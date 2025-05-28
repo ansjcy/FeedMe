@@ -53,21 +53,21 @@ export const config = {
     //   url: "https://engineering.fb.com/feed/",
     //   category: "技术博客",
     // },
-    // {
-    //   name: "Google 新闻",
-    //   url: "https://news.google.com/rss",
-    //   category: "世界新闻",
-    // },
-    // {
-    //   name: "macrumors",
-    //   url: "https://feeds.macrumors.com/MacRumors-All",
-    //   category: "科技新闻",
-    // },
-    // {
-    //   name: "Github 近一周热门",
-    //   url: "https://rsshub.rssforever.com/github/trending/weekly/any",
-    //   category: "代码项目",
-    // },
+    {
+      name: "Google 新闻",
+      url: "https://news.google.com/rss",
+      category: "世界新闻",
+    },
+    {
+      name: "macrumors",
+      url: "https://feeds.macrumors.com/MacRumors-All",
+      category: "科技新闻",
+    },
+    {
+      name: "Github 近一周热门",
+      url: "https://rsshub.rssforever.com/github/trending/weekly/any",
+      category: "代码项目",
+    },
     // {
     //   name: "techcrunch",
     //   url: "https://techcrunch.com/feed",
@@ -94,7 +94,7 @@ export const config = {
     //   category: "技术博客",
     // },
   ],
-  maxItemsPerFeed: 2,
+  maxItemsPerFeed: 10,
   dataPath: "./data",
 }
 
