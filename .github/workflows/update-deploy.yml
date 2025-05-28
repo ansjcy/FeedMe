@@ -83,7 +83,7 @@ jobs:
           echo "Checking for specific assets:"
           ls -la ./out/_next/static/chunks/ | head -5 || echo "chunks directory not found"
       - uses: actions/configure-pages@v4
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: ./out
       - id: deployment
