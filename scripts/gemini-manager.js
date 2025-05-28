@@ -25,6 +25,14 @@ class GeminiManager {
   initialize() {
     const modelName = process.env.GEMINI_MODEL_NAME || "gemini-1.5-flash-latest";
     
+    // Define fallback models in order of preference
+    this.fallbackModels = [
+      modelName,
+      "gemini-2.0-flash-exp",
+      "gemini-1.5-flash-latest",
+      "gemini-1.5-flash-002"
+    ];
+    
     // Try to load multiple keys from environment variables
     for (let i = 1; i <= 8; i++) {
       const keyEnvVar = i === 1 ? 'GEMINI_API_KEY' : `GEMINI_API_KEY_${i}`;
@@ -35,10 +43,19 @@ class GeminiManager {
         
         // Create client for this key
         const genAI = new GoogleGenerativeAI(apiKey);
-        const model = genAI.getGenerativeModel({ model: modelName });
+        
+        // Create models for all fallback options
+        const models = this.fallbackModels.map(model => {
+          try {
+            return genAI.getGenerativeModel({ model });
+          } catch (error) {
+            console.warn(`无法创建模型 ${model}:`, error.message);
+            return null;
+          }
+        }).filter(model => model !== null);
         
         this.clients.push(genAI);
-        this.models.push(model);
+        this.models.push(models); // Store array of models for each key
         
         // Initialize stats for this key
         this.keyStats.push({
@@ -51,10 +68,11 @@ class GeminiManager {
           isRateLimited: false,
           rateLimitUntil: 0,
           totalRequests: 0,
-          errors: 0
+          errors: 0,
+          currentModelIndex: 0 // Track which model is currently being used for this key
         });
         
-        console.log(`已加载 Gemini API Key ${i}: ${apiKey.substring(0, 8)}...`);
+        console.log(`已加载 Gemini API Key ${i}: ${apiKey.substring(0, 8)}... (支持 ${models.length} 个模型)`);
       }
     }
     
@@ -195,6 +213,71 @@ class GeminiManager {
   }
 
   /**
+   * Clean and parse JSON response, handling common issues
+   */
+  cleanAndParseJSON(jsonString) {
+    try {
+      // Remove markdown code fences if present
+      let cleaned = jsonString.trim();
+      if (cleaned.startsWith("```json") && cleaned.endsWith("```")) {
+        cleaned = cleaned.substring(7, cleaned.length - 3).trim();
+      } else if (cleaned.startsWith("```") && cleaned.endsWith("```")) {
+        cleaned = cleaned.substring(3, cleaned.length - 3).trim();
+      }
+      
+      // More aggressive approach: handle multiline strings
+      // Find all string values and escape newlines within them
+      cleaned = cleaned.replace(/"([^"]*(?:\\.[^"]*)*)"/g, (match, content) => {
+        // Escape any unescaped newlines, tabs, etc. within the string
+        const escaped = content
+          .replace(/\\/g, '\\\\')  // First escape existing backslashes
+          .replace(/\n/g, '\\n')   // Escape newlines
+          .replace(/\r/g, '\\r')   // Escape carriage returns
+          .replace(/\t/g, '\\t')   // Escape tabs
+          .replace(/"/g, '\\"');   // Escape any quotes within the string
+        return '"' + escaped + '"';
+      });
+      
+      // Remove any remaining control characters outside strings
+      cleaned = cleaned
+        .replace(/[\f\v]/g, ' ')  // Replace form feeds and vertical tabs with spaces
+        .replace(/[\x00-\x1F\x7F]/g, ' '); // Replace other control characters with spaces
+      
+      // Handle incomplete JSON by trying to complete it
+      if (!cleaned.endsWith('}') && !cleaned.endsWith(']')) {
+        const openBraces = (cleaned.match(/{/g) || []).length;
+        const closeBraces = (cleaned.match(/}/g) || []).length;
+        if (openBraces > closeBraces) {
+          // Add missing closing braces
+          for (let i = 0; i < openBraces - closeBraces; i++) {
+            cleaned += '}';
+          }
+        }
+      }
+      
+      return JSON.parse(cleaned);
+    } catch (error) {
+      // If JSON parsing still fails, try a simpler approach
+      try {
+        // Remove all newlines and try again
+        let simple = jsonString.trim();
+        if (simple.startsWith("```json") && simple.endsWith("```")) {
+          simple = simple.substring(7, simple.length - 3).trim();
+        } else if (simple.startsWith("```") && simple.endsWith("```")) {
+          simple = simple.substring(3, simple.length - 3).trim();
+        }
+        
+        // Replace all newlines and control characters with spaces
+        simple = simple.replace(/[\n\r\t\f\v\x00-\x1F\x7F]/g, ' ');
+        
+        return JSON.parse(simple);
+      } catch (secondError) {
+        throw new Error(`JSON解析失败: ${error.message}`);
+      }
+    }
+  }
+
+  /**
    * Generate content using the best available API key
    */
   async generateContent(prompt, generationConfig = {}) {
@@ -209,20 +292,24 @@ class GeminiManager {
       try {
         // Get the best available key
         const keyIndex = this.getNextAvailableKey();
-        const model = this.models[keyIndex];
+        const models = this.models[keyIndex];
+        const stat = this.keyStats[keyIndex];
         
-        console.log(`使用 API Key ${keyIndex + 1} 发送请求 (尝试 ${attempt + 1}/${maxRetries})`);
+        console.log(`使用 API Key ${keyIndex + 1} 模型 ${this.fallbackModels[stat.currentModelIndex]} 发送请求 (尝试 ${attempt + 1}/${maxRetries})`);
         
         // Record the request
         this.recordRequest(keyIndex);
         
         // Add a small delay to avoid hitting rate limits too quickly
-        if (this.keyStats[keyIndex].requestsThisMinute > 5) {
+        if (stat.requestsThisMinute > 5) {
           await this.sleep(2000); // 2 second delay for keys that are being used heavily
         }
         
+        // Try current model for this key
+        const currentModel = models[stat.currentModelIndex];
+        
         // Make the request
-        const result = await model.generateContent({
+        const result = await currentModel.generateContent({
           contents: [{ role: "user", parts: [{ text: prompt }] }],
           generationConfig: {
             temperature: 0.3,
@@ -231,7 +318,7 @@ class GeminiManager {
           }
         });
         
-        console.log(`API Key ${keyIndex + 1} 请求成功`);
+        console.log(`API Key ${keyIndex + 1} 模型 ${this.fallbackModels[stat.currentModelIndex]} 请求成功`);
         return result;
         
       } catch (error) {
@@ -262,7 +349,21 @@ class GeminiManager {
             await this.sleep(30000);
             continue;
           }
-        } else {
+        } 
+        // Check if this is a model-specific error and we can try a fallback model
+        else if ((errorMessage.includes("model") || 
+                  errorMessage.includes("not found") || 
+                  errorMessage.includes("invalid") ||
+                  errorMessage.includes("not available")) && 
+                 this.keyStats[this.currentKeyIndex].currentModelIndex < this.models[this.currentKeyIndex].length - 1) {
+          
+          // Try next model for the same key
+          this.keyStats[this.currentKeyIndex].currentModelIndex++;
+          const newModelIndex = this.keyStats[this.currentKeyIndex].currentModelIndex;
+          console.warn(`模型错误，切换到备用模型: ${this.fallbackModels[newModelIndex]}`);
+          continue;
+        }
+        else {
           // Non-rate-limit error, record it and try next key
           if (this.currentKeyIndex >= 0) {
             this.recordError(this.currentKeyIndex);

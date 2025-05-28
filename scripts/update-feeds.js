@@ -162,16 +162,9 @@ ${cleanContent.slice(0, 50000)}
       }
 
       try {
-        // Attempt to clean markdown code fences if present
-        let cleanedResponse = rawApiResponse;
-        if (cleanedResponse.startsWith("```json") && cleanedResponse.endsWith("```")) {
-          cleanedResponse = cleanedResponse.substring(7, cleanedResponse.length - 3).trim();
-        } else if (cleanedResponse.startsWith("```") && cleanedResponse.endsWith("```")) {
-          // Fallback for cases where just ``` is used without 'json'
-          cleanedResponse = cleanedResponse.substring(3, cleanedResponse.length - 3).trim();
-        }
-
-        const parsedResult = JSON.parse(cleanedResponse);
+        // Use the improved JSON parsing from GeminiManager
+        const parsedResult = geminiManager.cleanAndParseJSON(rawApiResponse);
+        
         // Ensure both fields exist and are strings.
         if (parsedResult && typeof parsedResult.translated_title === 'string' && typeof parsedResult.summary === 'string') {
           return {
@@ -179,7 +172,7 @@ ${cleanContent.slice(0, 50000)}
             summary: parsedResult.summary
           };
         } else {
-          console.warn(`为标题 "${title}" 生成的结果JSON格式不正确或缺少字段. Cleaned:`, cleanedResponse.substring(0,200), "Raw:", rawApiResponse.substring(0,200));
+          console.warn(`为标题 "${title}" 生成的结果JSON格式不正确或缺少字段. Raw:`, rawApiResponse.substring(0,200));
           return { translatedTitle: title, summary: "无法生成摘要（返回JSON格式错误）。" };
         }
       } catch (jsonError) {
