@@ -67,11 +67,21 @@ jobs:
           REPOSITORY_NAME: ${{ env.REPOSITORY_NAME }}
           NODE_ENV: ${{ env.NODE_ENV }}
           GITHUB_ACTIONS: ${{ env.GITHUB_ACTIONS }}
+      - name: Add .nojekyll to output directory  
+        run: touch ./out/.nojekyll
       - name: Copy CNAME to output directory
         run: |
           if [ -f "./CNAME" ]; then
             cp ./CNAME ./out/CNAME
           fi
+      - name: Verify build output
+        run: |
+          echo "Output directory contents:"
+          find ./out -name "*" -type f | head -20
+          echo "Checking _next directory:"
+          ls -la ./out/_next/ || echo "_next directory not found"
+          echo "Checking for specific assets:"
+          ls -la ./out/_next/static/chunks/ | head -5 || echo "chunks directory not found"
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
