@@ -69,11 +69,7 @@ jobs:
           GITHUB_ACTIONS: ${{ env.GITHUB_ACTIONS }}
       - name: Add .nojekyll to output directory  
         run: touch ./out/.nojekyll
-      - name: Copy CNAME to output directory
-        run: |
-          if [ -f "./CNAME" ]; then
-            cp ./CNAME ./out/CNAME
-          fi
+
       - name: Verify build output
         run: |
           echo "Output directory contents:"

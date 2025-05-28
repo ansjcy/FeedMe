@@ -15,9 +15,12 @@ const isVercel = process.env.VERCEL === '1';
 const repositoryName = process.env.REPOSITORY_NAME || 'feedme';
 const isGitHubPages = process.env.GITHUB_ACTIONS === 'true' && !isVercel;
 
-// 由于你有自定义域名 (CNAME)，所以不需要 basePath
-const basePath = '';
-const assetPrefix = '';
+// 配置GitHub Pages部署路径
+// 由于使用 ansjcy.github.io/FeedMe，需要设置basePath
+const basePath = hasCNAME ? '' : (isGitHubPages ? `/${repositoryName}` : '');
+const assetPrefix = basePath;
+
+
 
 
 
@@ -36,7 +39,7 @@ const nextConfig = {
   // 设置trailingSlash
   trailingSlash: true,
   
-  // 由于使用自定义域名，不需要basePath和assetPrefix
+  // GitHub Pages配置：使用basePath和assetPrefix
   basePath,
   assetPrefix,
   
