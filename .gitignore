@@ -44,7 +44,7 @@ Thumbs.db
 logs
 *.log
 
-# data directory - stored locally and updated on deploy
-data/
+# RSS feed data is now tracked to persist between GitHub Action runs
+# data/
 
 .cursorrules

@@ -29,18 +29,23 @@ export const config = {
       category: "技术博客",
     },
     // {
-    //   name: "Spotify blog",
-    //   url: "https://engineering.atspotify.com/feed",
+    //   name: "TechCrunch",
+    //   url: "https://techcrunch.com/feed/",
+    //   category: "技术新闻",
+    // },
+    // {
+    //   name: "Netflix blog",
+    //   url: "https://netflixtechblog.com/feed",
+    //   category: "技术博客",
+    // },
+    // {
+    //   name: "Github blog",
+    //   url: "https://github.blog/feed/",
     //   category: "技术博客",
     // },
     // {
     //   name: "Airbnb blog",
     //   url: "https://medium.com/feed/airbnb-engineering",
-    //   category: "技术博客",
-    // },
-    // {
-    //   name: "Netflix blog",
-    //   url: "https://netflixtechblog.com/feed",
     //   category: "技术博客",
     // },
     // {
@@ -72,11 +77,6 @@ export const config = {
     //   name: "techcrunch",
     //   url: "https://techcrunch.com/feed",
     //   category: "技术新闻",
-    // },
-    // {
-    //   name: "Github blog",
-    //   url: "https://github.blog/feed/",
-    //   category: "技术博客",
     // },
     // {
     //   name: "Hugging Face 每日论文",

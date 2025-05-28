@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -21,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -42,6 +44,20 @@ jobs:
           GEMINI_API_KEY_7: ${{ secrets.GEMINI_API_KEY_7 }}
           GEMINI_API_KEY_8: ${{ secrets.GEMINI_API_KEY_8 }}
           GEMINI_MODEL_NAME: ${{ secrets.GEMINI_MODEL_NAME }}
+      
+      # Commit the updated data back to the repository
+      - name: Commit updated data
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ./data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update RSS feed data [skip ci]"
+            git push
+          fi
+      
       - uses: actions/upload-artifact@v4
         with:
           name: data-artifact
