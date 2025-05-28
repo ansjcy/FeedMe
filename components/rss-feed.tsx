@@ -143,9 +143,22 @@ export function RssFeed({ defaultSource }: { defaultSource: string }) {
                   </TabsContent>
                   <TabsContent value="original">
                     <div className="text-sm prose prose-sm max-w-none">
-                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {item.content || item.contentSnippet || "无内容"}
-                      </ReactMarkdown>
+                      {item.content || item.contentSnippet ? (
+                        // Try markdown first, but if content contains HTML tags, render as HTML
+                        (item.content || item.contentSnippet || "").includes('<') ? (
+                          <div 
+                            dangerouslySetInnerHTML={{ 
+                              __html: item.content || item.contentSnippet || "无内容" 
+                            }} 
+                          />
+                        ) : (
+                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {item.content || item.contentSnippet || "无内容"}
+                          </ReactMarkdown>
+                        )
+                      ) : (
+                        "无内容"
+                      )}
                     </div>
                   </TabsContent>
                 </Tabs>

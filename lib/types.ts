@@ -3,10 +3,19 @@ export interface FeedItem {
   link?: string
   pubDate?: string
   isoDate?: string
-  content?: string
-  contentSnippet?: string
   creator?: string
   summary?: string
+  translated_title?: string
+  images?: Array<{
+    url: string
+    alt: string
+    title: string
+    position: number
+  }>
+  contentSource?: string
+  // Content fields only included when summary is missing
+  content?: string
+  contentSnippet?: string
   enclosure?: {
     url: string
     type: string

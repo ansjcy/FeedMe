@@ -639,14 +639,51 @@ function mergeFeedItems(oldItems = [], newItems = [], maxItems = config.maxItems
     }
   }
 
-  // 将Map转换回数组，保持原始RSS源的顺序
-  // 使用newItems的顺序作为基准
-  const mergedItems = newItems
-    .filter(item => item.link && itemsMap.has(item.link))
-    .map(item => item.link ? itemsMap.get(item.link) : item)
-    .slice(0, maxItems); // 只保留指定数量的条目
+  // 将Map转换回数组，按发布日期排序（最新的在前）
+  const allItems = Array.from(itemsMap.values());
+  
+  // 按日期排序 - 使用 isoDate 或 pubDate，最新的在前
+  allItems.sort((a, b) => {
+    const dateA = new Date(a.isoDate || a.pubDate || '1970-01-01');
+    const dateB = new Date(b.isoDate || b.pubDate || '1970-01-01');
+    return dateB.getTime() - dateA.getTime(); // 降序排序（最新的在前）
+  });
+  
+  // 只保留指定数量的条目
+  const mergedItems = allItems.slice(0, maxItems);
 
   return { mergedItems, newItemsForSummary };
+}
+
+// 优化存储的数据结构，只保留必要的字段
+function optimizeItemForStorage(item) {
+  // 保留前端显示必需的字段
+  const optimizedItem = {
+    title: item.title || "",
+    link: item.link || "",
+    pubDate: item.pubDate || "",
+    isoDate: item.isoDate || "",
+    creator: item.creator || "",
+    summary: item.summary || "",
+    translated_title: item.translated_title || "",
+    images: item.images || [],
+    contentSource: item.contentSource || "RSS",
+    // 保留原文内容字段供前端显示
+    content: item.content || "",
+  };
+
+  // 如果存在enclosure，保留它
+  if (item.enclosure) {
+    optimizedItem.enclosure = {
+      url: item.enclosure.url || "",
+      type: item.enclosure.type || "",
+    };
+  }
+  
+  // 移除不必要的字段：encodedSnippet等
+  // (这些字段不会被添加到optimizedItem中，从而实现优化)
+  
+  return optimizedItem;
 }
 
 // 更新单个源
@@ -718,15 +755,24 @@ async function updateFeed(sourceUrl) {
       itemsWithSummaries.push(processedItem);
     }
 
-    // 创建新的数据对象
+    // 创建新的数据对象，优化存储结构
+    const optimizedItems = itemsWithSummaries.map(optimizeItemForStorage);
+    
     const updatedData = {
       sourceUrl,
       title: newFeed.title,
       description: newFeed.description,
       link: newFeed.link,
-      items: itemsWithSummaries,
-      lastUpdated: new Date().toISOString(),
-      // 添加处理统计信息
+      items: optimizedItems,
+      lastUpdated: new Date().toISOString()
+    };
+
+    // 保存到文件
+    await saveFeedData(sourceUrl, updatedData);
+
+    // 返回包含统计信息的对象（用于日志，但不保存到文件）
+    return {
+      ...updatedData,
       processingStats: {
         totalItems: totalItems,
         newItems: newItems,
@@ -734,11 +780,6 @@ async function updateFeed(sourceUrl) {
         lastProcessed: new Date().toISOString()
       }
     };
-
-    // 保存到文件
-    await saveFeedData(sourceUrl, updatedData);
-
-    return updatedData;
   } catch (error) {
     console.error(`更新源 ${sourceUrl} 时出错:`, error);
     throw new Error(`更新源失败: ${error.message}`);
