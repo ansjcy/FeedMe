@@ -42,7 +42,7 @@ if (fs.existsSync(dotenvPath)) {
 }
 
 const Parser = require('rss-parser');
-const { OpenAI } = require('openai');
+const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require('@google/generative-ai');
 
 // 从配置文件中导入RSS源配置
 const { config } = require('../config/rss-config.js');
@@ -58,31 +58,26 @@ const parser = new Parser({
 });
 
 // 从环境变量中获取API配置
-const OPENAI_API_KEY = process.env.LLM_API_KEY;
-const OPENAI_API_BASE = process.env.LLM_API_BASE;
-const OPENAI_MODEL_NAME = process.env.LLM_NAME;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_MODEL_NAME = process.env.GEMINI_MODEL_NAME || "gemini-1.5-flash-latest"; // Default to a common model
 
 // 验证必要的环境变量
-if (!OPENAI_API_KEY) {
-  console.error('环境变量LLM_API_KEY未设置，无法生成摘要');
+if (!GEMINI_API_KEY) {
+  console.error('环境变量GEMINI_API_KEY未设置，无法生成摘要');
   process.exit(1);
 }
 
-if (!OPENAI_API_BASE) {
-  console.error('环境变量LLM_API_BASE未设置，无法生成摘要');
+if (!GEMINI_MODEL_NAME) {
+  console.error('环境变量GEMINI_MODEL_NAME未设置，无法生成摘要 (e.g., "gemini-1.5-flash-latest")');
   process.exit(1);
 }
 
-if (!OPENAI_MODEL_NAME) {
-  console.error('环境变量LLM_NAME未设置，无法生成摘要');
-  process.exit(1);
-}
-
-// 创建OpenAI客户端
-const openai = new OpenAI({
-  baseURL: OPENAI_API_BASE,
-  apiKey: OPENAI_API_KEY,
+// 创建Google Generative AI客户端
+const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+const geminiModel = genAI.getGenerativeModel({
+  model: GEMINI_MODEL_NAME
 });
+
 
 // 确保数据目录存在
 function ensureDataDir() {
@@ -131,45 +126,125 @@ function loadFeedData(sourceUrl) {
   }
 }
 
+// 辅助函数：延迟执行
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // 生成摘要函数
 async function generateSummary(title, content) {
-  try {
-    // 清理内容 - 移除HTML标签
-    const cleanContent = content.replace(/<[^>]*>?/gm, "");
 
-    // 准备提示词
-    const prompt = `
-你是一个专业的内容摘要生成器。请根据以下文章标题和内容，生成一个简洁、准确的中文摘要。
-摘要应该：
-1. 捕捉文章的主要观点和关键信息
-2. 使用清晰、流畅的中文
-3. 长度控制在100字左右
-4. 保持客观，不添加个人观点
-5. 如果文章内容为空或不包含有效信息，不要生成文章标题或内容未提及的无关内容。对非中文的标题进行翻译，不需要翻译中文的标题
+  // gemini rate limit is 10 requests per minute. Sleep for 6 sec to avoid rate limiting.
+  sleep(5000);
+
+  const maxRetries = 5; // 最大重试次数
+  let attempt = 0;
+  let baseDelay = 1000; // 基础延迟时间 (1秒)
+
+  // 清理内容 - 移除HTML标签
+  const cleanContent = content.replace(/<[^>]*>?/gm, "");
+
+  // 准备提示词 (Gemini prefers a direct prompt style)
+  const fullPrompt = `
+请根据以下文章标题和内容，完成以下任务：
+1.  将文章标题翻译成中文。如果标题已经是中文，则返回原始标题。
+2.  生成一个简洁、准确的中文摘要。摘要应：
+    a. 捕捉文章的主要观点和关键信息。
+    b. 使用清晰、流畅的中文。
+    c. 避免冗长的描述，确保摘要简洁明了。
+    d. 使用markdown进行格式化，让摘要易于阅读。使用title，bullets或编号列表来组织信息。
+    d. 长度尽量控制在1000字以内。
+    e. 保持客观，不添加个人观点。
+    f. 如果文章内容为空或不包含有效信息，请明确指出无法生成摘要，不要编造内容。
+
+请以JSON格式返回结果，格式如下：
+{
+  "translated_title": "翻译后的标题",
+  "summary": "文章的中文摘要"
+}
 
 文章标题：${title}
 
 文章内容：
-${cleanContent.slice(0, 5000)} // 限制内容长度以避免超出token限制
+${cleanContent.slice(0, 50000)}
 `;
 
-    const completion = await openai.chat.completions.create({
-      model: OPENAI_MODEL_NAME,
-      messages: [
-        {
-          role: "user",
-          content: prompt
-        }
-      ],
-      temperature: 0.3,
-      max_tokens: 500,
-    });
+  const generationConfig = {
+    temperature: 0.3,
+    maxOutputTokens: 50000, // Equivalent to max_tokens
+  };
 
-    return completion.choices[0].message.content?.trim() || "无法生成摘要。";
-  } catch (error) {
-    console.error("生成摘要时出错:", error);
-    return "无法生成摘要。AI 模型暂时不可用。";
+  while (attempt < maxRetries) {
+    try {
+      const result = await geminiModel.generateContent({
+        contents: [{ role: "user", parts: [{ text: fullPrompt }] }],
+        generationConfig,
+      });
+      
+      const response = result.response;
+      if (response && response.candidates && response.candidates.length > 0 && response.candidates[0].content && response.candidates[0].content.parts && response.candidates[0].content.parts.length > 0) {
+        const safetyRatings = response.candidates[0].safetyRatings;
+        if (safetyRatings && safetyRatings.some(rating => rating.probability !== 'NEGLIGIBLE' && rating.probability !== 'LOW')) {
+            console.warn(`为标题 "${title}" 生成的内容可能因安全原因被阻止或修改。Safety Ratings:`, safetyRatings);
+        }
+
+        const rawApiResponse = response.candidates[0].content.parts[0].text?.trim();
+        if (!rawApiResponse) {
+          return { translatedTitle: title, summary: "无法生成摘要（内容为空）。" };
+        }
+
+        try {
+          // Attempt to clean markdown code fences if present
+          let cleanedResponse = rawApiResponse;
+          if (cleanedResponse.startsWith("```json") && cleanedResponse.endsWith("```")) {
+            cleanedResponse = cleanedResponse.substring(7, cleanedResponse.length - 3).trim();
+          } else if (cleanedResponse.startsWith("```") && cleanedResponse.endsWith("```")) {
+            // Fallback for cases where just ``` is used without 'json'
+            cleanedResponse = cleanedResponse.substring(3, cleanedResponse.length - 3).trim();
+          }
+
+          const parsedResult = JSON.parse(cleanedResponse);
+          // Ensure both fields exist and are strings.
+          if (parsedResult && typeof parsedResult.translated_title === 'string' && typeof parsedResult.summary === 'string') {
+            return {
+              translatedTitle: parsedResult.translated_title,
+              summary: parsedResult.summary
+            };
+          } else {
+            console.warn(`为标题 "${title}" 生成的结果JSON格式不正确或缺少字段. Cleaned:`, cleanedResponse.substring(0,200), "Raw:", rawApiResponse.substring(0,200));
+            return { translatedTitle: title, summary: "无法生成摘要（返回JSON格式错误）。" };
+          }
+        } catch (jsonError) {
+          console.warn(`为标题 "${title}" 解析JSON响应时出错: ${jsonError.message}. Raw response:`, rawApiResponse.substring(0, 200));
+          return { translatedTitle: title, summary: `无法生成摘要（JSON解析失败）。` };
+        }
+      } else if (response && response.promptFeedback && response.promptFeedback.blockReason) {
+        console.warn(`为标题 "${title}" 生成摘要的请求被阻止: ${response.promptFeedback.blockReason}`);
+        return { translatedTitle: title, summary: `无法生成摘要（请求被阻止: ${response.promptFeedback.blockReason}）。`};
+      }
+      return { translatedTitle: title, summary: "无法生成摘要（无有效响应）。" };
+    } catch (error) {
+      // Gemini SDK errors might not have a .status field.
+      // We check for common indicators of rate limiting in the message.
+      const errorMessage = error.message?.toLowerCase() || "";
+      const isRateLimitError = errorMessage.includes("quota") || errorMessage.includes("rate limit") || errorMessage.includes("resource has been exhausted") || (error.httpStatusCode === 429);
+
+      if (isRateLimitError && attempt < maxRetries - 1) {
+        const delay = baseDelay * Math.pow(2, attempt) + Math.random() * 1000; // 指数退避 + 随机抖动
+        console.warn(`Gemini API 请求频繁或配额不足，将在 ${Math.round(delay / 1000)} 秒后重试 (尝试 ${attempt + 1}/${maxRetries})... Error: ${error.message}`);
+        await sleep(delay);
+        attempt++;
+      } else {
+        console.error(`Gemini API 生成摘要时出错 (尝试 ${attempt + 1}/${maxRetries}):`, error.message || error);
+        if (isRateLimitError) {
+          return { translatedTitle: title, summary: "无法生成摘要。已达到Gemini API请求频率限制或配额不足。" };
+        }
+        return { translatedTitle: title, summary: "无法生成摘要。Gemini AI 模型暂时不可用或发生其他错误。" };
+      }
+    }
   }
+  // 如果所有重试都失败了
+  return { translatedTitle: title, summary: "无法生成摘要。多次尝试后Gemini API请求仍然失败。" };
 }
 
 // 获取RSS源
@@ -190,6 +265,11 @@ async function fetchRssFeed(url) {
         contentSnippet: item.contentSnippet || "",
         creator: item.creator || "",
       };
+      if (serializedItem.content) {
+        serializedItem.encodedSnippet = serializedItem.content + "\n" + item["content:encodedSnippet"]
+      } else {
+        serializedItem.encodedSnippet = serializedItem.contentSnippet + "\n" + item["content:encodedSnippet"]
+      }
       
       // 如果存在enclosure，以纯对象形式添加
       if (item.enclosure) {
@@ -279,23 +359,33 @@ async function updateFeed(sourceUrl) {
 
     console.log(`发现 ${newItemsForSummary.length} 条新条目，来自 ${sourceUrl}`);
 
-    // 为新条目生成摘要
-    const itemsWithSummaries = await Promise.all(
-      mergedItems.map(async (item) => {
-        // 如果是新条目且需要生成摘要
-        if (newItemsForSummary.some((newItem) => newItem.link === item.link) && !item.summary) {
-          try {
-            const summary = await generateSummary(item.title, item.content || item.contentSnippet || "");
-            return { ...item, summary };
-          } catch (err) {
-            console.error(`为条目 ${item.title} 生成摘要时出错:`, err);
-            return { ...item, summary: "无法生成摘要。" };
+    // 为新条目生成摘要 (逐条处理)
+    const itemsWithSummaries = [];
+    for (const item of mergedItems) {
+      let processedItem = { ...item }; // Start with a copy of the item
+
+      // 如果是新条目且需要生成摘要 (并且还没有摘要)
+      // If item is new and doesn't have a summary (implies translated_title might also be missing or needs update)
+      if (newItemsForSummary.some((newItem) => newItem.link === item.link) && !processedItem.summary) {
+        console.log(`为条目 "${processedItem.title}" 生成摘要和翻译标题...`);
+        try {
+          const generationResult = await generateSummary(processedItem.title, processedItem.encodedSnippet || processedItem.content || processedItem.contentSnippet || "");
+          processedItem.summary = generationResult.summary;
+          processedItem.translated_title = generationResult.translatedTitle; // Add translated title
+          // Update the main title field with the translation
+          if (generationResult.translatedTitle && generationResult.translatedTitle.trim() !== "") {
+            processedItem.title = generationResult.translatedTitle + " (原标题: " + processedItem.title + ")";
           }
+        } catch (err) {
+          // This catch block is a safeguard for unexpected errors from generateSummary NOT returning the expected object.
+          console.error(`在 updateFeed 中为条目 ${processedItem.title} 调用 generateSummary 时发生意外错误:`, err);
+          processedItem.summary = "无法生成摘要（处理异常）。";
+          // Provide a fallback for translated_title if an error occurs here
+          processedItem.translated_title = processedItem.title;
         }
-        // 否则保持不变
-        return item;
-      }),
-    );
+      }
+      itemsWithSummaries.push(processedItem);
+    }
 
     // 创建新的数据对象
     const updatedData = {

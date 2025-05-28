@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
+import ReactMarkdown from "react-markdown"
+import remarkGfm from "remark-gfm"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
@@ -120,15 +122,18 @@ export function RssFeed({ defaultSource }: { defaultSource: string }) {
                   </TabsList>
                   <TabsContent value="summary" className="space-y-2">
                     <div className="text-sm text-muted-foreground mb-2">由 AI 生成的摘要：</div>
-                    <div className="text-foreground whitespace-pre-line">{item.summary || "无法生成摘要。"}</div>
+                    <div className="text-foreground prose prose-sm max-w-none">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {item.summary || "无法生成摘要。"}
+                      </ReactMarkdown>
+                    </div>
                   </TabsContent>
                   <TabsContent value="original">
-                    <div
-                      className="text-sm prose prose-sm max-w-none"
-                      dangerouslySetInnerHTML={{
-                        __html: item.content || item.contentSnippet || "无内容",
-                      }}
-                    />
+                    <div className="text-sm prose prose-sm max-w-none">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {item.content || item.contentSnippet || "无内容"}
+                      </ReactMarkdown>
+                    </div>
                   </TabsContent>
                 </Tabs>
               </CardContent>
