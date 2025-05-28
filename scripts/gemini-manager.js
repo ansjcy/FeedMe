@@ -69,7 +69,8 @@ class GeminiManager {
           rateLimitUntil: 0,
           totalRequests: 0,
           errors: 0,
-          currentModelIndex: 0 // Track which model is currently being used for this key
+          currentModelIndex: 0, // Track which model is currently being used for this key
+          currentModelName: this.fallbackModels[0] // Store the actual model name being used
         });
         
         console.log(`已加载 Gemini API Key ${i}: ${apiKey.substring(0, 8)}... (支持 ${models.length} 个模型)`);
@@ -83,6 +84,28 @@ class GeminiManager {
     
     console.log(`Gemini 管理器初始化完成，共加载 ${this.keys.length} 个 API Key`);
     this.initialized = true;
+  }
+
+  /**
+   * Get the current model name for a specific key
+   */
+  getCurrentModelName(keyIndex) {
+    const stat = this.keyStats[keyIndex];
+    if (stat && stat.currentModelIndex < this.fallbackModels.length) {
+      return this.fallbackModels[stat.currentModelIndex];
+    }
+    return 'unknown';
+  }
+
+  /**
+   * Update the current model name for a specific key
+   */
+  updateCurrentModelName(keyIndex, modelIndex) {
+    const stat = this.keyStats[keyIndex];
+    if (stat) {
+      stat.currentModelIndex = modelIndex;
+      stat.currentModelName = this.fallbackModels[modelIndex] || 'unknown';
+    }
   }
 
   /**
@@ -225,54 +248,34 @@ class GeminiManager {
         cleaned = cleaned.substring(3, cleaned.length - 3).trim();
       }
       
-      // More aggressive approach: handle multiline strings
-      // Find all string values and escape newlines within them
-      cleaned = cleaned.replace(/"([^"]*(?:\\.[^"]*)*)"/g, (match, content) => {
-        // Escape any unescaped newlines, tabs, etc. within the string
-        const escaped = content
-          .replace(/\\/g, '\\\\')  // First escape existing backslashes
-          .replace(/\n/g, '\\n')   // Escape newlines
-          .replace(/\r/g, '\\r')   // Escape carriage returns
-          .replace(/\t/g, '\\t')   // Escape tabs
-          .replace(/"/g, '\\"');   // Escape any quotes within the string
-        return '"' + escaped + '"';
-      });
-      
-      // Remove any remaining control characters outside strings
-      cleaned = cleaned
-        .replace(/[\f\v]/g, ' ')  // Replace form feeds and vertical tabs with spaces
-        .replace(/[\x00-\x1F\x7F]/g, ' '); // Replace other control characters with spaces
-      
-      // Handle incomplete JSON by trying to complete it
-      if (!cleaned.endsWith('}') && !cleaned.endsWith(']')) {
-        const openBraces = (cleaned.match(/{/g) || []).length;
-        const closeBraces = (cleaned.match(/}/g) || []).length;
-        if (openBraces > closeBraces) {
-          // Add missing closing braces
-          for (let i = 0; i < openBraces - closeBraces; i++) {
-            cleaned += '}';
-          }
-        }
-      }
-      
+      // Try to parse as-is first
       return JSON.parse(cleaned);
     } catch (error) {
-      // If JSON parsing still fails, try a simpler approach
+      // If that fails, try some basic cleanup
       try {
-        // Remove all newlines and try again
-        let simple = jsonString.trim();
-        if (simple.startsWith("```json") && simple.endsWith("```")) {
-          simple = simple.substring(7, simple.length - 3).trim();
-        } else if (simple.startsWith("```") && simple.endsWith("```")) {
-          simple = simple.substring(3, simple.length - 3).trim();
+        let fixed = cleaned;
+        
+        // Handle incomplete JSON by trying to complete it
+        if (!fixed.endsWith('}') && !fixed.endsWith(']')) {
+          const openBraces = (fixed.match(/{/g) || []).length;
+          const closeBraces = (fixed.match(/}/g) || []).length;
+          if (openBraces > closeBraces) {
+            // Add missing closing braces
+            for (let i = 0; i < openBraces - closeBraces; i++) {
+              fixed += '}';
+            }
+          }
         }
         
-        // Replace all newlines and control characters with spaces
-        simple = simple.replace(/[\n\r\t\f\v\x00-\x1F\x7F]/g, ' ');
-        
-        return JSON.parse(simple);
+        return JSON.parse(fixed);
       } catch (secondError) {
-        throw new Error(`JSON解析失败: ${error.message}`);
+        // Last resort: try removing control characters
+        try {
+          let lastResort = cleaned.replace(/[\x00-\x1F\x7F]/g, ' ');
+          return JSON.parse(lastResort);
+        } catch (thirdError) {
+          throw new Error(`JSON解析失败: ${error.message}`);
+        }
       }
     }
   }
@@ -295,7 +298,7 @@ class GeminiManager {
         const models = this.models[keyIndex];
         const stat = this.keyStats[keyIndex];
         
-        console.log(`使用 API Key ${keyIndex + 1} 模型 ${this.fallbackModels[stat.currentModelIndex]} 发送请求 (尝试 ${attempt + 1}/${maxRetries})`);
+        console.log(`使用 API Key ${keyIndex + 1} 模型 ${this.getCurrentModelName(keyIndex)} 发送请求 (尝试 ${attempt + 1}/${maxRetries})`);
         
         // Record the request
         this.recordRequest(keyIndex);
@@ -318,7 +321,7 @@ class GeminiManager {
           }
         });
         
-        console.log(`API Key ${keyIndex + 1} 模型 ${this.fallbackModels[stat.currentModelIndex]} 请求成功`);
+        console.log(`API Key ${keyIndex + 1} 模型 ${this.getCurrentModelName(keyIndex)} 请求成功`);
         return result;
         
       } catch (error) {
@@ -358,9 +361,9 @@ class GeminiManager {
                  this.keyStats[this.currentKeyIndex].currentModelIndex < this.models[this.currentKeyIndex].length - 1) {
           
           // Try next model for the same key
-          this.keyStats[this.currentKeyIndex].currentModelIndex++;
-          const newModelIndex = this.keyStats[this.currentKeyIndex].currentModelIndex;
-          console.warn(`模型错误，切换到备用模型: ${this.fallbackModels[newModelIndex]}`);
+          const newModelIndex = this.keyStats[this.currentKeyIndex].currentModelIndex + 1;
+          this.updateCurrentModelName(this.currentKeyIndex, newModelIndex);
+          console.warn(`模型错误，切换到备用模型: ${this.getCurrentModelName(this.currentKeyIndex)}`);
           continue;
         }
         else {
@@ -387,6 +390,7 @@ class GeminiManager {
   getStats() {
     return this.keyStats.map((stat, index) => ({
       keyIndex: index + 1,
+      modelName: stat.currentModelName || this.getCurrentModelName(index),
       totalRequests: stat.totalRequests,
       requestsThisMinute: stat.requestsThisMinute,
       requestsToday: stat.requestsToday,
@@ -402,7 +406,8 @@ class GeminiManager {
   printStats() {
     console.log('\n=== Gemini API Keys 使用统计 ===');
     this.keyStats.forEach((stat, index) => {
-      console.log(`Key ${index + 1}: 总请求=${stat.totalRequests}, 本分钟=${stat.requestsThisMinute}, 今日=${stat.requestsToday}, 错误=${stat.errors}, 限流=${stat.isRateLimited}`);
+      const modelName = stat.currentModelName || this.getCurrentModelName(index);
+      console.log(`Key ${index + 1} (${modelName}): 总请求=${stat.totalRequests}, 本分钟=${stat.requestsThisMinute}, 今日=${stat.requestsToday}, 错误=${stat.errors}, 限流=${stat.isRateLimited}`);
     });
     console.log('================================\n');
   }

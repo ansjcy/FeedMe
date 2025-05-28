@@ -13,6 +13,19 @@ import type { FeedData } from "@/lib/types"
 import { findSourceByUrl } from "@/config/rss-config"
 import { ExternalLink } from "lucide-react"
 
+// Function to clean up double-escaped content for proper markdown rendering
+const cleanMarkdownContent = (content: string | undefined): string => {
+  if (!content) return "无法生成摘要。"
+  
+  // Fix double-escaped newlines that occur during Next.js build process
+  let cleaned = content
+    .replace(/\\\\n/g, '\n')  // Convert \\n to actual newlines
+    .replace(/\\n/g, '\n')    // Convert \n to actual newlines (backup)
+    .replace(/\\\\/g, '\\')   // Fix any other double-escaped backslashes
+  
+  return cleaned
+}
+
 export function RssFeed({ defaultSource }: { defaultSource: string }) {
   const searchParams = useSearchParams()
   const sourceUrl = searchParams.get("source") || defaultSource
@@ -124,7 +137,7 @@ export function RssFeed({ defaultSource }: { defaultSource: string }) {
                     <div className="text-sm text-muted-foreground mb-2">由 AI 生成的摘要：</div>
                     <div className="text-foreground prose prose-sm max-w-none">
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {item.summary || "无法生成摘要。"}
+                        {cleanMarkdownContent(item.summary)}
                       </ReactMarkdown>
                     </div>
                   </TabsContent>
