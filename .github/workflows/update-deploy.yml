@@ -58,9 +58,20 @@ jobs:
           path: ./data
       - name: Get repository name
         run: echo "REPOSITORY_NAME=$(echo ${{ github.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
+      - name: Set environment variables for build
+        run: |
+          echo "NODE_ENV=production" >> $GITHUB_ENV
+          echo "GITHUB_ACTIONS=true" >> $GITHUB_ENV
       - run: pnpm build
         env:
           REPOSITORY_NAME: ${{ env.REPOSITORY_NAME }}
+          NODE_ENV: ${{ env.NODE_ENV }}
+          GITHUB_ACTIONS: ${{ env.GITHUB_ACTIONS }}
+      - name: Copy CNAME to output directory
+        run: |
+          if [ -f "./CNAME" ]; then
+            cp ./CNAME ./out/CNAME
+          fi
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
