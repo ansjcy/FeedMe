@@ -18,41 +18,41 @@ export const config = {
       url: "https://machinelearningmastery.com/blog/feed/",
       category: "技术博客",
     },
-    // {
-    //   name: "Science Daily - 人工智能",
-    //   url: "https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml",
-    //   category: "技术新闻",
-    // },
-    // {
-    //   name: "Slack blog",
-    //   url: "https://slack.engineering/feed/",
-    //   category: "技术博客",
-    // },
-    // {
-    //   name: "Spotify blog",
-    //   url: "https://engineering.atspotify.com/feed",
-    //   category: "技术博客",
-    // },
-    // {
-    //   name: "Airbnb blog",
-    //   url: "https://medium.com/feed/airbnb-engineering",
-    //   category: "技术博客",
-    // },
-    // {
-    //   name: "Netflix blog",
-    //   url: "https://netflixtechblog.com/feed",
-    //   category: "技术博客",
-    // },
-    // {
-    //   name: "Microsoft blog",
-    //   url: "https://blogs.microsoft.com/feed/",
-    //   category: "技术博客",
-    // },
-    // {
-    //   name: "Facebook blog",
-    //   url: "https://engineering.fb.com/feed/",
-    //   category: "技术博客",
-    // },
+    {
+      name: "Science Daily - 人工智能",
+      url: "https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml",
+      category: "技术新闻",
+    },
+    {
+      name: "Slack blog",
+      url: "https://slack.engineering/feed/",
+      category: "技术博客",
+    },
+    {
+      name: "Spotify blog",
+      url: "https://engineering.atspotify.com/feed",
+      category: "技术博客",
+    },
+    {
+      name: "Airbnb blog",
+      url: "https://medium.com/feed/airbnb-engineering",
+      category: "技术博客",
+    },
+    {
+      name: "Netflix blog",
+      url: "https://netflixtechblog.com/feed",
+      category: "技术博客",
+    },
+    {
+      name: "Microsoft blog",
+      url: "https://blogs.microsoft.com/feed/",
+      category: "技术博客",
+    },
+    {
+      name: "Facebook blog",
+      url: "https://engineering.fb.com/feed/",
+      category: "技术博客",
+    },
     {
       name: "Google 新闻",
       url: "https://news.google.com/rss",
@@ -68,33 +68,33 @@ export const config = {
       url: "https://rsshub.rssforever.com/github/trending/weekly/any",
       category: "代码项目",
     },
-    // {
-    //   name: "techcrunch",
-    //   url: "https://techcrunch.com/feed",
-    //   category: "技术新闻",
-    // },
-    // {
-    //   name: "Github blog",
-    //   url: "https://github.blog/feed/",
-    //   category: "技术博客",
-    // },
-    // {
-    //   name: "Hugging Face 每日论文",
-    //   url: "https://rsshub.rssforever.com/huggingface/daily-papers",
-    //   category: "科研论文",
-    // },
-    // {
-    //   name: "Google 开发者博客",
-    //   url: "https://rsshub.rssforever.com/google/developers/en",
-    //   category: "技术博客",
-    // },
-    // {
-    //   name: "Google 研究博客",
-    //   url: "https://rsshub.rssforever.com/google/research",
-    //   category: "技术博客",
-    // },
+    {
+      name: "techcrunch",
+      url: "https://techcrunch.com/feed",
+      category: "技术新闻",
+    },
+    {
+      name: "Github blog",
+      url: "https://github.blog/feed/",
+      category: "技术博客",
+    },
+    {
+      name: "Hugging Face 每日论文",
+      url: "https://rsshub.rssforever.com/huggingface/daily-papers",
+      category: "科研论文",
+    },
+    {
+      name: "Google 开发者博客",
+      url: "https://rsshub.rssforever.com/google/developers/en",
+      category: "技术博客",
+    },
+    {
+      name: "Google 研究博客",
+      url: "https://rsshub.rssforever.com/google/research",
+      category: "技术博客",
+    },
   ],
-  maxItemsPerFeed: 10,
+  maxItemsPerFeed: 30,
   dataPath: "./data",
 }
 
