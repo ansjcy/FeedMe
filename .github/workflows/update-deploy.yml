@@ -34,6 +34,13 @@ jobs:
           LLM_API_BASE: ${{ secrets.LLM_API_BASE }}
           LLM_NAME: ${{ secrets.LLM_NAME }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+          GEMINI_API_KEY_5: ${{ secrets.GEMINI_API_KEY_5 }}
+          GEMINI_API_KEY_6: ${{ secrets.GEMINI_API_KEY_6 }}
+          GEMINI_API_KEY_7: ${{ secrets.GEMINI_API_KEY_7 }}
+          GEMINI_API_KEY_8: ${{ secrets.GEMINI_API_KEY_8 }}
           GEMINI_MODEL_NAME: ${{ secrets.GEMINI_MODEL_NAME }}
       - uses: actions/upload-artifact@v4
         with:
@@ -70,14 +77,6 @@ jobs:
       - name: Add .nojekyll to output directory  
         run: touch ./out/.nojekyll
 
-      - name: Verify build output
-        run: |
-          echo "Output directory contents:"
-          find ./out -name "*" -type f | head -20
-          echo "Checking _next directory:"
-          ls -la ./out/_next/ || echo "_next directory not found"
-          echo "Checking for specific assets:"
-          ls -la ./out/_next/static/chunks/ | head -5 || echo "chunks directory not found"
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:

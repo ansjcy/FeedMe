@@ -42,7 +42,7 @@ if (fs.existsSync(dotenvPath)) {
 }
 
 const Parser = require('rss-parser');
-const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require('@google/generative-ai');
+const GeminiManager = require('./gemini-manager');
 
 // 从配置文件中导入RSS源配置
 const { config } = require('../config/rss-config.js');
@@ -57,27 +57,8 @@ const parser = new Parser({
   },
 });
 
-// 从环境变量中获取API配置
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL_NAME = process.env.GEMINI_MODEL_NAME || "gemini-1.5-flash-latest"; // Default to a common model
-
-// 验证必要的环境变量
-if (!GEMINI_API_KEY) {
-  console.error('环境变量GEMINI_API_KEY未设置，无法生成摘要');
-  process.exit(1);
-}
-
-if (!GEMINI_MODEL_NAME) {
-  console.error('环境变量GEMINI_MODEL_NAME未设置，无法生成摘要 (e.g., "gemini-1.5-flash-latest")');
-  process.exit(1);
-}
-
-// 创建Google Generative AI客户端
-const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-const geminiModel = genAI.getGenerativeModel({
-  model: GEMINI_MODEL_NAME
-});
-
+// 创建 Gemini 管理器实例
+const geminiManager = new GeminiManager();
 
 // 确保数据目录存在
 function ensureDataDir() {
@@ -131,16 +112,8 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// 生成摘要函数
+// 生成摘要函数 - 使用新的 Gemini 管理器
 async function generateSummary(title, content) {
-
-  // gemini rate limit is 10 requests per minute. Sleep for 6 sec to avoid rate limiting.
-  sleep(5000);
-
-  const maxRetries = 5; // 最大重试次数
-  let attempt = 0;
-  let baseDelay = 1000; // 基础延迟时间 (1秒)
-
   // 清理内容 - 移除HTML标签
   const cleanContent = content.replace(/<[^>]*>?/gm, "");
 
@@ -169,82 +142,60 @@ async function generateSummary(title, content) {
 ${cleanContent.slice(0, 50000)}
 `;
 
-  const generationConfig = {
-    temperature: 0.3,
-    maxOutputTokens: 50000, // Equivalent to max_tokens
-  };
-
-  while (attempt < maxRetries) {
-    try {
-      const result = await geminiModel.generateContent({
-        contents: [{ role: "user", parts: [{ text: fullPrompt }] }],
-        generationConfig,
-      });
+  try {
+    // 使用 Gemini 管理器发送请求
+    const result = await geminiManager.generateContent(fullPrompt);
+    
+    const response = result.response;
+    if (response && response.candidates && response.candidates.length > 0 && 
+        response.candidates[0].content && response.candidates[0].content.parts && 
+        response.candidates[0].content.parts.length > 0) {
       
-      const response = result.response;
-      if (response && response.candidates && response.candidates.length > 0 && response.candidates[0].content && response.candidates[0].content.parts && response.candidates[0].content.parts.length > 0) {
-        const safetyRatings = response.candidates[0].safetyRatings;
-        if (safetyRatings && safetyRatings.some(rating => rating.probability !== 'NEGLIGIBLE' && rating.probability !== 'LOW')) {
-            console.warn(`为标题 "${title}" 生成的内容可能因安全原因被阻止或修改。Safety Ratings:`, safetyRatings);
-        }
-
-        const rawApiResponse = response.candidates[0].content.parts[0].text?.trim();
-        if (!rawApiResponse) {
-          return { translatedTitle: title, summary: "无法生成摘要（内容为空）。" };
-        }
-
-        try {
-          // Attempt to clean markdown code fences if present
-          let cleanedResponse = rawApiResponse;
-          if (cleanedResponse.startsWith("```json") && cleanedResponse.endsWith("```")) {
-            cleanedResponse = cleanedResponse.substring(7, cleanedResponse.length - 3).trim();
-          } else if (cleanedResponse.startsWith("```") && cleanedResponse.endsWith("```")) {
-            // Fallback for cases where just ``` is used without 'json'
-            cleanedResponse = cleanedResponse.substring(3, cleanedResponse.length - 3).trim();
-          }
-
-          const parsedResult = JSON.parse(cleanedResponse);
-          // Ensure both fields exist and are strings.
-          if (parsedResult && typeof parsedResult.translated_title === 'string' && typeof parsedResult.summary === 'string') {
-            return {
-              translatedTitle: parsedResult.translated_title,
-              summary: parsedResult.summary
-            };
-          } else {
-            console.warn(`为标题 "${title}" 生成的结果JSON格式不正确或缺少字段. Cleaned:`, cleanedResponse.substring(0,200), "Raw:", rawApiResponse.substring(0,200));
-            return { translatedTitle: title, summary: "无法生成摘要（返回JSON格式错误）。" };
-          }
-        } catch (jsonError) {
-          console.warn(`为标题 "${title}" 解析JSON响应时出错: ${jsonError.message}. Raw response:`, rawApiResponse.substring(0, 200));
-          return { translatedTitle: title, summary: `无法生成摘要（JSON解析失败）。` };
-        }
-      } else if (response && response.promptFeedback && response.promptFeedback.blockReason) {
-        console.warn(`为标题 "${title}" 生成摘要的请求被阻止: ${response.promptFeedback.blockReason}`);
-        return { translatedTitle: title, summary: `无法生成摘要（请求被阻止: ${response.promptFeedback.blockReason}）。`};
+      const safetyRatings = response.candidates[0].safetyRatings;
+      if (safetyRatings && safetyRatings.some(rating => rating.probability !== 'NEGLIGIBLE' && rating.probability !== 'LOW')) {
+          console.warn(`为标题 "${title}" 生成的内容可能因安全原因被阻止或修改。Safety Ratings:`, safetyRatings);
       }
-      return { translatedTitle: title, summary: "无法生成摘要（无有效响应）。" };
-    } catch (error) {
-      // Gemini SDK errors might not have a .status field.
-      // We check for common indicators of rate limiting in the message.
-      const errorMessage = error.message?.toLowerCase() || "";
-      const isRateLimitError = errorMessage.includes("quota") || errorMessage.includes("rate limit") || errorMessage.includes("resource has been exhausted") || (error.httpStatusCode === 429);
 
-      if (isRateLimitError && attempt < maxRetries - 1) {
-        const delay = baseDelay * Math.pow(2, attempt) + Math.random() * 1000; // 指数退避 + 随机抖动
-        console.warn(`Gemini API 请求频繁或配额不足，将在 ${Math.round(delay / 1000)} 秒后重试 (尝试 ${attempt + 1}/${maxRetries})... Error: ${error.message}`);
-        await sleep(delay);
-        attempt++;
-      } else {
-        console.error(`Gemini API 生成摘要时出错 (尝试 ${attempt + 1}/${maxRetries}):`, error.message || error);
-        if (isRateLimitError) {
-          return { translatedTitle: title, summary: "无法生成摘要。已达到Gemini API请求频率限制或配额不足。" };
-        }
-        return { translatedTitle: title, summary: "无法生成摘要。Gemini AI 模型暂时不可用或发生其他错误。" };
+      const rawApiResponse = response.candidates[0].content.parts[0].text?.trim();
+      if (!rawApiResponse) {
+        return { translatedTitle: title, summary: "无法生成摘要（内容为空）。" };
       }
+
+      try {
+        // Attempt to clean markdown code fences if present
+        let cleanedResponse = rawApiResponse;
+        if (cleanedResponse.startsWith("```json") && cleanedResponse.endsWith("```")) {
+          cleanedResponse = cleanedResponse.substring(7, cleanedResponse.length - 3).trim();
+        } else if (cleanedResponse.startsWith("```") && cleanedResponse.endsWith("```")) {
+          // Fallback for cases where just ``` is used without 'json'
+          cleanedResponse = cleanedResponse.substring(3, cleanedResponse.length - 3).trim();
+        }
+
+        const parsedResult = JSON.parse(cleanedResponse);
+        // Ensure both fields exist and are strings.
+        if (parsedResult && typeof parsedResult.translated_title === 'string' && typeof parsedResult.summary === 'string') {
+          return {
+            translatedTitle: parsedResult.translated_title,
+            summary: parsedResult.summary
+          };
+        } else {
+          console.warn(`为标题 "${title}" 生成的结果JSON格式不正确或缺少字段. Cleaned:`, cleanedResponse.substring(0,200), "Raw:", rawApiResponse.substring(0,200));
+          return { translatedTitle: title, summary: "无法生成摘要（返回JSON格式错误）。" };
+        }
+      } catch (jsonError) {
+        console.warn(`为标题 "${title}" 解析JSON响应时出错: ${jsonError.message}. Raw response:`, rawApiResponse.substring(0, 200));
+        return { translatedTitle: title, summary: `无法生成摘要（JSON解析失败）。` };
+      }
+    } else if (response && response.promptFeedback && response.promptFeedback.blockReason) {
+      console.warn(`为标题 "${title}" 生成摘要的请求被阻止: ${response.promptFeedback.blockReason}`);
+      return { translatedTitle: title, summary: `无法生成摘要（请求被阻止: ${response.promptFeedback.blockReason}）。`};
     }
+    return { translatedTitle: title, summary: "无法生成摘要（无有效响应）。" };
+    
+  } catch (error) {
+    console.error(`为标题 "${title}" 生成摘要时发生错误:`, error.message);
+    return { translatedTitle: title, summary: "无法生成摘要（API请求失败）。" };
   }
-  // 如果所有重试都失败了
-  return { translatedTitle: title, summary: "无法生成摘要。多次尝试后Gemini API请求仍然失败。" };
 }
 
 // 获取RSS源
@@ -430,11 +381,26 @@ async function updateAllFeeds() {
 // 主函数
 async function main() {
   try {
+    const startTime = Date.now();
+    console.log("开始更新所有RSS源");
+    
     await updateAllFeeds();
-    console.log("RSS数据更新成功");
+    
+    const endTime = Date.now();
+    const duration = Math.round((endTime - startTime) / 1000);
+    
+    console.log(`RSS数据更新成功，耗时 ${duration} 秒`);
+    
+    // 打印 Gemini API 使用统计
+    geminiManager.printStats();
+    
     process.exit(0);
   } catch (error) {
     console.error("RSS数据更新失败:", error);
+    
+    // 即使出错也打印统计信息
+    geminiManager.printStats();
+    
     process.exit(1);
   }
 }
