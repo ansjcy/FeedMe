@@ -1,8 +1,8 @@
-name: Update Feeds - daily-scienced-macrumor-gi
+name: Update Feeds - every-2-days-facebook
 
 on:
   schedule:
-    - cron: '23 10 * * *'
+    - cron: '5 5 */2 * *'
   workflow_dispatch:
     inputs:
       force_update:
@@ -21,7 +21,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: "update-daily-scienced-macrumor-gi"
+  group: "update-every-2-days-facebook"
   cancel-in-progress: true
 
 jobs:
@@ -40,10 +40,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       
       # 只更新特定的源
-      - name: Update RSS feeds for Science Daily - 人工智能, macrumors, Github 近一周热门
+      - name: Update RSS feeds for Facebook blog
         run: node scripts/update-feeds.js
         env:
-          SELECTED_SOURCES: '["https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml","https://feeds.macrumors.com/MacRumors-All","https://rsshub.rssforever.com/github/trending/weekly/any"]'
+          SELECTED_SOURCES: '["https://engineering.fb.com/feed/"]'
           TEST_MODE: ${{ github.event.inputs.test_mode || 'false' }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_API_BASE: ${{ secrets.LLM_API_BASE }}
@@ -67,20 +67,20 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Auto-update RSS feeds: Science Daily - 人工智能, macrumors, Github 近一周热门 [skip ci]"
+            git commit -m "Auto-update RSS feeds: Facebook blog [skip ci]"
             git push
           fi
       
       - uses: actions/upload-artifact@v4
         with:
-          name: data-artifact-daily-scienced-macrumor-gi
+          name: data-artifact-every-2-days-facebook
           path: ./data
 
   # 只有主要工作流才负责部署
   trigger-deployment:
     needs: update-data
     runs-on: ubuntu-latest
-    if: ${{ contains('23 10 * * *', '*/6') || contains('23 10 * * *', '*/3') || github.event_name == 'workflow_dispatch' }}
+    if: ${{ contains('5 5 */2 * *', '*/6') || contains('5 5 */2 * *', '*/3') || github.event_name == 'workflow_dispatch' }}
     steps:
       - name: Trigger main deployment workflow
         uses: actions/github-script@v7

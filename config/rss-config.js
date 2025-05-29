@@ -177,6 +177,34 @@ export const config = {
       maxItemsPerFeed: 10,
       cronConfig: "0 0 * * *", // 每天更新一次
     },
+    {
+      name: "South China Morning Post - 财富",
+      url: "https://www.scmp.com/rss/318200/feed/",
+      category: "新闻",
+      maxItemsPerFeed: 20,
+      cronConfig: "0 */6 * * *", // 每6小时更新一次 (高频新闻)
+    },
+    {
+      name: "South China Morning Post - 全球经济",
+      url: "https://www.scmp.com/rss/12/feed/",
+      category: "新闻",
+      maxItemsPerFeed: 20,
+      cronConfig: "0 */6 * * *", // 每6小时更新一次 (高频新闻)
+    },
+    {
+      name: "South China Morning Post - 中国经济",
+      url: "https://www.scmp.com/rss/318421/feed/",
+      category: "新闻",
+      maxItemsPerFeed: 20,
+      cronConfig: "0 */6 * * *", // 每6小时更新一次 (高频新闻)
+    },
+    {
+      name: "South China Morning Post - 科技",
+      url: "https://www.scmp.com/rss/36/feed/",
+      category: "新闻",
+      maxItemsPerFeed: 20,
+      cronConfig: "0 */6 * * *", // 每6小时更新一次 (高频新闻)
+    },
   ],
   // 全局默认配置
   maxItemsPerFeed: 10, // 全局默认最大条目数
@@ -188,13 +216,13 @@ export const config = {
     // 是否自动分布更新时间以避免同时执行
     distributeCronTiming: true,
     // 分布时间的范围（小时）
-    distributionHourRange: { min: 6, max: 22 }, // 6AM 到 10PM
+    distributionHourRange: { min: 0, max: 23 }, // 6AM 到 10PM
     // 每个工作流的最大源数量（用于进一步分散负载）
-    maxSourcesPerWorkflow: 3,
+    maxSourcesPerWorkflow: 5, // 减少每个工作流的源数量，创建更多组来避免冲突
     // 工作流执行时间优化
     optimization: {
-      // 每个工作流预估运行时间（分钟）
-      estimatedJobDurationMinutes: 40,
+      // 每个工作流预估运行时间（分钟）- 基于实际测试结果
+      estimatedJobDurationMinutes: 25, // 实际测试显示工作流运行约25分钟
       // 禁用的时间间隔组合（会产生频繁冲突）
       disallowedIntervalCombinations: [
         { intervals: [2, 3], reason: "2小时和3小时会在6小时倍数时冲突" },

@@ -155,9 +155,9 @@ function distributeCronTiming(cronConfig, sourceGroup, groupIndex) {
   const parts = cronConfig.split(' ');
   let [minute, hour, dayOfMonth, month, dayOfWeek] = parts;
   const optimization = config.workflowGeneration?.optimization;
-  const jobDuration = optimization?.estimatedJobDurationMinutes || 40;
-  const bufferTime = 10; // 额外缓冲时间
-  const minSpacing = jobDuration + bufferTime; // 最小间隔50分钟
+  const jobDuration = optimization?.estimatedJobDurationMinutes || 25; // 更新为25分钟
+  const bufferTime = 15; // 增加缓冲时间到15分钟，为未来扩展留更多空间
+  const minSpacing = jobDuration + bufferTime; // 最小间隔40分钟（25+15）
   
   // 处理固定时间的任务（小时为数字，不是表达式）
   if (hour === '0' || (hour.match(/^\d+$/) && parseInt(hour) < 6)) {
@@ -177,44 +177,53 @@ function distributeCronTiming(cronConfig, sourceGroup, groupIndex) {
     
     // 区分每日和多日任务的时间分配
     if (dayOfMonth.includes('*/')) {
-      // 多日任务 (如每2天)
+      // 多日任务 (如每2天) - 避开与每日任务冲突的时间段
       const multiDaySlots = [
-        { hour: 13, minute: 15 },  // 13:15-13:55
-        { hour: 14, minute: 30 },  // 14:30-15:10 (75分钟间隔)
-        { hour: 15, minute: 45 }   // 15:45-16:25 (75分钟间隔)
+        { hour: 4, minute: 5 },    // 4:05-4:45 (早晨安全时段)
+        { hour: 5, minute: 5 },    // 5:05-5:45 (早晨时段)
+        { hour: 13, minute: 5 },   // 13:05-13:45 (下午时段，避开12:05冲突)
+        { hour: 16, minute: 5 },   // 16:05-16:45 (下午时段)
+        { hour: 17, minute: 5 },   // 17:05-17:45 (傍晚时段)
+        { hour: 19, minute: 5 },   // 19:05-19:45 (晚间时段)
+        { hour: 20, minute: 5 },   // 20:05-20:45 (晚间时段)
+        { hour: 21, minute: 5 }    // 21:05-21:45 (晚间时段)
       ];
       
       if (groupIndex < multiDaySlots.length) {
         hour = multiDaySlots[groupIndex].hour.toString();
         minute = multiDaySlots[groupIndex].minute.toString();
       } else {
-        hour = "13";
+        hour = "4";
         minute = (15 + groupIndex * 20).toString();
       }
     } else {
       // 每日任务或每周任务
       const timeSlots = [
-        { hour: 8, minute: 41 },   // 8:41-9:21
-        { hour: 9, minute: 32 },   // 9:32-10:12 (51分钟间隔)
-        { hour: 10, minute: 23 },  // 10:23-11:03 (51分钟间隔)
-        { hour: 22, minute: 47 }   // 22:47-23:27 (避开其他时间)
+        { hour: 8, minute: 5 },    // 8:05-8:45  (40分钟窗口)
+        { hour: 9, minute: 5 },    // 9:05-9:45  (60分钟间隔)
+        { hour: 10, minute: 5 },   // 10:05-10:45 (60分钟间隔)
+        { hour: 11, minute: 5 },   // 11:05-11:45 (60分钟间隔)
+        { hour: 14, minute: 5 },   // 14:05-14:45 (跳过午餐时间)
+        { hour: 15, minute: 5 },   // 15:05-15:45 (60分钟间隔)
+        { hour: 22, minute: 5 },   // 22:05-22:45 (晚间时段)
+        { hour: 23, minute: 5 }    // 23:05-23:45 (深夜时段)
       ];
       
       // 为每周任务分配不同的时间段
       if (dayOfWeek !== '*') {
-        // 每周任务使用下午时间段
+        // 每周任务使用完全安全的时间段，避开所有6小时间隔
         const weeklySlots = [
-          { hour: 16, minute: 15 },  // 16:15-16:55
-          { hour: 17, minute: 10 },  // 17:10-17:50
-          { hour: 18, minute: 5 }    // 18:05-18:45
+          { hour: 4, minute: 45 },  // 4:45-5:25 (早晨安全时段)
+          { hour: 12, minute: 45 }, // 12:45-13:25 (中午时段)
+          { hour: 23, minute: 5 }   // 23:05-23:45 (深夜时段，安全)
         ];
         
         if (groupIndex < weeklySlots.length) {
           hour = weeklySlots[groupIndex].hour.toString();
           minute = weeklySlots[groupIndex].minute.toString();
         } else {
-          hour = "16";
-          minute = (15 + groupIndex * 20).toString();
+          hour = "4";
+          minute = (5 + groupIndex * 60).toString(); // 间隔60分钟为未来扩展
         }
       } else if (groupIndex < timeSlots.length) {
         hour = timeSlots[groupIndex].hour.toString();
@@ -230,24 +239,62 @@ function distributeCronTiming(cronConfig, sourceGroup, groupIndex) {
     console.log(`  📅 分布式调度 (避开6小时冲突): ${cronConfig} -> ${minute} ${hour} ${dayOfMonth} ${month} ${dayOfWeek} (组 ${groupIndex + 1}: ${sourceGroup.map(s => s.name).join(', ')})`);
   }
   
-  // 处理间隔式时间的任务（如 */6, */12）- 使用更保守的间隔分布
+  // 处理间隔式时间的任务（如 */6, */12）- 使用组索引来分散时间
   else if (hour.match(/^\*\/\d+$/)) {
     const seedUrl = sourceGroup[0].url + `_group_${groupIndex}`;
     const interval = parseInt(hour.replace('*/', ''));
     
-    // 为不同频率的任务分配不同的分钟段，确保至少有jobDuration+10分钟的缓冲
+    // 对于间隔任务，我们需要在一个小时内分散所有工作流
+    // 考虑40分钟运行时间+10分钟缓冲，每个工作流需要50分钟窗口
+    // 在60分钟内最多只能运行1个工作流，所以需要错开小时
     let baseMinute = 0;
+    let hourOffset = 0;
     
     switch(interval) {
-      case 6: baseMinute = 11; break;  // 6小时: 11分钟 (避开整点和其他时间)
-      case 8: baseMinute = 25; break;  // 8小时: 25分钟段  
-      case 12: baseMinute = 39; break; // 12小时: 39分钟段
-      default: baseMinute = 5; break;  // 其他: 5分钟段
+      case 6: 
+        // 6小时间隔：使用不同的开始小时来错开
+        // 组0: 0:05, 6:05, 12:05, 18:05
+        // 组1: 1:05, 7:05, 13:05, 19:05  
+        // 组2: 2:05, 8:05, 14:05, 20:05
+        // 组3: 3:05, 9:05, 15:05, 21:05
+        hourOffset = groupIndex;
+        baseMinute = 5;
+        break;
+      case 8: 
+        // 8小时间隔：类似处理
+        hourOffset = groupIndex;
+        baseMinute = 15;
+        break;
+      case 12: 
+        // 12小时间隔：可以在同一小时内分散
+        hourOffset = 0;
+        baseMinute = 30 + (groupIndex * 15);
+        if (baseMinute >= 60) {
+          hourOffset = Math.floor(baseMinute / 60);
+          baseMinute = baseMinute % 60;
+        }
+        break;
+      default: 
+        hourOffset = groupIndex;
+        baseMinute = 10;
+        break;
     }
     
     minute = baseMinute.toString();
     
-    console.log(`  📅 分布式调度 (间隔): ${cronConfig} -> ${minute} ${hour} ${dayOfMonth} ${month} ${dayOfWeek} (组 ${groupIndex + 1}: ${sourceGroup.map(s => s.name).join(', ')})`);
+    // 对于有小时偏移的情况，我们需要修改cron表达式
+    if (hourOffset > 0 && interval <= 6) {
+      // 创建一个新的cron表达式，在每个间隔的基础上加上偏移
+      const newHourExpr = `${hourOffset},${hourOffset + interval},${hourOffset + interval * 2},${hourOffset + interval * 3}`;
+      // 但这会超出24小时，所以我们需要使用模运算
+      const hours = [];
+      for (let h = hourOffset; h < 24; h += interval) {
+        hours.push(h);
+      }
+      hour = hours.join(',');
+    }
+    
+    console.log(`  📅 分布式调度 (间隔): ${cronConfig} -> ${minute} ${hour} ${dayOfMonth} ${month} ${dayOfWeek} (组 ${groupIndex + 1}, 小时偏移 ${hourOffset}: ${sourceGroup.map(s => s.name).join(', ')})`);
   }
   
   return `${minute} ${hour} ${dayOfMonth} ${month} ${dayOfWeek}`;

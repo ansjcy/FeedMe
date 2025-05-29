@@ -2,7 +2,7 @@ name: Update Feeds - every-2-days-slackblo-netflixb-gi
 
 on:
   schedule:
-    - cron: '15 13 */2 * *'
+    - cron: '5 4 */2 * *'
   workflow_dispatch:
     inputs:
       force_update:
@@ -40,10 +40,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       
       # 只更新特定的源
-      - name: Update RSS feeds for Slack blog, Netflix blog, Github blog
+      - name: Update RSS feeds for Slack blog, Netflix blog, Github blog, Airbnb blog, Microsoft blog
         run: node scripts/update-feeds.js
         env:
-          SELECTED_SOURCES: '["https://slack.engineering/feed/","https://netflixtechblog.com/feed","https://github.blog/feed/"]'
+          SELECTED_SOURCES: '["https://slack.engineering/feed/","https://netflixtechblog.com/feed","https://github.blog/feed/","https://medium.com/feed/airbnb-engineering","https://blogs.microsoft.com/feed/"]'
           TEST_MODE: ${{ github.event.inputs.test_mode || 'false' }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_API_BASE: ${{ secrets.LLM_API_BASE }}
@@ -67,7 +67,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Auto-update RSS feeds: Slack blog, Netflix blog, Github blog [skip ci]"
+            git commit -m "Auto-update RSS feeds: Slack blog, Netflix blog, Github blog, Airbnb blog, Microsoft blog [skip ci]"
             git push
           fi
       
@@ -80,7 +80,7 @@ jobs:
   trigger-deployment:
     needs: update-data
     runs-on: ubuntu-latest
-    if: ${{ contains('15 13 */2 * *', '*/6') || contains('15 13 */2 * *', '*/3') || github.event_name == 'workflow_dispatch' }}
+    if: ${{ contains('5 4 */2 * *', '*/6') || contains('5 4 */2 * *', '*/3') || github.event_name == 'workflow_dispatch' }}
     steps:
       - name: Trigger main deployment workflow
         uses: actions/github-script@v7

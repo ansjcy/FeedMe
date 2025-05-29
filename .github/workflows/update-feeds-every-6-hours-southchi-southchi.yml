@@ -1,8 +1,8 @@
-name: Update Feeds - every-6-hours
+name: Update Feeds - every-6-hours-southchi-southchi
 
 on:
   schedule:
-    - cron: '11 */6 * * *'
+    - cron: '5 1,7,13,19 * * *'
   workflow_dispatch:
     inputs:
       force_update:
@@ -21,7 +21,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: "update-every-6-hours"
+  group: "update-every-6-hours-southchi-southchi"
   cancel-in-progress: true
 
 jobs:
@@ -40,10 +40,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       
       # 只更新特定的源
-      - name: Update RSS feeds for Apple Insider, TechCrunch, Google 新闻
+      - name: Update RSS feeds for South China Morning Post - 中国经济, South China Morning Post - 科技
         run: node scripts/update-feeds.js
         env:
-          SELECTED_SOURCES: '["https://rsshub.rssforever.com/appleinsider","https://techcrunch.com/feed/","https://news.google.com/rss"]'
+          SELECTED_SOURCES: '["https://www.scmp.com/rss/318421/feed/","https://www.scmp.com/rss/36/feed/"]'
           TEST_MODE: ${{ github.event.inputs.test_mode || 'false' }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_API_BASE: ${{ secrets.LLM_API_BASE }}
@@ -67,20 +67,20 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Auto-update RSS feeds: Apple Insider, TechCrunch, Google 新闻 [skip ci]"
+            git commit -m "Auto-update RSS feeds: South China Morning Post - 中国经济, South China Morning Post - 科技 [skip ci]"
             git push
           fi
       
       - uses: actions/upload-artifact@v4
         with:
-          name: data-artifact-every-6-hours
+          name: data-artifact-every-6-hours-southchi-southchi
           path: ./data
 
   # 只有主要工作流才负责部署
   trigger-deployment:
     needs: update-data
     runs-on: ubuntu-latest
-    if: ${{ contains('11 */6 * * *', '*/6') || contains('11 */6 * * *', '*/3') || github.event_name == 'workflow_dispatch' }}
+    if: ${{ contains('5 1,7,13,19 * * *', '*/6') || contains('5 1,7,13,19 * * *', '*/3') || github.event_name == 'workflow_dispatch' }}
     steps:
       - name: Trigger main deployment workflow
         uses: actions/github-script@v7

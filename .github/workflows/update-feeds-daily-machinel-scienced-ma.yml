@@ -1,8 +1,8 @@
-name: Update Feeds - daily-unitedai-dailyai-mac
+name: Update Feeds - daily-machinel-scienced-ma
 
 on:
   schedule:
-    - cron: '32 9 * * *'
+    - cron: '5 9 * * *'
   workflow_dispatch:
     inputs:
       force_update:
@@ -21,7 +21,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: "update-daily-unitedai-dailyai-mac"
+  group: "update-daily-machinel-scienced-ma"
   cancel-in-progress: true
 
 jobs:
@@ -40,10 +40,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       
       # 只更新特定的源
-      - name: Update RSS feeds for united ai, daily ai, Machine Learning Mastery
+      - name: Update RSS feeds for Machine Learning Mastery, Science Daily - 人工智能, macrumors, Github 近一周热门, Hugging Face 每日论文
         run: node scripts/update-feeds.js
         env:
-          SELECTED_SOURCES: '["https://www.unite.ai/feed/","https://dailyai.com/feed","https://machinelearningmastery.com/blog/feed/"]'
+          SELECTED_SOURCES: '["https://machinelearningmastery.com/blog/feed/","https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml","https://feeds.macrumors.com/MacRumors-All","https://rsshub.rssforever.com/github/trending/weekly/any","https://rsshub.rssforever.com/huggingface/daily-papers"]'
           TEST_MODE: ${{ github.event.inputs.test_mode || 'false' }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_API_BASE: ${{ secrets.LLM_API_BASE }}
@@ -67,20 +67,20 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Auto-update RSS feeds: united ai, daily ai, Machine Learning Mastery [skip ci]"
+            git commit -m "Auto-update RSS feeds: Machine Learning Mastery, Science Daily - 人工智能, macrumors, Github 近一周热门, Hugging Face 每日论文 [skip ci]"
             git push
           fi
       
       - uses: actions/upload-artifact@v4
         with:
-          name: data-artifact-daily-unitedai-dailyai-mac
+          name: data-artifact-daily-machinel-scienced-ma
           path: ./data
 
   # 只有主要工作流才负责部署
   trigger-deployment:
     needs: update-data
     runs-on: ubuntu-latest
-    if: ${{ contains('32 9 * * *', '*/6') || contains('32 9 * * *', '*/3') || github.event_name == 'workflow_dispatch' }}
+    if: ${{ contains('5 9 * * *', '*/6') || contains('5 9 * * *', '*/3') || github.event_name == 'workflow_dispatch' }}
     steps:
       - name: Trigger main deployment workflow
         uses: actions/github-script@v7

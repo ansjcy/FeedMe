@@ -1,8 +1,8 @@
-name: Update Feeds - daily-36kr-harvardh-nasa
+name: Update Feeds - daily-google-google
 
 on:
   schedule:
-    - cron: '41 8 * * *'
+    - cron: '5 10 * * *'
   workflow_dispatch:
     inputs:
       force_update:
@@ -21,7 +21,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: "update-daily-36kr-harvardh-nasa"
+  group: "update-daily-google-google"
   cancel-in-progress: true
 
 jobs:
@@ -40,10 +40,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       
       # 只更新特定的源
-      - name: Update RSS feeds for 36kr, Harvard Health, NASA
+      - name: Update RSS feeds for Google 开发者博客, Google 研究博客
         run: node scripts/update-feeds.js
         env:
-          SELECTED_SOURCES: '["https://rsshub.rssforever.com/36kr/hot-list","https://rsshub.rssforever.com/harvard/health/blog","https://rsshub.app/nasa/apod"]'
+          SELECTED_SOURCES: '["https://rsshub.rssforever.com/google/developers/en","https://rsshub.rssforever.com/google/research"]'
           TEST_MODE: ${{ github.event.inputs.test_mode || 'false' }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_API_BASE: ${{ secrets.LLM_API_BASE }}
@@ -67,20 +67,20 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Auto-update RSS feeds: 36kr, Harvard Health, NASA [skip ci]"
+            git commit -m "Auto-update RSS feeds: Google 开发者博客, Google 研究博客 [skip ci]"
             git push
           fi
       
       - uses: actions/upload-artifact@v4
         with:
-          name: data-artifact-daily-36kr-harvardh-nasa
+          name: data-artifact-daily-google-google
           path: ./data
 
   # 只有主要工作流才负责部署
   trigger-deployment:
     needs: update-data
     runs-on: ubuntu-latest
-    if: ${{ contains('41 8 * * *', '*/6') || contains('41 8 * * *', '*/3') || github.event_name == 'workflow_dispatch' }}
+    if: ${{ contains('5 10 * * *', '*/6') || contains('5 10 * * *', '*/3') || github.event_name == 'workflow_dispatch' }}
     steps:
       - name: Trigger main deployment workflow
         uses: actions/github-script@v7
