@@ -128,13 +128,22 @@ export function RssFeed({ defaultSource }: { defaultSource: string }) {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Tabs defaultValue="summary">
+                <Tabs defaultValue="short">
                   <TabsList className="mb-4">
-                    <TabsTrigger value="summary">AI 摘要</TabsTrigger>
+                    <TabsTrigger value="short">简短摘要</TabsTrigger>
+                    <TabsTrigger value="summary">详细摘要</TabsTrigger>
                     <TabsTrigger value="original">原文内容</TabsTrigger>
                   </TabsList>
+                  <TabsContent value="short" className="space-y-2">
+                    <div className="text-sm text-muted-foreground mb-2">由 AI 生成的简短摘要 (100词内)：</div>
+                    <div className="text-foreground prose prose-sm max-w-none">
+                      <p className="text-sm leading-relaxed">
+                        {item.shortSummary || "暂无简短摘要"}
+                      </p>
+                    </div>
+                  </TabsContent>
                   <TabsContent value="summary" className="space-y-2">
-                    <div className="text-sm text-muted-foreground mb-2">由 AI 生成的摘要：</div>
+                    <div className="text-sm text-muted-foreground mb-2">由 AI 生成的详细摘要：</div>
                     <div className="text-foreground prose prose-sm max-w-none">
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>
                         {cleanMarkdownContent(item.summary)}

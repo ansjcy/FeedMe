@@ -5,6 +5,7 @@ export interface FeedItem {
   isoDate?: string
   creator?: string
   summary?: string
+  shortSummary?: string
   translated_title?: string
   images?: Array<{
     url: string

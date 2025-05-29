@@ -420,20 +420,22 @@ async function generateSummary(title, content, articleUrl) {
   const fullPrompt = `
 请根据以下文章标题和内容，完成以下任务：
 1.  将文章标题翻译成中文。如果标题已经是中文，则返回原始标题。
-2.  生成一个简洁、准确的中文摘要。摘要应：
-    a. 捕捉文章的主要观点和关键信息。
-    b. 使用清晰、流畅的中文。
-    c. 避免冗长的描述，确保摘要简洁明了。
-    d. 使用markdown进行格式化，让摘要易于阅读。使用title，bullets或编号列表来组织信息。
-    e. 长度尽量控制在1000字以内。
-    f. 保持客观，不添加个人观点。
-    g. **重要：只有当文章内容中包含有效的实际图片链接时，才在摘要中包含这些图片。如果图片链接是占位符（如 example.com）、无效链接或不存在，请完全省略这些图片，不要提及图片不可用或添加任何关于图片的说明。**
-    h. 如果文章内容为空或不包含有效信息，请明确指出无法生成摘要，不要编造内容。
+2.  生成两种中文摘要：
+    a. **详细摘要**：捕捉文章的主要观点和关键信息，使用markdown进行格式化，让摘要易于阅读。使用title，bullets或编号列表来组织信息。长度尽量控制在1000字以内。
+    b. **简短摘要**：生成一个100词以内的简洁摘要，只包含最核心的信息点，使用简洁的中文表达。
+    
+两种摘要都应：
+    - 使用清晰、流畅的中文
+    - 避免冗长的描述，确保摘要简洁明了
+    - 保持客观，不添加个人观点
+    - **重要：只有当文章内容中包含有效的实际图片链接时，才在详细摘要中包含这些图片。如果图片链接是占位符（如 example.com）、无效链接或不存在，请完全省略这些图片，不要提及图片不可用或添加任何关于图片的说明。简短摘要中不要包含任何图片。**
+    - 如果文章内容为空或不包含有效信息，请明确指出无法生成摘要，不要编造内容
 
 请以JSON格式返回结果，格式如下：
 {
   "translated_title": "翻译后的标题",
-  "summary": "文章的中文摘要（只包含有效的图片，完全省略无效或占位符图片）"
+  "summary": "文章的详细中文摘要（只包含有效的图片，完全省略无效或占位符图片）",
+  "short_summary": "100词以内的简短摘要（不包含图片）"
 }
 
 文章标题：${title}
@@ -470,6 +472,7 @@ ${fullContent.slice(0, 15000)}
         return { 
           translatedTitle: title, 
           summary: "无法生成摘要（内容为空）。",
+          shortSummary: "",
           images: cleanedImages
         };
       }
@@ -493,6 +496,15 @@ ${fullContent.slice(0, 15000)}
           // Clean up multiple newlines and spaces
           cleanedSummary = cleanedSummary.replace(/\n\s*\n\s*\n/g, '\n\n').trim();
           
+          // Process short_summary if it exists
+          let cleanedShortSummary = "";
+          if (typeof parsedResult.short_summary === 'string') {
+            cleanedShortSummary = parsedResult.short_summary
+              .replace(/!\[.*?\]\(https?:\/\/.*?\)/g, '') // Remove any image references
+              .replace(/\n\s*\n\s*\n/g, '\n\n')
+              .trim();
+          }
+          
           // Filter out placeholder images from the images array
           const cleanedImages = uniqueImages.filter(img => 
             img.url && 
@@ -504,6 +516,7 @@ ${fullContent.slice(0, 15000)}
           return {
             translatedTitle: parsedResult.translated_title,
             summary: cleanedSummary,
+            shortSummary: cleanedShortSummary,
             images: cleanedImages,
             contentSource: contentSource
           };
@@ -519,6 +532,7 @@ ${fullContent.slice(0, 15000)}
           return { 
             translatedTitle: title, 
             summary: "无法生成摘要（返回JSON格式错误）。",
+            shortSummary: "",
             images: cleanedImages
           };
         }
@@ -529,6 +543,7 @@ ${fullContent.slice(0, 15000)}
         try {
           let extractedTitle = title; // fallback to original title
           let extractedSummary = "无法生成摘要（JSON解析失败）。";
+          let extractedShortSummary = "";
           
           // Try to extract translated_title
           const titleMatch = rawApiResponse.match(/"translated_title"\s*:\s*"([^"]+)"/);
@@ -558,7 +573,17 @@ ${fullContent.slice(0, 15000)}
             }
           }
           
-          console.log(`手动提取成功 - 标题: "${extractedTitle}", 摘要长度: ${extractedSummary.length}`);
+          // Try to extract short_summary
+          const shortSummaryMatch = rawApiResponse.match(/"short_summary"\s*:\s*"([^"]+)"/);
+          if (shortSummaryMatch && shortSummaryMatch[1]) {
+            extractedShortSummary = shortSummaryMatch[1]
+              .replace(/\\"/g, '"')
+              .replace(/\\n/g, '\n')
+              .replace(/\\\\/g, '\\')
+              .trim();
+          }
+          
+          console.log(`手动提取成功 - 标题: "${extractedTitle}", 摘要长度: ${extractedSummary.length}, 简短摘要长度: ${extractedShortSummary.length}`);
           
           // Apply the same post-processing to extracted summary
           let cleanedExtractedSummary = extractedSummary;
@@ -573,6 +598,12 @@ ${fullContent.slice(0, 15000)}
           // Clean up multiple newlines and spaces
           cleanedExtractedSummary = cleanedExtractedSummary.replace(/\n\s*\n\s*\n/g, '\n\n').trim();
           
+          // Clean the short summary (remove any image references)
+          let cleanedExtractedShortSummary = extractedShortSummary
+            .replace(/!\[.*?\]\(https?:\/\/.*?\)/g, '')
+            .replace(/\n\s*\n\s*\n/g, '\n\n')
+            .trim();
+          
           // Filter out placeholder images from the images array
           const cleanedImages = uniqueImages.filter(img => 
             img.url && 
@@ -584,6 +615,7 @@ ${fullContent.slice(0, 15000)}
           return {
             translatedTitle: extractedTitle,
             summary: cleanedExtractedSummary,
+            shortSummary: cleanedExtractedShortSummary,
             images: cleanedImages,
             contentSource: contentSource
           };
@@ -600,6 +632,7 @@ ${fullContent.slice(0, 15000)}
           return { 
             translatedTitle: title, 
             summary: `无法生成摘要（JSON解析和手动提取都失败）。`,
+            shortSummary: "",
             images: cleanedImages
           };
         }
@@ -616,6 +649,7 @@ ${fullContent.slice(0, 15000)}
       return { 
         translatedTitle: title, 
         summary: `无法生成摘要（请求被阻止: ${response.promptFeedback.blockReason}）。`,
+        shortSummary: "",
         images: cleanedImages
       };
     }
@@ -629,6 +663,7 @@ ${fullContent.slice(0, 15000)}
     return { 
       translatedTitle: title, 
       summary: "无法生成摘要（无有效响应）。",
+      shortSummary: "",
       images: cleanedImages
     };
     
@@ -644,6 +679,7 @@ ${fullContent.slice(0, 15000)}
     return { 
       translatedTitle: title, 
       summary: "无法生成摘要（API请求失败）。",
+      shortSummary: "",
       images: cleanedImages
     };
   }
@@ -747,6 +783,7 @@ function mergeFeedItems(oldItems = [], newItems = [], maxItems = config.maxItems
           ...item, // 使用新的RSS数据作为基础
           // 保留已有的AI生成的字段
           summary: existingItem.summary,
+          shortSummary: existingItem.shortSummary,
           translated_title: existingItem.translated_title,
           images: existingItem.images,
           contentSource: existingItem.contentSource,
@@ -755,6 +792,14 @@ function mergeFeedItems(oldItems = [], newItems = [], maxItems = config.maxItems
         // 如果旧条目有翻译标题，保持标题格式
         if (existingItem.translated_title && existingItem.title.includes('(原标题:')) {
           mergedItem.title = existingItem.title;
+        } else if (existingItem.translated_title) {
+          // If we have a translated title but current title doesn't have the prefix,
+          // apply the same logic as in updateFeed
+          if (existingItem.translated_title !== item.title) {
+            mergedItem.title = existingItem.translated_title + " (原标题: " + item.title + ")";
+          } else {
+            mergedItem.title = existingItem.translated_title;
+          }
         }
         
         itemsMap.set(item.link, mergedItem);
@@ -788,6 +833,7 @@ function optimizeItemForStorage(item) {
     isoDate: item.isoDate || "",
     creator: item.creator || "",
     summary: item.summary || "",
+    shortSummary: item.shortSummary || "",
     translated_title: item.translated_title || "",
     images: item.images || [],
     contentSource: item.contentSource || "RSS",
@@ -852,10 +898,14 @@ async function updateFeed(sourceUrl) {
         try {
           const generationResult = await generateSummary(processedItem.title, processedItem.encodedSnippet || processedItem.content || processedItem.contentSnippet || "", processedItem.link);
           processedItem.summary = generationResult.summary;
+          processedItem.shortSummary = generationResult.shortSummary;
           processedItem.translated_title = generationResult.translatedTitle; // Add translated title
-          // Update the main title field with the translation
-          if (generationResult.translatedTitle && generationResult.translatedTitle.trim() !== "") {
+          // Update the main title field with the translation only if it's different from the original
+          if (generationResult.translatedTitle && generationResult.translatedTitle.trim() !== "" && generationResult.translatedTitle !== processedItem.title) {
             processedItem.title = generationResult.translatedTitle + " (原标题: " + processedItem.title + ")";
+          } else if (generationResult.translatedTitle && generationResult.translatedTitle.trim() !== "") {
+            // If the translated title is the same as original, just use the translated title
+            processedItem.title = generationResult.translatedTitle;
           }
           // Store images and content source information
           if (generationResult.images && generationResult.images.length > 0) {
@@ -871,6 +921,7 @@ async function updateFeed(sourceUrl) {
           // This catch block is a safeguard for unexpected errors from generateSummary NOT returning the expected object.
           console.error(`在 updateFeed 中为条目 ${processedItem.title} 调用 generateSummary 时发生意外错误:`, err);
           processedItem.summary = "无法生成摘要（处理异常）。";
+          processedItem.shortSummary = "";
           // Provide a fallback for translated_title if an error occurs here
           processedItem.translated_title = processedItem.title;
         }
