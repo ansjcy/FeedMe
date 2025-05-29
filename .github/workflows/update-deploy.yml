@@ -4,8 +4,8 @@ on:
   # schedule:
     # Disabled - runs too frequently
     # - cron: '0 */6 * * *'
-  push:
-    branches: [main, dev]
+  # push:
+  #   branches: [main, dev]
   workflow_dispatch:
 
 permissions:
