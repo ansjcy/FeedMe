@@ -33,7 +33,7 @@ export const config = {
       url: "https://rsshub.rssforever.com/appleinsider",
       category: "技术新闻",
       maxItemsPerFeed: 30, // 该源特定的配置
-      cronConfig: "0 */3 * * *", // 每3小时更新一次
+      cronConfig: "0 */6 * * *", // 每6小时更新一次
       enabled: true,
     },
     {
@@ -98,7 +98,7 @@ export const config = {
       url: "https://techcrunch.com/feed/",
       category: "技术新闻",
       maxItemsPerFeed: 20, // 新闻类保留更多条目
-      cronConfig: "0 */2 * * *", // 每2小时更新一次 (高频新闻)
+      cronConfig: "0 */6 * * *", // 每6小时更新一次 (高频新闻)
     },
     {
       name: "Netflix blog",
@@ -140,7 +140,7 @@ export const config = {
       url: "https://news.google.com/rss",
       category: "新闻",
       maxItemsPerFeed: 20, // 新闻类保留更多条目
-      cronConfig: "0 */1 * * *", // 每小时更新一次 (高频新闻)
+      cronConfig: "0 */6 * * *", // 每6小时更新一次 (高频新闻)
     },
     {
       name: "macrumors",
@@ -191,6 +191,24 @@ export const config = {
     distributionHourRange: { min: 6, max: 22 }, // 6AM 到 10PM
     // 每个工作流的最大源数量（用于进一步分散负载）
     maxSourcesPerWorkflow: 3,
+    // 工作流执行时间优化
+    optimization: {
+      // 每个工作流预估运行时间（分钟）
+      estimatedJobDurationMinutes: 40,
+      // 禁用的时间间隔组合（会产生频繁冲突）
+      disallowedIntervalCombinations: [
+        { intervals: [2, 3], reason: "2小时和3小时会在6小时倍数时冲突" },
+        { intervals: [2, 4], reason: "2小时和4小时会在4小时倍数时冲突" },
+        { intervals: [3, 6], reason: "3小时和6小时会在6小时倍数时冲突" },
+        { intervals: [1, 2, 3, 4, 6], reason: "1小时间隔与其他所有间隔都会冲突" }
+      ],
+      // 推荐的安全时间间隔配置
+      recommendedIntervals: {
+        "high-frequency": [6], // 高频更新：6小时一次
+        "daily": ["0 0 * * *"], // 日更新：分散到不同时间
+        "low-frequency": ["0 0 */2 * *", "0 0 * * 0"] // 低频更新：每2天或每周
+      }
+    }
   },
 }
 

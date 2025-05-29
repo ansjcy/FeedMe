@@ -2,7 +2,7 @@ name: Update Feeds - daily-huggingf-google-goog
 
 on:
   schedule:
-    - cron: '41 6 * * *'
+    - cron: '47 22 * * *'
   workflow_dispatch:
     inputs:
       force_update:
@@ -80,7 +80,7 @@ jobs:
   trigger-deployment:
     needs: update-data
     runs-on: ubuntu-latest
-    if: ${{ contains('41 6 * * *', '*/6') || contains('41 6 * * *', '*/3') || github.event_name == 'workflow_dispatch' }}
+    if: ${{ contains('47 22 * * *', '*/6') || contains('47 22 * * *', '*/3') || github.event_name == 'workflow_dispatch' }}
     steps:
       - name: Trigger main deployment workflow
         uses: actions/github-script@v7

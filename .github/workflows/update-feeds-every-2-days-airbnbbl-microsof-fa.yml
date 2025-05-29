@@ -2,7 +2,7 @@ name: Update Feeds - every-2-days-airbnbbl-microsof-fa
 
 on:
   schedule:
-    - cron: '23 8 */2 * *'
+    - cron: '30 14 */2 * *'
   workflow_dispatch:
     inputs:
       force_update:
@@ -80,7 +80,7 @@ jobs:
   trigger-deployment:
     needs: update-data
     runs-on: ubuntu-latest
-    if: ${{ contains('23 8 */2 * *', '*/6') || contains('23 8 */2 * *', '*/3') || github.event_name == 'workflow_dispatch' }}
+    if: ${{ contains('30 14 */2 * *', '*/6') || contains('30 14 */2 * *', '*/3') || github.event_name == 'workflow_dispatch' }}
     steps:
       - name: Trigger main deployment workflow
         uses: actions/github-script@v7

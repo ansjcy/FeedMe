@@ -72,6 +72,77 @@ function generateDistributedHour(sourceUrl, maxHour = 23) {
 }
 
 /**
+ * 检测并优化调度冲突
+ * 考虑每个工作流的运行时间，避免重叠
+ */
+function optimizeScheduleCollisions(sourcesByCron, config) {
+  const optimization = config.workflowGeneration?.optimization;
+  if (!optimization) return sourcesByCron;
+  
+  const jobDuration = optimization.estimatedJobDurationMinutes || 40;
+  const disallowedCombinations = optimization.disallowedIntervalCombinations || [];
+  
+  // 提取当前使用的间隔
+  const usedIntervals = new Set();
+  Object.keys(sourcesByCron).forEach(cronConfig => {
+    const match = cronConfig.match(/^\d+ \*\/(\d+) \* \* \*$/);
+    if (match) {
+      usedIntervals.add(parseInt(match[1]));
+    }
+  });
+  
+  // 检查禁用的组合
+  for (const combination of disallowedCombinations) {
+    const conflictingIntervals = combination.intervals.filter(interval => usedIntervals.has(interval));
+    if (conflictingIntervals.length > 1) {
+      console.log(`⚠️  检测到冲突的时间间隔: ${conflictingIntervals.join(', ')} 小时`);
+      console.log(`   原因: ${combination.reason}`);
+      console.log(`   建议: 使用推荐的安全间隔配置`);
+      
+      // 自动优化：将冲突的间隔合并为更安全的配置
+      const optimizedSources = optimizeConflictingIntervals(sourcesByCron, conflictingIntervals);
+      return optimizedSources;
+    }
+  }
+  
+  return sourcesByCron;
+}
+
+/**
+ * 优化冲突的间隔配置
+ */
+function optimizeConflictingIntervals(sourcesByCron, conflictingIntervals) {
+  const optimized = { ...sourcesByCron };
+  
+  // 找到所有冲突的源
+  const conflictingSources = [];
+  const conflictingCrons = [];
+  
+  for (const [cronConfig, sources] of Object.entries(sourcesByCron)) {
+    const match = cronConfig.match(/^\d+ \*\/(\d+) \* \* \*$/);
+    if (match && conflictingIntervals.includes(parseInt(match[1]))) {
+      conflictingSources.push(...sources);
+      conflictingCrons.push(cronConfig);
+      delete optimized[cronConfig];
+    }
+  }
+  
+  if (conflictingSources.length > 0) {
+    // 将所有冲突的源合并到6小时间隔（更安全的选择）
+    const safeCron = "0 */6 * * *";
+    console.log(`🔧 自动优化: 将 ${conflictingCrons.join(', ')} 合并为 ${safeCron}`);
+    console.log(`   涉及源: ${conflictingSources.map(s => s.name).join(', ')}`);
+    
+    if (!optimized[safeCron]) {
+      optimized[safeCron] = [];
+    }
+    optimized[safeCron].push(...conflictingSources);
+  }
+  
+  return optimized;
+}
+
+/**
  * 智能分布cron表达式，避免同时更新
  * 保持相同的频率，但分散更新时间
  */
@@ -83,24 +154,100 @@ function distributeCronTiming(cronConfig, sourceGroup, groupIndex) {
   
   const parts = cronConfig.split(' ');
   let [minute, hour, dayOfMonth, month, dayOfWeek] = parts;
+  const optimization = config.workflowGeneration?.optimization;
+  const jobDuration = optimization?.estimatedJobDurationMinutes || 40;
+  const bufferTime = 10; // 额外缓冲时间
+  const minSpacing = jobDuration + bufferTime; // 最小间隔50分钟
   
-  // 只处理固定时间的任务（小时为数字，不是表达式）
+  // 处理固定时间的任务（小时为数字，不是表达式）
   if (hour === '0' || (hour.match(/^\d+$/) && parseInt(hour) < 6)) {
     const { min: minHour, max: maxHour } = config.workflowGeneration?.distributionHourRange || { min: 6, max: 22 };
-    const hourRange = maxHour - minHour;
+    
+    // 为了避免与6小时间隔冲突，避开6的倍数小时 (6, 12, 18)
+    const avoidHours = [6, 12, 18];
+    const availableHours = [];
+    for (let h = minHour; h <= maxHour; h++) {
+      if (!avoidHours.includes(h)) {
+        availableHours.push(h);
+      }
+    }
     
     // 使用第一个源的URL和组索引来生成唯一的分布时间
     const seedUrl = sourceGroup[0].url + `_group_${groupIndex}`;
     
-    // 为避免夜间集中更新，在指定时间范围内分布
-    const distributedHour = minHour + (generateDistributedHour(seedUrl, hourRange));
-    hour = distributedHour.toString();
+    // 区分每日和多日任务的时间分配
+    if (dayOfMonth.includes('*/')) {
+      // 多日任务 (如每2天)
+      const multiDaySlots = [
+        { hour: 13, minute: 15 },  // 13:15-13:55
+        { hour: 14, minute: 30 },  // 14:30-15:10 (75分钟间隔)
+        { hour: 15, minute: 45 }   // 15:45-16:25 (75分钟间隔)
+      ];
+      
+      if (groupIndex < multiDaySlots.length) {
+        hour = multiDaySlots[groupIndex].hour.toString();
+        minute = multiDaySlots[groupIndex].minute.toString();
+      } else {
+        hour = "13";
+        minute = (15 + groupIndex * 20).toString();
+      }
+    } else {
+      // 每日任务或每周任务
+      const timeSlots = [
+        { hour: 8, minute: 41 },   // 8:41-9:21
+        { hour: 9, minute: 32 },   // 9:32-10:12 (51分钟间隔)
+        { hour: 10, minute: 23 },  // 10:23-11:03 (51分钟间隔)
+        { hour: 22, minute: 47 }   // 22:47-23:27 (避开其他时间)
+      ];
+      
+      // 为每周任务分配不同的时间段
+      if (dayOfWeek !== '*') {
+        // 每周任务使用下午时间段
+        const weeklySlots = [
+          { hour: 16, minute: 15 },  // 16:15-16:55
+          { hour: 17, minute: 10 },  // 17:10-17:50
+          { hour: 18, minute: 5 }    // 18:05-18:45
+        ];
+        
+        if (groupIndex < weeklySlots.length) {
+          hour = weeklySlots[groupIndex].hour.toString();
+          minute = weeklySlots[groupIndex].minute.toString();
+        } else {
+          hour = "16";
+          minute = (15 + groupIndex * 20).toString();
+        }
+      } else if (groupIndex < timeSlots.length) {
+        hour = timeSlots[groupIndex].hour.toString();
+        minute = timeSlots[groupIndex].minute.toString();
+      } else {
+        // 如果组数超过预定义时间段，使用算法分布
+        const selectedHour = availableHours[generateDistributedHour(seedUrl, availableHours.length - 1)];
+        hour = selectedHour.toString();
+        minute = (generateDistributedHour(seedUrl + 'minute', 59)).toString();
+      }
+    }
     
-    // 同时随机化分钟，进一步分散负载
-    const distributedMinute = generateDistributedHour(seedUrl + 'minute', 59);
-    minute = distributedMinute.toString();
+    console.log(`  📅 分布式调度 (避开6小时冲突): ${cronConfig} -> ${minute} ${hour} ${dayOfMonth} ${month} ${dayOfWeek} (组 ${groupIndex + 1}: ${sourceGroup.map(s => s.name).join(', ')})`);
+  }
+  
+  // 处理间隔式时间的任务（如 */6, */12）- 使用更保守的间隔分布
+  else if (hour.match(/^\*\/\d+$/)) {
+    const seedUrl = sourceGroup[0].url + `_group_${groupIndex}`;
+    const interval = parseInt(hour.replace('*/', ''));
     
-    console.log(`  📅 分布式调度: ${cronConfig} -> ${minute} ${hour} ${dayOfMonth} ${month} ${dayOfWeek} (组 ${groupIndex + 1}: ${sourceGroup.map(s => s.name).join(', ')})`);
+    // 为不同频率的任务分配不同的分钟段，确保至少有jobDuration+10分钟的缓冲
+    let baseMinute = 0;
+    
+    switch(interval) {
+      case 6: baseMinute = 11; break;  // 6小时: 11分钟 (避开整点和其他时间)
+      case 8: baseMinute = 25; break;  // 8小时: 25分钟段  
+      case 12: baseMinute = 39; break; // 12小时: 39分钟段
+      default: baseMinute = 5; break;  // 其他: 5分钟段
+    }
+    
+    minute = baseMinute.toString();
+    
+    console.log(`  📅 分布式调度 (间隔): ${cronConfig} -> ${minute} ${hour} ${dayOfMonth} ${month} ${dayOfWeek} (组 ${groupIndex + 1}: ${sourceGroup.map(s => s.name).join(', ')})`);
   }
   
   return `${minute} ${hour} ${dayOfMonth} ${month} ${dayOfWeek}`;
@@ -280,12 +427,135 @@ jobs:
 `;
 }
 
+/**
+ * 验证所有生成的调度是否存在冲突
+ * 读取实际生成的工作流文件来检查真实的调度时间
+ */
+function verifyNoCollisions(sourcesByCron, config) {
+  const optimization = config.workflowGeneration?.optimization;
+  const jobDuration = optimization?.estimatedJobDurationMinutes || 40;
+  
+  console.log('\n🔍 验证调度冲突...');
+  
+  // 读取实际生成的工作流文件
+  const workflowsDir = path.join(process.cwd(), '.github/workflows');
+  const schedules = [];
+  let hasCollisions = false;
+  
+  try {
+    const files = fs.readdirSync(workflowsDir).filter(f => f.startsWith('update-feeds-') && f.endsWith('.yml'));
+    
+    for (const file of files) {
+      const content = fs.readFileSync(path.join(workflowsDir, file), 'utf8');
+      const cronMatch = content.match(/cron:\s*'([^']+)'/);
+      
+      if (cronMatch) {
+        const cronExpr = cronMatch[1];
+        const [minute, hour, dayOfMonth, month, dayOfWeek] = cronExpr.split(' ');
+        
+        if (hour.match(/^\*\/\d+$/)) {
+          // 间隔式调度 (如 */6)
+          const interval = parseInt(hour.replace('*/', ''));
+          const startMinute = parseInt(minute);
+          
+          // 生成24小时内的所有运行时间
+          for (let h = 0; h < 24; h += interval) {
+            schedules.push({
+              type: `every-${interval}h`,
+              file: file,
+              startTime: h * 60 + startMinute,
+              endTime: h * 60 + startMinute + jobDuration,
+              cronExpr
+            });
+          }
+        } else {
+          // 固定时间调度
+          const startHour = parseInt(hour);
+          const startMinute = parseInt(minute);
+          const startTime = startHour * 60 + startMinute;
+          
+          schedules.push({
+            type: dayOfWeek !== '*' ? 'weekly' : (dayOfMonth.includes('*/') ? 'multi-day' : 'daily'),
+            file: file,
+            startTime: startTime,
+            endTime: startTime + jobDuration,
+            cronExpr
+          });
+        }
+      }
+    }
+    
+    // 检查冲突 - 只检查同一天内的时间重叠
+    for (let i = 0; i < schedules.length; i++) {
+      for (let j = i + 1; j < schedules.length; j++) {
+        const schedule1 = schedules[i];
+        const schedule2 = schedules[j];
+        
+        // 对于不同类型的调度，需要考虑它们是否会在同一天运行
+        let canCollide = false;
+        
+        if (schedule1.type.includes('every-') && schedule2.type.includes('every-')) {
+          // 两个都是间隔式，检查是否会在同一时间运行
+          canCollide = true;
+        } else if (schedule1.type.includes('every-') || schedule2.type.includes('every-')) {
+          // 一个是间隔式，一个是固定时间，间隔式每天都运行
+          canCollide = true;
+        } else {
+          // 两个都是固定时间，检查是否在同一天运行
+          canCollide = schedule1.type === schedule2.type || 
+                      (schedule1.type === 'daily' || schedule2.type === 'daily');
+        }
+        
+        if (canCollide) {
+          // 检查时间重叠 (考虑24小时周期)
+          const start1 = schedule1.startTime % (24 * 60);
+          const end1 = schedule1.endTime % (24 * 60);
+          const start2 = schedule2.startTime % (24 * 60);
+          const end2 = schedule2.endTime % (24 * 60);
+          
+          const overlap = !(end1 <= start2 || end2 <= start1);
+          
+          if (overlap) {
+            console.log(`❌ 检测到冲突:`);
+            console.log(`   ${schedule1.type} (${schedule1.file}): ${Math.floor(start1/60)}:${(start1%60).toString().padStart(2,'0')}-${Math.floor(end1/60)}:${(end1%60).toString().padStart(2,'0')}`);
+            console.log(`   ${schedule2.type} (${schedule2.file}): ${Math.floor(start2/60)}:${(start2%60).toString().padStart(2,'0')}-${Math.floor(end2/60)}:${(end2%60).toString().padStart(2,'0')}`);
+            hasCollisions = true;
+          }
+        }
+      }
+    }
+    
+    if (!hasCollisions) {
+      console.log('✅ 验证完成: 没有检测到调度冲突');
+      console.log(`   所有 ${schedules.length} 个调度时间段都有足够的缓冲时间`);
+      
+      // 显示调度摘要
+      console.log('\n📋 调度摘要:');
+      schedules.sort((a, b) => (a.startTime % (24*60)) - (b.startTime % (24*60)));
+      schedules.forEach(s => {
+        const start = s.startTime % (24*60);
+        const end = s.endTime % (24*60);
+        console.log(`   ${s.type}: ${Math.floor(start/60)}:${(start%60).toString().padStart(2,'0')}-${Math.floor(end/60)}:${(end%60).toString().padStart(2,'0')} (${s.file})`);
+      });
+    }
+    
+  } catch (error) {
+    console.log('⚠️  无法验证调度冲突:', error.message);
+  }
+  
+  return !hasCollisions;
+}
+
 // 主函数
 function main() {
   console.log('正在生成GitHub Actions工作流文件...');
   
   const workflowsDir = ensureWorkflowsDir();
-  const sourcesByCron = getSourcesByCronConfig();
+  let sourcesByCron = getSourcesByCronConfig();
+  
+  // 优化调度冲突
+  console.log('\n🔍 检查调度冲突...');
+  sourcesByCron = optimizeScheduleCollisions(sourcesByCron, config);
   
   // 删除旧的自动生成的工作流文件
   const existingFiles = fs.readdirSync(workflowsDir);
@@ -342,6 +612,9 @@ function main() {
   console.log('生成部署工作流: deploy.yml');
   
   console.log(`\n总共生成了 ${workflowCount} 个更新工作流和 1 个部署工作流`);
+  
+  // 验证生成的调度是否存在冲突
+  verifyNoCollisions(sourcesByCron, config);
   
   // 生成使用说明
   console.log('\n使用说明:');
