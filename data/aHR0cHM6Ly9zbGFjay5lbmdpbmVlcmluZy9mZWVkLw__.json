@@ -1,0 +1,194 @@
+{
+  "sourceUrl": "https://slack.engineering/feed/",
+  "title": "Engineering at Slack",
+  "description": "Hear directly from Slack's engineers about what we build, why and how we build it, and how you can use it.",
+  "link": "https://slack.engineering",
+  "items": [
+    {
+      "title": "优化我们的端到端（E2E）流水线 (原标题: Optimizing Our E2E Pipeline)",
+      "link": "https://slack.engineering/speedup-e2e-testing/",
+      "pubDate": "Mon, 14 Apr 2025 09:00:30 +0000",
+      "isoDate": "2025-04-14T09:00:30.000Z",
+      "creator": "Dan Carton",
+      "summary": "# 优化Slack的端到端（E2E）测试流水线\n\n在DevOps和开发者体验（DevXP）领域，速度和效率对工程师的日常工作至关重要。Slack的DevXP团队通过优化其端到端（E2E）测试流水线，显著降低了构建时间并减少了冗余流程，从而为工程师节省了时间和资源。\n\n## 问题：不必要的UI前端构建\n\nSlack最大的代码仓库（一个单体仓库）在代码合并到`main`分支之前会运行E2E测试，以确保更改在整个Slack应用程序栈（前端、后端、数据库及中间服务）中得到验证。然而，团队发现了一个瓶颈：UI前端代码的构建耗时过长且过于频繁，即使没有前端相关更改。\n\n**现有流程分解：**\n*   开发者提交代码。\n*   UI前端代码构建（约5分钟）。\n*   部署到QA环境。\n*   运行200多个E2E测试（约5分钟）。\n\n整个过程每次运行约10分钟。其中一半时间（约5分钟）被UI前端构建占用，即使没有前端更改。考虑到每天有数百个拉取请求（PR）合并，这些冗余构建不仅耗时，而且成本高昂：\n\n*   每周数千次UI前端构建，每次构建在AWS S3中存储近1GB数据。\n*   其中一半构建与上次合并到`main`的代码相比不包含前端更改，导致数TB的重复数据。\n*   每次构建5分钟的额外延迟，每周累积数千小时的不必要等待。\n\n![端到端测试流水线的阶段](https://slack.engineering/wp-content/uploads/sites/7/2025/04/image4.png?w=640)\n\n## 解决方案：更智能的构建策略与缓存的UI前端资产\n\n为了解决这个问题，团队利用现有工具重新思考了构建策略。\n\n### 步骤1：条件性UI前端构建\n\n*   利用`git diff`的三点表示法来检测当前分支与`main`分支之间最新共同提交的差异。\n*   如果检测到前端更改，则触发UI前端构建作业。\n*   如果未检测到更改，则完全跳过构建，并重用预构建版本。\n\n### 步骤2：预构建资产和内部CDN\n\n*   当不需要UI前端构建时，从AWS S3中查找一个现有的构建（通常是最近的生产版本）。\n*   将为E2E测试提供预构建UI前端资产的任务委托给内部CDN。\n*   这减少了每个PR都需要创建新构建的需求，同时仍确保在当前资产上进行测试。\n\n## 挑战：规模化效率\n\n尽管方法看似简单，但将此解决方案扩展到单体仓库带来了几个挑战：\n\n*   **识别UI前端更改：** 仓库包含超过100,000个跟踪文件。`git`在几秒钟内高效处理了文件跟踪。\n*   **查找预构建资产：** 每天有数百个PR合并到此仓库中，识别足够新的预构建版本需要强大的资产管理。通过使用S3存储概念，团队平衡了新近度、一致的文件命名和性能来管理资产。\n*   **速度：** 平均而言，判断UI前端构建是否不必要并找到最近的构建产物仅需不到3秒。\n\n![端到端流水线描绘了第三阶段的本地预构建前端](https://slack.engineering/wp-content/uploads/sites/7/2025/04/image3.png?w=640)\n\n## 成果：构建频率降低60%，构建时间缩短50%\n\n这些努力带来了显著的改进：\n\n*   **构建频率降低60%：** 通过智能重用预构建的UI前端资产，不必要的UI前端构建数量减少了一半以上。\n*   **每月节省数百小时：** 减少了云计算时间和开发者等待时间。\n*   **节省数TB存储空间：** 每月减少了AWS S3存储数TB，这些重复资产原本会被存储一年。\n*   **构建时间提高50%：** 这是前端DevXP团队及其合作团队的第二个主要项目。第一个项目（升级Webpack设置）将平均构建时间从约10分钟缩短到约5分钟。本项目将平均构建时间从约5分钟缩短到仅约2分钟。两个项目都成功后，E2E流水线的平均构建时间从约10分钟缩短到约2分钟，是年度的巨大改进。\n\n![一月份的基线平均构建时间为10分钟，测试时间为6分钟。到八月份，平均构建时间为2分钟，全年下降了80%。](https://slack.engineering/wp-content/uploads/sites/7/2025/04/image1.png?w=640)\n\n**两个意想不到的成果：**\n\n*   **更可靠、更值得信赖的E2E结果：** 测试的片状性（即尽管没有代码更改，测试仍间歇性或不一致地失败）显著降低。这得益于优化的流水线、对复杂UI前端构建需求的减少以及一致的资产交付。团队观察到测试片状性达到了有史以来的最低百分比。\n*   **重新发现遗留代码：** 实施此优化需要深入研究多年未进行重大修改的多个系统的遗留代码。这次探索提供了宝贵的见解，引发了关于代码库行为的新问题，并生成了未来增强任务的待办事项。\n\n## 结论：重新思考UI前端构建效率\n\n通过战略性地利用`git diff`和内部CDN等现有工具，Slack成功节省了宝贵的开发者时间，降低了云成本，并提高了整体构建效率。对于面临DevOps和DevXP中类似瓶颈的其他公司团队，经验教训是质疑流水线中真正必要的部分，并进行相应优化。虽然这个项目的改进事后看来显而易见，但很容易忽视那些没有彻底失败的系统中的低效率。在Slack的案例中，重新思考如何处理UI前端资产为组织带来了巨大的成功。",
+      "shortSummary": "Slack的DevXP团队通过优化其端到端（E2E）测试流水线，显著提升了效率。针对UI前端构建频繁且耗时的问题，团队实施了智能构建策略：利用`git diff`进行条件性构建，并重用通过内部CDN缓存的预构建资产。这使得构建频率降低了60%，平均构建时间从约10分钟缩短至2分钟，节省了大量时间和存储成本。此外，该优化还提高了测试可靠性，并加深了对遗留代码的理解。",
+      "translated_title": "优化我们的端到端（E2E）流水线",
+      "images": [
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/04/image4.png?w=640",
+          "alt": "Stages of the end to end testing pipeline.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/04/image3.png?w=640",
+          "alt": "End to end pipeline depicting local pre-built frontends at the third stage.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/04/image1.png?w=640",
+          "alt": "January baseline was an average build time of 10 minutes and 6 minutes for testing. By August average build time was 2 minutes, an 80% decrease for the year.",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>In the world of DevOps and Developer Experience (DevXP), speed and efficiency can make a big difference on an engineer’s day-to-day tasks. Today, we’ll dive into how Slack’s DevXP team took some existing tools and used them to optimize an end-to-end (E2E) testing pipeline. This lowered build times and reduced redundant processes, saving both time&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/speedup-e2e-testing/\">Optimizing Our E2E Pipeline</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+    },
+    {
+      "title": "我们如何构建安全私密的智能企业搜索 (原标题: How we built enterprise search to be secure and private)",
+      "link": "https://slack.engineering/how-we-built-enterprise-search-to-be-secure-and-private/",
+      "pubDate": "Fri, 07 Mar 2025 01:14:37 +0000",
+      "isoDate": "2025-03-07T01:14:37.000Z",
+      "creator": "Ian Hoffman",
+      "summary": "### 引言：Slack的演进\n\n“Slack”实际上是一个逆向首字母缩略词，代表“Searchable Log of all Communication and Knowledge”（所有通信和知识的可搜索日志）。如今，借助Slack AI，Slack已不仅仅是一个可搜索的日志，它利用最新的生成式AI技术，安全地提供强大且省时的洞察，成为一个智能日志。\n\n### Slack AI的安全与隐私原则\n\nSlack AI从零开始构建，遵循与现有企业级合规标准相同的安全和隐私原则：\n\n*   **客户数据永不离开Slack：** 确保客户信息始终在Slack的信任边界内。\n*   **不使用客户数据训练大型语言模型（LLMs）：** 保护客户数据的隐私性，避免其被用于模型训练。\n*   **Slack AI仅处理用户可见的数据：** 确保AI的响应仅基于用户已有权限访问的信息。\n*   **与现有企业级合规标准无缝集成：** 兼容既有的安全和合规框架。\n\n### 企业搜索的扩展与功能\n\n现在，通过企业搜索，Slack不仅是其内部所有内容和知识的日志，还包括来自关键外部应用程序的知识。用户可以直接在Slack的搜索中找到最新、相关且有权限的内容。目前已支持Google Drive和GitHub，未来还将集成更多连接的应用。这些新应用的加入，使得Slack搜索和AI答案能够从关键工具中获取上下文，从而更强大地满足用户查询。\n\n### 企业搜索的安全与隐私原则\n\n企业搜索秉承与Slack AI相同的企业级安全和隐私标准：\n\n*   **从不存储外部数据：** 外部数据不会存储在Slack的数据库中。\n*   **外部数据和权限实时更新：** 确保从外部系统获取的数据和权限始终是最新的。\n*   **用户和管理员需明确授权：** 必须明确授予Slack访问外部源的权限，并可随时撤销。\n*   **遵循最小权限原则：** 仅请求满足搜索查询所需的授权。\n\n### Slack AI如何保障安全\n\n*   **托管LLMs在托管VPC中：** Slack使用AWS在托管VPC中托管闭源LLMs，确保模型提供商无法访问Slack客户数据，且客户数据永不离开Slack的信任边界。\n*   **采用检索增强生成（RAG）：** 不通过训练LLMs来处理数据，而是使用RAG，仅向LLM提供完成任务所需的、用户有权限访问的内容。这些内容只在运行时提供给LLM，LLM不会保留任何用户数据。\n*   **权限感知：** Slack利用请求用户的访问控制列表（ACL），确保LLM只接收用户在Slack中已有权限访问的数据。\n*   **重用现有合规基础设施：** 存储和处理LLM生成内容时，重用所有现有合规基础设施（如加密密钥管理和国际数据驻留）。搜索答案摘要不会被存储，仅显示给请求用户后立即丢弃。\n\n### 企业搜索如何保障安全\n\n企业搜索建立在Slack AI之上，并受益于其多项创新（例如使用相同的LLMs、RAG，且不存储搜索答案）。此外，企业搜索增加了从外部源提供有权限内容的能力：\n\n*   **不存储外部数据：** 采用联邦式实时方法，通过合作伙伴的公共搜索API返回最新、有权限的结果。Slack客户端可能会缓存数据以优化性能，但核心数据不存储。\n*   **数据和权限实时更新：** 实时从外部源获取数据，避免数据过时。通过OAuth协议，确保企业搜索只能执行用户授权的操作，且这些操作是用户自身可执行操作的子集。\n*   **用户明确授权：** Slack管理员必须选择启用每个外部源用于组织搜索，并可随时撤销。同样，Slack用户也需明确授权，并可随时撤销。这得益于基于OAuth的方法。\n*   **最小权限原则：** 连接外部系统时，仅请求满足搜索查询所需的OAuth读取权限。Slack会向管理员和最终用户展示计划请求的权限范围，确保透明度。\n\n### 结论\n\nSalesforce将信任视为首要价值。Slack自豪地构建了以安全和隐私为核心的企业搜索体验，它建立在Slack AI已有的强大安全原则之上。客户可以放心地使用这一强大新功能，因为他们的外部数据始终得到妥善保护。",
+      "shortSummary": "Slack推出了基于其AI技术的企业搜索功能，将搜索范围从内部扩展到Google Drive、GitHub等外部应用。该功能严格遵循安全和隐私原则：客户数据不离开Slack，不用于训练LLM，仅处理用户有权限访问的数据。企业搜索不存储外部数据，采用实时联邦查询，并通过OAuth确保用户明确授权和最小权限访问。其核心目标是提供安全、私密且高效的跨应用内容检索体验，将信任置于首位。",
+      "translated_title": "我们如何构建安全私密的智能企业搜索",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Many don’t know that “Slack” is in fact a backronym—it stands for “Searchable Log of all Communication and Knowledge”. And these days, it’s not just a searchable log: with Slack AI, Slack is now an intelligent log, leveraging the latest in generative AI to securely surface powerful, time-saving insights. We built Slack AI from the&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/how-we-built-enterprise-search-to-be-secure-and-private/\">How we built enterprise search to be secure and private</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+    },
+    {
+      "title": "Slack 的自动化无障碍测试 (原标题: Automated Accessibility Testing at Slack)",
+      "link": "https://slack.engineering/automated-accessibility-testing-at-slack/",
+      "pubDate": "Tue, 07 Jan 2025 20:46:20 +0000",
+      "isoDate": "2025-01-07T20:46:20.000Z",
+      "creator": "nstormann",
+      "summary": "在 Slack，客户满意度是首要任务，而无障碍性是客户信任的核心要素。为了确保产品功能符合 Web 内容无障碍指南 (WCAG)，Slack 制定了内部无障碍标准，并设有专门的无障碍团队支持开发人员。除了与外部手动测试人员合作外，Slack 在2022年开始引入桌面自动化无障碍测试，作为其整体测试策略的补充。这项策略还包括让残障人士早期参与设计过程、进行设计和原型评审，以及对所有支持的辅助技术进行手动测试。尽管自动化工具可能无法发现需要人工判断的细微无障碍问题（如屏幕阅读器可用性）或可能误报不符合产品特定设计考虑的问题，但 Slack 仍认为将其集成到现有测试框架中具有重要价值。\n\n### 探索与局限性\n\n**意外的复杂性：Axe、Jest 和 React Testing Library (RTL)**\n\nSlack 选择了流行的无障碍测试工具 Axe，因为它功能广泛、易于配置且与现有端到端 (E2E) 测试框架兼容。Axe 能够检查多种无障碍指南，并最大限度地减少误报。最初，团队尝试将 Axe 检查直接嵌入到 React Testing Library (RTL) 框架中，通过自定义 `render` 函数来简化开发流程。然而，由于 Slack 定制的 Jest 设置，这种方法遇到了问题。虽然通过单独的 Jest 配置运行检查可行，但这会要求开发人员专门为无障碍性编写测试，这与团队的初衷相悖。修改自定义 Jest 设置被认为过于复杂且不值得投入时间和资源，因此团队转向了 Playwright 框架。\n\n**Axe 检查的最佳解决方案：Playwright**\n\n在排除了 Jest 后，Slack 转向了其 E2E 测试框架 Playwright。Playwright 通过 `@axe-core/playwright` 包支持 Axe 无障碍测试。Axe Core 提供了过滤和自定义无障碍检查所需的大部分功能，包括排除特定规则和选择器，以及使用无障碍标签（如 'wcag2a'、'wcag2aa'）来指定分析类型。最初的目标是将无障碍检查“烘焙”到 Playwright 的交互方法中（如点击和导航），使其自动运行。然而，Playwright 的 `Locator` 对象带来了挑战。`Locator` 旨在简化与页面元素的交互，但它只确保单个元素的就绪性，而非整个页面的完全渲染。在错误时机运行检查可能导致遗漏问题。使用已弃用的方法（如 `waitForElement`）来控制检查触发时机也存在性能下降、错误重复和与 Playwright 抽象模型冲突的问题。因此，尽管将 Axe 检查嵌入到 Playwright 核心交互方法中看似理想，但 Playwright 内部机制的复杂性促使团队探索其他解决方案。\n\n### 定制与变通方案\n\n为了克服将无障碍检查嵌入框架的障碍，团队做出了一些让步，同时仍优先考虑简化的开发人员工作流程。他们继续专注于 Playwright，因为它在选择性地隐藏或应用无障碍检查方面提供了更大的灵活性，从而更容易管理检查的运行时间和地点。此外，Axe Core 也提供了出色的定制功能，例如过滤规则和使用特定的无障碍标签。\n\n使用 `@axe-core/playwright` 包，无障碍检查流程如下：\n\n1.  Playwright 测试加载页面/视图。\n2.  Axe 分析页面。\n3.  过滤掉预定义的排除项。\n4.  违规和工件被保存到文件中。\n\n团队设置了主函数 `runAxeAndSaveViolations`，并使用 AxeBuilder 类提供的功能自定义了范围，以检查 WCAG 2.1 A 级和 AA 级的合规性。他们还创建了一个选择器列表，用于从违规报告中排除已知问题和不适用的规则。为了避免重复并控制报告的严重性，团队创建了方法来检查每个违规的唯一性，并只报告被认为是“Critical”级别的违规。\n\n团队利用了 Playwright 的 fixture 模型，将无障碍辅助函数集成到现有的 `slack` fixture 中，从而使测试作者可以直接在测试规范中调用它，减少了开销。此外，他们还定制了 Playwright 的 `test.step`，添加了自定义标签“Running accessibility checks in runAxeAndSaveViolations”，以便更容易检测到无障碍违规发生的位置。\n\n![图片 1](https://slack.engineering/wp-content/uploads/sites/7/2024/12/joachim-schnurle-4j732BLw0BI-unsplash.jpg?w=640)\n\n### 无障碍检查在端到端测试中的放置\n\n为了启动项目，团队建立了一个与 Slack 关键功能测试套件镜像的测试套件，并将其重命名为无障碍测试套件，设置为非阻塞运行。这意味着开发人员将看到测试结果，但失败或违规不会阻止他们将代码合并到生产环境。这个初始套件总共包含 91 个测试。\n\n在策略上，团队考虑了在这些关键流程测试中放置无障碍检查的位置。通常，目标是在测试中覆盖的每个新视图、页面或流程之后添加一个无障碍检查。在大多数情况下，这意味着在按钮点击或导致导航的链接之后直接放置检查。在其他情况下，检查需要在第二个用户登录或重定向之后放置。重要的是要确保在一次测试中或在具有相同 UI 流程的多个测试中，同一视图不会被分析两次，以避免不必要的错误消息、保存工件和测试速度减慢。团队还小心地确保 Axe 调用只在页面或视图完全加载且所有内容渲染完成后才进行。这种方法要求团队深入了解应用程序和每个测试用例的上下文。\n\n![图片 2](https://slack.engineering/wp-content/uploads/sites/7/2024/12/krystian-tambur-k7rZ8wTfABA-unsplash.jpg?w=640)\n\n### 违规报告\n\n团队花费了一些时间迭代改进无障碍违规报告。最初，他们创建了一个简单的文本文件来保存本地运行的结果。根据开发人员的早期反馈，他们集成了 Playwright 的截图功能，并将截图与文本报告一起保存在同一个工件文件夹中。为了使报告更具连贯性和可读性，团队利用了 Playwright HTML Reporter。这个工具不仅聚合测试结果，还允许将截图和违规报告等工件附加到 HTML 输出中，从而在一个测试报告中显示所有无障碍工件。最后，为了使违规错误消息更有帮助且易于理解，团队编写了代码来提取违规的关键信息，并通过解析和精简错误消息来定制违规在报告和控制台中的显示方式。\n\n### 环境设置和运行测试\n\n一旦集成了 Axe 检查并设置了测试套件，团队就需要确定开发人员如何以及何时运行它们。为了简化开发人员的工作流程，他们引入了一个环境变量 `A11Y_ENABLE` 来控制框架中无障碍检查的激活，默认设置为 false 以防止不必要的运行。这种设置允许开发人员选择：\n\n*   **按需测试：** 开发人员可以在需要时手动启用该标志，在其分支上本地运行无障碍检查。\n*   **计划运行：** 开发人员可以配置在非高峰时段进行定期运行。Slack 在 Buildkite 中配置了每日回归运行，将无障碍测试运行结果每日发送到 Slack 警报通道。\n*   **CI 集成：** 可选地，可以在持续集成管道中启用该标志，以便在合并重大更改之前进行彻底测试。\n\n### 分类和所有权\n\n测试的所有权和维护是常见的问题。在将 Axe 调用添加到 Playwright E2E 测试的关键流程后，团队需要决定谁将负责分类通过自动化发现的无障碍问题，以及谁将负责现有测试的维护。在 Slack，开发人员负责其测试的创建和维护。为了支持开发人员更好地理解框架更改和新的无障碍自动化，团队创建了文档，并与内部 Slack 无障碍团队合作，制定了一个全面的分类流程，以适应他们现有的无障碍问题分类工作流程。Slack 的内部无障碍团队已经建立了分类和标记传入无障碍问题的流程，并以内部 Slack 无障碍标准为指导。为了增强流程，他们创建了一个新的“automated accessibility”标签来追踪通过自动化发现的问题。为了方便这些问题的编目，他们还在警报通道中设置了一个 Jira 工作流，可以自动创建带有预填充模板的 Jira 工单。该工单通过工作流创建，并自动标记为“automated accessibility”并放入 Jira Epic 中进行分类。\n\n### 执行审计\n\n团队定期对无障碍 Playwright 调用进行审计，以检查 Axe 调用的重复性，并确保无障碍覆盖的适当性。",
+      "shortSummary": "Slack 将无障碍性视为客户信任的核心，并于2022年引入桌面自动化无障碍测试，作为其全面测试策略的补充。团队选择 Axe 工具并将其集成到 Playwright E2E 测试框架中，克服了与 Jest 集成时的复杂性。通过定制化，实现了无障碍检查的自动化运行、优化了违规报告（包含截图），并建立了清晰的问题分类和所有权流程。自动化测试结果通过 Jira 工作流自动创建工单，并定期进行审计，旨在提高效率并及早发现无障碍问题。",
+      "translated_title": "Slack 的自动化无障碍测试",
+      "images": [
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/joachim-schnurle-4j732BLw0BI-unsplash.jpg?w=640",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/krystian-tambur-k7rZ8wTfABA-unsplash.jpg?w=640",
+          "alt": "",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>At Slack, customer love is our first priority and accessibility is a core tenet of customer trust. We have our own Slack Accessibility Standards that product teams follow to guarantee their features are compliant with Web Content Accessibility Guidelines (WCAG). Our dedicated accessibility team supports developers in following these guidelines throughout the development process. We&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/automated-accessibility-testing-at-slack/\">Automated Accessibility Testing at Slack</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+    },
+    {
+      "title": "迁移自动化：借助AI简化Jenkins到GHA的迁移 (原标题: Migration Automation: Easing the Jenkins → GHA shift with help from AI)",
+      "link": "https://slack.engineering/migration-automation-easing-the-jenkins-%e2%86%92-gha-shift-with-help-from-ai/",
+      "pubDate": "Mon, 16 Dec 2024 09:00:03 +0000",
+      "isoDate": "2024-12-16T09:00:03.000Z",
+      "creator": "Zhengyu Shen",
+      "summary": "Slack的CI基础设施近期经历了一次重大变革，从长期困扰开发人员的Jenkins迁移至GitHub Actions (GHA)。为了加速这一过程并减轻手动迁移的负担，Slack的一名实习生开发了一个自动化转换工具，旨在将Jenkins流水线自动迁移到GitHub Actions。该项目取得了成功，预计将迁移时间缩短一半，并节省超过1300小时的开发时间。\n\n### 项目概述与目标\n\n*   **背景**：Jenkins在安全性、停机时间和用户体验方面的问题促使Slack决定将大部分CI作业迁移到GitHub Actions。\n*   **核心目标**：创建一个能够自动迁移Jenkins流水线到GitHub Actions的转换工具。\n*   **成功标准**：\n    *   开发自动化工具以解决手动迁移的困难。\n    *   将工具应用于大量现有Jenkins作业。\n    *   创建关于转换过程的文档。\n*   **关键术语**：\n    *   **流水线 (Pipeline)**：Jenkins中用于组织作业的一组插件。项目开始时有242个Jenkins流水线待迁移。\n    *   **实例 (Instance)**：Jenkins流水线托管的Jenkins实例，需从3个实例迁移。\n    *   **工作流 (Workflow)**：GitHub Actions CI作业。\n    *   **GHA**：GitHub Actions的缩写。\n\n### 解决方案设计与实施\n\n项目分为三个主要部分：\n\n#### 第一部分：GitHub Actions Importer的使用\n\n*   **工具介绍**：GitHub Actions Importer是GitHub发布的一个工具，可以审计Jenkins实例并尝试将所有流水线转换为GitHub Actions工作流。\n*   **性能表现**：\n    *   约50%的流水线能够完全无误地从Jenkins迁移到GHA。\n    *   约5%的迁移完全失败。\n    *   其余的作业（约45%）是部分导入，即生成了工作流YAML文件但未能完全填充。\n*   **关键发现**：虽然有数百个流水线未能完全转换，但深入检查发现，90%以上的失败是由仅八个不受支持的Jenkins构建步骤和环境引起的。这使得后续的修正工作得以集中。\n\n#### 第二部分：研究与修正类型识别\n\n在了解了Importer的局限性后，项目团队识别出需要对生成的YAML文件进行四种主要类型的修正：\n\n1.  **替换限速操作为内部镜像 (RoI: 很高)**：\n    *   **问题**：默认情况下，GitHub Actions市场上的操作会受到github.com API的速率限制。\n    *   **解决方案**：替换为Slack内部GitHub Enterprise实例上的内部镜像操作，这些操作具有更高的速率限制。\n    *   **价值**：避免因速率限制导致作业失败，提升用户体验。\n2.  **替换操作为其他操作 (RoI: 高)**：\n    *   **问题**：Importer有时会选择某个操作，而Slack更倾向于使用内部或更合适的其他操作（例如，将`rtCamp/action-slack-notify`替换为Slack内部的消息发送操作）。\n    *   **解决方案**：利用大型语言模型（LLM）进行替换，因为不同操作的语法差异较大，难以通过简单的字符串方法转换。\n    *   **价值**：节省终端用户学习和适应不同操作的时间和精力。\n3.  **为终端用户添加有用注释 (RoI: 中等)**：\n    *   **问题**：某些工作流文件中的操作项（如访问秘密）无法自动化，因为秘密存储在GitHub外部，且迁移到GitHub不符合安全策略。\n    *   **解决方案**：在无法自动化的部分留下注释，指导用户如何手动修改以从正确位置读取秘密。\n    *   **价值**：为用户提供明确的修复方向，尽管仍需手动操作。\n4.  **删除不必要的注释 (RoI: 低-中等)**：\n    *   **问题**：Importer在遇到不支持的Jenkins项时会留下“X Jenkins项不受支持”的注释。但很多情况下，这些功能在GHA中已包含或不再需要。\n    *   **解决方案**：删除这些不重要的注释，以清理工作流文件。\n    *   **价值**：使工作流更简洁，虽然收益较小，但脚本实现简单。\n\n#### 第三部分：修正工具的开发\n\n*   **架构**：修正工具的输入是包含工作流YAML文件的目录路径。工具会遍历每个YAML文件，先进行所有非AI修正，再进行所有AI修正，并原地修改文件内容。\n*   **非AI修正实现**：主要使用Python的`String.replace()`方法来处理简单的字符串替换和注释添加。\n*   **AI修正实现**：\n    *   **提示工程 (Prompt Engineering)**：结合科学（结构化提示：上下文设置、具体步骤、输出指令）和艺术（实验与迭代）。\n    *   **示例提示**：详细指导LLM将`rtCamp/action-slack-notify`替换为`slack/message-action`，并指定如何处理参数映射，同时强调不要删除注释或修改其他操作。\n    *   **LLM表现**：对约24个LLM输出的检查显示，其在执行请求任务时达到了100%的准确率，这打消了对幻觉和其他意外副作用的担忧。LLM在处理Python字符串方法难以解决的复杂替换任务中发挥了关键作用。\n\n### 影响与用户反馈\n\n*   **效率提升**：该转换工具让终端用户完全跳过了手动编写GHA工作流的第一步，并极大地简化了第二步的调试工作，因为生成的GHA工作流文件准确性很高，几乎没有缺陷。\n*   **时间节省**：对于242个待迁移的流水线，根据开发人员经验的不同，手动转换每个流水线可能需要2到10小时。该工具的自动化能力显著减少了所需时间，实现了项目预期的总时间节省。\n*   **总结**：LLM在迁移过程中非常有用，尽管提示工程并非微不足道，但其投入时间不长，且LLM在“替换A为B”的任务上表现与人类一样出色，填补了Python字符串方法难以解决的复杂错误修正的空白。",
+      "shortSummary": "Slack通过一个AI辅助的自动化工具，成功将其CI作业从Jenkins迁移到GitHub Actions (GHA)。该工具由一名实习生开发，结合了GitHub Actions Importer、Python脚本和大型语言模型（LLM），能够自动修正和优化转换后的GHA工作流。LLM在复杂的操作替换任务中表现出100%的准确率。此举将迁移时间缩短了一半，预计为Slack节省超过1300小时的开发工作，显著提高了迁移效率和准确性。",
+      "translated_title": "迁移自动化：借助AI简化Jenkins到GHA的迁移",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Overview The past few months have been exciting times for Slack’s CI infrastructure. After years of developer frustration with Jenkins (everything from security issues to downtime to generally poor UX) internal pressure led us to move a majority of Slack’s CI jobs from Jenkins to GitHub Actions.  My intern project at Slack this summer involved&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/migration-automation-easing-the-jenkins-%e2%86%92-gha-shift-with-help-from-ai/\">Migration Automation: Easing the Jenkins → GHA shift with help from AI</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+    },
+    {
+      "title": "故意破坏 (原标题: Break Stuff on Purpose)",
+      "link": "https://slack.engineering/break-stuff-on-purpose/",
+      "pubDate": "Tue, 10 Dec 2024 09:00:41 +0000",
+      "isoDate": "2024-12-10T09:00:41.000Z",
+      "creator": "Sean Madden",
+      "summary": "## 引言：故意破坏以应对复杂系统故障\n\n文章引用John Gall在《Systemantics》中的观点：“一个复杂系统可以以无限种方式失败。”事故是不可避免的，即使是为高可用性设计的服务最终也会遇到故障。工程师们发现，要防御系统可能出现的“无限种”问题是令人生畏的。Slack的工程团队通过一次内部Kibana仪表盘服务故障，认识到主动应对的重要性。他们通过一种富有创意和“恶作剧”精神的练习，解决了问题根源，激励了团队成员，并为枯燥的系统维护工作带来了兴奋和乐趣。\n\n## 一次Kibana事故\n\n2024年1月29日，Slack工程师使用的Kibana集群（用于保存自定义仪表盘和应用性能数据可视化）因磁盘空间不足而开始出现故障。调查发现，这是早期架构决策的下游影响：Kibana集群被配置为使用与Kibana应用在同一主机上的Elasticsearch实例，导致存储和应用紧密耦合在同一节点上，这些节点最终崩溃。工程师无法加载所需数据来确保应用健康。集群最终陷入无法挽回的糟糕状态，不得不从头重建。\n\n团队原以为可以通过更换新主机并从备份中恢复Kibana对象来重建集群。然而，他们震惊地发现最近的备份已是近两年前的。备份和恢复方法在首次配置后并未得到充分关注，也没有配置告警来通知其运行异常。此外，运行手册也已过时，旧备份在尝试恢复时也失败了。这导致内部员工的链接和可视化数据丢失，团队不得不手动重建索引和索引模式。向同事解释恢复程序失败和数据丢失的过程令人沮丧。\n\n这次事故的教训是：除非主动演练流程、程序和运行手册，否则它们会过时并在最需要时失效。事故响应旨在尽快恢复服务，但事故平息后的行动决定了它们最终是收益还是负担。\n\n## “破坏东西”的乐趣与价值\n\n团队决心将这次事故转化为实际收益。事故后的任务包括：\n\n*   确保所有环境中的Elasticsearch集群都通过计划备份脚本进行备份。\n*   根据经验修复运行手册。\n*   检查Amazon S3的保留策略是否设置正确。\n\n为了验证这些改进措施的有效性，团队提出了一个非传统但令人兴奋的想法：故意破坏一个开发环境的Kibana集群，并尝试新的备份和恢复流程。开发集群的配置与生产集群类似，能提供真实的测试环境。为了确保成功，他们仔细规划了要破坏哪个集群、如何破坏以及如何恢复服务。\n\n## 演练过程与成果\n\n团队在一个安静的周四上午安排了这次测试活动，并邀请了所有团队成员。大家充满活力地参与了这次“故意在工作中破坏东西”的机会。他们通过填满Kibana节点的磁盘，实时观察其故障，并成功触发了告警。团队按照新的运行手册步骤操作，将整个集群循环重建。系统成功地从这次模拟事故中恢复。\n\n尽管恢复成功，但他们未能达到在一小时内恢复的目标。运行手册中的许多命令难以理解，在压力下难以掌握。甚至从运行手册中复制粘贴也因格式问题而充满挑战。尽管存在这些粗糙之处，备份最终还是完全恢复了集群状态。此外，他们还意外发现了一些需要添加到基础设施即代码中的防火墙规则，修复这些问题避免了未来的麻烦。\n\n在对新恢复流程的最终测试中，团队将通用的开发Kibana实例和Elasticsearch集群迁移到Kubernetes。这是一个绝佳的机会，可以在高使用率的Kibana集群上测试改进后的备份脚本。由于对流程的理解加深和更新的配置脚本，他们成功完成了迁移，停机时间约为30分钟。\n\n在两次演练中，团队都遇到了新运行手册和恢复过程中的小问题。他们花时间找出运行手册的不足之处并加以改进。受演练启发，他们主动将计划备份脚本工具升级为一个功能齐全的CLI备份和恢复程序。现在，他们能够通过一个命令从云存储中完全恢复Kibana备份。\n\n“破坏东西”不仅有趣，更是对时间的一项极其宝贵的投资，它将使团队免于未来的压力。\n\n## 混沌无处不在——善加利用\n\n文章再次引用John Gall的观点：“复杂系统通常在故障模式下运行。”每个生产系统都以一种尚未被发现的方式存在问题。因此，在问题变得关键之前，投入时间和精力去发现这些问题并规划如何从中恢复至关重要。建议包括：\n\n*   在客户使用前生成大量流量并进行负载测试。\n*   关闭服务以模拟意外中断。\n*   经常升级依赖项。\n\n软件中的日常维护常常被忽视，因为它可能枯燥乏味，但当事故不可避免地发生时，我们就会为此付出代价。Slack团队发现，通过“战略性混沌”（有计划的破坏），他们可以使系统测试和维护变得令人兴奋和新鲜。这不仅打破了日常修复工作的常规，还让他们置身于独特而真实的境地，这是传统维护方式无法发现的。文章鼓励其他团队也花时间“破坏”自己的系统，然后恢复它们，并反复进行。每次迭代都会改进流程和工具，以应对未来不可避免的压力情况。最后，文章提醒大家每年3月31日庆祝世界备份日。\n\n## 致谢\n\n文章感谢了Kyle Sammons、Mark Carey、Renning Bruns、Emma Montross、Shelly Wu、Bryan Burkholder、George Luong和Ryan Katkov等多位团队成员在恢复演练的规划、执行、工具功能实现、自动化、事故响应和支持以及提供自主权方面的贡献。",
+      "shortSummary": "Slack工程团队通过一次Kibana事故认识到主动测试系统恢复流程的重要性。他们创新性地开展“故意破坏”演练，在开发环境中模拟故障，测试并完善了备份、恢复流程和运行手册。通过这种“战略性混沌”，团队不仅将事故转化为宝贵经验，还自动化了恢复过程，显著提升了系统韧性。文章强调，主动发现并解决潜在问题，比被动应对事故更有效，并鼓励其他团队也进行类似的破坏性测试。",
+      "translated_title": "故意破坏",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p> “A complex system can fail in an infinite number of ways.” -“Systemantics” by John Gall &#160; Incidents are stressful but inevitable. Even services designed for availability will eventually encounter a failure. Engineers naturally find it daunting to defend their systems against the “infinite number of ways” things can go wrong.  Our team found ourselves in&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/break-stuff-on-purpose/\">Break Stuff on Purpose</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+    },
+    {
+      "title": "Slack 审计日志与异常 (原标题: Slack Audit Logs and Anomalies)",
+      "link": "https://slack.engineering/slack-audit-logs-and-anomalies/",
+      "pubDate": "Mon, 09 Dec 2024 17:02:13 +0000",
+      "isoDate": "2024-12-09T17:02:13.000Z",
+      "creator": "Ryan Katkov",
+      "summary": "# Slack 审计日志与异常\n\n本文详细介绍了 Slack 的审计日志功能及其异常检测机制，旨在帮助企业用户理解和利用这些工具来增强安全监控和响应能力。\n\n## 什么是 Slack 审计日志？\nSlack 审计日志是为 Enterprise Grid 客户提供的服务，用于记录平台上实体执行的各种操作，例如用户登录、资料更新、应用下载文件等。这些日志记录了广泛的活动，建议定期查阅文档以了解最新添加的动作列表。\n\n![审计日志的 JSON 表示](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image1.png?w=640)\n\n## Slack 审计日志的可用性\n*   **访问权限**：组织管理员 (Org Admins)、所有者 (Owners) 以及拥有“审计日志管理员”角色 (Audit Logs Admin) 的用户可以通过审计日志仪表板访问。\n*   **访问路径**：工具和设置 → 管理审计日志。\n*   **API 访问**：审计日志也通过 API 提供，支持按生成时间、操作（最多可指定 30 种）、执行者和实体进行过滤。\n*   **集成**：许多供应商（如 Splunk、AWS AppFabric、DataDog）提供连接器，可将审计日志导入其平台。\n\n## 异常事件 (Anomaly Events)\n\n### 什么是异常？\n审计日志流中包含“异常”事件（动作类型为 `anomaly`）。这些事件不同于普通审计日志，它们不记录实体执行的动作，而是表明 Slack 的分析管道检测到实体执行了异常动作，或实体执行动作的环境异常。异常是 Slack 工作区内不寻常或潜在可疑活动的指示器。\n\n### 如何使用异常？\n*   **调查与分析**：异常事件需要组织进行调查、实验和分析，才能被检测和响应团队投入实际使用。\n*   **非直接事件**：通常，异常不应直接作为事件上报，它们表示发生了意料之外的情况，可能需要进一步调查。\n*   **重要性**：异常的重要性取决于组织的政策和允许的活动。例如，`user_agent` 异常（如检测到 `Go-http-client/2.0`）可能表明有人使用自动化工具访问 Slack，这在某些组织中可能不被允许。\n\n### 允许列表 CIDR 范围和 ASN\nSlack 允许客户通过 API 将已知合法活动的 IP 地址或网络范围（CIDR 和 ASN）添加到允许列表，以优化异常检测并减少误报。\n\n### 关联异常\n关联多个异常可以提供有价值的安全洞察：\n*   **示例**：`user_agent` 异常与 `excessive_downloads` 异常同时出现，可能表明正在使用抓取工具。如果同时伴随 `ip_address` 或 `session_fingerprint` 异常，则情况更严重，可能意味着外部方获取了用户 Cookie 进行数据抓取。\n*   **高保真异常**：Slack 还发布了高保度的 `unexpected_scraping` 异常用于特定抓取场景。\n\n### 聚合异常\n聚合某些异常可以揭示感兴趣的场景。例如，通过检查用户在特定时间内产生的 `excessive_downloads` 异常数量并与历史常态进行比较，可以发现用户是否正在执行不必要的活动（如大量数据抓取）。\n\n### 审计日志事件的上下文\n*   **日志量**：异常日志的量远低于审计日志（通常低两个数量级）。\n*   **推荐**：尽管可以只过滤异常日志，但强烈建议尽可能消费完整的审计日志，以便在调查异常日志时获得最全面的上下文信息（例如，`excessive_downloads` 异常发生时，`file_downloaded` 审计日志可提供下载了哪些文件的具体信息）。\n*   **应急响应**：在应急响应场景中，本地可查询的审计日志可以节省时间和压力。\n\n## 审计日志 UI 示例\nSlack 提供了一个用户界面，可从“工具和设置”→“管理审计日志”访问，用于审查审计日志而无需外部服务。\n\n以下以虚构公司 Acme Corp 的销售员 Matt 离职为例：\n\n1.  **加载主审计日志选项卡**：\n    ![Acme Corp 的审计日志管理界面](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image4.png?w=640)\n2.  **切换到安全检测选项卡查看 Matt 产生的异常**：\n    ![Acme Corp 的审计日志管理界面](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image5.png?w=640)\n    发现 Matt 产生了多个异常。\n3.  **查看异常详情**：\n    *   第一个异常是 `unexpected_scraping` 和 `user_agent`（用户代理为 Scrapers Inc.），表明 Matt 正在进行抓取，且使用了非授权的 Slack 客户端。\n    ![审计日志的 JSON 表示](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image3.png?w=640)\n    *   另一个异常是 `excessive_downloads`，进一步证实 Matt 正在从 Slack 工作区抓取数据，同样来自 Scrapers Inc. 客户端。\n    ![审计日志的 JSON 表示](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image7.png?w=640)\n4.  **过滤 `file_downloaded` 事件以查看下载文件**：\n    ![Acme Corp 的审计日志管理界面](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image6.png?w=640)\n5.  **检查文件详情**：\n    文件名为 `Glengarry-Leads.xlsx`，这可能不是 Acme Corp 希望销售员离职时获取的文件。\n    ![审计日志的 JSON 表示](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image2.png?w=640)\n\n## 终止用户的活跃会话\n如果发现与用户账户相关的可疑活动，可以直接从审计日志仪表板终止用户的活跃会话。导航到相关异常日志条目，点击“•••”菜单，选择“退出 Slack”，这将立即使该用户所有活跃会话失效，强制其重新认证。也可以按设备类型选择性终止会话。\n\n![图片 8](https://slack.engineering/wp-content/uploads/sites/7/2024/12/row-actions-sign-out-of-slack.png?w=1020)\n\n## 其他检测思路\n*   **IP 地址**：无论是否生成 `ip_address` 异常，都建议检查异常中包含的 IP 地址，以判断其是否为预期来源。\n*   **会话指纹**：`session_fingerprint` 异常可能表明会话 Cookie 被窃取。应调查相关 IP 地址并结合端点日志进行确认。\n*   **用户代理**：`excessive_downloads`、`user_agent` 和 `ip_address` 等异常中的用户代理是判断抓取或其他不必要活动的重要信号。可以通过维护一个预期用户代理的允许列表来识别异常。",
+      "shortSummary": "Slack 审计日志记录平台操作，为 Enterprise Grid 客户提供安全监控。其中包含“异常”事件，指示 Slack 检测到的不寻常或可疑活动。异常通常需要进一步调查而非直接上报事件。组织可利用允许列表、关联和聚合异常来优化检测。完整的审计日志提供关键上下文。Slack UI 支持直接查看和管理日志，并能立即终止可疑用户的会话。IP 地址、用户代理和会话指纹是识别潜在威胁的重要信号。",
+      "translated_title": "Slack 审计日志与异常",
+      "images": [
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image1.png?w=640",
+          "alt": "JSON representation of an Audit Log",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image4.png?w=640",
+          "alt": "Audit log management interface for Acme Corp",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image5.png?w=640",
+          "alt": "Audit log management interface for Acme Corp",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image3.png?w=640",
+          "alt": "JSON representation of an Audit Log",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image7.png?w=640",
+          "alt": "JSON representation of an Audit Log",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image6.png?w=640",
+          "alt": "Audit log management interface for Acme Corp",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image2.png?w=640",
+          "alt": "JSON representation of an Audit Log",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/row-actions-sign-out-of-slack.png?w=1020",
+          "alt": "",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>What are Slack Audit Logs? Like many Software as a Service (SaaS) offerings, Slack provides audit logs to Enterprise Grid customers that record when entities take an action on the platform. For example, when a user logs in, when a user updates their profile, when an app downloads a file, etc. The actual list of&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/slack-audit-logs-and-anomalies/\">Slack Audit Logs and Anomalies</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+    },
+    {
+      "title": "Astra 动态分块：我们如何通过重新设计 Astra 的关键部分来节省成本 (原标题: Astra Dynamic Chunks: How We Saved by Redesigning a Key Part of Astra)",
+      "link": "https://slack.engineering/astra-dynamic-chunks-how-we-saved-by-redesigning-a-key-part-of-astra/",
+      "pubDate": "Mon, 18 Nov 2024 22:06:23 +0000",
+      "isoDate": "2024-11-18T22:06:23.000Z",
+      "creator": "George Luong",
+      "summary": "# Astra 动态分块：通过重新设计节省成本\n\n## 引言\n\nSlack 每天处理海量的日志数据，每秒超过 600 万条日志消息，相当于每秒超过 10 GB 的数据。这些数据都存储在 Astra 中，Astra 是 Slack 内部开发的开源日志搜索引擎。为了使数据可搜索，Astra 会按时间对数据进行分组，并将其分割成称为“分块”（chunks）的数据块。\n\n最初，Astra 的设计假设所有分块都是固定大小的。然而，这一假设导致了效率低下，表现为磁盘空间未被充分利用，并增加了基础设施的开销。为了降低 Astra 的运营成本，Slack 决定解决这个问题。\n\n## 固定大小分块的问题\n\n固定大小分块的最大问题在于并非所有分块都得到了充分利用，导致实际分块大小不一。尽管固定大小分块简化了代码，但它导致在缓存节点上分配了比实际需求更多的空间，造成了不必要的开销。\n\n*   **空间浪费：** 以前，每个缓存节点被分配固定数量的“槽位”，每个槽位预期容纳一个固定大小的分块（例如，一个 3TB 的缓存节点有 200 个槽位，每个槽位预期容纳 15GB 的分块）。如果实际分块小于预期大小（例如 10GB），就会有额外的空间（5GB）被分配但未被使用。在拥有数千个分块的集群中，这迅速导致了相当大比例的空间被分配但未被利用。\n*   **分配不足：** 另一个问题是，有些分块实际上比预设大小更大。这可能发生在 Astra 创建恢复任务以追赶旧数据时。恢复任务是基于落后的消息数量而不是数据大小来创建的。如果每条消息的平均大小超出预期，可能会导致创建超大分块，这比分块过小更糟，因为它意味着分配的空间不足。\n\n## 动态分块的设计\n\n为了构建动态分块，Slack 必须修改 Astra 的两个关键部分：集群管理器（Cluster Manager）和缓存（Cache）。\n\n### 重新设计缓存节点\n\n*   **原有流程：**\n    *   缓存节点上线后，会在 Zookeeper（集中协调存储）中公布其槽位数量。\n    *   Astra 管理器会为每个槽位分配一个分块。\n    *   缓存节点下载并提供该分块。\n    *   这种设计的好处是槽位是短暂的，当缓存节点下线时，其槽位会从 Zookeeper 中消失，管理器会重新分配这些槽位曾经持有的分块。\n*   **动态分块的挑战：** 引入动态分块后，缓存节点只能公布其容量，而无法预先知道将被分配多少个分块。这意味着无法再依赖槽位来提供上述好处。\n*   **解决方案：** 在 Zookeeper 中持久化两种新的数据类型：\n    *   **缓存节点分配（Cache Node Assignment）：** 分块 ID 到缓存节点的映射。\n    *   **缓存节点元数据（Cache Node Metadata）：** 包含容量、主机名等每个缓存节点的信息。\n*   **新流程：**\n    *   缓存节点上线后，公布其磁盘空间。\n    *   管理器获取每个缓存节点的磁盘空间信息，并利用“装箱算法”（bin packing）为每个缓存节点创建分配，以最小化使用的缓存节点数量。\n    *   缓存节点获取为其创建的分配，并下载其分块。\n\n### 重新设计管理器\n\n管理器被升级以利用新引入的两种数据类型：缓存节点分配和缓存节点元数据。\n\n*   **分块分配逻辑：** 决定哪个缓存节点应该分配哪个分块时，Slack 实现了“首次适应装箱算法”（first-fit bin packing）。然后，利用缓存节点元数据来判断特定分块是否能放入给定的缓存节点。\n*   **原有分配逻辑：** 获取槽位列表 -> 获取要分配的分块列表 -> 将两者打包并分配。\n*   **新分配逻辑：** 获取要分配的分块列表 -> 获取缓存节点列表 -> 对每个分块，执行首次适应装箱算法以确定应分配给哪个缓存节点 -> 持久化缓存节点到分块的映射。\n\n### 装箱算法（Bin Packing）\n\n重新设计管理器最核心的部分是实现首次适应装箱算法。这是一个众所周知的问题，旨在最小化用于容纳一定数量物品（分块）的箱子（缓存节点）数量。Slack 选择了首次适应装箱算法，因为它速度快且易于实现。\n\n*   **算法伪代码：**\n    ```\n    对于每个分块：\n        对于每个缓存节点：\n            如果当前分块能放入该缓存节点：\n                分配该分块\n            否则：\n                移至下一个缓存节点\n        如果所有缓存节点都已尝试且分块仍未分配：\n            创建一个新的缓存节点\n    ```\n    这有助于确保缓存节点尽可能紧密地打包，从而提高已分配空间的利用率。\n\n## 推广与部署\n\n这是一项对 Astra 代码库的重大修改，它触及了 Astra 的许多关键部分，几乎重写了所有处理分块分配和下载的逻辑。为了确保安全推广，Slack 采取了以下措施：\n\n*   **托管相同数据的两个副本：**\n    *   允许逐步部署到一个副本并监控其行为。\n    *   确保如果更改导致任何问题，仍有第二个副本能够提供数据。\n*   **将所有动态分块代码置于功能标志（feature flag）之后：**\n    *   允许代码尽早合并到主分支，因为它在未明确启用时不会运行。\n    *   允许逐步推广和测试更改，从较小的集群开始，在验证一切正常后逐步推广到更大的集群。\n\n## 结果\n\n这项改进带来了显著的成果：\n\n*   对于拥有许多过小分块的集群，所需的缓存节点数量减少了高达 50%。\n*   整体缓存节点成本降低了 20%，为 Astra 的运营带来了可观的成本节约。",
+      "shortSummary": "Slack 的 Astra 日志引擎最初使用固定大小的数据分块，导致磁盘空间浪费和成本增加。为解决此问题，他们重新设计了 Astra 的缓存节点和管理器，引入了动态分块。核心改进包括在 Zookeeper 中持久化新元数据，并采用“首次适应装箱算法”高效分配分块。通过双副本和功能标志谨慎推广后，Astra 成功将部分集群的缓存节点数量减少了高达 50%，整体缓存节点成本降低了 20%，实现了显著的成本节约。",
+      "translated_title": "Astra 动态分块：我们如何通过重新设计 Astra 的关键部分来节省成本",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Introduction Slack handles a lot of log data. In fact, we consume over 6 million log messages per second. That equates to over 10 GB of data per second! And it’s all stored using Astra, our in-house, open-source log search engine. To make this data searchable, Astra groups it by time and splits the data&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/astra-dynamic-chunks-how-we-saved-by-redesigning-a-key-part-of-astra/\">Astra Dynamic Chunks: How We Saved by Redesigning a Key Part of Astra</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+    },
+    {
+      "title": "天下没有免费的午餐！ (原标题: There’s No Such Thing as a Free Lunch!)",
+      "link": "https://slack.engineering/theres-no-such-thing-as-a-free-lunch/",
+      "pubDate": "Thu, 14 Nov 2024 09:00:08 +0000",
+      "isoDate": "2024-11-14T09:00:08.000Z",
+      "creator": "Scott Nelson Windels",
+      "summary": "## Slack 的“事件午餐”：实战化事件响应培训\n\n### 概述\n\n文章介绍了 Slack 如何通过一项名为“事件午餐”（Incident Lunch）的创新实践，为员工提供实用的事件响应经验。这项活动旨在弥补传统培训在实际操作经验方面的不足，让员工在模拟的压力环境下学习和应用事件管理流程。\n\n### 起源与灵感\n\n“事件午餐”的灵感来源于 2018 年 3 月 Blackrock 3 Partners 团队在 Slack 举办的一次培训中的“午休练习”。该练习的核心要素包括：\n\n*   **时间压力**：在有限时间内完成任务。\n*   **角色扮演**：分配事件响应中的不同角色。\n*   **约束条件**：设置简单的规则，如不能订购某些食物。\n*   **趣味性**：让参与者在轻松愉快的氛围中学习。\n\nSlack 将此练习发展为公司内部的常态化培训项目。\n\n### “事件午餐”的运作方式\n\n这项活动对公司内所有员工开放，无需任何前期准备或专业知识，因为每个人都对点餐和用餐有所了解。具体流程如下：\n\n1.  **邀请与承诺**：员工被邀请参加一个两小时的事件培训练习，并被告知将提供午餐。\n2.  **流程回顾**：参与者到达后，首先进行 15 分钟的事件处理流程回顾。\n3.  **“突发事件”**：随后宣布午餐订单出了问题，他们的任务是利用事件响应实践为在场所有人获取午餐。\n4.  **角色与沟通**：团队需指定一名事件指挥官（IC），在专门的 Slack 频道中沟通，并定期发布状态报告。\n5.  **教练与裁判**：培训师担任活动的裁判和教练。\n6.  **结果**：迄今为止，所有团队都成功获得了午餐，尽管有时过程充满挑战。\n\n### 资源需求\n\n运行“事件午餐”所需的资源极少，使其成为一个可持续的培训方案：\n\n*   **活动大纲**：使用 GitHub 仓库中的 Markdown 文件作为幻灯片，包含 15 分钟的介绍和事件响应流程概述。\n*   **场地**：一到两个会议室。\n*   **宣传与邀请流程**：用于通知和邀请参与者。\n*   **协调员**：一到两名员工负责协调（他们每次运行活动都能获得免费午餐）。\n*   **预算**：每场约 300-500 美元，远低于第三方现场培训的费用。\n\n### “混沌卡片”（Chaos Cards）\n\n为了增加活动的变数和不可预测性，一位前工程师引入了“混沌卡片”。这些卡片包含不同的行动或事件，能在练习过程中改变局势，例如：\n\n*   **“笔记本电脑故障”**：随机选择一名专家，使其在剩余练习中无法使用笔记本电脑。\n*   **“异常安静”**：要求在两分钟内抽取一张新卡片。\n\n这些卡片通常每五分钟抽取一次，增加了练习的真实感和不适感，模拟了真实事件中可能出现的突发情况。\n\n### 成功的原因\n\n“事件午餐”在 Slack 取得成功有几个关键原因：\n\n*   **对组织者而言**：\n    *   **低投入**：相比于开发复杂的模拟游戏，设置和维护成本极低。\n    *   **易于扩展**：可以在有协调员的远程办公室运行。\n    *   **时间效率**：小型团队也能轻松运行，节省了处理真实事件的时间。\n*   **对员工而言**：\n    *   **广泛参与**：包括客户体验、客户成功、销售及其他非技术团队在内的所有员工都可以参加。\n    *   **无需准备**：参与者只需携带笔记本电脑并预留两小时。\n    *   **激励机制**：以“提供午餐”为诱饵，吸引员工参与。\n\n### 实践中的经验\n\n*   **混沌卡片的效果**：有效增加了时间压力和不可预测性，更贴近真实事件。\n*   **预选事件指挥官（IC）**：提前确定 IC 有助于活动顺利进行，也能发现具有事件协调天赋的员工，成为内部招聘工具。\n*   **教练与引导**：当 IC 遇到困难时，协调员可以提供指导、提问或减慢混沌卡片的抽取速度。\n*   **目标聚焦**：强调事件响应的核心目标是快速恢复服务，而非民主决策。在时间压力下，快速达成共识（如通过“有无强烈反对意见？”）至关重要。\n*   **交付与自取**：选择外卖交付可能增加复杂性和依赖性，从而延长响应时间。\n\n### 待改进之处\n\n*   **虚拟替代方案**：目前该活动最适合面对面进行。在疫情期间未能找到同样简单有效的线上替代方案，未来希望能开发适用于混合或远程工作环境的版本。\n*   **使用日常工具**：目前未在练习中使用真实的事件管理工具，因为设置开销过大。若能实现工具的“演练”或“演示”模式，将为参与者提供更真实的工具操作经验。\n*   **记录回顾洞察**：建议记录每次“午餐”的回顾和笔记，以便回顾和改进项目。\n\n文章鼓励其他团队尝试实施“事件午餐”，并分享他们的经验和学习成果。",
+      "shortSummary": "Slack 通过“事件午餐”活动为员工提供实用的事件响应培训。该活动灵感来源于外部培训，通过模拟午餐订单失败的场景，让员工在时间压力下，运用事件管理流程（如指定事件指挥官、Slack 沟通、报告）获取午餐。活动引入“混沌卡片”增加不可预测性，资源投入低，且对技术和非技术员工都开放。它不仅提升了员工的实战经验，还成为发现潜在事件指挥官的有效工具。尽管目前主要适用于线下，Slack 仍在探索线上版本和整合实际工具的可能性。",
+      "translated_title": "天下没有免费的午餐！",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Incident Management takes time Incidents need responders that are trained and experienced.  At Slack, training is a foundation of our incident management program. Self-service training and live courses based mainly on prepared content are one piece of the puzzle, but there can be a missing piece in many organizations. How can staff get practical experience&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/theres-no-such-thing-as-a-free-lunch/\">There’s No Such Thing as a Free Lunch!</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+    }
+  ],
+  "lastUpdated": "2025-05-29T05:12:30.386Z"
+}

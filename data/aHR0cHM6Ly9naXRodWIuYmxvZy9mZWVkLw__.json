@@ -1,0 +1,429 @@
+{
+  "sourceUrl": "https://github.blog/feed/",
+  "title": "The GitHub Blog",
+  "description": "Updates, ideas, and inspiration from GitHub to help developers build and design software.",
+  "link": "https://github.blog/",
+  "items": [
+    {
+      "title": "GitHub 内部：我们如何强化 SAML 实现 (原标题: Inside GitHub: How we hardened our SAML implementation)",
+      "link": "https://github.blog/security/web-application-security/inside-github-how-we-hardened-our-saml-implementation/",
+      "pubDate": "Tue, 27 May 2025 16:00:00 +0000",
+      "isoDate": "2025-05-27T16:00:00.000Z",
+      "creator": "Greg Ose",
+      "summary": "## GitHub 内部：我们如何强化 SAML 实现\n\n### 引言与背景\n\n*   **SAML SSO 在 GitHub 的重要性**：自 2014 年 GitHub Enterprise Server 2.0.0 发布以来，GitHub 便开始提供基于 SAML（安全断言标记语言）的企业认证服务。SAML 单点登录（SSO）允许企业将其现有身份提供商与 GitHub 产品集成，扩展条件访问策略，并实现企业组织管理。\n*   **SAML 实现的复杂性与安全风险**：\n    *   SAML 2.0 规范定义了身份提供商和服务提供商之间如何进行认证和建立信任，涉及生成 SAML 元数据、发起认证请求以及最关键的——处理和验证来自身份提供商的 SAML 响应。\n    *   这些代码路径在安全上至关重要，任何漏洞都可能导致认证绕过或用户冒充。\n    *   涉及 XML 解析、密码学以及复杂的标准（如 XML Signature、XML Encryption 和 XML Schema）。\n    *   SAML 代码的攻击面非常广，用户（和潜在攻击者）浏览器中传递的数据可能被篡改。这种安全性关键性、复杂性和攻击面的结合，使得 SAML 实现的风险高于大多数代码。\n\n### 自研 SAML 实现的挑战\n\n*   **早期选择与持续投入**：2014 年推出 SAML 支持时，可用库很少。GitHub 在尝试 `ruby-saml` 后，决定创建自己的实现以更好地满足需求。多年来，GitHub 持续投入强化这些认证流程，包括与内部安全研究员和通过安全漏洞赏金计划合作，识别并修复漏洞。\n*   **现有问题的根源与重新思考的必要性**：尽管修复了许多漏洞，但由于根本原因的广度和复杂性，担忧依然存在。因此，GitHub 决定重新审视，以更可持续和整体的方式来保障其 SAML 实现的安全性。\n\n### 强化 SAML 实现的四大关键步骤\n\n为了在 SAML 这样复杂且高风险的技术中建立信任，GitHub 团队采取了以下四个关键步骤：\n\n1.  **重新评估库选择**：评估 `ruby-saml` 库并对其实现进行审计。\n2.  **通过 A/B 测试验证新库**：构建一个系统，安全地评估和观察 SAML 处理逻辑的变化。\n3.  **模式验证与最小化攻击面**：通过收紧模式验证来降低输入处理的复杂性。\n4.  **限制漏洞影响**：使用多个解析器来降低风险。（此部分在原文中未完全展开）\n\n### 步骤一：重新评估库选择\n\n*   **为何转向社区支持的 `ruby-saml`**：\n    *   GitHub 认识到转向一个拥有强大社区支持的库的优势，可以与更广泛的开发者共同贡献。\n    *   `ruby-saml` 库（由 Sixto Martín 维护）被许多关键 SaaS 产品使用，并通过 `omniauth-saml` 广泛采用。\n    *   该库近期有活跃的漏洞报告和修复，并通过 GitHub Advisory Database、CVEs 和 Dependabot 进行更新，与 GitHub 现有的漏洞管理流程良好集成。这是自研实现无法获得的优势。\n*   **对 `ruby-saml` 的安全审计与测试**：\n    *   尽管转向新库并非易事，GitHub 仍与漏洞赏金团队、产品安全团队和 GitHub 安全实验室合作，进行了一系列严格的验证和测试活动。\n    *   包括安全审计、深入的代码分析和应用程序安全测试，并邀请了经验丰富的漏洞赏金研究员（Hacktocats）和 GitHub 安全实验室的研究员参与。\n    *   这些工作识别了 `ruby-saml` 库中的关键漏洞，并指出了可以应用于库的整体强化领域，以消除某些类别的漏洞。\n    *   然而，GitHub 意识到仅凭一次性测试和审计不足以完全信任新库，因为底层代码路径过于复杂。\n\n### 步骤二：通过 A/B 测试验证新库\n\n*   **GitHub.com SAML 流量的巨大规模与测试需求**：GitHub.com 每天处理约一百万个 SAML 有效载荷，是其支持的最广泛使用的外部认证形式。任何更改都需要高度的审查和测试。\n*   **`Scientist` 工具的应用**：\n    *   为了在评估 `ruby-saml` 的同时保持 SAML 处理代码的稳定性，GitHub 使用了其开源工具 `Scientist`。\n    *   `Scientist` 允许同时执行“控制”（现有代码）和“候选”（新代码），比较结果并记录差异，同时始终以控制代码的结果为准，并隔离候选代码中的故障，从而安全地进行实验。\n*   **`Scientist` 在 SAML 响应验证中的具体实践**：\n    *   主要关注 SAML 响应验证（即 Assertion Consumer Service - ACS URL），这是大多数漏洞发生的地方。\n    *   **粒度化发布门控**：`Scientist` 提供基于百分比的流量控制，GitHub 还增加了额外的功能标志，确保可以先通过自己的测试账户，再引入实际客户流量。\n    *   **可观察性**：利用 GitHub 的自定义实验仪表，将指标发送到 Datadog，并添加补充日志以生成更细粒度的验证数据，帮助调试库之间的差异。\n    *   **幂等性**：确保实验不会修改 SAML 流程中跟踪的状态（如 CSRF 令牌）。\n*   **A/B 测试如何帮助建立信心**：\n    *   **识别配置差异**：例如，在 2024 年 9 月，日志显示约 3% 的不匹配是由 SAML 颁发者验证差异引起的。发现 `ruby-saml` 会针对空字符串验证颁发者，而 GitHub 历史上的实现如果值为空或未设置则会跳过验证。为了处理这种遗留情况，GitHub 进行了更改，阻止 `ruby-saml` 配置空或 null 的颁发者值，从而允许库跳过验证。\n    *   **覆盖边缘案例**：通过实验，GitHub 能够让所有流量通过 `ruby-saml` 运行，长时间观察其性能，这对于建立覆盖所有边缘案例的信心至关重要。\n    *   **识别安全相关后果**：通过识别不同实现处理某些输入时的差异，GitHub 能够调查这些差异是否具有安全相关后果，并主动识别新旧实现中的不正确行为。\n    *   **优化实现**：例如，发现 `ruby-saml` 拒绝包含多个 SAML 断言的响应，而 GitHub 的实现则更宽松，这促使 GitHub 意识到其原有实现“做得太多”。\n\n### 步骤三：模式验证与最小化攻击面\n\n在深入研究更严格的输入验证之前，需要了解构成输入的关键因素：\n\n1.  **内嵌 XML 签名与文档结构的关系**：\n    *   SAML 的关键组成部分是 XML 签名规范，它提供了一种签署和验证 SAML 数据完整性的方法。SAML 主要依赖内嵌 XML 签名，即签名本身嵌入在其所覆盖的元素内部。\n    *   验证过程涉及查找签名、提取值、提取引用和摘要、验证摘要，然后验证完整性。\n    *   **核心问题**：为了处理使元素内容合法化的签名，必须首先解析元素的内容。SAML 数据的完整性与其文档结构相关联，但该文档结构在验证方式中扮演着关键角色。这种结构与完整性之间令人不安的关系可能被利用，并已多次被利用，例如 XML 签名包装攻击。\n    *   SAML 库通常通过查询文档并拒绝意外或模糊的输入形状来处理此问题，但这仍然需要在验证真实性之前信任文档，因此任何小错误都可能成为攻击目标。\n2.  **宽松的 SAML 模式定义**：\n    *   SAML 响应必须符合 SAML 2.0 XML 模式定义（XSD）。XSD 文件用于定义 XML 的结构，创建发送方和接收方之间关于元素序列、数据类型和属性的契约。\n    *   （文章在此处截断）",
+      "shortSummary": "GitHub 强化其 SAML 单点登录（SSO）实现，以提升系统信任度。面对自研代码的复杂性和风险，团队决定转向社区支持的 `ruby-saml` 库。他们通过严格的安全审计和 A/B 测试（使用 `Scientist` 工具）验证新库，识别并解决了配置差异和边缘案例。此外，还通过加强模式验证来缩小攻击面，以应对 XML 签名和宽松 SAML 模式带来的安全挑战。这些措施显著提升了 SAML 认证的安全性与稳定性。",
+      "translated_title": "GitHub 内部：我们如何强化 SAML 实现",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Maintaining and developing complex and risky code is never easy. See how we addressed the challenges of securing our SAML implementation with this behind-the-scenes look at building trust in our systems.</p>\n<p>The post <a href=\"https://github.blog/security/web-application-security/inside-github-how-we-hardened-our-saml-implementation/\">Inside GitHub: How we hardened our SAML implementation</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "GitHub 初学者指南：使用 GitHub Copilot 进行测试驱动开发 (TDD) (原标题: GitHub for Beginners: Test-driven development (TDD) with GitHub Copilot)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-for-beginners-test-driven-development-tdd-with-github-copilot/",
+      "pubDate": "Mon, 26 May 2025 13:00:00 +0000",
+      "isoDate": "2025-05-26T13:00:00.000Z",
+      "creator": "Kedasha Kerr",
+      "summary": "# GitHub 初学者指南：使用 GitHub Copilot 进行测试驱动开发 (TDD)\n\n本篇文章是“GitHub 初学者指南”系列的第七集，深入探讨了如何利用 GitHub Copilot 简化和自动化测试过程，特别是测试驱动开发（TDD）。\n\n## 引言\n\n测试是软件开发中不可或缺但通常繁琐的部分，尤其随着代码库的增长和复杂化。GitHub Copilot 能够帮助自动化这一过程，确保代码按预期运行。\n\n## 测试基础 (Testing 101)\n\n### 为什么测试很重要？\n\n测试的核心目的是确保您的代码能够按照预期工作。它帮助开发者验证功能的正确性，并及早发现潜在问题。\n\n![为什么测试很重要？确保代码按预期工作。](https://github.blog/wp-content/uploads/2025/05/01-testing-important.png?resize=1657%2C927)\n\n### 测试类型\n\n测试可以采取多种形式，包括：\n\n*   **验收测试 (Acceptance tests)：** 确保应用程序满足一组定义好的功能需求。\n*   **集成测试 (Integration tests)：** 验证应用程序能否与数据库、API 等各种系统进行有效通信。\n*   **单元测试 (Unit tests)：** 专注于将代码分解成小的、独立的“单元”，确保每个独立单元的功能都符合预期。本文主要侧重于单元测试。\n\n## 编写单元测试\n\n单元测试通过将代码分解为更小的、易于测试的块来工作。这有助于提高对整个应用程序在组装后能够正常工作的信心。单元测试的一大优势是其自动化能力，您可以通过一条命令运行数千个测试，从而快速了解应用程序的健康状况，并及时发现代码更改可能引入的意外问题。\n\n### 使用 GitHub Copilot 编写单元测试的步骤：\n\n1.  打开您的代码，并高亮您想要测试的特定部分（例如，一个函数）。\n2.  打开 Copilot Chat。\n3.  发送提示：`/tests add unit tests for my code`。\n4.  如果 Copilot 询问是否配置测试框架，选择“Dismiss”。\n5.  审查 Copilot 提供的计划和代码建议，确保您理解将要进行的更改。\n6.  点击代码建议顶部的“Add to new file”按钮，创建测试文件。\n7.  保存新文件。\n8.  在您的终端中运行命令（例如 `python -m pytest`）来执行测试。\n\n## 测试驱动开发 (TDD)\n\n测试驱动开发 (TDD) 是一种开发流程，您通过测试来驱动代码的开发。在使用 TDD 时，您首先编写测试，然后才创建实际的功能实现。这种方法需要调整开发思维，但带来了多项优势，例如让您有机会预先了解代码的行为，并确保所编写的测试能够准确地测试预期功能。\n\n### “红、绿、重构” (Red, Green, Refactor) 流程\n\nTDD 的一个核心概念是“红、绿、重构”循环：\n\n1.  **红 (Red)：** 首先创建测试，此时它们会失败（因为还没有对应的实现代码）。\n2.  **绿 (Green)：** 编写“刚好足够”的代码，使之前失败的测试通过。这意味着您已经实现了所需功能的最小部分。\n3.  **重构 (Refactor)：** 在测试通过后，对代码进行优化和清理。在此阶段，您会持续运行单元测试，以确保重构不会破坏任何现有功能。\n\n![红、绿、重构步骤：1. 先写测试 2. 测试失败（红！）3. 编写刚好足够的代码使测试通过 4. 重新运行测试使其通过（绿！）5. 重构和清理代码](https://github.blog/wp-content/uploads/2025/05/red_green_refactor.png?resize=1657%2C927)\n\n### GitHub Copilot 在 TDD 中的应用\n\nGitHub Copilot 能够有效地辅助 TDD 流程：\n\n*   **红阶段：** 您可以告诉 Copilot 预期的代码功能，让它基于这些信息生成测试。例如，您可以描述一个用户名验证函数的规则，Copilot 将生成相应的单元测试。此时，这些测试会因为没有实现代码而失败，进入“红”阶段。\n*   **绿阶段：** 接下来，您可以提示 Copilot 生成实现代码（例如，发送“Create the implementation”），它将生成使这些测试通过的代码。将此代码添加到您的项目中并重新运行测试，它们将通过，进入“绿”阶段。\n\n## 最佳实践\n\n请记住，单元测试本身也是代码。为了提高其可读性和可维护性，您应该遵循与生产代码相同的编码标准：\n\n*   为您的测试添加文档。\n*   保持测试代码的组织性。\n*   创建实用工具以加快测试编写速度。\n*   随着代码的更改及时更新您的测试。\n\n## 总结\n\n测试是开发中不可或缺的一部分。拥有像 GitHub Copilot 这样的工具，可以使测试编写变得不那么繁琐，从而提高代码质量，并让开发者有更多时间专注于编码中更具创造性的部分。GitHub Copilot 可免费使用。",
+      "shortSummary": "本文介绍了如何使用 GitHub Copilot 进行测试驱动开发 (TDD)。文章强调了测试的重要性，特别是单元测试，并详细说明了利用 Copilot 自动化单元测试的编写步骤。此外，文章还解释了 TDD 的“红、绿、重构”循环，并展示了 Copilot 如何辅助开发者在 TDD 流程中先生成测试（红阶段），再生成实现代码（绿阶段），从而提高开发效率和代码质量。Copilot 使测试编写更高效，让开发者能专注于核心编码。",
+      "translated_title": "GitHub 初学者指南：使用 GitHub Copilot 进行测试驱动开发 (TDD)",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/01-testing-important.png?resize=1657%2C927",
+          "alt": "A slide explaining 'Why are tests important? Ensures code is working as expected.'",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/red_green_refactor.png?resize=1657%2C927",
+          "alt": "A slide explaining Red, Green, Refactor steps:\n\n1. Write tests first\n2. Tests fail because there's no code (red!)\n3. Write just enough code to allow tests to pass\n4. Rerun the test to see it pass (green!)\n5. Refactor and clean up code",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/47188731?v=4&s=200",
+          "alt": "Kedasha Kerr",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>See how to use GitHub Copilot to engage in some test-driven development.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/github-for-beginners-test-driven-development-tdd-with-github-copilot/\">GitHub for Beginners: Test-driven development (TDD) with GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "使用 CVE-2025-0072 绕过 MTE (原标题: Bypassing MTE with CVE-2025-0072)",
+      "link": "https://github.blog/security/vulnerability-research/bypassing-mte-with-cve-2025-0072/",
+      "pubDate": "Fri, 23 May 2025 10:00:00 +0000",
+      "isoDate": "2025-05-23T10:00:00.000Z",
+      "creator": "Man Yue Mo",
+      "summary": "## 使用 CVE-2025-0072 绕过 MTE：ARM Mali GPU 驱动中的内核漏洞\n\n本文详细介绍了 CVE-2025-0072，这是一个在 ARM Mali GPU 驱动中发现的新漏洞。该漏洞允许恶意 Android 应用程序绕过内存标记扩展 (MTE) 并获得任意内核代码执行权限。MTE 是一种旨在防止内存损坏漏洞的高级内存安全功能，但此漏洞证明了即使在内核代码中，也存在绕过的可能性。\n\n### 漏洞概述\n\n*   **漏洞编号**：CVE-2025-0072\n*   **受影响组件**：ARM Mali GPU 驱动\n*   **影响**：绕过 MTE，实现任意内核代码执行\n*   **受影响设备**：使用 Command Stream Frontend (CSF) 架构的较新 Arm Mali GPU 设备，例如 Google Pixel 7、8 和 9 系列。\n*   **报告与修复**：\n    *   于 2024 年 12 月 12 日报告给 Arm。\n    *   在 Mali 驱动版本 r54p0 中修复，该版本于 2025 年 5 月 2 日公开发布，并包含在 Android 2025 年 5 月的安全更新中。\n\n### CSF 队列工作原理及漏洞根源\n\nArm Mali GPU 通过驱动中实现的 `kbase_queue` 对象与用户空间应用程序通信。这些队列通过一系列 `ioctl` 调用进行创建和绑定：\n\n1.  **创建队列**：使用 `KBASE_IOCTL_CS_QUEUE_REGISTER` 创建 `kbase_queue`。\n2.  **创建队列组**：使用 `KBASE_IOCTL_CS_QUEUE_GROUP_CREATE` 创建 `kbase_queue_group`。\n3.  **绑定队列**：使用 `KBASE_IOCTL_CS_QUEUE_BIND` 将 `kbase_queue` 绑定到 `kbase_queue_group`。此操作返回一个 `mmap_handle`，并将 `queue->bind_state` 设置为 `KBASE_CSF_QUEUE_BIND_IN_PROGRESS`。\n4.  **完成绑定**：用户应用程序必须使用返回的 `mmap_handle` 作为文件偏移量调用 `mmap`。这会触发 `kbase_csf_cpu_mmap_user_io_pages`，进而调用 `kbase_csf_alloc_command_stream_user_pages` 来分配 GPU 内存页（存储在 `queue->phys` 字段中）并将其映射到用户空间，最后将 `queue->bind_state` 设置为 `KBASE_CSF_QUEUE_BOUND`。\n5.  **内存释放**：当用户空间解除映射时，`kbase_csf_free_command_stream_user_pages` 会被调用来释放 `queue->phys` 中存储的页面。\n\n### 漏洞利用思路：页 Use-After-Free\n\n漏洞的核心在于利用 `queue->phys` 字段在用户空间映射后被修改的可能性，从而导致页面的 Use-After-Free (UAF) 漏洞。\n\n**利用步骤：**\n\n1.  **创建并绑定**：创建一个 `kbase_queue` 和一个 `kbase_queue_group`，然后将 `kbase_queue` 绑定到该组。\n2.  **首次映射**：调用 `mmap` 为 `kbase_queue` 创建 GPU 内存页（存储在 `queue->phys` 中）并映射到用户空间。\n3.  **终止队列组**：终止 `kbase_queue_group`。作为清理过程的一部分，这会解除 `kbase_queue` 的绑定，重置其 `queue->group` 字段为 `NULL`，并将其 `bind_state` 设置为 `KBASE_CSF_QUEUE_UNBOUND`。\n4.  **重新绑定**：创建另一个 `kbase_queue_group`，并将 *相同的* `kbase_queue` 绑定到这个新组。\n5.  **二次映射**：再次为该 `kbase_queue` 调用 `mmap`。这将分配新的 GPU 内存页，并覆盖 `queue->phys` 中现有的页。这些新页也被映射到用户空间。\n6.  **触发 UAF**：解除映射步骤 2 中创建的用户空间内存区域。此时，`kbase_csf_free_command_stream_user_pages` 会被调用来释放 `queue->phys` 中存储的页面。然而，由于 `queue->phys` 已经被步骤 5 中的新页覆盖，因此被释放的是这些新页。这些新页在被释放后，仍然被映射到用户空间（来自步骤 5 的映射），从而导致一个页 Use-After-Free 漏洞。\n\n![A diagram demonstrating how to free the new pages while unmapping an old region.](https://github.blog/wp-content/uploads/2025/05/bypassing1.png?resize=960%2C720)\n\n### 从 Use-After-Free 到内核代码执行\n\n获得页 UAF 后，攻击者可以重用这些已释放的页面作为 Mali GPU 的页表全局目录 (PGD)。\n\n*   **内存池分配**：`kbase_mem_pool_alloc_pages` 函数通过分层内存池进行分配：首先从当前 `kbase_mem_pool`，然后是 `pool->next_pool`，最后是内核的 buddy 分配器。\n*   **PGD 重用**：`pool->next_pool` 是 Mali 驱动管理的一个共享内存池，也用于分配 GPU 上下文使用的 PGD。通过精心安排内存池，可以使一个已释放的 `kbase_va_region` 后备页被重用为 GPU 上下文的 PGD。\n*   **内核代码执行**：一旦已释放的页面被重用为 PGD，用户空间映射就可以用于重写 GPU 的 PGD。这使得任何内核内存（包括内核代码）都可以被映射到 GPU，从而允许攻击者重写内核代码并执行任意内核代码。此外，它还允许读写任意内核数据，从而可以轻松修改进程凭据以获取 root 权限并禁用 SELinux。\n\n### MTE 绕过机制\n\n内存标记扩展 (MTE) 是 Arm 处理器上的一项安全功能，通过在 64 位指针的高位存储“标签”来检测内存损坏。当指针被解引用时，会检查指针标签与内存块中存储的标签是否一致，从而检测到损坏。\n\n![A diagram demonstrating how, by checking the tags on the pointer and the adjacent memory blocks at dereference time, the corrupted dereference can be detected.](https://github.blog/wp-content/uploads/2025/05/bypassing2.png?resize=1040%2C807)\n\nMTE 依赖于 Arm 架构 v8.5a 中引入的硬件加速指令，以及 Linux 内核中 SLUB 和 buddy 分配器的软件支持。\n\n尽管 MTE 旨在防止此类攻击，但此漏洞成功绕过了它。与之前报告的通过 GPU 访问已释放内存页的漏洞不同，此漏洞通过 *用户空间映射* 访问已释放的内存页。文章指出，最初认为这可能与 Mali GPU 驱动使用的自定义内存池 `kbase_mem_pool` 有关，但文章在此处中断，未能完全解释 MTE 绕过的具体细节。",
+      "shortSummary": "CVE-2025-0072 是 Arm Mali GPU 驱动中的一个漏洞，允许恶意 Android 应用绕过内存标记扩展 (MTE) 并实现任意内核代码执行。该漏洞利用了 Command Stream Frontend (CSF) 队列处理中的一个页 Use-After-Free (UAF) 缺陷。通过精心操作队列的绑定和解除绑定，攻击者可以在旧映射解除时释放新映射的页面，然后将这些已释放的页面重用为 GPU 页表全局目录 (PGD)，从而获得对内核内存的读写权限，最终实现内核代码执行。该漏洞影响 Pixel 7、8、9 等设备，并已在 Mali 驱动 r54p0 版本中修复。",
+      "translated_title": "使用 CVE-2025-0072 绕过 MTE",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/bypassing1.png?resize=960%2C720",
+          "alt": "A diagram demonstrating how to free the new pages while unmapping an old region.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/bypassing2.png?resize=1040%2C807",
+          "alt": "A diagram demonstrating how, by checking the tags on the pointer and the adjacent memory blocks at dereference time, the corrupted dereference can be detected.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/15773368?v=4&s=200",
+          "alt": "Man Yue Mo",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>In this post, I’ll look at CVE-2025-0072, a vulnerability in the Arm Mali GPU, and show how it can be exploited to gain kernel code execution even when Memory Tagging Extension (MTE) is enabled.</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/bypassing-mte-with-cve-2025-0072/\">Bypassing MTE with CVE-2025-0072</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "聚焦你的开源项目 (原标题: Shine a spotlight on your open source project)",
+      "link": "https://github.blog/open-source/shine-a-spotlight-on-your-open-source-project/",
+      "pubDate": "Fri, 23 May 2025 08:30:00 +0000",
+      "isoDate": "2025-05-23T08:30:00.000Z",
+      "creator": "Lee Reilly",
+      "summary": "# 聚焦你的开源项目：GitHub 推出两大展示机会\n\n为庆祝 #维护者月（Maintainer Month），GitHub 宣布为开源项目提供两大高调展示机会，分别在 WeAreDevelopers World Congress 和 GitHub Universe 大会上。申请现已开放，旨在帮助维护者们将其项目推向全球开发者社区。\n\n## 维护者月与项目展示机会\n\n五月是维护者月，旨在表彰那些为互联网提供动力的项目背后的贡献者。GitHub 借此机会，开放了两个备受瞩目的申请通道，让开源项目能够成为焦点，无论是关键的开发工具还是正在获得关注的周末副项目，都有机会向世界展示其成果。\n\n## 活动一：WeAreDevelopers World Congress 上的开源聚光灯\n\n*   **时间：** 2025年7月9日至11日\n*   **地点：** 德国柏林\n*   **申请截止日期：** 5月31日\n\nGitHub 将参加第十届 WeAreDevelopers World Congress，这是全球最大的开发者大会之一，预计将吸引超过15,000名工程师、贡献者和技术领袖。GitHub 将在展位中设立“开源聚光灯”专区，为开源项目提供一个专属空间，让参与者能够进行现场演示，展示其终端和代码库，获得真实世界的关注。\n\n**参与者将获得：**\n*   在 GitHub 展位内的现场演示空间。\n*   两张免费的参展商通行证，可探索整个大会。\n*   在超过15,000名开发者、决策者和潜在用户面前获得曝光。\n\n**现场图片：**\n![DevCycle在WeAreDevelopers World Congress的GitHub开源聚光灯展位](https://pic.twitter.com/cJSgRIRX4f)\n*DevCycle 在 WeAreDevelopers World Congress 的 GitHub 开源聚光灯展位，展示 OpenFeature 和功能标志。*\n\n## 活动二：GitHub Universe 上的开源专区\n\n*   **时间：** 2025年10月29日至30日\n*   **地点：** 美国旧金山\n*   **申请截止日期：** 7月31日\n\n“开源专区”是 GitHub Universe 大会中一个充满活力的区域，专门用于庆祝开源社区。这是项目维护者现场演示项目、分享故事并与来自世界各地的数千名开发者、贡献者和行业领袖建立联系的绝佳机会。去年，维护者们展示了从基于浏览器的VR到开源AI工具等各种项目。\n\n**参与者将获得：**\n*   项目在数千名开发者和决策者面前展示的机会。\n*   一个配备电源、Wi-Fi 和良好氛围的展位空间。\n*   两张免费通行证。\n*   如果来自较远地区，还可获得差旅津贴。\n\n## 参与意义与联系方式\n\n这些活动旨在庆祝维护者的工作并扩大其影响力。无论项目是 Python 包、硬件固件还是下一代AI开发工具，GitHub 都希望帮助维护者与最重要的社区——其他开发者——分享。\n\n如有任何疑问或想了解项目是否适合，请通过 opensourcezone@github.com 联系 GitHub 团队。",
+      "shortSummary": "GitHub为庆祝“维护者月”，推出两大机会让开源项目获得曝光：一是2025年7月在德国柏林举行的WeAreDevelopers World Congress上的“开源聚光灯”活动（5月31日截止申请），二是2025年10月在美国旧金山举行的GitHub Universe上的“开源专区”活动（7月31日截止申请）。项目维护者可获得现场演示空间、免费通行证及与数千名开发者交流的机会，旨在帮助他们展示并分享其项目。",
+      "translated_title": "聚焦你的开源项目",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Celebrate #MaintainerMonth with two big opportunities to showcase your open source project at GitHub Universe and WeAreDevelopers World Congress. Applications are open. Don’t miss out!</p>\n<p>The post <a href=\"https://github.blog/open-source/shine-a-spotlight-on-your-open-source-project/\">Shine a spotlight on your open source project</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Agent模式101：关于GitHub Copilot强大模式的一切 (原标题: Agent mode 101: All about GitHub Copilot’s powerful mode)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/agent-mode-101-all-about-github-copilots-powerful-mode/",
+      "pubDate": "Thu, 22 May 2025 19:15:57 +0000",
+      "isoDate": "2025-05-22T19:15:57.000Z",
+      "creator": "Alexandra Lietzke",
+      "summary": "GitHub Copilot的Agent模式是一种强大的、自主的、实时的同步协作工具，旨在帮助开发者自动化多步骤编码任务，从而提高效率并允许他们专注于更高级别的解决问题。\n\n### 什么是GitHub Copilot Agent模式？\n\nAgent模式是一个问题解决者，它理解用户的意图，构建解决方案，并不断迭代直到达到正确结果。它能够：\n\n*   分析代码库以掌握完整上下文。\n*   规划并执行多步骤解决方案。\n*   运行命令或测试。\n*   调用外部工具执行专业任务。\n*   提出架构改进建议。\n*   通过代理循环（包括规划、应用更改、测试和迭代）运行并完善自身工作。\n\n与仅仅响应请求不同，Agent模式主动朝着用户目标努力，用户定义结果，它决定最佳方法，并在需要时寻求反馈、测试解决方案并实时完善工作。它还能快速识别并自动修复错误。\n\n### Agent模式与其他AI编码工具的比较\n\n*   **Agent模式**：Copilot能够迭代自身代码，识别并自动修复错误。\n*   **GitHub Copilot编码代理**：一个自主的SWE代理，异步地代表用户工作，从解决问题到处理人工反馈。\n*   **代码补全**：Copilot的一项功能，在支持的IDE中提供自动补全式的建议。\n\n### GitHub Copilot Agent模式如何工作？\n\nAgent模式的核心是作为多种工具和变量（如用户提示和工作区）的协调器，通过一个系统提示来指导Copilot不断迭代其输出直到达到最终状态。\n\n![流程图](https://github.blog/wp-content/uploads/2025/05/how-it-works.png?resize=1600%2C774)\n\n当用户向Copilot Agent模式发送自然语言提示时，后端系统提示会对其进行增强，其中包含查询、工作区摘要结构、机器上下文和工具描述。具体流程如下：\n\n1.  用户向Copilot提供明确的最终结果要求。\n2.  Copilot解析问题，询问AI语言模型如何解决任务，然后开始工作。\n3.  Copilot监控第一次迭代的错误，并确定如何修复它们。\n4.  Agent模式自主使用各种工具来达到最终结果。\n5.  在运行命令和应用编辑后，Agent模式会检测语法错误、终端输出、测试结果和构建错误。根据结果，它会决定如何纠正，无论是通过进行额外编辑、终端命令还是执行工具调用。\n\n大型语言模型（LLM）拥有一套不断扩展的工具可供调用，每个工具都具有帮助Copilot完成任务的能力，并且用户可以控制Agent模式使用哪些工具。这些工具（如`read_file`、`edit_file`和`run_in_terminal`）为Copilot提供了详细的使用说明，使其能够搜索工作区、读取文件内容、运行终端命令、从编辑器获取错误并应用建议的更改等。\n\n用户不仅限于内置工具，还可以通过从模型上下文协议（MCP）服务器或扩展安装更多专业工具来扩展Agent模式的功能。MCP是一个开放标准，使AI模型能够通过统一接口与外部工具和服务交互。GitHub MCP服务器允许自动化GitHub工作流、提取和分析GitHub仓库数据、构建与GitHub生态系统交互的AI工具和应用程序。Agent模式与MCP的结合意味着LLM的知识在连接到用户的服务和数据源后将进一步扩展。\n\n### GitHub Copilot Agent模式的用例\n\nAgent模式为GitHub Copilot带来了代理工作流，在工作流中的任何任务中提供实时同步帮助。无论用户是让代理自由发挥，还是每一步都进行引导和控制，用户始终处于主导地位。一些常见的用例包括：\n\n*   重构代码\n*   将项目迁移到另一种编程语言或技术栈\n*   编写测试\n*   现代化遗留代码\n*   自动修复代码生成错误\n*   向应用程序添加新功能\n*   根据功能规范或UI草图原型化新应用\n*   实现非功能性需求或样板代码\n*   新功能实现的范围界定和规划\n*   非代码生成任务，如文档编写\n\n### 结合其他GitHub Copilot功能\n\nAgent模式虽然强大，但可以通过与其他GitHub Copilot功能结合来扩展其能力。例如：\n\n*   **自定义指令**：用户可以为Copilot提供自定义指令，使其所有响应都符合日常编码实践、工具和开发人员工作流，例如指定测试框架或单元测试的指导原则。\n*   **编辑模式（Edit mode）**：轻松在代码库的多个文件中进行编辑，适用于实现新功能、修复错误或重构代码。\n*   **询问模式（Ask mode）**：向Copilot提问以更好地理解代码库或技术概念，例如了解代码工作原理、集思广益软件想法或发现新技术。\n\n### 总结\n\n与任何其他开发者协作一样，提供越多的上下文和越具体的目标，从GitHub Copilot（尤其是Agent模式）获得的结果就越好。通过自定义指令或MCP集成扩展其功能，Agent模式可以适应用户的特定软件构建风格。由于Agent模式由LLM驱动，其建议受益于用户的审查，以确保代码按预期工作。Agent模式的显著之处在于其灵活性，用户可以根据自己的需求使用它，无论是构建原型应用、处理现有代码库，还是回答问题和自动化工作流的低级部分。",
+      "shortSummary": "GitHub Copilot的Agent模式是一种强大的自主协作工具，能理解自然语言提示，并自动执行多步骤编码任务。它能分析代码、规划解决方案、运行测试、检测并修复错误，并通过迭代完善自身工作。Agent模式可用于代码重构、原型开发、测试编写等多种场景，并通过外部工具和自定义指令进行扩展。它旨在帮助开发者自动化繁琐任务，从而专注于更高层次的问题解决。",
+      "translated_title": "Agent模式101：关于GitHub Copilot强大模式的一切",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/how-it-works.png?resize=1600%2C774",
+          "alt": "Flowchart diagram illustrating how a user interacts with Copilot, which communicates with a machine, workspace, and tools, all connected through a loop involving a large language model (LLM).",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/188614820?v=4&s=200",
+          "alt": "Alexandra Lietzke",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>A full look at agent mode in GitHub Copilot, including what it can do, when to use it, and best practices.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/agent-mode-101-all-about-github-copilots-powerful-mode/\">Agent mode 101: All about GitHub Copilot’s powerful mode</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "初级工程师的成长之道：技巧与洞察 (原标题: How to thrive as a junior engineer: Tips and insights)",
+      "link": "https://github.blog/developer-skills/career-growth/how-to-thrive-as-a-junior-engineer-tips-and-insights/",
+      "pubDate": "Wed, 21 May 2025 16:00:00 +0000",
+      "isoDate": "2025-05-21T16:00:00.000Z",
+      "creator": "Yelyzaveta Kramarenko",
+      "summary": "# 初级工程师的成长之道：技巧与洞察\n\n本文作者分享了她从初创公司到GitHub，在2.5年内从初级工程师成长为中级工程师的经验，旨在帮助早期职业工程师在任何公司取得成功。文章从个人成长和团队支持两个方面提供了宝贵的建议。\n\n## 初级工程师如何自我成长\n\n作为初级工程师，成长在于积极寻找学习机会并对自己的进步负责。以下是帮助作者快速进步的策略：\n\n### 1. 拥抱学习曲线\n*   **提问是优势而非弱点**：像海绵一样吸收知识，暴露自己不懂的地方以快速填补空白。\n*   **设定提问前的一小时限制**：在寻求帮助前，给自己一小时独立尝试解决问题，避免陷入无尽的挫败感。\n*   **关键问题**：建议初级工程师向导师或队友提问以下问题：\n    *   您见过初级工程师常犯的错误有哪些，我如何避免？\n    *   当事情不如预期时，您如何进行调试？\n    *   当所有任务都感觉很紧急时，我们如何确定优先级？\n    *   有哪些习惯或实践帮助您在职业生涯中提升？\n*   **自我反思**：花时间从错误中学习，并找到下次做得更好的方法。\n\n### 2. 让成长和进步可见\n*   **展示工作和进步至关重要**：尤其在大型公司，需要主动分享所学、克服的挑战、对文档的贡献或对流程的改进建议。\n*   **具体行动**：\n    *   更新未记录的功能文档并告知团队。\n    *   总结复杂的跨团队协作，方便他人后续跟进。\n    *   在内部沟通渠道（如Slack）分享解决的难题或提升效率的改进，并强调其影响。\n\n### 3. 通过沟通走向成功\n*   **清晰简洁的沟通**：确保进度、障碍和决策易于追踪。\n*   **分享与记录**：分享解决难题的技巧，记录跨团队讨论和决策，这会使团队、利益相关者和未来的自己受益。\n\n### 4. 建立人际网络\n*   **建立真实关系**：与同事建立牢固、真诚的关系。\n*   **寻求指导与贡献**：向资深工程师寻求指导，深入内部社区学习并贡献，进行跨团队咖啡聊天，并主动参与结对编程。\n*   **帮助他人**：分享知识，支持队友，这将提升你的可见度，并在绩效评估和晋升中发挥重要作用。\n\n### 5. 先求深度，再求广度\n*   **避免贪多嚼不烂**：不要试图一次性掌握所有技术，这会导致概念半懂不懂，进展缓慢。\n*   **专注于核心技能**：优先专注于当前所需技能，深入学习，打好基础后再扩展。\n\n### 6. 对抗“冒名顶替综合症”\n*   **识别并解决**：这种心理会悄悄侵蚀自信，阻碍协作、表达和自我主张。\n*   **应对策略**：向导师和同事寻求看法，记录自己的成就，并提醒自己成长源于拥抱过程，而非追求完美。\n\n## 团队如何帮助早期职业工程师成功\n\n帮助初级工程师成功，需要创造一个让他们感到被支持、被挑战并有信心成长的环境。\n\n### 1. 保持耐心，而非恼怒\n*   **理解学习过程**：初级工程师学习新概念可能感到不知所措，有时会忘记已提供的答案。\n*   **提供支持**：提供信息追踪方法，尝试用不同方式解释，进行动手实践，提供文章、视频等学习资源，或安排有挑战性的任务。\n\n### 2. 承认困难\n*   **正视挑战**：承认工作有难度，需要时间掌握，这会给初级工程师带来希望。\n*   **提供工具与指导**：不要轻描淡写地说“这很简单”或“直接做”，而是提供有用的工具或指引。\n*   **创造安全犯错环境**：让他们感到犯错是学习的一部分，鼓励他们自信地承担任务。\n\n### 3. 赋能初级队友\n*   **培养自力更生能力**：提供工具，鼓励他们通过搜索和探索来学习，但在他们遇到困难时提供支持。\n*   **引导而非直接给出答案**：引导他们自己找出解决方案。\n*   **循序渐进**：给予任务时逐步增加复杂性，同时确保他们获得所需支持，避免“自生自灭”的模式。\n\n### 4. 给予积极反馈\n*   **肯定进步**：当他们写出整洁的代码、熟练使用工具或做出明智决策时，及时肯定他们。\n*   **对抗“冒名顶替综合症”**：积极反馈能帮助他们看到自己的成长，保持动力，一点点鼓励都能产生巨大影响。\n\n## 总结\n\n作为开发者意味着不断学习和成长。无论是初级开发者还是导师，每一次经历都是提升自我的机会。文章鼓励读者探索GitHub博客上的职业成长资源。\n\n由 ![Yelyzaveta Kramarenko](https://avatars.githubusercontent.com/u/11159684?v=4&s=200) 软件工程师 III 撰写。\n\n探索更多来自GitHub：\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握GitHub所需的一切。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在GitHub上构建未来。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用GitHub的公司和工程团队。\n*   ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) Enterprise content：专为您策划的高管洞察。",
+      "shortSummary": "本文为初级工程师提供了成长指南。个人方面，应积极学习（多提问、从错误中学习）、展示工作成果、有效沟通、建立人际网络、专注于深度而非广度，并对抗“冒名顶替综合症”。团队方面，应耐心指导、承认工作难度、赋能初级队友并给予积极反馈。持续学习和成长是工程师职业生涯的关键。",
+      "translated_title": "初级工程师的成长之道：技巧与洞察",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/11159684?v=4&s=200",
+          "alt": "Yelyzaveta Kramarenko",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Plus, ways teammates and leaders can be better mentors for their new counterparts.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/career-growth/how-to-thrive-as-a-junior-engineer-tips-and-insights/\">How to thrive as a junior engineer: Tips and insights</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "GitHub Copilot：认识全新的编码代理 (原标题: GitHub Copilot: Meet the new coding agent)",
+      "link": "https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/",
+      "pubDate": "Mon, 19 May 2025 16:02:36 +0000",
+      "isoDate": "2025-05-19T16:02:36.000Z",
+      "creator": "Thomas Dohmke",
+      "summary": "## GitHub Copilot：认识全新的编码代理\n\nGitHub Copilot 推出了一款全新的编码代理，它直接嵌入 GitHub，旨在自动化和简化开发工作流程。\n\n### 代理的工作流程与启动\n\n*   **启动方式**：当您将 GitHub Issue 分配给 Copilot，或在 VS Code 中向其发出提示时，代理便会开始工作。\n*   **环境准备**：代理会启动一个安全且完全可定制的开发环境，该环境由 GitHub Actions 提供支持。\n*   **代码提交**：代理在工作过程中会将提交推送到一个草稿拉取请求（PR），并通过代理会话日志让用户能够全程追踪其每一步操作。\n*   **交互方式**：\n    *   您可以在 github.com、GitHub Mobile 或通过 GitHub CLI 分配 GitHub Issue 给 Copilot，就像分配给团队成员一样。\n    *   也可以通过 GitHub Copilot Chat 或 VS Code 中的 Copilot Chat 要求它打开一个拉取请求，例如 `@github Open a pull request to refactor this query generator into its own class`。\n*   **后台操作**：一旦 Issue 被分配，代理会添加一个 👀 表情符号反应，并在后台启动工作。它会启动虚拟机、克隆仓库、配置环境，并利用由 GitHub 代码搜索提供支持的先进检索增强生成（RAG）技术分析代码库。\n*   **透明度**：代理会定期将其更改作为 Git 提交推送到草稿 PR，并更新 PR 的描述。会话日志会显示代理的推理和验证步骤，便于追踪决策和发现问题。\n\n### 核心能力与优势\n\n*   **任务范围**：代理擅长处理测试完善的代码库中低到中等复杂度的任务，包括添加功能、修复错误、扩展测试、重构代码和改进文档。\n*   **效率提升**：它能够接手耗时但枯燥的任务，利用拉取请求、CI/CD 和所有现有工具，让开发者能够专注于更有趣、更高价值的工作。\n*   **外部集成**：通过 Model Context Protocol (MCP)，可以授予编码代理访问 GitHub 外部数据和能力。MCP 服务器可在仓库设置中配置，并且所有 GitHub 数据都可以从官方 GitHub MCP 服务器中提取。\n*   **视觉能力**：借助视觉模型，代理可以“看到”您分配给它的 GitHub Issue 中包含的图片，例如错误截图或新功能的模型图。\n*   **迭代与反馈**：当 Copilot 完成工作后，它会标记您进行审查，您可以留下评论要求其进行更改。代理会自动识别这些评论并提出代码更改。\n*   **上下文理解**：代理还会整合来自相关 Issue 或 PR 讨论的上下文，并遵循任何自定义的仓库指令，使其能够理解任务背后的意图和项目的编码标准。\n\n![Asking Copilot to iterate on its work by leaving a comment.](https://github.blog/wp-content/uploads/2025/05/copilot1.png?resize=1241%2C782)\n\n*   **赋能开发者**：该编码代理为人类开发者开启了拥有自己代理驱动团队的大门，所有成员并行工作，从而放大他们的工作成果。这使得开发者能够将通常会分散精力、阻碍更深入复杂工作的任务分配出去，从而专注于高价值的编码任务。\n\n### 安全性与控制\n\nGitHub Copilot 编码代理从设计之初就考虑了项目的安全性，并确保其工作在投入生产前经过审查。默认应用以下策略：\n\n*   **分支保护**：代理只能推送到它自己创建的分支，从而保护您的默认分支和团队创建的分支的安全。\n*   **审批流程**：要求代理打开拉取请求的开发者不能是批准该请求的人员，因此您在仓库中设置的任何“必需审查”规则都将得到遵守。代理的拉取请求在任何 CI/CD 工作流运行之前都需要人工批准，为构建和部署环境创建了额外的保护控制。\n*   **网络访问限制**：代理的互联网访问权限被严格限制在一个可定制的信任目的地列表中。\n*   **工作流批准**：GitHub Actions 工作流未经您的批准不会运行，这让您有机会对代理的代码进行抽查。\n*   **策略兼容**：现有的仓库规则集和组织策略也会被考虑在内。\n\n![Monitoring Copilot's thought process and reasoning with the agent logs.](https://github.blog/wp-content/uploads/2025/05/copilot2.png?resize=1600%2C1260)\n\n### 技术实现与可用性\n\n*   **计算环境**：所有 SWE 代理都需要一个计算环境来执行工作。对于 VS Code 中的代理模式，它可能是您的 PC 或 Mac 的 CPU，或像 GitHub Codespaces 这样的远程开发容器。对于此编码代理，它使用 GitHub Actions，这是世界上最大的 CI/CD 生态系统，拥有超过 25,000 个 Actions。\n*   **可用性**：新的编码代理已向所有 Copilot Enterprise 和 Copilot Pro+ 客户开放。\n    *   **启用方式**：您只需在希望使用代理的仓库中启用它。如果您是 Copilot Enterprise 用户，管理员还需要开启相关策略。\n    *   **IDE 支持**：现在可以在更多 IDE 中激活代理模式，包括 Xcode、Eclipse、Jetbrains 和 Visual Studio。\n*   **计费**：从 2025 年 6 月 4 日起，Copilot 编码代理每次模型请求将消耗一次高级请求。\n\n### GitHub Copilot 的使命\n\n无论是代码补全、下一编辑建议、聊天、代理模式，还是现在的编码代理，GitHub Copilot 的使命始终如一：让您保持在“心流”状态。它旨在完成您不想做的事情，从而让您有更多时间专注于您真正喜欢的事情，找回最初吸引您进入这个行业的创造火花。\n\n### 作者\n\n本文由 GitHub 首席执行官 Thomas Dohmke 撰写。\n\n![Thomas Dohmke](https://secure.gravatar.com/avatar/f9a3d6bee42f4503d3169861b9ecdfab5b2faebc73eb6344d2c3fa15727da799?s=200&d=mm&r=g)\n\n### 更多资源\n\n*   **文档**：\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs\n*   **GitHub**：\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub\n*   **客户案例**：\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories\n*   **企业内容**：\n    ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) Enterprise content",
+      "shortSummary": "GitHub Copilot推出全新编码代理，直接集成于GitHub，可处理低到中等复杂度的编码任务。用户通过分配Issue或提示启动代理，它将自动创建安全开发环境，提交代码至草稿PR，并支持人工审查。该代理利用GitHub Actions确保安全与合规，能理解图片和上下文，旨在自动化繁琐任务，让开发者专注于高价值的创造性工作。它已面向Copilot Enterprise和Copilot Pro+客户开放，并支持多种IDE。",
+      "translated_title": "GitHub Copilot：认识全新的编码代理",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/copilot1.png?resize=1241%2C782",
+          "alt": "Asking Copilot to iterate on its work by leaving a comment.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/copilot2.png?resize=1600%2C1260",
+          "alt": "Monitoring Copilot's thought process and reasoning with the agent logs.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://secure.gravatar.com/avatar/f9a3d6bee42f4503d3169861b9ecdfab5b2faebc73eb6344d2c3fa15727da799?s=200&d=mm&r=g",
+          "alt": "Thomas Dohmke",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Implementing features has never been easier: Just assign a task or issue to Copilot. It runs in the background with GitHub Actions and submits its work as a pull request.</p>\n<p>The post <a href=\"https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/\">GitHub Copilot: Meet the new coding agent</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "编码。创造。提交。欢迎来到 dev/core (原标题: Code. Create. Commit. Welcome to dev/core)",
+      "link": "https://github.blog/news-insights/company-news/code-create-commit-welcome-to-dev-core/",
+      "pubDate": "Fri, 16 May 2025 16:10:56 +0000",
+      "isoDate": "2025-05-16T16:10:56.000Z",
+      "creator": "Lavinia Sfetcu",
+      "summary": "## GitHub 推出全新 dev/core 系列商品：致敬开发者核心精神\n\nGitHub 全新推出的 dev/core 商品系列，旨在深入探讨“开发者意味着什么”这一核心问题。该系列旨在庆祝开发者的多层次体验，从代码的编写，到创造的世界，再到作为构建者、核心人物的开发者独有的身份。它不仅捕捉了开发者的精髓，也为 GitHub 的核心基础商品带来了令人兴奋的更新，真正做到了由开发者为开发者打造。\n\n### 核心商品亮点\n\n1.  **头部与足部：代码结构化穿搭**\n    *   `<header>` 帽和 `<footer>` 袜：专为熟悉代码库和穿搭的开发者设计。帽子象征着项目的开端，袜子则舒适地收尾，如同代码的起始与结束，完美呼应你的造型。\n\n2.  **基础款升级：经典与未来的融合**\n    *   灵感来源于广受欢迎的黑色 Invertocat 连帽衫，此次推出了两款全新升级版：\n        *   **ASCII Octocat 连帽衫**：以 ASCII 艺术形式重新诠释了标志性的 Octocat 吉祥物，致敬开发者根源。\n        *   **GitHub Copilot 连帽衫**：代表着你最喜爱的 AI 结对程序员，展望未来。\n    *   ![一位女士穿着带有 ASCII Octocat 的连帽衫，一位男士穿着 GitHub Copilot 连帽衫。](https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_HeaderFooterB-1.jpg?resize=1920%2C1080)\n\n3.  **创意表达：释放你的“Ctrl+Alt+Vibes”**\n    *   **扎染 T 恤**：这款扎染 T 恤旨在唤起你第一次构建项目时的回忆——代码可能粗糙，咖啡因在体内流淌，但梦想却无比宏大。它散发着原始、多彩的混乱感，充满创业精神、车库乐队的活力，以及“我在 2004 年的论坛上学习 CSS”的时代气息。\n    *   ![一位女士穿着扎染 T 恤。](https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_TieDye.jpg?resize=1920%2C1080)\n\n4.  **贡献图：你的成就，随身携带**\n    *   **贡献图托特包**：看着你的贡献图日复一日、方块方块地填满，每一次提交和突破都带来深深的满足感。这款托特包以 Invertocat 形状的贡献图来庆祝这份热爱，让你自豪地佩戴在身边。\n    *   ![一位女士手持一个带有 GitHub 贡献图（Invertocat 标志形状）的托特包。](https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_Tote.jpg?w=1024&resize=1920%2C1080)\n\n5.  **代码即衣：ASCII T 恤**\n    *   **ASCII T 恤**：这款 T 恤是对早期构建时代的致敬——那时文本就是你拥有的一切，也是你所需的一切。它直接致敬了开发的根源，每一行代码都是一个构建块。你可能在 thegithubshop.com 首页见过它，那里我们创建了你自己的可交互版本，可以旋转、摇晃、把玩，非常适合在站会变得无聊时解闷。\n    *   ![一位男士穿着 ASCII T 恤。](https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_TieDye-1.jpg?w=1024&resize=1920%2C1080)\n\n### 超越商品：更多开发者乐趣\n\nGitHub 商店不仅仅是一个购物平台，它还充满了有趣的开发者发现。除了商品本身，商店还添加了一个**隐藏的 CLI 功能**：在搜索栏中输入 `git` 后加一个空格，即可体验。此外，在 dev/core 系列中，点击 dev/core 标签，可以解锁一个工具调色板，自定义图片上的 ASCII 图案、大小和速度，创造新的模式。\n\n### 系列理念与优惠\n\ndev/core 系列不仅仅是商品，更是对每天塑造互联网的构建者、梦想家和提交者的致敬。从 ASCII 艺术的简洁线条到俏皮多彩的元素，每一件商品都经过精心设计。无论你是在提交代码、品尝咖啡，还是凝视终端的深渊，穿上这些商品，它们会懂你。\n\n**特别优惠**：即日起至 6 月 1 日，结账时使用代码“GITHUBBLOG15”可享受免费送货。同时，GitHub 也推出了几款新贴纸。\n\n立即访问 thegithubshop.com 探索 dev/core 系列。",
+      "shortSummary": "GitHub 推出全新“dev/core”商品系列，旨在庆祝开发者的多层次体验。该系列由开发者为开发者打造，商品包括 `<header>` 帽、`<footer>` 袜、ASCII Octocat 和 GitHub Copilot 连帽衫、扎染 T 恤以及贡献图托特包和 ASCII T 恤。商店还隐藏了 CLI 功能和图片交互定制等彩蛋。该系列不仅是商品，更是对构建者、梦想家和提交者的致敬。使用代码“GITHUBBLOG15”可享免费送货优惠。",
+      "translated_title": "编码。创造。提交。欢迎来到 dev/core",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_HeaderFooterB-1.jpg?resize=1920%2C1080",
+          "alt": "An image of a woman wearing a hoodie with the Octocat in ASCII and a man wearing a GitHub Copilot hoodie.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_TieDye.jpg?resize=1920%2C1080",
+          "alt": "An image of a woman wearing a tie dye tee shirt.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_Tote.jpg?w=1024&resize=1920%2C1080",
+          "alt": "A woman holding a tote bag with a GitHub contribution graph in the shape of the Invertocat logo.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_TieDye-1.jpg?w=1024&resize=1920%2C1080",
+          "alt": "A man wearing an ASCII tee shirt.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/54560767?v=4&s=200",
+          "alt": "Lavinia Sfetcu",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>The new GitHub Shop collection is here. We’re celebrating you.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/code-create-commit-welcome-to-dev-core/\">Code. Create. Commit. Welcome to dev/core</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Vibe 编程：成为 AI 开发者的路线图 (原标题: Vibe coding: Your roadmap to becoming an AI developer)",
+      "link": "https://github.blog/ai-and-ml/vibe-coding-your-roadmap-to-becoming-an-ai-developer/",
+      "pubDate": "Fri, 16 May 2025 16:00:00 +0000",
+      "isoDate": "2025-05-16T16:00:00.000Z",
+      "creator": "Gwen Davis",
+      "summary": "# 成为 AI 开发者的路线图\n\n本文旨在为有志成为 AI 开发者的个人提供一份全面的路线图，重点介绍所需掌握的知识、技能和工具，并利用 GitHub 上的现有资源。随着 AI 在医疗、自动驾驶和就业等领域的日益普及，预计到 2027 年，80% 的开发者将需要具备基本的 AI 技能，现在正是进入该领域的最佳时机。\n\n## 1. 学习核心编程语言和框架\n\n掌握正确的编程语言和工具是 AI 和机器学习开发的基础。\n\n*   **核心编程语言：**\n    *   **Python：** 因其简洁性和丰富的库支持而成为 AI 和机器学习的基石，适用于从数据预处理到模型部署的各种任务。\n    *   **Java：** 凭借其可扩展性和跨平台能力，常用于企业级应用和大型 AI 系统。\n    *   **C++：** 作为最快的编程语言之一，常用于性能关键型应用，如游戏 AI、实时模拟和机器人技术。\n*   **AI 框架：**\n    *   **TensorFlow：** 由 Google 开发，一个全面的框架，简化了 AI 模型的构建、训练和部署。\n    *   **Keras：** 构建于 TensorFlow 之上，用户友好，支持快速原型开发。\n    *   **PyTorch：** 因其灵活性而受到研究人员青睐，提供动态计算图和直观的调试工具。\n    *   **Scikit-learn：** 适用于传统机器学习算法，提供高效的数据分析和建模工具。\n*   **GitHub 学习资源：** GitHub Learning Lab、The Algorithms、TensorFlow Tutorials 和 PyTorch Examples 提供实践机会。GitHub Copilot 等工具提供实时编码辅助。\n\n## 2. 掌握机器学习\n\n机器学习 (ML) 是现代 AI 的驱动力，使系统能够从数据中学习并随时间改进性能。掌握 ML 技能对于技术领域的就业至关重要。\n\n*   **关键子领域：**\n    *   **深度学习：** 机器学习的一个子集，使用多层神经网络分析大型数据集中的复杂模式，驱动语音识别、自动驾驶汽车和生成式 AI 模型等进步。\n    *   **自然语言处理 (NLP)：** 使机器能够理解、解释和响应人类语言，应用于聊天机器人、情感分析和语言翻译工具。\n    *   **计算机视觉：** 专注于使机器处理和解释来自世界的视觉信息，如识别物体、分析图像和驾驶汽车。\n*   **GitHub 实践资源：** Awesome Machine Learning (工具和教程)、Keras (深度学习项目)、NLTK (自然语言处理) 和 OpenCV (计算机视觉) 等开源仓库。通过参与 Kaggle 竞赛解决方案或贡献带有“good first issue”标签的开源 AI 项目来获取实践经验。\n\n## 3. 建立 GitHub 作品集以展示技能\n\n一个强大的 GitHub 作品集能够突出您的技能和 AI 项目，使您在开发者社区中脱颖而出。\n\n*   **优化作品集的方法：**\n    *   **组织您的仓库：** 使用清晰的名称、详细的 README 文件和可复现工作的说明。\n    *   **展示您的最佳作品：** 突出 NLP 或计算机视觉等领域的项目，并使用标签提高可发现性。\n    *   **创建个人资料 README：** 用专业的 README 介绍自己，包括兴趣、技能和优秀项目。\n    *   **使用 GitHub Pages：** 构建个人网站来托管您的项目、案例研究或交互式演示。\n    *   **贡献开源：** 突出您的开源贡献，展示您的协作和技术专长。\n*   **相关指南：** 《构建令人惊叹的 GitHub 作品集》和《如何创建 GitHub 作品集》。\n\n## 4. 获得 GitHub Copilot 认证\n\n获得 GitHub Copilot 认证能够展示您利用 AI 驱动工具提升开发工作流程的专业知识，是向雇主、协作者和更广泛的开发者社区证明您技能的宝贵凭证。\n\n*   **入门步骤：**\n    *   **理解 GitHub Copilot：** 熟悉其功能，如实时代码建议、Visual Studio Code 中的代理模式、模型上下文协议 (MCP) 和跨多种编程语言生成样板代码。\n    *   **探索认证选项：** 通过 GitHub 认证门户了解认证计划，这些计划验证您有效使用 GitHub 工具的能力。\n    *   **准备考试：** 查阅 GitHub Copilot 官方文档，完成实践练习，并在实际项目中利用 Copilot 解决编码挑战。\n    *   **获得徽章：** 成功通过考试后，您将获得一个数字徽章，可在 LinkedIn、GitHub 个人资料或个人作品集中展示，从而提升您的简历。\n\n![图片 1](https://github.blog/wp-content/uploads/2025/05/meme.png?resize=503%2C764)\n![Gwen Davis](https://avatars.githubusercontent.com/u/94031472?v=4&s=200)\n![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg)",
+      "shortSummary": "成为 AI 开发者需要掌握核心编程语言（如 Python）和 AI 框架（如 TensorFlow）。深入学习机器学习的子领域，包括深度学习、自然语言处理和计算机视觉。通过在 GitHub 上构建和优化个人项目作品集来展示技能，并积极贡献开源。此外，获得 GitHub Copilot 认证能进一步证明您利用 AI 工具提升开发效率的能力，为您的职业发展提供有力支持。",
+      "translated_title": "Vibe 编程：成为 AI 开发者的路线图",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/meme.png?resize=503%2C764",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/94031472?v=4&s=200",
+          "alt": "Gwen Davis",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Learn how to go from curious coder to AI wizard—with a little help from GitHub.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/vibe-coding-your-roadmap-to-becoming-an-ai-developer/\">Vibe coding: Your roadmap to becoming an AI developer</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "我们致力于大规模提升开源软件可访问性的承诺 (原标题: Our pledge to help improve the accessibility of open source software at scale)",
+      "link": "https://github.blog/open-source/social-impact/our-pledge-to-help-improve-the-accessibility-of-open-source-software-at-scale/",
+      "pubDate": "Thu, 15 May 2025 08:00:00 +0000",
+      "isoDate": "2025-05-15T08:00:00.000Z",
+      "creator": "Ed Summers",
+      "summary": "## GitHub 承诺大规模提升开源软件可访问性\n\nGitHub 荣幸地签署了全球无障碍宣传日 (GAAD) 承诺，重申其在提升开源软件可访问性方面的坚定决心。此举旨在赋能残障人士贡献开源，增加开源辅助技术的可用性和普及，并提升主流开源项目的可访问性。\n\n### GAAD 的起源与 GitHub 的承诺\n\nGAAD 的理念最初由 Joe Devon 于 2011 年提出，旨在解决开发者在可访问性信息方面的不足。在 Jennison Asuncion 的协助下，首届 GAAD 于 2012 年 5 月举行，现已发展成为一项全球性的年度盛事。2020 年，GAAD 基金会发起 GAAD 承诺，旨在将可访问性融入开源项目的核心，GitHub 现已自豪地加入这一重要倡议。\n\n### GitHub 的三大相互依存目标\n\nGitHub 的承诺将聚焦于以下三个相互依存的目标：\n\n1.  **赋能残障人士贡献开源**\n    *   **重要性**：技术是现代生活不可或缺的一部分，全球约有 16%（13 亿）人口有残障。确保残障人士能够参与技术开发至关重要，这能增加技术对所有人的可用性。\n    *   **案例**：Becky Tyler，一位患有四肢瘫痪脑瘫的年轻女性，通过眼动控制电脑。她从玩 Minecraft 开始，因可访问性障碍而转向学习编程并贡献开源，现就读于邓迪大学应用计算专业。\n    *   **需移除的障碍**：包括键盘操作性不足、颜色对比度不够以及与辅助技术（如屏幕阅读器）不兼容等。\n\n2.  **增加免费开源辅助技术 (AT) 的可用性和普及**\n    *   **定义**：辅助技术是用于增强、维持或改善残障人士功能能力的任何物品、设备、软件或产品系统。\n    *   **挑战**：专有辅助技术通常非常昂贵，而残障人士的就业率和高学历比例相对较低。\n    *   **开源优势**：GitHub 平台消除了创建 AT 的财务和官僚障碍。开源许可允许任何人使用这些技术，并促成支持和改进 AT 的社区形成。\n    *   **案例**：NVDA 屏幕阅读器，由 Jamie Teh 和 Michael “Mick” Curran 创建，是一款免费、高质量的 Windows 屏幕阅读器，拥有庞大的盲人开发者社区和超过 25 万用户。\n    *   **需求**：需要更多像 NVDA 这样的免费开源 AT，并提高其在残障社区及其支持者（如护理人员、职业治疗师、言语治疗师等）中的认知度。\n\n3.  **提升主流开源项目的可访问性**\n    *   **影响**：全球软件运行高度依赖开源（90% 的公司使用开源，97% 的代码库包含开源，开源在全球的价值估计达 8.8 万亿美元）。因此，计算基础设施、框架和库在设计时必须考虑可访问性，以确保下游消费者也能访问。\n    *   **上游投资**：对上游开源项目的可访问性投资，不仅能使消费应用程序变得可访问，还能对下游项目产生指数级影响。反之，若上游项目缺乏可访问性，下游项目将难以或高成本地支持可访问性。\n    *   **额外益处**：流行的开源项目为整个软件行业设定趋势。当这些社区将可访问性作为核心要求时，它们会提升行业期望并教育整个行业的开发者。\n    *   **三个视角**：\n        *   **终端用户**：确保残障终端用户可以使用基于开源软件构建的应用程序和内容。\n        *   **消费者**：确保残障开发者和 IT 专业人员能够访问消费和构建开源项目所需的文档、视频和启用材料。\n        *   **贡献者**：确保残障开发者和其他贡献者能够加入开源社区，贡献并享受与志同道合的创作者群体学习和分享的益处。\n\n### GitHub 的战略\n\nGitHub 认识到可访问性是一个持续的实践，而非一次性任务。将采用以下策略推进目标：\n\n*   **改进平台**：过去三年，GitHub 大力投资平台可访问性，将其整合到产品开发生命周期 (PDLC) 中。自 2022 年 1 月以来，已解决了 4400 多个可访问性问题。未来将继续移除障碍，并在 PDLC 早期将可访问性“左移”，确保新功能默认可访问。\n*   **建立伙伴关系**：GitHub 呼吁整个科技行业加入，并特别渴望通过开源项目办公室 (OSPOs) 与私营、公共、学术和非政府组织合作。全球可访问性法规日益加强，各行业都将受益于开源可访问性的改进。GitHub 强调应“与”残障人士合作，而非“为”他们做，并邀请残障人士主导可访问性工作。\n*   **赋能开源社区**：GitHub 致力于帮助开源维护者建立多元包容、重视可访问性的社区，并根据社区规模提供支持，帮助其在可访问性之旅中迈向新阶段。\n\n### 展望\n\n将可访问性作为开源软件的核心原则是一项正在进行的旅程，GitHub 荣幸能成为其中一员。展望未来，GitHub 将组织一次“开源可访问性峰会”，为残障、可访问性和开源社区成员提供一个共同探讨目标和定义下一步行动的空间。更多详情将在 GitHub 博客上公布。\n\n### 相关图片\n\n*   Ed Summers 的头像：\n    ![Ed Summers](https://avatars.githubusercontent.com/u/108237890?v=4&s=200)\n*   Docs 图标：\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n*   GitHub 图标：\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n*   Customer stories 图标：\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n*   Enterprise content 图标：\n    ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg)",
+      "shortSummary": "GitHub 签署全球无障碍宣传日 (GAAD) 承诺，致力于大规模提升开源软件的可访问性。其核心目标是赋能残障人士贡献开源、增加开源辅助技术的可用性，并提升主流开源项目的可访问性。GitHub 将通过改进自身平台、建立行业伙伴关系以及赋能开源社区来实现这些目标，旨在构建一个更具包容性的技术生态系统，确保所有人都能参与和受益。未来还将举办开源可访问性峰会。",
+      "translated_title": "我们致力于大规模提升开源软件可访问性的承诺",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/108237890?v=4&s=200",
+          "alt": "Ed Summers",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>GitHub takes the Global Accessibility Awareness Day (GAAD) pledge.</p>\n<p>The post <a href=\"https://github.blog/open-source/social-impact/our-pledge-to-help-improve-the-accessibility-of-open-source-software-at-scale/\">Our pledge to help improve the accessibility of open source software at scale</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    }
+  ],
+  "lastUpdated": "2025-05-29T05:20:16.156Z"
+}
