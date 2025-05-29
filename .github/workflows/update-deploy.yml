@@ -1,8 +1,9 @@
 name: 更新数据并部署
 
 on:
-  schedule:
-    - cron: '0 */6 * * *'
+  # schedule:
+    # Disabled - runs too frequently
+    # - cron: '0 */6 * * *'
   push:
     branches: [main, dev]
   workflow_dispatch:

@@ -1,4 +1,4 @@
-import { config } from "@/config/rss-config"
+import { config, getMaxItemsForSource } from "@/config/rss-config"
 import type { FeedData, FeedItem } from "@/lib/types"
 
 /**
@@ -40,11 +40,14 @@ export async function getAllCachedSources(): Promise<string[]> {
 export async function mergeFeedItems(
   oldItems: FeedItem[] = [],
   newItems: FeedItem[] = [],
-  maxItems: number = config.maxItemsPerFeed,
+  sourceUrl?: string, // 新增参数：源URL，用于获取该源的配置
 ): Promise<{
   mergedItems: FeedItem[]
   newItemsForSummary: FeedItem[]
 }> {
+  // 获取最大条目数，如果没有提供sourceUrl则使用全局默认值
+  const maxItems = sourceUrl ? getMaxItemsForSource(sourceUrl) : config.maxItemsPerFeed;
+
   // 创建一个Map来存储所有条目，使用链接作为键
   const itemsMap = new Map<string, FeedItem>()
 

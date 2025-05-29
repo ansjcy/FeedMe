@@ -1,0 +1,94 @@
+name: Update Feeds - daily-huggingf-google-goog
+
+on:
+  schedule:
+    - cron: '41 6 * * *'
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Force update all sources'
+        required: false
+        default: 'false'
+      test_mode:
+        description: 'Test mode (use minimal items)'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: write
+
+concurrency:
+  group: "update-daily-huggingf-google-goog"
+  cancel-in-progress: true
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8.4.0
+      - run: pnpm install --frozen-lockfile
+      
+      # 只更新特定的源
+      - name: Update RSS feeds for Hugging Face 每日论文, Google 开发者博客, Google 研究博客
+        run: node scripts/update-feeds.js
+        env:
+          SELECTED_SOURCES: '["https://rsshub.rssforever.com/huggingface/daily-papers","https://rsshub.rssforever.com/google/developers/en","https://rsshub.rssforever.com/google/research"]'
+          TEST_MODE: ${{ github.event.inputs.test_mode || 'false' }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_API_BASE: ${{ secrets.LLM_API_BASE }}
+          LLM_NAME: ${{ secrets.LLM_NAME }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+          GEMINI_API_KEY_5: ${{ secrets.GEMINI_API_KEY_5 }}
+          GEMINI_API_KEY_6: ${{ secrets.GEMINI_API_KEY_6 }}
+          GEMINI_API_KEY_7: ${{ secrets.GEMINI_API_KEY_7 }}
+          GEMINI_API_KEY_8: ${{ secrets.GEMINI_API_KEY_8 }}
+          GEMINI_MODEL_NAME: ${{ secrets.GEMINI_MODEL_NAME }}
+      
+      # 提交更新的数据
+      - name: Commit updated data
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ./data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update RSS feeds: Hugging Face 每日论文, Google 开发者博客, Google 研究博客 [skip ci]"
+            git push
+          fi
+      
+      - uses: actions/upload-artifact@v4
+        with:
+          name: data-artifact-daily-huggingf-google-goog
+          path: ./data
+
+  # 只有主要工作流才负责部署
+  trigger-deployment:
+    needs: update-data
+    runs-on: ubuntu-latest
+    if: ${{ contains('41 6 * * *', '*/6') || contains('41 6 * * *', '*/3') || github.event_name == 'workflow_dispatch' }}
+    steps:
+      - name: Trigger main deployment workflow
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'deploy.yml',
+              ref: 'main'
+            });

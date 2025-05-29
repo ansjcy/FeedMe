@@ -7,7 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "update-feeds": "node scripts/update-feeds.js"
+    "update-feeds": "node scripts/update-feeds.js",
+    "generate-workflows": "node scripts/generate-workflows.js",
+    "setup-hooks": "node scripts/setup-git-hooks.js",
+    "validate-config": "node scripts/validate-config.js",
+    "test-feeds": "TEST_MODE=true node scripts/update-feeds.js",
+    "clean-data": "node scripts/clean-existing-data.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

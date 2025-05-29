@@ -57,7 +57,7 @@ async function getFetch() {
 }
 
 // 从配置文件中导入RSS源配置
-const { config } = require('../config/rss-config.js');
+const { config, getMaxItemsForSource, getEnabledSources } = require('../config/rss-config.js');
 
 // RSS解析器配置
 const parser = new Parser({
@@ -131,21 +131,39 @@ async function fetchFullContent(articleUrl) {
     
     const fetch = await getFetch();
     
-    // More realistic headers to avoid being blocked
-    const headers = {
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-      'Accept-Language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
-      'Accept-Encoding': 'gzip, deflate, br',
-      'DNT': '1',
-      'Connection': 'keep-alive',
-      'Upgrade-Insecure-Requests': '1',
-      'Sec-Fetch-Dest': 'document',
-      'Sec-Fetch-Mode': 'navigate',
-      'Sec-Fetch-Site': 'none',
-      'Sec-Fetch-User': '?1',
-      'Cache-Control': 'max-age=0'
-    };
+    // 基于测试结果，使用最小化的头部来绕过反爬虫保护
+    // 发现：machinelearningmastery.com 的 Cloudflare 会阻止多个头部的组合，
+    // 但允许无头部或单个头部的请求
+    let headers = {};
+    
+    // 针对已知的反爬虫站点，使用极简策略
+    const isAntiCrawlerSite = articleUrl.includes('machinelearningmastery.com') || 
+                             articleUrl.includes('medium.com') ||
+                             articleUrl.includes('towardsdatascience.com');
+    
+    if (isAntiCrawlerSite) {
+      // 对于反爬虫站点，使用最小化的User-Agent
+      headers = {
+        'User-Agent': 'Mozilla/5.0'
+      };
+      console.log(`检测到反爬虫站点，使用最小化头部策略`);
+    } else {
+      // 对于普通站点，使用完整的浏览器头部
+      headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'Accept-Language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'DNT': '1',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'none',
+        'Sec-Fetch-User': '?1',
+        'Cache-Control': 'max-age=0'
+      };
+    }
 
     const response = await fetch(articleUrl, {
       timeout: 15000, // 15秒超时
@@ -409,13 +427,13 @@ async function generateSummary(title, content, articleUrl) {
     d. 使用markdown进行格式化，让摘要易于阅读。使用title，bullets或编号列表来组织信息。
     e. 长度尽量控制在1000字以内。
     f. 保持客观，不添加个人观点。
-    g. **重要：文章内容中包含的图片已经以markdown格式嵌入，请在摘要中保持这些图片的位置和格式。**
+    g. **重要：只有当文章内容中包含有效的实际图片链接时，才在摘要中包含这些图片。如果图片链接是占位符（如 example.com）、无效链接或不存在，请完全省略这些图片，不要提及图片不可用或添加任何关于图片的说明。**
     h. 如果文章内容为空或不包含有效信息，请明确指出无法生成摘要，不要编造内容。
 
 请以JSON格式返回结果，格式如下：
 {
   "translated_title": "翻译后的标题",
-  "summary": "文章的中文摘要（保持原有的图片位置和markdown格式）"
+  "summary": "文章的中文摘要（只包含有效的图片，完全省略无效或占位符图片）"
 }
 
 文章标题：${title}
@@ -442,10 +460,17 @@ ${fullContent.slice(0, 15000)}
 
       const rawApiResponse = response.candidates[0].content.parts[0].text?.trim();
       if (!rawApiResponse) {
+        // Filter out placeholder images from the images array
+        const cleanedImages = uniqueImages.filter(img => 
+          img.url && 
+          !img.url.includes('example.com') && 
+          !img.url.includes('placeholder') &&
+          img.url.startsWith('http')
+        );
         return { 
           translatedTitle: title, 
           summary: "无法生成摘要（内容为空）。",
-          images: uniqueImages
+          images: cleanedImages
         };
       }
 
@@ -455,18 +480,46 @@ ${fullContent.slice(0, 15000)}
         
         // Ensure both fields exist and are strings.
         if (parsedResult && typeof parsedResult.translated_title === 'string' && typeof parsedResult.summary === 'string') {
+          // Post-process the summary to clean up placeholder images and text
+          let cleanedSummary = parsedResult.summary;
+          
+          // Remove any remaining placeholder image references
+          cleanedSummary = cleanedSummary.replace(/!\[.*?\]\(https?:\/\/example\.com\/.*?\)/g, '');
+          
+          // Remove Chinese placeholder text about images
+          cleanedSummary = cleanedSummary.replace(/\*?\(?\s*请注意：这里只是占位符[^)]*?\)\*?/g, '');
+          cleanedSummary = cleanedSummary.replace(/\*?\s*请注意：这里只是占位符[^*]*?\*/g, '');
+          
+          // Clean up multiple newlines and spaces
+          cleanedSummary = cleanedSummary.replace(/\n\s*\n\s*\n/g, '\n\n').trim();
+          
+          // Filter out placeholder images from the images array
+          const cleanedImages = uniqueImages.filter(img => 
+            img.url && 
+            !img.url.includes('example.com') && 
+            !img.url.includes('placeholder') &&
+            img.url.startsWith('http')
+          );
+          
           return {
             translatedTitle: parsedResult.translated_title,
-            summary: parsedResult.summary,
-            images: uniqueImages,
+            summary: cleanedSummary,
+            images: cleanedImages,
             contentSource: contentSource
           };
         } else {
           console.warn(`为标题 "${title}" 生成的结果JSON格式不正确或缺少字段. Raw:`, rawApiResponse.substring(0,200));
+          // Filter out placeholder images from the images array
+          const cleanedImages = uniqueImages.filter(img => 
+            img.url && 
+            !img.url.includes('example.com') && 
+            !img.url.includes('placeholder') &&
+            img.url.startsWith('http')
+          );
           return { 
             translatedTitle: title, 
             summary: "无法生成摘要（返回JSON格式错误）。",
-            images: uniqueImages
+            images: cleanedImages
           };
         }
       } catch (jsonError) {
@@ -507,42 +560,91 @@ ${fullContent.slice(0, 15000)}
           
           console.log(`手动提取成功 - 标题: "${extractedTitle}", 摘要长度: ${extractedSummary.length}`);
           
+          // Apply the same post-processing to extracted summary
+          let cleanedExtractedSummary = extractedSummary;
+          
+          // Remove any remaining placeholder image references
+          cleanedExtractedSummary = cleanedExtractedSummary.replace(/!\[.*?\]\(https?:\/\/example\.com\/.*?\)/g, '');
+          
+          // Remove Chinese placeholder text about images
+          cleanedExtractedSummary = cleanedExtractedSummary.replace(/\*?\(?\s*请注意：这里只是占位符[^)]*?\)\*?/g, '');
+          cleanedExtractedSummary = cleanedExtractedSummary.replace(/\*?\s*请注意：这里只是占位符[^*]*?\*/g, '');
+          
+          // Clean up multiple newlines and spaces
+          cleanedExtractedSummary = cleanedExtractedSummary.replace(/\n\s*\n\s*\n/g, '\n\n').trim();
+          
+          // Filter out placeholder images from the images array
+          const cleanedImages = uniqueImages.filter(img => 
+            img.url && 
+            !img.url.includes('example.com') && 
+            !img.url.includes('placeholder') &&
+            img.url.startsWith('http')
+          );
+          
           return {
             translatedTitle: extractedTitle,
-            summary: extractedSummary,
-            images: uniqueImages,
+            summary: cleanedExtractedSummary,
+            images: cleanedImages,
             contentSource: contentSource
           };
           
         } catch (extractError) {
           console.warn(`手动提取也失败: ${extractError.message}`);
+          // Filter out placeholder images from the images array
+          const cleanedImages = uniqueImages.filter(img => 
+            img.url && 
+            !img.url.includes('example.com') && 
+            !img.url.includes('placeholder') &&
+            img.url.startsWith('http')
+          );
           return { 
             translatedTitle: title, 
             summary: `无法生成摘要（JSON解析和手动提取都失败）。`,
-            images: uniqueImages
+            images: cleanedImages
           };
         }
       }
     } else if (response && response.promptFeedback && response.promptFeedback.blockReason) {
       console.warn(`为标题 "${title}" 生成摘要的请求被阻止: ${response.promptFeedback.blockReason}`);
+      // Filter out placeholder images from the images array
+      const cleanedImages = uniqueImages.filter(img => 
+        img.url && 
+        !img.url.includes('example.com') && 
+        !img.url.includes('placeholder') &&
+        img.url.startsWith('http')
+      );
       return { 
         translatedTitle: title, 
         summary: `无法生成摘要（请求被阻止: ${response.promptFeedback.blockReason}）。`,
-        images: uniqueImages
+        images: cleanedImages
       };
     }
+    // Filter out placeholder images from the images array
+    const cleanedImages = uniqueImages.filter(img => 
+      img.url && 
+      !img.url.includes('example.com') && 
+      !img.url.includes('placeholder') &&
+      img.url.startsWith('http')
+    );
     return { 
       translatedTitle: title, 
       summary: "无法生成摘要（无有效响应）。",
-      images: uniqueImages
+      images: cleanedImages
     };
     
   } catch (error) {
     console.error(`为标题 "${title}" 生成摘要时发生错误:`, error.message);
+    // Filter out placeholder images from the images array
+    const cleanedImages = uniqueImages.filter(img => 
+      img.url && 
+      !img.url.includes('example.com') && 
+      !img.url.includes('placeholder') &&
+      img.url.startsWith('http')
+    );
     return { 
       translatedTitle: title, 
       summary: "无法生成摘要（API请求失败）。",
-      images: uniqueImages
+      images: cleanedImages
     };
   }
 }
@@ -592,6 +694,27 @@ async function fetchRssFeed(url) {
     console.error("获取RSS源时出错:", error);
     throw new Error(`获取RSS源失败: ${error.message}`);
   }
+}
+
+// 获取是否为推送触发（而非定时触发）
+const isPushTrigger = process.env.GITHUB_EVENT_NAME === 'push';
+const isTestMode = process.env.TEST_MODE === 'true';
+
+console.log(`触发方式: ${isPushTrigger ? '推送触发' : '定时触发'}`);
+if (isPushTrigger || isTestMode) {
+  console.log('🧪 测试模式：使用最小条目数进行快速更新');
+}
+
+// 动态调整每个源的最大条目数
+function getEffectiveMaxItems(url) {
+  const configuredMax = getMaxItemsForSource(url);
+  
+  // 如果是推送触发或测试模式，使用最小条目数
+  if (isPushTrigger || isTestMode) {
+    return 1; // 测试时只获取1条
+  }
+  
+  return configuredMax;
 }
 
 // 合并新旧数据，并找出需要生成摘要的新条目
@@ -697,11 +820,14 @@ async function updateFeed(sourceUrl) {
     // 获取新数据
     const newFeed = await fetchRssFeed(sourceUrl);
 
+    // 获取该源的最大条目数配置
+    const maxItems = getEffectiveMaxItems(sourceUrl);
+    
     // 合并数据，找出需要生成摘要的新条目
     const { mergedItems, newItemsForSummary } = mergeFeedItems(
       existingData?.items || [],
       newFeed.items,
-      config.maxItemsPerFeed,
+      maxItems, // 使用该源特定的配置
     );
 
     // 计算最终需要处理的新条目（在maxItems限制后）
@@ -713,7 +839,7 @@ async function updateFeed(sourceUrl) {
     const newItems = finalNewItems.length;
     const existingItems = totalItems - newItems;
     
-    console.log(`发现 ${totalItems} 条总条目，其中 ${newItems} 条新条目需要生成摘要，${existingItems} 条已存在条目将跳过处理，来自 ${sourceUrl}`);
+    console.log(`发现 ${totalItems} 条总条目，其中 ${newItems} 条新条目需要生成摘要，${existingItems} 条已存在条目将跳过处理，来自 ${sourceUrl} (最大条目数: ${maxItems})`);
 
     // 为新条目生成摘要 (逐条处理)
     const itemsWithSummaries = [];
@@ -786,16 +912,32 @@ async function updateFeed(sourceUrl) {
   }
 }
 
-// 更新所有源
+// 更新所有源或指定源
 async function updateAllFeeds() {
-  console.log("开始更新所有RSS源");
+  // 检查是否有指定要更新的源
+  const selectedSourcesEnv = process.env.SELECTED_SOURCES;
+  let sourcesToUpdate = getEnabledSources();
+  
+  if (selectedSourcesEnv) {
+    try {
+      const selectedUrls = JSON.parse(selectedSourcesEnv);
+      sourcesToUpdate = config.sources.filter(source => 
+        selectedUrls.includes(source.url) && source.enabled !== false
+      );
+      console.log(`仅更新指定的 ${sourcesToUpdate.length} 个源: ${sourcesToUpdate.map(s => s.name).join(', ')}`);
+    } catch (error) {
+      console.error('解析 SELECTED_SOURCES 环境变量失败，将更新所有源:', error);
+    }
+  } else {
+    console.log(`开始更新所有 ${sourcesToUpdate.length} 个启用的RSS源`);
+  }
 
   const results = {};
   let totalProcessed = 0;
   let totalNewItems = 0;
   let totalExistingItems = 0;
 
-  for (const source of config.sources) {
+  for (const source of sourcesToUpdate) {
     try {
       const result = await updateFeed(source.url);
       results[source.url] = true;
@@ -812,7 +954,7 @@ async function updateAllFeeds() {
     }
   }
 
-  console.log("所有RSS源更新完成");
+  console.log("RSS源更新完成");
   console.log(`\n=== 处理统计 ===`);
   console.log(`总处理条目: ${totalProcessed}`);
   console.log(`新条目（需要API调用）: ${totalNewItems}`);
@@ -830,7 +972,6 @@ async function updateAllFeeds() {
 async function main() {
   try {
     const startTime = Date.now();
-    console.log("开始更新所有RSS源");
     
     await updateAllFeeds();
     

@@ -18,20 +18,9 @@ export default function Home() {
           </Link>
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <a
-              href="https://github.com/Seanium/feedme"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub 仓库"
-            >
-              <Button variant="outline" size="icon" className="relative">
-                <Github className="h-[1.2rem] w-[1.2rem]" />
-                <span className="sr-only">GitHub 仓库</span>
-              </Button>
-            </a>
           </div>
         </div>
-        <p className="text-muted-foreground mb-8">从多个信息源获取最新内容，由 AI 生成摘要</p>
+        <p className="text-muted-foreground mb-8">CY selected news and blogs</p>
 
         <div className="mb-8">
           <Suspense fallback={<div className="w-full md:w-[300px] h-10 bg-muted rounded-md animate-pulse" />}>

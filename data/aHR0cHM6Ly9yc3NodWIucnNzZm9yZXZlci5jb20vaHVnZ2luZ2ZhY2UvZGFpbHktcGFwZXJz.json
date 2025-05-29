@@ -1,0 +1,21 @@
+{
+  "sourceUrl": "https://rsshub.rssforever.com/huggingface/daily-papers",
+  "title": "Huggingface Daily Papers",
+  "description": "Huggingface Daily Papers - Powered by RSSHub",
+  "link": "https://huggingface.co/papers",
+  "items": [
+    {
+      "title": "对齐如何提升大型语言模型的多语言能力？一种语言神经元的视角 (原标题: How does Alignment Enhance LLMs' Multilingual Capabilities? A Language Neurons Perspective)",
+      "link": "https://arxiv.org/abs/2505.21505",
+      "pubDate": "Tue, 27 May 2025 13:59:52 GMT",
+      "isoDate": "2025-05-27T13:59:52.000Z",
+      "creator": "Shimao Zhang, Zhejian Lai, Xiang Liu, Shuaijie She, Xiao Liu, Yeyun Gong, Shujian Huang, Jiajun Chen",
+      "summary": "本文从语言神经元的角度探讨了对齐如何提升大型语言模型（LLMs）的多语言能力。主要观点和研究包括：\n\n*   **提出了一种新的细粒度神经元识别算法**，用于检测语言神经元（包括语言特定神经元和语言相关神经元）和语言无关神经元。\n*   **基于不同类型神经元的分布特征**，将LLMs的多语言推理过程划分为四个部分：多语言理解、共享语义空间推理、多语言输出空间转换和词汇空间输出。\n*   **系统地分析了对齐前后模型的不同类型神经元**，并分析了“自发多语言对齐”现象。\n*   **对不同类型的神经元进行了全面的研究**，为更好地理解多语言对齐和LLMs的多语言能力提供了实证结果和有价值的见解。",
+      "translated_title": "对齐如何提升大型语言模型的多语言能力？一种语言神经元的视角",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Multilingual Alignment is an effective and representative paradigm to enhance LLMs' multilingual capabilities, which transfers the capabilities from the high-resource languages to the low-resource languages. Meanwhile, some researches on language-specific neurons reveal that there are language-specific neurons that are selectively activated in LLMs when processing different languages. This provides a new perspective to analyze and understand LLMs' mechanisms more specifically in multilingual scenarios. In this work, we propose a new finer-grained neuron identification algorithm, which detects language neurons~(including language-specific neurons and language-related neurons) and language-agnostic neurons. Furthermore, based on the distributional characteristics of different types of neurons, we divide the LLMs' internal process for multilingual inference into four parts: (1) multilingual understanding, (2) shared semantic space reasoning, (3) multilingual output space transformation, and (4) vocabulary space outputting. Additionally, we systematically analyze the models before and after alignment with a focus on different types of neurons. We also analyze the phenomenon of ''Spontaneous Multilingual Alignment''. Overall, our work conducts a comprehensive investigation based on different types of neurons, providing empirical results and valuable insights for better understanding multilingual alignment and multilingual capabilities of LLMs."
+    }
+  ],
+  "lastUpdated": "2025-05-29T00:12:56.822Z"
+}

@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['data/**', 'components/**', 'lib/**', 'app/**', 'config/**', 'public/**']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8.4.0
+      - run: pnpm install --frozen-lockfile
+      
+      - name: Get repository name
+        run: echo "REPOSITORY_NAME=$(echo ${{ github.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
+      - name: Set environment variables for build
+        run: |
+          echo "NODE_ENV=production" >> $GITHUB_ENV
+          echo "GITHUB_ACTIONS=true" >> $GITHUB_ENV
+      - run: pnpm build
+        env:
+          REPOSITORY_NAME: ${{ env.REPOSITORY_NAME }}
+          NODE_ENV: ${{ env.NODE_ENV }}
+          GITHUB_ACTIONS: ${{ env.GITHUB_ACTIONS }}
+      - name: Add .nojekyll to output directory  
+        run: touch ./out/.nojekyll
+
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  deploy-vercel:
+    runs-on: ubuntu-latest
+    if: ${{ vars.ENABLE_VERCEL_DEPLOYMENT == 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: amondnet/vercel-action@v25.2.0
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: ./
+          vercel-args: '--prod --build-env VERCEL=1'
