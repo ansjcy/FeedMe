@@ -1,0 +1,517 @@
+{
+  "sourceUrl": "https://rsshub.rssforever.com/github/trending/weekly/any",
+  "title": "Trending repositories on GitHub this week · GitHub",
+  "description": "Trending repositories on GitHub this week · GitHub - Powered by RSSHub",
+  "link": "https://github.com/trending/?since=weekly&spoken_language_code=",
+  "items": [
+    {
+      "title": "Fosowl/智能代理搜索 (原标题: Fosowl/agenticSeek)",
+      "link": "https://github.com/Fosowl/agenticSeek",
+      "pubDate": "",
+      "isoDate": "",
+      "creator": "Fosowl",
+      "summary": "# AgenticSeek：私有、本地的Manus替代方案\n\n![Agentic Seek Logo](https://github.com/Fosowl/agenticSeek/raw/main/media/agentic_seek_logo.png)\n\n## 项目概述\nAgenticSeek 是一个100%本地化的AI助手，旨在作为Manus AI的替代方案。它支持语音交互，能够自主浏览网页、编写代码和规划任务，同时将所有数据保留在用户设备上。该项目专为本地推理模型设计，完全在用户硬件上运行，确保了完整的隐私和零云依赖。\n\n## AgenticSeek 的核心优势\n\n*   **完全本地化与隐私保护**：所有操作都在用户机器上进行，不涉及云端，不共享数据。用户的文档、对话和搜索记录都保持私密。\n*   **智能网页浏览**：AgenticSeek 可以自主浏览互联网，包括搜索、阅读、提取信息和填写网页表单，全程无需手动操作。\n*   **自主编程助手**：能够编写、调试和运行多种编程语言（如Python、C、Go、Java等）的代码，无需人工监督。\n*   **智能代理选择**：用户提出需求后，系统能自动识别并选择最适合该任务的AI代理，如同拥有一个随时待命的专家团队。\n*   **复杂任务规划与执行**：从旅行规划到复杂的项目，它能将大型任务分解为多个步骤，并利用多个AI代理协同完成。\n*   **语音交互能力**：提供清晰、快速、未来感的语音和语音转文本功能，让用户可以像与科幻电影中的个人AI对话一样进行交流。\n\n## 项目状态与免责声明\n\n*   **积极开发中**：该项目目前处于活跃开发阶段。代码/Bash环境尚未完全Docker化，但即将实现（可查看`docker_deployment`分支）。\n*   **部署警告**：不建议在网络或生产环境中部署。\n*   **开源性质**：AgenticSeek最初是一个个人实验项目，没有预设路线图或期望，目前正寻求开源贡献者而非雇员。\n*   **资金支持**：目前仅有少量资金支持（每月1美元）。项目团队非常感谢社区的贡献、反馈和耐心。\n\n## 安装指南\n\n### 前置条件\n确保已安装Chrome Driver、Docker和Python 3.10。强烈建议使用Python 3.10以避免依赖错误。\n\n### 安装步骤\n\n1.  **克隆仓库并设置**：\n    ```bash\n    git clone https://github.com/Fosowl/agenticSeek.git\n    cd agenticSeek\n    mv .env.example .env\n    ```\n2.  **创建虚拟环境**：\n    ```bash\n    python3 -m venv agent_seek_env\n    source agent_seek_env/bin/activate # Windows: agent_seek_env\\Scripts\\activate\n    ```\n3.  **安装软件包**：\n    确保Python、Docker、Docker Compose和Google Chrome已安装。推荐Python 3.10.0。\n    *   **自动安装（推荐）**：\n        *   Linux/Macos: `./install.sh`\n        *   Windows: `./install.bat`\n    *   **手动安装**：\n        *   **注意**：确保安装的ChromeDriver版本与您的Chrome浏览器版本匹配。可通过`google-chrome --version`查看。\n        *   **Linux**：更新软件包列表，安装依赖（`alsa-utils`, `portaudio19-dev`, `python3-pyaudio`, `libgtk-3-dev`等），安装`chromium-chromedriver`，然后`pip3 install -r requirements.txt`。\n        *   **Macos**：更新brew，安装`chromedriver`和`portaudio`，升级`pip`和`wheel`，然后`pip3 install -r requirements.txt`。\n        *   **Windows**：安装`pyreadline3`，手动安装`portaudio`（例如通过vcpkg或预编译二进制文件），然后`pip install pyaudio`，手动下载并安装ChromeDriver并将其路径添加到系统PATH，最后`pip3 install -r requirements.txt`。\n\n## 本地运行大型语言模型 (LLM) 设置\n\n### 硬件要求\n至少需要一块能够运行Qwen/Deepseek 14B模型的GPU。详细模型/性能建议请参阅FAQ。\n\n### 设置步骤\n\n1.  **启动本地提供商**：例如使用Ollama：`ollama serve`。\n2.  **更新 `config.ini` 文件**：\n    *   将`is_local`设置为`True`。\n    *   设置`provider_name`为支持的提供商（如`ollama`, `lm-studio`, `openai`）。\n    *   设置`provider_model`为提供商支持的LLM模型（推荐Qwen或Deepseek）。\n    *   配置`provider_server_address`、`agent_name`、`recover_last_session`、`save_session`、`speak`、`listen`、`work_dir`、`jarvis_personality`、`languages`等参数。\n    *   浏览器配置：`headless_browser`和`stealth_mode`。\n    *   **注意**：如果使用LM-studio运行LLM，请勿将`provider_name`设置为`openai`，应设置为`lm-studio`。某些提供商（如lm-studio）要求服务器地址前加`http://`。\n\n### 支持的本地提供商\n*   **ollama**：轻松在本地运行LLM。\n*   **lm-studio**：使用LM Studio在本地运行LLM。\n*   **openai**：使用兼容OpenAI API的本地服务（如llama.cpp server）。\n\n## 通过API运行设置\n\n### 设置步骤\n\n1.  **更新 `config.ini` 文件**：\n    *   将`is_local`设置为`False`。\n    *   设置`provider_name`和`provider_model`。\n    *   `provider_server_address`在此模式下不重要。\n2.  **导出API密钥**：例如：`export TOGETHER_API_KEY=\"xxxxx\"`。\n\n### 支持的API提供商\n*   **openai**：取决于具体API（可能非私有）。\n*   **deepseek**：Deepseek API（非私有）。\n*   **huggingface**：Hugging-Face API（非私有）。\n*   **togetherAI**：Together AI API（非私有）。\n*   **google**：Google Gemini API（非私有）。\n\n### 使用建议\n*   不建议使用`gpt-4o`或其他闭源AI模型，它们在网页浏览和任务规划方面的性能较差。\n*   使用Gemini进行编程/Bash操作可能会失败，因为它似乎会忽略项目为Deepseek R1优化过的格式提示。\n\n## 启动服务与运行AgenticSeek\n\n1.  **激活Python环境**（如果需要）：`source agent_seek_env/bin/activate`。\n2.  **启动所需服务**：这将启动`docker-compose.yml`中定义的所有服务，包括`searxng`、`redis`和`frontend`。\n    *   Macos/Linux: `sudo ./start_services.sh`\n    *   Windows: `start ./start_services.cmd`\n3.  **运行AgenticSeek**：\n    *   **选项1：CLI界面**：运行`python3 cli.py`。建议在`config.ini`中将`headless_browser`设置为`False`。\n    *   **选项2：Web界面**：首先启动后端`python3 api.py`，然后访问`http://localhost:3000/`即可看到Web界面。\n\n## 使用方法\n\n*   确保服务已通过`./start_services.sh`启动。\n*   通过`python3 cli.py`（CLI模式）或`python3 api.py`并访问`localhost:3000`（Web界面）运行AgenticSeek。\n*   **语音转文本**：在`config.ini`中设置`listen = True`（仅限CLI模式）。语音转文本功能默认禁用，仅支持英文。当启用时，它会监听代理名称作为触发关键词。建议使用常见的英文名作为代理名称以获得最佳识别效果。当转录开始出现时，说出代理名称唤醒它，然后清晰地说出您的查询，并以确认短语（如“do it”, “go ahead”, “thanks”等）结束请求。\n*   **查询示例**：\n    *   “用Python制作一个贪吃蛇游戏！”\n    *   “在网上搜索法国雷恩最好的咖啡馆，并将其中三家及其地址保存到`rennes_cafes.txt`中。”\n    *   “编写一个Go程序来计算一个数的阶乘，将其保存为`factorial.go`到你的工作区。”\n    *   “搜索我的`summer_pictures`文件夹中所有JPG文件，用今天的日期重命名它们，并将重命名后的文件列表保存到`photos_list.txt`中。”\n    *   “在线搜索2024年流行的科幻电影，选择三部今晚观看。将列表保存到`movie_night.txt`中。”\n    *   “搜索网络上2025年最新的AI新闻文章，选择三篇，并编写一个Python脚本来抓取它们的标题和摘要。将脚本保存为`news_scraper.py`，摘要保存到`/home/projects/ai_news.txt`中。”\n    *   “周五，在网上搜索一个免费的股票价格API，使用`supersuper7434567@gmail.com`注册，然后编写一个Python脚本，使用该API获取特斯拉的每日价格，并将结果保存到`stock_prices.csv`中。”\n*   **注意**：表单填写功能仍在实验中，可能失败。\n*   **明确指令**：由于代理路由系统仍是早期原型，可能无法总是根据您的查询分配正确的代理。因此，您应该非常明确地说明您的意图以及AI应如何操作。例如，如果您想进行网页搜索，不要说：“你知道一些适合独自旅行的好国家吗？”而应问：“进行网页搜索，找出哪些是适合独自旅行的最佳国家。”\n\n## 在自有服务器上运行LLM设置\n\n如果您有一台强大的计算机或服务器，但希望从笔记本电脑使用它，可以选择在远程服务器上运行LLM。\n\n### 服务器端设置\n1.  在将运行AI模型的“服务器”上，获取IP地址。\n2.  克隆仓库并进入`server/`文件夹：\n    ```bash\n    git clone --depth 1 https://github.com/Fosowl/agenticSeek.git\n    cd agenticSeek/llm_server/\n    ```\n3.  安装服务器特定依赖：`pip3 install -r requirements.txt`。\n4.  运行服务器脚本：`python3 app.py --provider ollama --port 3333`（可选择`ollama`或`llamacpp`作为LLM服务）。\n\n### 个人电脑端设置\n更改`config.ini`文件：\n*   将`is_local`设置为`False`。\n*   将`provider_name`设置为`server`。\n*   将`provider_model`设置为您选择的模型（如`deepseek-r1:70b`）。\n*   将`provider_server_address`设置为运行模型的机器的IP地址和端口（如`x.x.x.x:3333`）。\n\n## 配置说明\n\n以下是`config.ini`文件中主要参数的详细解释：\n\n*   `is_local`：布尔值，`True`表示在本地运行代理，`False`表示使用远程提供商。\n*   `provider_name`：字符串，要使用的LLM提供商（可选值：`ollama`, `server`, `lm-studio`, `deepseek-api`）。\n*   `provider_model`：字符串，使用的模型名称，例如`deepseek-r1:32b`。\n*   `provider_server_address`：字符串，服务器地址，例如本地为`127.0.0.1:11434`。对于非本地API，可设置为任意值。\n*   `agent_name`：字符串，代理的名称，例如`Friday`。用作语音转文本的触发词。\n*   `recover_last_session`：布尔值，`True`表示从上次会话恢复，`False`则不恢复。\n*   `save_session`：布尔值，`True`表示保存当前会话数据，`False`则不保存。\n*   `speak`：布尔值，`True`启用语音输出，`False`禁用。\n*   `listen`：布尔值，`True`启用语音输入，`False`禁用（仅适用于CLI模式）。\n*   `work_dir`：字符串，AI可以访问的工作目录，例如`/Users/user/Documents/`。\n*   `jarvis_personality`：布尔值，`True`表示使用更像“JARVIS”的个性（实验性），`False`则不使用。这仅改变提示文件。\n*   `languages`：字符串列表，支持的语言列表，LLM路由器正常工作所需。避免添加过多或过于相似的语言。\n*   `headless_browser`：布尔值，`True`表示在无头模式下运行浏览器（无可见窗口），`False`则显示窗口。建议仅在Web界面中使用无头模式。\n*   `stealth_mode`：布尔值，`True`表示使用`undetected_selenium`以减少浏览器检测。",
+      "shortSummary": "AgenticSeek是一个100%本地化、注重隐私的AI助手，作为Manus AI的替代方案。它能在用户设备上自主浏览网页、编写代码、规划任务，并支持语音交互。该项目完全在本地硬件上运行，无需云依赖，确保数据安全。它仍在积极开发中，提供详细的本地LLM和API配置选项，支持CLI和Web界面使用，旨在为用户提供一个私密且功能强大的个人AI代理。",
+      "translated_title": "Fosowl/智能代理搜索",
+      "images": [
+        {
+          "url": "https://github.com/Fosowl/agenticSeek/raw/main/media/agentic_seek_logo.png",
+          "alt": "Agentic Seek Logo",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://camo.githubusercontent.com/1b201020fa2f92b255e76ee5f4b688f3863f8eb4c206174eaccfb75e752a8a53/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f6c6162656c3d57656273697465266d6573736167653d4167656e7469635365656b26636f6c6f723d626c7565267374796c653d666c61742d737175617265",
+          "alt": "Visit AgenticSeek",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://camo.githubusercontent.com/b8aca6757b3afb9c067f24b6f7b08c350f1c500199efeaf3f094d943b930a40b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d47504c2d2d332e302d677265656e",
+          "alt": "License",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://camo.githubusercontent.com/76464400d65162855e285f00e09548aa7607253fe2c10193469e53d436b15c4d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446973636f72642d4a6f696e25323055732d3732383944413f6c6f676f3d646973636f7264266c6f676f436f6c6f723d7768697465",
+          "alt": "Discord",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://camo.githubusercontent.com/bb69697f1cb8ca8ff8b0ee170fd1e26ee4e146138424b9562f3123e3a068a76c/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f75726c2f68747470732f747769747465722e636f6d2f666f736f776c2e7376673f7374796c653d736f6369616c266c6162656c3d557064617465253230253430466f736f776c",
+          "alt": "Twitter",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://camo.githubusercontent.com/201d0d6c81d53a77461c65d8eaf57d3ba1bcef2f5939cc95f27e4a701afc2a02/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f466f736f776c2f6167656e7469635365656b3f7374796c653d736f6369616c",
+          "alt": "GitHub stars",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.com/Fosowl/agenticSeek/raw/main/media/chromedriver_readme.png",
+          "alt": "alt text",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://camo.githubusercontent.com/ee51d06ba1b397256bb8935752bd4ca97a9afc48607a8b0121e8840eb85f25b9/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d466f736f776c2f6167656e7469635365656b26747970653d44617465",
+          "alt": "Star History Chart",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<img src=\"https://opengraph.githubassets.com/ff66e5367ed0a064ce0a0bde227272955be3f4566ded4d78c4dcf2ce4fe31afa/Fosowl/agenticSeek\" referrerpolicy=\"no-referrer\"><br>Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. <br><br>Language: Python <br>Stars: 11979 <br>Forks: 990"
+    },
+    {
+      "title": "全员AI/OpenHands (原标题: All-Hands-AI/OpenHands)",
+      "link": "https://github.com/All-Hands-AI/OpenHands",
+      "pubDate": "",
+      "isoDate": "",
+      "creator": "All-Hands-AI",
+      "summary": "## OpenHands：少写代码，多做创造\n\n![Logo](https://github.com/All-Hands-AI/OpenHands/raw/main/docs/static/img/logo.png)\n\n### 引言\n\nOpenHands（前身为OpenDevin）是一个由AI驱动的软件开发代理平台，旨在帮助开发者实现“少写代码，多做创造”。OpenHands的AI代理能够执行人类开发者所能完成的任何任务，包括修改代码、运行命令、浏览网页、调用API，甚至从StackOverflow复制代码片段。\n\n### 核心功能与能力\n\n*   **全能型AI代理**：能够像人类开发者一样进行代码修改、命令执行、网页浏览、API调用等。\n*   **提高效率**：通过自动化开发任务，帮助用户减少编码工作量，提升创造力。\n\n### 如何开始使用\n\n1.  **OpenHands 云服务**：\n    *   最便捷的入门方式。\n    *   新用户可获得50美元的免费积分。\n2.  **本地运行**：\n    *   可通过Docker在本地系统上运行OpenHands。\n    *   提供了详细的Docker拉取和运行命令示例。\n    *   **推荐LLM提供商**：Anthropic的Claude Sonnet 4 (anthropic/claude-sonnet-4-20250514) 效果最佳，但也支持其他多种选项。\n    *   **访问地址**：本地运行后，可在 `http://localhost:3000` 访问应用程序。\n    *   **安全警告**：在公共网络上部署时，建议参考“强化Docker安装指南”以增强安全性。\n\n![App screenshot](https://github.com/All-Hands-AI/OpenHands/raw/main/docs/static/img/screenshot.png)\n\n3.  **其他运行方式**：\n    *   连接到本地文件系统。\n    *   以脚本化的无头模式运行。\n    *   通过友好的命令行界面（CLI）进行交互。\n    *   通过GitHub Action处理带标签的问题。\n    *   **重要提示**：OpenHands设计用于单用户本地工作站，不适用于多租户部署，因为它不提供内置的认证、隔离或可扩展性。如需多租户环境部署，请联系官方获取高级部署选项。\n\n### 设计合作伙伴计划\n\nOpenHands邀请企业用户加入其设计合作伙伴计划。参与者将获得商业功能的早期访问权，并有机会为产品路线图提供宝贵意见。\n\n### 文档\n\n![Ask DeepWiki](https://camo.githubusercontent.com/e7d4bb1a32530e373bb53fbe8eea825440ad27c7531d8f144d561acdd20c093a/68747470733a2f2f6465657077696b692e636f6d2f62616467652e737667)\n\nOpenHands提供全面的文档（docs.all-hands.dev），涵盖了如何使用不同的LLM提供商、故障排除资源以及高级配置选项。\n\n### 社区参与\n\nOpenHands是一个社区驱动的项目，欢迎所有人的贡献。主要的沟通和参与渠道包括：\n\n*   **Slack工作区**：讨论研究、架构和未来开发。\n*   **Discord服务器**：社区运营，用于一般讨论、问题和反馈。\n*   **GitHub Issues**：查看正在处理的问题或提交新想法。\n\n更多社区信息和贡献细节可在 `COMMUNITY.md` 和 `CONTRIBUTING.md` 文件中找到。\n\n### 项目进展\n\n![Star History Chart](https://camo.githubusercontent.com/9302342ad390c0bee60d4c5e085cf5fbc66dc6ff5dc95b9efaa4c167a5ea09c7/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d416c6c2d48616e64732d41492f4f70656e48616e647326747970653d44617465)\n\n项目路线图每月更新，可在维护者会议结束后查看。\n\n### 许可与致谢\n\nOpenHands项目采用MIT许可证分发。项目由众多贡献者共同构建，并基于其他开源项目，对此深表感谢。详细的开源项目列表和许可证信息可在 `CREDITS.md` 文件中找到。\n\n### 引用\n\n提供了关于OpenHands的学术引用信息，对应于arXiv上的一篇论文：《OpenHands: An Open Platform for AI Software Developers as Generalist Agents》。",
+      "shortSummary": "OpenHands（前身为OpenDevin）是一个AI驱动的软件开发代理平台，旨在帮助开发者“少写代码，多做创造”。其AI代理能执行代码修改、命令运行、网页浏览、API调用等多种开发任务。用户可通过OpenHands云服务或本地Docker部署快速开始。项目提供详细文档和活跃社区支持，并采用MIT许可证。它主要面向单用户使用，不适用于多租户环境。",
+      "translated_title": "全员AI/OpenHands",
+      "images": [
+        {
+          "url": "https://github.com/All-Hands-AI/OpenHands/raw/main/docs/static/img/logo.png",
+          "alt": "Logo",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.com/All-Hands-AI/OpenHands/raw/main/docs/static/img/screenshot.png",
+          "alt": "App screenshot",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://camo.githubusercontent.com/e7d4bb1a32530e373bb53fbe8eea825440ad27c7531d8f144d561acdd20c093a/68747470733a2f2f6465657077696b692e636f6d2f62616467652e737667",
+          "alt": "Ask DeepWiki",
+          "title": "Autogenerated Documentation by DeepWiki",
+          "position": 3
+        },
+        {
+          "url": "https://camo.githubusercontent.com/9302342ad390c0bee60d4c5e085cf5fbc66dc6ff5dc95b9efaa4c167a5ea09c7/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d416c6c2d48616e64732d41492f4f70656e48616e647326747970653d44617465",
+          "alt": "Star History Chart",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://opengraph.githubassets.com/04cf200000fbf52f1e351ebd9e346130bc4897f51becc6033620fe1472b74f85/All-Hands-AI/OpenHands",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<img src=\"https://opengraph.githubassets.com/04cf200000fbf52f1e351ebd9e346130bc4897f51becc6033620fe1472b74f85/All-Hands-AI/OpenHands\" referrerpolicy=\"no-referrer\"><br>🙌 OpenHands: Code Less, Make More <br><br>Language: Python <br>Stars: 56685 <br>Forks: 6369"
+    },
+    {
+      "title": "microsoft/WSL",
+      "link": "https://github.com/microsoft/WSL",
+      "pubDate": "",
+      "isoDate": "",
+      "creator": "microsoft",
+      "summary": "# Windows Subsystem for Linux (WSL) 存储库介绍\n\n![WSL logo](https://github.com/microsoft/WSL/raw/master/Images/Square44x44Logo.targetsize-256.png)\n\nWindows Subsystem for Linux (WSL) 是一个强大的工具，允许用户在 Windows 系统上直接运行未经修改的 Linux 命令行工具、实用程序和应用程序，而无需传统虚拟机或双启动设置的额外开销。\n\n## 主要功能与安装\n\n*   **核心功能**：WSL 旨在提供一个高效的环境，让 Linux 工具和应用能够无缝集成到 Windows 工作流中。\n*   **快速安装**：用户可以通过在 Windows 命令行中运行 `wsl --install` 命令来立即安装 WSL。\n*   **详细文档**：微软提供了全面的 WSL 文档页面，涵盖了最佳实践、WSL 概述以及更多设置和使用信息。\n\n## 相关开源存储库\n\nWSL 项目还维护着几个相关的开源存储库，以支持其生态系统：\n\n*   `microsoft/WSL2-Linux-Kernel`：这是 WSL 中附带的 Linux 内核的存储库。\n*   `microsoft/WSLg`：该存储库提供了在 WSL 中运行 Linux GUI 应用程序的支持。\n*   `microsoftdocs/wsl`：这是 WSL 官方文档的存储库，可在 aka.ms/wsldocs 访问。\n\n## 贡献与社区\n\n*   **欢迎贡献**：该项目欢迎各种类型的贡献，包括代码功能开发、错误修复、文档更正以及设计提案等。\n*   **贡献指南**：在开始贡献之前，建议阅读项目的《贡献者指南》。\n*   **开发者文档**：开发者可以通过阅读开发者文档，了解如何从源代码构建 WSL 及其架构细节。\n*   **行为准则**：本项目已采纳微软开源行为准则，以确保社区环境的积极和包容。\n\n## 商标、隐私与遥测\n\n*   **商标使用**：项目可能包含微软或其他第三方的商标或标志。微软商标的使用需遵循其商标和品牌指南，修改版本不得引起混淆或暗示微软赞助。第三方商标的使用则需遵循其各自政策。\n*   **隐私与遥测**：\n    *   **数据收集**：应用程序会记录基本的诊断数据（遥测），这些数据可能被微软用于提供服务和改进产品。\n    *   **遥测关闭**：用户可以根据存储库中的说明关闭遥测功能。\n    *   **用户数据责任**：如果软件中的某些功能允许您和微软从您的应用程序用户那里收集数据，您必须遵守适用法律，包括向用户提供适当的通知以及微软隐私声明的副本（链接：https://go.microsoft.com/fwlink/?LinkID=824704）。\n    *   **同意**：使用该软件即表示您同意这些数据收集和使用实践。",
+      "shortSummary": "Windows Subsystem for Linux (WSL) 允许用户在 Windows 上直接运行 Linux 命令行工具和应用程序，无需传统虚拟机开销。用户可通过 `wsl --install` 快速安装。项目包含用于 Linux 内核和 GUI 应用支持的相关开源存储库。WSL 欢迎社区贡献，并遵循微软开源行为准则。软件会收集基本诊断数据（遥测），但用户可选择关闭，并需注意用户数据收集的隐私责任。",
+      "translated_title": "microsoft/WSL",
+      "images": [
+        {
+          "url": "https://github.com/microsoft/WSL/raw/master/Images/Square44x44Logo.targetsize-256.png",
+          "alt": "WSL logo",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://opengraph.githubassets.com/32b35380a90b605475ac35886ce8cf832a6108fb600f8c8f30c942e9ee8a1f65/microsoft/WSL",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<img src=\"https://opengraph.githubassets.com/32b35380a90b605475ac35886ce8cf832a6108fb600f8c8f30c942e9ee8a1f65/microsoft/WSL\" referrerpolicy=\"no-referrer\"><br>Windows Subsystem for Linux <br><br>Language: C++ <br>Stars: 27733 <br>Forks: 1311"
+    },
+    {
+      "title": "MCP注册中心 (原标题: modelcontextprotocol/registry)",
+      "link": "https://github.com/modelcontextprotocol/registry",
+      "pubDate": "",
+      "isoDate": "",
+      "creator": "modelcontextprotocol",
+      "summary": "## MCP注册中心概述\n\nMCP注册中心（Model Context Protocol Registry）是一个社区驱动的服务，旨在为模型上下文协议（MCP）服务器提供集中式的注册服务。\n\n### 项目简介\n\n*   **名称**：MCP注册中心\n*   **开发状态**：该项目目前处于早期开发阶段，以开放形式构建。\n*   **目标**：提供一个集中式存储库，用于MCP服务器条目，从而实现对各种MCP实现及其相关元数据、配置和功能的发现与管理。\n\n### 核心功能\n\nMCP注册中心提供以下主要功能：\n\n*   **RESTful API**：用于管理MCP注册条目，支持列表、获取、创建、更新和删除操作。\n*   **服务监控**：提供健康检查端点，便于服务状态监控。\n*   **环境配置**：支持多种环境配置。\n*   **优雅关机**：具备优雅处理服务关机的功能。\n*   **数据库支持**：支持MongoDB和内存数据库。\n*   **API文档**：提供全面的API文档，通过Swagger/OpenAPI进行交互式访问。\n*   **分页支持**：在列出注册条目时支持分页。\n\n### 快速入门\n\n**先决条件**：\n\n*   Go 1.18或更高版本\n*   MongoDB\n*   Docker（可选，但推荐用于开发）\n\n**使用Docker Compose运行**：\n\n这是启动注册中心最简单的方式，它将设置MCP注册服务，导入初始数据，并在本地Docker环境中运行MongoDB。\n\n1.  构建Docker镜像：`docker build -t registry .`\n2.  使用Docker Compose运行服务和MongoDB：`docker compose up`\n\n服务将在端口8080上暴露。\n\n**本地构建和运行**：\n\n如果不想使用Docker，可以直接使用Go构建和运行服务。\n\n1.  构建可执行文件：`go build ./cmd/registry`\n2.  确保MongoDB在本地运行。服务默认运行在`http://localhost:8080`。\n\n### 项目结构\n\n项目采用清晰的模块化结构：\n\n*   `api/`：OpenAPI规范\n*   `cmd/`：应用程序入口点\n*   `config/`：配置文件\n*   `internal/`：私有应用程序代码（包括HTTP服务器、请求处理、配置管理、数据模型和业务逻辑）\n*   `pkg/`：公共库\n*   `scripts/`：实用脚本\n*   `tools/`：命令行工具，包括`publisher/`（用于向注册中心发布MCP服务器的工具）\n\n### API文档与端点\n\n*   **API文档访问**：可以通过`/v0/swagger/index.html`访问交互式Swagger UI，提供所有端点的完整参考和测试功能。\n*   **主要API端点**：\n    *   `GET /v0/health`：返回服务的健康状态。\n    *   `GET /v0/servers`：列出MCP注册服务器条目，支持分页（`limit`和`cursor`查询参数）。\n    *   `GET /v0/servers/{id}`：根据唯一标识符检索特定MCP服务器条目的详细信息。\n    *   `POST /v0/publish`：向注册中心发布新的MCP服务器条目，需要通过Bearer令牌进行身份验证。\n    *   `GET /v0/ping`：一个简单的ping端点，返回环境配置信息。\n\n### 配置\n\n服务可以通过环境变量进行配置，例如：\n\n*   `MCP_REGISTRY_APP_VERSION`：应用程序版本\n*   `MCP_REGISTRY_COLLECTION_NAME`：MongoDB集合名称\n*   `MCP_REGISTRY_DATABASE_NAME`：MongoDB数据库名称\n*   `MCP_REGISTRY_DATABASE_URL`：MongoDB连接字符串\n*   `MCP_REGISTRY_GITHUB_CLIENT_ID` / `MCP_REGISTRY_GITHUB_CLIENT_SECRET`：GitHub App客户端凭据\n*   `MCP_REGISTRY_LOG_LEVEL`：日志级别\n*   `MCP_REGISTRY_SEED_FILE_PATH` / `MCP_REGISTRY_SEED_IMPORT`：种子数据导入路径和是否在首次运行时导入\n*   `MCP_REGISTRY_SERVER_ADDRESS`：服务器监听地址\n\n### 测试\n\n可以通过运行测试脚本`./scripts/test_endpoints.sh`来验证API端点，也可以指定要测试的特定端点。\n\n### 许可与贡献\n\n项目的许可和贡献指南分别在`LICENSE`和`CONTRIBUTING`文件中详细说明。",
+      "shortSummary": "MCP注册中心是一个为模型上下文协议（MCP）服务器提供集中注册服务的项目。它允许发现和管理MCP实现及其元数据。该服务提供RESTful API，支持服务器条目的列表、获取、发布等操作。它支持MongoDB数据库，可通过Docker或本地Go环境运行，并提供全面的API文档。项目目前处于早期开发阶段，旨在简化MCP服务器的发现和管理。",
+      "translated_title": "MCP注册中心",
+      "images": [
+        {
+          "url": "https://opengraph.githubassets.com/47b10a4b4ffdb4e421be0b5558c3fc2ac753cdc0971e8ea828b5069336cf68aa/modelcontextprotocol/registry",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<img src=\"https://opengraph.githubassets.com/47b10a4b4ffdb4e421be0b5558c3fc2ac753cdc0971e8ea828b5069336cf68aa/modelcontextprotocol/registry\" referrerpolicy=\"no-referrer\"><br>A community driven registry service for Model Context Protocol (MCP) servers. <br><br>Language: Go <br>Stars: 1299 <br>Forks: 82"
+    },
+    {
+      "title": "微软/R&D-Agent (原标题: microsoft/RD-Agent)",
+      "link": "https://github.com/microsoft/RD-Agent",
+      "pubDate": "",
+      "isoDate": "",
+      "creator": "microsoft",
+      "summary": "# 微软R&D-Agent：领先的机器学习工程代理\n\nR&D-Agent 是一个由微软开发的AI代理，旨在自动化工业研发过程中最关键和最有价值的方面，尤其专注于数据驱动的场景，以简化模型和数据的开发。其核心方法论包含两个关键组件：“R”（Research，提出新想法）和“D”（Development，实现这些想法）。\n\n## 性能表现\nR&D-Agent 在 MLE-bench 上表现卓越，该基准测试通过使用来自75个Kaggle竞赛的数据集，全面评估AI代理在真实世界机器学习工程任务中的性能。目前，R&D-Agent 是 MLE-bench 上表现最佳的机器学习工程代理。\n\n| 代理版本 | Low == Lite (%) | Medium (%) | High (%) | All (%) |\n| :----------------------- | :---------------- | :--------------- | :--------------- | :-------------- |\n| R&D-Agent o1-preview | 48.18 ± 2.49 | 8.95 ± 2.36 | 18.67 ± 2.98 | 22.4 ± 1.1 |\n| R&D-Agent o3(R)+GPT-4.1(D) | 51.52 ± 6.21 | 7.89 ± 3.33 | 16.67 ± 3.65 | 22.45 ± 2.45 |\n| AIDE o1-preview | 34.3 ± 2.4 | 8.8 ± 1.1 | 10.0 ± 1.9 | 16.9 ± 1.1 |\n\n*   **o3(R)+GPT-4.1(D) 版本**：旨在减少每次循环的平均时间，并通过无缝集成研究代理（o3）与开发代理（GPT-4.1）来利用成本效益高的后端大型语言模型（LLM）组合。\n*   **MLE-bench 复杂度分类**：\n    *   **Low==Lite**：经验丰富的ML工程师在2小时内（不含模型训练时间）能给出合理解决方案。\n    *   **Medium**：2到10小时。\n    *   **High**：超过10小时。\n\n## 最新动态与功能\n*   **技术报告发布**：提供了整体框架描述和在MLE-bench上的结果。\n*   **R&D-Agent-Quant 发布**：将R&D-Agent应用于量化交易。\n*   **LiteLLM 后端支持**：全面支持LiteLLM作为后端，可集成多个LLM提供商。\n*   **Kaggle 场景发布**：发布了Kaggle Agent，提供新功能。\n*   **社区支持**：已创建微信群和Discord聊天频道。\n*   **数据科学代理预览**：展示了正在开发中的数据科学代理的进展。\n\n## 核心理念与应用场景\nR&D-Agent 的目标是构建一个能够自动化数据驱动研发的代理，具体能力包括：\n*   **阅读真实世界材料**：从报告、论文等中提取关键公式、感兴趣的特征和模型描述。\n*   **实现提取的公式**：将提取的公式（如特征、因子和模型）转化为可运行的代码。\n*   **提出新想法**：基于当前知识和观察提出新想法，并通过学习反馈和知识来改进性能。\n\n该项目在数据驱动场景的两个关键领域——模型实现和数据构建中，主要扮演两种角色：**Copilot（副驾驶）**和**Agent（代理）**。\n\nR&D-Agent 的潜在应用场景广泛，包括：\n*   **自动化量化工厂**：自动进行量化交易。\n*   **数据挖掘代理**：迭代地提出数据和模型，并通过从数据中获取知识来实现它们。\n*   **研究副驾驶**：自动阅读研究论文/财务报告，并实现模型结构或构建数据集。\n*   **Kaggle 代理**：自动进行模型调优和特征工程，以在竞赛中取得更好成绩。\n\n## 快速开始\n用户可以通过以下步骤快速体验R&D-Agent：\n\n1.  **Docker 安装**：确保已安装Docker，并配置当前用户无需sudo即可运行Docker命令。\n2.  **创建 Conda 环境**：\n    *   `conda create -n rdagent python=3.10`\n    *   `conda activate rdagent`\n3.  **安装 R&D-Agent**：\n    *   `pip install rdagent`\n4.  **健康检查**：\n    *   `rdagent health_check`（检查Docker安装和UI端口占用情况）\n5.  **配置**：\n    *   在 `.env` 文件中配置API密钥和模型，支持OpenAI API、Azure OpenAI以及LiteLLM后端。需要支持 `ChatCompletion json_mode` 和 `embedding query` 功能。\n6.  **运行应用**：\n    *   提供多种预设的演示场景，例如：\n        *   量化交易（因子/模型演化）：`rdagent fin_factor` / `rdagent fin_model`\n        *   医疗预测模型演化：`rdagent med_model`\n        *   从财务报告中提取因子：`rdagent fin_factor_report`\n        *   模型研发副驾驶（论文/报告）：`rdagent general_model <Your paper URL>`\n        *   Kaggle 模型调优与特征工程：`rdagent kaggle --competition <your competition name>` (需配置Kaggle API和chromedriver)\n7.  **监控结果**：\n    *   通过运行 `rdagent ui --port 19899 --log_dir <your log folder>` 命令监控运行日志。\n\n## 包含的图片\n\n*   ![CI](https://github.com/microsoft/RD-Agent/actions/workflows/ci.yml/badge.svg)\n*   ![CodeQL](https://github.com/microsoft/RD-Agent/actions/workflows/github-code-scanning/codeql/badge.svg)\n*   ![Dependabot Updates](https://github.com/microsoft/RD-Agent/actions/workflows/dependabot/dependabot-updates/badge.svg)\n*   ![Lint PR Title](https://github.com/microsoft/RD-Agent/actions/workflows/pr.yml/badge.svg)\n*   ![Release.yml](https://github.com/microsoft/RD-Agent/actions/workflows/release.yml/badge.svg)\n*   ![Platform](https://camo.githubusercontent.com/ec95a9315e09a85e8157f8a3c009c6b4df0d69d69906dde1501790d7fd1afc9b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706c6174666f726d2d4c696e75782d626c7565)\n*   ![PyPI](https://camo.githubusercontent.com/18c8cc7b413abe900055f5491fc41b9e75977756222be7cca167ea4d40eeaab2/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f72646167656e74)\n*   ![PyPI - Python Version](https://camo.githubusercontent.com/5efa052408367f3814a15ad89856d21b871a26a723e253f1477e27396e6fc9be/68747470733a2f2f696d672e736869656c64732e696f2f707970692f707976657273696f6e732f72646167656e74)\n*   ![Release](https://camo.githubusercontent.com/6db4d4d458fe3973d73e6b48f87c8e2473aa864a7c803937901a5f92fc3eb532/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f6d6963726f736f66742f52442d4167656e74)\n*   ![GitHub](https://camo.githubusercontent.com/bd37cece6cc43815d5f220d7706bf960c43dbd6b01f04cb697064ce2ec7c333f/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d6963726f736f66742f52442d4167656e74)\n*   ![pre-commit](https://camo.githubusercontent.com/0d057bf51eafb5183bd4dfd1e62deabe4d3cae00c54930c829ec8e6aa131ef0a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7072652d2d636f6d6d69742d656e61626c65642d627269676874677265656e3f6c6f676f3d7072652d636f6d6d6974)\n*   ![Checked with mypy](https://camo.githubusercontent.com/94ee3fdd3e1d5ecd6d95a0f8258f37ac1e77f040ccd0a7ad64b6b6828445aa84/68747470733a2f2f7777772e6d7970792d6c616e672e6f72672f7374617469632f6d7970795f62616467652e737667)\n*   ![Ruff](https://camo.githubusercontent.com/051a04ae958f4a1a5d6444df4cdc520305eef93d5028e6d4c7cd16efa3136cd4/68747470733a2f2f696d672e736869656c64732e696f2f656e64706f696e743f75726c3d68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f61737472616c2d73682f727566662f6d61696e2f6173736574732f62616467652f76322e6a736f6e)\n*   ![Chat](https://camo.githubusercontent.com/428a1f7a91d7df544fdd76c7d40e53a305bb0bf5a38b596db008cbde9e13f763/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636861742d646973636f72642d626c7565)\n*   ![Documentation Status](https://camo.githubusercontent.com/0e218b08d82fad8cde8bfd54b0b0041ccd3651052d4079403b66145ba3a3333b/68747470733a2f2f72656164746865646f63732e6f72672f70726f6a656374732f72646167656e742f62616467652f3f76657273696f6e3d6c6174657374)\n*   ![Readthedocs Preview](https://github.com/microsoft/RD-Agent/actions/workflows/readthedocs-preview.yml/badge.svg)\n*   ![arXiv](https://camo.githubusercontent.com/62532e102ce240754e97d5de6aa91173f1dac74919baf213096421120f3e7fa3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f61725869762d323530352e31343733382d3030666630302e737667)\n*   ![Our focused scenario](https://github.com/microsoft/RD-Agent/raw/main/docs/_static/scen.png)\n*   ![Watch the demo](https://github.com/microsoft/RD-Agent/raw/main/docs/_static/demo.png)",
+      "shortSummary": "微软的R&D-Agent是一个领先的AI代理，专注于自动化机器学习工程任务。它在MLE-bench基准测试中表现最佳，利用“研究”（提出想法）和“开发”（实现想法）双重机制，自动化数据驱动的研发流程。R&D-Agent可应用于量化交易、数据挖掘、研究辅助和Kaggle竞赛等场景，旨在通过阅读材料、实现代码和迭代优化来提升研发效率。",
+      "translated_title": "微软/R&D-Agent",
+      "images": [
+        {
+          "url": "https://github.com/microsoft/RD-Agent/actions/workflows/ci.yml/badge.svg",
+          "alt": "CI",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.com/microsoft/RD-Agent/actions/workflows/github-code-scanning/codeql/badge.svg",
+          "alt": "CodeQL",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.com/microsoft/RD-Agent/actions/workflows/dependabot/dependabot-updates/badge.svg",
+          "alt": "Dependabot Updates",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.com/microsoft/RD-Agent/actions/workflows/pr.yml/badge.svg",
+          "alt": "Lint PR Title",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.com/microsoft/RD-Agent/actions/workflows/release.yml/badge.svg",
+          "alt": "Release.yml",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://camo.githubusercontent.com/ec95a9315e09a85e8157f8a3c009c6b4df0d69d69906dde1501790d7fd1afc9b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706c6174666f726d2d4c696e75782d626c7565",
+          "alt": "Platform",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://camo.githubusercontent.com/18c8cc7b413abe900055f5491fc41b9e75977756222be7cca167ea4d40eeaab2/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f72646167656e74",
+          "alt": "PyPI",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://camo.githubusercontent.com/5efa052408367f3814a15ad89856d21b871a26a723e253f1477e27396e6fc9be/68747470733a2f2f696d672e736869656c64732e696f2f707970692f707976657273696f6e732f72646167656e74",
+          "alt": "PyPI - Python Version",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<img src=\"https://opengraph.githubassets.com/66de5e3549285de2d86921e61d6a2259cc2eb0f9b2477901b31f0aeed9b634ba/microsoft/RD-Agent\" referrerpolicy=\"no-referrer\"><br>Research and development (R&amp;D) is crucial for the enhancement of industrial productivity, especially in the AI era, where the core aspects of R&amp;D are mainly focused on data and models. We are committed to automating these high-value generic R&amp;D processes through R&amp;D-Agent, which lets AI drive data-driven AI. 🔗https://aka.ms/RD-Agent-Tech-Report <br><br>Language: Python <br>Stars: 5194 <br>Forks: 461"
+    },
+    {
+      "title": "Anthropic/Claude 代码 (原标题: anthropics/claude-code)",
+      "link": "https://github.com/anthropics/claude-code",
+      "pubDate": "",
+      "isoDate": "",
+      "creator": "anthropics",
+      "summary": "# Anthropic Claude 代码\n\nClaude Code 是 Anthropic 推出的一款智能代理编码工具，它在终端中运行，能够理解代码库，并通过自然语言命令帮助开发者更快地完成编码工作。\n\n## 主要功能\n*   **代码编辑与修复**：在整个代码库中编辑文件和修复错误。\n*   **代码理解**：回答关于代码架构和逻辑的问题。\n*   **任务执行与调试**：执行并修复测试、linting 和其他命令。\n*   **Git 工作流管理**：搜索 Git 历史记录、解决合并冲突、创建提交和拉取请求 (PRs)。\n\n## 快速开始\n1.  **Node.js 和 npm 配置**：建议为用户配置 NPM 前缀（相关说明可查阅官方文档）。\n2.  **安装**：\n    *   推荐以非特权用户身份安装，以维护系统安全和稳定性。\n    *   执行命令：`npm install -g @anthropic-ai/claude-code`\n3.  **运行**：\n    *   导航到您的项目目录。\n    *   运行 `claude` 命令。\n4.  **认证**：完成与您的 Claude Max 或 Anthropic Console 账户的一次性 OAuth 过程。\n\n## 报告 Bug\n在测试期间，Anthropic 欢迎用户反馈：\n*   在 Claude Code 内部使用 `/bug` 命令直接报告问题。\n*   在 GitHub 上提交 issue。\n\n## 数据收集、使用和保留\n当您使用 Claude Code 时，Anthropic 会收集反馈数据，包括：\n*   **使用数据**：例如代码接受或拒绝情况。\n*   **相关对话数据**。\n*   **通过 `/bug` 命令提交的用户反馈**。\n\n### 数据使用方式\n*   **产品改进**：收集到的反馈可能用于改进 Anthropic 的产品和服务。\n*   **重要声明**：Anthropic **不会**使用来自 Claude Code 的反馈数据来训练生成模型。\n*   **数据保留**：用户反馈记录（transcripts）仅存储 30 天。\n*   **调试与功能改进**：如果您选择发送关于 Claude Code 的反馈（例如使用记录），Anthropic 可能会使用这些反馈来调试相关问题并改进 Claude Code 的功能（例如，降低未来发生类似错误的风险）。\n\n### 隐私保护措施\nAnthropic 实施了多项数据保护措施，包括：\n*   对敏感信息设置有限的保留期限。\n*   限制对用户会话数据的访问。\n*   明确规定禁止使用反馈进行模型训练。\n*   完整详情请查阅 Anthropic 的《商业服务条款》和《隐私政策》。\n\n### 相关图片\n*   Node.js 版本徽章：![Node.js Version](https://camo.githubusercontent.com/42dd0d4d66d954a88749cfbcf0b9ddcb7675d2f7bd8072675e99e6da8abde5c0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f64652e6a732d31382532422d627269676874677265656e3f7374796c653d666c61742d737175617265)\n*   npm 版本徽章：![npm Version](https://camo.githubusercontent.com/961ca37273ecd043d77954d3cf7d9fb9a2da2d5cf043ba6dca3609debae0ff6e/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f40616e7468726f7069632d61692f636c617564652d636f6665.svg3f7374796c653d666c61742d737175617265)",
+      "shortSummary": "Claude Code 是 Anthropic 推出的一款终端智能编码工具，通过自然语言命令帮助开发者加速编码、理解代码库并管理 Git 工作流。其核心功能包括文件编辑、bug 修复、代码问答、测试执行及 Git 操作。该工具会收集使用数据和反馈以改进产品，但明确承诺不会将这些数据用于训练生成模型，并采取多项隐私保护措施。",
+      "translated_title": "Anthropic/Claude 代码",
+      "images": [
+        {
+          "url": "https://camo.githubusercontent.com/42dd0d4d66d954a88749cfbcf0b9ddcb7675d2f7bd8072675e99e6da8abde5c0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f64652e6a732d31382532422d627269676874677265656e3f7374796c653d666c61742d737175617265",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://camo.githubusercontent.com/961ca37273ecd043d77954d3cf7d9fb9a2da2d5cf043ba6dca3609debae0ff6e/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f40616e7468726f7069632d61692f636c617564652d636f64652e7376673f7374796c653d666c61742d737175617265",
+          "alt": "npm",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://opengraph.githubassets.com/a05a7ebe36f64275bffc07d396359d4c8592b32209cc9db31c4485afb20112fd/anthropics/claude-code",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<img src=\"https://opengraph.githubassets.com/a05a7ebe36f64275bffc07d396359d4c8592b32209cc9db31c4485afb20112fd/anthropics/claude-code\" referrerpolicy=\"no-referrer\"><br>Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. <br><br>Language: Shell <br>Stars: 10488 <br>Forks: 586"
+    },
+    {
+      "title": "mlabonne/LLM课程 (原标题: mlabonne/llm-course)",
+      "link": "https://github.com/mlabonne/llm-course",
+      "pubDate": "",
+      "isoDate": "",
+      "creator": "mlabonne",
+      "summary": "# mlabonne/LLM课程概述\n\n![LLM Engineer's Handbook Cover](https://i.imgur.com/7iNjEq2.png)\n\nmlabonne/LLM课程是一个全面的学习资源，旨在教授如何构建、优化和部署大型语言模型（LLM）应用。该课程分为三个主要部分，并提供丰富的实践笔记本和学习资源。\n\n## 课程结构\n\n该LLM课程分为以下三个主要部分：\n\n*   **🧩 LLM基础 (可选)**：涵盖数学、Python和神经网络等基础知识，为深入学习LLM奠定基础。\n*   **🧑‍🔬 LLM科学家**：专注于使用最新技术构建性能最佳的LLM。\n*   **👷 LLM工程师**：侧重于创建基于LLM的应用程序并进行部署。\n\n## 相关资源\n\n*   **《LLM工程师手册》**：基于本课程，作者与Paul Iuzstin合著了《LLM工程师手册》。这是一本实践性强、内容详细的图书，涵盖了LLM应用程序从设计到部署的端到端流程。课程本身免费，但鼓励购买书籍以支持作者的工作。\n*   **LLM助手**：为了提供课程的交互式版本，作者创建了一个LLM助手，可在HuggingChat或ChatGPT上提供个性化的问答和知识测试。\n\n## 📝 笔记本列表\n\n课程提供了大量关于LLM的Jupyter Notebooks和文章，涵盖了从工具到微调、量化等多个方面。\n\n### 工具\n\n这些工具笔记本旨在简化LLM的开发和操作：\n\n*   **🧐 LLM AutoEval**：使用RunPod自动评估LLM。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **🥱 LazyMergekit**：一键使用MergeKit轻松合并模型。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **🦎 LazyAxolotl**：一键在云端使用Axolotl微调模型。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **⚡ AutoQuant**：一键将LLM量化为GGUF、GPTQ、EXL2、AWQ和HQQ格式。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **🌳 Model Family Tree**：可视化合并模型的家族树。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **🚀 ZeroSpace**：使用免费的ZeroGPU自动创建Gradio聊天界面。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n\n### 微调 (Fine-tuning)\n\n一系列关于LLM微调的实践指南：\n\n*   **使用Unsloth微调Llama 3.1**：在Google Colab中进行超高效的监督式微调。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **使用ORPO微调Llama 3**：通过ORPO进行更经济、更快速的单阶段微调。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **使用DPO微调Mistral-7b**：通过DPO提升监督式微调模型的性能。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **使用QLoRA微调Mistral-7b**：在免费的Google Colab层级中使用TRL监督式微调Mistral-7b。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **使用Axolotl微调CodeLlama**：端到端的最先进微调工具指南。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **使用QLoRA微调Llama 2**：在Google Colab中监督式微调Llama 2的分步指南。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n\n### 量化 (Quantization)\n\n关于LLM量化以优化性能和资源使用的指南：\n\n*   **量化简介**：使用8位量化进行大型语言模型优化。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **使用GPTQ进行4位量化**：量化自己的开源LLM以在消费级硬件上运行。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **使用GGUF和llama.cpp进行量化**：使用llama.cpp量化Llama 2模型并将GGUF版本上传到HF Hub。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **ExLlamaV2: 运行LLM最快的库**：量化并运行EXL2模型并将其上传到HF Hub。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n\n### 其他\n\n涵盖LLM相关高级主题的笔记本：\n\n*   **使用MergeKit合并LLM**：轻松创建自己的模型，无需GPU！ ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **使用MergeKit创建MoEs**：将多个专家模型组合成一个“FrankenMoE”。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **使用abliteration解除任何LLM的审查**：无需重新训练的微调。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **使用知识图谱改进ChatGPT**：使用知识图谱增强ChatGPT的回答。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n*   **大型语言模型中的解码策略**：从束搜索到核采样的文本生成指南。 ![Open In Colab](https://github.com/mlabonne/llm-course/raw/main/img/colab.svg)\n\n## 🧩 LLM基础 (可选)\n\n本节介绍机器学习所需的数学、Python和神经网络等基本知识。\n\n![LLM Fundamentals Roadmap](https://github.com/mlabonne/llm-course/raw/main/img/roadmap_fundamentals.png)\n\n1.  **机器学习数学基础**：\n    *   **线性代数**：向量、矩阵、行列式、特征值和特征向量、向量空间、线性变换。\n    *   **微积分**：导数、积分、极限、级数、多元微积分和梯度概念。\n    *   **概率与统计**：概率论、随机变量、概率分布、期望、方差、协方差、相关性、假设检验、置信区间、最大似然估计和贝叶斯推断。\n    *   **推荐资源**：3Blue1Brown、StatQuest with Josh Starmer、AP Statistics Intuition by Ms Aerin、Immersive Linear Algebra、Khan Academy。\n2.  **机器学习Python基础**：\n    *   **Python基础**：语法、数据类型、错误处理、面向对象编程。\n    *   **数据科学库**：NumPy、Pandas、Matplotlib、Seaborn。\n    *   **数据预处理**：特征缩放、归一化、缺失数据处理、异常值检测、分类数据编码、数据拆分。\n    *   **机器学习库**：Scikit-learn（线性回归、逻辑回归、决策树、随机森林、K-NN、K-means聚类）、降维技术（PCA、t-SNE）。\n    *   **推荐资源**：Real Python、freeCodeCamp、Python Data Science Handbook、Udacity。\n3.  **神经网络**：\n    *   **基础**：神经网络结构（层、权重、偏置、激活函数）。\n    *   **训练与优化**：反向传播、损失函数（MSE、交叉熵）、优化算法（梯度下降、SGD、RMSprop、Adam）。\n    **过拟合**：理解过拟合及正则化技术（dropout、L1/L2正则化、提前停止、数据增强）。\n    *   **实现多层感知机 (MLP)**：使用PyTorch构建MLP。\n    *   **推荐资源**：3Blue1Brown、freeCodeCamp、Fast.ai、Patrick Loeber。\n4.  **自然语言处理 (NLP)**：\n    *   **文本预处理**：分词、词干提取、词形还原、停用词移除。\n    *   **特征提取技术**：词袋模型 (BoW)、TF-IDF、n-gram。\n    *   **词嵌入**：Word2Vec、GloVe、FastText。\n    *   **循环神经网络 (RNNs)**：RNN、LSTM、GRU。\n    *   **推荐资源**：Lena Voita、RealPython、Kaggle、Jay Alammar、Jake Tae、colah's blog。\n\n## 🧑‍🔬 LLM科学家\n\n本节课程侧重于学习如何使用最新技术构建最佳的LLM。\n\n![LLM Scientist Roadmap](https://github.com/mlabonne/llm-course/raw/main/img/roadmap_scientist.png)\n\n1.  **LLM架构**：\n    *   **架构概述**：从编码器-解码器Transformer到仅解码器架构（如GPT）的演变。\n    *   **分词 (Tokenization)**：文本如何转换为LLM可处理的数值表示。\n    *   **注意力机制**：自注意力及其变体，理解其如何处理长距离依赖并保持上下文。\n    *   **采样技术**：文本生成方法及其权衡（贪婪搜索、束搜索、温度采样、核采样）。\n    *   **推荐参考**：3Blue1Brown、Brendan Bycroft、Andrej Karpathy、Lilian Weng、Maxime Labonne。\n2.  **预训练模型**：\n    *   预训练是一个计算密集且昂贵的过程，但理解其原理很重要。\n    *   **数据准备**：大规模数据集的整理、清洗、去重和分词。\n    *   **分布式训练**：结合数据并行、流水线并行和张量并行等策略。",
+      "shortSummary": "mlabonne/LLM课程是一个免费的综合性学习资源，分为“LLM基础”、“LLM科学家”和“LLM工程师”三部分。它提供了大量实践性Jupyter Notebooks，涵盖LLM评估、模型合并、微调（如Llama 3.1、Mistral-7b）、量化及其他高级主题。课程旨在帮助学习者掌握从LLM构建到部署的端到端技能。此外，课程还配套有《LLM工程师手册》和交互式LLM助手，以提供更深入的学习和支持。",
+      "translated_title": "mlabonne/LLM课程",
+      "images": [
+        {
+          "url": "https://camo.githubusercontent.com/fa800f7ce2c0ede3a223fa24b71ef3b6d86ecec5d2b57eee8425f6bcc06bdf89/68747470733a2f2f692e696d6775722e636f6d2f37694e6a4571322e706e67",
+          "alt": "LLM Engineer's Handbook Cover",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.com/mlabonne/llm-course/raw/main/img/colab.svg",
+          "alt": "Open In Colab",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://opengraph.githubassets.com/27ee79ee3f85550f241872741f12249b527438c7af9edf610a7fd6a1cf1a8968/mlabonne/llm-course",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<img src=\"https://opengraph.githubassets.com/27ee79ee3f85550f241872741f12249b527438c7af9edf610a7fd6a1cf1a8968/mlabonne/llm-course\" referrerpolicy=\"no-referrer\"><br>Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks. <br><br>Language: Jupyter Notebook <br>Stars: 53374 <br>Forks: 5676"
+    },
+    {
+      "title": "duixcom/Duix.mobile",
+      "link": "https://github.com/duixcom/Duix.mobile",
+      "pubDate": "",
+      "isoDate": "",
+      "creator": "duixcom",
+      "summary": "DUIX-Mobile 是一个基于移动端的、由 AI 驱动的数字人 SDK，用于实时交互（Android/iOS）。\n\n**主要特点：**\n\n*   **类人 AI：** 模仿人类的面部表情、语调和同理心。\n*   **超快响应：** 实时交互低于 1.5 秒，实现流畅对话。\n*   **经济高效的部署：** 低资源消耗，可在移动设备、智能屏幕等设备上快速设置。\n*   **轻量级网络设计：** 片上处理最大限度地减少了连接需求，非常适合金融、政府和法律服务。\n*   **通用适应性：** 使用模块化、可扩展的架构为任何行业定制数字人和场景。\n\n**文档：**\n\n*   Android 开发者：DUIX-Mobile SDK: [Android]\n*   IOS 开发者：DUIX-Mobile SDK: [iOS]\n\n**模型下载：**\n\n提供公共测试模型，方便下载和集成。\n\n*   女性模型：\n    ![Hazel](https://github.com/GuijiAI/duix.ai/raw/main/res/Hazel.jpg)\n    ![Luna](https://github.com/GuijiAI/duix.ai/raw/main/res/Luna.jpg)\n    ![Ivy](https://github.com/GuijiAI/duix.ai/raw/main/res/Ivy.jpg)\n    ![Aurora](https://github.com/GuijiAI/duix.ai/raw/main/res/Aurora.jpg)\n\n*   男性模型：\n    ![William](https://github.com/GuijiAI/duix.ai/raw/main/res/William.jpg)\n    ![Andrew](https://github.com/GuijiAI/duix.ai/raw/main/res/andrew.jpg)\n    ![Michael](https://github.com/GuijiAI/duix.ai/raw/main/res/Michael.jpg)\n    ![Eric](https://github.com/GuijiAI/duix.ai/raw/main/res/Eric.jpg)\n\n**使用案例：**\n\n该模型支持跨 Web、移动设备、Android 智能显示器和其他平台的各种应用程序。\n\n*   商业案例演示\n    ![Digital Lawyer](https://github.com/GuijiAI/duix.ai/raw/main/res/540p/lvshi/lvshi-bg.jpg)\n    ![Digital Doctor](https://github.com/GuijiAI/duix.ai/raw/main/res/540p/yisheng/yisheng-bg.jpg)\n    ![Virtual Companion](https://github.com/GuijiAI/duix.ai/raw/main/res/540p/peiban/peiban-bg.jpg)\n    ![Speaking Tutor](https://github.com/GuijiAI/duix.ai/raw/main/res/540p/laoshi/laoshi-bg.jpg)\n*   低端终端屏幕案例\n    ![God of Wealth](https://github.com/GuijiAI/duix.ai/raw/main/res/270p/caishen/caishen-bg.jpg)\n    ![Guanyin Bodhisattva](https://github.com/GuijiAI/duix.ai/raw/main/res/270p/guanyin/guanyin-bg.jpg)\n    ![Su Shi](https://github.com/GuijiAI/duix.ai/raw/main/res/270p/sushi/sushi-bg.jpg)\n    ![Virtual Girlfriend](https://github.com/GuijiAI/duix.ai/raw/main/res/270p/nvyou/nvyou-bg.jpg)\n\n**常见问题解答：**\n\n提供关于创建自定义数字形象、定价、更新、API、手势控制等常见问题的解答。\n\n**联系方式：**\n\n如有任何问题，请提出 issue 或通过 james@duix.com 联系。",
+      "shortSummary": "DUIX-Mobile 是一个移动端 AI 驱动的数字人 SDK，支持实时交互。它具有类人 AI、超快响应、经济高效的部署和轻量级网络设计等特点，适用于各种行业。该 SDK 提供 Android 和 iOS 平台的文档，并提供公共测试模型下载。模型支持 Web、移动设备和智能显示器等多种应用场景。常见问题解答部分涵盖了创建自定义数字形象、定价和 API 等问题。如有疑问，可通过 issue 或邮件联系。",
+      "translated_title": "duixcom/Duix.mobile",
+      "images": [
+        {
+          "url": "https://github.com/duixcom/Duix.mobile/raw/main/res/logo_en.png",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.com/duixcom/Duix.mobile/raw/main/res/duix_home.png",
+          "alt": "图片1",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.com/duixcom/Duix.mobile/raw/main/res/duix_doc.png",
+          "alt": "图片2",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.com/duixcom/Duix.mobile/raw/main/res/duix_conversation.png",
+          "alt": "图片3",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.com/duixcom/Duix.mobile/raw/main/res/duix_more.png",
+          "alt": "图片4",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.com/GuijiAI/duix.ai/raw/main/res/Hazel.jpg",
+          "alt": "",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.com/GuijiAI/duix.ai/raw/main/res/Luna.jpg",
+          "alt": "",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.com/GuijiAI/duix.ai/raw/main/res/Ivy.jpg",
+          "alt": "",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<img src=\"https://opengraph.githubassets.com/a7874916ae14144f7b5583c49bbfee9c116b8b1be128546119082958a370c433/duixcom/Duix.mobile\" referrerpolicy=\"no-referrer\"><br>null <br><br>Language: C++ <br>Stars: 6559 <br>Forks: 958"
+    },
+    {
+      "title": "AI对冲基金 (原标题: virattt/ai-hedge-fund)",
+      "link": "https://github.com/virattt/ai-hedge-fund",
+      "pubDate": "",
+      "isoDate": "",
+      "creator": "virattt",
+      "summary": "# AI对冲基金概念验证项目\n\n本项目是一个AI驱动的对冲基金的概念验证，旨在探索人工智能在交易决策中的应用。该项目仅用于教育和研究目的，不适用于实际交易或投资，且系统仅模拟交易决策，不进行实际交易。\n\n## 系统架构：多智能体协作\n\n该系统由多个智能体协同工作，分为投资理念智能体和功能性智能体。\n\n### 投资理念智能体（模拟著名投资者）\n\n*   **Aswath Damodaran 智能体**：估值领域的权威，专注于故事、数据和严谨的估值。\n*   **Ben Graham 智能体**：价值投资之父，只购买具有安全边际的隐藏瑰宝。\n*   **Bill Ackman 智能体**：激进投资者，采取大胆立场并推动变革。\n*   **Cathie Wood 智能体**：成长投资女王，坚信创新和颠覆的力量。\n*   **Charlie Munger 智能体**：沃伦·巴菲特的合伙人，只以合理价格购买优秀企业。\n*   **Michael Burry 智能体**：电影《大空头》中的逆向投资者，寻找深度价值。\n*   **Peter Lynch 智能体**：实用投资者，在日常业务中寻找“十倍股”。\n*   **Phil Fisher 智能体**：细致的成长投资者，运用深入的“耳语”研究。\n*   **Stanley Druckenmiller 智能体**：宏观投资传奇，寻找具有增长潜力的非对称机会。\n*   **Warren Buffett 智能体**：奥马哈的先知，寻找价格公允的优秀公司。\n\n### 功能性智能体\n\n*   **估值智能体**：计算股票的内在价值并生成交易信号。\n*   **情绪智能体**：分析市场情绪并生成交易信号。\n*   **基本面智能体**：分析基本面数据并生成交易信号。\n*   **技术面智能体**：分析技术指标并生成交易信号。\n*   **风险管理器**：计算风险指标并设置头寸限制。\n*   **投资组合管理器**：做出最终交易决策并生成订单。\n\n## 系统截图\n\n*   **系统运行界面**\n    ![Screenshot 2025-03-22 at 6 19 07 PM](https://private-user-images.githubusercontent.com/901795/425765974-cbae3dcf-b571-490d-b0ad-3f0f035ac0d4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDg0OTEzMTAsIm5iZiI6MTc0ODQ5MTAxMCwicGF0aCI6Ii85MDE3OTUvNDI1NzY1OTc0LWNiYWUzZGNmLWJmNzEtNDkwZC1iMGFkLTNmMGYwMzVhYzBkNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyOVQwMzU2NTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05YTJkYTM1YTQ1OTA3NWVlMzRlMWUwMzc0NTdlYWQ2NGMyZTBlZDg0OGZmNmIxZDc3MjY2YzA1ZmY4YzU4Mjg4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Lb2VtMB4U0_S0dGP7JpZMgAM8ShCR-gvSmp85sCvwPg)\n*   **Twitter 关注按钮**\n    ![Twitter Follow](https://camo.githubusercontent.com/f99294920342324adc542cb046a01c7b4ff376a4719817f920af5bce71d24f65/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f766972617474743f7374796c653d736f6369616c)\n*   **运行对冲基金示例输出**\n    ![Screenshot 2025-01-06 at 5 50 17 PM](https://private-user-images.githubusercontent.com/901795/400576829-e8ca04bf-9989-4a7d-a8b4-34e04666663b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImkeyIjoia2V5NSIsImV4cCI6MTc0ODQ5MTMxMCwibmJmIjoxNzQ4NDkxMDEwLCJwYXRoIjoiLzkwMTc5NS80MDA1NzY4MjktZThjYTA0YmYtOTk4OS00YTdkLWE4YjQtMzRlMDQ2NjY2NjNiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFE0WkElMkYyMDI1MDUyOSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA1MjlUMDM1NjUwWiZYLUFtYnotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM0M2E2NTMyODA1MDdhMzA1ZGMxYWE1ZmVjMTgwM2QyNmU4MzNlNGU5ZWQ4YjgzY2FmOWNmMGNkZDg5OGU4OTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.uU8DQ0QsZX26q7AcT6pQsE48dJW17DgC8DcXfD2FdVA)\n*   **运行回测器示例输出**\n    ![Screenshot 2025-01-06 at 5 47 52 PM](https://private-user-images.githubusercontent.com/901795/400576351-00e794ea-8628-44e6-9a84-8f8a31ad3b47.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDg0OTEzMTAsIm5iZiI6MTc0ODQ5MTAxMCwicGF0aCI6Ii85MDE3OTUvNDAwNTc2MzUxLTAwZTc5NGVhLTg2MjgtNDRlNi05YTg0LThmOGEzMWFkM2I0Ny5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyOVQwMzU2NTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zZWE4MmFhNzEzMmEwOWJhY2QwZWRiMDEzYTk0NDM4ODFkNjZlZWU5NDA1MWEwZDhhOTI2ZTMyMzUxNTlmYWUyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.nn-LltscpcvM257qUtnwzIk-b0OrAf6qa-9HB9CJuPc)\n\n## 免责声明\n\n本项目仅用于教育和研究目的，不构成任何投资建议，也不提供任何投资保证。项目创建者不承担任何财务损失的责任。在做出任何投资决策之前，请务必咨询专业的财务顾问。请注意，过往表现不预示未来结果。使用本软件即表示您同意仅将其用于学习目的。\n\n## 安装与使用指南\n\n### 安装方式\n\n1.  **使用 Poetry**\n    *   克隆仓库：`git clone https://github.com/virattt/ai-hedge-fund.git`\n    *   进入目录：`cd ai-hedge-fund`\n    *   安装 Poetry (如果未安装)：`curl -sSL https://install.python-poetry.org | python3 -`\n    *   安装依赖：`poetry install`\n    *   设置环境变量：复制 `.env.example` 到 `.env`，并填入您的API密钥。\n2.  **使用 Docker**\n    *   确保系统已安装 Docker。\n    *   克隆仓库：`git clone https://github.com/virattt/ai-hedge-fund.git`\n    *   进入目录：`cd ai-hedge-fund`\n    *   设置环境变量：复制 `.env.example` 到 `.env`，并填入您的API密钥。\n    *   构建 Docker 镜像：`./run.sh build` (Linux/Mac) 或 `run.bat build` (Windows)。\n\n### API 密钥要求\n\n*   运行对冲基金需要至少一个LLM提供商的API密钥，例如 `OPENAI_API_KEY`, `GROQ_API_KEY`, `ANTHROPIC_API_KEY`, 或 `DEEPSEEK_API_KEY`。\n*   对于 AAPL, GOOGL, MSFT, NVDA, TSLA 的财务数据是免费的。查询其他股票数据需要设置 `FINANCIAL_DATASETS_API_KEY`。\n\n### 运行对冲基金\n\n*   **使用 Poetry：** `poetry run python src/main.py --ticker AAPL,MSFT,NVDA`\n*   **使用 Docker (Linux/Mac)：** `./run.sh --ticker AAPL,MSFT,NVDA main`\n*   **使用 Docker (Windows)：** `run.bat --ticker AAPL,MSFT,NVDA main`\n*   **可选参数：**\n    *   `--ollama`：使用本地LLM运行。\n    *   `--show-reasoning`：在控制台打印每个智能体的推理过程。\n    *   `--start-date YYYY-MM-DD --end-date YYYY-MM-DD`：指定决策的时间段。\n\n### 运行回测器\n\n*   **使用 Poetry：** `poetry run python src/backtester.py --ticker AAPL,MSFT,NVDA`\n*   **使用 Docker (Linux/Mac)：** `./run.sh --ticker AAPL,MSFT,NVDA backtest`\n*   **使用 Docker (Windows)：** `run.bat --ticker AAPL,MSFT,NVDA backtest`\n*   **可选参数：**\n    *   `--start-date YYYY-MM-DD --end-date YYYY-MM-DD`：指定回测的时间段。\n    *   `--ollama`：使用本地LLM运行回测。\n\n## 项目结构\n\n项目目录 `ai-hedge-fund/` 包含：\n*   `src/agents/`：智能体定义和工作流程，包括各种投资理念智能体（如 `bill_ackman.py`, `warren_buffett.py`）和功能性智能体（如 `fundamentals.py`, `portfolio_manager.py`）。\n*   `src/tools/`：智能体工具，如 `api.py`。\n*   `src/backtester.py`：回测工具。\n*   `src/main.py`：主入口点。\n\n## 贡献与许可\n\n*   **贡献**：欢迎通过 Fork 仓库、创建功能分支、提交更改并提交拉取请求来贡献。请保持拉取请求小而集中。\n*   **功能请求**：如有功能请求，请提交一个 issue 并标记为 `enhancement`。\n*   **许可**：本项目采用 MIT 许可证。",
+      "shortSummary": "AI对冲基金是一个概念验证项目，旨在探索AI在交易决策中的应用。该系统通过模拟多位著名投资者的策略（如巴菲特、格雷厄姆）和功能性智能体（估值、情绪、基本面、技术面、风险管理、投资组合管理）协同工作。项目仅用于教育和研究，不进行实际交易，也不提供投资建议。用户可通过Poetry或Docker进行安装和运行，并支持本地LLM或指定回测日期。",
+      "translated_title": "AI对冲基金",
+      "images": [
+        {
+          "url": "https://private-user-images.githubusercontent.com/901795/425765974-cbae3dcf-b571-490d-b0ad-3f0f035ac0d4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDg0OTEzMTAsIm5iZiI6MTc0ODQ5MTAxMCwicGF0aCI6Ii85MDE3OTUvNDI1NzY1OTc0LWNiYWUzZGNmLWI1NzEtNDkwZC1iMGFkLTNmMGYwMzVhYzBkNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyOVQwMzU2NTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05YTJkYTM1YTQ1OTA3NWVlMzRlMWUwMzc0NTdlYWQ2NGMyZTBlZDg0OGZmNmIxZDc3MjY2YzA1ZmY4YzU4Mjg4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Lb2VtMB4U0_S0dGP7JpZMgAM8ShCR-gvSmp85sCvwPg",
+          "alt": "Screenshot 2025-03-22 at 6 19 07 PM",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://camo.githubusercontent.com/f99294920342324adc542cb046a01c7b4ff376a4719817f920af5bce71d24f65/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f766972617474743f7374796c653d736f6369616c",
+          "alt": "Twitter Follow",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/901795/400576829-e8ca04bf-9989-4a7d-a8b4-34e04666663b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDg0OTEzMTAsIm5iZiI6MTc0ODQ5MTAxMCwicGF0aCI6Ii85MDE3OTUvNDAwNTc2ODI5LWU4Y2EwNGJmLTk5ODktNGE3ZC1hOGI0LTM0ZTA0NjY2NjYzYi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyOVQwMzU2NTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jNDNhNjUzMjgwNTA3YTMwNWRjMWFhNWZlYzE4MDNkMjZlODMzZTRlOWVkOGI4M2NhZjljZjBjZGQ4OThlODkyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.uU8DQ0QsZX26q7AcT6pQsE48dJW17DgC8DcXfD2FdVA",
+          "alt": "Screenshot 2025-01-06 at 5 50 17 PM",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/901795/400576351-00e794ea-8628-44e6-9a84-8f8a31ad3b47.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDg0OTEzMTAsIm5iZiI6MTc0ODQ5MTAxMCwicGF0aCI6Ii85MDE3OTUvNDAwNTc2MzUxLTAwZTc5NGVhLTg2MjgtNDRlNi05YTg0LThmOGEzMWFkM2I0Ny5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyOVQwMzU2NTBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zZWE4MmFhNzEzMmEwOWJhY2QwZWRiMDEzYTk0NDM4ODFkNjZlZWU5NDA1MWEwZDhhOTI2ZTMyMzUxNTlmYWUyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.nn-LltscpcvM257qUtnwzIk-b0OrAf6qa-9HB9CJuPc",
+          "alt": "Screenshot 2025-01-06 at 5 47 52 PM",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://opengraph.githubassets.com/906515d7d6c60aaaf62101a5820fceede9eb7c0eb10063f11aaf40582a44abca/virattt/ai-hedge-fund",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<img src=\"https://opengraph.githubassets.com/906515d7d6c60aaaf62101a5820fceede9eb7c0eb10063f11aaf40582a44abca/virattt/ai-hedge-fund\" referrerpolicy=\"no-referrer\"><br>An AI Hedge Fund Team <br><br>Language: Python <br>Stars: 33614 <br>Forks: 5803"
+    },
+    {
+      "title": "bilibili/Index-AniSora (原标题: bilibili/Index-anisora)",
+      "link": "https://github.com/bilibili/Index-anisora",
+      "pubDate": "",
+      "isoDate": "",
+      "creator": "bilibili",
+      "summary": "# Index-AniSora：终极开源动漫视频生成模型\n\n![Index-AniSora 图标](https://github.com/bilibili/Index-anisora/raw/main/assets/index_icon.png)\n\nIndex-AniSora 是哔哩哔哩（Bilibili）向动漫世界献上的一份礼物，旨在成为功能最强大的开源动漫视频生成模型。它支持一键生成多种动漫风格的视频片段，包括剧集、中国原创动画、漫画改编、VTuber 内容、动漫PV、鬼畜动画等。\n\n该项目基于哔哩哔哩被 IJCAI'25 接收的论文《AniSora: Exploring the Frontiers of Animation Video Generation in the Sora Era》。\n\n## 最新进展\n\n*   **2025/05/12**：所有构建内容已开源。\n*   **2025/05/10**：论文已被 IJCAI'25 接收，最终版本已更新。\n*   **2024/12/19**：论文已提交至 arXiv，项目及评估基准已发布。如需访问基准、AniSoraV2.0 权重或基准上所有由 AniSoraV1 和 AniSoraV2 生成的视频，需填写表格并以 PDF 格式发送至指定邮箱（jiangyudong@bilibili.com / yangsiqian@bilibili.com / xubaohan@bilibili.com），并手写签名及所属公司/学术机构名称。\n\n## 项目指南\n\n### AniSoraV1.0\n\n*   **基础模型**：基于 CogVideoX-5B 基础模型训练。\n*   **代码发布**：完整训练和推理代码已发布（位于 `anisoraV1_infer` 和 `anisoraV1_train_npu` 文件夹）。\n*   **核心功能**：\n    *   视频控制的局部区域引导。\n    *   时间引导（首帧/尾帧引导、关键帧插值、多帧引导）。\n*   **部署与应用**：可在 RTX 4090 上进行经济高效的部署，覆盖 80% 的应用场景。\n\n### AniSoraV2.0\n\n*   **基础模型**：由增强型 Wan2.1-14B 基础模型驱动，提供卓越稳定性。\n*   **推理优化**：通过蒸馏加速推理，在不牺牲质量的前提下实现更快、更低的成本。\n*   **代码发布**：完整训练和推理代码已发布（位于 `anisoraV2_gpu` 和 `anisoraV2_npu` 文件夹）。\n*   **硬件支持**：原生支持华为昇腾 910B NPU（完全在国内芯片上训练）。\n*   **应用范围**：高质量视频片段生成，覆盖 90% 的应用场景。\n\n### 生态系统工具\n\n*   **数据处理管线 (`data_pipeline`)**：端到端数据集管线，用于快速扩展训练数据，包含动画数据清洗管线。\n*   **动漫优化基准系统 (`reward`)**：\n    *   专为动漫视频生成设计的评估模型和评分算法。\n    *   包含适用于强化学习和基准测试的奖励模型。\n    *   为动画生成量身定制的评估框架。\n    *   符合 ACG 审美标准的标准测试数据集。\n    *   **人类偏好对齐**：基准数据集包含 948 个动画视频片段，按不同动作进行标注。文本提示最初由 Qwen-VL2 生成，后经手动校正以确保文本与视频对齐。\n*   **AniSoraV1.0_RL (`anisora_rl`)**：首个用于动漫视频生成的 RLHF (Reinforcement Learning from Human Feedback) 框架，RL 优化后的 AniSoraV1.0，以增强动漫风格输出。方法论详见预印本论文《Aligning Anime Video Generation with Human Feedback》。\n\n## 待办事项\n\n*   AniSora 数据集：高质量训练集开放申请。\n*   AniSora 基准：更新最新 SOTA 模型性能，提供更多视频演示。\n\n## 摘要（论文）\n\n尽管 Sora、Kling 和 CogVideoX 等先进视频生成模型在生成自然视频方面取得了成功，但它们在处理动画视频时效果不佳，原因在于动画独特的艺术风格、违反物理定律的夸张动作。此外，评估动画视频生成也极具挑战性。\n\n本文提出了一个名为 AniSora 的综合系统，专为动画视频生成设计，包括数据处理管线、可控生成模型和评估数据集。该生成模型在超过 1000 万高质量数据的支持下，整合了时空掩码模块，以实现关键动画制作功能，如图像到视频生成、帧插值和局部图像引导动画。项目还收集了一个包含 948 个不同动画视频的评估基准。在 VBench 和人类双盲测试中的评估结果表明，AniSora 在角色和动作一致性方面表现出色，达到了动画视频生成的最新水平。\n\n## 方法概述\n\nIndex-AniSora 的整体框架如下图所示：\n\n![Index-AniSora 框架图](https://github.com/bilibili/Index-anisora/raw/main/assets/framework.png)\n\n**主要特点**：\n\n*   开发了一个全面的视频处理系统，显著增强了视频生成的前处理能力。\n*   提出了一个统一的动画视频生成框架，包含时空掩码模块，支持图像到视频生成、帧插值和局部图像引导动画等任务。\n*   发布了一个专门用于评估动画视频生成的基准数据集。\n\n## 演示\n\n### 图像生成视频（不同艺术风格）\n\n*   **提示**：图中人物坐在一辆向前行驶的汽车中，向后挥手，头发随风左右摆动。\n    ![初始图片](https://github.com/bilibili/Index-anisora/raw/main/assets/000000(225).png) ![生成视频](https://github.com/bilibili/Index-anisora/raw/main/assets/000000(225).gif)\n*   **提示**：场景中，两个身穿红色婚服的人物手持红绳，渐行渐远。\n    ![初始图片](https://github.com/bilibili/Index-anisora/raw/main/assets/000000(223).png) ![生成视频](https://github.com/bilibili/Index-anisora/raw/main/assets/000000(223).gif)\n*   **提示**：黄发人物伸手触摸跪着人物的头部，跪着人物的身体随着喘息声起伏。\n    ![初始图片](https://github.com/bilibili/Index-anisora/raw/main/assets/000000(232).png) ![生成视频](https://github.com/bilibili/Index-anisora/raw/main/assets/000000(232).gif)\n*   **提示**：画面中，一个人高速向前冲刺，其动作因速度显得略微模糊。\n    ![初始图片](https://github.com/bilibili/Index-anisora/raw/main/assets/image_1.jpg) ![生成视频](https://github.com/bilibili/Index-anisora/raw/main/assets/image_1_vid.gif)\n*   **提示**：画面中，角色抬起手臂，气体流清晰可见地沿着其表面流动。\n    ![初始图片](https://github.com/bilibili/Index-anisora/raw/main/assets/image_2.jpg) ![生成视频](https://github.com/bilibili/Index-anisora/raw/main/assets/image_2_vid.gif)\n*   **提示**：老人凝视着宝石，右手巧妙地调整着放大镜，嘴唇微动——仿佛它掌握着解开某种古老知识或秘密的关键。\n    ![初始图片](https://github.com/bilibili/Index-anisora/raw/main/assets/image_3.jpg) ![生成视频](https://github.com/bilibili/Index-anisora/raw/main/assets/image_3_vid.gif)\n*   **提示**：左边的男人紧抿双唇，脸上刻满了愤怒和决心。他表情的每一条纹路都散发着深刻的沮丧和坚定不移的信念。与此同时，另一个男人的下巴张开——仿佛准备爆发出一声呐喊或激情的宣言。\n    ![初始图片](https://github.com/bilibili/Index-anisora/raw/main/assets/image_4.jpg) ![生成视频](https://github.com/bilibili/Index-anisora/raw/main/assets/image_4_vid.gif)\n*   **提示**：场景描绘了一块爆炸的岩石，在刺眼的光芒中爆发，破碎的碎片向四面八方飞散。\n    ![初始图片](https://github.com/bilibili/Index-anisora/raw/main/assets/image_5.jpg) ![生成视频](https://github.com/bilibili/Index-anisora/raw/main/assets/image_5_vid.gif)\n\n### 时间控制\n\n*   **提示**：在这段视频中，我们看到了动画电影《美女与野兽》中贝儿和野兽的场景。贝儿，长着金色的头发，站在一个有大窗户的房间里，看着窗外并对着它说话。她穿着一件紫色连衣裙，上身是紫色的……\n    ![首帧](https://github.com/bilibili/Index-anisora/raw/main/assets/cartoon_films_ren_wu_shuo_hua_34_firstmidlast_first.png) ![中帧](https://github.com/bilibili/Index-anisora/raw/main/assets/cartoon_films_ren_wu_shuo_hua_34_firstmidlast_mid.png) ![尾帧](https://github.com/bilibili/Index-anisora/raw/main/assets/cartoon_films_ren_wu_shuo_hua_34_firstmidlast_last.png) ![生成视频](https://github.com/bilibili/Index-anisora/raw/main/assets/cartoon_films_ren_wu_shuo_hua_34_firstmidlast.gif)\n*   **提示**：在这段视频中，可以看到一位金发年轻女子在夜晚从车门后向外看。汽车停在星空下，一轮满月照亮了场景。从她的面部表情和握住车门的方式来看，这位女子似乎处于担忧状态。\n    ![首帧](https://github.com/bilibili/Index-anisora/raw/main/assets/motion_comics_tui_la_5_firstlast_first.png) ![尾帧](https://github.com/bilibili/Index-anisora/raw/main/assets/motion_comics_tui_la_5_firstlast_last.jpeg) ![生成视频](https://github.com/bilibili/Index-anisora/raw/main/assets/motion_comics_tui_la_5_firstlast.gif)\n*   **提示**：一只卡通猫是这段视频的中心人物，它似乎处于淘气或好奇的状态。猫的眼睛闭着，嘴巴张开，暗示着一个惊喜或期待的时刻……\n    ![尾帧](https://github.com/bilibili/Index-anisora/raw/main/assets/motion_comics_zhi_dong_xi_2_last.jpeg) ![生成视频](https://github.com/bilibili/Index-anisora/raw/main/assets/motion_comics_zhi_dong_xi_2_last.gif)\n\n### 空间控制\n\n*   **提示**：在这段充满活力的动画电影《海底总动员》水下场景中，马林和尼莫，两条小丑鱼，在一大块紫色珊瑚附近交谈……\n    ![首帧](https://github.com/bilibili/Index-anisora/raw/main/assets/132.png) ![运动掩码](https://github.com/bilibili/Index-anisora/raw/main/assets/132_mask.png) ![生成视频（含运动掩码可视化）](https://github.com/bilibili/Index-anisora/raw/main/assets/132.gif)\n*   **提示**：同上\n    ![运动掩码](https://github.com/bilibili/Index-anisora/raw/main/assets/133_mask.png) ![生成视频](https://github.com/bilibili/Index-anisora/raw/main/assets/133.gif)\n\n## 评估结果\n\n文章提供了在 VBench 和 AniSora-Benchmark 上的详细评估结果表格，将 AniSora 与 Opensora、Vidu、CogVideoX、MiniMax 等模型进行了比较。AniSora 在多项指标上表现出色，尤其在人类评估和一致性方面达到领先水平。\n\n## 基准数据集\n\n基准数据集包含 948 个收集并标注了不同动作的动画视频片段，每个标签包含 10-30 个视频片段。相应的文本提示最初由 Qwen-VL2 生成，随后经过手动校正以确保文本与视频的对齐。数据集的访问需与哔哩哔哩达成协议。\n\n## 致谢\n\n感谢 CogVideoX、Wan2.1、FasterCache 和 OSS 的宝贵工作。\n\n## 引用\n\n如果您认为我们的工作有帮助，请引用我们的论文：\n\n```\n@article{jiang2024anisora,\n  title={AniSora: Exploring the Frontiers of Animation Video Generation in the Sora Era},\n  author={Yudong Jiang, Baohan Xu, Siqian Yang, Mingyu Yin, Jing Liu, Chao Xu, Siqi Wang, Yidi Wu, Bingwen Zhu, Xinwen Zhang, Xingyu Zheng,Jixuan Xu, Yue Zhang, Jinlong Hou and Huyang Sun},\n  journal={arXiv preprint arXiv:2412.10255},\n  year={2024}\n}\n```",
+      "shortSummary": "Index-AniSora是哔哩哔哩推出的开源动漫视频生成模型，旨在实现一键生成多样化动漫风格视频。该项目基于IJCAI'25接收的AniSora论文，提供AniSoraV1.0和V2.0两个版本，后者支持华为昇腾NPU。系统包含数据管线、动漫优化基准和RLHF框架，解决了现有模型在动画生成上的不足。评估结果显示，AniSora在角色和动作一致性方面表现卓越，达到了动画视频生成的最新水平。",
+      "translated_title": "bilibili/Index-AniSora",
+      "images": [
+        {
+          "url": "https://github.com/bilibili/Index-anisora/raw/main/assets/index_icon.png",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://camo.githubusercontent.com/4def0406a82254a737c79ee1a58f19a5e9c3150bdef587182d49a4d676d7fbe2/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f41725869762d323431322e31303235352d726564",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://camo.githubusercontent.com/ec9a6d5f90335bbf164921bf9470911793599d41a083cbf95f1bfcccb5c2484b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f41725869762d323530342e31303034342d726564",
+          "alt": "",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.com/bilibili/Index-anisora/raw/main/assets/wechat.png",
+          "alt": "",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.com/bilibili/Index-anisora/raw/main/assets/framework.png",
+          "alt": "",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.com/bilibili/Index-anisora/raw/main/assets/000000(225).png",
+          "alt": "",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.com/bilibili/Index-anisora/raw/main/assets/000000(225).gif",
+          "alt": "Demo",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.com/bilibili/Index-anisora/raw/main/assets/000000(223).png",
+          "alt": "",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<img src=\"https://opengraph.githubassets.com/81c3b9f8b8d0e40e9b016e788e38c8c2b990d1150bbb1245608cccdc6fcff326/bilibili/Index-anisora\" referrerpolicy=\"no-referrer\"><br>null <br><br>Language: Python <br>Stars: 1177 <br>Forks: 51"
+    },
+    {
+      "title": "Appwrite/Appwrite (原标题: appwrite/appwrite)",
+      "link": "https://github.com/appwrite/appwrite",
+      "pubDate": "",
+      "isoDate": "",
+      "creator": "appwrite",
+      "summary": "# Appwrite 简介\n\nAppwrite 是一个开源的后端平台，专为 Web、移动和 Flutter 应用程序开发而设计。它以一套 Docker 微服务的形式提供端到端后端服务，旨在抽象从零开始构建现代后端 API 的复杂性和重复性，帮助开发者更快地构建安全的应用。Appwrite 强调开发者体验，并支持多种编程语言。\n\n![Appwrite banner, with logo and text saying ](https://github.com/appwrite/appwrite/raw/main/public/images/banner.png)\n*Appwrite 宣传横幅*\n\nAppwrite 被定位为 Firebase 的 100% 开源替代品。\n![Appwrite - 100% open source alternative for Firebase | Product Hunt](https://camo.githubusercontent.com/af681e489bb53340e9ae1e505069d97baea1b82a397ada464498b3e1a513cb32/68747470733a2f2f6170692e70726f6475637468756e742e636f6d2f776964676574732f656d6265642d696d6167652f76312f746f702d706f73742d62616467652e7376673f706f73745f69643d333630333135267468656d653d6c6967687426706572696f643d6461696c79)\n*Product Hunt 徽章，显示 Appwrite 是 Firebase 的开源替代品*\n\n![Appwrite project dashboard showing various Appwrite features](https://github.com/appwrite/appwrite/raw/main/public/images/github.png)\n*Appwrite 项目仪表盘，展示各项功能*\n\n## 核心功能 (产品)\n\nAppwrite 提供一系列服务，方便开发者集成到其应用中：\n\n*   **用户认证与管理 (Account & Users)**：管理当前用户认证、会话、设备、登录方式和安全日志。对于后端集成，可管理所有项目用户。\n*   **团队 (Teams)**：将用户分组到团队中，管理团队成员资格、邀请和用户角色。\n*   **数据库 (Databases)**：管理数据库、集合和文档。支持文档的读取、创建、更新、删除以及使用高级过滤器查询文档列表。\n*   **存储 (Storage)**：管理存储文件，支持文件的读取、创建、删除和预览。文件预览可根据应用需求进行操作。所有文件都经过 ClamAV 扫描，并以安全加密的方式存储。\n*   **云函数 (Functions)**：在安全、隔离的环境中执行自定义代码，可根据任何 Appwrite 系统事件手动或通过 CRON 计划触发。\n*   **消息 (Messaging)**：通过 Appwrite 消息服务向用户发送推送通知、电子邮件和短信。\n*   **实时事件 (Realtime)**：监听 Appwrite 服务的实时事件，包括用户、存储、函数、数据库等。\n*   **本地化 (Locale)**：跟踪用户位置并管理应用的本地化数据。\n*   **头像 (Avatars)**：管理用户头像、国家/地区旗帜、浏览器图标和信用卡符号。可从链接或纯文本字符串生成二维码。\n\n## 快速开始\n\n### Appwrite Cloud\n\n最简单的入门方式是注册 Appwrite Cloud。目前 Appwrite Cloud 处于公开测试阶段，可完全免费使用，无需提供信用卡信息。\n\n### 自托管\n\nAppwrite 设计为在容器化环境中运行。您可以在本地使用 Docker Compose 或其他容器编排工具（如 Kubernetes、Docker Swarm 或 Rancher）运行 Appwrite 服务器。\n\n*   **安装要求**：确保机器上已安装 Docker。\n*   **安装命令示例**：\n    *   **Unix**: `docker run -it --rm --volume /var/run/docker.sock:/var/run/docker.sock --volume \"$(pwd)\"/appwrite:/usr/src/code/appwrite:rw --entrypoint=\"install\" appwrite/appwrite:1.7.3`\n    *   **Windows CMD**: `docker run -it --rm ^ --volume //var/run/docker.sock:/var/run/docker.sock ^ --volume \"%cd%\"/appwrite:/usr/src/code/appwrite:rw ^ --entrypoint=\"install\" ^ appwrite/appwrite:1.7.3`\n    *   **PowerShell**: `docker run -it --rm ` --volume /var/run/docker.sock:/var/run/docker.sock ` --volume ${pwd}/appwrite:/usr/src/code/appwrite:rw ` --entrypoint=\"install\" ` appwrite/appwrite:1.7.3`\n*   **访问控制台**：Docker 安装完成后，通过 `http://localhost` 访问 Appwrite 控制台。\n*   **升级**：从旧版本升级时，应使用 Appwrite 迁移工具。\n*   **一键部署**：除了本地运行，还可通过预配置的一键部署方案快速启动 Appwrite，无需在本地安装 Docker。\n\n### 平台集成\n\n通过创建新项目、选择平台并集成其 SDK，即可轻松开始使用 Appwrite。提供了针对各种平台的快速入门教程：\n\n*   **Web 应用**：Web、Next.js、React、Vue.js、Nuxt、SvelteKit、Refine、Angular。\n*   **移动和原生应用**：React Native、Flutter、Apple、Android。\n*   **服务端**：Node.js、Python、.NET、Dart、Ruby、Deno、PHP、Kotlin、Swift。\n\n## SDKs (开发工具包)\n\nAppwrite 提供了多种官方维护的客户端和服务端 SDK，以及社区贡献的 SDK：\n\n*   **客户端 SDKs (Appwrite 团队维护)**：\n    *   Web\n    *   Flutter\n    *   Apple\n    *   Android\n    *   React Native (Beta)\n*   **服务端 SDKs (Appwrite 团队维护)**：\n    *   NodeJS\n    *   PHP\n    *   Dart\n    *   Deno\n    *   Ruby\n    *   Python\n    *   Kotlin\n    *   Swift\n    *   .NET (Beta)\n*   **社区维护 SDKs**：\n    *   Appcelerator Titanium (由 Michael Gangolf 维护)\n    *   Godot Engine (由 fenix-hub @GodotNuts 维护)\n\n## 架构\n\nAppwrite 采用微服务架构，旨在实现轻松扩展和职责委派。它支持 REST、WebSocket 和 GraphQL 等多种 API，允许开发者利用现有知识和首选协议与资源进行交互。\n\n![Appwrite Architecture showing how Appwrite is built and the services and tools it uses](https://github.com/appwrite/appwrite/raw/main/docs/specs/overview.drawio.svg)\n*Appwrite 架构图*\n\nAppwrite 的 API 层通过利用内存缓存和将繁重任务委托给后台工作者来确保极快的速度。后台工作者还允许通过消息队列处理负载，从而精确控制计算容量和成本。\n\n## 社区与贡献\n\nAppwrite 拥有一个不断壮大的全球社区。\n\n*   **活动**：可参与 5 月 19 日的 Init kick off event，了解 Appwrite 创始人兼 CEO Eldad Fux 展望的未来。\n*   **参与方式**：\n    *   关注官方博客。\n    *   在 X (Twitter)、LinkedIn、Dev Community 上关注。\n    *   加入 Discord 服务器获取帮助、交流想法和讨论。\n    *   欢迎贡献代码，所有代码贡献都需通过拉取请求并经核心开发者批准。\n*   **安全**：如遇安全问题，请发送邮件至 `security@appwrite.io`，而非在 GitHub 上公开提出。\n\n## 许可证\n\nAppwrite 项目采用 BSD 3-Clause 许可证。",
+      "shortSummary": "Appwrite是一个开源的后端平台，以Docker微服务形式提供，旨在简化Web、移动和Flutter应用的后端开发。它提供用户认证、数据库、存储、云函数、消息、实时事件等核心服务。用户可通过Appwrite Cloud或自托管（支持Docker）快速开始。Appwrite采用微服务架构，支持多种SDK和API，提升开发效率和应用安全性，并拥有活跃的开源社区。",
+      "translated_title": "Appwrite/Appwrite",
+      "images": [
+        {
+          "url": "https://github.com/appwrite/appwrite/raw/main/public/images/banner.png",
+          "alt": "Appwrite banner, with logo and text saying ",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://camo.githubusercontent.com/7998eebcac68b3bf03406f767e63f2bfd53602055710fc7992fcbe53be858f82/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f6c6162656c3d5765277265266d6573736167653d486972696e6726636f6c6f723d626c7565267374796c653d666c61742d737175617265",
+          "alt": "We're Hiring label",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://camo.githubusercontent.com/8f64260db76689fdeaa49873bb206084e9ab4315bac5987981fd4de0bcc68755/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f6c6162656c3d6861636b746f62657266657374266d6573736167653d726561647926636f6c6f723d313931313230267374796c653d666c61742d737175617265",
+          "alt": "Hacktoberfest label",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://camo.githubusercontent.com/b8c0390d9a9a77bd0d7847609f823ea8d87f88f0480a38d2ff5a154e04fce7b9/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3536343136303733303834353135313234343f6c6162656c3d646973636f7264267374796c653d666c61742d737175617265",
+          "alt": "Discord label",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://camo.githubusercontent.com/578da1e49d0a4be2db0a1effbc5075df81ea47acc1cdf6e5dd20efe3bc031013/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f61707077726974652f61707077726974652f74657374732e796d6c3f6272616e63683d6d6173746572266c6162656c3d7465737473267374796c653d666c61742d737175617265",
+          "alt": "Build Status label",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://camo.githubusercontent.com/c98e86eb6fc99f0f89267d1e8ab4ae8ff5b0306ba8f0b06d7196bf4d75b3a469/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f61707077726974653f636f6c6f723d303061636565266c6162656c3d74776974746572267374796c653d666c61742d737175617265",
+          "alt": "X Account label",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://camo.githubusercontent.com/af681e489bb53340e9ae1e505069d97baea1b82a397ada464498b3e1a513cb32/68747470733a2f2f6170692e70726f6475637468756e742e636f6d2f776964676574732f656d6265642d696d6167652f76312f746f702d706f73742d62616467652e7376673f706f73745f69643d333630333135267468656d653d6c6967687426706572696f643d6461696c79",
+          "alt": "Appwrite - 100% open source alternative for Firebase | Product Hunt",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.com/appwrite/appwrite/raw/main/public/images/github.png",
+          "alt": "Appwrite project dashboard showing various Appwrite features",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<img src=\"https://opengraph.githubassets.com/7b41df4cdea33a25d394781df2bcc79d186f311cd30c8e32c9a4d4de22249013/appwrite/appwrite\" referrerpolicy=\"no-referrer\"><br>Build like a team of hundreds_ <br><br>Language: TypeScript <br>Stars: 50462 <br>Forks: 4414"
+    }
+  ],
+  "lastUpdated": "2025-05-29T03:59:14.202Z"
+}
