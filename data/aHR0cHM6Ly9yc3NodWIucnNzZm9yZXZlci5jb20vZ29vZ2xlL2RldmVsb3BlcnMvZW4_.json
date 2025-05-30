@@ -5,6 +5,26 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "数据驱动的营销始于开发者 (原标题: Data-driven marketing starts with developers)",
+      "link": "https://developers.googleblog.com/en/data-driven-marketing-starts-with-developers/",
+      "pubDate": "Wed, 28 May 2025 16:00:00 GMT",
+      "isoDate": "2025-05-28T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## 数据驱动的营销始于开发者\n\n在当今的营销环境中，数据应作为策略的指导而非仅仅衡量成功。开发者在实施分析和处理数据的工具方面扮演着关键角色，将原始数据转化为洞察、更智能的策略和更优的结果。本文介绍了三种开发者友好的营销技术（MarTech）解决方案，它们能帮助开发者释放营销数据的强大潜力。\n\n### 1. sGTM Pantheon：增强营销数据控制与透明度\n\nsGTM Pantheon 是一个易于部署的工具箱，旨在补充服务器端 Google Tag Manager (sGTM) 的现有功能，从而提升对营销数据的控制和透明度。它通过测量流量和管理数据流，为更好的隐私、性能、控制和生产力打开了大门。\n\n**核心优势：**\n\n*   改善报告、出价、受众管理和数据管道流程。\n*   对网站和应用数据拥有无与伦比的透明度和控制权。\n*   实时访问外部 API 和基于云的客户、产品和业务数据。\n*   提供实时网站个性化和转化率优化。\n*   利用云数据库进行高级分析和报告。\n\n**开发者灵活性：**\n\n*   开发者可以灵活地混合搭配解决方案，创建可与 Google 和非 Google 平台集成的单一管道。\n*   sGTM Pantheon 解决方案在私有、第一方云安全环境中运行。\n\n**sGTM Pantheon 工具箱内容：**\n\n*   **数据收集工具：**\n    *   **Soteria：** 计算在线交易的投标利润，不暴露数据。\n    *   **Phoebe：** 实时调用 Vertex AI 进行生命周期价值 (LTV) 出价和潜在客户评分。\n    *   **Artemis：** 从 Firestore 获取客户数据用于受众细分。\n    *   **Apollo：** 从 Google 表格检索数据以生成潜在客户评分的潜在客户价值。\n    *   **Cerberus：** 集成 reCAPTCHA 以过滤机器人生成的事件和可疑活动。\n    *   **Dioscuri：** 通过快速访问 Gemini 提供个性化服务。\n*   **数据发送工具：**\n    *   **Hephaestus：** 推进出价、受众、分析和营销数据管道自动化。\n    *   **Deipeus：** 将第一方数据发送回网站进行个性化。\n    *   **Chaos：** 驱动高级分析、数据恢复和受众创建。\n    *   **Hermes：** 简化数据管道中的数据发送。\n*   **数据管理工具：**\n    *   **Argos：** 监控关键的 gTag 设置。\n\n### 2. GA4 Dataform：将BigQuery数据转化为可访问的洞察\n\nGA4 Dataform 是一款数据转换工具，它将 Google Analytics 4 (GA4) 的原始 BigQuery 数据组织成清晰、模块化的表格（如事件、商品、会话、交易等），使所有技术水平的用户都能分析数据并指导数据驱动的营销活动。它提供了深度和简洁性，让用户能够超越默认设置，构建自己的数据模型，并发现新的客户互动方式。\n\n**集成方式：**\n\nGA4 Dataform 是一个 Google Cloud Dataform 项目，提供 SQL 数据模型，用于转换原始 GA4 BigQuery 导出数据。其代码是一个入门包，帮助您在 GA4 原始数据导出的基础上构建模型，以获取数据驱动的营销洞察。\n\n![GA4 Dataform](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-05-27_2.52.15_PM.original.png)\n\n**现有功能：**\n\n1.  构建唯一的 `user_key` 和 `ga_session_key`。\n2.  输出可消化的会话表、用户交易日报表和事件表等。\n3.  可选的 Gclid 扩展（将 GA4 GCLID 映射到 Google Ads 数据传输点击视图 GCLID）。\n4.  事件级别的末次点击归因。\n\n### 3. FeedX：购物Feed的终极A/B测试平台\n\nFeedX 是一个开源的实验框架，旨在帮助广告商对其 Google Ads 购物 Feed 修改进行 A/B 测试，从而消除猜测和手动测试。它提供了一个可靠的 Python A/B 测试框架，让广告商能够了解特定调整对性能变化的影响。\n\n**工作原理：**\n\nFeedX 采用行业最佳实践，确保实验的稳健性和敏感性，包括交叉设计、使用预实验数据进行受控实验 (CUPED) 以调整预实验性能，并在必要时修剪异常值。\n\n**实验流程概览：**\n\n1.  广告商选择希望测试的商品（例如，优化标题或描述）。为确保结果可靠，测试应包含至少 1000 个商品。\n2.  Feed 商品被随机分为两组：对照组和处理组。\n3.  广告商创建一个补充 Feed，仅包含处理组商品的优化内容，并将其上传到 Merchant Center 以开始实验。\n4.  可选地，可以运行交叉实验，交换对照组和处理组。\n5.  实验结束时，分析所有商品的表现，并比较对照组和处理组之间的差异。结果是包含置信区间和统计显著性的可靠指标报告。\n\n### 总结\n\n这些 MarTech 工具在解锁数据驱动解决方案中发挥着关键作用。本文是关于弥合营销与开发之间差距的两部分系列文章的第二部分。更多创新工具和更新，请关注 Google for Developers 博客或查阅 MarTech 解决方案指南。",
+      "shortSummary": "数据驱动的营销离不开开发者的支持。文章介绍了三款关键的营销技术（MarTech）解决方案：sGTM Pantheon、GA4 Dataform 和 FeedX。sGTM Pantheon 通过服务器端 Google Tag Manager 增强营销数据的控制和透明度。GA4 Dataform 将原始 GA4 BigQuery 数据转化为易于理解的洞察。FeedX 则提供了一个开源的 A/B 测试平台，用于优化 Google Ads 购物 Feed。这些工具共同帮助营销人员利用数据制定更智能的策略，提升营销效果。",
+      "translated_title": "数据驱动的营销始于开发者",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-05-27_2.52.15_PM.original.png",
+          "alt": "GA4 Dataform",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Three developer-friendly MarTech solutions – sGTM Pantheon for data control, GA4 Dataform for data transformation, and FeedX for A/B testing shopping feeds – empower developers to leverage marketing data for insights, strategies, and better results."
+    },
+    {
       "title": "在 Android WebView 中添加对 Google Pay 的支持 (原标题: Adding support for Google Pay within Android WebView)",
       "link": "https://developers.googleblog.com/en/adding-support-for-google-pay-within-android-webview/",
       "pubDate": "Tue, 27 May 2025 16:00:00 GMT",
@@ -221,20 +241,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Updates to Google's agent technologies include the Agent Development Kit (ADK) with new Python and Java versions, an improved Agent Engine UI for management, and enhancements to the Agent2Agent (A2A) protocol for better agent communication and security."
-    },
-    {
-      "title": "全面重塑：AI优先的Google Colab (原标题: Fully Reimagined: AI-First Google Colab)",
-      "link": "https://developers.googleblog.com/en/fully-reimagined-ai-first-google-colab/",
-      "pubDate": "Mon, 19 May 2025 16:00:00 GMT",
-      "isoDate": "2025-05-19T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 全面重塑：AI优先的Google Colab\n\nGoogle Colab 长期以来为开发者和研究人员提供了免费的云端 Jupyter Notebook 环境，并集成了 Google Cloud GPU 和 TPU，极大地加速了 AI 开发并简化了协作。在 Google I/O 大会上，Google 宣布推出全新重塑的 AI 优先 Colab，旨在将其承诺提升到新的水平。\n\n## 作为真正的编码伙伴\n\n新的 Colab 作为一个真正的代理协作伙伴，能够理解用户当前的L代码、操作、意图和目标。这种深度集成到工作流程中，使用户能够以前所未有的速度解决最具挑战性的编码问题，降低了探索和解锁数据洞察的门槛。Colab AI 能够跨整个笔记本运行，提供更准确的响应，跨多个单元格执行操作，并以有意义的方式帮助用户更快地构建。编码是一个迭代和协作的过程，Colab 正是为此而设计——用户可以发出简短命令，使用后续提示来完善想法，并真正与代理协作。\n\n## 关键功能，助力工作流程\n\nColab 现由 Gemini 2.5 Flash 提供代理辅助支持，提供了一系列强大的功能：\n\n### 1. 迭代查询\n\nColab 的所有强大 AI 功能都通过简单的对话体验提供。用户可以要求 Colab 执行以下操作：\n*   **生成和转换代码：** 请求短函数、样板代码或整个笔记本的重构。\n*   **讨论 Python 库：** 发现新库和工具，并请求基于工作上下文的示例用法。\n*   **智能修复错误：** Colab 最受欢迎的 AI 功能现在更加智能。当出现错误时，Colab 会在笔记本中迭代地建议修复方案，并以差异视图（diff view）的形式呈现建议的代码更改供用户审查。\n\n### 2. 下一代数据科学代理 (DSA)\n\n数据科学代理 (DSA) 于 2025 年 3 月推出，旨在帮助用户探索数据、深入分析并发现重要的洞察。现在，DSA 得到了升级，并与 Colab 新的统一 AI 体验完全集成，包括：\n*   **智能文件分析：** 要求 Colab 审查上传和现有文件，并进行深入分析。\n*   **自主代理流程：** 触发完整的分析工作流程。DSA 将自主生成计划、执行必要的代码、推理结果并呈现其发现。\n*   **交互式反馈：** 在代理工作时保持控制。在计划执行期间提供反馈，以重新路由或完善过程，确保分析与研究目标完美契合。\n\n### 3. 轻松代码转换\n\n需要修改现有代码？只需描述所需的转换，Colab 就会识别相关代码，并在清晰直观的差异视图中建议必要的更改。\n\n### 4. 灵活交互\n\nColab 提供了多种方式来参与这种新体验：\n*   **中心舞台框：** 用于快速提示和笔记本内操作，只需点击底部工具栏中的 Gemini 火花图标。\n*   **侧边面板：** 用于更深入的讨论，提供额外的空间进行审查和迭代。\n\n## AI 优先开发的 Colab 重塑\n\n所有这些以及更多的变化，是 Google 创建更简单、更强大 AI 优先 Colab 的众多更新中的第一步。展望未来，Google 将带来更多功能、改进的工作流程，甚至更多代理。之前的 Gemini 集成已显示 Colab 中效率提升超过 2 倍*，这种 AI 优先的重塑可以极大地提升用户的工作流程。\n\n新的 Colab 将于今天开始向首批用户推出，每周会增加更多用户。Google 邀请用户加入 Google Labs Discord 社区和 #colab-ai 频道进行交流。\n\n*基于 Google 内部研究。",
-      "shortSummary": "Google 在 I/O 大会上宣布推出全面重塑的 AI 优先 Colab。新版 Colab 作为智能编码伙伴，深度集成 Gemini 2.5 Flash，能理解用户意图并跨笔记本操作。它提供迭代查询、智能错误修复、下一代数据科学代理（DSA）进行自主分析，以及轻松的代码转换功能。通过中心舞台框和侧边面板实现灵活交互。此次重塑旨在显著提升开发效率，降低 AI 和数据探索门槛，并已开始向用户推出。",
-      "translated_title": "全面重塑：AI优先的Google Colab",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Google Colab is launching a reimagined AI-first version at Google I/O, featuring an agentic collaborator powered by Gemini 2.5 Flash with iterative querying capabilities, an upgraded Data Science Agent, effortless code transformation, and flexible interaction methods, aiming to significantly improve coding workflows."
     }
   ],
-  "lastUpdated": "2025-05-29T10:32:46.287Z"
+  "lastUpdated": "2025-05-30T10:30:43.677Z"
 }
