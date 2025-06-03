@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "事半功倍：GitHub Copilot 编码代理与代理模式的区别 (原标题: Less TODO, more done: The difference between coding agent and agent mode in GitHub Copilot)",
+      "link": "https://github.blog/developer-skills/github/less-todo-more-done-the-difference-between-coding-agent-and-agent-mode-in-github-copilot/",
+      "pubDate": "Mon, 02 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-02T16:00:00.000Z",
+      "creator": "Andrea Griffiths",
+      "summary": "## GitHub Copilot 编码代理与代理模式的区别\n\nGitHub Copilot 在2025年推出了两项全新的、截然不同的AI超能力：**代理模式（Agent mode）**和**编码代理（Coding agent）**。虽然两者都是AI代理，但它们针对日常工作流的不同部分进行了优化，旨在帮助开发者“减少待办，增加完成”。\n\n### 核心区别速览\n\n*   **代理模式（Agent mode）**：\n    *   **同步**：在VS Code（以及JetBrains/Eclipse/Xcode预览版）等编辑器内部工作。\n    *   **实时协作者**：作为自主协作者，实时迭代代码、运行测试并修复自身错误。\n*   **编码代理（Coding agent）**：\n    *   **异步**：在GitHub Actions中运行（公开预览版）。\n    *   **异步队友**：接收你分配的问题（`assignee: Copilot`），探索仓库，编写代码，通过测试，并为你提交经过充分测试的拉取请求（PR）。\n\n可以将代理模式想象成与你结对编程的资深开发者，而编码代理则是勤奋地处理明确范围任务的队友。两者可以（也应该）协同使用：例如，在代理模式下进行交互式原型开发，然后将后续任务交给编码代理。\n\n### 代理模式（Agent mode）：您的实时协作者\n\n代理模式将Copilot Chat转变为一个工具编排器（如 `read_file`、`edit_file`、`run_in_terminal` 等）。你只需给出自然语言目标（例如：“为我们的Flask应用添加OAuth并编写测试”），它就会规划、编辑文件、运行测试套件、读取失败、修复错误，并循环直到通过。你可以观察其步骤，随时介入，所有更改都保留在本地。\n\n**如何开启代理模式：**\n\n1.  在VS Code中打开Copilot Chat。\n2.  从模式下拉菜单中选择“Agent”。\n3.  （可选但推荐）点击“Tools”→“Manage”来启用或禁用功能并添加MCP扩展。\n\n**充分利用代理模式的专业技巧：**\n\n*   **明确结果范围**：清晰地表达你想要什么，避免模糊描述。\n*   **提供上下文**：指向规范文件或粘贴架构，避免其重新发明。\n*   **交互式迭代**：让它运行，但在偏离时进行引导，就像与一位快速但偶尔需要指导的熟练队友结对编程。\n*   **通过MCP服务器扩展**：如果你需要自定义工具（如数据库迁移、云部署等）。\n*   **选择模型**：OpenAI GPT-4o 提供原始能力，Anthropic Claude 适用于更长的上下文，可通过模型选择器切换。\n\n### 编码代理（Coding agent）：您的异步队友\n\n代理模式存在于IDE中，而编码代理则存在于你的仓库中。将一个问题分配给Copilot，它就会启动一个安全的云工作区（通过GitHub Actions），制定计划，在自己的分支上编辑代码，运行你的测试/Linter，并打开一个拉取请求，标记你进行审查。\n\n**如何启用编码代理：**\n\n1.  **计划资格**：需要Copilot Pro+或Copilot Enterprise。\n2.  **开启开关**：企业管理员必须在组织策略中启用“Copilot coding agent”。\n3.  **分配问题**：通过将问题分配给Copilot，并用自然语言描述来启动编码代理。例如：`### Feature: add dark-mode toggle assignees: Copilot`。\n\n**编码代理的理想任务：**\n\n*   测试完善的仓库中低到中等复杂度的更改。\n*   添加或扩展单元测试。\n*   小型重构（重命名服务、提取辅助函数）。\n*   文档或错别字修复。\n\n**目前不适合：**大规模重写、跨仓库更改、测试覆盖率为0%的代码库。\n\n**使用GitHub Copilot编码代理的专业技巧：**\n\n*   **在问题中编写清晰的验收标准**：代理会将其视为规范。\n*   **链接到更改涉及的文件或函数**：节省探索时间。\n*   **保持原子性**：每个问题只包含一个逻辑任务。多个小问题比一个庞然大物更容易扩展。\n*   **利用PR评论**：要求代理进行调整，然后你可以将逻辑提取到单独的函数中并添加错误处理。\n*   **注意分钟数**：繁重任务会消耗Actions分钟数和高级请求，因此请策略性地排队。\n\n### 并排比较：选择合适的工具\n\n| 决策维度     | 代理模式（Agent mode）                               | 编码代理（Coding agent）                               |\n| :----------- | :--------------------------------------------------- | :----------------------------------------------------- |\n| 工作流节奏   | 实时协作、对话式、迭代式                             | 即发即忘、后台任务                                     |\n| 界面         | VS Code / JetBrains / Eclipse / Xcode 聊天           | GitHub Issues 或 Copilot Chat → 通过拉取请求监控       |\n| 典型任务     | 重构、原型开发、调试、迁移                           | 添加功能、修复Bug、扩展测试、无聊和重复的工程任务      |\n| 人工监督     | 持续（你观察编辑）                                   | 在拉取请求审查检查点                                   |\n| 资源成本     | 高级请求                                             | 高级请求 + Actions 分钟数                              |\n| 最佳适用场景 | 探索未知代码、紧密的反馈循环                         | 清理待办、并行化琐事                                   |\n\n### 通过协同使用两者实现事半功倍\n\nCopilot的超能力并非非此即彼，它们是互补的。当实时、编辑器内的代理模式遇到稳定、后台运行的编码代理时，其魔力才真正展现。以下是三种经过验证的搭配，可让你充分发挥两者的生产力：\n\n1.  **代理模式原型开发，编码代理交付**：使用代理模式快速实现一个功能分支。然后，创建一个描述完善任务的问题，并分配给Copilot。\n2.  **代理模式生成规范，编码代理实现**：要求代理模式根据代码上下文起草设计文档。对其进行微调，然后将任务交给编码代理执行。\n3.  **编码代理回归修复，代理模式紧急修补**：如果编码代理的拉取请求导致构建失败，在本地打开分支并召唤代理模式进行诊断和即时修补。\n\n### 安全与质量检查清单\n\n在合并代码之前，请务必进行以下快速检查，以确保质量、安全和版本控制的良好实践：\n\n*   **测试通过**：两个代理都依赖测试——投入测试覆盖率，否则它们将盲目运行。\n*   **秘密安全**：编码代理在安全的临时环境中运行；但仍需保护 `.env` 文件。\n*   **全面审查**：代理加速工作；它们不会消除你作为记录审查者的责任。\n*   **版本控制**：代理模式在本地分支中进行编辑，因此请尽早并经常提交。\n\n### 常见问题解答\n\n*   **编码代理能否修复2002年的旧Perl CGI脚本？** 它可以尝试——但没有测试就像教金毛犬微积分。建议先使用代理模式进行重构。\n*   **代理模式是否支持Vim？** 暂不支持。\n*   **我能同时向编码代理抛出多少问题？** 多个，但请记住每个问题都会消耗计算资源和你的拉取请求队列容忍度。\n*   **GitHub Copilot编码代理能否处理图片？** 是的！借助视觉模型，它可以“看到”GitHub问题中包含的Bug截图或原型图，使视觉Bug报告更加有效。\n*   **能否访问外部数据源？** 是的！通过模型上下文协议（MCP）支持，GitHub Copilot编码代理可以连接到GitHub之外的外部数据和功能。\n\n### 总结\n\n**代理模式**是编辑器内的同步掌握；**编码代理**是GitHub问题和PR中的异步工作。清晰的提示、良好的测试和小范围的任务仍然是成功的秘诀。协同使用这两个代理可以覆盖整个开发周期——从“嗯，如果……”到“LGTM，发布吧。”\n\n让人类工程师参与架构选择、安全审查和庆祝击掌。AI代理不会取代工程师；它们将取代工程中无聊的部分。这意味着有更多时间用于创新功能、更好的代码质量和构建未来。这不正是我们热爱成为开发者的原因吗？\n\n### 作者信息及相关链接\n\n本文由 **Andrea Griffiths** 撰写，她是GitHub的高级开发者倡导者，拥有十多年的开发者工具经验。她将技术深度与使先进技术更易于访问的使命相结合。她住在佛罗里达州，与她的威尔士伴侣、两个儿子和两条狗一起生活，并通过GitHub的全球倡议继续推动创新和支持开源。\n\n![Andrea Griffiths](https://github.blog/wp-content/uploads/2025/03/cropped-IMG_1971-200x200.jpeg)\n\n探索更多来自GitHub的内容：\n\n*   **文档**：掌握GitHub所需的一切，尽在一处。\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n*   **GitHub**：在GitHub上构建未来，这里是任何人、任何地方、构建任何东西的场所。\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n*   **客户案例**：了解使用GitHub进行构建的公司和工程团队。\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n*   **企业内容**：专为您策划的执行洞察。\n    ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg)",
+      "shortSummary": "GitHub Copilot新增了“代理模式”（Agent mode）和“编码代理”（Coding agent）两大AI能力。代理模式是编辑器内的实时协作工具，用于即时代码迭代和修复；编码代理是云端的异步队友，可自动处理GitHub问题、编写代码并提交PR。两者可协同使用，提升开发效率，取代重复性工作，让工程师专注于创新。尽管AI加速了工作，但仍需人工审查、测试和版本控制来确保代码质量和安全。",
+      "translated_title": "事半功倍：GitHub Copilot 编码代理与代理模式的区别",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/03/cropped-IMG_1971-200x200.jpeg",
+          "alt": "Andrea Griffiths",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>We’ll decode these two tools—and show you how to use them both to work more efficiently. </p>\n<p>The post <a href=\"https://github.blog/developer-skills/github/less-todo-more-done-the-difference-between-coding-agent-and-agent-mode-in-github-copilot/\">Less TODO, more done: The difference between coding agent and agent mode in GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub Universe 2025：开发者奇境的精彩预告 (原标题: GitHub Universe 2025: Here’s what’s in store at this year’s developer wonderland)",
       "link": "https://github.blog/news-insights/company-news/github-universe-2025-heres-whats-in-store-at-this-years-developer-wonderland/",
       "pubDate": "Fri, 30 May 2025 16:00:00 +0000",
@@ -324,69 +368,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Implementing features has never been easier: Just assign a task or issue to Copilot. It runs in the background with GitHub Actions and submits its work as a pull request.</p>\n<p>The post <a href=\"https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/\">GitHub Copilot: Meet the new coding agent</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "编码。创造。提交。欢迎来到 dev/core (原标题: Code. Create. Commit. Welcome to dev/core)",
-      "link": "https://github.blog/news-insights/company-news/code-create-commit-welcome-to-dev-core/",
-      "pubDate": "Fri, 16 May 2025 16:10:56 +0000",
-      "isoDate": "2025-05-16T16:10:56.000Z",
-      "creator": "Lavinia Sfetcu",
-      "summary": "## GitHub 推出全新 dev/core 系列商品：致敬开发者核心精神\n\nGitHub 全新推出的 dev/core 商品系列，旨在深入探讨“开发者意味着什么”这一核心问题。该系列旨在庆祝开发者的多层次体验，从代码的编写，到创造的世界，再到作为构建者、核心人物的开发者独有的身份。它不仅捕捉了开发者的精髓，也为 GitHub 的核心基础商品带来了令人兴奋的更新，真正做到了由开发者为开发者打造。\n\n### 核心商品亮点\n\n1.  **头部与足部：代码结构化穿搭**\n    *   `<header>` 帽和 `<footer>` 袜：专为熟悉代码库和穿搭的开发者设计。帽子象征着项目的开端，袜子则舒适地收尾，如同代码的起始与结束，完美呼应你的造型。\n\n2.  **基础款升级：经典与未来的融合**\n    *   灵感来源于广受欢迎的黑色 Invertocat 连帽衫，此次推出了两款全新升级版：\n        *   **ASCII Octocat 连帽衫**：以 ASCII 艺术形式重新诠释了标志性的 Octocat 吉祥物，致敬开发者根源。\n        *   **GitHub Copilot 连帽衫**：代表着你最喜爱的 AI 结对程序员，展望未来。\n    *   ![一位女士穿着带有 ASCII Octocat 的连帽衫，一位男士穿着 GitHub Copilot 连帽衫。](https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_HeaderFooterB-1.jpg?resize=1920%2C1080)\n\n3.  **创意表达：释放你的“Ctrl+Alt+Vibes”**\n    *   **扎染 T 恤**：这款扎染 T 恤旨在唤起你第一次构建项目时的回忆——代码可能粗糙，咖啡因在体内流淌，但梦想却无比宏大。它散发着原始、多彩的混乱感，充满创业精神、车库乐队的活力，以及“我在 2004 年的论坛上学习 CSS”的时代气息。\n    *   ![一位女士穿着扎染 T 恤。](https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_TieDye.jpg?resize=1920%2C1080)\n\n4.  **贡献图：你的成就，随身携带**\n    *   **贡献图托特包**：看着你的贡献图日复一日、方块方块地填满，每一次提交和突破都带来深深的满足感。这款托特包以 Invertocat 形状的贡献图来庆祝这份热爱，让你自豪地佩戴在身边。\n    *   ![一位女士手持一个带有 GitHub 贡献图（Invertocat 标志形状）的托特包。](https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_Tote.jpg?w=1024&resize=1920%2C1080)\n\n5.  **代码即衣：ASCII T 恤**\n    *   **ASCII T 恤**：这款 T 恤是对早期构建时代的致敬——那时文本就是你拥有的一切，也是你所需的一切。它直接致敬了开发的根源，每一行代码都是一个构建块。你可能在 thegithubshop.com 首页见过它，那里我们创建了你自己的可交互版本，可以旋转、摇晃、把玩，非常适合在站会变得无聊时解闷。\n    *   ![一位男士穿着 ASCII T 恤。](https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_TieDye-1.jpg?w=1024&resize=1920%2C1080)\n\n### 超越商品：更多开发者乐趣\n\nGitHub 商店不仅仅是一个购物平台，它还充满了有趣的开发者发现。除了商品本身，商店还添加了一个**隐藏的 CLI 功能**：在搜索栏中输入 `git` 后加一个空格，即可体验。此外，在 dev/core 系列中，点击 dev/core 标签，可以解锁一个工具调色板，自定义图片上的 ASCII 图案、大小和速度，创造新的模式。\n\n### 系列理念与优惠\n\ndev/core 系列不仅仅是商品，更是对每天塑造互联网的构建者、梦想家和提交者的致敬。从 ASCII 艺术的简洁线条到俏皮多彩的元素，每一件商品都经过精心设计。无论你是在提交代码、品尝咖啡，还是凝视终端的深渊，穿上这些商品，它们会懂你。\n\n**特别优惠**：即日起至 6 月 1 日，结账时使用代码“GITHUBBLOG15”可享受免费送货。同时，GitHub 也推出了几款新贴纸。\n\n立即访问 thegithubshop.com 探索 dev/core 系列。",
-      "shortSummary": "GitHub 推出全新“dev/core”商品系列，旨在庆祝开发者的多层次体验。该系列由开发者为开发者打造，商品包括 `<header>` 帽、`<footer>` 袜、ASCII Octocat 和 GitHub Copilot 连帽衫、扎染 T 恤以及贡献图托特包和 ASCII T 恤。商店还隐藏了 CLI 功能和图片交互定制等彩蛋。该系列不仅是商品，更是对构建者、梦想家和提交者的致敬。使用代码“GITHUBBLOG15”可享免费送货优惠。",
-      "translated_title": "编码。创造。提交。欢迎来到 dev/core",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_HeaderFooterB-1.jpg?resize=1920%2C1080",
-          "alt": "An image of a woman wearing a hoodie with the Octocat in ASCII and a man wearing a GitHub Copilot hoodie.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_TieDye.jpg?resize=1920%2C1080",
-          "alt": "An image of a woman wearing a tie dye tee shirt.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_Tote.jpg?w=1024&resize=1920%2C1080",
-          "alt": "A woman holding a tote bag with a GitHub contribution graph in the shape of the Invertocat logo.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/05/GHSocial_16_9_TieDye-1.jpg?w=1024&resize=1920%2C1080",
-          "alt": "A man wearing an ASCII tee shirt.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/54560767?v=4&s=200",
-          "alt": "Lavinia Sfetcu",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>The new GitHub Shop collection is here. We’re celebrating you.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/code-create-commit-welcome-to-dev-core/\">Code. Create. Commit. Welcome to dev/core</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-06-01T04:44:04.258Z"
+  "lastUpdated": "2025-06-03T04:37:29.677Z"
 }
