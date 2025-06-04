@@ -5,6 +5,95 @@
   "link": "https://www.scmp.com/rss/36/feed/1",
   "items": [
     {
+      "title": "美国禁止芯片设计工具后，中国三大EDA公司受关注 (原标题: China’s top three EDA firms under spotlight after US ban on chip design tools)",
+      "link": "https://www.scmp.com/tech/tech-war/article/3313069/tech-war-chinas-top-three-eda-firms-under-spotlight-after-us-ban-chip-design-tools?utm_source=rss_feed",
+      "pubDate": "Wed, 04 Jun 2025 13:00:20 +0000",
+      "isoDate": "2025-06-04T13:00:20.000Z",
+      "creator": "Ann Cao",
+      "summary": "### 美国对芯片设计工具的出口管制及其对中国EDA市场的影响\n\n美国商务部工业和安全局近期向主要的EDA（电子设计自动化）供应商，包括Cadence Design Systems、Synopsys和Siemens EDA，发出了关于其软件新出口管制的通知。这些软件可用于开发先进的人工智能芯片。\n\n*   **管制目的与影响**\n    *   新限制针对可用于开发先进AI芯片的EDA软件。\n    *   据工银瑞信资产管理公司的最新研究报告，这些限制预计将有助于加强中国在半导体领域的自给自足努力。\n\n*   **中国EDA公司的市场反应**\n    *   在美国科技禁令消息传出后，中国三大EDA公司——华大九天（Empyrean）、概伦电子（Primarius）和广立微（Semitronix）——的深圳上市公司股票最初表现强劲，投资者寄希望于它们能成为中国主要的替代EDA供应商。\n    *   概伦电子股价一度上涨超过22%，而广立微和华大九天同期分别上涨超过17%和8%。\n    *   然而，随后这些公司的股价出现回调：概伦电子下跌9.41%，广立微下跌4.19%，华大九天则下跌4.01%。\n    *   尽管近期股价有所下跌，但投资者对这三家中国公司的持续兴趣反映出它们在国内市场仍有增长空间，并能抓住新的机遇。\n\n*   **市场份额格局**\n    *   根据摩根士丹利5月29日的一份研究报告，去年Cadence、Synopsys和Siemens三家公司在中国EDA市场占据了高达82%的营收份额，显示出美国公司在该领域的强大主导地位。",
+      "shortSummary": "美国对用于AI芯片的EDA软件实施出口管制，使中国三大EDA公司——华大九天、概伦电子和广立微——受到关注。尽管这些中国公司的股价在禁令消息后经历先涨后跌，但市场普遍认为此举将推动中国半导体自给自足。目前，美国EDA巨头仍占据中国市场82%的份额，中国本土企业面临巨大发展机遇。",
+      "translated_title": "美国禁止芯片设计工具后，中国三大EDA公司受关注",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Chinese semiconductor design software vendors Empyrean Technology, Primarius Technologies and Semitronix are in the spotlight after Washington directed the world’s leading electronic design automation (EDA) suppliers to halt sales on the mainland under new US export restrictions.\nTop EDA suppliers Cadence Design Systems, Synopsys and and Siemens EDA recently confirmed that they had received notices from the US Commerce Department’s Bureau of Industry and Security about the new export controls of...",
+      "enclosure": {
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/04/8637f701-c97e-47de-a6aa-f13c60427079_7bdcb2a6.jpg",
+        "type": "image/jpeg"
+      }
+    },
+    {
+      "title": "华为声称使用自有芯片实现比DeepSeek更好的AI训练方法 (原标题: Huawei claims better AI training method than DeepSeek using own chips)",
+      "link": "https://www.scmp.com/tech/big-tech/article/3313042/huawei-claims-better-ai-training-method-deepseek-using-own-ascend-chips?utm_source=rss_feed",
+      "pubDate": "Wed, 04 Jun 2025 12:00:08 +0000",
+      "isoDate": "2025-06-04T12:00:08.000Z",
+      "creator": "Hannah Wang",
+      "summary": "华为Pangu团队提出新型AI训练方法MoGE\n\n*   华为Pangu大语言模型（LLM）研究团队声称，他们利用华为自有的硬件，改进了DeepSeek原有的AI训练方法。\n*   该团队发表了一篇论文，介绍了“分组专家混合”（Mixture of Grouped Experts, MoGE）的概念。\n*   MoGE是“专家混合”（Mixture of Experts, MoE）技术的升级版本，MoE技术在DeepSeek的成本效益型AI模型中发挥了关键作用。\n\nMoGE改进了MoE的效率问题\n\n*   MoE技术虽然能为大型模型参数提供低执行成本并增强学习能力，但论文指出，它常因“专家”激活不均而导致效率低下，影响并行运行时的性能。\n*   相比之下，改进后的MoGE在选择时对“专家”进行分组，并能更好地平衡“专家”的工作负载。\n*   在AI训练中，“专家”指的是大型模型中专门的子模型或组件，每个都设计用于处理特定任务或数据类型，从而利用多样化专业知识提升整体系统性能。\n\n背景与意义\n\n*   这一进展正值关键时期，尽管美国限制了Nvidia等公司先进AI芯片的出口，但中国AI公司正通过算法改进以及软硬件协同来提升模型训练和推理效率。\n\n相关图片\n\n*   ![图片 1](https://cdn.i-scmp.com/sites/default/files/styles/wide_landscape/public/d8/video/thumbnail/2025/04/18/thumb.jpg?itok=5wxV8Deu)\n    *   **描述:** Nvidia首席执行官黄仁勋在北京访问期间表示中国是“关键市场”，尽管美国禁止AI芯片出口。",
+      "shortSummary": "华为Pangu团队利用自有芯片，提出了一种名为“分组专家混合”（MoGE）的新型AI训练方法。MoGE是DeepSeek所用“专家混合”（MoE）技术的升级版，旨在解决MoE因专家激活不均导致的效率问题，通过分组和平衡专家工作负载来提升性能。这一突破在中国AI公司面临美国芯片限制的背景下尤为重要，有助于提升模型训练效率。",
+      "translated_title": "华为声称使用自有芯片实现比DeepSeek更好的AI训练方法",
+      "images": [
+        {
+          "url": "https://cdn.i-scmp.com/sites/default/files/styles/wide_landscape/public/d8/video/thumbnail/2025/04/18/thumb.jpg?itok=5wxV8Deu",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Researchers working on Huawei Technologies’ large language model (LLM) Pangu claimed they have improved on DeepSeek’s original approach to training artificial intelligence (AI) by leveraging the US-sanctioned company’s proprietary hardware.\nA paper – published last week by Huawei’s Pangu team, which comprises 22 core contributors and 56 additional researchers – introduced the concept of Mixture of Grouped Experts (MoGE). It is an upgraded version of the Mixture of Experts (MoE) technique that...",
+      "enclosure": {
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/04/2d1d3d3a-5f31-44fc-a7ad-d28954669d02_13fc811d.jpg",
+        "type": "image/jpeg"
+      }
+    },
+    {
+      "title": "生物科技公司在第三次香港IPO尝试中宣传其新AI药物发现 (原标题: Biotech firm touts new AI drug discovery amid third Hong Kong IPO attempt)",
+      "link": "https://www.scmp.com/tech/tech-trends/article/3313032/biotech-firm-touts-new-ai-lung-disease-drug-discovery-amid-third-hong-kong-ipo-attempt?utm_source=rss_feed",
+      "pubDate": "Wed, 04 Jun 2025 10:00:12 +0000",
+      "isoDate": "2025-06-04T10:00:12.000Z",
+      "creator": "Xinmei Shen",
+      "summary": "## Insilico Medicine公司AI新药在临床试验中取得积极进展，助力香港IPO\n\n生物科技公司Insilico Medicine正积极推动在香港上市（第三次尝试），并宣布其AI辅助设计的新药在最新临床试验中取得了积极成果。\n\n### AI新药Rentosertib的突破\n\n*   **药物详情**：新药名为rentosertib，是一种小分子药物候选物。\n*   **AI平台**：该药由Insilico的AI平台Chemistry42设计。\n*   **治疗目标**：旨在治疗特发性肺纤维化（IPF），这是一种导致肺组织增厚和僵硬的慢性疾病，严重影响呼吸功能。\n\n### 2A期临床试验结果\n\n*   **发布渠道**：试验结果已于周二在《自然医学》(Nature Medicine)杂志上发表。\n*   **安全性与有效性**：结果显示rentosertib“总体安全且可能有效”。\n*   **研究规模**：一项为期12周的研究在中国招募了71名患者。\n*   **关键发现**：接受较高剂量的患者肺功能有所改善。\n*   **安全性考量**：尽管一些同时服用其他IPF药物的患者出现了与肝毒性相关的副作用，但rentosertib达到了试验设定的安全目标。\n\n### AI在药物发现中的变革潜力\n\n*   Insilico创始人兼首席执行官Alex Zhavoronkov表示，这项研究“展示了AI在药物发现和开发中的变革性潜力”。\n*   他强调，这为实现更快、更具创新性的治疗进展铺平了道路。\n*   Zhavoronkov还认为，AI技术将使新兴国家更容易参与到药物发现领域。\n\n![Insilico Medicine创始人兼首席执行官Alex Zhavoronkov认为AI使新兴国家更容易参与药物发现。图片来源：资料图片](https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/06/04/c4727903-e8f9-4eaa-9973-1bca5ed5a43d_32afda76.jpg)\n\n### 公司背景与全球布局\n\n*   **成立**：Insilico于2014年在马里兰州巴尔的摩（约翰霍普金斯大学新兴技术中心）成立。\n*   **总部迁移**：去年，公司宣布将全球总部迁至波士顿。\n*   **亚洲布局**：Insilico在中国大陆（苏州设有实验室）和香港（科学园设有办事处）拥有重要的业务布局。",
+      "shortSummary": "生物科技公司Insilico Medicine宣布，其AI辅助设计的新药rentosertib在治疗特发性肺纤维化（IPF）的2A期临床试验中表现出“总体安全且可能有效”。该药由其Chemistry42 AI平台开发，并在中国71名患者中显示出肺功能改善。此进展正值该公司第三次尝试在香港上市之际，凸显了AI在加速药物发现方面的巨大潜力。",
+      "translated_title": "生物科技公司在第三次香港IPO尝试中宣传其新AI药物发现",
+      "images": [
+        {
+          "url": "https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/06/04/c4727903-e8f9-4eaa-9973-1bca5ed5a43d_32afda76.jpg",
+          "alt": "Insilico Medicine founder and CEO Alex Zhavoronkov believes AI makes it easier for emerging countries to take part in drug discovery. Photo: Handout",
+          "title": "Insilico Medicine founder and CEO Alex Zhavoronkov believes AI makes it easier for emerging countries to take part in drug discovery. Photo: Handout",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Biotechnology firm Insilico Medicine said its new drug for lung disease, designed with the help of artificial intelligence (AI), showed positive results in the latest clinical trials, as the company pushes for a public listing in Hong Kong.\nInsilico found that its new small-molecule drug candidate, rentosertib, designed with its AI platform Chemistry42, was “generally safe and potentially effective” for treating idiopathic pulmonary fibrosis (IPF), according to its phase 2A clinical trial...",
+      "enclosure": {
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/04/3ee325b5-4999-4c66-ab45-f9ff38c5f215_ca4898d9.jpg",
+        "type": "image/jpeg"
+      }
+    },
+    {
+      "title": "蚂蚁国际通过代理式AI平台追求金融科技的“圣杯” (原标题: Ant International pursues ‘holy grail’ for fintech with agentic AI platform)",
+      "link": "https://www.scmp.com/news/article/3313027/ant-international-rolls-out-agentic-ai-platform-pursuit-holy-grail-fintech?utm_source=rss_feed",
+      "pubDate": "Wed, 04 Jun 2025 09:00:17 +0000",
+      "isoDate": "2025-06-04T09:00:17.000Z",
+      "creator": "Sam Phillips",
+      "summary": "# 蚂蚁国际推出代理式AI平台，赋能金融科技\n\n蚂蚁国际（Ant International），作为蚂蚁集团的子公司，近期推出了一款名为“Alipay+ GenAI Cockpit”的代理式人工智能（AI）工具。该工具旨在显著提升金融服务行业的支付效率和合规能力。\n\n## 平台特性与功能\n\n*   **AI即服务（AIaaS）平台**：该工具被定位为一个AI即服务平台，为金融科技公司提供基础设施。\n*   **构建代理式AI系统**：它使金融科技公司能够开发和部署自己的代理式AI系统。\n*   **赋能AI原生金融服务**：平台支持创建“AI原生金融服务”，以优化支付流程和合规性检查。\n\n## 代理式AI的定义\n\nAI代理是能够自主执行任务的程序，它们可以代表用户或另一个系统进行操作。这些代理能够根据既定目标，利用可用资源，制定具体的任务和子任务计划并加以完成。\n\n## 战略意义与行业愿景\n\n蚂蚁国际首席创新官杨江明表示，金融AI（FinAI）领域正处于其“大爆炸时刻”。公司渴望与行业伙伴合作，共同发展和扩展工具箱及生态系统，以帮助金融企业更快、更好地实现规模化增长。蚂蚁国际认为，将AI技术应用于金融领域是当前AI革命的“圣杯”。\n\n## 行业趋势\n\n蚂蚁国际的这一最新举措，反映了大型科技公司正积极利用其在AI领域的专业知识，为生态系统中的价值链合作伙伴提供先进工具的普遍趋势。\n\n## 相关图片\n\n*   ![Alipay+横幅](https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/06/04/d7fc2675-2eee-40e5-bbeb-95df274222cc_37e9a148.jpg)\n*   *2024年6月17日，在德国杜塞尔多夫举行的2024年欧洲杯D组奥地利对法国的比赛中，可以看到Alipay+的横幅。图片来源：新华社*",
+      "shortSummary": "蚂蚁国际推出了“Alipay+ GenAI Cockpit”代理式AI平台，旨在提升金融服务业的支付效率和合规能力。该AI即服务平台赋能金融科技公司构建AI代理系统和AI原生金融服务。蚂蚁国际认为，将AI应用于金融是当前AI革命的“圣杯”，此举也体现了大型科技公司利用AI赋能生态伙伴的趋势。",
+      "translated_title": "蚂蚁国际通过代理式AI平台追求金融科技的“圣杯”",
+      "images": [
+        {
+          "url": "https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/06/04/d7fc2675-2eee-40e5-bbeb-95df274222cc_37e9a148.jpg",
+          "alt": "A banner for Alipay+ is seen at the UEFA Euro 2024 Group D match between Austria and France in Dusseldorf, Germany, on June 17, 2024. Photo: Xinhua",
+          "title": "A banner for Alipay+ is seen at the UEFA Euro 2024 Group D match between Austria and France in Dusseldorf, Germany, on June 17, 2024. Photo: Xinhua",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Ant International, a spin-off from Ant Group, has launched an agentic artificial intelligence (AI) tool called the Alipay+ GenAI Cockpit, to deliver more efficient payments and compliance capabilities in the financial services industry.\nThe Singapore-based company said the tool, described as an AI-as-a-Service (AIaaS) platform, enables fintech companies to build agentic AI systems as well as “AI-native financial services” for facilitating payments and compliance checks. Ant Group is the fintech...",
+      "enclosure": {
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/04/4720985f-6ad5-499a-b791-46a5a770940b_400c410b.jpg",
+        "type": "image/jpeg"
+      }
+    },
+    {
       "title": "随着香港稳定币法律的通过，内地企业正为市场繁荣做准备 (原标题: With Hong Kong’s stablecoin law, mainland firms are preparing for a market boom)",
       "link": "https://www.scmp.com/tech/blockchain/article/3312916/hong-kong-stablecoin-law-draws-mainland-attention-citic-anticipates-tokenisation-boom?utm_source=rss_feed",
       "pubDate": "Tue, 03 Jun 2025 13:00:16 +0000",
@@ -352,96 +441,7 @@
         "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/05/30/7c25e062-ec84-4d93-949d-90fdb274e897_fa901d42.jpg",
         "type": "image/jpeg"
       }
-    },
-    {
-      "title": "OKX认为随着加密情绪高涨，区块链技术正迎来转折点 (原标题: OKX sees tipping point for blockchain tech amid rising crypto sentiment)",
-      "link": "https://www.scmp.com/tech/blockchain/article/3312328/okx-envisions-future-running-blockchain-crypto-exchange-shifts-focus-hong-kong?utm_source=rss_feed",
-      "pubDate": "Thu, 29 May 2025 14:00:08 +0000",
-      "isoDate": "2025-05-29T14:00:08.000Z",
-      "creator": "Matt Haldane",
-      "summary": "# OKX对区块链技术前景的展望\n\n全球交易量最大的加密货币交易所之一OKX预测，未来几年区块链技术将迎来爆发式增长，尽管其在香港市场的计划仍处于搁置状态。\n\n## 联合报告揭示未来趋势\n\nOKX与Blockworks Research联合发布了一份题为《区块链应用的未来：重塑全球产业》的报告。该报告于周四发布，旨在预测区块链技术在未来25年内的演变，并特别指出在未来几年内，这个目前价值2.6万亿美元的生态系统将实现爆炸性增长。\n\n## 行业转折点到来\n\nOKX首席商务官黎智凯（Lennix Lai）表示，尽管游戏内资产所有权和知识产权管理等区块链用例已缓慢发展多年，但该行业可能正达到一个转折点。他指出：\n\n*   “整个金融科技领域，加上传统金融领域，再加上资产管理方面，包括政府，都开始在加密领域有所涉足。”\n*   “我们看到一整套不同的行业参与者开始构建与加密相关的东西。”\n\n## 广泛的应用前景\n\n报告概述了区块链技术在众多行业中的光明前景，包括：\n\n*   **传统金融**\n*   **视频游戏**\n\n其中重点提及的用例包括游戏内资产所有权和知识产权管理。\n\n## 金融领域：最实际的用例\n\n目前，金融仍然是区块链最实际的用例。OKX已通过建立合作伙伴关系，例如与渣打银行的合作，积极拓展传统金融领域，允许客户使用加密货币和代币化货币市场基金作为抵押品。\n\n报告预测，最终“‘加密银行’或‘新银行’与传统银行之间的区别将基本消失”。然而，OKX表示无意侵犯传统银行的领地。\n\n![Pedestrians walk past a likeness of US President Donald Trump at a crypto exchange in Hong Kong on January 31. Photo: Antony Dickson](https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/05/29/8e54ff08-349b-4478-8207-3a33087f555a_08d4efd0.jpg)\n*行人于1月31日在香港一家加密货币交易所旁走过美国前总统唐纳德·特朗普的肖像。图片：Antony Dickson*",
-      "shortSummary": "加密货币交易所OKX预测，随着加密情绪高涨，区块链技术正迎来转折点，未来几年将实现爆发式增长。OKX与Blockworks Research联合发布的报告指出，该技术将在从传统金融到视频游戏等多个行业得到广泛应用，当前金融领域是其最实际的用例。OKX首席商务官黎智凯表示，金融、资管乃至政府部门都已开始涉足加密领域。尽管OKX正通过合作拓展传统金融业务，但其在香港市场的计划仍未启动。",
-      "translated_title": "OKX认为随着加密情绪高涨，区块链技术正迎来转折点",
-      "images": [
-        {
-          "url": "https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/05/29/8e54ff08-349b-4478-8207-3a33087f555a_08d4efd0.jpg",
-          "alt": "Pedestrians walk past a likeness of US President Donald Trump at a crypto exchange in Hong Kong on January 31. Photo: Antony Dickson",
-          "title": "Pedestrians walk past a likeness of US President Donald Trump at a crypto exchange in Hong Kong on January 31. Photo: Antony Dickson",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "OKX, one of the world’s largest cryptocurrency exchanges by trading volume, is preparing for explosive growth in blockchain adoption in the coming years, according to chief commercial officer Lennix Lai, although plans for the Hong Kong market remain on the back burner.\nIn a report co-produced by OKX and Blockworks Research, the companies outline a bright future for the adoption of blockchain technology across myriad industries, from traditional finance to video gaming. Many of the use cases...",
-      "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/05/29/c7fd90ac-dea3-4415-80a4-8b77d26b9b5c_479271b2.jpg",
-        "type": "image/jpeg"
-      }
-    },
-    {
-      "title": "英伟达‘考虑’为中国市场推出新AI芯片，但排除Hopper系列 (原标题: Nvidia ‘considering’ new AI chip for China but rules out Hopper series)",
-      "link": "https://www.scmp.com/tech/tech-war/article/3312324/nvidia-considering-new-ai-chip-china-rules-out-hopper-series-due-us-export-ban?utm_source=rss_feed",
-      "pubDate": "Thu, 29 May 2025 12:00:08 +0000",
-      "isoDate": "2025-05-29T12:00:08.000Z",
-      "creator": "Ann Cao",
-      "summary": "### 英伟达考虑为中国市场推出新AI芯片\n\n英伟达（Nvidia）首席执行官黄仁勋表示，公司正在考虑为中国市场开发一款新的AI芯片，但目前尚未有具体产品可宣布。此举旨在应对美国出口管制政策对英伟达业务造成的持续影响。\n\n*   **背景与现状**\n    *   黄仁勋在公司财报电话会议上指出，关键在于理解出口限制，并在此框架内开发能够继续服务中国市场的“有趣产品”。\n    *   他明确表示，目前没有具体产品可以宣布，但公司正在积极考虑这一计划。\n\n*   **美国出口管制的影响**\n    *   此前，美国突然对英伟达专为中国客户定制的H20芯片实施了出口禁令，这些芯片对中国客户开发和训练AI模型至关重要。\n    *   H20禁令于4月中旬公布，对英伟达在华业务前景造成了不确定性。\n\n*   **英伟达对中国市场的承诺**\n    *   自H20禁令宣布以来，黄仁勋多次强调中国市场对英伟达的重要性，称其为全球第二大经济体。\n    *   禁令公布后，黄仁勋曾意外访问中国，会见了中国高级官员，并表达了对该市场的承诺。\n\n*   **相关图片**\n    *   ![人们在2025年5月21日台湾台北举行的Computex 2025展览上观看英伟达的新产品。图片来源：美联社](https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/05/29/33ae671c-58cf-4a68-bc78-e79ed346a126_1126e908.jpg)",
-      "shortSummary": "英伟达正考虑为中国市场开发一款新的AI芯片，以应对美国出口管制。CEO黄仁勋表示，目前尚无具体产品，但公司致力于在限制内服务中国市场。此举源于美国对专为中国定制的H20芯片实施禁令。黄仁勋多次强调中国市场的重要性，并曾为此访问中国。",
-      "translated_title": "英伟达‘考虑’为中国市场推出新AI芯片，但排除Hopper系列",
-      "images": [
-        {
-          "url": "https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/05/29/33ae671c-58cf-4a68-bc78-e79ed346a126_1126e908.jpg",
-          "alt": "People look at Nvidia’s new products during the Computex 2025 exhibition in Taipei, Taiwan, May 21, 2025. Photo: AP",
-          "title": "People look at Nvidia’s new products during the Computex 2025 exhibition in Taipei, Taiwan, May 21, 2025. Photo: AP",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Nvidia said a new artificial intelligence (AI) chip for the Chinese market is not ready although it is considering such a plan, as US export controls continue to cloud the outlook for the tech giant in the world’s second largest economy.\n“The key is to understand the limits and see if we can come up with interesting products that could continue to serve the Chinese market,” Nvidia founder and CEO Jensen Huang, 62, said during the company’s post-earnings call on Wednesday.\n“We don’t have anything...",
-      "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/05/29/883ef356-793a-4398-85ce-7232697a3c71_8fd4390e.jpg",
-        "type": "image/jpeg"
-      }
-    },
-    {
-      "title": "上海拥抱具身智能，加大对机器人产业的政策支持 (原标题: Shanghai embraces embodied intelligence as it boosts policy support for robotics)",
-      "link": "https://www.scmp.com/tech/tech-trends/article/3312336/shanghai-embraces-embodied-intelligence-it-boosts-policy-support-humanoid-robotics?utm_source=rss_feed",
-      "pubDate": "Thu, 29 May 2025 11:30:08 +0000",
-      "isoDate": "2025-05-29T11:30:08.000Z",
-      "creator": "Wency Chen",
-      "summary": "# 上海拥抱具身智能，加大对机器人产业的政策支持\n\n上海近期举办了具身智能产业大会和人形机器人技能竞赛，标志着中国多个城市正积极支持这一新兴领域，将其作为国家高科技发展的重要焦点。\n\n## 具身智能开发者大会亮点\n\n*   **地点与内容：** 大会在上海张江高科技园区举行，包括多场论坛、企业展览以及一场人形机器人“技能”竞赛。\n*   **竞赛详情：** 大学生们使用组织方提供的机器人参与各项任务，涵盖从足球比赛到工业、家庭和商业场景中的实际应用。\n\n## 上海市政府的坚定承诺与政策支持\n\n上海市政府副秘书长兼浦东新区区长吴金城在开幕式上强调了对该产业的强力支持：\n\n*   **支持重点：** 将加倍支持技术商业化、实际场景应用、市场推广，并增加政府采购。\n*   **机器人愿景：** 期望机器人能够“听、理解并执行任务”，从而赋能各行各业并进入千家万户。\n*   **具体政策：** 承诺提供资金支持、具身智能开源数据、发挥产业集群优势、提供创业空间，以及为人才提供住房激励。\n\n## 上海机器人产业的领先地位\n\n张江集团总经理陈伟伟在媒体吹风会上指出上海在全国机器人产业中的重要地位：\n\n*   **全国占比：** 上海的机器人产业规模占全国总量的三分之一。\n*   **浦东贡献：** 浦东新区拥有上海三分之一的机器人企业，数量超过100家。\n*   **重点项目：** 提及了2020年启动的张江机器人谷项目，该项目占地4.2平方公里。\n\n## 关键企业与创新中心\n\n上海是多家新兴机器人制造商的所在地，包括：\n\n*   阿吉波特（Agibot）\n*   傅里叶（Fourier）\n*   开普勒机器人（Kepler Robotics）\n*   卓德（DroidUp）\n*   此外，国家和地方人形机器人创新中心也落户上海，该中心由中国工业和信息化部与上海市政府共同支持。\n\n## 专项资金投入\n\n为进一步推动具身智能产业发展，上海国有资本投资公司和浦东新区于今年4月共同设立了一项具身智能专项基金，目标总额达10亿元人民币（约1.389亿美元）。\n\n![人形机器人在上海的一场活动中踢足球。图片：Wency Chen](https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/05/29/1dd003f7-562f-444b-93f4-5ed0481ecdbf_7865902d.jpg)",
-      "shortSummary": "上海近期举办具身智能产业大会和人形机器人技能竞赛，以大力支持机器人产业发展。上海作为中国机器人产业的领头羊，其规模占全国三分之一，浦东新区是重要枢纽。市政府承诺加大政策支持，包括资金、人才激励和市场推广，目标是让机器人能听、懂、执行任务，赋能产业并进入千家万户。为此，已设立10亿元人民币的专项基金。",
-      "translated_title": "上海拥抱具身智能，加大对机器人产业的政策支持",
-      "images": [
-        {
-          "url": "https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/05/29/1dd003f7-562f-444b-93f4-5ed0481ecdbf_7865902d.jpg",
-          "alt": "Humanoid robots play soccer at an event in Shanghai on Thursday. Photo: Wency Chen",
-          "title": "Humanoid robots play soccer at an event in Shanghai on Thursday. Photo: Wency Chen",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Shanghai hosted an embodied intelligence industry conference and a humanoid robotics skills competition on Thursday, as multiple Chinese cities step up efforts to support the burgeoning sector, now a key focus of the nation’s hi-tech ambitions.\nThe Embodied Intelligence Developer Conference, held in Zhangjiang, Shanghai’s hi-tech zone, included forums, corporate exhibits and a “skills” contest featuring humanoid robots. University students competed using robots provided by the organisers in...",
-      "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/05/29/78e0e64f-3bac-40d5-9afe-e04652afc97c_a55a2086.jpg",
-        "type": "image/jpeg"
-      }
-    },
-    {
-      "title": "DeepSeek R1 AI模型的小幅更新引人关注 (原标题: DeepSeek’s small update to R1 AI model draws big attention)",
-      "link": "https://www.scmp.com/tech/tech-trends/article/3312254/deepseek-quietly-updates-r1-ai-model-amid-anticipation-next-gen-tech?utm_source=rss_feed",
-      "pubDate": "Thu, 29 May 2025 06:30:08 +0000",
-      "isoDate": "2025-05-29T06:30:08.000Z",
-      "creator": "Ben Jiang",
-      "summary": "## DeepSeek R1 AI模型发布小幅更新，编码能力显著提升\n\n中国人工智能初创公司DeepSeek于周三对其R1推理模型进行了首次更新，发布了新版本R1-0528。这是该模型自今年1月首次亮相以来的首次修订。\n\n### 更新详情与可用性\n\n*   **发布时间**：周三，是R1模型自1月首次发布以来的首次更新。\n*   **版本名称**：R1-0528。\n*   **可用平台**：新版本已在其同名聊天机器人网站和移动应用程序上提供，并已在开源AI平台Hugging Face上线。\n*   **更新内容**：DeepSeek官方并未披露此次R1-0528更新的具体细节，也未立即回应置评请求。\n\n### 市场反响与性能表现\n\n尽管更新细节未公开，R1-0528版本迅速引起了开发者社区的广泛关注。\n\n*   **编码能力提升**：独立基准测试平台LiveCodeBench报告称，新模型在AI辅助编码方面取得了显著进步。\n*   **排名表现**：\n    *   在LiveCodeBench排行榜上，R1-0528现已成为中国模型中编码能力最强的模型。\n    *   其整体排名仅次于OpenAI的o4-mini-high、o3-high和o4-mini-medium。\n    *   性能超越了阿里巴巴集团的最新模型Qwen3以及被广泛认为是AI编码领域领先模型的Anthropic Claude 3.7。\n\n### DeepSeek此前更新\n\nDeepSeek上一次更新其基础大语言模型V3是在3月份，当时发布的V3-0324版本在编码和写作方面有所改进。",
-      "shortSummary": "中国AI公司DeepSeek发布了R1推理模型的小幅更新版本R1-0528。尽管官方未披露具体细节，但该模型在AI辅助编码能力上显著提升，已成为LiveCodeBench排行榜上中国模型中的佼佼者，并超越了阿里巴巴的Qwen3和Anthropic的Claude 3.7，仅次于部分OpenAI模型。",
-      "translated_title": "DeepSeek R1 AI模型的小幅更新引人关注",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Chinese artificial intelligence (AI) start-up DeepSeek quietly released a new version of its R1 reasoning model on Wednesday, marking its first revision since its high-profile debut in January.\nThe Hangzhou-based company said it had “completed a minor update to the R1 model”, which is now available on the website for its namesake chatbot, as well as its mobile apps, according to a notice posted in a company-run WeChat group chat.\nDeepSeek did not disclose details of the changes in the update,...",
-      "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/05/29/2edd2b4a-bdfa-4093-ab34-776224357f27_d747da43.jpg",
-        "type": "image/jpeg"
-      }
     }
   ],
-  "lastUpdated": "2025-06-04T07:19:42.605Z"
+  "lastUpdated": "2025-06-04T13:35:30.077Z"
 }
