@@ -5,6 +5,98 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "Windsurf 称 Anthropic 限制其直接访问 Claude AI 模型 (原标题: Windsurf says Anthropic is limiting its direct access to Claude AI models)",
+      "link": "https://techcrunch.com/2025/06/03/windsurf-says-anthropic-is-limiting-its-direct-access-to-claude-ai-models/",
+      "pubDate": "Wed, 04 Jun 2025 00:48:43 +0000",
+      "isoDate": "2025-06-04T00:48:43.000Z",
+      "creator": "Maxwell Zeff",
+      "summary": "### 核心问题：Anthropic 大幅限制 Windsurf 对 Claude AI 模型的直接访问\n\n*   **访问受限详情**：\n    *   AI 编码初创公司 Windsurf 透露，Anthropic 大幅减少了其对 Claude 3.7 Sonnet 和 Claude 3.5 Sonnet AI 模型的直接（第一方）访问权限。\n    *   Anthropic 仅提前不到五天通知了这一变更，导致 Windsurf 必须紧急寻找其他第三方计算提供商来运行这些模型。\n    *   Windsurf CEO Varun Mohan 在 X 上表示，他们对此决定和仓促的通知感到失望，并曾明确表示希望支付费用以获得全部容量。\n    *   这一变化可能导致 Windsurf 用户在短期内访问 Claude 模型时出现可用性问题。\n\n*   **Claude 4 访问问题**：\n    *   在此次限制之前，Anthropic 在推出其新一代模型 Claude 4 时，似乎也未向 Windsurf 提供直接访问权限。\n    *   这迫使 Windsurf 依赖一种更昂贵、更复杂的“自带密钥”（bring your own key）解决方案，让开发者通过连接自己的 Anthropic API 密钥来访问 Claude 4。\n    *   与此同时，Anysphere 的 Cursor、Cognition 的 Devin 和微软的 GitHub Copilot 等其他流行的 AI 编码工具在 Claude 4 发布时似乎获得了直接访问权限。\n\n### 背景与影响\n\n*   **行业竞争与 Anthropic 策略**：\n    *   AI 辅助编码领域（亦称“vibe coding”）近期竞争激烈。\n    *   有报道称 OpenAI 已于四月完成对 Windsurf 的收购。\n    *   Anthropic 也在加大对其自身 AI 编码应用的投资，例如于二月推出了 Claude Code，并于五月举办了首届 Code with Claude 开发者大会。\n    *   Anthropic 发言人 Steve Mnich 表示，公司正在“优先考虑能够有效服务更广泛开发者社区的可持续合作伙伴关系”，并指出开发者仍可通过 API 密钥或其合作伙伴生态系统访问 Claude。\n\n*   **Windsurf 的增长与用户反馈**：\n    *   Windsurf 今年增长迅速，四月年化经常性收入（ARR）达到 1 亿美元，旨在追赶 Cursor 和 GitHub Copilot 等更受欢迎的 AI 编码工具。\n    *   然而，对 Anthropic 模型的有限访问可能会阻碍其增长。\n    *   多位 Windsurf 用户对无法直接访问 Anthropic 最好的 AI 编码模型表示沮丧。\n    *   例如，一位专注于 Apple Swift 编程语言的初创公司创始人 Ronald Mannak，因 Claude 4 的强大功能而从 Windsurf 转向使用 Cursor。\n\n### 解决方案与行业展望\n\n*   **“自带密钥”解决方案的局限性**：\n    *   尽管 Windsurf 提供了“自带密钥”作为短期解决方案，但开发者认为这种方式比 Windsurf 直接提供模型更昂贵、更复杂。\n*   **行业对模型可选性的需求**：\n    *   对于 vibe coder 而言，可选性至关重要，因为 OpenAI、Google 和 Anthropic 每隔几个月就会发布在编码任务上表现优异的新 AI 模型。\n    *   因此，支持所有领先开发者提供的 AI 模型对 vibe coding 初创公司有利。\n    *   Windsurf 发言人 Payal Patel 表示，公司始终致力于为用户提供可选性，但 Anthropic 的决定使这变得更具挑战性。",
+      "shortSummary": "AI 编码初创公司 Windsurf 称，Anthropic 大幅限制了其对 Claude 3.x 及 Claude 4 AI 模型的直接访问，且通知时间极短。这导致 Windsurf 用户面临短期可用性问题，并被迫采用更昂贵、复杂的第三方解决方案。此举发生在 Windsurf 传闻将被 OpenAI 收购之际，而 Anthropic 正加大对其自身 AI 编码应用的投入。用户对此表示不满，部分已转向竞争对手。Anthropic 表示此举旨在优先服务更广泛的开发者社区。",
+      "translated_title": "Windsurf 称 Anthropic 限制其直接访问 Claude AI 模型",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Windsurf, the popular vibe coding startup that&#8217;s reportedly being acquired by OpenAI, said Anthropic significantly reduced its first-party access to its Claude 3.7 Sonnet and Claude 3.5 Sonnet AI models. Windsurf CEO Varun Mohan said in a post on X that Anthropic gave Windsurf little notice for this change, and the startup now has to [&#8230;]"
+    },
+    {
+      "title": "Anthropic的AI正在撰写自己的博客——并有人工监督 (原标题: Anthropic’s AI is writing its own blog — with human oversight)",
+      "link": "https://techcrunch.com/2025/06/03/anthropics-ai-is-writing-its-own-blog-with-human-oversight/",
+      "pubDate": "Tue, 03 Jun 2025 20:29:26 +0000",
+      "isoDate": "2025-06-03T20:29:26.000Z",
+      "creator": "Kyle Wiggers",
+      "summary": "# Anthropic推出AI驱动的博客“Claude Explains”\n\nAnthropic公司近期悄然推出了一个名为“Claude Explains”的新页面，该博客主要由其AI模型家族Claude生成内容，但有人工监督。\n\n## 博客目的与运作方式\n\n*   **展示AI能力：** “Claude Explains”旨在展示Claude在撰写技术主题文章方面的能力，例如“使用Claude简化复杂代码库”。\n*   **人机协作模式：** 尽管内容主要由AI生成，但Anthropic的“主题专家和编辑团队”会对Claude的草稿进行审查、完善和增强，加入“见解、实际案例和背景知识”。公司强调这并非“纯粹的Claude输出”，而是需要人类专业知识和多次迭代的编辑过程。\n*   **潜在误导：** 博客首页的描述“欢迎来到Anthropic宇宙中Claude撰写各种主题的小角落”可能会让读者误以为所有内容都是由Claude端到端完成的。\n\n## Anthropic的愿景\n\nAnthropic将“Claude Explains”视为“人类专业知识与AI能力如何协同工作”的范例，尤其是在教育资源方面。公司认为AI可以“增强”人类的工作，而非取代人类专业知识，从而为用户提供更大价值。未来，该博客计划涵盖从创意写作到数据分析再到商业策略等广泛主题。\n\n## 行业背景与挑战\n\nAnthropic的这项AI内容生成实验并非孤例，其他科技公司和出版商也在积极探索：\n\n*   **竞争对手动态：** OpenAI曾表示已开发出专门用于创意写作的模型；Meta的马克·扎克伯格希望开发端到端AI广告工具；OpenAI首席执行官萨姆·奥尔特曼预测AI未来可处理95%的营销工作。\n*   **出版业应用：**\n    *   Gannett：推出AI生成的体育赛事回顾和摘要。\n    *   Bloomberg：在文章顶部添加AI生成的摘要。\n    *   Business Insider：鼓励作者使用辅助AI工具。\n    *   传统媒体：纽约时报鼓励员工使用AI建议编辑、标题和采访问题；华盛顿邮报正在开发AI驱动的“故事编辑器”Ember。\n*   **AI生成内容的挑战：** 许多AI生成内容的尝试并不顺利，主要因为AI容易“自信地编造信息”。例如：\n    *   Business Insider：因推荐不存在的书籍而被迫道歉。\n    *   Bloomberg：不得不修正数十个AI生成的文章摘要。\n    *   G/O Media：发布了充满错误的AI撰写文章，引发广泛嘲笑。\n\n## Anthropic的招聘情况\n\n尽管Anthropic涉足AI驱动的博客草稿撰写，但公司发言人指出，他们仍在招聘营销、内容、编辑以及许多其他涉及写作的领域的人才，这表明AI并非完全取代人类工作。\n\n![Anthropic Claude Explains](https://techcrunch.com/wp-content/uploads/2025/06/Screenshot-2025-06-03-at-4.19.27PM.png?w=680)\n*图片来源：Anthropic*",
+      "shortSummary": "Anthropic公司推出了由其AI模型Claude主导的新博客“Claude Explains”，旨在展示AI的写作能力。该博客内容主要由AI生成，但有人工编辑团队进行严格监督和完善，强调人机协作而非纯AI输出。文章指出，尽管AI内容生成是行业趋势，但其“凭空捏造”问题导致其他媒体出现错误。Anthropic强调AI是增强人类工作，而非取代，公司仍在招聘相关人才。",
+      "translated_title": "Anthropic的AI正在撰写自己的博客——并有人工监督",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Screenshot-2025-06-03-at-4.19.27PM.png?w=680",
+          "alt": "Anthropic Claude Explains",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Anthropic has given its AI a blog. A week ago, Anthropic quietly launched Claude Explains, a new page on its website that&#8217;s generated mostly by the company&#8217;s AI model family, Claude. Populated by posts on technical topics related to various Claude use cases (e.g. &#8220;Simplify complex codebases with Claude&#8221;), the blog is intended to be [&#8230;]"
+    },
+    {
+      "title": "Deel 指控 Rippling 通过“冒充”客户进行间谍活动 (原标题: Now Deel is accusing Rippling of spying by ‘impersonating’ a customer)",
+      "link": "https://techcrunch.com/2025/06/03/now-deel-is-accusing-rippling-of-spying-by-impersonating-a-customer/",
+      "pubDate": "Tue, 03 Jun 2025 20:04:16 +0000",
+      "isoDate": "2025-06-03T20:04:16.000Z",
+      "creator": "Julie Bort",
+      "summary": "## Deel与Rippling的法律纠纷升级：互相指控间谍活动\n\nHR科技初创公司Deel与竞争对手Rippling之间的法律战持续升级。Deel于周二提交了一份修订后的诉状，披露了其对Rippling企业间谍活动的新指控，为这场已经充满戏剧性的法律纠纷增添了新的细节。\n\n### Rippling的初步诉讼\n\nRippling于今年三月率先起诉Deel，指控其盗用商业机密、不正当干预和不公平竞争。Rippling的诉讼主要基于一名Rippling员工在爱尔兰法庭的证词，该员工承认替Deel进行间谍活动，并声称向Deel提供了包括销售线索、产品路线图、客户账户、明星员工名单等在内的内部信息。\n\n### Deel的修订诉状及反诉\n\nDeel此后提出了反诉，试图以技术原因驳回Rippling的诉讼，同时也提出了自己的指控，声称Rippling也从事了间谍活动。修订后的诉状提供了更多细节：\n\n*   **核心指控**：Deel声称Rippling的一名“竞争情报”员工“冒充Deel的合法客户长达六个月，非法访问Deel的系统，以细致分析、记录和复制Deel的全球产品及其业务运作方式，从而为Rippling谋利。”\n*   **对Rippling CEO的攻击**：诉状中包含对Rippling CEO Parker Conrad的侮辱，并提及他之前在Zenefits的困境。诉状甚至进行心理分析，推测Conrad针对Deel是因为对Zenefits的风险投资方Andreessen Horowitz（也是Deel的20%股东）怀恨在心。\n*   **散布虚假信息指控**：Deel声称Rippling“在媒体和全国监管机构中散布关于Deel的虚假和误导性信息”，例如美国参议员Adam Schiff曾公开致函美国劳工部，要求调查Deel的员工分类问题（此前《商业内幕》曾报道此事）。Deel当时否认不当行为，并表示已与Schiff讨论解决。\n*   **财务信息披露**：Deel在诉状中透露，公司已盈利多年，年收入超过10亿美元。\n\n### Rippling的回应\n\nRippling的发言人表示，公司正在调查Deel指控的员工收集产品情报的具体方式。Rippling坚称致力于公平竞争和最高道德标准，并要求员工完全遵守其书面政策。发言人还指出，Deel的修订诉状“撤回”了原始诉状中的一些断言，包括暗示Rippling曾获取Deel董事会级别信息的措辞。\n\n### 两种间谍指控的性质差异\n\n尽管两家公司都指控对方进行间谍活动，但其性质有所不同：\n\n*   **Rippling的指控**：Deel通过支付员工获取其*内部网络*信息，包括销售线索和产品路线图等。\n*   **Deel的指控**：Rippling通过冒充客户获取其*产品和功能*信息，即通过访问Deel的产品本身及其提供给客户的信息。\n\n竞争对手购买彼此产品以进行监控、超越和竞争是常见的商业做法。因此，法院将如何处理Deel的诉讼，即是否会认定此类策略越界，将是一个值得关注的焦点。\n\n### 行业影响\n\nRippling抓捕企业间谍的事件（涉及设陷阱、砸手机和蜜罐）已成为科技行业的文化流行语。例如，Y Combinator的毕业生Cotool上个月推出了一款代理安全平台，其广告就曾以此为噱头。",
+      "shortSummary": "HR科技公司Deel和Rippling正陷入法律纠纷。Rippling此前起诉Deel，指控其通过收买员工窃取内部商业机密。Deel随后反诉，指控Rippling一名员工冒充客户，非法访问Deel系统以获取产品和业务运作信息。Deel的诉状还攻击Rippling CEO，并指控Rippling散布虚假信息。Rippling否认指控，并称Deel的诉状有所“退缩”。两起案件代表了不同性质的企业间谍指控，其法律结果备受关注。",
+      "translated_title": "Deel 指控 Rippling 通过“冒充”客户进行间谍活动",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Deel alleges that one of Rippling’s employees \"spent six months impersonating a legitimate Deel customer to gain unauthorized access to Deel’s systems to meticulously analyze, record, and copy Deel’s global products and the way Deel does business for Rippling’s own benefit and use.” "
+    },
+    {
+      "title": "谷歌再次押注TAE Technologies的聚变能 (原标题: Google places another fusion power bet on TAE Technologies)",
+      "link": "https://techcrunch.com/2025/06/03/google-places-another-fusion-power-bet-on-tae-technologies/",
+      "pubDate": "Tue, 03 Jun 2025 19:47:50 +0000",
+      "isoDate": "2025-06-03T19:47:50.000Z",
+      "creator": "Tim De Chant",
+      "summary": "## TAE Technologies 获得新一轮融资，谷歌持续投资\n\nTAE Technologies 是一家致力于聚变能商业化的公司，近日宣布完成新一轮1.5亿美元的融资。本轮投资者包括现有支持者谷歌、雪佛龙和 New Enterprise Associates。\n\n### 融资概况\n\n*   **总融资额**：据 PitchBook 统计，TAE Technologies 迄今已累计融资约18亿美元，使其成为资金最雄厚的聚变公司之一。\n*   **本轮融资**：这是该公司近30年历史中的第12轮投资，获得了1.5亿美元。\n*   **谷歌的参与**：谷歌已参与了TAE的两轮投资，包括本轮以及2022年完成的2.5亿美元融资。\n*   **未来计划**：TAE 首席执行官 Michl Binderbauer 表示，目标是在今年夏天本轮融资结束前再筹集5000万美元。\n\n### 技术突破与进展\n\n*   **早期设计**：TAE（前身为 Tri Alpha Energy）多年来一直秘密开发其反应堆设计。最初的方法是发射两个等离子体球相互碰撞，然后用粒子束旋转形成的等离子体团（形状像中空的雪茄），该等离子体团会产生自己的磁场，与反应堆磁体协同作用以约束等离子体。\n*   **最新突破**：在今年4月，TAE 宣布不再需要发射两个等离子体球来启动反应。现在，他们能够仅使用粒子束来形成、加热和稳定等离子体。\n*   **优势**：这一改进使得反应堆更小、更便宜且更易于操作。\n\n### 谷歌与TAE的合作\n\n*   **机器学习应用**：自2014年以来，谷歌的计算机科学家一直与TAE的工程师合作，利用机器学习（一种人工智能形式）来寻找聚变设备的理想设置。\n*   **效率提升**：在引入人工智能之前，优化过程需要两个月时间，涉及约1000次实验。人工智能的引入显著缩短了这一时间，将实验次数减少了两个数量级，现在只需几个小时即可完成。\n\n### 商业化目标\n\n*   **当前能力**：TAE 的反应堆目前可以将等离子体加热到7000万摄氏度。\n*   **商业化目标**：为了实现商业化，该公司表示需要将等离子体加热到10亿摄氏度。\n*   **时间表**：TAE 希望能在2030年代初将电力输送到电网。",
+      "shortSummary": "TAE Technologies 近期完成1.5亿美元融资，累计筹集约18亿美元，谷歌是主要投资者之一。该公司在聚变技术上取得突破，现能仅用粒子束形成并稳定等离子体，使反应堆更小、更经济。谷歌自2014年起利用AI优化TAE的反应堆设置，大幅提升效率。TAE目前能将等离子体加热至7000万摄氏度，目标是10亿摄氏度，并计划在2030年代初实现商业供电。",
+      "translated_title": "谷歌再次押注TAE Technologies的聚变能",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "TAE Technologies raised $150 million from investors including Google, Chevron, and others."
+    },
+    {
+      "title": "OpenAI董事会风波据报道将拍成电影 (原标题: The OpenAI board drama is reportedly turning into a movie)",
+      "link": "https://techcrunch.com/2025/06/03/the-openai-board-drama-is-reportedly-turning-into-a-movie/",
+      "pubDate": "Tue, 03 Jun 2025 19:16:12 +0000",
+      "isoDate": "2025-06-03T19:16:12.000Z",
+      "creator": "Lauren Forristal",
+      "summary": "## OpenAI董事会风波将拍成电影《Artificial》\n\n据报道，一部名为《Artificial》的电影正在制作中，该片将聚焦OpenAI联合创始人兼首席执行官萨姆·奥特曼（Sam Altman）在短短五天内被解雇又复职的混乱时期。这部电影由亚马逊米高梅影业（Amazon MGM Studios）开发，旨在描绘2023年11月OpenAI董事会内部发生的戏剧性事件。\n\n### 电影制作详情\n\n*   **片名**：《Artificial》\n*   **制片方**：亚马逊米高梅影业（Amazon MGM Studios）\n*   **导演**：据《好莱坞报道》（The Hollywood Reporter）消息，曾执导《请以你的名字呼唤我》（Call Me by Your Name）和《挑战者》（Challengers）的卢卡·瓜达尼诺（Luca Guadagnino）正在洽谈执导事宜。\n*   **潜在演员**：\n    *   安德鲁·加菲尔德（Andrew Garfield）有望饰演萨姆·奥特曼（Sam Altman）。\n    *   莫妮卡·巴巴罗（Monica Barbaro）有望饰演前首席技术官米拉·穆拉蒂（Mira Murati）。\n    *   尤拉·鲍里索夫（Yura Borisov）有望饰演联合创始人伊利亚·苏茨克维尔（Ilya Sutskever），他曾力主罢免奥特曼。\n*   **编剧**：据报道，曾为《周六夜现场》（Saturday Night Live）撰稿的西蒙·里奇（Simon Rich）负责剧本创作，这暗示影片可能融入喜剧元素。考虑到AI领域本身的荒诞性以及两年前发生的事件，一部关于OpenAI的喜剧电影似乎恰如其分。\n\n### 事件回顾\n\n2023年11月，萨姆·奥特曼被OpenAI董事会解雇，并辞去了首席执行官和董事会成员的职务。董事会给出的理由是“不再信任奥特曼能够有效领导”。然而，仅仅五天后，经过多轮讨论和谈判，双方达成协议，奥特曼最终复职。\n\n### 展望\n\n随着ChatGPT等AI工具日益普及，这部电影将如何呈现这场风波，以及普通观众将如何看待《Artificial》中的剧情，都将引人关注。\n\n![OpenAI CEO Sam Altman speaks during the Microsoft Build conference at the Seattle Convention Center Summit Building in Seattle, Washington on May 21, 2024.](https://techcrunch.com/wp-content/uploads/2024/11/GettyImages-2153474303-e.jpg?w=1024)\n\n图片来源：JASON REDMOND/AFP / Getty Images",
+      "shortSummary": "OpenAI董事会风波将拍成电影，片名《Artificial》，由亚马逊米高梅影业制作。该片将讲述2023年11月OpenAI首席执行官萨姆·奥特曼在五天内被解雇又复职的事件。卢卡·瓜达尼诺有望执导，安德鲁·加菲尔德可能饰演奥特曼。影片将探讨这场荒诞的AI界风波，并可能融入喜剧元素。",
+      "translated_title": "OpenAI董事会风波据报道将拍成电影",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2024/11/GettyImages-2153474303-e.jpg?w=1024",
+          "alt": "OpenAI CEO Sam Altman speaks during the Microsoft Build conference at the Seattle Convention Center Summit Building in Seattle, Washington on May 21, 2024.",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "A film that will portray the chaotic time at OpenAI, when co-founder and CEO Sam Altman was fired and rehired within a span of just five days, is reportedly in the works.  According to The Hollywood Reporter, the movie is titled “Artificial,” and it’s in development at Amazon MGM Studios. While details aren’t finalized, sources [&#8230;]"
+    },
+    {
+      "title": "手机芯片制造商高通修复了被黑客利用的三个零日漏洞 (原标题: Phone chipmaker Qualcomm fixes three zero-days exploited by hackers)",
+      "link": "https://techcrunch.com/2025/06/03/phone-chipmaker-qualcomm-fixes-three-zero-days-exploited-by-hackers/",
+      "pubDate": "Tue, 03 Jun 2025 18:59:57 +0000",
+      "isoDate": "2025-06-03T18:59:57.000Z",
+      "creator": "Lorenzo Franceschi-Bicchierai",
+      "summary": "# 高通修复被利用的零日漏洞\n\n芯片巨头高通于周一发布了系列补丁，修复了其数十款芯片中的多项漏洞，其中包括三个该公司表示可能已被用于黑客攻击活动的零日漏洞。\n\n## 漏洞详情\n\n*   **发现与报告：** 谷歌的威胁分析小组（TAG），一个调查政府支持的网络攻击的团队，向高通报告了这些漏洞。谷歌的Android安全团队于今年二月向高通报告了这三个零日漏洞，其标识分别为CVE-2025-21479、CVE-2025-21480和CVE-2025-27038。\n*   **利用情况：** 谷歌TAG指出，这三个漏洞“可能正被有限且有针对性地利用”。\n*   **零日漏洞定义：** 零日漏洞是指在被发现时，软件或硬件制造商尚不知晓的安全漏洞，这使得它们对网络犯罪分子和政府黑客而言极具价值。\n\n## 补丁与部署\n\n*   **补丁可用性：** 高通表示，这些补丁已于五月提供给设备制造商，并“强烈建议尽快在受影响设备上部署更新”。\n*   **部署挑战：** 由于安卓系统的开源和分布式特性，现在需要由设备制造商来应用高通提供的补丁。这意味着尽管补丁已可用，但部分设备可能仍会在未来数周内保持易受攻击状态。\n*   **不受影响设备：** 谷歌发言人Ed Fernandez表示，谷歌的Pixel设备不受这些高通漏洞的影响。\n*   **用户建议：** 高通发言人Dave Schefcik鼓励终端用户在设备制造商提供安全更新时及时应用。\n\n## 芯片成为攻击目标的原因\n\n移动设备中的芯片组是黑客和零日漏洞开发者频繁攻击的目标。这是因为芯片通常对操作系统的其余部分拥有广泛的访问权限，这意味着黑客可以从芯片入手，进而访问设备中可能包含敏感数据的其他部分。\n\n## 历史案例\n\n在过去几个月里，已有高通芯片组被利用的记录。例如，去年国际特赦组织就发现了一个被塞尔维亚当局利用的高通零日漏洞，该漏洞很可能通过手机解锁工具制造商Cellebrite被利用。",
+      "shortSummary": "高通已发布补丁，修复其芯片中的三个零日漏洞（CVE-2025-21479, CVE-2025-21480, CVE-2025-27038）。谷歌威胁分析小组报告称，这些漏洞可能正被有限且有针对性地利用。补丁已提供给设备制造商，但由于安卓系统的特性，部分设备可能仍需数周才能获得更新。高通鼓励用户及时应用安全更新。移动芯片因其对操作系统的广泛访问权限而成为黑客的常见目标。",
+      "translated_title": "手机芯片制造商高通修复了被黑客利用的三个零日漏洞",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Google's Threat Analysis Group, which investigates government-backed hacks, was credited with the discovery of the zero-days."
+    },
+    {
       "title": "Colossal Labs创始人称，今年晚些时候将发布恐狼的嚎叫声 (原标题: Colossal Labs will release the sounds of dire wolves howling ‘later this year,’ founder says)",
       "link": "https://techcrunch.com/2025/06/03/colossal-labs-will-release-the-sounds-of-dire-wolves-howling-later-this-year-founder-says/",
       "pubDate": "Tue, 03 Jun 2025 18:10:36 +0000",
@@ -60,7 +152,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "Reddit on Tuesday announced a new feature that will offer its users more privacy when it comes to what&#8217;s shared on their user profiles. The company says it&#8217;s rolling out an update that will introduce a &#8220;Content and Activity&#8221; setting that allows users to decide which content from the subreddits they participate in will appear [&#8230;]"
+      "content": "Reddit says it's rolling out an update that will introduce a \"Content and Activity\" setting that allows users to decide which content from the subreddits they participate in will appear on their profiles. This includes both their posting and commenting history."
     },
     {
       "title": "Yoshua Bengio 推出非营利性人工智能安全实验室 LawZero (原标题: Yoshua Bengio launches LawZero, a nonprofit AI safety lab)",
@@ -269,117 +361,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Think you know which AI assistant was the first to use natural language processing for everyday tasks? Or which researcher coined the term &#8220;deep learning,&#8221; revolutionizing AI? If so, this is your chance to win two TechCrunch Sessions: AI tickets for a discounted rate of one. Test your AI smarts — win a chance to [&#8230;]"
-    },
-    {
-      "title": "AWS在德国设立新公司以推进欧洲主权云 (原标题: AWS establishes new German corporate presence to advance European sovereign cloud)",
-      "link": "https://techcrunch.com/2025/06/03/aws-establishes-new-german-corporate-presence-to-advance-european-sovereign-cloud/",
-      "pubDate": "Tue, 03 Jun 2025 14:09:42 +0000",
-      "isoDate": "2025-06-03T14:09:42.000Z",
-      "creator": "Kyle Wiggers",
-      "summary": "## AWS在德国设立新公司，推进欧洲主权云\n\n亚马逊云计算部门Amazon Web Services (AWS) 正在德国组建一家新的母公司和三家子公司，以在欧盟推出其“AWS欧洲主权云”。这一举措旨在满足欧洲日益增长的数字主权和数据合规性需求。\n\n### 关键信息点：\n\n*   **推出时间与目的：**\n    *   “AWS欧洲主权云”计划于2025年底前上线。\n    *   旨在帮助客户遵守欧洲当地的隐私和数据保护法律，例如《通用数据保护条例》(GDPR) 和德国的《联邦数据保护法》。\n\n*   **运营独立性与控制权：**\n    *   该主权云的所有运营所需资源均位于欧盟境内。\n    *   运营控制权完全在欧盟境内，欧盟境外没有任何控制。\n    *   日常运营（包括数据中心访问、技术支持和客户服务）将仅由居住在欧盟的AWS员工负责。\n    *   基础设施将位于欧盟内部，并独立于AWS现有的云计算区域运行。\n    *   客户能够将其数据和元数据（包括用于运行AWS的配置）保留在欧盟境内，以符合适用的法律法规。\n\n*   **投资与区域规划：**\n    *   AWS计划在2040年前向德国投资78亿欧元（约合88亿美元）用于建设“AWS欧洲主权云”。\n    *   首个云“区域”将在德国勃兰登堡州上线。\n\n*   **管理与治理结构：**\n    *   AWS副总裁Kathrin Renz将担任AWS德国母公司的董事总经理，并由欧盟境内的“政府安全和隐私官员”共同领导。\n    *   AWS还将设立一个由欧盟公民组成的咨询委员会和一个专门的欧洲安全运营中心。\n\n*   **市场背景与承诺：**\n    *   包括微软和谷歌在内的其他科技巨头和云服务提供商也已提供欧洲主权云或数据驻留计划，以满足合规需求。\n    *   AWS表示，其设计“AWS欧洲主权云”旨在满足欧洲数字主权要求，同时保持客户对AWS所期望的服务组合、安全性、可靠性和性能。\n    *   这项投资重申了AWS对欧洲数字未来的承诺。\n\n*   **AWS与欧盟监管机构的历史：**\n    *   2021年，亚马逊曾因涉嫌未经用户同意处理数据用于定向广告，被卢森堡数据监管机构处以当时创纪录的7.46亿欧元（约合8.49亿美元）罚款。\n    *   2022年，AWS就欧盟对其涉嫌滥用竞争对手销售数据以不公平地偏袒自身产品的反垄断调查达成和解。",
-      "shortSummary": "AWS正在德国设立新公司，计划于2025年底前推出“AWS欧洲主权云”。该云旨在满足欧盟数据主权和合规要求，所有运营和数据控制均在欧盟境内，并由居住在欧盟的AWS员工负责。AWS将投资78亿欧元在德国建设该云，首个区域设在勃兰登堡州。此举旨在帮助客户遵守GDPR等欧盟法律，并强化AWS对欧洲数字未来的承诺，尽管AWS此前曾面临欧盟监管机构的罚款和调查。",
-      "translated_title": "AWS在德国设立新公司以推进欧洲主权云",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Amazon Web Services is forming a new parent company and 3 subsidiaries in Germany as part of a sovereign cloud launching in the EU."
-    },
-    {
-      "title": "距离TechCrunch Sessions: AI在加州大学伯克利分校开幕仅剩2天——人工智能的未来在此成形 (原标题: Just 2 days until TechCrunch Sessions: AI at UC Berkeley — where the future of AI takes shape)",
-      "link": "https://techcrunch.com/2025/06/03/just-2-days-until-techcrunch-sessions-ai-at-uc-berkeley-where-the-future-of-ai-takes-shape/",
-      "pubDate": "Tue, 03 Jun 2025 14:00:00 +0000",
-      "isoDate": "2025-06-03T14:00:00.000Z",
-      "creator": "TechCrunch Events",
-      "summary": "# TechCrunch Sessions: AI 峰会即将开幕\n\nTechCrunch Sessions: AI 峰会将于 **2025年6月5日** 在加州大学伯克利分校的 **泽勒巴赫音乐厅 (Zellerbach Hall)** 举行，为期一天。本次峰会旨在汇聚塑造人工智能未来的思想领袖，通过深入探讨、挑战假设、提升竞争优势，并可能重新定义参与者的研究方向、产品策略或公司发展轨迹。无论是AI研究人员、工程师还是创始人，都能从中获得对AI发展前沿及其应用的深刻见解。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2019/01/GettyImages-8497138461.jpg?w=1024)\n*图片来源: David Paul Morris/Bloomberg / Getty Images*\n\n### 峰会亮点与体验\n\n本次峰会将提供多维度的参与体验，包括：\n\n*   **主舞台会议 (Main Stage Sessions)**：邀请研究、政策、基础设施和风险投资领域的开拓者进行分享。\n*   **深度分组讨论 (Hands-on Breakouts)**：在小型会议室进行更深入的对话，提供可操作的见解。\n*   **有目的的社交 (Intentional, Meaningful Networking)**：通过 Braindate 平台，参与者可以根据共同兴趣进行连接，而非随机闲聊。\n*   **现场创业公司路演 (Live Startup Pitch-off)**：在“你认为你能路演吗？”(So You Think You Can Pitch) 环节中，创业公司将获得风险投资人的实时反馈。\n*   **会后周边活动 (After-hours Side Events)**：在伯克利周边举办，鼓励突破性想法在会场之外继续碰撞。\n\n![TechCrunch Sessions: AI 2 days left](https://techcrunch.com/wp-content/uploads/2025/06/CountdownArticleImageHeader_2days_TCSessionsAI_V2_16x9.png?w=680)\n\n### 塑造AI未来的声音\n\n峰会将汇聚众多AI领域的顶尖专家和思想领袖，部分主讲嘉宾包括：\n\n*   **Jared Kaplan** (Anthropic 联合创始人兼首席科学官)：探讨如何负责任地构建前沿模型。\n*   **Artemis Seaford** (ElevenLabs AI 安全负责人)：分享实际安全协议和伦理架构。\n*   **Jae Lee** (Twelve Labs 首席执行官)：重新定义多模态AI的可能性。\n*   **Sara Ittelson** (Accel 合伙人)：从投资者角度展望AI的下一波机遇。\n*   **Logan Kilpatrick** (Google DeepMind 高级产品经理)：讨论开发者工具和负责任的规模化。\n*   **Ann Bordetsky** (NEA 合伙人)：运营者转型投资者如何看待当前的AI热潮。\n*   **Oliver Cameron** (Odyssey 首席执行官)：分享在尖端科技领域与现有巨头竞争的经验。\n*   **Iliana Quinonez** (Google Cloud 总监)：为AI初创公司提供基础设施深度解析。\n*   **Ion Stoica** (Databricks 联合创始人兼加州大学伯克利分校教授)：探讨大规模数据基础设施。\n*   **Kanu Gulati** (Khosla Ventures 合伙人)：从战术性风险投资角度分析AI产品市场契合度。\n*   **Astasia Myers** (Felicis 普通合伙人)：关于创始人故事讲述和战略资本。\n\n此外，还将有来自 OpenAI、Cohere、Oracle、Linear、Amazon、Recursive Ventures、欧盟和英国政府的顶尖声音，以及一系列值得关注的新兴创始人。\n\n![TC Sessions: Robotics + AI 2020 at Zellerbach Hall in Berkeley, CA on March 3, 2020.](https://techcrunch.com/wp-content/uploads/2025/02/TC-Sessions-Robotics_Zellerbach-Hall-2-1.jpg?w=680)\n*图片来源: Max Morse for TechCrunch*\n\n### 注册与优惠\n\n目前，购票可享受大幅优惠：\n\n*   节省超过 **300美元**。\n*   购买第二张门票可享 **5折** 优惠。\n*   参与AI问答倒计时挑战，有机会获得 **200美元** 优惠和一张免费嘉宾票。\n\n这些优惠将在 **6月5日** 峰会开幕时结束。文章鼓励无论是初次构建AI代理还是管理多阶段投资组合的专业人士，都应立即注册，以确保获得优惠票价，参与到AI领域最重要的对话中。",
-      "shortSummary": "TechCrunch Sessions: AI峰会将于两天后（6月5日）在加州大学伯克利分校举行，旨在汇聚AI领域的思想领袖，共同塑造人工智能的未来。峰会将提供主舞台演讲、深度分组讨论、有目的的社交和创业公司路演等环节，并邀请Anthropic、ElevenLabs、Google DeepMind等公司的顶尖专家分享见解。目前购票可享大幅优惠，包括折扣和第二张半价。本次峰会是AI研究人员、工程师和创始人获取前沿洞察、拓展人脉的重要机会。",
-      "translated_title": "距离TechCrunch Sessions: AI在加州大学伯克利分校开幕仅剩2天——人工智能的未来在此成形",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2019/01/GettyImages-8497138461.jpg?w=1024",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/CountdownArticleImageHeader_2days_TCSessionsAI_V2_16x9.png?w=680",
-          "alt": "TechCrunch Sessions: AI 2 days left",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/02/TC-Sessions-Robotics_Zellerbach-Hall-2-1.jpg?w=680",
-          "alt": "TC Sessions: Robotics + AI 2020 at Zellerbach Hall in Berkeley, CA on March 3, 2020.",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "In just 2 days, TechCrunch Sessions: AI takes over UC Berkeley’s Zellerbach Hall for a one-day summit built for the minds shaping AI. Expect hard questions, bold ideas, and real insight—designed to challenge your assumptions, sharpen your competitive edge, and maybe — just maybe — redefine the trajectory of your research, your product, or your [&#8230;]"
-    },
-    {
-      "title": "Wispr Flow 发布 iOS 应用，旨在让听写体验轻松自如 (原标题: Wispr Flow releases iOS app in a bid to make dictation feel effortless)",
-      "link": "https://techcrunch.com/2025/06/03/wispr-flow-releases-ios-app-in-a-bid-to-make-dictation-feel-effortless/",
-      "pubDate": "Tue, 03 Jun 2025 13:42:13 +0000",
-      "isoDate": "2025-06-03T13:42:13.000Z",
-      "creator": "Ivan Mehta",
-      "summary": "### Wispr Flow 发布 iOS 应用，旨在让听写体验轻松自如\n\nWispr Flow 是一家专注于听写技术的初创公司，致力于提供比大型科技公司（如 Meta、Google、OpenAI 和 Anthropic）更卓越的语音转文本体验。在已有的 Windows 和 Mac 桌面应用基础上，该公司现已发布了新的 iOS 应用，该应用可作为键盘使用，允许用户在任何应用中通过语音进行输入。\n\n#### 核心产品与特性\n*   **多语言支持**：Wispr Flow 的技术支持超过 100 种语言。\n*   **iOS 键盘集成**：新的 iOS 应用可作为系统键盘，方便用户在任何应用中进行语音输入。\n*   **智能学习能力**：应用能自动学习自定义名称和术语，用户也可以通过其词典部分手动添加。\n*   **“耳语”模式**：允许用户在不便大声说话的环境中低声输入。\n*   **离线/弱网络支持**：公司声称 iOS 应用在网络覆盖不佳的环境下也能工作。\n*   **桌面应用便捷性**：桌面应用通过热键启动听写，操作更为便捷。\n\n#### 用户体验与性能\n一位印度记者对 Wispr Flow 的表现印象深刻，认为其远超大型科技公司的听写技术，尤其在理解印度口音方面表现出色。尽管初期可能需要少量编辑，但经过几次使用后，听写准确性显著提高。该记者甚至使用 Wispr Flow 撰写了大部分文章，并用它来编写长邮件和消息。\n\n#### 公司背景与发展\n*   **起源与转型**：联合创始人 Tanay Kothari 最初旨在开发一种可穿戴设备，通过无声口型实现输入，Flow 是该设备的操作系统层。公司于去年 7 月转型，专注于软件开发，并于几个月后发布了 Mac 应用。\n*   **融资情况**：迄今已从 NEA、Palo Alto Networks 和 8VC 等投资者处筹集 2600 万美元。\n*   **业务增长**：订阅业务转化率达 19%，年收入增长 60%。\n\n#### 商业模式与未来计划\n*   **免费增值模式**：提供免费使用，每周限额 2000 字。无限量计划每月 12 美元（或每年 144 美元），并可提前体验新功能。\n*   **未来发展**：计划今年发布 Android 应用，并正在开发团队共享上下文功能，以帮助应用理解企业环境中的常用术语。\n\n#### 竞争与差异化\nWispr Flow 面临着包括 YC 支持的 Aqua、TalkTastic、Superwhisper 和 BetterDictation 在内的众多竞争对手。尽管 Kothari 预计随着 AI 和语音技术的进步，该领域竞争将更加激烈，但他相信 Wispr 的工程团队和对技术的长期投入将使其在市场中脱颖而出。",
-      "shortSummary": "Wispr Flow 发布了其 iOS 听写应用，旨在提供轻松自然的语音输入体验。该应用支持 100 多种语言，可作为键盘使用，并能准确识别不同口音，表现优于大型科技公司的同类产品。Wispr Flow 采用免费增值模式，已筹集 2600 万美元，并计划推出 Android 版本和团队功能。公司相信其工程实力和长期投入将使其在竞争激烈的市场中保持优势。",
-      "translated_title": "Wispr Flow 发布 iOS 应用，旨在让听写体验轻松自如",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "A startup called Wispr Flow feels it can outdo the bigwigs with its dictation tech that supports more than 100 languages."
-    },
-    {
-      "title": "医疗巨头Kettering在勒索软件攻击数周后仍面临中断 (原标题: Health giant Kettering still facing disruption weeks after ransomware attack)",
-      "link": "https://techcrunch.com/2025/06/03/health-giant-kettering-still-facing-disruption-weeks-after-ransomware-attack/",
-      "pubDate": "Tue, 03 Jun 2025 13:25:14 +0000",
-      "isoDate": "2025-06-03T13:25:14.000Z",
-      "creator": "Lorenzo Franceschi-Bicchierai",
-      "summary": "# Kettering Health 勒索软件攻击后续：运营仍受干扰\n\n俄亥俄州医疗网络 Kettering Health 在遭受勒索软件攻击导致“全系统技术中断”两周后，仍在努力恢复正常运营。\n\n## 攻击造成的持续影响\n\n*   **患者服务受阻：**\n    *   患者无法致电医生办公室。\n    *   难以获得药物续订，有患者面临“戒断性癫痫发作”的风险。\n    *   部分急诊室关闭。\n*   **运营模式倒退：**\n    *   “所有操作都通过手工完成——笔和纸。”\n    *   电话服务不稳定。\n*   **其他具体影响：**\n    *   救护车因纸质记录和标签制作导致的长时间等待，正避免前往 Kettering。\n    *   患者的核磁共振（MRI）、癌症复查、心脏直视手术前测试以及化疗疗程被取消。\n\n## 恢复进展\n\nKettering Health 于周一（更新发布时）表示，已恢复了由 Epic 提供的电子健康记录系统的“核心组件”。这重新建立了公司“更新和访问电子健康记录、促进护理团队间沟通以及协调患者护理的能力”。\n\n## 勒索软件攻击详情\n\n*   **攻击性质：** Kettering Health 认为这是一次勒索软件攻击，并已关闭了其 IT 基础设施以阻止攻击蔓延。\n*   **赎金支付：** 公司表示未支付赎金。\n*   **攻击者信息：**\n    *   据 CNN 报道，攻击由名为“Interlock”的团伙实施。\n    *   勒索信息称：“您的网络已被入侵，我们已保护了您最重要的文件。”\n    *   该团伙尚未公开宣称对此网络攻击负责，这可能表明他们仍在尝试谈判赎金。\n*   **数据泄露疑问：** Kettering Health 的发言人未回应 TechCrunch 关于黑客是否窃取数据以及窃取了何种数据的问题。\n\n## 医疗行业网络攻击背景\n\nKettering Health 是近期一系列遭受黑客攻击的医疗保健公司之一，这些攻击包括勒索软件和其他类型的恶意软件。\n\n*   **Change Healthcare 事件：** 2024 年，UnitedHealth 旗下的医疗技术公司 Change Healthcare 遭受勒索软件攻击，成为美国历史上最严重的医疗数据泄露事件，影响了全美 1.9 亿人。\n*   **Ascension 事件：** 去年，美国医疗巨头 Ascension 披露，黑客在一次勒索软件攻击中窃取了 560 万份患者记录。\n*   **行业趋势：** 医疗新闻网站 The HIPAA Journal 将 2024 年称为“医疗数据泄露的可怕一年”，患者数据被盗数量创历史新高。",
-      "shortSummary": "俄亥俄州医疗网络 Kettering Health 在遭受勒索软件攻击两周后，仍面临严重运营中断。患者服务受到广泛影响，包括电话不通、药物续订困难、急诊室关闭，且许多操作转为手工进行。尽管部分电子健康记录系统已恢复，但攻击者“Interlock”团伙可能仍在谈判，Kettering Health 已表示未支付赎金。此次事件凸显了医疗行业日益增长的网络安全威胁，是继Change Healthcare和Ascension等重大攻击之后的又一例。",
-      "translated_title": "医疗巨头Kettering在勒索软件攻击数周后仍面临中断",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "A healthcare giant with dozens of facilities across Ohio is still recovering after shutting down nearly all its operations following a ransomware attack."
-    },
-    {
-      "title": "与英伟达竞争的芯片初创公司Speedata完成4400万美元B轮融资 (原标题: Speedata, a chip startup competing with Nvidia, raises a $44M Series B)",
-      "link": "https://techcrunch.com/2025/06/03/speedata-a-chip-startup-competing-with-nvidia-raises-a-44m-series-b/",
-      "pubDate": "Tue, 03 Jun 2025 13:00:00 +0000",
-      "isoDate": "2025-06-03T13:00:00.000Z",
-      "creator": "Kate Park",
-      "summary": "## Speedata完成4400万美元B轮融资，加速大数据分析与AI工作负载\n\n**引言**\n\n总部位于特拉维夫的初创公司Speedata，专注于开发分析处理单元（APU），旨在加速大数据分析和人工智能（AI）工作负载。该公司近日成功完成了4400万美元的B轮融资，使其总融资额达到1.14亿美元。\n\n**融资详情**\n\n*   **领投方**：现有投资者，包括Walden Catalyst Ventures、83North、Koch Disruptive Technologies、Pitango First和Viola Ventures。\n*   **战略投资者**：英特尔首席执行官兼Walden Catalyst Ventures管理合伙人Lip-Bu Tan，以及Mellanox Technologies联合创始人兼前首席执行官Eyal Waldman。\n\n**APU的独特优势**\n\nSpeedata的APU与图形处理单元（GPU）不同，后者最初为图形设计，后被修改用于AI和数据任务。APU从底层专为数据处理构建，旨在解决计算层面的分析瓶颈。\n\n*   **性能提升**：Speedata首席执行官Adi Gelvan表示，APU能够取代多台服务器，提供显著优越的性能，因为它是为数据分析量身定制的处理器，而非通用处理器或为其他工作负载设计的处理器。\n*   **解决痛点**：传统的通用处理器在处理复杂的数据分析工作负载时，可能需要数百台服务器。Speedata的创始人认为，通过开发单一的专用处理器，可以更快、更节能地完成任务。\n\n**公司背景与愿景**\n\n*   **创立**：Speedata由六位创始人于2019年创立，其中一些是粗粒度可重构架构（CGRA）技术的早期研究人员。他们与ASIC设计专家合作，旨在解决通用处理器在数据分析方面的根本问题。\n*   **市场定位**：目前，Speedata的APU主要针对Apache Spark工作负载。公司的路线图包括支持所有主流数据分析平台。\n*   **宏伟目标**：Speedata的目标是成为数据处理领域的标准处理器，就像GPU成为AI训练的默认选择一样，APU将成为所有数据库和分析平台中数据分析的默认选择。\n\n**产品进展与市场推广**\n\n*   **客户测试**：Speedata表示，已有数家大型公司正在测试其APU，但未透露具体名称。\n*   **正式发布**：产品将于6月第二周在Databricks的数据与AI峰会上首次公开展示和正式发布。\n*   **性能案例**：Speedata声称，在一个特定的制药工作负载案例中，其APU仅用19分钟就完成了任务，而使用非专用处理单元则需要90小时，实现了280倍的速度提升。\n\n**里程碑**\n\n自上一轮融资以来，Speedata已实现多项重要里程碑，包括在2024年末完成首个APU的设计和制造。公司已从概念阶段发展到现场可编程门阵列（FPGA）测试，并成功推出可工作的硬件。目前，Speedata已拥有不断增长的企业客户群，并准备扩大其市场运营。",
-      "shortSummary": "与英伟达竞争的芯片初创公司Speedata完成4400万美元B轮融资，总融资达1.14亿美元。该公司开发APU（分析处理单元），旨在加速大数据分析和AI工作负载。APU专为数据处理设计，可显著提升性能，取代多台服务器。Speedata的目标是成为数据分析领域的标准处理器，已完成首个APU的设计和制造，并有大型企业客户正在测试，计划于6月在Databricks峰会首次公开展示。",
-      "translated_title": "与英伟达竞争的芯片初创公司Speedata完成4400万美元B轮融资",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Speedata, a Tel Aviv-based startup developing an analytics processing unit (APU) designed to accelerate big data analytic and AI workloads, has raised a $44 million Series B funding round, bringing its total capital raised to $114 million. The Series B round was led by its existing investors, including Walden Catalyst Ventures, 83North, Koch Disruptive Technologies, [&#8230;]"
-    },
-    {
-      "title": "Adobe 在 Android 平台推出 Photoshop 应用的测试版 (原标题: Adobe launches beta version of its Photoshop app on Android)",
-      "link": "https://techcrunch.com/2025/06/03/adobe-launches-beta-version-of-its-photoshop-app-on-android/",
-      "pubDate": "Tue, 03 Jun 2025 13:00:00 +0000",
-      "isoDate": "2025-06-03T13:00:00.000Z",
-      "creator": "Aisha Malik",
-      "summary": "## Adobe 在 Android 平台推出 Photoshop 应用测试版\n\nAdobe 于2025年6月3日（太平洋夏令时）宣布，正式发布其适用于 Android 设备的 Photoshop 应用测试版。此举距离该公司推出 iPhone 版应用仅四个月。\n\n### 应用特性（测试版免费）\n\n该应用提供了一系列与桌面版相似的编辑工具，并针对移动屏幕进行了优化。在初始测试期间，用户可以免费访问以下功能：\n\n*   **图像组合与混合：** 利用选择、图层和蒙版等工具组合和混合图像。\n*   **AI 功能：** 使用“生成式填充”（Generative Fill）等AI功能添加或转换图像元素。\n*   **快速编辑：**\n    *   通过“轻触选择”（Tap Select）工具快速移除或替换图像部分。\n    *   使用“污点修复画笔”（Spot Healing Brush）消除图像中的干扰。\n    *   利用“移除”（Remove）和“克隆图章”（Clone Stamp）工具精修图像。\n*   **精确选择：** “对象选择”（Object Select）和“魔棒”（Magic Wand）功能可帮助用户进行更精确的选择。\n*   **资源访问：** 用户可以访问免费的 Adobe Stock 素材库。\n*   **高级控制：** 通过混合模式和调整图层控制图层和效果。\n\n### 未来计划与战略目标\n\nAdobe 表示，计划很快为该应用带来更多功能。通过将 Photoshop 引入移动平台，Adobe 旨在：\n\n*   **吸引新用户：** 特别是那些习惯于使用手机进行创作的年轻用户。\n*   **提升可访问性：** 使偏好在手机上工作的现有 Photoshop 用户能够更便捷地使用该服务。\n\n### 系统要求\n\n目前，Android 版 Photoshop（测试版）适用于运行 Android 11 或更高版本、且至少配备 6GB RAM 的设备。Adobe 建议使用 8GB 或更高 RAM 以获得最佳性能。\n\n### 与 iPhone 版应用的对比\n\n与 Android 版不同，iPhone 版 Photoshop 应用在发布时就同时提供了免费和付费功能。此外，iPhone 版 Photoshop 还支持与网页版 Photoshop 集成（需付费）。目前尚不清楚 Adobe 何时会将这些功能引入 Android 应用。\n\n### 相关图片\n\n![Photoshop iPhone app](https://techcrunch.com/wp-content/uploads/2025/02/photoshop-iphone-app.jpg?w=1024)\n\n![图片 2](https://techcrunch.com/wp-content/uploads/2025/06/photoshop-android.jpeg?w=680)",
-      "shortSummary": "Adobe于2025年6月3日发布了Android版Photoshop应用的测试版，距离iPhone版发布四个月。这款免费测试版提供了桌面版的核心编辑工具，包括图层、蒙版和AI功能（如“生成式填充”），并针对移动设备进行了优化。它旨在吸引新用户并提升Photoshop的移动可访问性。应用要求Android 11及以上系统，至少6GB内存。目前，付费功能和网页集成尚未在Android版中推出，而这些功能已在iPhone版中提供。",
-      "translated_title": "Adobe 在 Android 平台推出 Photoshop 应用的测试版",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/02/photoshop-iphone-app.jpg?w=1024",
-          "alt": "Photoshop iPhone app",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/photoshop-android.jpeg?w=680",
-          "alt": "",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Android users can now download Photoshop for mobile. Adobe announced on Tuesday that it&#8217;s releasing the beta version of its Android Photoshop app, four months after the company launched its iPhone app. The app offers a similar set of editing tools as the desktop version, including layering and masking, but is optimized for mobile screens. [&#8230;]"
     }
   ],
-  "lastUpdated": "2025-06-03T18:36:02.672Z"
+  "lastUpdated": "2025-06-04T01:48:50.158Z"
 }
