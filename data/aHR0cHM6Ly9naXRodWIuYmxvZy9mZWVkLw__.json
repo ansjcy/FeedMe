@@ -5,6 +5,100 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "攻破模型：通过GitHub安全代码游戏构建AI安全技能 (原标题: Hack the model: Build AI security skills with the GitHub Secure Code Game)",
+      "link": "https://github.blog/security/hack-the-model-build-ai-security-skills-with-the-github-secure-code-game/",
+      "pubDate": "Tue, 03 Jun 2025 16:37:03 +0000",
+      "isoDate": "2025-06-03T16:37:03.000Z",
+      "creator": "Joseph Katsioloudes",
+      "summary": "# GitHub安全代码游戏第三季：构建AI安全技能\n\nGitHub近日推出了安全代码游戏第三季，本次重点聚焦人工智能引入的安全风险，旨在通过实践帮助开发者提升AI安全技能。\n\n## 关于GitHub安全代码游戏\n\n*   **免费软件安全课程**：适合所有开发者水平。\n*   **学习方式**：玩家通过修复故意设置的漏洞代码来构建代码安全技能。\n*   **沉浸式体验**：游戏直接在代码编辑器中进行，模拟开发者日常工作环境。\n*   **快速上手**：使用Codespaces，两分钟内即可开始。\n\n## 历史与成就\n\n*   **第一季（2023年3月）**：旨在弥补开发者培训中安全技能的不足，通过看似完美但实则包含OWASP Top 10等关键漏洞的代码片段吸引玩家。\n*   **游戏化学习**：挑战玩家高效修复问题，同时避免引入新漏洞或遗漏边缘情况。\n*   **第二季**：在强大社区支持下推出，已有超过10,000名来自企业、开源和教育领域的开发者参与，磨练了技能。\n*   **玩家反馈**：\n    *   Sanyam Mehta（后端开发者）：“这让我意识到识别最基本缺陷的差距有多大，也让我更加谨慎。”\n    *   Tyler Anton（计算机科学学生）： “这是一种非常有趣的学习方式！我绝对会推荐这款游戏，它帮助我更清楚地认识到存在的漏洞。”\n\n## 第三季：聚焦AI安全\n\n*   **推出背景**：随着生成式AI的广泛应用（麦肯锡报告显示，生成式AI使用率从2023年的33%增至2024年的71%），以及GitHub Copilot被超过77,000个组织使用，提升AI安全技能正当其时。\n*   **学习内容**：第三季包含六个现实挑战，难度递增，涵盖以下防御技术：\n    1.  **构建健壮的系统提示**：安全地设计引导模型行为的初始指令，确保输出安全、相关且符合预期。\n    2.  **输出验证**：通过验证输出是否符合预定义规则、格式或预期来防止信息泄露。\n    3.  **输入过滤**：在用户提供的文本输入模型之前进行检查、修改或阻止，以防止有害或不相关内容影响模型生成输出。\n    4.  **LLM自我验证**：利用大型语言模型（LLM）检查自身输出的准确性、一致性和合规性。\n\n## 游戏玩法\n\n*   玩家需“攻破”大型语言模型（LLM）。\n*   每个挑战始于LLM的一组指导指令（代码和系统消息），其中可能包含可被恶意提示利用的漏洞或边缘情况。\n*   **任务一**：识别漏洞，并精心设计提示来操纵模型，使其泄露隐藏的秘密。\n*   **任务二**：在保持代码功能的同时，完善代码和系统消息，以防止未来出现类似的恶意提示泄露。\n\n## 玩家感言\n\n*   Rajeev Mandalam（波音公司应用安全）： “我学会了发现漏洞，了解它们发生的位置和方式，并在将其发布到世界之前有效地纠正它们。我绝对会向任何人推荐这项培训，不仅是网络安全领域，也包括软件开发领域。”\n*   Reshmi Mehta（爱尔康安全分析师）： “一个主要收获是，关注细节很重要，因为它们常常会导致你意想不到的漏洞。在格式方面，我喜欢它不专注于某一种特定的编程语言，而是强调代码概念。我也喜欢游戏关卡之间切换的便捷性。这款游戏为我的职业生涯增添了很棒的新技能。”\n\n## 如何开始\n\n*   访问Secure Code Game GitHub仓库，其中包含所有季度的说明。\n\n## 第三季的诞生\n\n*   第三季由Bartosz Gałek（@bgalek）贡献，源于他在FOSDEM 2025上与Joseph Katsioloudes的交流。\n*   Bartosz创建的“HackMerlin”游戏（挑战玩家的提示工程技能）成为了第三季的基础。\n*   **游戏界面截图**：\n    ![游戏界面截图，显示了第6关的交互式游戏界面。游戏指示玩家通过巧妙提问来智取梅林，以揭示密码。顶部显示卡通巫师梅林，说着“你好，旅行者！问我任何问题……”。下方是一个文本框，用户可以在其中输入问题，一个“提问”按钮，以及一个标有“输入秘密密码”的字段，后面跟着一个“提交”按钮，用于检查答案的有效性。](https://github.blog/wp-content/uploads/2025/06/hackmerlin.png?resize=932%2C1240)\n*   **技术实现**：\n    *   从HackMerlin的UI中心方法转向安全代码游戏的“代码优先”方法，同时确保用户友好性是一个关键挑战。\n    *   Codespaces预配置了开发环境，并自动化了对GitHub Models的访问，后者提供了内置的LLM集成。\n    *   第三季通过遵循GitHub Models的默认安全防护措施来优先考虑真实性。\n\n## 参与贡献\n\n*   欢迎提出新挑战的想法，成为下一季的贡献者。\n\n## 立即体验\n\n*   立即开始游戏，释放你的创造力，迎接第三季的挑战！",
+      "shortSummary": "GitHub发布了安全代码游戏第三季，专注于AI安全技能培训。这款免费课程让开发者通过在代码编辑器中实践，学习如何识别和修复大型语言模型（LLM）中的安全漏洞。内容涵盖构建健壮提示、输出验证、输入过滤和LLM自我验证等。游戏基于社区贡献，旨在帮助开发者应对日益增长的AI安全风险，提升其在AI时代的关键技能。",
+      "translated_title": "攻破模型：通过GitHub安全代码游戏构建AI安全技能",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/hackmerlin.png?resize=932%2C1240",
+          "alt": "Screenshot of an interactive game interface at Level 6. The game instructs the player to outsmart Merlin by asking clever questions to reveal a password. A cartoon wizard, Merlin, appears at the top, saying 'Hello traveler! Ask me anything...'. Below is a text box where the user can type questions, an 'Ask' button, and a field labeled 'Enter the secret password' followed by a 'Submit' button to check the validity of the answer.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/31040295?v=4&s=200",
+          "alt": "Joseph Katsioloudes",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Dive into the novel security challenges AI introduces with the open source game  that over 10,000 developers have used to sharpen their skills.</p>\n<p>The post <a href=\"https://github.blog/security/hack-the-model-build-ai-security-skills-with-the-github-secure-code-game/\">Hack the model: Build AI security skills with the GitHub Secure Code Game</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "DNS重绑定攻击解析：查找源自内部！ (原标题: DNS rebinding attacks explained: The lookup is coming from inside the house!)",
+      "link": "https://github.blog/security/application-security/dns-rebinding-attacks-explained-the-lookup-is-coming-from-inside-the-house/",
+      "pubDate": "Tue, 03 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-03T16:00:00.000Z",
+      "creator": "Jaroslav Lobacevski",
+      "summary": "# DNS重绑定攻击解析：查找源自内部！\n\n本文深入探讨了DNS重绑定攻击，这是一种严重的浏览器安全漏洞，能够绕过同源策略（Same-Origin Policy, SOP），从而允许攻击者访问受害者本地机器或网络上的内部应用程序。\n\n## 同源策略 (Same-Origin Policy, SOP)\n\n同源策略是Netscape于1995年引入的浏览器安全基石。其核心思想是阻止来自一个源的脚本访问另一个源的数据，以保护用户隐私（例如，防止恶意网页读取用户的网络邮件）。一个“源”由协议（schema）、主机（DNS名称）和端口号三部分组合定义。这三者中任何一个不匹配，都意味着是不同的源。\n\n| URL | 结果 | 原因 |\n| :----------------------------------------- | :--- | :----------------------------------- |\n| `https://www.somedomain.com:81/sub/page.html` | 不同 | 端口81与HTTPS默认端口443不匹配 |\n| `https://somedomain.com/sub/page.html` | 不同 | 需要精确匹配`www.somedomain.com` |\n| `http://www.somedomain.com:443/sub/page.html` | 不同 | 协议HTTP与HTTPS不匹配 |\n| `https://www.somedomain.com/admin/login.html` | 相同 | 只有路径不同 |\n\n## 攻击原理：DNS重绑定\n\n人们常误以为在本地运行的服务是与外部世界完全隔离的。然而，浏览器可能成为攻击者访问本地网络应用的门户。DNS重绑定攻击利用了浏览器安全机制与网络协议之间的脱节：即使解析的IP地址发生变化，浏览器仍会将来自同一主机的请求视为同源。攻击者控制一个域名（例如`somesite.com`）及其DNS服务器。他们最初将该域名解析到一个公共IP地址，然后迅速将后续解析切换到本地网络IP地址（如`192.168.0.1`或`127.0.0.1`）。从`somesite.com`加载的JavaScript将在受害者浏览器中运行，其后续对`somesite.com`的请求将被导向新的本地IP地址。由于浏览器仍认为这是“同源”请求，攻击者便能通过JavaScript与受害者的本地网络进行交互。需要注意的是，本地服务的认证Cookie不会被发送，因为浏览器仍处于攻击者域名的上下文中。\n\n## 防御尝试：DNS缓存\n\n浏览器试图通过缓存DNS响应来抵抗DNS重绑定，但这种防御远非完美。一些浏览器已实现本地网络访问（CORS-RFC1918）规范，但仍存在绕过方式，例如在Linux和macOS上使用`0.0.0.0`IP地址。由于涉及浏览器DNS缓存、操作系统DNS缓存和DNS名称服务器等多个层面，这种攻击常被认为不可靠。然而，也存在自动化攻击工具，如Tavis Ormandy的Simple DNS Rebinding Service和NCCGroup的Singularity of Origin。\n\n## 真实世界漏洞案例：Deluge BitTorrent客户端\n\nDeluge BitTorrent客户端（已在v2.2.0中修复）曾存在一个真实世界的漏洞，可被DNS重绑定攻击利用。Deluge WebUI（一个可选的本地运行服务）的未认证`/js`端点存在路径遍历漏洞，允许任意文件读取。攻击者可以通过构造请求（例如`/js/known_keyword/../...`）绕过路径验证，读取系统上的任意文件，只要其MIME类型能被识别。例如，攻击者可以读取Deluge的`web.conf`配置文件，其中包含WebUI管理员密码的SHA1哈希（带盐）和会话列表。如果能获取有效会话或暴力破解密码，攻击者便可利用CVE-2017-7178漏洞，通过`/json` Web API下载、安装并运行恶意插件。\n\n## 漏洞利用（Deluge示例）\n\n即使Deluge WebUI仅在本地可访问，攻击者也可以利用DNS重绑定攻击来访问这个未认证的服务。对于实现了CORS-RFC1918的浏览器，攻击者可以利用Linux和macOS上的非路由`0.0.0.0`IP地址作为绕过。攻击流程大致如下：\n\n1.  Deluge WebUI用户访问一个恶意网站（`somesite.com`），该网站包含多个IFrames。\n2.  每个IFrame尝试从攻击者控制的子域（例如`http://sub.somesite.com:8182/attack.html`）加载内容。\n3.  攻击者控制的DNS解析器会交替返回`0.0.0.0`和真实服务器IP地址，并设置极低的TTL（生存时间）。\n4.  当DNS解析到真实IP地址时，IFrame中的脚本会等待DNS条目过期。\n5.  一旦DNS重绑定成功，脚本将尝试请求并读取本地配置文件（例如`http://sub.somesite.com:8182/js/deluge-all/..%2F..%2F..%2F..%2F..%2F..%2F.config%2Fdeluge%2Fweb.conf`）。\n6.  如果攻击成功，配置文件中的敏感信息将被窃取。\n\n## 如何主动防御DNS重绑定攻击\n\n*   **使用HTTPS服务：** DNS重绑定攻击对HTTPS服务无效。一旦与`somesite.com`建立TLS会话，浏览器会验证证书主题与域名是否匹配。IP地址改变后，浏览器需要建立新的会话，但由于本地部署的Web应用程序的证书与域名不匹配，连接将失败。\n*   **强制强认证：** 即使是未加密的HTTP服务，也要确保使用强认证。由于浏览器在攻击者域名的上下文中运行，本地服务的认证Cookie不会被发送给攻击者。\n*   **验证Host头：** 检查请求的Host头，并拒绝不严格匹配允许列表的请求。重绑定请求的Host头将包含攻击者的域名（例如`somesite.com`）。\n\n## 总结与建议\n\n在本地运行Web应用程序是开发人员的常见做法，但永久部署的、无需认证且不使用TLS（即无HTTPS加密）的本地网络Web应用程序是一个危险信号。DNS重绑定攻击生动地说明了看似隔离的本地服务如何通过浏览器行为和对网络边界的错误假设而被暴露。切勿仅仅因为服务“仅在本地运行”就认为它是安全的。始终对所有本地服务或开发工具强制实施强密码认证和严格的访问控制。任何没有严格访问控制的本地服务都可能通过受害者的浏览器被暴露。务必验证Host头，并尽可能使用HTTPS。在开发下一个Web应用程序时，请务必将DNS重绑定纳入您的威胁模型。\n\n---\n\n**作者：**\n\n![Jaroslav Lobacevski](https://avatars.githubusercontent.com/u/26652396?v=4&s=200)\n\n**探索更多来自GitHub的资源：**\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**\n    掌握GitHub所需的一切，尽在一处。\n    [前往文档](https://docs.github.com/)\n\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**\n    在GitHub上构建未来，这里是任何地方的任何人构建任何东西的地方。\n    [开始构建](https://github.com/)\n\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**\n    了解使用GitHub进行构建的公司和工程团队。\n    [了解更多](https://github.com/customer-stories)\n\n*   ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) **企业内容**\n    专为您策划的执行洞察。\n    [开始](https://github.com/enterprise)",
+      "shortSummary": "DNS重绑定攻击利用浏览器同源策略与DNS解析的脱节，通过控制DNS服务器将域名解析从公共IP切换到本地IP。这使得攻击者网站的JavaScript能够与受害者本地网络或机器上的内部Web应用交互，即使这些服务“仅在本地运行”。防御措施包括使用HTTPS、强制强认证和验证Host头，以保护本地服务免受此类隐蔽攻击。",
+      "translated_title": "DNS重绑定攻击解析：查找源自内部！",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/26652396?v=4&s=200",
+          "alt": "Jaroslav Lobacevski",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>DNS rebinding attack without CORS against local network web applications. Explore the topic further and see how it can be used to exploit vulnerabilities in the real-world.</p>\n<p>The post <a href=\"https://github.blog/security/application-security/dns-rebinding-attacks-explained-the-lookup-is-coming-from-inside-the-house/\">DNS rebinding attacks explained: The lookup is coming from inside the house!</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "事半功倍：GitHub Copilot 编码代理与代理模式的区别 (原标题: Less TODO, more done: The difference between coding agent and agent mode in GitHub Copilot)",
       "link": "https://github.blog/developer-skills/github/less-todo-more-done-the-difference-between-coding-agent-and-agent-mode-in-github-copilot/",
       "pubDate": "Mon, 02 Jun 2025 16:00:00 +0000",
@@ -268,107 +362,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>A full look at agent mode in GitHub Copilot, including what it can do, when to use it, and best practices.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/agent-mode-101-all-about-github-copilots-powerful-mode/\">Agent mode 101: All about GitHub Copilot’s powerful mode</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "初级工程师的成长之道：技巧与洞察 (原标题: How to thrive as a junior engineer: Tips and insights)",
-      "link": "https://github.blog/developer-skills/career-growth/how-to-thrive-as-a-junior-engineer-tips-and-insights/",
-      "pubDate": "Wed, 21 May 2025 16:00:00 +0000",
-      "isoDate": "2025-05-21T16:00:00.000Z",
-      "creator": "Yelyzaveta Kramarenko",
-      "summary": "# 初级工程师的成长之道：技巧与洞察\n\n本文作者分享了她从初创公司到GitHub，在2.5年内从初级工程师成长为中级工程师的经验，旨在帮助早期职业工程师在任何公司取得成功。文章从个人成长和团队支持两个方面提供了宝贵的建议。\n\n## 初级工程师如何自我成长\n\n作为初级工程师，成长在于积极寻找学习机会并对自己的进步负责。以下是帮助作者快速进步的策略：\n\n### 1. 拥抱学习曲线\n*   **提问是优势而非弱点**：像海绵一样吸收知识，暴露自己不懂的地方以快速填补空白。\n*   **设定提问前的一小时限制**：在寻求帮助前，给自己一小时独立尝试解决问题，避免陷入无尽的挫败感。\n*   **关键问题**：建议初级工程师向导师或队友提问以下问题：\n    *   您见过初级工程师常犯的错误有哪些，我如何避免？\n    *   当事情不如预期时，您如何进行调试？\n    *   当所有任务都感觉很紧急时，我们如何确定优先级？\n    *   有哪些习惯或实践帮助您在职业生涯中提升？\n*   **自我反思**：花时间从错误中学习，并找到下次做得更好的方法。\n\n### 2. 让成长和进步可见\n*   **展示工作和进步至关重要**：尤其在大型公司，需要主动分享所学、克服的挑战、对文档的贡献或对流程的改进建议。\n*   **具体行动**：\n    *   更新未记录的功能文档并告知团队。\n    *   总结复杂的跨团队协作，方便他人后续跟进。\n    *   在内部沟通渠道（如Slack）分享解决的难题或提升效率的改进，并强调其影响。\n\n### 3. 通过沟通走向成功\n*   **清晰简洁的沟通**：确保进度、障碍和决策易于追踪。\n*   **分享与记录**：分享解决难题的技巧，记录跨团队讨论和决策，这会使团队、利益相关者和未来的自己受益。\n\n### 4. 建立人际网络\n*   **建立真实关系**：与同事建立牢固、真诚的关系。\n*   **寻求指导与贡献**：向资深工程师寻求指导，深入内部社区学习并贡献，进行跨团队咖啡聊天，并主动参与结对编程。\n*   **帮助他人**：分享知识，支持队友，这将提升你的可见度，并在绩效评估和晋升中发挥重要作用。\n\n### 5. 先求深度，再求广度\n*   **避免贪多嚼不烂**：不要试图一次性掌握所有技术，这会导致概念半懂不懂，进展缓慢。\n*   **专注于核心技能**：优先专注于当前所需技能，深入学习，打好基础后再扩展。\n\n### 6. 对抗“冒名顶替综合症”\n*   **识别并解决**：这种心理会悄悄侵蚀自信，阻碍协作、表达和自我主张。\n*   **应对策略**：向导师和同事寻求看法，记录自己的成就，并提醒自己成长源于拥抱过程，而非追求完美。\n\n## 团队如何帮助早期职业工程师成功\n\n帮助初级工程师成功，需要创造一个让他们感到被支持、被挑战并有信心成长的环境。\n\n### 1. 保持耐心，而非恼怒\n*   **理解学习过程**：初级工程师学习新概念可能感到不知所措，有时会忘记已提供的答案。\n*   **提供支持**：提供信息追踪方法，尝试用不同方式解释，进行动手实践，提供文章、视频等学习资源，或安排有挑战性的任务。\n\n### 2. 承认困难\n*   **正视挑战**：承认工作有难度，需要时间掌握，这会给初级工程师带来希望。\n*   **提供工具与指导**：不要轻描淡写地说“这很简单”或“直接做”，而是提供有用的工具或指引。\n*   **创造安全犯错环境**：让他们感到犯错是学习的一部分，鼓励他们自信地承担任务。\n\n### 3. 赋能初级队友\n*   **培养自力更生能力**：提供工具，鼓励他们通过搜索和探索来学习，但在他们遇到困难时提供支持。\n*   **引导而非直接给出答案**：引导他们自己找出解决方案。\n*   **循序渐进**：给予任务时逐步增加复杂性，同时确保他们获得所需支持，避免“自生自灭”的模式。\n\n### 4. 给予积极反馈\n*   **肯定进步**：当他们写出整洁的代码、熟练使用工具或做出明智决策时，及时肯定他们。\n*   **对抗“冒名顶替综合症”**：积极反馈能帮助他们看到自己的成长，保持动力，一点点鼓励都能产生巨大影响。\n\n## 总结\n\n作为开发者意味着不断学习和成长。无论是初级开发者还是导师，每一次经历都是提升自我的机会。文章鼓励读者探索GitHub博客上的职业成长资源。\n\n由 ![Yelyzaveta Kramarenko](https://avatars.githubusercontent.com/u/11159684?v=4&s=200) 软件工程师 III 撰写。\n\n探索更多来自GitHub：\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握GitHub所需的一切。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在GitHub上构建未来。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用GitHub的公司和工程团队。\n*   ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) Enterprise content：专为您策划的高管洞察。",
-      "shortSummary": "本文为初级工程师提供了成长指南。个人方面，应积极学习（多提问、从错误中学习）、展示工作成果、有效沟通、建立人际网络、专注于深度而非广度，并对抗“冒名顶替综合症”。团队方面，应耐心指导、承认工作难度、赋能初级队友并给予积极反馈。持续学习和成长是工程师职业生涯的关键。",
-      "translated_title": "初级工程师的成长之道：技巧与洞察",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/11159684?v=4&s=200",
-          "alt": "Yelyzaveta Kramarenko",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
-          "alt": "Enterprise content",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Plus, ways teammates and leaders can be better mentors for their new counterparts.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/career-growth/how-to-thrive-as-a-junior-engineer-tips-and-insights/\">How to thrive as a junior engineer: Tips and insights</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub Copilot：认识全新的编码代理 (原标题: GitHub Copilot: Meet the new coding agent)",
-      "link": "https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/",
-      "pubDate": "Mon, 19 May 2025 16:02:36 +0000",
-      "isoDate": "2025-05-19T16:02:36.000Z",
-      "creator": "Thomas Dohmke",
-      "summary": "## GitHub Copilot：认识全新的编码代理\n\nGitHub Copilot 推出了一款全新的编码代理，它直接嵌入 GitHub，旨在自动化和简化开发工作流程。\n\n### 代理的工作流程与启动\n\n*   **启动方式**：当您将 GitHub Issue 分配给 Copilot，或在 VS Code 中向其发出提示时，代理便会开始工作。\n*   **环境准备**：代理会启动一个安全且完全可定制的开发环境，该环境由 GitHub Actions 提供支持。\n*   **代码提交**：代理在工作过程中会将提交推送到一个草稿拉取请求（PR），并通过代理会话日志让用户能够全程追踪其每一步操作。\n*   **交互方式**：\n    *   您可以在 github.com、GitHub Mobile 或通过 GitHub CLI 分配 GitHub Issue 给 Copilot，就像分配给团队成员一样。\n    *   也可以通过 GitHub Copilot Chat 或 VS Code 中的 Copilot Chat 要求它打开一个拉取请求，例如 `@github Open a pull request to refactor this query generator into its own class`。\n*   **后台操作**：一旦 Issue 被分配，代理会添加一个 👀 表情符号反应，并在后台启动工作。它会启动虚拟机、克隆仓库、配置环境，并利用由 GitHub 代码搜索提供支持的先进检索增强生成（RAG）技术分析代码库。\n*   **透明度**：代理会定期将其更改作为 Git 提交推送到草稿 PR，并更新 PR 的描述。会话日志会显示代理的推理和验证步骤，便于追踪决策和发现问题。\n\n### 核心能力与优势\n\n*   **任务范围**：代理擅长处理测试完善的代码库中低到中等复杂度的任务，包括添加功能、修复错误、扩展测试、重构代码和改进文档。\n*   **效率提升**：它能够接手耗时但枯燥的任务，利用拉取请求、CI/CD 和所有现有工具，让开发者能够专注于更有趣、更高价值的工作。\n*   **外部集成**：通过 Model Context Protocol (MCP)，可以授予编码代理访问 GitHub 外部数据和能力。MCP 服务器可在仓库设置中配置，并且所有 GitHub 数据都可以从官方 GitHub MCP 服务器中提取。\n*   **视觉能力**：借助视觉模型，代理可以“看到”您分配给它的 GitHub Issue 中包含的图片，例如错误截图或新功能的模型图。\n*   **迭代与反馈**：当 Copilot 完成工作后，它会标记您进行审查，您可以留下评论要求其进行更改。代理会自动识别这些评论并提出代码更改。\n*   **上下文理解**：代理还会整合来自相关 Issue 或 PR 讨论的上下文，并遵循任何自定义的仓库指令，使其能够理解任务背后的意图和项目的编码标准。\n\n![Asking Copilot to iterate on its work by leaving a comment.](https://github.blog/wp-content/uploads/2025/05/copilot1.png?resize=1241%2C782)\n\n*   **赋能开发者**：该编码代理为人类开发者开启了拥有自己代理驱动团队的大门，所有成员并行工作，从而放大他们的工作成果。这使得开发者能够将通常会分散精力、阻碍更深入复杂工作的任务分配出去，从而专注于高价值的编码任务。\n\n### 安全性与控制\n\nGitHub Copilot 编码代理从设计之初就考虑了项目的安全性，并确保其工作在投入生产前经过审查。默认应用以下策略：\n\n*   **分支保护**：代理只能推送到它自己创建的分支，从而保护您的默认分支和团队创建的分支的安全。\n*   **审批流程**：要求代理打开拉取请求的开发者不能是批准该请求的人员，因此您在仓库中设置的任何“必需审查”规则都将得到遵守。代理的拉取请求在任何 CI/CD 工作流运行之前都需要人工批准，为构建和部署环境创建了额外的保护控制。\n*   **网络访问限制**：代理的互联网访问权限被严格限制在一个可定制的信任目的地列表中。\n*   **工作流批准**：GitHub Actions 工作流未经您的批准不会运行，这让您有机会对代理的代码进行抽查。\n*   **策略兼容**：现有的仓库规则集和组织策略也会被考虑在内。\n\n![Monitoring Copilot's thought process and reasoning with the agent logs.](https://github.blog/wp-content/uploads/2025/05/copilot2.png?resize=1600%2C1260)\n\n### 技术实现与可用性\n\n*   **计算环境**：所有 SWE 代理都需要一个计算环境来执行工作。对于 VS Code 中的代理模式，它可能是您的 PC 或 Mac 的 CPU，或像 GitHub Codespaces 这样的远程开发容器。对于此编码代理，它使用 GitHub Actions，这是世界上最大的 CI/CD 生态系统，拥有超过 25,000 个 Actions。\n*   **可用性**：新的编码代理已向所有 Copilot Enterprise 和 Copilot Pro+ 客户开放。\n    *   **启用方式**：您只需在希望使用代理的仓库中启用它。如果您是 Copilot Enterprise 用户，管理员还需要开启相关策略。\n    *   **IDE 支持**：现在可以在更多 IDE 中激活代理模式，包括 Xcode、Eclipse、Jetbrains 和 Visual Studio。\n*   **计费**：从 2025 年 6 月 4 日起，Copilot 编码代理每次模型请求将消耗一次高级请求。\n\n### GitHub Copilot 的使命\n\n无论是代码补全、下一编辑建议、聊天、代理模式，还是现在的编码代理，GitHub Copilot 的使命始终如一：让您保持在“心流”状态。它旨在完成您不想做的事情，从而让您有更多时间专注于您真正喜欢的事情，找回最初吸引您进入这个行业的创造火花。\n\n### 作者\n\n本文由 GitHub 首席执行官 Thomas Dohmke 撰写。\n\n![Thomas Dohmke](https://secure.gravatar.com/avatar/f9a3d6bee42f4503d3169861b9ecdfab5b2faebc73eb6344d2c3fa15727da799?s=200&d=mm&r=g)\n\n### 更多资源\n\n*   **文档**：\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs\n*   **GitHub**：\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub\n*   **客户案例**：\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories\n*   **企业内容**：\n    ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) Enterprise content",
-      "shortSummary": "GitHub Copilot推出全新编码代理，直接集成于GitHub，可处理低到中等复杂度的编码任务。用户通过分配Issue或提示启动代理，它将自动创建安全开发环境，提交代码至草稿PR，并支持人工审查。该代理利用GitHub Actions确保安全与合规，能理解图片和上下文，旨在自动化繁琐任务，让开发者专注于高价值的创造性工作。它已面向Copilot Enterprise和Copilot Pro+客户开放，并支持多种IDE。",
-      "translated_title": "GitHub Copilot：认识全新的编码代理",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/05/copilot1.png?resize=1241%2C782",
-          "alt": "Asking Copilot to iterate on its work by leaving a comment.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/05/copilot2.png?resize=1600%2C1260",
-          "alt": "Monitoring Copilot's thought process and reasoning with the agent logs.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://secure.gravatar.com/avatar/f9a3d6bee42f4503d3169861b9ecdfab5b2faebc73eb6344d2c3fa15727da799?s=200&d=mm&r=g",
-          "alt": "Thomas Dohmke",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
-          "alt": "Enterprise content",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Implementing features has never been easier: Just assign a task or issue to Copilot. It runs in the background with GitHub Actions and submits its work as a pull request.</p>\n<p>The post <a href=\"https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/\">GitHub Copilot: Meet the new coding agent</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-06-03T04:37:29.677Z"
+  "lastUpdated": "2025-06-05T04:38:47.631Z"
 }
