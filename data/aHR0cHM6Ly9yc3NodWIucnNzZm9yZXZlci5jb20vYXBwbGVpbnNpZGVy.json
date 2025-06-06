@@ -5,6 +5,179 @@
   "link": "https://appleinsider.com",
   "items": [
     {
+      "title": "iOS 26 中的专用游戏应用将尝试帮助用户一起玩游戏并发现新游戏 (原标题: Dedicated Games app in iOS 26 will try to help users play together & find new titles)",
+      "link": "https://appleinsider.com/articles/25/06/06/dedicated-games-app-in-ios-26-will-try-to-help-users-play-together-find-new-titles",
+      "pubDate": "Fri, 06 Jun 2025 15:40:48 GMT",
+      "isoDate": "2025-06-06T15:40:48.000Z",
+      "creator": "Amber Neely",
+      "summary": "### iOS 26 新增独立游戏应用\n\n*   **应用概述**\n    *   iOS 26（可能也包括 iPadOS 26）将引入一个独立的“游戏”应用。\n    *   该应用旨在整合 Apple Arcade 和第三方游戏，提供一个统一的中心。\n    *   它将取代 App Store 中现有的“游戏”标签。\n\n*   **主要功能与布局**\n    *   新应用将包含五个标签页：主页 (Home)、Arcade、一起玩 (Play Together) 和搜索 (Search)。\n    *   其主要目标是帮助用户发现新游戏并促进多人游戏体验。\n\n*   **发布时间与背景**\n    *   这款新应用预计将在 2025 年 6 月 9 日开始的 WWDC 2025 大会上公布。\n    *   苹果届时将发布其今年晚些时候推出的软件更新。\n\n*   **市场竞争与展望**\n    *   有报道推测，此举可能是为了与任天堂 Switch 2 的发布保持同步，希望通过新的游戏应用提升苹果设备在游戏行业中的竞争力。\n    *   然而，彭博社的报告指出，该应用可能表现平平，并且苹果在游戏领域可能仍将面临挑战，延续其传统表现。\n\n*   **WWDC 2025 观看信息**\n    *   用户可以通过相关指南观看 WWDC 2025，AppleInsider 也将提供实时报道和分析。",
+      "shortSummary": "iOS 26 将推出一个独立的“游戏”应用，整合 Apple Arcade 和第三方游戏，取代 App Store 的游戏标签。该应用旨在帮助用户发现新游戏并促进多人游戏体验，预计在 WWDC 2025 发布。此举可能旨在与任天堂 Switch 2 竞争，但有分析认为其效果可能不佳，苹果在游戏领域仍面临挑战。",
+      "translated_title": "iOS 26 中的专用游戏应用将尝试帮助用户一起玩游戏并发现新游戏",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "iMessage漏洞可能已允许零点击定向攻击 (原标题: iMessage flaw may have allowed for zero-click targeted attacks)",
+      "link": "https://appleinsider.com/articles/25/06/06/imessage-flaw-may-have-allowed-for-zero-click-targeted-attacks",
+      "pubDate": "Fri, 06 Jun 2025 15:26:12 GMT",
+      "isoDate": "2025-06-06T15:26:12.000Z",
+      "creator": "Andrew Orr",
+      "summary": "# iMessage“昵称”漏洞可能已允许零点击定向攻击\n\n安全公司iVerify发现了一个iMessage漏洞，该漏洞可能导致iPhone用户遭受零点击定向监控攻击，尽管苹果公司对此表示怀疑。\n\n## 漏洞发现与影响\n*   **漏洞名称与发现者**：该漏洞被iVerify命名为“昵称”（Nickname），影响了iOS中Messages应用处理昵称更新的方式。\n*   **潜在影响**：iVerify研究人员表示，他们在记者、政府官员和科技高管等高风险用户的设备上发现了该漏洞可能被利用的迹象。\n*   **苹果立场**：苹果公司强烈否认该漏洞被恶意利用。\n*   **修复情况**：该漏洞已在iOS 18.3中悄然修复。\n\n## “昵称”漏洞的运作方式\n*   **关联功能**：该问题与“共享姓名和照片”功能相关。此功能允许用户在消息传递时发送其首选姓名、个人资料图片和壁纸。\n*   **攻击机制**：iVerify指出，iOS处理这些昵称更新的方式存在缺陷，使得攻击者能够远程使Messages应用崩溃。攻击者可以发送一系列经过特殊时间安排的昵称更改，从而在名为“imagent”的系统进程中触发内存错误。\n*   **零点击特性**：这种漏洞可能被用作更严重攻击的起点，且无需用户进行任何交互（即“零点击”攻击）。潜在攻击者只需知道目标的电话号码和Apple ID。\n\n## 可能被定向攻击的证据（iVerify的发现）\n*   **数据分析**：在2024年4月至2025年1月期间，iVerify分析了近50,000台iOS设备的崩溃日志。\n*   **崩溃稀有性**：与“昵称”漏洞相关的崩溃极为罕见，仅出现在不到0.002%的受调查设备上，且仅限于高风险用户使用的手机。\n*   **具体案例**：\n    *   一名欧盟高级官员的设备出现了与该漏洞一致的崩溃，并在大约一个月后收到了苹果发出的威胁通知。\n    *   另一台设备在崩溃后20秒内显示出文件删除的迹象。\n*   **iVerify的结论**：iVerify研究人员表示，这种模式类似于过去间谍软件攻击中观察到的情况。尽管他们未发现任何恶意软件或植入物，但他们有中等信心认为该漏洞可能已被用作更大规模攻击链的一部分。\n*   **相关图片**：\n    *   ![调试线程信息，包含库、内存地址和与苹果主线程相关的函数调用，包括libdispatch和IMDaemonCore引用。](https://photos5.appleinsider.com/gallery/63884-132914-IMG_2232-xl.jpg)\n        *   图注：来自iOS 17.6.1的部分解码崩溃，类似于其他imagent问题。图片来源：iVerify\n    *   ![黑色背景上显示白色文本的线程崩溃报告，以技术格式列出函数调用、库、内存地址和错误代码。](https://photos5.appleinsider.com/gallery/63884-132913-IMG_2231-xl.jpg)\n        *   图注：来自iOS 17.7上Messages系统的未处理崩溃数据。图片来源：iVerify\n\n## 苹果的回应与怀疑\n*   **强烈否认**：苹果公司不同意iVerify的结论。苹果安全工程主管Ivan Krstic向Axios表示，公司强烈不同意这是定向攻击的说法。\n*   **苹果的解释**：苹果认为该崩溃源于一个常规软件错误，并已在iOS 18.3中修复。\n*   **缺乏证据**：Krstic补充说，苹果没有看到任何可信证据表明该漏洞在实际攻击中被利用，并且iVerify未能提供间谍软件被安装的技术证据。\n*   **解释差异**：iVerify公司依赖崩溃日志和设备活动模式，而苹果则认为这些发现不足以支持实际攻击的说法。\n\n## 对用户的启示与安全建议\n*   **风险提示**：即使没有确认的恶意软件，这份“昵称”报告也表明强大的消息功能可能带来新的风险，并凸显了保护用户免受无需交互的隐形攻击的挑战。\n*   **保持更新**：最重要的一步是及时更新iPhone。一旦iOS更新可用，请立即安装。您也可以在“设置”>“通用”>“软件更新”中开启自动更新。\n*   **高风险人群**：如果您从事新闻、政府、社会活动或网络安全等高风险领域，请考虑启用“锁定模式”（Lockdown Mode）。此设置会限制某些消息和网页功能，以帮助防范定向攻击。\n*   **警惕可疑信息**：避免与可疑消息互动，即使它们看起来无害或来自未知发件人。\n*   **官方信息**：如需了解更多信息，请查看苹果官方安全更新页面。\n*   **无需恐慌**：无需恐慌，但及时更新软件是保护iPhone免受此类隐形威胁的最佳方式。",
+      "shortSummary": "安全公司iVerify发现iMessage“昵称”漏洞，可能允许零点击定向攻击。该漏洞利用“共享姓名和照片”功能，远程使Messages应用崩溃。iVerify称在高风险用户设备上发现潜在利用迹象，但未找到恶意软件。苹果否认是定向攻击，称其为已在iOS 18.3中修复的常规软件错误，且未发现实际利用证据。建议用户及时更新系统，高风险人群可启用“锁定模式”以增强保护。",
+      "translated_title": "iMessage漏洞可能已允许零点击定向攻击",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/63884-132914-IMG_2232-xl.jpg",
+          "alt": "Debugging thread information with libraries, memory addresses, and function calls related to Apple's main thread, including libdispatch and IMDaemonCore references.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/63884-132913-IMG_2231-xl.jpg",
+          "alt": "Black background with white text displaying a crash report from a thread, listing function calls, libraries, memory addresses, and error codes in a technical format.",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "深入了解语音备忘录：充分利用苹果最被忽视的应用 (原标题: Inside Voice Memos: getting the most out of Apple's most overlooked app)",
+      "link": "https://appleinsider.com/inside/ios-18/tips/inside-voice-memos-getting-the-most-out-of-apples-most-overlooked-app",
+      "pubDate": "Fri, 06 Jun 2025 14:58:21 GMT",
+      "isoDate": "2025-06-06T14:58:21.000Z",
+      "creator": "Amber Neely",
+      "summary": "# 深入了解语音备忘录：充分利用苹果最被忽视的应用\n\n“语音备忘录”是苹果公司的一款音频录制应用，其功能远不止简单的录音。它可能是苹果设备上最被忽视的应用之一，但却提供了分层录音、自动转录和易用性等强大功能。本文将深入探讨“语音备忘录”的起源以及如何充分利用其各项功能。\n\n## 声音录制的历史背景\n\n讨论音频录制史，离不开图像录制史。可以说，如果没有先掌握图像录制技术，我们可能不会那么早地实现音频录制。\n\n*   **从图像到声音录制**\n    人类很早就知道光在显示图像中的重要作用，但直到19世纪早期，发明家才找到永久记录图像的方法。1822年，法国发明家尼塞福尔·涅普斯（Nicephore Niepce）使用感光介质创造了第一张永久记录的图像。1839年，达盖尔照相法（daguerreotype）问世，并在19世纪40年代和50年代被广泛使用，标志着摄影术的开端。\n    受此启发，法国印刷商兼发明家爱德华-莱昂·斯科特·德·马丁维尔（Edouard-Leon Scott de Martinville）在1857年首次“视觉”记录了声音。他最初的目的并非播放，而是为了视觉研究，希望将声音记录下来并“阅读”，类似于速记。\n    ![爱德华-莱昂·斯科特·德·马丁维尔](https://photos5.appleinsider.com/gallery/63073-131521-e-l-s-d-m-xl.jpg)\n    *爱德华-莱昂·斯科特·德·马丁维尔*\n    尽管斯科特·德·马丁维尔的愿望未能实现（人类无法直接“阅读”录制的音频），但2008年，劳伦斯伯克利国家实验室的科学家成功将他1857年的录音转化为可播放的音频，那是一段法国民谣《月光下》（Au clair de la lune）的片段，很可能是斯科特本人演唱。\n\n*   **回放的诞生**\n    虽然人类无法直接“阅读”录音，但很快有人意识到机器可以。仅仅过了大约二十年，托马斯·爱迪生（Thomas Edison）于1877年获得了留声机滚筒的专利，实现了声音的录制和回放。最初使用锡箔，不到十年后被蜡筒取代。到了20世纪10年代，至今仍在生产的唱片取代了它们。\n\n*   **便携式录音机的兴起**\n    直到20世纪30年代，随着磁带成为主流录音形式，音频录制才真正普及。20世纪50年代初，磁带被誉为奇迹，使电台主持人和音乐家能够高质量地录制和回放表演。\n    到了20世纪70年代，许多个人音频录音机开始上市，例如索尼于1973年发布的TC-55，这是一款高度便携但略显笨重的个人录音机。\n    ![索尼TC-55便携式卡带录音机](https://photos5.appleinsider.com/gallery/63073-131523-sonytc55-xl.jpg)\n    *索尼TC-55便携式卡带录音机 | 图片来源：Hifiengine.com*\n    从最初的探索到如今在iPhone上轻松录制音频，历经约150年，这条发展之路令人惊叹。\n\n## 苹果设备上的“语音备忘录”\n\n计算机上的声音录制早已存在，数字录音机也相当普遍。然而，通过智能手机录制音频是前代录音机的显著改进：无需携带笨重设备，无需更换磁带，且分享录音变得异常简单。\n\n*   **广泛普及**\n    苹果公司在2009年随iOS 3推出“语音备忘录”时，已占据市场14%以上份额。如今，苹果在美国智能手机市场占有近57%的份额，这意味着超过一半的美国公民可以在iPhone上使用“语音备忘录”应用。直到九年后，随着macOS Mojave的发布，它才登陆Mac平台。此后，它几乎出现在所有苹果平台上。目前，“语音备忘录”支持iPhone、iPad、Mac、Apple Watch，甚至Apple Vision Pro，唯一不支持该应用的苹果平台是Apple TV。\n\n*   **跨平台一致性**\n    尽管设备不同，但“语音备忘录”在所有平台上的体验都保持了令人欣慰的一致性。\n\n## 主要功能及使用方法\n\n### 1. 录制与回放基础\n\n“语音备忘录”会优先使用外部麦克风（如耳机中的麦克风，如AirPods Max或AirPods/AirPods Pro），否则将使用设备的内置麦克风。\n\n*   **录制步骤：**\n    1.  打开“语音备忘录”应用。\n    2.  轻点或点击“录制”按钮。\n    3.  完成录制后，再次按下“录制”按钮。\n*   **回放步骤：**\n    1.  轻点或点击“播放”按钮。\n\n### 2. 管理基于位置的命名\n\n默认情况下，备忘录会根据地理位置命名（例如，您家地址）。如果您想关闭此功能，操作非常简单。\n\n*   **在iPhone或iPad上关闭基于位置的命名：**\n    1.  打开“设置”。\n    2.  向下滚动并轻点“应用”。\n    3.  向下滚动并轻点“语音备忘录”。\n    4.  关闭“基于位置的命名”开关。\n    ![在iPhone上关闭基于位置的命名](https://photos5.appleinsider.com/gallery/63073-131527-locationbased-xl.jpg)\n    *如何在“语音备忘录”中关闭基于位置的命名*\n\n*   **在Mac上关闭基于位置的命名：**\n    1.  打开“语音备忘录”应用。\n    2.  在顶部菜单栏中，点击“语音备忘录”。\n    3.  点击“设置...”。\n    4.  取消勾选“基于位置的备忘录”。\n\n### 3. 查看转录（iOS 18 / macOS 15 Sequoia）\n\n作为iOS 18和macOS 15 Sequoia的一部分，苹果新增了自动转录“语音备忘录”录音的功能。查看转录很简单，但在macOS和iOS/iPadOS之间略有不同。\n\n*   **在iPhone或iPad上查看“语音备忘录”转录：**\n    1.  打开“语音备忘录”应用。\n    2.  轻点您想查看转录的语音备忘录。\n    3.  轻点“...”。\n    4.  轻点“查看转录”或“复制转录”。\n    ![在iPhone上查看语音备忘录转录](https://photos5.appleinsider.com/gallery/63073-131524-transcript-xl.jpg)\n    *在iPhone上查看“语音备忘录”转录*\n\n*   **在Mac上查看“语音备忘录”转录：**\n    1.  打开“语音备忘录”应用。\n    2.  点击您想查看转录的语音备忘录。\n    3.  在“语音备忘录”应用窗口的右上角，点击“转录”按钮。\n    4.  或者，您可以右键点击或按住Ctrl键点击转录，然后从下拉菜单中选择“查看转录”。\n\n### 4. 分享语音备忘录\n\n有时您可能需要与家人、朋友或同事分享语音备忘录。这个过程在iPhone/iPad和Mac之间有所不同，但都非常简单。\n\n*   **在iPhone或iPad上分享：**\n    1.  打开“语音备忘录”应用。\n    2.  在您想分享的备忘录右侧，轻点“...”。\n    3.  轻点“分享”。\n\n*   **在Mac上分享：**\n    1.  打开“语音备忘录”应用。\n    2.  点击您想分享的语音备忘录。\n    3.  在“语音备忘录”应用窗口的右上角，点击“分享”按钮。\n\n### 5. 分层语音备忘录（iPhone 16 Pro 独占）\n\n如果您拥有iPhone 16 Pro，可以利用分层语音备忘录功能。该功能于2024年12月随iOS 18.2更新推出。它允许用户在现有伴奏音轨之上录制人声音轨，无需耳机。用户只需点击录制并在伴奏上唱歌，iPhone将创建两个人声和伴奏的独立音轨。\n![分层语音备忘录界面](https://photos5.appleinsider.com/gallery/62017-128433-header-m-xl.jpg)\n*图片来源：Apple*\n之后，用户可以将分层音轨导入到Logic Pro等制作应用中。分层语音备忘录功能仅限于iPhone 16 Pro及更新型号的iPhone。\n\n*   **在iPhone上录制分层语音备忘录：**\n    1.  打开“语音备忘录”应用。\n    2.  轻点您想添加第二层的录音。\n    3.  轻点“波形”图标。\n    4.  轻点“添加”按钮（+）。\n    5.  轻点“分层录制”按钮以录制您的第二层。\n\n### 6. 删除和恢复语音备忘录\n\n您可以按照以下步骤删除或恢复“语音备忘录”录音。\n\n*   **在iPhone或iPad上删除“语音备忘录”录音：**\n    1.  打开“语音备忘录”应用。\n    2.  在您想删除的录音上，轻点“垃圾桶”图标。\n    ![在Mac上删除录音](https://photos5.appleinsider.com/gallery/63073-131526-deleteonmac-xl.jpg)\n    *如何在Mac上的“语音备忘录”中删除录音*\n\n*   **在Mac上删除语音备忘录：**\n    1.  打开“语音备忘录”应用。\n    2.  点击您想删除的语音备忘录。\n    3.  在“语音备忘录”应用窗口的右上角，点击“垃圾桶”图标。\n\n*   **恢复已删除的语音备忘录：**\n    默认情况下，已删除的备忘录会在设备上存储30天后才被永久删除。要查找已删除的语音备忘录，请按照以下步骤操作。\n\n*   **在iPhone或iPad上恢复“语音备忘录”录音：**\n    1.  打开“语音备忘录”应用。\n    2.  轻点屏幕左上角的“返回”按钮。\n    3.  轻点“最近删除”。\n    4.  轻点您想恢复的录音。\n    5.  轻点“恢复”。\n    ![查看最近删除的录音](https://photos5.appleinsider.com/gallery/63073-131528-recentlydeletedonmac-xl.jpg)\n    *在“语音备忘录”中查看最近删除的录音*\n\n*   **在Mac上恢复“语音备忘录”录音：**\n    1.  打开“语音备忘录”应用。\n    2.  在顶部菜单栏中，点击“语音备忘录”。\n    3.  点击“查看”。\n    4.  点击“显示边栏”。\n    5.  在“语音备忘录”应用窗口的边栏中，点击“最近删除”。\n    6.  点击您想恢复的录音。\n    7.  在“语音备忘录”应用右上角的栏中，点击“恢复”。",
+      "shortSummary": "“语音备忘录”是苹果一款常被忽视但功能强大的录音应用。它不仅能轻松录音和回放，还支持自动转录（iOS 18/macOS 15）、基于位置的命名管理、以及iPhone 16 Pro独有的分层录音功能。该应用已广泛覆盖iPhone、iPad、Mac、Apple Watch和Apple Vision Pro等设备，提供便捷的录音、分享、删除和恢复体验，是日常音频记录的实用工具。",
+      "translated_title": "深入了解语音备忘录：充分利用苹果最被忽视的应用",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/63073-131521-e-l-s-d-m-xl.jpg",
+          "alt": "Engraving of a man with a thick mustache, full sideburns, and a suit with a checkered tie against a neutral background.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/63073-131523-sonytc55-xl.jpg",
+          "alt": "Two vintage portable cassette recorders, one black and the other white, with buttons and switches, displayed against a blue gradient background.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/63073-131527-locationbased-xl.jpg",
+          "alt": "Smartphone screen displaying Voice Memos settings, options for location, Siri, and data. Background app refresh and cellular data toggled on. Pink to purple gradient background.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/63073-131524-transcript-xl.jpg",
+          "alt": "Two smartphones display a voice recording app with a list of recordings and controls for playback, editing, and transcription options. Background is a pink to blue gradient.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/62017-128433-header-m-xl.jpg",
+          "alt": "Two smartphones displaying audio editing software and music player, featuring the song 'Maybe This Christmas' by Michael Buble and Carly Pearce.",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/63073-131526-deleteonmac-xl.jpg",
+          "alt": "Audio recording software interface showing a list of recordings, waveform display, and recording controls, set against a gradient background. A trash icon is highlighted.",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/63073-131528-recentlydeletedonmac-xl.jpg",
+          "alt": "Audio recording app interface with waveform display, file list titled 'Recently Deleted', and controls for play, delete, recover. Highlighted file 'Barricade' dated June 15, 2023, duration 3:05 minutes.",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "《无主之地2》现已免费，并且支持现代Mac系统 (原标题: 'Borderlands 2' is free right now, and yes, it runs on modern Macs)",
+      "link": "https://appleinsider.com/articles/25/06/06/borderlands-2-is-free-right-now-and-yes-it-runs-on-modern-macs",
+      "pubDate": "Fri, 06 Jun 2025 14:12:37 GMT",
+      "isoDate": "2025-06-06T14:12:37.000Z",
+      "creator": "Amber Neely",
+      "summary": "### 《无主之地2》免费获取与兼容性\n\n为了宣传即将于2025年9月发布的《无主之地4》，游戏开发商Gearbox、发行商2K和Take-Two Interactive正在限时免费提供《无主之地2》。\n\n*   **免费获取方式与期限**\n    *   PC和Mac用户可在Steam平台下载《无主之地2》。\n    *   在美东时间6月8日下午1点前下载，即可永久保留这款原价20美元的游戏。\n\n*   **游戏介绍与兼容性**\n    *   《无主之地2》是一款广受好评的第一人称射击游戏，融合了角色扮演元素，设定在一个后启示录世界中。\n    *   游戏以其高度风格化的设计和黑色幽默而闻名。\n    *   玩家可以选择不同角色，通过完成任务来收集日益强大的武器和装备。\n    *   游戏强调合作多人模式，但也可单人游玩。\n    *   尽管游戏于2012年发布，但通过Rosetta 2技术，它在现代Mac系统（包括Apple Silicon芯片的Mac）上运行良好。\n\n### 近期争议\n\n2025年3月，拥有《无主之地》系列开发商Gearbox的Take-Two公司更新了其所有游戏的最终用户许可协议（EULA），《无主之地2》也受此影响。这一举动引发了争议，并导致游戏在Steam上遭遇“差评轰炸”。\n\n*   **争议的起因**\n    *   一位YouTuber对EULA的更新进行了“不友善的解读”，声称新协议允许游戏访问用户的“个人信息”（如电话号码、IP地址和操作系统），并禁止任何形式的Modding（模组修改）。\n\n*   **官方澄清与事实**\n    *   文章指出，关于EULA允许访问个人信息的说法并非新鲜事，很可能只是为了避免法律上的混淆而进行的标准法律修改。\n    *   关于禁止Modding的说法也是一种误读。EULA主要是劝阻用户不要对其他玩家的游戏体验造成负面影响，这适用于Take-Two旗下的所有游戏，而非特指《无主之地2》。考虑到《无主之地2》拥有庞大的Modding文化，开发商突然打击Modding将是一个奇怪的举动。\n    *   尽管如此，该视频达到了其预期效果，导致《无主之地2》在Steam上被“差评轰炸”，近期评价显示为“褒贬不一”。\n    *   Gearbox首席执行官Randy Pitchford对此进行了澄清，表示软件本身没有任何改变，也没有间谍软件。他强调EULA的修改是发行商层面的决定，与开发商无关。\n\n因此，如果玩家看到《无主之地2》在Steam上显示“褒贬不一”的评价，现在便能理解其原因。",
+      "shortSummary": "《无主之地2》现已在Steam平台限时免费，PC和Mac用户可在美东时间6月8日前下载并永久保留。这款2012年的第一人称射击/角色扮演游戏以其独特风格和黑色幽默广受好评，且支持现代Mac系统。近期，因Take-Two更新EULA引发争议，被YouTuber误读为收集个人信息和禁止Modding，导致游戏在Steam上遭遇差评轰炸，但开发商已澄清软件本身无变化，也无间谍软件。",
+      "translated_title": "《无主之地2》现已免费，并且支持现代Mac系统",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "开发者、设计奖项和WWDC在AppleInsider播客上 (原标题: Developers, Design Awards, and WWDC on the AppleInsider Podcast)",
+      "link": "https://appleinsider.com/articles/25/06/06/developers-design-awards-and-wwdc-on-the-appleinsider-podcast",
+      "pubDate": "Fri, 06 Jun 2025 12:51:46 GMT",
+      "isoDate": "2025-06-06T12:51:46.000Z",
+      "creator": "William Gallagher",
+      "summary": "### WWDC 2025前瞻与传闻\n\nAppleInsider播客讨论了即将到来的WWDC 2025，传闻此次大会内容可能非常丰富，也可能相对轻量。Tim Cook的主题演讲视频将于2025年6月9日发布，届时Apple预计将揭示Mac、iPhone和iPad的新设计。\n\n**主要关注点与传闻包括：**\n\n*   **Apple Intelligence：** 有传闻称今年WWDC可能对此提及甚少。\n*   **操作系统更新：**\n    *   **iOS 26：** 预计将有更多功能泄露。\n    *   **iPadOS：** 是WWDC愿望清单中的重点。\n    *   **visionOS 26：** 传闻最终可能提供对PlayStation VR2空间控制器的完整支持。\n    *   **macOS 26：** 传闻代号为“Tahoe”。\n    *   **HomeOS：** 也有相关传闻。\n*   **Siri：** 聊天机器人原型已接近ChatGPT的质量，但幻觉问题比Apple期望的更多。\n*   **AirPods：** 预计将获得新的头部手势和摄像头控制功能。\n\n### Apple Design Awards 2025\n\nApple已公布了2025年Apple Design Award的获奖者，其中包括《Balatro》和《Watch Duty》。\n\n### App Store与监管挑战\n\n播客还探讨了Apple在App Store方面的行动和挑战：\n\n*   Apple在2024年拒绝了数百万个欺诈应用，以打击欺诈行为。\n*   Apple正在积极捍卫App Store，并向开发者展示在iPhone等平台上发布应用的优势。\n*   Apple正在对欧盟要求其自由共享技术的指令提出上诉。\n*   Apple暂停执行允许外部链接的禁令上诉失败。\n\n### 其他信息\n\n*   AppleInsider播客还提供了订阅AppleInsider+（扩展版）的途径，可通过Patreon或Apple Podcasts订阅。\n*   节目中提到了其他AppleInsider播客，如HomeKit Insider，涵盖HomeKit相关新闻、产品和应用。\n*   文章中提及了赞助商Oracle和NordLayer。\n*   听众可以通过Apple Podcasts、Overcast、Pocket Casts、Castro、Stitcher、Google Podcasts等平台订阅AppleInsider播客。",
+      "shortSummary": "AppleInsider播客讨论了WWDC 2025的临近，届时Mac、iPhone和iPad的新设计有望亮相。播客还涵盖了Apple Intelligence、iOS 26、macOS 26等操作系统的传闻更新，以及AirPods和Siri的新功能。此外，节目还提到了2025年Apple设计奖获奖者，Apple在2024年拒绝了数百万个欺诈应用，以及Apple对App Store监管和欧盟指令的上诉。",
+      "translated_title": "开发者、设计奖项和WWDC在AppleInsider播客上",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "哪些 Apple TV 硬件将运行新的 tvOS 26 (原标题: What Apple TV hardware will run the new tvOS 26)",
+      "link": "https://appleinsider.com/articles/25/06/06/which-apple-tv-sets-will-run-the-new-tvos-26",
+      "pubDate": "Fri, 06 Jun 2025 12:48:00 GMT",
+      "isoDate": "2025-06-06T12:48:00.000Z",
+      "creator": "William Gallagher",
+      "summary": "# tvOS 26 兼容性列表泄露\n\n一份新的泄露声称获得了将在 #WWDC25 上宣布的 tvOS 26 升级的完整 Apple TV 型号兼容性列表。这份泄露是继 Apple Watch 和 HomePod 兼容性泄露之后，WWDC 泄露的又一部分。\n\n## 主要兼容型号\n根据泄露信息，tvOS 26 将支持以下 Apple TV 型号：\n*   **Apple TV HD (2015)**\n*   **Apple TV 4K (第一代, 2017)**\n*   **Apple TV 4K (第二代, 2021)**\n*   **Apple TV 4K (第三代, 2022)**\n    *   泄露并未具体说明，但第三代 Apple TV 4K 有两个版本（仅支持 Wi-Fi 和支持 Wi-Fi + 以太网），据推测两者都将获得支持。\n\n## 兼容性趋势\n*   与之前泄露的 Apple Watch watchOS 26 兼容性列表类似，这意味着今年没有 Apple TV 型号被淘汰。\n*   因此，唯一不被支持的 Apple TV 型号是原始系统的第一代、第二代和第三代版本。\n    *   Apple 公司自 2018 年起已停止支持第一代型号。\n    *   最近，Netflix 也宣布停止支持第二代和第三代 Apple TV 型号。\n\n## 新硬件展望\n*   尽管有反复的传闻称新的 Apple TV 将在 2025 年发布，但 tvOS 26 确定将在 WWDC 2025 上推出。\n*   然而，在 WWDC 2025 上同时发布硬件的可能性“极其微小”。",
+      "shortSummary": "一份新的泄露表明，tvOS 26 将在 WWDC 2025 上发布，并兼容所有现有 Apple TV HD (2015) 和 Apple TV 4K (2017, 2021, 2022) 型号，包括第三代 4K 的两个版本。这意味着今年没有 Apple TV 型号被淘汰。仅原始系统的早期版本（第一、二、三代）不被支持。尽管有新 Apple TV 的传闻，但其在 WWDC 2025 与 tvOS 26 同时发布的可能性极低。",
+      "translated_title": "哪些 Apple TV 硬件将运行新的 tvOS 26",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "Apple Pay恶作剧惹恼受害者，TikTok恶作剧者自食其果 (原标题: Apple Pay prank irritates victim, TikTok prankster gets what they deserve)",
+      "link": "https://appleinsider.com/articles/25/06/06/apple-pay-prank-irritates-victim-tiktok-prankster-gets-what-they-deserve",
+      "pubDate": "Fri, 06 Jun 2025 12:20:40 GMT",
+      "isoDate": "2025-06-06T12:20:40.000Z",
+      "creator": "William Gallagher",
+      "summary": "### TikTok恶作剧：假冒Apple Pay“Tap to Pay”引发的事件\n\n*   **恶作剧手法**\n    *   一名TikTok视频创作者拍摄了一种恶作剧，假装通过“Tap to Pay”功能从他人的iPhone中“取走”现金。\n    *   恶作剧者将自己的iPhone靠近陌生人的手机，播放Apple Pay交易时特有的声音，然后感谢对方的“慷慨捐赠”。\n    *   通常有同伴在旁拍摄，以制作搞笑的TikTok视频。\n\n*   **伦敦事件**\n    *   据英国《每日邮报》报道，一名TikTok用户在伦敦泰晤士河边对一名男子实施了此恶作剧。\n    *   该用户最初声称“取走”了1万英镑（约13,500美元），后改口称是1,000英镑。\n    *   受害者抓住恶作剧者的手臂，另一名陌生人也加入进来帮忙制止，两人同时寻找警察。\n    *   两名便衣警察随后介入，该TikTok用户因拒捕被戴上手铐。\n    *   一名警官告知恶作剧者，他将因涉嫌欺诈而被搜查相关证据。\n    *   整个过程被恶作剧者的朋友拍摄下来。\n    *   文章未详细说明这对TikTok用户后续的遭遇。\n\n*   **Apple Pay工作原理与恶作剧的无效性**\n    *   **无实际资金转移：** 文章强调，这些恶作剧中没有实际的资金被转移。Apple Pay要求付款人在交易发生前进行确认。\n    *   **技术误解：** 恶作剧者假装使用的是Apple的“Tap to Cash”功能，但该功能需要Apple Cash，且在英国不可用。\n    *   **英国的“Tap to Pay”：** 英国和欧洲大部分地区有类似的“Tap to Pay on iPhone”功能，但其明确用于商家收款，且商家必须使用特定的支付应用程序。\n    *   **Apple Cash（美国）的复杂流程：** 即使在美国，“Tap to Cash”也涉及多步操作，包括用户必须打开“信息”或“Apple钱包”应用，选择发送金额，并通过双击侧边按钮、Face ID、Touch ID或密码进行确认。\n    *   **无法盗取资金：** 恶作剧无法从Apple Cash中盗取资金。\n\n*   **媒体报道差异**\n    *   《每日邮报》的报道被批评缺乏细节（如恶作剧如何运作、发生时间）且金额有误。\n    *   《伦敦标准晚报》提供了更详细的解释和伦敦其他类似案例。",
+      "shortSummary": "一名TikTok恶作剧者假装通过Apple Pay的“Tap to Pay”功能从陌生人手机中“取走”现金，并因此自食其果。在伦敦，一名恶作剧者因此被受害者和路人制止，并被便衣警察逮捕。文章指出，这些恶作剧中没有实际资金转移，因为Apple Pay要求用户进行多重确认，且恶作剧者误解了技术（如“Tap to Cash”在英国不可用）。此次事件凸显了此类恶作剧的风险和无效性。",
+      "translated_title": "Apple Pay恶作剧惹恼受害者，TikTok恶作剧者自食其果",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "所有 HomePod 都应仍兼容 HomePod 软件 26 (原标题: Every HomePod should still be compatible with HomePod Software 26)",
+      "link": "https://appleinsider.com/articles/25/06/06/every-homepod-should-still-be-compatible-with-homepod-software-26",
+      "pubDate": "Fri, 06 Jun 2025 11:56:33 GMT",
+      "isoDate": "2025-06-06T11:56:33.000Z",
+      "creator": "Mike Wuerthele",
+      "summary": "### HomePod 软件 26 兼容性列表泄露\n\n*   在苹果全球开发者大会（WWDC）前夕，HomePod 软件 26 的兼容性列表意外泄露。\n*   此前关于 2025 年 9 月发布的 HomePod 软件（可能命名为 HomePod 软件 26）的传闻甚少，尤其是关于设备兼容性的信息。\n\n### 所有 HomePod 型号均兼容\n\n*   泄露的信息显示，所有已发售的 HomePod 设备都将兼容 HomePod 软件 26，这令人感到意外。\n*   此前普遍猜测，2018 年发布的初代 HomePod 将被排除在兼容性列表之外。\n\n### 初代 HomePod 的背景\n\n*   初代 HomePod 于 2017 年 WWDC 上宣布，并于 2018 年 2 月发货。\n*   它搭载了与 Apple TV HD 相同的 A8 处理器，该处理器在其他设备中已不常见。\n*   苹果在 2020 年将重心转向 HomePod mini，并于 2021 年 3 月停止了初代 HomePod 的零售。\n*   在第二代大型 HomePod 发布一年后，初代 HomePod 于 2024 年被列为“复古产品”。\n\n### 泄露信息的可靠性\n\n*   文章认为此次泄露的信息很可能属实，因为泄露者在发布此类信息以及准确泄露测试版版本号方面有着长期且可靠的记录。\n\n### 官方确认时间\n\n*   所有信息都将在 6 月 9 日星期一（苹果 2025 年 WWDC 主题演讲）得到官方确认。",
+      "shortSummary": "根据最新泄露的兼容性列表，所有已发售的 HomePod 设备，包括 2018 年发布的初代 HomePod，都将兼容即将推出的 HomePod 软件 26。这一消息令人意外，因为此前普遍认为初代 HomePod 会因其较旧的 A8 处理器而被淘汰。泄露者过往记录良好，因此该信息可信度较高。官方确认预计将在 6 月 9 日的 WWDC 2025 主题演讲上公布。",
+      "translated_title": "所有 HomePod 都应仍兼容 HomePod 软件 26",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "泄露：哪些Apple Watch将获得watchOS 26 (原标题: Leak reveals which Apple Watches will get watchOS 26)",
+      "link": "https://appleinsider.com/articles/25/06/06/leak-reveals-which-apple-watches-will-get-watchos-26",
+      "pubDate": "Fri, 06 Jun 2025 10:59:56 GMT",
+      "isoDate": "2025-06-06T10:59:56.000Z",
+      "creator": "William Gallagher",
+      "summary": "根据一项最新泄露，下一代watchOS（可能被命名为watchOS 26）将支持以下Apple Watch型号：\n\n*   **支持型号列表：**\n    *   Apple Watch Series 6\n    *   Apple Watch Series 7\n    *   Apple Watch Series 8\n    *   Apple Watch Series 9\n    *   Apple Watch Series 10\n    *   Apple Watch Ultra\n    *   Apple Watch Ultra 2\n    *   Apple Watch SE (第二代)\n\n*   **与watchOS 11的对比：**\n    *   这个列表与当前支持watchOS 11的型号列表完全相同。\n    *   最旧的支持型号Apple Watch Series 6于2020年发布。\n    *   尽管苹果在iOS 18上展示了对旧设备（最长七年）的长期支持，但2024年发布的watchOS 11却大幅度削减了对旧型号的支持，一次性放弃了Apple Watch Series 4、Apple Watch Series 5和初代Apple Watch SE。\n\n*   **命名和发布：**\n    *   文章提到，苹果可能会将其所有操作系统重新命名为以数字“26”结尾，以匹配其主要使用年份，这将有助于统一命名。\n    *   即将发布的Apple Watch Series 11将肯定运行最新版本的watchOS。\n    *   新watchOS的完整细节将在6月9日的WWDC开幕主题演讲中公布。",
+      "shortSummary": "一项泄露表明，下一代watchOS（可能命名为watchOS 26）将支持Apple Watch Series 6及更新型号，包括Ultra和第二代SE。该支持列表与watchOS 11相同。尽管苹果通常长期支持设备，但watchOS 11已放弃了Series 4、5和初代SE。新watchOS的完整细节将于6月9日在WWDC上公布。",
+      "translated_title": "泄露：哪些Apple Watch将获得watchOS 26",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
       "title": "Redkey 机器人割草机评测：低价位下的最低配置 (原标题: Redkey robot lawn mower review: bare minimum specs for a low price)",
       "link": "https://appleinsider.com/articles/25/06/06/redkey-robot-lawn-mower-review-bare-minimum-specs-for-a-low-price",
       "pubDate": "Fri, 06 Jun 2025 00:32:43 GMT",
@@ -93,6 +266,19 @@
       "content": ""
     },
     {
+      "title": "商标为WWDC上“homeOS”的揭示带来希望 (原标题: Trademark gives hope for 'homeOS' reveal at WWDC)",
+      "link": "https://appleinsider.com/articles/25/06/05/trademark-gives-hope-for-homeos-reveal-at-wwdc",
+      "pubDate": "Thu, 05 Jun 2025 20:24:37 GMT",
+      "isoDate": "2025-06-05T20:24:37.000Z",
+      "creator": "Malcolm Owen",
+      "summary": "### “homeOS”商标文件引发WWDC发布猜测\n\n一份关于“homeOS”的商标文件被发现，这可能意味着苹果正准备推出其智能家居操作系统，并有可能在即将到来的全球开发者大会（WWDC）上公布。\n\n*   **背景信息**\n    *   多年来，一直有传言称苹果正在开发一款针对智能家居的操作系统，并可能将其命名为“homeOS”。\n\n*   **商标发现详情**\n    *   据Parker Ortolani通过9to5Mac披露，一份“homeOS”的商标文件已被发现。\n    *   该商标于2025年4月注册（原文如此）。\n    *   注册方为“Home Operations Suite LLC”，注册地址位于特拉华州威尔明顿的251 Little Falls Drive，该地址常被许多公司用于企业注册。\n    *   联系人是Benjamin Law PC的Amy J Benjamin，该公司专门从事知识产权和广告法业务。\n    *   商标分类：\n        *   **009类**：涵盖“计算机和软件产品及电气和科学产品”。\n        *   **042类**：涵盖“计算机和软件服务及科学服务”。\n        *   这两个类别都与操作系统的功能或任何软件产品和服务相符。\n\n*   **与苹果的潜在联系**\n    *   所有这些迹象都指向这可能是一份由苹果提交的“homeOS”商标申请，其注册方式旨在最大限度地降低被归因于苹果的可能性。\n    *   苹果公司习惯性地使用壳公司来隐藏其注册信息，这是一种“屡试不爽”的策略。\n\n*   **不确定性与历史先例**\n    *   尽管在WWDC之前发现软件商标通常被视为一个好兆头，但这绝不保证产品会实际发布。\n    *   **“realityOS”案例**：2022年WWDC前夕，也曾发现“realityOS”的商标，当时有传言称这与后来的visionOS和Apple Vision Pro有关。然而，“realityOS”本身并未作为实际产品发布，尽管苹果的代码中曾有相关引用。\n    *   “homeOS”也可能面临同样的情况。\n    *   苹果也可能提交了多个名称申请，以在最终确定一个品牌名称之前保护所有可能的品牌创意。",
+      "shortSummary": "一份“homeOS”商标文件被发现，引发了苹果可能在WWDC上发布智能家居操作系统的猜测。该商标由一家常用于企业注册的实体注册，且分类与操作系统相符，暗示可能与苹果有关，因苹果常使用壳公司。然而，商标发现并非产品发布的保证，例如2022年“realityOS”商标虽被发现但未实际发布。因此，“homeOS”的未来仍不确定。",
+      "translated_title": "商标为WWDC上“homeOS”的揭示带来希望",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
       "title": "'狙击精英5' 将残酷的二战行动带到 iPhone、iPad 和 Mac 平台，预计2026年推出 (原标题: 'Sniper Elite 5' brings brutal WWII action to iPhone, iPad, and Mac in 2026)",
       "link": "https://appleinsider.com/articles/25/06/05/sniper-elite-5-brings-brutal-wwii-action-to-iphone-ipad-and-mac-in-2026",
       "pubDate": "Thu, 05 Jun 2025 19:53:51 GMT",
@@ -102,6 +288,26 @@
       "shortSummary": "《狙击精英5》将于2026年初登陆iPhone、iPad和Mac平台。这款第三人称战术潜行射击游戏设定在1944年二战法国，玩家扮演精英狙击手卡尔·费尔伯恩，协助法国抵抗组织。游戏以其沉浸式地图和标志性的“X光击杀视角”闻名。预计Mac需M1芯片，iPad/iPhone需M系列或A17 Pro芯片。",
       "translated_title": "'狙击精英5' 将残酷的二战行动带到 iPhone、iPad 和 Mac 平台，预计2026年推出",
       "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "用户要求大幅折扣以在App Store外支付订阅费用 (原标题: Users demand a big discount to pay for subscriptions out of the App Store)",
+      "link": "https://appleinsider.com/articles/25/06/05/users-demand-a-big-discount-to-pay-for-subscriptions-out-of-the-app-store",
+      "pubDate": "Thu, 05 Jun 2025 18:53:36 GMT",
+      "isoDate": "2025-06-05T18:53:36.000Z",
+      "creator": "Malcolm Owen",
+      "summary": "本文探讨了美国iPhone用户在App Store之外购买订阅的意愿，以及苹果公司因此面临的潜在收入风险。\n\n### 背景与起因\n\n*   **法律强制**：由于Epic Games与苹果公司之间关于App Store的持续诉讼，苹果被迫允许开发者链接到外部商店，此前苹果未能遵守2021年的相关禁令。\n*   **潜在影响**：尽管不太可能导致App Store的完全退出，但这一变化可能导致苹果未来收入大幅减少。\n\n### 用户购买意愿调查\n\n*   **调查来源**：摩根士丹利分析师报告中引用的AlphaWise于5月进行的一项调查。\n*   **调查对象**：美国iPhone用户。\n*   **调查问题**：假设价格相同，用户直接从开发者网站购买应用的意愿。\n*   **意愿程度**：采用五点量表（从“极有可能”到“极不可能”）。\n    *   **“极有可能”**：约28%的受访者选择，高于2022年的27%和2021年的18%。\n    *   **“比较可能”**：20%的受访者选择，低于2022年和2021年的23%。\n    *   **“比较不可能”**：7%的受访者选择（2025年数据）。\n    *   **“极不可能”**：19%的受访者选择（2025年数据），远高于2022年的10%和2021年的11%。\n\n*   **特定用户群体**：年轻用户、男性以及在App Store中支付多个应用的用户更愿意在App Store之外支付。然而，鉴于75%的iPhone用户不支付超过五个应用，这部分更愿意的用户群体非常小。\n\n![iPhone用户直接从开发者购买应用的意愿（2021、2022、2025年）](https://photos5.appleinsider.com/gallery/63871-132892-AlphaWise-2025-xl.jpg)\n\n### 激励性折扣需求\n\n*   **折扣比例**：调查显示，用户需要约29%的折扣才能被激励在App Store之外购买。这略低于2022年调查所需的35%折扣。\n*   **对开发者的影响**：所需的折扣比例接近苹果App Store现有的30%佣金。这意味着，在扣除苹果佣金后，开发者理论上通过自行销售应用所获得的收入，与通过App Store销售所获得的收入大致相同，甚至可能因额外的处理费用而更少。\n\n### 对苹果的潜在影响\n\n*   **收入风险**：摩根士丹利认为，禁令可能导致苹果面临约37亿美元的收入风险，在最坏情况下，每股收益将减少16美分。\n*   **法律纠纷进展**：\n    *   苹果最初提出的解决方案（允许链接但收取27%佣金）导致其在2025年4月受到制裁，法院要求其重新尝试。\n    *   苹果已对禁令提出上诉，并请求暂停执行，但该请求于6月被驳回。",
+      "shortSummary": "一项调查显示，美国iPhone用户越来越愿意在App Store之外购买订阅，但前提是需要大幅折扣（约29%）。这一折扣接近苹果30%的佣金，可能导致开发者通过外部销售获得的收益与App Store内销售相差无几。摩根士丹利估计，此举可能使苹果面临37亿美元的收入损失。苹果正因未能有效遵守法院禁令而面临持续的法律挑战。",
+      "translated_title": "用户要求大幅折扣以在App Store外支付订阅费用",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/63871-132892-AlphaWise-2025-xl.jpg",
+          "alt": "Bar chart showing iPhone users' likelihood to buy apps directly from developers in 2021, 2022, and 2025, with categories from extremely likely to extremely unlikely.",
+          "title": "",
+          "position": 1
+        }
+      ],
       "contentSource": "完整文章",
       "content": ""
     },
@@ -425,202 +631,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": ""
-    },
-    {
-      "title": "英国打击手机盗窃激增，苹果被指从中渔利 (原标题: Apple accused of cashing in as UK battles phone theft surge)",
-      "link": "https://appleinsider.com/articles/25/06/04/apple-accused-of-cashing-in-as-uk-battles-phone-theft-surge",
-      "pubDate": "Wed, 04 Jun 2025 16:15:00 GMT",
-      "isoDate": "2025-06-04T16:15:00.000Z",
-      "creator": "Amber Neely",
-      "summary": "### 英国议员指控苹果和谷歌从手机盗窃中获利\n\n随着智能手机盗窃在全球范围内日益猖獗，英国议员们提出质疑，认为苹果和谷歌在遏制盗窃方面做得不够，甚至可能从中获利。他们认为，如果被盗手机无法被系统禁用，公司就能继续销售更多新手机。\n\n### 盗窃数据与警方呼吁\n\n*   **盗窃数量激增**：据《卫报》报道，2024年仅伦敦就有8万部各类手机被盗，比2023年的6.4万部增长了约25%。这些被盗设备的市场价值高达2000万英镑（约合2700万美元）。\n*   **警方要求**：伦敦警察厅已要求苹果和谷歌等智能手机公司采取措施，阻止被盗设备访问云服务，从而有效禁用手机并大幅降低其转售价值。\n\n### 公司回应与争议\n\n*   **议员质疑**：议会科学和技术委员会成员马丁·赖特利（Martin Wrigley）直言，公司不采取行动是因为它们从中获利，并敦促它们立即实施禁用措施。\n*   **公司辩护**：\n    *   谷歌代表西蒙·温格罗夫（Simon Wingrove）和苹果高级总监加里·戴维斯（Gary Davis）均表示，公司已有一套完善的功能来保护客户数据。\n    *   戴维斯警告，禁用设备可能被不法分子利用进行欺诈、获取数据或删除账户以勒索。\n    *   苹果否认从用户手机被盗的创伤事件中获利，并声称已投入数亿资金设计保护措施。\n*   **潜在经济动机**：前保守党警务大臣基特·马尔特豪斯（Kit Malthouse）认为，公司存在允许盗窃继续的经济动机。苹果代表戴维斯也承认，如果伦敦每年5000万英镑的手机盗窃停止，可能会导致销售额下降。\n\n### 盗窃模式与警方行动\n\n*   **作案方式**：指挥官詹姆斯·康威（James Conway）描述，犯罪分子通常是骑着大功率电动自行车的青少年，在伦敦A10公路沿线快速实施10到20起盗窃或抢劫，然后迅速将手机用锡箔纸或法拉第袋包装，以规避定位，并迅速转交给中间商，最终运出英国。\n*   **目标设备**：苹果的高端手机是主要目标，因为其转售价值高，每部可达300至400英镑（约合400至550美元）。被盗手机主要销往合法智能手机价格较高的低收入国家。\n*   **警方成效**：伦敦警察厅表示，4月和5月整体盗窃案下降了15%，手机盗窃案下降了三分之二，但康威认为这只是暂时的。\n\n### 智能手机普及与防盗建议\n\n*   **普及率上升**：智能手机的普及率是盗窃率上升的原因之一。皮尤研究中心数据显示，美国智能手机拥有率从2015年的66%跃升至2024年的91%，这意味着有更多手机可供盗窃，也有更大的销赃市场。\n*   **常见盗窃方式**：“苹果摘取”（Apple picked）指在公共场所手机被抢走。\n*   **防盗措施**：\n    *   在公共场所保持警惕，避免边走边无意识地刷手机。\n    *   在餐厅不要将手机放在桌边，应放入衣袋或包中。\n    *   避免将手机放在后口袋，最好放在前口袋、包内或外套内袋。\n    *   不要轻易让陌生人使用你的手机，如果遇到紧急情况，可主动帮助拨打电话或指引他们寻求帮助。\n\n### 苹果现有安全功能\n\n*   **被盗设备保护**：苹果的“被盗设备保护”（Stolen Device Protection）功能在手机和密码同时被盗时提供额外安全层。\n*   **查找我的（Find My）**：用户可以使用“查找我的”功能定位被盗手机。该功能已被用于在全球范围内追踪被盗iPhone。\n\n![Apple has extended Find My to help you locate third-party devices too](https://photos5.appleinsider.com/gallery/41394-80318-000-lead-Find-My-xl.jpg)\n\n*   **标记为丢失**：将iPhone标记为丢失后，手机将被锁定且无法访问，同时禁用Apple Pay。\n*   **报案与索赔**：尽快向当地警方报案。如果拥有包含盗窃和丢失保障的AppleCare+计划，可在将设备标记为丢失后，通过苹果的iPhone盗窃和丢失索赔页面提交索赔以更换手机。",
-      "shortSummary": "英国议员指控苹果和谷歌未能有效阻止日益增长的手机盗窃，并暗示公司可能从中获利。伦敦手机盗窃案激增25%，警方呼吁公司禁用被盗设备。苹果和谷歌辩称已有安全功能，但议员认为它们应采取更强硬措施。被盗手机主要销往海外，高端苹果手机是主要目标。尽管警方报告盗窃案有所下降，但强调了盗窃的易操作性及转售利润。文章还提供了防盗建议和苹果现有安全功能。",
-      "translated_title": "英国打击手机盗窃激增，苹果被指从中渔利",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/41394-80318-000-lead-Find-My-xl.jpg",
-          "alt": "Apple has extended Find My to help you locate third-party devices too",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "亚马逊299美元的11英寸iPad优惠活动在父亲节前回归 (原标题: Amazon's $299 iPad 11 deal is back ahead of Father's Day)",
-      "link": "https://appleinsider.com/articles/25/06/04/amazons-299-ipad-11-deal-is-back-ahead-of-fathers-day",
-      "pubDate": "Wed, 04 Jun 2025 16:03:19 GMT",
-      "isoDate": "2025-06-04T16:03:19.000Z",
-      "creator": "Christine McKee",
-      "summary": "## 亚马逊11英寸iPad优惠回归\n\n亚马逊在2025年6月再次推出备受欢迎的11英寸iPad 299美元促销活动，使其成为父亲节礼物的理想选择。\n\n### 主要优惠详情\n\n*   **型号与折扣**：苹果2025年发布的11英寸iPad，128GB Wi-Fi标准配置售价299美元，直降50美元。\n*   **颜色选择**：此折扣适用于所有四种颜色。\n*   **存储选项**：256GB型号也有高达62美元的折扣，提供Wi-Fi Only或Wi-Fi Cellular版本。\n\n### 2025款iPad主要特性\n\n*   **显示屏**：配备11英寸Liquid Retina显示屏。\n*   **芯片**：搭载苹果A16仿生芯片。\n*   **摄像头**：前后均配备12MP摄像头。\n*   **生物识别**：支持触控ID。\n*   **电池续航**：电池续航时间最长可达10小时。\n*   **兼容性**：兼容Apple Pencil USB-C（目前在亚马逊售价69美元）。\n\n### 供货状态\n\n该iPad优惠目前有库存，可立即发货。\n\n### 其他iPad优惠\n\n除了上述11英寸iPad的优惠外，亚马逊还提供了其他iPad型号的折扣：\n\n*   **M3 iPad Air 11英寸 (2025款)**：499美元起 (优惠100美元)\n*   **M3 iPad Air 13英寸 (2025款)**：699美元起 (优惠100美元)\n*   **M4 iPad Pro 11英寸**：899美元起 (优惠100美元)\n*   **M4 iPad Pro 13英寸**：1099.99美元起 (优惠200美元)",
-      "shortSummary": "亚马逊在父亲节前夕再次推出2025款11英寸iPad的299美元优惠，128GB Wi-Fi版直降50美元。这款iPad配备A16仿生芯片和11英寸Liquid Retina显示屏，电池续航达10小时。256GB版本也有折扣。此外，M3 iPad Air和M4 iPad Pro等其他型号也有高达200美元的优惠。该优惠目前有货，是父亲节礼物的不错选择。",
-      "translated_title": "亚马逊299美元的11英寸iPad优惠活动在父亲节前回归",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "毫不意外——iPhone和iPad成为苹果生态系统的支柱 (原标题: No surprise - iPhone & iPad anchor Apple's ecosystem)",
-      "link": "https://appleinsider.com/articles/25/06/04/no-surprise---iphone-ipad-anchor-apples-ecosystem",
-      "pubDate": "Wed, 04 Jun 2025 15:55:00 GMT",
-      "isoDate": "2025-06-04T15:55:00.000Z",
-      "creator": "Andrew Orr and Mike Wuerthele",
-      "summary": "## 苹果生态系统的核心：iPhone和iPad\n\n最新数据显示，iPhone和iPad已成为苹果生态系统的主要支柱，而Mac则扮演着辅助角色，服务于一小部分客户。\n\n### 核心发现\n\n根据消费者情报研究合作伙伴（CIRP）于2025年6月4日发布的题为《重新思考苹果生态系统》的报告，在截至2025年3月的12个月中，苹果客户对iPhone和iPad的偏爱远超Mac。\n\n*   **所有权比例（CIRP调查数据）：**\n    *   94%的苹果客户拥有iPhone。\n    *   78%拥有iPad。\n    *   仅有36%拥有Mac。\n    *   几乎所有iPad用户也拥有iPhone。\n    *   只有30%的客户同时拥有这三款设备。\n\n### 所有权与实际销售量的对比\n\n虽然Mac在苹果生态系统早期曾是核心，驱动了iPod和iPhone的销售，但如今iPhone已成为主导平台，常常是客户唯一或主要的苹果设备。CIRP报告中的36%Mac所有权数据，在与财务数据对比时呈现出不同的视角：\n\n*   **iPhone销售数据：**\n    *   同期iPhone营收达到468.4亿美元。\n    *   根据CIRP的美国平均售价971美元估算，苹果售出约4800万部iPhone。\n*   **Mac销售数据：**\n    *   IDC估算第一季度Mac出货量为550万部（假设第二季度类似）。\n    *   Mac的平均售价约为1445美元。\n    *   MacBook Pro和MacBook Air占Mac销量的86%，其中Pro型号占53%。台式Mac（如Mac mini）销量远低于笔记本电脑。\n*   **销售比例差异：**\n    *   在一个Mac新品发布较多的季度，每售出9部iPhone，才售出1部Mac。\n    *   所有权调查与实际销售量之间的巨大差异，部分原因在于Mac的升级周期更长，用户持有Mac的时间通常比iPhone更久。\n\n![Bar chart displaying ownership percentages: iPhone 94%, iPad 78%, Mac 36%, iPhone and iPad 74%, all three 30%. CIRP logo at top right corner.](https://photos5.appleinsider.com/gallery/63851-132850-IMG_2206-xl.jpg)\n*截至2025年3月的12个月内苹果客户的所有权比例。图片来源：CIRP*\n\n### Mac的独特价值\n\nMac服务于一个更小众但价值更高的细分市场。与几乎所有苹果客户日常使用的iPhone不同，Mac通常用于更专业的目的，例如：\n\n*   专业工作负载\n*   软件开发\n*   内容创作\n\n这些客户倾向于支付更高的费用，即使他们的数量较少。Mac的耐用性也发挥了作用：CIRP数据显示，约68%的Mac用户仍在使用的设备已超过两年。这表明Mac从较小的用户群中产生了可观的收入，这些用户升级频率较低，但倾向于购买高端型号。\n\n![A silver Mac Studio on a table with a red smart speaker, in front of a brick wall and monitor screen.](https://photos5.appleinsider.com/gallery/63851-132852-53012005230_9b1feabac4_k-xl.jpg)\n*台式Mac型号不如其他型号常见*\n\n### 服务的整合作用\n\n苹果已将重点转向订阅服务，这些服务无需用户拥有三款独立设备即可强化生态系统。2025年第二季度，服务收入达到266.6亿美元，创下公司新纪录，并超过了Mac硬件的总收入。\n\n*   **服务示例：** iCloud、Apple One、Apple Music等。\n*   **生态系统绑定：** 客户仅需一部iPhone，或iPhone与iPad的组合，即可通过这些服务深度融入苹果生态系统。这些服务连接了不同设备上的用户，产生了经常性收入，并提供了同步和共享访问等功能，而这些功能过去可能需要拥有Mac才能实现。\n\n与谷歌的Android生态系统或微软的Windows PC模式不同，苹果的服务在连接其硬件平台方面发挥着更核心的作用。\n\n### 三设备模式并非典型\n\n尽管苹果曾长期推广围绕Mac、iPhone和iPad构建的生态系统，但实际上，这种三设备组合从未成为大多数客户的标准配置。iPhone仍然是主力设备，而Mac则迎合了更小众、高价值的细分市场。苹果的生态系统符合人们实际使用其产品的方式，通常只涉及两款设备和一个不断增长的云服务层。",
-      "shortSummary": "最新数据显示，iPhone和iPad已成为苹果生态系统的核心支柱。截至2025年3月，94%的苹果用户拥有iPhone，78%拥有iPad，而Mac所有权仅为36%。尽管Mac用户群较小，但其服务于专业且高价值的细分市场。苹果的服务收入创新高，通过iCloud等服务将用户与生态系统紧密连接，使得用户无需拥有所有三款设备也能深度融入。三设备模式并非主流，苹果生态系统更适应用户实际使用习惯。",
-      "translated_title": "毫不意外——iPhone和iPad成为苹果生态系统的支柱",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63851-132850-IMG_2206-xl.jpg",
-          "alt": "Bar chart displaying ownership percentages: iPhone 94%, iPad 78%, Mac 36%, iPhone and iPad 74%, all three 30%. CIRP logo at top right corner.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63851-132852-53012005230_9b1feabac4_k-xl.jpg",
-          "alt": "A silver Mac Studio on a table with a red smart speaker, in front of a brick wall and monitor screen.",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "苹果获得数百万美元税款退款以留在库比蒂诺 (原标题: Apple gets millions of dollars in tax refunds to stay in Cupertino)",
-      "link": "https://appleinsider.com/articles/25/06/04/apple-gets-millions-of-dollars-in-tax-refunds-to-stay-in-cupertino",
-      "pubDate": "Wed, 04 Jun 2025 15:52:00 GMT",
-      "isoDate": "2025-06-04T15:52:00.000Z",
-      "creator": "William Gallagher",
-      "summary": "### 苹果在库比蒂诺获得数百万美元税款退款的细节披露\n\n加州与当地公司交易的此前未知细节已被披露，显示库比蒂诺市向苹果公司支付了数百万美元的税款退款，以确保其留在当地。尽管此前已有报道，但具体退款金额一直不明确。\n\n*   **苹果获得的具体金额**\n    *   根据彭博社和加州税务和费用管理局（CDTFA）在新州法律下的披露：\n        *   自2013年以来，苹果已从库比蒂诺获得了6470万美元的退款。\n        *   若追溯到1998年的一项协议，彭博社研究估计苹果已获得近1.2亿美元。\n\n*   **数据披露的挑战**\n    *   完整披露的记录质量极差，许多数据似乎由加州城市在自由文本字段中输入，导致无法进行数字排序。\n    *   许多加州城市只列出退款金额，并未指明公司名称。\n    *   库比蒂诺列出了两项交易：一项与苹果，另一项与Insight Consulting Services Inc.（该公司似乎已不复存在）。\n    *   总共披露了185项交易，日期范围从1997年到2023年。\n\n*   **其他获得退款的公司**\n    *   Edison Materials Supply：获得7350万美元（自1999年起，但其交易性质与苹果不同，不具可比性）。\n    *   亚马逊：自2018年以来，从克恩县获得了190万美元。\n    *   CostCo：自2007年以来，从圣迪马斯市获得了770万美元。\n    *   沃尔玛：似乎从圣布鲁诺市获得了2140万美元（报告细节不明确）。\n\n*   **交易运作机制及争议**\n    *   根据加州自1950年代以来的州法律，公司需支付7.25%的销售税，其中州政府获得1%，并可选择以此激励公司留在当地。\n    *   然而，该法律制定时全球在线销售的概念尚不可想象，对于像苹果这样在全球销售产品的公司，其合理性受到质疑。\n    *   2024年，加州州政府认为库比蒂诺是苹果全球成功的唯一受益者是不公平的，并因此与该镇产生分歧。\n    *   州政府与该镇之间的分歧在2024年10月达到高潮，最终州政府败诉。",
-      "shortSummary": "加州披露的细节显示，库比蒂诺市向苹果公司支付了数百万美元的销售税退款，以确保其留在当地。自2013年以来，苹果已获得6470万美元，若追溯至1998年，总额接近1.2亿美元。尽管数据记录质量不佳，但这些交易是加州激励企业留驻政策的一部分。2024年，加州州政府曾质疑库比蒂诺独享苹果全球销售税收益的公平性，但最终在10月败诉。",
-      "translated_title": "苹果获得数百万美元税款退款以留在库比蒂诺",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "iPhone XS、iPhone XR 可能不支持 iOS 26 (原标题: iPhone XS, iPhone XR probably won't have iOS 26 support)",
-      "link": "https://appleinsider.com/articles/25/06/04/iphone-xs-iphone-xr-probably-wont-have-ios-26-support",
-      "pubDate": "Wed, 04 Jun 2025 14:58:01 GMT",
-      "isoDate": "2025-06-04T14:58:01.000Z",
-      "creator": "Malcolm Owen",
-      "summary": "### iPhone XS、XS Max 和 iPhone XR 可能不再支持 iOS 26\n\n**主要观点：**\n*   据传闻，苹果即将推出的 iOS 26 操作系统可能不再支持 iPhone XS、iPhone XS Max 和 iPhone XR 这三款旧型号。\n*   尽管这些型号将无法运行最新系统，但它们仍将继续获得苹果提供的安全更新。\n\n**信息来源：**\n*   这一消息来自一个在 X 平台上拥有良好准确记录的私人账户所发布的兼容设备列表。\n*   该列表与4月1日的一项类似传闻相符，该传闻也排除了 iPhone XS 和 iPhone XR。\n\n**兼容设备列表（如果信息准确）：**\n如果此信息准确无误，以下设备系列将兼容 iOS 26：\n*   iPhone 17 系列\n*   iPhone 16 系列\n*   iPhone 15 系列\n*   iPhone 14 系列\n*   iPhone 13 系列\n*   iPhone 12 系列\n*   iPhone 11 系列\n*   iPhone SE 3\n*   iPhone SE 2",
-      "shortSummary": "根据可靠消息来源，iPhone XS、XS Max 和 iPhone XR 预计将不再支持即将发布的 iOS 26 操作系统。这意味着这些旧款机型将无法升级到最新版本，但仍会继续接收苹果提供的安全更新。据称，从 iPhone 11 系列及更新型号（包括 iPhone SE 2 和 SE 3）都将兼容 iOS 26。",
-      "translated_title": "iPhone XS、iPhone XR 可能不支持 iOS 26",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "《堡垒之夜》CEO曾以为数周内就能击败苹果，而非数年 (原标题: 'Fortnite' CEO thought he'd beat Apple in weeks, not years)",
-      "link": "https://appleinsider.com/articles/25/06/04/fortnite-ceo-thought-hed-beat-apple-in-weeks-not-years",
-      "pubDate": "Wed, 04 Jun 2025 12:32:11 GMT",
-      "isoDate": "2025-06-04T12:32:11.000Z",
-      "creator": "William Gallagher",
-      "summary": "### Epic Games与苹果之争：CEO斯威尼回顾《堡垒之夜》下架事件\n\nEpic Games首席执行官蒂姆·斯威尼（Tim Sweeney）近日在接受采访时表示，他曾以为《堡垒之夜》（Fortnite）被苹果应用商店下架只会持续数周，而非长达五年。他抱怨游戏下架时间过长，尽管事实是Epic Games主动违反了苹果的服务条款。\n\n**事件起因与法律纠纷**\n*   **故意违规：** 2020年，苹果将《堡垒之夜》从App Store下架。随后揭露，Epic Games不仅知情并违反了其App Store合同，而且为此违规行为、抗议活动及其配套视频进行了数月的精心策划。\n*   **法律判决：** 苹果在与Epic Games的法律诉讼中几乎赢得了所有关键点，唯一例外是关于“反转向”（anti-steering）条款的问题。\n*   **游戏回归：** 尽管苹果在大部分案件中胜诉，但由于其在“反转向”问题上的处理失误，最终被迫允许《堡垒之夜》重新上架App Store。\n\n**CEO斯威尼的看法与损失**\n*   **下架时长：** 斯威尼表示：“我曾希望我们能获得一项禁止苹果阻止《堡垒之夜》的禁令，并且我们只会下架几周。但法庭程序拖延了，我们下架了五年。”\n*   **经济损失：** 斯威尼此前曾声称，包括利润损失在内，Epic选择与苹果就支付系统进行抗争，使其损失了10亿美元。\n\n**《堡垒之夜》的未来计划**\n*   **重心转向移动端：** Epic Games现在计划充分利用《堡垒之夜》在iPhone上回归的机会。斯威尼表示：“《堡垒之夜》未来的所有增长将主要集中在移动端。”\n*   **高管支持：** Epic Games执行副总裁萨克斯·佩尔森（Saxs Persson）也呼应了这一观点，并暗示击败苹果意味着他们现在可以进一步开发《堡垒之夜》。他指出，iOS版游戏现在是公司“每个人生活的一部分”，开发人员对下一步的计划有了“真实的感受”。佩尔森补充道：“大门已经打开，我们现在可以每天去把游戏做得更好。”\n\n**支付系统选择**\n*   **用户偏好：** 斯威尼透露，自从公司被允许提供替代支付系统以来，40%的用户选择了使用Epic的支付方式，而约60%的用户仍选择苹果的应用内支付处理。\n*   **未来展望：** 他认为，后者是因为用户已经在苹果那里拥有账户。斯威尼希望随着更多玩家将支付方式与他们的Epic账户关联起来，Epic支付方式的采用率会更高，并期望能超过50%。\n\n**回归背景**\n*   《堡垒之夜》重返App Store是苹果根据法官伊冯娜·冈萨雷斯·罗杰斯（Yvonne Gonzalez Rogers）的裁决而必须遵守的一系列命令的一部分。这些命令都与“反转向”问题有关，即禁止开发者向用户传达替代优惠的业务行为。",
-      "shortSummary": "《堡垒之夜》CEO蒂姆·斯威尼对游戏被苹果下架五年表示不满，原以为仅数周。下架源于Epic故意违反苹果服务条款。尽管苹果在多数诉讼中胜诉，但因反转向条款问题，被迫允许游戏回归。斯威尼称此战役致Epic损失10亿美元，未来《堡垒之夜》增长将主要集中在移动端。目前40%用户选择Epic支付，斯威尼希望未来能超过50%。",
-      "translated_title": "《堡垒之夜》CEO曾以为数周内就能击败苹果，而非数年",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "visionOS 支持即将登陆热门的 Godot 引擎 (原标题: visionOS support is coming to the popular Godot engine)",
-      "link": "https://appleinsider.com/articles/25/06/04/visionos-support-is-coming-to-the-popular-godot-engine",
-      "pubDate": "Wed, 04 Jun 2025 12:26:20 GMT",
-      "isoDate": "2025-06-04T12:26:20.000Z",
-      "creator": "Malcolm Owen",
-      "summary": "## Godot 引擎即将获得 visionOS 支持\n\n免费开源游戏引擎 Godot 即将支持 Apple Vision Pro，这得益于 Apple 员工的积极协助和贡献。\n\n### Godot 引擎简介\n*   Godot 是一款免费且开源的游戏引擎。\n*   它在今年四月引起了 Apple 的关注。\n\n### Apple 的参与与贡献\n*   Apple 主动提出帮助 Godot 添加 visionOS 支持，并由其 visionOS 工程团队成员 Ricardo Sanchez-Saez 领导了这项工作。\n*   Sanchez-Saez 虽是 Godot 的首次贡献者，但其作为 Apple 工程师的身份确保了快速且高质量的集成。\n*   Apple 的直接贡献在游戏领域是不寻常的举动，但对于 Godot 这样的开源引擎来说意义重大，因为它主要依赖志愿者贡献。\n\n### 开发进展与状态\n*   在 Apple 提出帮助后仅一个多月，visionOS 支持就进入了 Beta 测试阶段。\n*   该功能已包含在 Godot 4.5 的第五个开发者 Beta 版本中，Godot 4.5 是该引擎的下一个主要版本。\n*   目前尚不清楚何时会结束 Beta 测试。\n\n### visionOS 支持的重要性\n*   这将是 Godot 引擎近十年来首次获得官方支持的平台集成。\n*   尽管 Godot 熟悉 XR（扩展现实）平台，但 visionOS 具有其独特性，需要单独处理。\n*   visionOS 用户对使用 Godot 开发 XR 内容表现出强烈兴趣，未来 Godot 可能会在 XR 游戏开发中扮演重要角色，甚至可能在未来的 XR 游戏创作大赛中占据重要地位。\n\n### 技术细节（来自初始拉取请求）\n*   Apple 团队在集成过程中努力遵循 Godot 的编码标准，并保持 Apple 一贯的“高质量标准”。\n*   他们创建了将 Swift 文件与 Godot 编译和链接的方法。\n*   开发了一个可工作的 visionOS VR 插件。\n*   计划通过重用现有 iOS 支持的代码，实现完整的 visionOS 平台支持。\n\n### Apple 的战略考量与益处\n*   **鼓励游戏开发：** 这是 Apple 推动开发者为其平台制作游戏的更广泛努力的一部分，例如 Game Porting Toolkit。\n*   **赋能独立开发者：** 为独立开发者提供了一种将使用 Godot 引擎制作的 3D 游戏带到 Apple Vision Pro 的途径。\n*   **提升 Godot 地位：** 尽管 Godot 目前使用率相对较低（曾用于《Buckshot Roulette》和《Cassette Beasts》等独立游戏），但有了 Apple 的支持，它将在 VR 和 AR 领域与资金雄厚的竞争对手（如 Unity 和 Unreal Engine）获得更平等的地位。\n*   **效率与专业性：** 利用 Apple 自身的工程团队专业知识，确保了快速实施，避免了通常由无偿贡献者带来的较长开发周期。",
-      "shortSummary": "热门的 Godot 游戏引擎即将获得 Apple visionOS 的原生支持。在 Apple 员工的积极贡献下，这项集成已进入 Godot 4.5 的 Beta 测试阶段。此举旨在帮助独立开发者为 Apple Vision Pro 制作游戏，提升 Godot 在 VR/AR 领域的竞争力，并是 Apple 推动其平台游戏开发战略的一部分。这项支持由 Apple 工程师主导，确保了快速高效的实现。",
-      "translated_title": "visionOS 支持即将登陆热门的 Godot 引擎",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "Epomaker Split65 键盘评测：独特设计，褒贬不一 (原标题: Epomaker Split65 keyboard review: A unique design that will split opinion)",
-      "link": "https://appleinsider.com/articles/25/06/04/epomaker-split65-keyboard-review-a-unique-design-that-will-split-opinion",
-      "pubDate": "Wed, 04 Jun 2025 00:21:29 GMT",
-      "isoDate": "2025-06-04T00:21:29.000Z",
-      "creator": "Oliver Haslam",
-      "summary": "## Epomaker Split65 键盘评测：独特设计，褒贬不一\n\n### 引言\nEpomaker Split65 是一款在众多同质化机械键盘中脱颖而出的产品，其独特的分体式设计旨在提供更佳的人体工学体验。尽管并非所有用户都能适应其分体模式，但其高度可定制性和作为普通键盘使用的灵活性使其备受关注。评测者作为一名键盘爱好者，对其独特的理念和实用的功能（如音量旋钮）表示赞赏，尤其是在合拢状态下使用时。\n\n### 开箱内容\nEpomaker Split65 是一款 65% 布局的键盘，评测者收到的是 ANSI 布局版本。包装内含：\n*   Epomaker Split65 键盘本体\n*   2.4GHz 无线接收器\n*   USB-C 转 A 连接线\n*   用户手册\n*   拔键器\n*   备用轴体\n*   连接键盘两半的专用线缆\n\n### 设计与功能\nEpomaker Split65 采用紧凑的 65% 布局，具备日常使用所需的所有按键。其主要特点包括：\n*   **连接方式**：支持蓝牙、2.4GHz 无线接收器和 USB-C 有线连接。\n*   **媒体旋钮**：键盘右上角设有一个实用的媒体旋钮，用于音量控制，手感顺滑。\n*   **键帽与背光**：配备 PBT 双色注塑键帽，采用 Cherry 键帽高度。支持南向 RGB 单键背光。\n*   **轴体与结构**：支持 3/5 针热插拔机械轴。采用塑料定位板，ABS 上盖和铁质底壳。支持 N 键无冲，有效避免按键冲突。\n*   **轴体选择**：提供 Epomaker 自研的 Wisteria Linear 和 Flamingo 轴体。评测型号配备 Flamingo 线性轴，触底压力 60g，行程 3.8mm。\n*   **接口**：键盘背面设有一个电源/连接模式开关和 USB-C 接口。键盘的每一半也各有一个 USB-C 接口，用于连接两半键盘。\n*   **分体设计**：核心功能是其分体式设计，键盘可从中间分开，用户可根据需要调整两半的位置。两半通过内置磁铁吸附，也可合拢作为普通 65% 键盘使用。\n\n### 图片展示\n\n![机械键盘，青色背光，彩色桌面垫，紫色卷线，背景显示鲜艳图形的屏幕。](https://photos5.appleinsider.com/gallery/63845-132829-IMG_1372-xl.jpg)\n\n![机械键盘，青色背光，彩色鼠标垫，紫色线缆，背景有手持游戏机。](https://photos5.appleinsider.com/gallery/63845-132828-IMG_1373-xl.jpg)\n\n### 自定义选项\nEpomaker Split65 提供了丰富的自定义功能：\n*   **QMK/VIA 支持**：全面支持 QMK/VIA 固件，允许用户进行按键编程、映射和宏设置。\n*   **灯光调节**：可通过网页界面轻松调整键盘背光。\n*   **热插拔**：作为一款热插拔键盘，用户可以根据个人喜好轻松更换轴体和键帽。\n\n### 使用体验\n评测者主要通过有线连接 MacBook Pro（合盖模式）使用 Epomaker Split65，蓝牙和 2.4GHz 连接也表现良好。尽管分体设计是其主要卖点，但评测者个人因长期打字习惯，更倾向于在合拢模式下使用。他承认这是个人适应问题，而非键盘缺陷，并认为习惯人体工学键盘的用户会非常喜欢分体模式。\n\n*   **打字手感**：按键手感扎实，有“咔哒”声（略响），反馈充足。在合拢模式下，盲打没有问题，打字速度和准确性未受影响。\n*   **音量旋钮**：音量旋钮是亮点，非常实用，甚至让评测者在使用其他键盘时感到不习惯。\n*   **自定义便捷性**：QMK/VIA 的支持使得自定义过程非常简单。\n*   **不足**：键盘支持 Mac 和 PC，但未提供 Mac 专用键帽，这意味着 Mac 用户需要记住按键功能。\n\n### 图片展示 (续)\n\n![电脑设置，键盘、紫色线缆和游戏手柄放在彩色垫子上；背景有风扇和显示器。](https://photos5.appleinsider.com/gallery/63845-132827-IMG_1374-xl.jpg)\n\n### 总结与评价\nEpomaker Split65 是一款独特且功能丰富的键盘，尽管分体设计可能不适合所有人，但其灵活性和自定义选项使其成为一个有吸引力的选择。评测者表示，即使在评测结束后，他也会继续使用这款键盘，并可能再次尝试分体配置。其媒体旋钮和易于自定义的特性都为其增色不少。\n\n**优点：**\n*   灵活的人体工学设计\n*   丰富的自定义选项\n*   实用的媒体控制旋钮\n*   多种连接方式\n\n**缺点：**\n*   对部分用户可能声音偏响\n*   无 Mac 专用键帽\n*   部分用户可能需要更多按键\n\n**评分：** 4/5\n\n**购买信息：**\nEpomaker Split65 键盘售价 119.99 美元，可直接从 Epomaker 官网或亚马逊购买（亚马逊常有折扣，约 108 美元）。",
-      "shortSummary": "Epomaker Split65 是一款独特的 65% 分体式机械键盘，旨在提供人体工学体验。它支持蓝牙、2.4GHz 和有线连接，并配备实用的音量旋钮和丰富的 QMK/VIA 自定义功能。键盘可分体使用，也可通过磁吸合拢成普通键盘。尽管评测者个人不适应分体模式，但其扎实的打字手感和高度可定制性仍获好评。该键盘售价约 120 美元，适合寻求独特设计和自定义选项的用户。",
-      "translated_title": "Epomaker Split65 键盘评测：独特设计，褒贬不一",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63845-132829-IMG_1372-xl.jpg",
-          "alt": "Mechanical keyboard with teal backlighting on a colorful desk mat, purple coiled cable, and a screen in the background displaying vibrant graphics.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63845-132828-IMG_1373-xl.jpg",
-          "alt": "Mechanical keyboard with teal backlighting on a colorful mouse pad, purple cable, and handheld gaming console in the background.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63845-132827-IMG_1374-xl.jpg",
-          "alt": "Computer setup with a keyboard, purple cable, and gaming controller on a colorful mat; a fan and monitor are in the background.",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "可靠来源再泄露五项iOS 26新功能 (原标题: Five more iOS 26 features leak from a reliable source)",
-      "link": "https://appleinsider.com/articles/25/06/03/five-more-ios-26-features-leak-from-a-reliable-source",
-      "pubDate": "Tue, 03 Jun 2025 23:43:08 GMT",
-      "isoDate": "2025-06-03T23:43:08.000Z",
-      "creator": "Wesley Hilliard",
-      "summary": "### iOS 26新功能泄露概览\n\n在WWDC 2025发布之前，关于iOS 26的一些新功能可能已经提前泄露。虽然大多数关于iOS 26的传闻都集中在其可能向visionOS靠拢的重新设计上，但一份来自可靠匿名消息源（向9to5Mac透露）的最新传闻揭示了五项可能的新功能，这些功能有望为用户带来显著的体验提升。\n\n#### 泄露的主要功能点：\n\n*   **信息 (Messages)**\n    *   **实时翻译功能**：据传，信息应用将获得由Apple Intelligence驱动的全新实时翻译功能。当用户收到非系统设定语言的文本时，系统将自动提供翻译。\n    *   **投票功能**：信息应用可能还会引入投票功能，这在其他竞争性消息应用和iMessage应用中已存在。此外，该功能可能利用上下文数据和AI帮助用户即时生成投票。\n\n*   **音乐 (Music)**\n    *   **锁屏全屏动态专辑封面**：Apple Music应用有望更新，在锁屏界面显示全屏动态专辑封面。目前，专辑封面在锁屏上以方形显示且无动画效果。这项功能预计将使锁屏界面基本变为Apple Music的“正在播放”界面，部分专辑将支持全屏动态封面。\n\n*   **备忘录 (Notes)**\n    *   **Markdown导出**：备忘录应用可能会增加一项备受高级用户期待的功能——将笔记导出为Markdown格式。这是许多专业用户所寻求的，并且在其他竞争性应用中也已提供。\n\n*   **CarPlay**\n    *   **用户界面 (UI) 更改**：传闻指出，CarPlay也将进行UI更改，以反映更广泛的生态系统向visionOS风格的重新设计。尽管这似乎是显而易见的趋势，但此前在传闻中并未被提及。\n\n这些新功能预计将在WWDC 2025上与iOS 26及新的Apple Intelligence功能一同揭晓。",
-      "shortSummary": "可靠消息源泄露了iOS 26的五项新功能，预计将在WWDC 2025上发布。信息应用将获得实时翻译和投票功能。音乐应用将在锁屏上支持全屏动态专辑封面。备忘录应用将新增Markdown导出功能。CarPlay的用户界面也将进行更新，以呼应visionOS风格的重新设计。这些功能有望提升用户体验。",
-      "translated_title": "可靠来源再泄露五项iOS 26新功能",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "visionOS 26 最终可能全面支持 PlayStation VR2 空间控制器 (原标题: visionOS 26 may eventually offer full support for PlayStation VR2 spatial controllers)",
-      "link": "https://appleinsider.com/articles/25/06/03/visionos-26-may-eventually-offer-full-support-for-playstation-vr2-spatial-controllers",
-      "pubDate": "Tue, 03 Jun 2025 19:29:48 GMT",
-      "isoDate": "2025-06-03T19:29:48.000Z",
-      "creator": "Marko Zivkovic",
-      "summary": "### visionOS 26 可能支持 PlayStation VR2 空间控制器\n\n一份新报告指出，Apple Vision Pro 未来可能通过 visionOS 更新获得对空间控制器的支持，这与此前泄露的消息相符。\n\n**当前控制器支持情况：**\n*   Apple Vision Pro 目前支持 Xbox 和 PlayStation 游戏控制器，但仅限于 Apple Arcade 游戏。\n\n**潜在的未来更新：**\n*   **空间控制器支持：** 新报告称，Apple 计划在未来的 visionOS 更新中增加对空间控制器的支持。\n*   **PlayStation VR2 控制器：** 早在 2024 年 12 月就有传闻称，Apple 曾接触索尼，试图实现对 PlayStation VR2 控制器的支持。\n*   **开发者激励：** 据称，Apple 还联系了第三方开发者，鼓励他们为 Apple Vision Pro 平台带来更多游戏，并以控制器支持作为吸引点。\n\n**9to5mac 报告的佐证：**\n*   周二来自 9to5mac 的一份报告似乎证实了 12 月的传闻。\n*   未来的 visionOS 版本将不再仅仅显示“需要控制器”的通用标识，而是会明确告知用户特定游戏需要 Xbox、PlayStation 还是“空间”控制器（如 PlayStation VR2 控制器）。\n\n**潜在益处：**\n*   **提升销量：** 支持 VR 控制器并鼓励开发者为 Apple Vision Pro 平台开发更多 VR 游戏，可能会增加 Apple 头显的销量。\n*   **增强交互：** 支持手部控制器可以增强设备的眼动和手部动作检测能力。\n*   **吸引开发：** 有望吸引更多游戏及其他应用的开发。\n\n**不确定性和注意事项：**\n*   **实施时间：** Apple 何时实施这些改进的控制器支持计划尚不确定。\n*   **WWDC 2025：** 周二的报告无法确认兼容性是否会在 2025 年 WWDC（全球开发者大会）上宣布，或在今年晚些时候公布。\n*   **信息来源：** 该信息似乎来源于匿名消息人士，而非有可靠记录的泄密者，因此应“持保留态度”。\n*   **visionOS 26：** Apple 将于 2025 年 6 月 9 日的 WWDC 上宣布下一代 visionOS，预计版本号将是“26”，而非“3”。届时，我们将很快得知是否会扩展控制器支持。",
-      "shortSummary": "Apple Vision Pro 预计将在未来的 visionOS 更新（可能为 visionOS 26）中获得对 PlayStation VR2 空间控制器的全面支持。目前仅支持标准游戏控制器。此举旨在通过鼓励更多游戏开发来提升 Vision Pro 销量和用户体验。尽管具体发布时间未定，且消息来源匿名，但 Apple 有望在 2025 年 6 月 9 日的 WWDC 上公布相关进展。",
-      "translated_title": "visionOS 26 最终可能全面支持 PlayStation VR2 空间控制器",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "这位设计师的愿景为苹果下一次重大操作系统更新提供了清晰的窗口 (原标题: This designer's vision offers a clear window into Apple's next big OS update)",
-      "link": "https://appleinsider.com/articles/25/06/03/this-designers-vision-offers-a-clear-window-into-apples-next-big-os-update",
-      "pubDate": "Tue, 03 Jun 2025 19:01:54 GMT",
-      "isoDate": "2025-06-03T19:01:54.000Z",
-      "creator": "Amber Neely",
-      "summary": "### 苹果下一代操作系统更新展望：设计师Sebastiaan de With的“活体玻璃”愿景\n\n随着WWDC 2025的临近，苹果暗示其操作系统将迎来重大变革，引发了业界对新设计方向的广泛猜测。设计师兼Lux联合创始人Sebastiaan de With（知名应用Halide、Kino等开发者）在其Lux博客上分享了他对苹果未来OS设计的独到见解，认为新设计可能深受visionOS的影响。\n\n#### 苹果设计哲学的演变：从拟物化到扁平化\nde With首先回顾了iPhone设计的历史，探讨了苹果在不同时期的设计理念：\n\n*   **拟物化时代 (Skeuomorphism)**：\n    *   在iOS的早期版本（如iOS 6），苹果大量采用拟物化设计，即数字界面模仿物理对象。\n    *   例如，旧版语音备忘录应用曾采用收音机风格的金属麦克风图标，旨在帮助用户从物理世界过渡到数字世界。\n    *   ![iOS 6与iOS 18语音备忘录应用对比](https://photos5.appleinsider.com/gallery/63843-132834-ios6vsios18-xl.jpg)\n    *   然而，随着Z世代和Alpha世代等数字原生代用户的成长，这种设计方式的必要性逐渐降低，因为他们从小就接触智能设备，对物理对象的模仿不再具有相同的意义。\n\n*   **扁平化设计时代 (Flat Design)**：\n    *   2013年，苹果在iOS 7中引入了扁平化设计，这是一次剧烈的变革，放弃了拟物化中的仿金属、渐变和对现实物品的模仿。\n    *   计算器应用在iOS 6到iOS 7之间的转变是扁平化设计最显著的例子之一。\n    *   尽管被称为“扁平”，但iOS 7并非完全平面，苹果巧妙地引入了动态效果来暗示深度，赋予了整体设计极大的流畅性。\n\n#### 未来展望：统一生态系统与“活体玻璃”概念\nde With推测，苹果正准备彻底改变iOS以及其所有其他操作系统（如iPadOS、watchOS）的外观。这种变革很可能旨在标准化苹果所有设备的设计，以鼓励用户在iPhone、Mac、iPad和Apple Watch之间无缝切换，因为统一的设计将大幅降低学习曲线，从而巩固用户在苹果生态系统中的粘性。\n\n*   **“活体玻璃” (Living Glass) 概念**：\n    *   de With大胆猜测，苹果可能会尝试在非visionOS设备上模拟增强现实（AR）的感受，他将这一概念命名为“活体玻璃”。\n    *   ![Sebastiaan de With设计的概念图](https://photos5.appleinsider.com/gallery/63843-132832-more-xl.jpg)\n    *   这一猜测与WWDC 2025被标记为“Sleek Peek”活动不谋而合。\n    *   苹果还据称已联系第三方零售员工，帮助他们理解“当硬件和软件协同设计时，一切皆有可能”的理念。\n    *   de With认为，新设计将大量依赖动态效果和行为，类似于“灵动岛”的工作方式。他的概念设计精美，用户界面不仅能增强用户体验，还能无缝融入其中。\n\n#### 总结\n尽管这些都只是基于现有线索和设计师洞察的推测，但它们为我们描绘了苹果未来OS设计可能的发展方向。最终的答案，仍需等待苹果在WWDC上亲自揭晓。",
-      "shortSummary": "设计师Sebastiaan de With展望苹果即将到来的OS重大更新，推测新设计将借鉴visionOS，并引入“活体玻璃”概念。这将是继拟物化和扁平化之后的新阶段，旨在通过动态效果统一苹果生态系统体验。新设计将模拟增强现实感，并强调硬件与软件的深度融合。WWDC 2025前夕，苹果已暗示将有重大变革。",
-      "translated_title": "这位设计师的愿景为苹果下一次重大操作系统更新提供了清晰的窗口",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63843-132834-ios6vsios18-xl.jpg",
-          "alt": "Split screen showing a vintage microphone icon on the left and a voice recording app with a progress bar on the right.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63843-132832-more-xl.jpg",
-          "alt": "Close-up of a clock face with sleek, floating hour markers and hands, alongside translucent icons including user symbols and a play button on a smooth surface.",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
     }
   ],
-  "lastUpdated": "2025-06-06T01:48:51.340Z"
+  "lastUpdated": "2025-06-06T18:32:48.149Z"
 }
