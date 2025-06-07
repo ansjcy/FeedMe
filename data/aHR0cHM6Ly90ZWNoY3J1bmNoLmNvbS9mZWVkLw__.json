@@ -5,6 +5,19 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "数据被清除后，KiranaPro联合创始人无法排除外部攻击 (原标题: After its data was wiped, KiranaPro’s co-founder cannot rule out an external hack)",
+      "link": "https://techcrunch.com/2025/06/06/after-its-data-was-wiped-kiranapros-co-founder-cannot-rule-out-an-external-hack/",
+      "pubDate": "Sat, 07 Jun 2025 02:30:00 +0000",
+      "isoDate": "2025-06-07T02:30:00.000Z",
+      "creator": "Jagmeet Singh",
+      "summary": "# KiranaPro数据丢失事件：联合创始人无法排除外部攻击\n\n印度杂货配送初创公司KiranaPro近期遭遇了严重的数据丢失事件，其后端服务器无法访问，应用程序代码也从GitHub上被删除。尽管公司最初将此归咎于一名前员工，但事件的性质——究竟是内部泄露还是外部攻击——仍存在诸多疑点。\n\n## 事件背景与初步指控\n\n*   **数据丢失：** 上周，这家位于班加罗尔的初创公司发现其后端服务器无法访问，所有数据，包括应用程序代码，都已从GitHub上被删除。\n*   **初步归因：** 公司周五将此次事件归咎于一名前员工。\n*   **联合创始人Deepak Ravindran的声明：**\n    *   Ravindran在接受TechCrunch采访时承认，公司在前员工离职后并未停用其账户。\n    *   他无法排除该账户随后被恶意滥用的可能性。\n    *   他表示，若要深入调查，需要进行真正的取证，但公司决定不为此花费资金。\n    *   此前，Ravindran曾在X（原Twitter）上发帖称，此次事件是“内部泄露”，而非外部攻击，并声称“没有外部方渗透我们的订单或支付系统，利用漏洞，或绕过安全协议”。\n    *   他还在X上分享了一张KiranaPro一名前员工的LinkedIn个人资料截图，指控其删除了公司的代码。（TechCrunch未分享该帖子链接，因为KiranaPro尚未提供支持其立场的具体证据。）\n    *   Ravindran在周五的帖子中写道：“这是一次内部数据泄露。具体来说，是由于一名拥有合法系统访问权限的受信任内部员工所采取的行动。”他指控该员工“在测试和/或编辑关键服务器日志时故意将其删除，此举直接违反了我们的政策、原则以及我们对团队的信任。”\n    *   当TechCrunch询问KiranaPro是否能排除第三方恶意获取前员工账户访问权限的可能性时，Ravindran表示不能。他指出，需要进行全面的公司取证检查，包括IP扫描、检查电脑和MacBook等，但公司决定不投入资金进行。\n    *   Ravindran指控前员工的依据是GitHub的回复，其中包含一个他声称与该前员工关联的用户名。他表示，目前只有GitHub的邮件，表明该前员工删除了账户，公司尚未进行进一步调查。\n    *   Ravindran称，公司是基于“信仰体系”决定指控该前员工的，因为他们声称该员工在被突然解雇后删除了数据。\n\n## 离职流程与安全漏洞\n\n*   **账户未停用：** 公司证实，在前员工离职后，并未移除其对公司数据和GitHub账户的访问权限。\n*   **CTO Saurav Kumar的解释：** KiranaPro的首席技术官Saurav Kumar向TechCrunch证实，由于没有全职人力资源部门，“员工离职流程没有得到妥善处理”。\n*   **设备保护不足：** 公司不确定前员工的设备上是否有足够保护措施（如多因素认证）来限制恶意第三方访问（如恶意软件）。\n\n## 数据恢复与客户信息安全\n\n*   **数据丢失范围：** 除了GitHub上保存的代码，KiranaPro还失去了对其Amazon Web Services (AWS) 账户的访问权限，其中包含客户数据和交易详情。\n*   **数据恢复：** Ravindran表示，GitHub数据已从一名员工的备份中恢复。公司也重新获得了对其AWS账户及其客户数据的访问权限。\n*   **AWS账户访问疑点：** 联合创始人兼CTO均表示AWS账户受多因素认证保护，但两人都无法解释该账户是如何被访问的，因为除了Ravindran本人，没有人能物理接触到生成多因素代码的手机。\n*   **客户数据安全声明：** 尽管存在疑点，Ravindran声称存储在AWS云中的客户数据保持完整，未被任何第三方访问，也未被涉事的前员工下载。他表示，如果发生这种情况，他会收到电子邮件通知。\n\n## 公司现状与未来计划\n\n*   **业务概况：** KiranaPro于2024年末推出，作为印度政府开放数字商务网络上的买家应用程序运营。该初创公司通过语音界面，让50个城市的55,000多名客户从当地商店和附近超市购买杂货，并支持英语、印地语、马拉雅拉姆语和泰米尔语等本地语言输入。\n*   **法律行动：** Ravindran表示，公司有足够的证据向警方提起正式投诉，但调查仍在进行中。\n*   **财务状况：** 公司联合创始人证实，尽管公司刚刚完成了一轮1亿印度卢比（约合120万美元）的种子轮融资，但尚未完全支付现有员工的工资，且融资款项尚未完全到账。\n*   **投资者：** 投资者包括Blume Ventures、Unpopular Ventures、Turbostart等机构风险投资方，以及奥运奖牌获得者PV Sindhu和波士顿咨询集团董事总经理Vikas Taneja等天使投资人。\n*   **员工：** 公司在班加罗尔和喀拉拉邦有15名员工。",
+      "shortSummary": "印度杂货配送初创公司KiranaPro遭遇数据丢失，后端服务器和GitHub代码被删除。公司最初指责一名前员工，但联合创始人承认未停用该员工账户，无法排除外部攻击。公司未进行全面取证调查。尽管GitHub和AWS数据已恢复，但AWS账户访问方式存疑。公司还面临员工薪资未全额支付的问题，且融资款项尚未完全到账。",
+      "translated_title": "数据被清除后，KiranaPro联合创始人无法排除外部攻击",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Exclusive: The company's co-founder and CTO blame a former employee for a breach, but cannot rule out that it wasn't."
+    },
+    {
       "title": "认识决赛选手：VivaTech 2025年最具远见的五家初创公司 (原标题: Meet the Finalists: VivaTech’s 5 Most Visionary Startups of 2025)",
       "link": "https://techcrunch.com/2025/06/06/meet-the-finalists-vivatechs-5-most-visionary-startups-of-2025/",
       "pubDate": "Sat, 07 Jun 2025 00:34:55 +0000",
@@ -296,27 +309,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "The harsh reality of the AI sector is that it’s dominated by a select group of well-funded incumbents. That doesn’t mean new companies can’t break through, but it makes it all that much harder for them to do so.  At TechCrunch Sessions: AI, Odyssey co-founder Oliver Cameron, Linear COO Cristina Cordova, and NEA partner Ann [&#8230;]"
-    },
-    {
-      "title": "X 宣布 Polymarket 为其官方预测市场合作伙伴 (原标题: X names Polymarket as its official prediction market partner)",
-      "link": "https://techcrunch.com/2025/06/06/x-names-polymarket-as-its-official-prediction-market-partner/",
-      "pubDate": "Fri, 06 Jun 2025 17:05:58 +0000",
-      "isoDate": "2025-06-06T17:05:58.000Z",
-      "creator": "Aisha Malik",
-      "summary": "### X 宣布 Polymarket 为其官方预测市场合作伙伴\n\n**合作背景与目的**\n\n*   X（前身为 Twitter）于 2025 年 6 月 6 日周五宣布与 Polymarket 建立合作关系，指定其为平台官方预测市场合作伙伴。\n*   Polymarket 于 2020 年推出，允许用户使用加密货币对现实世界事件的结果进行投注。\n*   此次合作旨在推出一款“集成产品”，结合 Polymarket 的预测数据与 X 平台的数据，提供实时、数据驱动的洞察和建议。\n\n**集成产品功能**\n\n*   Polymarket 的预测将与 X 数据相结合，提供实时洞察。\n*   产品将包含 Grok 对市场动态的实时注释以及相关的 X 帖子。\n*   Polymarket 在新闻稿中表示，这将是双方合作“一系列集成和独特体验”中的首个产品。\n\n**Polymarket 首席执行官 Shayne Coplan 的观点**\n\n*   Polymarket 创始人兼首席执行官 Shayne Coplan 表示，将 Polymarket 准确、公正、实时的预测市场概率与 Grok 的分析和 X 的实时洞察相结合，将能即时向全球数百万 Polymarket 用户提供情境化、数据驱动的洞察。\n*   他期待增强 X 和 Polymarket 用户理解突发新闻并对未来做出明智决策的能力。\n\n**Polymarket 的市场表现与历史合作**\n\n*   2024 年，Polymarket 在政治、时事、流行文化等领域产生了超过 80 亿美元的预测交易。\n*   此次合作是在 Polymarket 与 AI 搜索引擎 Perplexity 合作显示事件新闻摘要，以及与 Substack 合作允许作者在其帖子中嵌入预测数据之后进行的。\n\n**相关图片**\n\n*   ![X、Threads 和 Instagram 标志](https://techcrunch.com/wp-content/uploads/2024/02/threads-vs-x-GettyImages-1763609219.jpg?w=1024)",
-      "shortSummary": "X（前身为 Twitter）已宣布 Polymarket 为其官方预测市场合作伙伴。Polymarket 允许用户使用加密货币对现实世界事件进行投注。此次合作将整合 Polymarket 的预测数据与 X 平台数据，通过 Grok 分析和相关 X 帖子提供实时、数据驱动的洞察。目标是帮助用户更好地理解新闻并做出明智决策。Polymarket 在2024年处理了超过80亿美元的预测交易。",
-      "translated_title": "X 宣布 Polymarket 为其官方预测市场合作伙伴",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2024/02/threads-vs-x-GettyImages-1763609219.jpg?w=1024",
-          "alt": "In this photo illustration the logo of US online social media and social networking site 'X' (formerly known as Twitter) is displayed centrally on a smartphone screen alongside that of Threads and Instagram",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "X announced on Friday that it has partnered with Polymarket, naming it the platform’s official prediction market partner. "
     }
   ],
-  "lastUpdated": "2025-06-07T01:49:27.443Z"
+  "lastUpdated": "2025-06-07T06:28:53.639Z"
 }
