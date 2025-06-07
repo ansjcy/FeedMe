@@ -5,6 +5,63 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "使用GitHub Copilot中的编码代理分配和完成问题 (原标题: Assigning and completing issues with coding agent in GitHub Copilot)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/assigning-and-completing-issues-with-coding-agent-in-github-copilot/",
+      "pubDate": "Fri, 06 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-06T16:00:00.000Z",
+      "creator": "Alexandra Lietzke",
+      "summary": "# GitHub Copilot 编码代理：分配与完成问题\n\nGitHub Copilot 推出了一项新的编码代理功能，旨在帮助开发者更高效地工作，通过将 GitHub 问题分配给它，从而获得经过充分测试的拉取请求。\n\n## 编码代理概述\n\n*   **功能定位**：作为一种新型的软件工程代理，它直接内置于 GitHub 中，一旦被分配 GitHub Issue 或在 VS Code 中收到提示，便会开始工作。\n*   **工作方式**：它像一位异步协作的队友，基于您分配的问题构建拉取请求。它不是简单的自动补全，而是能够异步工作，帮助您加速开发、清理技术债务并专注于更重要的工作。\n*   **核心机制**：\n    *   基于 GitHub Actions 构建，提供集成、安全、可定制的环境。\n    *   接收问题后，会规划工作、打开拉取请求、编写代码、运行测试，然后请求您的审查。\n    *   如果收到反馈，它会修改拉取请求并持续工作直到您批准。\n    *   能够整合相关问题或 PR 讨论的上下文，并遵循团队设定的自定义仓库指令。\n\n## 编码代理与代理模式的区别\n\n*   **代理模式 (Agent Mode)**：\n    *   同步协作器，在您工作时进行配对。\n    *   在 IDE（如 VS Code, JetBrains, Eclipse, Xcode）内作为实时协作器工作，迭代代码、运行测试并实时修正错误。\n*   **编码代理 (Coding Agent)**：\n    *   异步协作器，代表您像队友一样工作。\n    *   作为 SWE 代理在 GitHub Actions 内部运行，接收您分配的问题，探索仓库以获取上下文，编写代码，通过测试，并打开拉取请求供您审查。\n*   **资源消耗**：两者都使用 Copilot 高级请求，编码代理还会消耗 GitHub Actions 分钟数。\n\n## 编码代理的优势与应用场景\n\nGitHub 高级软件工程师 Brittany Ellich 指出，编码代理能帮助开发者更好地完成多项任务：\n\n*   **卸载重复性任务**：例如添加和扩展单元测试、快速修复拼写错误、进行小型重构等。\n*   **改善问题管理和文档**：通过快速修复和小型重构来维护更好的问题卫生和文档。\n*   **提升用户体验**：修复错误、更新用户界面功能和增强可访问性。\n\n通过将这些低到中等复杂度的任务分配给编码代理，开发者可以有更多精力专注于高层次的问题解决和设计、处理积压的技术债务、学习新技能等。\n\n## 使用编码代理完成问题的步骤\n\n尽管 Copilot 执行工作，但您始终掌握控制权：您决定分配什么、批准什么以及需要更改什么。Copilot 还可以通过其“创建问题流程”预览功能帮助您构建问题。\n\n1.  **编写并分配问题给 Copilot**\n    *   这是最关键的步骤，需要提供充足的上下文，如同向团队成员简要说明任务。\n    *   **包含信息**：相关背景信息、预期结果、技术细节、格式或 linting 规则。\n    *   **分配方式**：通过 github.com、GitHub 移动应用或 GitHub CLI。\n    *   **任务范围**：最适合范围明确的任务，但也能处理大型任务（可能耗时更长）。可以批量分配多个问题。\n    *   **实用技巧**：\n        *   使用问题模板（如“描述”和“验收标准”字段）提高一致性。\n        *   Copilot 会利用仓库中的自定义指令（如自动生成文件、格式化规则）。\n        *   代理能够识别分配问题中包含的图片，因此您可以分享新功能的外观图片。\n\n2.  **Copilot 规划代码**\n    *   分配后，Copilot 会添加 👀 表情符号反应，并启动 GitHub Actions 会话。\n    *   在此环境中，Copilot 会探索和分析代码库、运行测试并进行更改。\n    *   它会同时打开一个分支和一个拉取请求，并随着工作进展而演变。\n    *   Copilot 会阅读问题并将其分解为任务清单，然后更新拉取请求。\n    *   完成任务后，Copilot 会将其勾选并推送提交。您可以实时查看会话、查看日志或刷新 PR。\n\n3.  **Copilot 编写代码**\n    *   当拉取请求时间线显示“Copilot started work”事件时，表示工作已开始。\n    *   Copilot 会根据问题修改代码库，运行自动化测试和 linter（如果存在），并根据需要更新或生成测试。\n    *   它会迭代推送提交。您可以实时查看工作进展，并在必要时介入以确保方向正确。\n\n4.  **审查并合并拉取请求**\n    *   Copilot 完成工作后，会标记您进行审查。您可以：\n        *   批准拉取请求\n        *   留下评论\n        *   要求更改\n    *   Copilot 会根据仓库规则自动请求审阅者。可以进行多轮审查。\n    *   **重要提示**：问题创建者不能是最终批准者。需要由同事、经理或指定审阅者批准，以促进协作并确保代码安全。\n\n## 成功使用编码代理的建议\n\n*   **编写全面的问题**：清晰、范围明确、文档完善的问题会带来更好的结果。\n*   **从小处着手**：尝试将代理用于测试、文档或简单的重构。\n*   **故障排除**：如果 Copilot 遇到问题，在评论中标记它并添加更多上下文。迭代和完善问题要求也有帮助。\n\n## 展望\n\nAI 和 LLM 正在快速发展，编码代理已在实际工作流程中展现出实用性。鼓励开发者尝试使用编码代理，构建自己的代理工作流。",
+      "shortSummary": "GitHub Copilot 推出了一项新的编码代理功能，允许开发者将 GitHub 问题分配给它。该代理作为异步队友，能自动规划、编写代码、运行测试并创建拉取请求，从而帮助开发者卸载重复性任务，专注于更复杂的开发工作。用户始终保持控制权，通过细致的问题描述和审查流程指导代理。这项功能旨在显著提升开发效率，加速软件交付。",
+      "translated_title": "使用GitHub Copilot中的编码代理分配和完成问题",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Have you tried the new coding agent in GitHub Copilot? Here’s how developers are using it to work more efficiently. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/assigning-and-completing-issues-with-coding-agent-in-github-copilot/\">Assigning and completing issues with coding agent in GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "如何在GitHub上快速创建问题和拉取请求 (原标题: How to create issues and pull requests in record time on GitHub)",
+      "link": "https://github.blog/developer-skills/github/how-to-create-issues-and-pull-requests-in-record-time-on-github/",
+      "pubDate": "Thu, 05 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-05T16:00:00.000Z",
+      "creator": "Jon Peck",
+      "summary": "## GitHub Copilot如何加速问题和拉取请求的创建\n\n软件开发的核心始于对话，而GitHub上的“问题”（Issue）正是这种对话的结晶。一个精心设计的问题为后续的拉取请求（PR）、代码审查、测试和部署奠定了基础。GitHub Copilot正在改变从想法到问题再到PR的流程，通过协助起草问题并将其分配给其编码代理，从而显著加速整个开发周期。\n\n本文将深入探讨：\n\n*   问题为何仍然是GitHub上工作的核心，无论是由人工还是Copilot创建。\n*   与团队或Copilot协作时，构建优质问题的最佳实践。\n*   Copilot驱动的工作流如何帮助您更快地推进工作，确保一致性，并为Copilot编码代理的自动化修复做好准备。\n\n## 为何优质的问题和拉取请求至关重要\n\nGitHub上的问题和拉取请求是核心构建块。每个问题描述一项独立的工作，并提供有用的细节和要求；PR则捆绑已完成的工作以进行代码审查和合并。即使在AI加速的工作流中，这些“工件”仍是团队理解工作进展的关键。无论由谁（或什么）创建，结构良好的问题和拉取请求都能带来四大关键优势：\n\n*   **共享上下文**：一个URL即可捕获问题陈述、复现步骤和完成定义，便于新成员快速了解。\n*   **异步协作**：减少会议，让开发人员可以异步工作，仅在必要时进行同步。\n*   **审计和分析**：标签、里程碑和模板支持仪表盘、SLA和合规性报告。\n*   **自动化钩子**：Actions工作流、项目看板和代理工具都依赖于附加到每个问题的可预测元数据。\n\n**不良问题的示例**：文章中提到一个糟糕的问题示例，仅有标题“Issue #12609: Found broken link. Please fix!”，但正文没有任何解释、实际链接、上下文、环境或版本信息，也没有可复现的示例或建议修复。这种模糊的提示会导致模糊的输出，无论是人类还是机器。\n\nAI（如大型语言模型）在目标、约束和成功标准明确时表现最佳。Copilot通过协助创建问题，让开发者能够专注于清晰度，而非复制粘贴，因为它能定位相关引用、构建初始问题结构，甚至添加标签或项目分配。\n\n## 优质GitHub问题的构成要素\n\n创建或审查问题时，请使用以下清单（Copilot会协助编写，但您仍需把控）：\n\n*   **行动导向的标题**：以名词开头，动词结尾（例如：“登录按钮 – 在Safari 17 beta上禁用”）。\n*   **问题或用户故事**：描述痛点（例如：“作为购物者，我无法在移动Safari上点击购买，因此放弃购物车并哭泣。”）。\n*   **预期行为与实际行为**：简洁的对比（例如：“应渲染主按钮” vs. “按钮不可点击，无CSS pointer-events。”）。\n*   **复现步骤或视觉证据**：GIF、截图或命令行细节，帮助团队成员（或Copilot）快速理解问题。\n*   **验收标准/完成定义**：明确的通过/失败标准（例如：“所有测试通过”，“Lighthouse分数 > 90”，“功能标志已移除”）。\n*   **范围和约束**：防止过度开发（例如：性能预算、浏览器列表、无新依赖）。\n*   **元数据**：标签、负责人、里程碑、项目，这是驱动看板、筛选和Slack通知的关键。\n\n## 如何使用Copilot在GitHub上更快地起草问题\n\n优质问题具备两个特点：编写快速且上下文丰富。GitHub Copilot的“创建问题”流程兼顾两者。您无需在不同字段间跳转或复制粘贴片段，只需打开Copilot Chat并用自然语言描述问题，例如：“创建关于octo-org/octo-web登录表单500错误的bug报告。”\n\nCopilot会起草标题、正文，甚至建议标签和负责人，并根据您的仓库首选模板进行格式化，确保每次问题都以正确的格式呈现。\n\n**分步指南**：\n\n1.  在github.com/copilot打开Copilot Chat的沉浸式视图。\n2.  描述您的需求。提及仓库（组织/仓库）或让Copilot根据您上次提交问题的位置推断。\n3.  如果图片能更快地说明问题，请插入截图；Copilot会将其嵌入草稿并引用在描述中。\n4.  审查草稿。可以提出后续提示（例如：“添加复现步骤”、“切换到bug模板”）或直接修改Markdown。\n5.  确认无误后点击“创建”。\n\n**使用GitHub Copilot构建优质问题的技巧**：\n\n| 您做什么           | Copilot如何帮助                                | 为何重要                                     |\n| :----------------- | :--------------------------------------------- | :------------------------------------------- |\n| 提供上下文         | 将您的措辞解析到正确的模板部分。               | 团队成员（或Copilot）获得清晰度。            |\n| 附上证据           | “图像转问题”将文件保留在问题正文中。           | 未来的调试者能准确看到您所看到的。           |\n| 标记后续操作       | 一次性添加负责人、标签、里程碑。               | 保持看板整洁，工作流自动化。                 |\n| 批量处理相关bug    | 生成多个草稿供您单独批准。                     | 在分类模式下无需切换标签页。                 |\n\n## 如何通过GitHub Copilot的编码代理将问题转化为草稿PR\n\n一旦您通过Copilot获得了清晰的问题，就可以通过编码代理将其分配给Copilot（它会像任何团队成员一样显示）或直接询问：“将此分配给Copilot。”当您点击“创建”时，Copilot会接管并开始修复工作——您会在问题线程上看到👀表情符号。\n\n**幕后流程**：\n\n1.  Copilot启动一个安全的GitHub Actions工作区。\n2.  它克隆仓库，进行语义代码搜索（RAG风格），并制定修复计划。\n3.  提交会实时推送到草稿PR，您可以实时查看——没有意外的强制推送。\n4.  您的标准分支保护和CI门禁仍会运行。\n\n**这样做的好处**：\n\n*   **并行化**：您在审查时Copilot在编写，开发周期完美重叠。\n*   **可审计性**：每次提交、差异和评论都清晰可见，没有黑盒AI的神秘感。\n*   **安全保障**：遵循相同的CODEOWNERS和签名规则，在提高速度的同时保持控制。\n\n## 常见问题与快速解答\n\n*   **“Copilot会用低质量问题淹没我的仓库吗？”**：它起草，您完善并点击“创建”。相同的速率限制，相同的模板——只是减少了打字量。\n*   **“它能更新现有问题吗？”**：目前不能。目前仅支持新建；更新现有问题的功能正在路线图上。\n*   **“它理解我的自定义模板吗？”**：是的！Copilot会从您的仓库中推断，并且您可以在起草过程中切换模板而不会丢失提示上下文。\n*   **“支持移动端吗？”**：目前仅支持桌面端；移动端支持正在计划中。\n\n## 总结\n\n下次当您觉得“天哪，提交这个bug比修复它还费时间”时，打开Copilot Chat，让机器人处理表单字段，您则专注于捕捉意图。将想法更快地转化为问题和PR，用户就能更快地获得功能——您也能更快地回到有趣的工作中。祝您编码愉快！\n\n想要了解更多关于GitHub Copilot的信息？请访问我们的文档。\n\n**作者**：\n\n![Jon Peck](https://avatars.githubusercontent.com/u/5299412?v=4&s=200)\n\n**探索更多来自GitHub的内容**：\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**：掌握GitHub所需的一切，尽在一个地方。 [前往文档](https://docs.github.com/)\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**：在GitHub上构建未来，这里是任何人、任何地点构建任何东西的地方。 [开始构建](https://github.com/)\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**：了解使用GitHub进行构建的公司和工程团队。 [了解更多](https://github.blog/customer-stories/)\n*   ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) **企业内容**：专为您策划的执行洞察。 [开始](https://github.blog/enterprise/)",
+      "shortSummary": "GitHub Copilot显著加速了在GitHub上创建问题和拉取请求的流程。它能根据自然语言描述自动起草清晰的问题，包括标题、正文和元数据，并支持添加截图和遵循自定义模板。更进一步，Copilot的编码代理可直接接管问题，自动生成并提交草稿PR，实现开发工作的并行化和自动化。这大大提高了开发效率，确保了工作流的清晰性和可审计性。",
+      "translated_title": "如何在GitHub上快速创建问题和拉取请求",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/5299412?v=4&s=200",
+          "alt": "Jon Peck",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Learn how to spin up a GitHub Issue, hand it to Copilot, and get a draft pull request in the same workflow you already know.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/github/how-to-create-issues-and-pull-requests-in-record-time-on-github/\">How to create issues and pull requests in record time on GitHub</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "攻破模型：通过GitHub安全代码游戏构建AI安全技能 (原标题: Hack the model: Build AI security skills with the GitHub Secure Code Game)",
       "link": "https://github.blog/security/hack-the-model-build-ai-security-skills-with-the-github-secure-code-game/",
       "pubDate": "Tue, 03 Jun 2025 16:37:03 +0000",
@@ -299,70 +356,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>In this post, I’ll look at CVE-2025-0072, a vulnerability in the Arm Mali GPU, and show how it can be exploited to gain kernel code execution even when Memory Tagging Extension (MTE) is enabled.</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/bypassing-mte-with-cve-2025-0072/\">Bypassing MTE with CVE-2025-0072</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "聚焦你的开源项目 (原标题: Shine a spotlight on your open source project)",
-      "link": "https://github.blog/open-source/shine-a-spotlight-on-your-open-source-project/",
-      "pubDate": "Fri, 23 May 2025 08:30:00 +0000",
-      "isoDate": "2025-05-23T08:30:00.000Z",
-      "creator": "Lee Reilly",
-      "summary": "# 聚焦你的开源项目：GitHub 推出两大展示机会\n\n为庆祝 #维护者月（Maintainer Month），GitHub 宣布为开源项目提供两大高调展示机会，分别在 WeAreDevelopers World Congress 和 GitHub Universe 大会上。申请现已开放，旨在帮助维护者们将其项目推向全球开发者社区。\n\n## 维护者月与项目展示机会\n\n五月是维护者月，旨在表彰那些为互联网提供动力的项目背后的贡献者。GitHub 借此机会，开放了两个备受瞩目的申请通道，让开源项目能够成为焦点，无论是关键的开发工具还是正在获得关注的周末副项目，都有机会向世界展示其成果。\n\n## 活动一：WeAreDevelopers World Congress 上的开源聚光灯\n\n*   **时间：** 2025年7月9日至11日\n*   **地点：** 德国柏林\n*   **申请截止日期：** 5月31日\n\nGitHub 将参加第十届 WeAreDevelopers World Congress，这是全球最大的开发者大会之一，预计将吸引超过15,000名工程师、贡献者和技术领袖。GitHub 将在展位中设立“开源聚光灯”专区，为开源项目提供一个专属空间，让参与者能够进行现场演示，展示其终端和代码库，获得真实世界的关注。\n\n**参与者将获得：**\n*   在 GitHub 展位内的现场演示空间。\n*   两张免费的参展商通行证，可探索整个大会。\n*   在超过15,000名开发者、决策者和潜在用户面前获得曝光。\n\n**现场图片：**\n![DevCycle在WeAreDevelopers World Congress的GitHub开源聚光灯展位](https://pic.twitter.com/cJSgRIRX4f)\n*DevCycle 在 WeAreDevelopers World Congress 的 GitHub 开源聚光灯展位，展示 OpenFeature 和功能标志。*\n\n## 活动二：GitHub Universe 上的开源专区\n\n*   **时间：** 2025年10月29日至30日\n*   **地点：** 美国旧金山\n*   **申请截止日期：** 7月31日\n\n“开源专区”是 GitHub Universe 大会中一个充满活力的区域，专门用于庆祝开源社区。这是项目维护者现场演示项目、分享故事并与来自世界各地的数千名开发者、贡献者和行业领袖建立联系的绝佳机会。去年，维护者们展示了从基于浏览器的VR到开源AI工具等各种项目。\n\n**参与者将获得：**\n*   项目在数千名开发者和决策者面前展示的机会。\n*   一个配备电源、Wi-Fi 和良好氛围的展位空间。\n*   两张免费通行证。\n*   如果来自较远地区，还可获得差旅津贴。\n\n## 参与意义与联系方式\n\n这些活动旨在庆祝维护者的工作并扩大其影响力。无论项目是 Python 包、硬件固件还是下一代AI开发工具，GitHub 都希望帮助维护者与最重要的社区——其他开发者——分享。\n\n如有任何疑问或想了解项目是否适合，请通过 opensourcezone@github.com 联系 GitHub 团队。",
-      "shortSummary": "GitHub为庆祝“维护者月”，推出两大机会让开源项目获得曝光：一是2025年7月在德国柏林举行的WeAreDevelopers World Congress上的“开源聚光灯”活动（5月31日截止申请），二是2025年10月在美国旧金山举行的GitHub Universe上的“开源专区”活动（7月31日截止申请）。项目维护者可获得现场演示空间、免费通行证及与数千名开发者交流的机会，旨在帮助他们展示并分享其项目。",
-      "translated_title": "聚焦你的开源项目",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Celebrate #MaintainerMonth with two big opportunities to showcase your open source project at GitHub Universe and WeAreDevelopers World Congress. Applications are open. Don’t miss out!</p>\n<p>The post <a href=\"https://github.blog/open-source/shine-a-spotlight-on-your-open-source-project/\">Shine a spotlight on your open source project</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Agent模式101：关于GitHub Copilot强大模式的一切 (原标题: Agent mode 101: All about GitHub Copilot’s powerful mode)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/agent-mode-101-all-about-github-copilots-powerful-mode/",
-      "pubDate": "Thu, 22 May 2025 19:15:57 +0000",
-      "isoDate": "2025-05-22T19:15:57.000Z",
-      "creator": "Alexandra Lietzke",
-      "summary": "GitHub Copilot的Agent模式是一种强大的、自主的、实时的同步协作工具，旨在帮助开发者自动化多步骤编码任务，从而提高效率并允许他们专注于更高级别的解决问题。\n\n### 什么是GitHub Copilot Agent模式？\n\nAgent模式是一个问题解决者，它理解用户的意图，构建解决方案，并不断迭代直到达到正确结果。它能够：\n\n*   分析代码库以掌握完整上下文。\n*   规划并执行多步骤解决方案。\n*   运行命令或测试。\n*   调用外部工具执行专业任务。\n*   提出架构改进建议。\n*   通过代理循环（包括规划、应用更改、测试和迭代）运行并完善自身工作。\n\n与仅仅响应请求不同，Agent模式主动朝着用户目标努力，用户定义结果，它决定最佳方法，并在需要时寻求反馈、测试解决方案并实时完善工作。它还能快速识别并自动修复错误。\n\n### Agent模式与其他AI编码工具的比较\n\n*   **Agent模式**：Copilot能够迭代自身代码，识别并自动修复错误。\n*   **GitHub Copilot编码代理**：一个自主的SWE代理，异步地代表用户工作，从解决问题到处理人工反馈。\n*   **代码补全**：Copilot的一项功能，在支持的IDE中提供自动补全式的建议。\n\n### GitHub Copilot Agent模式如何工作？\n\nAgent模式的核心是作为多种工具和变量（如用户提示和工作区）的协调器，通过一个系统提示来指导Copilot不断迭代其输出直到达到最终状态。\n\n![流程图](https://github.blog/wp-content/uploads/2025/05/how-it-works.png?resize=1600%2C774)\n\n当用户向Copilot Agent模式发送自然语言提示时，后端系统提示会对其进行增强，其中包含查询、工作区摘要结构、机器上下文和工具描述。具体流程如下：\n\n1.  用户向Copilot提供明确的最终结果要求。\n2.  Copilot解析问题，询问AI语言模型如何解决任务，然后开始工作。\n3.  Copilot监控第一次迭代的错误，并确定如何修复它们。\n4.  Agent模式自主使用各种工具来达到最终结果。\n5.  在运行命令和应用编辑后，Agent模式会检测语法错误、终端输出、测试结果和构建错误。根据结果，它会决定如何纠正，无论是通过进行额外编辑、终端命令还是执行工具调用。\n\n大型语言模型（LLM）拥有一套不断扩展的工具可供调用，每个工具都具有帮助Copilot完成任务的能力，并且用户可以控制Agent模式使用哪些工具。这些工具（如`read_file`、`edit_file`和`run_in_terminal`）为Copilot提供了详细的使用说明，使其能够搜索工作区、读取文件内容、运行终端命令、从编辑器获取错误并应用建议的更改等。\n\n用户不仅限于内置工具，还可以通过从模型上下文协议（MCP）服务器或扩展安装更多专业工具来扩展Agent模式的功能。MCP是一个开放标准，使AI模型能够通过统一接口与外部工具和服务交互。GitHub MCP服务器允许自动化GitHub工作流、提取和分析GitHub仓库数据、构建与GitHub生态系统交互的AI工具和应用程序。Agent模式与MCP的结合意味着LLM的知识在连接到用户的服务和数据源后将进一步扩展。\n\n### GitHub Copilot Agent模式的用例\n\nAgent模式为GitHub Copilot带来了代理工作流，在工作流中的任何任务中提供实时同步帮助。无论用户是让代理自由发挥，还是每一步都进行引导和控制，用户始终处于主导地位。一些常见的用例包括：\n\n*   重构代码\n*   将项目迁移到另一种编程语言或技术栈\n*   编写测试\n*   现代化遗留代码\n*   自动修复代码生成错误\n*   向应用程序添加新功能\n*   根据功能规范或UI草图原型化新应用\n*   实现非功能性需求或样板代码\n*   新功能实现的范围界定和规划\n*   非代码生成任务，如文档编写\n\n### 结合其他GitHub Copilot功能\n\nAgent模式虽然强大，但可以通过与其他GitHub Copilot功能结合来扩展其能力。例如：\n\n*   **自定义指令**：用户可以为Copilot提供自定义指令，使其所有响应都符合日常编码实践、工具和开发人员工作流，例如指定测试框架或单元测试的指导原则。\n*   **编辑模式（Edit mode）**：轻松在代码库的多个文件中进行编辑，适用于实现新功能、修复错误或重构代码。\n*   **询问模式（Ask mode）**：向Copilot提问以更好地理解代码库或技术概念，例如了解代码工作原理、集思广益软件想法或发现新技术。\n\n### 总结\n\n与任何其他开发者协作一样，提供越多的上下文和越具体的目标，从GitHub Copilot（尤其是Agent模式）获得的结果就越好。通过自定义指令或MCP集成扩展其功能，Agent模式可以适应用户的特定软件构建风格。由于Agent模式由LLM驱动，其建议受益于用户的审查，以确保代码按预期工作。Agent模式的显著之处在于其灵活性，用户可以根据自己的需求使用它，无论是构建原型应用、处理现有代码库，还是回答问题和自动化工作流的低级部分。",
-      "shortSummary": "GitHub Copilot的Agent模式是一种强大的自主协作工具，能理解自然语言提示，并自动执行多步骤编码任务。它能分析代码、规划解决方案、运行测试、检测并修复错误，并通过迭代完善自身工作。Agent模式可用于代码重构、原型开发、测试编写等多种场景，并通过外部工具和自定义指令进行扩展。它旨在帮助开发者自动化繁琐任务，从而专注于更高层次的问题解决。",
-      "translated_title": "Agent模式101：关于GitHub Copilot强大模式的一切",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/05/how-it-works.png?resize=1600%2C774",
-          "alt": "Flowchart diagram illustrating how a user interacts with Copilot, which communicates with a machine, workspace, and tools, all connected through a loop involving a large language model (LLM).",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/188614820?v=4&s=200",
-          "alt": "Alexandra Lietzke",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
-          "alt": "Enterprise content",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>A full look at agent mode in GitHub Copilot, including what it can do, when to use it, and best practices.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/agent-mode-101-all-about-github-copilots-powerful-mode/\">Agent mode 101: All about GitHub Copilot’s powerful mode</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-06-05T04:38:47.631Z"
+  "lastUpdated": "2025-06-07T04:34:57.994Z"
 }
