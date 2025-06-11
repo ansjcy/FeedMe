@@ -5,6 +5,118 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "GitHub工程师如何解决平台问题 (原标题: How GitHub engineers tackle platform problems)",
+      "link": "https://github.blog/engineering/infrastructure/how-github-engineers-tackle-platform-problems/",
+      "pubDate": "Tue, 10 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-10T16:00:00.000Z",
+      "creator": "Fabian Aguilar Gomez",
+      "summary": "# GitHub工程师如何解决平台问题\n\n## 引言：产品与平台工程的类比\n*   文章通过高达模型制作类比产品工程师和平台工程师的角色：\n    *   **产品工程师**：使用工具包构建最终产品（高达模型），专注于构建可玩或收藏的工作产品。\n    *   **平台工程师**：提供构建工具（如剪钳、锉刀）并可能搭建展示平台，确保构建者拥有所需工具，即使他们不亲自构建高达模型。\n*   作者的团队一年前转入基础设施组织，职责从解决外部客户问题（如构建新的部署视图）转变为服务内部客户，成为平台工程团队。这意味着他们现在负责构建产品组件，这要求他们重新思考代码测试和问题解决方法。\n\n## 解决平台问题的最佳实践\n\n### 1. 理解你的领域\n*   **定义**：“领域”是指团队和平台组织运作的业务和技术主题区域。\n*   **如何快速掌握**：\n    *   **与同事交流**：与对主题有更多知识和经验的团队安排交接会议，询问术语并深入理解问题。\n    *   **调查旧问题**：研究积压或持续存在的问题，以更好地理解系统的当前限制和潜在改进领域。\n    *   **阅读文档**：文档是知识的宝库，有助于理解系统的工作原理。\n\n### 2. 将概念与平台特定技能相结合\n*   平台团队作为基础层，需要更深入的理解：\n    *   **网络**：理解TCP、UDP、L4负载均衡等网络基础知识，以及`dig`等调试工具，这对于理解网络流量如何影响平台至关重要。\n    *   **操作系统和硬件**：选择合适的虚拟机（VM）或物理硬件对于可扩展性和成本管理至关重要，并需选择正确的操作系统以避免漏洞或接近生命周期结束的系统。\n    *   **基础设施即代码（IaC）**：熟练使用Terraform、Ansible、Consul等自动化工具，它们能显著减少基础设施配置和修改过程中的人为错误。\n    *   **分布式系统**：处理平台问题，尤其是在分布式系统中，需要深入理解故障是不可避免的。因此，采用故障转移和恢复机制等主动解决方案对于保持系统可靠性和防止不良用户体验至关重要。\n\n### 3. 知识共享\n*   通过分享经验和想法，工程师可以引入新视角，从而带来突破和创新。\n*   **重要性**：\n    *   **团队合作**：协作通常能更快地解决问题，并促进新解决方案的创新，因为工程师有机会相互学习并扩展现有想法。\n    *   **防止知识流失**：如果不分享经验教训，信息就无法在团队或组织内传播。当工程师离职或无法联系时，这会成为问题。\n    *   **提升客户成功**：工程师的解决方案应有效地服务客户。通过分享知识和经验教训，团队可以构建可靠、可扩展、安全的平台，从而创造出满足客户需求和期望的更好产品！\n\n## 产品工程与基础设施工程的显著差异\n\n### 1. 影响范围\n*   平台作为系统的基本构建块，任何（无论大小的）变更都可能影响广泛的产品。例如，DNS服务的一个微小改动就可能对GitHub Pages到GitHub Copilot等产品造成广泛影响。\n*   **如何理解影响范围**：\n    *   **与下游团队直接沟通**：与依赖服务的团队直接沟通，提供有关拟议变更可能如何影响其他服务的宝贵见解。\n    *   **事后分析（Postmortems）**：通过查看与平台相关的过去事件，并询问“此事件的影响是什么？”，可以更深入地了解引入了什么变更或故障、平台在其中扮演的角色以及如何修复。\n    *   **监控和遥测**：将重要的监控和日志信息浓缩成小巧且易于消化的介质（例如单一可用性指标SAM），以提供系统的总体健康状况。快速浏览单个仪表盘的能力使工程师能够迅速查明问题来源，并简化调试和事件缓解过程。\n\n### 2. 测试变更\n*   在分布式环境中测试变更（特别是像DNS这样的服务）可能具有挑战性。\n*   **关键步骤**：\n    *   **利用测试站点**：将其作为“真实”机器，可以在其中实施和评估所有变更。\n    *   **基础设施即代码（IaC）测试**：使用Terraform或Ansible等工具时，测试配置和解除配置机器等基本操作至关重要。在需要重新配置机器的情况下，要确保机器不会被意外删除，并且在需要时能够创建新机器。\n    *   **端到端（E2E）测试**：开始将一些网络流量导向这些服务器。团队可以通过直接与其交互来观察主机行为，或者通过分流一小部分流量来评估功能。\n    *   **自愈能力测试**：测试平台从意外负载中恢复的能力，并在影响用户之前识别瓶颈。早期识别瓶颈或错误对于维护平台健康至关重要。\n    *   **逐主机实施**：理想情况下，测试完成后应逐主机实施变更。这种方法允许单独机器回滚，并防止变更应用于未受影响的主机。\n\n## 总结\n*   平台工程可能很困难，GitHub的系统复杂且包含许多服务和活动部件。然而，当一切顺利运行时，所有幕后努力都得到了回报。当平台平稳运行，团队能够更快、更可靠地交付产品时，GitHub就能成为所有开发者的家园。\n\n由 ![Fabian Aguilar Gomez](https://avatars.githubusercontent.com/u/27039604?v=4&s=200) Fabian Aguilar Gomez 撰写\n\n### 相关文章\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握GitHub所需的一切。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在GitHub上构建未来，这里是任何地方的任何人都可以构建任何东西的地方。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用GitHub进行构建的公司和工程团队。\n*   ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) Enterprise content：专为您策划的企业洞察。",
+      "shortSummary": "GitHub工程师通过高达模型类比阐述了平台工程与产品工程的区别，强调平台工程师提供基础工具和基础设施。解决平台问题需深入理解领域知识、掌握网络、操作系统、IaC和分布式系统等平台特定技能，并重视知识共享。平台工程的挑战在于其广泛的影响范围和分布式环境下的测试复杂性。通过理解依赖、事后分析、有效监控和分阶段测试，确保平台稳定运行，从而支持产品团队更快、更可靠地交付产品。",
+      "translated_title": "GitHub工程师如何解决平台问题",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/gundam.jpg?resize=1024%2C840",
+          "alt": "A photograph of several Gundam models on a shelf.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/27039604?v=4&s=200",
+          "alt": "Fabian Aguilar Gomez",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Our best practices for quickly identifying, resolving, and preventing issues at scale.</p>\n<p>The post <a href=\"https://github.blog/engineering/infrastructure/how-github-engineers-tackle-platform-problems/\">How GitHub engineers tackle platform problems</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "GitHub 初学者指南：使用 GitHub Copilot 进行代码审查和重构 (原标题: GitHub for Beginners: Code review and refactoring with GitHub Copilot)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-for-beginners-code-review-and-refactoring-with-github-copilot/",
+      "pubDate": "Mon, 09 Jun 2025 13:00:00 +0000",
+      "isoDate": "2025-06-09T13:00:00.000Z",
+      "creator": "Kedasha Kerr",
+      "summary": "# GitHub 初学者指南：使用 GitHub Copilot 进行代码审查和重构\n\n本篇文章是“GitHub 初学者指南”系列的第八集，也是最后一集，深入探讨了 GitHub Copilot 在代码审查和重构中的应用。在任何开发项目中，维护一个清晰高效的代码库至关重要，而 GitHub Copilot 不仅能辅助编写代码，还能使代码审查和重构过程更顺畅、更高效。\n\n## 使用 Copilot 进行代码重构\n\nGitHub Copilot 能够帮助开发者重构代码，使其更易于理解和维护。\n\n### 操作步骤与建议类型\n\n1.  **高亮代码并提问：** 在代码编辑器中高亮需要重构的函数，然后在 Copilot Chat 中发送提示，例如“`please provide refactoring suggestions`”（请提供重构建议）。\n2.  **审查建议：** Copilot 会提供多种重构建议，包括将代码拆分为更小的部分、优化逻辑以提高性能，甚至更新变量名称以符合命名规范。\n3.  **应用更改：** 审查并确认建议后，点击“`Apply in editor`”按钮即可自动更新文件。\n\n### 重构范围与具体示例\n\n*   **局部重构：** 适用于对代码特定区域的关注。\n*   **文件或项目级重构：** Copilot 也可以审查整个文件或项目。例如，对于一个仪表盘组件，可以向 Copilot Chat 提问“`How can I improve this code?`”（我如何改进这段代码？），Copilot 会给出多条改进建议，并可进一步解释。\n*   **提取逻辑：** 可以通过提问“`How can I extract the data fetching logic into a custom hook?`”（如何将数据获取逻辑提取到自定义 Hook 中？）来将特定逻辑（如数据获取）提取到可重用的组件中。操作流程包括将更改保存到新文件、导入 Hook 并删除旧代码。\n*   **识别冗余代码：** 提问“`Is there any redundant code in this file?`”（此文件中是否有任何冗余代码？），Copilot 会扫描代码并识别可纠正的冗余部分。\n*   **其他重构辅助：** Copilot 还能提供性能改进建议、帮助函数模块化、添加注释以提高可读性，以及升级语法到更现代的版本等。\n\n![一张幻灯片，解释 Copilot 可以提供性能改进建议、如何使函数更模块化、添加注释以提高可读性、升级语法等等！](https://github.blog/wp-content/uploads/2025/06/copilot_refactor_help.png?resize=1024%2C573)\n\n## 在 GitHub.com 上进行代码审查\n\nGitHub Copilot 也能直接在 GitHub.com 上进行代码审查，使流程更加无缝。\n\n### 审查流程\n\n1.  **创建拉取请求：** 打开一个拉取请求（Pull Request）。\n2.  **请求 Copilot 审查：** 在右上角的“Reviewers”（审查者）部分，会看到 Copilot 列为可能的审查者。点击“Request”（请求）即可让 Copilot 审查代码。\n\n![一张截图，显示了在右侧“审查者”列表中如何请求 Copilot 进行审查。](https://github.blog/wp-content/uploads/2025/06/code_review.png?resize=1024%2C573)\n\n3.  **查看建议：** Copilot 完成审查后，向下滚动拉取请求即可看到其提出的任何建议。\n4.  **接受建议：** Copilot 总是留下“Comment review”（评论审查），从不留下“Approve”（批准）或“Request changes”（请求更改）审查，这意味着 Copilot 的审查永远不会是必需的，也不会阻止合并。要接受 Copilot 的建议，点击特定建议底部的“`Commit suggestion`”（提交建议），然后在上下文菜单中点击“`Commit changes`”（提交更改），GitHub 会更新拉取请求。\n\n![一张截图，显示了标题为“提交建议”的下拉菜单中的“提交更改”按钮。](https://github.blog/wp-content/uploads/2025/06/commit_code_review.png?resize=1024%2C573)\n\n5.  **批量处理与重新审查：** 可以通过点击单个建议下的“`Add to batch`”（添加到批次）按钮来批量处理多个建议。在集成建议后，可以通过点击“Reviewers”框中 Copilot 名称旁边的圆形箭头来再次请求 Copilot 审查。\n\nCopilot 代码审查可以作为团队最终代码审查前的初步审查。\n\n## 关键组成部分与局限性\n\n### 关键组成部分\n\n使用 Copilot 进行代码审查和重构主要包括以下五个方面：\n\n*   **自动化建议：** 在审查代码时，Copilot 会提出改进和优化建议。\n*   **一致性检查：** 通过建议一致的命名约定和函数结构，帮助维护编码标准。\n*   **重构辅助：** 提供可操作的重构建议，无论是简化复杂函数还是重组代码库。\n*   **错误检测：** 能够发现可能遗漏的潜在错误或低效率问题。\n*   **注释支持：** 帮助生成清晰的代码注释，使其更易于他人理解。\n\n### 局限性\n\n尽管 GitHub Copilot 功能强大，但它仍是一个辅助工具，并非人类审查的替代品：\n\n*   **依赖上下文：** Copilot 的建议质量取决于所提供的上下文，不清晰或文档不完善的代码可能导致建议效果不佳。\n*   **非人类审查替代品：** Copilot 无法替代彻底的人工审查。务必仔细检查其提供的建议，确保它们符合项目目标、标准以及组织政策。\n\n![一张幻灯片，列出了 Copilot 的功能：协助代码审查和重构；帮助维护整洁、高效和一致的代码；节省时间并减少错误；让您更专注于构建。](https://github.blog/wp-content/uploads/2025/06/copilot_can_do.png?resize=1024%2C573)\n\n## 总结\n\nGitHub Copilot 是代码审查和重构的宝贵助手，它能帮助开发者维护整洁、高效且一致的代码，从而节省时间并减少错误。通过将 Copilot 整合到工作流程中，开发者可以更专注于构建出色的功能，而不是纠结于代码维护的细节。",
+      "shortSummary": "GitHub Copilot 是一个强大的代码审查和重构工具。它通过 Copilot Chat 提供重构建议，如优化代码、提取逻辑和识别冗余。在 GitHub.com 上，Copilot 可作为拉取请求的初步审查者，提供评论但不阻塞合并。其核心功能包括自动化建议、一致性检查和错误检测。尽管功能强大，Copilot 仍是辅助工具，不能替代彻底的人工审查，其建议需人工复核。它旨在帮助开发者维护整洁高效的代码，节省时间并减少错误。",
+      "translated_title": "GitHub 初学者指南：使用 GitHub Copilot 进行代码审查和重构",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/copilot_refactor_help.png?resize=1024%2C573",
+          "alt": "A slide explaining that Copilot can help with performance improvement suggestions, how to make functions more modular, adding comments for readability, upgrading syntax, and much more!",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/code_review.png?resize=1024%2C573",
+          "alt": "A screenshot shoring where to request a review from Copilot, under the 'reviewers' list on the right.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/commit_code_review.png?resize=1024%2C573",
+          "alt": "A screenshot showing the 'Commit changes' button in the drop down menu titled 'Commit suggestion.'",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/copilot_can_do.png?resize=1024%2C573",
+          "alt": "A slide listing items Copilot can do: Assists with code review and refactoring; helps maintain clean, efficient, and consistent code; saves you time and reduces errors; and allows you to focus more on building.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/47188731?v=4&s=200",
+          "alt": "Kedasha Kerr",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Learn how to use GitHub Copilot to help review and polish your code.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/github-for-beginners-code-review-and-refactoring-with-github-copilot/\">GitHub for Beginners: Code review and refactoring with GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "使用GitHub Copilot中的编码代理分配和完成问题 (原标题: Assigning and completing issues with coding agent in GitHub Copilot)",
       "link": "https://github.blog/ai-and-ml/github-copilot/assigning-and-completing-issues-with-coding-agent-in-github-copilot/",
       "pubDate": "Fri, 06 Jun 2025 16:00:00 +0000",
@@ -268,95 +380,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Maintaining and developing complex and risky code is never easy. See how we addressed the challenges of securing our SAML implementation with this behind-the-scenes look at building trust in our systems.</p>\n<p>The post <a href=\"https://github.blog/security/web-application-security/inside-github-how-we-hardened-our-saml-implementation/\">Inside GitHub: How we hardened our SAML implementation</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub 初学者指南：使用 GitHub Copilot 进行测试驱动开发 (TDD) (原标题: GitHub for Beginners: Test-driven development (TDD) with GitHub Copilot)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/github-for-beginners-test-driven-development-tdd-with-github-copilot/",
-      "pubDate": "Mon, 26 May 2025 13:00:00 +0000",
-      "isoDate": "2025-05-26T13:00:00.000Z",
-      "creator": "Kedasha Kerr",
-      "summary": "# GitHub 初学者指南：使用 GitHub Copilot 进行测试驱动开发 (TDD)\n\n本篇文章是“GitHub 初学者指南”系列的第七集，深入探讨了如何利用 GitHub Copilot 简化和自动化测试过程，特别是测试驱动开发（TDD）。\n\n## 引言\n\n测试是软件开发中不可或缺但通常繁琐的部分，尤其随着代码库的增长和复杂化。GitHub Copilot 能够帮助自动化这一过程，确保代码按预期运行。\n\n## 测试基础 (Testing 101)\n\n### 为什么测试很重要？\n\n测试的核心目的是确保您的代码能够按照预期工作。它帮助开发者验证功能的正确性，并及早发现潜在问题。\n\n![为什么测试很重要？确保代码按预期工作。](https://github.blog/wp-content/uploads/2025/05/01-testing-important.png?resize=1657%2C927)\n\n### 测试类型\n\n测试可以采取多种形式，包括：\n\n*   **验收测试 (Acceptance tests)：** 确保应用程序满足一组定义好的功能需求。\n*   **集成测试 (Integration tests)：** 验证应用程序能否与数据库、API 等各种系统进行有效通信。\n*   **单元测试 (Unit tests)：** 专注于将代码分解成小的、独立的“单元”，确保每个独立单元的功能都符合预期。本文主要侧重于单元测试。\n\n## 编写单元测试\n\n单元测试通过将代码分解为更小的、易于测试的块来工作。这有助于提高对整个应用程序在组装后能够正常工作的信心。单元测试的一大优势是其自动化能力，您可以通过一条命令运行数千个测试，从而快速了解应用程序的健康状况，并及时发现代码更改可能引入的意外问题。\n\n### 使用 GitHub Copilot 编写单元测试的步骤：\n\n1.  打开您的代码，并高亮您想要测试的特定部分（例如，一个函数）。\n2.  打开 Copilot Chat。\n3.  发送提示：`/tests add unit tests for my code`。\n4.  如果 Copilot 询问是否配置测试框架，选择“Dismiss”。\n5.  审查 Copilot 提供的计划和代码建议，确保您理解将要进行的更改。\n6.  点击代码建议顶部的“Add to new file”按钮，创建测试文件。\n7.  保存新文件。\n8.  在您的终端中运行命令（例如 `python -m pytest`）来执行测试。\n\n## 测试驱动开发 (TDD)\n\n测试驱动开发 (TDD) 是一种开发流程，您通过测试来驱动代码的开发。在使用 TDD 时，您首先编写测试，然后才创建实际的功能实现。这种方法需要调整开发思维，但带来了多项优势，例如让您有机会预先了解代码的行为，并确保所编写的测试能够准确地测试预期功能。\n\n### “红、绿、重构” (Red, Green, Refactor) 流程\n\nTDD 的一个核心概念是“红、绿、重构”循环：\n\n1.  **红 (Red)：** 首先创建测试，此时它们会失败（因为还没有对应的实现代码）。\n2.  **绿 (Green)：** 编写“刚好足够”的代码，使之前失败的测试通过。这意味着您已经实现了所需功能的最小部分。\n3.  **重构 (Refactor)：** 在测试通过后，对代码进行优化和清理。在此阶段，您会持续运行单元测试，以确保重构不会破坏任何现有功能。\n\n![红、绿、重构步骤：1. 先写测试 2. 测试失败（红！）3. 编写刚好足够的代码使测试通过 4. 重新运行测试使其通过（绿！）5. 重构和清理代码](https://github.blog/wp-content/uploads/2025/05/red_green_refactor.png?resize=1657%2C927)\n\n### GitHub Copilot 在 TDD 中的应用\n\nGitHub Copilot 能够有效地辅助 TDD 流程：\n\n*   **红阶段：** 您可以告诉 Copilot 预期的代码功能，让它基于这些信息生成测试。例如，您可以描述一个用户名验证函数的规则，Copilot 将生成相应的单元测试。此时，这些测试会因为没有实现代码而失败，进入“红”阶段。\n*   **绿阶段：** 接下来，您可以提示 Copilot 生成实现代码（例如，发送“Create the implementation”），它将生成使这些测试通过的代码。将此代码添加到您的项目中并重新运行测试，它们将通过，进入“绿”阶段。\n\n## 最佳实践\n\n请记住，单元测试本身也是代码。为了提高其可读性和可维护性，您应该遵循与生产代码相同的编码标准：\n\n*   为您的测试添加文档。\n*   保持测试代码的组织性。\n*   创建实用工具以加快测试编写速度。\n*   随着代码的更改及时更新您的测试。\n\n## 总结\n\n测试是开发中不可或缺的一部分。拥有像 GitHub Copilot 这样的工具，可以使测试编写变得不那么繁琐，从而提高代码质量，并让开发者有更多时间专注于编码中更具创造性的部分。GitHub Copilot 可免费使用。",
-      "shortSummary": "本文介绍了如何使用 GitHub Copilot 进行测试驱动开发 (TDD)。文章强调了测试的重要性，特别是单元测试，并详细说明了利用 Copilot 自动化单元测试的编写步骤。此外，文章还解释了 TDD 的“红、绿、重构”循环，并展示了 Copilot 如何辅助开发者在 TDD 流程中先生成测试（红阶段），再生成实现代码（绿阶段），从而提高开发效率和代码质量。Copilot 使测试编写更高效，让开发者能专注于核心编码。",
-      "translated_title": "GitHub 初学者指南：使用 GitHub Copilot 进行测试驱动开发 (TDD)",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/05/01-testing-important.png?resize=1657%2C927",
-          "alt": "A slide explaining 'Why are tests important? Ensures code is working as expected.'",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/05/red_green_refactor.png?resize=1657%2C927",
-          "alt": "A slide explaining Red, Green, Refactor steps:\n\n1. Write tests first\n2. Tests fail because there's no code (red!)\n3. Write just enough code to allow tests to pass\n4. Rerun the test to see it pass (green!)\n5. Refactor and clean up code",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/47188731?v=4&s=200",
-          "alt": "Kedasha Kerr",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
-          "alt": "Enterprise content",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>See how to use GitHub Copilot to engage in some test-driven development.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/github-for-beginners-test-driven-development-tdd-with-github-copilot/\">GitHub for Beginners: Test-driven development (TDD) with GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "使用 CVE-2025-0072 绕过 MTE (原标题: Bypassing MTE with CVE-2025-0072)",
-      "link": "https://github.blog/security/vulnerability-research/bypassing-mte-with-cve-2025-0072/",
-      "pubDate": "Fri, 23 May 2025 10:00:00 +0000",
-      "isoDate": "2025-05-23T10:00:00.000Z",
-      "creator": "Man Yue Mo",
-      "summary": "## 使用 CVE-2025-0072 绕过 MTE：ARM Mali GPU 驱动中的内核漏洞\n\n本文详细介绍了 CVE-2025-0072，这是一个在 ARM Mali GPU 驱动中发现的新漏洞。该漏洞允许恶意 Android 应用程序绕过内存标记扩展 (MTE) 并获得任意内核代码执行权限。MTE 是一种旨在防止内存损坏漏洞的高级内存安全功能，但此漏洞证明了即使在内核代码中，也存在绕过的可能性。\n\n### 漏洞概述\n\n*   **漏洞编号**：CVE-2025-0072\n*   **受影响组件**：ARM Mali GPU 驱动\n*   **影响**：绕过 MTE，实现任意内核代码执行\n*   **受影响设备**：使用 Command Stream Frontend (CSF) 架构的较新 Arm Mali GPU 设备，例如 Google Pixel 7、8 和 9 系列。\n*   **报告与修复**：\n    *   于 2024 年 12 月 12 日报告给 Arm。\n    *   在 Mali 驱动版本 r54p0 中修复，该版本于 2025 年 5 月 2 日公开发布，并包含在 Android 2025 年 5 月的安全更新中。\n\n### CSF 队列工作原理及漏洞根源\n\nArm Mali GPU 通过驱动中实现的 `kbase_queue` 对象与用户空间应用程序通信。这些队列通过一系列 `ioctl` 调用进行创建和绑定：\n\n1.  **创建队列**：使用 `KBASE_IOCTL_CS_QUEUE_REGISTER` 创建 `kbase_queue`。\n2.  **创建队列组**：使用 `KBASE_IOCTL_CS_QUEUE_GROUP_CREATE` 创建 `kbase_queue_group`。\n3.  **绑定队列**：使用 `KBASE_IOCTL_CS_QUEUE_BIND` 将 `kbase_queue` 绑定到 `kbase_queue_group`。此操作返回一个 `mmap_handle`，并将 `queue->bind_state` 设置为 `KBASE_CSF_QUEUE_BIND_IN_PROGRESS`。\n4.  **完成绑定**：用户应用程序必须使用返回的 `mmap_handle` 作为文件偏移量调用 `mmap`。这会触发 `kbase_csf_cpu_mmap_user_io_pages`，进而调用 `kbase_csf_alloc_command_stream_user_pages` 来分配 GPU 内存页（存储在 `queue->phys` 字段中）并将其映射到用户空间，最后将 `queue->bind_state` 设置为 `KBASE_CSF_QUEUE_BOUND`。\n5.  **内存释放**：当用户空间解除映射时，`kbase_csf_free_command_stream_user_pages` 会被调用来释放 `queue->phys` 中存储的页面。\n\n### 漏洞利用思路：页 Use-After-Free\n\n漏洞的核心在于利用 `queue->phys` 字段在用户空间映射后被修改的可能性，从而导致页面的 Use-After-Free (UAF) 漏洞。\n\n**利用步骤：**\n\n1.  **创建并绑定**：创建一个 `kbase_queue` 和一个 `kbase_queue_group`，然后将 `kbase_queue` 绑定到该组。\n2.  **首次映射**：调用 `mmap` 为 `kbase_queue` 创建 GPU 内存页（存储在 `queue->phys` 中）并映射到用户空间。\n3.  **终止队列组**：终止 `kbase_queue_group`。作为清理过程的一部分，这会解除 `kbase_queue` 的绑定，重置其 `queue->group` 字段为 `NULL`，并将其 `bind_state` 设置为 `KBASE_CSF_QUEUE_UNBOUND`。\n4.  **重新绑定**：创建另一个 `kbase_queue_group`，并将 *相同的* `kbase_queue` 绑定到这个新组。\n5.  **二次映射**：再次为该 `kbase_queue` 调用 `mmap`。这将分配新的 GPU 内存页，并覆盖 `queue->phys` 中现有的页。这些新页也被映射到用户空间。\n6.  **触发 UAF**：解除映射步骤 2 中创建的用户空间内存区域。此时，`kbase_csf_free_command_stream_user_pages` 会被调用来释放 `queue->phys` 中存储的页面。然而，由于 `queue->phys` 已经被步骤 5 中的新页覆盖，因此被释放的是这些新页。这些新页在被释放后，仍然被映射到用户空间（来自步骤 5 的映射），从而导致一个页 Use-After-Free 漏洞。\n\n![A diagram demonstrating how to free the new pages while unmapping an old region.](https://github.blog/wp-content/uploads/2025/05/bypassing1.png?resize=960%2C720)\n\n### 从 Use-After-Free 到内核代码执行\n\n获得页 UAF 后，攻击者可以重用这些已释放的页面作为 Mali GPU 的页表全局目录 (PGD)。\n\n*   **内存池分配**：`kbase_mem_pool_alloc_pages` 函数通过分层内存池进行分配：首先从当前 `kbase_mem_pool`，然后是 `pool->next_pool`，最后是内核的 buddy 分配器。\n*   **PGD 重用**：`pool->next_pool` 是 Mali 驱动管理的一个共享内存池，也用于分配 GPU 上下文使用的 PGD。通过精心安排内存池，可以使一个已释放的 `kbase_va_region` 后备页被重用为 GPU 上下文的 PGD。\n*   **内核代码执行**：一旦已释放的页面被重用为 PGD，用户空间映射就可以用于重写 GPU 的 PGD。这使得任何内核内存（包括内核代码）都可以被映射到 GPU，从而允许攻击者重写内核代码并执行任意内核代码。此外，它还允许读写任意内核数据，从而可以轻松修改进程凭据以获取 root 权限并禁用 SELinux。\n\n### MTE 绕过机制\n\n内存标记扩展 (MTE) 是 Arm 处理器上的一项安全功能，通过在 64 位指针的高位存储“标签”来检测内存损坏。当指针被解引用时，会检查指针标签与内存块中存储的标签是否一致，从而检测到损坏。\n\n![A diagram demonstrating how, by checking the tags on the pointer and the adjacent memory blocks at dereference time, the corrupted dereference can be detected.](https://github.blog/wp-content/uploads/2025/05/bypassing2.png?resize=1040%2C807)\n\nMTE 依赖于 Arm 架构 v8.5a 中引入的硬件加速指令，以及 Linux 内核中 SLUB 和 buddy 分配器的软件支持。\n\n尽管 MTE 旨在防止此类攻击，但此漏洞成功绕过了它。与之前报告的通过 GPU 访问已释放内存页的漏洞不同，此漏洞通过 *用户空间映射* 访问已释放的内存页。文章指出，最初认为这可能与 Mali GPU 驱动使用的自定义内存池 `kbase_mem_pool` 有关，但文章在此处中断，未能完全解释 MTE 绕过的具体细节。",
-      "shortSummary": "CVE-2025-0072 是 Arm Mali GPU 驱动中的一个漏洞，允许恶意 Android 应用绕过内存标记扩展 (MTE) 并实现任意内核代码执行。该漏洞利用了 Command Stream Frontend (CSF) 队列处理中的一个页 Use-After-Free (UAF) 缺陷。通过精心操作队列的绑定和解除绑定，攻击者可以在旧映射解除时释放新映射的页面，然后将这些已释放的页面重用为 GPU 页表全局目录 (PGD)，从而获得对内核内存的读写权限，最终实现内核代码执行。该漏洞影响 Pixel 7、8、9 等设备，并已在 Mali 驱动 r54p0 版本中修复。",
-      "translated_title": "使用 CVE-2025-0072 绕过 MTE",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/05/bypassing1.png?resize=960%2C720",
-          "alt": "A diagram demonstrating how to free the new pages while unmapping an old region.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/05/bypassing2.png?resize=1040%2C807",
-          "alt": "A diagram demonstrating how, by checking the tags on the pointer and the adjacent memory blocks at dereference time, the corrupted dereference can be detected.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/15773368?v=4&s=200",
-          "alt": "Man Yue Mo",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>In this post, I’ll look at CVE-2025-0072, a vulnerability in the Arm Mali GPU, and show how it can be exploited to gain kernel code execution even when Memory Tagging Extension (MTE) is enabled.</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/bypassing-mte-with-cve-2025-0072/\">Bypassing MTE with CVE-2025-0072</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-06-09T04:40:45.301Z"
+  "lastUpdated": "2025-06-11T04:39:11.322Z"
 }
