@@ -5,6 +5,26 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Google Pay 在沙盒 iframe 中实现 PCI DSS v4 合规性 (原标题: Google Pay inside sandboxed iframe for PCI DSS v4 compliance)",
+      "link": "https://developers.googleblog.com/en/google-pay-inside-sandboxed-iframe-for-pci-dss-v4-compliance/",
+      "pubDate": "Mon, 09 Jun 2025 16:00:00 GMT",
+      "isoDate": "2025-06-09T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Google Pay 在沙盒 iframe 中实现 PCI DSS v4 合规性\n\n### 背景：PCI DSS v4 合规性挑战\n\n文章指出，在开发或维护结账页面时，会遇到 PCI DSS v4 标准的要求，特别是 **6.4.3 条款**，该条款规定了对加载和执行在消费者浏览器中的所有支付页面脚本的管理要求：\n\n*   必须有方法确认每个脚本都经过授权。\n*   必须有方法确保每个脚本的完整性。\n*   必须维护所有脚本的清单，并附有书面的业务或技术理由。\n\n虽然像子资源完整性（SRI）这样的技术可以帮助满足这些要求，但 Google Pay 的 JavaScript (pay.js) 的构建和发布过程不支持 SRI 所需的长期稳定哈希。\n\n### 解决方案：使用沙盒 iframe\n\n为了解决这一合规性挑战，文章推荐使用**沙盒 iframe**。这种方法能够满足合规性要求，因为 iframe 内的脚本无法访问父级 DOM，从而实现了脚本的隔离和完整性。\n\n**工作原理与所需属性：**\n\n*   **隔离性**：沙盒 iframe 中的脚本与父页面 DOM 隔离，增强了安全性。\n*   **通信**：成功交易后，内部 iframe 可以通过 `window.postMessage()` 等机制与父页面进行通信。\n*   **必要的 `sandbox` 属性**：为了让 Google Pay 在所有浏览器中正常工作，除了 `allow=\"payment\"` 之外，还需要以下四个 `sandbox` 属性：\n    *   `allow-scripts`：允许 iframe 执行脚本（例如 pay.js）。\n    *   `allow-popups`：允许嵌入页面创建“子浏览上下文”，即允许 iframe 在用户点击链接时打开新标签页或窗口。\n    *   `allow-same-origin`：如果未设置，在某些浏览器中会失败；如果设置，iframe 可以访问父级的存储和 cookies。\n    *   `allow-forms`：允许 Google Pay 登录等表单提交数据。\n\n**图示：**\n\n![沙盒 iframe 示例](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_yuqehlR.original.png)\n\n### 成功案例：Shopify\n\nGoogle Pay 与 Shopify 合作实施了上述解决方案。Shopify 通过使用沙盒 iframe 来显示 Google Pay 按钮，成功通过了 PCI DSS v4 审计。Shopify 的杰出工程师 Ilya Grigorik 表示：“我们构建 Shopify Checkout 的方式使得 Google Pay 代码在一个安全的沙盒环境中执行，使我们能够维护结账的完整性并符合 PCI DSS V4 要求。”\n\n### 结论与支持\n\n将 Google Pay 集成包装在沙盒 iframe 中，可以帮助开发者符合 PCI DSS v4 的要求。文章鼓励开发者登录 Google Pay & Wallet Console 创建支持工单，或加入 Discord 上的 #payments 频道寻求帮助。",
+      "shortSummary": "为满足 PCI DSS v4 合规性要求，Google Pay 推荐在沙盒 iframe 中集成其支付脚本。此方法通过隔离 iframe 内的脚本，解决了 Google Pay `pay.js` 不支持子资源完整性（SRI）的问题，确保了支付页面的安全性与完整性。Shopify 已成功采用此方案并通过 PCI DSS v4 审计，证明了沙盒 iframe 是实现合规性的有效途径。",
+      "translated_title": "Google Pay 在沙盒 iframe 中实现 PCI DSS v4 合规性",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_yuqehlR.original.png",
+          "alt": "sandboxed iframe",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Use a sandboxed iframe to implement Google Pay on checkout pages, which helps comply with PCI DSS v4 requirements by isolating scripts. Shopify successfully implemented this method and passed the PCI DSS v4 audit."
+    },
+    {
       "title": "数据驱动的营销始于开发者 (原标题: Data-driven marketing starts with developers)",
       "link": "https://developers.googleblog.com/en/data-driven-marketing-starts-with-developers/",
       "pubDate": "Wed, 28 May 2025 16:00:00 GMT",
@@ -228,20 +248,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Gemma 3n is a cutting-edge open model designed for fast, multimodal AI on devices, featuring optimized performance, unique flexibility with a 2-in-1 model, and expanded multimodal understanding with audio, empowering developers to build live, interactive applications and sophisticated audio-centric experiences."
-    },
-    {
-      "title": "智能代理新进展：ADK、Agent Engine 和 A2A 协议增强 (原标题: What's new with Agents: ADK, Agent Engine, and A2A Enhancements)",
-      "link": "https://developers.googleblog.com/en/agents-adk-agent-engine-a2a-enhancements-google-io/",
-      "pubDate": "Mon, 19 May 2025 16:00:00 GMT",
-      "isoDate": "2025-05-19T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "Google 正致力于构建一个未来，让智能代理成为解决复杂挑战、简化工作流程和开启新可能性的协作伙伴。为了实现这一愿景，Google 发布了一系列重大更新，旨在帮助开发者更轻松、更强大地构建和管理智能代理。\n\n### 1. 代理开发工具包 (ADK) 增强\n\n为了赋能开发者创建稳定且适应性强的复杂代理，ADK 进行了显著创新：\n\n*   **Python ADK v1.0.0：生产就绪的稳定性**\n    *   Python ADK 已发布 v1.0.0 稳定版，标志着其已达到生产就绪状态，为开发者在实际环境中构建和部署代理提供了可靠且强大的平台。\n    *   雷诺集团、Box 和 Revionics 等客户已在使用 ADK 并提供了积极反馈。\n*   **Java ADK v0.1.0：将代理能力扩展到 Java 生态系统**\n    *   Java ADK v0.1.0 的首次发布，将 ADK 的强大功能和灵活性带给 Java 开发者，满足其代理开发需求。\n    *   开发者可通过添加 Maven 依赖项开始使用。\n\n### 2. 直观的控制与管理：Agent Engine UI\n\nVertex AI Agent Engine 帮助开发者在生产环境中部署、管理和扩展代理。现在，Google 推出了 Agent Engine UI，以更直接、更集中的方式简化代理生命周期：\n\n*   **用户友好的界面**：可在 Google Cloud 控制台中访问，提供全面的仪表板，用于查看和管理已部署的代理、列出会话、跟踪和调试操作以及监控代理。\n*   **增强的开发与管理流程**：此简化方法显著提升了开发和管理过程，提供了对代理行为和性能的更大控制和更深入洞察。\n\n### 3. 无缝安全的协作：Agent2Agent (A2A) 协议进展\n\n为了让代理真正成为不可或缺的伙伴，它们需要彼此高效安全地通信。Google 持续改进 A2A 协议，以促进代理之间更复杂、更可靠的交互：\n\n*   **更轻量和安全的交互**\n    *   **更新的 A2A 协议规范 (v0.2)**：\n        *   **支持无状态交互**：简化了不需要会话管理场景的开发，实现更高效、更轻量级的通信。\n        *   **标准化认证**：基于类似 OpenAPI 的认证模式，确保代理间认证要求的清晰沟通，增强了代理间交互的安全性和可靠性。\n*   **通过 A2A Python SDK 简化集成**\n    *   发布了 A2A 的官方 Python SDK，为开发者提供了与 A2A 交互和构建所需的工具，简化了将这些强大的通信能力集成到基于 Python 的代理中。\n*   **A2A 合作伙伴生态系统发展势头强劲**\n    *   A2A 的行业采用正在加速，越来越多的平台引入了增强功能来构建、部署和保护 A2A 代理。\n    *   **近期更新包括**：\n        *   **Auth0**：推出开源示例代理，展示如何使用 A2A 和 Auth0 的 Auth for GenAI 进行安全的多代理通信。\n        *   **Box AI Agents**：通过 A2A 协议安全地与外部代理协作，将非结构化内容转换为可操作数据。\n        *   **Microsoft**：宣布 Azure AI Foundry 支持 A2A 协议，并能在 Microsoft Copilot Studio 中调用任何 A2A 代理；展示了 A2A 在工作场所生产力用例中的应用。\n        *   **SAP**：将 A2A 协议支持添加到其 AI 助手 Joule 中，使其能够协调 SAP 生态系统内的代理，并调用通过 Google ADK 构建的 A2A 代理。\n        *   **Zoom**：宣布支持 A2A 协议和 Agentspace 集成，推进其开放平台上的多代理协作。\n\n这些更新旨在提供一个全面且灵活的平台，帮助开发者实现其最雄心勃勃的代理驱动项目。",
-      "shortSummary": "Google 发布了智能代理开发的重要更新，包括：生产就绪的 Python ADK v1.0.0 和初始 Java ADK v0.1.0；用于集中管理和监控代理的 Agent Engine UI；以及增强的 Agent2Agent (A2A) 协议 v0.2，支持更轻量、安全的交互，并推出了 A2A Python SDK。Auth0、Box、Microsoft、SAP 和 Zoom 等合作伙伴已开始采用 A2A 协议。这些进展旨在赋能开发者构建更复杂、可靠的智能代理解决方案。",
-      "translated_title": "智能代理新进展：ADK、Agent Engine 和 A2A 协议增强",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Updates to Google's agent technologies include the Agent Development Kit (ADK) with new Python and Java versions, an improved Agent Engine UI for management, and enhancements to the Agent2Agent (A2A) protocol for better agent communication and security."
     }
   ],
-  "lastUpdated": "2025-06-09T10:32:01.837Z"
+  "lastUpdated": "2025-06-12T10:31:49.364Z"
 }
