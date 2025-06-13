@@ -5,6 +5,94 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "GitHub 计费团队如何利用 GitHub Copilot 中的编码代理持续消除技术债务 (原标题: How the GitHub billing team uses the coding agent in GitHub Copilot to continuously burn down technical debt)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-the-github-billing-team-uses-the-coding-agent-in-github-copilot-to-continuously-burn-down-technical-debt/",
+      "pubDate": "Thu, 12 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-12T16:00:00.000Z",
+      "creator": "Brittany Ellich",
+      "summary": "## GitHub 计费团队如何利用 GitHub Copilot 中的编码代理持续消除技术债务\n\n### 引言：技术债务的挑战\n\n软件在不断演进中会积累技术债务，这源于过去的快速修复、临时方案和妥协。技术债务如同金融债务，拖延越久成本越高，但在紧迫的截止日期和不断涌入的功能需求下，很难优先处理。传统的管理方法（如“园艺周”或延长功能时间线）效果不佳，因为它们将技术债务视为例外而非持续维护，或导致不切实际的估算。核心问题在于将技术债务视为对正常开发流程的干扰。理想状态是能够与日常工作并行，持续地消除技术债务。\n\n### 利用 AI 代理持续管理技术债务\n\nAI 代理（如 GitHub Copilot 中的编码代理）为管理技术债务提供了巨大机会。技术债务任务不再需要堆积在待办事项中。工程师可以专注于新功能和架构变更，同时将技术债务任务分配给 GitHub Copilot。\n\n### 编码代理的具体应用示例（来自 GitHub 计费团队的实践）\n\nGitHub 计费团队已通过 GitHub Copilot 编码代理成功解决了以下实际问题：\n\n*   **提高代码测试覆盖率：** 分配任务给 Copilot 增加测试覆盖，完成后通知审查。\n*   **替换依赖项：** 让 Copilot 处理耗时的库替换工作。\n*   **标准化代码库模式：** 统一错误返回和日志记录方式，提高可维护性。\n*   **优化前端加载模式：** 调整应用，仅在需要数据时才进行 API 调用，而非每次页面加载。\n*   **识别并消除废弃代码：** 让 Copilot 查找并安全移除未使用的函数、过时端点或陈旧配置。\n\n这些实践极大地提升了团队持续处理技术债务的能力，将消除技术债务的时间从数周的间歇性工作缩短到几分钟的发布问题和几小时的拉取请求审查。\n\n### 人机协作：AI 作为副驾驶\n\nAI 代理并非取代人类工程师，而是增强其能力。代理处理重复、耗时的工作（如重构遗留代码、更新依赖、标准化模式），而工程师则可以专注于架构决策、功能创新和解决复杂的业务问题。这使得软件更健康、团队交付更快、工程师工作更有活力。\n\n人类在整个过程中至关重要：AI 代理擅长明确、重复的任务，但大型架构决策和复杂业务逻辑仍需人类判断。每个提示都需要仔细考虑，每次代码更改都需要彻底审查。AI 代理提供速度和一致性，而人类提供战略性思考（优先处理哪个技术债务、评估业务影响、识别潜在问题）。人机协作的精髓在于人类定义问题、设定约束、验证解决方案，代理处理繁琐的实现细节。\n\n### 充分利用 GitHub Copilot 编码代理的技巧\n\n1.  **为你的仓库编写 Copilot 指令：** 显著改善体验，可让代理协助编写，包含开发脚本（格式化、linting）。\n2.  **分块处理任务：** 代理可能进行大范围修改，但审查大量文件的拉取请求效率低下。将大任务分解为更小的、可审查的子任务（例如，针对特定文件或文件夹改进测试覆盖）。\n3.  **掌握有效提示的艺术：** 明确说明上下文、约束和编码标准。\n4.  **始终彻底审查代码：** AI 代理不理解业务逻辑，代码审查是确保质量的核心环节。Copilot 编码代理与现有代码审查工具无缝集成。\n\n### 拥抱 AI 工具的软件工程师的未来\n\n技术债务长期以来是“无声的生产力杀手”，很少被优先处理直到成为危机。AI 编码代理提供了彻底改变这一局面的机会。能够有效与 AI 代理协作的工程师（掌握清晰提示、周到代码审查和战略性任务委派）将拥有巨大优势。他们将能够维护同行难以处理的代码库，解决他人回避的技术债务，并可能消除耗时且昂贵的系统重写。这种转变需要有意识的努力：实验工具、了解其优缺点并将其整合到工作流程中。这将使工程师更高效、更少挫败，专注于工程的创造性方面，并为用户带来更稳定、维护良好的应用程序。\n\n### 作者信息及相关资源\n\n*   作者：Brittany Ellich，GitHub 软件工程师。\n    ![Brittany Ellich](https://avatars.githubusercontent.com/u/25957322?v=4&s=200)\n*   更多来自 GitHub 的资源：\n    *   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切。\n    *   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来。\n    *   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用 GitHub 的公司和工程团队。\n    *   ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) Enterprise content：专为您策划的高管见解。",
+      "shortSummary": "GitHub 计费团队利用 GitHub Copilot 的编码代理持续消除技术债务。传统技术债务管理效率低下，而 AI 代理能并行处理测试覆盖、依赖替换、代码标准化和死代码清理等任务。这并非取代工程师，而是增强其能力，让人类专注于架构和创新，AI 处理重复性工作。关键在于人机协作，工程师提供战略指导和彻底审查，AI 负责高效执行。通过有效提示和分块处理，团队能显著提升生产力，使软件更健康，并避免昂贵的系统重写。",
+      "translated_title": "GitHub 计费团队如何利用 GitHub Copilot 中的编码代理持续消除技术债务",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/25957322?v=4&s=200",
+          "alt": "Brittany Ellich",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Tech debt is a big problem that no one has time to solve. GitHub Copilot coding agent can help.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-the-github-billing-team-uses-the-coding-agent-in-github-copilot-to-continuously-burn-down-technical-debt/\">How the GitHub billing team uses the coding agent in GitHub Copilot to continuously burn down technical debt</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "GitHub 可用性报告：2025 年 5 月 (原标题: GitHub Availability Report: May 2025)",
+      "link": "https://github.blog/news-insights/company-news/github-availability-report-may-2025/",
+      "pubDate": "Wed, 11 Jun 2025 23:24:41 +0000",
+      "isoDate": "2025-06-11T23:24:41.000Z",
+      "creator": "Jakub Oleksy",
+      "summary": "# GitHub 2025 年 5 月可用性报告\n\nGitHub 在 2025 年 5 月经历了三次导致服务性能下降的事件。\n\n## 事件回顾\n\n### 1. 5 月 1 日事件：附件上传降级\n\n*   **时间：** 2025 年 5 月 1 日 22:09 UTC 至 23:13 UTC（持续 1 小时 4 分钟）。\n*   **受影响服务：** Issues 服务。\n*   **影响：** 用户无法上传附件，估计约 13 万用户受到影响约 45 分钟。\n*   **根本原因：** 新功能在所有客户端 HTTP 请求中添加了自定义头部，导致上传附件到提供商时出现 CORS 错误。\n*   **缓解措施：** 于 22:56 UTC 回滚了添加新头部的功能标志。\n*   **预防措施：** 正在添加新的监控指标，以确保客户端请求更改的安全推出。基于此次事件的经验，已部署了增强版功能，目前在生产环境中运行良好。\n\n### 2. 5 月 28 日事件：GitHub Actions 作业启动延迟\n\n*   **时间：** 2025 年 5 月 28 日约 09:45 UTC 至 14:45 UTC（持续 5 小时）。\n*   **受影响服务：** GitHub Actions，特别是使用 Ubuntu-24 标准托管运行器的公共仓库工作流。\n*   **影响：** 公共仓库中约 19.7% 的 Ubuntu-24 托管运行器作业出现延迟。其他托管运行器、自托管运行器和私有仓库工作流未受影响。\n*   **根本原因：** 故障转移后后端缓存行为配置错误，导致重复的作业分配，降低了受影响托管运行器池的整体容量。\n*   **缓解措施：** 配置问题于 12:45 UTC 修复。同时扩大了运行器池规模，以更快地处理积压的排队作业，直到 14:45 UTC 完全缓解排队影响。\n*   **预防措施：** 正在改进故障转移的弹性和验证，以降低未来发生类似问题的可能性。\n\n### 3. 5 月 30 日事件：Microsoft Teams GitHub 集成服务中断\n\n*   **时间：** 2025 年 5 月 30 日 08:10 UTC 至 16:00 UTC（持续 7 小时 50 分钟）。\n*   **受影响服务：** Microsoft Teams GitHub 集成服务。\n*   **影响：** 除链接预览外，所有功能均出现 100% 的错误率，集成服务无法处理用户请求或发送通知。\n*   **根本原因：** 下游身份验证提供商的身份验证问题。尽管有适当的监控，但警报阈值不够灵敏，导致事件检测和响应延迟。\n*   **缓解措施：** 团队与下游提供商密切合作诊断并解决了身份验证故障，恢复了服务功能。\n*   **预防措施：** 正在迁移到更持久的身份验证方法，以降低未来发生类似问题的风险。提供商响应时间超出预期也导致了此次中断的延长。\n\n## 更多信息\n\n*   请关注 [GitHub 状态页面](https://www.githubstatus.com/) 获取实时状态更新和事件后总结。\n*   访问 [GitHub 工程博客](https://github.blog/engineering/) 了解更多正在进行的工作。\n*   文章作者： ![Jakub Oleksy](https://avatars.githubusercontent.com/u/6147691?v=4&s=200)\n\n### 相关文章\n\n*   GitHub Copilot：认识新的编码代理\n*   实现功能从未如此简单：只需将任务或问题分配给 Copilot。它在后台与 GitHub Actions 一起运行，并将其工作作为拉取请求提交。\n\n### 探索更多 GitHub 内容\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**\n    掌握 GitHub 所需的一切，尽在一处。前往文档\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**\n    在 GitHub 上构建未来，这里是任何人、任何地点构建任何东西的地方。开始构建\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**\n    了解使用 GitHub 进行构建的公司和工程团队。了解更多\n*   ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) **企业内容**\n    为您精心策划的执行洞察。开始使用",
+      "shortSummary": "GitHub 在 2025 年 5 月报告了三起服务中断事件。5 月 1 日，Issues 服务因新功能导致附件上传降级，影响约 13 万用户。5 月 28 日，GitHub Actions 因后端缓存配置错误导致公共仓库作业启动延迟。5 月 30 日，Microsoft Teams GitHub 集成服务因下游身份验证问题完全中断，持续近 8 小时。GitHub 已采取措施修复并预防类似问题，包括回滚功能、改进故障转移弹性和迁移认证方法。",
+      "translated_title": "GitHub 可用性报告：2025 年 5 月",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/6147691?v=4&s=200",
+          "alt": "Jakub Oleksy",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
+          "alt": "Enterprise content",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>In May, we experienced three incidents that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-may-2025/\">GitHub Availability Report: May 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub工程师如何解决平台问题 (原标题: How GitHub engineers tackle platform problems)",
       "link": "https://github.blog/engineering/infrastructure/how-github-engineers-tackle-platform-problems/",
       "pubDate": "Tue, 10 Jun 2025 16:00:00 +0000",
@@ -354,33 +442,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Sharpen your skills, test out new tools, and connect with people who build like you.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-universe-2025-heres-whats-in-store-at-this-years-developer-wonderland/\">GitHub Universe 2025: Here’s what’s in store at this year’s developer wonderland</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "影响开源项目资助的4大趋势——以及它们对维护者的意义 (原标题: 4 trends shaping open source funding—and what they mean for maintainers)",
-      "link": "https://github.blog/open-source/maintainers/4-trends-shaping-open-source-funding-and-what-they-mean-for-maintainers/",
-      "pubDate": "Thu, 29 May 2025 16:00:00 +0000",
-      "isoDate": "2025-05-29T16:00:00.000Z",
-      "creator": "Jeimy Ruiz",
-      "summary": "# 影响开源项目资助的4大趋势——以及它们对维护者的意义\n\nGitHub专家团队分析了八个成功获得资助的开源项目，旨在为维护者和贡献者提供关于开源项目如何吸引赞助的见解。这些分析揭示了几个关键模式，有助于项目在不断发展的开源环境中脱颖而出。\n\n## 核心趋势概览\n\n分析显示，以下特点的项目更容易获得资助：\n\n*   **社区参与是成功的驱动力：** 拥有热情用户群体的项目，这些用户既重视维护者也重视项目本身。\n*   **解决特定痛点能建立强大的社区：** 以独特方式解决困难或小众问题的项目能为用户创造价值。\n*   **面向用户的工具和打包通常获得更多关注：** 开发者和用户日常交互的打包工具或“产品”更容易被看到。相比之下，作为这些工具基础的底层基础设施项目，尽管对生态系统至关重要，却可能难以获得关注和资助。\n*   **通过其他有价值的方式提供服务：** 通过支持合同、培训、会员资格或其他服务提供明确价值的项目。\n\n## 八个成功获得资助的开源项目案例分析\n\n1.  **Ladybird：开源网页浏览器**\n    *   **项目简介：** 由SerenityOS前维护者发起，GitHub联合创始人Chris Wanstrath资助。这是一个从零开始用C++/Swift构建的独立、跨平台网页浏览器，拥有自己的LibWeb渲染引擎和LibJS JavaScript引擎。其501(c)(3)非营利组织Ladybird Browser Initiative完全拒绝广告和搜索引擎版税，仅通过无限制捐赠获得资助。\n    *   **资助启示：** 这是一个价值观驱动资助的完美案例，它满足了用户对隐私、独立和道德技术的渴望。此外，项目受益于强大的“创始人效应”，知名开发者发起能更快吸引关注和资金。\n\n2.  **Neovim：激发奉献精神的编辑器**\n    *   **项目简介：** 2014年推出的经典Vim文本编辑器的现代化重构，旨在增强可扩展性、可维护性和用户体验。它引入了内置LSP支持、异步I/O和Lua脚本功能，同时保持与Vim大部分功能的兼容性。\n    *   **资助启示：** 开发者愿意为他们每天使用并已成为其身份一部分的工具付费。面向用户的工具通常比底层工具获得更多资助，因为它们更容易被用户记住和认同。\n\n3.  **RunAsUser：简化系统权限**\n    *   **项目简介：** Kelvin Tegelaar开发的PowerShell模块，允许在当前登录用户的安全上下文中启动进程，即使脚本本身以SYSTEM身份运行。这对于系统管理员和托管服务提供商常用的RMM工具、计划任务等自动化非常有用。\n    *   **资助启示：** 当项目为特定受众解决痛点时，他们更有可能提供资金支持。该项目通过简化Windows系统管理员的工作来提供价值，甚至能吸引来自企业预算的资助。\n\n4.  **Zig：日益受到关注的C语言替代品**\n    *   **项目简介：** 一种低级、基于LLVM的编程语言和工具链，旨在构建快速、小型、可靠的软件。它作为C语言的替代品，具有一流的交叉编译、C/C++互操作性以及内置的包和构建系统。\n    *   **资助启示：** 该项目主要通过草根开发者支持获得了大量赞助，而非企业资助。这表明，当个人开发者真正相信一个项目的价值时，他们的热情足以维持可观的财务支持。\n\n5.  **Yjs：实时协作**\n    *   **项目简介：** 一种高性能无冲突复制数据类型（CRDT）框架，能将任何数据结构转换为自动点对点协作模型。它允许多个对等方同时编辑同一文档（离线或在线），并通过任何传输方式高效同步更改并自动解决冲突。\n    *   **资助启示：** 解决了实时数据协作这一日益增长的需求（尤其在AI和ML领域）。项目通过解决一个困难的技术问题并提供清晰的支持路径（如优秀的文档、培训和入门资源）来吸引资助。\n\n6.  **Caddy：无忧的Web服务器**\n    *   **项目简介：** 一个现代化的开源Web服务器和反向代理（用Go编写），能自动为托管的每个站点配置和续订TLS和PKI证书。它具有模块化架构、JSON-API配置和跨平台二进制文件。\n    *   **资助启示：** 通过自动HTTPS简化了互联网安全。项目清晰地解释了资助需求，并在README中突出显示了赞助选项。良好的文档是促进资助转化的关键因素。\n\n7.  **Crystal (Graphile)：改进GraphQL + Postgres**\n    *   **项目简介：** Graphile的Crystal monorepo是一个强大的工具包，可将PostgreSQL数据库转换为动态、开发者友好的API。它包括PostGraphile（从数据库模式自动生成GraphQL API）和Grafast（优化数据获取和解析的执行引擎）。\n    *   **资助启示：** 如果项目能极大地简化一项困难的任务，它就更有可能获得关注和资助。特别是当它解决了广泛采用、对工作流程至关重要但难以实现的技术问题时。\n\n8.  **Vuetify：Vue开发者美观的UI组件**\n    *   **项目简介：** 一个强大的Vue.js UI库，通过手工制作的组件将Google的Material Design变为现实，提供大量即用型元素。\n    *   **资助启示：** (文章内容在此处截断，但可推断其成功在于为流行框架提供高质量、开箱即用的UI组件，从而解决开发者的痛点并提高生产力，进而吸引资助。)",
-      "shortSummary": "GitHub专家分析了8个成功获得资助的开源项目，总结出4个关键趋势：社区参与、解决特定痛点、面向用户的工具更受欢迎，以及通过支持/培训等提供额外价值。案例包括Ladybird（价值观驱动）、Neovim（日常工具）、RunAsUser（解决特定痛点）、Zig（草根支持）、Yjs（实时协作）、Caddy（简化安全）和Crystal（简化复杂技术）。这些项目通过满足用户需求、建立强大社区和提供清晰价值来吸引资助，为开源维护者提供了宝贵经验。",
-      "translated_title": "影响开源项目资助的4大趋势——以及它们对维护者的意义",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Get insights on the latest trends from GitHub experts while catching up on these exciting new projects.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/4-trends-shaping-open-source-funding-and-what-they-mean-for-maintainers/\">4 trends shaping open source funding—and what they mean for maintainers</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub 内部：我们如何强化 SAML 实现 (原标题: Inside GitHub: How we hardened our SAML implementation)",
-      "link": "https://github.blog/security/web-application-security/inside-github-how-we-hardened-our-saml-implementation/",
-      "pubDate": "Tue, 27 May 2025 16:00:00 +0000",
-      "isoDate": "2025-05-27T16:00:00.000Z",
-      "creator": "Greg Ose",
-      "summary": "## GitHub 内部：我们如何强化 SAML 实现\n\n### 引言与背景\n\n*   **SAML SSO 在 GitHub 的重要性**：自 2014 年 GitHub Enterprise Server 2.0.0 发布以来，GitHub 便开始提供基于 SAML（安全断言标记语言）的企业认证服务。SAML 单点登录（SSO）允许企业将其现有身份提供商与 GitHub 产品集成，扩展条件访问策略，并实现企业组织管理。\n*   **SAML 实现的复杂性与安全风险**：\n    *   SAML 2.0 规范定义了身份提供商和服务提供商之间如何进行认证和建立信任，涉及生成 SAML 元数据、发起认证请求以及最关键的——处理和验证来自身份提供商的 SAML 响应。\n    *   这些代码路径在安全上至关重要，任何漏洞都可能导致认证绕过或用户冒充。\n    *   涉及 XML 解析、密码学以及复杂的标准（如 XML Signature、XML Encryption 和 XML Schema）。\n    *   SAML 代码的攻击面非常广，用户（和潜在攻击者）浏览器中传递的数据可能被篡改。这种安全性关键性、复杂性和攻击面的结合，使得 SAML 实现的风险高于大多数代码。\n\n### 自研 SAML 实现的挑战\n\n*   **早期选择与持续投入**：2014 年推出 SAML 支持时，可用库很少。GitHub 在尝试 `ruby-saml` 后，决定创建自己的实现以更好地满足需求。多年来，GitHub 持续投入强化这些认证流程，包括与内部安全研究员和通过安全漏洞赏金计划合作，识别并修复漏洞。\n*   **现有问题的根源与重新思考的必要性**：尽管修复了许多漏洞，但由于根本原因的广度和复杂性，担忧依然存在。因此，GitHub 决定重新审视，以更可持续和整体的方式来保障其 SAML 实现的安全性。\n\n### 强化 SAML 实现的四大关键步骤\n\n为了在 SAML 这样复杂且高风险的技术中建立信任，GitHub 团队采取了以下四个关键步骤：\n\n1.  **重新评估库选择**：评估 `ruby-saml` 库并对其实现进行审计。\n2.  **通过 A/B 测试验证新库**：构建一个系统，安全地评估和观察 SAML 处理逻辑的变化。\n3.  **模式验证与最小化攻击面**：通过收紧模式验证来降低输入处理的复杂性。\n4.  **限制漏洞影响**：使用多个解析器来降低风险。（此部分在原文中未完全展开）\n\n### 步骤一：重新评估库选择\n\n*   **为何转向社区支持的 `ruby-saml`**：\n    *   GitHub 认识到转向一个拥有强大社区支持的库的优势，可以与更广泛的开发者共同贡献。\n    *   `ruby-saml` 库（由 Sixto Martín 维护）被许多关键 SaaS 产品使用，并通过 `omniauth-saml` 广泛采用。\n    *   该库近期有活跃的漏洞报告和修复，并通过 GitHub Advisory Database、CVEs 和 Dependabot 进行更新，与 GitHub 现有的漏洞管理流程良好集成。这是自研实现无法获得的优势。\n*   **对 `ruby-saml` 的安全审计与测试**：\n    *   尽管转向新库并非易事，GitHub 仍与漏洞赏金团队、产品安全团队和 GitHub 安全实验室合作，进行了一系列严格的验证和测试活动。\n    *   包括安全审计、深入的代码分析和应用程序安全测试，并邀请了经验丰富的漏洞赏金研究员（Hacktocats）和 GitHub 安全实验室的研究员参与。\n    *   这些工作识别了 `ruby-saml` 库中的关键漏洞，并指出了可以应用于库的整体强化领域，以消除某些类别的漏洞。\n    *   然而，GitHub 意识到仅凭一次性测试和审计不足以完全信任新库，因为底层代码路径过于复杂。\n\n### 步骤二：通过 A/B 测试验证新库\n\n*   **GitHub.com SAML 流量的巨大规模与测试需求**：GitHub.com 每天处理约一百万个 SAML 有效载荷，是其支持的最广泛使用的外部认证形式。任何更改都需要高度的审查和测试。\n*   **`Scientist` 工具的应用**：\n    *   为了在评估 `ruby-saml` 的同时保持 SAML 处理代码的稳定性，GitHub 使用了其开源工具 `Scientist`。\n    *   `Scientist` 允许同时执行“控制”（现有代码）和“候选”（新代码），比较结果并记录差异，同时始终以控制代码的结果为准，并隔离候选代码中的故障，从而安全地进行实验。\n*   **`Scientist` 在 SAML 响应验证中的具体实践**：\n    *   主要关注 SAML 响应验证（即 Assertion Consumer Service - ACS URL），这是大多数漏洞发生的地方。\n    *   **粒度化发布门控**：`Scientist` 提供基于百分比的流量控制，GitHub 还增加了额外的功能标志，确保可以先通过自己的测试账户，再引入实际客户流量。\n    *   **可观察性**：利用 GitHub 的自定义实验仪表，将指标发送到 Datadog，并添加补充日志以生成更细粒度的验证数据，帮助调试库之间的差异。\n    *   **幂等性**：确保实验不会修改 SAML 流程中跟踪的状态（如 CSRF 令牌）。\n*   **A/B 测试如何帮助建立信心**：\n    *   **识别配置差异**：例如，在 2024 年 9 月，日志显示约 3% 的不匹配是由 SAML 颁发者验证差异引起的。发现 `ruby-saml` 会针对空字符串验证颁发者，而 GitHub 历史上的实现如果值为空或未设置则会跳过验证。为了处理这种遗留情况，GitHub 进行了更改，阻止 `ruby-saml` 配置空或 null 的颁发者值，从而允许库跳过验证。\n    *   **覆盖边缘案例**：通过实验，GitHub 能够让所有流量通过 `ruby-saml` 运行，长时间观察其性能，这对于建立覆盖所有边缘案例的信心至关重要。\n    *   **识别安全相关后果**：通过识别不同实现处理某些输入时的差异，GitHub 能够调查这些差异是否具有安全相关后果，并主动识别新旧实现中的不正确行为。\n    *   **优化实现**：例如，发现 `ruby-saml` 拒绝包含多个 SAML 断言的响应，而 GitHub 的实现则更宽松，这促使 GitHub 意识到其原有实现“做得太多”。\n\n### 步骤三：模式验证与最小化攻击面\n\n在深入研究更严格的输入验证之前，需要了解构成输入的关键因素：\n\n1.  **内嵌 XML 签名与文档结构的关系**：\n    *   SAML 的关键组成部分是 XML 签名规范，它提供了一种签署和验证 SAML 数据完整性的方法。SAML 主要依赖内嵌 XML 签名，即签名本身嵌入在其所覆盖的元素内部。\n    *   验证过程涉及查找签名、提取值、提取引用和摘要、验证摘要，然后验证完整性。\n    *   **核心问题**：为了处理使元素内容合法化的签名，必须首先解析元素的内容。SAML 数据的完整性与其文档结构相关联，但该文档结构在验证方式中扮演着关键角色。这种结构与完整性之间令人不安的关系可能被利用，并已多次被利用，例如 XML 签名包装攻击。\n    *   SAML 库通常通过查询文档并拒绝意外或模糊的输入形状来处理此问题，但这仍然需要在验证真实性之前信任文档，因此任何小错误都可能成为攻击目标。\n2.  **宽松的 SAML 模式定义**：\n    *   SAML 响应必须符合 SAML 2.0 XML 模式定义（XSD）。XSD 文件用于定义 XML 的结构，创建发送方和接收方之间关于元素序列、数据类型和属性的契约。\n    *   （文章在此处截断）",
-      "shortSummary": "GitHub 强化其 SAML 单点登录（SSO）实现，以提升系统信任度。面对自研代码的复杂性和风险，团队决定转向社区支持的 `ruby-saml` 库。他们通过严格的安全审计和 A/B 测试（使用 `Scientist` 工具）验证新库，识别并解决了配置差异和边缘案例。此外，还通过加强模式验证来缩小攻击面，以应对 XML 签名和宽松 SAML 模式带来的安全挑战。这些措施显著提升了 SAML 认证的安全性与稳定性。",
-      "translated_title": "GitHub 内部：我们如何强化 SAML 实现",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Maintaining and developing complex and risky code is never easy. See how we addressed the challenges of securing our SAML implementation with this behind-the-scenes look at building trust in our systems.</p>\n<p>The post <a href=\"https://github.blog/security/web-application-security/inside-github-how-we-hardened-our-saml-implementation/\">Inside GitHub: How we hardened our SAML implementation</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-06-11T04:39:11.322Z"
+  "lastUpdated": "2025-06-13T04:38:59.352Z"
 }
