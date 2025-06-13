@@ -5,394 +5,409 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
-      "title": "研究人员证实两名记者遭到Paragon间谍软件攻击 (原标题: Researchers confirm two journalists were hacked with Paragon spyware)",
-      "link": "https://techcrunch.com/2025/06/12/researchers-confirm-two-journalists-were-hacked-with-paragon-spyware/",
-      "pubDate": "Thu, 12 Jun 2025 12:00:00 +0000",
-      "isoDate": "2025-06-12T12:00:00.000Z",
-      "creator": "Lorenzo Franceschi-Bicchierai",
-      "summary": "数字权利组织“公民实验室”（The Citizen Lab）发布了一份新报告，证实两名欧洲记者——意大利记者西罗·佩莱格里诺（Ciro Pellegrino）和一名未透露姓名的“知名”欧洲记者——的iPhone被以色列监控技术供应商Paragon制造的政府间谍软件攻击。\n\n*   **核心发现**\n    *   根据在两名记者设备上发现的证据，研究人员表示，这两名记者被同一Paragon客户攻击。\n    *   这是首次确认Paragon间谍软件感染案例，进一步加深了当前主要集中在意大利政府使用间谍软件上的丑闻，并可能扩展到其他欧洲国家。\n    *   佩莱格里诺此前收到苹果公司的通知，称其遭到雇佣兵间谍软件攻击，但未具体提及Paragon。公民实验室的法医调查证实了他的设备感染了Paragon的Graphite间谍软件。\n\n*   **背景与争议**\n    *   数月前，WhatsApp曾通知欧洲及其他地区约90名用户（包括记者）他们已成为Paragon间谍软件（Graphite）的目标。\n    *   意大利议会情报机构监督委员会COPASIR此前发布报告称，未发现佩莱格里诺的同事、Fanpage主任弗朗切斯科·坎切拉托（Francesco Cancellato）被间谍监视的证据，但证实意大利国内情报机构AISI和对外情报机构AISE是Paragon的客户。\n    *   公民实验室的新报告对COPASIR的结论提出了质疑。公民实验室高级研究员约翰·斯科特-雷尔顿（John Scott-Railton）指出，佩莱格里诺的案件增加了“谁用Paragon间谍软件攻击意大利记者？”这一重大且政治敏感的问题，并认为意大利政府有能力明确回答这些问题。\n    *   佩莱格里诺表示，他认为自己的公民权利被“践踏”，并质疑意大利总理梅洛尼（Meloni）作为一名职业记者，为何不对被监视的记者表示声援。\n    *   意大利政府此前否认与任何记者或人权活动家被攻击事件有关。公民实验室报告指出，佩莱格里诺和坎切拉托在同一媒体工作，可能表明他们是“目标群”的一部分。\n\n*   **技术细节**\n    *   未透露姓名的欧洲记者于2025年4月29日收到苹果通知，与佩莱格里诺收到的通知在同一天。\n    *   公民实验室分析发现，该记者的设备通过“针对iMessage的复杂零点击攻击”感染了Graphite间谍软件，攻击对受害者是不可见的。\n    *   苹果公司表示，这些攻击在iOS 18.3.1中已得到缓解，该版本于2025年2月10日发布。\n    *   公民实验室在佩莱格里诺的iPhone日志中也发现了相同的iMessage账户，鉴于政府客户通常拥有独立的间谍软件基础设施，这表明两人可能被同一Paragon操作员攻击。\n    *   未透露姓名的记者iPhone在2025年1月和2月初被感染。COPASIR报告称，Paragon及其意大利情报客户于2025年2月14日暂停了公司的监控系统，这意味着在未透露姓名的记者被攻击时，意大利情报机构AISI和AISE仍在继续使用Paragon的间谍软件。\n\n*   **其他受害者**\n    *   除佩莱格里诺和未透露姓名的记者外，另有两人被证实感染了Paragon间谍软件：卢卡·卡萨里尼（Luca Casarini）和贝佩·卡恰（Beppe Caccia），他们都为意大利非营利组织Mediterranea Saving Humans工作，该组织负责在地中海营救移民。COPASIR报告证实两人受到意大利情报机构的监视。\n    *   苏丹公民、非营利组织Refugees in Libya的联合创始人戴维·扬比奥（David Yambio）也收到了苹果通知。公民实验室发现其设备有间谍软件感染痕迹，但无法确定具体间谍软件制造商或政府。COPASIR称扬比奥被意大利情报机构合法监视，但并非使用Graphite，而是出于刑事调查。\n    *   与Mediterranea合作的牧师马蒂亚·费拉里（Mattia Ferrari）也收到了WhatsApp的间谍软件通知，但COPASIR未发现其被Graphite攻击的证据。\n\n*   **结论**\n    *   公民实验室目前尚未将佩莱格里诺和另一名未透露姓名的欧洲记者的攻击归因于任何特定政府。\n    *   公民实验室的法医和技术分析仍在进行中。",
-      "shortSummary": "数字权利组织“公民实验室”证实，两名欧洲记者——意大利记者西罗·佩莱格里诺和一名未透露姓名的记者——的iPhone被以色列Paragon公司的政府间谍软件“Graphite”攻击。这是首次确认Paragon间谍软件感染案例，加深了意大利政府间谍软件丑闻。攻击通过零点击iMessage漏洞进行，对受害者不可见。公民实验室的发现与意大利官方报告存在矛盾，并呼吁意大利政府就谁攻击了本国记者给出明确答复。",
-      "translated_title": "研究人员证实两名记者遭到Paragon间谍软件攻击",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The confirmation of two hacked victims further deepens an ongoing spyware scandal that, for now, appears largely focused on the Italian government."
-    },
-    {
-      "title": "Waymo打车费用高于优步或Lyft——但人们仍然愿意支付 (原标题: Waymo rides cost more than Uber or Lyft — and people are paying anyway)",
-      "link": "https://techcrunch.com/2025/06/12/waymo-rides-cost-more-than-uber-or-lyft-and-people-are-paying-anyway/",
-      "pubDate": "Thu, 12 Jun 2025 12:00:00 +0000",
-      "isoDate": "2025-06-12T12:00:00.000Z",
-      "creator": "Sean O'Kane",
-      "summary": "# Waymo打车服务定价分析\n\n## 引言\n机器人出租车（Robotaxis）的核心前提是，通过高使用率和降低劳动力成本，最终使其成为一种廉价的交通选择。然而，目前这远未实现。Obi是一款聚合实时打车服务价格和接驾时间的应用程序，其最新报告首次深入探讨了Waymo的定价策略。报告发现，Waymo的自动驾驶汽车服务始终比优步（Uber）和Lyft的同类服务更昂贵，但似乎并未影响其受欢迎程度。\n\n## 数据来源与方法\n这份独家分享给TechCrunch的报告，基于2024年3月25日至4月25日期间在旧金山收集的一个月数据。Obi从Waymo、Lyft的“标准”服务和UberX中提取了近9万条“报价记录”，以比较价格和预计到达时间（ETA），并对比了相同时间、相同路线的打车请求。\n\n## 核心发现一：Waymo费用更高\nObi发现，Lyft的平均价格最低，为14.44美元。优步次之，为15.58美元。而Waymo在一个月数据中的平均价格为20.43美元。\n\n![Waymo、Uber和Lyft的平均价格对比](https://techcrunch.com/wp-content/uploads/2025/06/Screenshot-2025-06-12-at-6.56.11AM.png?w=680)\n\nObi的首席营收官Ashwini Anburajan表示，考虑到Waymo服务早期的受欢迎程度，这一发现有些令人惊讶。Waymo在5月份表示，其在前四个城市每周提供25万次付费行程。显然，较高的定价并未减弱这种热情。Anburajan指出，虽然普遍认为自动驾驶汽车会取代司机工作，但讽刺的是，运营自动驾驶汽车实际上成本相当高昂，因此至少在短期内，这种情况不会发生。\n\n在高峰时段，Obi发现Waymo的平均价格比Lyft贵约11美元，比优步贵近9.50美元。Anburajan表示，她没想到消费者愿意多支付高达10美元。这“说明了人们对技术、新奇感以及有时更喜欢没有司机的汽车的真正热情和偏好。”\n\n## 核心发现二：Waymo定价波动性更大\nObi发现，Waymo不仅更贵，而且其定价的波动性也比优步或Lyft更大。Anburajan认为，一个解释是Waymo的定价模型不如优步和Lyft成熟。优步和Lyft有十多年的时间来完善其打车定价方式，它们的平台也更具动态性，司机可以根据自己的时间上下班，或完全加入或放弃零工工作。而Waymo的车辆供应基本固定但缓慢增长（尽管增长速度可能很快加快），这导致了Anburajan所说的更“纯粹的供需”定价方案。\n\n### 对客户的影响\n这种“纯粹的供需”定价对客户产生了两个主要影响：\n\n1.  **短途行程往往更贵：** Obi发现，如果行程距离在1.4公里以内，Waymo的打车费用约为每公里26美元。优步和Lyft的短途行程也存在类似情况，但Waymo最短途的行程分别比优步和Lyft高出41.48%和31.12%。随着行程距离的增加，这种差距会缩小。在4.3公里到9.3公里的行程中，Lyft每公里2.60美元，优步每公里2.90美元，Waymo每公里3.50美元。\n\n    ![不同距离行程的每公里价格对比](https://techcrunch.com/wp-content/uploads/2025/06/Screenshot-2025-06-12-at-6.55.00AM.png?w=680)\n\n2.  **等待时间越长，行程费用越高：** 毕竟，派一辆车长途接送客户意味着它将执行更少的高利润短途行程。Anburajan表示，尽管Obi发现Waymo的等待时间波动性更大，但这并未打消Waymo客户的热情。\n\n## 用户调查结果\n除了基于数据的深入分析，Obi还在洛杉矶、旧金山和凤凰城对乘客进行了调查，以更好地了解这些趋势背后的驱动因素。\n\n*   **对无人驾驶的偏好：** 70%的Waymo用户表示，他们更喜欢无人驾驶汽车，而不是传统的网约车或出租车。\n*   **安全顾虑：** 尽管用户热情高涨，但Obi发现安全仍然是乘客最关心的问题。74%的受访者表示安全是他们对机器人出租车最大的担忧。近70%的受访者认为应该对行程进行某种形式的远程人工监控（这已经是常见的做法）。\n*   **用户支付意愿：** 更令人惊讶的是，当被问及是否愿意为Waymo支付更多费用时：\n    *   近40%的人表示他们会支付“相同或更少”。\n    *   16.3%的人表示他们愿意每程多支付不到5美元。\n    *   另有10.1%的人表示他们愿意每程多支付5美元。\n    *   16.3%的人表示他们愿意每程多支付10美元。\n\nAnburajan表示，这些回应进一步解释了Waymo价格更高的原因。她认为，“独自待在车里”的感觉正在赢得客户。“它就像一个为你而设的小泡泡，让你从A点到B点，并且非常舒适。”",
-      "shortSummary": "Obi报告显示，Waymo打车服务费用高于优步和Lyft，平均价格为20.43美元，而Lyft和优步分别为14.44美元和15.58美元。尽管价格更高，Waymo仍非常受欢迎，用户愿意支付溢价，主要出于对技术的新奇感和无司机的偏好。Waymo的定价波动性更大，短途和等待时间长的行程费用更高。用户调查显示，多数人偏爱无人驾驶，但安全仍是主要顾虑，且部分用户愿为Waymo的独特体验支付更高费用。",
-      "translated_title": "Waymo打车费用高于优步或Lyft——但人们仍然愿意支付",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Screenshot-2025-06-12-at-6.56.11AM.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Screenshot-2025-06-12-at-6.55.00AM.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "A new analysis done by ride-hailing aggregator Obi shows Waymos cost more especially on shorter trips. They also have longer wait times."
-    },
-    {
-      "title": "Meta起诉AI‘裸体化’应用Crush AI在其平台投放广告 (原标题: Meta sues AI ‘nudify’ app Crush AI for advertising on its platforms)",
-      "link": "https://techcrunch.com/2025/06/12/meta-sues-ai-nudify-app-crush-ai-for-advertising-on-its-platforms/",
-      "pubDate": "Thu, 12 Jun 2025 10:00:00 +0000",
-      "isoDate": "2025-06-12T10:00:00.000Z",
-      "creator": "Maxwell Zeff",
-      "summary": "## Meta起诉AI“裸体化”应用Crush AI\n\nMeta已对流行的AI“裸体化”应用Crush AI的制造商提起诉讼，该应用据称在其平台投放了数千条广告。除了法律诉讼，Meta还表示正在采取新措施打击类似Crush AI的应用。\n\n### 诉讼背景\n\n*   **被告方：** Meta在香港起诉了Crush AI背后的实体Joy Timeline HK。\n*   **指控内容：** Meta声称Joy Timeline HK试图规避公司的审核流程，以分发AI“裸体化”服务的广告。尽管Meta反复删除其违反政策的广告，Joy Timeline HK仍继续投放。\n*   **Crush AI的功能：** 该应用利用生成式AI，未经真实人物同意，制作虚假的、具有性暗示的图片。\n\n### 违规行为的规模与策略\n\n*   **广告数量：** 据Faked Up新闻通讯的作者Alexios Mantzarlis称，Crush AI在2025年前两周内在Meta平台投放了超过8000条“AI脱衣”服务的广告。\n*   **流量来源：** Mantzarlis在1月份的报告中指出，Crush AI网站约90%的流量来自Facebook或Instagram。\n*   **规避手段：** Crush AI通过设立数十个广告账户并频繁更改域名来规避Meta的广告审核流程。许多广告账户被命名为“Eraser Annyone’s Clothes”加上不同的数字。Crush AI甚至一度拥有一个推广其服务的Facebook页面。\n\n### 行业普遍挑战\n\n*   **平台普遍性：** Facebook和Instagram并非唯一面临此类挑战的平台。X、Reddit等社交媒体公司在竞相将生成式AI添加到其应用的同时，也努力应对AI工具可能对用户（尤其是未成年人）造成不安全影响的问题。\n*   **链接激增：** 研究发现，2024年AI“脱衣”应用的链接在X和Reddit等平台激增，YouTube上也有数百万用户看到此类应用的广告。\n*   **清除难度：** Meta和TikTok已禁止AI“裸体化”应用的关键词搜索，但彻底清除这些服务仍具挑战。\n\n### Meta的应对措施\n\nMeta表示，除了法律行动，还在采取多方面措施应对这一问题：\n\n*   **技术创新：**\n    *   开发了新技术，即使广告本身不包含裸露内容，也能专门识别AI“裸体化”或“脱衣”服务广告。\n    *   现在使用匹配技术更快地发现和删除仿冒广告。\n    *   扩大了系统标记的术语、短语和表情符号列表。\n*   **网络打击：**\n    *   将传统用于打击不良行为者网络的方法应用于这些新的AI“裸体化”服务广告账户网络。\n    *   自2025年初以来，已成功捣毁了四个推广此类服务的独立网络。\n*   **行业合作：**\n    *   将通过Tech Coalition的Lantern项目（谷歌、Meta、Snap等公司为防止在线儿童性剥削而进行的集体努力）分享AI“裸体化”应用的信息。\n    *   自3月以来，已向该网络提供了3800多个独特的URL。\n*   **立法支持：**\n    *   将继续支持赋能家长监督和批准青少年应用下载的立法。\n    *   此前支持美国《Take It Down法案》，目前正与立法者合作实施该法案。",
-      "shortSummary": "Meta已起诉AI“裸体化”应用Crush AI，指控其通过规避手段在Meta平台投放数千条违规广告，生成未经同意的虚假色情图片。为应对这一普遍挑战，Meta正采取多项措施：包括法律诉讼、开发新技术识别违规广告、打击不良账户网络、通过行业合作分享信息，并支持相关立法以保护用户，特别是未成年人。",
-      "translated_title": "Meta起诉AI‘裸体化’应用Crush AI在其平台投放广告",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Meta has sued the maker of a popular AI \"nudify\" app, Crush AI, that reportedly ran thousands of ads across its platforms. "
-    },
-    {
-      "title": "Multiverse Computing 融资 2.15 亿美元，用于开发可大幅降低 AI 成本的技术 (原标题: Multiverse Computing raises $215M for tech that could radically lower AI costs)",
-      "link": "https://techcrunch.com/2025/06/12/multiverse-computing-raises-215m-for-tech-that-could-radically-slim-ai-costs/",
-      "pubDate": "Thu, 12 Jun 2025 09:00:00 +0000",
-      "isoDate": "2025-06-12T09:00:00.000Z",
+      "title": "在经历一系列成功后，早期基金Felicis再募得9亿美元 (原标题: After a string of successes, early-stage fund Felicis raises fresh $900M)",
+      "link": "https://techcrunch.com/2025/06/12/after-a-string-of-successes-early-stage-fund-felicis-raises-fresh-900m/",
+      "pubDate": "Thu, 12 Jun 2025 21:13:38 +0000",
+      "isoDate": "2025-06-12T21:13:38.000Z",
       "creator": "Julie Bort",
-      "summary": "Multiverse Computing 是一家西班牙初创公司，近日宣布完成了一轮高达 1.89 亿欧元（约合 2.15 亿美元）的 B 轮融资。此次融资主要得益于其名为“CompactifAI”的创新技术，该技术有望大幅降低人工智能的成本。\n\n### 核心技术：CompactifAI\n\n*   **技术原理**：CompactifAI 是一种受量子计算启发的压缩技术，能够在不影响模型性能的前提下，将大型语言模型（LLMs）的尺寸缩小高达 95%。\n*   **性能优势**：\n    *   Multiverse Computing 称其“精简版”模型比未压缩的同类模型速度快 4 到 12 倍。\n    *   这转化为推理成本降低 50% 到 80%。例如，其 Llama 4 Scout Slim 在 AWS 上的每百万 token 成本为 10 美分，而 Llama 4 Scout 则为 14 美分。\n*   **支持模型**：该公司主要提供知名开源 LLM 的压缩版本，包括 Llama 4 Scout、Llama 3.3 70B、Llama 3.1 8B 和 Mistral Small 3.1 等小型模型。他们计划很快发布 DeepSeek R1 的版本，并正在开发更多开源和推理模型。\n*   **不支持模型**：不兼容 OpenAI 等公司的专有模型。\n*   **可用性**：这些“精简版”模型可通过亚马逊网络服务（AWS）获取，也可授权用于本地部署。\n*   **应用潜力**：Multiverse 声称其部分模型可以做到非常小巧且节能，以至于可以在个人电脑、手机、汽车、无人机甚至树莓派等微型设备上运行。\n\n### 融资详情与投资者\n\n*   **融资额**：本次 B 轮融资达到 1.89 亿欧元（约合 2.15 亿美元）。\n*   **总融资额**：迄今为止，Multiverse Computing 已累计融资约 2.5 亿美元。\n*   **领投方**：本轮融资由 Bullhound Capital 领投，该公司曾投资过 Spotify、Revolut、DeliveryHero、Avito 和 Discord 等知名企业。\n*   **其他参与方**：HP Tech Ventures、SETT、Forgepoint Capital International、CDP Venture Capital、Santander Climate VC、Toshiba 和 Capital Riesgo de Euskadi – Grupo SPR 也参与了本轮融资。\n\n### 公司背景与成就\n\n*   **创始人**：\n    *   **首席技术官 (CTO)**：Román Orús，西班牙圣塞巴斯蒂安多诺斯蒂亚国际物理中心教授。他以在张量网络（一种模仿量子计算机但在普通计算机上运行的计算工具，主要用于深度学习模型压缩）方面的开创性工作而闻名。\n    *   **首席执行官 (CEO)**：Enrique Lizaso Olmos，拥有多个数学学位，曾是大学教授，职业生涯大部分时间在银行业度过，曾任 Unnim 银行副首席执行官。\n*   **知识产权与客户**：Multiverse Computing 拥有 160 项专利，在全球拥有 100 家客户，其中包括 Iberdrola、博世（Bosch）和加拿大银行。",
-      "shortSummary": "Multiverse Computing 成功完成 2.15 亿美元 B 轮融资，用于推广其“CompactifAI”技术。该技术通过受量子计算启发的压缩算法，能将大型语言模型（LLMs）尺寸缩小高达 95%，同时保持性能。这使得 AI 推理成本降低 50%-80%，速度提升 4-12 倍，并能让 LLMs 在小型设备上运行。公司专注于开源模型，已累计融资约 2.5 亿美元，并拥有 160 项专利和 100 家全球客户。",
-      "translated_title": "Multiverse Computing 融资 2.15 亿美元，用于开发可大幅降低 AI 成本的技术",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Spanish startup Multiverse Computing said it raised an enormous Series B round on the strength of a technology it calls “CompactifAI.”"
-    },
-    {
-      "title": "二十年坚守：致TechCrunch的一封情书 (原标题: Twenty years strong: a love letter to TechCrunch)",
-      "link": "https://techcrunch.com/2025/06/11/twenty-years-strong-a-love-letter-to-techcrunch/",
-      "pubDate": "Thu, 12 Jun 2025 06:00:12 +0000",
-      "isoDate": "2025-06-12T06:00:12.000Z",
-      "creator": "Connie Loizos",
-      "summary": "### TechCrunch二十载坚韧：一封情书\n\n这篇文章是TechCrunch主编兼总经理Loizos为庆祝TechCrunch成立20周年而撰写的一封“情书”，回顾了其在TechCrunch十年间的经历，并赞扬了公司的独特文化、广泛影响和坚韧不拔的精神。\n\n*   **独特的企业文化与团队精神**\n    *   作者在TechCrunch工作十年，称这是她职业生涯中最好的工作，时间飞逝。\n    *   TechCrunch拥有独特的文化：反传统、聪明、幽默、勤奋。\n    *   团队成员身兼数职，对一切充满好奇，对品牌和彼此都投入了极大的热情。\n    *   挑战传统智慧不仅受到鼓励，更是被期待的行为。\n\n*   **广泛的报道范围与深远的影响力**\n    *   **深度访谈：** 作者个人采访了众多杰出人物，包括Sam Altman、Marc Andreessen、Lina Khan、Conan O’Brien、Al Gore、芬兰总理Sanna Marin，以及国防科技、消费巨头和数十亿美元软件公司的创始人。\n    *   **全球足迹：** TechCrunch的报道足迹遍布全球，从里斯本、伦敦、柏林、巴塞罗那、巴黎、达沃斯等欧洲城市，到拉各斯、内罗毕、香港、杭州等亚洲和非洲城市。\n    *   **行业洞察：** 通过这些对话和全球报道，TechCrunch向读者解释了科技、政策和人类抱负如何相互交织，塑造着世界。\n    *   **见证兴衰：** 他们见证了行业的诞生、成熟与衰落，观察了两人的初创公司成长为万亿美元巨头，报道了商业创新和改变一切的突破，也揭露了名不副实的“突破”。\n    *   **持续关注：** 近期，TechCrunch采访了希腊总理和旧金山市长，并报道了涉及知名风险投资家、初创公司创始人和大型科技公司的重要新闻。作者自信地表示，TechCrunch在交通、初创企业、网络安全和人工智能领域的报道能力首屈一指。\n\n*   **媒体行业的坚韧与使命**\n    *   尽管媒体行业面临挑战，但TechCrunch依然坚守阵地，打破重要新闻，追究权力责任，并在其他人发现之前找到下一个大事件。\n    *   文章感谢创始人Michael Arrington创造了这个远超所有人想象的品牌，也感谢包括Regent在内的历任母公司提供的支持。\n    *   尽管所有权几经变更，但TechCrunch“在噪音中寻找信号，讲述重要故事”的核心使命始终未变。\n\n*   **展望未来与致谢**\n    *   文章展望未来二十年，TechCrunch将继续提出尖锐问题，帮助读者洞察先机，并与优秀的同事并肩作战。\n    *   作者向所有为TechCrunch做出贡献的人表示感谢，包括作者、编辑、消息来源、读者、与会者、演讲者、评论家和支持者。正是他们，让TechCrunch成为了一个致力于理解未来、坚信科技能让世界变得更好、并信任其指出不足之处的平台。\n\n*   **作者背景**\n    *   文章末尾简要介绍了作者Loizos的背景，她自90年代末开始报道硅谷，曾任TechCrunch硅谷编辑，并于2023年9月被任命为主编兼总经理。她还是StrictlyVC的创始人，该品牌现已成为TechCrunch的子品牌。",
-      "shortSummary": "TechCrunch迎来20周年，主编Loizos撰文回顾其十年历程，赞扬了公司独特的反传统文化、全球化的报道范围和对科技行业的深刻洞察。尽管媒体行业艰难，TechCrunch始终坚守“在噪音中寻找信号，讲述重要故事”的使命，持续报道重要新闻，追究权力责任，并发现下一个大事件。文章感谢所有贡献者，展望未来，TechCrunch将继续作为理解科技发展、推动行业进步的关键平台。",
-      "translated_title": "二十年坚守：致TechCrunch的一封情书",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Here’s to the perspective that twenty years gives you, and to twenty more years of asking hard questions, helping readers see around corners, and working with people who make even the roughest days worth it.  "
-    },
-    {
-      "title": "苹果借助ChatGPT提升Image Playground (原标题: Apple is salvaging Image Playground with a boost from ChatGPT)",
-      "link": "https://techcrunch.com/2025/06/11/apple-is-salvaging-image-playground-with-a-boost-from-chatgpt/",
-      "pubDate": "Wed, 11 Jun 2025 21:03:17 +0000",
-      "isoDate": "2025-06-11T21:03:17.000Z",
-      "creator": "Aisha Malik",
-      "summary": "### 苹果Image Playground的现状与ChatGPT加持\n\n苹果公司去年推出的图像生成应用Image Playground最初并未获得广泛好评。用户普遍对其功能限制和生成图像质量低下表示失望，例如有用户反映应用生成了六指的手，或无法生成“老人”或“花朵”等简单描述的图像。许多人认为它与市面上流行的AI图像生成器相比显得幼稚，甚至质疑其存在的意义。\n\n#### 通过ChatGPT集成进行改进\n\n在今年的WWDC大会上，苹果宣布将通过集成ChatGPT来提升Image Playground。这一举措旨在提供更先进的AI图像生成服务，从而挽救该应用并吸引更多用户。通过ChatGPT的加持，用户将能体验到以下显著改进：\n\n*   **更多图像风格**：Image Playground将不再局限于其标志性的表情符号式创作。新的风格包括：\n    *   油画（Oil Painting）\n    *   水彩（Watercolor）\n    *   矢量（Vector）\n    *   动漫（Anime）\n    *   印刷（Print）\n*   **“任意风格”选项**：用户可以选择“Any Style”选项，以便更精确地描述他们想要的图像效果。\n*   **风格标识**：这些新风格将显示在标有“ChatGPT style”的横幅下。\n\n此前，Image Playground仅限于动画（Animation）、插画（Illustration）、素描（Sketch）和Genmoji风格。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/06/apple-image-playground.png?w=551)\n\n#### 技术实现与隐私保护\n\n苹果表示，Image Playground将把用户的描述发送给ChatGPT以生成图像。同时，苹果强调，未经用户许可，不会与ChatGPT共享任何信息，以确保用户隐私。\n\n#### 苹果的战略考量\n\n苹果将ChatGPT集成到Image Playground中，旨在为这款应用提供第二次机会，使其成为一个更全面的竞争对手，与市场上其他免费的AI图像生成应用抗衡。此举也符合苹果利用OpenAI工具的整体战略。此前，苹果已将ChatGPT集成到Siri和其他第一方应用及操作系统功能中：\n\n*   **Siri集成**：当Siri无法回答问题或用户明确要求时，Siri会利用ChatGPT来提供答案。\n*   **系统级写作工具**：ChatGPT也被集成到写作工具中，允许用户在备忘录（Notes）和邮件（Mail）等应用中生成、重写和总结文本。\n\n更新后的Image Playground应用预计将于今年秋季随iOS 26一同发布。",
-      "shortSummary": "苹果公司正通过集成ChatGPT来改进其图像生成应用Image Playground。该应用最初因质量和功能限制而受到批评。新的ChatGPT集成将为Image Playground带来油画、水彩、动漫等多种新风格，并提供“任意风格”选项，显著提升图像生成质量。此举是苹果更广泛地将ChatGPT整合到其生态系统（如Siri和写作工具）的一部分。更新后的Image Playground预计将于今年秋季随iOS 26发布。",
-      "translated_title": "苹果借助ChatGPT提升Image Playground",
+      "summary": "# 早期基金Felicis成功募得9亿美元新基金\n\n## Felicis再创纪录，推出史上最大基金\n早期基金Felicis的创始人Aydin Senkut正值其作为机构早期投资者20周年之际，宣布公司已成功募得其迄今为止最大的一笔基金——规模达9亿美元的“基金X”（Fund X）。\n\n![Aydin Senkut](https://techcrunch.com/wp-content/uploads/2022/06/Aydin-Senkut.jpg?w=1024)\n*图片来源：Felicis*\n\n![Julie Bort](https://secure.gravatar.com/avatar/c547babb262b4c91487b1052aac029b1?s=265&d=blank&r=g)\n\n## 基金募集历程\n此次9亿美元的基金X是Felicis在过去几年中连续成功募资的最新成果：\n*   2023年，募得8.25亿美元的“基金IX”（Fund IX）。\n*   2021年，募得6亿美元的“基金XIII”（Fund XIII）。\n\n## 卓越的投资业绩\nFelicis作为一家专注于种子轮和A轮投资的机构，以其成功投资一系列知名公司而闻名，其中包括：\n*   Ayden\n*   Bonobos\n*   Ring\n*   Shopify\n*   Twitch\n\n自2006年成立以来，Felicis声称已支持了超过50家独角兽公司，并实现了超过125次成功退出。\n\n## 聚焦人工智能领域\n近期，Felicis与大多数风险投资公司一样，将重心放在了人工智能（AI）领域。其投资组合中目前包含多个人工智能相关项目，例如：\n*   Browser Use\n*   Poolside\n*   Runway\n*   Supabase\n\nFelicis在其博客文章中表示：“我们相信，本十年将涌现数十家市值超过1000亿美元的人工智能公司（而不仅仅是10亿或100亿美元）。”该公司还指出，其活跃投资组合中，有70%被认为是“AI原生”的初创公司。",
+      "shortSummary": "早期基金Felicis宣布成功募得其迄今最大基金“基金X”，规模达9亿美元。这是继2023年8.25亿美元和2021年6亿美元基金后的又一里程碑。Felicis自2006年成立以来，已支持超过50家独角兽公司并实现125次退出，包括Shopify和Twitch。目前，公司正积极布局AI领域，其活跃投资组合中70%为AI原生初创公司，坚信未来将涌现大量千亿美元级AI公司。创始人Aydin Senkut也迎来了其20年的投资生涯。",
+      "translated_title": "在经历一系列成功后，早期基金Felicis再募得9亿美元",
       "images": [
         {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/apple-image-playground.png?w=551",
+          "url": "https://techcrunch.com/wp-content/uploads/2022/06/Aydin-Senkut.jpg?w=1024",
+          "alt": "Aydin Senkut",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://secure.gravatar.com/avatar/c547babb262b4c91487b1052aac029b1?s=265&d=blank&r=g",
+          "alt": "Julie Bort",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Lately, Felicis, like most VCs, has been all over AI. Its portfolio now includes, for example, Browser Use, Poolside, Runway, and Supabase."
+    },
+    {
+      "title": "Meta AI 应用是隐私灾难 (原标题: The Meta AI app is a privacy disaster)",
+      "link": "https://techcrunch.com/2025/06/12/the-meta-ai-app-is-a-privacy-disaster/",
+      "pubDate": "Thu, 12 Jun 2025 20:49:02 +0000",
+      "isoDate": "2025-06-12T20:49:02.000Z",
+      "creator": "Amanda Silberling",
+      "summary": "## Meta AI 应用：一场隐私灾难\n\nMeta AI 应用被指存在严重的隐私问题，其核心在于用户与聊天机器人的“私人”对话被公开分享，而许多用户对此毫不知情。\n\n### 核心问题：私人对话被公开\n\n当用户向 Meta AI 提问时，可以选择点击一个“分享”按钮，这会引导用户进入一个预览界面，然后可以将内容发布出去。然而，许多用户似乎并未意识到他们正在将这些文本对话、音频片段和图片公开分享给全世界。\n\n### 泄露的敏感信息示例\n\n文章指出，在 Meta AI 应用上已经出现了大量敏感信息的公开，包括但不限于：\n\n*   **个人健康问题：** 例如，关于“为什么有些屁比其他屁更臭”的询问，以及关于大腿内侧红疹的查询。\n*   **非法活动咨询：** 有人寻求逃税帮助，询问家人是否会因与白领犯罪的接近而被捕，或者如何为面临法律困境的员工撰写品格推荐信，甚至包含了该员工的姓名。\n*   **个人身份信息：** 安全专家 Rachel Tobac 发现了人们的家庭住址和敏感的法院细节等私人信息。\n*   **不当内容：** 还有用户询问如何约会“大屁股女人”，甚至有人试图发布自己的电话号码以寻求约会。\n\n### Meta 的不足与设计缺陷\n\n*   **隐私设置不明确：** Meta 在用户发布内容时没有明确指示其隐私设置，也没有告知用户内容将发布到何处。\n*   **账户关联问题：** 如果用户使用公开的 Instagram 账户登录 Meta AI，那么他们在 AI 上的搜索内容也会随之公开。\n*   **缺乏预见性：** 文章批评 Meta 在发布应用时，未能预见到公开用户与 AI 对话会带来严重问题，或认为人们会希望看到彼此的 AI 对话，这被认为是“疯狂的想法”。\n\n### 历史教训与潜在风险\n\n*   **与 Google 和 AOL 的对比：** 文章指出，Google 从未尝试将其搜索引擎变成社交媒体，而 AOL 在2006年公开匿名用户搜索的事件也以失败告终，这表明将私人搜索内容公开是一种灾难的“配方”。\n*   **应用现状：** 尽管 Meta AI 应用自4月29日发布以来已下载650万次，但对于像 Meta 这样投资数十亿美元的公司来说，这并非一个令人印象深刻的数字。\n*   **病毒式传播和恶意信息：** 随着时间的推移，应用上出现了越来越多明显的恶意信息（trolling），例如有人分享简历寻求网络安全工作，或询问如何制作水瓶烟枪，这可能导致“病毒式混乱”。\n\n### 结论\n\nMeta AI 应用的设计导致了严重的隐私泄露风险，使用户的敏感私人信息在不知情的情况下被公开，这被形容为一场“隐私灾难”。",
+      "shortSummary": "Meta AI 应用因允许用户与聊天机器人的私人对话被公开分享而引发严重隐私问题。许多用户在不知情的情况下，将包括健康问题、非法咨询、个人身份和地址等敏感信息泄露。Meta 未明确告知用户隐私设置，且其设计被批评为隐私灾难，与历史教训背道而驰。该应用可能导致大量私人数据曝光，引发混乱和恶意利用。",
+      "translated_title": "Meta AI 应用是隐私灾难",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/IMG_1930.jpg",
+          "alt": "Three screenshots from the Meta AI app -- the first shows a user prompting to see Mark Zuckerberg with a pregnant belly marrying a bug, the second shows a query about what to do if you have red bumps on your inner thigh, and the third is a prompt for Goku celebrating Russia day.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/IMG_1921.jpg",
+          "alt": "Three screenshots of Meta AI posts. One shows a conversation in which the user is asking Meta to post his phone number on Facebook groups to seek women to date. The second shows someone asking Meta to help write a character letter for an employee. The third shows an AI generated image of Mario in a court room and says \"super mario divorce.\"",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Meta does not indicate to users what their privacy settings are as they post, or where they are even posting to. So, if you log into Meta AI with Instagram, and your Instagram account is public, then so too are your searches."
+    },
+    {
+      "title": "对 Bluesky 的反弹误解了其本质 (原标题: Bluesky backlash misses the point)",
+      "link": "https://techcrunch.com/2025/06/12/bluesky-backlash-misses-the-point/",
+      "pubDate": "Thu, 12 Jun 2025 20:27:19 +0000",
+      "isoDate": "2025-06-12T20:27:19.000Z",
+      "creator": "Sarah Perez",
+      "summary": "### 对 Bluesky 的误解\n\n最近，Bluesky 面临一系列质疑和批评，包括增长放缓、网络是否已成为左倾回音室、用户是否缺乏幽默感等。投资者马克·库班（Mark Cuban）抱怨 Bluesky 上的回复变得充满仇恨，迫使用户返回 X。X 的所有者埃隆·马斯克（Elon Musk）和首席执行官琳达·亚卡里诺（Linda Yaccarino）也借机抨击 Bluesky。\n\n这些争议的根源在于 Bluesky 未能有效向公众解释其网络远不止其自身的 Bluesky 社交应用。目前，Bluesky 品牌被普遍认为是 X 的自由左翼替代品，这虽然不完全准确，但若不加以纠正，可能阻碍其进一步发展。\n\n#### Bluesky 的用户构成与刻板印象\n\nBluesky 的许多早期用户确实是因不满马斯克对 X 的新所有权及其右翼转向而离开 X 的。在美国 11 月大选后，随着 X 用户大量涌入，Bluesky 的用户数量迅速增长，从 9 月的 900 万增至 11 月中旬的近 1500 万，几天后达到 2000 万，并持续增长。如今，Bluesky 拥有超过 3650 万注册用户。巴拉克·奥巴马和希拉里·克林顿等民主党高层的加入，也使得网络上的新闻和政治讨论占据主导地位，从而定义了网络的基调。\n\n#### Bluesky 的真正潜力：AT Protocol 生态系统\n\n当前叙事中缺失的关键点是，Bluesky 的社交应用仅仅是 AT Protocol 广泛生态系统中的一个示例。如果用户不喜欢 Bluesky 上热门话题的基调，他们可以：\n\n*   **切换到其他应用：** 在 AT Protocol 上有多种应用可供选择。\n*   **更改默认信息流：** 用户可以自定义其信息流，以关注特定内容。\n*   **构建自己的社交平台：** 利用 AT Protocol 技术，用户可以创建自己的社交体验。\n\n**多样化的应用示例：**\n\n*   **特定社群应用：** 例如，Blacksky 专为黑人在线社区服务，Gander Social 则面向加拿大社交媒体用户。\n*   **自定义信息流构建器：** Graze 和 Surf 等工具允许用户创建自定义信息流，专注于他们关心的特定内容（如视频游戏或棒球），并排除其他内容（如政治）。\n*   **内置工具：** Bluesky（及其他第三方客户端）内置了工具，让用户可以选择默认信息流，并从各种主题中添加感兴趣的信息流，例如关注他们最喜欢的电视节目或动物。\n\n这意味着 Bluesky 旨在成为用户所塑造的样子，其内容可以以用户偏好的任何格式消费。\n\n除了 Bluesky 本身，AT Protocol 上构建的更广泛应用网络还包括：\n\n*   图片和视频分享应用\n*   直播工具\n*   通讯应用\n*   博客应用\n*   音乐应用\n*   电影和电视推荐应用等\n\n![Flipboard app](https://techcrunch.com/wp-content/uploads/2024/12/Surf.png?w=680)\n图片来源：Flipboard/Surf\n\n其他工具还允许用户将 Bluesky 的信息流与其他社交网络结合。例如，Openvibe 可以混合来自 Threads、Bluesky、Mastodon 和 Nostr 等社交网络的信息流。Surf 和 Tapestry 等应用则可以追踪开放社交平台以及其他开放协议（如 RSS）发布的内容，从而从博客、新闻网站、YouTube 和播客中获取内容。\n\n![图片 2](https://techcrunch.com/wp-content/uploads/2024/07/openvibe-08.png?w=680)\n图片来源：Openvibe\n\n尽管 Bluesky 团队可能不直接构建这些其他社交体验和工具，但突出和推广这个更广泛、互联的社交网络的存在，将有助于提升 Bluesky 的品牌形象。这不仅表明 Bluesky 不仅仅是 Twitter/X 的替代品，更重要的是，它只是一个基于开放技术构建的更广阔社交生态系统中的一个应用，而这远比仅仅构建另一个 X 更有意义。",
+      "shortSummary": "Bluesky正面临增长放缓和被视为左倾回音室的批评，主要因其未能有效解释其AT Protocol网络远超单一社交应用。文章指出，Bluesky的社交应用仅是该开放协议生态系统的一个示例，用户可选择不同应用、自定义信息流或构建自己的平台，以适应多样化的内容和社区需求。Bluesky应强调其作为开放技术生态系统一部分的身份，而非仅作为X的替代品。",
+      "translated_title": "对 Bluesky 的反弹误解了其本质",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2024/12/Surf.png?w=680",
+          "alt": "Flipboard app",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2024/07/openvibe-08.png?w=680",
           "alt": "",
           "title": "",
-          "position": 1
+          "position": 2
         }
       ],
       "contentSource": "完整文章",
-      "content": "With the new ChatGPT integration, users will be able to access more styles that move beyond the emoji-like creations that Image Playground has become known for."
+      "content": "Not only is Bluesky more than just a Twitter/X alternative, it's just one app in a wider social ecosystem built on open technology."
     },
     {
-      "title": "欧洲，我们不会离开。就这样。 (原标题: Europe, we’re not leaving. Period.)",
-      "link": "https://techcrunch.com/2025/06/11/europe-were-not-leaving-period/",
-      "pubDate": "Wed, 11 Jun 2025 20:45:14 +0000",
-      "isoDate": "2025-06-11T20:45:14.000Z",
-      "creator": "Michael Reinstein",
-      "summary": "# TechCrunch：我们不会离开欧洲，而是加倍投入\n\n近期有传言称TechCrunch将“撤出欧洲”并停止对欧洲初创公司的报道，但文章明确指出这些说法完全错误。TechCrunch的近期调整并非撤退，而是为了“重新调整和强化”其全球战略。\n\n## 新的合作与全球愿景\n*   **与Foundry的合作**：TechCrunch与姊妹公司Foundry（旗下拥有PCWorld、Macworld、CIO和TechAdvisor等知名品牌）合并所有权，旨在创建一个具有无与伦比全球覆盖范围的科技媒体实体。\n*   **强化全球报道**：新所有权的目标是整合TechCrunch和Foundry的优势，打造一个更强大、更注重全球的媒体平台，而非削弱国际报道。\n\n## 欧洲的重要性\n*   **科技创新中心**：欧洲是金融科技法规重塑、量子初创公司涌现、气候科技试点成为全球标准的重要区域。\n*   **巨大投资**：仅在2024年，欧洲创始人就筹集了超过400亿欧元；许多TechCrunch去年报道的独角兽企业都诞生于欧洲。\n*   **战略要地**：文章强调，如果关注科技的未来，就必须关注欧洲。\n\n## 对欧洲的承诺\nTechCrunch承诺将TechCrunch和Foundry的优势整合，为欧洲及其他地区的创始人、投资者和读者提供：\n*   **彻底的在场**：将亲身参与欧洲各地的活动，从塔林的演示日到巴斯克地区的氢能中心揭幕，因为亲身经历才能发现真实的故事。\n*   **不懈的审视**：将持续提出尖锐问题，深入挖掘真实故事，揭露炒作。\n*   **真正的全球扩音器**：通过整合TechCrunch和Foundry的网络，将欧洲的创新成果放大，传播给190多个国家的数百万读者，提供更深入的洞察和真正统一的全球视野。\n\n## 呼吁与结论\n文章鼓励初创社区继续分享信息、投资意向书和反馈。TechCrunch表示，他们将比以往任何时候都更广泛、更响亮地倾听。\n\n**结论**：TechCrunch并非撤离欧洲，而是选择“加倍投入”。\n\n![TC Podcast Logo](https://techcrunch.com/wp-content/uploads/2022/05/TC-Pod-feature.jpg?w=1024)\nImage Credits: TechCrunch",
-      "shortSummary": "TechCrunch驳斥了其将撤出欧洲的传言，强调近期调整是为强化全球战略。通过与Foundry合并，TechCrunch旨在创建更强大的全球科技媒体平台。欧洲是重要的科技创新中心，TechCrunch承诺将加倍投入，提供更深入的本地报道、严格审视，并利用其全球网络放大欧洲创新。他们将继续积极关注并报道欧洲科技生态系统。",
-      "translated_title": "欧洲，我们不会离开。就这样。",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2022/05/TC-Pod-feature.jpg?w=1024",
-          "alt": "TC Podcast Logo",
-          "title": "",
-          "position": 1
-        }
-      ],
+      "title": "Meta与XGS Energy合作建设150兆瓦地热发电厂 (原标题: Meta teams with XGS Energy to build a 150 MW geothermal power plant)",
+      "link": "https://techcrunch.com/2025/06/12/meta-teams-with-xgs-energy-to-build-a-150-mw-geothermal-power-plant/",
+      "pubDate": "Thu, 12 Jun 2025 20:00:00 +0000",
+      "isoDate": "2025-06-12T20:00:00.000Z",
+      "creator": "Tim De Chant",
+      "summary": "Meta与XGS Energy合作开发地热能\n\n*   **合作概况**：\n    *   Meta宣布与初创公司XGS Energy达成协议，将在新墨西哥州开发一个150兆瓦的地热发电厂。\n    *   XGS Energy尚未公布具体建设地点，Meta也未透露交易细节，仅表示这不是一份购电合同，而是“推进该州地热能源开发”的协议。\n\n*   **地热能的吸引力**：\n    *   近期，科技公司、数据中心开发商和投资者对地热技术兴趣渐浓。\n    *   地热能能够全天候发电且不产生排放，这对超大规模企业（hyperscalers）极具吸引力。\n    *   Rhodium Group研究显示，到2030年，先进地热技术（钻探更深以获取更热岩石）在美国可产生的电力，足以满足近三分之二的新数据中心需求。\n\n*   **XGS Energy的独特技术**：\n    *   许多地热初创公司采用开环设计，即通过一口井注入水，使其流经岩石裂缝，再从另一口井提取，这种方式会造成部分水流失。\n    *   XGS Energy则采用闭环系统，水在密封井内的闭环中流动，最大限度地减少了水损失。\n    *   此外，XGS Energy还在井套管外部注入专有泥浆，以帮助将更多热量从岩石传递到循环回路中。\n\n*   **地热行业近期动态**：\n    *   Meta与XGS Energy的合作是地热初创公司近期一系列交易中的最新一例。\n    *   Fervo Energy于周三获得2.06亿美元融资，用于继续建设其Cape Station发电厂，该电厂建成后将成为全球最大的地热发电厂。Fervo Energy的强劲势头引发了其可能最早于明年上市的猜测。\n    *   今年4月，Google宣布从Baseload Capital购买10兆瓦地热电力，为其在台湾的运营供电。\n    *   Google还与Fervo Energy达成协议，为其内华达州的数据中心供电。\n    *   XGS Energy去年完成了2000万美元的A轮融资，用于在加利福尼亚州开发商业规模的原型。\n\n*   **作者简介**：\n    *   文章作者Tim De Chant是TechCrunch的高级气候记者。\n    *   他曾为Wired杂志、Chicago Tribune、Ars Technica、The Wire China和NOVA Next等众多出版物撰稿，并曾是NOVA Next的创始编辑。\n    *   De Chant还是麻省理工学院科学写作研究生项目的讲师，并于2018年获得麻省理工学院奈特科学新闻奖学金，期间研究气候技术并探索新闻业的新商业模式。\n    *   他拥有加州大学伯克利分校环境科学、政策与管理博士学位，以及圣奥拉夫学院环境研究、英语和生物学学士学位。",
+      "shortSummary": "Meta与XGS Energy达成协议，将在新墨西哥州开发一个150兆瓦的地热发电厂。地热能因其全天候、无排放的特点，正受到科技公司的青睐。XGS Energy采用独特的闭环系统以减少水损失。此举是地热行业近期一系列投资中的最新进展，Google等其他科技巨头也已投资地热项目，显示出该领域日益增长的吸引力。",
+      "translated_title": "Meta与XGS Energy合作建设150兆瓦地热发电厂",
+      "images": [],
       "contentSource": "完整文章",
-      "content": "There are some headlines making the rounds claiming that TechCrunch is “pulling out of Europe” and shuttering its coverage of European startups. This is flat-out wrong. It misrepresents who we are, what we do, and — most of all — what we believe. The recent changes at TechCrunch are not about retreat. They are about [&#8230;]"
+      "content": "Meta is the latest tech company to warm to geothermal energy, announcing on Thursday a deal with startup XGS Energy to develop a 150 megawatt geothermal power plant in New Mexico. "
     },
     {
-      "title": "Sam Altman支持的Coco Robotics融资8000万美元 (原标题: Sam Altman-backed Coco Robotics raises $80M)",
-      "link": "https://techcrunch.com/2025/06/11/sam-altman-backed-coco-robotics-raises-80m/",
-      "pubDate": "Wed, 11 Jun 2025 20:40:15 +0000",
-      "isoDate": "2025-06-11T20:40:15.000Z",
+      "title": "特斯拉起诉前擎天柱工程师涉嫌窃取商业机密 (原标题: Tesla sues former Optimus engineer over alleged trade secret theft)",
+      "link": "https://techcrunch.com/2025/06/12/tesla-sues-former-optimus-engineer-over-alleged-trade-secret-theft/",
+      "pubDate": "Thu, 12 Jun 2025 19:35:43 +0000",
+      "isoDate": "2025-06-12T19:35:43.000Z",
       "creator": "Rebecca Szkutak",
-      "summary": "Coco Robotics，一家专注于“最后一英里”配送机器人的洛杉矶初创公司，近日宣布成功完成8000万美元融资。此轮融资由包括天使投资人Sam Altman和Max Altman（均为回归投资者）以及Pelion Venture Partners和Offline Ventures等风险投资公司共同参与。\n\n*   **融资概况**\n    *   本轮融资使Coco Robotics的总融资额超过1.2亿美元。\n    *   公司上一次融资是在2021年，当时完成了3600万美元的A轮融资。\n\n*   **产品与运营**\n    *   Coco的机器人是零排放的，能够容纳90升的杂货或商品。\n    *   自2020年投入使用以来，这些机器人已完成了超过50万次配送。\n    *   公司与包括Subway、Wingstop和Jack in the Box在内的全国性零售商建立了合作关系。\n\n*   **与Sam Altman及OpenAI的关联**\n    *   Sam Altman不仅个人为Coco Robotics提供了资金，OpenAI也从中受益。\n    *   Coco于今年3月宣布与OpenAI建立合作关系，允许Coco使用OpenAI的技术。\n    *   作为回报，OpenAI能够获取机器人收集的真实世界数据，用于训练其AI模型。\n\n*   **公司创始人**\n    *   Coco Robotics由Brad Squicciarini和Zach Rash于2020年共同创立。\n\n*   **相关图片**\n    *   ![Coco Robotics, robots, delivery robots](https://techcrunch.com/wp-content/uploads/2025/06/GettyImages-2182735330.jpg?w=1024)\n    *   ![Rebecca Szkutak](https://techcrunch.com/wp-content/uploads/2022/05/Rebecca-Szkutak.jpg)",
-      "shortSummary": "由Sam Altman支持的“最后一英里”配送机器人初创公司Coco Robotics成功融资8000万美元，使其总融资额超1.2亿美元。其零排放机器人自2020年以来已完成逾50万次配送，并与Subway等全国零售商合作。此外，Coco还与OpenAI建立合作，利用其技术并提供真实数据以训练AI模型。",
-      "translated_title": "Sam Altman支持的Coco Robotics融资8000万美元",
+      "summary": "## 特斯拉起诉前擎天柱工程师涉嫌窃取商业机密\n\n特斯拉已对一名前工程师提起诉讼，指控其窃取了其人形机器人项目“擎天柱”（Optimus）的商业机密，并利用这些机密创办了一家竞争性初创公司。\n\n### 核心指控\n\n*   **被告人：** 钟杰（Zhongjie “Jay” Li），曾于2022年8月至2024年9月在特斯拉工作。\n*   **窃取内容：** 诉讼指控李窃取了特斯拉在“先进机器人手部传感器”开发方面的商业机密。\n*   **窃取方式：** 据称，李在两个私人智能手机上下载了擎天柱项目的机密信息。此外，在他任职特斯拉的最后几个月里，李在其工作电脑上研究了“人形机器人手部”并搜索了风险投资和其他初创公司融资来源。\n*   **目的：** 利用窃取的机密创办了初创公司Proception，该公司由Y Combinator支持，专注于制造机器人手部。\n\n### 事件时间线与证据\n\n*   李离开特斯拉不到一周后，Proception公司即注册成立。\n*   在短短五个月内，Proception公开宣称已“成功制造”出先进的人形机器人手部，这些手部与李在特斯拉工作期间参与设计的方案“惊人地相似”。\n*   Proception的网站声称，该公司致力于通过“构建世界上最先进的人形手部”来“彻底改变人机交互”。\n\n### 特斯拉擎天柱项目背景\n\n特斯拉的擎天柱机器人项目自2021年首次公布其正在开发人形机器人（特斯拉机器人）以来，一直面临一些挑战：\n\n*   2022年，特斯拉曾表示该机器人及其他新产品将于2023年推出，但擎天柱项目仍处于开发阶段。\n*   2024年7月，埃隆·马斯克表示公司将于2026年开始销售该机器人。\n*   在2024年10月的特斯拉“我们，机器人”活动中，现场展示的擎天柱机器人大部分仍由场外人员远程控制。\n\n### 相关图片\n\n![特斯拉的擎天柱机器人](https://techcrunch.com/wp-content/uploads/2024/10/YouTube-Thumb-Text-3.png?w=1024)\n\n图片来源：特斯拉",
+      "shortSummary": "特斯拉已起诉前擎天柱（Optimus）项目工程师钟杰（Jay Li），指控其窃取了关于先进机器人手部传感器的商业机密。诉讼称，李在离职前下载了机密信息，并在离职后不到一周内成立了初创公司Proception，该公司迅速开发出与特斯拉设计相似的机器人手部。特斯拉的擎天柱项目自2021年公布以来仍在开发中，预计2026年开始销售。",
+      "translated_title": "特斯拉起诉前擎天柱工程师涉嫌窃取商业机密",
       "images": [
         {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/GettyImages-2182735330.jpg?w=1024",
-          "alt": "Coco Robotics, robots, delivery robots",
+          "url": "https://techcrunch.com/wp-content/uploads/2024/10/YouTube-Thumb-Text-3.png?w=1024",
+          "alt": "Tesla's Optimus robot against a blue background",
           "title": "",
           "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2022/05/Rebecca-Szkutak.jpg",
-          "alt": "Rebecca Szkutak",
-          "title": "",
-          "position": 2
         }
       ],
       "contentSource": "完整文章",
-      "content": "Coco Robotics has made more than 500,000 deliveries with its zero-emissions robots since they hit the streets in 2020. "
+      "content": "Tesla alleges that Zhongjie Li stole confidential trade secrets and used them to launch a robotics startup a week after he left Tesla. "
     },
     {
-      "title": "Apple iOS 应用即将推出的所有新功能 (原标题: All of the new features coming to Apple’s iOS apps)",
-      "link": "https://techcrunch.com/2025/06/11/all-of-the-new-features-coming-to-apples-ios-apps/",
-      "pubDate": "Wed, 11 Jun 2025 19:39:00 +0000",
-      "isoDate": "2025-06-11T19:39:00.000Z",
-      "creator": "Aisha Malik",
-      "summary": "# Apple iOS 应用即将推出的所有新功能\n\n在2025年WWDC大会上，苹果公司公布了一系列将于今年秋季随iOS 26推出的新功能，这些功能将覆盖其多款应用。更新内容包括重要的通话筛选、更便捷的钱包旅行功能以及备受期待的信息群聊功能。部分更新融入了Apple Intelligence，例如实时翻译；而另一些更新，如照片应用中标签页的回归，则旨在提升设备易用性。\n\n## 电话应用\n\n*   **通话筛选 (Call Screening)**：\n    *   当接到未知号码来电时，系统会在后台自动静默接听。\n    *   来电者说明姓名和来电原因后，iPhone会响铃，用户可查看其回复再决定接听或忽略。\n    ![图片 1](https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Apple-Intelligence-Call-Screening-250609_inline.jpg.medium_2x.jpg?w=486)\n*   **等待辅助 (Hold Assist)**：\n    *   检测到等待音乐时，系统会代为保持通话，直到有客服人员接听。\n*   **实时翻译 (Live Translation)**：\n    *   通话中实时翻译对话，用户说话时即时翻译并以AI语音播放给对方。\n    *   对方用其语言回复时，用户会听到其语音的翻译。\n\n## 信息应用 (Messages)\n\n*   **群聊投票**：\n    *   群聊成员可创建投票，便于规划活动和快速决策。\n    *   Apple Intelligence会智能建议何时发起投票。\n*   **群聊增强**：\n    *   支持自定义群聊背景。\n    *   显示打字指示器。\n    *   可在群聊中请求、发送和接收Apple Cash。\n    ![图片 2](https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Polls-in-Messages-250609_inline.jpg.large_2x.jpg?w=486)\n*   **未知发件人信息筛选**：\n    *   来自未知发件人的信息将显示在专用文件夹中。\n    *   用户可标记为已知号码、请求更多信息或删除信息。\n    *   这些信息在用户接受前将保持静默。\n*   **实时翻译**：\n    *   用户输入时自动翻译文本，并以首选语言发送。\n    *   对方回复时，其信息也会被翻译。\n\n## Apple Music 应用\n\n*   **歌词翻译 (Lyrics Translation)**：\n    *   帮助用户理解其他语言歌曲的歌词。\n*   **歌词发音 (Lyrics Pronunciation)**：\n    *   显示歌词的音标，帮助用户用不同语言跟唱。\n    ![图片 3](https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Music-Lyric-Translation-250609_inline.jpg.large_2x.jpg?w=486)\n*   **AudioMix 功能**：\n    *   通过时间拉伸和节拍匹配实现歌曲间的无缝过渡，提供连续播放体验。\n*   **卡拉OK 功能**：\n    *   将iPhone变为Apple TV的掌上麦克风。\n    *   放大用户歌声，同时在电视屏幕上显示实时歌词和视觉效果。\n*   **置顶收藏**：\n    *   可将喜爱的音乐置顶到资料库顶部，方便访问。\n\n## Apple 地图应用 (Apple Maps)\n\n*   **通勤智能优化**：\n    *   利用设备端智能，根据日常通勤习惯显示首选路线（回家或去办公室）。\n    *   通知延迟并提供替代路线。\n    ![图片 4](https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Maps-Visited-Places_inline.jpg.large_2x.jpg?w=486)\n*   **到访地点 (Visited Places)**：\n    *   帮助用户记住曾去过的地点。\n    *   可选择让iPhone检测用户在餐厅或商店时的位置，并在地图中查看所有到访地点。\n    *   到访地点受端到端加密保护，苹果无法访问。\n\n## Apple 钱包应用 (Apple Wallet)\n\n*   **数字身份证 (Digital ID)**：\n    *   可存储数字版护照（非实体护照替代品）。\n    *   可用于需要验证年龄和身份的应用，以及支持的TSA检查点。\n    *   在美国国内旅行时提供另一种出示身份证明的方式。\n    ![图片 5](https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Apple-Wallet-Digital-ID_inline.jpg.medium_2x.jpg?w=486)\n*   **数字驾照/州ID**：\n    *   可在钱包中向网站出示驾照或州ID进行年龄和身份验证，初期支持Chime、Turo、Uber Eats、U.S. Bank以及亚利桑那州MVD、佐治亚州DDS和马里兰州MVA。\n*   **登机牌体验升级**：\n    *   通过实时活动 (Live Activities) 获取航班实时更新。\n    *   可与他人分享航班实时活动，以便他们了解行程。\n    ![图片 6](https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Live-Activities-shareable-live-flight-status_inline.jpg.medium_2x.jpg?w=486)\n    *   可从钱包中的登机牌访问地图，导航至机场。\n    *   可使用“查找”功能追踪物品和报告丢失行李。\n    *   可查看航空公司应用中的关键服务，如座位升级和候补名单。\n*   **订单追踪摘要**：\n    *   钱包应用现在利用Apple Intelligence自动汇总并显示来自商家或送货承运商电子邮件中的订单追踪详情。\n\n## FaceTime 应用\n\n*   **实时翻译**：\n    *   与电话和信息应用类似，FaceTime也将利用实时翻译功能，让不同语言的人们进行交流。\n    *   当与使用不同语言的人通话时，FaceTime会显示翻译字幕，帮助双方理解。\n    ![图片 7](https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Apple-Intelligence-Live-Translation-FaceTime-250609_inline.jpg.large_2x.jpg?w=486)\n\n## 照片应用 (Photos)\n\n*   **标签页界面回归**：\n    *   为响应用户对iOS 18照片应用重新设计的强烈反馈，苹果将重新引入标签页界面。\n    *   在“收藏”中可找到收藏夹、相册和搜索图库的功能。\n    *   “图库”标签页使滚动浏览近期照片更加便捷。\n    ![图片 8](https://techcrunch.com/wp-content/uploads/2025/06/photos-app-ios-26.jpeg?w=680)\n*   **2D照片转3D空间照片**：\n    *   照片应用现在能够将2D照片转换为3D空间照片。\n\n## 相机应用 (Camera)\n\n*   **主屏幕模式优化**：\n    *   iPhone相机应用主屏幕将突出显示最常用的两种拍摄模式：照片和视频。\n    *   向左或向右滑动可显示更多模式，如人像模式和电影模式。\n    ![图片 9](https://techcrunch.com/wp-content/uploads/2025/06/Screenshot-2025-06-10-at-2.12.32PM.png?w=373)\n*   **设置访问**：\n    *   从屏幕底部向上滑动可访问闪光灯、计时器、光圈等设置。\n*   **格式切换**：\n    *   轻点即可更改格式，方便在高清和4K分辨率之间切换或调整视频帧率。\n\n## Apple Podcasts 应用\n\n*   **自定义播放速度**：\n    *   提供0.5倍至3倍的播放速度选项。\n    ![图片 10](https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Apple-Podcasts-customized-listening-experience_inline.jpg.large_2x.jpg?w=486)\n*   **增强对话 (Enhance Dialogue)**：\n    *   利用音频处理和机器学习，使语音在背景声音中更清晰。\n\n## Image Playground\n\n*   **ChatGPT 集成**：\n    *   Image Playground将集成ChatGPT，以增强功能。\n    *   用户可访问新的风格，如矢量艺术或油画。\n    *   可选择“任意风格”选项，精确描述所需效果。\n    *   Image Playground会将描述或照片发送给ChatGPT，以创建独特的图像。\n    ![图片 11](https://techcrunch.com/wp-content/uploads/2025/06/apple-image-playground.png?w=551)",
-      "shortSummary": "苹果在WWDC 2025大会上发布了iOS 26的多项新功能。电话应用新增通话筛选和实时翻译；信息应用支持群聊投票、Apple Cash和未知发件人筛选。Apple Music推出歌词翻译、卡拉OK功能。地图应用优化通勤路线并新增到访地点。钱包应用引入数字护照/驾照和航班实时更新。FaceTime、照片和相机应用也获得改进，照片应用回归标签页。Apple Podcasts支持自定义播放速度。Image Playground集成了ChatGPT，提供更多图像创作风格。这些更新旨在提升用户体验和智能化水平。",
-      "translated_title": "Apple iOS 应用即将推出的所有新功能",
+      "title": "谷歌云服务中断导致大量互联网服务瘫痪 (原标题: Google Cloud outage brings down a lot of the internet)",
+      "link": "https://techcrunch.com/2025/06/12/google-cloud-outage-brings-down-a-lot-of-the-internet/",
+      "pubDate": "Thu, 12 Jun 2025 19:34:10 +0000",
+      "isoDate": "2025-06-12T19:34:10.000Z",
+      "creator": "Maxwell Zeff",
+      "summary": "### 谷歌云服务中断事件概述\n\n周四，谷歌云（Google Cloud）发生了一次服务中断，导致互联网上大范围的服务受到影响，包括全球云平台Cloudflare以及Spotify等热门应用程序。\n\n#### 事件起因与影响范围\n\n*   **根本原因**：谷歌云服务中断被认为是导致其他服务中断的根本原因。\n*   **受影响服务**：\n    *   **云平台**：Cloudflare（部分服务）\n    *   **热门应用**：Spotify、Discord、Snapchat、Character.AI\n    *   **AI编码应用**：Cursor、Replit\n*   **报告来源**：DownDetector等众包报告平台显示，数千用户报告了这些应用的中断。\n\n#### 事件时间线与恢复进展\n\n*   **约上午11点 PT**：服务中断开始，影响了美国数百万人的工作日。\n*   **上午11:19 PT**：Cloudflare表示正在调查影响其客户的服务中断问题。\n*   **上午11:46 PT**：谷歌云表示已开始调查影响其客户的服务问题。\n*   **中午12:12 PT**：Cloudflare表示在调查问题后，其服务已开始恢复。\n*   **下午2:23 PT**：谷歌云表示已实施缓解措施，并预计其服务将在一个小时内恢复正常运行。\n\n#### 官方回应\n\n*   **谷歌云**：发言人Devon Smiley表示正在调查部分谷歌云服务的服务中断。\n*   **Cloudflare**：发言人Ripley Park确认这是一次谷歌云中断，并指出Cloudflare有限数量的服务使用了谷歌云并受到影响，但核心Cloudflare服务未受影响。\n*   **Spotify**：发言人Shira Rimini表示正在关注谷歌云的状态页面以获取更多更新。\n\n#### 未受影响的服务\n\n*   亚马逊网络服务（AWS）发言人表示周四未经历任何服务中断。\n*   微软Azure在其官方渠道也未报告任何中断。\n\n#### 预期与展望\n\n*   通常，此类服务中断会在数小时内解决。\n*   预计受影响的服务将相对较快地恢复在线。",
+      "shortSummary": "周四，谷歌云（Google Cloud）发生服务中断，导致互联网上大量服务瘫痪，包括Cloudflare的部分服务以及Spotify、Discord等热门应用。中断始于太平洋时间上午11点左右，谷歌云于11:46开始调查，并于下午2:23实施了缓解措施，预计服务将在数小时内恢复。AWS和微软Azure未受影响。",
+      "translated_title": "谷歌云服务中断导致大量互联网服务瘫痪",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Google Cloud seems to be at the core of a major outage affecting popular internet apps and services on Thursday."
+    },
+    {
+      "title": "a16z投资的Infinite Machine展示更便宜的模块化电动滑板车 (原标题: a16z-backed Infinite Machine shows off cheaper, modular electric scooter)",
+      "link": "https://techcrunch.com/2025/06/12/a16z-backed-infinite-machine-shows-off-cheaper-modular-electric-scooter/",
+      "pubDate": "Thu, 12 Jun 2025 18:35:48 +0000",
+      "isoDate": "2025-06-12T18:35:48.000Z",
+      "creator": "Sean O'Kane",
+      "summary": "### Infinite Machine推出Olto电动滑板车\n\nInfinite Machine是一家总部位于纽约的微出行初创公司，近期推出了其新款坐式电动滑板车Olto。这款车型预计将于今年晚些时候开始发货，定价为3,495美元，远低于其旗舰产品P1（售价10,000美元）。\n\n#### 公司背景与融资\n\n*   Infinite Machine在2023年凭借其P1滑板车的设计引起关注。\n*   2024年末，该公司成功获得900万美元融资，由知名风险投资公司Andreessen Horowitz（a16z）领投。\n*   创始人兼CEO Joseph Cohen表示，Infinite Machine的最终目标是将其车辆推广到全球各大城市，但近期将重点放在充满挑战的美国市场。\n\n#### Olto电动滑板车的主要特点\n\nOlto旨在提供一种功能丰富且价格更亲民的电动两轮车体验：\n\n*   **续航与动力**：\n    *   续航里程可达40英里。\n    *   配备可轻松更换的48V锂离子电池。\n    *   由750W后轮毂电机驱动，在自行车道上最高时速可达20英里/小时，越野时可达33英里/小时。\n*   **安全与可见性**：\n    *   配备远近光前大灯和转向灯，以提高道路上的可见性。\n*   **模块化设计**：\n    *   Olto的一大亮点是其模块化特性，用户可以根据需求附加或拆卸各种组件，例如儿童座椅、后货架或篮子，使其功能类似于大型货运自行车。\n*   **辅助骑行功能**：\n    *   配有可折叠踏板，通过连接后轮的链条提供踏板辅助动力，使其能够像电动自行车一样使用。\n*   **载客能力**：\n    *   车辆的双悬挂车架支持两人乘坐。\n\n#### 市场背景与公司愿景\n\n电动两轮车市场竞争激烈且充满挑战，尤其是在美国市场，曾有领先品牌经历裁员，国际品牌如VanMoof和Cake也面临破产重组。Joseph Cohen认为，作为一家美国公司，Infinite Machine能够带来市场上现有产品所缺乏的“卓越产品感”。他表示，公司旨在创造出“感觉像你最喜欢的汽车——但又不是汽车，而是城市延伸”的产品，而非“看起来像打印机的塑料制品”。\n\n![Olto电动滑板车](https://techcrunch.com/wp-content/uploads/2025/06/00-OLTO-QUARTER-FRONT-LIGHTS.jpg?w=680)\n\n图片来源：Infinite Machine",
+      "shortSummary": "a16z投资的Infinite Machine公司推出了更便宜的模块化电动滑板车Olto，售价3,495美元。Olto拥有40英里续航、可更换电池、双人乘坐能力和踏板辅助功能。该产品旨在进入竞争激烈的美国微出行市场，提供独特的产品体验，并计划最终推广至全球各大城市。",
+      "translated_title": "a16z投资的Infinite Machine展示更便宜的模块化电动滑板车",
       "images": [
         {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Apple-Intelligence-Call-Screening-250609_inline.jpg.medium_2x.jpg?w=486",
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/00-OLTO-QUARTER-FRONT-LIGHTS.jpg?w=680",
           "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The Olto is the newest entry into the always-churning market for electric two-wheelers, and it will cost $3,495. "
+    },
+    {
+      "title": "酒店管理平台Canary获得BPC、YC、Insight Partners 8000万美元D轮融资 (原标题: Hotel management platform Canary nabs $80M Series D from BPC, YC, Insight Partners)",
+      "link": "https://techcrunch.com/2025/06/12/hotel-management-platform-canary-nabs-80m-series-d-from-yc-insight-partners/",
+      "pubDate": "Thu, 12 Jun 2025 18:30:00 +0000",
+      "isoDate": "2025-06-12T18:30:00.000Z",
+      "creator": "Dominic-Madori Davis",
+      "summary": "## Canary酒店管理平台获得8000万美元D轮融资\n\nCanary，一家专注于酒店宾客管理的平台，于周四宣布完成8000万美元的D轮融资。本轮融资由Brighton Park Capital领投，Y Combinator、Insight Partners和Fidelity等投资者也参与了本轮。\n\n### 公司背景与使命\n\n*   **成立时间与创始人**：Canary由Harman Singh Narula和其儿时好友SJ Sawhney于2018年共同创立。\n*   **总融资额**：迄今为止，该公司已累计融资近1.8亿美元。\n*   **核心使命**：旨在帮助酒店实现宾客互动数字化和自动化。Singh Narula指出，酒店运营日益复杂，宾客期望不断演变，且人员短缺持续给运营带来压力。Canary致力于通过现代化解决方案提升宾客体验、提高盈利能力并提高运营效率。\n\n### 产品与服务\n\n*   **产品套件**：Canary提供一套全面的产品，涵盖宾客旅程的各个环节，从预订到离店。\n*   **主要功能示例**：\n    *   允许酒店宾客通过移动设备办理入住。\n    *   支持宾客通过短信联系前台寻求帮助。\n    *   **AI应用**：利用大型语言模型（LLM）通过语音、网络和文本为客户宾客提供服务，有时能实现即时响应。\n*   **用户体验**：宾客的用户体验为每家酒店量身定制并进行品牌化，因此宾客可能不会意识到其旅行体验是由Canary提供支持的。\n\n### 市场影响力与未来展望\n\n*   **市场覆盖**：Canary目前已与全球100多个国家/地区的20,000家酒店合作。\n*   **知名客户**：使用Canary服务的酒店包括Rosewood Hotels、Marriott、Best Western和Wyndham。\n*   **竞争格局**：据PitchBook称，该领域的其他管理软件公司包括Cloudbeds和Revinate。\n*   **融资目的**：Singh Narula表示，此次融资是机会性的，旨在引入与公司愿景和价值观高度契合的合作伙伴。所获资金将用于公司发展和招聘更多员工。\n*   **公司愿景**：Canary相信旅行是人们与世界连接的最有力方式之一，并致力于在其中发挥重要作用，使这些体验更加个性化、难忘和有意义。",
+      "shortSummary": "酒店管理平台Canary宣布完成8000万美元D轮融资，由Brighton Park Capital领投，累计融资近1.8亿美元。该公司由Harman Singh Narula和SJ Sawhney于2018年创立，旨在帮助酒店实现宾客互动数字化和自动化，提升运营效率和宾客体验。Canary的产品套件覆盖宾客旅程全过程，并应用AI技术，目前已服务全球100多个国家/地区的20,000家酒店，包括万豪等知名品牌。本轮资金将用于公司发展和员工招聘。",
+      "translated_title": "酒店管理平台Canary获得BPC、YC、Insight Partners 8000万美元D轮融资",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Canary offers a product suite that encompasses every part of the guest journey, from booking to departure. The company offers services that let hotel guests check in on mobile devices or text the front desk for help. And it's leaning into AI in serving its customers’ guests through voice, web, and text with an LLM, sometimes offering instant responses."
+    },
+    {
+      "title": "苹果WWDC 2025上的主要AI公告 (原标题: Here are Apple’s top AI announcements from WWDC 2025)",
+      "link": "https://techcrunch.com/2025/06/12/here-are-apples-top-ai-announcements-from-wwdc-2025/",
+      "pubDate": "Thu, 12 Jun 2025 17:53:12 +0000",
+      "isoDate": "2025-06-12T17:53:12.000Z",
+      "creator": "Lauren Forristal",
+      "summary": "# 苹果WWDC 2025主要AI公告概述\n\n在WWDC 2025上，苹果虽然降低了对“Apple Intelligence”的强调，转而关注操作系统、服务和软件的更新，并引入了“Liquid Glass”美学和新的命名约定，但仍发布了一些重要的AI相关功能。\n\n## 关键AI功能亮点\n\n*   **视觉智能 (Visual Intelligence)**\n    *   苹果的AI驱动图像分析技术，旨在帮助用户获取周围环境的信息。\n    *   能够识别植物、提供餐厅信息或识别衣物。\n    *   **新功能**：现在可以与iPhone屏幕上的信息进行交互，例如在社交媒体应用中进行图像搜索。\n    *   搜索功能通过Google Search、ChatGPT等应用实现。\n    *   **访问方式**：通过控制中心或自定义操作按钮。\n    *   **可用性**：将于今年晚些时候随iOS 26推出。\n    *   ![苹果在WWDC 2025上演示的视觉智能功能](https://techcrunch.com/wp-content/uploads/2025/06/apple-visual-intelligence-wwdc-2025.png?w=680)\n\n*   **ChatGPT集成到Image Playground**\n    *   苹果将其AI图像生成工具Image Playground与ChatGPT进行了整合。\n    *   现在，该应用可以生成“动漫”、“油画”和“水彩”等新风格的图像。\n    *   用户还可以选择向ChatGPT发送提示，以创建更多图像。\n\n*   **健身伙伴 (Workout Buddy)**\n    *   苹果最新AI驱动的健身教练。\n    *   利用文本转语音模型，在用户锻炼时提供鼓励，模仿私人教练的声音。\n    *   在跑步时，AI会提供激励性对话，突出关键时刻，如最快的一英里和平均心率。\n    *   锻炼结束后，AI会总结平均配速、心率以及是否达到任何里程碑。\n\n*   **实时翻译 (Live Translation)**\n    *   由Apple Intelligence驱动的新实时翻译功能，适用于信息、FaceTime和电话。\n    *   该技术能实时将文本或口语翻译成用户偏好的语言。\n    *   在FaceTime通话中，用户将看到实时字幕；对于电话，苹果将大声翻译对话。\n    *   ![图片 2](https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-macOS-Tahoe-26-Apple-Intelligence-Live-Translation-250609_big.jpg.large_2x.jpg?w=680)\n\n*   **AI辅助处理未知来电**\n    *   **来电筛选 (Call Screening)**：自动在后台接听未知号码的电话，用户可以听到来电者姓名和原因，再决定是否接听。\n    *   **保持辅助 (Hold Assist)**：自动检测等待呼叫中心客服时的等待音乐，用户可以选择保持连接并使用iPhone进行其他任务，当客服可用时会收到通知。\n\n*   **信息应用中的投票建议**\n    *   允许用户在信息应用中创建投票。\n    *   Apple Intelligence会根据对话上下文（例如群聊中难以决定用餐地点）建议发起投票。\n    *   ![图片 3](https://techcrunch.com/wp-content/uploads/2025/06/polls-messages.png?w=680)\n\n*   **AI驱动的快捷指令 (Shortcuts)**\n    *   快捷指令应用通过Apple Intelligence变得更加实用。\n    *   用户在构建快捷指令时，可以选择AI模型来启用AI摘要等功能。\n    *   ![图片 4](https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-Apple-Intelligence-Shortcuts-Notes-250609_big.jpg.large_2x.jpg?w=680)\n\n*   **情境感知Spotlight**\n    *   Mac上的设备内搜索功能Spotlight获得小幅更新。\n    *   将整合Apple Intelligence，提高情境感知能力，根据用户当前任务提供定制化的操作建议。\n\n*   **面向开发者的基础模型 (Foundation Models)**\n    *   苹果允许开发者离线访问其AI模型。\n    *   引入了Foundation Models框架，使开发者能够利用苹果现有系统，在其第三方应用中构建更多AI功能。\n\n## Siri的AI进展受挫\n\n本次活动中最令人失望的消息是，备受期待的Siri AI功能尚未准备就绪。苹果软件工程高级副总裁Craig Federighi表示，要到明年才能分享更多信息。这一延迟可能引发人们对苹果在日益竞争激烈的市场中Siri战略的疑问。",
+      "shortSummary": "苹果在WWDC 2025上发布了一系列AI功能，尽管整体强调有所降低。主要亮点包括：AI驱动的视觉智能，可分析图像和屏幕信息；ChatGPT集成到Image Playground，支持新风格图像生成；AI健身教练提供实时鼓励和总结；信息、FaceTime和电话的实时翻译；AI辅助处理未知来电和保持等待；信息应用中的投票建议；以及AI增强的快捷指令和Spotlight。此外，苹果还为开发者提供了离线访问AI模型的能力。然而，备受期待的Siri AI更新被推迟到明年。",
+      "translated_title": "苹果WWDC 2025上的主要AI公告",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/apple-visual-intelligence-wwdc-2025.png?w=680",
+          "alt": "Apple's Visual Intelligence feature demoed at WWDC 2025",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Polls-in-Messages-250609_inline.jpg.large_2x.jpg?w=486",
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-macOS-Tahoe-26-Apple-Intelligence-Live-Translation-250609_big.jpg.large_2x.jpg?w=680",
           "alt": "",
           "title": "",
           "position": 2
         },
         {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Music-Lyric-Translation-250609_inline.jpg.large_2x.jpg?w=486",
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/polls-messages.png?w=680",
           "alt": "",
           "title": "",
           "position": 3
         },
         {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Maps-Visited-Places_inline.jpg.large_2x.jpg?w=486",
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-Apple-Intelligence-Shortcuts-Notes-250609_big.jpg.large_2x.jpg?w=680",
           "alt": "",
           "title": "",
           "position": 4
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Apple-Wallet-Digital-ID_inline.jpg.medium_2x.jpg?w=486",
-          "alt": "",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Live-Activities-shareable-live-flight-status_inline.jpg.medium_2x.jpg?w=486",
-          "alt": "",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iOS-26-Apple-Intelligence-Live-Translation-FaceTime-250609_inline.jpg.large_2x.jpg?w=486",
-          "alt": "",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/photos-app-ios-26.jpeg?w=680",
-          "alt": "",
-          "title": "",
-          "position": 8
         }
       ],
       "contentSource": "完整文章",
-      "content": "New features launching with iOS 26 include significant updates like Call Screening, more travel-friendly features in Wallet, and highly requested group chat features in Messages."
+      "content": "At WWDC 2025, Apple announced several AI features, such as a workout coach, live translation, and more."
     },
     {
-      "title": "Fervo Energy 获得 2.06 亿美元融资，用于建设大型地热发电厂 (原标题: Fervo Energy lands $206M in financing to build massive geothermal power plant)",
-      "link": "https://techcrunch.com/2025/06/11/fervo-energy-lands-206m-in-financing-to-build-massive-geothermal-power-plant/",
-      "pubDate": "Wed, 11 Jun 2025 19:31:35 +0000",
-      "isoDate": "2025-06-11T19:31:35.000Z",
-      "creator": "Tim De Chant",
-      "summary": "## Fervo Energy 获得 2.06 亿美元融资，建设大型地热发电厂\n\n地热能源领域的领军企业 Fervo Energy 于周三宣布，已成功获得 2.06 亿美元的融资，以继续推进其在犹他州建设一个大型增强型地热发电厂的项目。该项目名为“Cape Station”，有望成为全球最大的增强型地热发电厂。\n\n### 项目规模与时间表\n*   **第一阶段：** 预计于明年（2026年）投入运营，发电量为 100 兆瓦（MW）。\n*   **后续扩建：** 计划于 2028 年完成，将再增加 400 兆瓦的发电量。\n*   **总发电量：** 建成后总发电量将达到 500 兆瓦。\n\n### 增强型地热技术优势\n增强型地热技术比传统地热技术钻探更深、利用更热的地下资源。它已成为为人工智能数据中心寻找新电源的首选技术，主要优势包括：\n*   提供 24/7 全天候电力供应，确保稳定可靠。\n*   发电过程无排放，符合清洁能源需求。\n*   该技术利用了石油和天然气行业开创的钻探技能，这可能有助于其在当前政府中的地位。\n\n### 最新技术突破\n就在宣布融资的前一天，Fervo Energy 宣布已完成了迄今为止最热、最深的钻井。具体成就包括：\n*   在 16 天内钻探深度达到 15,765 英尺（约 4805 米）。\n*   井底温度预计将稳定在约 520°F（约 271°C）。\n*   钻井时间是地热发电厂成本的重要组成部分，Fervo 在钻探速度和深度上的突破，为其带来了新的资金流入。\n\n### 融资构成\n本次 2.06 亿美元的融资由多方共同提供：\n*   **突破能源催化剂（Breakthrough Energy Catalyst）：** 比尔·盖茨“突破能源”集团的项目融资部门提供了 1 亿美元的项目级优先股。\n*   **Mercuria：** 追加了 6000 万美元的贷款，此前该公司已提供过 1.2 亿美元的贷款。\n*   **X-Caliber Rural Capital 附属公司：** 贡献了 4560 万美元的过桥债务融资。\n\n### 近期融资历史与行业信心\nFervo Energy 近期融资活动频繁，显示出其强劲的增长势头：\n*   2024 年 2 月，公司筹集了 2.44 亿美元。\n*   去年 12 月，又通过股权和债务方式筹集了 2.55 亿美元。\n债务融资的增加表明投资者普遍认为增强型地热技术已经成功跨越了商业化的“死亡之谷”，并已为广泛的商业应用做好了准备。\n\n### 相关图片\n![钻井平台正在钻入地球以利用地热能。](https://techcrunch.com/wp-content/uploads/2024/02/Fervo-Energy_Project-Red_Rig-2-2048x1367-1.jpg?w=1024)",
-      "shortSummary": "Fervo Energy 获得 2.06 亿美元融资，用于在犹他州建设全球最大的增强型地热发电厂 Cape Station。该项目分两期，预计 2026 年和 2028 年分别上线，总发电量达 500 兆瓦。增强型地热能提供 24/7 无排放电力，尤其适用于 AI 数据中心。公司近期完成了最深最热的钻井，证明了其技术实力。此次融资表明投资者对增强型地热技术商业化前景充满信心。",
-      "translated_title": "Fervo Energy 获得 2.06 亿美元融资，用于建设大型地热发电厂",
+      "title": "Snapchat 为创作者新增功能，包括更便捷的视频编辑方式 (原标题: Snapchat adds new features for creators, including an easier way to edit videos)",
+      "link": "https://techcrunch.com/2025/06/12/snapchat-adds-new-features-for-creators-including-an-easier-way-to-edit-videos/",
+      "pubDate": "Thu, 12 Jun 2025 17:47:00 +0000",
+      "isoDate": "2025-06-12T17:47:00.000Z",
+      "creator": "Aisha Malik",
+      "summary": "# Snapchat 推出创作者新功能\n\n为了在与 Instagram 和 TikTok 的竞争中保持优势，Snapchat 于周四宣布推出一系列新的工具和功能，旨在帮助创作者更轻松地在其平台上创建和分享内容。这些更新包括“时间轴编辑器”功能、从已保存的“回忆”中创建视频的新方式、将故事自动保存到个人资料的功能等。\n\n## 核心新功能\n\n### 1. 时间轴编辑器 (Timeline Editor)\n\n*   **目的**：提供更直观的视频编辑方式，直接在 Snapchat 平台内完成。\n*   **功能**：\n    *   以时间顺序布局显示视频，方便剪辑、移动或重新排列片段。\n    *   完成序列设置后，可添加滤镜 (Lenses)、从“声音库”添加音乐，并使用其他创意工具。\n*   **优势**：有望减少用户在发布前对简单视频进行第三方编辑（如 CapCut）的需求。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/06/Timeline-Editor_Yellow.png?w=680)\n\n### 2. “创建视频”模板 (Create a Video Template)\n\n*   **目的**：让创作者能够生成自定义的合辑视频。\n*   **功能**：选择一些“回忆”，从 Snapchat 的“声音库”中选择一首歌曲，然后挑选喜欢的模板来生成视频。\n*   **可用性**：此功能正在全球范围内向 iOS 用户推出。\n\n### 3. 公共故事自动保存至个人资料\n\n*   **目的**：允许用户将他们的公共故事直接保存到个人资料中，以便人们可以重新访问这些内容。\n*   **影响**：使创作者能够建立一个持久的精彩回忆合集，并保持其内容的生命力。尽管这在一定程度上削弱了故事的“短暂性”特点，但对于希望保存故事的用户来说非常有用。\n\n### 4. 增强的创作者数据洞察\n\n*   **目的**：为创作者提供更多关于其内容表现的洞察，从而更好地优化帖子。\n*   **具体指标**：\n    *   过去一个月内，观看其公共内容至少 12 天的观众数量（有助于了解回头客）。\n    *   过去 28 天内，其 Spotlight 帖子和公共故事中获得最多观看量的内容，以及所有内容的累计观看时长。\n    *   流量来源洞察：根据来源（如“为你发现”页面、关注、Spotlight、搜索、聊天和个人资料）查看观看量。\n    *   用户观看其 Spotlight 帖子的平均时长。\n    *   用户看完其 Spotlight 帖子的平均百分比。",
+      "shortSummary": "Snapchat 推出一系列新功能，旨在增强创作者体验并应对竞争。主要更新包括：时间轴编辑器，简化视频剪辑；“创建视频”模板，用于生成合辑视频；公共故事自动保存至个人资料，方便内容保存和回顾；以及更详细的创作者数据洞察，帮助优化内容表现。这些功能旨在让创作者更便捷地制作、分享和分析内容，提升平台活跃度。",
+      "translated_title": "Snapchat 为创作者新增功能，包括更便捷的视频编辑方式",
       "images": [
         {
-          "url": "https://techcrunch.com/wp-content/uploads/2024/02/Fervo-Energy_Project-Red_Rig-2-2048x1367-1.jpg?w=1024",
-          "alt": "A drilling rig bores into the Earth to tap geothermal energy.",
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Timeline-Editor_Yellow.png?w=680",
+          "alt": "",
           "title": "",
           "position": 1
         }
       ],
       "contentSource": "完整文章",
-      "content": "Fervo is developing what promises to be the largest enhanced geothermal power plant in the world. "
+      "content": "Snapchat is introducing a suite of new tools and features to make it easier for creators to post and share content on its platform."
     },
     {
-      "title": "Scale AI 和 Alexandr Wang 能否重振 Meta 的 AI 努力？ (原标题: Can Scale AI and Alexandr Wang reignite Meta’s AI efforts?)",
-      "link": "https://techcrunch.com/2025/06/11/can-scale-ai-and-alexandr-wang-reignite-metas-ai-efforts/",
-      "pubDate": "Wed, 11 Jun 2025 19:16:34 +0000",
-      "isoDate": "2025-06-11T19:16:34.000Z",
-      "creator": "Maxwell Zeff",
-      "summary": "Meta 正在对数据标注公司 Scale AI 进行重大投资，并任命其 CEO Alexandr Wang 领导一个新的“超智能”实验室，旨在重振其 AI 努力。这项战略举措被视为 Meta 追赶 OpenAI、谷歌和 Anthropic 等竞争对手的关键一步。\n\n*   **Meta 的投资与战略意图**\n    *   Meta 计划向 Scale AI 投资近 150 亿美元，并持有其 49% 的股份。\n    *   Scale AI 的 CEO Alexandr Wang 将加入 Meta，领导一个新的“超智能”实验室。\n    *   此举被比作 Meta 过去对 WhatsApp 和 Instagram 的大手笔收购，这些收购最初被认为溢价过高，但最终证明是成功的。此次交易能否再次证明扎克伯格的战略远见，仍是未知数。\n    *   Meta 此次押注的不是新兴社交媒体应用，而是用于训练顶级 AI 模型的数据。\n\n*   **Scale AI 的核心价值**\n    *   Scale AI 长期以来为 OpenAI 等领先 AI 实验室提供数据生产和标注服务。\n    *   近期，Scale AI 及其竞争对手开始招聘博士科学家和高级软件工程师等高技能人才，以生成高质量数据。\n    *   Meta 领导层曾抱怨公司领先 AI 团队在数据创新方面的不足，这可能是促成此次合作的原因之一。\n\n*   **Meta AI 面临的挑战**\n    *   Meta 的生成式 AI 部门今年早些时候发布的 Llama 4 模型未能达到中国 AI 实验室 DeepSeek 模型的水平，被普遍视为令人失望。\n    *   Meta 还面临人才流失问题：SignalFire 的数据显示，2024 年 Meta 有 4.3% 的顶尖人才流向了 AI 实验室。\n\n*   **Alexandr Wang 的角色与背景**\n    *   28 岁的 Alexandr Wang 将领导 Meta 的新超智能团队。\n    *   他被认为是硅谷一位雄心勃勃、善于推销且人脉广泛的优秀创业公司创始人，并已开始与世界各国领导人讨论 AI 对社会的影响。\n    *   然而，Wang 之前没有领导过此类 AI 实验室的经验，也缺乏像 Ilya Sutskever（Safe Superintelligence）或 Arthur Mensch（Mistral）那样的深厚 AI 研究背景。\n    *   因此，Meta 据称还在招募像 DeepMind 的 Jack Rae 这样的知名人才来充实其新的 AI 研究团队。\n\n*   **Scale AI 及其数据行业的未来不确定性**\n    *   AI 模型训练中真实数据的作用正在变化：一些 AI 实验室开始内部收集数据，另一些则更多依赖合成（AI 生成）数据。\n    *   据报道，Scale AI 在 4 月份未能达到部分收入目标。\n    *   Anyscale 联合创始人 Robert Nishihara 指出，数据是一个“移动的目标”，需要不断创新。\n    *   Meta 与 Wang 的密切关系可能会吓跑其他传统上与 Scale AI 合作的 AI 实验室，从而可能有利于 Turing、Surge AI 等 Scale AI 的竞争对手。Turing CEO Jonathan Siddharth 证实，一些客户更倾向于与更“中立”的合作伙伴合作。\n\n*   **Meta AI 的未来展望**\n    *   Meta 在 AI 领域仍有很大的差距需要弥补。\n    *   竞争对手并未放慢脚步，OpenAI 正准备发布其下一代旗舰模型 GPT-5 以及多年来的第一个公开模型，这将与 Meta 未来的 Llama 版本展开竞争。",
-      "shortSummary": "Meta 正斥资近 150 亿美元投资数据标注公司 Scale AI 并持股 49%，同时任命 Scale AI CEO Alexandr Wang 领导新的“超智能”实验室，旨在重振其 AI 努力。此举被视为Meta追赶OpenAI等竞争对手的重大押注。尽管Meta在数据创新、Llama模型表现和人才流失方面面临挑战，且Wang缺乏AI研究背景，但Meta希望通过此交易及其在数据领域的深耕，复制过去WhatsApp和Instagram收购的成功。然而，此举也可能影响Scale AI与其他AI实验室的合作，并加剧市场竞争。",
-      "translated_title": "Scale AI 和 Alexandr Wang 能否重振 Meta 的 AI 努力？",
-      "images": [],
+      "title": "Chime在2016年濒临倒闭，曾被100家风投拒绝——如今它以145亿美元市值上市 (原标题: Chime almost died in 2016, turned down by 100 VCs — today it IPO’d at $14.5B)",
+      "link": "https://techcrunch.com/2025/06/12/chime-almost-died-in-2016-turned-down-by-100-vcs-today-it-ipod-at-14-5b/",
+      "pubDate": "Thu, 12 Jun 2025 17:23:17 +0000",
+      "isoDate": "2025-06-12T17:23:17.000Z",
+      "creator": "Julie Bort",
+      "summary": "# Chime的上市之路：从濒临倒闭到145亿美元市值\n\n## IPO表现与财务亮点\n\n*   **成功上市**：Chime于周四成功IPO，以每股27美元的价格发行股票，高于此前24-26美元的预期区间，共筹集8.64亿美元。\n*   **市值波动**：\n    *   初始市值约98亿美元。\n    *   尽管低于PitchBook估计的250亿美元私人估值，但股价开盘即达42美元。\n    *   午盘交易中市值达到145亿美元。\n    *   收盘时股价37美元，市值约120亿美元。\n    *   尽管未达历史高点，但散户投资者反应积极。\n*   **财务数据**：\n    *   2023年营收：13亿美元。\n    *   2024年营收：17亿美元。\n    *   亏损显著收窄：从2023年的2.03亿美元降至2024年的2500万美元。\n    *   2025年第一季度实现盈利：营收5.19亿美元，净利润1300万美元（公司警告为增长投入可能导致未来再次亏损）。\n\n## 艰难的创业历程\n\n*   **早期困境**：\n    *   Chime成立于2012年，最初五六年间，说服投资者投资其理念和业务异常艰难。\n    *   联合创始人兼原CTO Ryan King表示，这比他预期的要困难得多。\n*   **2016年濒临倒闭**：\n    *   2016年初，公司试图为其A轮融资寻求扩展，向100多家投资者推介，结果全部遭到拒绝。\n    *   Chime当时几乎耗尽资金。\n*   **核心理念与挑战**：\n    *   联合创始人Ryan King和CEO Chris Britt坚信其使命：为工薪阶层提供免费的在线银行体验，通过交换费盈利。\n    *   Chime不收取透支费，并提供现金担保的“信用卡”等信用建设工具。\n    *   然而，风投们普遍认为其所处行业受严格监管，且当时增长缓慢，因此纷纷放弃。\n    *   Ryan King曾自嘲，Robinhood创始人被50-75家投资者拒绝后仍获得几份意向书，而他自己“一周内就能收到50个拒绝”。\n\n## 关键转折点：一位投资者的信任\n\n*   **救星出现**：\n    *   一位种子投资者——Lauren Kolodny（当时是Aspect Ventures合伙人，现为Acrew Capital联合创始人）伸出援手。\n    *   她主导了Chime的900万美元扩展融资。\n    *   这是Chime当时获得的唯一一份投资意向书。\n    *   Kolodny对两位创始人的热情和信念给予了极大支持，Chime甚至邀请她到纳斯达克敲响开市钟。\n*   **后续融资**：\n    *   这笔投资使Chime当时的融资总额达到2100万美元。\n    *   此后，Chime作为一家私营公司又筹集了约26.5亿美元，并吸引了Iconiq等知名风投的追逐。\n    *   Kolodny以每股0.26美元的价格买入，无论Chime最终市值如何，她都获得了巨大成功。\n\n## 令人欣慰的时刻\n\n*   **来自用户的认可**：\n    *   在IPO路演期间，Ryan King在一次会议上被安保人员要求出示证件时，安保人员看到了CEO Chris Britt钱包里的Chime卡。\n    *   安保人员惊喜地表示：“哦，我看到那张Chime卡了！”并向他们眨眼。\n    *   当被问及是否是Chime客户时，安保人员自豪地回答：“支票和储蓄，宝贝！”并与创始人击掌。这成为Ryan King心中“锦上添花”的时刻。\n\n## 图片\n\n*   Chime联合创始人Ryan King\n    ![Chime co-founder Ryan King](https://techcrunch.com/wp-content/uploads/2025/06/Chime-co-founder-Ryan-King.jpg?w=680)",
+      "shortSummary": "金融科技公司Chime成功上市，市值达145亿美元，通过IPO筹集8.64亿美元。然而，该公司在2016年曾濒临倒闭，被100多家风投拒绝。最终，一位名为Lauren Kolodny的投资者伸出援手，使其得以延续。Chime致力于为工薪阶层提供免费在线银行服务，并于2025年第一季度实现盈利，克服了早期的巨大挑战。",
+      "translated_title": "Chime在2016年濒临倒闭，曾被100家风投拒绝——如今它以145亿美元市值上市",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Chime-co-founder-Ryan-King.jpg?w=680",
+          "alt": "Chime co-founder Ryan King",
+          "title": "",
+          "position": 1
+        }
+      ],
       "contentSource": "完整文章",
-      "content": "Meta has reportedly invested billions of dollars into AI startup Scale AI and hired its CEO, Alexandr Wang, to lead a new AI research lab. So what does that mean for Meta and the rest of the AI ecosystem?"
+      "content": "In 2016 when Chime desperately needed cash, over 100 VCs said no. One seed VC took a chance and saved the company, co-founder Ryan King recalls."
     },
     {
-      "title": "美国政府疫苗网站被AI生成内容篡改 (原标题: US government’s vaccine website defaced with AI-generated content)",
-      "link": "https://techcrunch.com/2025/06/11/us-governments-vaccine-website-defaced-with-ai-generated-content/",
-      "pubDate": "Wed, 11 Jun 2025 18:36:03 +0000",
-      "isoDate": "2025-06-11T18:36:03.000Z",
+      "title": "苹果修复了被Paragon间谍软件攻击利用的新iPhone零日漏洞 (原标题: Apple fixes new iPhone zero-day bug used in Paragon spyware hacks)",
+      "link": "https://techcrunch.com/2025/06/12/apple-fixes-new-iphone-zero-day-bug-used-in-paragon-spyware-hacks/",
+      "pubDate": "Thu, 12 Jun 2025 17:06:41 +0000",
+      "isoDate": "2025-06-12T17:06:41.000Z",
       "creator": "Lorenzo Franceschi-Bicchierai",
-      "summary": "### 美国政府疫苗网站遭AI生成内容篡改事件概述\n\n*   **事件核心**：美国政府的一个旨在向公众提供疫苗信息的网站遭到篡改，目前托管着疑似由AI生成的垃圾内容。\n*   **涉事部门与域名**：该域名属于美国卫生与公众服务部（HHS）。\n*   **篡改内容**：网站上出现的内容主要是与同性恋和LGBTQ+主题相关的帖子，被描述为“AI生成的劣质垃圾信息”。\n*   **时间线**：根据网站的存档版本，这种篡改内容至少从5月12日开始出现。\n*   **责任方与目的**：目前尚不清楚谁应对此负责，也无法明确除了推送AI生成的垃圾信息之外，此次篡改的目的何在。\n*   **历史背景**：过去，美国政府官方域名托管的网站也曾被劫持，用于托管诈骗广告和黑客服务。\n*   **更广泛的垃圾信息行动**：404 Media于周三报道称，HHS的疫苗网站是更广泛的垃圾信息行动的一部分。该行动还涉及属于NPR、英伟达（Nvidia）和斯坦福大学的网站，所有这些网站都重定向到一个由wowlazy.com托管的“无意义的SEO垃圾页面”。\n*   **官方回应**：HHS未回应TechCrunch的置评请求。",
-      "shortSummary": "美国卫生与公众服务部（HHS）的疫苗信息网站遭到篡改，自5月12日起托管AI生成的LGBTQ+主题垃圾内容。此次事件是更广泛的垃圾信息行动的一部分，该行动还涉及NPR、英伟达和斯坦福大学等网站，它们均重定向至一个SEO垃圾页面。目前尚不清楚幕后黑手及篡改目的，HHS未对此置评。",
-      "translated_title": "美国政府疫苗网站被AI生成内容篡改",
+      "summary": "### 苹果修复Paragon间谍软件利用的iPhone零日漏洞\n\n**引言**\n\n周四，研究人员披露了两名欧洲记者的iPhone被Paragon公司制造的间谍软件入侵。苹果公司表示，已修复了用于入侵这些手机的漏洞。\n\n**漏洞详情与修复**\n\n*   **漏洞类型**：该漏洞是一个逻辑问题，存在于通过iCloud链接共享的恶意制作的照片或视频的处理过程中。\n*   **修复版本**：苹果公司告知The Citizen Lab研究人员，该漏洞已在2月10日发布的iOS 18.3.1软件更新中得到“缓解”。\n*   **苹果声明**：苹果在其更新后的安全公告中指出，已知此问题可能已被用于针对特定目标的高度复杂攻击。\n\n**披露时间线与争议**\n\n*   **最初披露**：2月10日，iOS 18.3.1发布时的安全公告仅提及了一个不相关的漏洞，该漏洞允许攻击者禁用iPhone的一种安全机制。\n*   **延迟披露**：直到周四（文章发布日），苹果才更新了其2月10日的公告，包含了这个新的零日漏洞的详细信息，尽管该漏洞当时已被修复但未公开。苹果公司未解释为何在iOS更新发布四个月后才披露此漏洞的存在。\n\n**受害者确认**\n\n*   The Citizen Lab在其周四发布的最终报告中证实，意大利记者Ciro Pellegrino和一名未透露姓名的“知名”欧洲记者正是此漏洞的受害者。\n\n**Paragon间谍软件背景**\n\n*   **事件起源**：Paragon间谍软件丑闻始于今年1月，当时WhatsApp通知约90名用户（包括记者和人权活动家）他们已成为Paragon名为“Graphite”的间谍软件的目标。\n*   **苹果警报**：4月底，多名iPhone用户收到了苹果的通知，提醒他们已成为雇佣兵间谍软件的目标。该警报未提及幕后的间谍软件公司。\n*   **最新发现**：The Citizen Lab周四发布的研究结果证实，收到苹果通知的两名记者确实被Paragon的间谍软件入侵。目前尚不清楚所有收到苹果通知的用户是否都受到了“Graphite”的攻击。苹果的警报称，“今天的通知已发送给100个国家/地区受影响的用户”。",
+      "shortSummary": "苹果公司已修复了一个新的iPhone零日漏洞，该漏洞被Paragon间谍软件利用，入侵了两名欧洲记者的手机。该漏洞在2月10日发布的iOS 18.3.1中得到修复，但苹果延迟了四个月才公开披露其存在。该漏洞涉及通过iCloud链接处理恶意照片或视频时出现的逻辑问题。此事件是Paragon间谍软件攻击活动的一部分，此前已有用户收到WhatsApp和苹果的间谍软件攻击警报。",
+      "translated_title": "苹果修复了被Paragon间谍软件攻击利用的新iPhone零日漏洞",
       "images": [],
       "contentSource": "完整文章",
-      "content": "The content of a vaccines information website owned by the U.S. Department of Health and Human Services was swapped with gay-themed spam."
+      "content": "The iPhone maker quietly updated a February security advisory to publicize a flaw that was used to hack at least two journalists in Europe. "
     },
     {
-      "title": "在WWDC上，苹果表示将利用AI为应用添加标签，以提升App Store的应用发现能力 (原标题: At WWDC, Apple says it will use AI to tag apps to improve discoverability on the App Store)",
-      "link": "https://techcrunch.com/2025/06/11/at-wwdc-apple-says-it-will-use-ai-to-tag-apps-to-improve-discoverability-on-the-app-store/",
-      "pubDate": "Wed, 11 Jun 2025 18:17:33 +0000",
-      "isoDate": "2025-06-11T18:17:33.000Z",
-      "creator": "Sarah Perez",
-      "summary": "### App Store 应用发现新进展：AI 驱动的标签系统\n\n苹果在今年的全球开发者大会（WWDC 25）上宣布，将开始利用人工智能技术来提升 App Store 上的应用发现能力。\n\n#### App Store 标签 (App Store Tags)\n\n*   **功能介绍**：\n    *   苹果将引入“App Store 标签”，这些标签旨在突出显示应用中的特定功能和特性。\n    *   这些标签将帮助揭示通常隐藏在应用列表深处的信息，例如应用描述、类别、元数据甚至截图中的细节。\n*   **生成与审核流程**：\n    *   标签将首先由苹果的大型语言模型（LLM）根据应用的元数据等多种来源生成。\n    *   生成后，这些标签会经过人工审核，然后才会被应用于 App Store 上的应用。\n*   **用户体验提升**：\n    *   用户在 App Store 搜索应用时，将能够利用这些新标签。\n    *   标签会与搜索页面上的类别以及搜索结果中的应用一同显示。\n    *   当用户点击某个标签时，他们将被引导至一个新页面，该页面会展示所有提供类似功能或特性的应用和游戏的精选集合，这类似于 App Store 现有“您可能也喜欢”的功能。\n    *   苹果相信，这些标签将使用户更容易找到他们正在寻找特定功能的应用程序。\n*   **开发者益处**：\n    *   新标签系统将帮助开发者更好地了解他们的应用是如何被用户发现的。\n    *   开发者对与他们应用关联的标签拥有最终决定权。App Store Connect 软件中将提供一个新信息页面，供开发者管理或取消选择不希望显示在其应用产品页面上的标签。\n\n#### 现有应用发现方式\n\n目前，消费者通过多种 App Store 功能发现应用，包括：\n*   Today 标签页上的编辑精选文章。\n*   App Store 编辑团队策划的精选集合。\n*   浏览应用类别。\n*   使用 App Store 搜索功能。\n*   App Store 广告，这些广告可能出现在 Today 标签页、搜索标签页、产品页面和搜索结果中。\n\n#### 其他 AI 应用与 App Store 改进\n\n*   **AI 总结评论**：苹果已在 App Store 上利用 AI 来总结应用评论，将多条评论信息整合为简短段落。\n*   **其他 App Store 改进**：\n    *   开发者将能够创建自定义产品页面，当用户使用特定关键词搜索应用时显示。\n    *   改进了应用“营养标签”功能。\n    *   扩展了应用年龄范围（现在共有五种）。\n    *   将优惠码的适用范围扩展到消耗品、非消耗品和非续订订阅。",
-      "shortSummary": "苹果在WWDC 25宣布，将利用AI为App Store应用添加“App Store 标签”，以提升应用发现能力。这些标签由AI生成并经人工审核，用户可用于搜索，点击标签可查看相关应用精选集。此举旨在帮助用户更易找到所需功能的应用，并为开发者提供发现洞察。开发者对标签有最终控制权。此外，苹果还在App Store中利用AI总结应用评论，并推出自定义产品页面等其他改进。",
-      "translated_title": "在WWDC上，苹果表示将利用AI为应用添加标签，以提升App Store的应用发现能力",
+      "title": "OpenAI与芭比制造商美泰合作，将生成式AI引入玩具制造及其他产品 (原标题: OpenAI and Barbie-maker Mattel team up to bring generative AI to toymaking, other products)",
+      "link": "https://techcrunch.com/2025/06/12/openai-and-barbie-maker-mattel-team-up-to-bring-generative-ai-to-toy-making-and-content-creation/",
+      "pubDate": "Thu, 12 Jun 2025 16:44:33 +0000",
+      "isoDate": "2025-06-12T16:44:33.000Z",
+      "creator": "Rebecca Bellan",
+      "summary": "### OpenAI与美泰达成战略合作\n\n*   **合作背景与目标**\n    *   芭比制造商美泰（Mattel）与人工智能公司OpenAI宣布建立合作关系。\n    *   此次合作旨在将生成式人工智能（Generative AI）技术引入玩具制造领域，并应用于美泰不断扩展的知识产权（IP）重塑和再包装。\n    *   这是OpenAI首次与玩具制造商签署此类许可协议，标志着其将AI技术嵌入各行各业的整体战略的进一步延伸，并可能为OpenAI在美泰日益壮大的娱乐部门中奠定基础。\n\n*   **美泰的业务布局与发展**\n    *   美泰在2023年凭借电影《芭比》取得了巨大成功，吸引了广泛的成年观众。\n    *   公司目前正积极开发基于其他标志性玩具（如风火轮、波莉口袋、巴尼、UNO和宇宙的巨人希曼）的电影项目，并拥有丰富的动画和真人电视内容。\n    *   美泰也在大力拓展数字游戏市场，预计将在2026年推出其首款自主发行的游戏。\n\n*   **合作细节与产品展望**\n    *   此次合作的具体细节目前披露不多。\n    *   两家公司计划在今年晚些时候发布他们的首款“AI驱动产品”，旨在以“安全、周到、负责任的方式增强粉丝参与度”。\n    *   美泰强调，作为合作的核心部分，公司将优先考虑产品和体验的安全性、隐私性和数据安全。\n    *   美泰首席特许经营官乔什·西尔弗曼（Josh Silverman）透露，未来的AI产品将“涵盖实体产品和部分体验”。\n    *   西尔弗曼同时明确表示，美泰在此次交易中并未将其IP授权给OpenAI，而是保留对所创建产品的完全控制权。\n\n*   **AI在美泰内部的应用**\n    *   作为合作的一部分，美泰的员工将获得使用OpenAI工具（如ChatGPT Enterprise）的权限，以“增强产品开发和创意构思”。\n\n*   **美泰对AI赋能的愿景**\n    *   乔什·西尔弗曼表示，美泰的每一款产品和体验都旨在通过玩乐激发粉丝、娱乐观众、丰富生活。\n    *   他认为，AI有能力扩展这一使命，以新颖而激动人心的方式拓宽美泰品牌的影响力。\n    *   与OpenAI的合作将使美泰能够利用新技术，巩固其在创新领域的领导地位，并重新构想新的游戏形式。\n    *   这意味着美泰拥有数十年历史的品牌将通过AI获得下一代的技术提升，无论是通过ChatGPT赋能的芭比，还是更快的剧本创作。",
+      "shortSummary": "OpenAI与芭比制造商美泰达成合作，将生成式AI引入玩具制造和IP开发。双方计划今年推出首款AI驱动产品，旨在以安全、负责任的方式提升粉丝参与度。美泰将保留对IP的完全控制权，并允许员工使用OpenAI工具辅助产品开发。此次合作旨在利用AI拓展美泰品牌影响力，并重新构想新的游戏形式。",
+      "translated_title": "OpenAI与芭比制造商美泰合作，将生成式AI引入玩具制造及其他产品",
       "images": [],
       "contentSource": "完整文章",
-      "content": "Apple will begin using AI technology to power the discovery of apps on the App Store, the company announced at this week&#8217;s Worldwide Developers Conference (WWDC 25). In a session focused on updates to App Store Connect, its app distribution platform for developers, the company announced it will introduce App Store Tags &#8212; labels that [&#8230;]"
+      "content": "Barbie-maker Mattel and OpenAI have teamed up to bring generative AI to the toymaking and ever-expanding pipeline of IP repackaging."
     },
     {
-      "title": "TikTok最大明星被ICE拘留，另一位网红协助举报 (原标题: TikTok’s biggest star was detained by ICE, with help from another influencer)",
-      "link": "https://techcrunch.com/2025/06/11/tiktoks-biggest-star-was-detained-by-ice-with-help-from-another-influencer/",
-      "pubDate": "Wed, 11 Jun 2025 18:16:56 +0000",
-      "isoDate": "2025-06-11T18:16:56.000Z",
-      "creator": "Connie Loizos",
-      "summary": "# TikTok明星Khaby Lame被ICE拘留事件\n\n*   **事件概述**\n    *   全球顶级TikTok创作者Khaby Lame近期在拉斯维加斯被美国移民官员拘留。\n    *   据《纽约时报》报道，他已离开美国。\n\n*   **拘留原因**\n    *   美国移民和海关执法局（ICE）表示，Lame在四月抵达美国后，签证逾期滞留。\n    *   他被允许自愿离境，目前已身在国外。\n\n*   **举报者身份**\n    *   事件引起关注是因为一位名叫Bo Loudon的青少年网红在X（原Twitter）上声称，他向当局举报了Lame的移民身份。\n    *   Loudon经常发布政治内容，并表示他联系了相关人士进行举报。\n\n*   **Khaby Lame的背景与成就**\n    *   25岁的Khaby Lame是一位意大利裔塞内加尔网红，以其对热门视频的无声、面无表情的反应而闻名。\n    *   据报道，他在疫情期间失业后，积累了庞大的全球粉丝群，并获得了大量利润丰厚的品牌合作。\n    *   合作对象包括Hugo Boss等知名品牌。\n    *   他还曾短暂出演一部好莱坞电影，并主演了一部关于他在美国经历的三集旅行系列片。\n\n*   **后续**\n    *   截至本文撰写时，Khaby Lame尚未公开回应此事。",
-      "shortSummary": "TikTok顶级网红Khaby Lame因签证逾期在拉斯维加斯被美国移民局（ICE）拘留，现已自愿离境。据报道，另一位网红Bo Loudon声称是他向当局举报了Lame的移民身份。25岁的Lame以其无声反应走红，在疫情期间失业后积累了大量粉丝和品牌合作。截至目前，他尚未公开回应此事。",
-      "translated_title": "TikTok最大明星被ICE拘留，另一位网红协助举报",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The situation grabbed headlines after a teenage influencer, Bo Loudon, boasted on X that he flagged Khaby Lame’s immigration status to authorities."
-    },
-    {
-      "title": "维基百科暂停AI生成摘要试点，因编辑抗议 (原标题: Wikipedia pauses AI-generated summaries pilot after editors protest)",
-      "link": "https://techcrunch.com/2025/06/11/wikipedia-pauses-ai-generated-summaries-pilot-after-editors-protest/",
-      "pubDate": "Wed, 11 Jun 2025 18:01:41 +0000",
-      "isoDate": "2025-06-11T18:01:41.000Z",
-      "creator": "Kyle Wiggers",
-      "summary": "# 维基百科暂停AI生成摘要试点\n\n维基百科近期暂停了一项在其平台上使用人工智能（AI）生成文章摘要的实验。此举是在编辑们提出强烈反对后做出的。\n\n## 试点背景与运作方式\n*   **启动时间：** 维基百科本月早些时候宣布了这项实验。\n*   **目标用户：** 仅面向安装了维基百科浏览器扩展并选择加入的用户。\n*   **摘要呈现：** AI生成的摘要出现在每篇维基百科文章的顶部。\n*   **标识：** 摘要带有黄色的“未验证”（unverified）标签。\n*   **阅读方式：** 用户需要点击才能展开并阅读摘要。\n\n## 编辑的抗议与担忧\n*   **即时批评：** 实验启动后，编辑们几乎立即对其进行了批评。\n*   **核心担忧：** 编辑们担心AI生成的摘要可能会损害维基百科的公信力。\n*   **主要问题：** AI生成的摘要常包含错误，这是AI“幻觉”（hallucinations）的结果。\n*   **行业先例：** 其他进行类似实验的新闻出版物，如彭博社，也曾被迫发布更正，甚至在某些情况下缩减了测试规模。\n\n## 未来展望\n*   **实验暂停：** 尽管维基百科已暂停了这项实验。\n*   **持续兴趣：** 该平台表示，仍对AI生成的摘要感兴趣，尤其是在扩展可访问性等用例方面。",
-      "shortSummary": "维基百科已暂停其AI生成文章摘要的试点项目，原因是编辑们提出强烈抗议。该实验旨在为部分用户提供AI摘要，但编辑们担忧AI“幻觉”导致的错误会损害维基百科的公信力。尽管暂停，维基百科仍表示对AI摘要在提升可访问性方面的应用保持兴趣。",
-      "translated_title": "维基百科暂停AI生成摘要试点，因编辑抗议",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Editors almost immediately criticized the pilot, raising concerns that it could damage Wikipedia's credibility. "
-    },
-    {
-      "title": "如何删除您的23andMe数据 (原标题: How to delete your 23andMe data)",
-      "link": "https://techcrunch.com/2025/06/11/23andme-files-for-bankruptcy-how-to-delete-your-data/",
-      "pubDate": "Wed, 11 Jun 2025 17:59:39 +0000",
-      "isoDate": "2025-06-11T17:59:39.000Z",
-      "creator": "Aisha Malik",
-      "summary": "### 如何删除您的23andMe数据：保护您的遗传信息\n\n**背景与数据隐私担忧**\nDNA检测服务公司23andMe于3月申请破产保护，引发了对其1500万客户遗传数据命运的广泛担忧。制药巨头Regeneron在5月通过破产拍卖以2.56亿美元收购了该公司。尽管Regeneron承诺将维持23andMe的隐私惯例，但也明确表示将利用23andMe的数据来辅助新药研发。在23andMe申请破产时，安全专家和立法者就已敦促客户采取行动保护其数据。\n\n**数据删除现状与法律挑战**\n*   23andMe临时首席执行官Joseph Selsavage向立法者透露，已有190万人（约占其客户群的15%）要求删除其遗传数据。\n*   此数字是在众议院监督委员会听证会上公布的，该委员会正在审查23andMe的出售事宜。\n*   此外，超过二十个州已起诉23andMe，质疑其在未获得客户明确同意的情况下出售私人数据的行为。\n\n**如何删除您的23andMe数据**\n如果您是曾与23andMe共享DNA的1500万用户之一，以下是您可以采取的保护措施。请注意，您无法删除所有23andMe数据，但可以控制一部分。\n\n1.  **登录您的23andMe账户。**\n2.  **导航至“设置”（Settings）部分。**\n3.  **向下滚动到标有“23andMe数据”（23andMe Data）的选项。**\n4.  **点击“查看”（View）选项，并滚动到“删除数据”（Delete Data）部分。**\n5.  **选择“永久删除数据”（Permanently Delete Data）按钮。**\n6.  **您将收到一封来自23andMe的电子邮件，其中包含一个链接，用于确认您的删除请求。**\n    *   在删除之前，您可以选择下载一份您的数据副本。\n\n**数据删除的局限性**\n23andMe的隐私政策明确指出，公司及其实验室“将保留您的遗传信息、出生日期和性别，以符合适用的法律义务”。政策还提到：“23andMe还将保留与您的账户和数据删除请求相关的有限信息，包括但不限于您的电子邮件地址、账户删除请求标识符、与查询或投诉相关的通信以及法律协议，保留期限根据法律、合同义务和/或为建立、行使或辩护法律索赔以及审计和合规目的所需。”这意味着23andMe可能会无限期地保留您的部分信息。\n\n**如何销毁您的23andMe测试样本并撤销数据用于研究的许可**\n如果您之前选择让23andMe存储您的唾液样本和DNA，您可以更改此设置：\n\n1.  **撤销样本存储许可：**\n    *   进入您的23andMe账户设置页面，然后导航到“偏好设置”（Preferences）。\n2.  **撤回研究同意：**\n    *   如果您之前同意23andMe和第三方研究人员使用您的遗传数据和样本进行研究，您可以从账户设置中的“研究和产品同意”（Research and Product Consents）部分撤回同意。\n    *   请注意，一旦信息已被用于研究，您无法删除这些信息。\n\n**重要建议**\n*   **与家人沟通：** 在您请求删除数据后，务必与您的家人核实，并鼓励他们也采取相同的行动，因为不仅是他们的DNA面临出售风险，这也会影响到与他们有血缘关系的人。\n*   **与朋友沟通：** 同样，建议与您的朋友核实，确保所有您关心的人都在采取措施保护他们的数据。",
-      "shortSummary": "23andMe破产后被Regeneron收购，引发客户遗传数据隐私担忧。尽管15%的用户已请求删除数据，且多州起诉其未经同意出售数据，但23andMe仍可能保留部分信息。文章提供了删除数据、销毁样本及撤销研究同意的步骤，但强调已用于研究的数据无法删除。建议用户鼓励家人朋友共同保护数据。",
-      "translated_title": "如何删除您的23andMe数据",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "23andMe holds millions of customers' genetic information. Here's what you can do to protect your data."
-    },
-    {
-      "title": "Snapchat 推出新的 $8.99 Lens+ 订阅层级 (原标题: Snapchat rolls out a new $8.99 Lens+ subscription tier)",
-      "link": "https://techcrunch.com/2025/06/11/snapchat-rolls-out-a-new-8-99-lens-subscription-tier/",
-      "pubDate": "Wed, 11 Jun 2025 17:54:14 +0000",
-      "isoDate": "2025-06-11T17:54:14.000Z",
-      "creator": "Aisha Malik",
-      "summary": "## Snapchat 推出新的 Lens+ 订阅层级\n\n![Snapchat logo](https://techcrunch.com/wp-content/uploads/2024/06/snapchat-getty.jpg?w=1024)\n图片来源：KIRILL KUDRYAVTSEV/AFP / Getty Images\n\nSnapchat 于2025年6月11日宣布推出名为“Lens+”的全新订阅层级，旨在通过独家 Lenses 和增强现实（AR）体验来吸引用户。\n\n*   **定价与功能**\n    *   Lens+ 每月费用为 $8.99。\n    *   它不仅包含标准每月 $3.99 的 Snapchat+ 层级的所有福利，还额外提供数百个独家 Lenses，用户可以利用这些 Lenses 进行“玩耍、创作和分享 Snaps”。\n    *   初期将包括由 Snapchat 和精选创作者开发的 Lenses，例如独家 AI 视频 Lenses 和全新的 Bitmoji 游戏 Lens。\n    *   Snapchat 承诺每周都会增加新的 AR 体验。\n    *   公司明确表示，此前免费提供的任何 Lenses 都不会被设为付费内容。\n\n*   **创作者变现机会**\n    *   在未来几个月内，部分 Lens 创作者将能够通过独家 Lenses 实现变现，为他们在平台上的收入增长提供新途径。\n    *   目前，Snapchat 尚未公布具体的创作者收入分成细节。\n\n*   **订阅服务对公司营收的影响**\n    *   Snapchat+ 于2022年推出，目前已拥有超过1400万付费订阅用户。\n    *   该付费订阅服务被认为是 Snap 收入增长的重要驱动力。在第一季度，Snap 报告营收达到13.6亿美元，同比增长14%，这主要得益于 Snapchat+ 订阅服务的增长以及广告解决方案的进步。\n    *   通过推出更多订阅层级，Snap 旨在通过将更高级的 Lenses 和 AR 体验设为付费内容来进一步增加公司收入。\n\n*   **其他订阅选项**\n    *   值得一提的是，Snapchat 还提供每月 $14.99 的 Platinum Snapchat+ 层级，该层级不仅移除广告，还包含标准 Snapchat+ 和 Lens+ 层级的所有福利。",
-      "shortSummary": "Snapchat 推出每月 $8.99 的新订阅层级“Lens+”，旨在提供独家 Lenses 和增强现实（AR）体验。该服务包含标准 Snapchat+ 的所有福利，并允许用户访问数百个独家 Lenses。Snapchat 不会将现有免费 Lenses 设为付费。此举旨在进一步推动公司收入增长，Snapchat+ 目前已有超过1400万付费用户，是其营收增长的主要动力。未来，部分 Lens 创作者也将能通过独家内容变现。",
-      "translated_title": "Snapchat 推出新的 $8.99 Lens+ 订阅层级",
+      "title": "电池制造商Powin在获得2亿美元贷款数月后申请破产 (原标题: Battery manufacturer Powin files for bankruptcy months after landing $200M loan)",
+      "link": "https://techcrunch.com/2025/06/12/battery-manufacturer-powin-files-for-bankruptcy-months-after-landing-200m-loan/",
+      "pubDate": "Thu, 12 Jun 2025 16:28:24 +0000",
+      "isoDate": "2025-06-12T16:28:24.000Z",
+      "creator": "Tim De Chant",
+      "summary": "### 电池制造商Powin申请破产保护\n\n电池制造商Powin于2025年6月12日（周三）申请了美国《破产法》第11章的破产保护。这家总部位于俄勒冈州的公司表示，其债务已超过3亿美元。此次破产申请将允许公司在重组债务的同时继续运营。\n\n**关键信息点：**\n\n*   **债务与破产申请**：Powin负债超过3亿美元，已提交第11章破产申请，旨在重组债务并维持运营。\n*   **产品与供应链挑战**：\n    *   Powin主要生产使用中国磷酸铁锂（LFP）电池的电网级电池。\n    *   公司曾寻求替代的国内供应商，但其前首席执行官Jeff Waters在4月份表示，国内供应链尚未足够成熟。\n*   **裁员与领导层变动**：\n    *   本月初，Powin裁员近250人，目前仅剩85名员工，不到年初员工总数的五分之一。\n    *   伴随破产申请，Jeff Waters被首席项目官Brian Krane取代。\n*   **融资历史与市场地位**：\n    *   Powin是十多年前第一波清洁技术热潮的幸存者，于2018年被私有化。\n    *   2022年，公司从Energy Impact Partners、GIC和Trilantic Energy Partners等投资者那里获得了1.35亿美元的增长股权。\n    *   近期，Powin还从KKR获得了2亿美元的循环信贷额度。\n    *   近年来，随着电网级电池储能市场的蓬勃发展，Powin的业务也随之增长，在美国安装容量方面排名第三，全球排名第四。\n*   **债务原因推测**：公司未明确说明债务突然增加的原因，但考虑到其对中国LFP电池的依赖，文章推测关税可能在其中发挥了作用。\n\n![加利福尼亚州一排排的Powin电池提供电力。](https://techcrunch.com/wp-content/uploads/2025/06/powin-california-battery-storage.jpg?w=1024)\n*图片来源：Powin*",
+      "shortSummary": "电池制造商Powin在获得2亿美元贷款数月后，因负债超3亿美元于周三申请破产保护。该公司曾是美国第三大电网级电池供应商，但因依赖中国磷酸铁锂（LFP）电池及潜在关税影响，面临供应链和财务困境。Powin已大幅裁员并更换CEO，将通过破产重组债务以继续运营。",
+      "translated_title": "电池制造商Powin在获得2亿美元贷款数月后申请破产",
       "images": [
         {
-          "url": "https://techcrunch.com/wp-content/uploads/2024/06/snapchat-getty.jpg?w=1024",
-          "alt": "Snapchat logo",
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/powin-california-battery-storage.jpg?w=1024",
+          "alt": "Rows of Powin batteries provide power in California.",
           "title": "",
           "position": 1
         }
       ],
       "contentSource": "完整文章",
-      "content": "Snapchat is launching a new Snapchat+ tier called \"Lens+,\" the company announced on Wednesday, which is centered around giving users access to exclusive Lenses and AR experiences."
+      "content": "Battery manufacturer Powin filed for bankruptcy on Wednesday. The Chapter 11 filing will let it continue operating while it restructures its debt."
     },
     {
-      "title": "迪士尼和环球影业起诉Midjourney，指控其涉嫌AI相关版权侵权 (原标题: Disney and Universal sue Midjourney, alleging AI-related copyright infringement)",
-      "link": "https://techcrunch.com/2025/06/11/disney-and-universal-sue-midjourney-alleging-ai-related-copyright-infringement/",
-      "pubDate": "Wed, 11 Jun 2025 17:34:39 +0000",
-      "isoDate": "2025-06-11T17:34:39.000Z",
-      "creator": "Kyle Wiggers",
-      "summary": "# 迪士尼和环球影业起诉Midjourney侵犯版权\n\n迪士尼和环球影业已对生成式人工智能平台Midjourney提起诉讼，指控其未经许可，使用两家公司的内容来训练其艺术生成和编辑模型，从而侵犯了版权。\n\n## 诉讼背景与指控\n*   **原告与被告：** 迪士尼和环球影业（原告）对生成式AI平台Midjourney（被告）提起诉讼。\n*   **核心指控：** 诉讼声称Midjourney在未经授权的情况下，使用迪士尼和环球影业的受版权保护内容来训练其AI模型。\n*   **此前请求：** 据《华尔街日报》报道，迪士尼和环球影业此前曾要求Midjourney停止侵犯其知识产权，但这些请求被Midjourney忽视。\n*   **诉讼地点：** 该诉讼已提交至美国加利福尼亚中区地方法院。\n\n## 侵权证据与诉求\n*   **证据示例：** 诉讼中包含了数十张由Midjourney生成的图片示例，这些图片清晰地描绘了工作室受版权保护的角色，例如霍默·辛普森（Homer Simpson）和达斯·维德（Darth Vader）。\n*   **诉讼诉求：** 迪士尼和环球影业寻求：\n    *   经济赔偿。\n    *   陪审团审判。\n    *   法院发布禁令，禁止Midjourney进一步侵犯版权。\n\n## 被告回应与行业背景\n*   **Midjourney回应：** 截至目前，Midjourney尚未对TechCrunch的置评请求作出回应。\n*   **行业趋势：** 此次诉讼发生在科技公司（包括OpenAI）积极推动获得法律保护的背景下，这些公司希望能够在未经创作者授权或补偿的情况下，使用公开可用的作品（包括受版权保护的作品）来训练其AI模型。\n*   **影视行业AI应用：** 《华尔街日报》指出，尽管一些影视工作室也曾尝试生成式AI技术，但其应用规模相对有限。\n\n## 相关图片\n\n![Stable Diffusion](https://techcrunch.com/wp-content/uploads/2022/08/ai-gen-unfiltered.jpg?w=1024)\n*图片来源：Bryce Durbin / TechCrunch*\n\n![Kyle Wiggers](https://techcrunch.com/wp-content/uploads/2022/03/Kyle-Wiggers.jpg)",
-      "shortSummary": "迪士尼和环球影业已起诉生成式AI平台Midjourney，指控其未经许可，使用两家公司受版权保护的内容（如霍默·辛普森和达斯·维德等角色）训练其AI模型，构成版权侵权。原告寻求经济赔偿和禁令，以阻止进一步侵权。此案反映了科技公司在未经授权使用受版权作品训练AI模型方面面临的日益增长的法律挑战。",
-      "translated_title": "迪士尼和环球影业起诉Midjourney，指控其涉嫌AI相关版权侵权",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2022/08/ai-gen-unfiltered.jpg?w=1024",
-          "alt": "Stable Diffusion",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2022/03/Kyle-Wiggers.jpg",
-          "alt": "Kyle Wiggers",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The studios are seeking monetary damages, a jury trial, and an order barring Midjourney from further copyright infringement. "
-    },
-    {
-      "title": "全食超市警告：主要分销商UNFI遭遇网络攻击后可能出现短缺 (原标题: Whole Foods warns of shortages after cyberattack at its primary distributor UNFI)",
-      "link": "https://techcrunch.com/2025/06/11/whole-foods-tells-staff-cyberattack-at-its-primary-distributor-unfi-will-affect-product-availability/",
-      "pubDate": "Wed, 11 Jun 2025 17:30:00 +0000",
-      "isoDate": "2025-06-11T17:30:00.000Z",
-      "creator": "Zack Whittaker",
-      "summary": "全食超市（Whole Foods）已告知员工，其主要分销商联合天然食品（United Natural Foods, UNFI）正在经历的系统中断和故障可能需要“数天才能解决”。\n\n*   **事件起因**：\n    *   UNFI遭遇了一场“全国性技术系统中断”，UNFI方面将其描述为一次网络安全事件。\n    *   UNFI首席执行官Sandy Douglas透露，公司在检测到入侵后于上周五将整个网络下线。\n\n*   **对全食超市的影响**：\n    *   网络攻击影响了UNFI从仓库拣选和运输产品的能力。\n    *   这将“影响我们正常的配送计划和产品供应”。\n    *   全食超市指示员工，对顾客的唯一官方说法是公司正面临“暂时性供应挑战”。\n    *   全食超市发言人Nathan Cimbala表示，他们正努力尽快补货，并对给顾客造成的不便表示歉意。\n\n*   **UNFI的恢复进展**：\n    *   UNFI发言人Grace Turiano表示，公司正在稳步恢复系统，并逐步恢复在线订购和接收能力，目标是在未来几天内进一步提高产能。\n    *   UNFI于周一向联邦监管机构披露了此次网络攻击。\n\n*   **UNFI的规模**：\n    *   UNFI是北美最大的食品分销商之一，为美国和加拿大超过30,000家商店和超市供应杂货和新鲜农产品。\n    *   该公司本周报告称，截至2025年5月3日的季度净销售额为81亿美元。\n\n*   **实际影响**：\n    *   TechCrunch收到了多份报告，称一些全食超市门店以及其他依赖UNFI的杂货店出现货架空置情况。\n    *   记者在周二走访一家全食超市时，看到多个货架上贴有通知，称某些产品存在“暂时性缺货问题”。\n    *   对杂货店及其顾客的下游实际影响可能要到本周晚些时候才能完全显现。",
-      "shortSummary": "全食超市警告称，由于其主要分销商UNFI遭遇网络攻击，可能面临产品短缺。此次攻击影响了UNFI的产品拣选和运输能力，导致全食超市的配送和商品供应受阻。UNFI正在努力恢复系统，并逐步恢复在线订购功能。此次事件已导致部分全食超市及其他依赖UNFI的门店出现货架空置。全食超市表示正在尽快补货，并预计问题将在数天内解决。",
-      "translated_title": "全食超市警告：主要分销商UNFI遭遇网络攻击后可能出现短缺",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The retail giant described the food shortages as \"temporary supply challenges\" following the cyberattack at its primary distributor, UNFI.\n"
-    },
-    {
-      "title": "Meta AI 获得视频编辑能力 (原标题: Meta AI gains video editing capabilities)",
-      "link": "https://techcrunch.com/2025/06/11/meta-ai-gains-video-editing-capabilities/",
-      "pubDate": "Wed, 11 Jun 2025 16:55:07 +0000",
-      "isoDate": "2025-06-11T16:55:07.000Z",
+      "title": "Nothing新款手机Phone 3将在美国全面上市 (原标题: Nothing’s new Phone 3 will be available for general sale in the US)",
+      "link": "https://techcrunch.com/2025/06/12/nothings-new-phone-3-will-be-available-for-general-sale-in-the-us/",
+      "pubDate": "Thu, 12 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-12T16:00:00.000Z",
       "creator": "Ivan Mehta",
-      "summary": "### Meta AI 推出视频编辑功能\n\nMeta 公司于2025年6月11日宣布，将为 Meta AI 增加视频编辑功能，允许用户使用预设的 AI 提示来编辑短视频，从而改变服装、地点和风格。\n\n**主要功能与特点：**\n*   **AI 驱动的编辑**：用户可以通过预设的 AI 提示，轻松编辑短视频（目前限制为10秒）。\n*   **编辑内容多样**：可改变视频中人物的服装、场景地点以及整体风格。\n*   **预设示例**：例如，可以将视频应用“复古漫画书风格”，将光线改为下雨天，或将主题人物的服装替换为宇航员服。\n*   **灵感来源**：这些功能受到 Meta 的 Movie Gen AI 模型启发，但尚不清楚是否直接使用这些模型提供支持。\n*   **当前限制**：目前提供50个预设选项。Meta 表示这些预设是根据创作者的反馈制作的。\n\n**可用性与竞争：**\n*   **推出平台**：这些编辑工具将在美国地区的 Meta AI 应用、Meta.ai 网站以及其 CapCut 竞争产品 Edits 中推出。\n*   **市场竞争**：此举旨在与谷歌等已在其应用中稳步增加生成式 AI 视频工具的竞争对手，以及 Captions 等其他 AI 驱动的编辑平台展开竞争。\n*   **公司目标**：Meta 希望通过这些功能，鼓励更多创作者使用其自有的工具，而非第三方应用。\n\n**分享与未来计划：**\n*   **直接分享**：编辑后的视频可以直接从 Edits 和 Meta AI 应用分享到 Facebook 和 Instagram。\n*   **未来展望**：Meta 计划在今年晚些时候增加更多的自定义选项。\n*   **公司愿景**：Meta 表示，推出此功能是为了让每个人都能进行创意实验，制作有趣、引人入胜的视频与朋友、家人和关注者分享。\n\n**图片：**\n*   Meta AI 标志：\n    ![Meta AI logo, blue circle](https://techcrunch.com/wp-content/uploads/2024/04/meta-ai-logo.jpg?w=1024)\n*   Meta AI 视频编辑功能示例：\n    ![图片 2](https://techcrunch.com/wp-content/uploads/2025/06/ezgif-27dbf937d8be70.gif?w=680)",
-      "shortSummary": "Meta AI 现已推出视频编辑功能，允许用户通过预设的 AI 提示编辑10秒短视频，改变服装、地点和风格。这些工具将在美国地区的 Meta AI 应用、Meta.ai 网站和 Edits 中上线，旨在与谷歌等竞争对手抗衡，并鼓励创作者使用 Meta 自己的工具。用户可直接分享编辑后的视频到 Facebook 和 Instagram，未来还将增加更多自定义选项。",
-      "translated_title": "Meta AI 获得视频编辑能力",
+      "summary": "## Nothing Phone (3) 美国市场策略与展望\n\n智能手机初创公司Nothing计划通过其官方网站和亚马逊在美国全面销售其下一代旗舰手机Nothing Phone (3)。这款新机预计将于下月初在伦敦发布。\n\n### 美国市场销售历史与新策略\n*   **过往销售模式**：自2020年成立以来，Nothing已发布八款手机，但此前只有Phone (2)在美国实现了全面销售。在此之前，用户需通过测试计划购买，且缺乏售后支持（尽管有14天退货政策）。\n*   **Phone (3) 的重要性**：Nothing首席执行官兼一加联合创始人裴宇（Carl Pei）表示，Phone (3) 不仅仅是一次新品发布，更是公司发展的重要标志。他强调，公司致力于长期发展，并已准备好在美国市场迈出下一步。\n*   **市场机遇**：裴宇认为，尽管美国智能手机市场由两大巨头主导，但许多消费者渴望与众不同。Nothing已观察到用户转向其产品的强劲转化率，并计划通过Phone (3) 更专注地把握这一机遇，认为这是在北美扩大规模的“正确产品和正确时机”。\n\n### 产品特性与市场定位\n*   **设计差异化**：Nothing寄希望于其智能手机独特的设计能吸引寻求苹果、三星和谷歌替代品的消费者。\n*   **运营商兼容性**：Phone (3) 将开箱即用支持AT&T和T-Mobile的4G和5G多频段网络，这相比其前代型号（如Phone (2a)、Phone (2a) Plus和CMF Phone 1）有限的运营商兼容性有了显著提升。\n*   **加拿大市场**：在加拿大，Nothing将首次与百思买合作，通过零售渠道销售Phone (3) 以及新款头戴式耳机Headphone (1)。\n*   **预期配置与价格**：裴宇在3月份的视频中透露，Nothing Phone 3将采用优质材料，带来重大性能升级，并拥有“真正提升水平的软件”。预计售价约为800英镑，在美国可能折合1000美元左右。这将使Phone (3) 直接与iPhone 16 Pro和三星Galaxy S25+等高端机型竞争。\n\n### 市场挑战与公司背景\n*   **市场份额**：根据研究公司Counterpoint Research的数据，Nothing在2024年的出货量为“低个位数百万”，其中印度是其最大的市场。\n*   **美国市场竞争**：Counterpoint Research高级研究分析师Maurice Klaehne指出，谷歌和摩托罗拉在美国高端设备市场取得了一些进展，但该市场仍由三星和苹果主导。他补充说，裴宇的前公司一加也在美国销售解锁设备，但其出货量较低。这意味着Nothing在北美市场面临着艰巨的挑战。\n*   **融资情况**：Nothing迄今已通过多轮融资筹集了超过2.5亿美元。",
+      "shortSummary": "Nothing公司宣布其新款旗舰手机Phone (3) 将通过官网和亚马逊在美国全面上市。该机预计售价约1000美元，旨在以独特设计和改进的运营商兼容性挑战苹果、三星和谷歌在美国主导的市场。尽管Nothing在印度市场表现良好，但其在美国高端市场面临激烈竞争，裴宇认为Phone (3) 是公司在北美扩张的关键一步。",
+      "translated_title": "Nothing新款手机Phone 3将在美国全面上市",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Smartphone startup Nothing will sell its next flagship model, the Nothing Phone (3), in the U.S. through its website and Amazon. "
+    },
+    {
+      "title": "Instagram 终于将允许你重新排列你的网格 (原标题: Instagram will finally let you rearrange your grid)",
+      "link": "https://techcrunch.com/2025/06/12/instagram-will-finally-let-you-rearrange-your-grid/",
+      "pubDate": "Thu, 12 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-12T16:00:00.000Z",
+      "creator": "Aisha Malik",
+      "summary": "## Instagram 推出多项新功能，提升用户创作与分享体验\n\nInstagram 于周四宣布了一系列备受期待的新功能和一项支持创作者的计划，旨在为用户提供更大的灵活性和更轻松的创作环境。\n\n### 1. 个人资料网格重新排列功能\n\n*   **功能概述**：Instagram 将允许用户自由重新排列其个人资料上的帖子，以自定义网格的显示顺序。这是用户长期以来最常请求的功能之一。\n*   **背景与目的**：此前，个人资料上的帖子按时间顺序显示，只有置顶功能能将旧内容保持在顶部。新功能旨在让用户能够根据审美偏好或突出特定内容来优化其网格布局。\n*   **发布时间**：该功能曾于2022年被开发但一度搁置，现已准备就绪，将于2025年推出。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/06/Rearrange-Grid-gradient-background.png?w=680)\n\n### 2. 悄悄发布内容功能（测试中）\n\n*   **功能概述**：Instagram 正在测试一项新功能，允许用户将内容发布到其个人资料，但不会出现在关注者的动态中。\n*   **目的**：Instagram 负责人 Adam Mosseri 表示，此举旨在降低创作表达的压力，特别是当内容需要发布到动态时。它让用户可以更轻松地分享内容，而无需担心所有人的关注和表现压力。\n*   **类似功能**：该功能类似于“试用Reels”，后者允许创作者发布不向关注者显示的视频来测试新内容。数据显示，40%的创作者在使用“试用Reels”后更频繁地发布Reels，其中80%的Reels触达了更多非关注者。\n*   **未来计划**：该功能目前正在测试中，计划很快更广泛地推出。\n\n### 3. Spotify 歌曲集成到 Instagram Notes\n\n*   **功能概述**：用户现在可以直接将正在 Spotify 上收听的歌曲分享到他们的 Instagram Notes 中。\n*   **目的**：这使得关注者可以看到并了解用户正在听什么音乐，增加了音乐分享的实时性和互动性。\n\n![图片 2](https://techcrunch.com/wp-content/uploads/2025/06/Spotify-in-Notes-2up-gradient-background.png?w=680)\n\n### 4. “Drafts”创作者支持计划\n\n*   **功能概述**：Instagram 推出了一项名为“Drafts”的新计划，旨在投资和支持新兴创作者。\n*   **支持形式**：通过“Drafts”，Instagram 将与创作者合作，提供包括财务支持、人脉连接、共同构思、合作机会等在内的定制化支持。\n*   **性质**：Instagram 发言人澄清，“Drafts”并非一个专门的创作者基金，而是根据每个创作者独特项目的需求，提供最适合的支持类型。",
+      "shortSummary": "Instagram 宣布推出多项新功能。最受期待的是用户可以自由重新排列个人资料网格，以美化展示内容。此外，Instagram 正在测试一项允许用户悄悄发布内容到个人资料而不出现在关注者动态中的功能，旨在减轻创作压力。同时，用户现在可以将 Spotify 歌曲直接分享到 Instagram Notes。公司还启动了“Drafts”计划，为新兴创作者提供定制化支持，以提升用户的创作与分享体验。",
+      "translated_title": "Instagram 终于将允许你重新排列你的网格",
       "images": [
         {
-          "url": "https://techcrunch.com/wp-content/uploads/2024/04/meta-ai-logo.jpg?w=1024",
-          "alt": "Mete AI logo, blue circle",
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Rearrange-Grid-gradient-background.png?w=680",
+          "alt": "",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/ezgif-27dbf937d8be70.gif?w=680",
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Spotify-in-Notes-2up-gradient-background.png?w=680",
           "alt": "",
           "title": "",
           "position": 2
         }
       ],
       "contentSource": "完整文章",
-      "content": "Meta said Wednesday that it is adding video editing capabilities to Meta AI that let users edit short videos using preset AI prompts to change costumes, locations, and styles. "
+      "content": "Instagram is finally going to let users rearrange their grid and is testing a way for users to quietly post to their profile without having the content appear in users' feeds."
+    },
+    {
+      "title": "Conveyor 利用 AI 自动化供应商安全审查和 RFP 的繁琐流程 (原标题: Conveyor uses AI to automate the painful process of vendor security reviews and RFPs with AI)",
+      "link": "https://techcrunch.com/2025/06/12/conveyor-uses-ai-to-automate-the-painful-process-of-vendor-security-reviews-and-rfps-with-ai/",
+      "pubDate": "Thu, 12 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-12T16:00:00.000Z",
+      "creator": "Marina Temkin",
+      "summary": "### Conveyor：利用 AI 自动化供应商安全审查和 RFP 流程\n\n*   **背景问题：**\n    *   向公司销售软件是一个耗时的过程，即使客户认可产品，仍需确保其符合所有安全要求。\n    *   供应商安全和合规审查（填写详细问卷）极其缓慢和繁琐，通常需要数周，从而延迟销售和合同续签。\n\n*   **Conveyor 的创立与解决方案：**\n    *   Chas Ballew（Aptible 联合创始人）在 2021 年创立 Conveyor，旨在自动化耗时的客户安全审批流程。\n    *   Conveyor 推出后，迅速利用 OpenAI 的 ChatGPT 技术为其产品赋能，将 AI 引入此流程。\n    *   客户乐于将这种“冗余和重复”的工作委托给 AI，因为他们认为这不会创造太多价值。\n\n*   **Conveyor 的成就与影响：**\n    *   据 Ballew 称，Conveyor 是首个在 Zendesk、Atlassian 和 Qualtrics 生产环境中全面部署的 AI 供应商。\n    *   客户群包括 Carta、Netflix、Zapier 以及其他 400 多家公司。\n    *   Conveyor 声称其 AI 代理能够自主、准确地填写 90% 以上的客户安全问题，为客户节省大量时间并加速销售流程。\n\n*   **新产品与未来展望：**\n    *   Conveyor 现已将 AI 自动化扩展到“提案请求”（RFPs）流程，这是许多销售流程的必要组成部分。\n    *   预计 RFP 自动化将吸引科技行业以外的新客户，显著提升其对投资者的吸引力。\n\n*   **融资情况：**\n    *   新产品帮助 Conveyor 获得了由 SignalFire 领投，Oregon Venture Fund 和 Cervin Ventures 参与的 2000 万美元 B 轮融资。\n\n*   **AI 应用的考量：**\n    *   Conveyor 的工作是 AI 的完美用例，因为人类普遍不愿做这些工作。\n    *   然而，AI 全面自动化需要严格的防护措施，Conveyor 强调为每个客户提供高度安全和隔离的环境，确保机密数据仅用于处理其自身信息，不被泄露或混淆。\n\n*   **竞争对手：**\n    *   其他解决 RFP 和安全问卷问题的初创公司包括 Loopio、Responsive 和 Rohirrim。",
+      "shortSummary": "Conveyor 利用 AI 自动化耗时的供应商安全审查和提案请求（RFP）流程。该公司由 Chas Ballew 创立，通过 AI 代理自主、准确地回答 90% 以上的安全问题，为客户节省大量时间并加速销售。Conveyor 已在 Zendesk、Netflix 等 400 多家公司部署，并成功扩展到 RFP 自动化，近期获得 2000 万美元 B 轮融资。其解决方案解决了销售团队面临的繁琐重复工作，同时强调数据安全和隔离。",
+      "translated_title": "Conveyor 利用 AI 自动化供应商安全审查和 RFP 的繁琐流程",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Conveyor claims that its AI agent can fill out over 90% of customer security questions fully, autonomously, and accurately, saving customers many hours and accelerating their sales process. The 4-year-old startup nabbed a $20 million Series B from SignalFire. "
+    },
+    {
+      "title": "你的iPad是你的新电脑 (原标题: Your iPad is your new computer)",
+      "link": "https://techcrunch.com/2025/06/12/your-ipad-is-your-new-computer/",
+      "pubDate": "Thu, 12 Jun 2025 15:37:07 +0000",
+      "isoDate": "2025-06-12T15:37:07.000Z",
+      "creator": "Amanda Silberling",
+      "summary": "## iPadOS 26：将iPad转变为更强大的生产力工具\n\n苹果公司在WWDC 2025大会上将即将发布的iPadOS 26更新描述为“史上最大的iPadOS版本”。这一更新有望彻底改变我们对iPad实用性的看法，使其不再仅仅是一个“超大号iPhone”，而是更接近一台功能全面的电脑。\n\n### 多任务处理的重大改进\n\n文章指出，当前iPad的多任务处理体验不佳，用户通常只能同时打开两个窗口，且在两者之间切换非常不便，难以高效处理需要参照多源信息的任务。iPadOS 26通过引入以下新功能解决了这些痛点：\n\n*   **新窗口控制：** 用户现在可以同时查看所有打开的窗口，并直观地平铺它们以进行多任务处理。这使得在不同应用和信息之间切换变得更加流畅和高效。\n*   **兼容“台前调度”（Stage Manager）：** 新的窗口控制与“台前调度”功能兼容，允许用户将窗口组织成特定的工作环境，进一步提升工作流的组织性。\n*   **取代旧功能：** iPadOS 26将移除旧的多任务功能，如“分屏浏览”（Split View）和“侧拉”（Slide Over），以统一和优化用户体验。\n\n### 新增与优化应用功能\n\niPadOS 26还带来了一系列提升用户体验和专业工作能力的应用级改进：\n\n*   **预览应用（Preview app）：** 新的预览应用使得在iPad上原生编辑和查看PDF文件成为可能，并支持自动填充和Apple Pencil兼容性，极大地便利了文档处理。\n\n    ![图片 1](https://techcrunch.com/wp-content/uploads/2025/06/videoframe_5000.png?w=680)\n\n*   **菜单栏：** 类似Mac产品，iPad应用现在也将拥有菜单栏，使用户更容易找到应用内的特定命令或功能。开发者也可以自定义其应用中的菜单栏。\n\n    ![图片 2](https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iPadOS-26-menu-bar-250609_big.jpg.medium_2x.jpg?w=680)\n\n*   **文件应用改进：** 用户可以将常用文件夹固定到程序坞，从而避免在笨重的“文件”应用中进行繁琐的导航。\n\n### 性能与专业级任务支持\n\n得益于Apple芯片强大的计算能力，iPadOS 26能够执行高强度的后台任务，例如视频导出。这意味着用户可以在等待导出完成的同时继续进行其他工作，显著提升了生产力。这使得iPad对于播客、视频编辑、内容创作者以及其他多媒体专业人士而言，变得更加实用。\n\n### 增强的音视频功能\n\n*   **音频输入选择：** 用户现在可以为任何应用或网站选择特定的音频输入设备，提供了更大的灵活性。\n*   **本地捕获功能：** iPad新增了本地捕获功能，允许用户录制来自任何会议应用的视频通话，并在之后访问音频和视频文件。\n\n    ![图片 3](https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iPadOS-26-Voice-Memos-recording-250609_571x321.jpg.large-1.jpg?w=680)\n\n### iPad作为“新电脑”的价值主张\n\n尽管iPad在整体实用性上可能仍无法完全匹敌MacBook，但对于特定用户群体而言，iPadOS 26的更新使其成为一个“游戏规则改变者”。例如，对于那些需要频繁出差、携带沉重公司笔记本（如16英寸MacBook Pro）的用户，iPad提供了一个更轻便、更舒适的替代方案，让他们在飞机、火车或大型会议中心等场合也能高效完成工作，甚至有助于缓解背部不适。",
+      "shortSummary": "iPadOS 26是iPad的重大更新，旨在将其转变为更强大的生产力工具。核心改进包括增强的多任务处理能力，如新的窗口控制和与“台前调度”的兼容。它还引入了原生PDF编辑（预览应用）、Mac式菜单栏，并支持高强度后台任务（如视频导出）。此外，新增的音视频输入选择和本地通话录制功能进一步提升了专业应用场景。这些更新使iPad在移动工作场景下成为MacBook的有力替代品，显著提升了用户体验和工作效率。",
+      "translated_title": "你的iPad是你的新电脑",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/videoframe_5000.png?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iPadOS-26-menu-bar-250609_big.jpg.medium_2x.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Apple-WWDC25-iPadOS-26-Voice-Memos-recording-250609_571x321.jpg.large-1.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Apple's upcoming iPadOS 26 makes the iPad function more like a MacBook, rather than a giant iPhone, making it a boon for productivity."
+    },
+    {
+      "title": "通过在TechCrunch Disrupt 2025举办周边活动提升品牌影响力 (原标题: Drive brand impact with a Side Event at TechCrunch Disrupt 2025)",
+      "link": "https://techcrunch.com/2025/06/12/drive-brand-impact-with-a-side-event-at-techcrunch-disrupt-2025/",
+      "pubDate": "Thu, 12 Jun 2025 15:00:00 +0000",
+      "isoDate": "2025-06-12T15:00:00.000Z",
+      "creator": "TechCrunch Events",
+      "summary": "## TechCrunch Disrupt 2025 周边活动：提升品牌影响力的绝佳机会\n\nTechCrunch Disrupt 2025 即将到来，为科技爱好者和创新者提供了一个通过举办周边活动来显著提升品牌知名度的独特机会。\n\n### 为什么选择举办周边活动？\n\n在TechCrunch Disrupt 2025 期间举办周边活动，能为您的品牌带来无与伦比的曝光度。您将有机会：\n\n*   **与行业精英互动**：与超过10,000名科技行业的顶尖人才进行深度交流。\n*   **拓展人脉网络**：连接广泛的参会者、行业影响者和潜在合作者。\n*   **展示品牌与专业知识**：分享您的专业见解，提升品牌形象。\n*   **建立持久联系**：为您的品牌知名度带来质的飞跃。\n\n### 可以举办哪些类型的活动？\n\n活动的类型没有限制，您可以根据品牌的愿景和兴趣自由设计。建议的活动形式包括：\n\n*   行业聚会\n*   风险投资（VC）办公时间\n*   研讨会\n*   轻松的欢乐时光（Happy Hour）\n\n### 活动时间\n\n周边活动可在 **2025年10月25日至10月31日** 期间举办。请注意，会议主会期间（10月27日至29日）的会议时间除外。强烈鼓励在这些日子的晚上举办活动。\n\n### 如何参与？\n\n将您的品牌置于聚光灯下比您想象的要简单：\n\n1.  **提交活动提案**：详细阐述您的愿景、目标和后勤需求。\n2.  **获得支持**：一旦提案获得批准，您将获得TechCrunch Disrupt团队的全力支持，以实现您的活动。\n3.  **申请截止日期**：申请将于**九月**截止。\n4.  **费用**：申请和参与周边活动是**完全免费**的。\n\n不要错过在TechCrunch Disrupt 2025 提升品牌形象的绝佳机会，立即申请吧！",
+      "shortSummary": "TechCrunch Disrupt 2025 提供免费举办周边活动的机会，旨在帮助品牌提升知名度。通过举办行业聚会、研讨会等形式，您可以与超过10,000名科技精英互动，拓展人脉，并展示品牌。活动可在10月25日至31日期间举行，申请将于九月截止。这是一个提升品牌影响力的绝佳机会，鼓励立即申请。",
+      "translated_title": "通过在TechCrunch Disrupt 2025举办周边活动提升品牌影响力",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Hosting a Side Event at TechCrunch Disrupt 2025 provides unparalleled exposure for your brand. This is your chance to connect with a vast network of attendees, influencers, and potential collaborators. "
+    },
+    {
+      "title": "Automattic 收购关系管理工具 Clay，为在线工具添加身份层 (原标题: Automattic acquires relationship manager Clay to add an identity layer to online tools)",
+      "link": "https://techcrunch.com/2025/06/12/automattic-acquires-relationship-manager-clay-to-add-an-identity-layer-to-online-tools/",
+      "pubDate": "Thu, 12 Jun 2025 13:00:00 +0000",
+      "isoDate": "2025-06-12T13:00:00.000Z",
+      "creator": "Sarah Perez",
+      "summary": "# Automattic 收购关系管理工具 Clay\n\nAutomattic，作为 WordPress.com、Beeper 和 Texts.com 的母公司，继收购通用消息应用 Beeper 和 Texts.com 之后，再次拓展其通信领域的产品线，收购了关系管理应用 Clay。此次交易的财务条款未公开，但 Clay 此前已从 General Catalyst 和 Forerunner Ventures 等投资者处筹集了超过 900 万美元的风险投资。\n\n## 关于 Clay\n\nClay 是一款于 2021 年推出的软件，可被视为一个更智能的地址簿或个人客户关系管理（CRM）工具。其核心功能包括：\n\n*   **联系人组织与动态追踪**：允许用户组织其认识的人，并通过从 LinkedIn、Facebook、WhatsApp、X 等社交平台以及地址簿和日历中提取数据，及时了解联系人的最新动态。\n*   **信息追踪**：用户可以追踪联系人的工作变动、搬迁、个人简介更新、最新社交帖子等信息。\n*   **笔记与时间线**：\n    *   用户可以为地址簿条目添加笔记，例如记录何时何地相遇，或联系人子女的名字。\n    *   每个条目都有一个时间线，显示添加笔记的时间、上次联系的时间以及其他互动记录。\n*   **AI 助手 Nexus**：Clay 后来引入了人工智能功能，添加了一个名为 Nexus 的 AI 助手。用户可以向其提问，例如了解在特定公司认识哪些人，或在访问纽约时应该联系谁。该 AI 机器人旨在与用户的日常工作流程集成。\n*   **可用性与定价**：Clay 应用可在 macOS、Windows、iOS 和 Web 平台上使用。目前采用免费增值模式，付费计划起价为每月 10 美元，团队版每席位每月 40 美元。\n*   **用户规模**：Clay 未公布具体用户数量，但表示其应用管理着超过 1.5 亿个关系。\n\n## 收购细节与整合计划\n\n作为此次收购的一部分，Clay 的小型团队，包括其联合创始人 Zachary Hamed 和 Matthew Achariam，已加入 Automattic 的“其他押注部门”（Other Bets Division），该部门还包括 Beeper 和 Gravatar。\n\nAutomattic 表示，收购 Clay 是一个合理的决定，因为它能够被整合到公司更广泛的生态系统中，其中包括通用聊天应用 Beeper（由 Texts.com 和 Beeper 的收购合并而来）。Clay 的创始人也认为与 Automattic 拥有共同的使命感，并很高兴能够继续开发他们的应用，避免了许多智能地址簿初创公司被收购后被关闭的命运。\n\nClay 的联合创始人 Achariam 表示：“我们的使命是帮助建立关系并提高自觉性。这始终是我们的北极星，所有功能都通过将关系管理的不同方面整合到一个平台和工具中来强化这一点。”\n\n对于 Clay 而言，在 Automattic 的长期计划包括与 Beeper 集成，并最终成为各种在线工具的“身份层”。然而，这些计划尚未最终确定，Automattic 也未能承诺具体的进展时间表，也未透露 Clay 的定价未来是否会改变。\n\n## 共同的价值观与未来展望\n\nClay 的创始人表示，他们认为自己的价值观与 Automattic 相似，这也是此次交易成功的原因。Achariam 提到：“他们（Automattic）的核心理念之一是开源思想，认为这是我们时代最强大的力量之一。我们对此深表认同。”\n\nClay 团队还表示有兴趣在未来与更多开放技术集成，例如 Mastodon 使用的 ActivityPub 协议和 Bluesky 使用的 AT Protocol。\n\n## 相关图片\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/06/clay_hero_mac.jpeg?w=680)\n*图片来源：Clay*\n\n![图片 2](https://techcrunch.com/wp-content/uploads/2025/06/clay_-_ios_screenshots.jpeg?w=680)\n*图片来源：Clay*",
+      "shortSummary": "Automattic 已收购关系管理应用 Clay。Clay 是一款智能通讯录/个人 CRM，能整合多平台数据，帮助用户管理联系人信息和动态，并提供 AI 助手。此次收购旨在将 Clay 整合到 Automattic 的产品生态（如 Beeper）中，并使其成为在线工具的身份层。Clay 将继续独立运营，其团队已加入 Automattic，共同致力于应用的长久发展和开放技术集成。",
+      "translated_title": "Automattic 收购关系管理工具 Clay，为在线工具添加身份层",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/clay_hero_mac.jpeg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/clay_-_ios_screenshots.jpeg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "WordPress.com owner Automattic has added another communication-focused startup to its lineup: relationship-management app Clay."
     }
   ],
-  "lastUpdated": "2025-06-12T12:45:22.509Z"
+  "lastUpdated": "2025-06-13T01:52:37.761Z"
 }
