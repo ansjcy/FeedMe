@@ -5,6 +5,72 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "使用 Pandas 和 Scikit-learn 处理不平衡数据集 (原标题: Navigating Imbalanced Datasets with Pandas and Scikit-learn)",
+      "link": "https://machinelearningmastery.com/navigating-imbalanced-datasets-with-pandas-and-scikit-learn/",
+      "pubDate": "Thu, 12 Jun 2025 12:00:56 +0000",
+      "isoDate": "2025-06-12T12:00:56.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "# 使用 Pandas 和 Scikit-learn 处理不平衡数据集\n\n## 引言\n不平衡数据集在现实世界中并不少见，例如银行金融领域的欺诈检测（欺诈交易远少于合法交易）和医疗诊断（罕见疾病远少于常见健康状况）。这类数据集的主要问题在于，机器学习模型容易偏向多数类，导致模型性能下降，甚至可能退化为“虚拟分类器”。本文将介绍使用 Python 的 Pandas 和 Scikit-learn 库处理不平衡数据集的几种策略。\n\n![Navigating Imbalanced Datasets with Pandas and Scikit-learn](https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-ipc-navigating-imbalanced-datasets.png)\n*图：使用 Pandas 和 Scikit-learn 处理不平衡数据集*\n\n## 实践指南：银行营销数据集\n为了演示处理不平衡数据的实际方法，本文使用了公开可用的银行营销数据集。该数据集包含银行客户信息，并标记了客户是否在接到银行营销电话后订阅了定期存款（“是”或“否”）。\n\n**数据集不平衡性：**\n该数据集之所以不平衡，是因为只有约 11% 的客户订阅了定期存款，而约 89% 的客户拒绝了。具体来说：\n*   **未订阅（“no”）:** 39922 名客户 (88.3%)\n*   **已订阅（“yes”）:** 5289 名客户 (11.7%)\n这表明“yes”类是显著的少数类。\n\n## 处理不平衡数据集的策略\n\n### 策略 1：逆频率依赖加权 (Inverse Frequency-Dependent Weighting)\n这是 Scikit-learn 提供的一种策略，通过调整分类模型训练时的实例权重来处理不平衡数据。\n\n*   **原理：** 在 Scikit-learn 的某些分类器中（例如 `RandomForestClassifier`），设置 `class_weight='balanced'` 参数。这会使实例权重与类频率成反比，从而给予少数类更大的权重，以补偿类不平衡。\n*   **优点：** 模型在训练时会更加关注少数类，减少对多数类的偏向。\n*   **示例：** 使用 `RandomForestClassifier` 并设置 `class_weight='balanced'`，同时对分类特征进行独热编码（使用 Pandas 的 `pd.get_dummies()`）。\n\n### 策略 2：欠采样 (Undersampling)\n这是一种在模型训练前进行的数据预处理策略，主要通过 Pandas 实现。\n\n*   **原理：** 减少多数类实例的数量，使其与少数类实例的数量相匹配。\n*   **优点：** 减少模型对多数类的偏向。\n*   **缺点：**\n    *   可能导致信息丢失，特别是当多数类被大量欠采样时。\n    *   可能增加模型方差，有时甚至导致欠拟合。\n*   **适用场景：** 当数据集足够大，即使欠采样后仍能保留足够代表性和多样性的实例时。\n*   **示例：** 将多数类（“no”）的实例数量随机减少到与少数类（“yes”）相同的数量，然后将欠采样后的多数类与少数类合并，形成一个平衡的数据集。原始数据集约 45K 实例，欠采样后平衡数据集约 10.5K 实例。\n\n### 策略 3：过采样 (Oversampling)\n这也是一种在模型训练前进行的数据预处理策略，主要通过 Pandas 实现。\n\n*   **原理：** 通过随机复制少数类实例（带替换采样）来增加其数量，使其与多数类数量相匹配。\n*   **优点：** 有助于缓解模型对多数类的偏向。\n*   **缺点：**\n    *   如果少数类本身不具代表性，或者重复实例可能引入噪声，则不适用。\n    *   可能导致过拟合，因为模型可能会过度学习重复的少数类实例。\n*   **适用场景：** 当少数类规模较小但具有代表性，且添加重复实例不太可能引入噪声或导致过拟合时。\n*   **示例：** 将少数类（“yes”）的实例数量随机复制增加到与多数类（“no”）相同的数量，然后将多数类与过采样后的少数类合并，形成一个平衡的数据集。\n\n## 总结\n本文探讨了数据集中的类不平衡问题，并介绍了使用 Pandas 和 Scikit-learn 库处理该问题的三种常用策略：训练平衡分类模型（逆频率依赖加权）、欠采样和过采样。值得注意的是，还有其他更高级的策略，如 Scikit-learn 的重采样工具和 SMOTE（合成少数类过采样技术）等。",
+      "shortSummary": "不平衡数据集（如欺诈检测）会导致机器学习模型偏向多数类，影响性能。本文介绍了使用 Pandas 和 Scikit-learn 处理此类问题的三种策略：一是通过 Scikit-learn 的 `class_weight='balanced'` 参数进行逆频率依赖加权，使模型更关注少数类；二是通过 Pandas 进行欠采样，减少多数类实例；三是通过 Pandas 进行过采样，复制少数类实例。这些方法旨在平衡数据分布，提升模型在不平衡数据集上的表现。",
+      "translated_title": "使用 Pandas 和 Scikit-learn 处理不平衡数据集",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-ipc-navigating-imbalanced-datasets.png",
+          "alt": "Navigating Imbalanced Datasets with Pandas and Scikit-learn",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Imbalanced datasets, where a majority of the data samples belong to one class and the remaining minority belong to others, are not that rare."
+    },
+    {
+      "title": "使用FastAPI和Docker部署机器学习模型的逐步指南 (原标题: Step-by-Step Guide to Deploying Machine Learning Models with FastAPI and Docker)",
+      "link": "https://machinelearningmastery.com/step-by-step-guide-to-deploying-machine-learning-models-with-fastapi-and-docker/",
+      "pubDate": "Wed, 11 Jun 2025 16:17:27 +0000",
+      "isoDate": "2025-06-11T16:17:27.000Z",
+      "creator": "Bala Priya C",
+      "summary": "## 使用FastAPI和Docker部署机器学习模型的逐步指南\n\n![使用FastAPI和Docker部署机器学习模型的逐步指南](https://machinelearningmastery.com/wp-content/uploads/2025/06/step-by-step-deploying-ml-models-docker.png)\n\n本文提供了一个将机器学习模型部署到生产环境的详细指南，通过构建一个糖尿病进展预测器并将其封装为可部署的API。该教程涵盖了从模型训练到使用FastAPI构建REST API，再到使用Docker进行容器化，并最终发布到Docker Hub的完整流程。\n\n### 1. 项目概述与目标\n\n*   **目标**：将训练好的机器学习模型部署为可供实际用户使用的生产级API。\n*   **项目**：基于scikit-learn的样本数据集构建一个糖尿病进展预测器。\n*   **最终成果**：\n    *   一个训练好的随机森林模型，用于预测糖尿病进展分数。\n    *   一个使用FastAPI构建的REST API，接受患者数据并返回预测结果。\n    *   一个完全容器化的应用程序，可随时部署到云端。\n\n### 2. 开发环境设置\n\n*   **先决条件**：Python 3.11+ (或 3.9+), Docker已安装并运行，对Python和API有基本了解。\n*   **项目结构**：\n    *   `diabetes-predictor/` (根目录)\n        *   `app/` (FastAPI应用)\n            *   `__init__.py`\n            *   `main.py`\n        *   `models/` (存放训练好的模型)\n            *   `diabetes_model.pkl`\n        *   `train_model.py` (模型训练脚本)\n        *   `requirements.txt` (Python依赖)\n        *   `Dockerfile` (容器配置)\n*   **安装依赖**：\n    1.  创建并激活虚拟环境：`python -m venv diabetes-env`，然后激活。\n    2.  安装所需库：`pip install scikit-learn pandas fastapi uvicorn`。\n\n### 3. 构建机器学习模型 (`train_model.py`)\n\n*   **模型选择**：使用`RandomForestRegressor`，因其鲁棒性、对不同特征尺度的良好处理能力以及提供特征重要性洞察。\n*   **数据集**：加载scikit-learn的糖尿病数据集，包含442条患者记录和10个生理特征，目标是衡量一年后的疾病进展。\n*   **数据准备**：将数据集按80/20比例划分为训练集和测试集 (`random_state=42`确保结果可复现)。\n*   **模型训练**：\n    *   初始化`RandomForestRegressor`，设置`n_estimators=100`, `random_state=42`, `max_depth=10`（防止过拟合）。\n    *   使用训练数据拟合模型。\n*   **模型评估**：\n    *   在测试集上进行预测。\n    *   计算均方误差 (MSE) 和 R² 分数。R² 分数高于0.4被认为是该数据集的良好表现。\n*   **模型保存**：将训练好的模型保存为`models/diabetes_model.pkl`。\n*   **运行脚本**：`python3 train_model.py`。\n\n### 4. 创建FastAPI应用程序 (`app/main.py`)\n\n*   **API结构**：\n    *   创建`app`目录和`__init__.py`。\n    *   导入`FastAPI`, `BaseModel` (Pydantic), `pickle`, `numpy`, `os`。\n*   **输入数据结构**：\n    *   使用Pydantic的`BaseModel`定义`PatientData`类，包含10个浮点型生理特征（如age, sex, bmi等）。\n    *   提供`schema_extra`示例，帮助API用户理解输入格式。\n*   **FastAPI初始化与模型加载**：\n    *   初始化`FastAPI`应用，设置标题、描述和版本。\n    *   加载之前保存的`diabetes_model.pkl`。\n*   **预测端点 (`/predict`)**：\n    *   定义POST请求端点，接受`PatientData`作为输入。\n    *   将输入转换为NumPy数组。\n    *   使用加载的模型进行预测。\n    *   返回包含`predicted_progression_score`（四舍五入到两位小数）和`interpretation`（通过`get_interpretation`函数提供）的JSON响应。\n*   **解释函数 (`get_interpretation`)**：根据预测分数提供人类可读的解释（低于平均、平均、高于平均进展）。\n*   **健康检查端点 (`/`)**：定义GET请求端点，返回API状态和模型信息。\n\n### 5. 本地测试API\n\n*   **运行命令**：在项目根目录运行`uvicorn app.main:app --reload --port 8000`。\n*   **访问**：在浏览器中打开`http://localhost:8000/`。\n*   **测试预测**：使用`curl`命令发送POST请求及示例数据进行测试，验证API功能。\n\n### 6. 使用Docker进行容器化\n\n*   **创建`requirements.txt`**：列出所有Python依赖及其精确版本，确保环境一致性。\n*   **创建`Dockerfile`**：\n    *   基于`python:3.11-slim`镜像，保持容器小巧。\n    *   设置工作目录为`/app`。\n    *   安装系统依赖（如果需要）。\n    *   复制`requirements.txt`并安装Python依赖（使用`--no-cache-dir`减少镜像大小）。\n    *   复制`app/`和`models/`目录到容器中。\n    *   暴露端口8000。\n    *   定义容器启动命令：`uvicorn app.main:app --host 0.0.0.0 --port 8000`。\n*   **构建Docker镜像**：`docker build -t diabetes-predictor .`。\n*   **运行Docker容器**：`docker run -d -p 8000:8000 diabetes-predictor`。\n\n### 7. 发布到Docker Hub\n\n*   **目的**：将容器化应用共享，便于云平台部署。\n*   **设置Docker Hub**：注册Docker Hub账户。\n*   **登录**：在终端运行`docker login`并输入凭据。\n*   **标记镜像**：\n    *   `docker tag diabetes-predictor your-username/diabetes-predictor:v1.0`\n    *   `docker tag diabetes-predictor your-username/diabetes-predictor:latest`\n*   **推送镜像**：\n    *   `docker push your-username/diabetes-predictor:v1.0`\n    *   `docker push your-username/diabetes-predictor:latest`\n*   **验证**：停止本地容器，然后从Docker Hub拉取并运行镜像，再次测试API以确保其正常工作。\n\n### 8. 总结与展望\n\n本文成功构建了一个完整的机器学习部署流程：训练了随机森林模型，使用FastAPI创建了REST API，并用Docker进行了容器化。该模型现在已准备好部署到AWS ECS、Fargate、Google Cloud或Azure等云平台。未来的改进方向包括添加认证和速率限制、模型监控和日志记录以及批量预测端点。",
+      "shortSummary": "本文提供了一个使用FastAPI和Docker部署机器学习模型的逐步指南。教程从训练一个预测糖尿病进展的随机森林模型开始，接着使用FastAPI构建一个REST API，实现数据输入和预测输出。随后，详细介绍了如何使用Dockerfile将整个应用容器化，并将其发布到Docker Hub，以便于云端部署。最终，用户将获得一个功能完整的、可生产部署的机器学习API。",
+      "translated_title": "使用FastAPI和Docker部署机器学习模型的逐步指南",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/step-by-step-deploying-ml-models-docker.png",
+          "alt": "Step-by-Step Guide to Deploying Machine Learning Models with FastAPI and Docker",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "You've trained your machine learning model, and it's performing great on test data."
+    },
+    {
+      "title": "从零开始实现向量搜索：一步步教程 (原标题: Implementing Vector Search from Scratch: A Step-by-Step Tutorial)",
+      "link": "https://machinelearningmastery.com/implementing-vector-search-from-scratch-a-step-by-step-tutorial/",
+      "pubDate": "Tue, 10 Jun 2025 14:49:47 +0000",
+      "isoDate": "2025-06-10T14:49:47.000Z",
+      "creator": "Kanwal Mehreen",
+      "summary": "# 从零开始实现向量搜索：一步步教程\n\n## 搜索的演进与向量搜索的兴起\n\n文章指出，搜索是计算领域最基本的问题之一。传统的关键词搜索方法（如基于词频和稀有度）存在局限性，它们过于字面化，无法理解用户查询的上下文和真实意图。例如，搜索“汽车修理”可能无法匹配到“车辆维护”的文档。为了弥补这一语义鸿沟，向量搜索应运而生。\n\n向量搜索通过将查询和文档转换为数值向量（高维数组，捕捉文本的语义本质）来匹配含义，而非精确的关键词。它在向量空间中寻找与查询向量距离最近的文档向量，从而返回上下文相关的结果。本教程旨在从头开始构建一个向量搜索系统，帮助读者深入理解其工作原理。\n\n## 向量搜索的核心工作原理\n\n向量搜索主要包含三个核心步骤：\n\n1.  **向量表示（Vector Representation）**：\n    *   将数据（如文本、图像）转换为数值向量。\n    *   常用技术包括词嵌入（Word Embeddings）或神经网络。\n    *   每个向量在高维空间中代表数据的语义。\n2.  **相似度计算（Similarity Calculation）**：\n    *   衡量查询向量与数据集中其他向量的“接近”程度。\n    *   常用度量包括余弦相似度（Cosine Similarity）或欧几里得距离（Euclidean Distance）。\n    *   向量越接近，表示相似度越高。\n3.  **检索（Retrieval）**：\n    *   根据相似度得分返回最相似的 Top-k 项。\n    *   例如，查询“机器学习”会找到与“人工智能”或“深度学习”相关的文档。\n\n## 从零开始构建向量搜索系统（Python 实现）\n\n文章通过一个 Python 示例，逐步演示了如何构建一个简单的向量搜索系统：\n\n### 步骤 1：环境设置\n\n*   使用 NumPy 进行向量操作，Matplotlib 进行可视化。\n*   为保持“从零开始”的理念，避免使用 FAISS 或 spaCy 等外部高级库。\n*   词嵌入将通过一个预定义的字典模拟，而非使用 Word2Vec、GloVe 或 BERT 等预训练模型。\n*   导入必要的库：`numpy`、`matplotlib.pyplot`、`collections.defaultdict`、`re`。\n\n### 步骤 2：创建示例数据集和词嵌入\n\n*   **示例数据集**：包含关于技术的几句话，例如：“Machine learning is powerful”、“Artificial intelligence advances rapidly”等。\n*   **简化 2D 词嵌入**：创建一个字典，将每个词映射到一个 2D 向量。这些向量是任意的，但设计上使得相关词（如“machine”和“neural”）在向量空间中彼此接近，便于可视化。\n\n### 步骤 3：将句子转换为向量\n\n*   定义 `tokenize` 函数：将文本转换为小写并分词。\n*   定义 `sentence_to_vector` 函数：通过平均句子中所有词的词向量来将句子转换为单个向量。如果词不在嵌入字典中，则使用零向量。\n*   将所有文档转换为对应的向量表示 (`doc_vectors`)。\n\n### 步骤 4：实现余弦相似度\n\n*   余弦相似度是衡量向量间角度的常用指标，非常适合比较文本嵌入的语义相似性。\n*   计算公式为两个向量的点积除以它们各自范数的乘积。\n*   函数会处理零向量以避免除以零的错误。\n\n### 步骤 5：构建向量搜索函数\n\n*   实现核心的 `vector_search` 函数，该函数接受查询、文档、嵌入和 `top_k` 参数。\n*   将查询转换为向量。\n*   计算查询向量与每个文档向量之间的余弦相似度。\n*   使用 `np.argsort` 对相似度进行排序，并返回 `top_k` 个最相似的文档及其得分。\n*   **示例查询**：“Machine learning technology”的搜索结果展示了语义相关性，即使文档中不包含确切的短语。\n\n```\nQuery: Machine learning technology\nTop results:\nScore: 1.000, Document: Machine learning is powerful\nScore: 0.999, Document: Deep learning transforms technology\nScore: 0.997, Document: Artificial intelligence advances rapidly\n```\n\n### 步骤 6：向量可视化\n\n*   通过 `plot_vectors` 函数将文档向量（蓝色点）和查询向量（红色星号）在 2D 空间中可视化。\n*   可视化结果清晰地展示了相似项如何在向量空间中聚类，以及查询向量如何靠近语义相关的文档向量。\n\n![从零开始实现向量搜索](https://machinelearningmastery.com/wp-content/uploads/2025/06/Vector-Search-from-Scratch.png)\n*图：从零开始实现向量搜索* \n\n![向量搜索：文档和查询向量的可视化](https://machinelearningmastery.com/wp-content/uploads/2025/06/plot.png)\n*图：向量搜索：文档和查询向量的可视化*\n\n## 向量搜索对 RAG 的重要性\n\n文章强调，在检索增强生成（RAG）系统中，向量搜索是检索步骤的基石。它通过将文档和查询转换为向量，即使对于复杂的查询也能获取上下文相关的准确信息。本教程的简单实现模拟了这一过程：查询向量检索语义上接近的文档，这些文档随后可供语言模型用于生成响应。在实际应用中，虽然需要更高维的嵌入和优化的搜索算法（如 HNSW 或 IVF），但核心思想保持不变。\n\n## 结论\n\n本教程成功从零开始实现了向量搜索。读者可以基于此扩展，使用真实的词嵌入（如来自 Hugging Face Transformers）或通过近似最近邻（ANN）技术优化搜索，从而加深对向量搜索的理解。",
+      "shortSummary": "向量搜索通过将查询和文档转换为数值向量并匹配其语义含义，克服了传统关键词搜索的局限性。文章详细介绍了向量搜索的核心原理：向量表示、相似度计算和检索。它通过一个Python教程，从零开始实现了向量搜索系统，包括环境设置、数据与嵌入创建、句子向量化、余弦相似度计算、搜索功能构建及向量可视化。该技术是RAG（检索增强生成）系统的关键组成部分，用于高效检索上下文相关信息。",
+      "translated_title": "从零开始实现向量搜索：一步步教程",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/Vector-Search-from-Scratch.png",
+          "alt": "Implementing Vector Search from Scratch",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/plot.png",
+          "alt": "Output",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "There’s no doubt that search is one of the most fundamental problems in computing."
+    },
+    {
       "title": "如何优化部署语言模型的大小 (原标题: How to Optimize Language Model Size for Deployment)",
       "link": "https://machinelearningmastery.com/how-to-optimize-language-model-size-for-deployment/",
       "pubDate": "Mon, 09 Jun 2025 16:40:47 +0000",
@@ -161,121 +227,7 @@
       ],
       "contentSource": "完整文章",
       "content": "This post is divided into three parts; they are: • Understanding Word Embeddings • Using Pretrained Word Embeddings • Training Word2Vec with Gensim • Training Word2Vec with PyTorch • Embeddings in Transformer Models Word embeddings represent words as dense vectors in a continuous space, where semantically similar words are positioned close to each other."
-    },
-    {
-      "title": "树模型SHAP入门指南 (原标题: A Gentle Introduction to SHAP for Tree-Based Models)",
-      "link": "https://machinelearningmastery.com/a-gentle-introduction-to-shap-for-tree-based-models/",
-      "pubDate": "Fri, 30 May 2025 12:00:42 +0000",
-      "isoDate": "2025-05-30T12:00:42.000Z",
-      "creator": "Vinod Chugani",
-      "summary": "## 树模型SHAP入门指南\n\n![Gentle Introduction SHAP Tree-Based Models](https://machinelearningmastery.com/wp-content/uploads/2025/05/mlm-chugani-Gentle-Introduction-SHAP-Tree-Based-Models-1024x683.png)\n\n### 引言：解释复杂模型的必要性\n\n机器学习模型日益复杂，但这种复杂性往往牺牲了可解释性。SHAP（SHapley Additive exPlanations）通过提供一种原则性的方法来解释单个预测并理解模型行为，弥补了这一差距。与传统的特征重要性度量不同，SHAP精确地展示了每个特征如何对模型的每个预测做出贡献。对于XGBoost、LightGBM和Random Forest等树模型，SHAP提供了特别优雅的解决方案，能够追溯决策路径以量化每个特征的贡献。\n\n### 构建XGBoost基础模型\n\n在深入探讨SHAP解释之前，文章首先回顾并重建了一个在Ames住房数据集上表现出色的优化XGBoost回归模型。该模型实现了0.8980的R²分数，并展示了以下关键能力：\n\n*   **原生数据处理**：XGBoost自动处理了829个缺失值。\n*   **分类编码**：将分类特征转换为数值代码以优化树分裂。\n*   **特征优化**：使用带交叉验证的递归特征消除（RFECV）从83个原始特征中识别出36个最优特征。\n*   **强大性能**：通过仔细调优和特征选择，实现了0.8980的R²。\n\n该模型在2579个房屋数据上进行训练，最终在2063个房屋数据上训练，使用了36个特征，为SHAP分析奠定了坚实基础。\n\n### SHAP基础：模型解释背后的科学\n\n#### SHAP的独特之处\n\n传统的特征重要性只能告诉你哪些变量在整个数据集中普遍重要，但无法解释单个预测。SHAP通过将每个预测分解为单个特征贡献来解决这个问题。每个特征都有一个SHAP值，表示其对将预测从基线（模型的平均预测）推开的贡献。这些贡献是可加的：`基线 + 所有SHAP值之和 = 最终预测`。\n\n#### Shapley值基础\n\nSHAP建立在合作博弈论中的Shapley值之上，这是一种数学上严谨的方法，用于在博弈中分配“功劳”。在机器学习中，“博弈”是进行预测，“玩家”是特征。每个特征根据其在所有可能的特征组合中的边际贡献获得功劳。这种方法满足以下理想属性：\n\n*   **效率**：所有SHAP值之和等于预测与基线之间的差异。\n*   **对称性**：贡献相同的特征获得相同的SHAP值。\n*   **虚拟性**：不影响预测的特征获得零SHAP值。\n*   **可加性**：该方法在不同模型组合中保持一致。\n\n#### 选择合适的SHAP解释器\n\nSHAP提供针对不同模型类型优化的解释器：\n\n*   **TreeExplainer**：专为XGBoost、LightGBM、RandomForest和CatBoost等树模型设计。它利用树结构高效计算精确的SHAP值，速度快且准确。\n*   **KernelExplainer**：适用于任何机器学习模型，将其视为黑盒。它通过训练代理模型来近似SHAP值，模型无关但计算成本高昂。\n*   **LinearExplainer**：通过直接使用模型系数为线性模型提供快速、精确的SHAP值。\n\n对于XGBoost模型，`TreeExplainer`是最佳选择，因为它能快速计算精确的SHAP值。\n\n### 设置SHAP进行模型分析\n\n文章指导读者安装SHAP库（`pip install shap`），然后初始化`shap.TreeExplainer`并计算测试集的SHAP值。通过验证步骤，确认模型预测与基线值加上所有SHAP值之和的数学一致性，误差通常小于1美元，表明获得了精确的解释。\n\n### 理解个体预测\n\nSHAP的真正价值在于解释个体预测。文章通过一个具体的房屋预测示例进行演示：\n\n*   **分析单个房屋预测**：选择一个房屋（索引0），模型预测价格为$165,708.67，实际价格为$166,000.00，误差仅为$291.33。\n\n![SHAP force plot showing how each feature pushes a house price prediction of $165,709 higher or lower relative to the base value.](https://machinelearningmastery.com/wp-content/uploads/2025/05/Screenshot-2025-05-25-at-21.47.24-946x1024.png)\n\n*   **解读瀑布图（Waterfall Plot）**：\n    *   **起点**：模型的基线预测（E[f(X)]）为$176,997，代表模型在不了解特定房屋情况下的平均预测。\n    *   **特征贡献**：每个条形图显示特定特征如何将预测从基线向上（红色/粉色条）或向下（蓝色条）推动。例如：\n        *   `GrLivArea` (1190平方英尺)：最大的负面影响，- $15,418，表明该房屋的居住面积低于平均水平，显著降低了预测值。\n        *   `YearBuilt` (1993年)：强大的正面贡献，+ $8,807，表明该房屋相对较新，增加了可观的价值。\n        *   `OverallQual` (6)：另一个大的负面影响，- $7,849，表明质量评级为6（“良好”）未能达到更高价格的驱动因素。\n        *   `TotalBsmtSF` (1181平方英尺)：正面贡献，+ $5,000，地下室面积有助于提升价值。\n    *   **最终计算**：从$176,997开始，加上所有个体贡献（总和为-$11,288），得到最终预测$165,709。\n\n*   **分解特征贡献**：文章进一步展示了前10个特征对该预测的详细贡献，包括特征值、SHAP贡献及其对价格的影响（增加或减少），再次验证了SHAP值的可加性，即基线预测加上所有贡献之和等于最终预测。",
-      "shortSummary": "本文介绍了SHAP（SHapley Additive exPlanations）如何为树模型（如XGBoost）提供可解释性。SHAP通过Shapley值量化每个特征对单个预测的贡献，弥补了复杂模型的可解释性鸿沟。文章以一个优化后的XGBoost住房价格预测模型为例，详细展示了如何使用SHAP的TreeExplainer来解释个体预测，并通过瀑布图和特征贡献分解，清晰地揭示了每个特征如何影响最终预测，从而使“黑箱”模型变得透明和可解释。",
-      "translated_title": "树模型SHAP入门指南",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/mlm-chugani-Gentle-Introduction-SHAP-Tree-Based-Models-1024x683.png",
-          "alt": "Gentle Introduction SHAP Tree-Based Models",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/Screenshot-2025-05-25-at-21.47.24-946x1024.png",
-          "alt": "SHAP force plot showing how each feature pushes a house price prediction of $165,709 higher or lower relative to the base value.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/Screenshot-2025-05-25-at-21.48.49-867x1024.png",
-          "alt": "SHAP summary plot illustrating the impact and value of top features across all housing predictions, colored by feature value.",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Machine learning models have become increasingly sophisticated, but this complexity often comes at the cost of interpretability."
-    },
-    {
-      "title": "使用量化模型与Ollama进行应用开发 (原标题: Using Quantized Models with Ollama for Application Development)",
-      "link": "https://machinelearningmastery.com/using-quantized-models-with-ollama-for-application-development/",
-      "pubDate": "Thu, 29 May 2025 12:00:04 +0000",
-      "isoDate": "2025-05-29T12:00:04.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "# 使用量化模型与Ollama进行应用开发\n\n本文探讨了如何利用Ollama无缝地查找、加载和使用来自Hugging Face模型仓库的量化语言模型，从而在资源受限的环境中优化大型语言模型（LLM）的性能。\n\n## 量化模型简介\n\n*   **定义**：量化是一种常用的机器学习模型生产策略，通过降低模型参数（权重）的数值精度（通常从32位浮点数降至8位整数等较低表示形式），使模型变得轻量化。\n*   **主要优势**：\n    *   减少内存占用。\n    *   加快推理速度。\n*   **对LLM的重要性**：量化已被证明能有效“压缩”大型语言模型，使其无需高昂的计算资源即可轻松部署在本地机器、移动设备或边缘服务器等资源受限的环境中。简而言之，量化允许在现有硬件上优化LLM性能。\n\n## Ollama概述\n\nOllama是一个基于`llama.cpp`构建的应用程序，它提供了与Hugging Face上几乎所有模型轻松集成的能力。\n\n## 使用Ollama运行量化Hugging Face模型\n\n### 1. 安装Ollama\n\n*   从Ollama官方网站下载与您操作系统兼容的版本。\n*   安装并运行后，您可以通过在浏览器中输入`http://localhost:11434/`来检查Ollama服务器是否正在运行。如果一切顺利，您可能会看到“Ollama is running”的消息。\n\n### 2. 拉取并运行量化模型\n\n使用命令行指令拉取Hugging Face上的量化模型，遵循特定语法：\n`ollama run hf.co/{username}/{repository}:{quantization}`\n\n**具体示例：**\n`!ollama run hf.co/bartowski/Llama-3.2-3B-Instruct-GGUF:IQ3_M`\n\n**命令解析：**\n\n*   `hf.co/bartowski/Llama-3.2-3B-Instruct-GGUF`：这是托管在Hugging Face上的Llama 3.2模型的路径。\n    *   模型名称中包含“instruct”表示该模型已针对指令遵循型语言任务进行了微调。\n    *   `GGUF`格式（“GPT-Generated Unified Format”）是为本地机器推理优化的模型版本。\n*   `IQ3_M`：这是一种特定的量化方法，与GGUF格式兼容，旨在平衡速度、压缩和准确性。\n    *   文章还提到了其他量化格式，如`Q8_0`（8位整数量化，精度最高）和`Q5_K`（5位分组量化，侧重低内存使用）。\n\n### 3. 执行推理\n\n一旦量化模型启动并运行，就可以对其执行推理。文章提供了一个使用Python `requests`库的简单方法：\n\n```python\nimport requests\n\ndef query_ollama(prompt, model=\"hf.co/bartowski/Llama-3.2-3B-Instruct-GGUF:IQ3_M\"):\n    response = requests.post(\n        \"http://localhost:11434/api/generate\",\n        json={\n            \"model\": model,\n            \"prompt\": prompt,\n            \"stream\": False\n        }\n    )\n    return response.json()[\"response\"]\n```\n\n**推理示例：**\n\n*   **示例1：**\n    *   输入：`output = query_ollama(\"What is the capital of Taiwan?\")`\n    *   输出：`The capital of Taiwan is Taipei.`\n*   **示例2：**\n    *   输入：`output = query_ollama(\"Write a Python function to check if a number is prime.\")`\n    *   输出：模型成功生成了一个高质量、可读且文档齐全的Python素数检查函数，尽管素数检查并非易事，模型仍能提供简化但合理的响应。\n\n## 总结\n\n本文重点介绍了如何将Hugging Face语言模型与Ollama应用程序结合，以在本地运行模型。文章首先解释了量化对在受限环境中运行大型语言模型的诸多益处，然后详细阐述了加载和运行流行语言模型量化版本的简化过程。\n\n## 更多相关主题\n\n*   ![Using Quantized Models with Ollama for Application Development](https://machinelearningmastery.com/wp-content/uploads/2025/05/mlm-palomares-ollama-quantization-feature.png)\n*   ![Building a Simple RAG Application Using LlamaIndex](https://machinelearningmastery.com/wp-content/uploads/2024/08/mlm-awan-rag-applications-llamaindex-200x200.png) *构建一个简单的RAG应用使用LlamaIndex*\n*   ![Application of differentiations in neural networks](https://machinelearningmastery.com/wp-content/uploads/2021/11/freeman-zhou-plX7xeNb3Yo-unsplash-150x150.jpg) *神经网络中微分的应用*\n*   ![K-Means Clustering in OpenCV and Application for Color Quantization](https://machinelearningmastery.com/wp-content/uploads/2023/03/kmeans_cover-150x150.jpg) *OpenCV中的K-Means聚类及颜色量化应用*\n*   ![Clever Application Of A Predictive Model](https://machinelearningmastery.com/wp-content/uploads/2014/08/wet-concrete.jpg) *预测模型的巧妙应用*\n*   ![How to Create a Linux Virtual Machine For Machine Learning Development With Python 3](https://machinelearningmastery.com/wp-content/uploads/2017/02/Python3-Version.jpg) *如何创建用于Python 3机器学习开发的Linux虚拟机*\n*   ![Machine Learning Development Environment](https://machinelearningmastery.com/wp-content/uploads/2018/04/Machine-Learning-Development-Environment.jpg) *机器学习开发环境*",
-      "shortSummary": "本文介绍了如何利用Ollama在本地部署和运行Hugging Face上的量化大型语言模型（LLM）。量化技术通过降低模型精度，显著减少LLM的内存占用并提高推理速度，使其能在资源受限的设备上高效运行。文章详细说明了Ollama的安装、如何拉取特定量化模型，以及通过Python进行模型推理的步骤和示例。这为在本地环境中进行LLM应用开发提供了无缝且优化的解决方案。",
-      "translated_title": "使用量化模型与Ollama进行应用开发",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/mlm-palomares-ollama-quantization-feature.png",
-          "alt": "Using Quantized Models with Ollama for Application Development",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2024/08/mlm-awan-rag-applications-llamaindex-200x200.png",
-          "alt": "mlm-awan-rag-applications-llamaindex",
-          "title": "Building a Simple RAG Application Using LlamaIndex",
-          "position": 2
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2021/11/freeman-zhou-plX7xeNb3Yo-unsplash-150x150.jpg",
-          "alt": "freeman-zhou-plX7xeNb3Yo-unsplash",
-          "title": "Application of differentiations in neural networks",
-          "position": 3
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2023/03/kmeans_cover-150x150.jpg",
-          "alt": "kmeans_cover",
-          "title": "K-Means Clustering in OpenCV and Application for Color Quantization",
-          "position": 4
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2014/08/wet-concrete.jpg",
-          "alt": "wet concrete",
-          "title": "Clever Application Of A Predictive Model",
-          "position": 5
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2017/02/Python3-Version.jpg",
-          "alt": "Python3 Version",
-          "title": "How to Create a Linux Virtual Machine For Machine Learning Development With Python 3",
-          "position": 6
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2018/04/Machine-Learning-Development-Environment.jpg",
-          "alt": "Machine Learning Development Environment",
-          "title": "Machine Learning Development Environment",
-          "position": 7
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Quantization is a frequently used strategy applied to production machine learning models, particularly large and complex ones, to make them lightweight by reducing the numerical precision of the model’s parameters (weights) &mdash; usually from 32-bit floating-point to lower representations like 8-bit integers."
-    },
-    {
-      "title": "语言模型中的分词器 (原标题: Tokenizers in Language Models)",
-      "link": "https://machinelearningmastery.com/tokenizers-in-language-models/",
-      "pubDate": "Wed, 28 May 2025 17:06:05 +0000",
-      "isoDate": "2025-05-28T17:06:05.000Z",
-      "creator": "Adrian Tam",
-      "summary": "## 语言模型中的分词器\n\n分词（Tokenization）是自然语言处理（NLP）中的关键预处理步骤，它将原始文本转换为语言模型可以处理的“词元”（tokens）。现代语言模型采用复杂的分词算法来处理人类语言的复杂性。本文将探讨大型语言模型（LLMs）中常用的分词算法、其实现方式以及如何使用它们。\n\n![图片 1](https://machinelearningmastery.com/wp-content/uploads/2025/05/pexels-belle-co-99483-402028-scaled.jpg)\n\n### 概述\n\n文章内容分为五个主要部分：\n\n*   朴素分词（Naive Tokenization）\n*   词干提取与词形还原（Stemming and Lemmatization）\n*   字节对编码（Byte-Pair Encoding, BPE）\n*   WordPiece\n*   SentencePiece 与 Unigram\n\n### 朴素分词\n\n最简单的分词形式是基于空格将文本分割成词元。这种方法虽然简单快速，但存在显著局限性：\n\n*   **词汇表问题：** 模型需要一个词汇表。朴素分词会导致词汇表包含所有遇到的词形，当遇到训练数据中未出现的新词时，模型无法处理或需替换为特殊“未知”词元。\n*   **标点符号和特殊字符处理不佳：** 例如，“world!”和“world”会被视为两个不同的词元，增加了词汇表的冗余。\n*   **大小写和连字符问题：** 类似地，大小写和连字符也会导致相同词的不同形式被视为独立词元。\n*   **语言特性：** 尽管英语中空格是词语分隔的基本单位，但对于德语等复合词较多的语言并不理想。此外，无法识别“unhappy”中“un-”和“happy”等子词单位的含义，这表明需要更好的分词方法。\n\n### 词干提取与词形还原\n\n为了减少词汇表大小并规范词形，可以采用更复杂的算法：\n\n*   **预处理：** 可以使用正则表达式将文本分词，并转换为小写。\n*   **词干提取（Stemming）：**\n    *   一种更激进的技术，基于规则移除词语的前缀和后缀（例如，Porter词干算法）。\n    *   缺点是可能产生无效的词（如“unstabl”）。\n    *   示例：使用NLTK库实现。\n*   **词形还原（Lemmatization）：**\n    *   一种更温和的技术，使用词典将词语还原为其基本形式（如WordNet词形还原器）。\n    *   几乎总能产生有效的词。\n    *   示例：使用NLTK库实现。\n\n尽管这些规范化步骤能产生更一致的词汇表，但它们仍未能解决子词识别等根本性的分词问题。\n\n### 字节对编码（BPE）\n\nBPE是现代语言模型（如GPT、BART和RoBERTa）中最广泛使用的分词算法之一。它最初是作为一种文本压缩算法被引入，后被应用于机器翻译并被GPT模型采用。\n\n*   **工作原理：** BPE通过迭代合并训练数据中最频繁的相邻字符或词元对来工作。算法从单个字符的词汇表开始，逐步合并最频繁的相邻对，直到达到预设的词汇表大小。最终的词汇表包含单个字符和常见的子词单元。\n*   **训练依赖：** BPE的训练结果取决于特定的训练数据，因此需要保存和加载训练好的BPE分词器模型。\n*   **预分词器：** BPE本身不定义单词，通常依赖一个“预分词器”（pre-tokenizer），最简单的形式是按空格分割单词。\n*   **使用示例：**\n    *   Hugging Face Transformers库的GPT-2分词器：在输出中，使用“Ġ”表示单词之间的空格。值得注意的是，BPE分词器不进行词干提取或词形还原。\n    *   OpenAI的tiktoken库也提供了BPE的实现。\n*   **自定义训练：** Hugging Face Tokenizers库提供了训练自定义BPE分词器的简便方法，可以通过迭代器在数据集上进行训练。\n*   **主要优势：** BPE能够通过将未知词分解为已知的子词单元来处理未知词（Out-Of-Vocabulary, OOV）问题。\n\n### WordPiece\n\nWordPiece是谷歌在2016年提出的一种流行的分词算法，被BERT及其变体广泛使用。它也是一种子词分词算法。\n\n*   **使用示例：**\n    *   Hugging Face Transformers库的BERT分词器：它将“initialized”等词分割为“initial”和“##ized”，其中“##”前缀表示这是一个前一个词的子词。\n    *   BERT模型特有的设计选择：所有文本被转换为小写，并自动添加`[CLS]`（分类）和`[SEP]`（分隔）特殊词元。这些并非WordPiece算法本身的要求。\n*   **与BPE的比较：**\n    *   **相似点：** 两者都从所有字符集开始，并合并生成新的词汇词元。\n    *   **关键区别：** BPE合并最频繁的词元对，而WordPiece使用一个最大化似然的评分公式。WordPiece通常将常见词保留为单个词元，而BPE可能会将其拆分。\n*   **自定义训练：** 使用Hugging Face Tokenizers库训练WordPiece分词器与训练BPE类似，可以使用`WordPieceTrainer`。\n\n### SentencePiece 与 Unigram\n\nBPE和WordPiece是“自下而上”构建的分词器，它们从字符开始，逐步合并生成子词。而Unigram是一种“自上而下”的分词算法。\n\n*   **Unigram：**\n    *   从训练数据中的所有单词开始，根据对数似然分数在每一步修剪词汇表，直到达到所需大小。\n    *   训练后的Unigram分词器是统计性的，而非基于规则，它保存每个词元的似然值，用于确定新文本的分词。\n*   **SentencePiece：**\n    *   一种语言中立的分词算法，不需要对输入文本进行预分词（即不需要事先按空格或其他规则分割单词）。\n    *   Unigram算法最常见地作为SentencePiece的一部分出现。\n    *   SentencePiece特别适用于多语言场景。",
-      "shortSummary": "分词是语言模型处理文本的关键步骤。朴素分词（如按空格）存在词汇表限制和标点处理问题。词干提取和词形还原能规范词形，但无法解决子词问题。现代语言模型广泛采用子词分词算法，如字节对编码（BPE）和WordPiece。BPE通过合并最频繁的字符/词元对工作，WordPiece则基于似然分数，两者都能有效处理未知词。SentencePiece是一种语言中立的分词方法，常结合Unigram算法，尤其适用于多语言环境。",
-      "translated_title": "语言模型中的分词器",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/pexels-belle-co-99483-402028-scaled.jpg",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png",
-          "alt": "Building Transformer Models with Attention",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "This post is divided into five parts; they are: • Naive Tokenization • Stemming and Lemmatization • Byte-Pair Encoding (BPE) • WordPiece • SentencePiece and Unigram The simplest form of tokenization splits text into tokens based on whitespace."
     }
   ],
-  "lastUpdated": "2025-06-14T09:28:03.695Z"
+  "lastUpdated": "2025-06-15T09:27:17.111Z"
 }
