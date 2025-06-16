@@ -5,6 +5,199 @@
   "link": "https://appleinsider.com",
   "items": [
     {
+      "title": "苹果重启开发者测试版，发布iOS 18.6和macOS 15.6 (原标题: Apple restarts its developer betas with iOS 18.6, macOS 15.6)",
+      "link": "https://appleinsider.com/articles/25/06/16/apple-restarts-its-developer-betas-with-ios-186-macos-156",
+      "pubDate": "Mon, 16 Jun 2025 17:15:13 GMT",
+      "isoDate": "2025-06-16T17:15:13.000Z",
+      "creator": "Malcolm Owen",
+      "summary": "### 苹果重启开发者测试版：iOS 18.6、macOS 15.6 及其他系统更新\n\n苹果公司在发布了iOS 18.5、macOS 15.5等操作系统更新，并启动了iOS 26等开发者测试版之后，又推出了iOS 18.6、iPadOS 18.6、macOS 15.6、tvOS 18.6、watchOS 11.6和visionOS 2.6的开发者测试版。\n\n**更新背景与版本信息：**\n*   这些新的测试版是继5月12日发布的iOS 18.5、iPadOS 18.5、macOS 15.5、tvOS 18.5和visionOS 2.5之后的后续更新。\n*   首个iOS 18.6和iPadOS 18.6开发者测试版的构建号为22G5054d。\n*   macOS Sequoia 15.6的构建号为24G5054d。\n*   tvOS 18.6的构建号为22M5054b。\n*   watchOS 11.6的构建号为22U5054b。\n*   visionOS 2.6的构建号为22O5754c。\n\n**测试轨道：**\n*   这些新的测试版是苹果正在进行的第二个测试轨道，与正在测试iOS 26、iPadOS 26、macOS 26、watchOS 26、tvOS 26和visionOS 26的轨道并行。\n\n**新功能展望：**\n*   目前尚不清楚这些新测试版具体包含哪些功能。\n*   预计可能包含对Apple Intelligence的更多小幅调整，因为其正在缓慢推出。\n*   其他主要功能不太可能出现，因为苹果倾向于将它们保留到今年秋季的里程碑式发布中。\n\n**重要提示与建议：**\n*   AppleInsider和苹果公司强烈建议用户不要在“任务关键型”或主要硬件上安装测试版操作系统或其他测试软件。\n*   这是因为测试版软件存在错误和问题的风险，可能导致数据丢失。\n*   测试人员应使用辅助或非必要设备进行测试，并确保其数据有足够的备份。",
+      "shortSummary": "苹果已重启开发者测试版，发布了iOS 18.6、iPadOS 18.6、macOS 15.6、tvOS 18.6、watchOS 11.6和visionOS 2.6的后续更新。这些版本与iOS 26测试版并行，具体新功能尚不明确，但可能包含Apple Intelligence的小幅调整。苹果强烈建议用户不要在主要设备上安装测试版，以避免潜在的错误和数据丢失风险，建议使用辅助设备并做好备份。",
+      "translated_title": "苹果重启开发者测试版，发布iOS 18.6和macOS 15.6",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果称没有聊天机器人——但iOS 26中的快捷指令却并非如此 (原标题: Apple says there's no chatbot — but Shortcuts in iOS 26 says otherwise)",
+      "link": "https://appleinsider.com/articles/25/06/16/apple-says-theres-no-chatbot----but-shortcuts-in-ios-26-says-otherwise",
+      "pubDate": "Mon, 16 Jun 2025 16:57:47 GMT",
+      "isoDate": "2025-06-16T16:57:47.000Z",
+      "creator": "Andrew Orr",
+      "summary": "### 苹果iOS 26中通过快捷指令创建聊天机器人\n\n尽管苹果高管在采访中表示公司没有构建公共聊天机器人，但iOS 26中的一项新操作允许用户创建类似聊天机器人的功能。这项功能在WWDC 2025上并非重点宣传，苹果软件工程高级副总裁Craig Federighi和全球营销高级副总裁Greg Joswiak均表示苹果无意构建聊天机器人，但通过快捷指令，用户可以让Apple Intelligence像聊天机器人一样运作。\n\n**如何使用快捷指令中的Apple Intelligence**\n\n如果用户正在运行iOS 26开发者测试版，可以尝试以下步骤：\n\n1.  打开“快捷指令”应用并创建一个新的快捷指令。\n2.  点击加号按钮添加一个操作。\n3.  搜索名为“使用模型”（Use Model）的操作。\n4.  在“模型”（Model）下，选择“在此iPhone上”（On This iPhone）、“私有云计算”（Private Cloud Compute），或者如果已安装，选择“ChatGPT”。\n5.  输入您的提示词。\n6.  运行快捷指令后，它会根据您的提示生成响应。您可以将输出显示为通知、保存到备忘录，或在快捷指令的后续步骤中使用。\n\n![平板电脑屏幕显示一条消息：“请求提供的操作无法运行。请修改并重试。”SwiftUI代码生成错误。](https://photos5.appleinsider.com/gallery/64035-133281-IMG_0354-2-xl.jpg)\n\n**设备端模型与云端模型**\n\n苹果提供了两种模型选择：\n\n*   **设备端模型（On-device model）**：\n    *   完全在iPhone上运行。\n    *   速度更快，隐私性更高。\n    *   在复杂性或创造性方面有限。\n*   **私有云计算模型（Private Cloud Compute model）**：\n    *   在苹果数据中心运行，使用更高级的模型。\n    *   可以处理更长、更细致的提示。\n    *   需要网络连接。\n\n如果设备端模型无法处理某个请求，快捷指令会通知用户并提供切换到云端模型的选项。\n\n![平板电脑屏幕显示一个用于分析医生笔记语气的文本界面。包括脚本选项和详细描述语气特征的响应文本。右侧可见各种应用程序图标。](https://photos5.appleinsider.com/gallery/64035-133282-IMG_0354-3-xl.jpg)\n\n**其聊天机器人特性**\n\n虽然它不是一个完整的聊天机器人（没有提示间的记忆、聊天历史或名称/个性），但它能清晰自然地响应提示。在测试中，它在创意写作、摘要、头脑风暴和文本简化方面表现良好，云端模型性能大约相当于GPT-3.5。\n\n**安全防护与局限性**\n\n*   **安全防护**：它具有基本的安全防护措施，例如拒绝编写虚假医生证明（即使作为虚构故事的一部分）。\n*   **局限性**：在某些情况下会产生事实错误，例如在被问及亚里士多德失传和重新发现的作品时，它编造了名称和虚构的细节，表现出“幻觉”现象。\n\n**苹果的立场与实际功能**\n\n尽管苹果高管否认正在构建聊天机器人，并表示公司专注于构建有用的功能而非聊天伴侣，但快捷指令中的“使用模型”操作的行为却与之相悖。它可能不被称为聊天机器人，但用户可以与它进行“聊天”，尤其是在给出开放式提示时，它的响应方式与聊天机器人无异。\n\n通过快捷指令，用户可以最直接地测试苹果的语言模型，无需通过Siri或等待系统更新。用户可以完全控制发送任何提示、选择运行模型以及决定如何处理响应。即使苹果不称之为聊天机器人，但就目前而言，它已经足够接近。",
+      "shortSummary": "苹果高管否认正在构建公共聊天机器人，但iOS 26中的“快捷指令”应用通过新的“使用模型”操作，允许用户创建类似聊天机器人的体验。用户可选择设备端或私有云计算模型，进行创意写作、摘要等任务。尽管缺乏记忆且可能出现“幻觉”，但该功能提供了直接控制苹果语言模型的途径，其行为与聊天机器人无异。",
+      "translated_title": "苹果称没有聊天机器人——但iOS 26中的快捷指令却并非如此",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64035-133281-IMG_0354-2-xl.jpg",
+          "alt": "Tablet screen displaying a message: 'The action could not run for the request provided. Please revise and try again.' Error with SwiftUI code generation.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64035-133282-IMG_0354-3-xl.jpg",
+          "alt": "Tablet screen displaying a text interface for analyzing the tone of a doctor's note. Includes script options and response text detailing tone characteristics. Various app icons are visible to the right.",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果因荷兰法院裁定其违反反垄断法被处以5800万美元罚款 (原标题: Apple stuck with $58M fine after Dutch court rules it broke antitrust law)",
+      "link": "https://appleinsider.com/articles/25/06/16/apple-stuck-with-58m-fine-after-dutch-court-rules-it-broke-antitrust-law",
+      "pubDate": "Mon, 16 Jun 2025 15:48:02 GMT",
+      "isoDate": "2025-06-16T15:48:02.000Z",
+      "creator": "Amber Neely",
+      "summary": "### 荷兰法院裁定苹果违反反垄断法并面临5800万美元罚款\n\n*   **背景与裁决**\n    *   荷兰鹿特丹地方法院支持监管机构的裁定，再次确认苹果公司在处理约会应用计费方面滥用了其市场支配地位。\n    *   法院维持了荷兰消费者和市场管理局（ACM）的决定，裁定苹果确实对App Store中的约会应用施加了不公平的条件。\n    *   苹果因此面临数百万美元的罚款，目前累计金额已接近5800万美元。\n\n*   **事件始末**\n    *   此事件始于2021年，当时ACM裁定苹果违反了App Store中关于约会应用的规定。\n    *   在2021年，约会应用不允许引导用户使用App Store之外的支付方式，苹果对所有应用内购买收取30%的佣金，且不提供第三方支付选项。许多国家（包括荷兰）认为这违反了反导向（anti-steering）法律。\n\n*   **苹果的“合规”措施与争议**\n    *   为安抚立法者，苹果同意在荷兰App Store改变规则，允许公司选择使用苹果的支付系统、在应用内包含指向开发者网站的链接，或在应用内使用第三方支付系统。\n    *   然而，苹果对引导用户使用第三方支付解决方案的开发者收取27%的佣金。\n    *   开发者普遍认为这一解决方案改进不大。\n    *   苹果也提醒立法者，对于在App Store之外进行的购买，将无法协助用户处理退款、购买历史、订阅管理等问题。\n\n*   **苹果的回应与上诉**\n    *   苹果公司的一位代表表示，此裁决“损害了我们为开发者和保护用户隐私与安全而创建的技术和工具”，并计划上诉。\n    *   苹果曾试图就裁决生效后至其开始“合规”期间累积的近5800万美元罚款提出上诉，但荷兰监管机构当时也驳回了其上诉。",
+      "shortSummary": "荷兰鹿特丹地方法院裁定苹果公司在App Store约会应用支付方面滥用市场支配地位，违反反垄断法。苹果因此面临累计近5800万美元的罚款。此前，苹果曾对引导用户使用第三方支付的开发者收取27%的佣金，被认为是不公平条件。苹果表示此裁决损害了其技术，并计划上诉。",
+      "translated_title": "苹果因荷兰法院裁定其违反反垄断法被处以5800万美元罚款",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "WWDC 2025及HomeKit Insider播客秋季内容预告 (原标题: WWDC 2025 & whats coming in the fall on the HomeKit Insider podcast)",
+      "link": "https://appleinsider.com/articles/25/06/16/wwdc-2025-whats-coming-in-the-fall-on-the-homekit-insider-podcast",
+      "pubDate": "Mon, 16 Jun 2025 15:18:41 GMT",
+      "isoDate": "2025-06-16T15:18:41.000Z",
+      "creator": "Andrew O'Hara",
+      "summary": "## HomeKit Insider播客：WWDC 2025智能家居回顾与新品评测\n\n最新一期的HomeKit Insider播客总结了WWDC 2025上宣布的所有新的智能家居功能，并动手评测了Govee灯柱灯。\n\n### WWDC 2025智能家居亮点\n\n尽管HomeOS未在WWDC上宣布，但苹果的新操作系统中仍有几项与智能家居相关的公告：\n\n*   **iOS 26重大更新**：\n    *   **CarPlay**：首次支持小组件，包括用于查看和控制智能家居配件的小组件。\n    *   **家庭应用（Home app）**：获得更新。\n    *   **新框架**：引入了EnergyKit框架，并支持设备端LLM（大型语言模型）访问。\n*   **tvOS更新**：\n    *   **新功能**：包括直通音频（passthrough audio）和卡拉OK模式。\n*   **visionOS更新**：\n    *   **小组件**：Vision Pro获得了小组件功能。\n\n### 其他新闻\n\n*   本周新闻较少，主要发布是Aqara的中国G100。\n\n### Govee灯柱灯动手评测\n\n播客最后对Govee灯柱灯进行了动手评测。这款大型户外灯具特点如下：\n\n*   **全彩**：支持全彩显示。\n*   **Matter over Wi-Fi**：支持通过Wi-Fi连接的Matter协议。\n*   **内置传感器**：配备多种板载传感器。\n\n### 播客相关链接\n\n*   iOS 26中CarPlay的Apple Home功能\n*   tvOS 26新功能\n*   Govee灯柱灯\n\n听众可以通过Apple的播客应用或Patreon订阅，每月5美元即可获得无广告的AppleInsider播客体验。",
+      "shortSummary": "最新一期HomeKit Insider播客回顾了WWDC 2025的智能家居更新，并评测了Govee灯柱灯。WWDC亮点包括iOS 26中CarPlay的智能家居小组件、家庭应用更新、EnergyKit框架，以及tvOS和visionOS的新功能。此外，播客还提到了Aqara的中国G100发布。Govee灯柱灯是一款支持Matter over Wi-Fi的全彩户外灯，内置多种传感器。",
+      "translated_title": "WWDC 2025及HomeKit Insider播客秋季内容预告",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "iOS 26中视觉智能的小更新带来了巨大的可用性提升 (原标题: A small update to Visual Intelligence in iOS 26 makes a giant difference in usability)",
+      "link": "https://appleinsider.com/articles/25/06/16/a-small-update-to-visual-intelligence-in-ios-26-makes-a-giant-difference-in-usability",
+      "pubDate": "Mon, 16 Jun 2025 14:53:23 GMT",
+      "isoDate": "2025-06-16T14:53:23.000Z",
+      "creator": "William Gallagher",
+      "summary": "Apple 在 iOS 26 中对视觉智能（Visual Intelligence）进行了微小但影响巨大的更新，使其现在可以应用于 iPhone 屏幕上的任何图像，从而大大提升了这项功能的实用性。\n\n### 视觉智能的演变\n\n*   **早期功能**：最初，视觉智能是 iPhone 上一项令人印象深刻的功能，用户只需将 iPhone 摄像头对准物体并按下“相机控制”按钮，AI 就能识别并提供相关信息。这扩展了“照片”应用识别植物的能力，视觉智能可以进一步识别著名地标、随机建筑，甚至推断复杂咖啡订单的成分，或识别海报上的日期并将其添加到日历中（尽管在某些复杂设计上可能遇到困难）。\n*   **局限性**：此前，所有这些功能都要求用户必须将 iPhone 摄像头对准感兴趣的物体。\n\n### iOS 26 的重大更新\n\n*   **核心改变**：iOS 26 的更新移除了必须使用摄像头的限制。现在，用户可以在 iPhone 屏幕上的任何内容上部署视觉智能。\n*   **影响与益处**：\n    *   **研究人员**：可以识别网站上看到的物体。\n    *   **购物者**：可以暂停 YouTube 视频，使用视觉智能追踪网红所穿戴的物品。\n*   **复杂性**：更新导致现在有两种不同的方式来使用视觉智能，且启动方式不同，这可能会给用户带来一些混淆。\n\n### 如何使用“常规”视觉智能（基于摄像头）\n\n要继续使用自视觉智能推出以来已有的功能，仍需将 iPhone 对准目标物体。以下是激活方式：\n\n*   按住“相机控制”按钮片刻。\n*   按下“操作按钮”（需在“设置”>“操作按钮”中配置）。\n*   从锁定屏幕按下视觉智能按钮（需在锁定屏幕自定义中添加）。\n*   从控制中心按下视觉智能按钮（需在控制中心添加）。\n\n**请注意**：以上方法均无法启动新版本的视觉智能。\n\n![三部智能手机屏幕显示一篇关于 AirPods Pro 3 传闻的文章。左侧屏幕包含一个总结 AirPods 功能的通知。](https://photos5.appleinsider.com/gallery/64034-133274-001-iPhones-xl.jpg)\n\n### 如何使用“新版本”视觉智能（基于屏幕图像）\n\n新版本是视觉智能的额外功能，而非替代。要对屏幕上的任何内容使用视觉智能，需要执行完全不同的操作：\n\n1.  **截屏**：同时按下音量调高和侧边（或电源）按钮。\n2.  **圈选**：用手指圈选或高亮显示图像中感兴趣的部分，该区域会以新的 Siri 风格动画发光。\n3.  **提问或搜索**：\n    *   点击“提问”按钮并输入问题。\n    *   向上滑动查看图像搜索结果，其中可能包含零售商链接，用户可以直接点击购买商品。\n\nApple 试图将其宣传为简单易用，因为它利用了常规截屏的相同操作。然而，对于不习惯截屏的用户来说，这可能需要学习一套新的按钮操作。\n\n### 总结\n\n尽管视觉智能现在有多种不同的使用方式，但能够识别屏幕上的任何内容无疑是一个巨大的优势。通过消除对摄像头指向的需求，Apple 大幅提升了视觉智能的实用性。文章作者也表达了希望此新版本能尽快登陆 iPad 或 Mac 的愿望。",
+      "shortSummary": "iOS 26中，Apple对视觉智能进行了重要更新，使其不再局限于摄像头输入，而是能识别iPhone屏幕上的任何图像。这一改变极大地提升了功能可用性，用户现在可以轻松识别网页或视频中的物体。新功能通过截屏并圈选感兴趣区域来激活，与原有的摄像头识别方式并存。尽管操作方式有所增加，但能在屏幕上直接识别信息，无疑是视觉智能的一大飞跃。",
+      "translated_title": "iOS 26中视觉智能的小更新带来了巨大的可用性提升",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64034-133274-001-iPhones-xl.jpg",
+          "alt": "Three smartphone screens display an article about AirPods Pro 3 rumored for 2026. The left screen includes a notification summarizing AirPods features.",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "iOS 26 信息应用中的投票功能如何让群组规划更轻松 (原标题: How polls in iOS 26 Messages app makes group planning easier)",
+      "link": "https://appleinsider.com/articles/25/06/16/how-polls-in-ios-26-messages-app-makes-group-planning-easier",
+      "pubDate": "Mon, 16 Jun 2025 13:51:32 GMT",
+      "isoDate": "2025-06-16T13:51:32.000Z",
+      "creator": "Andrew Orr",
+      "summary": "## iOS 26 信息应用新增投票功能，简化群组规划\n\nApple 在 iOS 26 中为信息（Messages）应用引入了一项全新的投票功能，旨在让群组规划和决策变得更加便捷高效。\n\n### 功能概述与目的\n\n*   **核心功能**：iOS 26 信息应用内置了投票功能，允许群聊参与者分享意见并对决策进行投票。\n*   **发布时间**：该功能于2025年6月9日的Apple全球开发者大会（WWDC）上首次亮相。\n*   **主要目的**：解决群聊中常见的犹豫不决问题，提供一种无需离开对话即可进行投票的原生方式，从而消除来回短信确认的混乱。\n\n### 工作原理与优势\n\n*   **创建与参与**：用户可以直接在群聊中创建投票，提出多个选项，群组中的每个人都可以参与投票。\n*   **实时更新**：投票结果会随着参与者的响应实时更新，确保信息即时透明。\n*   **操作直观**：Apple 表示该系统设计得快速且直观，易于使用。\n\n### 结合Apple Intelligence的智能增强\n\n*   **上下文感知建议**：Apple 通过其设备端AI系统“Apple Intelligence”增强了投票功能。\n*   **智能提示**：当系统检测到与规划相关的问题时（例如：“我们今晚看什么电影？”），信息应用会主动提示用户设置投票，并可能提供建议的选项。\n*   **隐私保护**：AI处理在本地设备上进行，确保用户隐私的同时提供有用的实时建议。\n\n![平板电脑屏幕显示消息应用界面，左侧是对话列表，右侧突出显示了相机、照片和贴纸等聊天选项。](https://photos5.appleinsider.com/gallery/64032-133271-IMG_0354-2-xl.jpg)\n\n*   **访问方式**：投票功能通过聊天界面中的“加号”按钮即可找到并创建。\n\n### iMessage作为规划工具的演变\n\n*   **功能扩展**：投票功能的加入，反映了iMessage从单纯的短信应用向更全面的规划工具转变的趋势，此前已增加了内联回复、消息编辑和日程安排等功能。\n*   **原生集成**：与第三方iMessage应用不同，新的投票工具是完全集成的，无需安装或额外的权限。\n*   **可用性限制**：投票功能目前仅适用于iMessage群聊，不支持SMS或跨平台聊天。\n\n![平板电脑屏幕显示消息应用，其中包含关于灌水壶和午餐选项（包括汉堡、意大利面和沙拉）的对话。联系人和对话列表可见。](https://photos5.appleinsider.com/gallery/64032-133272-IMG_0354-xl.jpg)\n\n### 市场对比与发布时间\n\n*   **市场现状**：其他聊天应用如WhatsApp（2022年引入）和Telegram（长期支持高级投票功能，包括测验模式）早已提供投票功能。\n*   **发布计划**：该投票功能已在iOS 26开发者测试版中可用，Apple 计划在7月推出公开测试版，并预计于2025年秋季与iPhone 17系列一同正式发布。",
+      "shortSummary": "iOS 26 信息应用新增投票功能，旨在简化群组规划和决策。用户可在iMessage群聊中直接创建投票，实时查看结果。该功能结合Apple Intelligence提供智能建议，并在设备本地处理以保护隐私。作为iMessage功能扩展的一部分，它无需第三方应用，预计于2025年秋季随iPhone 17正式发布。",
+      "translated_title": "iOS 26 信息应用中的投票功能如何让群组规划更轻松",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64032-133271-IMG_0354-2-xl.jpg",
+          "alt": "Tablet screen displaying messaging app interface with a list of conversations on the left and chat options such as camera, photos, and stickers highlighted.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64032-133272-IMG_0354-xl.jpg",
+          "alt": "Tablet screen displaying a messaging app with a conversation about filling a water jug and lunch options including burgers, spaghetti, and salad. Contacts and conversation list visible.",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "AirPods Pro 3 现已传闻将于 2026 年发布 (原标题: AirPods Pro 3 now rumored to launch in 2026)",
+      "link": "https://appleinsider.com/articles/25/06/16/airpods-pro-3-now-rumored-to-launch-in-2026",
+      "pubDate": "Mon, 16 Jun 2025 13:09:33 GMT",
+      "isoDate": "2025-06-16T13:09:33.000Z",
+      "creator": "Malcolm Owen",
+      "summary": "# AirPods Pro 3 传闻将于 2026 年发布\n\n## 发布时间预测\n*   **分析师预测：** GF Securities 的分析师 Jeff Pu 预测 AirPods 第三代将于 2026 年发布。他指出，2025 年剩余时间以及 2027 年预计不会有其他 AirPods 系列更新。\n*   **与郭明錤观点一致：** Jeff Pu 的预测与分析师郭明錤的预期相符。郭明錤在 5 月份曾表示，配备摄像头的 AirPods 将于 2026 年投产。\n\n## 存在证据（苹果系统泄露）\n*   **系统代码泄露：** 苹果公司通过操作系统代码泄露了 AirPods Pro 3 的存在，这增加了传闻的可信度。\n    *   **第一次泄露（5月中旬）：** 发现一段文本字符串从“AirPods Pro 2nd generation”更改为“AirPods Pro 2 or later”。\n    *   **第二次泄露（6月10日）：** iOS 26 的第一个开发者测试版明确提到了“AirPods Pro 3”，与“AirPods Pro 2”和“AirPods Pro”并列。\n*   **确认新型号：** 尽管这些泄露没有指出具体的发布时间，但它们确认了新型号正在开发中。\n\n## 传闻中的新功能\n*   **设计与降噪：**\n    *   更新的设计。\n    *   更强的主动降噪 (ANC)。\n*   **新增传感器：**\n    *   心率监测。\n    *   温度感应。\n    *   这些传感器将使其在健身方面更有用。\n*   **内置摄像头：**\n    *   可能配备内置摄像头，为视觉智能 (Visual Intelligence) 提供更多数据。",
+      "shortSummary": "AirPods Pro 3 传闻将于 2026 年发布。分析师 Jeff Pu 预测了这一时间，并与郭明錤关于配备摄像头 AirPods 在 2026 年投产的说法一致。苹果公司通过操作系统代码泄露（如iOS 26中明确提及“AirPods Pro 3”）证实了新型号的存在。传闻中的新功能包括更新设计、更强ANC、心率和温度传感器，以及用于视觉智能的内置摄像头。",
+      "translated_title": "AirPods Pro 3 现已传闻将于 2026 年发布",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果可能需要收购人工智能公司以提振Apple Intelligence (原标题: Apple may need to acquire AI firms to boost Apple Intelligence)",
+      "link": "https://appleinsider.com/articles/25/06/16/apple-may-need-to-acquire-ai-firms-to-boost-apple-intelligence",
+      "pubDate": "Mon, 16 Jun 2025 11:57:22 GMT",
+      "isoDate": "2025-06-16T11:57:22.000Z",
+      "creator": "William Gallagher",
+      "summary": "### 苹果Apple Intelligence战略与未来展望\n\n*   **WWDC 2025 表现评估**\n    *   金融公司Wedbush认为，WWDC 2025实际上展示了苹果如何执行其Apple Intelligence战略。\n    *   然而，包括Wedbush在内的多数投资和金融公司对WWDC 2025主题演讲感到“不尽如人意”。\n    *   Wedbush分析师Daniel Ives指出，苹果确实阐明了其AI愿景，并通过向第三方开发者开放Apple Intelligence开始执行。\n    *   苹果选择采取“安全”甚至“低调”的策略，以避免重蹈WWDC 2024的“失误”。\n\n*   **未来12个月的关键性**\n    *   Ives强调，接下来的12个月对Apple Intelligence至关重要。\n    *   投资者在此期间将重点关注Apple Intelligence的进展，因此苹果只有很短的时间来给他们留下深刻印象。\n    *   这种时间压力可能促使苹果进行比以往更多、规模更大的AI收购。\n\n*   **苹果的收购策略**\n    *   苹果每年都会收购大量公司，但通常只在交易规模要求披露时才公开。\n    *   目前已知苹果收购AI公司是为了日历功能和制造业，但分析师认为未来可能需要更大规模的AI收购来满足预期。\n    *   尽管如此，Ives表示Wedbush对苹果能够做好这一点充满信心。\n\n*   **Wedbush的展望与目标价**\n    *   Ives认为，WWDC 2025可能缺乏2024年活动那样的AI“推动力”，但它为未来的重大改进奠定了基础。\n    *   因此，Wedbush维持其270美元的目标股价。\n    *   该目标价于2025年5月上调，当时更多是基于苹果应对全球干扰（如特朗普关税）的能力，而非Apple Intelligence。",
+      "shortSummary": "Wedbush认为，苹果在WWDC 2025上展示了其Apple Intelligence战略，但未来12个月的进展至关重要。若无显著突破，苹果可能被迫进行大规模AI收购以满足投资者预期。分析师指出，苹果采取了保守策略，并已开始向第三方开放AI。尽管如此，Wedbush对苹果的执行能力充满信心，并维持270美元的目标股价。",
+      "translated_title": "苹果可能需要收购人工智能公司以提振Apple Intelligence",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "Dygma Raise 2 评测：一款价格过高的分体式键盘 (原标题: Dygma Raise 2 review: A split keyboard with a too hefty price)",
+      "link": "https://appleinsider.com/articles/25/06/15/dygma-raise-2-review-a-split-keyboard-with-a-hefty-price",
+      "pubDate": "Sun, 15 Jun 2025 20:08:00 GMT",
+      "isoDate": "2025-06-15T20:08:00.000Z",
+      "creator": "Brian Patterson",
+      "summary": "## Dygma Raise 2 评测：一款价格过高的分体式键盘\n\n### 引言\nDygma Raise 2 是一款无线分体式机械键盘，以其卓越的工程设计和人体工学支持在饱和的键盘市场中脱颖而出。然而，其高昂的售价是其最大的争议点，使得大多数用户望而却步。\n\n### 开箱体验\nRaise 2 是一款 60% 布局的机械键盘，包装极其精美。包装盒内含：\n*   RAISE 2 键盘\n*   键帽和轴体拔键器\n*   O 形圈 (1.5mm, 40 ShoreA) x70\n*   测试轴体 x8\n*   超细纤维布\n*   Crap Remover（清洁工具）\n*   Neuron（连接键盘两半与电脑的三向开关）\n*   一套掌托\n*   1.5m USB-C 转 USB-C 线缆\n*   50cm USB-C 转 USB-C 线缆\n*   30cm USB-C 转 USB-C 线缆\n*   USB-C 转 USB-A 适配器\n*   旅行箱\n*   说明书\n\n随附的硬壳旅行箱设计精良，内部有泡沫衬垫，能妥善固定键盘、线缆和掌托，防止移动。\n\n![旅行箱内的黑色键盘和磁吸式掌托](https://photos5.appleinsider.com/gallery/64022-133245-DygmaRaise2-6-xl.jpg)\n*Dygma Raise 2 评测 - 旅行箱内部*\n\n尽管旅行箱保护性良好，但缺少提手，且没有为增强套件（包含拔键器、额外轴体等小部件）预留空间，这些部件需要单独的盒子存放。\n\n![包含各种轴体、O形圈和清洁工具的配件盒](https://photos5.appleinsider.com/gallery/64022-133244-DygmaRaise2-5-xl.jpg)\n*Dygma Raise 2 评测 - 独立的配件盒*\n\n### 设计特点\nRaise 2 采用拉丝阳极氧化铝框架，不仅提供了出色的视觉美感，还带来了令人难以置信的坚固手感。键盘提供黑色和银色两种颜色选择。基础版包含一对可选的磁吸式掌托，可轻松吸附或取下，方便用户根据需求更换（一套新掌托售价39美元）。\n\n![带有掌托的黑色机械键盘特写](https://photos5.appleinsider.com/gallery/64022-133243-DygmaRaise2-4-xl.jpg)\n*Dygma Raise 2 评测 - 掌托可拆卸以提高舒适度*\n\n键盘背面设有 USB-C 端口，用于充电或有线连接。\n\n### 高度定制化\nRaise 2 提供多种轴体选择，包括 Gatereon G Pro 2.0 Yellow、Kailh Silent Brown 或 Kailh Box (Clicky) White。用户还可从 Dygma 商店购买额外的轴体，如 Kailh Silent Pink、Kailh Speed Silver、Kailh Speed Copper、Cherry Red MX、Cherry Brown MX 和 Cherry Blue MX。\n\n如果选择 RGB 灯效选项，键盘将配备 68 个（ANSI 版）/ 69 个（ISO 版）可自定义的键帽 RGB LED，以及超过 100 个用于底光的 LED。\n\nDygma 提供名为 Bazecor 的配置应用程序，支持 Mac、Windows 和 Linux 系统。该应用功能强大且易于使用，允许用户自定义键位映射、宏以及 RGB 灯效。\n\n![Bazecor 配置应用界面](https://photos5.appleinsider.com/gallery/64022-133239-Dygmaapp-xl.jpg)\n*Dygma Raise 2 评测 - Bazecor 配置应用*\n\n### 使用体验\n评测者最初对分体式键盘持保留态度，但 Raise 2 的实际表现令人惊喜。它并非纯粹的“中间对半分”设计，而是采用交错行分体，更易于肌肉记忆和人体工学舒适度。键盘既可以作为一体式使用，也可以分体成两半独立操作。\n\n![分体状态下的黑色键盘](https://photos5.appleinsider.com/gallery/64022-133242-DygmaRaise2-3-xl.jpg)\n*Dygma Raise 2 评测 - 分为两半*\n\n作为一体式键盘使用时，打字和日常使用体验良好。对于 60% 键盘布局，Dygma 通过层系统弥补了缺少方向键和其他按键的问题。键盘底部有四个拇指键，通过 Bazecor 应用可配置多达 10 个层，实现丰富的宏功能。\n\nRaise 2 的一个重要特性是可选的倾斜（tenting）功能，可以大幅调整键盘角度，以提供更佳的人体工学舒适度。尽管评测者个人不习惯，但认可其对部分用户的吸引力。\n\n![键盘底部及倾斜组件](https://photos5.appleinsider.com/gallery/64022-133241-DygmaRaise2-2-xl.jpg)\n*Dygma Raise 2 评测 - 底部和倾斜组件*\n\n如果选择无线版本，Raise 2 可通过蓝牙连接多达 5 台设备，满足大多数用户的需求。\n\n### 高昂的附加成本\n尽管 Raise 2 是一款优秀的机械键盘，但其定价策略是主要问题。键盘基础版售价高达 369 美元，而无线连接、内置倾斜功能和 RGB 灯效等关键特性却需要额外付费：\n*   无线连接：额外 90 美元\n*   内置倾斜：额外 80 美元\n*   RGB 灯效：不作为标准配置，仅随内置倾斜选项提供。\n\n这意味着，如果用户想要一个真正无线的 Raise 2（不含倾斜和 RGB），价格将达到 459 美元。这种将标准功能作为豪华附加项销售的策略，使得其性价比远低于同等质量的其他机械键盘，后者通常在更低的价格提供类似功能，仅牺牲了分体式和更多人体工学选项的新颖性。\n\n![带红色背光的拆分人体工学键盘](https://photos5.appleinsider.com/gallery/64022-133240-DygmaRaise2-1-xl.jpg)\n*Dygma Raise 2 评测 - RGB 灯效，但仅在购买倾斜选项时提供*\n\n### 优缺点总结\n**优点：**\n*   出色的制造质量\n*   优秀的专有应用程序（Bazecor）\n*   丰富的键帽和轴体选项\n*   兼容 Mac、Windows 和 Linux\n*   支持多达 5 台设备连接（无线选项）\n*   分体式键盘和可选倾斜功能提供更佳的人体工学选择\n\n**缺点：**\n*   入门成本过高\n*   无线功能作为可选附加项收费\n*   倾斜功能作为可选附加项收费\n*   分体键盘需要适应期\n\n### 评分\n3/5\n\n### 购买信息\nDygma Raise 2 基础版（不含附加项）可在 Dygma 官网购买，售价 369 美元。",
+      "shortSummary": "Dygma Raise 2 是一款设计精良、高度可定制的无线分体式机械键盘，提供出色的人体工学支持和用户体验。它拥有坚固的铝制框架、多种轴体选择和强大的 Bazecor 配置软件。然而，其主要缺点在于高昂的价格，基础版售价369美元，且无线连接、倾斜功能和RGB灯效等关键特性需额外付费，导致完全配置后的价格过高。尽管质量优秀，但过高的成本使其性价比不高，评分为3/5。",
+      "translated_title": "Dygma Raise 2 评测：一款价格过高的分体式键盘",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64022-133245-DygmaRaise2-6-xl.jpg",
+          "alt": "Black keyboard with magnetic palm pads in a gray soft-textured zippered case, viewed from above.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64022-133244-DygmaRaise2-5-xl.jpg",
+          "alt": "Keyboard switch kit containing various colorful switches, O-rings, tweezers, brush, and cleaning cloth in a black box.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64022-133243-DygmaRaise2-4-xl.jpg",
+          "alt": "Close-up of a black mechanical keyboard with textured keys and a wrist rest visible on the left side.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64022-133239-Dygmaapp-xl.jpg",
+          "alt": "Keyboard layout editor interface showing customizable keys with color-coded options and sidebar menu for various editing tools.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64022-133242-DygmaRaise2-3-xl.jpg",
+          "alt": "Black split keyboard with two halves, featuring ergonomic wrist supports, on a white surface.",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64022-133241-DygmaRaise2-2-xl.jpg",
+          "alt": "A split keyboard's underside with adjustment mechanisms, featuring black panels and visible brand logo, placed on a white background.",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64022-133240-DygmaRaise2-1-xl.jpg",
+          "alt": "Split ergonomic keyboard with red backlighting, featuring black keycaps and wrist rests, creating a modern, vibrant look.",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
       "title": "苹果预计将在2026年WWDC之前发布HomeOS及相关硬件 (原标题: Apple now expected to unveil HomeOS, related hardware ahead of 2026 WWDC)",
       "link": "https://appleinsider.com/articles/25/06/15/apple-now-expected-to-unveil-homeos-related-hardware-ahead-of-2026-wwdc",
       "pubDate": "Sun, 15 Jun 2025 13:48:00 GMT",
@@ -153,6 +346,26 @@
           "alt": "Mac Finder window showing file information for 'Pages' app and 'All my Pages documents' folder. Includes details like size, version, permissions, and folder location.",
           "title": "",
           "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "克雷格·费德里吉称macOS会破坏iPad的独特之处 (原标题: Craig Federighi says macOS would ruin what makes the iPad special)",
+      "link": "https://appleinsider.com/articles/25/06/13/craig-federighi-says-macos-would-ruin-what-makes-the-ipad-special",
+      "pubDate": "Fri, 13 Jun 2025 15:51:24 GMT",
+      "isoDate": "2025-06-13T15:51:24.000Z",
+      "creator": "Andrew Orr",
+      "summary": "### 克雷格·费德里吉解释iPadOS与macOS保持独立的原因\n\n在WWDC 2025之后的一次新采访中，苹果软件主管克雷格·费德里吉（Craig Federighi）阐明了苹果为何坚持让iPadOS和macOS保持独立，尽管iPadOS 26为平板电脑带来了更多Mac般的特性。\n\n#### iPadOS 26 的新特性\n\n最新的iPadOS 26更新引入了多项旨在提升iPad生产力的功能，使其更接近Mac的使用体验，尤其对于高级用户而言：\n\n*   **浮动菜单栏**：提供更灵活的界面导航。\n*   **灵活的应用窗口**：允许用户更自由地管理和调整应用窗口。\n*   **支持更高级的键盘快捷键**：增强了键盘操作的效率。\n*   **后台任务支持**：费德里吉称其为iPad高级用户“有史以来最好的功能”。\n\n#### 平台分离的核心理念\n\n费德里吉强调，苹果的目标并非合并平台，而是：\n\n*   **保留iPad的简洁性**：让iPad对所有年龄段和技术水平的用户都易于上手，避免macOS的复杂性给他们带来困扰。\n*   **提供渐进式体验**：允许用户“按照自己的节奏”深入探索iPad的更多功能。\n*   **触控优先的设计**：iPad的成功在于其以触控为先、精简的设计。过快地添加完整的桌面功能可能会让那些看重易用性和清晰度的用户感到困惑。\n\n#### 硬件融合与软件差异\n\n尽管iPad现在也使用与Mac相同的M系列芯片，引发了用户关于iPad是否最终会双启动macOS的猜测，但苹果的立场很明确：\n\n*   “iPad是最好的触控电脑。”\n*   “Mac是最好的键盘和鼠标电脑。”\n*   硬件的融合并不意味着软件也应该相同，两者服务于不同的目的。\n\n#### 平台间的相互学习\n\n费德里吉承认，两个操作系统会相互借鉴，表示“两个平台可以从彼此身上学到很多东西，我们也将最好的想法应用到各自的平台中”。\n\n#### macOS触控支持的可能性\n\n费德里吉并未排除macOS未来支持触控输入的可能性。关于未来MacBook或可折叠iPad将搭载支持触控的macOS版本的传闻仍在流传。然而，目前苹果仍致力于其分离策略：iPad将继续获得高级生产力功能，而macOS则专注于键盘和指针的使用。\n\n![平板电脑在蓝色太阳镜旁的白色大理石桌面上显示苹果产品文章。](https://photos5.appleinsider.com/gallery/64016-133228-IMG_1849-xl.jpg)",
+      "shortSummary": "苹果软件主管克雷格·费德里吉解释了iPadOS和macOS为何保持独立。他指出，尽管iPadOS 26引入了更多Mac般的功能，但苹果旨在保留iPad的简洁性和触控优先设计，使其对所有用户都易于上手。费德里吉强调iPad是最佳触控电脑，Mac是最佳键鼠电脑，硬件融合不代表软件需合并。苹果致力于提供独特体验，同时允许两平台相互借鉴。",
+      "translated_title": "克雷格·费德里吉称macOS会破坏iPad的独特之处",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64016-133228-IMG_1849-xl.jpg",
+          "alt": "Tablet displaying article about Apple products on a marble table with blue sunglasses nearby.",
+          "title": "",
+          "position": 1
         }
       ],
       "contentSource": "完整文章",
@@ -332,6 +545,19 @@
       "content": ""
     },
     {
+      "title": "Valve的Steam游戏客户端终于获得Apple Silicon原生升级 (原标题: Valve's Steam gaming client is finally getting an Apple Silicon native upgrade)",
+      "link": "https://appleinsider.com/articles/25/06/13/valves-steam-gaming-client-is-finally-getting-an-apple-silicon-native-upgrade",
+      "pubDate": "Fri, 13 Jun 2025 11:34:00 GMT",
+      "isoDate": "2025-06-13T11:34:00.000Z",
+      "creator": "Mike Wuerthele",
+      "summary": "## Valve Steam客户端迎来Apple Silicon原生升级\n\nValve公司在苹果转向Apple Silicon多年后，并经过反复的努力，终于发布了Steam客户端的测试版，使其能够原生支持Apple Silicon。\n\n### 漫长的等待与最终的进展\n\n*   尽管Steam平台上早已存在支持Apple Silicon的游戏，但Steam客户端本身的原生支持却迟迟未到。\n*   在Apple Silicon技术首次亮相五年后，Valve终于在周四晚些时候发布了最新的测试版，使Steam客户端和Steam Helper成为通用应用程序（Universal apps）。\n\n### 如何参与测试\n\n*   参与测试的选项并未隐藏，也不需要特殊的权限设置。\n*   用户只需在Steam客户端的“设置”菜单中，选择“界面”选项，然后选择加入测试版更新，并重启客户端即可下载新版本。\n\n### 初步测试结果\n\n*   在M1 Ultra Mac Studio上进行的简短测试显示，客户端的性能符合预期。\n*   除了客户端成为通用应用程序外，用户界面似乎没有明显变化，也没有其他值得注意的更新。\n\n### 对Intel Mac和Rosetta 2未来的影响\n\n*   **Intel Mac支持的终结：** 苹果在2025年WWDC大会上宣布，macOS Tahoe将是最后一个完全支持Intel Mac的版本。尽管此后仍会提供一段时间的安全更新，但全面支持将停止。\n*   **Rosetta 2支持的缩减：** 在同一场“平台现状”演示中，苹果表示Rosetta 2的支持将在2027年秋季结束。对于未迁移的游戏，Rosetta 2将提供缩减版支持。\n    *   “缩减版”具体含义尚不明确，苹果仅表示将保留“Rosetta功能的一个子集，旨在支持依赖基于Intel框架的旧版、未维护的游戏标题”。\n    *   苹果预计在2026年WWDC大会之前不会透露更多细节。",
+      "shortSummary": "Valve的Steam游戏客户端在苹果推出Apple Silicon五年后，终于发布了原生支持的测试版。现在，Steam客户端和Steam Helper已成为通用应用程序，用户可在设置中选择加入测试。初步测试显示性能符合预期，界面无明显变化。此举正值Intel Mac全面支持即将结束（macOS Tahoe是最后一个版本），且Rosetta 2对游戏的完整支持将于2027年秋季终止，未来仅保留对部分旧游戏的有限支持。",
+      "translated_title": "Valve的Steam游戏客户端终于获得Apple Silicon原生升级",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
       "title": "夫妇通过AirTag追踪，自行找回被盗汽车 (原标题: Couple steals back their own car after tracking an AirTag in it)",
       "link": "https://appleinsider.com/articles/25/06/13/couple-steals-back-their-own-car-after-tracking-an-airtag-in-it",
       "pubDate": "Fri, 13 Jun 2025 11:07:51 GMT",
@@ -341,6 +567,32 @@
       "shortSummary": "伦敦一对夫妇的汽车被盗后，尽管车内AirTag提供了精确位置，警方仍不予积极处理。夫妇决定自行追踪，最终在奇西克找回了车辆。由于他们安装的第二个防盗器，窃贼未能开走车辆，但夫妇也需联系车企才能解锁。此事件凸显了AirTag的追踪能力，但也引发了关于车主自行追回被盗物品的人身安全风险的讨论，多数机构不建议此类行为。",
       "translated_title": "夫妇通过AirTag追踪，自行找回被盗汽车",
       "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果的AI雄心超越Siri LLM，涵盖知识聊天机器人和全天候AI副驾驶 (原标题: Apple's AI ambitions go beyond Siri LLM with Knowledge chatbot and always-on AI copilot)",
+      "link": "https://appleinsider.com/articles/25/06/12/apples-ai-ambitions-go-beyond-siri-llm-with-knowledge-chatbot-and-always-on-ai-copilot",
+      "pubDate": "Thu, 12 Jun 2025 22:19:07 GMT",
+      "isoDate": "2025-06-12T22:19:07.000Z",
+      "creator": "Wesley Hilliard",
+      "summary": "# 苹果的AI雄心：超越Siri LLM，涵盖知识聊天机器人和全天候AI副驾驶\n\n尽管苹果高管对未来的Apple Intelligence计划保持沉默，但最新传闻表明，2026年发布的上下文Siri只是其迈向聊天机器人和全天候助手的开端。\n\n## 背景与挑战\n过去一年，苹果在AI领域面临公众形象挑战，被认为在AI竞赛中落后，尽管其坚称并非如此。Apple Intelligence的延迟也导致了产品发布推迟，例如传闻中的Home Hub将不得不等待更完善的Siri。然而，这些挫折并未影响苹果改进其AI产品的决心。\n\n## 未来AI计划\n据彭博社报道，苹果对Apple Intelligence的未来有多个计划，尽管内部似乎存在关于何时以及如何准备就绪的争论。营销高级副总裁Greg Joswiak曾公开表示Apple Intelligence并非旨在成为一个具有独立应用程序的聊天机器人，但有传闻指出苹果确实在开发某种聊天机器人，甚至可能就是Siri。\n\n报告列出了苹果未来瞄准的三个主要AI项目：\n\n### 1. 更具上下文的Siri\n*   **发布时间：** 原本计划在iOS 18中推出，但已推迟到“明年”，报告暗示可能在2026年初。\n*   **核心功能：** 将利用应用程序意图来获取用户数据，实现更具上下文和主动性的操作。\n*   **技术整合：** 此次升级将与基于LLM（大型语言模型）的Siri升级相结合，以解决当前Siri中过多的传统部分。因此，基于LLM的新Siri预计将在2026年初到来，同时启用应用程序意图系统。\n\n![智能手机屏幕显示应用程序图标、十月日历小部件和带有彩色边框的深色背景。](https://photos5.appleinsider.com/gallery/64007-133208-Siri-animation-xl.jpg)\n\n### 2. 知识聊天机器人（Knowledge Chatbot）\n*   **潜在发布：** 一旦Siri完全重建为由LLM支持的助手，苹果可能会推出一款名为“Knowledge”的聊天机器人。\n*   **功能：** 该应用程序将用于访问从网络获取的信息。\n*   **内部代号：** 这与AppleInsider此前发现的苹果内部测试项目“Ajax”和“Ask”代理（一些人称之为“AppleGPT”）类似。\n*   **内部争议：** 尽管存在开发的可能，但其发布并非板上钉钉。Greg Joswiak显然反对这一想法，他希望Apple Intelligence是一个幕后系统，而不是一个需要用户打开的应用程序。\n*   **负责人：** 据报道，Knowledge聊天机器人项目由前Siri负责人Robby Walker领导。\n\n### 3. Siri副驾驶（Siri Copilot）\n*   **愿景：** 这是Siri的又一次改造，旨在使其超越简单的主动和上下文功能。\n*   **核心特点：** 新的Siri将本质上是一个全天候的副驾驶，更具对话性。\n*   **操作模式：** 它可以像watchOS 26中引入的Workout Buddy一样，在后台运行并宣布更新或执行任务，而无需用户输入。\n*   **行业对比：** 这听起来类似于其他AI公司（如Humane、Rabbit R1以及Jony Ive的io）曾尝试但反复失败的构建目标。\n*   **苹果优势：** 然而，苹果拥有这些公司所不具备的优势——iPhone。\n\n![智能手机特写，带有三摄像头镜头，背景是发光的彩色抽象图案。](https://photos5.appleinsider.com/gallery/64007-133207-iPhone-16-Pro-Max-AI-xl.jpg)\n\n## 结论\n无论苹果是真正落后还是在走自己的路，它显然正在以自己的方式拥抱LLM和AI的兴起。正如苹果高管在采访中反复强调的，AI技术推广尚处于早期阶段，他们正在进行一场长期博弈。正如我们多次在苹果身上看到的那样，最好不要质疑他们进入新市场并取得成功的能力。目前，我们仍需继续使用苹果产品中那些普遍有用但略显“无聊”的AI工具。",
+      "shortSummary": "苹果正计划超越当前Siri，推出更宏大的AI项目。核心包括：2026年基于LLM的上下文Siri，一个名为“Knowledge”的聊天机器人，以及一个全天候的“Siri副驾驶”。尽管存在内部争议和发布延迟，苹果仍致力于利用其iPhone优势，在AI领域进行长期布局，旨在提供更智能、更主动的AI体验。",
+      "translated_title": "苹果的AI雄心超越Siri LLM，涵盖知识聊天机器人和全天候AI副驾驶",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64007-133208-Siri-animation-xl.jpg",
+          "alt": "A smartphone screen displaying app icons, a calendar widget for October, and a dark-themed background with colorful borders.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64007-133207-iPhone-16-Pro-Max-AI-xl.jpg",
+          "alt": "Close-up of a smartphone with triple camera lenses, featuring a glowing, colorful abstract background.",
+          "title": "",
+          "position": 2
+        }
+      ],
       "contentSource": "完整文章",
       "content": ""
     },
@@ -431,280 +683,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": ""
-    },
-    {
-      "title": "iOS 26 锁屏定制：可伸缩且支持 3D 效果 (原标题: Lock Screen customization in iOS 26 is both stretchy and 3D)",
-      "link": "https://appleinsider.com/articles/25/06/12/lock-screen-customization-in-ios-26-is-both-stretchy-and-3d",
-      "pubDate": "Thu, 12 Jun 2025 19:18:12 GMT",
-      "isoDate": "2025-06-12T19:18:12.000Z",
-      "creator": "Malcolm Owen",
-      "summary": "## iOS 26 锁屏定制：可伸缩且支持 3D 效果\n\niOS 26 的锁屏定制功能带来了重大改进，引入了“空间照片”作为壁纸以及“液态玻璃”效果，并允许用户拉伸时钟显示。这些新功能显著增强了用户个性化锁屏的体验。\n\n### 壁纸：3D 效果与照片随机播放\n\n锁屏上最大的可定制元素是壁纸。在 iOS 26 中，壁纸不再仅仅是静态图像，而是可以呈现出 3D 效果：\n\n*   **空间照片转换**：iOS 26 借鉴了“照片”应用中的空间照片转换功能，用户可以从照片库中选择一张图像，并通过机器学习将其从 2D 转换为 3D。转换效果相当不错。\n*   **视差效果**：当查看 3D 图像时，用户可以倾斜 iPhone 屏幕，享受背景和前景元素之间的视差效果。\n*   **启用方式**：\n    1.  长按锁屏界面。\n    2.  选择“自定义”。\n    3.  点击“照片图库”按钮。\n    4.  选择“选择照片”。\n    5.  选择一张预设的“空间场景”，或选择一张普通的非空间图像。\n    6.  对于 2D 图像，可以点击新的“空间图像”按钮（形状像六边形中的山丘），将其转换为 3D 效果，再次点击可关闭。\n*   **照片随机播放**：除了单张图像，用户还可以选择“照片随机播放”选项，定期切换一组图像。值得一提的是，用户可以为这些随机播放的照片启用空间效果，从而在整个播放列表中享受 3D 效果。\n\n![三部智能手机展示照片随机播放功能，显示不同的图像，包括宠物和风景。中间的手机显示已选择“宠物”类别并有随机播放选项。](https://photos5.appleinsider.com/gallery/64002-133190-wallpaper1-xl.jpg)\n\n### 液态玻璃与可伸缩时钟\n\n苹果新的“液态玻璃”外观贯穿整个用户界面，但在锁屏上效果更为柔和。在锁屏上，此选项目前仅适用于时钟和触觉反馈按钮：\n\n*   **应用范围**：其他锁屏小组件并未获得相同的液态玻璃处理，这似乎是一个错失的机会。虽然它们可以更改颜色，但没有特殊的玻璃效果。\n*   **字体与颜色**：\n    *   用户可以从六种不同的字体中选择，每种字体都可控制粗细。\n    *   下方是颜色选择器，此次新增了一个切换按钮，可在“实心”和“玻璃”选项之间切换。\n*   **玻璃效果特点**：选择“玻璃”颜色后，所有元素都具有 3D 效果，边缘有光泽，仿佛是 3D 玻璃碎片，并具有受背景影响的半透明度。\n*   **时钟伸缩**：\n    *   这组字体中的第一种字体具有额外优势，可以垂直拉伸。\n    *   它是唯一一个在时钟选择元素上添加了手柄的字体，用户可以上下拖动来挤压或拉伸字体长度。时钟数字甚至可以拉伸到 iPhone 屏幕长度的一半。\n*   **对小组件的影响**：虽然时钟拉伸功能很酷，但它会影响另一个新的界面变化。原本位于时钟下方的小组件行可以向下滑动到屏幕更低的位置，位于触觉反馈按钮上方。然而，虽然时钟拉伸时小组件栏会自动下移，但除非时钟恢复到原始大小，否则小组件栏不会自动上移。\n\n![三部智能手机显示黑白猫壁纸和数字时钟小组件。最左侧的屏幕显示字体大小和颜色自定义选项。](https://photos5.appleinsider.com/gallery/64002-133189-fontcolorwallpaper-xl.jpg)\n\n### 总结\n\n这些新选项是苹果在定制化方面持续努力的体现。壁纸的改进是一个很好的补充，但液态玻璃的添加则略显不足，因为它并未应用于所有可能受益的元素。尽管如此，用户现在至少可以设置一张猫咪壁纸，并让它的头看起来像是从屏幕中伸出来一样，这无疑增加了设备的个性化和趣味性。",
-      "shortSummary": "iOS 26 锁屏引入重大定制更新。用户可将壁纸转换为 3D 空间照片，实现视差效果。时钟和触觉反馈按钮支持“液态玻璃”效果，时钟字体还可垂直伸缩。这些新功能显著提升了锁屏的个性化程度，尽管液态玻璃效果的应用范围仍有待扩展。",
-      "translated_title": "iOS 26 锁屏定制：可伸缩且支持 3D 效果",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64002-133190-wallpaper1-xl.jpg",
-          "alt": "Three smartphones display photo shuffle feature, with different images selected, including pets and landscapes. The central phone shows a 'Pets' category selected with shuffle options.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64002-133189-fontcolorwallpaper-xl.jpg",
-          "alt": "Three smartphones displaying a black-and-white cat wallpaper with digital clock widgets. Customization options for font size and color appear on the leftmost screen.",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "iOS 26 新增语音邮件垃圾信息举报和新筛选工具 (原标题: iOS 26 adds voicemail spam reporting & new screening tools)",
-      "link": "https://appleinsider.com/articles/25/06/12/ios-26-adds-voicemail-spam-reporting-new-screening-tools",
-      "pubDate": "Thu, 12 Jun 2025 18:58:59 GMT",
-      "isoDate": "2025-06-12T18:58:59.000Z",
-      "creator": "Andrew Orr",
-      "summary": "Apple 在 iOS 26 中加强了对垃圾电话和信息的打击力度，引入了更智能的语音邮件举报和新的筛选工具。\n\n### 语音邮件垃圾信息举报\n\n*   **新选项**：电话应用中新增了一个选项，允许用户直接向 Apple 举报垃圾语音邮件。\n*   **操作方式**：当收到来自未知号码的语音邮件时，点击消息会显示一个“举报垃圾信息”按钮。用户可以选择“举报并保留”或“举报并删除”。\n*   **处理机制**：无论哪种方式，该消息都会被标记并发送给 Apple 进行审查。这些举报不会自动阻止来电者，用户仍需手动进行阻止。\n*   **目的**：这些信息可用于改进 Apple 的过滤算法，特别是当大量用户标记类似消息时。\n\n### 现有文本信息过滤工具的扩展\n\n*   **基础**：新的举报选项建立在 Apple 之前为减少 iMessage 中垃圾信息所做的努力之上。\n*   **垃圾信息文件夹**：在 iOS 26 中，信息应用引入了一个独立的“垃圾信息”文件夹，将诈骗信息与双因素验证码或来自未知发件人的提醒分开。\n*   **手动标记**：如果消息被错误分类，用户可以手动将其标记为垃圾信息。\n*   **通知管理**：新系统旨在静默未知发件人和检测到的垃圾信息，尽管信息应用中仍会显示徽章。通知默认关闭，但用户可以调整这些设置。\n\n### 通话筛选功能 (Call Screening)\n\n*   **工作原理**：当未知号码来电时，iPhone 会提示来电者提供姓名和来电原因。\n*   **用户决策**：这些信息会转达给用户，用户可以决定是否接听电话。\n*   **作用**：此功能有助于过滤干扰，而不会完全阻止合法但陌生的号码。\n\n### 当前限制与未来展望\n\n*   **可用性**：目前，垃圾语音邮件举报功能仅在 iOS 26 的开发者测试版中提供。\n*   **发布计划**：公共测试版预计于 2025 年 7 月发布，完整版可能在 9 月随 iPhone 17 系列一同推出。\n*   **报告处理**：Apple 尚未说明被标记的语音邮件会如何处理，但很可能它们会用于机器学习模型，以改进未来的过滤功能。\n*   **未来发展**：目前还没有针对语音邮件的自动阻止功能，但这可能为未来更主动的工具奠定基础。\n\n总的来说，这些更新标志着 Apple 在垃圾信息处理上转向预防，更多地依赖用户集体输入和实时过滤来减少垃圾信息的数量。\n\n![两部智能手机屏幕显示语音邮件。两者都显示了来自 Comcast Xfinity 关于 50% 账单折扣的转录。选项包括添加联系人或举报垃圾信息。](https://photos5.appleinsider.com/gallery/64003-133187-Image-xl.jpg)",
-      "shortSummary": "iOS 26引入多项新功能以打击垃圾电话和信息。核心更新包括：用户可直接举报垃圾语音邮件；信息应用新增独立的“垃圾信息”文件夹，用于隔离诈骗和未知发件人消息；以及通话筛选功能，允许iPhone在未知号码来电时提示来电者提供信息，用户可据此决定是否接听。这些举措旨在通过用户输入和实时过滤，更主动地预防垃圾信息。",
-      "translated_title": "iOS 26 新增语音邮件垃圾信息举报和新筛选工具",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64003-133187-Image-xl.jpg",
-          "alt": "Two smartphone screens showing voicemails. Both display a transcript from Comcast Xfinity about a 50% bill discount. Options include adding contact or reporting spam.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "苹果与谷歌从中国VPN收集用户私人数据中获利 (原标题: Apple & Google profit as Chinese VPNs collect your private data)",
-      "link": "https://appleinsider.com/articles/25/06/12/apple-google-profit-as-chinese-vpns-collect-your-private-data",
-      "pubDate": "Thu, 12 Jun 2025 17:57:00 GMT",
-      "isoDate": "2025-06-12T17:57:00.000Z",
-      "creator": "Andrew Orr",
-      "summary": "### 苹果与谷歌从中国VPN收集用户私人数据中获利\n\n**问题概述**\n研究人员发出警告六周多后，苹果和谷歌的应用商店中仍存在大量与中国公司有关联的VPN应用。这些应用大多未披露其真实所有权，有些甚至与受美国制裁的中国网络安全公司有关。尽管如此，两大科技巨头仍在从这些可能将用户数据传输给北京的VPN应用中获取利润。\n\n**Tech Transparency Project (TTP) 的调查结果**\nTech Transparency Project (TTP) 在其4月份报告的基础上进行了新的抽查，发现：\n*   **所有权隐藏：** 许多VPN应用实际上由中国公司所有，但它们通过将公司结构设在新加坡，或使用“Free Connected”、“Innovative Connecting”等通用开发者名称来规避审查。这些名称往往指向同一网络。\n*   **与受制裁公司的关联：** 其中一家被发现的中国公司是奇虎360，该公司因与中国人民解放军的关系而受到美国政府制裁。\n*   **活跃应用示例：**\n    *   在苹果App Store上，Turbo VPN 和 VPN Proxy Master 等应用仍可下载，两者都与奇虎360有关联。\n    *   谷歌Play Store上也有多款类似应用。\n*   **数量统计：** TTP共识别出苹果平台上仍有13款与中国有关联的VPN应用，谷歌平台上则有11款。\n\n**数据安全风险**\nVPN应用能够监控用户的所有在线活动。如果用户使用的是与外国政府（特别是拥有广泛监控法律的国家）有未披露关联的VPN，将构成严重的安全风险。在中国，公司在政府要求时无法拒绝提供用户数据。\n\n**苹果与谷歌的获利**\n这些VPN应用非常受欢迎且盈利丰厚。苹果和谷歌都从中收取标准分成（最高可达应用内收入的30%）。\n*   例如，X-VPN仅从美国用户就赚取了超过1000万美元。\n*   Turbo VPN 和 VPN Proxy Master 各自估计收入超过500万美元。\n这意味着，两大公司正在从可能将用户暴露于外国监控的应用中获得经济利益，这与苹果的隐私营销和谷歌对用户安全的承诺相矛盾。\n*   苹果声称其应用商店中的VPN应用不允许出售或分享用户数据，但其执行情况不透明。\n*   谷歌要求数据实践的透明度，但似乎没有针对VPN的特定政策。\n\n**用户风险与平台责任**\n用户下载VPN应用是为了保护隐私，但目前应用商店提供的许多应用可能适得其反。\n*   中国对VPN实行严格控制，只允许政府批准的提供商，并屏蔽大多数外国VPN。\n*   当中国公司在其他应用市场（如美国）上架其VPN时，美国公民也面临风险。\n*   一些应用试图与中国背景保持距离，例如Autumn Breeze Pte. Ltd.声称独立于奇虎360运营，但TTP发现其与奇虎前高管仍有联系。\n*   一旦数据离开设备，其去向和可访问者就难以追踪。\n*   用户有权知道他们用来保护敏感信息的软件背后是谁。当这些工具被宣传为安全、私密和匿名时，这一点尤为重要。\n*   目前，应用商店做得还不够。如果苹果和谷歌认真对待隐私问题，他们需要对其自己的商店应用与对小型开发者相同的标准。\n\n**苹果的回应**\n在本文发布后，苹果重申了其此前的指导意见：\n*   App Store允许任何国家的开发者分发应用，只要它们遵守App Store审核指南和当地法律。\n*   不根据开发者的国籍或公司所在地限制应用。\n*   VPN应用受更严格的规定约束：只有注册组织才能发布，开发者必须在使用前明确披露收集的数据以及如何使用。\n*   这些应用不允许将数据用于任何其他目的或共享，并且必须在隐私政策中声明。\n*   苹果表示会执行这些政策，并删除不合规的应用。\n\n**相关图片：**\n\n*   **VPN Proxy Master 应用商店页面示例：**\n    ![App Store page for VPN Proxy Master showing app details, screenshots, a 4.6-star rating, age 4+, and 151.7 MB size.](https://photos5.appleinsider.com/gallery/64000-133184-IMG_0354-2-xl.jpg)\n\n*   **Turbo VPN Private Browser 应用商店页面示例：**\n    ![App Store page for Turbo VPN Private Browser, showing app logo, install button, ratings, age limit, and screenshots highlighting features like global servers, private browsing, and secure access.](https://photos5.appleinsider.com/gallery/64000-133185-IMG_0354-xl.jpg)",
-      "shortSummary": "苹果和谷歌的应用商店中存在大量未披露中国所有权的VPN应用，这些应用可能将用户数据传输给北京，尽管研究人员已发出警告。其中一些与受美国制裁的中国公司有关联。两大科技巨头仍在从中获利，这与它们宣称的隐私保护承诺相悖，给用户带来了严重的安全风险。TTP发现苹果和谷歌平台上仍有数十款此类VPN应用。",
-      "translated_title": "苹果与谷歌从中国VPN收集用户私人数据中获利",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64000-133184-IMG_0354-2-xl.jpg",
-          "alt": "App Store page for VPN Proxy Master showing app details, screenshots, a 4.6-star rating, age 4+, and 151.7 MB size.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64000-133185-IMG_0354-xl.jpg",
-          "alt": "App Store page for Turbo VPN Private Browser, showing app logo, install button, ratings, age limit, and screenshots highlighting features like global servers, private browsing, and secure access.",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "iPadOS 26 上的预览 vs macOS Tahoe：iPad 终于有了好用的原生 PDF 工具 (原标题: Preview for iPadOS 26 vs macOS Tahoe: Finally a good native PDF tool on iPad)",
-      "link": "https://appleinsider.com/inside/ipados-26/vs/preview-for-ipados-26-vs-macos-tahoe-finally-a-good-native-pdf-tool-on-ipad",
-      "pubDate": "Thu, 12 Jun 2025 17:20:26 GMT",
-      "isoDate": "2025-06-12T17:20:26.000Z",
-      "creator": "Malcolm Owen",
-      "summary": "## 引言：Preview 应用登陆 iPadOS 26\n\nApple 已将 Preview 应用引入 iPadOS，旨在提升 iPad 的生产力，使其功能更接近 Mac。对于 Mac 用户而言，Preview 是一款非常熟悉的轻量级工具，主要用于快速查看 PDF 文件、文档和图片，而无需打开 Photoshop 等大型应用或安装额外的 PDF 阅读器。它还提供了批注和笔记功能。\n\n在 iPadOS 18 及之前，iPad 上并没有专用的 Preview 应用。由于 iPadOS 主要采用“应用优先”而非“文件优先”的工作流程，用户通常在打开文件前就已经进入了相应的应用。若要使用类似 macOS Preview 的扩展功能，iPad 用户通常需要利用“文件”应用中的“标记”功能，或在“备忘录”中调整 PDF。\n\n随着 iPadOS 26 的发布，Preview 应用终于登陆 iPad，这一更新在生产力方面使 iPad 与 Mac 更加一致。\n\n## Preview iPadOS 26 vs macOS Tahoe - 界面\n\niPadOS 和 macOS 版本 Preview 的第一个显著区别在于直接打开应用（不带文件）时的显示方式。\n\n*   **macOS 版本：** 打开时会显示一个文件选择对话框，让用户选择要预览的文件。这种方式非常实用，且无需更多功能。\n*   **iPadOS 版本：** iPadOS 不支持这种对话框，因此 iPad 上的 Preview 采用了一种更基于应用的布局。屏幕顶部三分之一显示“Preview”字样，提醒用户当前应用，下方三分之二则由可供应用打开的文件图标和缩略图组成。\n\n![Tablet screen displaying a file preview window with a grid of image thumbnails and document icons. Time shows 16:46 on Thursday, June 12. Battery is fully charged.](https://photos5.appleinsider.com/gallery/63995-133179-previewipados262-xl.jpg)\n*iPadOS 26 首次打开 Preview*\n\niPadOS 版本还设有一个侧边栏按钮，可显示更多选项，并在启用后移除顶部的部分过滤选项，这体现了 iPadOS UI 的整洁设计。当然，用户也可以通过“文件”应用选择用 Preview 打开文档，而非其他已安装的应用。\n\n一旦打开文件，两个应用都会呈现出相似且极简的界面。内容上方都有一条功能图标带，保持在视线之外。Apple 似乎希望两个应用都将主要焦点放在预览内容上，而其他功能则保持可用但不显眼。\n\n## Preview iPadOS 26 vs macOS Tahoe - 功能\n\nmacOS 上的 Preview 提供了多种与文档交互的方式，但并非进行重大编辑。相反，它允许用户根据文件类型进行批注。\n\n*   **macOS：** Mac 用户可以高亮 PDF、添加笔记、用鼠标手绘以及添加各种形状。\n\n![Break-even analysis spreadsheet; includes fixed costs, variable costs, unit price, total costs, and profits. A graph shows sales versus total costs. Red circle highlights the break-even profit/loss point.](https://photos5.appleinsider.com/gallery/63995-133177-Preview-in-MacOS-Tahoe-xl.jpg)\n*在 macOS Tahoe 的 Preview 中批注文档*\n\n*   **iPadOS 26：** iPadOS 26 应用也具备相同的功能。尽管功能图标的位置略有不同，但可执行的操作几乎相同。真正的例外在于标记文档时，Apple Pencil 标记工具可以从屏幕底部调出。用户可以使用此界面添加文本框和形状，工具也立即提供了在文档上涂鸦的机会。例如，使用 Apple Pencil 在照片上涂鸦标记编辑位置比使用鼠标直观得多。\n\n![Tablet displaying a break-even analysis with a costs table, profit/loss, and cost versus sales graph. Annotated with red marks and drawing tools panel.](https://photos5.appleinsider.com/gallery/63995-139031-previewipados261-xl.jpg)\n*在 iPadOS 26 的 Preview 中批注 PDF*\n\n*   **表单填写：** 对于空白 PDF 表单的填写，Mac 和 iPad 都提供了填写方式。两者都具备表单填写功能，可以检测预期填写信息的区域。\n*   **签名：** 两个版本都支持添加预先制作好的签名来签署表单。当然，iPad 版本也支持手动签名。\n*   **菜单栏：** macOS 拥有菜单栏，其中包含了 Preview 中可能需要执行的所有功能。随着 iPadOS 26 的变化，iPad 上也新增了菜单栏，提供相同的功能。这对于开始使用 iPad 的 Mac 用户以及生产力高级用户来说，将是一个非常有用的补充。\n\n## Preview iPadOS 26 vs macOS Tahoe - 导出\n\n虽然用户可以将批注后的文件保留为原始格式，但 iPadOS 和 macOS 的 Preview 应用都提供了丰富的导出选项，提供了多种文档选择。\n\n*   **macOS：** 可以“导出为”PDF 和 EPUB 格式。完整的导出对话框还包括 XHTML 和 HTML、XML，以及 JPEG、PNG 和 WEBP 等图片格式。\n\n![File save dialog box on a Mac, listing file types like PDF, JPEG, and WEBP, with folder navigation and tags on the left sidebar.](https://photos5.appleinsider.com/gallery/63995-133181-exportmacospreview-xl.jpg)\n*macOS Tahoe 的 Preview 中的部分导出选项*\n\n*   **iPadOS：** 导出选项位于共享表单以及菜单栏的“导出”中。共享表单上的选项会根据用户安装的其他应用程序而有所不同，例如可能提供转换为 Word 或以 PDF 格式在 Word 中打开，以及一些 Acrobat 编辑选项。菜单栏的导出选项列出了 HEIC、JPEG、PDF、PNG 和 TIFF。\n\n![Tablet displaying a break-even analysis with a graph and table. An export options window is open, and annotations are drawn on the table section.](https://photos5.appleinsider.com/gallery/63995-133182-exportsipados-xl.jpg)\n*iPadOS 26 的 Preview 中的导出选项*\n\n从可用的文件类型来看，macOS 版本的文件覆盖范围似乎更广，至少在处理普通 iPad 用户不常处理的格式方面是如此。iPadOS 26 版本的 Preview 在这方面可能不如 Mac 版本有用，但它仍然能满足基本需求。\n\n## 总结：Preview 的成熟\n\nMac 上的 Preview 过去和现在都是查看文档最简单的方式之一，它节省了用户打开重量级应用进行快速查看的时间和资源。这在 iPad 上一直不是一个主要问题，因为其“应用优先”的方法。Apple 之前的解决方案并不理想，但像 GoodReader 这样的应用弥补了不足。\n\n随着 iPadOS 26 的到来，Preview 在快速填写 PDF 文件和其他文档方面变得非常有用。尽管它不像 macOS 版本那样不可或缺，但 iPadOS 26 上的 Preview 自身也令人印象深刻。它在很大程度上实现了功能对等，应该能让那些希望 iPad 更像 Mac 的高效 iPad 用户感到满意。这不一定是 iPadOS 最大的改进，但它确实以一种相当重要的方式带来了功能上的对等。",
-      "shortSummary": "Apple 在 iPadOS 26 中引入了原生 Preview 应用，旨在提升 iPad 的生产力，使其更接近 Mac。新版 Preview 在 iPad 上提供了与 macOS 版本相似的文档查看、批注、表单填写和签名功能。尽管界面和部分导出选项（macOS 提供更多格式）有所不同，但 iPadOS 26 上的 Preview 显著增强了 iPad 的 PDF 处理能力，为用户带来了期待已久的原生工具，尤其对需要 Mac 般体验的生产力用户而言是一大改进。",
-      "translated_title": "iPadOS 26 上的预览 vs macOS Tahoe：iPad 终于有了好用的原生 PDF 工具",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63995-133179-previewipados262-xl.jpg",
-          "alt": "Tablet screen displaying a file preview window with a grid of image thumbnails and document icons. Time shows 16:46 on Thursday, June 12. Battery is fully charged.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63995-133177-Preview-in-MacOS-Tahoe-xl.jpg",
-          "alt": "Break-even analysis spreadsheet; includes fixed costs, variable costs, unit price, total costs, and profits. A graph shows sales versus total costs. Red circle highlights the break-even profit/loss point.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63995-133180-previewipados261-xl.jpg",
-          "alt": "Tablet displaying a break-even analysis with a costs table, profit/loss, and cost versus sales graph. Annotated with red marks and drawing tools panel.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63995-133181-exportmacospreview-xl.jpg",
-          "alt": "File save dialog box on a Mac, listing file types like PDF, JPEG, and WEBP, with folder navigation and tags on the left sidebar.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63995-133182-exportsipados-xl.jpg",
-          "alt": "Tablet displaying a break-even analysis with a graph and table. An export options window is open, and annotations are drawn on the table section.",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "检查你的Anker移动电源——火灾风险引发大规模召回 (原标题: Check your Anker power bank — a fire risk prompted a major recall)",
-      "link": "https://appleinsider.com/articles/25/06/12/check-your-anker-power-bank----a-fire-risk-prompted-a-major-recall",
-      "pubDate": "Thu, 12 Jun 2025 16:34:03 GMT",
-      "isoDate": "2025-06-12T16:34:03.000Z",
-      "creator": "Amber Neely",
-      "summary": "## Anker PowerCore 10000 移动电源召回通知\n\nAnker公司正在召回在美国销售的部分PowerCore 10000移动电源，原因是其锂离子电池存在缺陷，可能导致过热、熔化或火灾风险。消费者应立即停止使用受影响的产品。\n\n### 受影响产品信息\n\n*   **型号：** A1263\n*   **销售时间：** 2016年6月至2022年12月期间在美国市场销售。\n*   **问题：** 缺陷的锂离子电池可能过热，引发熔化、冒烟或火灾的风险。\n\n### 消费者应采取的行动\n\n1.  **立即停止使用：** 如果您拥有Anker PowerCore 10000移动电源，请立即停止使用。\n2.  **检查设备是否受影响：**\n    *   在设备底部查找“Anker Power Core 10000”字样。\n    *   确认型号为A1263。\n    *   找到设备的序列号，并使用Anker的序列号验证工具（可在官方召回通知中找到）检查您的设备是否在召回范围内。\n    *   如果序列号缺失或无法读取，消费者应联系Anker获取进一步指示。\n3.  **联系Anker：** 消费者可以在Anker官方召回通知的FAQ（常见问题）部分找到Anker的电子邮件和电话号码。\n4.  **提交退款/补偿申请：**\n    *   消费者必须提交姓名、联系方式，以及一张移动电源的照片。照片中需清晰显示型号、序列号、日期，并写上“recalled”（已召回）字样。\n    *   建议提供购买凭证，但并非强制要求。\n5.  **安全处置：**\n    *   消费者必须在经认证的设施安全处置已确认召回的设备。\n    *   向Anker提供处置证明。\n\n### 补偿选项\n\n一旦Anker收到设备已妥善处置的确认，消费者可以选择以下两种补偿方式之一：\n\n*   一张价值30美元的Anker.com礼品卡；或\n*   一个免费的Anker Power Bank 10K, 22.5W新型号移动电源。",
-      "shortSummary": "Anker因电池缺陷召回在美国销售的部分PowerCore 10000移动电源（型号A1263），存在过热和火灾风险。消费者应立即停用，并通过序列号工具检查设备是否受影响。确认召回后，需安全处置设备并提供证明。作为补偿，消费者可选择获得30美元的Anker礼品卡或一个免费的新型号移动电源。",
-      "translated_title": "检查你的Anker移动电源——火灾风险引发大规模召回",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "如何在macOS Tahoe Spotlight中使用快速键 (原标题: How to use Quick Keys in macOS Tahoe Spotlight)",
-      "link": "https://appleinsider.com/inside/macos-tahoe/tips/how-to-use-quick-keys-in-macos-tahoe-spotlight",
-      "pubDate": "Thu, 12 Jun 2025 16:08:05 GMT",
-      "isoDate": "2025-06-12T16:08:05.000Z",
-      "creator": "William Gallagher",
-      "summary": "## macOS Tahoe Spotlight 快速键使用指南\n\nmacOS Tahoe 中的 Spotlight 引入了“快速键”功能，旨在帮助用户快速执行常见任务，其理念与 Raycast 和 Alfred 等应用相似。通过输入少量字符（例如，输入“ar”添加提醒，输入“sm”发送消息），用户可以启动预设的操作。快速键能够适应用户的需求，但需要在使用时处于 Spotlight 的特定模式下，否则可能会尝试查找匹配的应用而非执行快速键操作。\n\n### 如何使用默认快速键\n\n直接在常规 Spotlight 搜索框中输入快速键通常无效。例如，在测试中输入“sm”可能会启动“HP Smart”应用。要正确使用快速键，需要遵循以下步骤：\n\n1.  按 `Command-Space` 打开 Spotlight。\n2.  按 `Command-3` 进入 Spotlight 的操作模式。\n3.  输入一个现有的快速键，例如 `sm`。\n4.  按 `Return`。\n\n或者，在打开 Spotlight 后，您可以等待片刻或按下 `Tab` 键，将 Spotlight 分割成不同的控制区域，然后使用 `Command-1`、`Command-2` 等快捷键导航到所需的功能。快速键不会直接启动应用程序，而是会在 Spotlight 内部呈现一个相应的表单供您填写，例如发送消息时会提示您输入消息内容和收件人，发送电子邮件时还会要求输入主题。\n\n![Interface with three options: Set Port Number, Send Message, Set Noise Control Mode. Each with app icons and additional options on a blue gradient background.](https://photos5.appleinsider.com/gallery/63998-133173-001-Set-Quick-Key-xl.jpg)\n\n### 如何创建快速键\n\n创建快速键的目的是为了加速您经常执行的任务。创建过程首先需要您手动执行一次该任务：\n\n1.  按 `Command-Space` 打开 Spotlight。\n2.  按 `Command-3`。\n3.  输入任务相关的关键词（例如，如果想添加日历事件，输入 `calendar`），稍等片刻。\n4.  在出现的列表中找到并点击“新建事件”（New Event）。\n5.  在“新建事件”的右侧，点击“添加快速键”（Add Quick Key）。\n6.  输入两（或更多）个您容易记住的字符。\n7.  按 `Return`。\n\nApple 在其示例中通常使用两个字符，这是一个很好的实践。macOS 似乎接受单个字符的快速键，但使用时可能不稳定。使用超过两个字符会失去快速键的便捷性，但最多可以设置12个字符，可以是字母、数字或它们的任意组合，但不能使用标点符号。\n\n![Stream Deck Beta window with app icons on left, Keyboard Maestro Editor with macros list on right, displayed on a blurred desktop background.](https://photos5.appleinsider.com/gallery/63998-133175-888-Keyboard-Maestro-nad-Stream-Deck-xl.jpg)\n\n### 快速键的优势\n\n快速键的主要优势在于其速度和效率：\n\n*   **速度：** 一旦设置完成，您就可以通过简单的快速键（例如，输入“ce”添加日历事件）来快速执行任务。\n*   **效率：** 快速键在 Spotlight 内部完成任务，无需跳转到相应的应用程序（如消息、邮件或日历），从而避免了打开应用可能带来的分心。\n*   **扩展性：** 设置好快速键后，您还可以通过第三方应用程序（如 Keyboard Maestro）和硬件设备（如 Stream Deck）进一步扩展其功能，例如设置一个物理按钮来启动 Spotlight 并激活您的快速键。",
-      "shortSummary": "macOS Tahoe Spotlight新增“快速键”功能，允许用户通过输入少量字符快速执行常见任务，如添加提醒或发送消息。使用时需按Command-Space打开Spotlight，再按Command-3进入操作模式。用户可自定义快速键，建议使用两个字符。其主要优势在于提高效率，无需打开特定应用即可在Spotlight内部完成任务，并支持与第三方工具集成，进一步简化操作流程。",
-      "translated_title": "如何在macOS Tahoe Spotlight中使用快速键",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63998-133173-001-Set-Quick-Key-xl.jpg",
-          "alt": "Interface with three options: Set Port Number, Send Message, Set Noise Control Mode. Each with app icons and additional options on a blue gradient background.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63998-133175-888-Keyboard-Maestro-nad-Stream-Deck-xl.jpg",
-          "alt": "Stream Deck Beta window with app icons on left, Keyboard Maestro Editor with macros list on right, displayed on a blurred desktop background.",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "苹果在iOS 26中推出新EnergyKit，帮助HomeKit用户转向更清洁、更便宜的电力 (原标题: Apple's new EnergyKit in iOS 26 help HomeKit users shift to cleaner, cheaper electricity)",
-      "link": "https://appleinsider.com/articles/25/06/12/apples-new-energykit-in-ios-26-help-homekit-users-shift-to-cleaner-cheaper-electricity",
-      "pubDate": "Thu, 12 Jun 2025 16:06:15 GMT",
-      "isoDate": "2025-06-12T16:06:15.000Z",
-      "creator": "Andrew Orr",
-      "summary": "### EnergyKit 简介\n\nApple 在 iOS 26 和 iPadOS 26 中引入了新的 EnergyKit 框架，旨在实现更智能、更可持续的能源使用。该框架为应用程序提供个性化的电网预测，显示电力何时更清洁，以及（如果用户连接了公用事业账户）何时可能更便宜。EnergyKit 是 Apple 环保责任倡议的一部分，使应用程序能够支持家庭设备的节能工作。\n\n### 核心功能与应用\n\n*   **目标用户与设备**：EnergyKit 主要面向住宅用途，针对常见的电力需求，如 HVAC 系统和电动汽车充电。它专注于 Apple 所称的“电表后”设备，例如家用电器或电动汽车，这些设备从电网获取电力。\n*   **开发者能力**：开发者可以构建应用程序，根据电网条件（通过分析环境数据和本地能源结构）推荐用电时间，以突出相对清洁的能源时段。\n*   **用户利益**：用户可以通过“家庭”应用连接其电力公用事业账户，EnergyKit 可以根据其分时费率计划标记高峰和非高峰时段。这使得应用程序能够建议运行烘干机、预冷房屋或延迟电动汽车充电的最佳时间，直到电力更清洁或更便宜。\n*   **数据洞察**：开发者可以通过向 EnergyKit 发送“负载事件”来跟踪这些设备如何消耗电力，从而深入了解使用趋势和清洁能源时段。\n*   **环境影响数据**：系统还可以通过 Apple 所称的“电力洞察记录”（Electricity Insight Records）返回环境影响数据，这些记录显示用电的碳强度，可以帮助用户了解其能源行为的影响。\n\n### 当前状态与限制\n\n*   **测试阶段**：EnergyKit 目前在 iOS 26 和 iPadOS 26 中作为测试版提供。\n*   **开发者访问**：开发者需要通过 Xcode 启用特定权限才能使用，目前仅限于开发版本和 Ad Hoc 测试。Apple 表示对 TestFlight 和 App Store 提交的支持将于 2025 年晚些时候推出。\n*   **地理限制**：EnergyKit 的指导功能目前仅在美国本土（不包括阿拉斯加、夏威夷和美国领土）可用。\n\n### 未来展望\n\n尽管仍处于早期阶段，EnergyKit 有望为更智能的家庭能源管理铺平道路。如果 Apple 继续扩展该框架，它最终可能有助于大规模改变能源使用模式。\n\n![平板电脑屏幕显示能源设置和电网预测，包含时间、状态栏、家庭界面以及气候、扬声器和能源图标。](https://photos5.appleinsider.com/gallery/63997-133172-IMG_0354-xl.jpg)",
-      "shortSummary": "苹果在iOS 26中推出EnergyKit框架，旨在帮助HomeKit用户更智能、可持续地管理家庭能源。该工具为应用程序提供个性化电网预测，显示何时电力更清洁或更便宜。用户可连接公用事业账户，获取HVAC、电动汽车充电等设备的最佳用电建议，从而节省成本并减少碳足迹。EnergyKit目前为测试版，未来有望大规模优化家庭能源使用。",
-      "translated_title": "苹果在iOS 26中推出新EnergyKit，帮助HomeKit用户转向更清洁、更便宜的电力",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63997-133172-IMG_0354-xl.jpg",
-          "alt": "Tablet screen showing energy settings and grid forecast with times and status bar, home interface, and icons for climate, speakers, and energy.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "iOS 26 更新修复了 iPhone 分享中最令人烦恼的部分 (原标题: iOS 26 update fixes the most annoying part of sharing on iPhone)",
-      "link": "https://appleinsider.com/articles/25/06/12/ios-26-update-fixes-the-most-annoying-part-of-sharing-on-iphone",
-      "pubDate": "Thu, 12 Jun 2025 15:05:10 GMT",
-      "isoDate": "2025-06-12T15:05:10.000Z",
-      "creator": "Andrew Orr",
-      "summary": "## iOS 26 分享表单改进：告别混乱，提升效率\n\nApple 在 iOS 26 中对 iPhone 的分享表单（Share Sheet）进行了急需的清理和优化，显著提升了用户体验，使其更加轻量和易用。\n\n### 问题所在：旧版分享表单的冗余\n\n多年来，iPhone 的分享表单变得日益混乱。每个应用程序都可以添加自己的操作，用户创建的每一个接受分享输入的快捷指令也会堆积其中。这导致原本简单的菜单变得臃肿，需要大量滚动和搜索，有时甚至让用户放弃使用。\n\n### iOS 26 的主要改进\n\n1.  **精简的默认视图**：\n    *   iOS 26 不再一开始就显示所有可能的选项，而是呈现一个更短、更集中的列表，该列表根据用户最可能使用的功能进行定制。\n    *   用户仍然可以通过向上滑动或点击新增的“更多”按钮来显示所有选项，没有任何功能被移除。\n    *   这种改变使得默认视图感觉更平静、更整洁，不再像一个堆满文件的文件柜。\n\n2.  **熟悉的布局，减少杂乱**：\n    *   分享表单的布局保持熟悉：建议联系人仍然出现在顶部，紧随其后的是 AirDrop、信息和备忘录等应用程序的水平条。\n    *   在这之下，用户会看到一小部分可用操作，其余的则被隐藏起来，直到用户向上滑动或点击“更多”按钮。\n\n    ![四部智能手机显示不同的屏幕，其中包含可自定义的操作选项，例如添加书签、复制和分享。每个屏幕都显示带有切换和按钮的可能操作列表。](https://photos5.appleinsider.com/gallery/63982-133166-Image-xl.jpg)\n    *旧版分享表单样式*\n\n3.  **优化快捷指令的处理**：\n    *   快捷指令是导致旧版分享表单混乱的一个主要原因。过去，每个接受分享输入的快捷指令都会默认显示，即使只使用过一次。\n    *   在 iOS 26 中，尽管这种行为没有根本改变，但这些快捷指令默认情况下不再显示，除非用户主动查找。这对于高级用户尤其有帮助，他们不再需要滚动过整个自动化库才能找到打印按钮。\n\n4.  **自定义功能保持不变**：\n    *   如果用户之前自定义过分享表单，则无需重新设置。“编辑操作”按钮仍然位于表单底部，允许用户固定常用项、隐藏不常用项，并按最佳顺序拖动项目。\n\n    ![三部智能手机显示关于 Apple Music iOS 26 更新的网页。屏幕在弹出菜单中显示分享选项、书签、应用程序和联系人图标。](https://photos5.appleinsider.com/gallery/63982-133163-Image-xl.jpg)\n    *iOS 26 中的新版分享表单样式*\n\n5.  **智能联系人建议**：\n    *   建议联系人仍由 Apple Intelligence 提供支持，显示在分享表单顶部。长按联系人会弹出“减少建议”选项，与之前的 iOS 版本相同，允许用户调整不实用的建议。\n\n### 总结\n\n尽管分享表单的基本交互方式（从屏幕底部滑出，通过向下滑动或点击外部区域关闭）没有改变，但 iOS 26 的更新使其变得更精简、更周到、更易于使用。对于频繁使用分享表单的用户来说，这是一项不显眼但非常值得注意和赞赏的改进，让系统感觉不再那么混乱。",
-      "shortSummary": "iOS 26 更新显著优化了 iPhone 的分享表单（Share Sheet）。新版本通过默认显示更少、更集中的选项来减少混乱，但仍保留了所有功能。它解决了应用程序和快捷指令过多导致表单臃肿的问题，使界面更轻量、易用。用户仍可自定义和访问所有选项。这项改进提升了分享体验，让系统感觉更整洁、高效，是频繁分享用户的福音。",
-      "translated_title": "iOS 26 更新修复了 iPhone 分享中最令人烦恼的部分",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63982-133166-Image-xl.jpg",
-          "alt": "Four smartphones display different screens with customizable action options such as adding bookmarks, copying, and sharing. Each screen shows lists of possible actions with toggles and buttons.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63982-133163-Image-xl.jpg",
-          "alt": "Three smartphones displaying a webpage about Apple Music iOS 26 update. The screens show sharing options, bookmarks, apps, and contact icons in pop-up menus.",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "史蒂夫·乔布斯著名的斯坦福演讲20周年，并全新修复 (原标题: Steve Jobs' famous Stanford speech is 20 years old, and newly remastered)",
-      "link": "https://appleinsider.com/articles/25/06/12/steve-jobs-famous-stanford-speech-is-20-years-old-and-newly-remastered",
-      "pubDate": "Thu, 12 Jun 2025 13:39:20 GMT",
-      "isoDate": "2025-06-12T13:39:20.000Z",
-      "creator": "Malcolm Owen",
-      "summary": "## 史蒂夫·乔布斯斯坦福大学毕业典礼演讲：20周年与全新修复\n\n### 演讲背景与意义\n\n2005年6月12日，苹果公司联合创始人史蒂夫·乔布斯在斯坦福大学毕业典礼上发表了一场15分钟的演讲。这场演讲后来成为有史以来对毕业生最具影响力、最令人难忘和被引用最多的演讲之一，观看次数已超过1.2亿次，对无数观看者产生了深远影响。例如，史蒂夫·乔布斯档案甚至提到，勒布朗·詹姆斯在2016年曾使用其中的片段来激励克利夫兰骑士队。\n\n### 20周年纪念与高清修复\n\n为纪念这场演讲发表20周年，史蒂夫·乔布斯档案（Steve Jobs Archive）重新发布了该演讲的视频片段。新发布的视频已在YouTube上进行分辨率增强，现在支持1080p和每秒60帧的播放，画面不再像以前那样低分辨率和粗糙，但其核心价值依然在于乔布斯所传达的深刻话语。\n\n### 演讲核心内容\n\n乔布斯的演讲并未过多谈论技术，而是分享了他人生中的三个关键故事：\n\n1.  **“点滴串联”（Connecting the Dots）：** 讲述了他从里德学院辍学的经历，强调回顾过去才能理解生命中看似不相关的事件如何最终连接起来，形成有意义的轨迹。\n2.  **爱与失（Love and Loss）：** 探讨了在拥抱挑战和面对挫折时所经历的爱与失去，以及这些经历如何塑造个人。\n3.  **死亡与生命的重要性（Death and the Importance of Living）：** 结合他被诊断出癌症的经历，强调了生命有限，因此要活在当下，追随内心，不要被他人的期望所束缚。\n\n### 演讲现场与遗产\n\n尽管这场演讲后来影响深远，但乔布斯并非学生们的首选演讲者，他是继乔恩·斯图尔特和阿诺德·施瓦辛格之后的第三选择。演讲现场也曾出现典型的学生分心行为，如沙滩球和“毕业典礼宾果”游戏。然而，尽管当时学生们可能没有完全意识到其重要性，但他们后来无疑会听到并理解这场演讲的深远内容。这场演讲为即将步入成人生活的听众提供了宝贵建议，并已成为乔布斯持久遗产的重要组成部分，至今仍具有深远意义。",
-      "shortSummary": "史蒂夫·乔布斯2005年在斯坦福大学的著名毕业演讲，在20周年之际由史蒂夫·乔布斯档案重新发布了1080p高清修复版。这场15分钟的演讲观看次数超1.2亿，被誉为最具影响力的毕业演讲之一。乔布斯分享了他人生中的三个故事：辍学后的“点滴串联”、爱与失的挑战以及面对死亡时活在当下的重要性。它已成为乔布斯持久遗产的一部分，至今仍激励着无数人。",
-      "translated_title": "史蒂夫·乔布斯著名的斯坦福演讲20周年，并全新修复",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "关于苹果十大主要挑战的新报告忽略了两个主要因素 (原标题: New report about Apple's 10 main challenges ignores two main factors)",
-      "link": "https://appleinsider.com/articles/25/06/12/new-report-about-apples-10-main-challenges-ignores-two-main-factors",
-      "pubDate": "Thu, 12 Jun 2025 13:36:55 GMT",
-      "isoDate": "2025-06-12T13:36:55.000Z",
-      "creator": "William Gallagher",
-      "summary": "# 关于苹果十大主要挑战的新报告忽略了两个主要因素\n\n一篇新报告详细分析了苹果面临的从Apple Intelligence到关税等问题，并声称这些问题是无法克服的。然而，本文作者认为该报告忽略了苹果一直以来有效使用的解决方案。\n\n## 彭博社报告列出的苹果十大挑战\n\n彭博社的一份新报告指出，苹果目前正面临十大主要问题，并且没有明确的应对措施。这些问题包括：\n\n*   苹果在人工智能方面落后\n*   没有“下一个大事件”产品\n*   Apple Vision Pro定价过高\n*   与谷歌的搜索协议可能终止\n*   App Store的改变和开发者关系问题\n*   全球法规和政府审查\n*   关税和制造业回流压力\n*   蒂姆·库克和大多数高管已达退休年龄\n*   中国市场销售额下降\n*   iPhone用户升级速度放缓\n\n这些问题被分为产品、法律和运营问题，且多数已存在多年。\n\n## 苹果的“非秘密武器”：耐心与长期战略\n\n尽管面临上述挑战，本文指出苹果并非“注定失败”，因为它拥有其他公司少有的优势：\n\n*   **产品问题并非无法解决：** 报告强调iPhone在中国销量下降，以及美国用户升级意愿不高。虽然iPhone 16系列未能引发“超级周期”，但文章指出，下一次iPhone发布或Apple Vision Pro的低成本版本（如传闻中的Apple Glass）可能改变现状。苹果有能力等待最佳时机，其历史表明它常在被指责“落后”后，通过颠覆性产品改变整个行业。\n*   **财务实力与战略耐心：** 苹果的“非秘密武器”是其能够承受等待任何竞争对手和任何情况的能力。它始终着眼于长期发展，通常是在竞争对手过早发布技术时，苹果则专注于用户需求，设计满足特定需求的产品和服务。这种策略是苹果积累财富的原因，也使其能够等待市场成熟。\n*   **高管继任计划：** 报告提到蒂姆·库克及多位高管接近退休年龄。然而，文章认为苹果很可能已经选定了库克的继任者，并且整个继任计划正在进行中。这与史蒂夫·乔布斯生病时苹果被指责没有继任计划，但实际上早已安排好的情况类似，体现了苹果“只做不说”的行事风格。\n\n## 总结\n\n本文认为，彭博社的报告虽然列出了苹果面临的诸多挑战，但未能充分认识到苹果通过其强大的财务实力、对长期战略的坚持以及对用户需求的深刻理解来克服这些挑战的能力。苹果的耐心和其“先行动后宣布”的文化，是其持续成功的关键因素。\n\n![两名男子并排坐着，其中一人戴着眼镜，手持一个杯子，背景为深蓝色。](https://photos5.appleinsider.com/gallery/63992-133150-001-Cook-and-Jobs-xl.jpg)\n图片来源：Apple",
-      "shortSummary": "一篇新报告列出了苹果面临的十大挑战，包括AI落后、产品缺乏创新、Vision Pro定价高、销售下滑、监管压力及高管退休等。然而，本文反驳称，该报告忽略了苹果的关键优势：其强大的财务实力、长期战略耐心以及专注于用户需求的开发模式。苹果有能力等待市场成熟，并已在幕后规划继任事宜，这些都是其持续成功的秘诀。",
-      "translated_title": "关于苹果十大主要挑战的新报告忽略了两个主要因素",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63992-133150-001-Cook-and-Jobs-xl.jpg",
-          "alt": "Two men sitting side by side, one wearing glasses and holding a cup, against a dark blue background.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "iOS 26 照片应用：标签页回归，并支持生成空间照片 (原标题: Photos in iOS 26 brings back tabs and generates Spatial Photos)",
-      "link": "https://appleinsider.com/articles/25/06/12/photos-in-ios-26-brings-back-tabs-and-generates-spatial-photos",
-      "pubDate": "Thu, 12 Jun 2025 12:31:59 GMT",
-      "isoDate": "2025-06-12T12:31:59.000Z",
-      "creator": "Malcolm Owen",
-      "summary": "## iOS 26 照片应用更新概览\n\niOS 26 中的照片应用进行了改进，旨在解决 iOS 18 版本引发的用户不满，并重新赢得用户认可。此次更新数量虽少，但影响深远，提升了应用的使用体验。\n\n### 一、标签页功能回归\n\n*   **背景回顾：iOS 18 的争议**\n    *   iOS 18 版本的照片应用布局备受争议，它取消了多标签页设计，改为单页布局。\n    *   该设计将“图库”（Library）以网格形式置于屏幕上半部分，下方则直接包含特色内容的轮播视图。\n    *   这种改变导致用户需要滚动查找图片，且起始界面显得较为杂乱，不如标签页方便导航。\n\n*   **iOS 26 的改进：Liquid Glass 风格标签页**\n    *   为回应用户强烈反对，Apple 在 iOS 26 中重新引入了标签页，并采用了新的“Liquid Glass”视觉风格。\n    *   **主要标签页：** 现在有两个主要标签页：“图库”（Library）和“精选集”（Collections）。\n        *   **图库：** 显示所有图片的网格视图。\n        *   **操作：** 在“图库”中向下滑动可隐藏标签元素，并提供按年、月或所有图片进行排序的选项，以及一个快速返回主标签页的按钮。\n    *   **精选集：** 实际上是旧应用中占据屏幕下半部分的内容。\n        *   **内容：** 以轮播形式展示图片和视频，包括“相簿”、“媒体类型”和“实用工具”的网格视图。\n        *   **回忆：** 列表顶部是“回忆”功能，即系统生成的幻灯片，Apple 显然希望推广此功能。列表中的第一个项目包含一个带有 Apple Intelligence 符号的文本框，提示“输入以创建”。\n    *   **搜索图标位置调整：** 搜索图标已从屏幕右上角移至右下角，并且图标更大。\n    *   **布局影响：** 此次布局刷新对 Apple 而言是一次小调整，并非大规模改动现有功能。它只是将“图库”网格与其他内容分离，从而使应用界面更美观、导航更便捷。这表明 Apple 认识到 iOS 18 布局的失误并及时进行了纠正。\n\n    ![Three smartphone screens showing photo library, collections with albums and memories, and media type categories. Contains various images, including a sandwich, dice, and cats.](https://photos5.appleinsider.com/gallery/63990-133148-homepage-xl.jpg)\n\n### 二、空间照片生成功能\n\n*   **背景：**\n    *   自 iOS 18.1 起，iPhone 15 Pro 及后续机型已能使用后置摄像头拍摄空间照片（3D 照片，具有深度信息，最适合在 Apple Vision Pro 上观看）。\n    *   自 visionOS 2 起，Apple Vision Pro 也能利用机器学习将 2D 图片转换为 3D 空间照片。\n\n*   **iOS 26 的新功能：iPhone 本地转换**\n    *   iOS 26 允许 iPhone 直接将现有 2D 图片转换为 3D 空间照片。\n    *   **操作：** 在 iPhone 照片应用中查看 2D 图片时，右上角会显示一个小型图标，点击即可将照片转换为空间照片。\n    *   **效果：** AppleInsider 团队测试了该功能，使用一张十年前由消费级单反相机拍摄的、缺乏深度数据的照片，结果显示照片应用成功地将主体分离并应用了 3D 效果。转换效果与 Apple Vision Pro 生成的完全相同。\n    *   **iPhone 上预览：** 转换后的空间照片也可在 iPhone 上预览，轻微移动手机屏幕即可看到深度效果。效果非常好，甚至能正确处理毛发等细节。\n    *   **应用场景：** 此功能不仅为 Vision Pro 头显创建内容，也为 iPhone 本身提供了更多用途，例如“锁定屏幕”现在支持空间壁纸，使得此功能更具即时实用性。\n\n    ![A fluffy black black and white cat lies on a desk with books and computer screens in the background, displayed on three smartphone screens.](https://photos5.appleinsider.com/gallery/63990-133149-spatialphotoconvert-xl.jpg)",
-      "shortSummary": "iOS 26 的照片应用带来了两项重要更新。首先，为回应用户反馈，它重新引入了标签页设计，将“图库”和“精选集”分离，使导航更清晰，纠正了iOS 18的布局失误。其次，iPhone 现在可以直接将现有 2D 图片转换为 3D 空间照片，这一功能此前仅限于 Vision Pro 或 iPhone 15 Pro 拍摄。转换效果出色，不仅服务于 Vision Pro，也为 iPhone 锁屏等提供了新的视觉体验。",
-      "translated_title": "iOS 26 照片应用：标签页回归，并支持生成空间照片",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63990-133148-homepage-xl.jpg",
-          "alt": "Three smartphone screens showing photo library, collections with albums and memories, and media type categories. Contains various images, including a sandwich, dice, and cats.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63990-133149-spatialphotoconvert-xl.jpg",
-          "alt": "A fluffy black and white cat lies on a desk with books and computer screens in the background, displayed on three smartphone screens.",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "PNY Duo Link V3 搭载 USB-C 和 USB-A 接口，可在您的任意 Mac 之间传输数据 (原标题: PNY Duo Link V3 with USB-C and USB-A will move data between any of your Macs)",
-      "link": "https://appleinsider.com/articles/25/06/12/pny-duo-link-v3-with-usb-c-and-usb-a-will-move-data-between-any-of-your-macs",
-      "pubDate": "Thu, 12 Jun 2025 12:30:03 GMT",
-      "isoDate": "2025-06-12T12:30:03.000Z",
-      "creator": "Amber Neely",
-      "summary": "## PNY Duo Link V3 闪存盘概述\n\nPNY Duo Link V3 是一款双接口闪存盘，旨在为需要跨多种设备（配备 USB-C 或 USB-A 端口）进行数据传输的用户提供快速、灵活且可靠的存储解决方案。它特别适合内容创作者、专业人士和移动优先用户。\n\n### 主要特点与性能\n\n*   **双接口设计**：配备 USB Type-C 和 Type-A 连接器，方便在移动设备（如 iPhone、iPad）以及 Mac 和 PC 之间进行快速数据传输。\n*   **高速传输**：支持 USB 3.2 Gen 2 标准，提供卓越的传输速度：\n    *   读取速度：高达 1000MB/s\n    *   写入速度：高达 800MB/s\n    这使其显著快于传统的 USB 3 驱动器。\n*   **广泛兼容性**：\n    *   兼容多种操作系统，包括 Windows、macOS、Android 和 Linux。\n    *   支持 Type-C 移动设备的 OTG（On-The-Go）功能。\n*   **存储容量**：提供从 256GB 到 2TB 的多种容量选择，满足用户对大容量媒体库或高要求文件管理的需求。\n\n### 设计与耐用性\n\n*   采用金属旋转外壳设计，确保产品紧凑且耐用。\n\n### 价格与保修\n\n*   **价格**：\n    *   256GB 版本起价 34.99 美元。\n    *   2TB 版本售价 159.99 美元。\n*   **保修**：PNY 提供两年有限保修。\n*   **购买渠道**：可在亚马逊购买。",
-      "shortSummary": "PNY Duo Link V3 是一款双接口（USB-C 和 USB-A）闪存盘，专为在 Mac、PC 和移动设备间高速传输数据而设计。它支持 USB 3.2 Gen 2，读取速度高达 1000MB/s，写入速度达 800MB/s。容量从 256GB 到 2TB，兼容多平台，并采用耐用的金属旋转设计，提供灵活、高效的存储解决方案。",
-      "translated_title": "PNY Duo Link V3 搭载 USB-C 和 USB-A 接口，可在您的任意 Mac 之间传输数据",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
     }
   ],
-  "lastUpdated": "2025-06-15T18:27:51.391Z"
+  "lastUpdated": "2025-06-16T18:33:34.504Z"
 }
