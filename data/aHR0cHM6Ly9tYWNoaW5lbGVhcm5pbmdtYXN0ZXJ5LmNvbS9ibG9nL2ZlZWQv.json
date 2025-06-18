@@ -5,6 +5,128 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "位置编码中的插值与使用 YaRN 扩展上下文窗口 (原标题: Interpolation in Positional Encodings and Using YaRN for Larger Context Window)",
+      "link": "https://machinelearningmastery.com/interpolation-in-positional-encodings-and-using-yarn-for-larger-context-window/",
+      "pubDate": "Tue, 17 Jun 2025 05:00:10 +0000",
+      "isoDate": "2025-06-17T05:00:10.000Z",
+      "creator": "Adrian Tam",
+      "summary": "# 位置编码中的插值与使用 YaRN 扩展上下文窗口\n\n本文探讨了 Transformer 模型在处理不同长度序列时，如何应对位置编码带来的挑战。由于 Transformer 模型通常在固定序列长度下训练，但在推理时可能需要处理更长的序列，这使得模型难以处理未在训练中遇到的位置编码。\n\n## 概述\n\n文章分为三个主要部分：\n1.  正弦编码和 RoPE 中的插值与外推\n2.  学习型编码中的插值\n3.  使用 YaRN 扩展上下文窗口\n\n## 正弦编码和 RoPE 中的插值与外推\n\n正弦编码（Sinusoidal encodings）由于使用连续函数，在**外推**方面表现出色。对于更长的序列，可以直接将位置 `p` 替换为更大的值来获取位置编码。\n\n此外，也可以使用**插值**。将 `p` 视为浮点数，通过 `p = (L/L')p'` 的方式，将新序列 `L'` 中的位置 `p'` 映射到原始训练长度 `L` 的范围内。\n\n这些技术同样适用于旋转位置编码（RoPE）。生成正弦位置编码或 RoPE 的函数无需修改即可处理任意长度的序列。然而，为了确保模型能够处理新的编码而性能不下降，可能需要进行微调。例如，Llama 模型使用 RoPE，最大训练序列长度为 16K，而 Code Llama 仅通过 1000 步微调就将其序列长度扩展到了 100K token。\n\n## 学习型编码中的插值\n\n学习型位置编码（Learned positional encodings）通过查找表获取位置编码向量，这意味着序列长度由查找表大小固定，因此无法进行**外推**。\n\n然而，学习型编码仍然可以通过**插值**来处理比训练长度更长的序列。对于长度为 `L'` (大于 `L`) 的序列，位置 `p'` 的编码向量可以通过线性插值计算，即在原始训练长度 `L` 范围内找到对应的浮点位置 `p`，然后插值其相邻的两个整数位置 `n` 和 `m` 的编码向量。\n\n尽管可以实现插值，但文章指出，这种基本插值实现并不能保证模型在不进行再训练的情况下，处理更长序列时性能不会下降。\n\n## 使用 YaRN 扩展上下文窗口\n\n旋转位置编码（RoPE）是当前大型语言模型中最广泛使用的位置编码方法。YaRN 是一种旨在扩展 RoPE 以处理更长序列的方法，并且比上述基本插值方法更有效。\n\nYaRN 的核心创新在于，当序列长度从 `L` 扩展到 `L'` 时，它会**不均匀地缩放 RoPE 正弦频率**。这种方法被称为“NTK-by-parts”插值。YaRN 通过引入一个混合了插值和外推效果的 `θ_i'` 来修改原始 RoPE 公式。此外，YaRN 还引入了一个额外的缩放因子 `sqrt(1/t)`，进一步提升了模型在更长上下文长度下的性能（通过降低困惑度衡量）。\n\n## 总结\n\n本文介绍了模型如何处理比训练时更长的输入序列：\n*   正弦编码和 RoPE 易于进行外推。\n*   学习型编码仅支持插值。\n*   YaRN 提供了一种先进的方法，用于将 RoPE 扩展到更长的序列长度。\n\n这些方法的共同目标是使模型能够在不进行再训练的情况下处理更长的输入序列。\n\n![Building Transformer Models with Attention](https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png)",
+      "shortSummary": "本文探讨了Transformer模型如何处理不同长度序列的位置编码挑战。正弦编码和RoPE擅长外推，也可通过插值处理更长序列，但可能需微调。学习型编码仅支持插值。YaRN是一种先进方法，通过不均匀缩放RoPE频率并引入额外缩放因子，有效扩展RoPE的上下文窗口，提升模型在长序列下的性能。目标是使模型无需再训练即可处理更长输入。",
+      "translated_title": "位置编码中的插值与使用 YaRN 扩展上下文窗口",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/enkuu-smile_-kbHvA6oXP8E-unsplash-scaled.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png",
+          "alt": "Building Transformer Models with Attention",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "This post is divided into three parts; they are: • Interpolation and Extrapolation in Sinusoidal Encodings and RoPE • Interpolation in Learned Encodings • YaRN for Larger Context Window Sinusoidal encodings excel at extrapolation due to their use of continuous functions: $$ \\begin{aligned} PE(p, 2i) &amp;= \\sin\\left(\\frac{p}{10000^{2i/d}}\\right) \\\\ PE(p, 2i+1) &amp;= \\cos\\left(\\frac{p}{10000^{2i/d}}\\right) \\end{aligned} $$ You can simply substitute $p$ with a larger value to obtain the positional encoding for a longer sequence."
+    },
+    {
+      "title": "如何结合Scikit-learn、CatBoost和SHAP构建可解释的树模型 (原标题: How to Combine Scikit-learn, CatBoost, and SHAP for Explainable Tree Models)",
+      "link": "https://machinelearningmastery.com/how-to-combine-scikit-learn-catboost-and-shap-for-explainable-tree-models/",
+      "pubDate": "Mon, 16 Jun 2025 12:00:01 +0000",
+      "isoDate": "2025-06-16T12:00:01.000Z",
+      "creator": "Vinod Chugani",
+      "summary": "## 如何结合Scikit-learn、CatBoost和SHAP构建可解释的树模型\n\n### 引言\n\n在机器学习工作流中，高性能模型与可解释性之间存在着微妙的平衡。CatBoost等高性能算法虽然能取得卓越成果，但其“黑箱”特性使得利益相关者难以理解模型决策背后的“为什么”。本文旨在通过结合Scikit-learn、CatBoost和SHAP这三个互补的库来解决这一挑战，从而实现模型的准确性和可解释性。\n\n### 核心整合库\n\n*   **Scikit-learn**：提供预处理生态系统和评估框架，是大多数机器学习工作流的基础。\n*   **CatBoost**：提供最先进的梯度提升性能，并原生支持分类特征处理。\n*   **SHAP (SHapley Additive exPlanations)**：将高性能预测转化为透明、可量化的解释。\n\n### 实际应用场景\n\n本教程以Ames Housing数据集为例，预测房屋价格。这是一个完美的用例，因为在房地产领域，专业人士不仅需要知道模型预测的价格，还需要确切了解哪些特征以及它们如何驱动这些预测。\n\n### 学习目标\n\n通过本教程，您将学会：\n*   创建从Scikit-learn预处理到CatBoost建模再到SHAP详细解释的无缝数据管道。\n*   比较不同的特征重要性方法。\n*   解释复杂的特征交互。\n*   量化邻里效应等分类变量的影响。\n*   构建既准确又可解释的树模型框架。\n\n### 先决条件\n\n在开始本教程之前，您需要：\n*   安装Python 3.7或更高版本。\n*   熟悉Python语法和编程概念。\n*   安装以下库：\n    *   Pandas (1.3.0或更高版本)\n    *   NumPy (1.20.0或更高版本)\n    *   scikit-learn (1.0.0或更高版本)\n    *   CatBoost (1.0.0或更高版本)\n    *   SHAP (0.40.0或更高版本)\n    *   Matplotlib (3.3.0或更高版本) 用于可视化。\n*   对机器学习概念（如回归、训练/测试分割、模型评估）有基本了解。\n\n### 构建CatBoost基础模型\n\n在进行解释之前，首先需要一个高性能模型。文章基于之前对CatBoost的探索，重新构建了一个针对Ames Housing数据集的优化回归模型，实现了0.9310的R²分数。该模型展示了CatBoost在不进行大量预处理的情况下，原生处理缺失值和分类数据的能力。这个高性能模型为后续的解释工作奠定了可靠的基础。\n\n### 整合点1：Scikit-learn → CatBoost 工作流\n\n本节展示了Scikit-learn的预处理和评估工具如何与CatBoost无缝协作。尽管CatBoost可以自动处理许多预处理任务，但结合Scikit-learn可以利用更广泛的数据科学工具生态系统，并建立可扩展到更复杂管道的模式。通过Scikit-learn进行数据分割（训练集2063个样本，测试集516个样本），并在训练数据上训练CatBoost模型，最终在测试集上获得了0.9335的R²分数，验证了模型的强大性能，为SHAP解释提供了可靠的基础。\n\n### 整合点2：CatBoost → SHAP 解释\n\nSHAP将高性能的CatBoost模型转化为可解释的系统。与传统的特征重要性（平均而言哪些变量最重要）不同，SHAP通过量化每个特征对每个个体预测的贡献来提供更深入的洞察。这不仅揭示了哪些特征重要，还揭示了它们在不同上下文和值范围内的行为方式。\n\n**特征重要性比较：CatBoost vs. SHAP**\n\n*   **SHAP TreeExplainer**：计算所有516个测试预测的精确解释，涵盖84个特征。\n*   **共同点**：SHAP和CatBoost的重要性排名都将“GrLivArea”（居住面积）和“OverallQual”（整体质量）列为最重要的特征。\n*   **差异**：在中间排名中存在显著差异，例如“Neighborhood”（社区）在SHAP中排名第三，而在CatBoost中排名第四，反之“TotalBsmtSF”（地下室总面积）则相反。这突出了一个关键区别：CatBoost的重要性反映了特征在树分裂中被使用的频率，而SHAP的重要性则衡量了特征对最终预测的实际影响大小。\n*   **量化影响**：SHAP条形图清晰地可视化了特征影响的程度，显示“GrLivArea”的平均影响几乎是其他任何特征的两倍。这意味着居住面积的变化对预测的影响大约是整体质量变化的两倍，是社区效应的近三倍。\n\n![SHAP Global Feature Importance Plot](https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-chugani-combine-sklearn-catboost-shap-explainable-tree-models-1.png)\n\n### 通过依赖图理解特征交互\n\n全局重要性排名无法揭示特征在不同值范围内的行为或它们之间的交互。SHAP依赖图通过展示特征值与其对个体预测影响之间的关系来解决这些限制。这使得分析从“OverallQual很重要”深入到“OverallQual显示阶梯式增长，其影响取决于其他房屋特征”。\n\n**交互作用示例：**\n\n*   **居住面积（GrLivArea）与地下室总面积（TotalBsmtSF）的交互**：\n    *   当居住面积超过2300平方英尺时，地下室面积越大（红色越深），房屋的SHAP值（即对价格的贡献）越高。这表明买家重视全面的空间，而不仅仅是地上建筑面积。\n*   **整体质量（OverallQual）与建造年份（YearBuilt）的交互**：\n    *   虽然质量始终驱动价值，但颜色模式表明质量评级可能根据房屋建造年份具有不同的含义或市场价值。这反映了随着时间推移，建筑标准和买家期望的变化。\n\n![SHAP Dependence Plots: Standalone vs Interactive Effects](https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-chugani-combine-sklearn-catboost-shap-explainable-tree-models-2-1024x813.png)\n\n这些依赖图揭示了CatBoost学习到的关于特征关系的复杂模式，并展示了SHAP依赖分析如何超越基本的特征重要性，提供更深层次的洞察。",
+      "shortSummary": "本文介绍了如何结合Scikit-learn、CatBoost和SHAP库来构建高性能且可解释的树模型。Scikit-learn用于预处理和评估，CatBoost提供强大的梯度提升性能，而SHAP则负责将模型预测转化为透明的解释。通过Ames Housing数据集的案例，文章展示了如何利用SHAP量化特征对个体预测的影响，比较特征重要性，并深入理解特征间的复杂交互，从而揭示“黑箱”模型内部的决策机制，为实际应用提供更深层次的洞察。",
+      "translated_title": "如何结合Scikit-learn、CatBoost和SHAP构建可解释的树模型",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-chugani-combine-sklearn-catboost-shap-explainable-tree-models-feature.png",
+          "alt": "How to Combine Scikit-learn, CatBoost, and SHAP for Explainable Tree Models",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-chugani-combine-sklearn-catboost-shap-explainable-tree-models-1.png",
+          "alt": "How to Combine Scikit-learn, CatBoost, and SHAP for Explainable Tree Models",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-chugani-combine-sklearn-catboost-shap-explainable-tree-models-2-1024x813.png",
+          "alt": "How to Combine Scikit-learn, CatBoost, and SHAP for Explainable Tree Models",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-chugani-combine-sklearn-catboost-shap-explainable-tree-models-3-1024x910.png",
+          "alt": "How to Combine Scikit-learn, CatBoost, and SHAP for Explainable Tree Models",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Machine learning workflows often involve a delicate balance: you want models that perform exceptionally well, but you also need to understand and explain their predictions."
+    },
+    {
+      "title": "Transformer模型中的位置编码 (原标题: Positional Encodings in Transformer Models)",
+      "link": "https://machinelearningmastery.com/positional-encodings-in-transformer-models/",
+      "pubDate": "Sun, 15 Jun 2025 05:06:17 +0000",
+      "isoDate": "2025-06-15T05:06:17.000Z",
+      "creator": "Adrian Tam",
+      "summary": "# Transformer模型中的位置编码\n\n本文深入探讨了Transformer模型中至关重要的位置编码，它们是捕获语言序列特性的关键创新。\n\n![图片 1](https://machinelearningmastery.com/wp-content/uploads/2025/06/svetlana-gumerova-6fAgnT3Dhl4-unsplash-scaled.jpg)\n*语言模型中的位置编码*\n\n## 理解位置编码的必要性\n\n*   **问题背景**：传统的循环神经网络（RNN）按顺序处理词语，自然地捕捉了词序信息。然而，Transformer模型并行处理所有词元，导致其无法区分词元相同但顺序不同的句子（例如：“狐狸跳过狗”和“狗跳过狐狸”）。\n*   **解决方案**：位置编码通过为序列中的每个词元提供位置信息来解决这一问题。\n*   **工作原理**：\n    *   每个词元首先通过模型的嵌入层转换为一个向量，其大小称为“隐藏维度”。\n    *   位置编码会生成一个与隐藏维度相同大小的向量。\n    *   这些位置编码向量被添加到输入词元嵌入中，通常在注意力模块中进行。\n    *   在点积操作期间，这些编码强调了相邻词元之间的关系，帮助模型理解上下文，从而区分词序不同的句子。\n\n## 常见位置编码类型\n\n文章详细介绍了以下五种主要的位置编码类型：\n\n1.  **正弦位置编码 (Sinusoidal Positional Encodings)**：\n    *   **特点**：在原始Transformer论文中引入，使用正弦和余弦函数构建的确定性向量。\n    *   **公式**：\n        $$ PE(p, 2i) = \\sin\\left(\\frac{p}{10000^{2i/d}}\\right) $$\n        $$ PE(p, 2i+1) = \\cos\\left(\\frac{p}{10000^{2i/d}}\\right) $$\n        其中，$p$ 是位置，$i$ 是维度索引，$d$ 是隐藏维度。常数10000应大于最大序列长度。\n    *   **实现原理**：通过计算 `div_term` ($1/N^{2i/d}$)，然后将 `position` 矩阵与 `div_term` 相乘的结果分别代入正弦和余弦函数，最后交错填充到输出矩阵中。\n    *   **优点**：确定性，能够外推到训练时未见的更长序列；利用正弦函数的性质，可以轻松计算词元间的相对位置。\n    *   **局限性**：不适应数据特性，对非常长的序列可能效果不佳。\n\n2.  **学习位置编码 (Learned Positional Encodings)**：\n    *   **特点**：在BERT和GPT等模型中使用，位置向量在训练过程中学习得到。\n    *   **实现原理**：通过 `nn.Embedding` 层实现，该层充当一个查找表，将整数位置索引映射到学习到的向量。在 `forward` 函数中，根据输入序列长度生成位置索引，然后通过嵌入层查找对应的位置编码，并将其添加到输入 `x` 中。\n    *   **优点**：能够适应数据特性，如果训练得当，可能提供更好的性能。\n    *   **局限性**：无法外推到更长的序列；可能存在过拟合风险；作为模型参数的一部分，会增加模型大小。\n\n3.  **旋转位置编码 (Rotary Positional Encodings, RoPE)**：\n    *   **特点**：Llama模型等大多数现代大型语言模型使用，通过旋转矩阵编码相对位置，每个位置代表一个几何级数的角度。\n    *   **公式**：\n        $$ \\hat{x}_m^{(i)} = x_m^{(i)} \\cos(m\\theta_i) + x_m^{(d/2+i)} \\sin(m\\theta_i) $$\n        $$ \\hat{x}_m^{(d/2+i)} = x_m^{(d/2+i)} \\cos(m\\theta_i) – x_m^{(i)} \\sin(m\\theta_i) $$\n        其中 $\\theta_i = 10000^{-2i/d}$，$m$ 是位置索引。\n        矩阵形式：$\\mathbf{\\hat{x}}_m = \\mathbf{R}_m\\mathbf{x}_m$。\n    *   **实现原理**：`rotate_half` 函数将向量的后半部分取负并与前半部分交换位置。`apply_rotary_pos_emb` 函数将输入 `x` 与预先计算好的 `cos` 和 `sin` 值进行旋转操作。`RotaryPositionalEncoding` 类预计算并缓存正弦和余弦值。\n    *   **优点**：\n        *   旋转矩阵 $\\mathbf{R}_m$ 几何地旋转2D输入向量。\n        *   转置 $\\mathbf{R}_m^\\top = \\mathbf{R}_m^{-1}$ 表示反向旋转，因此相对位置可以轻松计算为 $\\mathbf{R}_{m-n} = \\mathbf{R}_m\\mathbf{R}_n^\\top$。\n        *   由于角度的几何级数，可以外推到更长的序列。\n        *   保留向量范数，有助于训练稳定性。\n\n4.  **相对位置编码 (Relative Positional Encodings)**：\n    *   **特点**：T5和MPT等模型使用，关注词元之间的相对距离而非绝对位置。\n    *   **实现原理**：计算 `context_position` 和 `memory_position` 矩阵的差值得到 `relative_position` 矩阵，表示词元 $i$ 和 $j$ 之间的相对位置。通过 `relative_position_bucket` 将值转换为非负，然后从 `relative_attention_bias` 张量中查找对应的位置编码向量。\n    *   **优点**：自然处理可变长度序列，适用于翻译等任务。\n    *   **相关方法**：**线性偏置注意力 (Attention with Linear Bias, ALiBi)** 是一种相关方法，它不是修改输入序列，而是将一个偏置矩阵添加到注意力分数中，该偏置矩阵基于词元距离按比例缩放。缩放因子为 $m_h=1/2^{8h/H}$。\n\n## 总结\n\n本文详细介绍了Transformer模型中位置编码的重要性及其不同类型：\n\n*   位置编码对于Transformer模型至关重要，因为它们以并行方式处理词元，需要额外的位置信息来理解序列顺序。\n*   不同类型的位置编码各有优缺点：\n    *   **正弦编码**：确定性，可外推到更长序列。\n    *   **学习编码**：简单，但无法外推。\n    *   **RoPE**：在长序列上表现更好，保留向量范数。\n    *   **相对位置编码**：关注词元间距离，适用于可变长度序列。\n\n![Building Transformer Models with Attention](https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png)\n*构建带有注意力的Transformer模型*",
+      "shortSummary": "Transformer模型并行处理词元，缺乏序列顺序信息，因此需要位置编码。位置编码通过向词元嵌入添加位置向量来解决此问题，帮助模型理解上下文和词序。主要类型包括：原始Transformer使用的确定性正弦编码、BERT和GPT中学习到的编码、Llama模型中通过旋转矩阵实现的RoPE，以及T5等模型中基于词元间相对距离的相对位置编码。每种编码都有其独特优势，如外推能力或适应数据特性。",
+      "translated_title": "Transformer模型中的位置编码",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/svetlana-gumerova-6fAgnT3Dhl4-unsplash-scaled.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png",
+          "alt": "Building Transformer Models with Attention",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "This post is divided into five parts; they are: • Understanding Positional Encodings • Sinusoidal Positional Encodings • Learned Positional Encodings • Rotary Positional Encodings (RoPE) • Relative Positional Encodings Consider these two sentences: \"The fox jumps over the dog\" and \"The dog jumps over the fox\"."
+    },
+    {
+      "title": "使用Scikit-Learn管道、Pandas的ColumnTransformer和NumPy数组进行高级特征工程 (原标题: Advanced Feature Engineering Using Scikit-Learn Pipelines with Pandas’ ColumnTransformer and NumPy Arrays)",
+      "link": "https://machinelearningmastery.com/advanced-feature-engineering-using-scikit-learn-pipelines-with-pandas-columntransformer-and-numpy-arrays/",
+      "pubDate": "Fri, 13 Jun 2025 12:00:25 +0000",
+      "isoDate": "2025-06-13T12:00:25.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "## 使用Scikit-Learn管道、Pandas的ColumnTransformer和NumPy数组进行高级特征工程\n\n![高级特征工程](https://machinelearningmastery.com/wp-content/uploads/2025/05/mlm-palomares-ollama-quantization-feature.png)\n\n本文介绍了如何利用Pandas、NumPy和Scikit-learn这三个强大的Python库，构建健壮、可扩展且模块化的高级特征工程工作流。文章通过一个实际示例，详细阐述了如何将这些工具结合起来，实现数据预处理和机器学习模型的无缝集成。\n\n### 核心组件\n\n*   **Scikit-learn 管道 (Pipelines)**：一种便捷的机制，用于定义一系列操作（通常是数据转换，也可包含机器学习模型），并将这些操作封装为一个单一的对象。这有助于简化工作流并提高代码的可读性。\n*   **Pandas ColumnTransformer**：一个专门的类，用于对数据集中特定列应用自定义的转换。它允许对不同类型的特征（如数值型和类别型）应用不同的预处理方法。\n*   **NumPy 数组 (Arrays)**：在目标问题中扮演关键角色，能够高效处理大量数据。Scikit-learn模型内部最终需要NumPy数组作为输入格式，而非Pandas DataFrame对象，因此NumPy数组是数据流转的关键。\n\n### 实践示例：构建特征工程管道\n\n文章通过一个自制数据集的例子，演示了如何构建一个完整的特征工程管道。\n\n#### 1. 导入必要的库\n\n```python\nimport numpy as np\nimport pandas as pd\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.compose import ColumnTransformer\nfrom sklearn.preprocessing import StandardScaler, OneHotEncoder\nfrom sklearn.ensemble import RandomForestClassifier\n```\n\n#### 2. 创建示例数据集\n\n为了演示，文章创建了一个包含20个实例的模拟公民数据DataFrame，包括数值型特征（`age`、`income`）和类别型特征（`gender`、`city`），以及一个二元目标标签（`label`）。\n\n```python\ndf = pd.DataFrame({\n    'age': np.random.randint(18, 70, size=20),\n    'income': np.random.randint(30000, 120000, size=20),\n    'gender': np.random.choice(['male', 'female'], size=20),\n    'city': np.random.choice(['NY', 'SF', 'LA'], size=20),\n    'label': np.random.choice([0, 1], size=20)\n})\n```\n\n#### 3. 分离特征与标签并定义特征列表\n\n将数据集分为特征 `X` 和标签 `y`，并分别定义数值型和类别型特征的名称列表，这对于后续 `ColumnTransformer` 的使用至关重要。\n\n```python\nX = df.drop('label', axis=1)\ny = df['label']\nnumeric_features = ['age', 'income']\ncategorical_features = ['gender', 'city']\n```\n\n![特征工程前的数据集特征](https://machinelearningmastery.com/wp-content/uploads/2025/05/Captura-de-pantalla-2025-05-29-a-las-9.59.41.png)\n\n#### 4. 定义预处理步骤\n\n文章定义了两个并行的管道，分别用于数值型和类别型特征的预处理，并通过 `ColumnTransformer` 将它们结合起来。\n\n*   **数值型转换器**：使用 `StandardScaler` 进行标准化。\n*   **类别型转换器**：使用 `OneHotEncoder` 进行独热编码，并设置 `handle_unknown='ignore'` 以处理未知类别。\n*   **预处理器 (preprocessor)**：一个 `ColumnTransformer` 对象，将上述两个管道并行应用于各自对应的特征列表。\n\n```python\nnumeric_transformer = Pipeline(steps=[\n    ('scaler', StandardScaler())\n])\ncategorical_transformer = Pipeline(steps=[\n    ('encoder', OneHotEncoder(handle_unknown='ignore'))\n])\n\npreprocessor = ColumnTransformer(\n    transformers=[\n        ('num', numeric_transformer, numeric_features),\n        ('cat', categorical_transformer, categorical_features)\n    ]\n)\n```\n\n#### 5. 应用预处理并查看结果\n\n通过 `preprocessor.fit_transform(X)` 应用定义的预处理管道，并将结果转换为DataFrame以便于可视化。\n\n```python\nX_preprocessed = preprocessor.fit_transform(X)\npreprocessed_feature_names = preprocessor.get_feature_names_out()\nX_preprocessed_df = pd.DataFrame(X_preprocessed, columns=preprocessed_feature_names)\nprint(\"Preprocessed Data:\")\nX_preprocessed_df.head()\n```\n\n![特征工程后的数据集特征](https://machinelearningmastery.com/wp-content/uploads/2025/05/Captura-de-pantalla-2025-05-29-a-las-9.59.48.png)\n\n#### 6. 将特征工程与机器学习模型结合\n\n最后，文章展示了如何将预处理管道 (`preprocessor`) 与一个机器学习模型（例如 `RandomForestClassifier`）组合成一个更高级别的端到端管道。这个管道包含两个顺序步骤：特征工程和模型训练。\n\n```python\nfeng_pipeline = Pipeline(steps=[\n    ('preprocessing', preprocessor),\n    ('classifier', RandomForestClassifier())\n])\n\nfeng_pipeline.fit(X, y)\npredictions = feng_pipeline.predict(X)\nprint(predictions)\n```\n\n这种集成方式使得数据从原始形式到模型训练的整个过程变得流畅，尤其得益于NumPy数组在预处理后作为数据结构传递给模型，无需额外的数据结构修改。\n\n### 总结\n\n本文详细阐述了如何利用Scikit-learn的 `Pipeline` 和 Pandas 的 `ColumnTransformer` 对象，结合 NumPy 数组，对包含不同类型特征的数据集执行高级且定制化的特征工程过程。这种方法不仅提高了工作流的效率和可维护性，也确保了数据在整个机器学习流程中的顺畅传递。",
+      "shortSummary": "本文演示了如何使用Scikit-learn的Pipeline、Pandas的ColumnTransformer和NumPy数组进行高级特征工程。通过构建一个包含数据标准化、独热编码等预处理步骤的并行管道，并将其与机器学习模型（如随机森林）集成，文章展示了如何创建健壮、可扩展且模块化的端到端数据处理和建模工作流。NumPy数组在此过程中确保了数据在不同组件间的无缝传递。",
+      "translated_title": "使用Scikit-Learn管道、Pandas的ColumnTransformer和NumPy数组进行高级特征工程",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/mlm-palomares-ollama-quantization-feature.png",
+          "alt": "Advanced Feature Engineering Using Scikit-Learn Pipelines with Pandas’ ColumnTransformer and NumPy Arrays",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/Captura-de-pantalla-2025-05-29-a-las-9.59.41.png",
+          "alt": "Dataset features before feature engineering",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/Captura-de-pantalla-2025-05-29-a-las-9.59.48.png",
+          "alt": "Dataset features after feature engineering",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Pandas , NumPy , and Scikit-learn ."
+    },
+    {
       "title": "使用 Pandas 和 Scikit-learn 处理不平衡数据集 (原标题: Navigating Imbalanced Datasets with Pandas and Scikit-learn)",
       "link": "https://machinelearningmastery.com/navigating-imbalanced-datasets-with-pandas-and-scikit-learn/",
       "pubDate": "Thu, 12 Jun 2025 12:00:56 +0000",
@@ -141,93 +263,7 @@
       ],
       "contentSource": "完整文章",
       "content": "I must say, with the ongoing hype around machine learning, a lot of people jump straight to the application side without really understanding how things work behind the scenes."
-    },
-    {
-      "title": "机器学习从业者应了解的10种MLOps工具 (原标题: 10 MLOps Tools for Machine Learning Practitioners to Know)",
-      "link": "https://machinelearningmastery.com/10-mlops-tools-for-machine-learning-practitioners-to-know/",
-      "pubDate": "Thu, 05 Jun 2025 12:00:07 +0000",
-      "isoDate": "2025-06-05T12:00:07.000Z",
-      "creator": "Jayita Gulati",
-      "summary": "## 机器学习从业者应了解的10种MLOps工具\n\n![MLOps封面图片](https://machinelearningmastery.com/wp-content/uploads/2025/05/mlops_cover_photo.jpeg)\n\n### MLOps简介\n\n机器学习不仅仅是构建模型，还包括模型的部署、管理和维护。机器学习运维（MLOps）将机器学习与DevOps实践相结合，旨在简化从训练到部署的整个模型生命周期。它确保了机器学习工作流的自动化、协作和可扩展性。为了支持这一目标，一系列工具应运而生。本文重点介绍了机器学习从业者应了解的10种基本MLOps工具，它们有助于构建可靠且可投入生产的机器学习系统。\n\n### 10种核心MLOps工具\n\n1.  **MLflow**\n    *   **功能：** 帮助跟踪机器学习实验，记录训练运行、版本化模型并管理部署阶段。它与多种流行的机器学习库兼容，可在任何环境中运行。\n    *   **关键特性：**\n        *   跟踪每次运行的指标、参数和工件。\n        *   保存和版本化模型以实现可复现性。\n        *   管理模型在不同生命周期阶段的状态。\n\n2.  **Weights & Biases (W&B)**\n    *   **功能：** 一个用于记录和可视化机器学习实验的平台。它帮助团队监控模型性能并随时间组织实验。W&B集成了TensorFlow、PyTorch和Keras等多种ML库。\n    *   **关键特性：**\n        *   实时记录训练性能。\n        *   比较多次运行和超参数。\n        *   跟踪数据集、代码和模型文件。\n\n3.  **Comet**\n    *   **功能：** 帮助端到端监控机器学习实验的工具。它跟踪指标、参数、代码和工件，使实验可复现且文档完善。\n    *   **关键特性：**\n        *   跟踪实验、超参数和结果。\n        *   使用可视化仪表板比较模型运行。\n        *   记录代码版本和数据集更改。\n        *   组织项目并与团队协作。\n\n4.  **Apache Airflow**\n    *   **功能：** 一个工作流自动化工具。它允许定义和调度机器学习任务，如数据预处理、训练、评估和部署。工作流以Python代码编写，Airflow负责执行顺序。\n    *   **关键特性：**\n        *   使用Python脚本定义机器学习工作流。\n        *   调度和自动化重复性任务。\n        *   通过Web界面监控任务进度。\n        *   处理重试、故障和依赖关系。\n\n5.  **Kubeflow**\n    *   **功能：** 一个基于Kubernetes的平台，用于构建和管理机器学习工作流。它允许在云端或本地Kubernetes集群上运行训练、超参数调优和模型服务。\n    *   **关键特性：**\n        *   完全控制地构建机器学习管道。\n        *   在Kubernetes集群上大规模运行作业。\n        *   提供用于调优、服务和跟踪模型的工具。\n\n6.  **DVC (Data Version Control)**\n    *   **功能：** 类似于Git，但用于数据和模型。它帮助版本化数据集、跟踪更改，并使所有内容在实验中保持同步。它与Git配合良好，并集成了S3或Google Drive等远程存储。\n    *   **关键特性：**\n        *   跟踪和版本化数据集和模型。\n        *   将大文件连接到Git而不直接存储它们。\n        *   使用一致的数据和代码复现实验。\n        *   通过远程存储集成共享项目。\n\n7.  **Metaflow**\n    *   **功能：** 帮助数据科学家和机器学习工程师使用简单的Python代码构建和管理工作流。它支持在本地和云端跟踪、调度和扩展机器学习管道。\n    *   **关键特性：**\n        *   在本地或云端运行管道。\n        *   自动跟踪运行和元数据。\n        *   从上一步恢复失败的运行。\n\n8.  **Pachyderm**\n    *   **功能：** 一个数据管道和版本控制系统。它帮助管理和跟踪数据更改，并构建可复现的管道，这些管道在数据更改时自动更新。\n    *   **关键特性：**\n        *   像Git一样对数据集进行版本控制。\n        *   构建在数据更新时自动运行的管道。\n        *   通过完整的数据和代码历史复现结果。\n        *   与Docker和任何机器学习语言兼容。\n\n9.  **Evidently AI**\n    *   **功能：** 一个用于机器学习模型的监控工具。它有助于在部署后检测数据漂移、性能下降或预测不一致等问题。\n    *   **关键特性：**\n        *   监控数据质量和模型性能。\n        *   检测数据漂移和随时间的变化。\n        *   生成清晰的可视化报告和仪表板。\n\n10. **TensorFlow Extended (TFX)**\n    *   **功能：** 谷歌的TensorFlow机器学习管道平台。它涵盖了从数据处理到模型训练、验证和在实际环境中部署的所有环节。\n    *   **关键特性：**\n        *   使用可重用组件构建完整的机器学习管道。\n        *   处理数据验证和模型评估。\n        *   使用可扩展的服务工具部署模型。\n        *   可与Apache Airflow或Kubeflow编排工具配合使用。\n\n### 总结\n\nMLOps是现代机器学习不可或缺的一部分，它帮助团队将模型从开发环境推向实际应用。没有MLOps，项目可能难以扩展或在生产中出现问题。选择合适的工具能使这一过程更简单、更可靠。MLflow和W&B等工具用于实验跟踪；Airflow和Kubeflow用于自动化和运行机器学习管道；DVC和Pachyderm负责数据和模型版本控制；Evidently AI支持模型性能监控；TFX则提供了一整套用于生产级机器学习系统的管道。最佳的设置取决于团队的规模、目标和基础设施。通过使用这些工具，可以节省时间、减少错误并提高模型质量。",
-      "shortSummary": "MLOps（机器学习运维）对于现代机器学习至关重要，它简化了模型从训练到部署的整个生命周期。本文介绍了10种核心MLOps工具，涵盖实验跟踪（如MLflow、Weights & Biases）、工作流自动化（如Airflow、Kubeflow）、数据和模型版本控制（如DVC、Pachyderm）、模型监控（如Evidently AI）以及端到端管道构建（如TFX）。这些工具旨在帮助机器学习从业者构建可靠、可投入生产的系统，从而节省时间、减少错误并提升模型质量。",
-      "translated_title": "机器学习从业者应了解的10种MLOps工具",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/mlops_cover_photo.jpeg",
-          "alt": "10 MLOps Tools for Machine Learning Practitioners to Know",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Machine learning is not just about building models."
-    },
-    {
-      "title": "NumPy 忍术：掌握数组操作以实现高性能机器学习 (原标题: NumPy Ninjutsu: Mastering Array Operations for High-Performance Machine Learning)",
-      "link": "https://machinelearningmastery.com/numpy-ninjutsu-mastering-array-operations-for-high-performance-machine-learning/",
-      "pubDate": "Wed, 04 Jun 2025 12:00:20 +0000",
-      "isoDate": "2025-06-04T12:00:20.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "# NumPy 忍术：掌握数组操作以实现高性能机器学习\n\n机器学习工作流涉及大量数值计算，数据通常以大型向量、矩阵或张量的形式存储。处理、训练和应用这些大型数据结构（如预测）会消耗大量时间和内存。因此，优化这些底层操作的效率至关重要。NumPy 库正是为此而生：NumPy 数组是为快速、内存高效的数值计算而设计的数据结构，它利用向量化和广播等敏捷计算过程，从而实现高性能的机器学习建模过程，如忍者般快速而无声。本文揭示了一些具有代表性的 NumPy 数组操作示例，它们在优化机器学习工作流性能方面特别有用。\n\n![NumPy Ninjutsu: Mastering Array Operations for High-Performance Machine Learning](https://machinelearningmastery.com/wp-content/uploads/2025/05/r2k5UU1ZRqyC91TTOXMyyQ.webp)\n\n## 核心 NumPy 数组操作\n\n### 1. 向量化操作\n\nNumPy 允许对整个数组应用算术操作或数学函数，从而实现元素级的操作，而无需使用循环。例如，给定一个包含 1000 个元素的数组 `arr`，`arr * 2` 会将数组中的每个元素乘以二。在使用函数方面，向量化在手动定义的神经网络中进行激活函数计算时非常方便。ReLU（修正线性单元）函数是一种非常常见的激活函数，已被证明在训练神经网络模型中有效。它通过将负值映射到 0 并保持正值不变来消除信息的线性。以下是使用 NumPy 数组向量化实现 ReLU 激活的示例：\n\n```python\nimport numpy as np\ninput_array = np.array([-2.0, 0.0, 1.5])\noutput = np.maximum(0, input_array)\nprint(output)\n```\n\n**输出:**\n```\n[0. 0. 1.5]\n```\n这个例子定义了一个包含三个元素的数组，以方便理解。当处理成千上万甚至数百万个元素时，效率优化才能真正发挥作用。\n\n### 2. 广播机制 (Broadcasting)\n\nNumPy 数组操作的另一个吸引人的特性是广播：它涉及调整参与数学运算的多个数组中至少一个的大小。数据矩阵中的值标准化就是一个很好的例子，这是各种机器学习建模技术中非常常见的处理过程，通常需要缩放数据以获得更有效的结果。\n\n```python\nimport numpy as np\nbatch = np.array([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])\nnormalized = (batch - batch.mean(axis=0)) / batch.std(axis=0)\nprint(normalized)\n```\n\n**输出:**\n```\narray([[-1.22474487, -1.22474487],\n       [ 0.        ,  0.        ],\n       [ 1.22474487,  1.22474487]])\n```\n在上述示例中，`batch.mean(axis=0)` 和 `batch.std(axis=0)` 都是包含两个元素的 1D 数组：分别是按列计算的均值和标准差。因此，对于 2D 矩阵中的每个元素，标准化包括减去该元素所属列的均值并除以其标准差。\n\n### 3. 矩阵乘法 (Matrix Multiplication)\n\n矩阵乘法是许多机器学习模型（包括经典模型和基于神经网络的模型）应用线性变换的核心，例如将信息流与两个连续全连接神经元层之间的连接权重相乘。即使在像 Transformer 这样的大型模型中，这种操作也随处可见，它们是语言模型的基础。以下是 NumPy 中模拟两个各包含两个神经元的全连接层的工作方式：\n\n```python\nimport numpy as np\nweights = np.array([[0.2, 0.8], [0.5, 0.1]])\ninputs = np.array([1.0, 2.0])\nbias = np.array([0.1, -0.1])\noutput = np.dot(weights, inputs) + bias\nprint(np.round(output, 2))\n```\n\n**输出:**\n```\n[1.9 0.6]\n```\n\n### 4. 通过掩码进行高级行选择 (Advanced Row Selection by Masking)\n\n当需要根据某些外部条件选择数据集中的特定实例时，此功能非常有用，例如，通过布尔掩码（一个由“真”或“假”元素组成的 1D 数组）来决定过滤 2D 数据集中的哪些行。以下示例使用一个掩码来选择数据集矩阵中的第二个和第三个实例：\n\n```python\nimport numpy as np\ndata = np.array([[1, 2], [3, 4], [5, 6]])\nlabels = np.array([0, 1, 1])\nfiltered = data[labels == 1]\nprint(filtered)\n```\n\n**输出:**\n```\n[[3 4]\n [5 6]]\n```\n\n### 5. ArgMax 用于概率分类预测 (ArgMax for Probabilistic Class Prediction)\n\n几种分类模型使用名为 Softmax 的函数来计算实例属于某个类别的归一化概率（在多个互斥类别中）。在通过顺序应用下一个词预测问题来逐词生成文本响应的语言模型中，这种 Softmax 原理变得极其复杂，需要计算词汇表中每个词（通常是人类语言）作为下一个词的概率。多亏了 `np.argmax`，找到概率最高的词（或通常来说，类别）变得异常容易。此示例演示了此函数在两个实例中的应用，其中属于三个可能类别的概率存储在 `logits` 矩阵中：\n\n```python\nimport numpy as np\nlogits = np.array([[0.2, 0.8, 0.0], [0.5, 0.3, 0.2]])\npredictions = np.argmax(logits, axis=1)\nprint(predictions)\n```\n\n**输出:**\n```\n[1 0]\n```\n输出是为每个实例选择的类别（类别默认从 0 到 2 索引）。\n\n### 6. 使用 Einsum 进行自定义张量操作 (Custom Tensor Operations with Einsum)\n\nEinsum（爱因斯坦求和的缩写）是 NumPy 中一个有趣的函数。乍一看可能觉得微不足道，但这个函数通过特定的符号表示法来表达数组上的代数运算，如点积、外积，甚至 Transformer 注意力机制，使其易于理解。它还可以方便地在深度学习架构中构建自定义层。为了初步了解此函数，我们来看这个示例，它使用等效的“einsum”表达式来表示矩阵乘法的应用：`'ij,jk->ik'`。\n\n```python\nimport numpy as np\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\nresult = np.einsum('ij,jk->ik', A, B)\nprint(result)\n```\n\n**输出:**\n```\n[[19 22]\n [43 50]]\n```\n如果这些函数背后的机制不像真正的忍术，那还有什么像呢？有关此函数工作原理的更多信息，请查阅 NumPy 文档页面。\n\n## 结论\n\n本文揭示了 Python 的 NumPy 库提供的六种引人入胜的“忍术技巧”策略，用于高效执行数组操作，这对于扩展需要对数据、模型权重等进行密集计算的自定义机器学习工作流非常有用。",
-      "shortSummary": "NumPy 是高性能机器学习的关键库，通过其高效的数组操作优化了数值计算。文章介绍了六种核心“忍术”技巧：向量化操作（如 ReLU）、广播机制（如数据标准化）、矩阵乘法、通过掩码进行高级行选择、使用 `np.argmax` 进行概率分类预测，以及利用 `np.einsum` 进行自定义张量操作。这些功能使 NumPy 能够显著提升机器学习工作流的计算效率和性能。",
-      "translated_title": "NumPy 忍术：掌握数组操作以实现高性能机器学习",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/r2k5UU1ZRqyC91TTOXMyyQ.webp",
-          "alt": "NumPy Ninjutsu: Mastering Array Operations for High-Performance Machine Learning",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Machine learning workflows typically involve plenty of numerical computations in the form of mathematical and algebraic operations upon data stored as large vectors, matrices, or even tensors &mdash; matrix counterparts with three or more dimensions."
-    },
-    {
-      "title": "10个简化特征工程的Python单行代码 (原标题: 10 Python One-Liners That Will Simplify Feature Engineering)",
-      "link": "https://machinelearningmastery.com/10-python-one-liners-that-will-simplify-feature-engineering/",
-      "pubDate": "Tue, 03 Jun 2025 12:00:59 +0000",
-      "isoDate": "2025-06-03T12:00:59.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "## 10个简化特征工程的Python单行代码\n\n![10 Python One-Liners That Will Simplify Feature Engineering](https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-10-python-one-liners-feat-engineering.png)\n\n### 引言\n\n特征工程是数据分析工作流中的关键环节，尤其在构建机器学习模型时。它涉及基于现有原始数据特征创建新特征，以提取更深层次的分析洞察并提升模型性能。本文介绍了10个实用的Python单行代码，旨在简化和优化特征工程及数据准备流程，使其高效且简洁。\n\n### 准备工作\n\n在开始之前，需要导入一些关键的Python库和模块，包括`pandas`、`numpy`以及来自`sklearn.preprocessing`、`sklearn.feature_selection`和`sklearn.decomposition`的类。文章使用了Scikit-learn数据集模块中公开可用的葡萄酒数据集（`wine`）和波士顿住房数据集（`boston`），并将其加载到Pandas数据框`df_wine`和`df_boston`中。\n\n### 10个Python单行代码\n\n以下是简化特征工程的10个实用单行代码：\n\n1.  **数值特征标准化（Z-score缩放）**\n    *   **目的**：当数值特征的取值范围或量级差异较大，且可能存在适度异常值时，标准化是一种常用的缩放方法。它将数值转换为均值为0、标准差为1的标准正态分布。\n    *   **工具**：Scikit-learn的`StandardScaler`类。\n    *   **示例**：`df_wine_std = pd.DataFrame(StandardScaler().fit_transform(df_wine.drop('target', axis=1)), columns=df_wine.columns[:-1])`\n\n2.  **最小-最大缩放**\n    *   **目的**：当特征值在实例间均匀变化时，最小-最大缩放（Min-Max Scaling）是一种合适的缩放方式，它将特征值归一化到[0,1]区间。\n    *   **工具**：Scikit-learn的`MinMaxScaler`类。\n    *   **示例**：`df_boston_scaled = pd.DataFrame(MinMaxScaler().fit_transform(df_boston.drop('MEDV', axis=1)), columns=df_boston.columns[:-1])`（`MEDV`是目标变量，被排除在外）。\n\n3.  **添加多项式特征**\n    *   **目的**：当数据呈现非线性关系时，添加多项式特征非常有用。它通过将原始特征提升到一定幂次以及创建特征间的交互项来生成新特征。\n    *   **工具**：Scikit-learn的`PolynomialFeatures`类。\n    *   **示例**：`df_interactions = pd.DataFrame(PolynomialFeatures(degree=2, include_bias=False).fit_transform(df_wine[['alcohol', 'malic_acid']]))`（基于“alcohol”和“malic_acid”创建了“alcohol^2”、“malic_acid^2”和“alcohol * malic_acid”）。\n\n4.  **独热编码分类变量**\n    *   **目的**：将一个包含“m”个可能值的分类变量转换为“m”个二进制（0或1）特征，每个特征表示一个类别的出现或不出现。这对于机器学习模型处理纯分类特征至关重要。\n    *   **工具**：Pandas的`get_dummies`函数。\n    *   **示例**：`df_boston_ohe = pd.get_dummies(df_boston.astype({'CHAS': 'category'}), columns=['CHAS'])`\n\n5.  **离散化连续变量**\n    *   **目的**：将连续数值变量离散化为若干等宽子区间或箱，常用于可视化，使图表更易理解，同时仍能捕捉“大局”。\n    *   **工具**：Pandas的`pd.qcut`函数。\n    *   **示例**：`df_wine['alcohol_bin'] = pd.qcut(df_wine['alcohol'], q=4, labels=False)`（将“alcohol”属性离散化为四个箱）。\n\n6.  **偏斜特征的对数变换**\n    *   **目的**：如果数值特征呈右偏或正偏（即由于少数过大值导致长尾），对数变换有助于将其缩放到更适合进一步分析的形式。\n    *   **工具**：Numpy的`np.log1p`函数。\n    *   **示例**：`df_wine['log_malic'] = np.log1p(df_wine['malic_acid'])`\n\n7.  **创建两个特征之间的比率**\n    *   **目的**：在数据分析和预处理中，创建两个语义相关特征的比率作为新特征是一种直接而常见的特征工程步骤。\n    *   **工具**：Pandas直接进行除法运算。\n    *   **示例**：`df_wine['alcohol_malic_ratio'] = df_wine['alcohol'] / df_wine['malic_acid']`\n\n8.  **移除低方差特征**\n    *   **目的**：识别并移除方差非常小的特征，因为它们对分析或机器学习模型的贡献很小，甚至可能使结果变差。\n    *   **工具**：Scikit-learn的`VarianceThreshold`类。\n    *   **示例**：`df_boston_high_var = pd.DataFrame(VarianceThreshold(threshold=0.1).fit_transform(df_boston.drop('MEDV', axis=1)))`（`MEDV`作为目标变量被手动移除）。\n\n9.  **乘法交互**\n    *   **目的**：通过将两个现有特征相乘来创建新特征，通常用于将多个信息综合为一个单一的分数。\n    *   **工具**：Pandas直接进行乘法运算。\n    *   **示例**：`df_wine['wine_quality'] = df_wine['alcohol'] * df_wine['color_intensity']`\n\n10. **跟踪异常值**\n    *   **目的**：在某些情况下，与其移除异常值，不如创建一个新特征来指示数据实例是否为异常值。\n    *   **方法**：手动应用四分位距（IQR）方法来识别潜在异常值。\n    *   **示例**：`df_boston['tax_outlier'] = ((df_boston['TAX'] < df_boston['TAX'].quantile(0.25) - 1.5 * (df_boston['TAX'].quantile(0.75) - df_boston['TAX'].quantile(0.25))) | (df_boston['TAX'] > df_boston['TAX'].quantile(0.75) + 1.5 * (df_boston['TAX'].quantile(0.75) - df_boston['TAX'].quantile(0.25)))).astype(int)`\n\n### 结论\n\n本文介绍了10个有效的Python单行代码，它们能够高效地执行各种特征工程步骤，从而将数据转化为适合进一步分析或构建机器学习模型的良好形式。",
-      "shortSummary": "本文介绍了10个实用的Python单行代码，旨在简化和加速特征工程流程。这些代码涵盖了多种关键任务，包括数值特征的标准化和最小-最大缩放、添加多项式特征、独热编码分类变量、离散化连续变量、对数变换偏斜特征、创建特征比率、移除低方差特征、乘法交互以及跟踪异常值。通过利用Pandas和Scikit-learn等库，这些单行代码能高效地准备数据，提升机器学习模型的性能。",
-      "translated_title": "10个简化特征工程的Python单行代码",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-10-python-one-liners-feat-engineering.png",
-          "alt": "10 Python One-Liners That Will Simplify Feature Engineering",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Feature engineering is a key process in most data analysis workflows, especially when constructing machine learning models."
-    },
-    {
-      "title": "语言模型中的词嵌入 (原标题: Word Embeddings in Language Models)",
-      "link": "https://machinelearningmastery.com/word-embeddings-in-language-models/",
-      "pubDate": "Mon, 02 Jun 2025 04:06:23 +0000",
-      "isoDate": "2025-06-02T04:06:23.000Z",
-      "creator": "Adrian Tam",
-      "summary": "## 语言模型中的词嵌入：核心概念与应用\n\n自然语言处理（NLP）领域随着词嵌入（Word Embeddings）的引入发生了巨大变革。在此之前，NLP主要依赖将词汇视为离散符号的基于规则的方法。词嵌入的出现使计算机能够通过向量空间表示来理解语言。\n\n![图片 1](https://machinelearningmastery.com/wp-content/uploads/2025/06/pexels-satoshi-3322920-scaled.jpg)\n\n### 1. 理解词嵌入\n\n词嵌入将词汇表示为连续空间中的密集向量，其中语义相似的词汇彼此靠近。其核心原则是：出现在相似上下文中的词汇应具有相似的向量表示。这类模型通常通过无监督学习进行训练，以学习训练语料库中的词汇共现模式。\n\n*   **Word2Vec**：由“Efficient Estimation of Word Representations in Vector Space”论文首次提出，开创了这一方法。它使用神经网络根据局部上下文预测词汇，并有两种变体：\n    *   **连续词袋模型（CBOW）**：根据上下文预测目标词。速度更快，适用于大型数据集。\n    *   **Skip-gram**：根据目标词预测上下文词。在小型数据集和稀有词方面表现更好。\n    Word2Vec通过展示词嵌入向量可以满足“国王 – 男人 + 女人 ≈ 女王”等方程，证明了计算机能够理解词汇间的语义关系。\n\n*   **GloVe (Global Vectors for Word Representation)**：通过构建和分解词汇共现矩阵来获取嵌入。它结合了全局矩阵分解方法（如潜在语义分析）和局部上下文窗口方法（如Word2Vec）的优点，捕获词汇的语义和句法关系。\n\n*   **FastText**：在Word2Vec的基础上进行了改进，通过学习字符n-gram的向量而非整个词汇的向量。这种方法捕获了子词信息，解决了词汇表外（OOV）问题，并为形态丰富的语言提供了更好的性能。\n\n*   **ELMo (Embeddings from Language Models)**：使用深度双向LSTM生成上下文相关的词向量。与之前的模型不同，ELMo的词向量不是固定的，而是根据上下文变化的。尽管在大语言模型出现后使用较少，但ELMo的“词义应依赖于上下文”的核心思想构成了所有现代语言模型的基础。\n\n### 2. 使用预训练词嵌入\n\n可以轻松使用流行库中提供的预训练词嵌入。例如，使用`gensim`库加载GloVe嵌入，可以查询相似词或进行词语类比（如“国王 + 女人 – 男人”得到“女王”）。这需要下载相应的预训练模型文件。\n\n### 3. 训练自定义词嵌入\n\n*   **使用Gensim训练Word2Vec**：`gensim`提供了简单的接口来训练自定义的Word2Vec模型。训练一个有用的嵌入需要一个大型语料库。训练时可配置向量维度（`vector_size`）、上下文窗口大小（`window`）、最小词频（`min_count`）和模型类型（`sg`，0为CBOW，1为Skip-gram）。\n\n*   **使用PyTorch从零开始训练Word2Vec**：可以利用PyTorch实现一个基本的Skip-gram模型。模型包含一个`nn.Embedding`层（即词嵌入矩阵）和一个`nn.Linear`层。训练过程涉及将词汇转换为索引，然后使用这些索引获取嵌入向量。同样，为了获得高质量的模型，需要更大的语料库和更多的训练周期。词汇到索引的映射表（如`vocab_to_idx`）需要与模型一同保存。\n\n### 4. 嵌入在Transformer模型中的应用\n\n现代语言模型（如BERT）广泛使用学习到的嵌入。BERT模型包含`BertEmbeddings`层，其中又包含`word_embeddings`、`position_embeddings`和`token_type_embeddings`。`word_embeddings`层是一个数值矩阵，其行索引对应于分词器（Tokenizer）分配的词元ID。当输入文本被分词为词元ID序列后，嵌入层会将每个词元ID替换为嵌入矩阵中对应的行向量，从而将词元ID序列转换为嵌入向量序列。\n\n![Building Transformer Models with Attention](https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png)\n\n### 总结\n\n词嵌入将词汇表示为连续空间中的密集向量，使语义相似的词汇彼此靠近。预训练词嵌入可通过流行库直接使用，同时也可以使用Gensim或PyTorch训练自定义词嵌入。现代Transformer模型（如BERT）通过`nn.Embedding`层利用学习到的嵌入。嵌入对于捕捉词汇间的语义关系至关重要，是理解和处理人类语言的基础。",
-      "shortSummary": "词嵌入通过将词汇转换为密集向量，彻底改变了自然语言处理。它们使计算机能够理解词汇间的语义关系，其中语义相似的词汇在向量空间中距离相近。Word2Vec、GloVe、FastText和ELMo是重要的词嵌入模型。现代语言模型（如Transformer）广泛使用这些学习到的嵌入，通常通过嵌入层将词元ID转换为向量。用户可以使用预训练嵌入，或利用Gensim和PyTorch训练自定义嵌入，这对于捕捉词汇语义至关重要。",
-      "translated_title": "语言模型中的词嵌入",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/pexels-satoshi-3322920-scaled.jpg",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png",
-          "alt": "Building Transformer Models with Attention",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "This post is divided into three parts; they are: • Understanding Word Embeddings • Using Pretrained Word Embeddings • Training Word2Vec with Gensim • Training Word2Vec with PyTorch • Embeddings in Transformer Models Word embeddings represent words as dense vectors in a continuous space, where semantically similar words are positioned close to each other."
     }
   ],
-  "lastUpdated": "2025-06-17T09:29:45.047Z"
+  "lastUpdated": "2025-06-18T09:31:46.338Z"
 }
