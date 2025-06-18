@@ -5,6 +5,130 @@
   "link": "https://appleinsider.com",
   "items": [
     {
+      "title": "OpenCore 和 Hackintosh 在苹果终止对 Intel Mac 的支持后遗憾地走向终结。 (原标题: OpenCore and Hackintosh are sadly dead after Apple ends Intel Mac support.)",
+      "link": "https://appleinsider.com/articles/25/06/17/opencore-and-hackintosh-are-sadly-dead-after-apple-ends-intel-mac-support",
+      "pubDate": "Tue, 17 Jun 2025 20:12:19 GMT",
+      "isoDate": "2025-06-17T20:12:19.000Z",
+      "creator": "Mike Wuerthele and Malcolm Owen",
+      "summary": "### 苹果终止 Intel Mac 支持对 OpenCore 和 Hackintosh 的影响\n\n苹果在 WWDC 2025 上宣布 macOS 26 Tahoe 将是最后一个支持 Intel Mac 的版本，此举对 OpenCore 和 Hackintosh 用户造成了巨大影响。未来的 macOS 版本将仅支持 Apple Silicon Mac 机型。\n\n#### 对旧款 Intel Mac 用户的影响\n\n*   **官方支持终止**：macOS Tahoe 之后，Intel Mac 将不再获得新的 macOS 版本更新。2020 年发布的最后一代 Intel Mac 将在 2026 年 9 月之后仅获得安全更新，且不保证所有修复。\n*   **OpenCore Legacy Patcher (OCLP)**：\n    *   **功能**：OCLP 允许旧款 Mac 运行官方不支持的最新 macOS 版本，延长了硬件的使用寿命。\n    *   **未来限制**：由于苹果将从代码库中完全移除 Intel 相关的元素（如 x86_64 内核和二进制文件），OCLP 将无法再通过打补丁的方式让 Intel Mac 运行 macOS Tahoe 之后的版本。\n    *   **当前价值**：OCLP 项目仍有生命力，未来一段时间内仍能帮助旧款 Mac 运行当前或较旧的 macOS 版本。\n    *   **社区反应**：OCLP 社区成员的反应是克制但失望的，他们普遍理解这是技术限制而非可规避的问题。\n    *   **技术挑战**：OCLP 迁移到 Apple Silicon 平台面临巨大挑战，因为苹果的 T2 安全芯片已经对 Intel Mac 上的 OCLP 功能造成干扰，而 Apple Silicon 的安全性更高。\n    *   **替代方案**：一些用户建议转向 Linux 作为未来的出路。\n\n![黑色的紧凑型电脑设备，带有苹果标志，放置在木质桌面上，周围有键盘、小型电子设备和柔和的环境照明。](https://photos5.appleinsider.com/gallery/64052-133315-63335-131614-000-lead-Mac-mini-2018-xl-xl.jpg)\n2018 款 Mac mini 是该系列中最后一款使用 Intel 处理器的机型。\n\n#### 对 Hackintosh 用户的影响\n\n*   **定义**：Hackintosh 指的是非苹果电脑但能够运行 macOS 的设备。\n*   **未来限制**：与 OCLP 类似，由于操作系统中 Intel 相关功能和代码的移除，Hackintosh 也将无法运行 macOS Tahoe 之后的未来版本。\n*   **潜在的模拟方案**：唯一勉强可行的替代方案是模拟 Apple Silicon 版本在 x86 架构上运行，但这会引入抽象层，严重影响性能，且不再是“裸机”运行。\n*   **社区反应**：Hackintosh 社区的反应与 OCLP 社区类似，普遍接受这是 Intel Mac 时代的终结。许多用户表示希望在支持尚存时享受它。\n*   **当前状态**：尽管消息发布不久，用户已经成功在 Hackintosh 上运行 macOS Tahoe 的测试版，社区仍在积极交流和寻求帮助。\n\n![银色电脑塔，侧面有穿孔，黑色苹果标志，银色把手，放置在白色桌面上，旁边有小盆栽、键盘和鼠标。](https://photos5.appleinsider.com/gallery/64052-133316-52497-104847-macpro-xl-xl.jpg)\nMac Pro 是苹果在 2023 年销售的最后一款基于 Intel 的 Mac。\n\n#### 时代的终结\n\n*   **个人经历**：文章作者之一曾是 Hackintosh 和 OCLP 的用户，享受将旧硬件保持更新的乐趣。\n*   **影响**：虽然 Intel Mac 不会立即“死亡”，但它们将无法获得未来的更新，最终会像 Power PC 一样逐渐退出历史舞台。\n*   **总结**：Hackintosh 和 OCLP 将被怀念，这标志着一个时代的结束。",
+      "shortSummary": "苹果宣布 macOS Tahoe 将是最后一个支持 Intel Mac 的版本，标志着 OpenCore 和 Hackintosh 时代的终结。由于未来 macOS 将移除所有 Intel 相关代码，OpenCore 无法再让旧款 Intel Mac 运行新系统，Hackintosh 也将无法在非苹果硬件上运行 macOS。社区对此表示理解和失望，但仍享受现有支持。这预示着一个时代的落幕，Intel Mac 最终将停止更新。",
+      "translated_title": "OpenCore 和 Hackintosh 在苹果终止对 Intel Mac 的支持后遗憾地走向终结。",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64052-133315-63335-131614-000-lead-Mac-mini-2018-xl-xl.jpg",
+          "alt": "Black compact computer device with Apple logo on a wooden desk, surrounded by a keyboard, small electronic devices, and soft ambient lighting.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64052-133316-52497-104847-macpro-xl-xl.jpg",
+          "alt": "Silver computer tower with a perforated side, black apple logo, silver handles, on a white desk with a small plant, keyboard, and mouse.",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果再次在上诉中免于支付Optis无线专利案3亿美元的判决 (原标题: Apple again escapes $300M Optis wireless patents verdict on appeal)",
+      "link": "https://appleinsider.com/articles/25/06/17/apple-again-escapes-300m-optis-wireless-patents-verdict-on-appeal",
+      "pubDate": "Tue, 17 Jun 2025 19:46:00 GMT",
+      "isoDate": "2025-06-17T19:46:00.000Z",
+      "creator": "Malcolm Owen",
+      "summary": "## 苹果再次免于支付Optis无线专利案3亿美元赔偿金\n\n### 案件背景\n\n*   苹果公司自2019年起便卷入与Optis Wireless Technology的专利诉讼，争议焦点是数项4G LTE专利。\n*   在此案中，苹果曾两次败诉，但均通过上诉成功规避了巨额赔偿。\n\n### 最新进展：美国上诉法院裁决\n\n*   2023年6月16日，美国联邦上诉法院推翻了2022年要求苹果向Optis支付3亿美元赔偿的裁决。\n*   该案件将被发回德克萨斯州法院进行新的审判。\n\n### 裁决原因：程序性问题\n\n*   三名法官小组指出，问题出在美国地区法官Rodney Gilstrap设置的陪审团裁决表格上。\n*   苹果和Optis都曾请求将表格拆分，以便陪审团能就每项专利是否侵权单独提问。\n*   然而，Gilstrap法官只提出了一个单一问题，询问苹果是否侵犯了这些专利。\n*   上诉法院认为，这种单一问题形式剥夺了苹果就每项法律主张获得裁决的权利，因为单一答案适用于所有主张。\n*   因此，法院指示撤销损害赔偿重审判决，并要求进行新的审判。\n\n### Optis的回应\n\n*   Optis向AppleInsider表示，他们对法院将为Optis的关键专利（这些专利使数百万苹果设备实现高速连接）确定公平赔偿充满信心。\n*   Optis强调，此次裁决并未挑战苹果侵犯Optis专利的基本事实，并允许就损害赔偿进行新的审判。\n*   美国联邦巡回上诉法院也未发现任何专利无效。\n\n### 苹果的回应\n\n*   截至目前，苹果公司尚未对此事发表评论。\n\n### 历史回顾\n\n*   **2019年：** Optis对苹果提起诉讼，涉及七项与LTE蜂窝标准相关的专利。\n*   **2020年：** 苹果首次败诉，被判向Optis支付5.062亿美元。\n*   **2021年4月：** 苹果成功获得重审，理由是原判决存在“严重疑问”，陪审团未被告知FRAND条款。\n*   **2022年5月：** 重审将赔偿金额降至3亿美元，但该判决现已被联邦上诉法院撤销。\n*   新的重审日期尚未确定。\n\n### 英国法院的裁决（相关但独立）\n\n*   2023年5月，英国上诉法院裁定，苹果向Optis支付的5643万美元加利息过低。\n*   法院要求苹果向Optis支付5.02亿美元。",
+      "shortSummary": "苹果公司再次在美国Optis无线专利诉讼中避免了支付3亿美元的赔偿金。美国联邦上诉法院因陪审团裁决表格的程序性问题推翻了此前的判决，要求进行新的审判。这是苹果第二次成功规避在该案中的巨额赔偿。Optis表示对获得公平赔偿仍充满信心。此外，英国上诉法院近期裁定苹果需向Optis支付5.02亿美元。",
+      "translated_title": "苹果再次在上诉中免于支付Optis无线专利案3亿美元的判决",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "Satechi 最新 SSD 外壳带来小巧包装中的强劲速度 (原标题: Satechi's latest SSD enclosure brings serious speed in a small package)",
+      "link": "https://appleinsider.com/articles/25/06/17/satechis-latest-ssd-enclosure-brings-serious-speed-in-a-small-package",
+      "pubDate": "Tue, 17 Jun 2025 16:12:00 GMT",
+      "isoDate": "2025-06-17T16:12:00.000Z",
+      "creator": "Amber Neely",
+      "summary": "Satechi Ultra-Slim USB4 NVMe SSD 外壳：小巧高性能存储解决方案\n\nSatechi 最新推出的 Ultra-Slim USB4 NVMe SSD 外壳是一款专为移动用户设计的高性能存储解决方案，旨在提供快速、大容量的便携式存储体验。\n\n*   **主要特点：**\n    *   **广泛兼容性：** 支持 2230、2242、2260 和 2280 尺寸的 NVMe SSD。\n    *   **存储容量：** 提供从 1TB 到高达 8TB 的可扩展存储容量，非常适合需要大量存储空间的用户。\n    *   **极速传输：** 采用 USB4 接口，传输速度高达 40Gbps，比 USB 3.0 快约八倍。\n        *   **性能示例：** 理论上可在 40 秒内传输十部 4K 电影，或在约 30 秒内传输 4,000 张高分辨率图片。\n    *   **多功能用途：**\n        *   是需要随身携带大量数据用户的理想选择。\n        *   对于游戏玩家而言，搭配足够大的 SSD 可轻松存储多款 AAA 游戏。\n    *   **设计与材质：**\n        *   采用铝制外壳，设计时尚，与 Apple 设备（如 MacBook、iPad）相得益彰，也能很好地搭配其他 Satechi 产品。\n        *   特别适合与 M4 Mac Mini 搭配使用，可直接放置在其顶部。\n        *   内置隐藏式线缆收纳仓，确保线缆安全整洁。\n        *   配备散热孔，有助于最大限度地提高性能并减少热节流。\n    *   **设备兼容性：** 兼容几乎所有支持外置 SSD 的 USB-C 设备，包括 PC、MacBook 和 iPad。\n\n*   **价格与购买：**\n    *   该产品售价为 119.99 美元。\n    *   可在 Satechi 官方商店或亚马逊购买。",
+      "shortSummary": "Satechi 推出新款 Ultra-Slim USB4 NVMe SSD 外壳，为移动用户提供小巧高性能存储方案。它支持 1TB 至 8TB SSD，通过 USB4 实现高达 40Gbps 的传输速度，比 USB 3.0 快八倍。铝制外壳设计时尚，兼容 USB-C 设备，并配备散热和线缆管理功能。售价 119.99 美元，适合需要快速、大容量便携存储的用户和游戏玩家。",
+      "translated_title": "Satechi 最新 SSD 外壳带来小巧包装中的强劲速度",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "亚马逊宣布2025年Prime Day日期及促销重大变化 (原标题: Amazon announces Prime Day 2025 dates and big change to the sale)",
+      "link": "https://appleinsider.com/articles/25/06/17/amazon-announces-prime-day-2025-dates-and-big-change-to-the-sale",
+      "pubDate": "Tue, 17 Jun 2025 14:40:28 GMT",
+      "isoDate": "2025-06-17T14:40:28.000Z",
+      "creator": "Christine McKee",
+      "summary": "亚马逊已正式宣布2025年Prime Day购物活动将于7月8日拉开帷幕。此次活动将迎来一项重大调整，即促销期将从往年的两天延长至四天。\n\n**提前优惠活动**\n\n尽管Prime Day距离现在还有三周时间，但消费者已经可以享受到多项大幅折扣，尤其是在Apple产品和相关电子设备方面，包括集线器、家庭安全摄像头等。\n\n*   **优惠获取途径：**\n    *   亚马逊官方Prime Day页面\n    *   Apple产品特定优惠可在价格指南中查找\n\n**部分精选早期Prime Day优惠一览：**\n\n*   **AirTag四件装：** $74.99（优惠$25）\n*   **Apple Watch Series 10 (42毫米铝制表壳, GPS)：** $299（优惠$100）\n*   **AirPods 4（无主动降噪）：** $99（优惠$30）\n*   **Beats Studio Pro头戴式耳机：** $179.95（49%折扣）\n*   **Mac mini M4 (10核CPU, 10核GPU, 16GB内存, 256GB存储)：** $499（优惠$100）\n*   **11英寸iPad Air M2 (512GB, Wi-Fi + 蜂窝网络, 深空灰色)：** $699（优惠$350）\n*   **13英寸MacBook Air M4 (16GB内存, 256GB存储)：** $849（优惠$150）\n*   **15英寸MacBook Air M4 (16GB内存, 256GB存储)：** $1,049（优惠$150）\n*   **14英寸MacBook Pro M4 (10核CPU, 10核GPU, 16GB内存, 512GB存储)：** $1,429（优惠$170）\n*   **16英寸MacBook Pro M4 Max (16核CPU, 40核GPU, 48GB内存, 1TB存储)：** $3,599（优惠$400）",
+      "shortSummary": "亚马逊宣布2025年Prime Day将于7月8日开始，并将促销活动从两天延长至四天。尽管正式活动尚未开始，但目前已有多项Apple产品及相关电子设备提供大幅提前折扣，最高可达400美元。消费者可在亚马逊官方页面及价格指南中查看这些优惠。",
+      "translated_title": "亚马逊宣布2025年Prime Day日期及促销重大变化",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果在人工智能领域可能看似迟缓，但其目标与众不同 (原标题: Apple may look late to AI but it's aiming for something different)",
+      "link": "https://appleinsider.com/articles/25/06/17/apple-may-look-late-to-ai-but-its-aiming-for-something-different",
+      "pubDate": "Tue, 17 Jun 2025 14:25:47 GMT",
+      "isoDate": "2025-06-17T14:25:47.000Z",
+      "creator": "Andrew Orr",
+      "summary": "# 苹果在AI领域的独特策略\n\n## 苹果的AI方法与众不同\n\n在其他科技公司急于通过大胆承诺和参差不齐的结果主导人工智能时，苹果正在构建一种更慢、更安静、更持久的AI系统。文章指出，苹果的策略与众不同，它不追求快速推出，而是注重长期价值和用户体验。\n\n## Apple Intelligence的初步体验\n\n*   **Shortcuts中的新功能**：作者通过iOS 26中新的Shortcuts动作测试了Apple Intelligence。尽管该功能在WWDC 2025（注：文章中提及的年份）主题演讲中未受太多关注，但它允许用户直接访问苹果的大型语言模型（LLM），可以选择设备上的小型版本或在苹果私有计算环境中运行的更强大的云模型。这意味着用户可以像与ChatGPT或Claude对话一样与苹果的AI互动。\n*   **模型行为与对齐测试**：尽管苹果软件工程高级副总裁Craig Federighi和全球营销高级副总裁Greg Joswiak表示苹果无意构建聊天机器人，但Shortcuts中的新模型动作有时确实像一个精简的聊天机器人。在测试中，Apple Intelligence在基本对齐方面表现良好，即遵循人类道德规范和安全准则，例如拒绝生成虚假医生证明。然而，它可以通过虚构场景被“欺骗”，但这种现象并非苹果AI独有。\n*   **LLM的本质与挑战**：大型语言模型不像传统软件那样从数据库检索已知答案，而是根据训练模式生成看似合理的响应。它们可能同时具有说服力和错误性。苹果无法避免这一技术固有的问题，但可以控制系统如何使用、在哪里运行以及用户最可能遇到的错误类型。\n\n## 苹果为何步履缓慢\n\n*   **市场压力与Siri的局限**：公司和股东都在争夺生成式AI的市场份额，急于向华尔街证明其业绩增长。作者推测，这可能是苹果在功能尚未完全成熟时就宣布其AI特性的原因。Siri最初并非AI，而是一个基于规则的语音界面，其局限性在于无法解析请求时会将用户踢到Safari，这在用户期望较低时尚可接受。\n*   **生成式AI带来的哲学飞跃**：Apple Intelligence代表着一个更不可预测的飞跃。它使用基于大量文本训练的生成模型，而非预设响应，这带来了灵活性但也伴随着风险。对于像苹果这样重视控制和可预测性的公司而言，这在哲学上是一个巨大的转变，因为生成式AI更难沙盒化、更难测试，也几乎不可能保证一致的答案。\n\n![iPad screen displaying a script editing app with an error message reading 'The action could not run for the request provided. Please revise the request and try again.'](https://photos5.appleinsider.com/gallery/64039-133309-IMG_0354-3-xl.jpg)\n\n## 苹果的押注：Agentic AI (AI 2.0)\n\n*   **当前功能与实用性**：目前，Apple Intelligence能够重写电子邮件、总结通知、从文档中提取上下文，并与日历、Safari和备忘录等应用集成。这些功能虽然不引人注目，但非常实用，符合苹果只在技术能改善日常任务时才发布的模式。Apple Intelligence旨在融入背景，在用户需要时才出现，而非炫耀。\n*   **跳过“AI 1.0”：不追求聊天机器人**：苹果正在完全跳过第一代消费级AI，即“AI 1.0”——那些能对话、听起来很智能并试图回答任何问题的聊天机器人。作者认为这种形式的AI混乱、难以信任且运行成本高昂。苹果认为用户真正想要的是“帮助”，而不是一个聊天机器人。\n*   **Agentic AI的未来愿景**：Agentic AI，或称“AI 2.0”，是生成式AI领域的下一个目标。代理工具（Agents）是能够采取行动而非仅仅进行对话的工具。这正是苹果在WWDC 2024（注：文章中提及的年份）上“演示”的内容，预示着AI将更像一个功能而非产品。\n\n![Tablet displaying a chatbot interface with a conversation about recovering an iPhone passcode. Various app icons are visible on the right sidebar.](https://photos5.appleinsider.com/gallery/64039-133310-IMG_0354-xl.jpg)\n\n## 苹果的战略优势\n\n*   **品牌忠诚度与现金储备**：苹果拥有近乎文化层面的品牌忠诚度，数百万用户相信苹果最终会把事情做好，这给了公司从容不迫的空间。其次，苹果拥有庞大的现金储备，足以熬过任何炒作周期。苹果不需要赢得新一轮技术竞赛的开局，它只需要在尘埃落定后依然屹立不倒。\n\n## “繁荣”AI市场的假象\n\n*   **对“落后”论的质疑**：一些分析师坚称苹果在AI方面落后，但作者质疑“落后”到底是指什么——是落后于那些没有商业模式的半成品聊天机器人竞赛吗？苹果不追求参与度指标或演示炒作，它正在构建人们真正会使用的工具。如果从外部看起来缓慢，那可能意味着苹果正在认真思考。\n*   **苹果的“迟到”哲学**：苹果总是“迟到”。iPhone不是第一款智能手机，iPad不是第一款平板电脑，Apple Watch进入可穿戴设备市场也远晚于Fitbit。但在每个案例中，苹果都等待、观察，并构建出真正有意义的产品。\n*   **AI市场的真实状况**：目前并没有真正的AI市场，只有投资。OpenAI、微软、谷歌、亚马逊和Anthropic正在投入数十亿美元用于训练和推理基础设施，并发布了能够生成文本、图像、音频和代码的工具。然而，这些工具尚未成为盈利产品。OpenAI的ChatGPT在2023年实现了快速增长，近期数据显示每周用户超过4亿，但这主要通过微软集成或免费增值模式实现，高兴趣不等于高收入。OpenAI甚至乐于免费接入Apple Intelligence以获得曝光。文章总结道，AI不太可能消失，但苹果并未失败，也并非“迟到”，因为根本就没有“游戏”。一些人只是相信了股票分析师和AI公司CEO为炒作股东和投资者而散布的“胡言乱语”。",
+      "shortSummary": "苹果在AI领域采取了与众不同的策略，不急于推出半成品，而是专注于构建更持久、实用的工具。其Apple Intelligence通过Shortcuts提供LLM访问，注重基本对齐和日常任务改进，而非成为聊天机器人。苹果跳过“AI 1.0”，押注“AI 2.0”（Agentic AI），即能采取行动的智能工具。凭借强大的品牌忠诚度和资金储备，苹果有能力从容布局。文章指出，当前AI市场的“繁荣”更多是投资炒作，苹果并非“迟到”，而是坚持其“后发制人”的策略，旨在提供真正有价值的产品。",
+      "translated_title": "苹果在人工智能领域可能看似迟缓，但其目标与众不同",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64039-133309-IMG_0354-3-xl.jpg",
+          "alt": "iPad screen displaying a script editing app with an error message reading 'The action could not run for the request provided. Please revise the request and try again.'",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64039-133310-IMG_0354-xl.jpg",
+          "alt": "Tablet displaying a chatbot interface with a conversation about recovering an iPhone passcode. Various app icons are visible on the right sidebar.",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果返校季促销回归，但有更好的优惠 (原标题: Apple's Back to School sale returns, but there are better deals)",
+      "link": "https://appleinsider.com/articles/25/06/17/apples-back-to-school-sale-returns-but-there-are-better-deals",
+      "pubDate": "Tue, 17 Jun 2025 13:51:40 GMT",
+      "isoDate": "2025-06-17T13:51:40.000Z",
+      "creator": "Malcolm Owen",
+      "summary": "# 苹果返校季促销概览\n\n苹果一年一度的返校季促销活动已在美国启动，面向高等教育用户。虽然此次促销提供了部分免费或折扣配件，但消费者仍应考虑其他零售商可能提供的更优惠价格。\n\n## 促销内容与变化\n\n与2024年提供礼品卡不同，2025年的返校季促销改为提供精选配件。这些配件根据产品系列不同，有些是完全免费赠送，而另一些则需要支付额外费用才能获得，例如AirPods Pro 2和iPad妙控键盘等更昂贵的配件，苹果仅承担部分价值，消费者需补足差价。\n\n## 符合条件的产品\n\n此次促销适用于苹果产品目录中的五类特定产品：\n*   iPad Air (11英寸和13英寸)\n*   iPad Pro (11英寸和13英寸)\n*   MacBook Air (13英寸和15英寸)\n*   MacBook Pro (14英寸和16英寸)\n*   iMac\n\n## 配件优惠详情\n\n### iMac 配件：\n*   带主动降噪功能的AirPods 4\n*   AirPods Pro 2 (需支付70美元)\n\n### MacBook 配件：\n*   带主动降噪功能的AirPods 4\n*   AirPods Pro 2 (需支付70美元)\n*   妙控鼠标 (Magic Mouse)\n*   妙控板 (Magic Trackpad)\n*   带触控ID的妙控键盘 (Magic Keyboard with Touch ID)\n\n### iPad 配件：\n*   Apple Pencil Pro\n*   AirPods 4\n*   带主动降噪功能的AirPods 4 (需支付50美元)\n*   AirPods Pro 2 (需支付120美元)\n*   11英寸iPad Air妙控键盘 (需支付130美元)\n*   13英寸iPad Air妙控键盘 (需支付180美元)\n*   11英寸iPad Pro妙控键盘 (需支付160美元)\n*   13英寸iPad Pro妙控键盘 (需支付210美元)\n\n## 其他优惠\n\n除了配件，符合条件的学生还可以享受Mac或iPad的教育优惠价格，以及购买AppleCare+保护计划时最高10%的折扣。\n\n## 优惠价值评估\n\n2025年的返校季促销对于那些原本就计划购买这些配件的用户来说，确实能节省一笔钱。然而，这种捆绑销售模式也可能诱导消费者为了获得更高阶的配件而花费更多，从而抵消了教育优惠带来的部分节省。\n\n## 其他零售商的更优选择\n\n如果消费者对捆绑的配件不感兴趣，或者希望最大化硬件本身的折扣，那么通过其他零售商往往能找到更优惠的价格。例如：\n\n*   **iPad Air：** 苹果教育商店11英寸iPad Air起价549美元，13英寸起价749美元，比零售价节省50美元。而亚马逊上，128GB 13英寸M3 iPad Air (Wi-Fi版) 仅售699美元，11英寸版本售499美元，两者均比零售价节省100美元，比苹果的教育优惠价还低50美元。\n*   **13英寸MacBook Air (M4)：** 苹果教育商店中，最低配的13英寸M4 MacBook Air (10核CPU/8核GPU, 16GB内存, 256GB存储) 售价899美元，比零售价低100美元。然而，在亚马逊、B&H Photo或Best Buy等零售商处，同款机型仅售849美元，节省150美元，比苹果的优惠多出50美元。\n\n## 总结\n\n苹果的返校季促销对于那些希望同时购买硬件和官方配件的用户来说，仍是一个不错的选择。但如果消费者主要目标是最小化整体支出，那么通过零售合作伙伴购买通常能获得更大幅度的优惠。",
+      "shortSummary": "苹果返校季促销回归，为符合条件的Mac和iPad提供免费或折扣配件，并享受教育价格。然而，与2024年的礼品卡不同，今年是配件捆绑。尽管有优惠，但第三方零售商（如亚马逊）通常能提供更大幅度的硬件折扣，甚至比苹果的教育优惠更低。因此，若主要目标是节省硬件费用，建议比较其他零售商；若需官方配件，苹果促销仍有价值。",
+      "translated_title": "苹果返校季促销回归，但有更好的优惠",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "Adobe Firefly 新增移动应用、新AI模型和情绪板 (原标题: Adobe Firefly adds mobile app, new AI models & mood boards)",
+      "link": "https://appleinsider.com/articles/25/06/17/adobe-firefly-adds-mobile-app-new-ai-models-mood-boards",
+      "pubDate": "Tue, 17 Jun 2025 13:00:37 GMT",
+      "isoDate": "2025-06-17T13:00:37.000Z",
+      "creator": "Andrew Orr",
+      "summary": "## Adobe Firefly 平台重大更新\n\nAdobe 的 Firefly 平台近期进行了重大升级，新增了移动应用程序、对更多生成式 AI 模型的支持，以及增强的协作构思工具。\n\n### Firefly 移动应用\n\n*   **可用性：** Firefly 现已推出适用于 iOS 和 Android 设备的移动应用程序。\n*   **核心功能：** 允许用户通过文本提示生成和编辑图像或视频。\n*   **具体特性：**\n    *   图像到视频生成\n    *   对象移除\n    *   背景扩展\n    *   直接使用 AI 工具进行编辑，例如“生成式填充”（Generative Fill）和“生成式扩展”（Generative Expand）。\n*   **模型灵活性：** 用户可以在 Adobe 自己的模型与来自 OpenAI 和 Google 等提供商的第三方模型之间自由切换。\n*   **工作流程集成：** 在移动应用中完成的工作会自动同步到 Adobe Creative Cloud，使用户可以在手机上开始创作，然后在 Photoshop 或 Premiere Pro 等桌面应用程序中继续。\n*   **战略意义：** 此次移动应用的发布使 Firefly 更紧密地与 Adobe 其他移动工具（如 Lightroom 和 Adobe Express）整合。\n\n### Firefly Boards（情绪板）\n\n*   **状态：** Firefly Boards 已进入公开测试阶段。\n*   **目的：** 该界面旨在让创意团队能够协作生成和混编图像及视频片段。\n*   **模型支持：** 它不仅利用 Adobe 的 Firefly 模型，还集成了来自 Luma AI、Pika、Google 和 OpenAI 等外部开发者的模型。\n*   **创新点：** 将视频整合到情绪板流程中，旨在使早期构思阶段更具灵活性。\n*   **工具集：** Boards 包含对话式编辑工具、图像优化和文本到视频生成功能。\n\n![数字设计工具示例](https://photos5.appleinsider.com/gallery/64043-133296-Image-xl.jpg)\n\n### 平台表现与内容凭证\n\n*   **用户生成资产：** Adobe 表示，创作者已使用 Firefly 工具生成了超过 240 亿个资产。\n*   **业务增长：** 公司声称，上一季度付费订阅和新用户注册均增长了 30%，尽管未披露具体用户数量。\n*   **知识产权保护：** 为应对行业对 AI 生成内容和知识产权的担忧，Adobe 继续在 Firefly 输出中嵌入“内容凭证”（Content Credentials）。这些元数据标签可指示给定资产是使用 Adobe 自己的模型还是第三方模型生成的。\n\n### 可用性与定价\n\n*   **Firefly 移动应用：** 现已通过 Apple App Store 和 Google Play 提供。\n*   **Firefly Boards：** 可通过 Firefly 网络应用访问其测试版。\n*   **定价：** 取决于计划类型，通过 Creative Cloud Pro 订阅可获得完整集成。",
+      "shortSummary": "Adobe Firefly 平台迎来重大更新，推出移动应用（iOS/Android），支持用户通过文本提示生成和编辑图像与视频。该应用可使用Adobe及第三方AI模型（如OpenAI、Google），并与Creative Cloud同步。此外，Firefly Boards协作情绪板进入公测，支持团队共同构思图像和视频。Adobe还继续嵌入“内容凭证”以表明内容来源。这些更新旨在提升Firefly的易用性、协作性和模型多样性。",
+      "translated_title": "Adobe Firefly 新增移动应用、新AI模型和情绪板",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64043-133296-Image-xl.jpg",
+          "alt": "Two examples of digital design tools: a vibrant room with a yellow chair, and a video of an origami fox transforming into a tiger.",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
       "title": "苹果使用iPhone部件为电影《F1》制作定制摄影机 (原标题: Apple used iPhone parts to make a custom movie camera for 'F1')",
       "link": "https://appleinsider.com/articles/25/06/17/apple-used-iphone-parts-to-make-a-custom-movie-camera-for-f1",
       "pubDate": "Tue, 17 Jun 2025 12:01:25 GMT",
@@ -258,6 +382,19 @@
       "content": ""
     },
     {
+      "title": "Apple Watch 13 或在2027年获得血糖监测功能 (原标题: Apple Watch 13 may gain blood sugar monitoring in 2027)",
+      "link": "https://appleinsider.com/articles/25/06/16/apple-watch-13-may-gain-blood-sugar-monitoring-in-2027",
+      "pubDate": "Mon, 16 Jun 2025 12:52:40 GMT",
+      "isoDate": "2025-06-16T12:52:40.000Z",
+      "creator": "William Gallagher",
+      "summary": "### Apple Watch 13 血糖监测功能展望\n\n根据最新传闻，Apple Watch 13 有望在2027年首次引入血糖监测功能。这一功能是苹果公司多年来一直在研发的重点健康特性。\n\n*   **历史背景与早期传闻**\n    *   早在2021年Apple Watch Series 7发布时，就有报道称苹果已在开发血糖监测系统，并即将推出。然而，该功能并未如期发布。\n    *   到2024年，据称苹果正在测试一款Apple Watch应用程序，用于健康数据收集研究，而非面向公众发布。\n\n*   **分析师预测**\n    *   分析师Jeff Pu近日宣布，血糖监测将是2027年Apple Watch Series 13的关键功能。\n    *   他推测该产品可能被命名为“Apple Watch featuring Blood Monitoring”，但未提供更多细节。\n    *   Pu的信息来源尚不明确，仅在社交媒体上列出了该功能的日期，未说明是否来自供应链消息。值得注意的是，Pu过往的报告有时准确，但也曾多次发布错误的发布时间表。\n\n*   **苹果在健康功能上的努力与挑战**\n    *   苹果一直致力于为Apple Watch增加健康功能，其中一项显著的成果是血氧水平监测。\n    *   然而，血氧监测技术在美国市场因专利纠纷目前已被禁用。\n\n*   **市场竞争**\n    *   苹果并非唯一一家尝试开发非侵入式血糖监测系统的公司。\n    *   例如，PreEvnt公司在2025年1月预展了一款通过呼吸分析工作的夹式设备，显示出该领域的激烈竞争。",
+      "shortSummary": "2027年发布的Apple Watch 13据传将首次配备血糖监测功能。分析师Jeff Pu预测这将是其关键特性。苹果多年来一直在研发此技术，但进展缓慢，且其血氧监测功能在美国因专利纠纷被禁用。同时，其他公司也在积极开发非侵入式血糖监测方案，预示着该领域的激烈竞争。",
+      "translated_title": "Apple Watch 13 或在2027年获得血糖监测功能",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
       "title": "苹果可能需要收购人工智能公司以提振Apple Intelligence (原标题: Apple may need to acquire AI firms to boost Apple Intelligence)",
       "link": "https://appleinsider.com/articles/25/06/16/apple-may-need-to-acquire-ai-firms-to-boost-apple-intelligence",
       "pubDate": "Mon, 16 Jun 2025 11:57:22 GMT",
@@ -447,206 +584,7 @@
       ],
       "contentSource": "完整文章",
       "content": ""
-    },
-    {
-      "title": "macOS Tahoe 中文件夹表情符号和自定义功能的工作原理 (原标题: How folder emoji & customization works in macOS Tahoe)",
-      "link": "https://appleinsider.com/inside/macos-tahoe/tips/how-folder-emoji-customization-works-in-macos-tahoe",
-      "pubDate": "Fri, 13 Jun 2025 16:04:01 GMT",
-      "isoDate": "2025-06-13T16:04:01.000Z",
-      "creator": "William Gallagher",
-      "summary": "macOS Tahoe 引入了更简便的文件夹自定义功能，用户现在可以轻松更改文件夹颜色或添加图标/表情符号，而无需进行复杂的设置。这项改进旨在帮助用户更直观地管理和识别文件。\n\n### 新版 macOS Tahoe 文件夹自定义功能\n\n#### 概述\n新功能主要包含两个核心元素：\n*   更改文件夹的颜色。\n*   为文件夹添加图标或表情符号。\n\n#### 自定义文件夹颜色\n1.  **选择文件夹**：首先选中您想要自定义的文件夹。\n2.  **右键点击**：在选中的文件夹上点击右键。\n3.  **选择颜色标签**：在弹出的菜单中，选择一排彩色圆圈中的任意一个颜色标签。\n\n**注意事项：**\n*   您可以点击多个颜色，但在 Mac 上，文件夹最终会显示您最后点击的颜色，同时会保留小点来指示所有使用过的颜色。这与 iPad 上的行为可能不一致（iPad 上可能会显示多个颜色点）。\n*   颜色标签右侧的“加号”按钮会显示所有标签列表，但目前只有颜色标签可以实际使用。通过搜索框输入颜色名称（例如“Blue”）的效果与直接点击蓝色圆圈相同。\n\n![Finder 窗口显示上下文菜单，包含打开、下载、自定义文件夹等选项，底部有颜色选择。](https://photos5.appleinsider.com/gallery/64015-133225-Step-1-xl.jpg)\n\n![文件浏览器显示一个红色标记为“Tax”的文件夹，打开了颜色和符号自定义菜单，左侧可见图标和收藏夹列表。](https://photos5.appleinsider.com/gallery/64015-133224-Step-2-xl.jpg)\n\n#### 自定义文件夹符号或表情符号\n1.  **选择文件夹**：选中您想要自定义的文件夹。\n2.  **右键点击**：在选中的文件夹上点击右键。\n3.  **选择“自定义文件夹...”**：在颜色标签下方选择此选项。\n4.  **选择符号或表情符号**：\n    *   从默认显示的符号列表中选择。\n    *   或点击右下角的“表情符号”按钮，然后选择您想要的表情符号。\n5.  **完成操作**：点击表情符号以外的桌面空白区域即可应用更改。\n\n**符号与表情符号的区别：**\n*   **外观**：符号看起来像是浮雕在文件夹上，而表情符号则像一个全彩贴纸。\n*   **选择限制**：每次只能选择一种类型（符号或表情符号）和一个图像。\n*   **搜索功能**：表情符号提供搜索框，方便查找；而符号列表很长，需要滚动查找。\n\n### 清除自定义设置\n如果您已经使用了新方法自定义了文件夹（设置了颜色或添加了符号），并且想要恢复默认状态或使用旧方法，您需要先清除当前设置：\n1.  **选择文件夹**：选中已自定义的文件夹。\n2.  **右键点击并选择“自定义文件夹...”**。\n3.  **点击“清除”按钮**：在弹出的窗口左下角点击“清除”按钮。\n\n清除后，文件夹将恢复其默认外观。\n\n### 旧版“获取信息”自定义方法\n即使有了新功能，旧的“获取信息”方法仍然有效，但前提是您没有使用新方法进行过自定义。此方法允许您将任何图像（例如应用程序图标）用作文件夹图标。\n\n**操作步骤（以 Pages 应用图标为例）：**\n1.  **选择源图像**：例如，选择 Pages 应用程序。\n2.  **获取信息**：按下 Command-I 或选择“文件”>“获取信息”。\n3.  **复制图像**：点击出现面板顶部的应用程序小图标，然后按下 Command-C 复制该图像。\n4.  **选择目标文件夹**：选中您想要更改图标的文件夹。\n5.  **获取文件夹信息**：对该文件夹执行 Command-I。\n6.  **粘贴图像**：点击其顶部的小图像，然后按下 Command-V 粘贴。\n\n文件夹会立即变为 Pages 应用程序的图像，或者您选择粘贴的任何其他图像。\n\n![Mac Finder 窗口显示“Pages”应用和“所有我的 Pages 文档”文件夹的文件信息，包括大小、版本、权限和文件夹位置。](https://photos5.appleinsider.com/gallery/64015-133226-Step-3-xl.jpg)\n\n### 功能价值与注意事项\n*   **价值**：这项功能的主要益处在于能够通过颜色或图标来标记重要文件夹（例如，红色表示重要，绿色表示进展顺利），从而帮助用户更快地找到所需内容，提高在 Mac 上查找文件的效率。\n*   **注意事项**：过度使用此功能（例如，使每个文件夹都不同）可能会适得其反，因为当所有文件夹都变得独特时，反而无法突出真正的重点。它并非一个巨大的生产力功能，但能持续提升文件查找的速度。",
-      "shortSummary": "macOS Tahoe 简化了文件夹自定义功能，用户现在可轻松更改文件夹颜色或添加表情符号/图标。通过右键菜单，可选择颜色标签或符号/表情符号，表情符号支持搜索。此外，旧的“获取信息”方法仍允许将任何图像设为文件夹图标。此功能有助于标记重要文件夹，提高查找效率，但过度使用会降低其突出效果。",
-      "translated_title": "macOS Tahoe 中文件夹表情符号和自定义功能的工作原理",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64015-133225-Step-1-xl.jpg",
-          "alt": "Computer screen showing a Finder window with a context menu open. The menu includes options like open, download, and customize folder, with color selection at the bottom.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64015-133224-Step-2-xl.jpg",
-          "alt": "Computer screen displaying a file explorer with a red folder labeled Tax, color and symbol customization menu open, icons, and list of favorite folders visible on the left.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64015-133226-Step-3-xl.jpg",
-          "alt": "Mac Finder window showing file information for 'Pages' app and 'All my Pages documents' folder. Includes details like size, version, permissions, and folder location.",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "克雷格·费德里吉称macOS会破坏iPad的独特之处 (原标题: Craig Federighi says macOS would ruin what makes the iPad special)",
-      "link": "https://appleinsider.com/articles/25/06/13/craig-federighi-says-macos-would-ruin-what-makes-the-ipad-special",
-      "pubDate": "Fri, 13 Jun 2025 15:51:24 GMT",
-      "isoDate": "2025-06-13T15:51:24.000Z",
-      "creator": "Andrew Orr",
-      "summary": "### 克雷格·费德里吉解释iPadOS与macOS保持独立的原因\n\n在WWDC 2025之后的一次新采访中，苹果软件主管克雷格·费德里吉（Craig Federighi）阐明了苹果为何坚持让iPadOS和macOS保持独立，尽管iPadOS 26为平板电脑带来了更多Mac般的特性。\n\n#### iPadOS 26 的新特性\n\n最新的iPadOS 26更新引入了多项旨在提升iPad生产力的功能，使其更接近Mac的使用体验，尤其对于高级用户而言：\n\n*   **浮动菜单栏**：提供更灵活的界面导航。\n*   **灵活的应用窗口**：允许用户更自由地管理和调整应用窗口。\n*   **支持更高级的键盘快捷键**：增强了键盘操作的效率。\n*   **后台任务支持**：费德里吉称其为iPad高级用户“有史以来最好的功能”。\n\n#### 平台分离的核心理念\n\n费德里吉强调，苹果的目标并非合并平台，而是：\n\n*   **保留iPad的简洁性**：让iPad对所有年龄段和技术水平的用户都易于上手，避免macOS的复杂性给他们带来困扰。\n*   **提供渐进式体验**：允许用户“按照自己的节奏”深入探索iPad的更多功能。\n*   **触控优先的设计**：iPad的成功在于其以触控为先、精简的设计。过快地添加完整的桌面功能可能会让那些看重易用性和清晰度的用户感到困惑。\n\n#### 硬件融合与软件差异\n\n尽管iPad现在也使用与Mac相同的M系列芯片，引发了用户关于iPad是否最终会双启动macOS的猜测，但苹果的立场很明确：\n\n*   “iPad是最好的触控电脑。”\n*   “Mac是最好的键盘和鼠标电脑。”\n*   硬件的融合并不意味着软件也应该相同，两者服务于不同的目的。\n\n#### 平台间的相互学习\n\n费德里吉承认，两个操作系统会相互借鉴，表示“两个平台可以从彼此身上学到很多东西，我们也将最好的想法应用到各自的平台中”。\n\n#### macOS触控支持的可能性\n\n费德里吉并未排除macOS未来支持触控输入的可能性。关于未来MacBook或可折叠iPad将搭载支持触控的macOS版本的传闻仍在流传。然而，目前苹果仍致力于其分离策略：iPad将继续获得高级生产力功能，而macOS则专注于键盘和指针的使用。\n\n![平板电脑在蓝色太阳镜旁的白色大理石桌面上显示苹果产品文章。](https://photos5.appleinsider.com/gallery/64016-133228-IMG_1849-xl.jpg)",
-      "shortSummary": "苹果软件主管克雷格·费德里吉解释了iPadOS和macOS为何保持独立。他指出，尽管iPadOS 26引入了更多Mac般的功能，但苹果旨在保留iPad的简洁性和触控优先设计，使其对所有用户都易于上手。费德里吉强调iPad是最佳触控电脑，Mac是最佳键鼠电脑，硬件融合不代表软件需合并。苹果致力于提供独特体验，同时允许两平台相互借鉴。",
-      "translated_title": "克雷格·费德里吉称macOS会破坏iPad的独特之处",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64016-133228-IMG_1849-xl.jpg",
-          "alt": "Tablet displaying article about Apple products on a marble table with blue sunglasses nearby.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "WWDC亮点、iPad更新和Apple Intelligence，尽在AppleInsider播客 (原标题: WWDC highlights, iPad updates, and Apple Intelligence, on the AppleInsider Podcast)",
-      "link": "https://appleinsider.com/articles/25/06/13/wwdc-highlights-ipad-updates-and-apple-intelligence-on-the-appleinsider-podcast",
-      "pubDate": "Fri, 13 Jun 2025 15:23:45 GMT",
-      "isoDate": "2025-06-13T15:23:45.000Z",
-      "creator": "William Gallagher",
-      "summary": "## WWDC 2026回顾与Apple生态系统更新\n\nAppleInsider播客深入探讨了备受期待的WWDC 2026大会，详细分析了iOS 26、macOS 26和iPadOS 26的发布内容，包括其亮点、不足之处以及对新测试版软件的使用体验。\n\n### WWDC 2026大会概览\n\n*   **大会反响**：本届WWDC引发了褒贬不一的反应，但播客指出，部分负面评价可能源于未完整观看主题演讲。\n*   **意外遗漏**：节目讨论了大会中一些令人惊讶的遗漏。\n*   **测试版软件警告**：播客强烈建议用户谨慎使用测试版软件，因为其可能导致关键应用无法启动等问题。本期节目本身就是一次使用测试版软件的实验，通过iPad的新“本地捕捉”功能录制。\n\n### 主要软件更新亮点\n\n#### iOS 26\n\n*   **视觉设计**：引入了“液态玻璃”（Liquid Glass）视觉重新设计。\n*   **相机与智能**：更新了相机应用，并深度集成了Apple Intelligence（苹果智能）。\n*   **游戏体验**：新增了专为iPhone游戏设计的“游戏”应用，为iOS游戏提供了真正的归属。\n*   **核心应用改进**：音乐、地图和钱包应用迎来重大改变。\n*   **个性化**：用户可选择将所有iPhone图标设为透明。\n*   **截图实用性**：“视觉智能”（Visual Intelligence）功能使截图更具实用性，而不仅仅是保存。\n\n#### iPadOS 26\n\n*   **平台修复**：修复了平台诸多长期存在的问题。\n*   **多任务处理**：引入新的窗口管理、音频工具和后台任务功能，多任务处理更像Mac，具备菜单栏和改进的指针支持。\n*   **生产力工具**：“日记”（Journal）应用首次登陆iPad和Mac，提升写作、绘画和反思体验。\n*   **文件管理**：“文件”应用体验显著改善。\n*   **播客工作室**：“本地捕捉”（Local Capture）功能可立即将iPad转变为播客工作室。\n\n#### macOS Tahoe\n\n*   **视觉设计**：采用“液态玻璃”视觉重新设计。\n*   **工具更新**：工具集获得重大更新。\n*   **开发者影响**：“剪贴板历史”（Clipboard History）功能“Sherlock”了第三方开发者。\n*   **兼容性**：macOS Tahoe将是支持Intel Mac的最后一次重大更新。\n\n#### Apple Intelligence（苹果智能）\n\n*   **开发者开放**：通过Foundation Models Framework向所有开发者开放。\n*   **AI定位**：播客讨论了Siri在AI时代的角色以及苹果在AI竞赛中的定位，解释了苹果为何不一定“落后”。\n\n#### visionOS 26\n\n*   **组织与小组件**：带来更好的组织方式和锚定小组件。\n*   **空间体验**：“空间小组件”（Spatial Widgets）将数字生活融入现实空间。\n\n#### watchOS 26\n\n*   **设计与健康**：获得全新设计和以健康为中心的新功能。\n\n#### 其他亮点\n\n*   新的“F1”预告片通过触觉反馈带来沉浸式体验。\n\n### 播客特色与赞助商\n\n*   本期节目使用iPad的新“本地捕捉”功能录制。\n*   播客提及了MasterClass和NordLayer等赞助商的优惠信息。\n\n### 订阅与联系方式\n\n*   听众可通过Patreon或Apple Podcasts订阅AppleInsider+（扩展版）。\n*   播客还推荐了HomeKit Insider播客，可在Apple Podcasts、Overcast等平台订阅。\n*   提供了广告合作联系方式和订阅平台链接，并鼓励听众通过Siri收听播客。",
-      "shortSummary": "AppleInsider播客深入回顾了WWDC 2026大会，重点讨论了iOS 26、iPadOS 26和macOS Tahoe等新系统的发布内容。主要亮点包括iOS的“液态玻璃”设计和Apple Intelligence集成，iPadOS的多任务改进和“本地捕捉”功能，以及macOS Tahoe的更新。播客还探讨了苹果在AI领域的进展，并警告用户谨慎使用测试版软件。节目分析了大会引发的混合反应，并强调了新功能对用户体验的提升。",
-      "translated_title": "WWDC亮点、iPad更新和Apple Intelligence，尽在AppleInsider播客",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "iPadOS 26绘图工具升级，新增交互式3D功能 (原标题: iPadOS 26 graphing tool gets an upgrade adding interactive 3D)",
-      "link": "https://appleinsider.com/articles/25/06/13/ipados-26-graphing-tool-gets-an-upgrade-adding-interactive-3d",
-      "pubDate": "Fri, 13 Jun 2025 13:49:27 GMT",
-      "isoDate": "2025-06-13T13:49:27.000Z",
-      "creator": "Andrew Orr",
-      "summary": "# iPadOS 26 交互式 3D 绘图功能升级\n\niPadOS 26 为 Math Notes 引入了交互式 3D 绘图功能，让数学爱好者可以直接在 iPad 上旋转、缩放和探索复杂的方程，将其转化为动态、可触摸的可视化内容。这项功能建立在 iPadOS 18 中首次推出的 Math Notes 基础上。\n\n## 主要特点和功能\n\n*   **3D 可视化**：用户可以输入包含三个变量的方程，即时生成 3D 曲面图。\n*   **交互性**：图表支持标准手势，如双指缩放和拖动旋转，可通过触控或 Apple Pencil 进行操作。\n*   **实时渲染**：iPad 能够实时渲染 3D 图形，用户可以重新定位、调整大小，并将其复制到 Keynote 或 Pages 等应用程序中。\n*   **离线可用**：整个功能在 iPad 本地运行，无需互联网连接。\n*   **教育价值**：对于微积分、工程学和物理学等学科的学生和教育工作者来说，此更新非常有用，有助于使抽象的数学概念更加直观。\n\n## 如何使用\n\n1.  在 iPadOS 26 中打开“计算器”或“备忘录”应用。\n2.  切换到 Math Notes 模式。\n3.  输入或手写一个三变量方程。\n4.  点击“插入 3D 图形”，或者如果使用 Apple Pencil，可以直接圈选方程。\n\n## 与传统绘图工具的区别\n\niPad 的方法与传统绘图计算器不同，它允许用户直接与输出结果进行交互。用户可以旋转图形，从不同角度进行检查，从而更好地理解变量之间的关系。\n\n## 局限性\n\n尽管该工具对于单个方程的可视化功能强大，但目前尚不支持符号代数或更高级的建模。它旨在实现与单个方程的直接视觉交互，而非处理完整的系统或数据集。\n\n## 设备要求与发布\n\n*   **兼容设备**：需要支持 Apple Pencil 和最新版 Math Notes 的 iPad，包括自 2018 年以来发布的大多数 iPad 型号，如 iPad Pro、iPad Air（第三代及更高版本）以及近期发布的基础款 iPad。\n*   **发布时间**：iPadOS 26 更新目前已提供开发者测试版，预计公共测试版将于 7 月发布，完整版将于今年秋季随 iOS 26 和 macOS Tahoe 一同推出。\n\n![iPad屏幕上显示一个3D图形，呈蓝色漏斗状，代表函数z = -1/(x + y + 0.01)，带有网格线和标记为x、y、z的坐标轴。](https://photos5.appleinsider.com/gallery/64013-133221-IMG_0354-xl.jpg)",
-      "shortSummary": "iPadOS 26在Math Notes中新增交互式3D绘图功能，使用户能将三变量方程转化为动态3D可视化图形。该功能支持触控或Apple Pencil操作，可实时旋转、缩放，并本地运行。它有助于学生和教育工作者更直观地理解抽象数学，尤其适用于微积分等学科。目前处于开发者测试阶段，预计秋季正式发布。该工具主要用于单个方程的可视化，暂不支持符号代数或复杂系统。",
-      "translated_title": "iPadOS 26绘图工具升级，新增交互式3D功能",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64013-133221-IMG_0354-xl.jpg",
-          "alt": "A 3D graph on an iPad screen displaying a blue funnel shape representing the function z = -1/(x + y + 0.01) with grid lines and axes labeled x, y, z.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "PC基准测试工具3D Mark登陆macOS (原标题: PC benchmarking tool 3D Mark arrives on macOS)",
-      "link": "https://appleinsider.com/articles/25/06/13/pc-benchmarking-tool-3d-mark-arrives-on-macos",
-      "pubDate": "Fri, 13 Jun 2025 13:35:15 GMT",
-      "isoDate": "2025-06-13T13:35:15.000Z",
-      "creator": "Mike Wuerthele",
-      "summary": "## 3DMark基准测试套件原生登陆macOS\n\n继3DMark Steel Nomad Light在iPhone上首次亮相后，完整的3DMark测试套件现已原生登陆macOS，提供本地化的测试体验。此Mac原生版本于周四发布，即使在演示模式下也包含以下基准测试：\n\n*   Wild Life Extreme\n*   Solar Bay\n*   Steel Nomad\n*   Steel Nomad Light\n\n其中一些测试此前仅在Windows上可用，并未包含在iPhone版本中。\n\n### 开发背景与技术\n\n*   **开发原因**：开发公司注意到，六分之一的iOS测试结果实际上是在Mac上运行的。由于iOS应用程序的最大帧率受限于系统显示刷新率，在macOS设备上运行iOS应用程序可能会影响测试结果，因此开发了原生版本以提供更准确的测试。\n*   **技术栈**：所有基准测试均为原生开发，并使用Metal API。\n*   **测试目的**：该基准测试套件旨在全面测试设备的3D渲染能力和CPU性能，而非AI任务或通用工作负载等。\n\n### 跨平台兼容性与付费功能\n\n*   **跨平台结果**：开发商表示，测试结果完全支持跨平台比较，这意味着Windows、iOS和Android设备之间的结果可以相互对照。\n*   **付费功能**：付费版本提供以下额外功能：\n    *   **Steel Nomad基准测试的探索模式（Explorer Mode）**：允许使用控制器探索场景并拍摄自定义图像。\n    *   将测试结果保存到用户账户。\n    *   音效支持。\n    *   自定义模式，可在不同分辨率下运行基准测试。\n    *   基准测试循环运行，用于热稳定性测试。\n    *   HDR支持。\n\n### 可用性与定价\n\n*   **获取途径**：目前，macOS版3DMark套件可通过Steam获取。未来将很快在Epic Games Store和3DMark.com上推出。\n*   **定价**：\n    *   演示版（Demo）免费提供。\n    *   完整付费版售价35美元，支持跨平台，并包含Steam成就。\n*   **系统要求**：需要Apple Silicon Mac。",
-      "shortSummary": "PC基准测试工具3DMark现已原生登陆macOS，提供完整的测试套件，包括Wild Life Extreme和Steel Nomad等。该原生版本旨在解决iOS应用在Mac上运行的帧率限制问题，并利用Metal API测试设备的3D渲染和CPU性能。测试结果支持Windows、iOS和Android设备间的跨平台比较。免费提供演示版，完整版售价35美元，需Apple Silicon Mac，并包含多种付费功能。",
-      "translated_title": "PC基准测试工具3D Mark登陆macOS",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "macOS Tahoe 中新密码历史功能的工作原理 (原标题: How the new Passwords history feature works in macOS Tahoe)",
-      "link": "https://appleinsider.com/inside/macos-tahoe/tips/how-the-new-passwords-history-feature-works-in-macos-tahoe",
-      "pubDate": "Fri, 13 Jun 2025 13:18:27 GMT",
-      "isoDate": "2025-06-13T13:18:27.000Z",
-      "creator": "William Gallagher",
-      "summary": "macOS Tahoe 在其“密码”应用中引入了一项新功能，旨在帮助用户管理和检索旧密码，解决因覆盖或忘记密码而产生的困扰。\n\n**问题背景**\n\n*   **密码覆盖与遗忘**：用户很容易覆盖或忘记密码，尤其是在非个人设备上重置密码后。例如，在网站上使用“忘记密码”功能重置密码后，回到自己的设备上可能不记得新密码，导致需要再次重置并手动保存到“密码”应用中。\n*   **集中管理的问题**：虽然将密码集中存储在一个地方有明显好处，但也意味着更容易出错。\n*   **其他因素**：网络连接不佳或与同事共享密码也可能导致密码混淆。\n\n**macOS Tahoe 的新密码历史功能**\n\nApple 在 macOS Tahoe 中更新了其“密码”应用，引入了密码历史功能，旨在帮助用户理清密码变更，显示密码何时更改以及更改后的内容。\n\n**如何使用密码历史功能**\n\n1.  在 Mac 上打开“密码”应用。\n2.  选择一个登录条目。\n3.  如果该条目的密码曾被更改，底部会显示“查看历史记录”按钮，点击它。\n4.  在“查看历史记录”界面中，可以点击任何“密码已更改”条目旁边来查看详细信息。\n\n**功能细节**\n\n*   “查看历史记录”按钮仅在密码曾被更改时才会出现。\n*   历史记录列表会显示密码何时被保存或更改。\n*   点击任何历史条目都可以查看该旧密码。\n*   所有旧密码都像当前密码一样安全地存储在“密码”应用中。\n*   文章建议没有理由清除历史记录，因为旧密码可能随时需要核查。\n\n![密码管理器界面显示网站登录详细信息、安全状态以及与家人共享密码的选项。左侧边栏列出了各种应用程序图标。](https://photos5.appleinsider.com/gallery/64012-133214-001-View-History-step-1-xl.jpg)\n\n![密码管理器应用程序显示最近的密码活动历史记录，包括更改和保存。清除历史记录或使用完成按钮确认操作的选项。](https://photos5.appleinsider.com/gallery/64012-133218-002-Password-History-xl.jpg)\n\n**意义**\n\n*   这是 Apple 于 2024 年推出“密码”应用以来的首次重大更新。\n*   此功能使“密码”应用的功能更接近于 1Password 等更强大的密码管理器，后者已包含版本历史功能。",
-      "shortSummary": "macOS Tahoe 在其“密码”应用中引入了新的密码历史功能。此功能允许用户查看和检索特定登录条目的旧密码版本，显示密码何时被更改以及更改后的内容。它旨在解决用户因忘记或覆盖密码而产生的困扰，尤其是在多设备或重置密码后。这是“密码”应用的首次重大更新，使其功能更接近专业的密码管理器。",
-      "translated_title": "macOS Tahoe 中新密码历史功能的工作原理",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64012-133214-001-View-History-step-1-xl.jpg",
-          "alt": "Password manager interface with website login details displayed, security status, and options to share passwords with family. Various app icons are listed on the left sidebar.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64012-133218-002-Password-History-xl.jpg",
-          "alt": "Password manager application showing history of recent password activities, including changes and saves. Options to clear history or confirm actions with done button.",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "苹果将97%的印度产iPhone转运至美国以降低关税 (原标题: Apple redirects 97% of Indian-made iPhones to the US to lessen tariffs)",
-      "link": "https://appleinsider.com/articles/25/06/13/apple-redirects-97-of-indian-made-iphones-to-the-us-to-lessen-tariffs",
-      "pubDate": "Fri, 13 Jun 2025 11:59:33 GMT",
-      "isoDate": "2025-06-13T11:59:33.000Z",
-      "creator": "William Gallagher",
-      "summary": "## 苹果调整印度产iPhone出口策略以应对关税\n\n### 背景与主要变化\n\n为减轻美国前总统特朗普关税政策的影响，苹果制造商富士康已将其印度生产的iPhone对美出口比例从50%大幅提升至97%。尽管特朗普曾要求蒂姆·库克停止在印度生产，但由于美国缺乏熟练劳动力和必要设施，在美国本土制造iPhone仍不可行。鉴于特朗普对从印度进口的苹果产品征收的关税低于从中国进口的产品，苹果一直在调整其供应链和分销线路以最大限度地降低关税影响。\n\n### 出口数据详情\n\n根据路透社的最新数据，富士康对美出口的详细情况如下：\n\n*   **出口比例激增**：2025年3月至5月期间，富士康在印度生产的所有iPhone中，有97%出口到美国。\n*   **历史对比**：2024年，富士康印度产iPhone平均有50%销往美国。\n*   **出口额显著增长**：\n    *   2024年全年，富士康印度产iPhone对美出货价值为37亿美元。\n    *   2025年1月至5月，这一数字已估算达到44亿美元。\n*   **单月记录**：根据海关进口数据，仅2025年3月，运往美国的设备价值就达到创纪录的13亿美元。\n*   **近期波动**：2025年5月，该数字略有下降，接近10亿美元。\n*   **剩余产品去向**：富士康在印度生产的剩余3%产品，很可能销往印度国内经销商。此前报告显示，该地区生产的iPhone曾有近一半用于本地市场。\n\n### 未来展望与挑战\n\n*   **印度生产扩张**：苹果将继续扩大在印度的生产，并且不会将iPhone生产迁回美国，因为美国不具备所需的熟练劳动力和生产设施。\n*   **关税成本预期**：苹果CEO蒂姆·库克曾预计，截至2025年6月底的季度，苹果将支付9亿美元的关税，但这基于没有进一步关税变化的假设。然而，关税政策随后发生了变化。\n*   **新关税政策**：据报道，特朗普政府曾宣布对iPhone征收25%的新关税，据称是为了惩罚库克未出席某活动。此后，为“公平”起见（可能也出于法律原因，因为仅针对iPhone的关税可能不完全合法），该关税范围扩大到其他智能手机。\n*   **政策不确定性**：鉴于特朗普政府的政策波动性，预计未来将有更多关税出台。白宫已预先判断一项国家安全调查的结果将导致更多关税。\n*   **应对策略**：在库克与特朗普关系出现裂痕之前，苹果曾考虑在不公开归咎于关税的情况下，寻找提高iPhone 17价格的方法。",
-      "shortSummary": "为规避美国关税，苹果已将97%的印度产iPhone转运至美国，远高于此前的50%。此举是因印度关税较低且美国缺乏iPhone生产能力。2025年前五个月，印度对美iPhone出口额已达44亿美元。苹果将继续扩大印度生产，不会迁回美国。尽管面临特朗普政府关税政策的不确定性，苹果仍在调整策略以应对潜在的成本增加。",
-      "translated_title": "苹果将97%的印度产iPhone转运至美国以降低关税",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "macOS Tahoe 让你生产力大幅提升的五种方式 (原标题: Five ways macOS Tahoe makes you radically more productive)",
-      "link": "https://appleinsider.com/articles/25/06/13/five-ways-macos-tahoe-makes-you-radically-more-productive",
-      "pubDate": "Fri, 13 Jun 2025 11:48:52 GMT",
-      "isoDate": "2025-06-13T11:48:52.000Z",
-      "creator": "William Gallagher",
-      "summary": "macOS Tahoe 不仅带来了视觉上的改进，还引入了五项关键功能，旨在显著提升用户生产力。这些功能一旦被了解并掌握其局限性，将使Mac的使用更加高效便捷。\n\n## macOS Tahoe 提升生产力的五大功能\n\n### 1. 剪贴板历史记录 (Clipboard History)\n\nmacOS Tahoe 内置了剪贴板历史记录功能，类似于第三方应用（如 Alfred 和 Raycast）提供的功能。用户现在可以粘贴之前复制过的任何内容，而不仅仅是最近一次复制的内容。\n\n*   **访问方式：** 该功能集成在 Spotlight 中。用户需按下 Command-Space 唤出 Spotlight，然后等待片刻或按下 Tab 键，Spotlight 栏会分成五个部分，剪贴板历史记录位于最右端。\n*   **启用：** 首次使用时，macOS Tahoe 会提示“敏感信息可能出现在剪贴板上”，并要求用户选择启用。这是为了提醒用户注意潜在的隐私风险，例如密码。\n*   **使用体验：** 一旦启用，该功能与第三方应用类似，可以显示文本和图像的历史记录。用户可以按下 Command-4 快速跳转到剪贴板历史记录界面。\n*   **局限性：**\n    *   功能入口相对隐蔽，用户需要知道如何激活。\n    *   没有设置选项来管理或排除特定类型的复制内容（如密码）。\n    *   不支持“分组剪贴板”功能，即无法一次性粘贴多个独立复制的项目，而 Alfred 5 等第三方应用提供了此功能。\n*   **价值：** 尽管存在局限，但对于从未接触过剪贴板管理器的Mac用户来说，这是一项巨大的生产力提升。\n\n![屏幕显示一个米色搜索栏，标有Spotlight搜索，背景渐变，带有Finder、应用程序和其他工具的图标。](https://photos5.appleinsider.com/gallery/63991-133160-888-Spotlight-blank-xl.jpg)\n*需要先唤出Spotlight，然后等待或按Tab键才能看到新的控件*\n\n![剪贴板设置对话框，包含启用或拒绝剪贴板历史记录搜索的选项，并提示潜在的敏感信息。有两个按钮：稍后和启用。](https://photos5.appleinsider.com/gallery/63991-133161-888-Enable-xl.jpg)\n*剪贴板历史记录只有在您尝试并确认启用后才能工作*\n\n![一个剪贴板历史记录面板显示了复制项目的列表，包括文本片段和TIFF图像文件，背景为渐变色。](https://photos5.appleinsider.com/gallery/63991-133159-888-Spotlight-clipboard-full-xl.jpg)\n*新的剪贴板历史记录保存了您之前复制的文本和图像*\n\n![Alfred偏好设置窗口显示剪贴板历史记录设置，包含合并、声音通知和剪贴板集成选项。侧边栏显示各种功能和工作流程。](https://photos5.appleinsider.com/gallery/63991-133146-888-Alfred-Clipboard-Merge-xl.jpg)\n*Spotlight的剪贴板历史记录很棒，但Alfred 5更进一步，可以选择一次性粘贴多个内容*\n\n### 2. Spotlight 直接操作 (Quick Keys)\n\nSpotlight 现在支持通过“快速键”（Quick Keys）更快地访问Mac功能。macOS 会根据用户的使用习惯创建相应的快速键。\n\n*   **使用示例：** 在 Spotlight 中输入“sm”后加一个空格，即可立即发送消息；输入“ar”即可添加提醒。\n*   **优势：** 显著加快了日常任务的执行速度。作为原生macOS应用，它能够更深入地集成到系统功能中。\n*   **发现：** 当用户在Spotlight中开始输入时，系统会主动提示创建快速键。\n\n![消息提示显示“发送如何设置快速键？给Apple支持”，下方显示Apple的标志和公司名称。](https://photos5.appleinsider.com/gallery/63991-133157-888-Quick-Keys-xl.jpg)\n*快速键让您能迅速完成任务*\n\n### 3. 快捷指令与 Apple Intelligence\n\nmacOS Tahoe 中的“快捷指令”应用现在集成了 Apple Intelligence 功能，极大地提升了其生产力。\n\n*   **AI 能力：** 用户可以直接使用“写作工具”及其功能，也可以向 Apple Intelligence 传递更通用的指令。\n*   **处理选项：** 用户可以选择使用设备上的 Apple Intelligence、通过私有云计算使用 Apple 的完整在线版本，或者选择使用 ChatGPT。甚至可以设置为每次运行快捷指令时都询问用户选择哪种方式。\n*   **应用示例：** 学生可以创建一个快捷指令，录制讲座音频，将其转录，然后通过 Apple Intelligence 进行分析，并以可用的格式输出，例如将冗长的讲话转化为可导入“提醒事项”的行动要点。\n*   **待改进之处：** 尽管 AI 集成是巨大的进步，但“快捷指令”仍存在一些基本操作问题，例如 Safari 标签组切换功能在 macOS Sequoia 和 Tahoe 中依然无法正常工作，显示“内部错误”。\n\n![电脑屏幕显示一个文本摘要工具，菜单选项包括调整文本语气、制作列表、表格和校对，并有一个下拉菜单用于选择云端或设备处理。](https://photos5.appleinsider.com/gallery/63991-133156-888-Shortcuts-xl.jpg)\n*Apple将Apple Intelligence操作添加到快捷指令中，提升了生产力*\n\n![错误消息显示“打开标签组”操作因内部错误而无法运行，带有“确定”按钮，显示在灰色应用程序界面上。](https://photos5.appleinsider.com/gallery/63991-133155-888-Shortcut-fail-xl.jpg)\n*快捷指令仍需改进——因为这个错误不是测试版问题*\n\n### 4. Mac 上的实时活动 (Live Activities)\n\niPhone 上的“实时活动”功能（如航班详情、外卖送达时间、体育比分）现在可以直接显示在 Mac 的菜单栏中。\n\n*   **交互方式：** 菜单栏显示简要信息，点击可弹出更多详情，再点击弹出窗口可启动 iPhone 镜像并跳转到相关应用。\n*   **前提：** 实时活动仍需在 iPhone 上启动。\n*   **管理：** macOS Tahoe 允许用户控制哪些应用可以在菜单栏中显示或隐藏，以避免菜单栏过于拥挤。\n*   **优势：** 用户无需频繁查看 iPhone，即可在工作时一目了然地获取重要更新，减少干扰。\n\n![航班状态卡显示BOM-HYD航班19:45至21:15，1小时38分钟后从登机口出发。顶部状态栏有图标和第23周指示器。](https://photos5.appleinsider.com/gallery/63991-133154-888-Live-Activities-on-Mac-xl.jpg)\n*iPhone的实时活动现在显示在Mac的菜单栏中*\n\n![设置窗口显示菜单栏选项，带有天气、1Password和Dropbox等各种应用程序的开关，显示哪些是活动或非活动的。](https://photos5.appleinsider.com/gallery/63991-133158-888-Control-Menubars-xl.jpg)\n*您现在可以控制哪些应用程序在菜单栏中占有一席之地*\n\n### 5. Mac 上的电话通话 (Phone Calls)\n\nmacOS Tahoe 引入了真正的“电话”应用，允许用户直接在 Mac 上接听和拨打电话。\n\n*   **使用方式：** 只要 Mac 或显示器配备麦克风，用户即可启动电话应用，拨打电话并正常通话。\n*   **优势：** 用户无需中断工作拿起 iPhone，即可无缝进行通话，提升了工作流程的连贯性。这项功能虽然看似简单，但极大地减少了工作中的干扰，使用户能够更专注于任务。\n\n![联系人列表界面显示最近通话和Malcolm Owen的个人资料，带有通话选项和通话时长。](https://photos5.appleinsider.com/gallery/63991-133153-888-Phone-xl.jpg)\n*Mac上拥有真正的电话应用意味着您无需停下来拿起iPhone*\n\n总而言之，macOS Tahoe 通过这些实用的功能改进，帮助用户更高效地完成工作，减少分心和中断。",
-      "shortSummary": "macOS Tahoe 带来了五项核心生产力提升功能。其中包括：内置剪贴板历史记录，方便追溯复制内容；Spotlight 的快速键功能，加速任务执行；快捷指令集成 Apple Intelligence，实现智能自动化；iPhone 实时活动显示在 Mac 菜单栏，信息一目了然；以及直接在 Mac 上接打电话，减少工作中断。这些改进共同旨在让用户更专注、高效地完成工作。",
-      "translated_title": "macOS Tahoe 让你生产力大幅提升的五种方式",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63991-133160-888-Spotlight-blank-xl.jpg",
-          "alt": "Screen showing a beige search bar labeled Spotlight Search, with icons for Finder, Applications, and other tools on a gradient background.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63991-133161-888-Enable-xl.jpg",
-          "alt": "Clipboard settings dialog with options to enable or reject search in clipboard history, noting potential sensitive information. Two buttons: Not Now and Enable.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63991-133159-888-Spotlight-clipboard-full-xl.jpg",
-          "alt": "A clipboard history panel displays a list of copied items, including text snippets and a TIFF image file, against a gradient background.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63991-133146-888-Alfred-Clipboard-Merge-xl.jpg",
-          "alt": "Alfred Preferences window showing Clipboard History settings with options for merging, sound notifications, and clipboard integration. Sidebar displays various features and workflows.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63991-133157-888-Quick-Keys-xl.jpg",
-          "alt": "Message prompt showing 'Send How do you set up Quick Keys? to Apple Support' with Apple's logo and company name displayed beneath.",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63991-133156-888-Shortcuts-xl.jpg",
-          "alt": "A computer screen displaying a text summary tool with menu options like adjusting text tone, making lists, tables, and proofreading, featuring a dropdown for cloud or device processing.",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63991-133155-888-Shortcut-fail-xl.jpg",
-          "alt": "Error message about 'Open Tab Group' action not running due to an internal error, with an 'OK' button, displayed on a gray application interface.",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/63991-133154-888-Live-Activities-on-Mac-xl.jpg",
-          "alt": "Flight status card showing BOM-HYD flight 19:45 to 21:15, departing gate in 1h 38m. Top status bar with icons and week 23 indicator.",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
     }
   ],
-  "lastUpdated": "2025-06-17T12:45:47.241Z"
+  "lastUpdated": "2025-06-18T01:48:21.146Z"
 }
