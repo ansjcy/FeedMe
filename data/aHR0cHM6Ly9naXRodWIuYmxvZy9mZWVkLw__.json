@@ -5,6 +5,94 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "GitHub Copilot Spaces：为每次建议带来正确的上下文 (原标题: GitHub Copilot Spaces: Bring the right context to every suggestion)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-spaces-bring-the-right-context-to-every-suggestion/",
+      "pubDate": "Wed, 18 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-18T16:00:00.000Z",
+      "creator": "Andrea Griffiths",
+      "summary": "# GitHub Copilot Spaces：为每次建议带来正确的上下文\n\n## 引言：AI辅助开发的上下文瓶颈\n\n当生成式AI工具（如GitHub Copilot）尝试猜测用户需求时，其有效性取决于猜测的准确性。然而，面对不熟悉的复杂代码库、团队内部的特定安全清单、或解释重要性的临时Slack对话等非模式化上下文时，即使是最强大的模型也可能基于假设而非实际知识来填补空白。这导致AI助手只能进行猜测，成为AI辅助开发中的新瓶颈。\n\n## GitHub Copilot Spaces 简介\n\nGitHub Copilot Spaces 旨在解决这一问题，它允许用户将Copilot应读取的精确上下文（包括代码、文档、对话记录、示例查询等）捆绑到一个可重用的“空间”中。一旦创建了空间，Copilot的每次聊天、代码补全或命令都将基于这些精选知识，从而生成感觉像是来自组织内部专家而非通用模型的答案。\n\n### 什么是 Copilot Space？\n\n一个空间可以被视为一个安全、可共享的知识容器，并包含行为指令：\n\n*   **附件：** 包含代码文件、整个文件夹、Markdown文档、对话记录或任何纯文本。这些为Copilot提供了答案的“事实依据”。\n*   **自定义指令：** 简短的系统提示，用于设置Copilot的语气、编码风格或评审期望，使Copilot符合团队的“内部规范”。\n*   **共享与权限：** 遵循GitHub现有的角色/可见性模型，无需管理新的访问控制列表。\n*   **实时更新：** 空间中的文件与您引用的分支保持同步，确保空间内容与代码库保持最新。\n\n**简而言之：** 一个空间就像是将团队的集体智慧固定在Copilot侧边栏，让每个人都能用自然语言查询它。结果是：更少的错误猜测、更少的复制粘贴，以及可直接提交的代码。\n\n## 5分钟快速入门指南：如何构建您的第一个空间\n\n1.  **创建空间：** 导航至 `github.com/copilot/spaces` 并点击“Create space”。清晰命名（例如 `frontend-styleguide`），并添加描述，以便队友了解何时使用。\n2.  **附加上下文：**\n    *   **从仓库：** 引入 `src/components` 等文件夹或 `eslint.config.js` 等单个文件。\n    *   **自由文本：** 将Slack对话、视频转录、入职清单甚至JSON Schema粘贴到“Text”选项卡中。Copilot会将其视为任何其他附件。\n3.  **编写自定义指令：** 一两句话即可，例如：“作为高级React评审员回应。强制执行我们的ESLint规则和Tailwind类命名约定。”\n4.  **保存并测试：** 在空间聊天中向Copilot提问（例如：“重构此`<Button>`组件以符合我们的可访问性清单”），观察它引用您刚附加的文件。\n\n## 个性化Copilot的编码风格（和语气）\n\n自定义指令是空间的“个性层”，它们与附件并存，使您能够通过简单的句子实现强大的功能：\n\n*   **强制执行规范：** “示例中始终偏好Vue 3 `script setup` 语法和Composition API。”\n*   **采用团队语气：** “简洁回答。代码块前包含一行摘要。”\n*   **教授项目特定词汇：** “称之为‘场景ID’（SCID），而不是测试用例ID。”\n\n## 自动化工作流：三个真实案例\n\n1.  **可访问性合规助手**\n    *   **内容：** WCAG标准的Markdown文档和GitHub内部的“完成定义”。\n    *   **指令：** “回答时，引用文档部分，如果需要更改则提供代码差异。”\n    *   **效果：** 用户可以询问“此新模态框的MAS-C合规性需要哪些步骤？”，Copilot会总结相关检查点，引用文档锚点，甚至建议ARIA属性或颜色对比修复。\n2.  **复杂Schema的数据查询助手**\n    *   **内容：** 40多个事件表的YAML Schema文件，以及保存为`.sql`文件的KQL示例片段。\n    *   **指令：** “仅生成KQL，除非要求，否则不提供散文解释。”\n    *   **效果：** 不熟悉数据库结构的产品经理和支持工程师可以询问“过去7天平均PR评审时间？”，Copilot会自动补全有效的KQL查询，包含正确的连接，并允许他们迭代。\n3.  **入职培训中心和知识库**\n    *   **内容：** 导出为SVG文本的关键架构图，以及来自多个仓库的ADR（架构决策记录）和设计文档。\n    *   **指令：** “像入职导师一样回答；链接到更深入的文档。”\n    *   **效果：** 新员工输入“我们的认证流程如何处理SAML？”即可获得结构化答案，包含链接和图表，所有这些都无需离开GitHub。由于空间与主分支保持同步，ADR的更新会自动传播，避免知识库过时。\n\n## 与GitHub原生集成的协作与安全\n\nSpaces 尊重您已使用的相同权限模型：\n\n*   **个人空间：** 除非共享，否则仅您可见。\n*   **组织拥有的空间：** 使用仓库或团队权限来控制访问。\n*   **只读与可编辑：** 允许主题专家维护规范，而其他人则消费内容。\n\n共享就像发送空间URL或将其固定到仓库README一样简单。任何有访问权限和Copilot许可证的用户都可以立即开始聊天。\n\n## Copilot Spaces 的未来展望\n\nGitHub 正在努力将Copilot Spaces 引入更多工作流，目前正在开发：\n\n*   **问题和PR附件：** 将内联讨论和评审注释纳入相同的上下文捆绑包。\n*   **IDE集成：** 在VS Code中查询空间，以匹配团队模式编写测试。\n*   **组织范围可发现性：** 帮助您像浏览仓库一样浏览空间，以便新工程师可以搜索“支付主题专家”并开始聊天。\n\n您的反馈将塑造这些优先级。\n\n## 立即开始\n\n前往 `github.com/copilot/spaces`，创建您的第一个空间，并告诉我们它如何简化您的工作流。以下是完整的设置步骤：\n\n1.  **启用预览功能：** 在“Settings > Copilot > Preview features”中启用Copilot Spaces。\n2.  **创建空间：** 创建一个小型、高影响力的空间，例如团队的代码评审清单或一组常见的数据查询。\n3.  **分享：** 在Slack或README中分享链接，观察对主题专家的咨询请求减少。\n4.  **迭代：** 精简未使用的附件，完善指令，或将大型空间拆分为更小的空间。\n\nCopilot Spaces 在公开预览期间免费，并且在使用基础模型时不会计入您的Copilot席位权益。我们期待看到当Copilot拥有正确的上下文时，您能构建出什么。\n\n**作者：**\n\n![Andrea Griffiths](https://github.blog/wp-content/uploads/2025/03/cropped-IMG_1971-200x200.jpeg)\n\nAndrea Griffiths 是 GitHub 的高级开发者倡导者，拥有十多年的开发者工具经验。她将技术深度与使先进技术更易于访问的使命相结合。在从军队服役和施工管理转型到软件开发后，她为连接复杂的工程概念与实际实现带来了独特的视角。她与她的威尔士伴侣、两个儿子和两只狗住在佛罗里达州，在那里她通过GitHub的全球倡议继续推动创新和支持开源。\n\n**探索更多来自GitHub的资源：**\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) [Docs](https://docs.github.com/)\n    掌握GitHub所需的一切，尽在一处。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) [GitHub](https://github.com/)\n    在GitHub上构建未来，这里是任何人、任何地方、构建任何东西的场所。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) [Customer stories](https://github.blog/customer-stories/)\n    了解使用GitHub进行构建的公司和工程团队。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) [GitHub Universe 2025](https://githubuniverse.com/)\n    最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山与我们相聚。",
+      "shortSummary": "GitHub Copilot Spaces 旨在解决生成式AI在缺乏特定上下文时的问题。它允许用户将代码、文档、内部知识等捆绑成可重用的“空间”，并通过自定义指令个性化Copilot的行为。这使得Copilot能基于组织特有知识提供精确、专业的建议，减少错误和重复工作。功能包括快速创建、个性化风格、以及用于可访问性、数据查询和新员工培训的实际应用。Spaces遵循GitHub权限模型，未来将集成到IDE和PR工作流中。该功能在公开预览期间对所有Copilot用户免费。",
+      "translated_title": "GitHub Copilot Spaces：为每次建议带来正确的上下文",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/03/cropped-IMG_1971-200x200.jpeg",
+          "alt": "Andrea Griffiths",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Learn how to build your first space in minutes and customize Copilot to match your team's unique coding style and workflows.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/github-copilot-spaces-bring-the-right-context-to-every-suggestion/\">GitHub Copilot Spaces: Bring the right context to every suggestion</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "使用 GitHub Copilot 处理议题以提升生产力的 5 个技巧 (原标题: 5 tips for using GitHub Copilot with issues to boost your productivity)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/5-tips-for-using-github-copilot-with-issues-to-boost-your-productivity/",
+      "pubDate": "Tue, 17 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-17T16:00:00.000Z",
+      "creator": "Klint Finley",
+      "summary": "## 使用 GitHub Copilot 处理议题以提升生产力的 5 个技巧\n\n软件开发中的议题管理可能既繁琐又耗时。GitHub Copilot 最新的议题管理功能旨在简化这一过程，帮助开发者创建、组织甚至解决议题。这些功能可以节省时间、减少摩擦并保持项目的一致性。\n\n### 1. 截图转议题：即时生成 Bug 报告\n\n编写详细的 Bug 报告通常重复且令人沮丧，导致文档不一致。Copilot 的“截图转议题”功能显著减少了这一摩擦。\n\n*   **操作方式**：只需将 Bug 截图粘贴到 Copilot 聊天中，并附上简短描述，Copilot 就会分析图像并为你生成一份全面的 Bug 报告。\n*   **优势**：无需费力描述视觉故障或 UI 问题，图像本身就能说明问题，Copilot 负责文档化。例如，遇到 UI 对齐问题或难以描述的视觉故障时，截屏后粘贴到 Copilot，并简要提及问题即可。\n*   **示例**：文章提到，用户提示“创建 Bug 议题，因为 Markdown 表格在评论中未正确渲染”，Copilot 随后自动起草报告，包括重现 Bug 的步骤。\n*   **提示**：清晰地标注截图（高亮或圈出问题区域）有助于 Copilot 生成更精确的议题描述。\n\n### 2. 自动元数据和模板\n\n当团队成员跳过添加正确的元数据时，项目会迅速变得混乱，不正确的模板、缺失的标签或错误的议题类型会使跟踪和优先级排序变得困难。Copilot 通过以下方式解决此问题：\n\n*   **自动推断**：根据你的提示自动推断最佳模板。\n*   **自动添加**：无需导航多个下拉菜单或记住标签约定，即可添加适当的标签和议题类型。\n*   **自定义**：可以要求 Copilot 添加特定标签或切换模板。\n*   **自动重格式化**：如果起草后更改模板，Copilot 会自动重格式化内容，无需手动复制。\n\n### 3. 通过版本控制和里程碑保持井然有序\n\n保持议题更新和正确分类对于清晰沟通、维持项目进度和确保可见性至关重要。Copilot 使添加项目和里程碑变得像输入提示一样简单。\n\n*   **灵活组织**：你可以精确指定议题的组织方式，例如，要求 Copilot 使用“Bug 报告”或“功能请求”模板，添加“优先级：高”、“前端”或“需要分类”等标签，或将议题类型设置为“任务”或“史诗”。\n*   **一致性**：Copilot 会自动应用这些细节，确保议题始终保持一致的分类。\n*   **历史记录**：Copilot 还会跟踪所有更改，使其易于查阅。你可以查看议题历史记录并在需要时恢复更改，确保重要信息不会丢失。\n\n### 4. 批量创建多个议题\n\n有时在客户会议、用户测试会话或 Bug 修复活动后，你需要记录多个议题。传统上，这意味着重复多次相同的创建过程。Copilot 支持多议题起草，允许你在一次对话中创建多个议题。\n\n*   **节省时间**：无论是记录功能请求还是文档化 Bug，批量创建都能显著节省时间。\n*   **操作方式**：只需提示 Copilot 创建议题，描述每一个，Copilot 就会全部起草。\n*   **示例**：你可以给出类似“为以下功能创建议题：- 渲染的 Markdown 中忽略换行符，尽管有双空格 - 粗体和斜体 Markdown 样式组合时未应用”的提示，一次创建两个议题。\n*   **流程**：你仍然需要审查并最终确定每个议题，但起草过程被简化为单一工作流。\n\n### 5. 让 AI 帮助修复 Bug：Copilot 编码代理\n\n创建议题只是成功的一半，修复它们才是真正的工作。现在，你可以直接将议题分配给 Copilot。\n\n*   **AI 协助**：只需要求 Copilot 编码代理接管议题，你的 AI 编码助手就会开始分析 Bug。\n*   **建议修复**：Copilot 甚至可以建议包含潜在修复的拉取请求草稿。\n*   **效率提升**：这种无缝交接减少了上下文切换，并加快了解决时间，让你的团队能够专注于更复杂的挑战。\n\n### GitHub 议题增强功能（超越 Copilot）\n\n除了 Copilot，GitHub 也在不断增强整体议题体验：\n\n*   **标准化议题类型**：跨仓库标准化议题类型，实现一致的跟踪和报告。\n*   **分解复杂任务**：将复杂任务分解为子议题，以便更好地管理进度。\n*   **高级搜索**：使用逻辑运算符进行高级搜索，快速找到所需内容。\n*   **扩展限制**：管理更大的项目，支持多达 50,000 个项目。\n\n### 立即开始增强议题管理\n\n准备好使用 GitHub Copilot 改变你的议题管理工作流了吗？访问 github.com/copilot 并尝试以下提示：\n\n*   “为……创建议题”\n*   “记录一个 Bug”\n*   或者直接上传截图并提及你想提交一个 Bug。\n\n亲身体验 Copilot 如何让议题管理不再像行政负担，而更像与你的 AI 结对程序员进行对话。",
+      "shortSummary": "GitHub Copilot 推出五项新功能，旨在提升议题管理效率。这些功能包括：将截图转化为详细 Bug 报告、自动添加元数据和模板、通过版本控制和里程碑保持议题有序、支持批量创建多个议题，以及让 Copilot 编码代理协助分析和修复 Bug。Copilot 旨在简化议题创建、组织和解决流程，减少开发者的行政负担，提升生产力。",
+      "translated_title": "使用 GitHub Copilot 处理议题以提升生产力的 5 个技巧",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/957053?v=4&s=200",
+          "alt": "Klint Finley",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Reduce context-switching, minimize manual work, and accelerate resolution times with these new AI-powered features.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/5-tips-for-using-github-copilot-with-issues-to-boost-your-productivity/\">5 tips for using GitHub Copilot with issues to boost your productivity</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Git 2.50 的亮点 (原标题: Highlights from Git 2.50)",
       "link": "https://github.blog/open-source/git/highlights-from-git-2-50/",
       "pubDate": "Mon, 16 Jun 2025 17:12:27 +0000",
@@ -330,95 +418,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Dive into the novel security challenges AI introduces with the open source game  that over 10,000 developers have used to sharpen their skills.</p>\n<p>The post <a href=\"https://github.blog/security/hack-the-model-build-ai-security-skills-with-the-github-secure-code-game/\">Hack the model: Build AI security skills with the GitHub Secure Code Game</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "DNS重绑定攻击解析：查找源自内部！ (原标题: DNS rebinding attacks explained: The lookup is coming from inside the house!)",
-      "link": "https://github.blog/security/application-security/dns-rebinding-attacks-explained-the-lookup-is-coming-from-inside-the-house/",
-      "pubDate": "Tue, 03 Jun 2025 16:00:00 +0000",
-      "isoDate": "2025-06-03T16:00:00.000Z",
-      "creator": "Jaroslav Lobacevski",
-      "summary": "# DNS重绑定攻击解析：查找源自内部！\n\n本文深入探讨了DNS重绑定攻击，这是一种严重的浏览器安全漏洞，能够绕过同源策略（Same-Origin Policy, SOP），从而允许攻击者访问受害者本地机器或网络上的内部应用程序。\n\n## 同源策略 (Same-Origin Policy, SOP)\n\n同源策略是Netscape于1995年引入的浏览器安全基石。其核心思想是阻止来自一个源的脚本访问另一个源的数据，以保护用户隐私（例如，防止恶意网页读取用户的网络邮件）。一个“源”由协议（schema）、主机（DNS名称）和端口号三部分组合定义。这三者中任何一个不匹配，都意味着是不同的源。\n\n| URL | 结果 | 原因 |\n| :----------------------------------------- | :--- | :----------------------------------- |\n| `https://www.somedomain.com:81/sub/page.html` | 不同 | 端口81与HTTPS默认端口443不匹配 |\n| `https://somedomain.com/sub/page.html` | 不同 | 需要精确匹配`www.somedomain.com` |\n| `http://www.somedomain.com:443/sub/page.html` | 不同 | 协议HTTP与HTTPS不匹配 |\n| `https://www.somedomain.com/admin/login.html` | 相同 | 只有路径不同 |\n\n## 攻击原理：DNS重绑定\n\n人们常误以为在本地运行的服务是与外部世界完全隔离的。然而，浏览器可能成为攻击者访问本地网络应用的门户。DNS重绑定攻击利用了浏览器安全机制与网络协议之间的脱节：即使解析的IP地址发生变化，浏览器仍会将来自同一主机的请求视为同源。攻击者控制一个域名（例如`somesite.com`）及其DNS服务器。他们最初将该域名解析到一个公共IP地址，然后迅速将后续解析切换到本地网络IP地址（如`192.168.0.1`或`127.0.0.1`）。从`somesite.com`加载的JavaScript将在受害者浏览器中运行，其后续对`somesite.com`的请求将被导向新的本地IP地址。由于浏览器仍认为这是“同源”请求，攻击者便能通过JavaScript与受害者的本地网络进行交互。需要注意的是，本地服务的认证Cookie不会被发送，因为浏览器仍处于攻击者域名的上下文中。\n\n## 防御尝试：DNS缓存\n\n浏览器试图通过缓存DNS响应来抵抗DNS重绑定，但这种防御远非完美。一些浏览器已实现本地网络访问（CORS-RFC1918）规范，但仍存在绕过方式，例如在Linux和macOS上使用`0.0.0.0`IP地址。由于涉及浏览器DNS缓存、操作系统DNS缓存和DNS名称服务器等多个层面，这种攻击常被认为不可靠。然而，也存在自动化攻击工具，如Tavis Ormandy的Simple DNS Rebinding Service和NCCGroup的Singularity of Origin。\n\n## 真实世界漏洞案例：Deluge BitTorrent客户端\n\nDeluge BitTorrent客户端（已在v2.2.0中修复）曾存在一个真实世界的漏洞，可被DNS重绑定攻击利用。Deluge WebUI（一个可选的本地运行服务）的未认证`/js`端点存在路径遍历漏洞，允许任意文件读取。攻击者可以通过构造请求（例如`/js/known_keyword/../...`）绕过路径验证，读取系统上的任意文件，只要其MIME类型能被识别。例如，攻击者可以读取Deluge的`web.conf`配置文件，其中包含WebUI管理员密码的SHA1哈希（带盐）和会话列表。如果能获取有效会话或暴力破解密码，攻击者便可利用CVE-2017-7178漏洞，通过`/json` Web API下载、安装并运行恶意插件。\n\n## 漏洞利用（Deluge示例）\n\n即使Deluge WebUI仅在本地可访问，攻击者也可以利用DNS重绑定攻击来访问这个未认证的服务。对于实现了CORS-RFC1918的浏览器，攻击者可以利用Linux和macOS上的非路由`0.0.0.0`IP地址作为绕过。攻击流程大致如下：\n\n1.  Deluge WebUI用户访问一个恶意网站（`somesite.com`），该网站包含多个IFrames。\n2.  每个IFrame尝试从攻击者控制的子域（例如`http://sub.somesite.com:8182/attack.html`）加载内容。\n3.  攻击者控制的DNS解析器会交替返回`0.0.0.0`和真实服务器IP地址，并设置极低的TTL（生存时间）。\n4.  当DNS解析到真实IP地址时，IFrame中的脚本会等待DNS条目过期。\n5.  一旦DNS重绑定成功，脚本将尝试请求并读取本地配置文件（例如`http://sub.somesite.com:8182/js/deluge-all/..%2F..%2F..%2F..%2F..%2F..%2F.config%2Fdeluge%2Fweb.conf`）。\n6.  如果攻击成功，配置文件中的敏感信息将被窃取。\n\n## 如何主动防御DNS重绑定攻击\n\n*   **使用HTTPS服务：** DNS重绑定攻击对HTTPS服务无效。一旦与`somesite.com`建立TLS会话，浏览器会验证证书主题与域名是否匹配。IP地址改变后，浏览器需要建立新的会话，但由于本地部署的Web应用程序的证书与域名不匹配，连接将失败。\n*   **强制强认证：** 即使是未加密的HTTP服务，也要确保使用强认证。由于浏览器在攻击者域名的上下文中运行，本地服务的认证Cookie不会被发送给攻击者。\n*   **验证Host头：** 检查请求的Host头，并拒绝不严格匹配允许列表的请求。重绑定请求的Host头将包含攻击者的域名（例如`somesite.com`）。\n\n## 总结与建议\n\n在本地运行Web应用程序是开发人员的常见做法，但永久部署的、无需认证且不使用TLS（即无HTTPS加密）的本地网络Web应用程序是一个危险信号。DNS重绑定攻击生动地说明了看似隔离的本地服务如何通过浏览器行为和对网络边界的错误假设而被暴露。切勿仅仅因为服务“仅在本地运行”就认为它是安全的。始终对所有本地服务或开发工具强制实施强密码认证和严格的访问控制。任何没有严格访问控制的本地服务都可能通过受害者的浏览器被暴露。务必验证Host头，并尽可能使用HTTPS。在开发下一个Web应用程序时，请务必将DNS重绑定纳入您的威胁模型。\n\n---\n\n**作者：**\n\n![Jaroslav Lobacevski](https://avatars.githubusercontent.com/u/26652396?v=4&s=200)\n\n**探索更多来自GitHub的资源：**\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**\n    掌握GitHub所需的一切，尽在一处。\n    [前往文档](https://docs.github.com/)\n\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**\n    在GitHub上构建未来，这里是任何地方的任何人构建任何东西的地方。\n    [开始构建](https://github.com/)\n\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**\n    了解使用GitHub进行构建的公司和工程团队。\n    [了解更多](https://github.com/customer-stories)\n\n*   ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) **企业内容**\n    专为您策划的执行洞察。\n    [开始](https://github.com/enterprise)",
-      "shortSummary": "DNS重绑定攻击利用浏览器同源策略与DNS解析的脱节，通过控制DNS服务器将域名解析从公共IP切换到本地IP。这使得攻击者网站的JavaScript能够与受害者本地网络或机器上的内部Web应用交互，即使这些服务“仅在本地运行”。防御措施包括使用HTTPS、强制强认证和验证Host头，以保护本地服务免受此类隐蔽攻击。",
-      "translated_title": "DNS重绑定攻击解析：查找源自内部！",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/26652396?v=4&s=200",
-          "alt": "Jaroslav Lobacevski",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
-          "alt": "Enterprise content",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>DNS rebinding attack without CORS against local network web applications. Explore the topic further and see how it can be used to exploit vulnerabilities in the real-world.</p>\n<p>The post <a href=\"https://github.blog/security/application-security/dns-rebinding-attacks-explained-the-lookup-is-coming-from-inside-the-house/\">DNS rebinding attacks explained: The lookup is coming from inside the house!</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "事半功倍：GitHub Copilot 编码代理与代理模式的区别 (原标题: Less TODO, more done: The difference between coding agent and agent mode in GitHub Copilot)",
-      "link": "https://github.blog/developer-skills/github/less-todo-more-done-the-difference-between-coding-agent-and-agent-mode-in-github-copilot/",
-      "pubDate": "Mon, 02 Jun 2025 16:00:00 +0000",
-      "isoDate": "2025-06-02T16:00:00.000Z",
-      "creator": "Andrea Griffiths",
-      "summary": "## GitHub Copilot 编码代理与代理模式的区别\n\nGitHub Copilot 在2025年推出了两项全新的、截然不同的AI超能力：**代理模式（Agent mode）**和**编码代理（Coding agent）**。虽然两者都是AI代理，但它们针对日常工作流的不同部分进行了优化，旨在帮助开发者“减少待办，增加完成”。\n\n### 核心区别速览\n\n*   **代理模式（Agent mode）**：\n    *   **同步**：在VS Code（以及JetBrains/Eclipse/Xcode预览版）等编辑器内部工作。\n    *   **实时协作者**：作为自主协作者，实时迭代代码、运行测试并修复自身错误。\n*   **编码代理（Coding agent）**：\n    *   **异步**：在GitHub Actions中运行（公开预览版）。\n    *   **异步队友**：接收你分配的问题（`assignee: Copilot`），探索仓库，编写代码，通过测试，并为你提交经过充分测试的拉取请求（PR）。\n\n可以将代理模式想象成与你结对编程的资深开发者，而编码代理则是勤奋地处理明确范围任务的队友。两者可以（也应该）协同使用：例如，在代理模式下进行交互式原型开发，然后将后续任务交给编码代理。\n\n### 代理模式（Agent mode）：您的实时协作者\n\n代理模式将Copilot Chat转变为一个工具编排器（如 `read_file`、`edit_file`、`run_in_terminal` 等）。你只需给出自然语言目标（例如：“为我们的Flask应用添加OAuth并编写测试”），它就会规划、编辑文件、运行测试套件、读取失败、修复错误，并循环直到通过。你可以观察其步骤，随时介入，所有更改都保留在本地。\n\n**如何开启代理模式：**\n\n1.  在VS Code中打开Copilot Chat。\n2.  从模式下拉菜单中选择“Agent”。\n3.  （可选但推荐）点击“Tools”→“Manage”来启用或禁用功能并添加MCP扩展。\n\n**充分利用代理模式的专业技巧：**\n\n*   **明确结果范围**：清晰地表达你想要什么，避免模糊描述。\n*   **提供上下文**：指向规范文件或粘贴架构，避免其重新发明。\n*   **交互式迭代**：让它运行，但在偏离时进行引导，就像与一位快速但偶尔需要指导的熟练队友结对编程。\n*   **通过MCP服务器扩展**：如果你需要自定义工具（如数据库迁移、云部署等）。\n*   **选择模型**：OpenAI GPT-4o 提供原始能力，Anthropic Claude 适用于更长的上下文，可通过模型选择器切换。\n\n### 编码代理（Coding agent）：您的异步队友\n\n代理模式存在于IDE中，而编码代理则存在于你的仓库中。将一个问题分配给Copilot，它就会启动一个安全的云工作区（通过GitHub Actions），制定计划，在自己的分支上编辑代码，运行你的测试/Linter，并打开一个拉取请求，标记你进行审查。\n\n**如何启用编码代理：**\n\n1.  **计划资格**：需要Copilot Pro+或Copilot Enterprise。\n2.  **开启开关**：企业管理员必须在组织策略中启用“Copilot coding agent”。\n3.  **分配问题**：通过将问题分配给Copilot，并用自然语言描述来启动编码代理。例如：`### Feature: add dark-mode toggle assignees: Copilot`。\n\n**编码代理的理想任务：**\n\n*   测试完善的仓库中低到中等复杂度的更改。\n*   添加或扩展单元测试。\n*   小型重构（重命名服务、提取辅助函数）。\n*   文档或错别字修复。\n\n**目前不适合：**大规模重写、跨仓库更改、测试覆盖率为0%的代码库。\n\n**使用GitHub Copilot编码代理的专业技巧：**\n\n*   **在问题中编写清晰的验收标准**：代理会将其视为规范。\n*   **链接到更改涉及的文件或函数**：节省探索时间。\n*   **保持原子性**：每个问题只包含一个逻辑任务。多个小问题比一个庞然大物更容易扩展。\n*   **利用PR评论**：要求代理进行调整，然后你可以将逻辑提取到单独的函数中并添加错误处理。\n*   **注意分钟数**：繁重任务会消耗Actions分钟数和高级请求，因此请策略性地排队。\n\n### 并排比较：选择合适的工具\n\n| 决策维度     | 代理模式（Agent mode）                               | 编码代理（Coding agent）                               |\n| :----------- | :--------------------------------------------------- | :----------------------------------------------------- |\n| 工作流节奏   | 实时协作、对话式、迭代式                             | 即发即忘、后台任务                                     |\n| 界面         | VS Code / JetBrains / Eclipse / Xcode 聊天           | GitHub Issues 或 Copilot Chat → 通过拉取请求监控       |\n| 典型任务     | 重构、原型开发、调试、迁移                           | 添加功能、修复Bug、扩展测试、无聊和重复的工程任务      |\n| 人工监督     | 持续（你观察编辑）                                   | 在拉取请求审查检查点                                   |\n| 资源成本     | 高级请求                                             | 高级请求 + Actions 分钟数                              |\n| 最佳适用场景 | 探索未知代码、紧密的反馈循环                         | 清理待办、并行化琐事                                   |\n\n### 通过协同使用两者实现事半功倍\n\nCopilot的超能力并非非此即彼，它们是互补的。当实时、编辑器内的代理模式遇到稳定、后台运行的编码代理时，其魔力才真正展现。以下是三种经过验证的搭配，可让你充分发挥两者的生产力：\n\n1.  **代理模式原型开发，编码代理交付**：使用代理模式快速实现一个功能分支。然后，创建一个描述完善任务的问题，并分配给Copilot。\n2.  **代理模式生成规范，编码代理实现**：要求代理模式根据代码上下文起草设计文档。对其进行微调，然后将任务交给编码代理执行。\n3.  **编码代理回归修复，代理模式紧急修补**：如果编码代理的拉取请求导致构建失败，在本地打开分支并召唤代理模式进行诊断和即时修补。\n\n### 安全与质量检查清单\n\n在合并代码之前，请务必进行以下快速检查，以确保质量、安全和版本控制的良好实践：\n\n*   **测试通过**：两个代理都依赖测试——投入测试覆盖率，否则它们将盲目运行。\n*   **秘密安全**：编码代理在安全的临时环境中运行；但仍需保护 `.env` 文件。\n*   **全面审查**：代理加速工作；它们不会消除你作为记录审查者的责任。\n*   **版本控制**：代理模式在本地分支中进行编辑，因此请尽早并经常提交。\n\n### 常见问题解答\n\n*   **编码代理能否修复2002年的旧Perl CGI脚本？** 它可以尝试——但没有测试就像教金毛犬微积分。建议先使用代理模式进行重构。\n*   **代理模式是否支持Vim？** 暂不支持。\n*   **我能同时向编码代理抛出多少问题？** 多个，但请记住每个问题都会消耗计算资源和你的拉取请求队列容忍度。\n*   **GitHub Copilot编码代理能否处理图片？** 是的！借助视觉模型，它可以“看到”GitHub问题中包含的Bug截图或原型图，使视觉Bug报告更加有效。\n*   **能否访问外部数据源？** 是的！通过模型上下文协议（MCP）支持，GitHub Copilot编码代理可以连接到GitHub之外的外部数据和功能。\n\n### 总结\n\n**代理模式**是编辑器内的同步掌握；**编码代理**是GitHub问题和PR中的异步工作。清晰的提示、良好的测试和小范围的任务仍然是成功的秘诀。协同使用这两个代理可以覆盖整个开发周期——从“嗯，如果……”到“LGTM，发布吧。”\n\n让人类工程师参与架构选择、安全审查和庆祝击掌。AI代理不会取代工程师；它们将取代工程中无聊的部分。这意味着有更多时间用于创新功能、更好的代码质量和构建未来。这不正是我们热爱成为开发者的原因吗？\n\n### 作者信息及相关链接\n\n本文由 **Andrea Griffiths** 撰写，她是GitHub的高级开发者倡导者，拥有十多年的开发者工具经验。她将技术深度与使先进技术更易于访问的使命相结合。她住在佛罗里达州，与她的威尔士伴侣、两个儿子和两条狗一起生活，并通过GitHub的全球倡议继续推动创新和支持开源。\n\n![Andrea Griffiths](https://github.blog/wp-content/uploads/2025/03/cropped-IMG_1971-200x200.jpeg)\n\n探索更多来自GitHub的内容：\n\n*   **文档**：掌握GitHub所需的一切，尽在一处。\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n*   **GitHub**：在GitHub上构建未来，这里是任何人、任何地方、构建任何东西的场所。\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n*   **客户案例**：了解使用GitHub进行构建的公司和工程团队。\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n*   **企业内容**：专为您策划的执行洞察。\n    ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg)",
-      "shortSummary": "GitHub Copilot新增了“代理模式”（Agent mode）和“编码代理”（Coding agent）两大AI能力。代理模式是编辑器内的实时协作工具，用于即时代码迭代和修复；编码代理是云端的异步队友，可自动处理GitHub问题、编写代码并提交PR。两者可协同使用，提升开发效率，取代重复性工作，让工程师专注于创新。尽管AI加速了工作，但仍需人工审查、测试和版本控制来确保代码质量和安全。",
-      "translated_title": "事半功倍：GitHub Copilot 编码代理与代理模式的区别",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/03/cropped-IMG_1971-200x200.jpeg",
-          "alt": "Andrea Griffiths",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
-          "alt": "Enterprise content",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>We’ll decode these two tools—and show you how to use them both to work more efficiently. </p>\n<p>The post <a href=\"https://github.blog/developer-skills/github/less-todo-more-done-the-difference-between-coding-agent-and-agent-mode-in-github-copilot/\">The difference between coding agent and agent mode in GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-06-17T04:38:19.491Z"
+  "lastUpdated": "2025-06-19T04:38:24.603Z"
 }
