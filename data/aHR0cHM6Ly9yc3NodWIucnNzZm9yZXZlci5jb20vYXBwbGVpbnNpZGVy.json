@@ -5,6 +5,303 @@
   "link": "https://appleinsider.com",
   "items": [
     {
+      "title": "发现160亿条登录凭据泄露，但无需恐慌 (原标题: 16 billion logins discovered across exposed datasets, but don't panic)",
+      "link": "https://appleinsider.com/articles/25/06/18/16-billion-logins-discovered-across-exposed-datasets-but-dont-panic",
+      "pubDate": "Wed, 18 Jun 2025 22:08:44 GMT",
+      "isoDate": "2025-06-18T22:08:44.000Z",
+      "creator": "Wesley Hilliard",
+      "summary": "## 发现160亿条登录凭据泄露，但无需恐慌\n\n网络安全专家发现了一系列暴露的数据集，其中包含由信息窃取器获取的160亿条凭据。然而，那些遵循良好密码卫生习惯的用户应该会是安全的。\n\n### 泄露详情\n\n*   **规模巨大**：网络安全团队Cybernews的研究发现，30个数据集短暂出现在网上，共包含超过160亿条被盗凭据。这是迄今为止最大规模的数据泄露之一，使得其他大多数泄露相形见绌。\n*   **数据内容**：每个数据集包含数千万到35亿条凭据，包括URL、登录名和密码。\n*   **来源**：这些数据集似乎来源于恶意软件和数据窃取器，它们可以在个人设备或网站本身上运行。\n*   **受影响群体**：虽然不同数据集之间存在重叠，无法准确估计受影响的个体数量，但最大的35亿条记录数据库似乎来自葡萄牙语人群，另有4.45亿条记录来自俄罗斯。受影响的应用程序和服务广泛，包括Apple、Telegram（至少6000万条记录）、Facebook等。\n\n### 基本数字卫生习惯可保护您\n\n这次大规模数据泄露表明了恶意行为者的复杂程度。然而，重要的是要认识到，我们已经进入了一个用户名和密码不再是唯一登录方式的时代。以下是保护您的凭据和数据的关键措施：\n\n1.  **使用密码管理器**：\n    *   密码管理器已不再是简单的便利工具，而是数字生活的生命线。\n    *   无论是iPhone、Android、Windows、Mac还是Linux，都有相应的工具来存储和管理密码，例如Apple的密码应用。\n    *   这些工具会警告您重复使用的凭据，并直接链接到网站以进行更改。\n    *   付费服务（如1Password或Dashlane）甚至会在您的登录信息出现在已知泄露中时发出警告。Apple密码应用也提供此功能。\n    *   **关键功能**：密码管理器最重要的是其功能性，它能确保您保存的每个密码都是唯一的，并且是随机生成的。\n    ![两名蓝色火柴人握手，中间有一个锁的符号，背景为黑色。](https://photos5.appleinsider.com/gallery/64072-133380-Privacy-2-xl.jpg)\n    *Apple私密安全的密码应用足以保护您的凭据*\n\n2.  **设置双重认证（2FA）**：\n    *   为所有提供2FA的账户启用此功能。\n    *   短信验证码因SIM卡交换攻击向量而不再是最佳选择，但总比没有好。\n    *   如果应用程序提供通过代码生成工具进行2FA，Apple密码应用也可以生成这些代码。\n    *   通过密码管理器设置后，您可以使用面容ID或触控ID登录，无需记住凭据。\n    ![智能手机屏幕显示一个数字锁图标和文字“密码已锁定”，顶部有一个绿色的面部识别符号。](https://photos5.appleinsider.com/gallery/64072-133381-Passwords-xl.jpg)\n    *生物识别技术保护密码应用*\n\n3.  **使用“隐藏我的邮件”功能（Apple）**：\n    *   在创建账户时使用此功能，可以防止垃圾邮件堆积在主收件箱中。\n    *   它还能使黑客更难将您的账户相互关联。\n\n4.  **使用通行密钥（Passkeys）**：\n    *   通行密钥是一种新的在线数据保护方式，它依赖于通常受生物识别保护的硬件设备。\n    *   在可用之处设置通行密钥，它们将完全取代用户名和密码。\n    *   通行密钥基本上用您的硬件设备和生物识别技术取代了用户名和密码，是锁定账户的坚实方法。\n    ![设备屏幕显示密码类别：全部 (410)、通行密钥 (6)、代码 (21)、Wi-Fi (33)、安全 (0)、已删除 (0)。](https://photos5.appleinsider.com/gallery/64072-133382-Passwords-xl.jpg)\n    *密码应用可在iOS、iPadOS、macOS、浏览器扩展和Windows上使用*\n\n5.  **设置安全密钥（极端情况）**：\n    *   在最极端的情况下，可以设置安全密钥，即物理设备（如USB驱动器）充当物理2FA设备。\n    *   这适用于担心被黑客攻击的政治人物、公众人物和预期会受到定向攻击的人士。\n\n### 警惕网络钓鱼\n\n*   这160亿条凭据泄露很可能被用于设计网络钓鱼方案，以获取更多用户数据。\n*   **人类因素**是任何人安全中最薄弱的环节。\n*   **防范措施**：\n    *   切勿打开来自未知号码或电子邮件的链接。\n    *   切勿通过电话向他人提供个人详细信息，除非是经过验证的号码或您亲自拨打的号码。\n    *   如果对电子邮件或短信的真实性有疑问，请直接通过浏览器手动登录账户，而不是点击链接。\n*   **iOS 26新功能**：iOS 26使管理未知短信、电话和其他诈骗向量变得更容易，来自未知号码的电话和短信会自动移到“电话”或“信息”应用的新部分。\n\n### 总结\n\n基本的互联网和密码卫生习惯在挫败犯罪分子方面大有裨益。虽然其中一些设置可能需要时间，但一旦全部运行起来，即使发生数据泄露，您也无需再考虑用户名或密码。良好的数字习惯将为您带来长期的安全保障。",
+      "shortSummary": "网络安全专家发现30个数据集共泄露160亿条登录凭据，主要来自信息窃取器。尽管规模巨大，但遵循良好密码卫生习惯的用户可免受影响。文章强调使用密码管理器生成唯一密码、启用双重认证、利用通行密钥等高级安全措施的重要性。同时提醒用户警惕网络钓鱼，切勿点击可疑链接，并指出人类因素是安全最薄弱环节。加强数字卫生可有效防范此类威胁。",
+      "translated_title": "发现160亿条登录凭据泄露，但无需恐慌",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64072-133380-Privacy-2-xl.jpg",
+          "alt": "Two blue stick figures shaking hands with a lock symbol in between them on a black background.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64072-133381-Passwords-xl.jpg",
+          "alt": "Smartphone screen showing a digital lock icon and the text 'Passwords Are Locked' with a green facial recognition symbol at the top.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64072-133382-Passwords-xl.jpg",
+          "alt": "Device screen showing password categories: All (410), Passkeys (6), Codes (21), Wi-Fi (33), Security (0), Deleted (0).",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "立即以829美元抢购苹果M4 MacBook Air，优惠截止6月19日 (原标题: Grab Apple's M4 MacBook Air for $829 now through June 19)",
+      "link": "https://appleinsider.com/articles/25/06/18/grab-apples-m4-macbook-air-for-829-now-through-june-19",
+      "pubDate": "Wed, 18 Jun 2025 21:35:13 GMT",
+      "isoDate": "2025-06-18T21:35:13.000Z",
+      "creator": "Christine McKee",
+      "summary": "B&H正在举办一场大型苹果产品促销活动，以庆祝其Bild Expo盛会，其中包含多款M4 MacBook Air配置的最低价格，优惠将持续到6月19日。\n\n### 核心优惠亮点\n\n*   **13英寸M4 MacBook Air (2025款)**：\n    *   天蓝色版本，配备Apple M4芯片、16GB内存和256GB存储空间。\n    *   售价为**829美元**，原价999美元，优惠170美元。\n    *   根据文章的13英寸MacBook Air M4价格指南，这是目前主流苹果经销商中最大的折扣。\n\n### 其他MacBook Air优惠\n\n文章指出，更高配置的MacBook Air型号也享受三位数折扣。以下是一些主要优惠：\n\n*   **13英寸M4 MacBook Air**：\n    *   8核GPU, 16GB内存, 256GB存储, 天蓝色: **829美元** (优惠170美元)\n    *   10核GPU, 16GB内存, 512GB存储, 天蓝色: **999美元** (优惠200美元)\n    *   10核GPU, 24GB内存, 1TB存储, 天蓝色或午夜色: **1,399美元** (优惠200美元)\n    *   10核GPU, 32GB内存, 1TB存储, 天蓝色: **1,599美元** (优惠200美元)\n    *   10核GPU, 32GB内存, 2TB存储, 天蓝色: **1,999美元** (优惠200美元)\n*   **15英寸M4 MacBook Air**：\n    *   10核GPU, 16GB内存, 256GB存储: **1,049美元** (优惠150美元)\n    *   10核GPU, 24GB内存, 512GB存储, 午夜色: **1,399美元** (优惠200美元)\n\n### 其他Mac产品折扣\n\n除了MacBook Air，其他Mac产品也在此次促销中享受折扣：\n\n*   **Mac mini M4**：16GB内存, 256GB存储: **469美元** (优惠130美元)\n*   **14英寸MacBook Pro M4**：\n    *   16GB内存, 512GB SSD: **1,399美元** (优惠200美元)\n    *   16GB内存, 1TB SSD: **1,549美元** (优惠250美元)\n*   **14英寸MacBook Pro M4 Pro**：\n    *   12核CPU, 16核GPU, 24GB内存, 512GB SSD, 深空黑色: **1,749美元** (优惠250美元)\n    *   14核CPU, 20核GPU, 48GB内存, 1TB SSD, 深空黑色: **2,399美元** (优惠400美元)\n*   **14英寸MacBook Pro M4 Max**：14核CPU, 32核GPU, 36GB内存, 1TB SSD, 深空黑色: **2,879美元** (优惠320美元)\n*   **16英寸MacBook Pro M4 Pro**：\n    *   14核CPU, 20核GPU, 24GB内存, 1TB SSD, 深空黑色: **2,349美元** (优惠350美元) - 今日截止！\n    *   14核CPU, 20核GPU, 48GB内存, 1TB SSD, 深空黑色: **2,699美元** (优惠400美元) - 今日截止！\n*   **16英寸MacBook Pro M4 Max**：16核CPU, 40核GPU, 64GB内存, 1TB SSD, 深空黑色: **3,699美元** (优惠500美元) - 今日截止！\n\n文章还提到，未来将继续提供季度末优惠以及Prime Day 2025之前的折扣，以帮助消费者节省苹果产品购买费用。",
+      "shortSummary": "B&H正举行Bild Expo促销活动，提供苹果M4 MacBook Air及其他Mac产品的大幅折扣。其中，13英寸M4 MacBook Air（16GB内存/256GB存储）仅售829美元，优惠170美元。此外，Mac mini和多款MacBook Pro型号也享受高达数百美元的折扣。部分优惠今日截止，整体活动持续至6月19日。",
+      "translated_title": "立即以829美元抢购苹果M4 MacBook Air，优惠截止6月19日",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果新短片《大人物》使用iPhone 16 Pro拍摄 (原标题: Apple's new short film 'Big Man' was shot on an iPhone 16 Pro)",
+      "link": "https://appleinsider.com/articles/25/06/18/apples-new-short-film-big-man-was-shot-on-an-iphone-16-pro",
+      "pubDate": "Wed, 18 Jun 2025 21:07:26 GMT",
+      "isoDate": "2025-06-18T21:07:26.000Z",
+      "creator": "Marko Zivkovic",
+      "summary": "# 苹果新短片《大人物》：iPhone 16 Pro的电影级呈现\n\n苹果公司在其标志性的“Shot on iPhone”（用iPhone拍摄）宣传活动中，发布了最新短片《大人物》（Big Man），该片由英国说唱歌手Michael \"Stormzy\" Omari主演，并完全使用iPhone 16 Pro拍摄。\n\n## 《大人物》影片概览\n*   **主演与角色**: 影片由Stormzy饰演一位名叫Tenzman的厌世音乐家，他已近八年未创作音乐。\n*   **故事情节**: Tenzman偶遇两位充满活力和快乐的孩子，三人一同踏上了一段改变人生的旅程，最终Tenzman重新开始创作音乐。\n*   **片长**: 影片时长不到20分钟。\n*   **导演**: 由伦敦的编剧兼导演Aneil Karia执导，他以《Beat》、《Surge》和《The Long Goodbye》等作品闻名。\n\n## iPhone 16 Pro在电影制作中的优势\n导演Aneil Karia在苹果的《大人物》幕后视频中，详细阐述了使用iPhone 16 Pro进行电影制作的优势。\n*   **首次尝试**: Karia表示这是他首次使用iPhone进行叙事性电影项目，并称整个过程“有趣且令人振奋”。\n*   **多功能性与灵活性**: 相较于传统用于电视和音乐视频制作的笨重摄像机，iPhone的体积更小，因此具有无与伦比的轻便性和灵活性。\n*   **先进的摄像头功能**: iPhone 16 Pro配备了多项先进的摄像头功能，包括：\n    *   全新的摄像头控制按钮。\n    *   48MP主摄像头。\n    *   48MP超广角摄像头。\n    *   12MP长焦摄像头。\n    *   电影模式（提供浅景深和动态范围）。\n    *   自动对焦功能。\n*   **卓越的性能**: 影片的摄影指导Stuart Bentley强调了iPhone拍摄4K 120帧/秒视频的能力，并表示他们将摄像头推向了其能力的极限，发现它“非常坚韧”。\n\n## “Shot on iPhone”系列宣传活动回顾\n“Shot on iPhone”活动已成为苹果公司的一项年度传统，旨在展示iPhone在专业电影制作领域的强大能力。\n*   **2020年：《替身》（The Stunt Double）**: 由Damien Chazelle执导，时长9分钟，展示了iPhone 11 Pro的性能，并以独特的垂直宽高比拍摄。\n*   **2022年：《人生如梦》（Life is But a Dream）**: 由朴赞郁执导，时长20分钟，展示了iPhone 13 Pro在电影制作方面的功能集。\n*   **2023年：《福萨特》（Fursat）**: 时长30分钟，由印度导演Vishal Bhardwaj执导，旨在突出iPhone 14 Pro作为电影制作工具的潜力。\n*   **2024年：《午夜》（Midnight）**: 由三池崇史执导，是一部关于东京出租车司机的高动作影片，也是同名漫画的真人版翻拍。\n*   **即将上映：《28天后》（28 Days Later）**: 该片将于6月20日进行全面院线发行，iPhone在影片的视觉叙事中发挥了关键作用。",
+      "shortSummary": "苹果发布了其“Shot on iPhone”系列最新短片《大人物》，由英国说唱歌手Stormzy主演，并完全使用iPhone 16 Pro拍摄。该片由Aneil Karia执导，展示了iPhone 16 Pro卓越的电影拍摄能力，包括其多功能性、先进的摄像头功能（如4K 120fps、电影模式）和出色的韧性。这延续了苹果与知名导演合作，通过年度活动突出iPhone作为专业电影制作工具的传统。",
+      "translated_title": "苹果新短片《大人物》使用iPhone 16 Pro拍摄",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "Apple One 订阅在2025年还值得吗？ (原标题: Is the Apple One subscription worth it in 2025?)",
+      "link": "https://appleinsider.com/inside/apple-one/tips/is-the-apple-one-subscription-worth-it-in-2025",
+      "pubDate": "Wed, 18 Jun 2025 20:18:17 GMT",
+      "isoDate": "2025-06-18T20:18:17.000Z",
+      "creator": "Malcolm Owen",
+      "summary": "## Apple One 订阅在2025年还值得吗？\n\nApple One 订阅服务于2020年末推出，将苹果的多项高级在线服务整合到一个月费中。在推出近五年后，对于深度融入苹果生态系统的用户来说，它仍然是一个有吸引力的捆绑包，但并非适用于所有人的需求。在某些情况下，单独订阅可能更具价值。\n\n### Apple One 个人版 (Individual)\n\n*   **价格：** 每月19.95美元。\n*   **包含服务：**\n    *   Apple TV+\n    *   Apple Music\n    *   Apple Arcade\n    *   50GB iCloud+\n*   **iCloud+ 额外功能：** 除了存储空间，还包括 iCloud 私密转送（隐藏IP地址）、隐藏我的电子邮件、HomeKit 安全视频支持、自定义电子邮件域名以及 Invites 应用功能。\n*   **单独订阅费用对比：**\n    *   iCloud+ (50GB): 0.99美元\n    *   Apple TV+: 9.99美元\n    *   Apple Music: 10.99美元\n    *   Apple Arcade: 6.99美元\n    *   **总计：** 约28.96美元\n*   **节省金额：** 每月约9美元。\n*   **适用人群：** 如果您已经订阅了 Apple Music 和 Apple TV+，那么个人版订阅非常划算。\n\n![Apple One logo above six app icons: Music, TV, Arcade, News, Fitness, iCloud. Each icon has a distinctive design and color, arranged in two rows.](https://photos5.appleinsider.com/gallery/64069-133371-appleoneapps-xl.jpg)\n\n### Apple One 家庭版 (Family)\n\n*   **价格：** 每月25.95美元。\n*   **共享：** 可与最多五人共享。\n*   **包含服务：**\n    *   Apple TV+\n    *   Apple Music (家庭版)\n    *   Apple Arcade\n    *   200GB iCloud+\n*   **单独订阅费用对比：**\n    *   iCloud+ (200GB): 2.99美元\n    *   Apple Music (家庭版): 16.99美元\n    *   Apple TV+: 9.99美元\n    *   Apple Arcade: 6.99美元\n    *   **总计：** 约36.96美元\n*   **节省金额：** 每月约11美元。\n*   **适用人群：** 如果您的家庭成员都使用苹果服务，这是一个很好的省钱方式。对于个人用户来说，不如个人版划算。\n\n![Man in suit walking down a narrow, brightly-lit hallway, holding a bunch of blue balloons.](https://photos5.appleinsider.com/gallery/64069-133372-60322-124009-severance2-xl-xl.jpg)\n\n### Apple One 高级版 (Premier)\n\n*   **价格：** 每月37.95美元。\n*   **共享：** 可与最多五人共享。\n*   **包含服务：**\n    *   Apple TV+\n    *   Apple Music (家庭版)\n    *   Apple Arcade\n    *   Apple Fitness+\n    *   Apple News+\n    *   2TB iCloud+\n*   **单独订阅费用对比：**\n    *   iCloud+ (2TB): 9.99美元\n    *   Apple Fitness+: 9.99美元\n    *   Apple News+: 12.99美元\n    *   Apple TV+: 9.99美元\n    *   Apple Music (家庭版): 16.99美元\n    *   Apple Arcade: 6.99美元\n    *   **总计：** 约66.94美元\n*   **节省金额：** 每月约29美元。\n*   **适用人群：** 仅当您和您的家庭成员实际使用 Apple Fitness+ 和 Apple News+ 等额外服务时，高级版才最划算。如果这些服务未被充分利用，选择较低级别的计划可能更佳。\n\n![Smartphone displaying a workout video with two people exercising indoors. Nearby, a pink and black boxing glove rests on a textured surface.](https://photos5.appleinsider.com/gallery/64069-133373-52580-105055-52580-105043-IMG_0080-xl-xl-xl.jpg)\n\n### Apple One 的未来展望\n\nApple One 的价值随着时间的推移不断提升，Apple Music 和 Apple TV+ 的内容以及 Apple Arcade 的目录都在不断扩展。未来，苹果可能会将传闻中的 AI 健康伴侣或 Apple Intelligence 的高级AI功能作为订阅福利加入 Apple One。总的来说，Apple One 对于苹果用户而言，无论是现在还是未来几年，都是一个不错的订阅选择。",
+      "shortSummary": "Apple One 订阅服务将Apple Music、TV+、Arcade、iCloud+等核心服务捆绑，提供个人、家庭和高级版，旨在为深度使用苹果生态系统的用户节省费用。根据所选计划，每月可节省9至29美元。其价值随着内容和服务扩展而提升，未来可能整合AI健康伴侣等新功能。对于已订阅多项苹果服务的用户而言，Apple One通常是值得的，但需根据个人或家庭实际需求选择最合适的版本。",
+      "translated_title": "Apple One 订阅在2025年还值得吗？",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64069-133371-appleoneapps-xl.jpg",
+          "alt": "Apple One logo above six app icons: Music, TV, Arcade, News, Fitness, iCloud. Each icon has a distinctive design and color, arranged in two rows.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64069-133372-60322-124009-severance2-xl-xl.jpg",
+          "alt": "Man in suit walking down a narrow, brightly-lit hallway, holding a bunch of blue balloons.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64069-133373-52580-105055-52580-105043-IMG_0080-xl-xl-xl.jpg",
+          "alt": "Smartphone displaying a workout video with two people exercising indoors. Nearby, a pink and black boxing glove rests on a textured surface.",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "iOS 26 和 macOS 26 中的 Safari 如何通过“液态玻璃”UI 变化实现内容优先 (原标题: How Safari in iOS 26 & macOS 26 puts content first with Liquid Glass UI changes)",
+      "link": "https://appleinsider.com/articles/25/06/18/how-safari-in-ios-26-macos-26-puts-content-first-with-liquid-glass-ui-changes",
+      "pubDate": "Wed, 18 Jun 2025 18:37:56 GMT",
+      "isoDate": "2025-06-18T18:37:56.000Z",
+      "creator": "Malcolm Owen",
+      "summary": "### iOS 26 和 macOS 26 中的 Safari 更新概览\n\nApple 在 WWDC 上发布了 iOS 26、iPadOS 26 和 macOS 26 Tahoe 的 Safari 浏览器更新，带来了多项用户界面（UI）调整、Web 应用改进、HDR 照片支持以及其他较小的变化。Safari 26 Beta 版本共包含 67 项新功能和 107 项改进。\n\n#### 1. “液态玻璃”UI 刷新\n\n*   **设计理念：** 2025 年的新 UI 主题“液态玻璃”更新了用户界面，按钮、面板和窗口都基于玻璃效果，强调透明度和折射。应用程序界面最小化菜单，优先展示内容。\n*   **iPhone 上的变化：**\n    *   地址栏变为屏幕底部浮动的圆形条。\n    *   屏幕下方不再有五个按钮的区块，取而代之的是一个返回按钮和一个用于显示更多选项的“点”按钮。\n    *   ![三部智能手机展示科技新闻网站，包含 tvOS 26、智能家居中心显示器和先进 iPhone 显示技术文章。导航和书签选项可见。](https://photos5.appleinsider.com/gallery/64064-133358-safariios26newinterface-xl.jpg)\n    *   前进按钮和其他功能（如书签、标签页、分享表单）默认隐藏，通过长按返回按钮或点击“点”按钮显示。\n    *   核心目标是为网站内容腾出更多屏幕空间。\n*   **macOS 和 iPadOS 上的变化：**\n    *   同样采用内容优先的设计理念，但地址栏和选项位于屏幕顶部。\n    *   标签页在需要时会以浮动的椭圆形条显示，界面按钮同样极少。\n    *   ![三个打开的电脑窗口显示新闻网站、带有图标的常用网站和浏览标签管理界面。](https://photos5.appleinsider.com/gallery/64064-133357-safari-26-in-macos-26-xl.jpg)\n\n#### 2. Web 应用全面化\n\n*   **默认行为改变：** 在 iOS 和 iPadOS 26 版本中，网站默认会作为 Web 应用打开，无论其是否专门设计为 Web 应用。\n*   **用户控制：** 用户仍可通过“添加到主屏幕”功能创建图标时禁用“作为 Web 应用打开”选项，此时网站将在用户的默认浏览器中打开。\n*   **图片：** ![三个智能手机屏幕显示 AppleInsider 网站、分享选项菜单和带有键盘输入以进行自定义的添加到主屏幕功能。](https://photos5.appleinsider.com/gallery/64064-133359-webapptogglesafari26-xl.jpg)\n\n#### 3. HDR 照片支持\n\n*   Safari 26 新增了对网页中嵌入的 HDR 图像的正确显示支持，充分利用 HDR 特性。\n*   这意味着终端用户可以在网站上看到更生动、色彩更准确的照片。\n\n#### 4. SVG 图标支持\n\n*   Safari 26 现在支持 SVG 矢量图像格式作为图标，适用于浏览器中几乎所有放置图标的位置，如起始页、收藏夹和网站图标。\n*   这将带来更美观、在不同缩放比例下不易失真的网站图标。\n\n#### 5. 网页内应用、GPU 使用及其他开发者功能\n\n*   **SwiftUI 新 API：** 允许开发者将网页内容集成到为 Apple 平台制作的应用程序中，方便 Web 开发者构建原生应用。\n*   **WebGPU：** 这是一个 JavaScript API，用于在 GPU 上运行程序。它类似于 WebGL，但具有更少的转换开销，并能更好地映射到 Metal，从而利用 GPU 性能在浏览器中渲染内容。此功能已在 Safari Technology Preview 中提供一年多，现已正式发布。\n*   **CSS 新特性：** Web 设计师可以利用 CSS 锚点定位、滚动驱动动画、进度函数以及“Pretty”文本环绕功能。\n    *   “Pretty”文本环绕功能可以调整文本环绕，使文本边缘更平滑，消除尖锐的突出线条。\n    *   ![不同长度的段落，右侧有三条垂直线，分别为紫色、红色和绿色。文本讨论了网页设计中的布局和排版。](https://photos5.appleinsider.com/gallery/64064-133360-prettycss-xl.jpg)\n*   **沉浸式视频（Vision Pro）：** visionOS 上的 Safari 增加了对更多沉浸式视频类型的支持。",
+      "shortSummary": "Safari 在 iOS 26 和 macOS 26 中迎来重大更新。新版采用“液态玻璃”UI，通过透明效果和最小化菜单，实现内容优先，iPhone 地址栏移至底部并浮动。所有网站默认作为 Web 应用打开，提升体验。同时，新增对网页中 HDR 照片和 SVG 图标的支持，提升视觉效果。开发者可利用 SwiftUI API 集成网页内容，WebGPU 优化图形性能，并新增多项 CSS 特性，如“Pretty”文本环绕，以及 Vision Pro 的沉浸式视频支持。",
+      "translated_title": "iOS 26 和 macOS 26 中的 Safari 如何通过“液态玻璃”UI 变化实现内容优先",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64064-133358-safariios26newinterface-xl.jpg",
+          "alt": "Three smartphones showing a tech news website with articles on tvOS 26, a Home Hub smart display, and advanced iPhone display technology. Navigation and bookmark options are visible.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64064-133357-safari-26-in-macos-26-xl.jpg",
+          "alt": "Three open computer windows display a news website, frequently visited sites with icons, and a browsing tab management interface.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64064-133359-webapptogglesafari26-xl.jpg",
+          "alt": "Three smartphone screens display the AppleInsider website, sharing options menu, and add-to-home-screen feature with keyboard input for customization.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64064-133360-prettycss-xl.jpg",
+          "alt": "Paragraphs of different lengths with three vertical lines on the right side, colored purple, red, and green. Text discusses layout and typography in web design.",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果合作伙伴德州仪器在美国投资600亿美元用于芯片生产 (原标题: Apple partner Texas Instruments is spending $60B on chip production in the US)",
+      "link": "https://appleinsider.com/articles/25/06/18/apple-partner-texas-instruments-is-spending-60-b-on-chip-production-in-the-us",
+      "pubDate": "Wed, 18 Jun 2025 16:50:00 GMT",
+      "isoDate": "2025-06-18T16:50:00.000Z",
+      "creator": "Andrew Orr",
+      "summary": "# 德州仪器在美国芯片生产领域的重大投资\n\n德州仪器（Texas Instruments, TI）作为苹果的组件供应商，正在美国进行迄今为止对基础芯片生产的最大投资，计划在德克萨斯州和犹他州投入超过600亿美元扩建芯片工厂。\n\n## 投资规模与影响\n*   **投资额度**：超过600亿美元。\n*   **就业机会**：预计将支持超过6万个就业岗位。\n*   **供应链安全**：有助于确保从iPhone到汽车等各类产品关键组件的供应安全。\n*   **工厂数量**：涵盖七个使用300毫米晶圆的制造工厂。\n*   **芯片类型**：主要生产TI的模拟和嵌入式芯片，这些芯片采用成熟工艺，例如用于苹果产品的电源管理和触摸屏控制器。\n\n## 主要扩建地点\nTI的投资计划包括建设三个主要基地：\n*   **德克萨斯州谢尔曼（Sherman, Texas）**：正在运营其第一座晶圆厂，第二座即将完工，另有两座正在规划中。\n*   **德克萨斯州理查森（Richardson, Texas）**：正在提升第二座晶圆厂的产能。\n*   **犹他州莱希（Lehi, Utah）**：将建设第二座工厂以支持现有生产线。\n\n## 芯片特性与战略目标\n所有这些工厂都专注于生产可靠、低成本的芯片。它们虽然不会打破性能记录，但对于驱动数百万设备（从医疗监视器到汽车仪表盘）至关重要。TI表示，其目标是确保这些基础组件在日益增长的全球需求下，依然保持价格可负担且供应充足。\n\n## 行业支持\n*   **苹果公司**：首席执行官蒂姆·库克（Tim Cook）赞扬了德州仪器在为苹果产品提供动力和支持美国制造业方面的作用。他强调，双方将继续在美国各地创造机会、推动创新并投资于先进制造业的未来。苹果致力于加强国内合作伙伴关系，并投资于有韧性的美国本土供应链。\n*   **福特汽车**：首席执行官吉姆·法利（Jim Farley）指出，大多数在美国销售的福特汽车也是在美国制造的，拥有国内芯片合作伙伴将加强其供应链。\n\n## 投资的战略意义\n德州仪器600亿美元的投资正值美国努力重建国内芯片制造能力之际。虽然目前国家层面的讨论多集中于高性能计算芯片，但TI的投资侧重于成熟的300毫米晶圆厂，这些工厂能够大规模生产芯片，具有可预测的良率，且不受制程缩小周期的持续影响。尽管这些工厂造价不菲且回报周期较长，但一旦建成，它们将赋予TI定价权、供应控制权，并增强其与日益寻求美国本土生产客户的议价能力。\n\n![一名戴着耳罩的人在繁忙的现代化车间工作，背景中有各种工具、机器和人员。](https://photos5.appleinsider.com/gallery/64062-133353-IMG_1141-xl.jpg)",
+      "shortSummary": "德州仪器正投入600亿美元在美国德州和犹他州扩建芯片工厂，这是美国基础芯片生产迄今最大投资。此举旨在生产用于iPhone、汽车等产品的模拟和嵌入式芯片，确保关键组件供应安全，并创造超6万个就业岗位。苹果和福特等主要美国公司对此表示支持，强调其对加强美国本土供应链的重要性。该投资将提升TI的定价权和供应控制力。",
+      "translated_title": "苹果合作伙伴德州仪器在美国投资600亿美元用于芯片生产",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64062-133353-IMG_1141-xl.jpg",
+          "alt": "A person wearing earmuffs works at a busy, modern workshop with various tools, machines, and people in the background.",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果开放2025年线下Apple Camp注册 (原标题: Apple opens registrations for in-person Apple Camp 2025)",
+      "link": "https://appleinsider.com/articles/25/06/18/apple-opens-registrations-for-in-person-apple-camp-2025",
+      "pubDate": "Wed, 18 Jun 2025 16:30:47 GMT",
+      "isoDate": "2025-06-18T16:30:47.000Z",
+      "creator": "William Gallagher",
+      "summary": "## 2025年Apple Camp概览\n\n苹果公司已开放2025年Apple Camp的注册，邀请儿童及其家长或监护人参与这项年度活动。本届Apple Camp将专注于在iPad上制作电影。\n\n### 历史与背景\n\nApple Camp已举办近25年，每年都有不同的主题。除了2020年和2021年因新冠疫情改为在线版本外，该活动一直以线下形式进行。活动通常在夏季的几周内，以一系列90分钟的课程形式展开。\n\n### 2025年Apple Camp详情\n\n*   **主题与活动**：\n    *   本年度的主题是“在iPad上执导自己的友谊电影”（Direct Your Own Friendship Film on iPad）。\n    *   苹果表示，孩子们将通过协作来执导、拍摄、编辑等，共同制作一部友谊电影，以颂扬团结的力量。\n*   **年龄范围与时长**：\n    *   今年的年龄范围设定为6-10岁，这比以往大多数Apple Camp的8-12岁有所降低。\n    *   活动时长也略有延长，约为五周。\n*   **参与者收获**：\n    *   除了亲手制作的电影外，所有参与的儿童还将获得一件独家Apple Camp T恤。\n    *   今年的T恤经过全新设计，并由100%回收材料制成。\n*   **活动日期**：\n    *   2025年Apple Camp的举办时间为6月21日至7月31日。\n    *   家长和监护人可以预订在此期间进行的免费90分钟课程。\n\n### 注册信息\n\n苹果公司已宣布注册现已开放。然而，截至文章撰写时，其官方在线页面尚未完全上线。不过，页面提供了“获取通知”（Get Notified）选项，以便在注册正式开放时提醒用户。",
+      "shortSummary": "苹果已开放2025年线下Apple Camp的注册，邀请6-10岁儿童参与。本届主题为“在iPad上执导自己的友谊电影”，旨在通过协作制作电影。活动为期约五周，从6月21日至7月31日，提供免费的90分钟课程。参与者还将获得一件由回收材料制成的新款T恤。尽管苹果宣布注册已开放，但官方页面尚未完全上线，提供了“获取通知”选项。",
+      "translated_title": "苹果开放2025年线下Apple Camp注册",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果14英寸48GB内存MacBook Pro的400美元闪购优惠今晚截止 (原标题: This $400 flash discount on Apple's 14-inch MacBook Pro with 48GB RAM ends tonight)",
+      "link": "https://appleinsider.com/articles/25/06/18/this-400-flash-discount-on-apples-14-inch-macbook-pro-with-48gb-ram-ends-tonight",
+      "pubDate": "Wed, 18 Jun 2025 15:43:40 GMT",
+      "isoDate": "2025-06-18T15:43:40.000Z",
+      "creator": "Christine McKee",
+      "summary": "# B&H 苹果14英寸MacBook Pro闪购优惠今晚截止\n\nB&H正在对其最新款苹果14英寸MacBook Pro提供限时闪购优惠，该优惠将于太平洋时间今晚8:59结束。\n\n## 优惠详情\n*   **折扣金额**：400美元\n*   **折后价格**：2,399美元\n\n## 特定型号配置\n此次闪购优惠针对的是以下配置的14英寸MacBook Pro：\n*   **处理器**：苹果M4 Pro芯片，配备14核中央处理器（CPU）和20核图形处理器（GPU）。\n*   **内存**：48GB统一内存，是标准型号的两倍。\n*   **存储**：1TB固态硬盘（SSD），也是标准型号的两倍。\n*   **颜色**：深空黑。\n\n## B&H 附加服务\n购买此款MacBook Pro，B&H还提供以下便利：\n*   **免费送货**：美国本土（contiguous U.S.）订单享受免费两天送达服务。\n*   **销售税退款**：Payboo持卡人在符合条件的州可享受即时销售税退款，进一步节省开支。\n*   **分期付款**：可选择12个月的特殊分期付款方案。\n\n## 其他MacBook Pro优惠（供参考）\n文章还提到了一些其他MacBook Pro型号的当前优惠，可供消费者参考：\n*   **14英寸MacBook Pro M4**：16GB内存，512GB SSD，售价1,399美元（优惠200美元）。\n*   **14英寸MacBook Pro M4**：16GB内存，1TB SSD，售价1,549美元（优惠250美元）。\n*   **14英寸MacBook Pro M4 Pro**：12核CPU，16核GPU，24GB内存，512GB SSD，深空黑，售价1,749美元（优惠250美元）。\n*   **14英寸MacBook Pro M4 Max**：14核CPU，32核GPU，36GB内存，1TB SSD，深空黑，售价2,879美元（优惠320美元）。\n*   **16英寸MacBook Pro M4 Pro**：14核CPU，20核GPU，24GB内存，1TB SSD，深空黑，售价2,349美元（优惠350美元）。\n*   **16英寸MacBook Pro M4 Pro**：14核CPU，20核GPU，48GB内存，1TB SSD，深空黑，售价2,699美元（优惠400美元）。\n*   **16英寸MacBook Pro M4 Max**：16核CPU，40核GPU，64GB内存，1TB SSD，深空黑，售价3,699美元（优惠500美元）。",
+      "shortSummary": "B&H正对一款配置为48GB内存和1TB存储的苹果14英寸M4 Pro MacBook Pro提供400美元的闪购优惠，折后价为2,399美元。此优惠将于太平洋时间今晚8:59截止。该机型配备14核CPU和20核GPU，并提供免费两天送达等服务，是寻求高性能MacBook Pro用户的限时良机。",
+      "translated_title": "苹果14英寸48GB内存MacBook Pro的400美元闪购优惠今晚截止",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "如果你的iPhone版YouTube出现问题，请删除并重新安装应用 (原标题: If you had a problem with YouTube on iPhone, delete the app and reinstall it)",
+      "link": "https://appleinsider.com/articles/25/06/18/if-you-had-a-problem-with-youtube-on-iphone-delete-the-app-and-reinstall-it",
+      "pubDate": "Wed, 18 Jun 2025 15:07:36 GMT",
+      "isoDate": "2025-06-18T15:07:36.000Z",
+      "creator": "William Gallagher",
+      "summary": "### iPhone版YouTube应用问题及解决方案\n\n近期，谷歌的iPhone版YouTube应用出现了一系列故障，包括无响应或意外关闭。这些问题似乎始于6月9日开始推送的20.23.3版本更新。\n\n**问题描述：**\n\n*   **症状：** iPhone上的YouTube应用出现普遍的无响应或意外关闭情况。\n*   **可能原因：** 问题似乎与6月9日发布的20.23.3版本更新有关。该版本的发布说明曾戏称“我们修复了为您带来视频的管道——以及一些错误”。\n\n**谷歌的应对措施：**\n\n*   **初步建议：** 谷歌最初建议用户删除并重新安装应用，称之为“临时解决方案”，同时调查问题。然而，对于大多数用户来说，这个方法并未奏效。\n*   **当前解决方案：** 谷歌现在将删除并重新安装应用作为推荐的解决方案，并且已在App Store发布了一个新的应用更新。新版本的发布说明更为“清醒”，提及“错误修复、稳定性改进、时空连续体修复”。\n\n**其他相关信息：**\n\n*   YouTube仍在为其iOS应用添加新功能，例如画中画模式，并承诺为Apple Vision Pro提供原生应用。\n*   文章还提到了Apple TV版YouTube应用可能出现的冻结或垂直滚动失效问题，但明确指出这些问题与本次移动应用问题无关。",
+      "shortSummary": "近期，iPhone版YouTube应用出现无响应和意外关闭等故障，问题可能源于6月9日发布的20.23.3版本更新。谷歌最初建议用户删除并重新安装应用，但效果不佳。现在，谷歌已发布新的应用更新，并再次推荐用户删除并重新安装应用以解决这些问题。",
+      "translated_title": "如果你的iPhone版YouTube出现问题，请删除并重新安装应用",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "iPadOS 26 芦苇笔工具是书法的一大补充 (原标题: iPadOS 26 reed pen tool is a great calligraphy addition)",
+      "link": "https://appleinsider.com/articles/25/06/18/the-ipados-26-reed-pen-tool-is-a-great-calligraphy-addition",
+      "pubDate": "Wed, 18 Jun 2025 14:54:00 GMT",
+      "isoDate": "2025-06-18T14:54:00.000Z",
+      "creator": "Malcolm Owen",
+      "summary": "## iPadOS 26 芦苇笔工具：书法新体验\n\niPadOS 26 引入了一项名为“芦苇笔”的全新虚拟工具，它不仅仅是一种风格选择，更是 Apple Pencil 的一个重要补充，旨在支持阿拉伯语书写，并提供卓越的书法体验。\n\n### 工具概述与功能\n\n*   **集成与访问**：芦苇笔作为新的选项被添加到 iPad 的“标记”工具调色板中。用户可以通过向右滑动工具集合找到它，其图标特征是白色笔尖底座和黑色倾斜笔尖。\n    \n    ![Digital drawing toolbar with brush settings, color palette, various drawing tools, and undo options on a white background.](https://photos5.appleinsider.com/gallery/64058-133347-reedpencloseup-xl.jpg)\n    \n*   **核心目的**：Apple 表示，芦苇笔通过预设的笔触角度，提供“传统的书法体验”。它特别适用于需要精确笔触角度控制的书法。\n*   **兼容性**：该工具支持用户的手指或 Apple Pencil 操作，具体取决于 iPad 的绘图设置。它将首先在备忘录、预览、自由形式和日记等 Apple 自带应用中可用，并可在任何支持“标记”功能的地方使用。此外，它也将通过 PencilKit API 在第三方应用中实现。\n\n### 详细设置与效果\n\n芦苇笔的设置非常灵活，用户可以通过双击工具图标来调整其参数：\n\n1.  **角度选项**：提供五种角度预设，决定了芦苇笔在何种笔触角度下能画出最粗的线条。例如，选择中间的水平选项意味着垂直笔触会产生粗线，而水平笔触则产生细线。值得注意的是，这个角度设置独立于 Apple Pencil 的实际握持角度，笔画的粗细变化完全由所选角度决定。\n    \n    ![Tablet screen displaying digital brush strokes in various thicknesses, forming incomplete circles. Below are color and brush tool options, including pencils and markers.](https://photos5.appleinsider.com/gallery/64058-133349-reedpen1-xl.jpg)\n    \n2.  **尺寸选项**：同样提供五种尺寸选择，从相对粗的笔到非常大的画笔，类似于手写字体中的“字重”或笔触粗细。\n3.  **不透明度滑块**：用于调整笔迹的透明度或半透明度，这对于创作艺术效果，尤其是当笔触具有画笔特性时非常有用。\n4.  **压感支持**：与 Apple Pencil 配合使用时，芦苇笔支持压感。轻按屏幕会产生线条不连贯或墨迹不均匀的效果，而用力按压则会产生更实心、更均匀的笔迹。\n\n### 芦苇笔与钢笔的对比\n\nApple 现有的“钢笔”工具与芦苇笔在某些方面有相似之处，两者都能根据笔触角度产生不同粗细的线条。然而，它们之间存在显著差异：\n\n*   **角度控制**：芦苇笔允许用户选择和预设笔触角度，而钢笔则不具备此功能。\n*   **尺寸范围**：芦苇笔的整体尺寸范围更大，其中等尺寸选项甚至比钢笔的最大尺寸还要宽。\n*   **笔迹效果**：钢笔通常产生均匀的墨迹，而芦苇笔则更像画笔，在落笔时呈现出更丰富的纹理和变化。芦苇笔在需要更精细角度控制和画笔般美学效果时更具优势。\n    \n    ![Tablet screen displaying three pairs of hand-drawn squares, each labeled 'Test,' with drawing tools and color palette at the bottom.](https://photos5.appleinsider.com/gallery/64058-133346-reedpencomparison-xl.jpg)\n\n### 更广泛的市场意义\n\n引入新的书法工具对作家、设计师和插画师来说固然有用，但对 Apple 而言，其意义可能更为深远。芦苇笔书法在沙特阿拉伯和阿拉伯联合酋长国等国家非常流行，它模仿了传统上被阿拉伯、伊朗和土耳其书法家使用的 Kamish 芦苇笔。通过提供这款新工具，Apple 将其书写工具推向了这些市场的新受众。这不仅赋予用户更大的表达自由，让更多人能用 Apple Pencil 进行手写笔记，也可能有助于推动 iPad 在这些地区的销量。",
+      "shortSummary": "iPadOS 26 新增了虚拟芦苇笔工具，旨在为 Apple Pencil 提供传统书法体验，尤其支持阿拉伯语书写。该工具允许用户自定义笔触角度、大小和不透明度，并支持压感。它与现有钢笔工具的区别在于提供更精细的角度控制和画笔般的效果。芦苇笔将首先在备忘录等 Apple 应用中可用，并支持第三方应用。此举不仅提升了用户表达自由，也战略性地拓展了 iPad 在中东等传统芦苇笔书法盛行市场的吸引力。",
+      "translated_title": "iPadOS 26 芦苇笔工具是书法的一大补充",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64058-133347-reedpencloseup-xl.jpg",
+          "alt": "Digital drawing toolbar with brush settings, color palette, various drawing tools, and undo options on a white background.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64058-133349-reedpen1-xl.jpg",
+          "alt": "Tablet screen displaying digital brush strokes in various thicknesses, forming incomplete circles. Below are color and brush tool options, including pencils and markers.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64058-133346-reedpencomparison-xl.jpg",
+          "alt": "Tablet screen displaying three pairs of hand-drawn squares, each labeled 'Test,' with drawing tools and color palette at the bottom.",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "碎屏和电池耗尽比AI更能推动iPhone销量 (原标题: Cracked screens & dead batteries are selling more iPhones than AI)",
+      "link": "https://appleinsider.com/articles/25/06/18/cracked-screens-dead-batteries-are-selling-more-iphones-than-ai",
+      "pubDate": "Wed, 18 Jun 2025 14:35:34 GMT",
+      "isoDate": "2025-06-18T14:35:34.000Z",
+      "creator": "Andrew Orr",
+      "summary": "## 碎屏和电池耗尽比AI更能促进iPhone销量\n\n尽管苹果公司在WWDC 2025上发布了Apple Intelligence工具和iOS的新设计，但大多数iPhone的升级并非因为新功能，而是因为旧手机出现故障。iPhone已不再是突破性设备，而是一款成熟产品，升级周期较长。大多数用户更换手机是由于硬件故障，而非AI等炫酷功能。\n\n### 硬件疲劳仍是iPhone升级的主要驱动力\n\n消费者情报研究合作伙伴（CIRP）对iPhone购买数据进行了研究。其最新报告（截至2025年3月的12个月）显示，67%的iPhone购买者因设备某种程度的退化或故障而更换手机。具体数据如下：\n\n*   **40%** 的用户因性能变慢、电池问题或屏幕损坏而升级。\n*   **27%** 的用户因手机丢失、被盗或无法使用而被迫更换。\n\n![饼图显示更换新手机的原因：当前手机问题占40%，丢失/损坏/被盗占27%，新功能占13%，其他原因占11%或更少。](https://photos5.appleinsider.com/gallery/64059-133342-IMG_2424-xl.jpg)\n\n相比之下，只有13%的购买者将更好的摄像头、改进的显示屏或更快的性能等新功能作为升级理由。提及更换运营商、利用促销活动或将旧手机转给他人等原因的比例不足10%。\n\n### 成熟市场与渐进式创新\n\nCIRP提出了“AI会促使客户购买新iPhone吗？”的问题，答案是响亮的“不会”，而且这种情况已经持续了大约十年。尽管Apple Intelligence这个名称出现时间不长，但自Siri推出以来，苹果的机器学习努力就未能成为用户升级的理由。\n\n在COVID-19疫情之前，大多数iPhone用户会使用设备大约三年。这种稳定模式在2021年发生了变化，当时积极的以旧换新优惠和运营商补贴的扩大导致了早期升级的暂时激增。在此期间，更多用户在两年内更换了手机，其动机是经济激励而非必要性。\n\n然而，到2023年，这一趋势逆转。用户再次开始更长时间地使用手机，这反映了设备耐用性的提高和经济上的谨慎。最新数据显示，升级周期略有缩短。2024年末，36%的购买者在两年内完成了升级，高于前一年的31%。\n\n![智能手机放在螺旋笔记本上，旁边放着一支笔，显示时间12:25。背景包括笔记本电脑的一部分。](https://photos5.appleinsider.com/gallery/64059-133345-IMG_2137-xl.jpg)\n\n更长的更换周期是当前智能手机的现实。iPhone，像大多数旗舰手机一样，已经达到了一个成熟的水平，每年更新更多是关于改进而非彻底革新。过去，新的摄像头传感器或芯片就能引发大规模早期升级浪潮的时代已经结束。\n\n苹果对人工智能的拥抱也符合这一模式。Apple Intelligence可能有助于保持平台的新颖性和竞争力，但人们并不会因此蜂拥升级。大多数人只有在最终购买新手机时才会体验到这些功能，而不是因为这些功能而被迫购买。先进的AI功能可以帮助苹果保持用户忠诚度、捍卫市场份额，并为使用新机型的用户创造价值。但在一个硬件耐用、价格高昂的饱和市场中，用户行为是由必要性决定的。",
+      "shortSummary": "iPhone的升级主要由硬件故障驱动，而非AI等新功能。CIRP报告显示，67%的用户因性能下降、电池问题或屏幕损坏等原因更换手机，而仅13%的用户是为了新功能。iPhone已是成熟产品，升级周期长，AI更多是渐进式改进，不会促使现有用户立即升级。在饱和市场中，用户行为受必要性而非新功能驱动。",
+      "translated_title": "碎屏和电池耗尽比AI更能推动iPhone销量",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64059-133342-IMG_2424-xl.jpg",
+          "alt": "Pie chart showing reasons for getting a new phone: current phone issue 40%, lost/broken/stolen 27%, new features 13%, other reasons 11% or less.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64059-133345-IMG_2137-xl.jpg",
+          "alt": "Smartphone on a spiral notebook with a pen, displaying the time 12:25. Background includes part of a laptop.",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "趁现在还能免费获取这九款经典世嘉iOS游戏 (原标题: Get these nine classic Sega iOS games for free while you still can)",
+      "link": "https://appleinsider.com/articles/25/06/18/get-these-nine-classic-sega-ios-games-for-free-while-you-still-can",
+      "pubDate": "Wed, 18 Jun 2025 14:32:00 GMT",
+      "isoDate": "2025-06-18T14:32:00.000Z",
+      "creator": "William Gallagher",
+      "summary": "### 世嘉终止对经典iOS游戏的支持\n\n*   **背景与现状**：世嘉即将终止对九款经典iOS游戏的支持，其中包括《疯狂出租车》和《索尼克4》。这些游戏目前仍可免费下载和游玩。\n*   **“Sega Forever”计划的终结**：\n    *   2017年，世嘉推出了“Sega Forever”计划，提供免费但带广告的经典iOS游戏。\n    *   现在，该计划似乎即将结束，一系列游戏已完全免费，并附带支持即将终止的警告。\n*   **游戏内警告与未来展望**：\n    *   世嘉尚未正式宣布此消息，仅通过游戏内通知告知用户。\n    *   目前尚不清楚支持何时结束，也不确定这些游戏是否会继续留在App Store上，但警告暗示它们可能被下架。\n    *   警告信息显示：“此游戏的支持将终止，但您可以继续离线游玩！”\n*   **受影响的九款游戏列表**：\n    *   《疯狂出租车经典版》(Crazy Taxi Classic)\n    *   《黄金斧头经典版》(Golden Axe Classics)\n    *   《光明力量经典版》(Shining Force Classics)\n    *   《索尼克CD经典版》(Sonic CD Classic)\n    *   《索尼克4：第二章》(Sonic the Hedgehog 4 Ep. II)\n    *   《怒之铁拳经典版》(Streets of Rage Classic)\n    *   《怒之铁拳2经典版》(Streets of Rage 2 Classic)\n    *   《超级猴子球：樱花》(Super Monkey Ball: Sakura)\n    *   《VR网球挑战赛》(Virtua Tennis Challenge)\n*   **下载后的影响**：\n    *   文章指出，一旦购买（即免费下载），即使游戏从App Store下架，用户也应该能够继续游玩。\n    *   通过设备到设备复制迁移的游戏，即使从商店完全清除，也将保留在设备上。\n*   **与Apple Arcade的关系**：\n    *   在世嘉开始发布这些应用的广告支持版本两年后，苹果于2019年宣布了Apple Arcade。\n    *   苹果当时表示，世嘉将是该服务上的游戏开发者之一。\n    *   自那时起，世嘉一直为Apple Arcade贡献内容。",
+      "shortSummary": "世嘉即将终止对九款经典iOS游戏的支持，包括《疯狂出租车》和《索尼克4》。这些原属于“Sega Forever”计划的游戏目前已完全免费，并附带支持即将终止的警告。虽然世嘉尚未公布具体日期，但游戏可能从App Store下架。用户下载后仍可离线游玩。世嘉将继续为Apple Arcade提供内容。",
+      "translated_title": "趁现在还能免费获取这九款经典世嘉iOS游戏",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "Apple Intelligence 转录速度是 OpenAI Whisper 的两倍 (原标题: Apple Intelligence transcription is twice as fast as OpenAI's Whisper)",
+      "link": "https://appleinsider.com/articles/25/06/18/apple-intelligence-transcription-is-twice-as-fast-as-openais-whisper",
+      "pubDate": "Wed, 18 Jun 2025 12:18:24 GMT",
+      "isoDate": "2025-06-18T12:18:24.000Z",
+      "creator": "William Gallagher",
+      "summary": "### Apple Intelligence 转录工具：速度与精度的新标杆\n\nApple 近期向开发者发布了其 Apple Intelligence 转录工具，这些工具以其卓越的速度和准确性脱颖而出，其转录速度通常是 OpenAI 长期以来作为行业标准的 Whisper 技术的两倍。这可能预示着 Apple 再次在进入市场较晚的情况下，却能提供更优越的解决方案。\n\n#### 背景与发布\n\n*   自 2022 年 9 月 OpenAI 发布 Whisper 转录技术以来，它已成为数十款应用程序的标准模型。\n*   在 WWDC 2025 大会上，Apple 宣布向第三方开发者开放其 Apple Intelligence 工具，尽管当时细节甚少，也未特别宣传其转录功能。\n\n#### 开发者发现与应用\n\n*   开发者们正在探索这些工具的强大功能。\n*   MacStories 的作者 John Voorhees 和他的儿子仅用了大约十分钟，就构建了一个名为 \"Yap\" 的命令行工具，用于在 Mac 上使用 Apple 的转录技术。\n*   该工具利用了 Apple Speech 框架中的 SpeechAnalyzer 和 SpeechTranscriber 组件，这些组件随 Apple 的 macOS Tahoe 和 iOS 26 测试版一同向开发者发布。\n*   \"Yap\" 工具可在 Github 上下载，但需要 Apple 开发者账户和 macOS Tahoe 系统。\n\n#### 性能对比：Apple Intelligence vs. Whisper\n\nAI 转录工具的性能主要取决于所使用的 LLM（大型语言模型），因此直接比较并非总是简单。然而，将 Apple Intelligence 与基于 Whisper 的 MacWhisper Large V3 Turbo 模型进行对比，显示出显著的差异：\n\n*   **速度优势**：Apple Speech 框架工具的速度始终是基于 Whisper 的应用程序的两倍多。\n*   **实际测试案例**：\n    *   一个 4K、7GB 的视频文件被 Apple Intelligence 在 **45 秒**内读取并转录成字幕。\n    *   使用 Large V3 Turbo LLM 的 MacWhisper 完成相同任务耗时 **1 分 41 秒**。\n    *   MacWhisper Large C2 模型则需要 **3 分 55 秒**。\n*   **准确性**：尽管所有转录都需要后期编辑，但 Apple Intelligence 版本的准确性与基于 Whisper 的工具相当，同时速度快了一倍。\n\n#### 技术应用与未来展望\n\n*   除了向开发者开放这些 Apple Intelligence 工具外，Apple 还发布了详细的视频，指导开发者如何实现该技术。\n*   Apple 已将这项技术整合到其 macOS 26、iOS 26 等测试版操作系统中。\n*   这项技术也是 Apple 在信息应用和电话通话中实现实时翻译的核心驱动力。",
+      "shortSummary": "Apple Intelligence 新发布的转录工具，已向开发者开放，其速度是 OpenAI Whisper 的两倍，且准确性相当。开发者可利用 Apple Speech 框架集成这些工具。在测试中，Apple Intelligence 转录一个 4K 视频仅需 45 秒，远快于 Whisper 模型。这项技术也已应用于 macOS 26 和 iOS 26 测试版，驱动着实时翻译等功能，预示着 Apple 在 AI 转录领域的新优势。",
+      "translated_title": "Apple Intelligence 转录速度是 OpenAI Whisper 的两倍",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "Meta、亚马逊等公司寻求十年内禁止各州监管AI (原标题: Meta, Amazon, and more want 10-year ban on states regulating AI)",
+      "link": "https://appleinsider.com/articles/25/06/18/meta-amazon-and-more-want-10-year-ban-on-states-regulating-ai",
+      "pubDate": "Wed, 18 Jun 2025 11:33:38 GMT",
+      "isoDate": "2025-06-18T11:33:38.000Z",
+      "creator": "William Gallagher",
+      "summary": "## 科技巨头寻求十年内禁止各州监管AI\n\n亚马逊、Meta、谷歌和微软等大型科技公司（不包括苹果）正通过行业贸易机构Incompas进行游说，旨在未来十年内阻止美国各州制定任何人工智能（AI）法规。Incompas的成员包括主要的科技公司以及能源和法律公司。尽管苹果不是Incompas的成员，但它此前也曾在欧洲游说反对类似的AI监管计划。\n\n### 游说动机与核心观点\n\n*   **避免冲突法规**：Incompas首席执行官兼前国会议员Chip Pickering认为，阻止美国各地出现不同且相互冲突的AI法规至关重要，这对于“美国领导力”和“与中国竞争”同样重要。\n*   **OpenAI首席执行官Sam Altman的立场**：他曾在2025年5月的参议院听证会上表示，如果AI公司受到监管，将是“灾难性的”，特别是反对安全监管和数据来源透明度要求。\n*   **促进创新**：参议员Thom Tillis指出，如果出现50种不同的监管或法律框架，将严重阻碍美国的AI创新，导致美国落后。\n\n### 立法进展与争议\n\n*   **众议院通过**：该游说已成功促使相关条款被纳入美国众议院通过的所谓“One Big Beautiful”法案中。\n*   **共和党内部异议**：\n    *   **Marjorie Taylor Greene (R)**：她投票支持该法案后承认未阅读内容，现强烈反对，认为其“侵犯州权”且“潜在危险”，呼吁参议院将其剔除。她指出，未来十年AI能力未知，给予其自由发展并束缚各州是危险的。\n    *   **Marsha Blackburn (R)**：她反对暂停监管，支持田纳西州针对音乐产业中未经授权使用AI的法律。\n*   **党派策略**：共和党据称正试图利用参议院规则，将该法案称为“预算协调”法案，以便在没有民主党投票的情况下通过。\n*   **惩罚性提议**：Ted Cruz (R) 提议对不遵守该规定的州进行惩罚，可能包括撤回其数十亿美元的农村宽带联邦资金。\n\n### 国际背景\n\n欧盟正在逐步推行其“人工智能协议”，该协议包含支持AI安全和负责任发展的自愿承诺。Meta、谷歌和微软已签署该协议，但苹果尚未签署。\n\n此次游说凸显了科技行业在AI监管问题上的立场，以及美国国会内部在应对新兴技术挑战时所面临的复杂性和分歧。",
+      "shortSummary": "Meta、亚马逊、谷歌和微软等科技巨头正游说美国政府，寻求十年内禁止各州制定AI法规。他们认为统一监管对美国AI领导力至关重要，可避免各州法规冲突，并促进创新。相关条款已纳入众议院通过的法案，但引发共和党内部争议，如Marjorie Taylor Greene反对。此举旨在避免复杂的监管框架阻碍AI创新，但其对州权和未来AI发展的潜在影响引发担忧。",
+      "translated_title": "Meta、亚马逊等公司寻求十年内禁止各州监管AI",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "乔纳森·艾维获任大英博物馆理事会成员 (原标题: Jony Ive appointed to British Museum's board of trustees)",
+      "link": "https://appleinsider.com/articles/25/06/18/jony-ive-appointed-to-british-museums-board-of-trustees",
+      "pubDate": "Wed, 18 Jun 2025 11:07:50 GMT",
+      "isoDate": "2025-06-18T11:07:50.000Z",
+      "creator": "William Gallagher",
+      "summary": "# 乔纳森·艾维获任大英博物馆理事会成员\n\n前苹果首席设计师乔纳森·艾维（Jony Ive）已被任命为大英博物馆的理事会成员，该博物馆正致力于翻新其伦敦建筑并更好地利用数字技术。\n\n*   **任命背景与艾维的职责**\n    *   艾维的任命是大英博物馆理事会自行选择的五名成员之一。理事会共有25名成员，其余由英国首相、查尔斯国王以及相关行业机构任命。\n    *   艾维将立即履新。\n    *   大英博物馆正推行一项“宏伟转型计划”（Masterplan），该计划始于2023年，旨在翻新和重新设计博物馆的展厅，增设新的游客设施，并改革能源使用以逐步淘汰化石燃料。\n\n*   **艾维的个人看法**\n    *   艾维表示，加入大英博物馆理事会是“非凡的荣幸”。\n    *   他自50多年前首次参观以来就一直热爱这座博物馆，认为它是一个“非凡而独特的机构，最终能促进跨文化和跨时间的求知欲与理解”。\n    *   作为一名设计师，艾维自称是“狂热的历史学家”，并视大英博物馆为“公共文化体验的杰作”。\n\n*   **大英博物馆的期望**\n    *   大英博物馆理事会主席乔治·奥斯本（George Osborne）表示，艾维融合设计与技术的方式改变了世界，并且他在人工智能前沿的工作仍在继续。\n    *   奥斯本认为，对于希望在改造展厅时将卓越设计与最新技术相结合的大英博物馆而言，没有人比艾维更适合提供帮助。\n\n*   **艾维的其他成就与近期动态**\n    *   自离开苹果以来，艾维及其公司LoveFrom已成为英国设计界的重要力量，其作品包括为查尔斯国王设计的皇家徽章、一个太空项目标志以及重新设计的“红鼻子日”红鼻子。\n    *   艾维与山姆·奥特曼（Sam Altman）共同创立的“io”公司最近被OpenAI以65亿美元收购，该公司计划开发某种基于人工智能的设备。",
+      "shortSummary": "前苹果首席设计师乔纳森·艾维已被任命为大英博物馆理事会成员，立即履新。他将协助博物馆推进其“宏伟转型计划”，该计划旨在翻新展厅、增设设施并优化能源使用。大英博物馆主席乔治·奥斯本强调，艾维融合设计与技术的能力以及他在人工智能领域的经验，将对博物馆的现代化改造至关重要。艾维本人表示，能加入他从小就热爱的博物馆是莫大的荣幸。",
+      "translated_title": "乔纳森·艾维获任大英博物馆理事会成员",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
       "title": "OpenCore 和 Hackintosh 在苹果终止对 Intel Mac 的支持后遗憾地走向终结。 (原标题: OpenCore and Hackintosh are sadly dead after Apple ends Intel Mac support.)",
       "link": "https://appleinsider.com/articles/25/06/17/opencore-and-hackintosh-are-sadly-dead-after-apple-ends-intel-mac-support",
       "pubDate": "Tue, 17 Jun 2025 20:12:19 GMT",
@@ -52,6 +349,19 @@
       "summary": "Satechi Ultra-Slim USB4 NVMe SSD 外壳：小巧高性能存储解决方案\n\nSatechi 最新推出的 Ultra-Slim USB4 NVMe SSD 外壳是一款专为移动用户设计的高性能存储解决方案，旨在提供快速、大容量的便携式存储体验。\n\n*   **主要特点：**\n    *   **广泛兼容性：** 支持 2230、2242、2260 和 2280 尺寸的 NVMe SSD。\n    *   **存储容量：** 提供从 1TB 到高达 8TB 的可扩展存储容量，非常适合需要大量存储空间的用户。\n    *   **极速传输：** 采用 USB4 接口，传输速度高达 40Gbps，比 USB 3.0 快约八倍。\n        *   **性能示例：** 理论上可在 40 秒内传输十部 4K 电影，或在约 30 秒内传输 4,000 张高分辨率图片。\n    *   **多功能用途：**\n        *   是需要随身携带大量数据用户的理想选择。\n        *   对于游戏玩家而言，搭配足够大的 SSD 可轻松存储多款 AAA 游戏。\n    *   **设计与材质：**\n        *   采用铝制外壳，设计时尚，与 Apple 设备（如 MacBook、iPad）相得益彰，也能很好地搭配其他 Satechi 产品。\n        *   特别适合与 M4 Mac Mini 搭配使用，可直接放置在其顶部。\n        *   内置隐藏式线缆收纳仓，确保线缆安全整洁。\n        *   配备散热孔，有助于最大限度地提高性能并减少热节流。\n    *   **设备兼容性：** 兼容几乎所有支持外置 SSD 的 USB-C 设备，包括 PC、MacBook 和 iPad。\n\n*   **价格与购买：**\n    *   该产品售价为 119.99 美元。\n    *   可在 Satechi 官方商店或亚马逊购买。",
       "shortSummary": "Satechi 推出新款 Ultra-Slim USB4 NVMe SSD 外壳，为移动用户提供小巧高性能存储方案。它支持 1TB 至 8TB SSD，通过 USB4 实现高达 40Gbps 的传输速度，比 USB 3.0 快八倍。铝制外壳设计时尚，兼容 USB-C 设备，并配备散热和线缆管理功能。售价 119.99 美元，适合需要快速、大容量便携存储的用户和游戏玩家。",
       "translated_title": "Satechi 最新 SSD 外壳带来小巧包装中的强劲速度",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果智能家居显示屏Home Hub在iOS测试版代码中泄露 (原标题: Apple's Home Hub smart home display leaks in iOS beta code)",
+      "link": "https://appleinsider.com/articles/25/06/17/apples-home-hub-smart-home-display-leaks-in-ios-beta-code",
+      "pubDate": "Tue, 17 Jun 2025 14:44:16 GMT",
+      "isoDate": "2025-06-17T14:44:16.000Z",
+      "creator": "Malcolm Owen",
+      "summary": "## 苹果智能家居显示屏Home Hub在iOS测试版代码中泄露\n\n### 泄露来源与发现\n\n苹果公司传闻已久的智能家居显示屏——Home Hub，在最新的iOS 18.6开发者测试版代码中浮出水面。这一发现由9to5Mac于周二报道，为这款备受期待的设备可能提前发布带来了希望。\n\n### 关键泄露信息\n\n1.  **文件证据**：在iOS 18.6的首个开发者测试版中，发现了名为“apple-logo-1088@2x~home.png”的资产文件。\n2.  **“Home”的含义**：文件名中的“Home”被认为与苹果长期以来备受期待的智能家居平台“homeOS”相关。尽管homeOS未在WWDC 2025上发布，但预计可能在2026年推出。\n3.  **屏幕尺寸线索**：文件名中的“1088@2x”暗示屏幕比例可能为2176像素宽。虽然这不直接对应屏幕尺寸，但该宽度与iPad mini的尺寸大致相同，表明Home Hub的显示屏可能与iPad mini类似。\n4.  **开发进展**：文件的存在表明苹果正在积极开发智能家居产品，并至少在持续测试相关硬件。这预示着产品发布日益临近，尽管不一定很快就会推出。\n\n### Home Hub的传闻特性\n\n围绕苹果Home Hub的传闻主要集中在其作为一款带有iPad式显示屏的智能家居控制器，并可能融合HomePod的元素。该设备旨在成为管理智能家居设备的中心，类似于iOS上“家庭”应用的专用硬件版本。\n\n*   **操作系统**：将运行尚未发布的homeOS。\n*   **核心功能**：\n    *   增强的Apple Intelligence功能。\n    *   搭载A18芯片，至少配备8GB内存。\n    *   内置摄像头和麦克风。\n*   **连接标准**：预计将支持Thread和Matter标准，以便连接各种智能家居硬件。\n\n### 发布时间线\n\n*   **早期预测**：今年1月有报道称Home Hub计划于2025年末发布。\n*   **最新预测**：截至2025年6月，这些预期已发生变化，硬件产品可能会推迟到2026年初推出。\n\n### 其他相关泄露\n\n这并非苹果硬件首次通过软件泄露。例如，在6月10日，iOS 26测试版中也发现了对AirPods Pro 3的引用。",
+      "shortSummary": "苹果传闻中的智能家居显示屏Home Hub在iOS 18.6测试版代码中泄露。泄露的文件名“apple-logo-1088@2x~home.png”暗示其与“homeOS”平台相关，屏幕宽度可能与iPad mini相似。Home Hub预计将是带有iPad式显示屏的智能家居控制器，运行homeOS，集成A18芯片、摄像头和麦克风，并支持Thread和Matter标准。原预计2025年末发布，现可能推迟至2026年初。这表明苹果正积极推进智能家居硬件开发。",
+      "translated_title": "苹果智能家居显示屏Home Hub在iOS测试版代码中泄露",
       "images": [],
       "contentSource": "完整文章",
       "content": ""
@@ -256,335 +566,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": ""
-    },
-    {
-      "title": "苹果称没有聊天机器人——但iOS 26中的快捷指令却并非如此 (原标题: Apple says there's no chatbot — but Shortcuts in iOS 26 says otherwise)",
-      "link": "https://appleinsider.com/articles/25/06/16/apple-says-theres-no-chatbot----but-shortcuts-in-ios-26-says-otherwise",
-      "pubDate": "Mon, 16 Jun 2025 16:57:47 GMT",
-      "isoDate": "2025-06-16T16:57:47.000Z",
-      "creator": "Andrew Orr",
-      "summary": "### 苹果iOS 26中通过快捷指令创建聊天机器人\n\n尽管苹果高管在采访中表示公司没有构建公共聊天机器人，但iOS 26中的一项新操作允许用户创建类似聊天机器人的功能。这项功能在WWDC 2025上并非重点宣传，苹果软件工程高级副总裁Craig Federighi和全球营销高级副总裁Greg Joswiak均表示苹果无意构建聊天机器人，但通过快捷指令，用户可以让Apple Intelligence像聊天机器人一样运作。\n\n**如何使用快捷指令中的Apple Intelligence**\n\n如果用户正在运行iOS 26开发者测试版，可以尝试以下步骤：\n\n1.  打开“快捷指令”应用并创建一个新的快捷指令。\n2.  点击加号按钮添加一个操作。\n3.  搜索名为“使用模型”（Use Model）的操作。\n4.  在“模型”（Model）下，选择“在此iPhone上”（On This iPhone）、“私有云计算”（Private Cloud Compute），或者如果已安装，选择“ChatGPT”。\n5.  输入您的提示词。\n6.  运行快捷指令后，它会根据您的提示生成响应。您可以将输出显示为通知、保存到备忘录，或在快捷指令的后续步骤中使用。\n\n![平板电脑屏幕显示一条消息：“请求提供的操作无法运行。请修改并重试。”SwiftUI代码生成错误。](https://photos5.appleinsider.com/gallery/64035-133281-IMG_0354-2-xl.jpg)\n\n**设备端模型与云端模型**\n\n苹果提供了两种模型选择：\n\n*   **设备端模型（On-device model）**：\n    *   完全在iPhone上运行。\n    *   速度更快，隐私性更高。\n    *   在复杂性或创造性方面有限。\n*   **私有云计算模型（Private Cloud Compute model）**：\n    *   在苹果数据中心运行，使用更高级的模型。\n    *   可以处理更长、更细致的提示。\n    *   需要网络连接。\n\n如果设备端模型无法处理某个请求，快捷指令会通知用户并提供切换到云端模型的选项。\n\n![平板电脑屏幕显示一个用于分析医生笔记语气的文本界面。包括脚本选项和详细描述语气特征的响应文本。右侧可见各种应用程序图标。](https://photos5.appleinsider.com/gallery/64035-133282-IMG_0354-3-xl.jpg)\n\n**其聊天机器人特性**\n\n虽然它不是一个完整的聊天机器人（没有提示间的记忆、聊天历史或名称/个性），但它能清晰自然地响应提示。在测试中，它在创意写作、摘要、头脑风暴和文本简化方面表现良好，云端模型性能大约相当于GPT-3.5。\n\n**安全防护与局限性**\n\n*   **安全防护**：它具有基本的安全防护措施，例如拒绝编写虚假医生证明（即使作为虚构故事的一部分）。\n*   **局限性**：在某些情况下会产生事实错误，例如在被问及亚里士多德失传和重新发现的作品时，它编造了名称和虚构的细节，表现出“幻觉”现象。\n\n**苹果的立场与实际功能**\n\n尽管苹果高管否认正在构建聊天机器人，并表示公司专注于构建有用的功能而非聊天伴侣，但快捷指令中的“使用模型”操作的行为却与之相悖。它可能不被称为聊天机器人，但用户可以与它进行“聊天”，尤其是在给出开放式提示时，它的响应方式与聊天机器人无异。\n\n通过快捷指令，用户可以最直接地测试苹果的语言模型，无需通过Siri或等待系统更新。用户可以完全控制发送任何提示、选择运行模型以及决定如何处理响应。即使苹果不称之为聊天机器人，但就目前而言，它已经足够接近。",
-      "shortSummary": "苹果高管否认正在构建公共聊天机器人，但iOS 26中的“快捷指令”应用通过新的“使用模型”操作，允许用户创建类似聊天机器人的体验。用户可选择设备端或私有云计算模型，进行创意写作、摘要等任务。尽管缺乏记忆且可能出现“幻觉”，但该功能提供了直接控制苹果语言模型的途径，其行为与聊天机器人无异。",
-      "translated_title": "苹果称没有聊天机器人——但iOS 26中的快捷指令却并非如此",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64035-133281-IMG_0354-2-xl.jpg",
-          "alt": "Tablet screen displaying a message: 'The action could not run for the request provided. Please revise and try again.' Error with SwiftUI code generation.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64035-133282-IMG_0354-3-xl.jpg",
-          "alt": "Tablet screen displaying a text interface for analyzing the tone of a doctor's note. Includes script options and response text detailing tone characteristics. Various app icons are visible to the right.",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "闪购：M4 Mac mini 在今日价格战中跌至 $499 (原标题: Flash deal: M4 Mac mini drops to $499 in today's price war)",
-      "link": "https://appleinsider.com/articles/25/06/16/flash-deal-m4-mac-mini-drops-to-499-in-todays-price-war",
-      "pubDate": "Mon, 16 Jun 2025 15:52:15 GMT",
-      "isoDate": "2025-06-16T15:52:15.000Z",
-      "creator": "Christine McKee",
-      "summary": "### M4 Mac mini 价格战：低至 $499\n\n苹果最新款 M4 Mac mini 迎来“黑色星期五”级别的价格，在亚马逊和 B&H 之间的价格战中，其售价已降至 $499。\n\n**主要优惠信息：**\n*   **型号**: M4 Mac mini\n*   **配置**: 16GB 统一内存，256GB SSD 存储\n*   **处理器**: 10 核 CPU，10 核 GPU\n*   **优惠价格**: $499 (原价 $599，节省 $100)\n*   **销售平台**: 亚马逊 (Amazon) 和 B&H Photo\n*   **设计**: 更新设计，尺寸更紧凑，仅为 5 英寸 x 5 英寸，节省桌面空间。\n\n**其他配置优惠：**\n文章还列出了其他升级配置的 Mac mini 优惠：\n*   M4 Mac mini, 16GB 内存, 512GB 存储: $719 (节省 $80)\n*   M4 Mac mini, 24GB 内存, 512GB 存储: $849 (节省 $150)\n*   M4 Pro Mac mini, 24GB 内存, 512GB 存储: $1,286.99 (节省 $113)\n\n**背景信息：**\n此次降价是由于零售商在 2025 财年第二季度末展开价格战。随着七月亚马逊 Prime Day 的临近，预计将有更多苹果产品的季度末促销活动。用户可以通过苹果价格指南比较数百种设备的价格。",
-      "shortSummary": "苹果最新款 M4 Mac mini 在亚马逊和 B&H 的价格战中降至 $499，重现“黑色星期五”优惠。这款配备 16GB 内存、256GB SSD、10 核 CPU 和 10 核 GPU 的紧凑型台式机，原价 $599，现节省 $100。此外，文章也提供了其他升级配置的折扣信息。此次降价正值季度末，且亚马逊 Prime Day 即将到来。",
-      "translated_title": "闪购：M4 Mac mini 在今日价格战中跌至 $499",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "苹果因荷兰法院裁定其违反反垄断法被处以5800万美元罚款 (原标题: Apple stuck with $58M fine after Dutch court rules it broke antitrust law)",
-      "link": "https://appleinsider.com/articles/25/06/16/apple-stuck-with-58m-fine-after-dutch-court-rules-it-broke-antitrust-law",
-      "pubDate": "Mon, 16 Jun 2025 15:48:02 GMT",
-      "isoDate": "2025-06-16T15:48:02.000Z",
-      "creator": "Amber Neely",
-      "summary": "### 荷兰法院裁定苹果违反反垄断法并面临5800万美元罚款\n\n*   **背景与裁决**\n    *   荷兰鹿特丹地方法院支持监管机构的裁定，再次确认苹果公司在处理约会应用计费方面滥用了其市场支配地位。\n    *   法院维持了荷兰消费者和市场管理局（ACM）的决定，裁定苹果确实对App Store中的约会应用施加了不公平的条件。\n    *   苹果因此面临数百万美元的罚款，目前累计金额已接近5800万美元。\n\n*   **事件始末**\n    *   此事件始于2021年，当时ACM裁定苹果违反了App Store中关于约会应用的规定。\n    *   在2021年，约会应用不允许引导用户使用App Store之外的支付方式，苹果对所有应用内购买收取30%的佣金，且不提供第三方支付选项。许多国家（包括荷兰）认为这违反了反导向（anti-steering）法律。\n\n*   **苹果的“合规”措施与争议**\n    *   为安抚立法者，苹果同意在荷兰App Store改变规则，允许公司选择使用苹果的支付系统、在应用内包含指向开发者网站的链接，或在应用内使用第三方支付系统。\n    *   然而，苹果对引导用户使用第三方支付解决方案的开发者收取27%的佣金。\n    *   开发者普遍认为这一解决方案改进不大。\n    *   苹果也提醒立法者，对于在App Store之外进行的购买，将无法协助用户处理退款、购买历史、订阅管理等问题。\n\n*   **苹果的回应与上诉**\n    *   苹果公司的一位代表表示，此裁决“损害了我们为开发者和保护用户隐私与安全而创建的技术和工具”，并计划上诉。\n    *   苹果曾试图就裁决生效后至其开始“合规”期间累积的近5800万美元罚款提出上诉，但荷兰监管机构当时也驳回了其上诉。",
-      "shortSummary": "荷兰鹿特丹地方法院裁定苹果公司在App Store约会应用支付方面滥用市场支配地位，违反反垄断法。苹果因此面临累计近5800万美元的罚款。此前，苹果曾对引导用户使用第三方支付的开发者收取27%的佣金，被认为是不公平条件。苹果表示此裁决损害了其技术，并计划上诉。",
-      "translated_title": "苹果因荷兰法院裁定其违反反垄断法被处以5800万美元罚款",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "WWDC 2025及HomeKit Insider播客秋季内容预告 (原标题: WWDC 2025 & whats coming in the fall on the HomeKit Insider podcast)",
-      "link": "https://appleinsider.com/articles/25/06/16/wwdc-2025-whats-coming-in-the-fall-on-the-homekit-insider-podcast",
-      "pubDate": "Mon, 16 Jun 2025 15:18:41 GMT",
-      "isoDate": "2025-06-16T15:18:41.000Z",
-      "creator": "Andrew O'Hara",
-      "summary": "## HomeKit Insider播客：WWDC 2025智能家居回顾与新品评测\n\n最新一期的HomeKit Insider播客总结了WWDC 2025上宣布的所有新的智能家居功能，并动手评测了Govee灯柱灯。\n\n### WWDC 2025智能家居亮点\n\n尽管HomeOS未在WWDC上宣布，但苹果的新操作系统中仍有几项与智能家居相关的公告：\n\n*   **iOS 26重大更新**：\n    *   **CarPlay**：首次支持小组件，包括用于查看和控制智能家居配件的小组件。\n    *   **家庭应用（Home app）**：获得更新。\n    *   **新框架**：引入了EnergyKit框架，并支持设备端LLM（大型语言模型）访问。\n*   **tvOS更新**：\n    *   **新功能**：包括直通音频（passthrough audio）和卡拉OK模式。\n*   **visionOS更新**：\n    *   **小组件**：Vision Pro获得了小组件功能。\n\n### 其他新闻\n\n*   本周新闻较少，主要发布是Aqara的中国G100。\n\n### Govee灯柱灯动手评测\n\n播客最后对Govee灯柱灯进行了动手评测。这款大型户外灯具特点如下：\n\n*   **全彩**：支持全彩显示。\n*   **Matter over Wi-Fi**：支持通过Wi-Fi连接的Matter协议。\n*   **内置传感器**：配备多种板载传感器。\n\n### 播客相关链接\n\n*   iOS 26中CarPlay的Apple Home功能\n*   tvOS 26新功能\n*   Govee灯柱灯\n\n听众可以通过Apple的播客应用或Patreon订阅，每月5美元即可获得无广告的AppleInsider播客体验。",
-      "shortSummary": "最新一期HomeKit Insider播客回顾了WWDC 2025的智能家居更新，并评测了Govee灯柱灯。WWDC亮点包括iOS 26中CarPlay的智能家居小组件、家庭应用更新、EnergyKit框架，以及tvOS和visionOS的新功能。此外，播客还提到了Aqara的中国G100发布。Govee灯柱灯是一款支持Matter over Wi-Fi的全彩户外灯，内置多种传感器。",
-      "translated_title": "WWDC 2025及HomeKit Insider播客秋季内容预告",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "iOS 26中视觉智能的小更新带来了巨大的可用性提升 (原标题: A small update to Visual Intelligence in iOS 26 makes a giant difference in usability)",
-      "link": "https://appleinsider.com/articles/25/06/16/a-small-update-to-visual-intelligence-in-ios-26-makes-a-giant-difference-in-usability",
-      "pubDate": "Mon, 16 Jun 2025 14:53:23 GMT",
-      "isoDate": "2025-06-16T14:53:23.000Z",
-      "creator": "William Gallagher",
-      "summary": "Apple 在 iOS 26 中对视觉智能（Visual Intelligence）进行了微小但影响巨大的更新，使其现在可以应用于 iPhone 屏幕上的任何图像，从而大大提升了这项功能的实用性。\n\n### 视觉智能的演变\n\n*   **早期功能**：最初，视觉智能是 iPhone 上一项令人印象深刻的功能，用户只需将 iPhone 摄像头对准物体并按下“相机控制”按钮，AI 就能识别并提供相关信息。这扩展了“照片”应用识别植物的能力，视觉智能可以进一步识别著名地标、随机建筑，甚至推断复杂咖啡订单的成分，或识别海报上的日期并将其添加到日历中（尽管在某些复杂设计上可能遇到困难）。\n*   **局限性**：此前，所有这些功能都要求用户必须将 iPhone 摄像头对准感兴趣的物体。\n\n### iOS 26 的重大更新\n\n*   **核心改变**：iOS 26 的更新移除了必须使用摄像头的限制。现在，用户可以在 iPhone 屏幕上的任何内容上部署视觉智能。\n*   **影响与益处**：\n    *   **研究人员**：可以识别网站上看到的物体。\n    *   **购物者**：可以暂停 YouTube 视频，使用视觉智能追踪网红所穿戴的物品。\n*   **复杂性**：更新导致现在有两种不同的方式来使用视觉智能，且启动方式不同，这可能会给用户带来一些混淆。\n\n### 如何使用“常规”视觉智能（基于摄像头）\n\n要继续使用自视觉智能推出以来已有的功能，仍需将 iPhone 对准目标物体。以下是激活方式：\n\n*   按住“相机控制”按钮片刻。\n*   按下“操作按钮”（需在“设置”>“操作按钮”中配置）。\n*   从锁定屏幕按下视觉智能按钮（需在锁定屏幕自定义中添加）。\n*   从控制中心按下视觉智能按钮（需在控制中心添加）。\n\n**请注意**：以上方法均无法启动新版本的视觉智能。\n\n![三部智能手机屏幕显示一篇关于 AirPods Pro 3 传闻的文章。左侧屏幕包含一个总结 AirPods 功能的通知。](https://photos5.appleinsider.com/gallery/64034-133274-001-iPhones-xl.jpg)\n\n### 如何使用“新版本”视觉智能（基于屏幕图像）\n\n新版本是视觉智能的额外功能，而非替代。要对屏幕上的任何内容使用视觉智能，需要执行完全不同的操作：\n\n1.  **截屏**：同时按下音量调高和侧边（或电源）按钮。\n2.  **圈选**：用手指圈选或高亮显示图像中感兴趣的部分，该区域会以新的 Siri 风格动画发光。\n3.  **提问或搜索**：\n    *   点击“提问”按钮并输入问题。\n    *   向上滑动查看图像搜索结果，其中可能包含零售商链接，用户可以直接点击购买商品。\n\nApple 试图将其宣传为简单易用，因为它利用了常规截屏的相同操作。然而，对于不习惯截屏的用户来说，这可能需要学习一套新的按钮操作。\n\n### 总结\n\n尽管视觉智能现在有多种不同的使用方式，但能够识别屏幕上的任何内容无疑是一个巨大的优势。通过消除对摄像头指向的需求，Apple 大幅提升了视觉智能的实用性。文章作者也表达了希望此新版本能尽快登陆 iPad 或 Mac 的愿望。",
-      "shortSummary": "iOS 26中，Apple对视觉智能进行了重要更新，使其不再局限于摄像头输入，而是能识别iPhone屏幕上的任何图像。这一改变极大地提升了功能可用性，用户现在可以轻松识别网页或视频中的物体。新功能通过截屏并圈选感兴趣区域来激活，与原有的摄像头识别方式并存。尽管操作方式有所增加，但能在屏幕上直接识别信息，无疑是视觉智能的一大飞跃。",
-      "translated_title": "iOS 26中视觉智能的小更新带来了巨大的可用性提升",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64034-133274-001-iPhones-xl.jpg",
-          "alt": "Three smartphone screens display an article about AirPods Pro 3 rumored for 2026. The left screen includes a notification summarizing AirPods features.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "iOS 26 信息应用中的投票功能如何让群组规划更轻松 (原标题: How polls in iOS 26 Messages app makes group planning easier)",
-      "link": "https://appleinsider.com/articles/25/06/16/how-polls-in-ios-26-messages-app-makes-group-planning-easier",
-      "pubDate": "Mon, 16 Jun 2025 13:51:32 GMT",
-      "isoDate": "2025-06-16T13:51:32.000Z",
-      "creator": "Andrew Orr",
-      "summary": "## iOS 26 信息应用新增投票功能，简化群组规划\n\nApple 在 iOS 26 中为信息（Messages）应用引入了一项全新的投票功能，旨在让群组规划和决策变得更加便捷高效。\n\n### 功能概述与目的\n\n*   **核心功能**：iOS 26 信息应用内置了投票功能，允许群聊参与者分享意见并对决策进行投票。\n*   **发布时间**：该功能于2025年6月9日的Apple全球开发者大会（WWDC）上首次亮相。\n*   **主要目的**：解决群聊中常见的犹豫不决问题，提供一种无需离开对话即可进行投票的原生方式，从而消除来回短信确认的混乱。\n\n### 工作原理与优势\n\n*   **创建与参与**：用户可以直接在群聊中创建投票，提出多个选项，群组中的每个人都可以参与投票。\n*   **实时更新**：投票结果会随着参与者的响应实时更新，确保信息即时透明。\n*   **操作直观**：Apple 表示该系统设计得快速且直观，易于使用。\n\n### 结合Apple Intelligence的智能增强\n\n*   **上下文感知建议**：Apple 通过其设备端AI系统“Apple Intelligence”增强了投票功能。\n*   **智能提示**：当系统检测到与规划相关的问题时（例如：“我们今晚看什么电影？”），信息应用会主动提示用户设置投票，并可能提供建议的选项。\n*   **隐私保护**：AI处理在本地设备上进行，确保用户隐私的同时提供有用的实时建议。\n\n![平板电脑屏幕显示消息应用界面，左侧是对话列表，右侧突出显示了相机、照片和贴纸等聊天选项。](https://photos5.appleinsider.com/gallery/64032-133271-IMG_0354-2-xl.jpg)\n\n*   **访问方式**：投票功能通过聊天界面中的“加号”按钮即可找到并创建。\n\n### iMessage作为规划工具的演变\n\n*   **功能扩展**：投票功能的加入，反映了iMessage从单纯的短信应用向更全面的规划工具转变的趋势，此前已增加了内联回复、消息编辑和日程安排等功能。\n*   **原生集成**：与第三方iMessage应用不同，新的投票工具是完全集成的，无需安装或额外的权限。\n*   **可用性限制**：投票功能目前仅适用于iMessage群聊，不支持SMS或跨平台聊天。\n\n![平板电脑屏幕显示消息应用，其中包含关于灌水壶和午餐选项（包括汉堡、意大利面和沙拉）的对话。联系人和对话列表可见。](https://photos5.appleinsider.com/gallery/64032-133272-IMG_0354-xl.jpg)\n\n### 市场对比与发布时间\n\n*   **市场现状**：其他聊天应用如WhatsApp（2022年引入）和Telegram（长期支持高级投票功能，包括测验模式）早已提供投票功能。\n*   **发布计划**：该投票功能已在iOS 26开发者测试版中可用，Apple 计划在7月推出公开测试版，并预计于2025年秋季与iPhone 17系列一同正式发布。",
-      "shortSummary": "iOS 26 信息应用新增投票功能，旨在简化群组规划和决策。用户可在iMessage群聊中直接创建投票，实时查看结果。该功能结合Apple Intelligence提供智能建议，并在设备本地处理以保护隐私。作为iMessage功能扩展的一部分，它无需第三方应用，预计于2025年秋季随iPhone 17正式发布。",
-      "translated_title": "iOS 26 信息应用中的投票功能如何让群组规划更轻松",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64032-133271-IMG_0354-2-xl.jpg",
-          "alt": "Tablet screen displaying messaging app interface with a list of conversations on the left and chat options such as camera, photos, and stickers highlighted.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64032-133272-IMG_0354-xl.jpg",
-          "alt": "Tablet screen displaying a messaging app with a conversation about filling a water jug and lunch options including burgers, spaghetti, and salad. Contacts and conversation list visible.",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "AirPods Pro 3 现已传闻将于 2026 年发布 (原标题: AirPods Pro 3 now rumored to launch in 2026)",
-      "link": "https://appleinsider.com/articles/25/06/16/airpods-pro-3-now-rumored-to-launch-in-2026",
-      "pubDate": "Mon, 16 Jun 2025 13:09:33 GMT",
-      "isoDate": "2025-06-16T13:09:33.000Z",
-      "creator": "Malcolm Owen",
-      "summary": "# AirPods Pro 3 传闻将于 2026 年发布\n\n## 发布时间预测\n*   **分析师预测：** GF Securities 的分析师 Jeff Pu 预测 AirPods 第三代将于 2026 年发布。他指出，2025 年剩余时间以及 2027 年预计不会有其他 AirPods 系列更新。\n*   **与郭明錤观点一致：** Jeff Pu 的预测与分析师郭明錤的预期相符。郭明錤在 5 月份曾表示，配备摄像头的 AirPods 将于 2026 年投产。\n\n## 存在证据（苹果系统泄露）\n*   **系统代码泄露：** 苹果公司通过操作系统代码泄露了 AirPods Pro 3 的存在，这增加了传闻的可信度。\n    *   **第一次泄露（5月中旬）：** 发现一段文本字符串从“AirPods Pro 2nd generation”更改为“AirPods Pro 2 or later”。\n    *   **第二次泄露（6月10日）：** iOS 26 的第一个开发者测试版明确提到了“AirPods Pro 3”，与“AirPods Pro 2”和“AirPods Pro”并列。\n*   **确认新型号：** 尽管这些泄露没有指出具体的发布时间，但它们确认了新型号正在开发中。\n\n## 传闻中的新功能\n*   **设计与降噪：**\n    *   更新的设计。\n    *   更强的主动降噪 (ANC)。\n*   **新增传感器：**\n    *   心率监测。\n    *   温度感应。\n    *   这些传感器将使其在健身方面更有用。\n*   **内置摄像头：**\n    *   可能配备内置摄像头，为视觉智能 (Visual Intelligence) 提供更多数据。",
-      "shortSummary": "AirPods Pro 3 传闻将于 2026 年发布。分析师 Jeff Pu 预测了这一时间，并与郭明錤关于配备摄像头 AirPods 在 2026 年投产的说法一致。苹果公司通过操作系统代码泄露（如iOS 26中明确提及“AirPods Pro 3”）证实了新型号的存在。传闻中的新功能包括更新设计、更强ANC、心率和温度传感器，以及用于视觉智能的内置摄像头。",
-      "translated_title": "AirPods Pro 3 现已传闻将于 2026 年发布",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "Apple Watch 13 或在2027年获得血糖监测功能 (原标题: Apple Watch 13 may gain blood sugar monitoring in 2027)",
-      "link": "https://appleinsider.com/articles/25/06/16/apple-watch-13-may-gain-blood-sugar-monitoring-in-2027",
-      "pubDate": "Mon, 16 Jun 2025 12:52:40 GMT",
-      "isoDate": "2025-06-16T12:52:40.000Z",
-      "creator": "William Gallagher",
-      "summary": "### Apple Watch 13 血糖监测功能展望\n\n根据最新传闻，Apple Watch 13 有望在2027年首次引入血糖监测功能。这一功能是苹果公司多年来一直在研发的重点健康特性。\n\n*   **历史背景与早期传闻**\n    *   早在2021年Apple Watch Series 7发布时，就有报道称苹果已在开发血糖监测系统，并即将推出。然而，该功能并未如期发布。\n    *   到2024年，据称苹果正在测试一款Apple Watch应用程序，用于健康数据收集研究，而非面向公众发布。\n\n*   **分析师预测**\n    *   分析师Jeff Pu近日宣布，血糖监测将是2027年Apple Watch Series 13的关键功能。\n    *   他推测该产品可能被命名为“Apple Watch featuring Blood Monitoring”，但未提供更多细节。\n    *   Pu的信息来源尚不明确，仅在社交媒体上列出了该功能的日期，未说明是否来自供应链消息。值得注意的是，Pu过往的报告有时准确，但也曾多次发布错误的发布时间表。\n\n*   **苹果在健康功能上的努力与挑战**\n    *   苹果一直致力于为Apple Watch增加健康功能，其中一项显著的成果是血氧水平监测。\n    *   然而，血氧监测技术在美国市场因专利纠纷目前已被禁用。\n\n*   **市场竞争**\n    *   苹果并非唯一一家尝试开发非侵入式血糖监测系统的公司。\n    *   例如，PreEvnt公司在2025年1月预展了一款通过呼吸分析工作的夹式设备，显示出该领域的激烈竞争。",
-      "shortSummary": "2027年发布的Apple Watch 13据传将首次配备血糖监测功能。分析师Jeff Pu预测这将是其关键特性。苹果多年来一直在研发此技术，但进展缓慢，且其血氧监测功能在美国因专利纠纷被禁用。同时，其他公司也在积极开发非侵入式血糖监测方案，预示着该领域的激烈竞争。",
-      "translated_title": "Apple Watch 13 或在2027年获得血糖监测功能",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "苹果可能需要收购人工智能公司以提振Apple Intelligence (原标题: Apple may need to acquire AI firms to boost Apple Intelligence)",
-      "link": "https://appleinsider.com/articles/25/06/16/apple-may-need-to-acquire-ai-firms-to-boost-apple-intelligence",
-      "pubDate": "Mon, 16 Jun 2025 11:57:22 GMT",
-      "isoDate": "2025-06-16T11:57:22.000Z",
-      "creator": "William Gallagher",
-      "summary": "### 苹果Apple Intelligence战略与未来展望\n\n*   **WWDC 2025 表现评估**\n    *   金融公司Wedbush认为，WWDC 2025实际上展示了苹果如何执行其Apple Intelligence战略。\n    *   然而，包括Wedbush在内的多数投资和金融公司对WWDC 2025主题演讲感到“不尽如人意”。\n    *   Wedbush分析师Daniel Ives指出，苹果确实阐明了其AI愿景，并通过向第三方开发者开放Apple Intelligence开始执行。\n    *   苹果选择采取“安全”甚至“低调”的策略，以避免重蹈WWDC 2024的“失误”。\n\n*   **未来12个月的关键性**\n    *   Ives强调，接下来的12个月对Apple Intelligence至关重要。\n    *   投资者在此期间将重点关注Apple Intelligence的进展，因此苹果只有很短的时间来给他们留下深刻印象。\n    *   这种时间压力可能促使苹果进行比以往更多、规模更大的AI收购。\n\n*   **苹果的收购策略**\n    *   苹果每年都会收购大量公司，但通常只在交易规模要求披露时才公开。\n    *   目前已知苹果收购AI公司是为了日历功能和制造业，但分析师认为未来可能需要更大规模的AI收购来满足预期。\n    *   尽管如此，Ives表示Wedbush对苹果能够做好这一点充满信心。\n\n*   **Wedbush的展望与目标价**\n    *   Ives认为，WWDC 2025可能缺乏2024年活动那样的AI“推动力”，但它为未来的重大改进奠定了基础。\n    *   因此，Wedbush维持其270美元的目标股价。\n    *   该目标价于2025年5月上调，当时更多是基于苹果应对全球干扰（如特朗普关税）的能力，而非Apple Intelligence。",
-      "shortSummary": "Wedbush认为，苹果在WWDC 2025上展示了其Apple Intelligence战略，但未来12个月的进展至关重要。若无显著突破，苹果可能被迫进行大规模AI收购以满足投资者预期。分析师指出，苹果采取了保守策略，并已开始向第三方开放AI。尽管如此，Wedbush对苹果的执行能力充满信心，并维持270美元的目标股价。",
-      "translated_title": "苹果可能需要收购人工智能公司以提振Apple Intelligence",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "Dygma Raise 2 评测：一款价格过高的分体式键盘 (原标题: Dygma Raise 2 review: A split keyboard with a too hefty price)",
-      "link": "https://appleinsider.com/articles/25/06/15/dygma-raise-2-review-a-split-keyboard-with-a-hefty-price",
-      "pubDate": "Sun, 15 Jun 2025 20:08:00 GMT",
-      "isoDate": "2025-06-15T20:08:00.000Z",
-      "creator": "Brian Patterson",
-      "summary": "## Dygma Raise 2 评测：一款价格过高的分体式键盘\n\n### 引言\nDygma Raise 2 是一款无线分体式机械键盘，以其卓越的工程设计和人体工学支持在饱和的键盘市场中脱颖而出。然而，其高昂的售价是其最大的争议点，使得大多数用户望而却步。\n\n### 开箱体验\nRaise 2 是一款 60% 布局的机械键盘，包装极其精美。包装盒内含：\n*   RAISE 2 键盘\n*   键帽和轴体拔键器\n*   O 形圈 (1.5mm, 40 ShoreA) x70\n*   测试轴体 x8\n*   超细纤维布\n*   Crap Remover（清洁工具）\n*   Neuron（连接键盘两半与电脑的三向开关）\n*   一套掌托\n*   1.5m USB-C 转 USB-C 线缆\n*   50cm USB-C 转 USB-C 线缆\n*   30cm USB-C 转 USB-C 线缆\n*   USB-C 转 USB-A 适配器\n*   旅行箱\n*   说明书\n\n随附的硬壳旅行箱设计精良，内部有泡沫衬垫，能妥善固定键盘、线缆和掌托，防止移动。\n\n![旅行箱内的黑色键盘和磁吸式掌托](https://photos5.appleinsider.com/gallery/64022-133245-DygmaRaise2-6-xl.jpg)\n*Dygma Raise 2 评测 - 旅行箱内部*\n\n尽管旅行箱保护性良好，但缺少提手，且没有为增强套件（包含拔键器、额外轴体等小部件）预留空间，这些部件需要单独的盒子存放。\n\n![包含各种轴体、O形圈和清洁工具的配件盒](https://photos5.appleinsider.com/gallery/64022-133244-DygmaRaise2-5-xl.jpg)\n*Dygma Raise 2 评测 - 独立的配件盒*\n\n### 设计特点\nRaise 2 采用拉丝阳极氧化铝框架，不仅提供了出色的视觉美感，还带来了令人难以置信的坚固手感。键盘提供黑色和银色两种颜色选择。基础版包含一对可选的磁吸式掌托，可轻松吸附或取下，方便用户根据需求更换（一套新掌托售价39美元）。\n\n![带有掌托的黑色机械键盘特写](https://photos5.appleinsider.com/gallery/64022-133243-DygmaRaise2-4-xl.jpg)\n*Dygma Raise 2 评测 - 掌托可拆卸以提高舒适度*\n\n键盘背面设有 USB-C 端口，用于充电或有线连接。\n\n### 高度定制化\nRaise 2 提供多种轴体选择，包括 Gatereon G Pro 2.0 Yellow、Kailh Silent Brown 或 Kailh Box (Clicky) White。用户还可从 Dygma 商店购买额外的轴体，如 Kailh Silent Pink、Kailh Speed Silver、Kailh Speed Copper、Cherry Red MX、Cherry Brown MX 和 Cherry Blue MX。\n\n如果选择 RGB 灯效选项，键盘将配备 68 个（ANSI 版）/ 69 个（ISO 版）可自定义的键帽 RGB LED，以及超过 100 个用于底光的 LED。\n\nDygma 提供名为 Bazecor 的配置应用程序，支持 Mac、Windows 和 Linux 系统。该应用功能强大且易于使用，允许用户自定义键位映射、宏以及 RGB 灯效。\n\n![Bazecor 配置应用界面](https://photos5.appleinsider.com/gallery/64022-133239-Dygmaapp-xl.jpg)\n*Dygma Raise 2 评测 - Bazecor 配置应用*\n\n### 使用体验\n评测者最初对分体式键盘持保留态度，但 Raise 2 的实际表现令人惊喜。它并非纯粹的“中间对半分”设计，而是采用交错行分体，更易于肌肉记忆和人体工学舒适度。键盘既可以作为一体式使用，也可以分体成两半独立操作。\n\n![分体状态下的黑色键盘](https://photos5.appleinsider.com/gallery/64022-133242-DygmaRaise2-3-xl.jpg)\n*Dygma Raise 2 评测 - 分为两半*\n\n作为一体式键盘使用时，打字和日常使用体验良好。对于 60% 键盘布局，Dygma 通过层系统弥补了缺少方向键和其他按键的问题。键盘底部有四个拇指键，通过 Bazecor 应用可配置多达 10 个层，实现丰富的宏功能。\n\nRaise 2 的一个重要特性是可选的倾斜（tenting）功能，可以大幅调整键盘角度，以提供更佳的人体工学舒适度。尽管评测者个人不习惯，但认可其对部分用户的吸引力。\n\n![键盘底部及倾斜组件](https://photos5.appleinsider.com/gallery/64022-133241-DygmaRaise2-2-xl.jpg)\n*Dygma Raise 2 评测 - 底部和倾斜组件*\n\n如果选择无线版本，Raise 2 可通过蓝牙连接多达 5 台设备，满足大多数用户的需求。\n\n### 高昂的附加成本\n尽管 Raise 2 是一款优秀的机械键盘，但其定价策略是主要问题。键盘基础版售价高达 369 美元，而无线连接、内置倾斜功能和 RGB 灯效等关键特性却需要额外付费：\n*   无线连接：额外 90 美元\n*   内置倾斜：额外 80 美元\n*   RGB 灯效：不作为标准配置，仅随内置倾斜选项提供。\n\n这意味着，如果用户想要一个真正无线的 Raise 2（不含倾斜和 RGB），价格将达到 459 美元。这种将标准功能作为豪华附加项销售的策略，使得其性价比远低于同等质量的其他机械键盘，后者通常在更低的价格提供类似功能，仅牺牲了分体式和更多人体工学选项的新颖性。\n\n![带红色背光的拆分人体工学键盘](https://photos5.appleinsider.com/gallery/64022-133240-DygmaRaise2-1-xl.jpg)\n*Dygma Raise 2 评测 - RGB 灯效，但仅在购买倾斜选项时提供*\n\n### 优缺点总结\n**优点：**\n*   出色的制造质量\n*   优秀的专有应用程序（Bazecor）\n*   丰富的键帽和轴体选项\n*   兼容 Mac、Windows 和 Linux\n*   支持多达 5 台设备连接（无线选项）\n*   分体式键盘和可选倾斜功能提供更佳的人体工学选择\n\n**缺点：**\n*   入门成本过高\n*   无线功能作为可选附加项收费\n*   倾斜功能作为可选附加项收费\n*   分体键盘需要适应期\n\n### 评分\n3/5\n\n### 购买信息\nDygma Raise 2 基础版（不含附加项）可在 Dygma 官网购买，售价 369 美元。",
-      "shortSummary": "Dygma Raise 2 是一款设计精良、高度可定制的无线分体式机械键盘，提供出色的人体工学支持和用户体验。它拥有坚固的铝制框架、多种轴体选择和强大的 Bazecor 配置软件。然而，其主要缺点在于高昂的价格，基础版售价369美元，且无线连接、倾斜功能和RGB灯效等关键特性需额外付费，导致完全配置后的价格过高。尽管质量优秀，但过高的成本使其性价比不高，评分为3/5。",
-      "translated_title": "Dygma Raise 2 评测：一款价格过高的分体式键盘",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64022-133245-DygmaRaise2-6-xl.jpg",
-          "alt": "Black keyboard with magnetic palm pads in a gray soft-textured zippered case, viewed from above.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64022-133244-DygmaRaise2-5-xl.jpg",
-          "alt": "Keyboard switch kit containing various colorful switches, O-rings, tweezers, brush, and cleaning cloth in a black box.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64022-133243-DygmaRaise2-4-xl.jpg",
-          "alt": "Close-up of a black mechanical keyboard with textured keys and a wrist rest visible on the left side.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64022-133239-Dygmaapp-xl.jpg",
-          "alt": "Keyboard layout editor interface showing customizable keys with color-coded options and sidebar menu for various editing tools.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64022-133242-DygmaRaise2-3-xl.jpg",
-          "alt": "Black split keyboard with two halves, featuring ergonomic wrist supports, on a white surface.",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64022-133241-DygmaRaise2-2-xl.jpg",
-          "alt": "A split keyboard's underside with adjustment mechanisms, featuring black panels and visible brand logo, placed on a white background.",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64022-133240-DygmaRaise2-1-xl.jpg",
-          "alt": "Split ergonomic keyboard with red backlighting, featuring black keycaps and wrist rests, creating a modern, vibrant look.",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "苹果预计将在2026年WWDC之前发布HomeOS及相关硬件 (原标题: Apple now expected to unveil HomeOS, related hardware ahead of 2026 WWDC)",
-      "link": "https://appleinsider.com/articles/25/06/15/apple-now-expected-to-unveil-homeos-related-hardware-ahead-of-2026-wwdc",
-      "pubDate": "Sun, 15 Jun 2025 13:48:00 GMT",
-      "isoDate": "2025-06-15T13:48:00.000Z",
-      "creator": "Charles Martin",
-      "summary": "## 苹果HomeOS平台及智能家居硬件发布计划\n\n### 发布时间与原因\n*   苹果长期传闻的HomeOS平台及其智能家居设备的发布时间已推迟至2026年春季。\n*   预计将在2026年3月的一次面向消费者的活动中亮相，早于苹果的年度全球开发者大会（WWDC）。\n*   此次推迟的主要原因是Siri升级的延误。\n\n### 核心功能与Siri升级\n*   2026年初，苹果计划推出两项重大更新，其中之一是Siri体验的显著升级。\n*   升级后的Siri将具备上下文理解能力和聊天机器人功能。\n*   Siri还将推出一个对话式、始终在线的“副驾驶”（copilot），能够主动宣布任务。\n\n### 新硬件产品\n*   苹果正在规划一款iPad式的“家庭中枢”设备，用于控制家庭系统，例如气候控制、家庭安全及其他功能。\n*   传闻中的其他家居产品包括一个桌面机器人手臂，可能配备可旋转的iPad式显示屏。\n\n### 技术融合与生态系统\n*   苹果智能家居战略的推出依赖于多项技术的整合。\n*   新硬件将基于升级后的Siri，支持语音命令和请求。\n*   该系统将利用Thread协议在智能家居设备之间创建网状网络。\n*   现有苹果产品，如iPhone、Apple TV和HomePod，已内置未来HomeOS所需的无线电模块。\n*   Apple Intelligence的持续发展将在苹果家居技术的演进中发挥关键作用。\n*   苹果近期已通过在WWDC上宣布的“基础模型框架”（Foundation Models Framework），向开发者开放了Siri技术。\n*   其他制造商，例如宜家的Timmerflotte温湿度传感器，已开始在其产品中采用苹果的Thread家居技术兼容性。\n\n### 市场影响与目标\n*   苹果统一推广HomeOS及其支持产品的举措，旨在提供跨不同品牌和技术的统一家庭控制体验。\n*   如果用户广泛采用，这将使苹果在智能家居配件市场获得显著优势。",
-      "shortSummary": "苹果的HomeOS平台及相关智能家居硬件预计将推迟至2026年春季（可能在3月）发布，主要原因是Siri升级的延误。升级后的Siri将具备上下文理解和聊天机器人功能。新硬件包括iPad式“家庭中枢”和桌面机器人手臂。此举旨在通过Thread技术和Apple Intelligence实现统一的家庭控制，从而在智能家居市场中获得竞争优势。",
-      "translated_title": "苹果预计将在2026年WWDC之前发布HomeOS及相关硬件",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "犯罪记录：洛杉矶、找回失物以及停职的机组人员 (原标题: Crime blotter: Los Angeles, retrievals, and a suspended air crew)",
-      "link": "https://appleinsider.com/articles/25/06/15/crime-blotter-los-angeles-retrievals-and-a-suspended-air-crew",
-      "pubDate": "Sun, 15 Jun 2025 11:52:57 GMT",
-      "isoDate": "2025-06-15T11:52:57.000Z",
-      "creator": "Stephen Silver",
-      "summary": "以下是近期与苹果设备相关的犯罪事件：\n\n*   **洛杉矶的盗窃事件与苹果商店盗窃案的减少**：在洛杉矶，苹果剧院塔在抗议活动中遭到抢劫。被盗的iPhone会显示消息，警告窃贼将设备归还给苹果商店。\n\n*   **伦敦的iPhone盗窃案导致追捕和抓捕**：一名男子在伦敦东区偷走了一名妇女的iPhone，警察追捕了14分钟后将其逮捕。警方利用设备的跟踪功能定位并监控嫌疑人。\n\n*   **情侣使用AirTag“偷回”他们的捷豹**：在伦敦，一对夫妇的车被盗，他们使用AirTag追踪并找回了汽车，因为警方“太忙”无法帮助他们。他们通过AirTag追踪到了被盗车辆。\n\n*   **NBC记者从自助服务机找回被盗iPhone**：NBC新闻记者Ellison Barber在纽约地铁上被盗iPhone，后来使用工作电话追踪到一台ecoATM机器。她带着摄像组追踪到了一家兑现支票商店的ecoATM亭，窃贼可能在那里将iPhone归还以换取现金。纽约警察局成功找回了Barber的手机。\n\n*   **男子因盗窃32台Mac mini设备被通缉**：一名男子在孟菲斯冒充取货人，从DHL Express偷走了价值超过10万美元的32台苹果Mac mini电脑。该男子仍然在逃。\n\n*   **整个机组人员因iPhone盗窃案被停职**：在印度尼西亚，一名乘客的iPhone失踪后，整个机组人员被停职。后来，这部iPhone在澳大利亚的一条河底被发现，而该航班曾降落在澳大利亚。iPhone的主人追踪到手机在机组人员入住的酒店，并前往调查。在酒店及其附近区域的搜索没有找到手机，但在机组人员离开酒店几个小时后，手机被追踪到“亚拉河中央”。\n\n*   **iCloud证据与男子致命路怒枪击案的辩护相矛盾**：一名男子被指控在堪萨斯城附近1月份的一起路怒事件中枪杀了一名体育记者，已被逮捕。虽然被告在审讯中表示他没有枪，但从他的iCloud账户中收集到的证据显示了他手持9毫米手枪的照片。\n\n*   **Ice Cube声称TSA偷了他的iPad**：嘻哈传奇人物兼演员Ice Cube在X上表示，美国运输安全管理局（TSA）偷了他的iPad。不久之后，这位说唱歌手发布消息称iPad已找回。\n\n*   **AirTag导致船只修理工被捕**：在佛罗里达州，一辆拖车和多台船用发动机被盗，这些设备都配备了AirTag，AirTag信号追踪到一名船只修理工的住所，导致他被捕。搜查这名58岁男子的住所发现了更多被盗物品。他被逮捕并被指控犯有一系列罪行，包括盗窃车辆、盗窃、拥有没有船体识别码的船只以及拥有序列号被篡改的舷外发动机。",
-      "shortSummary": "近期发生多起与苹果设备相关的犯罪事件。包括洛杉矶苹果商店盗窃案减少，伦敦iPhone盗窃案导致追捕，情侣使用AirTag找回被盗捷豹，NBC记者找回被盗iPhone，男子盗窃Mac mini被通缉，印尼航空机组因iPhone盗窃被停职，iCloud证据反驳路怒枪击案嫌疑人，Ice Cube称iPad被盗后找回，以及AirTag协助逮捕船只修理工等。",
-      "translated_title": "犯罪记录：洛杉矶、找回失物以及停职的机组人员",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "M2 Mac mini 用户遇到交流电源问题可免费维修 (原标题: M2 Mac mini owners with AC power issues can get repairs for free)",
-      "link": "https://appleinsider.com/articles/25/06/14/m2-mac-mini-owners-with-ac-power-issues-can-get-repairs-for-free",
-      "pubDate": "Sat, 14 Jun 2025 14:44:00 GMT",
-      "isoDate": "2025-06-14T14:44:00.000Z",
-      "creator": "Charles Martin",
-      "summary": "# M2 Mac mini 免费维修计划\n\nApple 已启动一项针对部分 M2 Mac mini 设备的免费维修计划，以解决其无法开机的问题。\n\n*   **问题描述**\n    *   Apple 发现“极少数”在 2024 年 6 月 16 日至 11 月 23 日期间生产的 M2 芯片 Mac mini 受到影响，出现无法开机的问题。\n\n*   **受影响设备**\n    *   特指在上述日期范围内生产的 M2 芯片 Mac mini。\n\n*   **资格检查**\n    *   受影响的用户可以使用 Apple 网站上的序列号查询页面来确定其 Mac mini 是否符合免费维修条件。\n    *   序列号可在设备底部、原始产品包装上找到。如果设备能够开机，也可通过“关于本机”菜单项获取（但对于受此问题影响的用户，此选项可能不可用）。\n\n*   **维修流程**\n    *   如果 Mac mini 的序列号符合该计划条件，用户可以预约任何 Apple 授权服务提供商 (AASP) 或 Apple 零售店进行维修。\n    *   如果附近没有 AASP，用户可以联系 Apple 支持以获取其他维修选项。\n\n*   **计划期限与注意事项**\n    *   该免费维修计划适用于符合条件的 Mac mini 型号，自设备首次零售销售之日起三年内有效。\n    *   Apple 强调，这项全球性计划不延长用户 Mac mini 的标准保修范围。\n    *   Mac mini 系列产品近期刚刚庆祝了其 20 周年纪念。",
-      "shortSummary": "Apple 已为部分 M2 Mac mini 启动免费维修计划，解决其无法开机的问题。该计划针对 2024 年 6 月 16 日至 11 月 23 日期间生产的极少数设备。用户可通过序列号查询资格，并在 Apple 授权服务商或零售店享受免费维修。计划有效期为首次零售销售后三年，但不延长标准保修。",
-      "translated_title": "M2 Mac mini 用户遇到交流电源问题可免费维修",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "苹果Vision Pro持续缺乏原生应用对该平台来说不是好兆头 (原标题: Apple's continued lack of native apps on Vision Pro isn't a good sign for the platform)",
-      "link": "https://appleinsider.com/articles/25/06/13/apples-continued-lack-of-native-apps-on-vision-pro-isnt-a-good-sign-for-the-platform",
-      "pubDate": "Fri, 13 Jun 2025 18:18:25 GMT",
-      "isoDate": "2025-06-13T18:18:25.000Z",
-      "creator": "Wesley Hilliard",
-      "summary": "### 苹果Vision Pro：原生应用缺失的困境\n\n苹果Vision Pro作为其首款空间计算平台，价格昂贵，但市场普及缓慢，原生软件和媒体的推出也进展迟缓。尽管苹果在WWDC 2023发布了Vision Pro，并在WWDC 2025结束后，其兼容应用列表（即未经修改的2D iPad或iPhone应用版本）仍未有显著变化，这引发了对苹果自身承诺的质疑。\n\n**核心问题：苹果自身应用的缺失**\n\n苹果曾宣称开发者可以轻松地将其应用转换为原生版本，使工具栏、菜单和按钮从2D界面中“浮现”出来。然而，苹果似乎未能遵循自己的建议。以下是苹果自家尚未在Vision Pro上提供原生版本的应用列表：\n\n*   图书 (Books)\n*   日历 (Calendar)\n*   时钟 (Clock)\n*   家庭 (Home)\n*   地图 (Maps)\n*   新闻 (News)\n*   数字 (Numbers)\n*   页面 (Pages)\n*   播客 (Podcasts)\n*   提醒事项 (Reminders)\n*   快捷指令 (Shortcuts)\n*   股市 (Stocks)\n*   语音备忘录 (Voice Memos)\n\n自2024年2月Vision Pro发布以来，兼容应用的数量实际上有所增加，例如通过收购Pixelmator，其应用也加入了兼容列表。但这并未解决原生应用缺失的问题。\n\n**作者观点：对Vision Pro的喜爱与担忧**\n\n文章作者是Apple Vision Pro的忠实用户，每周花费大量时间在3D空间中工作或娱乐。作者认为，Vision Pro是一个引人入胜的平台，拥有无限的画布，可以随意打开窗口和空间小组件并放置它们。\n\n![Sleek virtual reality headset with a glossy black and silver exterior, featuring multiple small cameras and mesh padding on the inside for comfort.](https://photos5.appleinsider.com/gallery/64008-133230-VP35-xl.jpg)\n\n**visionOS 26更新与原生应用现状**\n\n最新的visionOS 26是一个出色的更新，它增强了平台的使用方式，包括更多的协作选项、重启后仍能保持位置的永久性对象，以及通过支持PSVR2控制器带来的新游戏机会。然而，在平台发布近三年（2023年6月公布，2024年2月发布）后，苹果仍未触及上述原生应用列表，这显得有些疏忽。即使只更新一两个应用，也能让人感受到进展，但零进展传递了一个令人不安的信息：如果世界上最富有的公司，拥有近乎无限的资源，都无法为新平台腾出时间，那它又向开发者传递了什么信息呢？\n\n**部分进展：空间小组件**\n\n尽管原生应用进展缓慢，但苹果在某些方面有所行动。它为日历、时钟、新闻、播客、提醒事项和股市等应用引入了空间小组件。甚至在平台上没有天气应用的情况下，也提供了天气小组件。作者承认这些小组件是“不错的折衷方案”，但仍觉得奇怪。\n\n![A digital interface displaying a list of apps for Apple Vision Pro with their icons and availability status, set against a cloudy sky background over a desert landscape.](https://photos5.appleinsider.com/gallery/64008-133231-vOS12-xl.jpg)\n\n**苹果应树立榜样**\n\n苹果通常会利用自己的API来展示可能性，并鼓励开发者遵循标准。它应该展示如何开发空间播客或天气应用。作者指出，目前visionOS 26仍处于Beta 1阶段，在秋季正式发布前仍有可能发生变化，或者在年内推出新的原生应用。然而，作者表示，如果到WWDC 2026时情况仍未改变，他将开始怀疑苹果对其平台的承诺。",
-      "shortSummary": "苹果Vision Pro持续缺乏其自身应用的原生版本，尽管WWDC 2025已结束，许多核心应用仍停留在2D兼容模式。这与苹果鼓励开发者开发原生应用的立场相悖，也向开发者传递了负面信号。尽管visionOS 26有所更新并引入了空间小组件，但苹果自身未能树立原生应用开发的榜样，引发了对其平台承诺的担忧。",
-      "translated_title": "苹果Vision Pro持续缺乏原生应用对该平台来说不是好兆头",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64008-133230-VP35-xl.jpg",
-          "alt": "Sleek virtual reality headset with a glossy black and silver exterior, featuring multiple small cameras and mesh padding on the inside for comfort.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64008-133231-vOS12-xl.jpg",
-          "alt": "A digital interface displaying a list of apps for Apple Vision Pro with their icons and availability status, set against a cloudy sky background over a desert landscape.",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "苹果悄然发布iOS 26 beta 1更新，附带新版本 (原标题: Apple slips out a quiet iOS 26 beta 1 update with a new build)",
-      "link": "https://appleinsider.com/articles/25/06/13/apple-slips-out-a-quiet-ios-26-beta-1-update-with-a-new-build",
-      "pubDate": "Fri, 13 Jun 2025 17:41:11 GMT",
-      "isoDate": "2025-06-13T17:41:11.000Z",
-      "creator": "Andrew Orr",
-      "summary": "## 苹果悄然发布iOS 26 beta 1更新：幕后调整与潜在改进\n\n苹果公司近日对iOS 26的第一个开发者测试版进行了一次静默更新，此次更新并未附带新的发布说明，但其版本号从23A5260n变更为23A5260u。这表明苹果正在进行幕后调整，而非发布一个完整的Beta 2版本。\n\n### 更新详情\n\n*   **发布时间**：新版本于6月12日开始出现在部分设备上，距离iOS 26 Beta 1在WWDC 2025主题演讲后首次发布仅三天。\n*   **更新性质**：此次更新被视为一次次要修订，旨在解决内部问题或最终确定资源，而无需推出正式的第二个测试版。\n\n### 潜在的更新内容（未公开文档）\n\n尽管苹果没有公开说明“n”和“u”版本之间的具体差异，但此类次要修订通常包括：\n\n*   **稳定性改进**：针对特定设备配置的稳定性提升。\n*   **错误修复**：对设置错误或开发者配置问题的最后阶段修复。\n*   **内部更新**：对内部框架或资源的更新。\n\n### 可能解决的问题\n\n此次修订可能旨在解决以下问题：\n\n*   **UI错误**：修复影响全新“Liquid Glass”设计语言的用户界面错误。\n*   **Apple Intelligence功能优化**：对“实时翻译”（Live Translation）和“视觉智能”（Visual Intelligence）等Apple Intelligence功能进行优化。\n*   **电池续航**：解决早期用户报告的在支持iPhone上出现的电池耗电过快问题。\n\n### 苹果的静默更新策略\n\n苹果偶尔会在相同的测试版标签下推出修订版本，以悄悄修复问题，避免造成测试版版本号的混淆。这些静默更新通常仅限于最早期的开发者测试版，并且并非总是会推送到所有设备。\n\n### 早期测试版注意事项\n\n与所有早期测试版一样，建议用户谨慎使用。目前，Apple Intelligence功能仍存在错误，动画偶尔会出现卡顿，并且一些重新设计的应用程序（如音乐和信息）也表现出不一致的行为。",
-      "shortSummary": "苹果悄然发布了iOS 26 Beta 1的静默更新，将版本号从23A5260n更改为23A5260u。此次更新未附带发布说明，被认为是次要修订，旨在解决幕后问题、提升稳定性或修复早期错误，如UI问题、Apple Intelligence功能优化或电池耗电。新版本在Beta 1发布三天后推出，通常仅限于早期开发者测试版。用户需注意，早期测试版仍存在诸多已知问题。",
-      "translated_title": "苹果悄然发布iOS 26 beta 1更新，附带新版本",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "亚马逊夏季大促：Apple Watch、AirPods、iPad、Beats、Mac 最高享51%折扣 (原标题: Amazon's Summer Sale slashes up to 51% off Apple Watch, AirPods, iPad, Beats, Mac)",
-      "link": "https://appleinsider.com/articles/25/06/13/amazons-summer-sale-slashes-up-to-51-off-apple-watch-airpods-ipad-beats-mac",
-      "pubDate": "Fri, 13 Jun 2025 17:25:24 GMT",
-      "isoDate": "2025-06-13T17:25:24.000Z",
-      "creator": "Christine McKee",
-      "summary": "# 亚马逊夏季大促：Apple Watch、AirPods、iPad、Beats、Mac 最高享51%折扣\n\n亚马逊正在加大六月Apple产品的促销力度，为父亲节周末带来高达51%的折扣。此次夏季大促涵盖数十款Apple产品，最高可节省400美元，起价仅为13美元。此外，亚马逊的优惠页面上还有数百款第三方产品降价。\n\n## 精选Apple产品折扣一览\n\n以下是亚马逊此次促销中的一些亮点折扣：\n\n*   **AirTag**: 22.98美元 (立省7美元)\n*   **Apple Watch Series 10** (42毫米铝壳, GPS): 299美元 (立省100美元)\n*   **11英寸iPad Air M2** (512GB, Wi-Fi + 蜂窝网络, 深空灰色): 699美元 (立省350美元)\n*   **13英寸MacBook Air M4** (16GB, 256GB): 849美元 (立省150美元)\n*   **15英寸MacBook Air M4** (16GB, 256GB): 1,049美元 (立省150美元)\n*   **Mac mini M4** (10核CPU, 10核GPU, 16GB, 256GB): 549美元 (立省50美元)\n*   **14英寸MacBook Pro M4** (10核CPU, 10核GPU, 16GB, 512GB): 1,429美元 (立省170美元)\n*   **16英寸MacBook Pro M4 Max** (16核CPU, 40核GPU, 48GB, 1TB): 3,599美元 (立省400美元)\n\n## iPad最高优惠400美元\n\n![iPad 10th Generation displaying weather and apps, surrounded by plants, headphones, and a table lamp with pink lighting.](https://photos5.appleinsider.com/gallery/61354-126753-ipad-10th-generation-xl.jpg)\n\niPad系列产品最高可享受400美元的折扣，包括2025年发布的最新型号和上一代平板电脑。\n\n**今日iPad降价精选：**\n\n*   iPad A16 2025 (128GB, Wi-Fi, 部分颜色): 299美元 (立省50美元)\n*   M3 iPad Air 11英寸 2025 (128GB, Wi-Fi, 部分颜色): 499美元 (立省100美元)\n*   M3 iPad Air 13英寸 2025 (128GB, Wi-Fi, 深空灰色): 699美元 (立省100美元)\n*   M4 iPad Pro 11英寸 (256GB, Wi-Fi, 标准玻璃): 899美元 (立省100美元)\n*   M4 iPad Pro 13英寸 (256GB, Wi-Fi, 标准玻璃): 1,099美元 (立省200美元)\n\n**M2 iPad Air特惠：**\n\n*   M2 iPad Air 11英寸 (512GB, Wi-Fi + 蜂窝网络): 699美元 (立省350美元)\n*   M2 iPad Air 11英寸 (1TB, Wi-Fi + 蜂窝网络): 849美元 (立省400美元)\n\n## AirPods和Beats最高享51%折扣\n\n![Apple AirPods Pro 2 on sale](https://photos5.appleinsider.com/gallery/51372-101579-airpods-pro-2-on-desk-xl.jpg)\n\nApple AirPods和Beats产品最高可节省180美元，其中Beats头戴式耳机折扣力度最大，AirPods最低可至99美元。\n\n**AirPods折扣：**\n\n*   AirPods 4 (无降噪): 99美元 (立省30美元)\n*   AirPods 4 (带降噪): 148.99美元 (立省31美元)\n*   AirPods Pro 2: 169美元 (立省80美元)\n*   AirPods Max (USB-C): 479.99美元 (立省70美元)\n\n**Beats折扣：**\n\n*   Beats Studio Pro: 169.95美元 (51%折扣)\n*   Beats Solo 4 Wireless: 99.95美元 (50%折扣)\n*   Beats Flex Wireless Earphones: 39.99美元 (43%折扣)\n\n## AirTag降至历史最低价\n\n![A brown leather AirTag holder attached to a gray fabric surface with three metal loops.](https://photos5.appleinsider.com/gallery/61354-126752-AirTag-leather-loop-xl.jpg)\n\n六月AirTag价格更低，单件装降至22.98美元。而4件装的AirTag每件价格更划算，降至74.99美元。\n\n*   AirTag: 22.98美元 (立省7美元)\n*   AirTag 4件装: 74.99美元 (立省25美元)\n\n## Apple Watch低至169美元起\n\n![Apple Watch SE 2, partially covered by a brown sleeve on a wrist.](https://photos5.appleinsider.com/gallery/61354-126750-apple-watch-se-2-xl.jpg)\n\n亚马逊六月Apple Watch促销活动中，价格最低可降至169美元，Series 10降至299美元 (立省100美元)。\n\n*   Apple Watch SE 2 GPS (40毫米铝壳, 部分颜色): 169美元 (立省80美元)\n*   Series 10 GPS (42毫米铝壳, 部分颜色): 299美元 (立省100美元)\n*   Series 10 GPS (46毫米铝壳, 部分颜色): 329美元 (立省100美元)\n*   Ultra 2 (黑色钛金属表壳, 部分表带): 739美元 (立省60美元)\n\n## Mac最高优惠400美元\n\n![Two 16-inch MacBook Pro laptops on a wooden table displaying video editing software. A small case and a partial view of a white flower nearby. Warm lighting in the background.](https://photos5.appleinsider.com/gallery/62384-129283-16-inch-macbook-pro-side-by-side-xl.jpg)\n\nApple的Mac系列产品在亚马逊上最高可享受400美元的即时折扣，包括笔记本电脑和台式机。从最新的M4 MacBook Air到M4 Max MacBook Pro，均有优惠。\n\n**MacBook Air M4折扣精选：**\n\n*   13英寸M4 Air (8核GPU, 16GB, 256GB): 849美元 (立省500美元)\n*   15英寸M4 Air 2025 (16GB, 256GB): 1,049美元 (立省150美元)\n\n**MacBook Pro M4折扣精选：**\n\n*   14英寸M4 MBP (10核CPU, 10核GPU, 16GB, 512GB): 1,429美元 (立省170美元)\n*   16英寸M4 Max MBP (16核CPU, 40核GPU, 48GB, 1TB): 3,599美元 (立省400美元)\n\n**Mac mini M4折扣精选：**\n\n*   M4 Mac mini (10核CPU, 10核GPU, 16GB, 256GB): 549美元 (立省50美元)\n\n**iMac M4折扣精选：**\n\n*   M4 24英寸iMac (8核CPU, 8核GPU, 16GB, 256GB, 蓝色): 1,192.50美元 (立省107美元)\n\n以上仅为部分精选优惠，更多折扣信息可在Apple价格指南中查阅。",
-      "shortSummary": "亚马逊夏季大促正火热进行，Apple Watch、AirPods、iPad、Beats和Mac等Apple产品最高可享51%折扣。此次促销最高可节省400美元，MacBook系列有大幅优惠，AirTag也降至历史最低价，产品起价仅13美元。活动涵盖最新型号和上一代产品，为消费者提供了广泛的Apple设备购买选择。",
-      "translated_title": "亚马逊夏季大促：Apple Watch、AirPods、iPad、Beats、Mac 最高享51%折扣",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/61354-126753-ipad-10th-generation-xl.jpg",
-          "alt": "iPad 10th Generation displaying weather and apps, surrounded by plants, headphones, and a table lamp with pink lighting.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/51372-101579-airpods-pro-2-on-desk-xl.jpg",
-          "alt": "Apple AirPods Pro 2 on sale",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/61354-126752-AirTag-leather-loop-xl.jpg",
-          "alt": "A brown leather AirTag holder attached to a gray fabric surface with three metal loops.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/61354-126750-apple-watch-se-2-xl.jpg",
-          "alt": "Apple Watch SE 2, partially covered by a brown sleeve on a wrist.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/62384-129283-16-inch-macbook-pro-side-by-side-xl.jpg",
-          "alt": "Two 16-inch MacBook Pro laptops on a wooden table displaying video editing software. A small case and a partial view of a white flower nearby. Warm lighting in the background.",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
     }
   ],
-  "lastUpdated": "2025-06-18T06:31:53.652Z"
+  "lastUpdated": "2025-06-19T01:51:45.144Z"
 }
