@@ -5,6 +5,57 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Gemini Code Assist 在 Apigee API 管理中现已正式发布 (原标题: Gemini Code Assist in Apigee API Management now generally available)",
+      "link": "https://developers.googleblog.com/en/gemini-code-assist-in-apigee-api-management-now-generally-available/",
+      "pubDate": "Tue, 17 Jun 2025 16:00:00 GMT",
+      "isoDate": "2025-06-17T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Gemini Code Assist 在 Apigee API 管理中现已正式发布\n\nGoogle 宣布 Gemini Code Assist 在 Apigee API 管理中现已正式发布，作为 Gemini Code Assist 企业版的一部分。经过成功的预览期和客户反馈，这项强大的 AI 辅助 API 开发能力现已可用于生产环境。\n\n## 加速企业级上下文的 API 开发\n\n在当今的数字化环境中，API 是应用程序、服务和数据之间的关键连接器。然而，大规模创建一致、安全且设计良好的 API 对许多组织来说仍然充满挑战。开发者必须应对复杂的规范，确保符合组织标准，并避免创建重复或不一致的 API。\n\nGemini Code Assist 在 Apigee 中通过结合 Google 的 Gemini 模型与 Apigee 独特的企业上下文能力来解决这些挑战。通过利用组织现有的 API 生态系统（通过 API hub），Gemini Code Assist 确保生成的 API 始终与已建立的模式、安全架构和对象结构保持一致。\n\n## 现已正式发布的主要功能\n\n根据预览期间的客户反馈，Gemini Code Assist 在 Apigee 中增强了多项强大功能：\n\n*   **API 创建的聊天界面：** 使用自然语言 Gemini Code Assist 界面创建 API 规范。只需在大型语言模型 (LLM) 提示前添加 `@Apigee`，即可开始设计或更新 API 规范，从而降低偏好对话式界面而非传统表单工具的开发者的上手难度。\n*   **AI 生成的规范摘要：** 获取生成的 API 规范的纯文本摘要，以便快速理解 API 功能以及企业上下文如何被使用，帮助平台团队无需深入技术规范即可快速评估 API 功能。\n*   **迭代式规范设计：** 通过聊天界面轻松优化生成的 API 规范，这是预览期间最受请求的功能，使开发者能够快速迭代和完善其 API，而无需从头开始。\n*   **增强的企业上下文：** 改进了对嵌套对象的支持，确保地址或货币格式等常见元素在不同父对象中保持一致的格式，帮助平台团队维护治理标准并减少其 API 生态系统中的不一致性。\n*   **重复 API 检测：** 主动识别请求的 API 是否可能与现有功能重复，从而在适当情况下重用现有 API，而不是创建重复的端点，防止开发者浪费时间在冗余工作上，同时帮助平台团队减少 API 蔓延。\n*   **企业级安全性：** 该工具符合 VPC Service Controls 规范，满足严格的企业安全要求，使平台团队能够自信地在其安全隔离的合规框架内部署 AI 辅助开发。\n\n## 无缝开发工作流\n\nGemini Code Assist 在 Apigee 中提供了一个简化的工作流，可在加速 API 开发的同时保持治理：\n\n1.  **创建：** 通过自然语言提示生成 OpenAPI 规范。\n2.  **迭代：** 通过自然语言提示更新 OpenAPI 规范。\n3.  **测试：** 部署模拟服务器进行协作测试。\n4.  **发布：** 通过 API hub 与团队共享规范。\n5.  **实施：** 生成代理或后端实现。\n\n在每个步骤中，企业上下文都确保您的 API 符合组织标准，同时减少重复和不一致。\n\n## 开始使用 Gemini Code Assist 在 Apigee 中\n\nGemini Code Assist 在 Apigee 中作为 Gemini Code Assist 企业版的一部分提供。现有的 Gemini Code Assist 企业客户可以通过 Cloud Code 和 Gemini Chat 在 VS Code 中立即访问这些功能。\n\n要开始使用：\n\n1.  安装适用于 VS Code 的 Cloud Code 和 Gemini Code Assist 扩展。\n2.  连接到您的 Apigee 和 API hub 实例。\n3.  开始使用自然语言提示创建 API。\n\n有关详细说明，请访问文档或探索 Google Cloud 控制台中的交互式教程。\n\n## 持续改进与未来展望\n\n您的反馈推动了 Gemini Code Assist 在 Apigee 中的增强，包括支持其他 IDE（如 IntelliJ）、gRPC 协议、API Hub 的样式规则强制执行以及代理创作和优化功能的扩展。\n\n立即开始使用 Gemini Code Assist 在 Apigee 中构建更一致、安全且设计良好的 API。",
+      "shortSummary": "Gemini Code Assist 在 Apigee API 管理中现已正式发布，作为企业版的一部分。它利用 AI 和企业上下文，通过自然语言提示加速 API 开发，确保 API 的一致性、安全性和合规性。主要功能包括聊天界面创建和迭代 API 规范、AI 摘要、增强的企业上下文支持以及重复 API 检测。这有助于开发者减少冗余工作，并帮助平台团队维护治理标准，从而实现更高效、规范的 API 生态系统。",
+      "translated_title": "Gemini Code Assist 在 Apigee API 管理中现已正式发布",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Gemini Code Assist in Apigee API Management enhances API development with AI-assisted features like natural language API creation, AI-generated summaries, and iterative design, allowing seamless integration with your organization's existing API ecosystem and ensuring consistency, security, and reduced duplication, while offering enterprise-grade security and a streamlined development workflow."
+    },
+    {
+      "title": "Gemini 2.5：我们思维模型家族的更新 (原标题: Gemini 2.5: Updates to our family of thinking models)",
+      "link": "https://developers.googleblog.com/en/gemini-2-5-thinking-model-updates/",
+      "pubDate": "Mon, 16 Jun 2025 16:00:00 GMT",
+      "isoDate": "2025-06-16T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Gemini 2.5 模型家族更新概览\n\nGoogle 于2025年6月17日宣布了其 Gemini 2.5 模型家族的全面更新，引入了新模型并调整了现有模型的定价和可用性。\n\n### 核心更新亮点\n\n*   **Gemini 2.5 Pro**：已普遍可用且稳定，与06-05预览版无变化。\n*   **Gemini 2.5 Flash**：已普遍可用且稳定，与05-20预览版无变化。\n*   **Gemini 2.5 Flash-Lite**：现已推出预览版。\n\n### Gemini 2.5 思维模型\n\nGemini 2.5 模型被设计为“思维模型”，能够在生成响应前进行推理，从而提高性能和准确性。开发者可以控制模型的“思考预算”，决定模型在响应前思考的时间和程度。\n\n![Overview of our family of Gemini 2.5 thinking models](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_family_1-1__dark_dev.original.png)\n\n### 推出 Gemini 2.5 Flash-Lite\n\n2.5 Flash-Lite 作为2.5模型家族中的新成员，以最低的延迟和成本推出预览版。它旨在成为1.5和2.0 Flash模型的经济高效升级版，并在大多数评估中表现出更好的性能，更低的首次令牌时间，同时实现更高的每秒解码令牌数。该模型非常适合大规模分类或摘要等高吞吐量任务。\n\nFlash-Lite 也是一个推理模型，允许通过API参数动态控制思考预算。为了优化成本和速度，Flash-Lite 默认关闭“思考”功能（与其他模型不同）。它还支持所有原生工具，如 Google 搜索接地、代码执行和URL上下文，以及函数调用。\n\n![Benchmarks for Gemini 2.5 Flash-Lite](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_flash-lite2-0_flash_benchmarks_margi.original.png)\n\n### Gemini 2.5 Flash 的更新与定价调整\n\n随着2.5 Flash稳定版的推出（与Google I/O上发布的05-20预览模型相同），Google 对其定价进行了调整：\n\n*   **输入令牌价格**：从 $0.15 / 1M 令牌上调至 **$0.30 / 1M 令牌**。\n*   **输出令牌价格**：从 $3.50 / 1M 令牌下调至 **$2.50 / 1M 令牌**。\n*   **简化定价**：取消了“思考”与“非思考”之间的价格差异，并保持了单一价格层级，无论输入令牌大小如何。\n\n此次调整旨在反映 Flash 卓越的价值，并继续提供最佳的智能成本效益。同时，Gemini 2.5 Flash-Lite 为对成本和延迟敏感、且对模型智能要求较低的用例提供了更低成本的选择。\n\n![Pricing updates for our Gemini Flash family](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_flash-lite_pricing_margin_dark.original.png)\n\n**针对现有用户**：使用 Gemini 2.5 Flash Preview 04-17 的用户，现有预览定价将持续到2025年7月15日，之后该模型端点将被关闭。用户应过渡到普遍可用的“gemini-2.5-flash”模型，或切换到2.5 Flash-Lite 预览版作为更低成本的选择。\n\n### Gemini 2.5 Pro 的持续增长\n\nGemini 2.5 Pro 的增长和需求是所有模型中最为迅猛的。为了让更多客户在生产环境中使用此模型，06-05版本现已稳定，并保持与之前相同的价格点。Pro 模型在需要最高智能和最多功能的场景中表现出色，例如编码和代理任务，它是许多广受欢迎的开发者工具的核心。\n\n![Top developer tools using Gemini 2.5 Pro, featuring Cursor, Bolt, Cline, Cognition, Windsurf, GitHub, Lovable, Replit, and Zed Industries](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini-2-5-pro-top-developer-tools.original.png)\n\n**针对现有用户**：使用 2.5 Pro Preview 05-06 的用户，该模型将持续可用至2025年6月19日，之后将被关闭。使用 2.5 Pro Preview 06-05 的用户，只需将模型字符串更新为“gemini-2.5-pro”即可。",
+      "shortSummary": "Google 发布了 Gemini 2.5 模型家族的更新。Gemini 2.5 Pro 和 Flash 已普遍可用且稳定。新推出的 Gemini 2.5 Flash-Lite 预览版提供最低的延迟和成本，适用于高吞吐量任务。所有2.5模型均为“思维模型”，支持推理控制。Gemini 2.5 Flash 的定价有所调整，输入价格上调，输出价格下调，并简化了定价结构。Gemini 2.5 Pro 需求持续强劲，适用于高智能和复杂任务。",
+      "translated_title": "Gemini 2.5：我们思维模型家族的更新",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_family_1-1__dark_dev.original.png",
+          "alt": "Overview of our family of Gemini 2.5 thinking models",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_flash-lite2-0_flash_benchmarks_margi.original.png",
+          "alt": "Benchmarks for Gemini 2.5 Flash-Lite",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_flash-lite_pricing_margin_dark.original.png",
+          "alt": "Pricing updates for our Gemini Flash family",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini-2-5-pro-top-developer-tools.original.png",
+          "alt": "Top developer tools using Gemini 2.5 Pro, featuring Cursor, Bolt, Cline, Cognition, Windsurf, GitHub, Lovable, Replit, and Zed Industries",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Google is releasing updates to its Gemini 2.5 model family, including the generally available and stable Gemini 2.5 Pro and Flash, and the new Gemini 2.5 Flash-Lite \"thinking models\" in preview, offering enhanced performance and accuracy, with Flash-Lite providing a lower-cost option."
+    },
+    {
       "title": "Google Pay 在沙盒 iframe 中实现 PCI DSS v4 合规性 (原标题: Google Pay inside sandboxed iframe for PCI DSS v4 compliance)",
       "link": "https://developers.googleblog.com/en/google-pay-inside-sandboxed-iframe-for-pci-dss-v4-compliance/",
       "pubDate": "Mon, 09 Jun 2025 16:00:00 GMT",
@@ -202,53 +253,7 @@
       ],
       "contentSource": "完整文章",
       "content": "At Google I/O 2025, new Google Pay API updates were unveiled to enhance checkout experiences with features like Android WebViews integration, a more versatile API, and improved developer tools."
-    },
-    {
-      "title": "Google AI Studio 的开发者体验升级 (原标题: An upgraded dev experience in Google AI Studio)",
-      "link": "https://developers.googleblog.com/en/google-ai-studio-native-code-generation-agentic-tools-upgrade/",
-      "pubDate": "Tue, 20 May 2025 16:00:00 GMT",
-      "isoDate": "2025-05-20T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Google AI Studio 的开发者体验升级\n\nGoogle AI Studio 是使用 Gemini API 进行开发的快速平台，提供包括 Gemini 2.5 预览模型、Imagen、Lyria RealTime 和 Veo 在内的强大模型。在 Google I/O 大会上，Google 宣布了多项新功能，旨在帮助开发者构建和部署完整的应用程序，提升模型能力，并增强 Google Gen AI SDK。\n\n## 使用 Gemini 2.5 Pro 生成代码构建应用\n\n*   **核心能力**：Gemini 2.5 Pro 在代码生成方面表现卓越，现已集成到 Google AI Studio 的原生代码编辑器中。它与 Gen AI SDK 紧密优化，使得通过简单的文本、图像或视频提示即可轻松生成应用程序。\n*   **新功能：Build 标签页**：新增的“Build”标签页是快速构建和部署 AI 驱动的 Web 应用的入口。同时，还推出了新的展示示例，供用户体验新模型。\n*   **迭代与部署**：除了通过单个提示生成应用外，开发者还可以通过聊天持续迭代 Web 应用，进行修改、查看差异，甚至回溯到之前的检查点以恢复编辑。新创建的应用可以一键部署到 Cloud Run。\n*   **API 密钥处理**：Google AI Studio 应用和生成的代码利用独特的占位符 API 密钥，使 Google AI Studio 能够代理所有 Gemini API 调用。这意味着用户通过 Google AI Studio 使用 API 时，其使用量将计入他们自己的免费配额，完全绕过开发者的 API 密钥和配额。\n*   **实验性说明**：此功能尚处于实验阶段，建议在外部共享项目前务必检查代码。目前，一次性生成功能主要针对 Gemini 和 Imagen 模型进行了优化，未来将支持更多模型和工具调用。\n\n## Google AI Studio 中的多模态生成\n\n*   **Generate Media 页面**：新的“Generate Media”页面集中了 Imagen、Veo、支持原生图像生成的 Gemini 以及新的原生语音生成模型的发现和使用。\n*   **交互式音乐生成**：通过 Google AI Studio 中内置的 PromptDJ 应用，可以体验 Lyria RealTime 带来的交互式音乐生成。\n\n## Live API 和文本转语音 (TTS) 的新原生音频功能\n\n*   **Live API 中的原生音频对话**：Gemini 2.5 Flash 的原生音频对话功能在 Live API 中提供预览，模型现在能生成更自然的响应，并支持超过 30 种声音。此外，新增的主动音频功能使模型能够区分说话者和背景对话，从而知道何时进行响应，这使得构建更直观、更自然的对话式 AI 代理成为可能。\n*   **文本转语音 (TTS)**：Gemini 2.5 Pro 和 Flash 的文本转语音 (TTS) 预览版也已发布，支持原生音频输出。现在，开发者可以创建单声道或多声道输出，并灵活控制语音的表达风格。\n\n## 模型上下文协议 (MCP) 支持\n\n*   **集成与示例**：模型上下文协议 (MCP) 定义现在已原生支持 Google Gen AI SDK，以便更轻松地与越来越多的开源工具集成。Google 提供了一个演示应用程序，展示了如何在 Google AI Studio 中使用 MCP 服务器，结合 Google 地图和 Gemini API。\n    ![模型上下文协议 (MCP)](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image6_Ygpnr0j.original.png)\n\n## 新的 URL 上下文工具\n\nURL 上下文是一个新的实验性工具，它赋予模型从用户提供的链接中检索和引用内容的能力。这对于事实核查、比较、摘要和深入研究非常有用。\n\n## 总结\n\nGoogle AI Studio 此次更新旨在使其成为开发者探索和使用 Google 最新模型进行构建的首选平台。更多关于此公告和 Google I/O 2025 的更新信息将于 5 月 22 日起在 io.google 上发布。",
-      "shortSummary": "Google AI Studio 推出多项开发者体验升级。核心亮点包括：利用 Gemini 2.5 Pro 在原生编辑器中生成和部署 AI 驱动的 Web 应用；通过新的“生成媒体”页面简化多模态内容创建；Live API 和 TTS 支持更自然的原生音频对话和输出；以及新增的模型上下文协议（MCP）支持和 URL 上下文工具，增强模型理解和数据检索能力。这些更新旨在加速开发者使用最新 Google AI 模型构建应用。",
-      "translated_title": "Google AI Studio 的开发者体验升级",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image6_Ygpnr0j.original.png",
-          "alt": "Model Context Protocol (MCP)",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Google AI Studio has been upgraded to enhance the developer experience, featuring native code generation with Gemini 2.5 Pro, agentic tools, and enhanced multimodal generation capabilities, plus  new features like the Build tab, Live API, and improved tools for building sophisticated AI applications."
-    },
-    {
-      "title": "发布 Gemma 3n 预览版：强大、高效、移动优先的 AI (原标题: Announcing Gemma 3n preview: powerful, efficient, mobile-first AI)",
-      "link": "https://developers.googleblog.com/en/introducing-gemma-3n/",
-      "pubDate": "Mon, 19 May 2025 16:00:00 GMT",
-      "isoDate": "2025-05-19T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "Google 宣布推出 Gemma 3n 预览版，这是其 Gemma 系列开放模型的新成员，旨在将先进的 AI 能力直接带到用户的日常设备上，如手机、平板电脑和笔记本电脑。\n\n**核心创新与架构**\n*   **全新架构**：Gemma 3n 基于与高通、联发科和三星系统级芯片业务等移动硬件领导者紧密合作开发的尖端架构。该架构专为闪电般快速的多模态 AI 优化，支持设备上的个性化和隐私保护体验。\n*   **Gemma 3n 与 Gemini Nano**：Gemma 3n 是首个基于此突破性共享架构的开放模型，允许开发者提前体验。同一架构也将为下一代 Gemini Nano 提供支持，后者将于今年晚些时候在 Google 应用和设备生态系统中广泛推出，并将在 Android 和 Chrome 等主要平台上线。\n*   **Per-Layer Embeddings (PLE)**：Gemma 3n 采用 Google DeepMind 的创新技术 PLE，显著减少了 RAM 使用。5B 和 8B 参数的模型，其内存开销可与 2B 和 4B 模型媲美，动态内存占用仅为 2GB 和 3GB。\n\n**关键能力**\nGemma 3n 专为本地运行的快速、低占用 AI 体验而设计，提供以下功能：\n\n*   **优化的设备端性能与效率**：\n    *   在移动设备上响应速度比 Gemma 3 4B 快约 1.5 倍，质量显著提升。\n    *   通过 Per Layer Embeddings、KVC 共享和高级激活量化等创新技术，减少了内存占用。\n*   **多合一灵活性**：\n    *   一个具有 4B 活跃内存占用量的模型，原生包含一个嵌套的尖端 2B 活跃内存占用子模型（得益于 MatFormer 训练）。\n    *   提供动态权衡性能和质量的灵活性，无需托管单独的模型。\n    *   引入“混搭”（mix’n’match）功能，可从 4B 模型动态创建子模型，以最佳方式适应特定用例。\n*   **隐私优先与离线就绪**：本地执行确保了用户隐私，并能在无网络连接时可靠运行。\n*   **扩展的多模态理解与音频能力**：\n    *   能够理解和处理音频、文本和图像，并显著增强了视频理解能力。\n    *   音频功能支持高质量的自动语音识别（转录）和翻译（语音到翻译文本）。\n    *   接受跨模态的交错输入，实现对复杂多模态交互的理解。\n*   **改进的多语言能力**：特别是在日语、德语、韩语、西班牙语和法语方面性能提升，在 WMT24++ (ChrF) 等多语言基准测试中表现出色（50.1%）。\n\n**解锁新的移动体验**\nGemma 3n 将赋能新一代智能移动应用，使开发者能够：\n1.  构建实时、交互式体验，理解并响应用户环境中的实时视觉和听觉线索。\n2.  利用音频、图像、视频和文本的组合输入，在设备上私密处理，实现更深层次的理解和上下文文本生成。\n3.  开发先进的以音频为中心的应用，包括实时语音转录、翻译和丰富的语音驱动交互。\n\n**负责任的开发**\nGemma 3n 像所有 Gemma 模型一样，经过严格的安全评估、数据治理和与安全政策对齐的微调。Google 采取谨慎的风险评估方法，并随着 AI 格局的演变不断完善实践。\n\n**获取预览版**\nGemma 3n 预览版现已推出：\n*   **基于云的探索**：通过 Google AI Studio 在浏览器中直接试用 Gemma 3n，无需设置。\n*   **设备端开发**：开发者可使用 Google AI Edge 提供的工具和库，开始进行文本和图像理解/生成功能的本地集成。\n\n**图表**\n*   **Chatbot Arena Elo 分数**：该图表根据 Chatbot Arena Elo 分数对 AI 模型进行排名；分数越高（顶部数字）表示用户偏好度越高。\n    ![Chatbot Arena Elo scores](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_OjwrVp1.original.png)\n*   **MMLU 性能**：该图表显示了 Gemma 3n 的混搭（预训练）能力在 MMLU 性能与模型大小方面的表现。\n    ![MMLU performance](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Artboard_1.original.png)",
-      "shortSummary": "Google 发布 Gemma 3n 预览版，这是一款强大、高效、移动优先的 AI 模型。它基于与硬件伙伴合作的新架构，旨在实现设备端运行，并支持下一代 Gemini Nano。Gemma 3n 采用 Per-Layer Embeddings 技术，显著降低内存占用，提供优化的性能、多模态理解（含音频）和多语言能力。它支持隐私保护和离线体验，赋能实时交互式应用。开发者现可通过 Google AI Studio 和 Google AI Edge 访问预览版。",
-      "translated_title": "发布 Gemma 3n 预览版：强大、高效、移动优先的 AI",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_OjwrVp1.original.png",
-          "alt": "Chatbot Arena Elo scores",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Artboard_1.original.png",
-          "alt": "MMLU performance",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Gemma 3n is a cutting-edge open model designed for fast, multimodal AI on devices, featuring optimized performance, unique flexibility with a 2-in-1 model, and expanded multimodal understanding with audio, empowering developers to build live, interactive applications and sophisticated audio-centric experiences."
     }
   ],
-  "lastUpdated": "2025-06-16T10:32:46.146Z"
+  "lastUpdated": "2025-06-20T10:31:27.026Z"
 }
