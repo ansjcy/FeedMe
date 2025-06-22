@@ -5,6 +5,32 @@
   "link": "https://appleinsider.com",
   "items": [
     {
+      "title": "Adobe 的 'Project Indigo' 应用将帮助您在 iPhone 上拍摄更好的照片 (原标题: Adobe's 'Project Indigo' app will help you take better photos on your iPhone)",
+      "link": "https://appleinsider.com/articles/25/06/21/adobes-project-indigo-app-will-help-you-take-better-photos-on-your-iphone",
+      "pubDate": "Sat, 21 Jun 2025 23:47:07 GMT",
+      "isoDate": "2025-06-21T23:47:07.000Z",
+      "creator": "Charles Martin",
+      "summary": "### Adobe 的 'Project Indigo' 应用：提升 iPhone 摄影体验\n\nAdobe 推出了一项名为“Project Indigo”的新举措，旨在通过改进智能手机摄像头和计算摄影技术，使 iPhone 拍摄的照片呈现出更自然、更接近单反相机的效果，并实现移动设备上的最高图像质量。这项由 Adobe 研究员 Marc Levoy 和高级科学家 Florian Kainz 共同开发的项目，目前已通过一款名为 Project Indigo 的 iPhone 应用实现。\n\n#### 核心技术与方法\n\n*   **多帧曝光与组合**：该应用比大多数相机应用更强地进行欠曝，但在生成每张照片时会捕获、对齐并组合多达 32 帧图像。\n    *   **优势**：减少高光溢出，降低阴影中的噪点。Levoy 和 Kainz 指出，这意味着照片将拥有更少的高光溢出和阴影噪点。\n    *   **用户体验**：拍摄后可能需要稍多等待时间，但能获得更好的照片。\n*   **保留自然纹理**：这种方法减少了大多数智能手机相机应用中常见的“平滑”处理，从而更好地保留了自然纹理。\n*   **避免全局色调映射**：Project Indigo 避免了通常将照片中最亮点用于设置整体曝光的“全局色调映射”。这种传统方法常导致非常明亮的物体曝光正确，而比最亮点暗的区域则曝光不足，从而增加了后期编辑的难度（尤其是在未使用 RAW 图像格式的情况下）。\n\n#### 解决变焦问题：超分辨率图像\n\n*   **挑战**：智能手机缺乏真正的光学变焦镜头，数码变焦会降低图像质量。\n*   **解决方案**：Indigo 应用采用“多帧超分辨率”技术，快速捕捉场景在不同分辨率和变焦水平下的多张图像，以减少噪点。\n*   **原理**：将这些图像组合成一张细节更丰富的照片。开发者表示，由于捕捉了不同的视角，额外细节是真实的，而非计算“幻觉”。\n\n![城市景观的两个版本，右侧版本比左侧更清晰、更详细。](https://photos5.appleinsider.com/gallery/64101-133464-Distance-challenges-xl.jpg)\n*远距离主体超分辨率校正示例。图片来源：Adobe*\n\n#### 丰富的智能手机摄影控制\n\nIndigo 应用为智能手机摄影师提供了专门设计的丰富控制选项：\n\n*   **基本控制**：对焦、快门速度、ISO、曝光补偿和白平衡（后者可单独控制色温和色调，类似于 Lightroom）。\n*   **独特控制**：由于每张照片都是多帧合成的结果，Indigo 还允许用户控制连拍帧数，从而平衡总捕获时间与噪点水平。\n\n#### 未来功能展望\n\n*   **实时取景器渲染**：Indigo 开发者希望实现照片最终效果在取景器中的实时渲染，实现真正的“所见即所得”。例如，这允许摄影师通过降低预览亮度来拍摄更暗的图像，而不是缩短曝光时间；反之，通过提高阴影来拍摄更亮的图像，而不是增加曝光。\n*   **智能消除反射**：Indigo 还能在相机内智能地消除玻璃或塑料下被摄主体的光线反射。\n\n![两张旧金山复古地图，详细的网格布局突出显示了街道、公园和海岸线，并以醒目的橙色和绿色区域以及关键位置的文本框为特色。](https://photos5.appleinsider.com/gallery/64101-133465-Reflection-challenges-xl.jpg)\n*Indigo 也能智能地消除受光照物体上的光线反射。图片来源：Adobe*\n\n#### 愿景与可用性\n\nAdobe 将 Project Indigo 视为一套技术平台，目前以同名应用的形式提供，这些技术最终可能会部署到 Adobe 的旗舰产品中，尤其是 Lightroom。该应用目前可在 App Store 免费下载。",
+      "shortSummary": "Adobe 的“Project Indigo”应用旨在提升 iPhone 摄影质量，使其更接近单反效果。它通过捕捉多达 32 帧图像并智能组合，减少高光溢出和阴影噪点，并保留自然纹理。该应用还采用多帧超分辨率技术解决变焦问题，并提供丰富的专业控制。未来将支持实时预览和智能消除反射。Project Indigo 的技术有望整合到 Adobe 的旗舰产品中，目前应用可在 App Store 免费获取。",
+      "translated_title": "Adobe 的 'Project Indigo' 应用将帮助您在 iPhone 上拍摄更好的照片",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64101-133464-Distance-challenges-xl.jpg",
+          "alt": "Two versions of a cityscape featuring tall buildings, with the right version appearing clearer and more detailed than the left.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64101-133465-Reflection-challenges-xl.jpg",
+          "alt": "Two vintage San Francisco maps with detailed grid layout, highlighting streets, parks, and coastline, featuring bold orange and green areas and text boxes for key locations.",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
       "title": "苹果高管可能正在重新考虑收购人工智能公司Perplexity (原标题: Apple execs may be newly considering buying AI firm Perplexity)",
       "link": "https://appleinsider.com/articles/25/06/20/apple-execs-may-be-newly-considering-buying-ai-firm-perplexity",
       "pubDate": "Fri, 20 Jun 2025 21:55:00 GMT",
@@ -517,8 +543,8 @@
     {
       "title": "在早期Prime Day价格战中以469美元抢购苹果M4 Mac mini (原标题: Snag Apple's M4 Mac mini for $469 in early Prime Day price war)",
       "link": "https://appleinsider.com/articles/25/06/19/snag-apples-m4-mac-mini-for-469-in-early-prime-day-price-war",
-      "pubDate": "Thu, 19 Jun 2025 14:53:46 GMT",
-      "isoDate": "2025-06-19T14:53:46.000Z",
+      "pubDate": "Thu, 19 Jun 2025 14:53:00 GMT",
+      "isoDate": "2025-06-19T14:53:00.000Z",
       "creator": "Christine McKee",
       "summary": "### 苹果M4 Mac mini早期Prime Day优惠\n\n*   **核心优惠信息**\n    *   苹果M4 Mac mini目前售价为469美元，优惠130美元。\n    *   此次优惠比“黑色星期五”期间的价格更低。\n    *   优惠活动由亚马逊和B&H Photo发起，作为早期Prime Day价格战的一部分。\n    *   优惠持续至6月21日，库存有限。\n\n*   **M4 Mac mini亮点**\n    *   标准型号配备更新的设计和16GB内存。\n    *   原零售价为599美元，当前优惠22%。\n    *   紧凑型台式机，适合家用或办公使用。\n\n*   **具体M4 Mac mini型号及优惠价格**\n    *   M4 Mac mini, 16GB内存, 256GB存储: 469美元 (优惠130美元) - 在亚马逊和B&H有售。\n    *   M4 Mac mini, 16GB内存, 512GB存储: 689美元 (优惠110美元) - 在亚马逊和B&H有售。\n    *   M4 Mac mini, 24GB内存, 512GB存储: 849美元 (优惠150美元) - 在亚马逊和B&H有售。\n    *   M4 Pro Mac mini, 24GB内存, 512GB存储: 1,286.99美元 (优惠113美元) - 在亚马逊有售。\n\n*   **价格参考**\n    *   根据M4 Mac mini价格指南，469美元是型号MU9D3LL/A（配备10核CPU和10核GPU的M4芯片）的最低价格。\n\n*   **其他苹果产品优惠**\n    *   MacBooks和iMacs的优惠可在Mac价格指南中查找。\n    *   亚马逊旗下的Woot网站对翻新清仓型号有大幅优惠，价格从649美元起。\n    *   **翻新产品优惠亮点:**\n        *   Mac Studio M2 Max, 12核CPU, 30核GPU, 32GB内存, 512GB存储 (翻新): 1,249美元 (优惠750美元)。\n        *   iMac M1, 8核CPU, 8核GPU, 8GB内存, 1TB存储 (翻新): 649美元 (优惠1,250美元)。",
       "shortSummary": "在早期Prime Day价格战中，苹果M4 Mac mini目前在亚马逊和B&H Photo有售，起价469美元，优惠130美元，比“黑色星期日”价格更低。标准型号配备16GB内存，原价599美元，现享22%折扣。此次优惠持续至6月21日，库存有限。此外，文章还提及了其他Mac mini配置、MacBook、iMac以及Woot上翻新Mac Studio和iMac的优惠。",
@@ -688,45 +714,7 @@
       ],
       "contentSource": "完整文章",
       "content": ""
-    },
-    {
-      "title": "iOS 26 和 macOS 26 中的 Safari 如何通过“液态玻璃”UI 变化实现内容优先 (原标题: How Safari in iOS 26 & macOS 26 puts content first with Liquid Glass UI changes)",
-      "link": "https://appleinsider.com/articles/25/06/18/how-safari-in-ios-26-macos-26-puts-content-first-with-liquid-glass-ui-changes",
-      "pubDate": "Wed, 18 Jun 2025 18:37:56 GMT",
-      "isoDate": "2025-06-18T18:37:56.000Z",
-      "creator": "Malcolm Owen",
-      "summary": "### iOS 26 和 macOS 26 中的 Safari 更新概览\n\nApple 在 WWDC 上发布了 iOS 26、iPadOS 26 和 macOS 26 Tahoe 的 Safari 浏览器更新，带来了多项用户界面（UI）调整、Web 应用改进、HDR 照片支持以及其他较小的变化。Safari 26 Beta 版本共包含 67 项新功能和 107 项改进。\n\n#### 1. “液态玻璃”UI 刷新\n\n*   **设计理念：** 2025 年的新 UI 主题“液态玻璃”更新了用户界面，按钮、面板和窗口都基于玻璃效果，强调透明度和折射。应用程序界面最小化菜单，优先展示内容。\n*   **iPhone 上的变化：**\n    *   地址栏变为屏幕底部浮动的圆形条。\n    *   屏幕下方不再有五个按钮的区块，取而代之的是一个返回按钮和一个用于显示更多选项的“点”按钮。\n    *   ![三部智能手机展示科技新闻网站，包含 tvOS 26、智能家居中心显示器和先进 iPhone 显示技术文章。导航和书签选项可见。](https://photos5.appleinsider.com/gallery/64064-133358-safariios26newinterface-xl.jpg)\n    *   前进按钮和其他功能（如书签、标签页、分享表单）默认隐藏，通过长按返回按钮或点击“点”按钮显示。\n    *   核心目标是为网站内容腾出更多屏幕空间。\n*   **macOS 和 iPadOS 上的变化：**\n    *   同样采用内容优先的设计理念，但地址栏和选项位于屏幕顶部。\n    *   标签页在需要时会以浮动的椭圆形条显示，界面按钮同样极少。\n    *   ![三个打开的电脑窗口显示新闻网站、带有图标的常用网站和浏览标签管理界面。](https://photos5.appleinsider.com/gallery/64064-133357-safari-26-in-macos-26-xl.jpg)\n\n#### 2. Web 应用全面化\n\n*   **默认行为改变：** 在 iOS 和 iPadOS 26 版本中，网站默认会作为 Web 应用打开，无论其是否专门设计为 Web 应用。\n*   **用户控制：** 用户仍可通过“添加到主屏幕”功能创建图标时禁用“作为 Web 应用打开”选项，此时网站将在用户的默认浏览器中打开。\n*   **图片：** ![三个智能手机屏幕显示 AppleInsider 网站、分享选项菜单和带有键盘输入以进行自定义的添加到主屏幕功能。](https://photos5.appleinsider.com/gallery/64064-133359-webapptogglesafari26-xl.jpg)\n\n#### 3. HDR 照片支持\n\n*   Safari 26 新增了对网页中嵌入的 HDR 图像的正确显示支持，充分利用 HDR 特性。\n*   这意味着终端用户可以在网站上看到更生动、色彩更准确的照片。\n\n#### 4. SVG 图标支持\n\n*   Safari 26 现在支持 SVG 矢量图像格式作为图标，适用于浏览器中几乎所有放置图标的位置，如起始页、收藏夹和网站图标。\n*   这将带来更美观、在不同缩放比例下不易失真的网站图标。\n\n#### 5. 网页内应用、GPU 使用及其他开发者功能\n\n*   **SwiftUI 新 API：** 允许开发者将网页内容集成到为 Apple 平台制作的应用程序中，方便 Web 开发者构建原生应用。\n*   **WebGPU：** 这是一个 JavaScript API，用于在 GPU 上运行程序。它类似于 WebGL，但具有更少的转换开销，并能更好地映射到 Metal，从而利用 GPU 性能在浏览器中渲染内容。此功能已在 Safari Technology Preview 中提供一年多，现已正式发布。\n*   **CSS 新特性：** Web 设计师可以利用 CSS 锚点定位、滚动驱动动画、进度函数以及“Pretty”文本环绕功能。\n    *   “Pretty”文本环绕功能可以调整文本环绕，使文本边缘更平滑，消除尖锐的突出线条。\n    *   ![不同长度的段落，右侧有三条垂直线，分别为紫色、红色和绿色。文本讨论了网页设计中的布局和排版。](https://photos5.appleinsider.com/gallery/64064-133360-prettycss-xl.jpg)\n*   **沉浸式视频（Vision Pro）：** visionOS 上的 Safari 增加了对更多沉浸式视频类型的支持。",
-      "shortSummary": "Safari 在 iOS 26 和 macOS 26 中迎来重大更新。新版采用“液态玻璃”UI，通过透明效果和最小化菜单，实现内容优先，iPhone 地址栏移至底部并浮动。所有网站默认作为 Web 应用打开，提升体验。同时，新增对网页中 HDR 照片和 SVG 图标的支持，提升视觉效果。开发者可利用 SwiftUI API 集成网页内容，WebGPU 优化图形性能，并新增多项 CSS 特性，如“Pretty”文本环绕，以及 Vision Pro 的沉浸式视频支持。",
-      "translated_title": "iOS 26 和 macOS 26 中的 Safari 如何通过“液态玻璃”UI 变化实现内容优先",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64064-133358-safariios26newinterface-xl.jpg",
-          "alt": "Three smartphones showing a tech news website with articles on tvOS 26, a Home Hub smart display, and advanced iPhone display technology. Navigation and bookmark options are visible.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64064-133357-safari-26-in-macos-26-xl.jpg",
-          "alt": "Three open computer windows display a news website, frequently visited sites with icons, and a browsing tab management interface.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64064-133359-webapptogglesafari26-xl.jpg",
-          "alt": "Three smartphone screens display the AppleInsider website, sharing options menu, and add-to-home-screen feature with keyboard input for customization.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64064-133360-prettycss-xl.jpg",
-          "alt": "Paragraphs of different lengths with three vertical lines on the right side, colored purple, red, and green. Text discusses layout and typography in web design.",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
     }
   ],
-  "lastUpdated": "2025-06-21T06:29:49.992Z"
+  "lastUpdated": "2025-06-22T12:39:27.688Z"
 }
