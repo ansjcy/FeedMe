@@ -5,6 +5,32 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "在AI时代，为什么开发者专业知识比以往任何时候都更重要 (原标题: Why developer expertise matters more than ever in the age of AI)",
+      "link": "https://github.blog/developer-skills/career-growth/why-developer-expertise-matters-more-than-ever-in-the-age-of-ai/",
+      "pubDate": "Tue, 24 Jun 2025 17:04:47 +0000",
+      "isoDate": "2025-06-24T17:04:47.000Z",
+      "creator": "Laura Lindeman",
+      "summary": "## 在AI时代，为什么开发者专业知识比以往任何时候都更重要\n\nAI工具的普及显著提高了开发者的编码速度，例如GitHub Copilot能让开发者编码速度提升高达55%，初级开发者甚至能实现27%至39%的生产力增长。然而，文章强调，仅仅追求速度是不够的。作为开发者，核心在于理解代码的运作原理、其在整体系统中的位置以及故障发生时的处理方式。真正的专业知识在于批判性思维和系统性解决问题的能力，这对于构建弹性、可扩展和安全的软件至关重要。\n\nGitHub首席执行官Thomas Dohmke指出：“初创公司可以用AI生成的代码启动，但没有经验丰富的开发者就无法扩展。” AI是开发者的“超能力”，但前提是开发者必须作为“人在回路中”的关键角色，理解代码的“为什么”，并能够调试、指导AI工具，超越“凭感觉编码”。\n\n### AI生产力红利 + 开发者经验 = 更大的影响力\n\n文章通过以下几点阐述了人类判断力如何倍增AI的价值：\n\n*   **更快的提交（任务完成速度提高达55%）**：开发者通过深思熟虑的代码审查、编写测试和发现边缘情况，确保速度不以牺牲质量为代价。\n*   **降低认知负荷**：释放的思维带宽使开发者能够设计更好的架构、指导队友并解决更高层次的问题。\n*   **初级开发者更容易上手**：资深工程师提供背景信息、建立标准，并将AI建议转化为教学机会，从而培养长期专业知识。\n*   **自动化样板代码**：开发者根据实际项目需求调整脚手架、质疑假设并及早重构，以控制技术债务并确保系统安全。\n\n### 缺乏判断力的速度带来的风险\n\n仅仅追求速度而缺乏判断力可能导致：\n\n*   静态分析无法独立发现的安全漏洞。\n*   无法扩展超越演示阶段的架构选择。\n*   导致人类和模型都难以理解的文档偏差。\n\n### 掌握基础：AI时代开发者应关注的三个关键工作流程\n\n文章指出，要充分利用AI开发工具的价值，开发者必须掌握传统基础知识。一个缺乏基础理解（如拉取请求、代码审查和文档）的初级开发者，即使能快速交付，也可能因缺乏上下文或结构而引入错误、遗漏边缘情况或导致协作混乱。这并非AI问题，而是基础问题。文章强调了以下三个核心技能：\n\n#### 1. 在拉取请求（Pull Request）中追求卓越\n\n拉取请求是开发者协作的核心，旨在清晰地传达意图、解释理由，并方便他人（包括人类和AI）理解和参与工作。一个范围明确的PR应解释变更的“为什么”，而不仅仅是“什么”。\n\n*   **关键实践**：\n    *   保持PR小而专注（建议≤300行）。\n    *   PR描述应解释“为什么”变更，并链接相关问题或对话。\n    *   明确请求何种反馈（例如，快速检查或深入审查）。\n    *   在请求审查前，先自行审查：运行测试、预览变更，并纠正任何不清晰或不完善之处。\n\n*   **PR清单**：\n    *   范围 ≤ 300行（或拆分）。\n    *   标题 = 动词 + 对象（例如：重构认证中间件为异步）。\n    *   描述回答“为什么现在？”并链接到问题。\n    *   用⚠️ **BREAKING** 突出显示破坏性变更。\n    *   请求具体反馈（例如：并发策略是否可行？）。\n\n#### 2. 加强代码审查\n\nAI可以在几秒内生成代码，但如何审查这些代码才是真正专业知识的体现。代码审查不仅能发现错误，还能传授知识、促进团队协作并减少昂贵的错误。开发者通常阅读和审查的代码量远超编写量，因此建立强大的代码审查实践至关重要。\n\n*   **关键实践**：\n    *   在分配给他人之前，先自行审查自己的拉取请求。\n    *   保持拉取请求小而专注，以便于审查、调试和回滚。\n    *   作为审查者，关注清晰度：提问、质疑假设、检查代码如何处理边缘情况或意外数据。\n    *   提供具体的改进示例，并肯定好的设计选择。\n\n*   **审查启发式**：\n    *   首先阅读测试，它们编码了意图。\n    *   追踪数据流，从用户输入到数据库写入再到外部调用。\n    *   寻找全局变量、单例和缓存中的隐藏状态。\n    *   即使性能不在考虑范围内，也要问“负载下会发生什么？”\n    *   赞扬好的模式以强化团队标准。\n\n#### 3. 投资文档\n\n强大的拉取请求和代码审查有助于团队今天构建更好的软件，而文档则使明天构建更好的软件变得更容易。在AI时代，清晰、彻底的文档仍然是开发者最宝贵且常被忽视的技能之一。良好的文档有助于所有人保持一致，包括团队、新贡献者、利益相关者，甚至AI编码代理。\n\n*   **关键实践**：\n    *   保持文档清晰、简洁、结构化。\n    *   使用平实语言，专注于人们实际需要的信息，避免过多不必要的细节。\n    *   使用Diátaxis框架组织文档，将其分为四类：\n        *   **教程**：通过分步指南进行实践学习。\n        *   **操作指南**：针对任务的步骤，使用项目符号或编号列表。\n        *   **解释**：提供更深入的理解。\n        *   **参考**：技术规范，如API规范。\n\n### 开发者进阶工具包\n\n文章提供了一个技能进阶矩阵和一些快速提升的建议：\n\n| 技能       | 初级（Junior）         | 中级（Mid-level）       | 高级（Senior）                     |\n| :--------- | :--------------------- | :---------------------- | :--------------------------------- |\n| 拉取请求   | 描述变更               | 解释原因并链接问题      | 预测性能/安全影响并建议审查重点   |\n| 代码审查   | 留下👍/👎              | 给出可操作的评论        | 指导、建模架构权衡                 |\n| 文档       | 更新README             | 编写面向任务的指南      | 将文档作为产品进行管理并衡量指标 |\n\n**快速提升技巧**：\n\n*   使用`.github/CODEOWNERS`自动路由审查。\n*   使用PR和Issue模板以保持上下文一致性。\n*   学习GitHub Skills课程：使用Markdown进行沟通。\n\n### 总结\n\nAI正在改变我们编写代码的方式，但好奇心、判断力和批判性思维比以往任何时候都更重要。优秀的开发者不会仅仅接受AI的建议，他们会追问“为什么”，提供上下文，理解基本原理，以系统思维、有目的性地编写代码，并精心构建。保持好奇心，持续学习，这正是区分优秀开发者的特质，也是在AI驱动的未来中生存和发展的关键。\n\n**作者**：\n\n*   ![Laura Lindeman](https://avatars.githubusercontent.com/u/3505798?v=4&s=200)\n    Laura Lindeman，GitHub博客的博客编辑与策略师。\n*   ![GitHub Staff](https://avatars.githubusercontent.com/u/9919?v=4&s=200)\n    GitHub，全球领先的开发者体验平台，将安全性融入每一步，助力开发者自信创新。",
+      "shortSummary": "AI工具显著提升了编码速度，但开发者专业知识在构建弹性、可扩展和安全软件方面比以往任何时候都更重要。速度若无判断力，将带来安全漏洞和扩展性问题。开发者需作为“人在回路中”的角色，掌握核心基础技能，如高质量的拉取请求、彻底的代码审查和清晰的文档。这些能力培养批判性思维和系统理解，确保AI带来的速度转化为高质量、可维护的软件，而非仅仅是快速交付。",
+      "translated_title": "在AI时代，为什么开发者专业知识比以往任何时候都更重要",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/3505798?v=4&s=200",
+          "alt": "Laura Lindeman",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/9919?v=4&s=200",
+          "alt": "GitHub Staff",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>AI can help you code faster, but knowing why the code works—and sharpening your human-in-the-loop skills—is what makes you a great developer.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/career-growth/why-developer-expertise-matters-more-than-ever-in-the-age-of-ai/\">Why developer expertise matters more than ever in the age of AI</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub Copilot Spaces：为每次建议带来正确的上下文 (原标题: GitHub Copilot Spaces: Bring the right context to every suggestion)",
       "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-spaces-bring-the-right-context-to-every-suggestion/",
       "pubDate": "Wed, 18 Jun 2025 16:00:00 +0000",
@@ -368,57 +394,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Learn how to spin up a GitHub Issue, hand it to Copilot, and get a draft pull request in the same workflow you already know.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/github/how-to-create-issues-and-pull-requests-in-record-time-on-github/\">How to create issues and pull requests in record time on GitHub</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "攻破模型：通过GitHub安全代码游戏构建AI安全技能 (原标题: Hack the model: Build AI security skills with the GitHub Secure Code Game)",
-      "link": "https://github.blog/security/hack-the-model-build-ai-security-skills-with-the-github-secure-code-game/",
-      "pubDate": "Tue, 03 Jun 2025 16:37:03 +0000",
-      "isoDate": "2025-06-03T16:37:03.000Z",
-      "creator": "Joseph Katsioloudes",
-      "summary": "# GitHub安全代码游戏第三季：构建AI安全技能\n\nGitHub近日推出了安全代码游戏第三季，本次重点聚焦人工智能引入的安全风险，旨在通过实践帮助开发者提升AI安全技能。\n\n## 关于GitHub安全代码游戏\n\n*   **免费软件安全课程**：适合所有开发者水平。\n*   **学习方式**：玩家通过修复故意设置的漏洞代码来构建代码安全技能。\n*   **沉浸式体验**：游戏直接在代码编辑器中进行，模拟开发者日常工作环境。\n*   **快速上手**：使用Codespaces，两分钟内即可开始。\n\n## 历史与成就\n\n*   **第一季（2023年3月）**：旨在弥补开发者培训中安全技能的不足，通过看似完美但实则包含OWASP Top 10等关键漏洞的代码片段吸引玩家。\n*   **游戏化学习**：挑战玩家高效修复问题，同时避免引入新漏洞或遗漏边缘情况。\n*   **第二季**：在强大社区支持下推出，已有超过10,000名来自企业、开源和教育领域的开发者参与，磨练了技能。\n*   **玩家反馈**：\n    *   Sanyam Mehta（后端开发者）：“这让我意识到识别最基本缺陷的差距有多大，也让我更加谨慎。”\n    *   Tyler Anton（计算机科学学生）： “这是一种非常有趣的学习方式！我绝对会推荐这款游戏，它帮助我更清楚地认识到存在的漏洞。”\n\n## 第三季：聚焦AI安全\n\n*   **推出背景**：随着生成式AI的广泛应用（麦肯锡报告显示，生成式AI使用率从2023年的33%增至2024年的71%），以及GitHub Copilot被超过77,000个组织使用，提升AI安全技能正当其时。\n*   **学习内容**：第三季包含六个现实挑战，难度递增，涵盖以下防御技术：\n    1.  **构建健壮的系统提示**：安全地设计引导模型行为的初始指令，确保输出安全、相关且符合预期。\n    2.  **输出验证**：通过验证输出是否符合预定义规则、格式或预期来防止信息泄露。\n    3.  **输入过滤**：在用户提供的文本输入模型之前进行检查、修改或阻止，以防止有害或不相关内容影响模型生成输出。\n    4.  **LLM自我验证**：利用大型语言模型（LLM）检查自身输出的准确性、一致性和合规性。\n\n## 游戏玩法\n\n*   玩家需“攻破”大型语言模型（LLM）。\n*   每个挑战始于LLM的一组指导指令（代码和系统消息），其中可能包含可被恶意提示利用的漏洞或边缘情况。\n*   **任务一**：识别漏洞，并精心设计提示来操纵模型，使其泄露隐藏的秘密。\n*   **任务二**：在保持代码功能的同时，完善代码和系统消息，以防止未来出现类似的恶意提示泄露。\n\n## 玩家感言\n\n*   Rajeev Mandalam（波音公司应用安全）： “我学会了发现漏洞，了解它们发生的位置和方式，并在将其发布到世界之前有效地纠正它们。我绝对会向任何人推荐这项培训，不仅是网络安全领域，也包括软件开发领域。”\n*   Reshmi Mehta（爱尔康安全分析师）： “一个主要收获是，关注细节很重要，因为它们常常会导致你意想不到的漏洞。在格式方面，我喜欢它不专注于某一种特定的编程语言，而是强调代码概念。我也喜欢游戏关卡之间切换的便捷性。这款游戏为我的职业生涯增添了很棒的新技能。”\n\n## 如何开始\n\n*   访问Secure Code Game GitHub仓库，其中包含所有季度的说明。\n\n## 第三季的诞生\n\n*   第三季由Bartosz Gałek（@bgalek）贡献，源于他在FOSDEM 2025上与Joseph Katsioloudes的交流。\n*   Bartosz创建的“HackMerlin”游戏（挑战玩家的提示工程技能）成为了第三季的基础。\n*   **游戏界面截图**：\n    ![游戏界面截图，显示了第6关的交互式游戏界面。游戏指示玩家通过巧妙提问来智取梅林，以揭示密码。顶部显示卡通巫师梅林，说着“你好，旅行者！问我任何问题……”。下方是一个文本框，用户可以在其中输入问题，一个“提问”按钮，以及一个标有“输入秘密密码”的字段，后面跟着一个“提交”按钮，用于检查答案的有效性。](https://github.blog/wp-content/uploads/2025/06/hackmerlin.png?resize=932%2C1240)\n*   **技术实现**：\n    *   从HackMerlin的UI中心方法转向安全代码游戏的“代码优先”方法，同时确保用户友好性是一个关键挑战。\n    *   Codespaces预配置了开发环境，并自动化了对GitHub Models的访问，后者提供了内置的LLM集成。\n    *   第三季通过遵循GitHub Models的默认安全防护措施来优先考虑真实性。\n\n## 参与贡献\n\n*   欢迎提出新挑战的想法，成为下一季的贡献者。\n\n## 立即体验\n\n*   立即开始游戏，释放你的创造力，迎接第三季的挑战！",
-      "shortSummary": "GitHub发布了安全代码游戏第三季，专注于AI安全技能培训。这款免费课程让开发者通过在代码编辑器中实践，学习如何识别和修复大型语言模型（LLM）中的安全漏洞。内容涵盖构建健壮提示、输出验证、输入过滤和LLM自我验证等。游戏基于社区贡献，旨在帮助开发者应对日益增长的AI安全风险，提升其在AI时代的关键技能。",
-      "translated_title": "攻破模型：通过GitHub安全代码游戏构建AI安全技能",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/hackmerlin.png?resize=932%2C1240",
-          "alt": "Screenshot of an interactive game interface at Level 6. The game instructs the player to outsmart Merlin by asking clever questions to reveal a password. A cartoon wizard, Merlin, appears at the top, saying 'Hello traveler! Ask me anything...'. Below is a text box where the user can type questions, an 'Ask' button, and a field labeled 'Enter the secret password' followed by a 'Submit' button to check the validity of the answer.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/31040295?v=4&s=200",
-          "alt": "Joseph Katsioloudes",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
-          "alt": "Enterprise content",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Dive into the novel security challenges AI introduces with the open source game  that over 10,000 developers have used to sharpen their skills.</p>\n<p>The post <a href=\"https://github.blog/security/hack-the-model-build-ai-security-skills-with-the-github-secure-code-game/\">Hack the model: Build AI security skills with the GitHub Secure Code Game</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-06-23T04:44:26.763Z"
+  "lastUpdated": "2025-06-25T04:39:20.028Z"
 }
