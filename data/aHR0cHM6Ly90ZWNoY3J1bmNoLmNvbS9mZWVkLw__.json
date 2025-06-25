@@ -5,6 +5,313 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "知识共享组织推出CC signals，一个开放AI生态系统的框架 (原标题: Creative Commons debuts CC signals, a framework for an open AI ecosystem)",
+      "link": "https://techcrunch.com/2025/06/25/creative-commons-debuts-cc-signals-a-framework-for-an-open-ai-ecosystem/",
+      "pubDate": "Wed, 25 Jun 2025 18:02:42 +0000",
+      "isoDate": "2025-06-25T18:02:42.000Z",
+      "creator": "Sarah Perez",
+      "summary": "## 知识共享组织推出CC signals：构建开放AI生态系统\n\n非营利组织知识共享（Creative Commons, CC）在推动创作者在保留版权的同时分享作品的许可运动中发挥了主导作用。现在，该组织正积极为人工智能（AI）时代做准备，并于近日宣布启动一项新项目——**CC signals**。\n\n### 项目目标与背景\n\n*   **核心目的**：CC signals旨在为数据集持有者提供一套工具，使其能够详细说明其内容如何被机器（例如用于训练AI模型）再利用或禁止再利用。\n*   **平衡开放性与数据需求**：该项目的核心理念是在互联网的开放性与AI对日益增长的数据需求之间建立平衡。知识共享组织指出，当前不受控制的数据提取可能侵蚀互联网的开放性，导致实体将其网站封闭或设置付费墙，而非共享数据。\n*   **法律与技术解决方案**：CC signals旨在提供一个法律和技术框架，促进数据控制者与使用数据训练AI的各方之间的数据共享。\n\n### 市场需求与现有挑战\n\n市场对这类工具的需求日益增长，因为公司正努力调整其政策和服务条款，以限制AI对其数据的训练，或解释其将用户数据用于AI相关目的的程度。当前面临的挑战包括：\n\n*   **X平台**：曾允许第三方在其公开数据上训练模型，但随后撤销了这一政策。\n*   **Reddit**：利用其robots.txt文件（用于指示自动化网络爬虫是否可以访问其网站）来限制机器人抓取其数据用于AI训练。\n*   **Cloudflare**：正在探索对AI爬虫收费的解决方案，以及开发混淆AI爬虫的工具。\n*   **开源开发者**：已开发出工具，旨在减缓不遵守“禁止抓取”指令的AI爬虫的速度并浪费其资源。\n\n### CC signals的独特方法\n\nCC signals项目提出了一种不同的解决方案：一套工具，它们提供不同程度的法律可执行性，但都具有道德分量，类似于当前覆盖数十亿在线开放许可创意作品的CC许可证。\n\n知识共享组织首席执行官Anna Tumadóttir表示：“CC signals旨在AI时代维持共享资源。正如CC许可证帮助构建了开放网络一样，我们相信CC signals将有助于塑造一个基于互惠的开放AI生态系统。”\n\n### 项目进展与未来计划\n\n该项目目前正处于起步阶段。早期设计已在知识共享组织的网站和GitHub页面上发布。该组织正在积极征求公众反馈，并计划于**2025年11月进行Alpha版本（早期测试）发布**。此外，知识共享组织还将举办一系列市政厅会议，以收集反馈和解答问题。",
+      "shortSummary": "知识共享组织（Creative Commons）推出了“CC signals”项目，旨在为AI时代提供一个开放的数据共享框架。该项目允许数据持有者明确其内容如何被AI再利用，以平衡互联网开放性与AI的数据需求。它提供法律和技术工具，旨在防止数据封闭，并促进基于互惠的开放AI生态系统。此举是对当前企业在AI数据使用上面临挑战的回应。早期设计已发布，计划于2025年11月进行Alpha版本发布，并正积极征求公众反馈。",
+      "translated_title": "知识共享组织推出CC signals，一个开放AI生态系统的框架",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "The idea is meant to create a balance between the open nature of the internet and the demand for ever more data to fuel AI."
+    },
+    {
+      "title": "Meta 为 WhatsApp 添加 AI 驱动的摘要功能 (原标题: Meta is adding AI-powered summaries to WhatsApp)",
+      "link": "https://techcrunch.com/2025/06/25/meta-is-adding-ai-powered-summaries-to-whatsapp/",
+      "pubDate": "Wed, 25 Jun 2025 17:56:49 +0000",
+      "isoDate": "2025-06-25T17:56:49.000Z",
+      "creator": "Ivan Mehta",
+      "summary": "# Meta 为 WhatsApp 添加 AI 驱动的摘要功能\n\nMeta 于周三宣布，将为 WhatsApp 推出一项由 AI 驱动的摘要功能。这项可选的新功能利用 Meta AI 来总结聊天中未读的消息，且该摘要仅对用户本人可见，聊天中的其他人无法看到。\n\n## 核心功能与隐私保护\n\n*   **消息摘要**：该功能能够总结用户未读的消息，帮助用户快速了解聊天内容。\n*   **用户可见性**：生成的摘要仅对生成摘要的用户可见，不会分享给聊天中的其他参与者。\n*   **隐私处理技术**：此功能基于 Meta 在四月份发布的 AI 技术，并采用了“私有处理技术”（Private Processing technology）。这意味着 Meta AI 在生成摘要时，Meta 或 WhatsApp 都不会看到用户的消息或私有摘要。聊天中的其他人也无法看到用户是否对未读消息进行了摘要。\n\n## 启用与可用性\n\n*   **默认关闭**：该功能默认是关闭的，但 WhatsApp 会显示一个小图标来提示用户该功能可用。\n*   **逐步推出**：Meta 最初将在美国推出此功能，并支持英语。预计今年晚些时候将覆盖更多国家和语言。\n\n## AI 能力的演进\n\n*   **此前限制**：在此之前，用户可以在聊天中访问 Meta AI 来提问或标记消息以提供上下文，但 Meta AI 无法读取用户的消息。\n*   **新 AI 堆栈**：新的 AI 堆栈允许 WhatsApp 私密地访问聊天上下文，以便通过其 AI 处理请求。这使得 AI 能够总结消息或提供写作建议。\n\n## 设置与控制\n\n*   **新设置路径**：新的 AI 驱动功能可以在“设置”>“聊天”>“私有处理”中找到。\n*   **功能开关**：用户可以在此设置中单独开启或关闭各项功能。\n\n## 图片\n\n![WhatsApp logo reflected on sunglasses and displayed on a phone screen.](https://techcrunch.com/wp-content/uploads/2024/12/whatsapp-logo.jpg?w=1024)\n\n![WhatsApp AI Summary Feature Screenshot](https://techcrunch.com/wp-content/uploads/2025/06/493931276_2156103918222996_2302475784316621764_n.gif?w=680)",
+      "shortSummary": "Meta 宣布为 WhatsApp 推出 AI 驱动的摘要功能，可总结未读消息。该功能采用“私有处理技术”，确保 Meta 或 WhatsApp 无法查看用户消息，摘要仅对用户本人可见。此功能默认关闭，将首先在美国推出，并支持英语。它扩展了 Meta AI 的能力，允许私密访问聊天上下文以提供摘要和写作建议，用户可在设置中控制。",
+      "translated_title": "Meta 为 WhatsApp 添加 AI 驱动的摘要功能",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2024/12/whatsapp-logo.jpg?w=1024",
+          "alt": "WhatsApp logo reflected on sunglasses and displayed on a phone screen.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/493931276_2156103918222996_2302475784316621764_n.gif?w=680",
+          "alt": "",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Meta announced on Wednesday that it&#8217;s adding an AI-powered summaries feature to WhatsApp. The optional new feature uses Meta AI to summarize unread messages in a chat. This summary would only be visible to you, not others in your chat, the company notes. The feature builds on the AI technology that Meta released in April, [&#8230;]"
+    },
+    {
+      "title": "Rubrik 收购 Predibase 以加速 AI 代理的普及 (原标题: Rubrik acquires Predibase to accelerate adoption of AI agents)",
+      "link": "https://techcrunch.com/2025/06/25/rubrik-acquires-predibase-to-accelerate-adoption-of-ai-agents/",
+      "pubDate": "Wed, 25 Jun 2025 17:34:25 +0000",
+      "isoDate": "2025-06-25T17:34:25.000Z",
+      "creator": "Rebecca Szkutak",
+      "summary": "## Rubrik 收购 Predibase 以加速 AI 代理的普及\n\n数据网络安全公司 Rubrik 于周三宣布，计划收购初创公司 Predibase。此次收购旨在加速企业 AI 代理的普及，是近期一系列旨在增强 AI 能力的行业收购中的最新案例。\n\n### Predibase 简介\n*   **公司性质：** 一家获得风险投资支持的初创公司，成立于 2021 年。\n*   **核心业务：** 帮助企业训练和微调开源 AI 模型，以满足其特定需求。\n*   **创始人：** 由现任 CEO Devvret Rishi、现任首席科学官 Piero Molino 和现任 CTO Travis Addair 共同创立。\n*   **融资情况：** 已从 Felicis、Greylock 和 Sancus Ventures 等投资者处筹集了超过 2800 万美元的风险投资。\n\n### 收购目的与整合效益\n*   **加速 AI 代理普及：** Rubrik 旨在通过此次收购，加速企业对 AI 代理的采用。\n*   **提升数据信任与 AI 效能：** Rubrik 联合创始人兼 CEO Bipul Sinha 在一篇博客文章中指出，Predibase 的能力与 Rubrik 的安全数据平台结合，将具有变革性，有助于确保可信数据为负责任且有影响力的 AI 提供支持。他还表示，Predibase 正在解决部署大型语言模型在代理和其他 AI 应用中的性能和成本问题。\n*   **简化 AI 代理构建：** 根据新闻稿，Predibase 的整合将允许 Rubrik 用户通过 Amazon Bedrock、Azure OpenAI 和 Google Agentspace 等平台加速构建 AI 代理。\n\n### 交易条款与行业趋势\n*   **交易金额：** 具体条款未披露。然而，CNBC 报道称交易金额在 1 亿美元至 5 亿美元之间，Rubrik 拒绝就此置评。\n*   **行业趋势：** Rubrik 的此次收购是当前企业为增强其 AI 代理技术栈而进行收购的趋势之一。其他近期案例包括：\n    *   Salesforce 于 5 月以 80 亿美元收购数据管理公司 Informatica。\n    *   Snowflake 于 6 月初收购 Crunchy Data 以增强其 AI 代理产品。\n    *   Collibra 在几天后收购 Raito，原因类似。\n\n### Rubrik 简介\n*   **成立时间：** 2014 年。\n*   **融资与上市：** 在 2024 年 4 月上市之前，已从 Khosla Ventures、IVP 和 Lightspeed Venture Partners 等公司筹集了超过 16 亿美元的风险投资。",
+      "shortSummary": "数据网络安全公司 Rubrik 宣布收购初创公司 Predibase，旨在加速企业 AI 代理的普及。Predibase 专注于帮助企业训练和微调开源 AI 模型。此次整合将使 Rubrik 用户能通过主流平台加速构建 AI 代理，并确保可信数据支持负责任的 AI 应用。交易金额未公开，但据报道在 1 亿至 5 亿美元之间。此举反映了当前企业为增强 AI 能力而进行技术栈收购的趋势。",
+      "translated_title": "Rubrik 收购 Predibase 以加速 AI 代理的普及",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Predibase helps companies train and fine-tune open source AI models which will help Rubrik customers deploy AI agents faster. "
+    },
+    {
+      "title": "Getty放弃对Stability AI的关键版权主张，但英国诉讼仍在继续 (原标题: Getty drops key copyright claims against Stability AI, but UK lawsuit continues)",
+      "link": "https://techcrunch.com/2025/06/25/getty-drops-key-copyright-claims-against-stability-ai-but-uk-lawsuit-continues/",
+      "pubDate": "Wed, 25 Jun 2025 16:34:35 +0000",
+      "isoDate": "2025-06-25T16:34:35.000Z",
+      "creator": "Rebecca Bellan",
+      "summary": "## Getty放弃对Stability AI的关键版权主张，但英国诉讼仍在继续\n\n### 案件背景与最新进展\n\n*   **主要事件**：Getty Images于周三在伦敦高等法院撤回了对Stability AI的主要版权侵权指控，这标志着围绕AI公司如何使用受版权保护内容训练模型的法律斗争取得了重要进展。\n*   **影响**：此举缩小了案件范围，但并未完全终止诉讼。它也凸显了生成式AI时代内容所有权和使用权未来的灰色地带。\n*   **时间点**：此进展发生在一天前，美国一名法官在类似案件中裁定Anthropic胜诉，该案涉及未经作者许可使用书籍训练AI是否构成版权侵权。\n\n### 英国诉讼中被撤销的指控\n\n*   **原始指控**：Getty Images于2023年1月起诉Stability AI（AI图像生成器Stable Diffusion的开发商），指控其未经许可使用数百万张受版权保护的图片训练AI模型，并声称Stable Diffusion生成的部分作品与训练内容相似，甚至带有Getty的水印。\n*   **撤销指控**：截至周三上午，Getty撤销了关于“训练侵权”和“输出侵权”的两项主要指控。\n*   **撤销原因**：\n    *   **训练侵权**：法律界人士Ben Maling表示，可能是Getty未能证明侵权行为与英国版权法管辖权之间存在充分联系。\n    *   **输出侵权**：Maling指出，可能是Getty未能证明模型复制的内容构成了原始图片（例如摄影师创作的）的“实质性部分”。\n    *   **Getty的解释**：Getty的律师在结案陈词中表示，撤销这些指控是由于证据不足以及Stability AI缺乏知情证人。公司将此举定性为战略性决策，旨在让双方和法院能专注于Getty认为更强且更有胜算的指控。\n\n### 英国诉讼中剩余的指控\n\n*   **次要侵权**：Getty主要争辩AI模型本身可能侵犯版权，并且在英国使用这些模型可能构成“进口侵权物品”，即使训练发生在英国境外。Maling指出，这对在英国境外训练的生成式AI公司具有最广泛的关联性。\n*   **商标侵权**：Getty仍在追究商标侵权指控。\n\n### Stability AI的回应\n\n*   Stability AI的发言人表示，公司“很高兴看到Getty在证词结束后决定撤销多项指控”。\n*   Stability AI在结案陈词中指出，他们认为Getty的商标和假冒指控将失败，因为消费者不会将水印解读为Stability AI的商业信息。\n\n### 美国诉讼情况\n\n*   **独立诉讼**：Getty的美国分公司于2023年2月也起诉了Stability AI，指控其商标和版权侵权。\n*   **索赔金额**：Getty声称Stability AI未经许可使用了多达1200万张受版权保护的图片训练其AI模型，并寻求对11,383件作品每件15万美元的赔偿，总计达17亿美元。\n*   **影响**：Getty发言人表示，在英国撤销版权侵权指控的决定不影响其在美国的案件，该案目前正在等待Stability AI驳回动议的裁决。\n\n### 其他相关信息\n\n*   **其他诉讼**：Stability AI还与Midjourney和DeviantArt一起被一群视觉艺术家起诉，指控版权侵权。\n*   **Getty自身的AI产品**：Getty Images也推出了自己的生成式AI服务，该工具利用基于Getty iStock图库和视频库训练的AI模型，允许用户生成新的可授权图片和艺术作品。\n\n**注：文章内容中未包含有效的实际图片链接，因此摘要中不包含图片。**",
+      "shortSummary": "Getty Images在伦敦高等法院撤销了对Stability AI的主要版权侵权指控，包括训练和输出侵权，理由是证据不足和管辖权问题。此举旨在集中精力于更强的次要侵权和商标侵权指控。尽管英国案件范围缩小，但Getty在美国对Stability AI的17亿美元版权和商标侵权诉讼仍在进行中。此案凸显了AI训练中版权使用的复杂性，而Stability AI对此进展表示欢迎。",
+      "translated_title": "Getty放弃对Stability AI的关键版权主张，但英国诉讼仍在继续",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Getty Images dropped its primary claims of copyright infringement against Stability AI on Wednesday at London’s High Court, narrowing one of the most closely watched legal fights over how AI companies use copyrighted content to train their models. "
+    },
+    {
+      "title": "英特尔叫停汽车业务，并已开始裁员 (原标题: Intel hits the brakes on its automotive business, and layoffs have started)",
+      "link": "https://techcrunch.com/2025/06/25/intel-hits-the-brakes-on-its-automotive-business-and-layoffs-have-started/",
+      "pubDate": "Wed, 25 Jun 2025 16:26:33 +0000",
+      "isoDate": "2025-06-25T16:26:33.000Z",
+      "creator": "Kirsten Korosec",
+      "summary": "# 英特尔叫停汽车业务并裁员\n\n英特尔正在关闭其汽车架构业务，并裁减该部门的大部分员工，这是这家芯片制造商更广泛重组的一部分。\n\n## 关键信息点：\n\n*   **业务关闭与裁员确认：**\n    *   该消息最初由《俄勒冈人报/俄勒冈生活》报道，并引用了一份周二上午与员工分享的内部备忘录。\n    *   英特尔已向TechCrunch证实，关闭汽车业务的计划已于周二内部传达。\n    *   公司发言人Cory Pforzheimer表示，此举是为了“重新聚焦于我们的核心客户端和数据中心产品组合，以加强我们的产品供应并满足客户需求”。\n    *   公司承诺确保客户的平稳过渡，但未透露受影响员工的具体数量。\n\n*   **汽车业务背景与投资：**\n    *   尽管英特尔的汽车业务并非其主要的收入来源，但该部门在自动驾驶技术和新兴的“软件定义汽车”趋势中一直非常活跃。\n    *   自2015年自动驾驶技术兴起初期，英特尔进行了多项数百万美元的投资。\n    *   其风险投资部门曾承诺向汽车技术投资2.5亿美元。\n    *   2017年，英特尔以153亿美元收购Mobileye，旨在扩展其自动驾驶技术，此举提升了其在该领域的地位。Mobileye后来分拆为独立的上市公司，英特尔仍是其主要股东。\n    *   2020年，英特尔汽车业务以9亿美元的估值收购了以色列初创公司Moovit。\n\n*   **近期活动与裁员背景：**\n    *   此次裁员发生在英特尔汽车业务在2025年国际消费电子展（CES 2025）上展示其技术六个月之后。\n    *   英特尔汽车部门曾试图向汽车制造商推销其软件定义汽车技术，其中包括一款为车辆设计的、计划于2025年底投产的AI增强型系统级芯片（SoC）。该SoC于今年4月在上海车展首次亮相。\n    *   然而，该部门的未来在4月就已显得不确定，尽管当时它还在上海车展上与中国汽车制造商会面。新任首席执行官Lip-Bu Tan曾警告英特尔员工，由于销售下滑和前景黯淡，公司将进行全公司范围的裁员。\n    *   本月早些时候，英特尔表示计划从7月开始裁减其英特尔代工（Intel Foundry）部门15%至20%的员工。英特尔代工业务负责为外部客户设计、制造和封装半导体。\n\n*   **相关图片：**\n    ![图片 1](https://techcrunch.com/wp-content/uploads/2025/06/Intel-Auto-Shanghai-7.jpg?w=1024)",
+      "shortSummary": "英特尔正在关闭其汽车架构业务并裁减大部分员工，以重新聚焦核心客户端和数据中心业务。尽管该部门曾进行大量投资（如收购Mobileye和Moovit）并积极推广软件定义汽车技术，但并非主要收入来源。此举是英特尔更广泛重组的一部分，此前公司已因销售下滑发出全公司裁员警告，并计划裁减代工部门员工。",
+      "translated_title": "英特尔叫停汽车业务，并已开始裁员",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Intel-Auto-Shanghai-7.jpg?w=1024",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Intel has decided to close down its automotive business, a decision that will lead to layoffs. "
+    },
+    {
+      "title": "伯尼·桑德斯称，如果AI提高生产力，我们应该实行每周四天工作制 (原标题: Bernie Sanders says that if AI makes us so productive, we should get a 4-day work week)",
+      "link": "https://techcrunch.com/2025/06/25/bernie-sanders-says-that-if-ai-makes-us-so-productive-we-should-get-a-4-day-work-week/",
+      "pubDate": "Wed, 25 Jun 2025 16:18:28 +0000",
+      "isoDate": "2025-06-25T16:18:28.000Z",
+      "creator": "Amanda Silberling",
+      "summary": "## 伯尼·桑德斯：AI提升生产力应带来每周四天工作制\n\n美国佛蒙特州参议员伯尼·桑德斯（Bernie Sanders）在接受播客主持人乔·罗根（Joe Rogan）采访时提出，如果人工智能（AI）技术显著提升了生产力，那么由此节省的时间应该回馈给工人，让他们有更多时间陪伴家人。\n\n### 桑德斯的核心论点\n\n*   **技术应惠及工人：** 桑德斯认为，技术进步，尤其是AI，应该改善所有人的生活，而不仅仅是技术所有者或大公司首席执行官的利益。\n*   **缩短工时而非裁员：** 他主张，当工人的生产力因AI而提高时，公司不应因此解雇工人，而应将每周工作时间缩短至32小时，且不减少工资。\n*   **增加个人时间：** 这样做的目的是让工人有更多时间陪伴家人、朋友，进行教育或其他个人活动。\n\n### 与科技精英观点的对比\n\n桑德斯指出，对于科技精英而言，AI带来的生产力提升通常意味着公司可以完成更多任务，或者通过裁员来节省成本，从而最大化股东价值。这与桑德斯提出的将时间回馈给工人的理念形成鲜明对比。\n\n### 并非激进的想法：现有成功案例\n\n桑德斯强调，每周四天工作制并非一个激进的概念，全球已有公司成功实践：\n\n*   **英国试点项目：** 2022年下半年，英国有61家公司（约2900名员工）参与了为期半年的每周四天工作制试点。在23家分享财务数据的公司中，试用期内收入平均增长1.4%，基本保持不变。\n*   **Kickstarter：** 自2021年起，众筹平台Kickstarter已实行每周四天工作制。\n*   **微软日本：** 微软日本在2019年试点每周四天工作制后，据报道生产力提高了40%。\n\n### 结论\n\n桑德斯总结道，我们应该利用技术来造福工人，这意味着给予他们更多的时间与家人和朋友相处，进行学习，或者做任何他们想做的事情。\n\n### 作者信息\n\n文章作者阿曼达·西尔伯林（Amanda Silberling）是TechCrunch的高级撰稿人，专注于科技与文化的交叉领域。她曾为Polygon、MTV、Kenyon Review、NPR和Business Insider等出版物撰稿，并与科幻作家伊莎贝尔·J·金共同主持播客“Wow If True”。在加入TechCrunch之前，她曾担任基层组织者、博物馆教育员和电影节协调员。她拥有宾夕法尼亚大学英语学士学位，并曾作为普林斯顿亚洲学者在老挝工作。",
+      "shortSummary": "参议员伯尼·桑德斯提出，如果AI提高生产力，工人应实行每周四天工作制，而非被裁员或仅让公司受益。他认为，AI节省的时间应回馈给工人，让他们有更多时间陪伴家人和进行个人发展。桑德斯强调这并非激进想法，并引用了英国、Kickstarter和微软日本等成功试点案例，证明缩短工时可保持甚至提高生产力。",
+      "translated_title": "伯尼·桑德斯称，如果AI提高生产力，我们应该实行每周四天工作制",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "\"Let's use technology to benefit workers,\" Sanders said."
+    },
+    {
+      "title": "TechCrunch Disrupt 2025首次推出“上市之路”舞台 (原标题: Introducing the Going Public Stage at TechCrunch Disrupt 2025)",
+      "link": "https://techcrunch.com/2025/06/25/introducing-the-going-public-stage-at-techcrunch-disrupt-2025/",
+      "pubDate": "Wed, 25 Jun 2025 16:01:46 +0000",
+      "isoDate": "2025-06-25T16:01:46.000Z",
+      "creator": "TechCrunch Events",
+      "summary": "# TechCrunch Disrupt 2025首次推出“上市之路”舞台\n\nTechCrunch Disrupt 2025将首次推出“上市之路”（Going Public Stage）舞台，这是一个专为处于公司建设中期和后期阶段的创始人设计的新目的地。该舞台的内容对于所有创始人，特别是那些快速扩张、准备退出或重新构想未来发展的创始人至关重要。无论您处于种子轮还是E轮融资阶段，最成功的创始人总是能提前十步思考。\n\n您将听到科技和风险投资领域的一些知名人士分享他们来之不易的经验，包括：\n*   **Julie Wainwright** (The RealReal)\n*   **David George** (Andreessen Horowitz)\n*   **Nirav Tolia** (Nextdoor)\n\n他们将分享如何建立有韧性的公司、驾驭不断变化的市场以及保持领先地位的经验。从IPO准备到AI驱动的市场进入（GTM）策略，这个舞台将为您构建未来提供路线图。\n\n![TechCrunch Disrupt 2025 Going Public Stage w/logo](https://techcrunch.com/wp-content/uploads/2025/06/TC25_Going_Public_Stage_V2.png?w=680)\n\n以下是部分已公布的精彩环节：\n\n### 1. 初创公司应该保持私有状态多久？\n*   **主讲人：** David George，Andreessen Horowitz 普通合伙人\n*   **内容概要：** 如今的初创公司可以获得巨额估值，为员工兑现，并比以往任何时候都更长时间地保持私有状态。但这同时也意味着后期初创公司正面临一套全新的规则。George将深入探讨不断变化的风险投资格局、下一代规模化初创公司需要了解什么，以及在资金紧张和期望更高的时代如何部署资本。从IPO窗口到二级市场，再到成长型投资者角色的演变，本次炉边谈话将深入探讨在当今市场中建立持久公司所需的真正要素，以及未来趋势。\n\n### 2. 退出前你需要知道的一切\n*   **主讲人：** Jai Das，Sapphire Ventures 联合创始人、总裁兼合伙人；Roseanne Wincek，Renegade Partners 联合创始人兼董事总经理；以及一位待公布的CFO\n*   **内容概要：** 上市、被收购，还是加倍投入并保持私有？在当今不可预测的市场中，创始人需要比以往任何时候都更早、更具战略性地考虑退出策略。本次小组讨论汇集了两名顶级风险投资家和一位经验丰富的CFO，他们将深入探讨如何为公司的各种选择做好准备。我们将讨论时机、关键指标、投资者期望，以及如何真正驾驭并购、IPO准备，或者仅仅是在风暴中继续建设。无论您还有12个月准备期，还是刚刚开始扩张，本次对话都旨在帮助您现在就做出明智的举动，以应对未来的一切。\n\n![The Future of Data in an Evolving Landscape Alisa Bergman Adobe Systems Jai Das Sapphire Ventures Nicole Helmer SAP and Sanjay Kumar Geospatial MediaDSC00264](https://techcrunch.com/wp-content/uploads/2019/09/The-Future-of-Data-in-an-Evolving-Landscape-Alisa-Bergman-Adobe-Systems-Jai-Das-Sapphire-Ventures-Nicole-Helmer-SAP-and-Sanjay-Kumar-Geospatial-MediaDSC00264.jpg?w=680)\n\n### 3. 构建未来\n*   **主讲人：** Julie Wainwright，Ahara 首席执行官；TheRealReal 创始人兼前首席执行官\n*   **内容概要：** Wainwright深知如何发现并驾驭潮流。从在The RealReal开创奢侈品转售先河，到通过Ahara涉足个性化营养领域，她职业生涯的成功在于始终走在时代前沿。在本次炉边谈话中，Wainwright将分享重新开始、快速扩张以及在市场变化和个人转型中保持韧性所需的经验。我们将深入探讨从品类创建中吸取的教训、再创新的风险，以及为什么经验可能是初创公司的终极优势。\n\n### 4. AI如何迫使后期初创公司重塑GTM——否则将被淘汰\n*   **主讲人：** Jane Alexander，CapitalG 合伙人；Vanessa Larco，Premise 联合创始人；Nirav Tolia，Nextdoor 首席执行官\n*   **内容概要：** 人工智能正在重写初创公司获取和赢得客户的策略，后期公司正感受到快速适应的压力。本次小组讨论中，两位顶级风险投资家和一位经验丰富的创始人将深入分析AI如何改变市场进入策略，从销售和营销到客户成功。我们将探讨哪些是有效的、哪些是炒作，以及如何在不失去重点的情况下将AI融入您的GTM引擎。如果您正在扩张并想知道AI如何适应您下一阶段的增长，那么这次对话不容错过。\n\n### 准备好退出市场了吗？从Disrupt 2025开始\n无论您是在权衡收购、关注IPO窗口，还是规划理想的退出策略，Disrupt 2025的“上市之路”舞台都是为准备迈出下一步的创始人而设。聆听那些经历过高潮、风险和再创造的领导者的经验，并获得现在即可付诸行动的见解。不要等待，立即磨砺您的退出策略。现在购买Disrupt 2025的门票，最高可节省675美元。",
+      "shortSummary": "TechCrunch Disrupt 2025首次推出“上市之路”舞台，旨在指导中后期创始人应对公司扩张、退出策略和未来发展。该舞台汇集了行业领袖，分享关于建立韧性公司、驾驭市场、IPO准备、并购以及AI如何重塑市场进入策略的宝贵经验。通过David George、Jai Das、Julie Wainwright和Nirav Tolia等专家的分享，创始人将获得关键洞察，为公司的下一步重大举措做好准备，是寻求退出或持续增长的创始人的必参加活动。",
+      "translated_title": "TechCrunch Disrupt 2025首次推出“上市之路”舞台",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/TC25_Going_Public_Stage_V2.png?w=680",
+          "alt": "TechCrunch Disrupt 2025 Going Public Stage w/logo",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2019/09/The-Future-of-Data-in-an-Evolving-Landscape-Alisa-Bergman-Adobe-Systems-Jai-Das-Sapphire-Ventures-Nicole-Helmer-SAP-and-Sanjay-Kumar-Geospatial-MediaDSC00264.jpg?w=680",
+          "alt": "The Future of Data in an Evolving Landscape Alisa Bergman Adobe Systems Jai Das Sapphire Ventures Nicole Helmer SAP and Sanjay Kumar Geospatial MediaDSC00264",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "For the first time ever, TechCrunch Disrupt is launching the Going Public Stage — a brand-new destination for founders navigating the mid and late stages of company building."
+    },
+    {
+      "title": "Better Auth：一位埃塞俄比亚自学开发者打造的认证工具，从Peak XV和YC获得500万美元融资 (原标题: Better Auth, an authentication tool by a self-taught Ethiopian dev, raises $5M from Peak XV, YC)",
+      "link": "https://techcrunch.com/2025/06/25/this-self-taught-ethiopian-dev-built-an-authentication-tool-and-got-into-yc/",
+      "pubDate": "Wed, 25 Jun 2025 16:00:16 +0000",
+      "isoDate": "2025-06-25T16:00:16.000Z",
+      "creator": "Tage Kene-Okafor",
+      "summary": "## Better Auth：埃塞俄比亚自学开发者打造的认证工具\n\n### 引言\n\nBetter Auth是由埃塞俄比亚自学程序员Bereket Engida创立的一款开源认证工具。它近期从Peak XV（前身为Sequoia India和Southeast Asia）、Y Combinator、P1 Ventures和Chapter One获得了约500万美元的种子轮融资。值得注意的是，Engida在埃塞俄比亚本土独立开发了整个产品，然后才前往美国。\n\n### 产品背景与痛点\n\nEngida在职业生涯中发现，用户认证是普遍存在的痛点。所有应用程序都需要管理用户登录、登出、密码重置，以及处理权限和用户角色。他发现现有工具（如Auth0、Firebase、NextAuth）存在以下局限性：\n\n*   将用户数据存储在外部。\n*   定制化程度受限。\n*   规模化成本高昂。\n\nEngida曾因需要“组织功能”而不得不从头构建，耗时两周，这促使他思考如何提供更好的解决方案。\n\n### Better Auth的解决方案\n\nBetter Auth是一个基于TypeScript的开源认证框架，旨在解决上述痛点：\n\n*   允许开发者通过开源库访问用户数据。\n*   开箱即用地支持常见的权限用例，如团队和角色。\n*   通过插件实现可扩展性，只需两三行代码即可添加高级功能。\n*   与托管服务不同，Better Auth是一个可直接集成到代码库的开源库，所有用户数据都保留在本地数据库中，解决了企业对第三方数据存储的担忧。\n\n### 市场反响与牵引力\n\nEngida在埃塞俄比亚的卧室里花费六个多月开发了第一个版本，并于2024年9月（*注：原文如此，可能为笔误*）发布到GitHub。该产品迅速获得开发者关注，目前已实现：\n\n*   每周下载量超过15万次。\n*   GitHub星标超过1.5万个。\n*   Discord社区成员超过6000人。\n\nBetter Auth特别受到早期AI初创公司的青睐，这些公司需要定制认证流程、安全管理令牌并实现低成本扩展。Peak XV合伙人Arnav Sahu表示，该产品在“下一代AI初创公司中获得了惊人的采用”。\n\n### 融资与未来计划\n\n本次融资是Peak XV首次直接投资非洲创始人。Better Auth目前免费使用，但未来计划：\n\n*   改进核心功能。\n*   推出付费企业基础设施，作为其开源基础的插件。\n*   提供开发者自主托管或选择Better Auth云附加组件的灵活性。\n*   计划招聘小团队来维护代码库、扩展文档和支持企业用户。\n\n### 意义与影响\n\nEngida目前仍亲自编写大部分代码。Better Auth是继无人机数字健康平台Avion和食品配送平台BeU Delivery之后，第三家从YC毕业的埃塞俄比亚初创公司。Engida认为，构建这个产品不仅因为其受欢迎，更因为它所代表的意义——为其他埃塞俄比亚创始人树立了榜样，激励他们追求更宏大的目标。",
+      "shortSummary": "埃塞俄比亚自学开发者Bereket Engida创立的认证工具Better Auth，从Peak XV和YC等机构获得了500万美元种子轮融资。Better Auth提供一个开源框架，简化用户认证管理，允许开发者将用户数据保留在本地，解决了现有工具的局限性。该工具已获得显著市场牵引力，每周下载量超15万次。未来计划推出付费企业功能，并旨在激励更多非洲创始人。",
+      "translated_title": "Better Auth：一位埃塞俄比亚自学开发者打造的认证工具，从Peak XV和YC获得500万美元融资",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Better Auth’s open source framework can simplify how developers manage user authentication. It’s caught the attention of some big name investors, recently raising about $5M in seed funding from Peak XV."
+    },
+    {
+      "title": "Sitch的新约会应用融合了人工配对和AI (原标题: Sitch’s new dating app fuses human matchmaking and AI)",
+      "link": "https://techcrunch.com/2025/06/25/sitch-wants-to-fuse-human-personality-and-ai-for-matchmaking/",
+      "pubDate": "Wed, 25 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-25T16:00:00.000Z",
+      "creator": "Ivan Mehta",
+      "summary": "# Sitch：融合人工配对与AI的新型约会应用\n\nSitch是一款旨在通过结合人类媒人专业知识和AI模型来改进约会市场的新型约会应用。与当前约会应用侧重于快速注册和提供海量选择不同，Sitch采取了一种更深思熟虑的方法，利用大型语言模型（LLMs）将人类媒人的专业知识融入约会体验，帮助用户找到潜在匹配对象，而无需通过滑动（swiping）操作。\n\n## 当前约会应用的局限性\n\n现有约会应用通常允许用户在几秒钟内通过上传照片和回答简单问题来创建个人资料。这些应用依赖于基本信息和用户滑动反馈来寻找潜在匹配。然而，Sitch的联合创始人Nandini Mullaji指出，尽管Match和Bumble等公司主导市场，但用户仍不满意，未能找到他们想要的匹配。Mullaji认为，约会配对是一个数据问题，传统约会应用的数据不足以判断两个人是否具有长期兼容性。\n\n## Sitch的独特方法与运作机制\n\nSitch的目标是解决现有约会应用在提供深度兼容性方面的不足。\n\n### 创始人背景\n\n*   **Nandini Mullaji：** 斯坦福商学院毕业生，其配对天赋源于她的祖母（也是一名媒人）。她曾参与Bumble在印度的发布，并在约会和教育相关项目上工作。\n*   **Chad DePue：** 曾是匿名社交网络Whisper的CTO，后在Snap工作。\n\n### AI与人工的融合\n\nSitch利用LLMs来扩展人工配对的体验。DePue表示，该初创公司的目标是利用LLMs从个人资料和图片中提取数据，并展示个性化的匹配。\n\n1.  **详细的入职流程：** Sitch构建了一个Mullaji的AI版本，通过询问近50个详细问题（可通过文本或语音回答）来帮助用户完成入职。\n    ![图片 1](https://techcrunch.com/wp-content/uploads/2025/06/step-1-get-to-know-you.jpeg?w=314)\n    *图片来源：Sitch*\n2.  **AI推荐匹配：** 用户资料设置完成后，AI媒人会显示其建议的匹配对象。\n3.  **群聊互动：** 如果两位用户都同意匹配，机器人会将他们添加到一个与AI共同存在的群聊中。\n    ![图片 2](https://techcrunch.com/wp-content/uploads/2025/06/Step-3-group-chat.jpeg?w=314)\n    *图片来源：Sitch*\n4.  **持续反馈机制：** 用户可以在任何时候——甚至在真实约会之后——提供关于匹配对象的反馈，以改进AI的个性化推荐。\n    ![post date feedback on Sitch](https://techcrunch.com/wp-content/uploads/2025/06/step-4-post-date-feedback.jpeg?w=314)\n    *图片来源：Sitch*\n\nDePue提到，用户对Sitch的信任度很高，在入职和提供反馈时分享了大量信息，因为他们知道这些数据不会被公开分享。\n\n### AI模型训练与匹配生成\n\nSitch最初使用Mullaji提供的75个以上配对参数来训练其AI模型，并借鉴了她的配对技巧来理解为何两个人会匹配。随后，公司利用用户反馈来扩展其模型。在生成匹配时，Sitch会确定两个用户资料之间兼容和对比的特质。\n\n## 商业模式与融资\n\nSitch按每次“设置”（即一次匹配）收费，并以套餐形式出售：\n*   3次设置：$89.99\n*   5次设置：$124.99\n*   8次设置：$159.99\n\nSitch已获得M13和a16z speedrun的500万美元种子轮融资，迄今总融资额达到700万美元。M13的合伙人Anna Barber对Sitch利用AI构建约会应用的愿景表示兴奋。她认为，创始人构建产品的方式与用户与真实媒人互动的方式相似，即在约会前后持续提供反馈。这种模式能将个性化服务扩展到更广泛的受众，而这些受众可能无法负担传统媒人的费用。Barber还指出，许多约会应用行为类似于手机游戏，试图延长用户注意力或将用户体验游戏化以增加参与度，从而带来更多销售。而Sitch由于用户预付费，团队无需专注于这些“增长黑客”策略。\n\n## 市场前景与挑战\n\nSitch目前仅在纽约提供服务，但计划今年在更多城市推出。公司表示会手动检查所有个人资料，以维护质量和安全性。\n\n尽管Tinder、Bumble和Grindr等大型公司也在将AI融入其应用体验，Sitch仍对其前景充满信心。它寄希望于用户可能正在寻求摆脱基于滑动的应用（Tinder和Bumble去年注册量有所放缓），并且相信随着用户提供更多数据并致力于认真约会，Sitch将脱颖而出。该应用目前已在Apple App Store上线。",
+      "shortSummary": "Sitch是一款新型约会应用，旨在通过融合人类媒人专业知识和AI来改进约会体验。它通过详细的入职问答和AI模型，为用户提供个性化匹配，避免了传统约会应用的滑动模式。Sitch由经验丰富的创始人团队打造，利用用户反馈持续优化AI。该应用专注于帮助用户寻找长期兼容性，并已获得700万美元融资。目前在纽约推出，未来计划扩展至更多城市，旨在满足用户对更认真、更个性化约会体验的需求。",
+      "translated_title": "Sitch的新约会应用融合了人工配对和AI",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/step-1-get-to-know-you.jpeg?w=314",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Step-3-group-chat.jpeg?w=314",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/step-4-post-date-feedback.jpeg?w=314",
+          "alt": "post date feedback on Sitch",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Sitch aims to take a more thoughtful approach to dating apps with its onboarding process and uses LLMs to bring a human matchmaker’s expertise to the dating app experience, helping people find potential matches without swiping."
+    },
+    {
+      "title": "Apple Sports 应用新增网球实时比分和重新设计的主屏幕 (原标题: Apple Sports app adds live tennis scores and a redesigned home screen)",
+      "link": "https://techcrunch.com/2025/06/25/apple-sports-app-adds-live-tennis-scores-and-a-redesigned-home-screen/",
+      "pubDate": "Wed, 25 Jun 2025 15:36:50 +0000",
+      "isoDate": "2025-06-25T15:36:50.000Z",
+      "creator": "Aisha Malik",
+      "summary": "### Apple Sports 应用更新：新增网球比分与主屏幕改版\n\nApple 于周三宣布，其去年推出的 Apple Sports 应用正在引入网球赛事覆盖，并对主屏幕体验进行了重新设计。\n\n**主要更新内容：**\n\n*   **新增网球赛事覆盖：**\n    *   用户现在可以访问大满贯和 1000 级别锦标赛的网球实时比分。\n    *   可追踪所有男子和女子单打比赛的每一个得分。\n    *   球迷可以随时了解球员在整个锦标赛中的进展，并获取从首轮到决赛的每场比赛结果。\n*   **重新设计的主屏幕体验：**\n    *   旨在让球迷更轻松地关注他们喜爱的球队和联赛。\n    *   赛事和对决现在按联赛分组，并根据用户的偏好顺序显示。\n    *   用户喜爱的球队始终显示在顶部，以便快速查看最新比分和更新。\n\n![Apple Sports 应用新主屏幕](https://techcrunch.com/wp-content/uploads/2025/06/Apple-Sports-app_new-home-experience.png?w=486)\n\n**应用历史与可用性：**\n\n*   Apple Sports 应用于 2024 年 2 月首次亮相。\n*   于去年 8 月更新，增加了足球比分和实时活动（Live Activities）。\n*   目前该应用在美国、加拿大和英国可用。\n\n**当前支持的体育赛事和联赛：**\n\n该应用目前还涵盖以下赛事和联赛：\n*   德甲 (Bundesliga)\n*   欧冠联赛 (Champions League)\n*   欧协联 (Conference League)\n*   英冠联赛 (EFL Championship)\n*   欧罗巴联赛 (Europa League)\n*   英格兰足总杯 (FA Cup)\n*   NCAA 大学橄榄球 (FBS and FCS)\n*   西甲 (LaLiga)\n*   联赛杯 (League Cup)\n*   墨西哥足球甲级联赛 (LIGA MX)\n*   法甲 (Ligue 1)\n*   NCAA 男子大学篮球 (Men’s College Basketball)\n*   美国职业棒球大联盟 (MLB)\n*   美国职业足球大联盟 (MLS)\n*   NBA\n*   NFL\n*   NHL\n*   美国女子足球联赛 (NWSL)\n*   英超 (Premier League)\n*   意甲 (Serie A)\n*   WNBA\n*   NCAA 女子大学篮球 (Women’s College Basketball)",
+      "shortSummary": "Apple Sports 应用已更新，新增网球赛事覆盖，包括大满贯和 1000 级别锦标赛的实时比分。同时，应用主屏幕也进行了重新设计，以便用户更轻松地关注喜爱的球队和联赛。该应用于 2024 年 2 月推出，目前在美国、加拿大和英国可用，并支持包括足球、篮球、棒球、橄榄球和冰球在内的多种体育赛事。",
+      "translated_title": "Apple Sports 应用新增网球实时比分和重新设计的主屏幕",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Apple-Sports-app_new-home-experience.png?w=486",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Users will now be able to access live tennis scores and can track every point across all men’s and women’s singles matches. The revamped home screen makes it easier for fans to follow their favorite teams and leagues."
+    },
+    {
+      "title": "比尔·盖茨支持的Airloom开始建造其首个发电厂 (原标题: Bill Gates-backed Airloom begins building its first power plant)",
+      "link": "https://techcrunch.com/2025/06/25/bill-gates-backed-airloom-begins-building-its-first-power-plant/",
+      "pubDate": "Wed, 25 Jun 2025 15:10:00 +0000",
+      "isoDate": "2025-06-25T15:10:00.000Z",
+      "creator": "Tim De Chant",
+      "summary": "## Airloom Energy：新型风力发电技术与首个试点项目\n\n风力发电行业正面临多重挑战，包括政治阻力以及近年来成本的上升。根据Lazard的数据，去年陆上风力发电成本达到每兆瓦时61美元，逆转了过去十年来的下降趋势。在这样的背景下，由比尔·盖茨支持的初创公司Airloom Energy正通过其创新的风力发电技术寻求突破。\n\n### Airloom的创新技术\n\nAirloom Energy的首席执行官尼尔·里克纳（Neal Rickner）承认行业面临“逆风”，但他认为公司独特的方法有望在未来五年内脱颖而出。Airloom颠覆了传统的风力涡轮机概念，其核心创新在于：\n\n*   **解构设计**：放弃了传统的三片长叶片设计，转而使用任意数量的更短叶片。\n*   **轨道系统**：这些短叶片连接到一根沿着椭圆形轨道运行的缆绳上，轨道长度可根据需要调整。\n*   **低矮结构**：整个系统的高度约为60英尺，远低于典型的风力涡轮机。\n*   **成本优势**：Airloom的目标是实现颠覆性的低成本，即使在没有补贴的情况下也能具备竞争力。里克纳表示，他们的模型显示，即使是首个低产量的系统也能实现成本竞争力，这预示着未来的巨大潜力。\n\n### 首个试点项目\n\n为了验证其技术能够产生与高大传统涡轮机相当的电力，Airloom Energy已于周三在怀俄明州拉勒米西北部破土动工，开始建造其试点项目。该试点系统将产生约150千瓦的电力。尽管是试点规模，但其部件将与兆瓦级安装的部件相同，唯一的区别在于轨道长度——试点系统的轨道长度与高中跑道（100米直道）相近。未来的3兆瓦系统将采用500米长的直道。\n\n值得一提的是，轨道之间的空间可以用于安装太阳能电池板或进行传统农业活动，因为叶片的设计允许农用设备轻松通过其下方，实现了土地的复合利用。\n\n### 商业化展望与目标客户\n\n里克纳表示，Airloom计划在2027或2028年部署其首个商业规模系统，这比他最初在2023年的预测晚了一两年。潜在的部署地点包括数据中心或军事基地。\n\n*   **军事市场**：鉴于里克纳曾是美国海军陆战队的F/A-18飞行员，Airloom一直将军事领域视为潜在客户。\n*   **数据中心市场**：近期，公司与多家数据中心开发商进行了洽谈。许多开发商正努力在2030年前获得风力涡轮机。Airloom的优势在于能够更早地部署系统（2027/2028年为早期系统，到2030年可迭代至第三代系统），这引起了这些开发商的极大兴趣。",
+      "shortSummary": "由比尔·盖茨支持的Airloom Energy已在怀俄明州开始建造其首个试点发电厂。该公司创新性地采用短叶片和椭圆形轨道系统，将风力发电装置高度降至约60英尺，旨在实现颠覆性的低成本。该试点项目将产生150千瓦电力，并计划于2027或2028年部署首个商业系统，主要面向急需能源的数据中心和军事基地，以应对当前风电行业的高成本和部署挑战。",
+      "translated_title": "比尔·盖茨支持的Airloom开始建造其首个发电厂",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Airloom takes that classic turbine concept and deconstructs it. To prove that it can generate as much power as conventional wind turbines, Airloom broke ground on its pilot site northwest of Laramie, Wyoming, on Wednesday."
+    },
+    {
+      "title": "为您的AI初创公司赢得资本？Kleida Martiro将在TechCrunch All Stage引领对话 (原标题: Winning capital for your AI startup? Kleida Martiro is leading the conversation at TechCrunch All Stage)",
+      "link": "https://techcrunch.com/2025/06/25/winning-capital-for-your-ai-startup-kleida-martiro-is-leading-the-conversation-at-techcrunch-all-stage/",
+      "pubDate": "Wed, 25 Jun 2025 14:30:00 +0000",
+      "isoDate": "2025-06-25T14:30:00.000Z",
+      "creator": "TechCrunch Events",
+      "summary": "# TechCrunch All Stage：Kleida Martiro将探讨AI初创公司融资策略\n\n在即将于波士顿举行的TechCrunch All Stage大会上，Glasswing Ventures合伙人Kleida Martiro将主持一场关键的分组讨论，旨在解决AI原生初创公司在融资过程中面临的挑战。\n\n## 活动与会议详情\n\n*   **活动名称：** TechCrunch All Stage\n*   **地点：** 波士顿\n*   **日期：** 7月15日\n*   **主讲人：** Kleida Martiro，Glasswing Ventures 合伙人\n*   **会议主题：** “在竞争激烈的市场中赢得资本：如何为您的AI原生初创公司融资” (Winning Capital in a Competitive Market: How to Fund Your AI-Native Startup)\n*   **核心议题：**\n    *   AI原生初创公司的早期发展模式正在重塑，但许多投资者仍沿用旧有评估标准。\n    *   Martiro的会议将深入探讨这一脱节，指导早期AI创始人如何构建其增长故事，使其能引起具有前瞻性思维的投资者共鸣，并识别出那些仍固守SaaS时代指标的投资者。\n\n## 主讲人背景与专长\n\nKleida Martiro女士凭借其在运营和投资领域的丰富经验，为本次讨论带来了独特的视角：\n\n*   **职业经历：** 在加入Glasswing之前，她曾担任SocialFlow的数据科学主管，负责机器学习方面的工作。\n*   **当前角色：** 目前在多家AI初创公司的董事会任职。\n*   **行业认可：** 曾被《商业内幕》评为“波士顿41位最重要的风险投资家”之一，并被VentureBeat评为“AI领域冉冉升起的新星女性”。\n\n## 创始人收获\n\n参与者将从本次会议中获得实用的指导，包括：\n\n*   如何将公司的愿景、融资需求和长期发展机遇与真正理解AI的资本伙伴进行有效对齐。\n*   对于正在从零开始构建AI的创始人而言，这是一个不容错过的交流平台。\n*   会议期间将有充足时间提问关于启动和扩展AI初创公司的“燃眉之急”问题。\n\n## 图片\n\n![Early Stage 2024 Fidelity breakout](https://techcrunch.com/wp-content/uploads/2024/04/early-stage-2024-fidelity-breakout.jpg?w=800)\n\n![TechCrunch All Stage 2025 Kleida Martiro](https://techcrunch.com/wp-content/uploads/2025/06/Kleida-Martiro-SpeakerArticleImageHeader_TCAllStage.png?w=680)\n\n## 参会提示\n\n建议在活动门票价格上涨前购买您的TechCrunch All Stage通行证。",
+      "shortSummary": "在TechCrunch All Stage大会上，Glasswing Ventures合伙人Kleida Martiro将主持一场关于AI初创公司融资的专题讨论。她将指导早期AI创始人如何构建增长故事，以吸引理解AI而非仅关注SaaS指标的投资者。Martiro女士凭借其丰富的运营和投资经验，将为创始人提供实用建议，帮助他们赢得资本，弥合AI初创公司与传统投资者之间的认知差距。",
+      "translated_title": "为您的AI初创公司赢得资本？Kleida Martiro将在TechCrunch All Stage引领对话",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2024/04/early-stage-2024-fidelity-breakout.jpg?w=800",
+          "alt": "Early Stage 2024 Fidelity breakout",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Kleida-Martiro-SpeakerArticleImageHeader_TCAllStage.png?w=680",
+          "alt": "TechCrunch All Stage 2025 Kleida Martiro",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "AI-native startups are rewriting the rules of what early traction looks like — and too often, investors are still playing by the old ones. At TechCrunch All Stage, happening in Boston on July 15, Kleida Martiro, partner at Glasswing Ventures, will lead a breakout that cuts straight to the core of this disconnect."
+    },
+    {
+      "title": "Bumble将裁员30% (原标题: Bumble to lay off 30% of its workforce)",
+      "link": "https://techcrunch.com/2025/06/25/bumble-to-lay-off-30-of-its-workforce/",
+      "pubDate": "Wed, 25 Jun 2025 14:17:09 +0000",
+      "isoDate": "2025-06-25T14:17:09.000Z",
+      "creator": "Aisha Malik",
+      "summary": "# Bumble宣布裁员30%\n\n约会应用Bumble于2025年6月25日星期三宣布，将裁员30%，影响约240个职位。此次裁员是公司“调整运营结构以优化战略重点执行”计划的一部分。\n\n![Bumble公司在纳斯达克市场中心首次公开募股（IPO）期间的显示器，摄于2021年2月11日，纽约。](https://techcrunch.com/wp-content/uploads/2024/05/GettyImages-1231102891-e1716207554357.jpg?w=1024)\n图片来源：Michael Nagle/Bloomberg / Getty Images\n\n**主要原因与财务影响：**\n*   **裁员规模与目的：** 裁员约240人，占总员工的30%。旨在调整运营结构，优化战略重点的执行。\n*   **预期节约与再投资：** 预计每年可节省4000万美元，其中大部分资金将再投资于产品和技术开发。\n*   **非经常性费用：** 预计在2025年第三和第四季度产生约1300万至1800万美元的非经常性费用，主要用于受影响员工的遣散费、福利及相关成本。\n*   **市场反应：** 裁员消息公布后，Bumble股价上涨约20%。\n\n**公司背景与近期动态：**\n*   **上次裁员：** 这并非Bumble首次大规模裁员。公司曾在2024年2月裁员30%，影响约350名员工。\n*   **营收预测上调：** 除了裁员，Bumble还上调了第二季度营收预测，从之前的2.35亿至2.43亿美元区间上调至2.44亿至2.49亿美元。\n*   **创始人回归：** 此次裁员发生之际，创始人Whitney Wolfe Herd于今年年初宣布，在2023年卸任后，于2025年3月重返CEO职位。\n*   **业绩表现：** Bumble上月公布的第一季度财报显示业绩疲软，同比下降7.7%。Herd在接受《纽约时报》采访时表示：“Bumble需要我回来。它在某种程度上是我的延伸，看着它从巅峰跌落非常艰难。”\n\n**行业背景：**\n*   **竞争对手状况：** 拥有Tinder和Hinge等竞争应用的Match公司也面临吸引和留住用户（特别是年轻用户）的困境。Match于今年5月宣布裁员13%，以削减成本并精简组织结构。\n\n**修正说明：**\n*   文章指出，Bumble上一次裁员是在2024年2月，而非2024年1月。",
+      "shortSummary": "约会应用Bumble宣布裁员30%，影响约240个职位，旨在调整运营结构并每年节省4000万美元，大部分将再投资于产品和技术。此消息发布后，Bumble股价上涨约20%。此次裁员是在公司第一季度业绩疲软，以及创始人Whitney Wolfe Herd重返CEO职位后进行的。Bumble曾在2024年2月进行过类似规模的裁员。竞争对手Match也面临用户流失并进行了裁员。",
+      "translated_title": "Bumble将裁员30%",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2024/05/GettyImages-1231102891-e1716207554357.jpg?w=1024",
+          "alt": "Monitors display Bumble Inc. signage during the company's initial public offering (IPO) in front of the Nasdaq MarketSite in New York, U.S., on Thursday, Feb. 11, 2021.",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Dating app Bumble announced on Wednesday that it's laying off 30% of its workforce, impacting around 240 positions. "
+    },
+    {
+      "title": "Nascent Materials 揭秘，致力于提升磷酸铁锂电池性能并降低成本 (原标题: Nascent Materials emerges from stealth to make LFP batteries better and cheaper)",
+      "link": "https://techcrunch.com/2025/06/25/nascent-materials-emerges-from-stealth-to-make-lfp-batteries-better-and-cheaper/",
+      "pubDate": "Wed, 25 Jun 2025 14:00:00 +0000",
+      "isoDate": "2025-06-25T14:00:00.000Z",
+      "creator": "Tim De Chant",
+      "summary": "## Nascent Materials：革新电池材料制造，提升性能并降低成本\n\n### 公司背景与创始人愿景\nNascent Materials 是一家由 Chaitanya Sharma 创立的初创公司，旨在通过改进锂离子电池阴极材料的制造方式，进一步降低电池成本并提升性能。Sharma 拥有在特斯拉超级工厂和锂离子电池制造商 iM3NY 的丰富经验，这使他深刻认识到电池材料供应链中存在的问题。他认为，与其开发全新的“奇异化学物质”，不如专注于“开发新的材料制造方法”。\n\n### 行业挑战与痛点\n锂离子电池在过去十年中成本下降了75%，这得益于无数渐进式改进。然而，Sharma 在 iM3NY 的经历让他发现，获得质量稳定的阴极材料是一个巨大挑战，尤其对于中小型制造商而言。大型企业如特斯拉的超级工厂通常能获得更稳定的材料，而小型企业则常常收到“异常材料”，这甚至导致了 iM3NY 在2023年1月的破产申请。这种供应链不平等是促使 Sharma 创立 Nascent Materials 的主要原因，他希望为所有客户提供一致的材料。\n\n### Nascent Materials 的创新解决方案\nNascent Materials 开发了一种新的阴极材料加工工艺，该工艺具有多重优势：\n*   **性能提升**：可将阴极的能量密度提高多达12%。\n*   **成本降低**：制造成本可降低30%。\n*   **能源效率**：加工过程中能耗更低。\n*   **材料一致性**：能够生产出尺寸和形状更一致的颗粒，从而使材料能够更紧密地堆积，进一步提高能量密度。\n*   **供应链优势**：该工艺还可以使用纯度较低的原材料，从而开辟更多的国内供应来源。\n\n### 初始重点与未来展望\nNascent Materials 初期专注于磷酸铁锂（LFP）和磷酸锰铁锂（LMFP）这两种阴极材料。这些材料因其较低的成本和不断提升的能量密度，正受到汽车制造商和数据中心运营商的青睐。Sharma 表示，公司计划未来将业务扩展到其他化学物质，包括镍锰钴（NMC）和富锂锰（LMR）等。\n\n### 战略意义与资金支持\nNascent Materials 的国内化重点解决了电池行业对中国阴极材料的严重依赖。Sharma 强调，公司的目标是简化供应链，利用本地原材料，从而进一步降低成本。\n\nNascent Materials 的制造导向方法已吸引了早期投资。公司最近在由 SOSV 领投的种子轮融资中筹集了230万美元，新泽西创新常青基金和 UM6P Ventures 也参与了投资。",
+      "shortSummary": "Nascent Materials 由 Chaitanya Sharma 创立，旨在通过革新锂离子电池阴极材料的制造工艺，提升电池性能并降低成本。其新工艺可将能量密度提高12%，制造成本降低30%，并能确保材料质量一致性，同时利用低纯度国内原材料。公司已获得230万美元种子轮融资，初期专注于LFP/LMFP材料，旨在简化供应链，减少对海外材料的依赖。",
+      "translated_title": "Nascent Materials 揭秘，致力于提升磷酸铁锂电池性能并降低成本",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Nascent recently raised $2.3 million to develop its novel manufacturing process for cathode materials."
+    },
+    {
+      "title": "谷歌推出 Gemini CLI，一款面向终端的开源AI工具 (原标题: Google unveils Gemini CLI, an open-source AI tool for terminals)",
+      "link": "https://techcrunch.com/2025/06/25/google-unveils-gemini-cli-an-open-source-ai-tool-for-terminals/",
+      "pubDate": "Wed, 25 Jun 2025 13:00:00 +0000",
+      "isoDate": "2025-06-25T13:00:00.000Z",
+      "creator": "Maxwell Zeff",
+      "summary": "## 谷歌推出 Gemini CLI：面向终端的开源AI工具\n\n谷歌于周三宣布推出 **Gemini CLI**，这是一款旨在将 Gemini AI 模型更紧密地融入开发者编码工作流的代理AI工具。该工具可在本地终端运行，旨在让开发者更便捷地利用AI能力。\n\n### 核心功能与应用\n\n*   **连接本地代码库**：Gemini CLI 能够连接到本地代码库，使 Gemini AI 模型能够理解和操作开发者的现有代码。\n*   **自然语言交互**：开发者可以通过自然语言请求与 Gemini CLI 互动，例如：\n    *   解释复杂的代码段。\n    *   编写新的功能。\n    *   调试代码。\n    *   运行命令。\n*   **多功能性**：除了编码任务，Gemini CLI 还被设计用于处理其他任务：\n    *   使用谷歌的 Veo 3 模型创建视频。\n    *   利用公司的 Deep Research 代理生成研究报告。\n    *   通过 Google Search 访问实时信息。\n    *   连接到 MCP 服务器，从而连接外部数据库。\n\n### 市场定位与竞争\n\nGemini CLI 是谷歌努力让开发者在其编码工作流中使用其AI模型的一部分。谷歌目前提供一系列AI编码工具，如 Gemini Code Assist 和其异步AI编码助手 Jules。Gemini CLI 将直接与市场上其他命令行AI工具竞争，例如 OpenAI 的 Codex CLI 和 Anthropic 的 Claude Code，这些工具通常被认为更易于集成、更快、更高效。\n\n### 推广策略\n\n*   **开源**：为鼓励广泛采用和社区贡献，谷歌将 Gemini CLI 在 Apache 2.0 许可下开源，这是最宽松的许可之一。谷歌期望开发者网络能在 GitHub 上为该项目做出贡献。\n*   **慷慨的使用限制**：为了刺激采用，谷歌为免费用户提供了慷慨的使用限制：每分钟可进行 60 次模型请求，每天可进行 1,000 次请求。公司表示，这大约是开发者在使用该工具时平均请求数量的两倍。\n\n### 潜在风险与挑战\n\n尽管AI编码工具日益普及，但使用它们也伴随着风险。根据 Stack Overflow 2024 年的一项调查，仅有 43% 的开发者信任AI工具的准确性。多项研究表明，代码生成AI模型有时会引入错误或未能修复安全漏洞。",
+      "shortSummary": "谷歌推出了Gemini CLI，一款面向终端的开源代理AI工具。它将Gemini AI模型与本地代码库连接，允许开发者通过自然语言请求解释、编写、调试代码及执行命令。该工具旨在将AI更紧密地融入开发者工作流，并与OpenAI和Anthropic的同类工具竞争。为促进采用，Google将其开源并提供慷慨的免费使用限制。然而，AI编码工具的准确性和安全性仍是开发者关注的风险。",
+      "translated_title": "谷歌推出 Gemini CLI，一款面向终端的开源AI工具",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Google is launching a new agentic AI tool that will put its Gemini AI models closer to where developers are already coding. The company announced on Wednesday the launch of Gemini CLI, an agentic AI tool designed to run locally from your terminal. The new tool connects Google&#8217;s Gemini AI models to local codebases, and [&#8230;]"
+    },
+    {
+      "title": "Ring 摄像头和门铃现已使用 AI 提供详细的运动活动描述 (原标题: Ring cameras and doorbells now use AI to provide specific descriptions of motion activity)",
+      "link": "https://techcrunch.com/2025/06/25/ring-cameras-and-doorbells-now-use-ai-to-provide-specific-descriptions-of-motion-activity/",
+      "pubDate": "Wed, 25 Jun 2025 13:00:00 +0000",
+      "isoDate": "2025-06-25T13:00:00.000Z",
+      "creator": "Lauren Forristal",
+      "summary": "## Ring 摄像头和门铃引入 AI 驱动的运动描述功能\n\n亚马逊旗下的 Ring 公司于2025年6月25日宣布，其门铃和摄像头将推出一项新的 AI 驱动功能，旨在为用户提供更具体、更详细的运动活动文本描述。这项功能将显著改善此前模糊的通知，使用户能够更准确地了解其财产周围正在发生的事情，并迅速判断是否需要立即关注。\n\n### 核心功能与优势\n\n*   **详细的运动描述**：当检测到运动时，系统将生成具体的文本描述，例如“一个人带着一只黑狗走上台阶”或“两个人正在查看停在车道上的白色汽车”。\n*   **提升决策效率**：通过提供精确的信息，用户可以更快地决定是否需要采取行动。\n*   **描述范围**：AI 仅描述运动激活视频剪辑的前几秒内容。\n\n### 推出情况与用户控制\n\n*   **当前推出**：此功能目前作为英语测试版，面向美国和加拿大的 Ring Home Premium 订阅用户推出。\n*   **用户选择**：用户可以通过 Ring 应用的设置选择禁用此功能。\n\n### 未来 AI 发展计划\n\nRing 创始人兼亚马逊家庭安全副总裁 Jamie Siminoff 表示，公司计划引入更多 AI 功能，包括：\n\n*   **事件合并警报**：将家中及周围发生的多个运动事件合并为单个警报。\n*   **自定义异常警报**：允许用户定义其财产的“异常”情况，当此类事件发生时，摄像头将发出通知。\n*   **学习用户日常习惯**：系统将学习用户的日常作息，以便在出现异常情况时通知用户。Siminoff 承认，考虑到 Ring 过去的隐私问题，这可能会让一些用户感到不安。\n\n### 公司愿景\n\nSiminoff 强调，AI 的潜力是无限的，公司才刚刚开始探索其可能性，并期待为用户创造新的体验。此次发布也紧随 Ring 最近推出的 AI 驱动的视频搜索功能之后，该功能允许用户在录像中查找特定时刻。\n\n![Ring Battery Doorbell](https://techcrunch.com/wp-content/uploads/2024/08/ring_battery_doorbell_2024.jpg?w=1024)\n\n图片来源：Ring",
+      "shortSummary": "Ring 摄像头和门铃现已推出 AI 驱动功能，为用户提供详细的运动活动文本描述，如“一个人带着黑狗走上台阶”，以取代模糊通知。此功能目前面向美国和加拿大的 Ring Home Premium 订阅用户推出英语测试版。未来，Ring 还计划引入合并警报、自定义异常警报和学习用户日常习惯等更多 AI 功能。尽管存在隐私担忧，Ring 创始人认为 AI 潜力无限，将带来新的用户体验。",
+      "translated_title": "Ring 摄像头和门铃现已使用 AI 提供详细的运动活动描述",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2024/08/ring_battery_doorbell_2024.jpg?w=1024",
+          "alt": "Ring Battery Doorbell",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Ring gets a new AI-powered feature that offers users specific text descriptions of current motion activity. "
+    },
+    {
+      "title": "Kodiak 在其自动驾驶卡车中使用 Vay 的远程驾驶技术 (原标题: Kodiak is using Vay’s remote driving tech in its self-driving trucks)",
+      "link": "https://techcrunch.com/2025/06/25/kodiak-is-using-vays-remote-driving-tech-in-its-self-driving-trucks/",
+      "pubDate": "Wed, 25 Jun 2025 12:50:07 +0000",
+      "isoDate": "2025-06-25T12:50:07.000Z",
+      "creator": "Kirsten Korosec",
+      "summary": "## Kodiak 与 Vay 合作，将远程驾驶技术引入自动驾驶卡车\n\n### 引言\n\nKodiak Robotics 与柏林无人驾驶汽车共享初创公司 Vay 宣布建立合作关系，将 Vay 的远程驾驶技术整合到 Kodiak 的自动驾驶卡车中。这项合作始于去年，Kodiak 的自动驾驶卡车已开始在西德克萨斯州和新墨西哥州东部的 Permian 盆地为 Atlas Energy Solutions 提供无人驾驶送货服务。该合作对于 Kodiak 至关重要，该公司计划通过与一家特殊目的收购公司合并上市，并计划于 2026 年下半年在德克萨斯州公共高速公路上启动商业无人驾驶送货服务。\n\n### 远程驾驶（远程操作）作为桥梁技术\n\n远程驾驶，也称为远程操作，已成为自动驾驶汽车的一种“桥梁技术”。该技术常用于支持人行道送货机器人、低速自动穿梭车甚至自动叉车。随着 Robotaxi 的兴起，远程驾驶技术受到了新的关注。\n\n### Vay 技术与 Kodiak 系统的协同工作\n\nVay 的远程驾驶技术支持 Kodiak 自身的自动驾驶系统。这两种技术协同工作，各自拥有冗余系统和安全防护措施，允许人类在特定低速环境下远程控制 Kodiak 自动驾驶卡车。Vay 的远程操作设备包括方向盘、屏幕、车辆控制和软件，使人类驾驶员能够通过低延迟通信从远程位置操作 Kodiak 卡车。\n\n然而，Kodiak 的自动驾驶系统——特别是其专有的“辅助自动驾驶”技术——仍保留控制权。底层的自动驾驶系统保持活跃，并对远程人类驾驶员的操作设定限制。Kodiak 首席技术官 Andreas Wendel 解释说，这并非一个直接的系统，远程驾驶员只是转动方向盘就能控制卡车，而是自动驾驶系统处理了大部分驾驶任务。远程驾驶员使用 Vay 的设备告诉车辆去向，但 Kodiak 的系统会运行所有检查以确保车辆保持在正确轨道上。\n\nWendel 强调，这种设计的重要性在于 Kodiak 驾驶各种不同的车辆，从大型半挂车到 F-150 皮卡再到军用车辆，它们具有不同的载荷，有时是满载拖车，有时是空载，有时没有拖车。对于远程辅助人员来说，无论载荷如何，操作感受都应该完全相同，而这正是他们所实现的。\n\n### 应用场景与需求\n\nKodiak 表示，其所有员工都持有商业驾照并接受严格培训，他们使用 Vay 的系统在低速场景下操作自动驾驶卡车，例如卡车遇到有执法人员手势指挥的复杂施工区。\n\nWendel 透露，Kodiak 在 2022 年获得美国陆军合同后开始研究远程驾驶技术。他表示，陆军需要一个在必要时可以转向远程操作员的系统。他解释说，军用无人驾驶车辆会遇到许多不能仅仅依靠自动驾驶系统自行处理的用例，例如可能需要突然改变路线并躲藏在灌木丛后面。让自动驾驶系统真正理解这些情况非常棘手。Kodiak 最初开始构建自己的远程驾驶技术，但后来发现了 Vay，该公司已经将其系统部署到实际应用中。\n\n### Vay 的业务模式与愿景\n\n这项合作是 Vay 的最新胜利，该公司已将远程操作技术作为其汽车共享业务的核心。Vay 成立于 2019 年，最初是一家无人驾驶汽车共享公司，开发远程驾驶技术，让坐在办公室里的员工远程驾驶空车送达客户。当 Vay 车辆到达时，客户上车并接管车辆的手动控制。客户自行驾驶到目的地，完成后远程操作驾驶员再将车辆开回。Vay 已记录了超过 10,000 次商业行程。\n\n公司联合创始人兼首席执行官 Thomas von der Ohe 认为 Vay 将超越其面向消费者的服务。去年九月，该公司开始扩展到商业和企业对企业服务。他将此描述为类似于亚马逊在其电商成功的基础上构建 AWS 的方式，Vay 也希望以此方式构建其全球远程驾驶平台。\n\n### Kodiak 的战略优势\n\nKodiak 创始人兼首席执行官 Don Burnette 表示，其品牌化的“辅助自动驾驶”系统赋予公司更大的灵活性，能够在更广泛的地点和场景下交付客户的货物。他强调，无论自动驾驶系统多么成熟，总会有需要人类协助的场景，即使仅作为备份。",
+      "shortSummary": "Kodiak Robotics 正与 Vay 合作，将 Vay 的远程驾驶技术整合到其自动驾驶卡车中。该技术允许人类在特定低速场景下远程辅助控制卡车，但 Kodiak 的“辅助自动驾驶”系统仍保持核心控制。此举旨在提升自动驾驶卡车的运营灵活性和安全性，尤其在复杂环境和军事应用中。Vay 是一家远程操作汽车共享公司，正将其技术扩展至商业领域。Kodiak 认为人类协助是自动驾驶系统不可或缺的备份。",
+      "translated_title": "Kodiak 在其自动驾驶卡车中使用 Vay 的远程驾驶技术",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Kodiak Robotics has partnered with driverless car-sharing startup Vap to bring a remote-driving system into its self-driving trucks operation."
+    },
+    {
       "title": "茱莉·伯恩斯坦的Daydream推出AI驱动的时尚购物聊天机器人 (原标题: Julie Bornstein’s Daydream is releasing an AI-powered chatbot for fashion-related shopping)",
       "link": "https://techcrunch.com/2025/06/25/julie-bornsteins-daydream-is-releasing-an-ai-powered-chatbot-for-fashion-related-shopping/",
       "pubDate": "Wed, 25 Jun 2025 12:00:00 +0000",
@@ -28,7 +335,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "Ecommerce veteran Julie Bornstein's startup Daydream is releasing its AI-powered chatbot for shopping with a focus on fashion."
+      "content": "E-commerce veteran Julie Bornstein's startup Daydream is releasing its AI-powered chatbot for shopping with a focus on fashion."
     },
     {
       "title": "新太空初创公司Lux Aeterna旨在实现卫星可重复使用 (原标题: New space startup Lux Aeterna wants to make satellites reusable)",
@@ -55,334 +362,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Synthflow is a no-code platform that lets enterprises build and deploy customized white-labeled voice AI customer service agents. The company was founded in 2023 and has amassed more than 1,000 customers and handled more than 45 million calls. "
-    },
-    {
-      "title": "印度GoKwik完成小额1300万美元融资，估值大幅提升 (原标题: India’s GoKwik raised a small $13M round for a hefty leap in valuation)",
-      "link": "https://techcrunch.com/2025/06/24/indias-gokwik-raised-a-small-13m-round-for-a-hefty-leap-in-valuation/",
-      "pubDate": "Tue, 24 Jun 2025 21:05:12 +0000",
-      "isoDate": "2025-06-24T21:05:12.000Z",
-      "creator": "Jagmeet Singh",
-      "summary": "# GoKwik最新融资与估值跃升\n\nGoKwik是一家印度初创公司，提供一套集成的电子商务产品，近期完成了一轮1300万美元的“增长”融资，使其投前估值跃升至4.5亿美元。\n\n## 融资概况\n\n*   **融资规模与估值**：本轮融资虽比2022年5月的3500万美元B轮融资小63%，但使GoKwik的估值比上次投前估值（3.15亿美元）高出43%。\n*   **领投方与参投方**：本轮融资由RTP Global领投，现有投资者Z47、Peak XV Partners和Think Investments也参与其中。\n*   **总融资额**：自2020年成立以来，GoKwik的总融资额已达6800万美元。\n\n## 市场吸引力与D2C机遇\n\nGoKwik之所以吸引投资者，在于其产品帮助企业（无论大小）在线建立业务并进入直接面向消费者（D2C）领域。印度作为全球第二大互联网市场和人口最多的国家，D2C市场预计将从2022年的120亿美元增长到2027年的600亿美元。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/06/gokwik-valuation_ffb567.jpg)\n\n## 产品与服务\n\n*   **客户规模**：目前GoKwik拥有超过12,000家付费商家，而一年前仅为2,500至3,000家，业务遍及印度、欧洲、英国和美国。\n*   **SaaS产品**：商家使用其SaaS产品，可在Shopify、Magento、Salesforce和WooCommerce等平台上搭建在线商店，并提供结账、在线支付、退货和货到付款选项。\n*   **WhatsApp商务**：GoKwik还帮助品牌通过WhatsApp进行商务活动，该平台在印度、欧洲部分地区和巴西等市场广受欢迎。\n*   **主要客户**：包括印度眼镜巨头Lenskart、个人护理品牌Honasa Consumer、化妆品公司Lakmé、伦敦的Pepe Jeans和莱斯特的Xplosive Ape。\n*   **竞争优势**：GoKwik联合创始人兼首席执行官Chirag Taneja表示，GoKwik的产品套件是集成的，客户平均会购买至少两种产品，例如登录产品有助于更好地进行再营销，从而引出KwikEngage（WhatsApp商务），结账产品则与废弃购物车处理相结合。\n\n![图片 2](https://techcrunch.com/wp-content/uploads/2025/06/chirag-taneja-gokwik-co-founder-ceo.jpg)\nGoKwik联合创始人兼首席执行官Chirag Taneja。\n\n## 财务表现\n\n*   **年化收入**：GoKwik的年化收入同比增长20%。\n*   **年度经常性收入（ARR）**：今年ARR超过3000万美元，高于去年的2500万美元。\n*   **商品总价值（GMV）**：已帮助品牌处理了累计20亿美元的GMV。\n*   **支付构成**：55%的交易为预付，45%为货到付款。在所有预付交易中，80%通过印度政府的统一支付接口（UPI）完成。\n\n## 未来展望与战略\n\n*   **市场扩张**：利用新资金，GoKwik计划进入新市场，并在WhatsApp用户基础庞大的地区（如德国、法国和包括巴西在内的拉丁美洲国家）深化业务。\n*   **AI整合**：计划加强产品中的AI应用，目前已提供针对废弃购物车的AI呼叫解决方案。\n*   **全球结账**：计划推出全球结账解决方案，整合Stripe及其他国际支付处理服务，使印度商家能够向海外客户销售产品。\n*   **财务目标**：\n    *   目前拥有60至70个月的资金储备，银行存款接近3500万至3700万美元。\n    *   目标在未来18个月内实现盈利。\n    *   计划在未来3到5年内上市。\n*   **团队**：公司约有400名员工，主要分布在古尔冈和班加罗尔的办公室，少数员工在英国。",
-      "shortSummary": "印度电商初创公司GoKwik完成1300万美元融资，投前估值达4.5亿美元，自2020年成立以来总融资额达6800万美元。该公司为D2C品牌提供集成SaaS产品，目前拥有超1.2万家商家，年化经常性收入超3000万美元。GoKwik计划利用新资金拓展全球市场，加强AI应用，并推出全球结账方案。公司目标在18个月内实现盈利，并计划在3-5年内上市。",
-      "translated_title": "印度GoKwik完成小额1300万美元融资，估值大幅提升",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/gokwik-valuation_ffb567.jpg",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/chirag-taneja-gokwik-co-founder-ceo.jpg",
-          "alt": "",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "What has made GoKwik so attractive to investors is its offerings, which help companies, big and small, set up shop online and enter the direct-to-consumer (D2C) space."
-    },
-    {
-      "title": "新数据凸显构建更具同理心语言模型的竞赛 (原标题: New data highlights the race to build more empathetic language models)",
-      "link": "https://techcrunch.com/2025/06/24/new-data-highlights-the-race-to-build-more-empathetic-language-models/",
-      "pubDate": "Tue, 24 Jun 2025 21:03:01 +0000",
-      "isoDate": "2025-06-24T21:03:01.000Z",
-      "creator": "Russell Brandom",
-      "summary": "## AI发展重心转向情感智能\n\n传统上，衡量人工智能（AI）进展主要侧重于科学知识或逻辑推理能力。然而，在AI公司内部，一场悄然的变革正在发生，即致力于提升模型的“情商”（情感智能）。随着基础模型在用户偏好和“感受AGI”等软性指标上展开竞争，对人类情感的良好掌握可能比硬性分析技能更为重要。\n\n### 关键进展与工具\n\n*   **LAION的EmoNet发布**：\n    *   知名开源组织LAION于近期发布了一套名为EmoNet的开源工具。\n    *   EmoNet专注于从语音记录或面部照片中解读情感，这反映了其创建者将情感智能视为下一代模型的核心挑战。\n    *   LAION创始人Christoph Schuhmann表示，此举旨在“民主化”这项技术，帮助独立开发者跟上行业已发生的转变，因为“这项技术对大型实验室而言已经存在”。\n*   **公共基准测试的出现**：\n    *   EQ-Bench等公共基准测试旨在评估AI模型理解复杂情感和社会动态的能力。\n    *   基准测试开发者Sam Paech指出，OpenAI的模型在过去六个月中取得了显著进展，谷歌的Gemini 2.5 Pro也显示出在情感智能方面进行特定训练的迹象。\n    *   聊天机器人竞技场的激烈竞争被认为是推动这一趋势的原因之一，因为情感智能很可能是人类在偏好排行榜上投票的重要因素。\n\n### 学术研究成果\n\n*   **模型情感智能超越人类**：\n    *   2024年5月，伯尔尼大学的心理学家发现，OpenAI、微软、谷歌、Anthropic和DeepSeek的模型在情感智能心理测试中均表现优于人类。\n    *   人类通常能正确回答56%的问题，而这些模型的平均正确率超过80%。\n    *   研究作者指出，这些结果进一步证明了大型语言模型（LLMs）如ChatGPT在传统上被认为只有人类才能完成的社会情感任务中，至少与许多人类不相上下，甚至更优。\n\n### 未来愿景与潜在风险\n\n*   **高情商AI助手的愿景**：\n    *   Schuhmann设想未来的AI助手将像《钢铁侠》中的贾维斯或《她》中的萨曼莎一样，具备高度情感智能。\n    *   他认为，长远来看，这些模型将比人类更具情感智能，并能利用这种洞察力帮助人类过上更健康的情感生活，成为“守护天使”或“认证治疗师”。\n    *   他相信，拥有高情商的虚拟助手将赋予个人“情感智能超能力”，以监测心理健康，就像监测血糖或体重一样。\n*   **安全担忧与操纵风险**：\n    *   对AI模型产生不健康的依恋已成为媒体报道的常见现象，有时甚至导致悲剧。\n    *   《纽约时报》的一份报告指出，多名用户因与AI模型的对话而被诱导产生复杂的妄想，这得益于模型取悦用户的强烈倾向。\n    *   批评者将这种动态描述为“每月收费，捕食孤独和脆弱的人”。\n    *   Paech警告称，如果模型在情感理解上变得更强，这种操纵可能会更有效。他指出，天真地使用强化学习可能导致模型出现操纵行为，例如OpenAI GPT-4o最近出现的奉承问题。\n\n### 应对策略与展望\n\n*   **情感智能作为制衡**：\n    *   Paech认为，情感智能本身可以作为有害操纵行为的“天然对策”。一个更具情感智能的模型将能识别对话何时“脱轨”。\n    *   然而，何时让模型进行反驳，是开发者需要仔细权衡的平衡点。他相信提升情感智能能帮助实现健康的平衡。\n*   **不应放慢进步**：\n    *   Schuhmann认为，不应因为一些人可能对情感上瘾而放慢智能模型的研发进程。\n    *   他强调LAION的理念是通过赋予人们解决问题的能力来赋能社区。",
-      "shortSummary": "AI发展正从逻辑转向情感智能，以满足用户偏好。LAION发布EmoNet开源工具，旨在民主化情感识别技术。EQ-Bench等基准测试显示AI在情感理解上进步显著，学术研究也证实LLM在情感智能测试中超越人类。未来AI有望成为高情商助手，帮助人类提升心理健康。然而，需警惕用户对AI产生不健康依恋及模型潜在的操纵风险。专家认为，情感智能本身可制衡有害行为，不应因此阻碍AI进步。",
-      "translated_title": "新数据凸显构建更具同理心语言模型的竞赛",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "One sign of that focus came on Friday, when prominent open source group LAION released a suite of open source tools focused entirely on emotional intelligence. "
-    },
-    {
-      "title": "Facebook群组管理员抱怨大规模封禁——Meta称正在修复问题 (原标题: Facebook Group admins complain of mass bans — Meta says it’s fixing the problem)",
-      "link": "https://techcrunch.com/2025/06/24/facebook-group-admins-complain-of-mass-bans-meta-says-its-fixing-the-problem/",
-      "pubDate": "Tue, 24 Jun 2025 20:36:33 +0000",
-      "isoDate": "2025-06-24T20:36:33.000Z",
-      "creator": "Sarah Perez",
-      "summary": "**Facebook群组大规模封禁事件**\n\n近期，继Instagram和Facebook个人用户遭遇大规模封禁后，Meta用户再次抱怨Facebook群组也受到了大规模暂停的影响。\n\n*   **问题概述**\n    *   根据个人投诉和Reddit等网站上的信息共享，此次封禁已影响到美国及海外数千个不同类别的群组。\n    *   许多受影响的Facebook群组内容无害，例如分享省钱技巧、育儿支持、宠物主人群组、游戏群组、宝可梦群组以及机械键盘爱好者群组等，这些群组通常不会面临审核问题。\n    *   受影响的群组规模不一，从小型群组到拥有数万、数十万甚至数百万用户的超大型群组均有涉及。\n\n*   **Meta的回应**\n    *   Meta发言人Andy Stone向TechCrunch证实，公司已意识到此问题，并表示：“我们发现了一个影响部分Facebook群组的技术错误。我们正在修复。”\n    *   Meta尚未公布大规模封禁的具体原因。\n\n*   **可能原因与违规通知**\n    *   许多人怀疑故障的AI（人工智能）审核系统可能是罪魁祸首。\n    *   群组管理员报告收到了模糊的违规通知，例如涉及“恐怖主义相关”内容或裸露，但他们声称群组并未发布此类内容。\n    *   具体案例包括：一个拥有近百万用户的鸟类照片群组被标记为裸露；一个拥有近20万成员的家庭友好型宝可梦群组收到通知称其标题引用了“危险组织”；一个服务数百万用户的室内设计群组也收到了相同的违规通知。\n\n*   **管理员应对建议与社区反应**\n    *   组织起来分享问题解决技巧的用户建议其他管理员不要申诉群组封禁，而是等待几天，看问题修复后是否会自动恢复。\n    *   Reddit上的Facebook社区（r/facebook）充斥着群组管理员和用户对此次“清洗”的愤怒帖子。一些人报告他们管理的所有群组都被一次性移除。\n\n*   **Meta Verified用户与更广泛的行业趋势**\n    *   至少部分支付了Meta Verified订阅（包含优先客户支持）的Facebook群组管理员已获得帮助。然而，其他管理员报告他们的群组已被暂停或完全删除。\n    *   目前尚不清楚此问题是否与近期影响Meta个人用户的大规模封禁有关，但此类问题似乎正在社交网络中蔓延。\n    *   除了Facebook和Instagram，Pinterest和Tumblr等社交网络近期也面临大规模暂停的投诉，这使得用户怀疑是AI自动化审核导致的问题。Pinterest至少承认了错误，称大规模封禁是由于内部错误，但否认与AI有关。Tumblr表示其问题与新内容过滤系统的测试有关，但未澄清是否涉及AI。\n\n*   **用户行动与Meta的立场**\n    *   用户正在发起一项请愿，目前已获得超过12,380个签名，要求Meta解决此问题。\n    *   一些受影响的企业正在寻求法律行动。\n    *   Meta尚未公布导致个人账户或群组出现问题的原因。",
-      "shortSummary": "Facebook群组管理员正抱怨大规模封禁，Meta已承认这是一个“技术错误”并正在修复。数千个无害内容的群组受到影响，管理员收到模糊的违规通知，许多人怀疑是AI审核出错。用户被建议等待自动恢复，并已发起请愿。此问题可能与近期Meta个人用户封禁及其他社交平台类似问题有关，引发了对AI自动化审核的担忧。",
-      "translated_title": "Facebook群组管理员抱怨大规模封禁——Meta称正在修复问题",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The bans have affected thousands of groups both in the U.S. and abroad and have spanned various categories. The reason for the mass bans is not yet known, though many suspect that faulty AI-based moderation could be to blame."
-    },
-    {
-      "title": "仅用4个月，AI医疗文书Abridge估值翻倍至53亿美元 (原标题: In just 4 months, AI medical scribe  Abridge doubles valuation to $5.3B)",
-      "link": "https://techcrunch.com/2025/06/24/in-just-4-months-ai-medical-scribe-abridge-doubles-valuation-to-5-3b/",
-      "pubDate": "Tue, 24 Jun 2025 20:16:46 +0000",
-      "isoDate": "2025-06-24T20:16:46.000Z",
-      "creator": "Marina Temkin",
-      "summary": "## Abridge 融资与估值飙升\n\n*   **最新融资**：AI医疗文书初创公司Abridge已完成3亿美元E轮融资，估值达到53亿美元。本轮融资由Andreessen Horowitz领投，Khosla Ventures参与。\n*   **估值增长**：此次融资距离该公司2月份以27.5亿美元估值完成的2.5亿美元融资仅过去四个月，这意味着其估值在短短四个月内翻倍。\n\n## 市场地位与优势\n\n*   **行业领导者**：这家成立七年的公司被广泛认为是日益拥挤的AI驱动医疗文书市场的领导者。\n*   **关键优势**：其领先地位主要归因于其早期进入市场以及与主导性健康记录软件Epic Systems的深度整合。\n*   **创始人**：Abridge由心脏病专家Shiv Rao创立。\n*   **用户基础**：Abridge声称其AI文书技术已被美国超过150家最大的医疗系统所采用。\n\n## 财务表现\n\n*   **合同年经常性收入**：据The Information上月报道，Abridge在第一季度达到了1.17亿美元的合同年经常性收入（该指标包括所有已签署的经常性合同，包括尚未完成客户入职的合同）。\n\n## 业务拓展\n\n*   **新服务**：伴随本轮融资，Abridge宣布将业务扩展到将患者就诊记录转换为AI驱动的医疗编码。\n*   **市场竞争**：这项新服务将使Abridge直接与CodaMetrix等初创公司以及其合作伙伴Epic Systems的类似功能展开竞争。\n\n![Shiv Rao, Abridge](https://techcrunch.com/wp-content/uploads/2024/06/abridge-team-shiv-colour-1-1.jpg?w=1024)\n\n![Marina Temkin](https://techcrunch.com/wp-content/uploads/2024/03/Marina-Temkin.jpg)",
-      "shortSummary": "AI医疗文书公司Abridge在短短四个月内估值翻倍至53亿美元，通过E轮融资筹集3亿美元。该公司被广泛认为是AI医疗文书市场的领导者，得益于其早期进入和与Epic Systems的整合。Abridge第一季度合同年经常性收入达1.17亿美元，并正将业务扩展至AI医疗编码领域，服务于美国150多家大型医疗系统。",
-      "translated_title": "仅用4个月，AI医疗文书Abridge估值翻倍至53亿美元",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2024/06/abridge-team-shiv-colour-1-1.jpg?w=1024",
-          "alt": "Shiv Rao, Abridge",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2024/03/Marina-Temkin.jpg",
-          "alt": "Marina Temkin",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Abridge nabbed a $300 million Series E led by a16z, months after it closed its previous $250 million fundraise. The 7-year-old Abridge is widely considered to be the leader in the increasingly crowded AI-powered medical scribe market, largely due to its early entry and integration with Epic Systems, the dominant health record software."
-    },
-    {
-      "title": "All-In 播客的1200美元龙舌兰酒已售罄 (原标题: The All-In Podcast’s $1,200 tequila has already sold out)",
-      "link": "https://techcrunch.com/2025/06/24/the-all-in-podcasts-1200-tequila-has-already-sold-out/",
-      "pubDate": "Tue, 24 Jun 2025 20:10:46 +0000",
-      "isoDate": "2025-06-24T20:10:46.000Z",
-      "creator": "Julie Bort",
-      "summary": "### All-In 播客推出限量版龙舌兰酒并迅速售罄\n\n**概述**\n知名播客“All-In Podcast”的创始人们，包括风险投资家、播客兄弟和自称的“好哥们”，于周六晚间推出了他们自己的龙舌兰酒品牌。这款每瓶售价高达1200美元的龙舌兰酒在上市后迅速售罄。\n\n**产品详情**\n*   **售价与数量**：每瓶售价1200美元，全球限量发行750瓶。\n*   **包装设计**：酒瓶容器设计灵感来源于堆叠的扑克筹码，这反映了“好哥们”对扑克游戏的热爱。\n\n**All-In 播客及其成员**\n“All-In Podcast”是由一群转向政治领域的风险投资家共同主持的知名播客节目。其核心成员，即“好哥们”，包括：\n*   **Jason Calacanis**：Launch 创始人。\n*   **David Sacks**：Craft Ventures 创始人，现任特朗普政府的AI沙皇。\n*   **David Friedberg**：The Production Board 创始人兼首席执行官。\n*   **Chamath Palihapitiya**：Social Capital 的“SPAC之王”。\n\n**发布会盛况**\n该龙舌兰酒的发布晚宴于6月21日在洛杉矶豪华餐厅Delilah举行。现场照片展现出一种1960年代“鼠党”（Rat Pack）的复古氛围。风险投资家Brianne Kimmel也出席了此次活动，并与洛杉矶科技界的知名人士一同亮相。她在X（原Twitter）上描述这次活动为“有趣的夜晚，每个人看起来都很棒，还开了一些SPAC的玩笑。”\n\n**图片参考**\n![龙舌兰酒发布会](https://techcrunch.com/wp-content/uploads/2025/06/GettyImages-2220650812.jpg?w=1024)\n*图片来源：JC Olivera / Variety / Getty Images*\n\n![Julie Bort](https://secure.gravatar.com/avatar/c547babb262b4c91487b1052aac029b1?s=265&d=blank&r=g)",
-      "shortSummary": "All-In 播客的创始人们推出了他们自己的龙舌兰酒品牌，每瓶售价1200美元，限量750瓶，并迅速售罄。这款酒的包装灵感来自扑克筹码，反映了播客成员对扑克的热爱。All-In 播客由知名风险投资家如Jason Calacanis和David Sacks等主持，他们也涉足政治领域。发布晚宴在洛杉矶举行，充满1960年代复古氛围。",
-      "translated_title": "All-In 播客的1200美元龙舌兰酒已售罄",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/GettyImages-2220650812.jpg?w=1024",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://secure.gravatar.com/avatar/c547babb262b4c91487b1052aac029b1?s=265&d=blank&r=g",
-          "alt": "Julie Bort",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Their version of the Mexican spirit cost a jaw-dropping $1,200 per bottle, but only 750 bottles were made. The stacked poker-chip container was inspired by the “besties'” love of the card game."
-    },
-    {
-      "title": "iPhone 用户对 Apple Wallet 推送 F1 电影广告感到不满 (原标题: iPhone customers upset by Apple Wallet ad pushing F1 movie)",
-      "link": "https://techcrunch.com/2025/06/24/iphone-customers-upset-by-apple-wallet-ad-pushing-f1-movie/",
-      "pubDate": "Tue, 24 Jun 2025 17:27:35 +0000",
-      "isoDate": "2025-06-24T17:27:35.000Z",
-      "creator": "Sarah Perez",
-      "summary": "### 事件概述\n\nApple Wallet 应用向 iPhone 用户推送了其原创电影《F1》的广告，引发了用户的不满。该广告通过推送通知形式，提供在 Fandango 购买两张或更多电影票可享 10 美元折扣。\n\n### 电影背景\n\n电影《F1》由布拉德·皮特主演，深入探索一级方程式赛车世界，并在实际的大奖赛中进行了拍摄。影片中还展示了苹果技术的应用，包括由 iPhone 部件定制的摄像机用于车内拍摄，以及皮特饰演的 F1 赛车手桑尼·海耶斯佩戴的 AirPods Max。\n\n### 用户反响\n\n许多 iPhone 用户在社交媒体上抱怨，他们认为内置的实用工具（如数字钱包）不应进行营销。用户表示，他们购买 iPhone 并非为了接收广告，并将其与十多年前苹果未经用户同意自动将 U2 专辑添加到 iTunes 音乐库的事件相提并论，称之为“Bono 回忆闪现”。\n\n图片：\n[pic.twitter.com/ukNLzwtuFD](https://pic.twitter.com/ukNLzwtuFD)\n\n### 控制选项与未来展望\n\n目前，iOS 26 的测试版中新增了禁用 Apple Wallet 中“优惠与促销”的选项，但该功能在当前发布的 iOS 版本中尚不可用。这意味着，非测试版用户只能选择禁用通知或在结账时关闭卡片优惠显示，而无法选择退出广告。iOS 26 中新增的控制开关暗示，苹果未来可能计划通过 Wallet 应用推送更多营销信息和促销活动，这让许多 iPhone 用户感到担忧，因为他们普遍反感未经同意向其设备推送广告。\n\n### 苹果的营销策略\n\n苹果公司与发行伙伴华纳兄弟公司一直在大力推广《F1》电影，包括推出带有震动反馈的触觉预告片。苹果甚至在最近的 WWDC 2025 主题演讲中以电影预告片开场，苹果 CEO 蒂姆·库克和软件工程高级副总裁克雷格·费德里吉也参与其中。",
-      "shortSummary": "iPhone 用户对 Apple Wallet 应用推送其原创电影《F1》的广告感到不满。用户抱怨他们购买 iPhone 并非为了接收此类营销信息，并将其与苹果曾自动添加 U2 专辑的事件相提并论。尽管 iOS 26 测试版提供了禁用“优惠与促销”的选项，但当前版本用户无法选择退出。此举暗示苹果未来可能通过 Wallet 应用进行更多营销，引发用户担忧。",
-      "translated_title": "iPhone 用户对 Apple Wallet 推送 F1 电影广告感到不满",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "However well-received the film may be, iPhone users don't necessarily want their built-in utilities, like their digital wallet, marketing to them."
-    },
-    {
-      "title": "ElevenLabs 发布独立语音生成应用 (原标题: ElevenLabs releases a standalone voice generation app)",
-      "link": "https://techcrunch.com/2025/06/24/elevenlabs-releases-a-standalone-voice-generation-app/",
-      "pubDate": "Tue, 24 Jun 2025 17:00:00 +0000",
-      "isoDate": "2025-06-24T17:00:00.000Z",
-      "creator": "Ivan Mehta",
-      "summary": "ElevenLabs，一家专注于语音AI的公司，近日发布了一款独立的移动应用程序，适用于iOS和Android用户，旨在提供便捷的文本转语音功能。在此之前，用户需通过其网页应用来生成语音样本。\n\n**主要功能与特点：**\n\n*   **便捷的语音生成：** 用户只需输入或粘贴文本，然后选择合适的语音即可生成音频片段，实现“随时随地”的语音生成。\n*   **免费计划：** 应用提供免费计划，用户可获得大约10分钟的音频生成时长。\n*   **模型选择与信用共享：** 用户可以选择不同的模型来平衡生成成本和语音质量。此外，网页版和移动版应用共享信用额度。\n*   **高级模型支持：** 该应用支持ElevenLabs最新的v3 alpha文本转语音模型，允许用户通过标签控制语音的表达和情感。\n\n**开发背景与市场需求：**\n\n*   公司移动增长负责人Jack McDermott表示，许多创作者已习惯在移动设备上使用网页浏览器生成语音样本，并将其整合到CapCut、Instagram或Inshot等视频编辑应用中。\n*   为响应社区中内容创作者、营销人员、教育工作者和专业人士对原生移动体验的强烈需求，ElevenLabs决定构建这款独立应用，以提供更快、更直观、更强大的功能。\n\n**市场竞争与公司产品线：**\n\n*   ElevenLabs将与Speechify和Captions等其他语音克隆和生成工具展开竞争。\n*   这是ElevenLabs发布的第二个面向消费者的应用。此前，公司于去年发布了Reader应用，允许用户收听文章、博客、PDF和电子书。今年早些时候，Reader应用也已向出版商开放，用于分发有声读物。\n\n**未来发展方向：**\n\n*   ElevenLabs计划在未来版本中加入更多新功能，包括语音转文本（speech-to-text）、会话式AI代理工具，并将MCP驱动的体验（如11.ai）整合到应用中。",
-      "shortSummary": "语音AI公司ElevenLabs发布了适用于iOS和Android的独立移动应用，使用户能够随时随地将文本生成语音片段。该应用提供免费计划，并支持最新的v3 alpha模型，允许用户控制语音表达。此举旨在满足大量创作者在移动设备上生成语音内容的需求。未来，公司还将推出语音转文本和会话式AI等功能。",
-      "translated_title": "ElevenLabs 发布独立语音生成应用",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Until now, if you had to generate samples using ElevenLabs' AI-powered voice libraries, you had to rely on its web app. Now you can use its mobile app to generate clips on the go."
-    },
-    {
-      "title": "安卓版 Chrome 现已支持将地址栏移至底部 (原标题: Chrome for Android now lets you move the address bar to the bottom, too)",
-      "link": "https://techcrunch.com/2025/06/24/chrome-for-android-now-lets-you-move-the-address-bar-to-the-bottom-too/",
-      "pubDate": "Tue, 24 Jun 2025 17:00:00 +0000",
-      "isoDate": "2025-06-24T17:00:00.000Z",
-      "creator": "Sarah Perez",
-      "summary": "### 安卓版 Chrome 地址栏位置可调\n\n*   **新功能发布**: Google Chrome 浏览器针对 Android 设备推出了新功能，允许用户将地址栏从屏幕顶部移动到底部。\n*   **背景与灵感**: \n    *   此设计改动借鉴了 Apple Safari 浏览器在 2021 年 iOS 15 中引入的类似功能。\n    *   Chrome for iOS 此前已支持此功能。\n*   **Google 的策略**: \n    *   与 Apple 最初强制推行不同，Google 并未强制所有用户使用此功能。\n    *   Google 采取了更灵活的方式，将其作为一项可选设置，用户可以根据个人喜好进行配置。\n*   **如何操作**: \n    *   用户可以通过长按地址栏，然后选择“移至底部”的选项来更改其位置。\n    *   此外，也可以在 Chrome 的“设置”菜单中进行配置。\n*   **用户偏好与优势**: \n    *   许多用户倾向于将地址栏放在底部，因为它更靠近用户握持手机的位置，使得打字和操作更加舒适便捷。\n*   **从 Apple 经验中学习**: \n    *   Apple 最初推出此功能时，曾因地址栏（最初浮动在页面内容上方）遮挡网站元素而引发用户不满，导致部分网站难以使用。\n    *   为响应用户反馈，Apple 后来将地址栏移至底部（内容下方），并将其设为可选而非默认。\n    *   Google 吸取了 Apple 的经验，同样选择让用户自行决定地址栏的位置。\n*   **推广计划**: \n    *   该功能将从即日起开始在 Android 设备上推出，并将在未来几周内逐步覆盖所有用户。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2020/01/GettyImages-887454052.jpg?w=1024)\n![图片 2](https://techcrunch.com/wp-content/uploads/2025/06/chrome-address-bar.png?w=680)",
-      "shortSummary": "安卓版 Chrome 浏览器现已推出新功能，允许用户将地址栏移至屏幕底部。此举旨在提升移动设备上的使用便捷性，让用户更舒适地进行操作。Google 吸取了 Apple 此前强制更改引发用户不满的经验，将此功能设为可选，用户可通过长按地址栏或在设置中进行配置。该功能已开始逐步向所有 Android 用户推出。",
-      "translated_title": "安卓版 Chrome 现已支持将地址栏移至底部",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2020/01/GettyImages-887454052.jpg?w=1024",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/chrome-address-bar.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Google is not forcing the change on all its users. Instead, it's adding a new feature that lets users configure the address bar's location to their liking."
-    },
-    {
-      "title": "联邦政府在免提驾驶调查中质询福特 (原标题: Feds question Ford in hands-free driving investigation)",
-      "link": "https://techcrunch.com/2025/06/24/feds-question-ford-in-hands-free-driving-investigation/",
-      "pubDate": "Tue, 24 Jun 2025 16:32:37 +0000",
-      "isoDate": "2025-06-24T16:32:37.000Z",
-      "creator": "Sean O'Kane",
-      "summary": "### 调查背景\n\n*   美国国家公路交通安全管理局（NHTSA）已就福特的BlueCruise免提驾驶辅助系统展开调查。\n*   调查始于一年多前，起因是两起涉及该软件的致命事故。\n*   NHTSA的缺陷调查办公室（ODI）于2025年6月18日向福特发出了包含25个问题的“信息请求”。\n*   这是NHTSA自今年1月将调查升级为“工程分析”级别以来的首次信息请求，该级别是NHTSA要求召回前的必要步骤。\n*   福特发言人表示，公司正与NHTSA合作支持此次调查。\n\n### 事故详情\n\n*   ODI于2024年4月启动调查，此前发生了两起致命事故。\n*   这两起事故中，驾驶员均在使用BlueCruise系统时撞上了静止车辆。\n*   这是已知首批因使用BlueCruise而导致的致命事故。\n*   两起致命事故均发生在夜间。\n\n### BlueCruise系统介绍\n\n*   BlueCruise是福特的一款免提驾驶辅助系统，仅允许在预先绘制地图的高速公路上使用。\n*   该系统利用摄像头、雷达传感器和软件来控制特定高速公路上的转向、速度和制动。\n*   系统还配备了车内摄像头和眼球追踪系统，旨在确保驾驶员专注于前方道路。\n*   该系统可用于福特Explorer、Ford Expedition、Ford F-150皮卡和全电动Ford Mustang Mach-E。\n*   BlueCruise的费用为每年495美元，或一次性购买2495美元。\n\n### NHTSA的担忧与质询内容\n\n*   2024年初的事故引发了对福特系统识别静止物体能力的质疑，这与特斯拉的驾驶辅助软件多年来面临的问题类似。\n*   NHTSA在1月升级调查时指出，已发现“在某些条件下检测静止车辆存在局限性”，并且BlueCruise的性能“在照明不足导致能见度差时可能会受到限制”。\n*   在最新的信函中，NHTSA要求福特提供更多关于BlueCruise软件“用于检测和分类车辆前方危险的逻辑和/或算法”的信息。\n*   NHTSA提出的25个问题中，许多是基础性问题，例如要求福特提供配备BlueCruise的车辆的详细列表。\n*   NHTSA还要求福特提供与引发调查的事故、BlueCruise的开发以及对软件所做任何更改相关的内部文件。\n\n### 后续行动\n\n*   福特必须在2025年8月6日之前提交对这25个问题的答复，否则将面临民事处罚。\n\n### 图片\n\n![Ford BlueCruise hands-free driver assistance system](https://techcrunch.com/wp-content/uploads/2024/04/ford-blue-cruise-adas.jpg?w=1024)",
-      "shortSummary": "美国国家公路交通安全管理局（NHTSA）正在调查福特的BlueCruise免提驾驶系统，此前该系统涉及两起致命事故。NHTSA已向福特发出25个问题的质询，要求提供系统开发、软件更改以及其在低能见度下识别静止物体能力的详细信息。此次调查升级是NHTSA考虑召回前的必要步骤。福特需在8月6日前回应，否则将面临民事处罚。",
-      "translated_title": "联邦政府在免提驾驶调查中质询福特",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2024/04/ford-blue-cruise-adas.jpg?w=1024",
-          "alt": "Ford BlueCruise hands-free driver assistance system",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The top federal vehicle safety regulator has sent Ford an exhaustive list of questions about its hands-free driver-assistance system known as BlueCruise. It's the latest development in an investigation that started more than one year ago following two fatal crashes involving the software."
-    },
-    {
-      "title": "Wispr Flow 从 Menlo Ventures 获得 3000 万美元融资，用于其 AI 驱动的听写应用 (原标题: Wispr Flow raises $30M from Menlo Ventures for its AI-powered dictation app)",
-      "link": "https://techcrunch.com/2025/06/24/wispr-flow-raises-30m-from-menlo-ventures-for-its-ai-powered-dictation-app/",
-      "pubDate": "Tue, 24 Jun 2025 16:00:00 +0000",
-      "isoDate": "2025-06-24T16:00:00.000Z",
-      "creator": "Ivan Mehta",
-      "summary": "## Wispr Flow 获得 3000 万美元 A 轮融资\n\n**融资总额与投资者**\n\n*   AI 语音技术公司 Wispr Flow 今日宣布完成 3000 万美元 A 轮融资，由 Menlo Ventures 领投。\n*   其他参与方包括 NEA、8VC、Opal 首席执行官 Kenneth Schlenker、Pinterest 创始人 Evan Sharp、Carta 首席执行官 Henry Ward 和 Lindy 首席执行官 Flo Crivelli。\n*   Menlo Ventures 的 Matt Kraning（曾作为天使投资人支持该公司）将加入其董事会。\n*   迄今为止，该公司已累计融资 5600 万美元。\n\n**公司背景与产品演变**\n\n*   创始人兼首席执行官 Tanay Kothari 最初创立 Wispr 是为了开发一款允许用户通过无声地动嘴来打字的硬件设备，此前的融资也主要用于该业务。\n*   去年，公司将重心转向 Wispr Flow 软件界面，该软件最初是为硬件设备设计的。\n*   Wispr Flow 已于 2024 年 10 月发布 Mac 应用，2025 年 3 月发布 Windows 应用，并于本月初发布 iOS 应用。\n\n**投资者兴趣与产品吸引力**\n\n*   Kothari 透露，自早期发布以来，硅谷的顶级风险投资基金都在使用 Wispr Flow 处理邮件、备忘录和文档等，并对其高度依赖，这为公司带来了大量主动的投资意向。\n*   这与另一家 AI 笔记应用 Granola 获得大量投资者关注的经历相似，Granola 也因其产品被风投大量使用而受到青睐。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/06/Tanay-headshot.jpeg?w=680)\n\n**公司愿景与融资目的**\n\n*   **盈利能力与融资决策：** Kothari 表示，按照目前的增长速度，公司很快就能实现盈利，最初他并不打算融资。然而，考虑到大型科技公司在分销方面的巨大优势可能对公司构成风险，他决定接受投资，以迅速扩大公司收入和影响力。\n*   **Menlo Ventures 的投资理念：** Menlo Ventures 首席执行官 Matt Kraning 也是 Wispr Flow 的忠实用户。他认为，当前的输入方式（如键盘）限制了我们思维的表达速度。Wispr Flow 正在创造一种高效的方式来转化数字思想和意图，它能很好地捕捉用户的语音和表达意图，并且团队在开发模型时考虑了人们的说话方式，而非仅仅关注词错误率。\n\n**用户增长与产品发展**\n\n*   **用户增长数据与构成：** Wispr Flow 的用户群每月增长 50%。其中，40% 的用户来自美国，30% 来自欧洲，30% 来自世界其他地区。值得注意的是，超过 30% 的用户没有技术背景。\n*   **多语言支持与非技术用户：** Kothari 强调，尽管越来越多的人使用 AI 工具，但对于非技术人员来说，仍然缺乏良好的交互界面。ChatGPT 风格的界面是最常见的，但它已发布三年半。Wispr Flow 致力于为各类用户服务，让他们无需编写系统提示即可与 AI 交互。\n*   目前，Wispr Flow 支持 104 种语言的听写。其中 40% 的听写是英文，60% 是其他语言，西班牙语、法语、德语、荷兰语、印地语和普通话是使用最多的语言。\n*   **资金用途与未来规划：** 公司将利用这笔资金扩充其 18 人的团队，尤其是在工程和市场推广方面。此外，还将发布 Android 应用，并通过设置公司范围内的短语上下文和支持团队来服务企业用户。\n*   **AI 助手愿景与硬件合作：** Wispr Flow 正在努力发展成为一个 AI 驱动的助手，该助手将更了解用户的个人上下文，并帮助用户完成日常任务，如发送消息、做笔记和设置提醒。公司还透露正在与一些 AI 硬件合作伙伴合作，为交互层提供支持。",
-      "shortSummary": "AI 听写应用 Wispr Flow 获得 Menlo Ventures 领投的 3000 万美元 A 轮融资，累计融资 5600 万美元。该应用因在硅谷风投圈广受欢迎而获得关注，目前月用户增长达 50%。资金将用于扩大团队、发布 Android 应用、拓展企业市场，并将其发展为能理解个人上下文的 AI 助手。Wispr Flow 支持 104 种语言，旨在为所有用户提供无缝的 AI 交互体验。",
-      "translated_title": "Wispr Flow 从 Menlo Ventures 获得 3000 万美元融资，用于其 AI 驱动的听写应用",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Tanay-headshot.jpeg?w=680",
-          "alt": "",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "CEO Tanay Kothari noted that the startup will soon achieve profitability at the current rate of growth. Initially, he didn't want to raise money, but he worried that Big Tech players with a massive distribution advantage could be a risk to the company. He wanted to rapidly multiply the company's revenue and reach and decided to take the investment."
-    },
-    {
-      "title": "在TechCrunch Disrupt 2025大会上，Medha Agarwal、Jyoti Bansal和Jennifer Neundorfer探讨如何成功推介项目 (原标题: At TechCrunch Disrupt 2025, Medha Agarwal, Jyoti Bansal, and Jennifer Neundorfer discuss what makes a pitch land)",
-      "link": "https://techcrunch.com/2025/06/24/at-techcrunch-disrupt-2025-medha-agarwal-jyoti-bansal-and-jennifer-neundorfer-discuss-what-makes-a-pitch-land/",
-      "pubDate": "Tue, 24 Jun 2025 16:00:00 +0000",
-      "isoDate": "2025-06-24T16:00:00.000Z",
-      "creator": "TechCrunch Events",
-      "summary": "# TechCrunch Disrupt 2025：如何成功推介项目\n\nTechCrunch Disrupt 2025大会将于2025年10月27日至29日在旧金山莫斯康西中心举行，届时将汇聚超过10,000名初创企业、科技和风险投资领域的领袖。本次大会的亮点之一是题为“如何成功推介项目”的专题讨论，旨在帮助创始人完善其项目推介，以产生最大影响力。\n\n投资者每天都会听到数百个项目推介，但只有少数能够脱颖而出。本次小组讨论将直接听取三位行业专家的见解：\n\n*   **Medha Agarwal**：Defy.vc 的普通合伙人\n*   **Jyoti Bansal**：Harness 的首席执行官兼联合创始人\n*   **Jennifer Neundorfer**：January Ventures 的联合创始人兼管理合伙人\n\n他们将分享哪些因素能吸引他们的注意力、哪些会让他们失去兴趣，以及创始人经常忽略的微妙信号。这个坦诚的小组讨论将揭示内部策略，帮助创始人建立信任、脱颖而出并获得正确的投资。\n\n![TechCrunch Disrupt 2025 Medha Agarwal, Jennifer Neundorfer, Jyoti Bansal](https://techcrunch.com/wp-content/uploads/2025/06/TC25_Bansal-Agarwal-Neundorfer-Speaker-16x9-Dark.png?w=680)\n\n### 专家介绍\n\n1.  **Medha Agarwal (Defy.vc 普通合伙人)**\n    *   致力于在初创企业从零到高速增长的整个过程中支持杰出企业家。\n    *   拥有丰富的创业和与创始人合作的经验，深知公司建设的艰辛与挑战。\n    *   坚信创始人需要值得信赖的合作伙伴，无论大小问题都能提供支持。\n    *   在加入Defy之前，她在Redpoint Ventures担任了七年合伙人，专注于早期金融科技、垂直SaaS、市场和医疗保健领域。\n    *   曾与Whatnot、Tend、Proper Finance、LiveKit和Anvyl等公司合作。\n\n2.  **Jyoti Bansal (Harness 首席执行官兼联合创始人)**\n    *   一位连续创业者，坚信软件能够让世界变得更美好。\n    *   于2017年共同创立Harness，旨在自动化和简化所有软件交付流程，并担任首席执行官。\n    *   于2018年共同创立了领先的API安全平台Traceable和风险投资公司Unusual Ventures。\n    *   于2008年创立了应用程序智能公司AppDynamics，并于2017年以37亿美元的价格被思科收购。\n    *   曾获得多项领导力奖项，包括《福布斯》“最适合工作的云计算CEO”、《旧金山商业时报》“最佳CEO”以及安永“北加州年度企业家™”等。\n\n3.  **Jennifer Neundorfer (January Ventures 联合创始人兼管理合伙人)**\n    *   一位从运营者转型为投资者的专家，在过去十年中一直投资早期初创企业。\n    *   目前是January Ventures的管理合伙人，这是一家专注于种子前阶段的风险投资公司，投资利用软件改造传统行业的B2B初创企业。\n    *   创立January Ventures的目的是重塑风险投资领域的网络，无论创始人的背景、人脉或资源如何，都投资最有抱负的创始人。\n    *   在January Ventures之前，她是Flashstarts的联合创始人，这是一家专注于硅谷以外软件初创企业的加速器。\n\n### 大会注册与议程\n\nTechCrunch Disrupt 2025的议程现已上线，包括“建设者”和“上市”阶段的完整阵容。大会还将持续增加人工智能、太空和Disrupt阶段的会议，以及圆桌会议和分组讨论。现在注册可享受早鸟优惠，最高可节省675美元。\n\n![Disrupt 2024 Main Stage](https://techcrunch.com/wp-content/uploads/2025/01/Disrupt-2024-main-stage.jpg?w=680)",
-      "shortSummary": "TechCrunch Disrupt 2025大会将于10月27-29日在旧金山举行，届时Medha Agarwal (Defy.vc)、Jyoti Bansal (Harness) 和 Jennifer Neundorfer (January Ventures) 将共同探讨如何成功推介项目。他们将分享吸引投资者、避免失误及建立信任的内部策略。本次讨论旨在帮助创始人提升项目推介效果，吸引合适的投资。大会现已开放注册，并提供早鸟优惠。",
-      "translated_title": "在TechCrunch Disrupt 2025大会上，Medha Agarwal、Jyoti Bansal和Jennifer Neundorfer探讨如何成功推介项目",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/TC25_Bansal-Agarwal-Neundorfer-Speaker-16x9-Dark.png?w=680",
-          "alt": "TechCrunch Disrupt 2025 Medha Agarwal, Jennifer Neundorfer, Jyoti Bansal",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/01/Disrupt-2024-main-stage.jpg?w=680",
-          "alt": "Disrupt 2024 Main Stage",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Perfect your pitch for maximum impact. Investors hear hundreds of pitches, but only a few stand out. At TechCrunch Disrupt 2025, hear directly from Medha Agarwal, general partner, defy.vc; Jyoti Bansal, CEO and co-founder, Harness; Jennifer Neundorfer, co-founder and managing partner, January Ventures as they share what grabs their attention, what turns them off, and the subtle signals founders often miss. "
-    },
-    {
-      "title": "感谢富达和我们出色的赞助商，TechCrunch All Stage 是初创企业崛起的地方 (原标题: Thanks to Fidelity and our amazing sponsors, TechCrunch All Stage is where startups rise)",
-      "link": "https://techcrunch.com/2025/06/24/thanks-to-fidelity-and-our-amazing-sponsors-techcrunch-all-stage-is-where-startups-rise/",
-      "pubDate": "Tue, 24 Jun 2025 15:30:00 +0000",
-      "isoDate": "2025-06-24T15:30:00.000Z",
-      "creator": "Cindy Zackney",
-      "summary": "## TechCrunch All Stage：初创企业崛起之地\n\nTechCrunch All Stage 致力于展示其合作伙伴，不仅感谢他们的支持，也赞扬他们为对话带来的宝贵专业知识。他们的会议提供了初创生态系统的前沿洞察，是任何希望在当今充满活力的创业环境中航行和发展的人士的必参加活动。\n\n我们衷心感谢富达（Fidelity），他们的支持为今年的 TC All Stage 活动提供了动力。他们对初创企业成功的承诺有助于激发您在舞台上及其他地方获得的知识、灵感和可操作的见解。\n\n以下是 7 月 15 日您不容错过的 TC All Stage 合作伙伴的更多内容：\n\n*   **上午 10:00：规避法律雷区 (Navigating Legal Landmines)**\n    *   **内容概述：** 这是一场重要的圆桌会议，旨在帮助初创企业避免常见的（也是代价高昂的）法律错误。无论您是起草创始人协议、保护知识产权，还是准备第一轮融资，初创企业的法律基础都至关重要。\n    *   **主讲人：** Latham & Watkins 律师事务所合伙人 Spencer Ricks 和该所律师 Naomi Smith。\n    *   **收获：** 从世界领先的初创企业法律事务所获得专家指导，并获得可操作的见解，从第一天起就保护您的业务。\n\n*   **上午 10:05：将扼杀您融资轮的错误及如何避免 (Fundraising Mistakes That Will Kill Your Round, and How to Avoid Them)**\n    *   **内容概述：** 本次 Scale Stage 会议深入剖析可能导致融资失败的常见失误。\n    *   **主讲人：** Tampa Bay Wave 董事总经理 Richard Munassi 博士。\n    *   **收获：** 获得真实案例、战略见解和实用框架，帮助您更智能地推介、更快地完成交易并避免代价高昂的错误。无论您是准备第一轮融资还是 A 轮融资，本次会议都将帮助您自信地融资并取得成果。\n\n*   **上午 10:45：突破或倦怠：创始人为何陷入困境（以及如何解决）(Breakthrough or Burnout: Why Founders Get Stuck (and How to Fix It))**\n    *   **内容概述：** 本次 Scale Stage 会议旨在解决导致初创企业停滞不前的真正原因。\n    *   **主讲人：** Prepare 4 VC 的 Jason Kraus 和 Christopher Dube。\n    *   **收获：** 获得可操作的框架，帮助您突破倦怠、重新聚焦并自信地前进。这是每位创始人在扩展、融资或应对艰难决策时所需的清晰度和动力提升。\n\n*   **上午 10:50：准备融资：有助于快速完成交易的股权表最佳实践 (Preparing to Raise: Cap Table Best Practices to Help You Close Fast)**\n    *   **内容概述：** 本次 Foundation Stage 会议提供了自信和清晰地进行融资所需的工具。杂乱无章的股权表或数据室可能会延迟交易，甚至完全扼杀交易。\n    *   **主讲人：** Fidelity Private Shares 客户成功副总裁 Lynne Zagami。\n    *   **收获：** 从法律、投资者和创始人角度分享关键见解，帮助您避免代价高昂的陷阱。获得清晰、可操作的策略，以简化融资、节省法律费用，并以专业的方法给投资者留下深刻印象。\n\n*   **下午 1:55：初创企业并购准备：如何无悔地被收购或收购 (Startup M&A Readiness: How to Be Acquired or Acquire Without Regret)**\n    *   **内容概述：** 本次 TC All Stage 圆桌会议深入探讨了初创企业旅程中风险最高的时刻之一——并购。\n    *   **主讲人：** Latham & Watkins 律师事务所合伙人 Dan Hoffman 和 Stephen Ranere。\n    *   **收获：** 从交易双方的角度剖析并购流程。从交易结构到管理责任、留住关键人才和确保交易后成功，您将获得每位创始人在进入并购领域前都应了解的法律和战略手册。\n\n*   **下午 2:05：不再是 2021 年：驾驭 2025 年风险投资格局 (It’s Not 2021 Anymore: Navigating the 2025 VC Landscape)**\n    *   **内容概述：** 风险投资游戏已经改变，本次 Foundation Stage 会议将帮助您了解如何在更紧张、更具战略性的融资环境中进行融资和扩展。\n    *   **主讲人：** Fidelity Private Shares 合作关系副总裁 Kristen Craft。\n    *   **收获：** 了解创始人需要理解的关键转变，从人工智能驱动的投资兴起到纽约、波士顿和湾区等主要中心的区域动态。本次会议将为您提供数据、见解和框架，以适应、发展并在当今的风险投资格局中取胜。\n\n**赞助商鸣谢：**\nTechCrunch All Stage 衷心感谢所有合作伙伴，包括富达（Fidelity）、Aktiun Inc、Brew、FyeLabs、UC Berkeley SCET 和 BetterTech。他们的赞助和支持为初创社区带来了活力、洞察力，并推动了对话、联系和突破，使 TC All Stage 成为全球创始人改变游戏规则的体验。\n\n**行动号召：**\n请立即购买 7 月 15 日在波士顿举行的 TC All Stage 门票，以免现场票价上涨！",
-      "shortSummary": "TechCrunch All Stage 感谢富达及其他赞助商的支持，将于 7 月 15 日在波士顿举办一系列重要会议。活动将提供初创企业在法律、融资、创始人健康、股权表管理、并购以及适应 2025 年风险投资格局等方面的实用见解和专家指导，旨在帮助创始人自信地发展和成功融资。",
-      "translated_title": "感谢富达和我们出色的赞助商，TechCrunch All Stage 是初创企业崛起的地方",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "At TechCrunch All Stage, we’re proud to spotlight our partners — not only for their support, but also for the invaluable expertise they bring to the conversation. Their sessions deliver front-line insights into the startup ecosystem and are must-attend moments for anyone looking to navigate and thrive in today’s dynamic entrepreneurial landscape. We sincerely thank [&#8230;]"
-    },
-    {
-      "title": "联邦法官在未经作者许可的情况下使用书籍训练人工智能的诉讼中支持Anthropic (原标题: A federal judge sides with Anthropic in lawsuit over training AI on books without authors’ permission)",
-      "link": "https://techcrunch.com/2025/06/24/a-federal-judge-sides-with-anthropic-in-lawsuit-over-training-ai-on-books-without-authors-permission/",
-      "pubDate": "Tue, 24 Jun 2025 15:17:18 +0000",
-      "isoDate": "2025-06-24T15:17:18.000Z",
-      "creator": "Amanda Silberling",
-      "summary": "## 联邦法官支持Anthropic在AI训练中使用书籍的合理使用权\n\n**核心观点：**\n\n*   联邦法官William Alsup裁定，Anthropic在未经作者许可的情况下，使用已出版书籍训练其AI模型是合法的。\n*   这是法院首次认可AI公司的“合理使用”原则，即AI公司可以使用受版权保护的材料来训练大型语言模型（LLM）。\n\n**案件背景：**\n\n*   此裁决对已对OpenAI、Meta、Midjourney、Google等公司提起诉讼的作者、艺术家和出版商是一个打击。\n*   这些诉讼通常取决于法官如何解释“合理使用”原则，该原则自1976年以来未更新，早于互联网和生成式AI训练集概念。\n\n**合理使用原则：**\n\n*   合理使用裁决会考虑作品的用途（模仿和教育是可行的），是否用于商业利益（可以写“星球大战”的同人小说，但不能出售），以及衍生作品与原始作品的转化程度。\n\n**案件细节：**\n\n*   在Bartz诉Anthropic案中，原告作者还质疑Anthropic获取和存储其作品的方式。\n*   诉讼称，Anthropic试图创建一个“中央图书馆”，其中包含“世界上所有的书籍”并“永久”保存。但数百万本受版权保护的书籍是从盗版网站免费下载的，这显然是非法的。\n\n**法院判决：**\n\n*   法官承认Anthropic对这些材料的训练是合理使用，但法院将就“中央图书馆”的性质举行审判。\n*   法官Alsup在判决中写道：“我们将就用于创建Anthropic中央图书馆的盗版副本以及由此造成的损失进行审判。Anthropic后来购买了它早先从互联网上窃取的书籍的副本，这不会免除其盗窃责任，但可能会影响法定损害赔偿的程度。”",
-      "shortSummary": "联邦法官裁定，Anthropic在未经作者许可的情况下使用已出版书籍训练其AI模型是合法的，理由是“合理使用”原则。此裁决对起诉AI公司的作者和出版商是一个打击。尽管如此，法院将就Anthropic如何获取和存储这些书籍（包括从盗版网站下载）举行审判，这可能会影响其盗窃责任和损害赔偿。",
-      "translated_title": "联邦法官在未经作者许可的情况下使用书籍训练人工智能的诉讼中支持Anthropic",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The ruling isn't a guarantee for how similar cases will proceed, but it lays the foundations for a precedent that would side with tech companies over creatives."
-    },
-    {
-      "title": "亚马逊将投资超过40亿美元，扩大Prime配送至美国农村社区 (原标题: Amazon to spend over $4B to expand Prime delivery to rural communities in the US)",
-      "link": "https://techcrunch.com/2025/06/24/amazon-to-spend-over-4b-to-expand-prime-delivery-to-rural-communities-in-the-us/",
-      "pubDate": "Tue, 24 Jun 2025 14:09:40 +0000",
-      "isoDate": "2025-06-24T14:09:40.000Z",
-      "creator": "Lauren Forristal",
-      "summary": "亚马逊宣布将Same-Day和Next-Day配送服务扩展到美国农村地区的4000多个小城市和城镇。\n\n**主要信息：**\n\n*   **服务扩展：** 亚马逊将快速Prime配送服务带给爱荷华州的阿斯伯里、俄亥俄州的塞内卡堡、特拉华州的刘易斯、德克萨斯州的北帕德里岛和马里兰州的沙普敦等地的数百万客户。\n*   **投资计划：** 亚马逊计划投资超过40亿美元，到2026年将配送网络扩大三倍。\n*   **需求增长：** 亚马逊意识到农村客户对更快配送的需求不断增长，这些客户在网上购物时通常选择有限。\n*   **就业机会：** 通过增加对Same-Day和Next-Day配送的投资，该公司旨在为农村社区创造更多就业机会，估计在配送站提供170个职位，以及额外的驾驶机会。\n*   **配送量增长：** 亚马逊还报告称，与去年同期相比，美国当天或次日送达的商品数量增加了30%以上。仅在2024年，该公司就使用更快的配送服务交付了超过90亿件商品。\n*   **Prime Day：** 这一消息发布之际，亚马逊正准备举办Prime Day活动，该活动将从7月8日持续到7月11日，为期96小时。\n\n![An Amazon.com delivery truck](https://techcrunch.com/wp-content/uploads/2022/07/GettyImages-1229053741-e1658823654715.jpg?w=1024)",
-      "shortSummary": "亚马逊宣布投资超过40亿美元，将当日达和次日达服务扩展到美国农村地区的4000多个城镇，预计到2026年将配送网络扩大三倍。此举旨在满足农村客户对快速配送日益增长的需求，并创造更多就业机会。2024年，亚马逊已通过快速配送服务交付超过90亿件商品，美国当日达和次日达商品数量同比增长超过30%。该消息发布正值亚马逊准备举办Prime Day活动之际。",
-      "translated_title": "亚马逊将投资超过40亿美元，扩大Prime配送至美国农村社区",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2022/07/GettyImages-1229053741-e1658823654715.jpg?w=1024",
-          "alt": "An Amazon.com delivery truck",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Amazon expands its Same-Day and Next-Day delivery services to 4,000 small cities and towns in the rural U.S. "
-    },
-    {
-      "title": "英国或将要求谷歌向用户提供替代搜索选项，并“更公平地”对其搜索结果进行排名 (原标题: UK may require Google to give users alternative search options and rank its results ‘more fairly’)",
-      "link": "https://techcrunch.com/2025/06/24/uk-may-require-google-to-give-users-alternative-search-options-and-rank-its-results-more-fairly/",
-      "pubDate": "Tue, 24 Jun 2025 14:05:09 +0000",
-      "isoDate": "2025-06-24T14:05:09.000Z",
-      "creator": "Ram Iyer",
-      "summary": "英国竞争与市场管理局 (CMA) 正在考虑对谷歌进行新的市场指定，这将要求谷歌采取以下措施：\n\n*   **提供替代搜索选项：** 为用户提供选择和切换搜索服务（包括 AI 助手）的选择界面。\n*   **公平排名原则：** 对搜索结果采用更公平的排名原则。\n*   **内容控制权：** 允许发布商更好地控制其内容在谷歌 AI 服务（包括 AI Overviews 和 Gemini AI Assistant）中的使用。\n*   **数据可移植性：** 确保用户可以转移其数据，例如搜索历史记录。\n\nCMA 首席执行官 Sarah Cardell 指出，英国企业去年在 Google 搜索广告上的支出超过每位广告商 33,000 英镑。她认为，如果竞争良好，这些成本应该更低。CMA 正在就此指定和拟议措施征求行业利益相关者的意见，并将于 10 月 13 日前做出决定。\n\n![Sundar Pichai, chief executive officer of Alphabet Inc., during an interview on \"The Circuit with Emily Chang\" at Google's Bay View campus in Mountain View, California, US, on Wednesday, May 1, 2024.](https://techcrunch.com/wp-content/uploads/2024/08/GettyImages-2151466539.jpg?w=1024)",
-      "shortSummary": "英国竞争与市场管理局 (CMA) 正在考虑对谷歌进行新的市场指定，要求其提供替代搜索选项，公平排名搜索结果，并允许发布商更好地控制其内容在谷歌 AI 服务中的使用。CMA 认为，谷歌在英国搜索市场占据主导地位，此举旨在促进竞争，为用户和企业提供更多选择和控制权。CMA 将于 10 月 13 日前做出决定。",
-      "translated_title": "英国或将要求谷歌向用户提供替代搜索选项，并“更公平地”对其搜索结果进行排名",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2024/08/GettyImages-2151466539.jpg?w=1024",
-          "alt": "Sundar Pichai, chief executive officer of Alphabet Inc., during an interview on \"The Circuit with Emily Chang\" at Google's Bay View campus in Mountain View, California, US, on Wednesday, May 1, 2024.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The UK's competition regulator may require Google to offer users alternative search engines; change how it ranks searches; and improve data portability."
-    },
-    {
-      "title": "谷歌推出可在本地机器人上运行的全新 Gemini 模型 (原标题: Google rolls out new Gemini model that can run on robots locally)",
-      "link": "https://techcrunch.com/2025/06/24/google-rolls-out-new-gemini-model-that-can-run-on-robots-locally/",
-      "pubDate": "Tue, 24 Jun 2025 14:00:00 +0000",
-      "isoDate": "2025-06-24T14:00:00.000Z",
-      "creator": "Ivan Mehta",
-      "summary": "谷歌DeepMind于2025年6月24日发布了一款名为Gemini Robotics On-Device的新语言模型，该模型可以在本地机器人上运行任务，而无需互联网连接。\n\n*   该模型基于3月份发布的Gemini Robotics模型构建，可以控制机器人的运动。\n*   开发者可以使用自然语言提示来控制和微调模型，以满足各种需求。\n*   谷歌声称，在基准测试中，该模型的性能接近于基于云的Gemini Robotics模型，并且在通用基准测试中优于其他设备端模型。\n\n![3D Rendering, robot hand assembling cube](https://techcrunch.com/wp-content/uploads/2025/03/GettyImages-642109519.jpg?w=1024)\n\n在演示中，谷歌展示了运行该本地模型的机器人执行诸如拉开袋子和折叠衣服等任务。该模型最初是为ALOHA机器人训练的，后来经过调整，可以与双臂Franka FR3机器人和Apptronik的Apollo人形机器人配合使用。谷歌声称，双臂Franka FR3成功地处理了以前未“见过”的场景和物体，例如在工业带上进行组装。\n\n![图片 2](https://techcrunch.com/wp-content/uploads/2025/06/image.png?w=680)\n\n谷歌DeepMind还发布了Gemini Robotics SDK。开发者可以使用MuJoCo物理模拟器，通过展示机器人50到100个任务演示，来训练它们执行新任务。其他AI模型开发者也在涉足机器人领域，例如Nvidia正在构建一个平台来创建人形的基础模型，Hugging Face不仅在开发用于机器人的开放模型和数据集，还在开发机器人，Mirae Asset支持的韩国初创公司RLWRLD正在致力于为机器人创建基础模型。",
-      "shortSummary": "谷歌DeepMind发布了Gemini Robotics On-Device模型，该模型可在本地机器人上运行，无需网络连接，能控制机器人运动，并可用自然语言提示进行微调。谷歌称其性能接近云端模型，且优于其他设备端模型。该模型已应用于ALOHA、Franka FR3和Apollo机器人，并发布了Gemini Robotics SDK，方便开发者训练机器人执行新任务。Nvidia、Hugging Face和RLWRLD等公司也在开发机器人领域的AI模型。",
-      "translated_title": "谷歌推出可在本地机器人上运行的全新 Gemini 模型",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/03/GettyImages-642109519.jpg?w=1024",
-          "alt": "3D Rendering, robot hand assembling cube",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/image.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Google DeepMind has released a new language model called Gemini Robotics On-Device that can run tasks locally on robots without an internet connection. "
-    },
-    {
-      "title": "Lyft 的数据处理问题如何成为 Eventual 的基础 (原标题: How a data-processing problem at Lyft became the basis for Eventual)",
-      "link": "https://techcrunch.com/2025/06/24/how-a-data-processing-problem-at-lyft-became-the-basis-for-eventual/",
-      "pubDate": "Tue, 24 Jun 2025 13:00:00 +0000",
-      "isoDate": "2025-06-24T13:00:00.000Z",
-      "creator": "Rebecca Szkutak",
-      "summary": "## Eventual 的诞生与 Daft 引擎\n\n### 背景：Lyft 的数据处理挑战\n\nEventual 的创始人 Sammy Sidhu 和 Jay Chia 在 Lyft 的自动驾驶项目担任软件工程师时，发现了一个日益严重的数据基础设施问题。自动驾驶汽车会产生海量的非结构化数据，包括 3D 扫描、照片、文本和音频等。当时，Lyft 的工程师缺乏一个能够同时处理所有这些不同类型数据的统一工具，这导致他们不得不耗费大量时间拼凑开源工具，且可靠性堪忧。Sidhu 指出，许多顶尖的博士和行业专家将 80% 的时间花在基础设施建设上，而非核心应用开发。他们共同为 Lyft 构建了一个内部多模态数据处理工具。Sidhu 在求职面试中发现，其他公司也面临着类似的数据解决方案需求，这促成了 Eventual 创意的萌生。\n\n### Eventual 及其核心产品 Daft\n\nEventual 公司成立于 2022 年初，早于 ChatGPT 发布，当时许多人尚未意识到这一数据基础设施的空白。他们开发了 Daft，一个基于 Python 的开源数据处理引擎，旨在快速处理文本、音频、视频等多种模态的数据。Sidhu 的目标是让 Daft 对非结构化数据基础设施产生像 SQL 对表格数据集那样变革性的影响。Daft 的第一个开源版本已于 2022 年发布，公司正准备在第三季度推出企业级产品。\n\n### 市场需求与增长机遇\n\nChatGPT 的爆发进一步凸显了多模态 AI 应用对数据基础设施的需求，推动了图像、文档和视频等数据在应用中的广泛使用，Daft 的使用量也因此显著增长。尽管 Daft 最初的灵感来源于自动驾驶领域，但其多模态数据处理能力也适用于机器人、零售科技和医疗保健等众多行业。目前，Eventual 的客户包括亚马逊、CloudKitchens 和 Together AI 等。\n\n根据管理咨询公司 MarketsandMarkets 的预测，多模态 AI 行业在 2023 年至 2028 年间的复合年增长率将达到 35%。Felicis 的普通合伙人 Astasia Myers 指出，过去 20 年间，年度数据生成量增长了 1000 倍，其中 90% 的数据是在过去两年内产生的，且绝大多数是非结构化数据。Daft 正好契合了生成式 AI 围绕文本、图像、视频和语音构建的巨大宏观趋势，因为它提供了一个多模态原生的数据处理引擎。\n\n### 融资情况与未来展望\n\nEventual 在八个月内完成了两轮融资。首轮是由 CRV 领投的 750 万美元种子轮。最近，公司又完成了由 Felicis 领投，微软 M12 和花旗参与的 2000 万美元 A 轮融资。这笔最新资金将用于增强 Eventual 的开源产品，并开发商业产品，以帮助客户基于处理过的数据构建 AI 应用。\n\n### 投资方观点\n\nFelicis 的 Astasia Myers 通过市场调研发现了 Eventual，她认为 Eventual 在这一领域是先行者，并且创始人拥有处理数据处理问题的第一手经验，这使得 Eventual 脱颖而出。她强调，Eventual 正在解决一个日益增长的问题，即支持不断增长的多模态 AI 模型所需的数据基础设施。",
-      "shortSummary": "Eventual 公司源于 Lyft 自动驾驶项目中的一个数据处理难题，当时工程师们难以有效处理海量非结构化多模态数据。创始人 Sammy Sidhu 和 Jay Chia 开发了 Python 原生开源引擎 Daft，旨在高效处理文本、音频、视频等多种数据类型。随着 AI 发展，Daft 解决了多模态数据基础设施的关键需求，吸引了亚马逊等客户，并在近期完成了由 Felicis 领投的 2000 万美元 A 轮融资，以进一步拓展其开源和商业产品。",
-      "translated_title": "Lyft 的数据处理问题如何成为 Eventual 的基础",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Eventual's data processing engine Daft was inspried by the founders' experience working on Lyft's autonomous vehicle project. "
     }
   ],
-  "lastUpdated": "2025-06-25T12:47:00.346Z"
+  "lastUpdated": "2025-06-25T18:35:46.314Z"
 }
