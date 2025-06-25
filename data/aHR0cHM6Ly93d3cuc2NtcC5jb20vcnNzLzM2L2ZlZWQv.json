@@ -5,6 +5,23 @@
   "link": "https://www.scmp.com/rss/36/feed/1",
   "items": [
     {
+      "title": "中国制造业中心如何转型成为科技强国 (原标题: How China’s manufacturing hub spins a new yarn to become a tech powerhouse)",
+      "link": "https://www.scmp.com/economy/china-economy/article/3315644/how-chinas-yangtze-river-delta-became-tech-powerhouse?utm_source=rss_feed",
+      "pubDate": "Tue, 24 Jun 2025 22:00:11 +0000",
+      "isoDate": "2025-06-24T22:00:11.000Z",
+      "creator": "Alice Li",
+      "summary": "# 中国制造业中心向科技强国转型：以苏州为例\n\n中国东部江苏省的苏州，作为长江三角洲地区的一部分，正从传统的纺织、化工和机械制造中心，转型成为国家级创新枢纽，孕育着对中国未来至关重要的技术。\n\n## 核心案例：Magic Lab\n\n*   **公司简介**: Magic Lab 是一家位于苏州的初创公司，专注于开发全尺寸人形机器人，旨在与人互动并在工厂中工作。\n*   **核心技术与本地化**: \n    *   超过90%的机器人组件，包括扭矩电机关节、执行器、控制单元和灵巧的机器人手，都是公司内部研发并在本地制造。\n    *   其余10%的组件是中央处理器（CPU）。\n    *   公司开发了一种通用人工智能模型，集成了传感、导航和运动控制功能，使人形机器人能够快速适应任务并在真实环境中协同工作。\n*   **政府支持与资金来源**: \n    *   当地政府通过税收优惠、工业园区等措施，为公司提供了有利的发展环境。\n    *   公司的大部分资金来源于私人投资，研发主要由公司自主驱动。\n*   **选择江苏的优势**: \n    *   江苏拥有成熟的制造业基础，特别是在下一代信息技术、高端设备和新材料等先进领域。\n    *   这为Magic Lab提供了快速获取上下游支持的便利，并有助于降低供应链成本。\n*   **实际应用与合作**: \n    *   Magic Lab 的人形机器人已部署在其投资者之一——家电独角兽 Dreame Technology 的工厂车间。\n    *   此举旨在收集真实世界数据，并探索多机器人协作，这是中国目前仍处于起步阶段的领域。\n\n## 区域转型概览\n\nMagic Lab 只是江苏和邻近的浙江省数千家尖端企业中的一个缩影。这些企业正在共同重塑长江三角洲地区，使其成为中国未来技术发展的核心驱动力。",
+      "shortSummary": "中国长江三角洲地区正从传统制造业中心转型为科技创新枢纽。以苏州的Magic Lab为例，这家初创公司专注于开发人形机器人，其90%以上核心部件实现本地化研发制造。得益于江苏成熟的制造业基础和政府支持，Magic Lab的机器人已在工厂部署，探索多机器人协作，这标志着该地区正成为中国未来技术发展的关键力量。",
+      "translated_title": "中国制造业中心如何转型成为科技强国",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "In Suzhou, eastern China’s Jiangsu province, the start-up Magic Lab specialises in full-sized humanoid robots designed to interact with people and work in factories – just one example of the Yangtze River Delta region’s transformation into a national innovation hub.\n“More than 90 per cent of the components, including critical parts like torque motor joints, actuators, control units and dexterous robotic hands, are developed in-house and locally manufactured,” said Wu Changzheng, the company’s...",
+      "enclosure": {
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/24/c48bb95d-c8ed-4a4d-b2be-9695d125c2a6_0805eeb4.jpg",
+        "type": "image/jpeg"
+      }
+    },
+    {
       "title": "科大讯飞在香港发布医疗AI和智慧课堂技术，推动全球化发展 (原标题: iFlytek unveils medical AI, smart classroom tech in Hong Kong amid global push)",
       "link": "https://www.scmp.com/tech/tech-trends/article/3315685/iflytek-unveils-medical-ai-smart-classroom-tech-hong-kong-amid-global-push?utm_source=rss_feed",
       "pubDate": "Tue, 24 Jun 2025 13:00:19 +0000",
@@ -417,24 +434,7 @@
         "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/19/899f3914-810b-4b8c-8e4f-42ca6e5dbc55_a007a5e6.jpg",
         "type": "image/jpeg"
       }
-    },
-    {
-      "title": "华为AI芯片在运行DeepSeek R1模型时如何超越英伟达 (原标题: How Huawei’s AI chips outperform Nvidia’s in running DeepSeek’s R1 model)",
-      "link": "https://www.scmp.com/tech/tech-trends/article/3315068/how-huaweis-ascend-ai-chips-outperform-nvidia-processors-running-deepseeks-r1-model?utm_source=rss_feed",
-      "pubDate": "Thu, 19 Jun 2025 11:00:08 +0000",
-      "isoDate": "2025-06-19T11:00:08.000Z",
-      "creator": "Wency Chen",
-      "summary": "## 华为CloudMatrix 384：重塑AI基础设施的AI超级节点\n\n### 引言\n\n*   华为与中国AI基础设施初创公司SiliconFlow联合发布了一篇论文，详细介绍了CloudMatrix 384。\n\n### CloudMatrix 384 架构与特点\n\n*   **定位：** 被描述为一个专门构建的“AI超级节点”，旨在处理大规模的AI工作负载。\n*   **组成：**\n    *   包含384个昇腾910C神经网络处理器（NPU）。\n    *   包含192个鲲鹏服务器中央处理器（CPU）。\n*   **互联：** 所有组件通过一个统一的总线互联，提供超高带宽和低延迟。\n*   **愿景：** 华为预计CloudMatrix将“重塑AI基础设施的基础”。\n\n### CloudMatrix-Infer 解决方案\n\n*   **功能：** 这是一个先进的大型语言模型（LLM）服务解决方案，充分利用了CloudMatrix 384的基础设施。\n*   **性能：** 在运行DeepSeek的6710亿参数R1推理模型时，CloudMatrix-Infer的性能超越了世界上一些最著名的系统。\n\n### 数据中心背景\n\n*   **定义：** 数据中心是容纳大容量服务器和数据存储系统的设施，配备多电源和高带宽互联网连接。\n*   **趋势：** 越来越多的企业正在利用数据中心来托管或管理其AI项目的计算基础设施。",
-      "shortSummary": "华为与SiliconFlow联合发布的CloudMatrix 384是一个专为大规模AI工作负载设计的“AI超级节点”。它集成了384个昇腾910C NPU和192个鲲鹏CPU，通过统一总线实现超高带宽和低延迟。基于此基础设施的CloudMatrix-Infer解决方案，在运行DeepSeek的6710亿参数R1推理模型时，性能超越了现有领先系统，预示着华为AI芯片在AI推理领域展现出强大实力，有望重塑AI基础设施。",
-      "translated_title": "华为AI芯片在运行DeepSeek R1模型时如何超越英伟达",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Huawei Technologies’ advanced data centre architecture, CloudMatrix 384, has enabled the company’s Ascend chips to surpass the performance of Nvidia’s H800 graphics processing units (GPUs) in running DeepSeek’s R1 artificial intelligence (AI) model, according to a technical paper.\nJointly written by researchers from Huawei and Chinese AI infrastructure start-up SiliconFlow, the paper described CloudMatrix 384 as a specialised “AI supernode” that is purpose-built for handling extensive AI...",
-      "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/19/9dff6ba6-61c8-449e-832f-7a5fa0cd224e_6f49756b.jpg",
-        "type": "image/jpeg"
-      }
     }
   ],
-  "lastUpdated": "2025-06-24T19:16:25.980Z"
+  "lastUpdated": "2025-06-25T02:49:32.867Z"
 }
