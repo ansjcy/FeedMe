@@ -5,6 +5,219 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "介绍 Gemma 3n：开发者指南 (原标题: Introducing Gemma 3n: The developer guide)",
+      "link": "https://developers.googleblog.com/en/introducing-gemma-3n-developer-guide/",
+      "pubDate": "Wed, 25 Jun 2025 16:00:00 GMT",
+      "isoDate": "2025-06-25T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# 介绍 Gemma 3n：开发者指南\n\n## 引言\nGemma 模型自去年初发布以来，已发展成为一个拥有超过 1.6 亿次总下载量的繁荣生态系统。在此基础上，Google 正式发布了 **Gemma 3n**，这是一款专为开发者社区设计的移动优先架构模型。Gemma 3n 得到了 Hugging Face Transformers、llama.cpp、Google AI Edge、Ollama、MLX 等流行工具的支持，方便开发者轻松进行微调和部署。本文旨在深入探讨 Gemma 3n 背后的创新、分享新的基准测试结果，并指导开发者如何开始构建。\n\n## Gemma 3n 的新特性\nGemma 3n 代表了设备端 AI 的重大进步，将强大的多模态能力带到边缘设备，其性能此前仅在去年的云端前沿模型中可见。\n\n*   **多模态设计**：Gemma 3n 原生支持图像、音频、视频和文本输入，以及文本输出。\n*   **针对设备优化**：Gemma 3n 模型专注于效率，提供两种基于有效参数的尺寸：E2B（5B 原始参数，2GB 内存占用）和 E4B（8B 原始参数，3GB 内存占用）。通过架构创新，其内存占用可与传统 2B 和 4B 模型媲美。\n*   **突破性架构**：Gemma 3n 的核心是新颖的组件，如用于计算灵活性的 MatFormer 架构、用于内存效率的逐层嵌入 (PLE)、用于架构效率的 LAuReL 和 AltUp，以及针对设备端用例优化的新型音频和基于 MobileNet-v5 的视觉编码器。\n*   **增强的质量**：Gemma 3n 在多语言（支持 140 种文本语言和 35 种多模态理解语言）、数学、编码和推理方面均有质量提升。E4B 版本在 LMArena 评分中达到 1300 分以上，使其成为首个参数量低于 100 亿的模型达到此基准。\n    ![LMArena Text Arena Elo Score rankings for Gemini 1.5 Pro, Gemma 3n E4B llama 4 Maverick 17B 128E GPT 4.1-nano and Phi-4](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemma_3n_Chart_1_RD1-V01_1.original.png)\n\n## MatFormer：一个模型，多种尺寸\nGemma 3n 的核心是 MatFormer (🪆Matryoshka Transformer) 架构，这是一种新颖的嵌套式 Transformer，专为弹性推理而设计。它像俄罗斯套娃一样：一个更大的模型包含更小、功能齐全的自身版本。这种方法将 Matryoshka 表示学习的概念从嵌入扩展到所有 Transformer 组件。\n![MatFormer in Nano V3](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_3h2xBRA.original.jpg)\n在 4B 有效参数 (E4B) 模型的 MatFormer 训练过程中，一个 2B 有效参数 (E2B) 的子模型同时在其内部得到优化。这为开发者提供了两种强大的能力和用例：\n\n1.  **预提取模型**：开发者可以直接下载并使用主 E4B 模型以获得最高能力，或使用已提取的独立 E2B 子模型，后者可提供高达 2 倍的推理速度。\n2.  **通过 Mix-n-Match 自定义尺寸**：为了更精细地控制以适应特定硬件限制，开发者可以使用 Mix-n-Match 方法创建 E2B 和 E4B 之间的一系列自定义尺寸模型。MatFormer Lab 工具已发布，展示如何检索这些通过 MMLU 等基准评估确定的最优模型。\n    ![Custom Sizes with Mix-n-Match](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image4_5lfhlBO.original.png)\n展望未来，MatFormer 架构也为弹性执行铺平了道路，允许单个部署的 E4B 模型在运行时动态切换 E4B 和 E2B 推理路径，从而根据当前任务和设备负载实时优化性能和内存使用（此功能不属于本次发布的实现）。\n\n## 逐层嵌入 (PLE)：提升内存效率\nGemma 3n 模型集成了逐层嵌入 (PLE)。这项创新专为设备端部署而设计，因为它在不增加设备加速器（GPU/TPU）所需高速内存占用的情况下，显著提高了模型质量。\n尽管 Gemma 3n E2B 和 E4B 模型的总参数量分别为 5B 和 8B，但 PLE 允许这些参数的很大一部分（与每层相关的嵌入）在 CPU 上高效加载和计算。这意味着只有核心 Transformer 权重（E2B 约 2B，E4B 约 4B）需要驻留在通常更受限制的加速器内存 (VRAM) 中。\n![Per-Layer Embeddings](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image6_BdtLmLG.original.jpg)\n\n## KV 缓存共享：加速长上下文处理\n处理长输入对于许多高级设备端多模态应用至关重要。Gemma 3n 引入了 KV 缓存共享功能，旨在显著加速流式响应应用的“首个令牌生成时间”。该功能优化了模型处理初始输入阶段（“预填充”阶段）的方式，通过直接共享中间层键和值，与 Gemma 3 4B 相比，预填充性能提高了 2 倍。\n\n## 音频理解：引入语音转文本和翻译\nGemma 3n 使用基于通用语音模型 (USM) 的高级音频编码器。该编码器每 160 毫秒的音频生成一个令牌，然后将其作为输入集成到语言模型中，提供声音上下文的细粒度表示。这种集成的音频能力为设备端开发解锁了关键功能，包括：\n\n*   **自动语音识别 (ASR)**：直接在设备上实现高质量的语音转文本转录。\n*   **自动语音翻译 (AST)**：将口语翻译成另一种语言的文本。在英语与西班牙语、法语、意大利语和葡萄牙语之间的翻译任务中，AST 表现尤其出色。\n\n在发布时，Gemma 3n 编码器可处理长达 30 秒的音频片段，但其底层是一个流式编码器，未来将支持任意长度的音频和低延迟、长流式应用。\n\n## MobileNet-V5：新的最先进视觉编码器\n除了集成的音频功能外，Gemma 3n 还配备了新型高效视觉编码器 MobileNet-V5-300M，为边缘设备上的多模态任务提供了最先进的性能。\n\n*   **主要特性**：原生支持 256x256、512x512 和 768x768 像素的多种输入分辨率；在大量多模态数据集上共同训练，擅长广泛的图像和视频理解任务；在 Google Pixel 设备上每秒处理高达 60 帧，实现实时、设备端视频分析和交互体验。\n*   **架构创新**：包括 MobileNet-V4 块的先进基础、显著扩展的混合深度金字塔模型（比最大的 MobileNet-V4 变体大 10 倍），以及新颖的多尺度融合 VLM 适配器。\n*   **性能提升**：MobileNet-V5-300M 大幅超越了 Gemma 3 中的基线 SoViT。在 Google Pixel Edge TPU 上，它在量化后提供 13 倍的速度提升，所需参数减少 46%，内存占用减少 4 倍，同时在视觉语言任务中提供显著更高的准确性。\n\n## Gemma 3n 的可访问性与生态系统\nGoogle 与 AMD、Hugging Face、NVIDIA 等众多开源开发者合作，确保 Gemma 3n 在流行工具和平台上的广泛支持。此外，Google 还推出了 **Gemma 3n 影响力挑战赛**，鼓励开发者利用 Gemma 3n 独特的设备端、离线和多模态能力，构建造福世界的产品，挑战赛提供 150,000 美元的奖金。\n\n## 立即开始使用 Gemma 3n\n开发者可以通过以下方式探索 Gemma 3n 的潜力：\n\n*   **直接体验**：使用 Google AI Studio 快速试用 Gemma 3n，并可直接部署到 Cloud Run。\n*   **下载模型**：在 Hugging Face 和 Kaggle 上获取模型权重。\n*   **学习与集成**：查阅全面的文档，或从推理和微调指南开始。\n*   **使用喜爱的设备端 AI 工具**：Google AI Edge Gallery/LiteRT-LLM、Ollama、MLX、llama.cpp、Docker、transformers.js 等。\n*   **使用喜爱的开发工具**：Hugging Face Transformers 和 TRL、NVIDIA NeMo Framework、Unsloth 和 LMStudio。\n*   **灵活部署**：Gemma 3n 提供多种部署选项，包括 Google GenAI API、Vertex AI、SGLang、vLLM 和 NVIDIA API Catalog。",
+      "shortSummary": "Gemma 3n 是 Google 发布的移动优先、多模态 AI 模型，专为设备端应用设计。它采用创新的 MatFormer 架构实现灵活尺寸（E2B/E4B），通过逐层嵌入和 KV 缓存共享优化内存与长上下文处理。Gemma 3n 原生支持图像、音频、视频和文本输入，并集成了基于 USM 的高级音频编码器和 MobileNet-V5 视觉编码器，提供语音识别、翻译及最先进的视觉理解能力。该模型高度优化，支持多种流行开发工具，并鼓励开发者参与影响力挑战赛。",
+      "translated_title": "介绍 Gemma 3n：开发者指南",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemma_3n_Chart_1_RD1-V01_1.original.png",
+          "alt": "LMArena Text Arena Elo Score rankings for Gemini 1.5 Pro, Gemma 3n E4B llama 4 Maverick 17B 128E GPT 4.1-nano and Phi-4",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_3h2xBRA.original.jpg",
+          "alt": "MatFormer in Nano V3",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image4_5lfhlBO.original.png",
+          "alt": "Custom Sizes with Mix-n-Match",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image6_BdtLmLG.original.jpg",
+          "alt": "Per-Layer Embeddings",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The Gemma 3n model has been fully released, building on the success of previous Gemma models and bringing advanced on-device multimodal capabilities to edge devices with unprecedented performance. Explore Gemma 3n's innovations, including its mobile-first architecture, MatFormer technology, Per-Layer Embeddings, KV Cache Sharing, and new audio and MobileNet-V5 vision encoders, and how developers can start building with it today."
+    },
+    {
+      "title": "使用新的Data Commons Python客户端库解锁更深层洞察 (原标题: Unlock deeper insights with the new Python client library for Data Commons)",
+      "link": "https://developers.googleblog.com/en/pythondatacommons/",
+      "pubDate": "Wed, 25 Jun 2025 16:00:00 GMT",
+      "isoDate": "2025-06-25T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Data Commons 新Python客户端库：解锁更深层洞察\n\n## 引言\n数据是各领域进步的基石，能够帮助我们衡量现状、识别趋势并预测未来。Google的Data Commons旨在组织全球公开统计数据，使其更易于访问和使用。它是一个开源知识图谱，整合了来自不同来源的大量公共数据，简化了开发者、研究人员和数据分析师的访问和理解。Google搜索也使用Data Commons来回答查询，例如“旧金山的人口是多少？”。\n\n今天，我们宣布基于V2 REST API的Data Commons新Python客户端库正式发布。这个新库将极大地增强数据开发者利用Data Commons的能力。\n\n## 实际影响：与ONE.org合作\n这一里程碑的实现，得益于我们的合作伙伴The ONE Campaign（一个致力于为非洲经济机会和健康生活创造所需投资的全球组织）的愿景和重大贡献。我们将Data Commons构建为一个开源平台，正是为了鼓励社区贡献和实现创新用途，而与The ONE Campaign的合作完美地体现了这一目标。ONE组织倡导、设计并编码了该客户端库，旨在让数据科学家和分析师能够利用Python分析工具和库的丰富生态系统，访问Data Commons的丰富洞察。\n\n## 支持自定义Data Commons实例\nData Commons平台还允许联合国或ONE等组织托管自己的Data Commons实例。这些自定义实例能够将专有数据集与基础的Data Commons知识图谱无缝集成。组织可以利用Data Commons的数据框架和工具，同时完全控制其数据和资源。\n\nV2库中最具影响力的新增功能之一是其对自定义实例的强大支持。这意味着您现在可以使用Python库以编程方式查询任何公共或私有实例——无论是本地托管、组织内部托管还是在Google Cloud Platform上托管。\n\n## 强大的新功能\nPython库使得对Data Commons数据执行常见查询变得非常容易，例如：\n*   探索知识图谱的结构。\n*   从人口统计、经济、教育、能源、环境、健康和住房等领域的200多个数据集中，检索200,000多个统计变量的数据。\n*   轻松将其他数据集中的实体映射到Data Commons中的实体。\n\n与V1库相比，客户端库的V2版本提供了许多技术改进，包括：\n*   **Pandas DataFrame API支持**：作为集成模块，通过单一安装包提供，可与同一客户端中的其他API端点无缝使用。\n*   **新的便捷方法**：针对常见数据查询提供了多个新方法。\n*   **API密钥管理**：API密钥管理和其他有状态操作内置于客户端类中。\n*   **Pydantic集成**：与Pydantic库集成，提高了类型安全性、验证和序列化能力。\n*   **多种响应格式支持**：支持JSON、Python字典和列表等多种响应格式。\n\n以下是一个使用示例，展示了如何绘制国际贫困线以下人口比例的图表：\n```python\nvariable = \"sdg/SI_POV_DAY1\"\nvariable_name = \"Proportion of population below international poverty line\"\ndf = client.observations_dataframe(variable_dcids=variable, date=\"all\", parent_entity=\"Earth\", entity_type=\"Continent\")\ndf = df.pivot(index=\"date\", columns=\"entity_name\", values=\"value\")\nax = df.plot(kind=\"line\")\nax.set_xlabel(\"Year\")\nax.set_ylabel(\"%\")\nax.set_title(variable_name)\nax.legend()\nax.plot()\n```\n![图表显示各大洲国际贫困线以下人口比例](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/DC_blogpost_screenshot1.original.png)\n\n## 开始使用\n要开始使用Data Commons Python库，您可以直接从PyPI安装软件包。我们还提供了全面的资源来帮助您深入了解，包括参考文档和作为Google Colab笔记本提供的在线教程。\n\n对于目前使用V1 Python API的用户，我们强烈建议升级到新的V2 Python库。V1 API计划弃用，采用新库可确保您能够访问最新功能并获得持续支持。\n\n## 开源协作\n这个库是开源协作力量的明证。开源代码可在GitHub上获取，我们欢迎社区根据Google贡献者许可协议做出贡献。",
+      "shortSummary": "Google发布了基于V2 REST API的Data Commons新Python客户端库，现已正式可用。该库旨在帮助数据开发者更深入地利用Data Commons的公共统计数据，支持探索知识图谱、检索海量变量数据，并与Pandas等工具无缝集成。新版本还增强了对自定义Data Commons实例的支持，并得益于ONE.org的重大贡献。建议V1用户升级，以获取最新功能和持续支持。该库是开源项目，欢迎社区贡献。",
+      "translated_title": "使用新的Data Commons Python客户端库解锁更深层洞察",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/DC_blogpost_screenshot1.original.png",
+          "alt": "Graph showing proportion of population below international poverty line across continental regions",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Google has released a new Python client library for Data Commons – an open-source knowledge graph that unifies public statistical data, and enhances how data developers can leverage Data Commons by offering improved features, support for custom instances, and easier access to a vast array of statistical variables – developed with contributions from The ONE Campaign."
+    },
+    {
+      "title": "使用 Gemini 2.5 Flash-Lite 模拟神经操作系统 (原标题: Simulating a neural operating system with Gemini 2.5 Flash-Lite)",
+      "link": "https://developers.googleblog.com/en/simulating-a-neural-operating-system-with-gemini-2-5-flash-lite/",
+      "pubDate": "Tue, 24 Jun 2025 16:00:00 GMT",
+      "isoDate": "2025-06-24T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## 使用 Gemini 2.5 Flash-Lite 模拟神经操作系统\n\n本文探讨了一种新的计算范式，即构建一个生成式、无限的计算机体验原型，该原型模拟了一个操作系统，其中每个屏幕都由大型语言模型实时生成。该原型利用 Gemini 2.5 Flash-Lite 模型，其低延迟对于创建即时响应的交互至关重要。\n\n### 核心技术概念\n\n1.  **模型条件化以实现即时 UI 生成**\n    *   为了实时生成用户界面 (UI)，模型需要清晰的结构和上下文。\n    *   提示被分为两部分：\n        *   **UI 宪法 (UI constitution)**：一个系统提示，包含一组固定的 UI 生成规则，定义了操作系统级别的样式、主屏幕格式以及嵌入地图等元素的逻辑。\n        *   **UI 交互 (UI interaction)**：一个 JSON 对象，捕获用户最近的操作（例如，点击图标），作为模型生成下一个屏幕的具体查询。例如，点击“保存笔记”按钮会生成一个包含 `id`、`type`、`value`、`elementType`、`elementText` 和 `appContext` 等信息的 JSON 对象。\n    *   这种双部分上下文设置方法使模型能够在生成基于特定实时用户输入的新屏幕的同时，保持一致的外观和感觉。\n\n2.  **使用交互追踪实现上下文感知**\n    *   单个交互提供即时上下文，而一系列交互则能提供更丰富的故事。\n    *   原型可以利用过去 N 次交互的追踪来生成更具上下文相关性的屏幕。\n    *   通过调整交互追踪的长度，可以在上下文准确性和 UI 可变性之间进行平衡。\n\n3.  **流式传输 UI 以实现响应式体验**\n    *   为了使系统感觉快速，原型利用模型流式传输和浏览器原生解析器实现渐进式渲染。\n    *   模型分块生成 HTML 代码，系统持续将其附加到组件状态，React 随后重新渲染内容。\n    *   这使得浏览器能够尽快显示有效的 HTML 元素，为用户创造了界面几乎即时呈现在屏幕上的体验。\n\n4.  **通过生成式 UI 图实现状态保持**\n    *   默认情况下，模型每次用户输入都会从头开始生成新屏幕，这可能导致非确定性、无状态的体验。\n    *   为了引入状态性，演示系统可以选择为会话特定的 UI 图构建内存缓存。\n    *   当用户导航到已生成的屏幕时，系统会从图中提供存储的版本，而无需再次查询 Gemini。\n    *   当用户请求缓存中没有的新屏幕时，UI 图会增量增长。\n    *   此方法在不影响生成输出质量的情况下实现了状态保持。\n\n### 即时生成式 UI 的潜在应用\n\n尽管这是一个概念原型，但其底层框架可应用于更实际的用例：\n\n*   **上下文快捷方式**：系统可以观察用户的交互模式，生成一个临时的 UI 面板以加速任务。例如，当用户比较多个网站上的航班时，一个浮动小部件可以即时出现，带有动态生成的按钮，用于比较价格或直接预订航班。\n*   **现有应用程序中的“生成模式”**：开发者可以向其应用程序添加“生成模式”。例如，在 Google 日历中，用户可以激活此模式以查看即时 UI。当移动日历邀请时，系统可以根据与会者的日程生成一个屏幕，以一系列可直接选择的按钮形式呈现最佳替代时间，而不是标准的对话框。这将创建一种混合体验，其中生成式和静态 UI 元素在同一应用程序中无缝共存。\n\n探索此类新颖概念有助于我们理解人机交互新范式的发展。随着模型变得更快、更强大，生成式界面代表了未来研究和开发的一个有前景的领域。",
+      "shortSummary": "本文介绍了一个使用 Gemini 2.5 Flash-Lite 模拟神经操作系统的研究原型。该系统能实时生成用户界面，通过“UI 宪法”和“UI 交互”提供上下文，并利用交互追踪提升相关性。为确保响应速度，系统采用流式传输和渐进式渲染。通过构建内存中的 UI 图，原型实现了状态保持。潜在应用包括上下文快捷方式和现有应用中的“生成模式”，预示着人机交互的新范式。",
+      "translated_title": "使用 Gemini 2.5 Flash-Lite 模拟神经操作系统",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "A research prototype simulating a neural operating system generates UI in real-time adapting to user interactions with Gemini 2.5 Flash-Lite, using interaction tracing for contextual awareness, streaming the UI for responsiveness, and achieving statefulness with an in-memory UI graph."
+    },
+    {
+      "title": "Imagen 4 现已在 Gemini API 和 Google AI Studio 中推出 (原标题: Imagen 4 is now available in the Gemini API and Google AI Studio)",
+      "link": "https://developers.googleblog.com/en/imagen-4-now-available-in-the-gemini-api-and-google-ai-studio/",
+      "pubDate": "Mon, 23 Jun 2025 16:00:00 GMT",
+      "isoDate": "2025-06-23T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Imagen 4 现已在 Gemini API 和 Google AI Studio 中推出\n\nGoogle 于 2025 年 6 月 24 日宣布，其最新、最强大的文本到图像模型 Imagen 4 已在 Gemini API 中推出付费预览，并在 Google AI Studio 中提供有限的免费测试。Imagen 4 在文本渲染方面比之前的图像模型有了显著改进，并进一步提升了文本到图像生成的质量。\n\n### Imagen 4 系列模型\n\nImagen 4 系列包含两个模型，旨在满足不同的创意需求：\n\n*   **Imagen 4：**\n    *   适用于大多数任务的首选模型。\n    *   作为旗舰文本到图像模型，它能够处理各种图像生成任务，并在质量上，尤其是在文本生成方面，比 Imagen 3 有显著提升。\n    *   定价：每张输出图像 0.04 美元。\n\n*   **Imagen 4 Ultra：**\n    *   适用于需要图像精确遵循指令的场景。\n    *   该模型旨在生成与文本提示高度对齐的输出，与其他领先的图像生成模型相比，表现出色。\n    *   定价：每张输出图像 0.06 美元。\n\n未来几周内将推出额外的计费层级，目前用户可以申请更高的 Imagen 4 和 4 Ultra 速率限制。\n\n### Imagen 4 实际应用示例\n\n以下是使用 Imagen 4 Ultra 生成的一些图像示例，展示了该模型在各种风格和内容上的多功能性：\n\n*   **提示：** 一个三格的宇宙史诗漫画。第一格：星云中的微小“星尘”；雷达显示异常（文字“ANOMALY DETECTED”），船体文字“stardust”。飞行员低语。第二格：生物发光巨兽出现；控制台红色文字“WARNING!”。第三格：巨兽在小行星群中追逐飞船；控制台红色文字“SHIELD CRITICAL!”，屏幕文字“EVADE!”。飞行员尖叫，音效“CRUNCH!”，“ROOOOAAARR!”。\n    ![一个由 Imagen 4 生成的三格宇宙史诗漫画](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/3-panel-cosmic-epic-comic-imagen-4.original.png)\n\n*   **提示：** 一张京都复古旅行明信片正面：樱花下的标志性宝塔，远处白雪皑皑的山脉，晴朗的蓝天，色彩鲜艳。\n    ![一个由 Imagen 4 生成的京都复古旅行明信片正面](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/vintage-travel-postcard-kyoto-imagen-4.original.png)\n\n*   **提示：** 一张冒险情侣在日出时分徒步登上山顶的照片，他们举起手臂庆祝胜利，下方山谷的史诗般全景，戏剧性的光线。\n    ![一个由 Imagen 4 生成的冒险情侣在日出时分徒步登上山顶的照片](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/adventurous-couple-photograph-imagen-4.original.png)\n\n*   **提示：** 一张前卫时尚编辑照片：模特身穿一件蓬松、建筑感十足的礼服，站在一个闪烁的外星景观上，双星落日，超现实色彩，高概念，电影感。\n    ![一个由 Imagen 4 生成的前卫时尚编辑照片](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/avant-garde-fashion-photo-shoot-imagen-4.original.png)\n\n### 开始使用 Imagen\n\n为了维护信任和透明度，所有由 Imagen 4 模型生成的图像都将包含一个不可见的数字 SynthID 水印。用户可以通过官方文档和教程开始使用 Imagen 4。Google 期待看到用户通过 Gemini API 和 Google AI Studio 使用 Imagen 4 创造的作品，并计划在未来几周内使这些模型普遍可用。",
+      "shortSummary": "Google 已在 Gemini API 和 Google AI Studio 中推出其最新的文本到图像模型 Imagen 4。Imagen 4 提供显著改进的文本渲染和图像生成质量。该系列包含 Imagen 4（通用型，每张0.04美元）和 Imagen 4 Ultra（高精度型，每张0.06美元）。所有生成图像都将包含不可见的数字水印。用户现可通过文档和教程开始使用，未来几周将普遍可用。",
+      "translated_title": "Imagen 4 现已在 Gemini API 和 Google AI Studio 中推出",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/3-panel-cosmic-epic-comic-imagen-4.original.png",
+          "alt": "A 3-panel cosmic epic comic generated by Imagen 4",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/vintage-travel-postcard-kyoto-imagen-4.original.png",
+          "alt": "Front of a vintage travel postcard for Kyoto generated by Imagen 4",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/adventurous-couple-photograph-imagen-4.original.png",
+          "alt": "Photograph of an adventurous couple hiking on a mountain peak at sunrise generated by Imagen 4",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/avant-garde-fashion-photo-shoot-imagen-4.original.png",
+          "alt": "Avant-garde fashion editorial shot generated by Imagen 4",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Imagen 4, Google's advanced text-to-image model, is now available in paid preview via the Gemini API and Google AI Studio, offering significant quality improvements, especially for text generation within images. The Imagen 4 family includes Imagen 4 for general tasks and Imagen 4 Ultra for high-precision prompt adherence, with all generated images featuring a non-visible SynthID watermark."
+    },
+    {
+      "title": "Gemini 2.5：机器人与具身智能 (原标题: Gemini 2.5 for robotics and embodied intelligence)",
+      "link": "https://developers.googleblog.com/en/gemini-25-for-robotics-and-embodied-intelligence/",
+      "pubDate": "Mon, 23 Jun 2025 16:00:00 GMT",
+      "isoDate": "2025-06-23T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Gemini 2.5：机器人与具身智能\n\n**引言**\n\nGoogle 于 2025 年 6 月 24 日发布了最新一代的 Gemini 模型（2.5 Pro 和 Flash），这些模型正在机器人领域开辟新的前沿。它们先进的编码、推理和多模态能力，结合空间理解，为下一代交互式智能机器人奠定了基础。本文探讨了开发者如何利用 Gemini 2.5 构建复杂的机器人应用，并提供了实际示例。\n\n**核心应用领域**\n\nGemini 2.5 的能力主要体现在以下三个方面：\n\n### 1. 复杂查询的语义场景理解\n\n对物理世界进行推理是通用且鲁棒控制的核心。Gemini 2.5 在这方面迈出了重要一步，其多模态推理能力得到了显著提升。文章分享了两个利用 Gemini 指向和物体检测能力的示例：\n\n*   **物体定位与补货需求**\n    *   Gemini 2.5 能够根据细粒度的语言描述定位场景中的物体，例如识别需要补货的货架。它甚至能理解超市货架上的空位表示需要补货。\n    *   **示例：** 定位需要补货的货架上的一个箱子。\n    ![Gemini 2.5 能根据细粒度语言描述定位场景中的物体，例如识别需要补货的货架。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-image-locate.original.png)\n\n*   **小物体定位与状态估计（读取仪表）**\n    *   Gemini 2.5 能够定位场景中的小物体并估计其状态，例如读取仪表盘的读数。\n    *   **示例：** 定位所有圆形仪表，并读取中间仪表读数（例如，读数为 0）。\n    ![Gemini 2.5 能定位场景中的小物体并估计其状态，例如读取仪表盘。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-gague-2.original.png)\n\n*   **超越以物体为中心的感知**\n    *   Gemini 2.5 能够准确地跨时间跟踪多个物体，并检测“溢出”等开放式概念，这需要常识知识和上下文特定推理。\n    *   **示例：** 检测视频中物体的边界框（如绿色碗、螃蟹、钱包等）。\n    *   **示例：** 检测并分割“溢出”区域，这对于有用的机器人至关重要。\n    ![Gemini 2.5 能检测与机器人相关的开放式概念，需要常识知识和上下文特定推理。例如，一个有用的机器人需要理解“溢出”的概念。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/spill3_v2.original.png)\n    *   **示例：** 提示 Gemini 2.5 生成一系列点的机器人手臂轨迹，例如将布料移动到溢出物处。\n    ![Gemini 2.5 可以被提示生成一系列点的机器人手臂轨迹。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/spill_traj.original.png)\n\n### 2. 结合空间理解与代码生成控制机器人\n\nGemini 2.5 能够利用其底层的空间理解能力，通过代码生成来控制机器人。通过向 Gemini 2.5 提供机器人控制 API，它能够将场景理解、物体操作和代码编写等高级能力结合起来，实现零样本任务执行，无需额外训练。\n\n*   **示例：高层规划代码生成（“将香蕉放入碗中”）**\n    *   展示了 Gemini 如何利用其空间理解、思考和代码生成能力来选择适当的 API 调用和参数以完成任务。\n    *   Gemini 2.5 能够生成两种可行的放置香蕉方案，并能处理机器人手臂可达性约束，例如在无法直接触及目标时，通过移动碗来完成任务。\n\n*   **利用少量上下文示例进行灵巧机器人控制**\n    *   Gemini 2.5 (Flash) 可以利用少量上下文示例（例如，针对每个任务提供 10 个推理和机器人动作交错的演示）来执行更灵巧的机器人控制任务，如打包盒子和折叠连衣裙。这使得机器人能够即时学习和部署。\n\n### 3. 使用 Live API 构建交互式机器人应用\n\n最近推出的 Live API 支持实时流媒体，可用于构建允许人们通过语音控制机器人的交互式应用。直观的人机交互是使机器人易于使用和安全的重要方面。\n\n*   Live API 支持音频和视频作为输入模态，以及音频/文本作为输出模态，允许同时发送语音输入和机器人摄像头画面。\n*   结合工具使用（Function Calling），Live API 能够超越简单的对话，执行真实世界的动作。例如，机器人 API 函数（如 `robot.open_gripper()`、`robot.close_gripper()` 和 `robot.move_gripper_to()`）可以定义为工具调用，从而实现人们与机器人的实时语音交互。\n\n**安全考量**\n\n2.5 Pro 和 2.5 Flash 模型在 ASIMOV 多模态和物理伤害基准测试中表现出稳健的性能，准确性与 2.0 模型相当。此外，它们在拒绝试图利用具身推理能力但违反安全政策（如宣扬有害刻板印象、歧视或危害未成年人）的提示方面表现出色，经过严格评估，违规率接近零。\n\n**Gemini 在机器人领域的当前应用**\n\n自 3 月份发布 Gemini Robotics-ER 模型以来，社区已将其应用于机器人交互性、感知、规划和函数调用等领域。Agile Robots、Agility Robotics、Boston Dynamics 和 Enchanted Tools 等受信任测试者已展示了 Gemini 在机器人应用中的强大能力。\n\n**可用性与参与**\n\nGemini 2.5 Flash 和 Pro 模型已在 Google AI Studio、Gemini API 和 Vertex AI 中提供。对 Gemini Robotics-ER 感兴趣的开发者可以注册受信任测试者计划。",
+      "shortSummary": "Gemini 2.5 Pro和Flash模型正推动机器人技术发展，通过其先进的编码、推理、多模态能力和空间理解，实现更智能的机器人。其核心应用包括复杂的语义场景理解（如物体识别、状态估计、开放概念检测和轨迹预测）、结合空间推理的代码生成（实现零样本任务执行）以及通过Live API构建交互式语音控制应用。Gemini Robotics-ER模型已发布，并被Agile Robots等公司用于实际应用，同时模型也展现出强大的安全性能。",
+      "translated_title": "Gemini 2.5：机器人与具身智能",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-image-locate.original.png",
+          "alt": "Gemini 2.5 can locate objects in the scene based on fine-grained language descriptions, for example, find a shelf that needs restocking.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-gague-2.original.png",
+          "alt": "Gemini 2.5 can locate small objects in the scene and estimate states of those objects. For example, it can read gauges.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/spill3_v2.original.png",
+          "alt": "Gemini 2.5 can detect open-ended concepts relevant to robotics, requiring commonsense knowledge and context specific reasoning. For example, a helpful robot needs to understand the concept of a “spill”.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/spill_traj.original.png",
+          "alt": "Gemini 2.5 can be prompted into trajectory prediction in the form of a sequence of points.",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Gemini 2.5 Pro and Flash are transforming robotics by enhancing coding, reasoning, and multimodal capabilities, including spatial understanding. These models are used for semantic scene understanding, code generation for robot control, and building interactive applications with the Live API, with a strong emphasis on safety improvements and community applications."
+    },
+    {
+      "title": "使用 KerasHub 轻松实现与 Hugging Face 的端到端机器学习工作流 (原标题: Using KerasHub for easy end-to-end machine learning workflows with Hugging Face)",
+      "link": "https://developers.googleblog.com/en/load-model-weights-from-safetensors-into-kerashub-multi-framework-machine-learning/",
+      "pubDate": "Mon, 23 Jun 2025 16:00:00 GMT",
+      "isoDate": "2025-06-23T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## 使用 KerasHub 轻松实现与 Hugging Face 的端到端机器学习工作流\n\n随着人工智能生态系统的发展，机器学习模型的定义和模型权重的保存方式日益多样化。KerasHub 应运而生，它允许用户在不同的机器学习框架（如 JAX、PyTorch 或 TensorFlow）之间混合和匹配流行的模型架构及其权重，从而简化了端到端的机器学习工作流。\n\n### 模型架构与模型权重（检查点）\n\n在加载模型时，需要区分两个核心组成部分：\n\n*   **模型架构**：指模型的层如何排列以及其中发生的运算，可以理解为模型的“结构”。它通常使用 Python 框架（如 PyTorch、JAX 或 Keras）来表达。\n*   **模型权重**：指模型的“参数”，即在训练过程中不断变化的数值。这些权重的特定值赋予了训练好的模型其独特的特性。\n*   **检查点**：是模型权重在训练过程中某个特定时间点的快照。通常，共享和广泛使用的检查点是模型达到良好训练结果时的版本。通过微调等技术，可以在相同的模型架构上创建新的检查点，这些检查点拥有不同的权重（例如，Google 的 gemma-2-2b-it 模型有超过 600 个微调版本，它们共享相同的架构但权重不同）。\n\n因此，模型架构由代码描述，而模型权重是经过训练的参数，以检查点文件的形式保存。将模型架构与一组模型权重结合，即可创建一个能够产生有用输出的完整功能模型。\n\n### KerasHub 简介\n\nKerasHub 是一个 Python 库，旨在简化模型架构的定义。它包含了许多当前最流行和常用的机器学习模型，并且在不断增加。由于 KerasHub 基于 Keras，它支持当前所有三大主流 Python 机器学习库：PyTorch、JAX 和 TensorFlow，这意味着用户可以使用他们偏好的库来定义模型架构。此外，KerasHub 支持最常见的检查点格式，可以轻松从 Hugging Face Hub 和 Kaggle 等众多检查点仓库加载模型。\n\n### KerasHub 与 Hugging Face transformers 库的兼容性\n\n开发者常用的工作流是使用 Hugging Face transformers 库进行模型微调并上传到 Hugging Face Hub。KerasHub 的 API 模式与 transformers 库的用户会感到熟悉。KerasHub 的一个重要特性是，Hugging Face Hub 上的许多检查点不仅与 transformers 库兼容，也与 KerasHub 兼容，特别是流行的 SafeTensors 格式。\n\nKerasHub 内置了转换器，能够自动将 Hugging Face 模型检查点转换为 KerasHub 兼容的格式。这意味着用户只需几行代码，就可以无缝地将 Hugging Face Hub 上各种预训练的 transformer 模型直接加载到 KerasHub 中。用户可以通过访问 [https://keras.io/keras_hub/presets/](https://keras.io/keras_hub/presets/) 查看支持的模型架构列表，并且所有社区创建的这些模型架构的微调检查点也都是兼容的。如果发现缺少某个模型架构，可以通过在 GitHub 上提交拉取请求来添加。\n\n### 如何将 Hugging Face Hub 检查点加载到 KerasHub\n\n以下是加载 Hugging Face Hub 检查点到 KerasHub 的具体示例：\n\n1.  **设置 Keras 后端**：首先选择机器学习库作为 Keras 的后端（例如 JAX、PyTorch 或 TensorFlow）。\n    ```python\n    import os\n    os.environ[\"KERAS_BACKEND\"] = \"jax\" # or \"torch\" or \"tensorflow\"\n    import keras\n    from keras_hub import models\n    from huggingface_hub import login\n    login('HUGGINGFACE_TOKEN')\n    ```\n2.  **加载 Mistral 模型到 JAX**：\n    *   选择 KerasHub 上的 `mistral_0.2_instruct_7b_en` 架构。\n    *   从 Hugging Face Hub 加载微调过的 `segolilylabs/Lily-Cybersecurity-7B-v0.2` 检查点。\n    ```python\n    gemma_lm = models.MistralCausalLM.from_preset(\"hf://segolilylabs/Lily-Cybersecurity-7B-v0.2\")\n    gemma_lm.generate(\"Lily, how do evil twin wireless attacks work?\", max_length=30)\n    ```\n3.  **在 JAX 上运行 Llama 3.1**：\n    *   使用 `Llama3CausalLM` 架构。\n    *   从 Hugging Face Hub 加载 `IAAR-Shanghai/xVerify-8B-I` 微调检查点。\n    ```python\n    gemma_lm = models.Llama3CausalLM.from_preset(\"hf://IAAR-Shanghai/xVerify-8B-I\")\n    gemma_lm.generate(\"What is the tallest building in NYC?\", max_length=100)\n    ```\n4.  **在 JAX 上加载 Gemma**：\n    *   使用 `Gemma3CausalLM` 架构。\n    *   从 Hugging Face Hub 加载 `erax-ai/EraX-Translator-V1.0` 微调检查点（例如，一个多语言翻译器）。\n    ```python\n    gemma_lm = models.Gemma3CausalLM.from_preset(\"hf://erax-ai/EraX-Translator-V1.0\")\n    gemma_lm.generate(\"Translate to German: \", max_length=30)\n    ```\n\n### 触手可及的灵活性\n\nKerasHub 弥合了不同框架和检查点仓库之间的鸿沟。它允许用户将 Hugging Face Hub 上的模型检查点（即使是使用 PyTorch-based transformers 库创建的）无缝加载到 Keras 模型中，并在 JAX、TensorFlow 或 PyTorch 等任何选择的后端上运行。这种灵活性使得用户能够利用庞大的社区微调模型集合，同时完全自主选择运行的后端框架，从而简化了架构、权重和框架的混合与匹配过程，赋能用户以简单而强大的灵活性进行实验和创新。",
+      "shortSummary": "KerasHub 是一款 Python 库，旨在简化机器学习工作流，允许用户在 JAX、PyTorch 和 TensorFlow 等不同框架间混合匹配模型架构与权重。它支持从 Hugging Face Hub 等仓库加载检查点，即使这些检查点最初由其他框架创建。KerasHub 内置转换器，能无缝兼容 Hugging Face 的 SafeTensors 格式。通过 KerasHub，用户可以轻松加载并运行社区微调模型，极大地提升了模型部署和实验的灵活性。",
+      "translated_title": "使用 KerasHub 轻松实现与 Hugging Face 的端到端机器学习工作流",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "KerasHub enables users to mix and match model architectures and weights across different machine learning frameworks, allowing checkpoints from sources like Hugging Face Hub (including those created with PyTorch) to be loaded into Keras models for use with JAX, PyTorch, or TensorFlow. This flexibility means you can leverage a vast array of community fine-tuned models while maintaining full control over your chosen backend framework."
+    },
+    {
+      "title": "提升你的笔记本性能：全新的AI优先Google Colab现已向所有人开放 (原标题: Supercharge your notebooks: The new AI-first Google Colab is now available to everyone)",
+      "link": "https://developers.googleblog.com/en/new-ai-first-google-colab-now-available-to-everyone/",
+      "pubDate": "Mon, 23 Jun 2025 16:00:00 GMT",
+      "isoDate": "2025-06-23T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## 全新的AI优先Google Colab现已向所有人开放\n\nGoogle 于2025年6月24日宣布，其在Google I/O 2025上首次分享的AI优先Colab愿景现已向所有用户开放。这款经过重新构想的Colab旨在成为一个真正的笔记本编程伙伴，帮助用户更快地解决最具挑战性的问题。\n\n### 从早期访问到日常生产力\n\nGoogle 的目标是构建一个能够理解用户意图并无缝融入工作流程的AI协作工具。早期用户的反馈表明，这一新体验已产生显著影响，用户正利用Colab的代理能力加速项目、学习新技能并从数据中解锁洞察。\n\n### 新Colab AI的主要使用方式\n\n1.  **加速端到端机器学习项目**\n    用户可以利用Colab AI完成整个机器学习生命周期。从原始数据集开始，AI代理能够自主执行数据清洗和准备、生成特征分析、训练模型并评估结果。这将数小时的工作转化为引导式的对话体验。\n\n2.  **更智能的调试**\n    Colab AI充当结对编程伙伴，帮助用户原型设计、生成样板代码以及理解新库。当遇到错误时，AI不仅能帮助找到错误，还能在清晰的差异视图中建议修复方案，从而帮助用户学习并继续项目，大幅提升生产力。\n\n3.  **轻松创建精美可视化**\n    数据探索离不开可视化。用户只需简单地要求Colab AI绘制数据图表，它就能生成高质量、标签清晰的图表，无需手动调整绘图库。\n\n### 驱动工作流程的关键功能\n\n这些强大的用例由一系列深度集成的新功能支持：\n\n*   **迭代查询（Iterative Querying）**：一种对话式体验，用户可以请求代码、获取库的解释并智能地修复错误。\n*   **下一代数据科学代理（Next-Generation Data Science Agent - DSA）**：触发自主分析工作流程。该代理会创建计划、执行代码、推理结果并呈现发现，同时允许用户提供反馈并保持控制。\n\n*   **轻松代码转换（Effortless Code Transformation）**：用户只需用自然语言描述更改，Colab 就会识别并重构相关代码。\n\n### 立即开始使用Colab AI\n\nGoogle 团队对将这些强大的新功能交到整个Colab社区手中感到非常兴奋，这标志着创建更强大、更直观的AI优先Colab的重要一步。\n\n**如何开始：**\n\n1.  在Google Colab中打开任何新的或现有笔记本。\n2.  在底部工具栏中寻找Gemini火花图标。\n    ![在底部工具栏中寻找Gemini火花图标](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/colab-toolbar-gemini-spark.original.png)\n3.  开始提问并给出指令！\n\nGoogle 期待看到用户将构建出什么。如需分享反馈并与其他用户联系，请加入Google Labs Discord社区的#colab-ai频道。",
+      "shortSummary": "全新的AI优先Google Colab现已向所有用户开放。它旨在成为一个智能编程伙伴，通过AI能力加速端到端机器学习项目，提供更智能的调试（包括错误修复建议），并能轻松创建高质量的数据可视化。Colab AI通过迭代查询、下一代数据科学代理和轻松代码转换等功能，显著提升用户生产力，简化数据科学和编码工作流程。",
+      "translated_title": "提升你的笔记本性能：全新的AI优先Google Colab现已向所有人开放",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/colab-toolbar-gemini-spark.original.png",
+          "alt": "Look for the Gemini spark icon in the bottom toolbar",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The new AI-first Google Colab enhances productivity with improvements powered by features like iterative querying for conversational coding, a next-generation Data Science Agent for autonomous workflows, and effortless code transformation. Early adopters report a dramatic productivity boost, accelerating ML projects, debugging code faster, and effortlessly creating high-quality visualizations."
+    },
+    {
+      "title": "Google Cloud 将 A2A 捐赠给 Linux 基金会 (原标题: Google Cloud donates A2A to Linux Foundation)",
+      "link": "https://developers.googleblog.com/en/google-cloud-donates-a2a-to-linux-foundation/",
+      "pubDate": "Sun, 22 Jun 2025 16:00:00 GMT",
+      "isoDate": "2025-06-22T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Google Cloud 将 A2A 捐赠给 Linux 基金会：推动 AI 代理互操作性\n\n2025 年 6 月 23 日，在北美开源峰会上，Linux 基金会宣布成立 Agent2Agent (A2A) 项目。该项目由亚马逊网络服务 (AWS)、思科、谷歌、微软、Salesforce、SAP 和 ServiceNow 等行业巨头共同发起，旨在建立一个开放、可互操作的 AI 代理生态系统。\n\n### 项目核心与谷歌的贡献\n\n*   **A2A 协议：** A2A 项目的核心是 Agent2Agent (A2A) 协议，这是一个用于不同 AI 代理之间通信和协作的开放标准。其目标是打破当前限制人工智能潜力的信息孤岛。\n*   **谷歌的捐赠：** 谷歌将开创性的 A2A 协议规范、配套的 SDK 和开发者工具捐赠给该项目，作为其启动资金。\n*   **广泛支持：** 目前已有超过 100 家公司支持该协议，AWS 和思科是其最新的验证者。\n\n### A2A 协议的愿景\n\nA2A 协议通过提供一种通用语言，使 AI 代理能够：\n\n*   发现彼此的能力\n*   安全地交换信息\n*   协调复杂的任务\n\n这将为更强大、更具协作性和创新性的 AI 应用新时代铺平道路。\n\n### Linux 基金会的角色与治理\n\nA2A 项目在 Linux 基金会的独立治理下成立，确保其保持厂商中立和社区驱动。此举旨在通过提供一个强大的框架来加速 A2A 协议的采用和开发，该框架涵盖开放协作、知识产权管理和长期管理。\n\n![Agent2Agent Foundation](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Founding_Partners.original.png)\n\n*A2A 协议创始成员*\n\n### 创始合作伙伴的观点\n\n*   **AWS：** 认为代理式 AI 对几乎所有客户体验都至关重要，将通过项目贡献和提供广泛的代理框架、协议和服务来支持社区。\n*   **思科 (Outshift)：** 坚信开放、可互操作的“代理互联网”愿景，将 A2A 支持直接集成到其 AGNTCY 开源组件中，以构建跨厂商边界的互操作层。\n*   **微软 (Azure AI Foundry)：** 致力于将开放互操作性与企业级能力相结合，以负责任地大规模部署代理，并期待在开放标准领域发挥领导作用。\n*   **Salesforce：** 相信企业 AI 的未来在于无缝的代理间协作，将通过 A2A 扩展其开放平台，赋能 Agentforce 协调来自不同系统的解决方案，确保安全、可扩展的互操作性。\n*   **SAP：** 认为 A2A 协议将确保来自不同厂商的代理能够交互、共享上下文并协同工作，从而实现跨传统上不相连系统的无缝自动化。\n*   **ServiceNow：** 凭借其 AI 代理控制塔能力和企业级 AI 平台，将帮助 A2A 落地，推动开放、安全、可扩展的智能代理发展。\n\n### Agent2Agent 基金会的主要目标\n\n1.  **建立开放标准：** 推动 A2A 规范发展和采用，使其成为 AI 代理互操作性的首要行业标准，确保普遍兼容性。\n2.  **培育活跃生态系统：** 培养一个由开发者、研究人员和公司组成的多元化全球社区，加速创新 A2A 技术和应用的创建。\n3.  **确保中立治理：** 在 Linux 基金会受信任的开放治理框架下，为所有贡献者和消费者提供公平的竞争环境。\n4.  **加速安全创新：** 鼓励开发利用安全、协作式 AI 代理力量的新颖应用和服务。\n\nLinux 基金会执行董事 Jim Zemlin 表示，A2A 加入 Linux 基金会将确保其长期中立性、协作性和治理，从而开启代理间驱动生产力的下一个时代。\n\n### 后续计划\n\n项目将继续与合作伙伴及其他相关方合作，制定更广泛的开放标准，以补充 A2A 协议，涵盖可信代理身份、委托代理权限、治理策略、代理安全和声誉等主题。A2A 项目邀请所有对 AI 未来充满热情的组织和个人加入社区并做出贡献。",
+      "shortSummary": "Google Cloud 已将其 Agent2Agent (A2A) 协议捐赠给 Linux 基金会，并与 AWS、思科、微软等主要科技公司共同成立了 A2A 项目。该项目旨在建立一个开放、可互操作的 AI 代理生态系统，通过 A2A 协议打破信息孤岛，使不同 AI 代理能够安全通信、协作并协调复杂任务。此举将加速 A2A 协议的采用和开发，推动更强大、更具协作性的 AI 应用，并确保项目在 Linux 基金会的中立治理下进行。",
+      "translated_title": "Google Cloud 将 A2A 捐赠给 Linux 基金会",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Founding_Partners.original.png",
+          "alt": "Agent2Agent Foundation",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Google, along with Amazon and Cisco, announces the formation of the Agent2Agent Foundation under the Linux Foundation, establishing A2A as an industry standard for AI agent interoperability, fostering a diverse ecosystem, ensuring neutral governance, and accelerating secure innovation in AI applications."
+    },
+    {
+      "title": "LLM中的多语言创新：开放模型如何助力解锁全球交流 (原标题: Multilingual innovation in LLMs: How open models help unlock global communication)",
+      "link": "https://developers.googleblog.com/en/unlock-global-communication-gemma-projects/",
+      "pubDate": "Sun, 22 Jun 2025 16:00:00 GMT",
+      "isoDate": "2025-06-22T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## LLM中的多语言创新：开放模型如何助力解锁全球交流\n\n本文庆祝了Kaggle上“使用Gemma解锁全球交流”竞赛中社区的杰出贡献。该竞赛旨在解决AI领域的一个关键挑战：如何使最先进的大型语言模型（LLMs）适应多样化的文化和语言环境。\n\n### 挑战与背景\n\n*   **语言偏见**：LLMs由于其训练和评估数据集的语言主导性，通常对高资源语言存在偏见。\n*   **性能差距**：这导致在低资源语言中，最新的AI进展可能无法完全实现。\n*   **文化理解缺失**：模型不仅可能缺乏对语言的理解，还可能缺乏对文化相关背景的理解，从而降低其对特定社区的帮助。\n\n### 社区的创新解决方案\n\n通过数百份提交，开发者展示了如何将LLMs的变革力量带给世界各地的语言。项目利用自定义数据集和高效的后训练方法来调整Gemma，以实现指令遵循、翻译和特定领域任务。\n\n以下是一些值得关注的项目：\n\n*   **Gemma 2 斯瓦希里语**：\n    *   第一名项目，将Gemma适应斯瓦希里语理解，为2亿多语言使用者开辟了新可能性。\n    *   使用参数高效微调技术对2B、9B和27B参数的Gemma模型进行微调。\n    *   关键在于Gemma在“指令-响应格式方面卓越的灵活性”，使其能以最小的结构约束解析指令并生成连贯响应。\n\n*   **Kyara：LLM微调的检索增强**：\n    *   探索LLM微调的检索过程，增强Gemma在繁体中文中生成信息丰富响应的能力。\n    *   受人类通过连接概念学习的启发，项目侧重于使用基于图的方法进行知识检索，构建高质量的问答（Q&A）数据集。\n\n*   **ArGemma：为阿拉伯语微调Gemma**：\n    *   为阿拉伯语任务（包括翻译、摘要、讲故事和对话生成）微调Gemma。\n    *   旨在增强对文学文本和艺术中使用的古老阿拉伯语形式的理解，采用多种技术连接现代标准阿拉伯语和古典阿拉伯语之间的任务。\n\n*   **Gemma的意大利语后训练及其他**：\n    *   通过成本效益高的后训练方法改进Gemma的意大利语理解，解决幻觉和灾难性遗忘等问题。\n    *   2B和9B模型在混合数据上进行微调，包括使用“LLM-as-a-judge”创建的新指令微调数据集，以确保翻译质量。\n\n*   **古汉语专家：Gemma 2 > ChatGPT**：\n    *   开发了一个“古汉语专家”，使用Gemma理解和生成古汉语文本的翻译，突出了LLMs在历史文化保护方面的潜力。\n    *   模型在综合数据集上进行微调以提高语言理解，后训练包括改进指令遵循的技术。\n\n*   **Lyric-Gemma 2：一首歌，不同的故事**：\n    *   解决AI驱动歌词翻译的细微挑战，增强Gemma对文化参考和象征语言的敏感性，同时确保与原歌曲的节奏忠实度。\n    *   多语言数据集包含歌词翻译，并进行注释以捕捉关键的文化背景、情感基调和节奏特征。\n\n*   **为读假名微调Gemma 2 JPN**：\n    *   调整Gemma 2 JPN以生成读假名/振假名（日语阅读辅助），帮助语言学习者或遇到复杂汉字的读者。\n    *   LLMs比现有基于规则的工具更能识别罕见汉字，并“解释句子的上下文，实现多音字准确消歧”。\n\n*   **数学思维：为印地语微调Gemma 2**：\n    *   增强Gemma在印地语数字词汇中的数学和逻辑理解，解决模型解释复杂词形（如“दो सौ”表示“200”或“ढाई”表示“2.5”）的挑战。\n    *   9B模型在经过人工专家验证的精选数据集上进行微调，该数据集包含各种问题类型，为AI驱动的教育工具、自动化辅导和本地化内容解锁了用途。\n\n*   **Gemma-2-9b-kk-it：学习翻译哈萨克语**：\n    *   为哈萨克语翻译任务微调Gemma 2 9B模型。哈萨克语使用三种不同文字（西里尔、拉丁和阿拉伯），其中西里尔版本所需的token数量约为英语的两倍，对有限资源下的训练构成挑战。\n    *   模型性能显示出比27B Gemma变体和Google Translate更好的基准，展示了如何以成本效益高的方式为代表性不足的语言调整LLMs。\n\n*   **THEODEN：古英语Gemma**：\n    *   使Gemma能够理解和翻译古英语（英语最早的记录形式）。\n    *   创建了包含古英语-现代英语语言对的自定义数据集，以应对处理历史语言和有限公开数据的挑战。\n    *   笔记本还包含一个基于开源冰岛语文本到语音模型的额外音频生成组件，提供了语音可能听起来的近似效果。\n\n### 其他值得关注的项目\n\n*   Gemma 2 日语数学推理：创建推理变体以执行思维链过程并处理复杂问题。\n*   多任务Gemma2代理 - 摘要与翻译：开发能够执行多任务的代理。\n*   韩语AI医生Gemma2：将Gemma应用于韩语医疗领域。\n*   Gemma微调俄英医学翻译：提高Gemma在眼科翻译的准确性。\n*   Gemma PT：微调ShieldGemma内容分类器以检测葡萄牙语中的偏见和虚假信息。\n*   如何微调Gemma 2以实现高级推理：通过实现Coconut（连续思维链）范式增强Gemma的推理能力。\n*   微调Gemma土耳其语聊天：在问答数据集上微调Gemma以提高准确性和对话能力。\n*   微调Gemma2定制数据集：微调Gemma以进行英阿翻译和医学理解。\n*   Gemma-2在泰卢固语新闻数据集上微调：调整Gemma以从新闻文章生成泰卢固语标题。\n*   微调Gemma2 9B俄语数学推理模型：增强Gemma在俄语数学问题上的性能。\n\n### 展望Gemma 3\n\n全球有7000多种语言，AI弥合沟通鸿沟的潜力巨大。Gemma开放模型家族为开发者提供了强大的基础，将高性能模型应用于低资源语言。\n\nKaggle社区在为各种语言调整Gemma 2方面所展示的创新和奉献精神令人鼓舞。随着我们继续构建一个AI赋能全球交流的未来，我们对Gemma 3充满期待，它带来了对140多种语言的预训练支持，使其成为一个优秀的构建基础。我们鼓励开发者探索Gemma的可能性，分享他们的数据集和模型，并共同推进多语言AI。",
+      "shortSummary": "Kaggle竞赛展示了社区如何利用Gemma开放模型，克服LLM对高资源语言的偏见，实现全球交流。开发者们通过微调Gemma，使其适应斯瓦希里语、阿拉伯语、古汉语、意大利语等多种语言，并解决了歌词翻译、数学理解、古籍翻译等特定任务。这些创新证明了开放模型在弥合语言和文化鸿沟方面的巨大潜力，为Gemma 3未来支持140多种语言奠定了基础，共同推进多语言AI发展。",
+      "translated_title": "LLM中的多语言创新：开放模型如何助力解锁全球交流",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Developers adapt LLMs like Gemma for diverse languages and cultural contexts, demonstrating AI's potential to bridge global communication gaps by addressing challenges like translating ancient texts, localizing mathematical understanding, and enhancing cultural sensitivity in lyric translation."
+    },
+    {
       "title": "Gemini Code Assist 在 Apigee API 管理中现已正式发布 (原标题: Gemini Code Assist in Apigee API Management now generally available)",
       "link": "https://developers.googleblog.com/en/gemini-code-assist-in-apigee-api-management-now-generally-available/",
       "pubDate": "Tue, 17 Jun 2025 16:00:00 GMT",
@@ -16,244 +229,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Gemini Code Assist in Apigee API Management enhances API development with AI-assisted features like natural language API creation, AI-generated summaries, and iterative design, allowing seamless integration with your organization's existing API ecosystem and ensuring consistency, security, and reduced duplication, while offering enterprise-grade security and a streamlined development workflow."
-    },
-    {
-      "title": "Gemini 2.5：我们思维模型家族的更新 (原标题: Gemini 2.5: Updates to our family of thinking models)",
-      "link": "https://developers.googleblog.com/en/gemini-2-5-thinking-model-updates/",
-      "pubDate": "Mon, 16 Jun 2025 16:00:00 GMT",
-      "isoDate": "2025-06-16T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Gemini 2.5 模型家族更新概览\n\nGoogle 于2025年6月17日宣布了其 Gemini 2.5 模型家族的全面更新，引入了新模型并调整了现有模型的定价和可用性。\n\n### 核心更新亮点\n\n*   **Gemini 2.5 Pro**：已普遍可用且稳定，与06-05预览版无变化。\n*   **Gemini 2.5 Flash**：已普遍可用且稳定，与05-20预览版无变化。\n*   **Gemini 2.5 Flash-Lite**：现已推出预览版。\n\n### Gemini 2.5 思维模型\n\nGemini 2.5 模型被设计为“思维模型”，能够在生成响应前进行推理，从而提高性能和准确性。开发者可以控制模型的“思考预算”，决定模型在响应前思考的时间和程度。\n\n![Overview of our family of Gemini 2.5 thinking models](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_family_1-1__dark_dev.original.png)\n\n### 推出 Gemini 2.5 Flash-Lite\n\n2.5 Flash-Lite 作为2.5模型家族中的新成员，以最低的延迟和成本推出预览版。它旨在成为1.5和2.0 Flash模型的经济高效升级版，并在大多数评估中表现出更好的性能，更低的首次令牌时间，同时实现更高的每秒解码令牌数。该模型非常适合大规模分类或摘要等高吞吐量任务。\n\nFlash-Lite 也是一个推理模型，允许通过API参数动态控制思考预算。为了优化成本和速度，Flash-Lite 默认关闭“思考”功能（与其他模型不同）。它还支持所有原生工具，如 Google 搜索接地、代码执行和URL上下文，以及函数调用。\n\n![Benchmarks for Gemini 2.5 Flash-Lite](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_flash-lite2-0_flash_benchmarks_margi.original.png)\n\n### Gemini 2.5 Flash 的更新与定价调整\n\n随着2.5 Flash稳定版的推出（与Google I/O上发布的05-20预览模型相同），Google 对其定价进行了调整：\n\n*   **输入令牌价格**：从 $0.15 / 1M 令牌上调至 **$0.30 / 1M 令牌**。\n*   **输出令牌价格**：从 $3.50 / 1M 令牌下调至 **$2.50 / 1M 令牌**。\n*   **简化定价**：取消了“思考”与“非思考”之间的价格差异，并保持了单一价格层级，无论输入令牌大小如何。\n\n此次调整旨在反映 Flash 卓越的价值，并继续提供最佳的智能成本效益。同时，Gemini 2.5 Flash-Lite 为对成本和延迟敏感、且对模型智能要求较低的用例提供了更低成本的选择。\n\n![Pricing updates for our Gemini Flash family](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_flash-lite_pricing_margin_dark.original.png)\n\n**针对现有用户**：使用 Gemini 2.5 Flash Preview 04-17 的用户，现有预览定价将持续到2025年7月15日，之后该模型端点将被关闭。用户应过渡到普遍可用的“gemini-2.5-flash”模型，或切换到2.5 Flash-Lite 预览版作为更低成本的选择。\n\n### Gemini 2.5 Pro 的持续增长\n\nGemini 2.5 Pro 的增长和需求是所有模型中最为迅猛的。为了让更多客户在生产环境中使用此模型，06-05版本现已稳定，并保持与之前相同的价格点。Pro 模型在需要最高智能和最多功能的场景中表现出色，例如编码和代理任务，它是许多广受欢迎的开发者工具的核心。\n\n![Top developer tools using Gemini 2.5 Pro, featuring Cursor, Bolt, Cline, Cognition, Windsurf, GitHub, Lovable, Replit, and Zed Industries](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini-2-5-pro-top-developer-tools.original.png)\n\n**针对现有用户**：使用 2.5 Pro Preview 05-06 的用户，该模型将持续可用至2025年6月19日，之后将被关闭。使用 2.5 Pro Preview 06-05 的用户，只需将模型字符串更新为“gemini-2.5-pro”即可。",
-      "shortSummary": "Google 发布了 Gemini 2.5 模型家族的更新。Gemini 2.5 Pro 和 Flash 已普遍可用且稳定。新推出的 Gemini 2.5 Flash-Lite 预览版提供最低的延迟和成本，适用于高吞吐量任务。所有2.5模型均为“思维模型”，支持推理控制。Gemini 2.5 Flash 的定价有所调整，输入价格上调，输出价格下调，并简化了定价结构。Gemini 2.5 Pro 需求持续强劲，适用于高智能和复杂任务。",
-      "translated_title": "Gemini 2.5：我们思维模型家族的更新",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_family_1-1__dark_dev.original.png",
-          "alt": "Overview of our family of Gemini 2.5 thinking models",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_flash-lite2-0_flash_benchmarks_margi.original.png",
-          "alt": "Benchmarks for Gemini 2.5 Flash-Lite",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_flash-lite_pricing_margin_dark.original.png",
-          "alt": "Pricing updates for our Gemini Flash family",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini-2-5-pro-top-developer-tools.original.png",
-          "alt": "Top developer tools using Gemini 2.5 Pro, featuring Cursor, Bolt, Cline, Cognition, Windsurf, GitHub, Lovable, Replit, and Zed Industries",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Google is releasing updates to its Gemini 2.5 model family, including the generally available and stable Gemini 2.5 Pro and Flash, and the new Gemini 2.5 Flash-Lite \"thinking models\" in preview, offering enhanced performance and accuracy, with Flash-Lite providing a lower-cost option."
-    },
-    {
-      "title": "Google Pay 在沙盒 iframe 中实现 PCI DSS v4 合规性 (原标题: Google Pay inside sandboxed iframe for PCI DSS v4 compliance)",
-      "link": "https://developers.googleblog.com/en/google-pay-inside-sandboxed-iframe-for-pci-dss-v4-compliance/",
-      "pubDate": "Mon, 09 Jun 2025 16:00:00 GMT",
-      "isoDate": "2025-06-09T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Google Pay 在沙盒 iframe 中实现 PCI DSS v4 合规性\n\n### 背景：PCI DSS v4 合规性挑战\n\n文章指出，在开发或维护结账页面时，会遇到 PCI DSS v4 标准的要求，特别是 **6.4.3 条款**，该条款规定了对加载和执行在消费者浏览器中的所有支付页面脚本的管理要求：\n\n*   必须有方法确认每个脚本都经过授权。\n*   必须有方法确保每个脚本的完整性。\n*   必须维护所有脚本的清单，并附有书面的业务或技术理由。\n\n虽然像子资源完整性（SRI）这样的技术可以帮助满足这些要求，但 Google Pay 的 JavaScript (pay.js) 的构建和发布过程不支持 SRI 所需的长期稳定哈希。\n\n### 解决方案：使用沙盒 iframe\n\n为了解决这一合规性挑战，文章推荐使用**沙盒 iframe**。这种方法能够满足合规性要求，因为 iframe 内的脚本无法访问父级 DOM，从而实现了脚本的隔离和完整性。\n\n**工作原理与所需属性：**\n\n*   **隔离性**：沙盒 iframe 中的脚本与父页面 DOM 隔离，增强了安全性。\n*   **通信**：成功交易后，内部 iframe 可以通过 `window.postMessage()` 等机制与父页面进行通信。\n*   **必要的 `sandbox` 属性**：为了让 Google Pay 在所有浏览器中正常工作，除了 `allow=\"payment\"` 之外，还需要以下四个 `sandbox` 属性：\n    *   `allow-scripts`：允许 iframe 执行脚本（例如 pay.js）。\n    *   `allow-popups`：允许嵌入页面创建“子浏览上下文”，即允许 iframe 在用户点击链接时打开新标签页或窗口。\n    *   `allow-same-origin`：如果未设置，在某些浏览器中会失败；如果设置，iframe 可以访问父级的存储和 cookies。\n    *   `allow-forms`：允许 Google Pay 登录等表单提交数据。\n\n**图示：**\n\n![沙盒 iframe 示例](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_yuqehlR.original.png)\n\n### 成功案例：Shopify\n\nGoogle Pay 与 Shopify 合作实施了上述解决方案。Shopify 通过使用沙盒 iframe 来显示 Google Pay 按钮，成功通过了 PCI DSS v4 审计。Shopify 的杰出工程师 Ilya Grigorik 表示：“我们构建 Shopify Checkout 的方式使得 Google Pay 代码在一个安全的沙盒环境中执行，使我们能够维护结账的完整性并符合 PCI DSS V4 要求。”\n\n### 结论与支持\n\n将 Google Pay 集成包装在沙盒 iframe 中，可以帮助开发者符合 PCI DSS v4 的要求。文章鼓励开发者登录 Google Pay & Wallet Console 创建支持工单，或加入 Discord 上的 #payments 频道寻求帮助。",
-      "shortSummary": "为满足 PCI DSS v4 合规性要求，Google Pay 推荐在沙盒 iframe 中集成其支付脚本。此方法通过隔离 iframe 内的脚本，解决了 Google Pay `pay.js` 不支持子资源完整性（SRI）的问题，确保了支付页面的安全性与完整性。Shopify 已成功采用此方案并通过 PCI DSS v4 审计，证明了沙盒 iframe 是实现合规性的有效途径。",
-      "translated_title": "Google Pay 在沙盒 iframe 中实现 PCI DSS v4 合规性",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_yuqehlR.original.png",
-          "alt": "sandboxed iframe",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Use a sandboxed iframe to implement Google Pay on checkout pages, which helps comply with PCI DSS v4 requirements by isolating scripts. Shopify successfully implemented this method and passed the PCI DSS v4 audit."
-    },
-    {
-      "title": "数据驱动的营销始于开发者 (原标题: Data-driven marketing starts with developers)",
-      "link": "https://developers.googleblog.com/en/data-driven-marketing-starts-with-developers/",
-      "pubDate": "Wed, 28 May 2025 16:00:00 GMT",
-      "isoDate": "2025-05-28T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## 数据驱动的营销始于开发者\n\n在当今的营销环境中，数据应作为策略的指导而非仅仅衡量成功。开发者在实施分析和处理数据的工具方面扮演着关键角色，将原始数据转化为洞察、更智能的策略和更优的结果。本文介绍了三种开发者友好的营销技术（MarTech）解决方案，它们能帮助开发者释放营销数据的强大潜力。\n\n### 1. sGTM Pantheon：增强营销数据控制与透明度\n\nsGTM Pantheon 是一个易于部署的工具箱，旨在补充服务器端 Google Tag Manager (sGTM) 的现有功能，从而提升对营销数据的控制和透明度。它通过测量流量和管理数据流，为更好的隐私、性能、控制和生产力打开了大门。\n\n**核心优势：**\n\n*   改善报告、出价、受众管理和数据管道流程。\n*   对网站和应用数据拥有无与伦比的透明度和控制权。\n*   实时访问外部 API 和基于云的客户、产品和业务数据。\n*   提供实时网站个性化和转化率优化。\n*   利用云数据库进行高级分析和报告。\n\n**开发者灵活性：**\n\n*   开发者可以灵活地混合搭配解决方案，创建可与 Google 和非 Google 平台集成的单一管道。\n*   sGTM Pantheon 解决方案在私有、第一方云安全环境中运行。\n\n**sGTM Pantheon 工具箱内容：**\n\n*   **数据收集工具：**\n    *   **Soteria：** 计算在线交易的投标利润，不暴露数据。\n    *   **Phoebe：** 实时调用 Vertex AI 进行生命周期价值 (LTV) 出价和潜在客户评分。\n    *   **Artemis：** 从 Firestore 获取客户数据用于受众细分。\n    *   **Apollo：** 从 Google 表格检索数据以生成潜在客户评分的潜在客户价值。\n    *   **Cerberus：** 集成 reCAPTCHA 以过滤机器人生成的事件和可疑活动。\n    *   **Dioscuri：** 通过快速访问 Gemini 提供个性化服务。\n*   **数据发送工具：**\n    *   **Hephaestus：** 推进出价、受众、分析和营销数据管道自动化。\n    *   **Deipeus：** 将第一方数据发送回网站进行个性化。\n    *   **Chaos：** 驱动高级分析、数据恢复和受众创建。\n    *   **Hermes：** 简化数据管道中的数据发送。\n*   **数据管理工具：**\n    *   **Argos：** 监控关键的 gTag 设置。\n\n### 2. GA4 Dataform：将BigQuery数据转化为可访问的洞察\n\nGA4 Dataform 是一款数据转换工具，它将 Google Analytics 4 (GA4) 的原始 BigQuery 数据组织成清晰、模块化的表格（如事件、商品、会话、交易等），使所有技术水平的用户都能分析数据并指导数据驱动的营销活动。它提供了深度和简洁性，让用户能够超越默认设置，构建自己的数据模型，并发现新的客户互动方式。\n\n**集成方式：**\n\nGA4 Dataform 是一个 Google Cloud Dataform 项目，提供 SQL 数据模型，用于转换原始 GA4 BigQuery 导出数据。其代码是一个入门包，帮助您在 GA4 原始数据导出的基础上构建模型，以获取数据驱动的营销洞察。\n\n![GA4 Dataform](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-05-27_2.52.15_PM.original.png)\n\n**现有功能：**\n\n1.  构建唯一的 `user_key` 和 `ga_session_key`。\n2.  输出可消化的会话表、用户交易日报表和事件表等。\n3.  可选的 Gclid 扩展（将 GA4 GCLID 映射到 Google Ads 数据传输点击视图 GCLID）。\n4.  事件级别的末次点击归因。\n\n### 3. FeedX：购物Feed的终极A/B测试平台\n\nFeedX 是一个开源的实验框架，旨在帮助广告商对其 Google Ads 购物 Feed 修改进行 A/B 测试，从而消除猜测和手动测试。它提供了一个可靠的 Python A/B 测试框架，让广告商能够了解特定调整对性能变化的影响。\n\n**工作原理：**\n\nFeedX 采用行业最佳实践，确保实验的稳健性和敏感性，包括交叉设计、使用预实验数据进行受控实验 (CUPED) 以调整预实验性能，并在必要时修剪异常值。\n\n**实验流程概览：**\n\n1.  广告商选择希望测试的商品（例如，优化标题或描述）。为确保结果可靠，测试应包含至少 1000 个商品。\n2.  Feed 商品被随机分为两组：对照组和处理组。\n3.  广告商创建一个补充 Feed，仅包含处理组商品的优化内容，并将其上传到 Merchant Center 以开始实验。\n4.  可选地，可以运行交叉实验，交换对照组和处理组。\n5.  实验结束时，分析所有商品的表现，并比较对照组和处理组之间的差异。结果是包含置信区间和统计显著性的可靠指标报告。\n\n### 总结\n\n这些 MarTech 工具在解锁数据驱动解决方案中发挥着关键作用。本文是关于弥合营销与开发之间差距的两部分系列文章的第二部分。更多创新工具和更新，请关注 Google for Developers 博客或查阅 MarTech 解决方案指南。",
-      "shortSummary": "数据驱动的营销离不开开发者的支持。文章介绍了三款关键的营销技术（MarTech）解决方案：sGTM Pantheon、GA4 Dataform 和 FeedX。sGTM Pantheon 通过服务器端 Google Tag Manager 增强营销数据的控制和透明度。GA4 Dataform 将原始 GA4 BigQuery 数据转化为易于理解的洞察。FeedX 则提供了一个开源的 A/B 测试平台，用于优化 Google Ads 购物 Feed。这些工具共同帮助营销人员利用数据制定更智能的策略，提升营销效果。",
-      "translated_title": "数据驱动的营销始于开发者",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-05-27_2.52.15_PM.original.png",
-          "alt": "GA4 Dataform",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Three developer-friendly MarTech solutions – sGTM Pantheon for data control, GA4 Dataform for data transformation, and FeedX for A/B testing shopping feeds – empower developers to leverage marketing data for insights, strategies, and better results."
-    },
-    {
-      "title": "在 Android WebView 中添加对 Google Pay 的支持 (原标题: Adding support for Google Pay within Android WebView)",
-      "link": "https://developers.googleblog.com/en/adding-support-for-google-pay-within-android-webview/",
-      "pubDate": "Tue, 27 May 2025 16:00:00 GMT",
-      "isoDate": "2025-05-27T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## 在 Android WebView 中集成 Google Pay\n\nGoogle 宣布，其 Android WebView 现在正式支持 Google Pay，为在应用中嵌入网页结账流程的开发者提供了便利。此功能从 WebView 版本 137 开始可用。\n\n### 工作原理\n\n该解决方案利用了 **Payment Request API**，允许在网站嵌入 WebView 时启动 Android 支付应用。从 Google Play Services 25.18.30 版本（已发布）开始，Google Pay 将触发原生的支付界面，这意味着用户设备令牌将可用于支付。\n\n### 应用所需更改\n\n由于 Payment Request API 在 WebView 中默认是禁用的，因此需要进行以下简单更改：\n\n1.  **添加或更新构建依赖：**\n    *   在您的 `build.gradle` 文件中添加或更新 `androidx.webkit:webkit:1.14.0-rc01` 依赖。稳定版 1.14.0 预计将于 6 月初发布。\n\n2.  **在 `AndroidManifest.xml` 中添加 `queries` 标签：**\n    *   添加以下 `queries` 标签，以允许 Chromium 定义的动作（`PAY`、`IS_READY_TO_PAY`、`UPDATE_PAYMENT_DETAILS`）在您的 Android 应用或 SDK 中启动：\n\n    ```xml\n    <queries>\n        <intent>\n            <action android:name=\"org.chromium.intent.action.PAY\"/>\n        </intent>\n        <intent>\n            <action android:name=\"org.chromium.intent.action.IS_READY_TO_PAY\"/>\n        </intent>\n        <intent>\n            <action android:name=\"org.chromium.intent.action.UPDATE_PAYMENT_DETAILS\"/>\n        </intent>\n    </queries>\n    ```\n\n3.  **为 WebView 启用 Payment Request API：**\n    *   确保使用正确的导入语句。除了以下更改，无需其他 Google Pay 特定的修改。\n    *   **Kotlin (Compose) 示例：**\n\n        ```kotlin\n        import android.webkit.WebSettings;\n        import android.webkit.WebView;\n        import androidx.webkit.WebSettingsCompat;\n        import androidx.webkit.WebViewFeature;\n\n        AndroidView(\n            factory = { WebView(it).apply {\n                // Update WebView settings to allow JavaScript and payment request settings.\n                javaScriptEnabled = true\n                if (WebViewFeature.isFeatureSupported(WebViewFeature.PAYMENT_REQUEST)) {\n                    WebSettingsCompat.setPaymentRequestEnabled(settings, true);\n                }\n            }},\n            update = { it.loadUrl(url) }\n        )\n        ```\n\n    *   **Java 示例：**\n\n        ```java\n        import android.webkit.WebSettings;\n        import android.webkit.WebView;\n        import androidx.webkit.WebSettingsCompat;\n        import androidx.webkit.WebViewFeature;\n\n        WebView webView = findViewById(R.id.webview);\n        WebSettings webSettings = webView.getSettings();\n        // Update WebView settings to allow JavaScript and payment request\n        webSettings.setJavaScriptEnabled(true);\n        if (WebViewFeature.isFeatureSupported(WebViewFeature.PAYMENT_REQUEST)) {\n            WebSettingsCompat.setPaymentRequestEnabled(webSettings, true);\n        }\n        ```\n\n### 获取生产访问权限\n\n最后，务必使用 Pay & Wallet 控制台为您的应用请求生产访问权限。\n\n![已批准的 Android 应用集成](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_dAsgxZP.original.jpg)\n\n### 优势与支持\n\n在 Android 应用中支持 Google Pay WebView 集成，能让您在应用中嵌入网页结账时，为 Android 用户提供无缝的 Google Pay 体验。如需实施协助，您可以登录 Google Pay & Wallet 控制台创建支持工单，或加入 Discord 上的 #payments 开发者社区。您还可以关注 X 上的 @GooglePayDevs 获取未来更新，并在提问时标记 @GooglePayDevs 并包含 #AskGooglePayDevs。",
-      "shortSummary": "Google 宣布 Android WebView 现已支持 Google Pay，从 WebView 137 版开始。此功能通过 Payment Request API 和 Google Play Services 实现，可触发原生支付界面。开发者需更新 `webkit` 依赖、在 `AndroidManifest.xml` 中添加 `queries` 标签，并为 WebView 启用 Payment Request API。完成集成后，需通过 Google Pay & Wallet 控制台请求生产访问，以在应用内为用户提供无缝的 Google Pay 结账体验。",
-      "translated_title": "在 Android WebView 中添加对 Google Pay 的支持",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_dAsgxZP.original.jpg",
-          "alt": "An approved Android app integration",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Google Pay support within Android WebView is now available, starting with WebView version 137 and Play Services 25.18.30, allowing users to utilize the native Google Pay payment sheet within embedded web checkout processes."
-    },
-    {
-      "title": "探索魔镜：由Gemini模型驱动的互动体验 (原标题: Exploring the Magic Mirror: an interactive experience powered by the Gemini models)",
-      "link": "https://developers.googleblog.com/en/magic-mirror-interactive-experience-powered-by-gemini-models/",
-      "pubDate": "Tue, 27 May 2025 16:00:00 GMT",
-      "isoDate": "2025-05-27T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## 探索魔镜：由Gemini模型驱动的互动体验\n\n“魔镜”项目将一面普通的镜子转变为一个由Gemini模型支持的创新聊天界面，旨在提供信息、激发创造力并带来一丝魔幻体验。该项目超越了简单的显示功能，展示了Gemini API和JavaScript GenAI SDK强大的互动能力。\n\n### 魔镜的关键互动功能\n\n该项目通过Gemini API的多个功能实现其互动体验：\n\n1.  **实时流畅对话 (Live API)**\n    *   魔镜互动的基础是Live API，它支持连续、实时的语音互动。\n    *   它不仅能听取单一指令，还能在用户说话时即时处理语音，从而实现更自然的来回对话（无论是文本还是音频形式）。\n    *   Live API还能理解用户在播放过程中的中断，并根据用户的输入动态调整叙述和对话。\n\n2.  **迷人的故事讲述者**\n    *   除了通过Live API进行对话，魔镜还可以根据Gemini模型的高级生成能力，通过提供特定的系统指令和更新语音配置（包括不同的方言、口音、声音及其他属性），定制化地讲述故事。\n\n3.  **即时信息：与Google搜索结合**\n    *   为了提供关于周围世界的实时信息，魔镜项目利用了模型与“Google搜索结合”的能力，从而提供基于事实的、最新的信息。\n\n4.  **视觉炼金术：按指令生成图像**\n    *   通过Gemini API的函数调用功能，魔镜能够根据用户的描述生成视觉内容，从而深化故事的内涵并增强与Gemini模型的互动体验。\n    *   Gemini模型会判断用户的请求是否需要图像生成，并根据所述特征调用预定义的函数，传递从用户口头描述中提取的详细提示。\n\n### 幕后技术：Gemini模型的核心特性\n\n尽管用户体验旨在隐藏技术细节，但Gemini模型的几个强大功能协同工作，共同实现了这种神奇的体验：\n\n*   **Live API:** 实时、双向音频流和对话的引擎。\n*   **Function Calling (函数调用):** 赋予Gemini模型根据对话与公开的外部工具和服务（如图像生成或自定义操作）进行交互的能力。\n*   **Grounding with Google Search (与Google搜索结合):** 确保获取实时、真实的信息。\n*   **System instructions (系统指令):** 塑造AI的语气和对话风格。\n*   **Speech configuration (语音配置):** 定制AI的语音和语言。\n*   **Modality control (模态控制):** 允许Gemini API以文本、音频或其他输出形式响应。\n\n### 超越反射：互动的未来\n\n这个由Gemini支持的魔镜不仅仅是一个新奇事物，它有力地展示了如何将复杂的AI融入我们的物理环境，以创造有益、引人入胜甚至充满魅力的互动。Gemini API的灵活性为无数其他应用打开了大门，包括超个性化助手、动态教育工具和沉浸式娱乐平台。\n\n### 资源与展望\n\n*   您可以在GitHub上查看该项目的完整代码。\n*   在Hackster.io上可以找到完整的技术教程。\n\n文章鼓励用户想象可能性，并分享他们的想法以及由Gemini驱动的创作。",
-      "shortSummary": "“魔镜”项目利用Gemini模型将普通镜子转变为智能互动界面。它通过Gemini API实现实时语音对话、定制化故事讲述、结合Google搜索提供即时信息，并能根据描述生成图像。该项目展示了AI融入物理环境的强大潜力，预示着个性化助手和沉浸式娱乐的未来。项目代码和技术教程已在GitHub和Hackster.io上发布。",
-      "translated_title": "探索魔镜：由Gemini模型驱动的互动体验",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The Magic Mirror project utilizes the Gemini API, including the Live API, Function Calling, and Grounding with Google Search, to create an interactive and dynamic experience,  demonstrating the power of the Gemini models to generate visuals, tell stories, and provide real-time information through a familiar object."
-    },
-    {
-      "title": "Gemini API I/O 更新 (原标题: Gemini API I/O updates)",
-      "link": "https://developers.googleblog.com/en/gemini-api-io-updates/",
-      "pubDate": "Thu, 22 May 2025 16:00:00 GMT",
-      "isoDate": "2025-05-22T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "Google 在 I/O 2025 大会上宣布了 Gemini API 的多项重大更新，旨在为开发者提供更强大、更灵活的工具，以构建创新的生成式 AI 应用。Google AI Studio 简化了 API 功能的测试和快速原型开发，支持文本、图像甚至视频提示。\n\n**API 中的新模型**\n\n*   **Gemini 2.5 Flash 预览版**\n    *   新增 `gemini-2.5-flash-preview-05-20` 版本，在推理、代码和长上下文处理方面优于之前的预览版。\n    *   目前在 LMarena 排行榜上排名第二，仅次于 2.5 Pro。\n    *   通过最新更新，Flash 的成本效率提高了 22%，在相同性能下所需 token 数量减少。\n    *   目标是根据用户反馈持续改进，并尽快实现普遍可用。\n*   **Gemini 2.5 Pro 和 Flash 文本转语音 (TTS)**\n    *   宣布了 2.5 Pro 和 Flash 的 TTS 预览版，支持单说话人及多说话人的原生音频输出。\n    *   支持 24 种语言，允许开发者控制 TTS 的表达和风格，生成丰富的音频输出。\n    *   多说话人功能可用于生成具有多个不同声音的对话，实现动态交互。\n*   **Gemini 2.5 Flash 原生音频对话**\n    *   此模型目前通过 Live API 提供预览，可生成自然的对话语音，支持 30 多种不同声音和 24 种以上语言。\n    *   新增主动音频功能，模型能够区分说话者和背景对话，从而知道何时响应。\n    *   模型还能根据用户的情绪表达和语调做出适当响应，独立的“思考模型”支持更复杂的查询。\n    *   这些功能使得构建更直观、更自然的对话式 AI 代理成为可能，例如增强呼叫中心交互、开发动态角色、创建独特的语音角色等。\n*   **Lyria RealTime**\n    *   实时音乐生成功能现已在 Gemini API 和 Google AI Studio 中可用，允许使用文本提示创建连续的器乐流。\n    *   利用 WebSockets 建立持久的实时通信通道，模型以小块连续生成音乐，并根据输入进行调整。\n    *   应用场景包括为应用程序添加响应式配乐或设计新型乐器。可在 Google AI Studio 中通过 PromptDJ-MIDI 应用程序试用。\n*   **Gemini 2.5 Pro Deep Think**\n    *   正在测试 2.5 Pro 的实验性推理模式，在处理高度复杂的数学和编码提示方面表现出卓越性能。\n    *   期待很快向更广泛的开发者开放实验。\n*   **Gemma 3n**\n    *   一种生成式 AI 开放模型，专为手机、笔记本电脑和平板电脑等日常设备优化。\n    *   可处理文本、音频和视觉输入，包含参数高效处理的创新，如逐层嵌入 (PLE) 参数缓存和 MatFormer 模型架构，可降低计算和内存要求。\n\n**API 中的新功能**\n\n*   **思维摘要 (Thought summaries)**\n    *   为 Gemini API 中的 2.5 Pro 和 Flash 模型新增，帮助开发者理解和调试模型响应。\n    *   将模型的原始思维合成有用的摘要，包含标题、相关细节和工具调用。Google AI Studio 中的原始思维链也已更新。\n*   **思维预算 (Thinking budgets)**\n    *   随 2.5 Flash 一同推出，将很快扩展到 2.5 Pro。\n    *   允许开发者控制模型“思考”的程度，以平衡其构建应用程序的性能、延迟和成本。\n*   **新的 URL 上下文工具**\n    *   一项实验性工具，用于从提供的链接中检索更多上下文。\n    *   可单独使用，也可与 Google Search 等其他工具结合使用，是开发者使用 Gemini API 构建自己的研究代理的关键组成部分。\n*   **计算机使用工具 (Computer use tool)**\n    *   将 Project Mariner 的浏览器控制功能引入 Gemini API。\n    *   通过 Google AI Studio 中的一键式操作，可轻松创建针对运行浏览器控制代理进行优化的 Cloud Run 实例。\n    *   已与 Automation Anywhere、UiPath 和 Browserbase 等公司进行早期测试，预计今年夏天将进行更广泛的实验性开发者发布。\n*   **结构化输出改进**\n    *   Gemini API 现在对 JSON Schema 提供更广泛的支持，包括备受请求的 `$ref`（引用）关键字和支持定义元组状结构（如 `prefixItems`）的关键字。\n*   **视频理解改进**\n    *   Gemini API 现在允许将 YouTube 视频 URL 或视频上传添加到提示中，从而能够总结、翻译或分析视频内容。\n    *   支持视频剪辑，灵活分析视频的特定部分，尤其适用于超过 8 小时的视频。\n    *   新增动态帧率 (FPS) 支持：游戏或体育等速度关键型视频可达 60 FPS，速度不那么重要的视频可设为 0.1 FPS。\n    *   为帮助用户节省 token，引入了 3 种不同的视频分辨率支持：高 (720p)、标准 (480p) 和低 (360p)。\n*   **异步函数调用 (Async function calling)**\n    *   Live API 中的级联架构现在支持异步函数调用，确保用户对话流畅不中断。\n    *   代理可以在后台执行函数的同时继续生成响应，只需将 `behavior` 字段设置为 `NON-BLOCKING`。\n*   **批量 API (Batch API)**\n    *   正在测试一项新 API，允许开发者轻松批量处理请求，并在最长 24 小时内获得结果。\n    *   价格将是交互式 API 的一半，且具有更高的速率限制。预计今年夏天晚些时候更广泛地推出。\n\n这些是今年 I/O 大会关于 Gemini API 的全部更新。借助 Gemini API 和 Google AI Studio，开发者可以将想法变为现实，无论是构建具有自然语音的对话式 AI 代理，还是开发分析和生成代码的工具。更多最新代码示例和信息，请查阅 Gemini API 开发者文档。",
-      "shortSummary": "Google 在 I/O 2025 大会宣布了 Gemini API 的重大更新。新模型包括增强的 Gemini 2.5 Flash 预览版、支持多语言和多说话人的 TTS 功能、以及用于自然对话的 Flash 原生音频对话。Lyria RealTime 实现了实时音乐生成。API 新增了思维摘要、思维预算、URL 上下文工具、计算机使用工具，并改进了结构化输出和视频理解。此外，还引入了异步函数调用和测试中的批量 API，旨在提升开发者构建 AI 应用的效率和能力。",
-      "translated_title": "Gemini API I/O 更新",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Announcing new features and models for the Gemini API, with the introduction of Gemini 2.5 Flash Preview with improved reasoning and efficiency, Gemini 2.5 Pro and Flash text-to-speech supporting multiple languages and speakers, and Gemini 2.5 Flash native audio dialog for conversational AI."
-    },
-    {
-      "title": "探索 Google 钱包的最新更新 (原标题: Explore the latest updates on Google Wallet)",
-      "link": "https://developers.googleblog.com/en/explore-the-latest-updates-google-wallet-io-25/",
-      "pubDate": "Wed, 21 May 2025 16:00:00 GMT",
-      "isoDate": "2025-05-21T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "Google 钱包近期宣布了一系列重要更新，旨在提升用户体验、扩展功能并加强开发者生态系统。这些更新涵盖了数字身份、家庭使用、通知机制、增值服务以及旅行体验等多个方面。\n\n### 1. 全球可用性扩展\n\n*   Google 钱包已在全球超过 90 个国家和地区推出，近期又新增了 50 多个国家，允许用户在应用和网页上查看和使用数字凭证。\n\n### 2. 数字身份（Digital IDs）\n\n*   **核心理念：** 数字身份已上线，以信任、易用性和互操作性为核心构建。\n*   **身份验证：** 更容易证明年龄和身份。\n*   **可用性扩展：**\n    *   阿肯色州、蒙大拿州、波多黎各和西弗吉尼亚州的居民将很快能将政府颁发的数字身份保存到 Google 钱包。\n    *   亚利桑那州、佐治亚州、马里兰州和新墨西哥州的用户将能在 DMV 使用其移动身份，简化客户体验。\n*   **英国护照支持：** 英国护照持有者将很快能创建数字身份凭证并安全存储在 Google 钱包中。初期将与 Rail Delivery Group 合作，允许火车旅客使用数字身份验证 Railcard 资格。\n*   **新用例：** 未来可用于恢复亚马逊账户、访问 CVS Health 和 MyChart by Epic 的在线健康服务、验证 Uber 等平台上的个人资料。\n*   **Digital Credentials API：** 与 W3C 生态系统合作伙伴共同开发，提供统一、安全的框架，允许应用和网站直接从用户设备上的任何数字钱包请求可验证的年龄或身份证明。\n\n### 3. 家庭连接：儿童版 Google 钱包\n\n*   父母和监护人现在可以在适当监督下，允许孩子访问 Google 钱包。\n*   孩子可以在商店进行非接触式支付，并存储活动门票、图书馆卡和礼品卡等支持的凭证。\n*   **安全控制：** 父母可通过 Family Link 接收每笔交易的电子邮件通知，轻松追踪近期购买、移除支付卡和关闭凭证访问权限。\n*   此功能无需对 Google Wallet API 进行任何更改。\n\n### 4. 提升用户参与度：更精细的通知\n\n*   **字段更新通知：** 除了常规更新通知，现在可以针对凭证内特定字段的更改触发推送通知（例如，积分余额达到阈值或会员等级升级）。\n*   **目标：** 提供更具吸引力和以用户为中心的体验，提高凭证的参与度和实用性。\n\n### 5. 近距离通知（Nearby Passes Notifications）\n\n*   Google Wallet API 将支持此功能，当用户接近指定地点时，会提醒他们相关的凭证（如会员卡、优惠、登机牌或活动门票）。\n*   通知作为直接入口，用户可一键访问相关凭证，促进更流畅的互动。\n*   **用户控制：** 引入两个新开关：\n    1.  在凭证详情屏幕上，允许用户开启或关闭该特定凭证的所有通知（包括字段更新和近距离通知）。\n    2.  通过“近距离凭证通知”通道，允许用户控制是否接收近距离凭证通知。\n\n### 6. 增值机会（Value Added Opportunities）\n\n*   允许开发者将个性化模块直接集成到凭证中，展示相关优惠、促销和附加服务。\n*   将凭证转变为更具动态性的互动界面，引导用户返回应用或网站，创造持续的用户互动门户。\n\n### 7. 凭证升级体验（Pass Upgrade experience）\n\n*   针对用户手动添加到 Google 钱包但未与商家账户关联的凭证，引入了“凭证升级”体验。\n*   系统会提示用户登录其商家账户并保存一个已关联的凭证版本。\n*   开发者需集成 Wallet API 的“用户忠诚度计划注册”功能。\n*   未来将扩展此功能，允许通过“其他”功能添加的凭证也能关联到商家账户。\n\n### 8. 旅行体验增强\n\n*   **自动关联凭证（Auto Linked Passes）扩展：** 航空公司若集成了常旅客计划，现在可在用户办理登机手续后自动将登机牌推送到其钱包。\n*   **开放式 EMV 交通系统：** 进一步增强体验，为乘客提供详细的行程和票价构成信息。令牌化开放式支付卡充当用户支付和交通系统之间的桥梁。\n*   **Google Transit Insights 扩展：** 将支持特定凭证类型（如季票）的销售，直接与用户的令牌化开放式支付卡关联，无需单独的交通卡。\n*   **实时交通凭证更新：** Google 钱包用户将直接在凭证上看到实时交通状态更新（如火车准点或延误），由 Google Wallet API 的实时状态支持和 Google 地图集成提供。运营商需确保车票包含所需字段并提供实时 GTFS 数据流。\n\n### 9. 个性化与安全：安全私有图片（Secure Private Images）\n\n*   允许在凭证中包含用户个人资料照片。\n*   这些图片仅凭证持有者可访问，例如用于数字名片、会员卡或带有用户照片的活动门票。\n*   **重要提示：** 此功能不能用于官方身份验证。",
-      "shortSummary": "Google 钱包发布多项重大更新，旨在提升用户体验和开发者能力。主要亮点包括：数字身份功能扩展至更多国家和用例（如英国护照、DMV），并推出 Digital Credentials API；支持儿童使用 Google 钱包，父母可通过 Family Link 监督；引入更精细的通知（如字段更新和近距离通知），增强用户参与度；新增增值机会和凭证升级体验，深化商家互动；优化旅行功能，如航空公司自动推送登机牌和实时交通更新；以及支持凭证中包含安全私有图片。这些更新旨在使 Google 钱包更强大、灵活和功能丰富。",
-      "translated_title": "探索 Google 钱包的最新更新",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Google Wallet has expanded globally and introduced new features like digital IDs via a new Digital Credentials API, granular notifications for pass updates, and nearby pass notifications, along with other features like Value Added Opportunities and a Pass Upgrade experience."
-    },
-    {
-      "title": "将 Gemini 智能引入 Google Home API (原标题: Bringing Gemini intelligence to Google Home APIs)",
-      "link": "https://developers.googleblog.com/en/bringing-gemini-intelligence-to-google-home-apis/",
-      "pubDate": "Wed, 21 May 2025 16:00:00 GMT",
-      "isoDate": "2025-05-21T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 将 Gemini 智能引入 Google Home API\n\nGoogle 宣布将 Gemini AI 智能集成到 Google Home API 中，旨在将智能家居体验提升到一个更直观、更轻松的新时代。这一举措超越了简单的设备连接，致力于创造真正理解、适应并响应用户需求的智能家居。\n\n## 核心进展与生态系统扩展\n\n*   **目标与愿景**：Google Home API 的目标是赋能所有开发者为智能家居构建创新设备和体验。现在，通过将 Gemini 引入 Home API，Google 将其顶尖的 AI 能力直接带给开发者和用户。\n*   **生态系统增长**：在 Google I/O 2024 上，Google 宣布 Home API 可访问超过 6 亿台设备。目前，这一生态系统已增长至超过 7.5 亿台设备，开发者可利用 Google 的中枢设备、Matter 基础设施以及由 Google 智能驱动的自动化引擎。\n*   **开发者工具**：Android 和 iOS SDK 已进入公开开发者测试阶段，部分开发者已利用 Home API 发布了新的 Android 应用。\n\n![7.5 亿台设备](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_qg8v3Hz.original.png)\n\n## 基于 Home API 构建的合作伙伴体验\n\nGoogle 展示了更多合作伙伴如何利用 Home API 提升客户体验：\n\n*   **First Alert**：用户可以通过 First Alert 应用或 Google Home 应用控制烟雾报警器，并与现有的 Nest Protects 无缝互联。\n    ![First Alert - Google Home at Google I/O](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/First_alert_share_v1.original.png)\n*   **Yale**：Yale 即将推出的 Matter 锁（Nest x Yale 锁的继任者）将利用 Google Home 应用中一流的锁功能，这些功能是使用 Home API 构建的。\n    ![Yale - Google Home at Google I/O](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Yale-google-home-google-io.original.png)\n*   **Cync**：Cync 正在实现当用户外出时，家居自动调整照明和风扇设置以确保宠物舒适的功能。\n    ![Cync - Google Home at Google I/O](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Cync_share_v1.original.png)\n*   **iRobot**：部分 iRobot Roomba® 机器人可以利用 Google Home 的存在感应功能创建自动化，在用户离家时自动清洁，确保回家时一尘不染。\n    ![iRobot - Google Home at Google I/O](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/i_robot_share_v1_1.original.png)\n*   **Motorola Moto Tag**：用户可以通过简单的标签交互触发自定义智能家居例程，提供无与伦比的个性化体验。\n    ![Motorola Moto Tag - Google Home at Google I/O](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Mototag_share_v1.original.png)\n*   **Tuya Smart**：涂鸦智能正在增强无缝互操作性。现在，用户可以直接在涂鸦智能应用中轻松设置 Matter 设备并控制连接到 Google 的设备。\n    ![Tuya - Google Home at Google I/O](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Tuya_share_v1.original.png)\n\n## 通过 Gemini 赋能的 Home API 激活摄像头功能\n\n去年秋天，Google 在 Google Home 应用中推出了 Gemini 赋能的摄像头功能公开预览版，允许用户提出自然语言问题（例如“孩子们把自行车留在车道上了吗？”），并即时获取相关视频片段。现在，这些摄像头体验也将直接提供给开发者。\n\n![Gemini 赋能的摄像头功能](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_q562FSk.original.png)\n\n*   **标准功能**：包括实时流媒体、事件历史访问、双向通话功能和摄像头设置。\n*   **Gemini 智能集成**：进一步整合了用户喜爱的 Gemini 智能，如 AI 描述和搜索摄像头历史记录的能力，使用户更容易快速识别所需内容，从而提高家庭安全性。\n\n## 利用 Gemini 实现轻松自动化\n\n创建和实施完美的自动化以改善家居体验对许多用户来说可能是一项艰巨的任务。为此，Google 正在 Automations API 中引入新的 Gemini 赋能功能，旨在使创建强大的例程比以往任何时候都更容易：\n\n*   **建议自动化 (Suggested Automations)**：Gemini 智能分析用户家中的设备，并主动建议他们可能没有想到的潜在有用自动化。\n    ![冥想模式 - Google Home at Google I/O](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/meditation_share_v1.original.png)\n*   **帮我创建 (Help me create)**：构建自动化变得像对话一样简单。用户可以使用自然语言告诉 Gemini 他们想要实现的目标，然后自动化草稿就会为他们生成。\n    ![花园守护者 - Google Home at Google I/O](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/critters_share_v1_1.original.png)\n*   **新自动化启动器 (New Automation Starters)**：增加了基于日期和天气条件的更复杂触发器，使自动化能够更动态地响应现实生活的复杂性。\n    ![自动化启动器 - Google Home at Google I/O](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/rain_share_v1.original.png)\n\n这些新功能将使开发者能够比以往更快地为用户提供前所未有的 Gemini 赋能智能功能。\n\n## Gemini 遍布 Google Home 各界面\n\n将设备通过 Google Home API 集成后，它们可以参与 Google 各界面上的 Gemini 赋能体验。\n\n![将 Gemini 智能引入 Google Home API - Google I/O 2025](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/montage_large_v3.original.png)\n\n*   **Gemini 应用**：Google Home 用户可以在 Gemini 应用中使用自然语言控制和查询他们的智能家居设备。\n*   **智能音箱、智能显示器和 Google TV**：Google 已经预览了 Gemini 增强这些设备上的语音体验，实现更自然的交互、更深入的主题探索、设备控制，甚至基于语音的自动化创建。\n*   **Pixel 上的 Home 摘要小部件**：Google 正在与部分用户测试此小部件，它无需打开应用即可提供有关家庭的洞察。\n    ![家庭摘要小部件 - Google Home at Google I/O](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/green_phone_share_v1.original.png)\n\n智能家居的下一个时代已经到来，它由 Gemini 驱动。这不仅仅是关于连接设备，更是关于创造真正轻松、直观的体验。通过将 Nest 摄像头智能和 Gemini 的强大功能引入 Home API，Google 期待看到开发者将如何继续塑造互联家庭的未来。\n\n## 参与未来\n\n*   **早期访问计划**：Google 将于今年晚些时候向一小部分合作伙伴推出 Gemini 赋能的 Home API 早期访问计划。\n*   **开发者挑战赛**：Google 将启动一系列主题开发者挑战赛，旨在激发创造力并提升技能，获胜者有机会向 Google 工程师展示。\n*   **开发者研究计划**：鼓励开发者加入研究计划，提供关于 Google 产品和工具的反馈。",
-      "shortSummary": "Google 正将 Gemini AI 智能集成到 Google Home API 中，以打造更智能、更轻松的家居体验。开发者现在可访问超过 7.5 亿台设备，并利用 Gemini 赋能的摄像头功能和自动化创建工具。新功能包括自然语言控制、AI 描述、建议自动化和基于对话的例程创建。Gemini 智能将遍布 Google Home 应用、智能音箱、显示器和 Pixel 设备，旨在实现更直观的智能家居交互。Google 邀请开发者参与早期访问计划和挑战赛，共同塑造互联家庭的未来。",
-      "translated_title": "将 Gemini 智能引入 Google Home API",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_qg8v3Hz.original.png",
-          "alt": "750M Devices",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/First_alert_share_v1.original.png",
-          "alt": "First Alert - Google Home at Google I/O",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Yale-google-home-google-io.original.png",
-          "alt": "Yale - Google Home at Google I/O",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Cync_share_v1.original.png",
-          "alt": "Cync- Google Home at Google I/O",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/i_robot_share_v1_1.original.png",
-          "alt": "IRobot - Google Home at Google I/O",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Mototag_share_v1.original.png",
-          "alt": "Motorola mototag - Google Home at Google I/O",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Tuya_share_v1.original.png",
-          "alt": "Tuya - Google Home at Google I/O",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_q562FSk.original.png",
-          "alt": "Gemini-powered camera features",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Gemini intelligence is being integrated into Google Home APIs, offering developers access to over 750 million devices and enabling advanced features like AI-powered camera analysis and automated routines."
-    },
-    {
-      "title": "Google Pay 新功能，优化您的支付流程 (原标题: New Google Pay features to enhance your payment flows)",
-      "link": "https://developers.googleblog.com/en/new-google-pay-features-to-enhance-your-payment-flows/",
-      "pubDate": "Tue, 20 May 2025 16:00:00 GMT",
-      "isoDate": "2025-05-20T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "在2025年的Google I/O大会上，Google Pay API 发布了一系列更新，旨在为用户提供更顺畅、更安全、更成功的结账体验，同时帮助开发者提升转化率、支持新的支付场景、增强安全性并简化集成。\n\n## 提升结账体验和转化率\n\n*   **Android WebView 中的 Google Pay**\n    *   从Chrome v137开始，用户可以在Android WebView中无缝使用Google Pay，获得原生的Android体验并访问Google Wallet中的设备令牌。\n    *   只需在应用清单中启用PaymentRequest即可。\n*   **更通用的API，支持现代结账流程**\n    *   **Google Pay支付表单**：现在支持更丰富的卡片艺术和名称，帮助用户更快选择偏好卡片，并支持深色模式，更好地融入应用界面。\n    *   **Web版createButton API**：提供更多自定义选项（显示/隐藏边框，更多按钮文本选项），以更好地匹配UI，并通过预先显示卡片详细信息来帮助提升销售。\n    *   **新的API**：未来几个月将推出新API，支持在不使用支付按钮的情况下显示卡片识别信息。\n    *   **支持商户发起交易（MITs）**：Google Pay Online API现在支持订阅、自动充值和延迟扣款等MITs，包括支付表单中的用户通知、设备无关的令牌（确保用户更换设备后支付连续性）以及底层卡片变更的生命周期通知。\n\n    ![Google Pay payment sheet](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image6.original.jpg)\n    *图2：展示Google Pay支付表单深色和浅色版本的截图。*\n\n    ![list selector](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_uIzW5le.original.png)\n    *图3：通过Payment Metadata API使用列表选择器提供Google Pay的示例。*\n\n## 简化开发者体验\n\n*   **更简单的测试**：改进了测试卡套件，在TEST环境下，开发者可以直接在支付表单中看到相关的测试卡（普通卡、令牌化卡、借记卡）。\n*   **更快的Android调试**：提供更细粒度的构建时错误日志，便于修改逻辑；运行时提供详细的异常/错误代码。\n\n    ![detailed error messages](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image4.original.jpg)\n    *图4：通过Logcat和调试器显示更详细的错误消息。*\n\n*   **新的开发者资源**：推出了新的codelabs、Firebase Studio模板（一键式开发环境）和针对Web开发者的学习路径。未来计划为原生Android、Flutter、React JS、React Native和Angular添加类似资源。\n*   **Google Pay API 状态仪表板**：新的仪表板实时监控关键API（如CreateButton、IsReadyToPay或LoadPaymentData API）的状态，显示API可用性（去年正常运行时间达99.99%），并即时获取事件更新。\n\n    ![Google Pay API Status Dashboard](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/status-dash.original.jpg)\n    *图5：Google Pay API状态仪表板包含服务正常运行时间和健康信息。*\n\n## 加强安全和风险管理\n\n*   **更智能的欺诈检测**：最新的模型显著减少支付欺诈。开发者现在可以通过Google Pay & Wallet Console上传退款数据，进一步优化模型。\n*   **内置身份验证与核实（ID&V）**：Google Pay可以自动触发针对可疑交易的身份验证挑战，开发者无需编写任何代码即可使用。\n*   **增强API响应**：未来几个月计划通过更详细的风险信息来增强API响应，赋予开发者更多风险决策控制权。\n*   **重要提示**：Google Pay的验证和欺诈检查是辅助性的，不应取代既定的风险管理程序。\n\n## 探索最新的Google Pay API更新\n\n今年的Google I/O大会为Google Pay带来了显著的进步，重点关注实际效益：更高的转化率、增强的安全性、更广泛的支付能力以及更顺畅的开发流程。鼓励开发者探索更新的文档、尝试新的测试工具，并利用这些功能构建更好的支付体验。",
-      "shortSummary": "在2025年的Google I/O大会上，Google Pay发布了多项新功能，旨在优化支付流程。主要更新包括：在Android WebView中无缝集成Google Pay以提升转化；API功能更强大，支持丰富的支付表单、更多自定义选项和商户发起交易；简化开发者体验，提供更便捷的测试工具、详细的调试日志和新的开发者资源；以及加强安全和风险管理，引入更智能的欺诈检测和内置身份验证。这些更新旨在提供更顺畅、安全且高效的支付体验。",
-      "translated_title": "Google Pay 新功能，优化您的支付流程",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image6.original.jpg",
-          "alt": "Google Pay payment sheet",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_uIzW5le.original.png",
-          "alt": "list selector",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image4.original.jpg",
-          "alt": "detailed error messages",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/status-dash.original.jpg",
-          "alt": "Google Pay API Status Dashboard",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "At Google I/O 2025, new Google Pay API updates were unveiled to enhance checkout experiences with features like Android WebViews integration, a more versatile API, and improved developer tools."
     }
   ],
-  "lastUpdated": "2025-06-21T10:28:55.568Z"
+  "lastUpdated": "2025-06-27T10:34:15.323Z"
 }
