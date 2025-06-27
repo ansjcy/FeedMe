@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "从结对编程到对等编程：GitHub Copilot 中智能代理工作流的愿景 (原标题: From pair to peer programmer: Our vision for agentic workflows in GitHub Copilot)",
+      "link": "https://github.blog/news-insights/product-news/from-pair-to-peer-programmer-our-vision-for-agentic-workflows-in-github-copilot/",
+      "pubDate": "Wed, 25 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-25T16:00:00.000Z",
+      "creator": "Tim Rogers",
+      "summary": "# GitHub Copilot：从结对编程到对等编程的智能代理工作流愿景\n\n## 引言：GitHub Copilot 的演进\n\nGitHub Copilot 最初于2021年推出时，被定位为“AI结对程序员”，旨在帮助开发者保持专注、减少样板代码并加速编码。然而，GitHub 的愿景是让 Copilot 不仅仅是一个助手，而是能够主动与开发者协作，包括同步任务、独立解决问题，甚至审查代码。这标志着 Copilot 正从一个辅助工具向一个能够主动解决问题的智能代理转变。\n\n## 智能代理的未来愿景\n\n未来的 GitHub Copilot AI 代理将通过多步骤推理和执行来积极解决问题，具备以下能力：\n\n*   **独立问题解决**：Copilot 将分解复杂任务并采取必要步骤来解决它们，并在此过程中提供更新。\n*   **自适应协作**：无论是与开发者同步工作，还是在后台独立运行，Copilot 都将迭代自己的输出以推动项目进展。\n*   **主动提升代码质量**：Copilot 将主动协助解决问题、测试和代码审查等任务，确保更高质量、更易于维护的代码。\n\nCopilot 的未来在于其在不同模式之间灵活切换的能力——独立执行任务，同时让开发者随时了解情况并保持控制。这种演变将使开发者能够专注于更高层次的决策，而 Copilot 则承担更多的执行工作。\n\n## Copilot 的实际应用：迈向愿景的步伐\n\n### 1. 代理模式（Agent Mode）：IDE 中的实时 AI 队友\n\n代理模式是 GitHub Copilot 中一个独立的 AI 代理，它存在于开发者的代码环境中，感觉就像将电脑交给队友几分钟。当开发者发出指令时，代理会接管控制，解决问题，并通过定期检查点报告其工作。其能力包括：\n\n*   读取整个工作区以理解上下文。\n*   规划多步骤的修复或重构（并首先展示计划）。\n*   应用更改、运行测试，并在紧密的反馈循环中迭代。\n*   在意图不明确时寻求指导。\n*   通过“代理循环”运行和完善自己的工作——规划、应用更改、测试和迭代。\n\n在代理模式下，Copilot 不仅仅响应请求，而是主动朝着开发者的目标努力。开发者定义结果，Copilot 决定最佳方法，并在需要时寻求反馈、测试自己的解决方案并实时完善工作。这就像是快速推进的结对编程：开发者实时观察任务的展开，可以随时介入或重新定向。\n\n### 2. 编码代理（Coding Agent）：在你休息时工作的 AI 队友\n\n并非所有编码都实时发生。有时，开发者需要将任务交给队友，稍后再检查。这就是编码代理的作用——它是 Copilot 转型为独立代理的第一步。编码代理在云端启动自己的安全开发环境。开发者可以向 Copilot 分配多个问题，然后专注于其他工作，而它则处理繁重的工作。其能力包括：\n\n*   克隆仓库并在隔离环境中引导工具。\n*   将问题分解为步骤，实现更改，并编写或更新测试。\n*   通过运行测试和 Linter 验证其工作。\n*   打开草稿拉取请求（PR），并根据 PR 审查意见进行迭代。\n*   流式传输进度更新，以便开发者可以随时查看或介入。\n\n与编码代理合作就像是请另一房间的队友（拥有自己的笔记本电脑和设置）来解决问题。开发者可以自由地处理其他事情，但可以随时查看状态或提供反馈。\n\n## Copilot 智能代理未来的下一阶段：三大支柱\n\nCopilot 的下一阶段将建立在三个融合的支柱之上：\n\n1.  **更智能、更精简的模型**：大型语言模型（LLM）的持续突破不断提高准确性，同时降低延迟和成本。扩展的上下文窗口现在可以覆盖整个单体应用，为 Copilot 提供了推理复杂代码库和返回基于实际代码答案所需的“长程记忆”。\n2.  **更深层的上下文感知**：Copilot 越来越能理解工作背后的完整故事——问题、拉取请求历史、依赖图，甚至私有运行手册和 API 规范（通过 MCP）。通过利用这种更丰富的上下文，它可以建议与项目意图而非仅语法对齐的更改。\n3.  **开放、可组合的基础**：Copilot 被设计为可以无缝集成到开发者的技术栈中。开发者选择编辑器、模型和工具；Copilot 则插入其中，学习开发者的模式并加以放大。开发者处于主导地位，引导 AI 以比以往任何时候都更快的速度构建、测试和发布代码。\n\n## 总结\n\n综合来看，这些支柱将 Copilot 从单一助手转变为一个灵活的 AI 队友——一个可以帮助任何团队（从车库里的三名开发者到全球企业中的数千名开发者）以更少的摩擦和更快的速度规划、编码、测试和发布代码的伙伴。下一波浪潮已经到来。\n\n## 相关信息\n\n*   **作者**：\n    ![Tim Rogers](https://avatars.githubusercontent.com/u/116134?v=4&s=200)\n    Staff Product Manager\n*   **相关文章**：\n    *   GitHub Copilot: Meet the new coding agent\n    *   Implementing features has never been easier: Just assign a task or issue to Copilot. It runs in the background with GitHub Actions and submits its work as a pull request.\n*   **探索更多来自 GitHub**：\n    *   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切，尽在一处。\n    *   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来，这里是任何人都可以构建任何东西的地方。\n    *   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用 GitHub 进行构建的公司和工程团队。\n    *   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025：最后机会：节省700美元购买 Universe 线下通行证，于10月28-29日在旧金山加入我们。",
+      "shortSummary": "GitHub Copilot正从“AI结对程序员”进化为“对等程序员”，旨在通过智能代理实现更深层次的协作。其愿景是让Copilot能独立解决问题、自适应协作并主动提升代码质量。目前已推出“代理模式”在IDE中实时协助，以及“编码代理”在云端独立完成任务。未来发展将基于更智能的模型、更深层的上下文感知和开放可组合的基础，使Copilot成为一个灵活的AI队友，加速软件开发，适用于各种规模的团队。",
+      "translated_title": "从结对编程到对等编程：GitHub Copilot 中智能代理工作流的愿景",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/116134?v=4&s=200",
+          "alt": "Tim Rogers",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>AI agents in GitHub Copilot don’t just assist developers but actively solve problems through multi-step reasoning and execution. Here’s what that means.</p>\n<p>The post <a href=\"https://github.blog/news-insights/product-news/from-pair-to-peer-programmer-our-vision-for-agentic-workflows-in-github-copilot/\">From pair to peer programmer: Our vision for agentic workflows in GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "在AI时代，为什么开发者专业知识比以往任何时候都更重要 (原标题: Why developer expertise matters more than ever in the age of AI)",
       "link": "https://github.blog/developer-skills/career-growth/why-developer-expertise-matters-more-than-ever-in-the-age-of-ai/",
       "pubDate": "Tue, 24 Jun 2025 17:04:47 +0000",
@@ -350,51 +394,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Have you tried the new coding agent in GitHub Copilot? Here’s how developers are using it to work more efficiently. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/assigning-and-completing-issues-with-coding-agent-in-github-copilot/\">Assigning and completing issues with coding agent in GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "如何在GitHub上快速创建问题和拉取请求 (原标题: How to create issues and pull requests in record time on GitHub)",
-      "link": "https://github.blog/developer-skills/github/how-to-create-issues-and-pull-requests-in-record-time-on-github/",
-      "pubDate": "Thu, 05 Jun 2025 16:00:00 +0000",
-      "isoDate": "2025-06-05T16:00:00.000Z",
-      "creator": "Jon Peck",
-      "summary": "## GitHub Copilot如何加速问题和拉取请求的创建\n\n软件开发的核心始于对话，而GitHub上的“问题”（Issue）正是这种对话的结晶。一个精心设计的问题为后续的拉取请求（PR）、代码审查、测试和部署奠定了基础。GitHub Copilot正在改变从想法到问题再到PR的流程，通过协助起草问题并将其分配给其编码代理，从而显著加速整个开发周期。\n\n本文将深入探讨：\n\n*   问题为何仍然是GitHub上工作的核心，无论是由人工还是Copilot创建。\n*   与团队或Copilot协作时，构建优质问题的最佳实践。\n*   Copilot驱动的工作流如何帮助您更快地推进工作，确保一致性，并为Copilot编码代理的自动化修复做好准备。\n\n## 为何优质的问题和拉取请求至关重要\n\nGitHub上的问题和拉取请求是核心构建块。每个问题描述一项独立的工作，并提供有用的细节和要求；PR则捆绑已完成的工作以进行代码审查和合并。即使在AI加速的工作流中，这些“工件”仍是团队理解工作进展的关键。无论由谁（或什么）创建，结构良好的问题和拉取请求都能带来四大关键优势：\n\n*   **共享上下文**：一个URL即可捕获问题陈述、复现步骤和完成定义，便于新成员快速了解。\n*   **异步协作**：减少会议，让开发人员可以异步工作，仅在必要时进行同步。\n*   **审计和分析**：标签、里程碑和模板支持仪表盘、SLA和合规性报告。\n*   **自动化钩子**：Actions工作流、项目看板和代理工具都依赖于附加到每个问题的可预测元数据。\n\n**不良问题的示例**：文章中提到一个糟糕的问题示例，仅有标题“Issue #12609: Found broken link. Please fix!”，但正文没有任何解释、实际链接、上下文、环境或版本信息，也没有可复现的示例或建议修复。这种模糊的提示会导致模糊的输出，无论是人类还是机器。\n\nAI（如大型语言模型）在目标、约束和成功标准明确时表现最佳。Copilot通过协助创建问题，让开发者能够专注于清晰度，而非复制粘贴，因为它能定位相关引用、构建初始问题结构，甚至添加标签或项目分配。\n\n## 优质GitHub问题的构成要素\n\n创建或审查问题时，请使用以下清单（Copilot会协助编写，但您仍需把控）：\n\n*   **行动导向的标题**：以名词开头，动词结尾（例如：“登录按钮 – 在Safari 17 beta上禁用”）。\n*   **问题或用户故事**：描述痛点（例如：“作为购物者，我无法在移动Safari上点击购买，因此放弃购物车并哭泣。”）。\n*   **预期行为与实际行为**：简洁的对比（例如：“应渲染主按钮” vs. “按钮不可点击，无CSS pointer-events。”）。\n*   **复现步骤或视觉证据**：GIF、截图或命令行细节，帮助团队成员（或Copilot）快速理解问题。\n*   **验收标准/完成定义**：明确的通过/失败标准（例如：“所有测试通过”，“Lighthouse分数 > 90”，“功能标志已移除”）。\n*   **范围和约束**：防止过度开发（例如：性能预算、浏览器列表、无新依赖）。\n*   **元数据**：标签、负责人、里程碑、项目，这是驱动看板、筛选和Slack通知的关键。\n\n## 如何使用Copilot在GitHub上更快地起草问题\n\n优质问题具备两个特点：编写快速且上下文丰富。GitHub Copilot的“创建问题”流程兼顾两者。您无需在不同字段间跳转或复制粘贴片段，只需打开Copilot Chat并用自然语言描述问题，例如：“创建关于octo-org/octo-web登录表单500错误的bug报告。”\n\nCopilot会起草标题、正文，甚至建议标签和负责人，并根据您的仓库首选模板进行格式化，确保每次问题都以正确的格式呈现。\n\n**分步指南**：\n\n1.  在github.com/copilot打开Copilot Chat的沉浸式视图。\n2.  描述您的需求。提及仓库（组织/仓库）或让Copilot根据您上次提交问题的位置推断。\n3.  如果图片能更快地说明问题，请插入截图；Copilot会将其嵌入草稿并引用在描述中。\n4.  审查草稿。可以提出后续提示（例如：“添加复现步骤”、“切换到bug模板”）或直接修改Markdown。\n5.  确认无误后点击“创建”。\n\n**使用GitHub Copilot构建优质问题的技巧**：\n\n| 您做什么           | Copilot如何帮助                                | 为何重要                                     |\n| :----------------- | :--------------------------------------------- | :------------------------------------------- |\n| 提供上下文         | 将您的措辞解析到正确的模板部分。               | 团队成员（或Copilot）获得清晰度。            |\n| 附上证据           | “图像转问题”将文件保留在问题正文中。           | 未来的调试者能准确看到您所看到的。           |\n| 标记后续操作       | 一次性添加负责人、标签、里程碑。               | 保持看板整洁，工作流自动化。                 |\n| 批量处理相关bug    | 生成多个草稿供您单独批准。                     | 在分类模式下无需切换标签页。                 |\n\n## 如何通过GitHub Copilot的编码代理将问题转化为草稿PR\n\n一旦您通过Copilot获得了清晰的问题，就可以通过编码代理将其分配给Copilot（它会像任何团队成员一样显示）或直接询问：“将此分配给Copilot。”当您点击“创建”时，Copilot会接管并开始修复工作——您会在问题线程上看到👀表情符号。\n\n**幕后流程**：\n\n1.  Copilot启动一个安全的GitHub Actions工作区。\n2.  它克隆仓库，进行语义代码搜索（RAG风格），并制定修复计划。\n3.  提交会实时推送到草稿PR，您可以实时查看——没有意外的强制推送。\n4.  您的标准分支保护和CI门禁仍会运行。\n\n**这样做的好处**：\n\n*   **并行化**：您在审查时Copilot在编写，开发周期完美重叠。\n*   **可审计性**：每次提交、差异和评论都清晰可见，没有黑盒AI的神秘感。\n*   **安全保障**：遵循相同的CODEOWNERS和签名规则，在提高速度的同时保持控制。\n\n## 常见问题与快速解答\n\n*   **“Copilot会用低质量问题淹没我的仓库吗？”**：它起草，您完善并点击“创建”。相同的速率限制，相同的模板——只是减少了打字量。\n*   **“它能更新现有问题吗？”**：目前不能。目前仅支持新建；更新现有问题的功能正在路线图上。\n*   **“它理解我的自定义模板吗？”**：是的！Copilot会从您的仓库中推断，并且您可以在起草过程中切换模板而不会丢失提示上下文。\n*   **“支持移动端吗？”**：目前仅支持桌面端；移动端支持正在计划中。\n\n## 总结\n\n下次当您觉得“天哪，提交这个bug比修复它还费时间”时，打开Copilot Chat，让机器人处理表单字段，您则专注于捕捉意图。将想法更快地转化为问题和PR，用户就能更快地获得功能——您也能更快地回到有趣的工作中。祝您编码愉快！\n\n想要了解更多关于GitHub Copilot的信息？请访问我们的文档。\n\n**作者**：\n\n![Jon Peck](https://avatars.githubusercontent.com/u/5299412?v=4&s=200)\n\n**探索更多来自GitHub的内容**：\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**：掌握GitHub所需的一切，尽在一个地方。 [前往文档](https://docs.github.com/)\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**：在GitHub上构建未来，这里是任何人、任何地点构建任何东西的地方。 [开始构建](https://github.com/)\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**：了解使用GitHub进行构建的公司和工程团队。 [了解更多](https://github.blog/customer-stories/)\n*   ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) **企业内容**：专为您策划的执行洞察。 [开始](https://github.blog/enterprise/)",
-      "shortSummary": "GitHub Copilot显著加速了在GitHub上创建问题和拉取请求的流程。它能根据自然语言描述自动起草清晰的问题，包括标题、正文和元数据，并支持添加截图和遵循自定义模板。更进一步，Copilot的编码代理可直接接管问题，自动生成并提交草稿PR，实现开发工作的并行化和自动化。这大大提高了开发效率，确保了工作流的清晰性和可审计性。",
-      "translated_title": "如何在GitHub上快速创建问题和拉取请求",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/5299412?v=4&s=200",
-          "alt": "Jon Peck",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
-          "alt": "Enterprise content",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Learn how to spin up a GitHub Issue, hand it to Copilot, and get a draft pull request in the same workflow you already know.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/github/how-to-create-issues-and-pull-requests-in-record-time-on-github/\">How to create issues and pull requests in record time on GitHub</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-06-25T04:39:20.028Z"
+  "lastUpdated": "2025-06-27T04:38:31.081Z"
 }
