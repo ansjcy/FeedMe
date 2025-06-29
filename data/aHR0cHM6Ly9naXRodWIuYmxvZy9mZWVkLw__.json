@@ -5,6 +5,68 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "GitHub 咨询数据库数据概览：已知安全漏洞及其应对措施 (原标题: GitHub Advisory Database by the numbers: Known security vulnerabilities and what you can do about them)",
+      "link": "https://github.blog/security/github-advisory-database-by-the-numbers-known-security-vulnerabilities-and-what-you-can-do-about-them/",
+      "pubDate": "Fri, 27 Jun 2025 16:00:00 +0000",
+      "isoDate": "2025-06-27T16:00:00.000Z",
+      "creator": "Jonathan Evans",
+      "summary": "GitHub 咨询数据库（Advisory DB）是开发者获取开源软件包已知安全漏洞和恶意软件信息的重要资源。本文分析了 2024 年咨询数据库的趋势，包括已审查咨询的增长、生态系统覆盖范围的扩大以及来源贡献的增加，并阐述了 GitHub 如何提供可操作的数据来保护软件项目。\n\n## 咨询数据库分类\nGitHub 咨询数据库中的已知安全漏洞和恶意软件分为三类：\n\n*   **GitHub 已审查咨询**：由 GitHub 手动审查的软件包咨询，确保其有效性、完整描述以及包含生态系统和软件包信息。每年，GitHub 发布的已审查咨询数量都在增加，这得益于来源的增加、生态系统覆盖范围的扩大以及对数据库建立前发布的咨询进行的审查活动。\n    *   2019 年新增 385 条已审查咨询，到 2024 年增至 5256 条。\n    *   在过去五年中，数据库中的已审查咨询总数从 2019 年的不足 400 条增长到 2024 年 10 月的 20,000 多条。\n    ![每年新增的已审查咨询数量条形图。图表显示从 2019 年的 385 条开始，数量随时间增加，到 2024 年达到 5256 条。](https://github.blog/wp-content/uploads/2025/06/advisory1.png?resize=1024%2C633)\n    ![已审查咨询总数折线图。图表显示从 2019 年的 0 条稳步增长到 2024 年底的 20607 条。](https://github.blog/wp-content/uploads/2025/06/advisory2.png?resize=1024%2C601)\n\n*   **未审查咨询**：这些咨询自动从国家漏洞数据库（NVD）导入。尽管其中许多已被 GitHub 分析师审查，但由于它们不属于受支持的软件包或不构成有效漏洞，因此归入此类别。GitHub 仍发布它们，以避免用户需要查询多个数据库。\n    ![咨询总数随时间变化的折线图。图表显示在 2022 年 4 月 GitHub 开始发布国家漏洞数据库的所有漏洞时出现突然跳跃，随后随时间逐渐增加。](https://github.blog/wp-content/uploads/2025/06/advisory3.png?resize=1024%2C386)\n\n*   **恶意软件咨询**：由 npm 安全团队提供的信息自动发布到 GitHub 咨询数据库，专门针对恶意软件威胁。目前仅限于 npm 生态系统，GitHub 不对此类咨询进行编辑或接受社区贡献。\n    ![恶意软件咨询总数随时间变化的折线图，从 2022 年 5 月到 2024 年 12 月。图表显示恶意软件咨询在此期间总体呈上升趋势，最终达到 13405 条。](https://github.blog/wp-content/uploads/2025/06/advisory4.png?resize=1024%2C509)\n\n## 生态系统覆盖\nGitHub 已审查咨询涵盖了 GitHub 支持的生态系统中的软件包漏洞。这些生态系统通常以相关编程语言的包注册表命名。目前支持的生态系统包括：\n\n| 生态系统           | 总咨询数 | 易受攻击的软件包数 | 首次添加日期 |\n| :----------------- | :------- | :----------------- | :----------- |\n| pip                | 3378     | 1044               | 2019-04-19   |\n| Maven              | 5171     | 955                | 2019-04-22   |\n| Composer           | 4238     | 812                | 2019-04-26   |\n| npm                | 3653     | 2652               | 2019-04-26   |\n| RubyGems           | 840      | 371                | 2019-04-26   |\n| NuGet              | 651      | 489                | 2019-04-26   |\n| Go                 | 2011     | 865                | 2021-04-01   |\n| Rust               | 857      | 553                | 2021-05-25   |\n| Erlang             | 31       | 26                 | 2022-01-27   |\n| GitHub Actions     | 21       | 21                 | 2022-07-29   |\n| Pub                | 10       | 9                  | 2022-08-04   |\n| Swift              | 33       | 21                 | 2023-05-10   |\n\n*   Maven 和 Composer 软件包的漏洞几乎占数据库中咨询的一半。npm、pip 和 Go 构成了其余大部分，而其他生态系统的份额较小。\n    ![饼图显示了不同软件生态系统中咨询的比例。Maven、Composer、npm、Pip 和 Go 是最大的生态系统。](https://github.blog/wp-content/uploads/2025/06/advisory5.png?resize=1024%2C633)\n*   数据库刚推出时，NPM 咨询占据主导地位，但随着覆盖范围的扩大和新生态系统的支持，分布组合发生了变化。\n    ![堆叠面积折线图显示了 2019 年至 2024 年各种生态系统的百分比分布。图表显示最初一半的咨询是针对 NPM 的，但随着时间的推移，Maven 和 Composer 等其他生态系统变得更加突出。](https://github.blog/wp-content/uploads/2025/06/advisory7.png?resize=1024%2C539)\n\n## 咨询来源\nGitHub 咨询数据库的咨询来源于以下渠道：\n\n| 来源                   | 咨询数 | 已审查咨询数 | 唯一来源数 | 覆盖率 |\n| :--------------------- | :----- | :----------- | :--------- | :----- |\n| NVD                    | 267429 | 18295        | 7450       | 6.84%  |\n| GitHub Repository Advisories | 12247  | 5311         | 5644       | 43.37% |\n| Community Contributions | 451    | 241          | 60         | 1092.20% |\\\n| PyPA Advisories        | 3040   | 2739         | 149        | 0.10%  |\n| Go Vulncheck           | 1581   | 1528         | 79         | 6.65%  |\n| NPM Advisories         | 1411   | 1408         | 629        | 99.79% |\n| FriendsOfPHP           | 1406   | 1396         | 400        | 99.29% |\n| RustSec                | 943    | 849          | 17         | 90.03% |\n| RubySec                | 873    | 861          | 4          | 98.63% |\n\n*   **NVD**：巨大的漏洞来源，GitHub 仅审查与受支持生态系统相关的咨询。\n*   **GitHub Repository Advisories**：第二大来源，不限于受支持生态系统，但专注于开源软件。\n*   **Community Contributions**：主要请求更新现有咨询。\n*   **Other Specialized Sources**：如 PyPA Advisories 和 Go Vulncheck，专注于特定生态系统，其咨询大部分与 GitHub 相关并得到审查。\n\n*   46% 的咨询只有一个来源，85% 的咨询有三个或更少来源。\n    ![饼图显示了咨询按来源数量的比例。这表明 46% 的咨询只有一个来源，85% 的咨询有三个或更少来源。](https://github.blog/wp-content/uploads/2025/06/advisory8.png?resize=1024%2C633)\n*   在单一来源的咨询中，近 80% 来自 NVD/CVE，这证明了 NVD/CVE 作为来源的价值，尽管其信息量最大。\n    ![饼图显示了单一来源咨询按来源的比例。图表显示所有单一来源咨询的 80% 来自国家漏洞数据库。](https://github.blog/wp-content/uploads/2025/06/advisory9.png?resize=1024%2C633)\n*   2024 年，从来源导入的咨询数量显著增加了 39%，主要原因是 CVE 记录发布数量的增加。\n    ![咨询导入数量随时间变化的折线图。图表显示导入数量随时间增加。](https://github.blog/wp-content/uploads/2025/06/advisory10.png?resize=1024%2C633)\n\n## CVE 编号机构（CNA）\nGitHub 也是 GitHub 上任何仓库的 CVE 编号机构（CNA）。这意味着 GitHub 为报告的漏洞发布 CVE ID，并在相关仓库咨询发布后将其发布到 CVE 数据库。2024 年，GitHub 发布了 2000 多个 CVE 记录，成为 CVE 项目中第五大 CNA。\n\n*   GitHub CNA 对 GitHub 上的所有仓库开放，不限于受支持的生态系统。\n    ![条形图显示了咨询数据库 CNA 随时间发布的 CVE 记录数量。每年发布的数量都在增加。](https://github.blog/wp-content/uploads/2025/06/advisory11.png?resize=1024%2C633)\n    ![饼图显示了咨询数据库分配的 CVE 中属于受支持生态系统的比例。58% 属于受支持生态系统，42% 不属于。](https://github.blog/wp-content/uploads/2025/06/advisory12.png?resize=1024%2C585)\n\n## 咨询优先级\n为了帮助开发者优先处理漏洞修复工作，GitHub 在咨询中提供了额外数据：\n\n1.  **严重性评级/CVSS**：漏洞的严重程度（低、中/中等、高、关键），以及相应的 CVSS 分数和向量。一半的漏洞（15% 关键，35% 高）需要立即或近期关注。\n    ![堆叠面积折线图显示了按咨询发布年份划分的严重性评级比例。图表显示关键漏洞在早期更常见（20-25%），而中等漏洞随时间变得更常见。](https://github.blog/wp-content/uploads/2025/06/advisory13.png?resize=1024%2C633)\n2.  **CWE**：通用弱点枚举标识符，提供确定漏洞类型的编程方法，允许用户根据漏洞类型过滤警报。\n    | 排名 | CWE ID   | CWE 名称                                                              | 2024 年咨询数量 | 2023 年排名变化 |\n    | :--- | :------- | :-------------------------------------------------------------------- | :-------------- | :-------------- |\n    | 1    | CWE-79   | 网页生成过程中输入不当中和（“跨站脚本”）                                | 936             | +0              |\n    | 2    | CWE-200  | 敏感信息泄露给未经授权的参与者                                        | 320             | +0              |\n    | 3    | CWE-22   | 路径名限制到受限目录不当（“路径遍历”）                                | 259             | +2              |\n    | 4    | CWE-20   | 输入验证不当                                                          | 202             | +0              |\n    | 5    | CWE-94   | 代码生成控制不当（“代码注入”）                                        | 188             | +2              |\n    | 6    | CWE-89   | SQL 命令中使用的特殊元素不当中和（“SQL 注入”）                      | 181             | +3              |\n    | 7    | CWE-352  | 跨站请求伪造（CSRF）                                                  | 161             | -4              |\n    | 8    | CWE-284  | 访问控制不当                                                          | 153             | +4              |\n    | 9    | CWE-400  | 不受控制的资源消耗                                                    | 149             | -3              |\n    | 10   | CWE-287  | 认证不当                                                              | 124             | +1              |\n3.  **EPSS**：漏洞利用预测评分系统，量化漏洞在未来 30 天内被攻击的可能性。关注 EPSS 分数 10% 或更高的漏洞（约占咨询数据库中所有漏洞的 7%），可以覆盖几乎所有可能出现利用活动的漏洞。\n    ![条形图显示了按 EPSS 概率划分的咨询数量。大多数咨询处于低或非常低概率。](https://github.blog/wp-content/uploads/2025/06/advisory14.png?resize=1024%2C633)\n    | EPSS 概率         | 范围内的漏洞数 | 占总漏洞的百分比 | 未来 30 天内预计被攻击的漏洞数 | 占总被攻击漏洞的百分比 |\n    | :---------------- | :------------- | :--------------- | :----------------------------- | :--------------------- |\n    | 高 (>= 10%)       | 1440           | 7.17%            | 74                             | 85.96%                 |\n    | 中等 (>= 1%, < 10%) | 2687           | 13.37%           | 8                              | 9.74%                  |\n    | 低 (>= 0.1%, < 1%) | 10264          | 51.09%           | 3                              | 4.06%                  |\n    | 非常低 (< 0.1%)   | 5701           | 28.37%           | 0                              | 0.23%                  |\n    *   **注意事项**：低概率事件仍可能发生；EPSS 仅表示可能性，不表示确定性；EPSS 分数每日更新，会随新信息而变化。\n\n## 可操作数据\nGitHub 咨询数据库不仅是漏洞存储库，它还为帮助开发者保护项目安全的工具提供支持。例如，Dependabot 服务利用咨询数据库来：\n\n*   **识别漏洞**：检查项目是否使用了已知漏洞的软件包。\n*   **建议修复**：推荐可修复漏洞的软件包更新版本。\n*   **减少干扰**：仅通知用户其正在使用的软件包版本受影响的漏洞。\n\n*   每年发布的咨询中，几乎所有都带有补丁。\n    ![条形图显示了每年发布带有补丁的咨询数量与不带补丁的咨询数量。每年，几乎所有咨询都带有补丁。](https://github.blog/wp-content/uploads/2025/06/advisory15.png?resize=1024%2C633)",
+      "shortSummary": "GitHub 咨询数据库（Advisory DB）是开源安全漏洞和恶意软件的关键资源。它将咨询分为 GitHub 已审查、未审查和恶意软件三类。数据库已显著增长，截至 2024 年 10 月，已审查咨询超过 20,000 条，并覆盖了更多生态系统。GitHub 还是重要的 CVE 编号机构，2024 年发布了 2,000 多个 CVE。它提供 CVSS、CWE 和 EPSS 等工具帮助开发者优先处理漏洞，并为 Dependabot 等服务提供支持，以识别漏洞并建议修复。",
+      "translated_title": "GitHub 咨询数据库数据概览：已知安全漏洞及其应对措施",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/advisory1.png?resize=1024%2C633",
+          "alt": "The bar graph shows the number of reviewed advisories added each year. The graph starts with 385 advisories added in 2019, shows an increase over time, and ends with 5256 advisories added in 2024.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/advisory2.png?resize=1024%2C601",
+          "alt": "The line graph shows the total reviewed advisories steadily increasing from 0 in 2019 to 20607 at the end of 2024.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/advisory3.png?resize=1024%2C386",
+          "alt": "The line graph shows the total number of advisories overtime. The graph shows a sudden jump in April 2022, when GitHub started publishing all vulnerabilities from the National Vulnerability Database feed. It then shows a gradual increase over time.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/advisory4.png?resize=1024%2C509",
+          "alt": "The line graph shows the total malware advisories over time, from May 2022 to December 2024. The line shows a general upward trend in malware advisories over the period, ending at 13405 advisories.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/advisory5.png?resize=1024%2C633",
+          "alt": "The pie chart shows the proportion of advisories across different software ecosystems. Maven, Composer, npm, Pip, and Go are the largest ecosystems.",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/advisory7.png?resize=1024%2C539",
+          "alt": "The stacked area line graph shows the percentage distribution of various ecosystems from 2019 to 2024. The graph starts with half the advisories being for NPM but over time, other ecosystems like Maven and Composer become more prominent.",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/advisory8.png?resize=1024%2C633",
+          "alt": "The pie graph shows the proportion of advisories by the number of sources they have. This shows that 46% of the advisories have only one source and 85% have three or fewer.",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/advisory9.png?resize=1024%2C633",
+          "alt": "The pie graph shows the proportion of advisories that have a single source by the source they came from. The graph shows that 80% of all single sourced advisories come from the National Vulnerability Database.",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Use these insights to automate software security (where possible) to keep your projects safe.</p>\n<p>The post <a href=\"https://github.blog/security/github-advisory-database-by-the-numbers-known-security-vulnerabilities-and-what-you-can-do-about-them/\">GitHub Advisory Database by the numbers: Known security vulnerabilities and what you can do about them</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "从结对编程到对等编程：GitHub Copilot 中智能代理工作流的愿景 (原标题: From pair to peer programmer: Our vision for agentic workflows in GitHub Copilot)",
       "link": "https://github.blog/news-insights/product-news/from-pair-to-peer-programmer-our-vision-for-agentic-workflows-in-github-copilot/",
       "pubDate": "Wed, 25 Jun 2025 16:00:00 +0000",
@@ -381,20 +443,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Learn how to use GitHub Copilot to help review and polish your code.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/github-for-beginners-code-review-and-refactoring-with-github-copilot/\">GitHub for Beginners: Code review and refactoring with GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "使用GitHub Copilot中的编码代理分配和完成问题 (原标题: Assigning and completing issues with coding agent in GitHub Copilot)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/assigning-and-completing-issues-with-coding-agent-in-github-copilot/",
-      "pubDate": "Fri, 06 Jun 2025 16:00:00 +0000",
-      "isoDate": "2025-06-06T16:00:00.000Z",
-      "creator": "Alexandra Lietzke",
-      "summary": "# GitHub Copilot 编码代理：分配与完成问题\n\nGitHub Copilot 推出了一项新的编码代理功能，旨在帮助开发者更高效地工作，通过将 GitHub 问题分配给它，从而获得经过充分测试的拉取请求。\n\n## 编码代理概述\n\n*   **功能定位**：作为一种新型的软件工程代理，它直接内置于 GitHub 中，一旦被分配 GitHub Issue 或在 VS Code 中收到提示，便会开始工作。\n*   **工作方式**：它像一位异步协作的队友，基于您分配的问题构建拉取请求。它不是简单的自动补全，而是能够异步工作，帮助您加速开发、清理技术债务并专注于更重要的工作。\n*   **核心机制**：\n    *   基于 GitHub Actions 构建，提供集成、安全、可定制的环境。\n    *   接收问题后，会规划工作、打开拉取请求、编写代码、运行测试，然后请求您的审查。\n    *   如果收到反馈，它会修改拉取请求并持续工作直到您批准。\n    *   能够整合相关问题或 PR 讨论的上下文，并遵循团队设定的自定义仓库指令。\n\n## 编码代理与代理模式的区别\n\n*   **代理模式 (Agent Mode)**：\n    *   同步协作器，在您工作时进行配对。\n    *   在 IDE（如 VS Code, JetBrains, Eclipse, Xcode）内作为实时协作器工作，迭代代码、运行测试并实时修正错误。\n*   **编码代理 (Coding Agent)**：\n    *   异步协作器，代表您像队友一样工作。\n    *   作为 SWE 代理在 GitHub Actions 内部运行，接收您分配的问题，探索仓库以获取上下文，编写代码，通过测试，并打开拉取请求供您审查。\n*   **资源消耗**：两者都使用 Copilot 高级请求，编码代理还会消耗 GitHub Actions 分钟数。\n\n## 编码代理的优势与应用场景\n\nGitHub 高级软件工程师 Brittany Ellich 指出，编码代理能帮助开发者更好地完成多项任务：\n\n*   **卸载重复性任务**：例如添加和扩展单元测试、快速修复拼写错误、进行小型重构等。\n*   **改善问题管理和文档**：通过快速修复和小型重构来维护更好的问题卫生和文档。\n*   **提升用户体验**：修复错误、更新用户界面功能和增强可访问性。\n\n通过将这些低到中等复杂度的任务分配给编码代理，开发者可以有更多精力专注于高层次的问题解决和设计、处理积压的技术债务、学习新技能等。\n\n## 使用编码代理完成问题的步骤\n\n尽管 Copilot 执行工作，但您始终掌握控制权：您决定分配什么、批准什么以及需要更改什么。Copilot 还可以通过其“创建问题流程”预览功能帮助您构建问题。\n\n1.  **编写并分配问题给 Copilot**\n    *   这是最关键的步骤，需要提供充足的上下文，如同向团队成员简要说明任务。\n    *   **包含信息**：相关背景信息、预期结果、技术细节、格式或 linting 规则。\n    *   **分配方式**：通过 github.com、GitHub 移动应用或 GitHub CLI。\n    *   **任务范围**：最适合范围明确的任务，但也能处理大型任务（可能耗时更长）。可以批量分配多个问题。\n    *   **实用技巧**：\n        *   使用问题模板（如“描述”和“验收标准”字段）提高一致性。\n        *   Copilot 会利用仓库中的自定义指令（如自动生成文件、格式化规则）。\n        *   代理能够识别分配问题中包含的图片，因此您可以分享新功能的外观图片。\n\n2.  **Copilot 规划代码**\n    *   分配后，Copilot 会添加 👀 表情符号反应，并启动 GitHub Actions 会话。\n    *   在此环境中，Copilot 会探索和分析代码库、运行测试并进行更改。\n    *   它会同时打开一个分支和一个拉取请求，并随着工作进展而演变。\n    *   Copilot 会阅读问题并将其分解为任务清单，然后更新拉取请求。\n    *   完成任务后，Copilot 会将其勾选并推送提交。您可以实时查看会话、查看日志或刷新 PR。\n\n3.  **Copilot 编写代码**\n    *   当拉取请求时间线显示“Copilot started work”事件时，表示工作已开始。\n    *   Copilot 会根据问题修改代码库，运行自动化测试和 linter（如果存在），并根据需要更新或生成测试。\n    *   它会迭代推送提交。您可以实时查看工作进展，并在必要时介入以确保方向正确。\n\n4.  **审查并合并拉取请求**\n    *   Copilot 完成工作后，会标记您进行审查。您可以：\n        *   批准拉取请求\n        *   留下评论\n        *   要求更改\n    *   Copilot 会根据仓库规则自动请求审阅者。可以进行多轮审查。\n    *   **重要提示**：问题创建者不能是最终批准者。需要由同事、经理或指定审阅者批准，以促进协作并确保代码安全。\n\n## 成功使用编码代理的建议\n\n*   **编写全面的问题**：清晰、范围明确、文档完善的问题会带来更好的结果。\n*   **从小处着手**：尝试将代理用于测试、文档或简单的重构。\n*   **故障排除**：如果 Copilot 遇到问题，在评论中标记它并添加更多上下文。迭代和完善问题要求也有帮助。\n\n## 展望\n\nAI 和 LLM 正在快速发展，编码代理已在实际工作流程中展现出实用性。鼓励开发者尝试使用编码代理，构建自己的代理工作流。",
-      "shortSummary": "GitHub Copilot 推出了一项新的编码代理功能，允许开发者将 GitHub 问题分配给它。该代理作为异步队友，能自动规划、编写代码、运行测试并创建拉取请求，从而帮助开发者卸载重复性任务，专注于更复杂的开发工作。用户始终保持控制权，通过细致的问题描述和审查流程指导代理。这项功能旨在显著提升开发效率，加速软件交付。",
-      "translated_title": "使用GitHub Copilot中的编码代理分配和完成问题",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Have you tried the new coding agent in GitHub Copilot? Here’s how developers are using it to work more efficiently. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/assigning-and-completing-issues-with-coding-agent-in-github-copilot/\">Assigning and completing issues with coding agent in GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-06-27T04:38:31.081Z"
+  "lastUpdated": "2025-06-29T04:47:25.235Z"
 }
