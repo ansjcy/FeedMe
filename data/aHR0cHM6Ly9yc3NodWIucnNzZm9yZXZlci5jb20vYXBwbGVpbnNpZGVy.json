@@ -5,6 +5,52 @@
   "link": "https://appleinsider.com",
   "items": [
     {
+      "title": "重新设计的iPhone 17 Pro摄像头可能导致苹果重新定位其标志 (原标题: Redesigned iPhone 17 Pro camera may lead Apple to reposition its logo)",
+      "link": "https://appleinsider.com/articles/25/06/28/redesigned-iphone-17-pro-camera-may-lead-apple-to-reposition-its-logo",
+      "pubDate": "Sat, 28 Jun 2025 21:34:49 GMT",
+      "isoDate": "2025-06-28T21:34:49.000Z",
+      "creator": "Charles Martin",
+      "summary": "### iPhone 17 Pro摄像头重新设计与苹果标志位置变动传闻\n\n一位泄密者声称，由于iPhone 17 Pro预期将采用新的顶部摄像头条，苹果可能会改变其背部标志的位置，这将是六年来首次进行此类调整。\n\n#### 核心传闻\n\n*   泄密者Majin Bu（其传闻记录好坏参半）在其网站上发布新图片和帖子，声称即将推出的Pro型号中预期的摄像头新布局将导致苹果重新定位其标志。\n*   Bu表示，标志将移至底部中央部分，位于摄像头条下方。\n\n#### 证据与可信度\n\n*   Bu报告称，一家与他们合作、专门生产iPhone 17 Pro系列手机壳的公司已确认正在为更新后的设计开始生产手机壳，并提供了一张示意图。\n*   目前，苹果标志的重新定位和引入全摄像头条的说法均未得到证实，但后者（摄像头条的改变）被认为“非常可能”。\n*   此前已有许多泄密消息一致声称iPhone 17 Pro的设备顶部背面将采用新布局。\n*   此前没有传闻表明这会导致标志位置的改变，也没有实际需求促使苹果移动它。\n\n#### 历史背景与先例\n\n*   苹果曾在2019年推出iPhone 11时重新定位了标志。在此之前，例如iPhone X的标志位于背面较高位置，并且下方还印有“iPhone”字样。\n*   随着iPhone 11的发布，苹果将标志居中并移除了“iPhone”字样，同时引入了重新设计的摄像头排列。此前摄像头呈垂直排列，而iPhone 11系列则引入了现在熟悉的圆形方形排列。\n\n#### iPhone 17 Pro摄像头系统预期变化\n\n*   预期iPhone 17 Pro的新摄像头系统将是自iPhone 11以来摄像头方面的首次重大改变。\n*   据推测，重新设计后，三颗摄像头仍将保留在左侧，但闪光灯和LiDAR传感器将移至右侧，形成一个几乎覆盖iPhone整个宽度的布局。\n\n![白色智能手机，背面光滑，带有三个摄像头镜头和苹果标志，背景为浅色。](https://photos5.appleinsider.com/gallery/64182-133665-iPhone-17-Pro-xl.jpg)\n\n*据称是iPhone 17 Pro背面的新外观。图片来源：Majin Bu*\n\n#### 其他相关传闻\n\n*   Majin Bu最近还声称iPhone 17 Pro将获得“均热板”冷却系统，但对这一传闻的信心不足，表示该均热板的设计“仍在演进中，存在一些挑战需要解决”。",
+      "shortSummary": "传闻称，由于iPhone 17 Pro将采用重新设计的摄像头系统，包括新的顶部摄像头条，苹果可能会将背部标志下移至底部中央。泄密者Majin Bu透露了这一消息，并称手机壳制造商已在准备新设计。虽然标志变动和全摄像头条的说法尚未证实，但摄像头布局的改变被认为可能性很高。这将是自iPhone 11以来iPhone摄像头系统的首次重大调整，可能涉及闪光灯和LiDAR传感器位置的移动。",
+      "translated_title": "重新设计的iPhone 17 Pro摄像头可能导致苹果重新定位其标志",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64182-133665-iPhone-17-Pro-xl.jpg",
+          "alt": "White smartphone with three camera lenses and an Apple logo on a sleek white back panel, set against a light background.",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "Power Mac G3 ROM中尘封27年的彩蛋图片被发现 (原标题: Easter egg image uncovered in Power Mac G3 ROM after 27 years)",
+      "link": "https://appleinsider.com/articles/25/06/28/easter-egg-image-uncovered-in-power-mac-g3-rom-after-27-years",
+      "pubDate": "Sat, 28 Jun 2025 19:46:29 GMT",
+      "isoDate": "2025-06-28T19:46:29.000Z",
+      "creator": "Charles Martin",
+      "summary": "### Power Mac G3 ROM中尘封27年的彩蛋图片被发现\n\n一位自称“电脑极客”的道格·布朗（Doug Brown）最近揭示了Power Macintosh G3 ROM代码中一个尘封了27年的秘密“彩蛋”图片文件。这张图片展示了参与该项目的工作团队。\n\n#### 发现过程\n\n道格·布朗在一次“悠闲的周日”使用ROM Fiend和Hex Fiend工具查看Power Mac G3的ROM资源时，偶然发现了这个彩蛋。Power Mac G3是苹果公司在1997年11月至1999年8月期间生产的机型，其ROM代码在迷你塔式、一体机和米色桌面型号中通用。\n\n布朗很快发现了两个未被记录的异常：\n\n1.  **HPOE类型的JPEG资源**：这个资源在2014年已被另一位ROM研究员皮埃尔·丹杜蒙（Pierre Dandumont）记录，但当时并未揭示该JPEG文件的具体内容。\n2.  **ID为43的nitt资源**：名为“Native 4.3”，布朗发现的这个资源最终被证实是PowerPC原生的SCSI Manager 4.3代码。尽管SCSI管理器是预期的常规内容，但布朗注意到数据末尾有一些意想不到的Pascal字符串，提到了“.Edisk”、“secret ROM image”和“The Team”。\n\n#### 揭示秘密\n\n布朗指出，“secret ROM image”这个文本特别像是与丹杜蒙发现但未能揭示的图片有关。他通过快速互联网搜索发现，这个短语曾用于早期PowerPC Mac的彩蛋，在那些机器上，只需输入文本、选中并拖到桌面即可显示图片。然而，这种方法对G3的秘密图片无效。\n\n随后，布朗将提取的文件输入到Ghidra（一个软件逆向工程框架）中进行分析。经过两次分析，Ghidra成功发现了一个e-disk驱动程序，该驱动程序可以创建一个RAM磁盘。\n\n#### 图片显示方法\n\n如何让这张隐藏的秘密图片显示出来仍然是个谜。一位关注布朗发现的合作者，在使用基于浏览器的模拟器工具Infinite Mac时找到了答案：创建一个RAM磁盘并将其格式化，然后将其命名为“secret ROM image”。\n\n![图片 1](https://photos5.appleinsider.com/gallery/64180-133662-Setupdisk-xl.jpg)\n\n创建的RAM磁盘包含一个名为“The Team”的文本文件。双击该文件会打开SimpleText，从而显示出图片。\n\n![图片 2](https://photos5.appleinsider.com/gallery/64180-133660-secret-e-disk-xl.jpg)\n\n#### 团队确认与历史背景\n\n布朗关于这一发现的帖子引来了秘密图片中人物之一比尔·萨珀斯坦（Bill Saperstein）的评论。萨珀斯坦在图片中是第二排从左数第四个人。他证实，这个彩蛋的灵感来源于原始PowerMac中一个未经许可的宝拉·阿卜杜勒（Paula Abdul）彩蛋。团队决定将自己的照片放入G3的ROM中，但必须“严格保密”。据称，史蒂夫·乔布斯（Steve Jobs）在1997年重返公司后终止了这种做法。",
+      "shortSummary": "电脑极客道格·布朗在Power Mac G3 ROM中发现了一个尘封27年的“彩蛋”图片。他通过逆向工程和合作者的帮助，发现通过创建一个名为“secret ROM image”的RAM磁盘，可以显示出这张包含开发团队照片的图片。据团队成员比尔·萨珀斯坦证实，这是受早期彩蛋启发而秘密加入的，史蒂夫·乔布斯在1997年回归后终止了这种做法。",
+      "translated_title": "Power Mac G3 ROM中尘封27年的彩蛋图片被发现",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64180-133662-Setupdisk-xl.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64180-133660-secret-e-disk-xl.jpg",
+          "alt": "",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
       "title": "苹果电影《F1》首周末票房突破5500万美元，创下佳绩 (原标题: 'F1' is Apple's biggest hit with $55M+ opening weekend)",
       "link": "https://appleinsider.com/articles/25/06/28/f1-is-apples-biggest-hit-with-55m-opening-weekend",
       "pubDate": "Sat, 28 Jun 2025 15:37:28 GMT",
@@ -498,6 +544,38 @@
       "content": ""
     },
     {
+      "title": "这项MacBook升级计划每月仅需33.28美元起 (原标题: This MacBook upgrade program starts at just $33.28 per month)",
+      "link": "https://appleinsider.com/articles/25/06/25/this-macbook-upgrade-program-starts-at-just-3328month",
+      "pubDate": "Wed, 25 Jun 2025 21:36:00 GMT",
+      "isoDate": "2025-06-25T21:36:00.000Z",
+      "creator": "Sponsored Content",
+      "summary": "## Upgraded MacBook 订阅计划：灵活、经济的升级方案\n\n### 引言：传统MacBook购买痛点与Upgraded的解决方案\n\n购买MacBook曾意味着高昂的预付款和有限的选择。然而，随着2025年的到来，这种模式正在改变。苹果用户渴望更多的控制权、更少的麻烦和更灵活的现金流。鉴于WWDC大会发布了macOS的重大更新，包括Apple Intelligence、改进的连续互通功能和更深度的生态系统集成，升级设备的需求，尤其是对于使用旧款机器的用户而言，变得更加迫切。正是在这种背景下，Upgraded应运而生：它提供了一种全新的MacBook购买方式，允许用户通过36个月的分期付款，享受低至0%的年利率，并可选择每两年无忧升级。\n\n### 传统购买的痛点\n\n传统的MacBook购买体验存在诸多不便：\n\n*   **配置受限：** 大型零售店通常只提供基础型号，用户可能被迫接受16GB内存或最小存储空间。\n*   **融资期限短：** 传统融资通常限制在12到18个月，导致每月还款额较高。\n*   **前期投入大：** 一次性支付全部费用会限制用户投资配件、软件或日常开支的能力。这种模式对部分人适用，但对于重视长期规划并希望科技产品发挥更大价值的用户而言，则不尽理想。\n\n### Upgraded 的独特之处\n\nUpgraded提供了一种围绕用户工作流程和升级周期构建的MacBook月度订阅服务，其优势包括：\n\n*   **灵活的财务方案：** 通过Affirm提供36个月的灵活融资，年利率低至0%。\n*   **定制化配置：** 提供商店中不常有的定制规格配置。\n*   **亲民的起价：** MacBook Air每月33.28美元起，MacBook Pro每月52.17美元起。\n*   **便捷的升级与拥有选项：**\n    *   每24个月可选择升级到一台新的Mac。\n    *   如果选择不升级，只需完成剩余的12期付款，设备即可永久归您所有。\n*   **省心的旧设备处理：** 无需自行转售，只需将旧设备放入预付费的退货箱寄回即可。这套系统是根据人们实际使用Mac的方式而设计，而非零售商偏好的销售方式。\n\n![Apple iPad displaying a MacBook Pro M4 customization page with upgrade options, color choices, and chip configurations. Black laptop with abstract pattern on screen is shown.](https://photos5.appleinsider.com/gallery/64140-133546-customize-macbook-pro-screenshot-xl.jpg)\n\n### 为各类用户量身定制\n\n无论您是需要处理多浏览器标签的专业人士、编译代码库的开发者，还是仅仅希望机器两年后不卡顿的普通用户，Upgraded都能让您构建一台符合需求的Mac。您可以选择：\n\n*   更多内存，以应对多任务处理和大型应用程序。\n*   更大容量的固态硬盘，用于存储学习文件、视频库或Xcode构建。\n*   更快的芯片，用于编辑、制作或日常操作。\n\nUpgraded与Apple Premier Partner GatorTec合作，确保所有设备均为全新、Apple授权产品，并包含AppleCare+服务。\n\n### 优化现金流的智能方式\n\n当您无需预付1500美元或更多资金时，您的资金流将变得更加充裕。这笔资金可以用于购买优化工作流程的配件、投资您的业务，甚至用于日常开支。对于需要为新项目添置设备的自由职业者或创作者而言，能够将MacBook的成本分摊到三年内支付，无疑是一项颠覆性的改变。\n\n![Person with curly hair and glasses using MacBook at a table, iPhone nearby, in a bright room with a couch in the background.](https://photos5.appleinsider.com/gallery/64140-133547-man_at_desk_with_macbook-xl.jpg)\n\n### 专业团队与用户认可\n\nUpgraded由一群了解科技、并对传统苹果设备购买和升级方式感到不满的专家团队从零开始打造。该团队成员包括创业公司资深人士、苹果爱好者以及来自OpenAI和Y Combinator等公司的投资者。最重要的是，Upgraded在实际用户中获得了广泛认可。在Trustpilot上获得了4.9星的平均评价，并拥有数千名满意的客户，Upgraded不仅因其定价而受到赞扬，更因其简单直观的整体体验而备受好评。\n\n*   “说实话，这是我体验过的非苹果公司中最像苹果的体验。” — Jonathan\n*   “我使用Upgraded的体验？如丝般顺滑，易如反掌！除了订单和交易的便捷，Upgraded的这次活动让我得以购买我急需且曾以为一年内都无法负担的新款MacBook Pro-M4，这显著提升了我作为视觉艺术家的生产力。” — Michael\n\n![图片 3](https://photos5.appleinsider.com/gallery/64140-133548-iphone-with-upgraded-website-xl.jpg)\n\n### 结论：2025年获取所需MacBook的更优选择\n\n您的笔记本电脑是您工作、学习、创作或构建未来的日常驱动工具。在2025年，当AI等工具正在重塑我们使用设备的方式时，拥有一台合适的机器比以往任何时候都更加重要。Upgraded让您更容易保持设备更新，避免转售的压力，并在不妥协的情况下分摊成本。您将获得真正想要的Mac，拥有所需的配置，并可自由选择每两年升级或直接拥有设备，同时还能节省更多现金。MacBook Air起价为每月33.28美元，MacBook Pro起价为每月52.17美元。访问getupgraded.com，选择您的下一台MacBook，了解为何如此多的客户正在做出改变。",
+      "shortSummary": "Upgraded推出MacBook订阅计划，每月33.28美元起，提供36个月分期付款（0% APR起），旨在解决传统购买痛点。用户可定制配置，每两年升级新机或选择拥有设备，并省去转售麻烦。该计划旨在优化现金流，提供全新Apple授权设备及AppleCare+。它为用户提供了一种灵活、经济的方式来获取和更新Mac，确保用户始终拥有满足需求的最新设备，尤其适合需要最新技术但预算有限的用户。",
+      "translated_title": "这项MacBook升级计划每月仅需33.28美元起",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64140-133546-customize-macbook-pro-screenshot-xl.jpg",
+          "alt": "Apple iPad displaying a MacBook Pro M4 customization page with upgrade options, color choices, and chip configurations. Black laptop with abstract pattern on screen is shown.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64140-133547-man_at_desk_with_macbook-xl.jpg",
+          "alt": "Person with curly hair and glasses using MacBook at a table, iPhone nearby, in a bright room with a couch in the background.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64140-133548-iphone-with-upgraded-website-xl.jpg",
+          "alt": "",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
       "title": "特朗普移动放弃虚假的‘美国制造’承诺 (原标题: Trump Mobile drops false 'made in America' promise)",
       "link": "https://appleinsider.com/articles/25/06/25/trump-mobile-drops-false-made-in-america-promise",
       "pubDate": "Wed, 25 Jun 2025 21:19:00 GMT",
@@ -574,53 +652,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": ""
-    },
-    {
-      "title": "AirTags 2 传闻：更远的精确查找范围、更好的电池续航以及发布时间 (原标题: AirTags 2 rumors: greater Precision Finding range, better battery, and when it'll ship)",
-      "link": "https://appleinsider.com/articles/25/06/25/airtags-2-rumors-greater-precision-finding-range-better-battery-and-when-itll-ship",
-      "pubDate": "Wed, 25 Jun 2025 15:49:00 GMT",
-      "isoDate": "2025-06-25T15:49:00.000Z",
-      "creator": "William Gallagher",
-      "summary": "# AirTags 2 传闻：更远的精确查找范围、更好的电池续航以及发布时间\n\n关于苹果 AirTag 2 的传闻不断，预示着这款追踪器即将迎来更新。文章汇总了关于 AirTag 2 改进的关键信息以及可能的发布时间。\n\n## 预期主要改进\n\n根据 iOS 26 开发者测试版中的代码片段以及各种可靠来源的报告，AirTag 2 几乎确定将具备以下特性：\n\n*   **更远的精确查找范围：**\n    *   目前，精确查找功能在用户距离 AirTag 15 米以内时启动。\n    *   预计 AirTag 2 将采用第二代超宽带 (UWB) 芯片，有望将精确查找的范围扩大到 60 米。这将大大提升用户在近距离寻找物品时的便利性。\n*   **更好的防跟踪功能：**\n    *   AirTag 发布后，跟踪问题引起了广泛关注。苹果已在现有 AirTag 中加入了多项防跟踪功能，并计划在 AirTag 2 中进一步加强。\n    *   具体而言，有报道称跟踪者会禁用 AirTag 的扬声器，使受害者无法听到警报声。AirTag 2 有望使扬声器更难被移除，并整体提升设备的防篡改能力。\n*   **改进的低电量警告：**\n    *   此前，苹果在 Find My 应用中移除了电池电量图标，导致用户难以准确了解剩余电量，只能在电量极低时收到一次性通知。\n    *   AirTag 2 有望提供多次或分阶段的低电量提醒，让用户有更充足的时间更换电池。\n    *   然而，也有猜测认为，由于新增功能（如更远的精确查找范围）可能增加功耗，AirTag 2 的电池续航时间可能会缩短，因此需要更频繁的低电量警告。\n\n## 电池续航与警告机制\n\n尽管现有 AirTag 的电池续航普遍令人满意，但苹果在电池警告方面曾有所退步。竞争对手如 UGreen 的 FineTracker 甚至声称在相同电池下能提供两倍于 AirTag 的续航。AirTag 2 的改进主要集中在提供更清晰、更及时的低电量通知，以解决用户无法预知电池耗尽的问题。\n\n## 不变之处\n\n*   **物理设计：** 几乎所有传闻来源都坚称 AirTag 2 的物理外观将与初代 AirTag 保持一致。这意味着数百万现有的 AirTag 配件（如保护套和挂件）将继续兼容新模型。\n*   **电池类型：** 尽管有用户希望 AirTag 2 能改用可充电电池，但这更像是“一厢情愿”而非确切传闻。考虑到 AirTag 的小尺寸，不太可能支持 MagSafe 无线充电，而引入单独的充电方式可能会增加用户使用的不便性，这与 AirTag 的“便捷性”核心优势相悖。因此，AirTag 2 仍很可能使用可更换的纽扣电池。\n*   **扬声器音量：** 尽管用户普遍希望扬声器声音更大，但目前这更多是期望而非确切的改进。\n\n## 发布时间传闻\n\n关于 AirTag 2 的发布时间，目前有多种说法：\n\n*   **今年秋季：** 最新的传闻指出 AirTag 2 可能在今年秋季发布，甚至可能与 iPhone 17 系列一同在 9 月份亮相。苹果通常会在此时发布备受关注的产品，以最大化宣传效果。\n*   **2025 年中/初：** 彭博社曾预测 AirTag 2 将在 2025 年中期发布，而分析师郭明錤则预测在 2025 年初。\n\n值得注意的是，初代 AirTag 于 2021 年 4 月发布，当时是与 iPad、iMac 等产品一同推出，而非与 iPhone 同期。",
-      "shortSummary": "AirTag 2 预计将带来多项改进，包括更远的精确查找范围（有望从15米增至60米，得益于第二代UWB芯片）、更强的防跟踪功能（使扬声器更难被禁用）以及更完善的低电量警告。其物理设计预计保持不变，现有配件仍可兼容。关于发布时间，传闻不一，可能在今年秋季与iPhone 17同期发布，或推迟至2025年初/中期。",
-      "translated_title": "AirTags 2 传闻：更远的精确查找范围、更好的电池续航以及发布时间",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "温网前夕，网球终获苹果体育青睐 (原标题: Before Wimbledon, Tennis finally gets some love in Apple Sports)",
-      "link": "https://appleinsider.com/articles/25/06/25/before-wimbledon-tennis-finally-gets-some-love-in-apple-sports",
-      "pubDate": "Wed, 25 Jun 2025 14:47:00 GMT",
-      "isoDate": "2025-06-25T14:47:00.000Z",
-      "creator": "Malcolm Owen",
-      "summary": "### 苹果体育应用更新：首次引入网球支持\n\n苹果公司发布了iOS版体育应用（Apple Sports）3.0版本，此次更新首次引入了对网球运动的支持，恰逢温布尔登网球锦标赛前夕。\n\n**主要更新亮点：**\n\n*   **网球支持：**\n    *   在“我的联赛”（My Leagues）下新增了“男子网球”和“女子网球”两个列表。\n    *   用户可以获取主要赛事的网球比分，包括即将到来的温网。\n    *   还包括WTA单打排名，以及每位选手的排名分数。\n    *   用户将能够追踪单打比赛的每一个得分点，从温网开始，包括实时比分更新。\n    *   此功能将适用于所有大满贯和1000级别赛事。\n    *   比赛结果还将以“实时活动”（Live Activity）的形式显示在iPhone锁屏和Apple Watch上。\n\n*   **其他改进：**\n    *   **新主屏幕布局：** 所有即将到来的赛事将按联赛分组显示，提升了信息组织性。\n    *   **联赛顺序调整：** 用户可以在“编辑”菜单下重新排列联赛的显示顺序，以便将偏好的运动排在列表前面。\n    *   **MLB更新：** 美国职业棒球大联盟（MLB）球迷现在可以在每个记分卡顶部看到投手和击球手的对阵情况，以便快速查看对阵组合。\n    *   **近期其他功能：** 此前更新还包括德甲降级附加赛详情、联赛页面排名、NHL（国家冰球联盟）进球者高亮显示以及比赛卡片分享功能。\n\n**可用性：**\n\n*   Apple Sports应用可在App Store免费下载。\n*   需要运行iOS 17.2或更高版本的iPhone设备。\n\n![两部智能手机屏幕显示体育比分；左侧显示温网比赛和NASCAR赛车，右侧显示温网详细比分和绿色背景上的历史结果。](https://photos5.appleinsider.com/gallery/64138-133549-sportstennis-xl.jpg)\n\n图片来源：Apple",
-      "shortSummary": "苹果体育应用（Apple Sports）3.0版本更新，首次引入网球支持，恰逢温网前夕。用户现可追踪主要网球赛事比分、WTA排名及实时得分，并支持iPhone锁屏和Apple Watch的实时活动。此外，更新还带来了新的主屏幕布局、联赛顺序调整及MLB投手/击球手对阵信息等改进。该应用免费下载，需iOS 17.2及以上版本。",
-      "translated_title": "温网前夕，网球终获苹果体育青睐",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64138-133549-sportstennis-xl.jpg",
-          "alt": "Two smartphone screens displaying sports scores; left shows a Wimbledon match and a NASCAR race, right shows detailed Wimbledon match scores and previous results on a green background.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "汽车制造商拒绝CarPlay Ultra，认为其过度干预 (原标题: Car makers reject CarPlay Ultra as an Apple overreach)",
-      "link": "https://appleinsider.com/articles/25/06/25/car-makers-reject-carplay-ultra-as-an-apple-overreach",
-      "pubDate": "Wed, 25 Jun 2025 12:30:32 GMT",
-      "isoDate": "2025-06-25T12:30:32.000Z",
-      "creator": "Malcolm Owen",
-      "summary": "## 汽车制造商普遍抵制苹果CarPlay Ultra\n\n苹果的CarPlay Ultra正面临普及的漫长道路，因为汽车制造商普遍抵制该系统，转而支持自己的解决方案。\n\n### CarPlay Ultra的特性与影响\n\nCarPlay Ultra与现有CarPlay有显著不同：\n\n*   **功能扩展：** 它不仅占据主信息娱乐屏幕，还会扩展到仪表盘的其他区域。\n*   **深度集成：** CarPlay Ultra能更直接地控制车辆的各种功能，包括取代驾驶员前方的仪表盘，并能控制车内系统，如空调，或通过直通模式访问制造商的自有控制。\n\n尽管苹果在三年前就提出了CarPlay Ultra的概念，并于今年5月在阿斯顿·马丁汽车上首次实现，但消费者若想在其他车辆上使用，仍需等待。\n\n### 汽车制造商的抵制与原因\n\n汽车制造商是CarPlay Ultra普及的主要阻力，他们更倾向于自己的车载系统。包括梅赛德斯-奔驰、奥迪、沃尔沃、极星和雷诺在内的多家汽车制造商已向《金融时报》明确表示，他们无意在其车辆中加入CarPlay Ultra的支持。值得注意的是，这份名单中包含了一些苹果此前曾表示会使用该软件的制造商。\n\n抵制的原因主要有以下几点：\n\n*   **控制权担忧：** 汽车制造商不愿将车内屏幕空间和车辆功能的访问权限提供给外部公司。他们认为CarPlay Ultra的深度集成（如取代仪表盘、控制车辆系统）是对其核心系统的“入侵”。\n*   **偏爱自有软件：** 汽车制造商更倾向于开发和使用自己的软件系统，尽管沃尔沃首席执行官哈坎·塞缪尔森承认，汽车制造商在软件方面不如科技公司。\n*   **潜在收入来源：** 信息娱乐系统和车内服务被视为汽车制造商重要的潜在收入来源。例如，通用汽车在2023年放弃CarPlay，转而使用自己的系统，正是为了向驾驶员销售订阅服务。\n\n### 现有CarPlay的保留\n\n尽管抵制CarPlay Ultra，但大多数汽车制造商并未完全阻止苹果。在多数情况下，他们仍将提供当前有限版本的CarPlay，与自己的系统并行。宝马坚持CarPlay将继续在其信息娱乐系统中使用，而奥迪也表示将提供自己的“定制化无缝数字体验”，同时仍保持对CarPlay的支持。\n\n### CarPlay Ultra的未来前景与消费者需求\n\n尽管面临挫折，仍有一些制造商对CarPlay Ultra持开放态度。苹果最初在2022年曾提及14家对CarPlay Ultra感兴趣的汽车制造商。此外，现代和起亚后来也被苹果提及正在考虑支持该软件，保时捷也预计将在未来车型中增加支持。然而，曾被列入名单的捷豹路虎表示仍在评估CarPlay Ultra的可行性。福特和日产则拒绝就CarPlay Ultra发表评论。\n\n消费者需求是推动制造商采用CarPlay Ultra的一个重要因素。消费者普遍表示希望在车辆中拥有CarPlay。一项2024年的调查显示，车载信息娱乐系统的平均满意度为1000分中的805分，而使用支持CarPlay的系统的驾驶员得分更高，达到840分。驾驶员对现有信息娱乐系统的不满主要集中在切换音源（25%）和菜单结构（23%）等问题上，而这些正是CarPlay能够轻松解决的问题。",
-      "shortSummary": "汽车制造商普遍抵制苹果的CarPlay Ultra，认为其过度干预车辆系统，并担忧失去屏幕控制权及潜在收入来源，更倾向于发展自有车载系统。奔驰、奥迪、沃尔沃等品牌已明确拒绝CarPlay Ultra，但多数制造商仍将保留现有CarPlay。尽管消费者对CarPlay需求旺盛，且其能解决现有车载系统痛点，CarPlay Ultra的普及仍面临挑战。",
-      "translated_title": "汽车制造商拒绝CarPlay Ultra，认为其过度干预",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
     }
   ],
-  "lastUpdated": "2025-06-28T18:28:01.067Z"
+  "lastUpdated": "2025-06-29T01:58:14.849Z"
 }
