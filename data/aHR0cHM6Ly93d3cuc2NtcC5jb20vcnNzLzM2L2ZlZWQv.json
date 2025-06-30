@@ -5,6 +5,71 @@
   "link": "https://www.scmp.com/rss/36/feed/1",
   "items": [
     {
+      "title": "百度通过公开Ernie 4.5模型加入开源运动 (原标题: Baidu joins open-source movement by making Ernie 4.5 models publicly available)",
+      "link": "https://www.scmp.com/tech/big-tech/article/3316415/baidu-latest-join-open-source-movement-ernie-45-models-publicly-available?utm_source=rss_feed",
+      "pubDate": "Mon, 30 Jun 2025 13:00:15 +0000",
+      "isoDate": "2025-06-30T13:00:15.000Z",
+      "creator": "Ben Jiang",
+      "summary": "## 百度开放Ernie 4.5模型，加入开源AI运动\n\n中国科技巨头百度于周一正式进入竞争激烈的中国开源人工智能（AI）系统领域，通过在AI网站Hugging Face上公开提供其旗舰Ernie 4.5模型供下载。\n\n### 关键信息与背景\n\n*   **模型开放**：百度开放了其Ernie 4.5多模态模型家族的10个变体，参数量从0.3亿的轻量级模型到4240亿的重量级模型不等。\n*   **策略转变**：此举标志着百度策略上的重大转变。一年前，百度创始人兼CEO李彦宏曾公开表示，其Ernie系列（如OpenAI的ChatGPT模型）将比开源模型更强大。\n*   **市场驱动**：中国初创公司DeepSeek在今年年初发布开源模型后，在AI界引起轰动，这加速了中国大型科技公司向开源的转变。例如，阿里巴巴集团开发的Qwen模型是开发者中最受欢迎的开源模型之一。\n\n### 性能表现与竞争\n\n*   **基准测试**：百度表示，其300B Ernie 4.5模型在多项基准测试中表现优于DeepSeek的V3模型，尽管后者规模是Ernie模型的两倍。\n*   **评估维度**：这些基准测试评估了AI系统的通用和领域知识、编码和数学技能以及推理能力。\n*   **进展体现**：测试结果展示了百度在近几个月改进模型方面取得的进展，此前该公司已宣布将转向开源方法。此举也呼应了杭州DeepSeek凭借其高性价比、高性能的开源V3和R1模型在全球舞台上的崛起。\n\n### 相关图片\n\n*   ![百度文心一言（Ernie Bot）的标志显示在显示百度标志的屏幕附近，摄于2023年6月28日。图片来源：路透社](https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/06/30/f0a682ab-b088-44bc-a183-84a7ec28474f_1126e908.jpg)",
+      "shortSummary": "百度已在Hugging Face上公开其Ernie 4.5系列模型，正式加入中国开源AI运动。此举标志着百度策略上的转变，此前其曾倾向于闭源模型。这一转变受到DeepSeek等初创公司开源模型成功的推动。百度声称，其300B Ernie 4.5模型在基准测试中表现优于DeepSeek的V3模型，展示了其在模型改进方面的进展。",
+      "translated_title": "百度通过公开Ernie 4.5模型加入开源运动",
+      "images": [
+        {
+          "url": "https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/06/30/f0a682ab-b088-44bc-a183-84a7ec28474f_1126e908.jpg",
+          "alt": "The logo of Baidu’s Ernie Bot is displayed near a screen showing the Baidu logo, in this illustration picture taken June 28, 2023. Photo: Reuters",
+          "title": "The logo of Baidu’s Ernie Bot is displayed near a screen showing the Baidu logo, in this illustration picture taken June 28, 2023. Photo: Reuters",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Chinese tech giant Baidu on Monday marked its entry into the highly competitive field of Chinese open-source artificial intelligence (AI) systems, by making its flagship Ernie 4.5 models available for download on AI site Hugging Face.\nBaidu open-sourced 10 variants from its Ernie 4.5 multimodal model family, from the 0.3 billion parameter lightweight models to the heavyweight 424 billion parameter ones, according to a statement.\nBeijing-based Baidu, one of the earliest tech firms in China to...",
+      "enclosure": {
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/30/bfdee93a-4020-48af-a9ae-e32c6515d059_9bf6c317.jpg",
+        "type": "image/jpeg"
+      }
+    },
+    {
+      "title": "中国算能为深度求索调整芯片产品，推动自力更生 (原标题: China’s Sophgo adapts chip product for DeepSeek in self-reliance push)",
+      "link": "https://www.scmp.com/tech/tech-trends/article/3316363/chinese-chipmaker-sophgo-adapts-compute-card-deepseek-beijings-self-reliance-push?utm_source=rss_feed",
+      "pubDate": "Mon, 30 Jun 2025 11:00:11 +0000",
+      "isoDate": "2025-06-30T11:00:11.000Z",
+      "creator": "Ben Jiang",
+      "summary": "## 中国算能SC11 FP300算力卡成功适配深度求索AI模型\n\n### 背景与目标\n*   中国芯片制造商算能（Sophgo）已调整其算力卡，以支持深度求索（DeepSeek）的推理模型。\n*   此举旨在推动中国本土企业发展自主研发的人工智能（AI）基础设施，以减少对外国芯片的依赖，尤其是在美国收紧出口管制背景下。\n\n### 关键进展：算力卡验证\n*   算能的SC11 FP300算力卡已成功通过验证。\n*   验证由中国信息通信研究院（CAICT）下属的中国电信技术实验室（CTTL）进行。\n*   测试结果显示，该算力卡在执行深度求索R1模型的推理任务时，表现出稳定且有效的性能。\n\n### 算力卡定义\n*   算力卡是一种紧凑型模块，集成了处理器、内存和其他计算任务所需的核心组件，常用于AI等应用。\n\n### 里程碑意义\n*   此次验证标志着算能的一个重要里程碑，确认其算力卡能够支持国内AI模型。\n*   这与北京方面旨在通过自主研发基础设施来增强其领先AI系统（如深度求索模型）的倡议相符。\n\n### FP300算力卡的技术创新\n*   FP300算力卡于去年发布，其进步归因于多项创新。\n*   主要特点包括：\n    *   配备256GB高带宽内存（HBM）。\n    *   提供高达每秒1.1太字节（TB）的内存带宽。\n*   这些特性有助于在模型训练和执行过程中实现更快的数据传输。",
+      "shortSummary": "中国芯片制造商算能（Sophgo）成功调整其SC11 FP300算力卡，以支持深度求索（DeepSeek）的AI推理模型。该算力卡经中国电信技术实验室（CTTL）验证，在执行深度求索R1模型任务时表现稳定高效。此举旨在推动中国AI基础设施的自主发展，减少对外国芯片的依赖，以应对美国出口管制。FP300算力卡配备256GB高带宽内存，提供1.1 TB/s内存带宽。",
+      "translated_title": "中国算能为深度求索调整芯片产品，推动自力更生",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Chinese chipmaker Sophgo has adapted its compute card to power DeepSeek’s reasoning model, underscoring growing efforts by local firms to develop home-grown artificial intelligence (AI) infrastructure and reduce dependence on foreign chips amid tightening US export controls.\nSophgo’s SC11 FP300 compute card successfully passed verification, showing stable and effective performance in executing the reasoning tasks of DeepSeek’s R1 model in tests conducted by the China Telecommunication Technology...",
+      "enclosure": {
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/30/c3a54acd-cd8f-425f-a9b7-5d1ee771bc12_1bebc423.jpg",
+        "type": "image/jpeg"
+      }
+    },
+    {
+      "title": "Meta从OpenAI招募中国顶尖人才以壮大其AI团队 (原标题: Meta bolsters AI team with top OpenAI talent from China)",
+      "link": "https://www.scmp.com/tech/big-tech/article/3316350/top-openai-talent-china-joins-meta-zuckerberg-bolsters-ai-team-tech-battle?utm_source=rss_feed",
+      "pubDate": "Mon, 30 Jun 2025 10:00:15 +0000",
+      "isoDate": "2025-06-30T10:00:15.000Z",
+      "creator": "Sam Phillips",
+      "summary": "## Meta从OpenAI招募顶尖中国人才以壮大其AI团队\n\n美国科技巨头Meta Platforms已成功招募四名来自OpenAI的顶尖科学家，此举旨在增强其在全球人工智能（AI）领域的竞争优势。\n\n### 关键招聘信息\n\n*   **被招募人才：** 赵盛佳、任鸿宇、余家辉和毕书超。\n*   **消息来源与确认：** 此次招聘最初由美国科技新闻媒体The Information报道，并得到了Meta AI部门负责人、前Scale AI首席执行官Alexandr Wang在社交媒体上的部分证实。Wang表示对与这四位研究人员“共同迈向超人工智能”充满热情。\n*   **当前状态：** 截至周一，这些研究人员的社交媒体资料仍保留OpenAI的头衔。\n\n### Meta在AI人才方面的投入\n\n*   **高额投资：** Meta创始人兼首席执行官马克·扎克伯格正投入数十亿美元以吸引顶尖人才。\n*   **激励措施：** 据OpenAI创始人兼首席执行官Sam Altman透露，Meta为吸引工程师跳槽提供了高达1亿美元的奖金。\n*   **战略性收购：** 本月早些时候，Meta还以142亿美元收购了Scale AI 49%的股份，此举旨在吸纳Alexandr Wang加入。\n\n### 中国AI人才的突出表现\n\n*   此次招聘再次凸显了中国研究人员在美国领先AI公司中的深厚专业知识和影响力。\n*   这四位被招募的科学家都拥有相似的学术背景：他们在中国顶尖大学完成本科教育后，选择赴美国深造。\n\n![Alexandr Wang, CEO of Scale AI. Photo: Reuters](https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/06/30/6ff17fce-cd7e-40e2-a44a-49502c089de3_972e69e6.jpg)\n*Alexandr Wang，Scale AI首席执行官。图片来源：路透社*",
+      "shortSummary": "Meta已从OpenAI招募赵盛佳、任鸿宇、余家辉和毕书超四位顶尖AI科学家，以加强其AI团队。此举凸显了美国AI公司中中国人才的深度。Meta正积极投入数十亿美元吸引人才，OpenAI首席执行官Sam Altman称Meta提供了高达1亿美元的奖金。Meta AI负责人Alexandr Wang对与新成员共同探索超人工智能表示期待。",
+      "translated_title": "Meta从OpenAI招募中国顶尖人才以壮大其AI团队",
+      "images": [
+        {
+          "url": "https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/06/30/6ff17fce-cd7e-40e2-a44a-49502c089de3_972e69e6.jpg",
+          "alt": "Alexandr Wang, CEO of Scale AI. Photo: Reuters",
+          "title": "Alexandr Wang, CEO of Scale AI. Photo: Reuters",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The expertise of Chinese researchers in artificial intelligence (AI) is in the spotlight, as US tech giant Meta Platforms has recruited four leading scientists from OpenAI to enhance its competitive edge in the global AI race.\nMeta’s hiring of Zhao Shengjia, Ren Hongyu, Yu Jiahui and Bi Shuchao, reported by US tech news outlet The Information, was partially confirmed by Alexandr Wang, head of Meta’s AI unit and former CEO of Scale AI, in a social media post over the weekend.\nWang expressed...",
+      "enclosure": {
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/30/95bc382d-75ec-440f-96c2-ee518fafc8a7_3b3a9556.jpg",
+        "type": "image/jpeg"
+      }
+    },
+    {
       "title": "英伟达招募两名中国青年AI专家以加强研究 (原标题: Nvidia taps 2 young Chinese AI experts to strengthen research)",
       "link": "https://www.scmp.com/tech/big-tech/article/3316269/nvidia-taps-two-young-chinese-ai-experts-strengthen-research?utm_source=rss_feed",
       "pubDate": "Sun, 29 Jun 2025 09:00:19 +0000",
@@ -355,65 +420,7 @@
         "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/26/b69639b7-162c-4452-999e-5b00f9fea09c_0e03ae71.jpg",
         "type": "image/jpeg"
       }
-    },
-    {
-      "title": "阿里巴巴推出全球首个胃癌AI检测模型 (原标题: Alibaba touts world’s first AI model to detect stomach cancer)",
-      "link": "https://www.scmp.com/tech/article/3315931/alibaba-touts-worlds-first-ai-model-detect-stomach-cancer-even-early-stages?utm_source=rss_feed",
-      "pubDate": "Thu, 26 Jun 2025 10:00:16 +0000",
-      "isoDate": "2025-06-26T10:00:16.000Z",
-      "creator": "Coco Feng",
-      "summary": "## 阿里巴巴推出全球首个胃癌AI检测模型\n\n阿里巴巴集团控股公司公布了一款名为“Grape”的人工智能（AI）模型，该模型声称是全球首个能够通过扫描计算机断层扫描（CT）图像来检测胃癌（包括早期阶段）的AI模型。\n\n### 模型概述\n\n*   **名称**：Grape，源自“gastric cancer risk assessment procedure”（胃癌风险评估程序）。\n*   **技术**：一个深度学习框架，能够分析三维CT扫描图像，以检测和分割胃癌。\n*   **共同开发**：由阿里巴巴达摩院和浙江省肿瘤医院共同开发，两家机构均位于中国杭州。\n\n### 解决的痛点\n\n*   **现有诊断方法**：目前胃癌诊断主要依赖内窥镜检查，这是一种侵入性手术，需要将摄像头和微小的活检工具通过喉咙插入。\n*   **患者依从性**：浙江省肿瘤医院的胃外科医生程向东表示，在中国，只有不到30%的患者愿意听从医生的建议进行内窥镜检查。\n\n### 性能表现\n\n*   **研究成果**：根据周二发表在《自然医学》（Nature Medicine）杂志上的一篇论文，Grape模型在检测胃癌方面显著优于放射科医生。\n*   **关键指标**：\n    *   **敏感性**：85.1%（衡量检测疾病的能力）。\n    *   **特异性**：96.8%（衡量避免健康患者误检的能力）。\n*   **对比放射科医生**：该模型在敏感性方面比没有使用模型的放射科医生高出21.8%，在特异性方面高出14%，尤其在早期胃癌检测方面表现突出。\n\n### 潜在影响\n\n*   **改变筛查方式**：程向东医生表示，这种开创性的模型“可能会改变我国乃至全球的胃癌筛查方法”。\n*   **提高早期发现率**：他补充说，早期胃癌的发现比例有望“显著增加”。\n\n### 胃癌背景\n\n*   **全球危害**：胃癌是全球第四大癌症相关死亡原因。\n*   **症状隐匿**：即使在晚期，胃癌也可能没有症状。\n*   **真实案例**：达摩院周三的一份声明中提到一个真实案例，一名晚期患者本可以通过CT扫描提前六个月诊断出来，但被放射科医生遗漏了。",
-      "shortSummary": "阿里巴巴推出了全球首个胃癌AI检测模型“Grape”，该模型由达摩院和浙江省肿瘤医院共同开发。它利用CT扫描图像进行早期胃癌检测，并已在《自然医学》上发表研究成果。该模型在敏感性和特异性方面均显著优于传统放射科医生，尤其在早期检测中表现突出。此创新有望改变胃癌筛查方式，提高早期诊断率，解决当前内窥镜检查侵入性强、患者依从性低的问题。",
-      "translated_title": "阿里巴巴推出全球首个胃癌AI检测模型",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Alibaba Group Holding unveiled what it says is the world’s first artificial intelligence (AI) model to detect gastric cancer, even in early stages, by scanning computed tomography (CT) images.\nKnown as Grape – a name derived from “gastric cancer risk assessment procedure” – the system is a deep-learning framework that can analyse three-dimensional CT scans to detect and segment gastric cancer, also known as stomach cancer. It was co-developed by Alibaba’s Damo Academy and the Zhejiang Cancer...",
-      "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/26/eb5871ea-0f16-4056-9854-1cfc01e002bb_8873ce18.jpg",
-        "type": "image/jpeg"
-      }
-    },
-    {
-      "title": "OpenAI：智谱AI正在推动中国在全球范围内寻求美国科技替代方案 (原标题: OpenAI: Zhipu AI is fuelling China’s global push for US tech alternatives)",
-      "link": "https://www.scmp.com/tech/tech-trends/article/3315911/openai-says-zhipu-ai-accelerates-chinas-global-efforts-challenge-us-tech-dominance?utm_source=rss_feed",
-      "pubDate": "Thu, 26 Jun 2025 09:01:07 +0000",
-      "isoDate": "2025-06-26T09:01:07.000Z",
-      "creator": "Hannah Wang",
-      "summary": "### OpenAI：智谱AI推动中国寻求美国科技替代方案\n\nOpenAI的分析师发现，中国人工智能（AI）初创公司智谱AI在向非西方市场的政府和国有企业提供基础设施解决方案方面取得了“显著进展”。此举正值北京寻求加强其在全球快速发展的人工智能技术领域的领导地位。\n\n#### OpenAI的观点与担忧\n\n*   ChatGPT的制造商OpenAI在周三的一篇博文中指出，智谱AI代表了“中国对OpenAI国际倡议的回应”。\n*   OpenAI此前曾敦促华盛顿支持美国公司与中国竞争对手进行竞争。\n*   该博文引用了《南华早报》上个月的一篇报道，详细介绍了智谱AI计划利用“一带一路”倡议拓展海外业务。\n*   OpenAI表示，智谱AI代表了中国“建立一个自给自足、具有全球竞争力的人工智能生态系统，以匹敌美国并减少对美国科技依赖的希望”。\n\n#### 中国的战略目标\n\n*   中国的目标是在美国或欧洲竞争对手之前，将中国的系统和标准锁定在新兴市场。\n*   同时，展示一个“负责任、透明且可审计”的中国AI替代方案。\n\n#### 相关方回应\n\n*   智谱AI周四未立即回应置评请求。\n\n#### 相关图片\n\n*   ![Open AI CEO Sam Altman speaks at an event in San Francisco, California, earlier this month. Photo: Getty Images/AFP](https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/06/26/26f71cb2-f177-47ff-a435-51d4afa9bf7a_39096398.jpg)\n    *   OpenAI首席执行官萨姆·奥特曼本月早些时候在加利福尼亚州旧金山的一次活动中发表讲话。图片来源：Getty Images/AFP",
-      "shortSummary": "OpenAI指出，中国智谱AI在向非西方政府和国有企业提供AI基础设施方面取得显著进展。OpenAI认为，智谱AI是中国在全球范围内寻求美国科技替代方案的体现，旨在通过“一带一路”倡议，在新兴市场建立自给自足、有竞争力的AI生态系统，减少对美国技术的依赖，并推广中国AI标准。",
-      "translated_title": "OpenAI：智谱AI正在推动中国在全球范围内寻求美国科技替代方案",
-      "images": [
-        {
-          "url": "https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/06/26/26f71cb2-f177-47ff-a435-51d4afa9bf7a_39096398.jpg",
-          "alt": "Open AI CEO Sam Altman speaks at an event in San Francisco, California, earlier this month. Photo: Getty Images/AFP",
-          "title": "Open AI CEO Sam Altman speaks at an event in San Francisco, California, earlier this month. Photo: Getty Images/AFP",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "OpenAI said its analysts found that Chinese artificial intelligence (AI) start-up Zhipu AI had made “notable progress” in providing infrastructure solutions to governments and state-owned firms in non-Western markets, as Beijing seeks to strengthen its global leadership in the rapidly evolving technology.\nIn a post on Wednesday, the ChatGPT maker, which has previously urged Washington to support US companies in their competition with Chinese rivals, said Zhipu represented “China’s answer” to...",
-      "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/26/ec7e1002-1a47-401e-a214-91114d96d905_25d0941d.jpg",
-        "type": "image/jpeg"
-      }
-    },
-    {
-      "title": "腾讯旗下Supercell将在微信上推出《皇室战争》等游戏小程序 (原标题: Tencent-owned Supercell to launch titles like Clash Royale as WeChat mini games)",
-      "link": "https://www.scmp.com/tech/article/3315811/gaming-studio-supercell-expand-tencents-wechat-installation-free-mini-games?utm_source=rss_feed",
-      "pubDate": "Thu, 26 Jun 2025 00:00:14 +0000",
-      "isoDate": "2025-06-26T00:00:14.000Z",
-      "creator": "Coco Feng",
-      "summary": "芬兰游戏工作室Supercell，即《皇室战争》和《荒野乱斗》的开发商，计划在腾讯控股的微信上推出其热门游戏，作为无需安装的小程序，以利用该超级应用程序庞大的用户群。\n\n*   Supercell的《部落冲突》业务和运营负责人Jakub Barczyk周三表示，《荒野乱斗》已在微信上推出，而《皇室战争》“目前正在开发中”，计划于9月在微信小程序平台上发布。\n*   Supercell专注于平台和手机游戏之间的无缝集成，通过同步资产实现轻松切换。这种方法既能满足现有玩家的需求，确保他们的进度得到保存，也能让新玩家受益于简化的体验。\n*   Supercell的目标是通过微信将热门游戏无缝集成到中国用户的日常生活中，通过经典体验提供便捷的访问。\n*   Supercell专注于微信小程序，因为该市场的快速增长以及轻量级游戏的日益普及，这些游戏几乎可以立即玩，无需下载单独的应用程序。\n*   自微信于2018年推出完全在该超级应用程序中运行的小程序以来，它们已经积累了5亿月活跃用户。根据微信周三发布的数据，超过300款小程序实现了超过1000万元人民币（140万美元）的季度销售额。",
-      "shortSummary": "Supercell计划在微信上推出《皇室战争》等热门游戏小程序，利用微信庞大的用户群。目前《荒野乱斗》已上线，而《皇室战争》预计9月发布。Supercell专注于平台与游戏的无缝集成，旨在通过微信将游戏融入中国用户日常生活。微信小程序市场增长迅速，已积累5亿月活跃用户，众多小程序季度销售额超过1000万元人民币。",
-      "translated_title": "腾讯旗下Supercell将在微信上推出《皇室战争》等游戏小程序",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Finnish video game studio Supercell, developer of Clash Royale and Brawl Stars, is set to launch its popular titles on Tencent Holdings’ WeChat as installation-free mini games, leveraging the super app’s vast user base.\nJakub Barczyk, business and operations lead for Supercell’s Clash of Clans, said on Wednesday that Brawl Stars was already available on WeChat, known as Weixin in mainland China, while Clash Royale was “currently being developed” for a September release on the WeChat mini-game...",
-      "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/06/25/b7d1034f-fc81-48ff-8444-76a21bc2fcd7_14fd7810.jpg",
-        "type": "image/jpeg"
-      }
     }
   ],
-  "lastUpdated": "2025-06-30T07:21:27.148Z"
+  "lastUpdated": "2025-06-30T13:34:35.838Z"
 }
