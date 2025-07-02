@@ -5,6 +5,130 @@
   "link": "https://appleinsider.com",
   "items": [
     {
+      "title": "朝鲜黑客利用Mac恶意软件攻击加密公司 (原标题: North Korean hackers use Mac malware to target crypto firms)",
+      "link": "https://appleinsider.com/articles/25/07/02/north-korean-hackers-use-mac-malware-to-target-crypto-firms",
+      "pubDate": "Wed, 02 Jul 2025 17:19:45 GMT",
+      "isoDate": "2025-07-02T17:19:45.000Z",
+      "creator": "Andrew Orr",
+      "summary": "# 朝鲜黑客利用Mac恶意软件攻击加密公司\n\n安全研究人员发现，朝鲜黑客正在通过一项名为“NimDoor”的复杂行动，利用Mac恶意软件攻击Web3和加密货币公司，窃取敏感数据并规避标准安全措施。\n\n## 攻击概述\n*   **目标群体**：Web3和加密货币公司，特别是macOS系统用户。\n*   **威胁行为者**：与朝鲜有关联的黑客组织。\n*   **主要目的**：窃取敏感数据，包括凭据、浏览器历史和Telegram数据。\n\n## 攻击链与技术细节\n1.  **初始入侵（社会工程）**：\n    *   攻击者冒充Telegram上的可信联系人。\n    *   诱骗受害者通过Calendly链接安排Zoom通话。\n    *   受害者收到包含恶意Zoom SDK更新脚本的网络钓鱼邮件。\n2.  **恶意脚本（AppleScript）**：\n    *   恶意文件名为`zoom_sdk_support.scpt`，是经过精心伪装的AppleScript文件。\n    *   脚本包含数千行填充代码，以逃避检测。\n    *   从模仿合法Zoom域名的攻击者控制服务器下载额外的恶意软件。\n    *   ![代码编辑器显示更新已弃用Zoom SDK的指令，包含超链接和用于访问SDK文档的shell脚本。](https://photos5.appleinsider.com/gallery/64229-133778-IMG_2687-xl.jpg)\n        *`zoom_sdk_support.scpt`文件包含10,000行填充代码，其中“Zoom”被错拼为“Zook”。图片来源：SentinelOne*\n3.  **恶意载荷（Mach-O二进制文件）**：\n    *   一旦AppleScript执行，会下载两个主要的Mach-O二进制文件，一个用C++编写，另一个用Nim语言编写。\n    *   **Nim语言的利用**：Nim在macOS上不常见，这使得检测更加困难。其编译时执行和开发人员与运行时代码的交错特性，增加了静态分析的难度。\n4.  **高级技术**：\n    *   **进程注入**：利用特殊权限进行进程注入。\n    *   **加密通信**：通过TLS加密的WebSockets (wss) 进行加密通信。\n    *   **基于信号的持久化机制**：当用户尝试终止恶意软件或系统重启时，恶意软件会自动重新安装。\n\n## 数据窃取与持久化\n*   **数据窃取**：\n    *   通过Bash脚本抓取浏览器历史记录（包括Arc、Brave、Firefox、Chrome和Microsoft Edge）。\n    *   窃取Keychain凭据。\n    *   窃取加密的本地Telegram数据库，以便进行离线破解。\n*   **持久化**：\n    *   巧妙利用macOS LaunchAgents。\n    *   采用欺骗性命名约定，例如将二进制文件命名为“GoogIe LLC”（用大写“i”代替小写“L”）以混淆视听。\n    *   另一个二进制文件“CoreKitAgent”监控系统信号，以便在被终止时重新安装。\n    *   **反分析措施**：包含10分钟的异步休眠周期，以规避安全沙箱检测。\n    *   ![深色主题代码编辑器显示一个包含条件语句和十六进制值的函数，具有行号、注释和各种颜色的高亮语法。](https://photos5.appleinsider.com/gallery/64229-133779-IMG_2688-xl.jpg)\n        *Binary Ninja的MLIL视图显示了恶意软件如何处理命令。图片来源：SentinelOne*\n*   **命令与控制（C2）**：基于AppleScript的信标机制，提供轻量级的C2功能，避免使用易触发警报的重型后渗透框架。\n\n## 防御建议\n*   **警惕不明来源**：避免运行通过意外电子邮件或消息接收到的脚本或软件更新，即使它们看起来来自可信联系人。\n*   **仔细检查URL**：攻击者常伪造相似域名，务必仔细检查URL。\n*   **及时更新**：保持macOS和所有已安装应用程序的最新安全补丁，以减少漏洞。\n*   **使用安全工具**：部署可靠的终端安全工具，检测可疑行为，如进程注入、恶意AppleScript或未经识别的启动代理。\n*   **定期审查**：定期审查登录项和LaunchAgents，以发现未经授权的条目。\n*   **强化认证**：采用强密码和唯一密码，并在可用时启用多因素认证。",
+      "shortSummary": "朝鲜黑客正利用名为“NimDoor”的Mac恶意软件，通过伪造的Zoom邀请攻击加密货币公司。该攻击利用复杂的AppleScript和罕见的Nim语言编写的恶意软件，窃取敏感数据，如浏览器历史、Keychain凭据和Telegram数据。恶意软件采用进程注入、加密通信和欺骗性命名等高级技术实现持久化和规避检测。为防范此类威胁，用户应警惕不明链接、及时更新系统和应用，并使用多因素认证。",
+      "translated_title": "朝鲜黑客利用Mac恶意软件攻击加密公司",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64229-133778-IMG_2687-xl.jpg",
+          "alt": "Code editor displaying instructions to update deprecated Zoom SDK with hyperlinks and shell script for accessing the SDK documentation.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64229-133779-IMG_2688-xl.jpg",
+          "alt": "Dark-themed code editor displaying a function with conditional statements and hexadecimal values, featuring line numbers, comments, and highlighted syntax in various colors.",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "OLED MacBook Pro 仍预计于2026年发布，可能获得三星的帮助 (原标题: OLED MacBook Pro still expected for 2026, possibly with Samsung's help)",
+      "link": "https://appleinsider.com/articles/25/07/02/oled-macbook-pro-still-expected-for-2026-possibly-with-samsungs-help",
+      "pubDate": "Wed, 02 Jul 2025 17:05:20 GMT",
+      "isoDate": "2025-07-02T17:05:20.000Z",
+      "creator": "Malcolm Owen",
+      "summary": "### OLED MacBook Pro 2026年展望\n\n根据分析报告，苹果的MacBook Pro系列预计将于2026年升级至OLED显示技术，此举很可能将三星显示（Samsung Display）引入其笔记本显示屏供应链。\n\n**主要预期与时间线：**\n\n*   **MacBook Pro OLED升级：** 预计从2026年开始。这一转变遵循了iPhone和iPad产品线已转向OLED显示技术的趋势。\n*   **MacBook Air OLED升级：** 预计要到2029年。\n\n**供应商与市场影响：**\n\n*   **三星显示加入：** Omdia的报告指出，三星显示很可能在2026年加入苹果的MacBook供应链。三星显示是苹果iPhone OLED面板的两大主要供应商之一，其在笔记本、平板和智能手机OLED面板制造方面的实力使其成为MacBook潜在供应商的合理选择。\n*   **竞争与成本：** 对于苹果而言，这可能意味着潜在供应商之间的竞争加剧，从而有助于降低显示屏采购成本。\n\n**OLED技术的优势：**\n\n*   **显示效果提升：** OLED显示屏将带来更高的亮度、对比度，以及极其鲜艳的色彩表现。\n*   **设计优化：** 由于OLED不需要背光，面板会更薄，这有助于减轻MacBook Pro的整体重量和厚度。\n\n**历史传闻与分析师预测：**\n\n*   **OLED MacBook传闻：** 有关OLED MacBook发布的传闻已流传一段时间，但发布日期曾多次变动，目前普遍猜测是2026年。\n*   **Omdia路线图泄露：** 2024年12月，一份据称来自Omdia的路线图显示，14英寸和16英寸的MacBook Pro可能采用“圆角+打孔”（Rounded Corner + Hole Cut）混合OLED显示屏，这意味着苹果可能会使用某种形式的打孔摄像头，而非当前设计中的刘海。然而，当前文章并未提及刘海相关讨论。\n*   **Omdia对iPad Pro的预测：** 此前，Omdia在2024年5月曾认为iPad Pro最早可能在2026年添加OLED，但几个月后另一份供应链报告又称要到2027年。\n*   **分析师预测准确性：** Omdia作为分析机构，其预测（包括时间表）的准确性记录并非最佳。\n\n**图片说明：** 文章内容中不包含有效的图片链接，因此摘要中不包含任何图片。",
+      "shortSummary": "苹果MacBook Pro预计在2026年升级至OLED显示屏，三星显示有望成为主要供应商之一。OLED技术将带来更薄、更亮、对比度更高的显示效果，并可能降低成本。MacBook Air预计在2029年采用OLED。尽管分析师预测存在不确定性，但OLED升级对MacBook系列而言是合理趋势。",
+      "translated_title": "OLED MacBook Pro 仍预计于2026年发布，可能获得三星的帮助",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果可能需要在iPhone 17中降低MagSafe位置以适应更大的摄像头凸起 (原标题: Apple may need to lower MagSafe in iPhone 17 to fit hugely larger camera bumps)",
+      "link": "https://appleinsider.com/articles/25/07/02/apple-may-need-to-lower-magsafe-in-iphone-17-to-fit-hugely-larger-camera-bumps",
+      "pubDate": "Wed, 02 Jul 2025 15:56:16 GMT",
+      "isoDate": "2025-07-02T15:56:16.000Z",
+      "creator": "William Gallagher",
+      "summary": "### iPhone 17 MagSafe与Apple Logo位置调整：深度解析\n\n**传闻背景与原因**\n*   **主要传闻：** 泄密者Majin Bu声称，iPhone 17系列中Apple Logo和MagSafe无线充电模块的位置都将下移。\n*   **Logo下移原因：** 据称是为了适应iPhone 17 Pro系列重新设计的、尺寸更大的摄像头系统。\n*   **历史先例：** 苹果上次调整iPhone上的Logo位置是在iPhone 11系列，当时也伴随着摄像头系统的改变。\n\n**MagSafe技术与潜在变化**\n*   **MagSafe简介：** MagSafe无线充电技术于2020年随iPhone 12系列推出，通过内部磁环实现与充电器的完美对齐。Apple Logo通常位于磁环的中心。\n*   **磁环传闻：** 2024年曾有传闻称iPhone 16的磁环会变小以节省磁铁，但这可能影响与现有数百万MagSafe充电器的兼容性，并减小MagSafe的表面积。\n*   **MagSafe内部结构：** MagSafe并非简单的磁环，它由一系列堆叠的组件构成，即使单个组件变薄，整体仍有一定厚度。\n*   **泄密者观点：** Majin Bu坚持认为MagSafe会移动，以使Apple Logo精确地居于磁环中心。然而，文章指出这可能比泄密者暗示的要复杂得多。\n\n**图片展示：MagSafe组件**\n*   ![智能手机爆炸视图显示层：铜石墨屏蔽层、磁铁阵列、对齐磁铁、聚碳酸酯外壳、充电线圈和电子屏蔽层，从左到右。](https://photos5.appleinsider.com/gallery/64226-133775-000-lead-MagSafe-components-xl.jpg)\n*   **图片说明：** 上图展示了iPhone内部MagSafe组件的堆叠结构，包括铜石墨屏蔽层、磁铁阵列、对齐磁铁、聚碳酸酯外壳、充电线圈和电子屏蔽层。\n\n**移动原因的合理性探讨**\n*   **Logo突出性质疑：** 仅仅为了让Logo更突出而进行如此大的内部结构调整似乎不合理，因为Logo通常会被MagSafe配件或保护壳覆盖，且磁环本身被玻璃背板覆盖，用户不可见。\n*   **更合理的解释：** MagSafe的移动更可能是由新摄像头系统及其传闻中更大的凸起所导致的内部结构变化所必需的。Logo的移动可能是次要的。\n*   **历史影响：** 这并非首次iPhone摄像头设计影响MagSafe。据报道，iPhone 14 Pro和iPhone 15 Pro的更大摄像头曾导致MagSafe Duo充电器连接困难。\n\n**MagSafe充电功率提升**\n*   **Qi 2.2标准：** 基于监管发现，iPhone 17的MagSafe可能支持更高的充电功率，这得益于苹果参与贡献的Qi 2.2无线充电标准。\n\n**泄密者可信度**\n*   **Majin Bu的记录：** 泄密者Majin Bu的往绩不佳，常将中国社交媒体上的其他泄露或逻辑猜测冒充自己的泄露。本次报告被认为是两者的结合。",
+      "shortSummary": "传闻称iPhone 17的MagSafe和Apple Logo将下移，以适应更大的摄像头模组。泄密者认为此举旨在突出Logo，但更合理的解释是新摄像头导致的内部结构调整所必需。MagSafe技术复杂，由多层组件堆叠。此前iPhone 14/15 Pro的摄像头已影响过MagSafe连接。iPhone 17的MagSafe可能支持更高功率的Qi 2.2充电。需注意，泄密者Majin Bu的过往记录不佳。",
+      "translated_title": "苹果可能需要在iPhone 17中降低MagSafe位置以适应更大的摄像头凸起",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64226-133775-000-lead-MagSafe-components-xl.jpg",
+          "alt": "Exploded view of a smartphone showing layers: copper-graphite shield, magnet array, alignment magnet, polycarbonate housing, charging coil, and e-shield, from left to right.",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "澳航数据泄露，数百万客户个人信息外泄 (原标题: Qantas data breach exposes personal details of millions of customers)",
+      "link": "https://appleinsider.com/articles/25/07/02/qantas-data-breach-exposes-personal-details-of-millions-of-customers",
+      "pubDate": "Wed, 02 Jul 2025 13:23:21 GMT",
+      "isoDate": "2025-07-02T13:23:21.000Z",
+      "creator": "Andrew Orr",
+      "summary": "## 澳航数据泄露事件：数百万客户信息受影响\n\n澳航（Qantas Airways）于2025年7月2日证实，其第三方系统遭到网络攻击，导致数百万客户的个人服务记录被盗。此次事件再次凸显了企业在保护客户数据方面面临的挑战。\n\n### 事件详情\n\n*   **受影响范围：** 约600万客户服务记录存储在受损平台中。\n*   **被盗信息：** 初步审查发现，被盗信息可能包括：\n    *   姓名\n    *   电子邮件地址\n    *   电话号码\n    *   出生日期\n    *   常旅客号码\n*   **未受影响信息：** 澳航强调，受影响系统中不包含信用卡详细信息、个人财务信息、护照号码或登录凭据（如密码和PIN码）。常旅客账户本身也未受损。\n*   **发现时间：** 2025年6月30日，澳航安全团队发现第三方平台出现异常活动后，迅速隔离了系统以防止进一步访问。\n*   **对核心系统的影响：** 澳航坚称其核心IT系统保持安全，航班运营或乘客安全未受影响。\n\n### 澳航的回应与措施\n\n*   **CEO致歉：** 澳航集团首席执行官Vanessa Hudson对此次泄露事件及其造成的不确定性表示歉意。她表示，澳航理解客户对其保护个人信息的信任，并正优先进行直接沟通和支持。\n*   **政府合作：** 澳航已通知联邦机构和监管机构，并正与政府网络安全团队及私人专家合作，以查明事件原因。\n*   **客户支持：** 澳航已设立支持热线并发布信息页面，提供更新和身份保护资源。旅客可通过澳航应用程序或网站查询即将到来的航班详情。\n*   **持续沟通：** 澳航表示将通过其网站和社交媒体渠道持续分享调查进展。\n\n### 数据泄露的持续担忧\n\n此次泄露是澳大利亚公司一系列数据攻击中的最新一起，这些攻击已导致个人数据泄露。这可能加剧企业加强网络安全和改进泄露披露的压力。监管机构一直在推动更严格的报告要求，公众对反复发生的数据泄露事件日益不满。\n\n安全专家警告称，即使是部分数据泄露也可能被利用。仅凭姓名和联系方式就可能助长有针对性的网络钓鱼攻击或身份盗窃计划。\n\n### 客户如何保护自己\n\n专家建议客户采取以下措施以确保安全：\n\n1.  **保持警惕：** 警惕要求提供个人信息的可疑电子邮件、电话或短信。避免点击未知来源的链接或下载附件。\n2.  **监控账户：** 监控您的常旅客账户和其他服务是否存在异常活动。\n3.  **启用多因素认证：** 尽可能启用多因素认证（MFA）。\n4.  **定期检查设置：** 定期检查安全设置。\n\n![一架飞机在蓝天白云下，起落架放下，正在空中飞行。](https://photos5.appleinsider.com/gallery/64225-133752-IMG_2685-xl.jpg)",
+      "shortSummary": "澳航于2025年7月2日证实，其第三方系统遭网络攻击，导致约600万客户的姓名、电子邮件、电话、生日和常旅客号码等个人服务记录被盗。信用卡信息和登录凭据未受影响。澳航已隔离受损系统，核心IT系统和航班运营安全。CEO已致歉并与政府合作。此次事件再次凸显澳大利亚企业面临的数据泄露风险，澳航建议客户警惕可疑通信，启用多因素认证以保护自身安全。",
+      "translated_title": "澳航数据泄露，数百万客户个人信息外泄",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64225-133752-IMG_2685-xl.jpg",
+          "alt": "Airplane flying overhead with landing gear down against a blue sky with scattered clouds.",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "DJI Power 2000 评测：供电强劲，便携性不足 (原标题: DJI Power 2000 review: Solid power delivery, not really what you'd call portable)",
+      "link": "https://appleinsider.com/articles/25/07/02/dji-power-2000-review-solid-power-heavy-weight",
+      "pubDate": "Wed, 02 Jul 2025 12:28:00 GMT",
+      "isoDate": "2025-07-02T12:28:00.000Z",
+      "creator": "Brian Patterson",
+      "summary": "# DJI Power 2000 评测：供电强劲，便携性不足\n\n## 引言\n大疆（DJI），一家以轻量级无人机闻名的公司，现已推出其最新款便携式电源——DJI Power 2000。作为Power 1000的升级版，Power 2000旨在提供更强的电力、更高的耐用性以及通过其专属应用进行更便捷的管理。在蓬勃发展的便携式电源市场中，消费者对各种个人电力需求的选择日益丰富，而Power 2000正是大疆在此领域的新尝试。\n\n## 产品规格\n*   **重量**：47磅（约21.3公斤）\n*   **尺寸**：高13英寸 x 长16英寸 x 宽8英寸\n*   **容量**：2,048Wh\n*   **输出功率**：3000W\n*   **循环寿命**：采用LFP电池，在容量降至80%之前可达4000次充电循环\n*   **交流输入**：2,200W\n*   **端口**：4个交流电源插座，4个USB-A端口，4个USB-C端口\n*   **不间断电源（UPS）模式**：切换时间仅为0.01秒\n\n## 质量与特性\nPower 2000的包装非常严密，确保了运输过程中的保护。产品本身做工精良，手感高级，从外壳到按钮和线缆都显得厚重耐用。显示屏明亮易读，所有插座都位于设备正面，方便使用。\n\n然而，正如坦克和SUV一样，增强的耐用性也意味着增加了重量。Power 2000的重量超过47磅，虽然技术上仍属于“便携式”电源，但对于有伤病或健康问题的人来说，搬运它会非常困难。它配备了两个内置提手，但仅此而已。大疆在其官网商店提供了一款价格高达998美元的手推车/电池扩展器组合，但没有单独的手推车选项。\n\n![Power bank with LCD screen, displaying 60% charge, various power outlets, including AC, USB ports, and a vehicle charging socket on a sleek, dark casing labeled 'Power 2000'.](https://photos5.appleinsider.com/gallery/64209-133721-djipower2000-2-xl.jpg)\n*DJI Power 2000 正面视图*\n\n## 充电选项\nPower 2000支持多种充电方式以适应不同场景：\n*   **墙壁充电**：从0%充至80%需55分钟，充满需90分钟。测试显示，使用附带的交流电缆，充满电耗时不到90分钟。\n*   **太阳能与车载超快速充电器**：从0%充满需75分钟。\n*   **仅使用车载电源**：充满需145分钟。\n\n一个小的不足是墙壁充电端口的位置。它位于Power 2000的正面，这在测试中略显不便，需要将设备稍微转向墙壁以确保交流电缆有足够的松弛度。\n\n![Digital display shows 71% battery, 99 hours remaining. Below are USB-C and USB-A ports. On the right, two SDC slots and charging port are visible.](https://photos5.appleinsider.com/gallery/64209-133722-djipower2000-3-xl.jpg)\n*DJI Power 2000 前面板及其部分接口*\n\n大疆在线商店提供了多种太阳能电池板、套件和捆绑包，用于在户外为Power 2000充电，功率从100W到1000W不等，价格从299美元到1900美元不等。大疆还销售其DJI Power 1.8k太阳能/车载超级充电器，售价319美元，支持太阳能电池板和汽车交流发电机/电池同时充电，提供1800W的充电功率。需要注意的是，Power 2000的基础单元仅包含交流电缆，不附带太阳能电池板或任何形式的车载充电器，这些可选配件会显著增加总成本。\n\n## DJI Home 应用\n与许多其他制造商的应用程序不同，DJI Home 应用表现出色。它允许用户通过Wi-Fi网络将Power 2000与手机同步，并监控所有信息，包括总输入/输出功率、充电时间以及每个插座的精确使用情况。该应用可在App Store下载。\n\n## 性能测试\n在实际使用场景中，Power 2000表现出色。在模拟停电情况下，Power 2000作为UPS（不间断电源）为路由器、Mac Studio和绘图板供电，不仅无缝切换，还能在断电后继续为工作站供电长达五小时，且仍有大量剩余电量。在长时间断电模拟中，Power 2000单独为冰箱供电超过10小时，之后仍有足够电量为手机、iPad和小型台灯供电。\n\nPower 2000运行时异常安静，只有在完全安静的环境中才能听到风扇的微弱声音。这一特点对于露营者、有浅睡眠者或儿童在场的情况非常有利，因为许多其他电源站在充电或使用时会发出很大的噪音。\n\n![A black portable power station with multiple outlets, a vent, and a digital display showing 60% charge against a plain white background.](https://photos5.appleinsider.com/gallery/64209-133723-djipower2000-4-xl.jpg)\n*DJI Power 2000 带有两个粗壮的提手，但移动起来仍然很重。*\n\n## 价格与价值\nDJI Power 2000的零售价为1299美元（仅电源站），发布折扣价为1099美元。虽然价格不菲，但考虑到其性能和质量，以及与Jackery和Bluetti等同类竞品（通常售价超过1200美元）的对比，这笔投资是值得的。大疆作为一家有提供优质产品历史的公司，其便携式电源产品也不例外。\n\n然而，需要注意的是，虽然Power 2000被宣传为“紧凑便携”，但其47磅的重量使其不适合“随时随地”的移动生活方式。它更适合作为家庭的永久备用电源、非移动式露营地或工地使用。\n\n## 优缺点总结\n### 优点\n*   出色的存储容量和功率输出\n*   丰富的插座类型\n*   充电速度快\n*   坚固耐用的结构\n*   运行安静\n\n### 缺点\n*   对于“便携式”产品而言，重量过重\n*   充电端口位置不寻常\n*   可选配件会显著增加总成本\n\n## 评级与购买渠道\n**评级**：4分（满分5分）\n\nDJI Power 2000及其所有配件可在store.dji.com和B&H Photo购买。",
+      "shortSummary": "大疆（DJI）Power 2000是一款性能强劲的便携式电源，拥有2048Wh大容量和3000W输出，支持快速充电和UPS功能，且运行极其安静。其做工扎实，提供多种接口。然而，重达47磅的机身使其便携性大打折扣，更适合家庭备用、固定营地或工地使用。虽然基础单元价格合理，但太阳能板等可选配件会显著增加总成本。总的来说，它是一款可靠的电源解决方案，但牺牲了移动性。",
+      "translated_title": "DJI Power 2000 评测：供电强劲，便携性不足",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64209-133721-djipower2000-2-xl.jpg",
+          "alt": "Power bank with LCD screen, displaying 60% charge, various power outlets, including AC, USB ports, and a vehicle charging socket on a sleek, dark casing labeled 'Power 2000'.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64209-133722-djipower2000-3-xl.jpg",
+          "alt": "Digital display shows 71% battery, 99 hours remaining. Below are USB-C and USB-A ports. On the right, two SDC slots and charging port are visible.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64209-133723-djipower2000-4-xl.jpg",
+          "alt": "A black portable power station with multiple outlets, a vent, and a digital display showing 60% charge against a plain white background.",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "富士康神秘地要求中国工人离开印度返回中国 (原标题: Foxconn mysteriously tells Chinese workers to quit India and return to China)",
+      "link": "https://appleinsider.com/articles/25/07/02/foxconn-mysteriously-tells-chinese-workers-to-quit-india-and-return-to-china",
+      "pubDate": "Wed, 02 Jul 2025 11:30:52 GMT",
+      "isoDate": "2025-07-02T11:30:52.000Z",
+      "creator": "William Gallagher",
+      "summary": "### 富士康要求中国工人撤离印度工厂\n\n苹果公司在印度的扩张计划遭遇了意想不到的问题，其iPhone制造商富士康已要求数百名中国工人离开在印度的工厂。\n\n*   **背景与投资**\n    *   2025年5月，富士康宣布在印度投资15亿美元。\n    *   印度政府也批准了一家新的半导体工厂。\n    *   尽管有这些积极进展，富士康印度公司却开始遣返中国工人。\n\n*   **撤离行动**\n    *   据彭博社援引知情人士消息，富士康在过去约两个月内一直在要求中国工人返回中国。\n    *   迄今为止，已有超过300名中国工人离开印度。\n    *   一位消息人士称，目前留在印度的主要人员是来自台湾的支持人员。\n\n*   **官方回应与原因不明**\n    *   富士康和苹果公司均未对此举发表评论。\n    *   富士康此举的原因尚不清楚，也无法确定这些工人是被解雇还是被重新部署到中国的工厂。\n\n*   **与北京政策的潜在关联**\n    *   此举发生之际，据报道北京官员正努力阻止企业将业务迁出中国。\n    *   这些官员据称口头鼓励中国地方政府和监管机构限制向印度和东南亚出口设备或技术。\n    *   总体而言，中国一直在加大熟练劳动力离境的难度。\n    *   目前尚不清楚这些政策变化具体如何影响了已经离境的中国工人。\n\n*   **对印度生产的影响**\n    *   富士康在印度快速扩张过程中，曾大量使用经验丰富的中国工程师。\n    *   中国经理在培训印度富士康员工方面也发挥了至关重要的作用。\n    *   由于培训已持续数年，且富士康的大部分生产线已建成，预计对制造质量不会产生影响。\n    *   然而，一位消息人士表示，这些变化将影响生产线的效率。\n    *   如果效率受到的影响严重，富士康在印度的iPhone产量可能会减少。\n    *   这一情况恰逢富士康即将开始大规模生产即将推出的iPhone 17系列。\n\n*   **短期与中期展望**\n    *   随着中国阻止企业继续使用中国专家，短期内印度扩张计划无疑将受到影响。\n    *   在中短期内，这个问题成为苹果无法在美国生产iPhone的又一个原因。",
+      "shortSummary": "富士康神秘地要求数百名中国工人离开其印度工厂返回中国，此举正值苹果在印度扩张之际。尽管富士康在印度有重大投资，但过去两个月已有300多名中国工人离开。富士康和苹果均未置评，原因不明，但可能与北京阻止企业和熟练劳动力外流的政策有关。此举预计不会影响制造质量，但可能降低生产效率，进而影响iPhone在印度的产量，尤其是在iPhone 17即将量产之际。",
+      "translated_title": "富士康神秘地要求中国工人离开印度返回中国",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
       "title": "下一部Apple TV+喜剧将是詹妮弗·安妮斯顿主演的《我很高兴我妈妈去世了》 (原标题: Next Apple TV+ dramedy will be 'I'm Glad My Mom Died' starring Jennifer Aniston)",
       "link": "https://appleinsider.com/articles/25/07/01/next-apple-tv-dramedy-will-be-im-glad-my-mom-died-starring-jennifer-aniston",
       "pubDate": "Tue, 01 Jul 2025 19:59:38 GMT",
@@ -195,8 +319,8 @@
     {
       "title": "苹果驳回美国司法部广泛反垄断诉讼的动议被驳回 (原标题: Apple loses bid to dismiss wide-ranging DOJ antitrust case)",
       "link": "https://appleinsider.com/articles/25/06/30/apple-loses-bid-to-dismiss-wide-ranging-doj-antitrust-case",
-      "pubDate": "Mon, 30 Jun 2025 21:20:30 GMT",
-      "isoDate": "2025-06-30T21:20:30.000Z",
+      "pubDate": "Mon, 30 Jun 2025 21:20:00 GMT",
+      "isoDate": "2025-06-30T21:20:00.000Z",
       "creator": "Wesley Hilliard",
       "summary": "## 苹果反垄断诉讼动议被驳回\n\n美国司法部（DOJ）对苹果公司提起的反垄断诉讼，苹果要求驳回该诉讼的动议已被法院驳回。这意味着一场可能颠覆苹果多项业务的审判即将开始。\n\n### 诉讼背景与进展\n\n*   **起源**：2019年，Spotify提起的一起案件引发了对苹果的反垄断调查。\n*   **起诉**：经过多年的模糊威胁，美国司法部于2024年正式对苹果提起了一项范围广泛但措辞模糊的反垄断诉讼。\n*   **初期波折**：诉讼初期并不顺利，原法官回避，后由美国地区法官朱利安·尼尔斯（Julien Neals）接替。\n*   **驳回动议**：苹果曾致函法官，要求立即驳回此案。时隔一年多，苹果的驳回请求最终被驳回。\n*   **审判在即**：这意味着苹果将不得不面对审判，以回应其被指控设置技术障碍，阻止其设备和服务的竞争。\n\n### 诉讼范围与司法部指控\n\n由于反垄断诉讼的非特定性，从Apple Watch到Apple Wallet的苹果所有业务都将受到审查。司法部预计将效仿欧盟的《数字市场法案》（DMA）来攻击和监管苹果的业务。\n\n原始诉讼文件暗示苹果存在以下行为：\n\n*   阻止“超级应用”的形成。\n*   不允许游戏流媒体服务。\n*   不允许跨平台消息应用。\n*   故意降低竞争性智能手表的功能。\n*   限制数字钱包。\n\n### 司法部具体指控与苹果的回应/更新\n\n尽管诉讼暗示苹果存在垄断，但文章指出苹果实际上在多个领域与多个品牌积极竞争。关于其畅销智能手表或流行消息服务是由于锁定效应的说法此前也多次受到挑战。尽管苹果的反转向（anti-steering）做法未被法院认可，但其佣金已被多次裁定为公平合法。\n\n以下是司法部的一些具体指控以及苹果的现状或回应：\n\n*   **超级应用**：这一论点此前曾被提及，核心是苹果不允许应用程序发展成拥有内部应用商店、银行、聊天功能等一体化的“操作系统”。一家名为Proton的公司也因此提起了单独的反垄断诉讼，认为既然微信可以在中国存在，也应允许其他地方存在。\n*   **游戏流媒体**：这一投诉已得到解决，但目前尚无公司采纳。例如，微软如果愿意，可以将Xbox流媒体服务作为应用程序提交到iOS上，但它尚未这样做。\n*   **跨平台消息选项**：苹果的Messages应用现在支持RCS（一种优于SMS的跨平台消息协议）。自iOS 18.2起，用户还可以选择不同的默认消息应用，如Messenger。\n*   **智能手表兼容性**：第三方智能手表制造商抱怨与iPhone的集成问题。Pebble曾回归并兼容iPhone，但其制造商抱怨无法与Apple Watch提供的选项竞争。司法部可能寻求强制苹果提供更多选项和API，但这可能需要苹果从头开发新系统。\n*   **Apple Wallet和NFC**：苹果的NFC阅读器新增了功能，允许第三方应用利用。例如，Square现在可以直接通过iPhone接受银行卡和手机的“触碰支付”。然而，这可能不足以满足司法部的反垄断诉讼要求。司法部很可能寻求强制苹果允许用户选择默认支付应用，而不是将其锁定为Apple Pay，就像欧盟那样。\n\n### 苹果面临的长期战役\n\n尽管法院的许多论点要么已被完全解决，要么因苹果自身的功能更新而变得几乎无关紧要，但诉讼仍将继续进行。诉讼程序将耗时数年，即使达成判决，也还会有上诉。\n\n![智能手机在深色表面上显示红色花瓣的特写。](https://photos5.appleinsider.com/gallery/64205-133713-Display-16-Pro-Max-xl.jpg)\n\n美国政府可能会从根本上改变苹果业务的另一个方面。苹果对其平台的处理方式没有改变，尽管开发者和政府似乎对此感到不耐烦。苹果倾向于内部开发技术，待成熟后再发布API和实施指南，而不是在技术未成熟时就提供API，这可能引入复杂性或潜在的安全隐私问题。司法部要求苹果在技术未准备好之前就向第三方开放，这可能导致苹果为了避免被迫开放而将新技术保留多年。\n\n目前尚未公布任何消息，但初步辩论和审判日期应很快确定。无论哪个政府执政，苹果都不会得到缓解，因为民主党和共和党领导人都表示有兴趣对苹果提起反垄断案件。",
       "shortSummary": "苹果公司驳回美国司法部反垄断诉讼的动议被驳回，这意味着一场可能重塑其业务的审判即将开始。该诉讼指控苹果设置技术障碍，阻碍其设备和服务的竞争，涵盖从Apple Watch到Apple Wallet的广泛领域。尽管苹果已针对部分指控进行了更新（如RCS支持、NFC功能），但司法部仍将推进此案，并可能要求苹果进一步开放其平台。这场诉讼预计将持续多年，并可能对苹果的商业模式产生深远影响。",
@@ -248,6 +372,26 @@
       "shortSummary": "苹果正面临AI人才流失和战略困境。资深Siri研究员Tom Gunter离职，且MLX团队险些集体辞职，凸显内部士气低落。公司在自研AI模型与外包（如Siri功能给Anthropic/OpenAI）之间摇摆不定，高管甚至认为自家模型逊色。这些问题暴露出苹果在AI军备竞赛中的竞争力危机，急需解决人才保留和明确战略方向。",
       "translated_title": "苹果面临人工智能人才动荡，资深Siri研究员离职",
       "images": [],
+      "contentSource": "完整文章",
+      "content": ""
+    },
+    {
+      "title": "苹果据传正与Anthropic和OpenAI洽谈为新Siri提供支持 (原标题: Apple rumored to be in talks with Anthropic and OpenAI about powering new Siri)",
+      "link": "https://appleinsider.com/articles/25/06/30/apple-rumored-to-be-in-talks-with-anthropic-and-openai-about-powering-new-siri",
+      "pubDate": "Mon, 30 Jun 2025 19:37:00 GMT",
+      "isoDate": "2025-06-30T19:37:00.000Z",
+      "creator": "Wesley Hilliard",
+      "summary": "## 苹果与第三方AI公司洽谈Siri支持的传闻分析\n\n### 背景与传闻起源\n\n近期有传闻称，苹果公司可能不会完全依赖其自研的“Apple Intelligence”来升级Siri，而是转向第三方公司寻求支持。这一传闻是在苹果宣布“Apple Intelligence”升级但尚未正式推出，导致部分用户和股东感到不满甚至引发诉讼的背景下出现的。彭博社的一份报告指出，苹果正在探索多种方案，以期为其平台带来更强大的AI工具。具体而言，匿名消息人士透露，苹果可能正在考虑让Anthropic或OpenAI来运行AI驱动Siri的后端。\n\n### 内部不满与质疑\n\n传闻进一步指出，苹果高管Craig Federighi和Mike Rockwell可能认为“Apple Intelligence”不如其他模型，因此正在寻求外部帮助。据称，苹果正在与OpenAI和Anthropic进行多轮谈判，以开发适用于苹果私有云计算（Private Cloud Compute）服务器的特殊版本ChatGPT和Claude。这一举动据称在苹果内部员工中引发了不满，甚至有员工威胁跳槽到Meta或其他竞争对手。然而，文章提醒，对于匿名消息来源的说法应持保留态度，因为泄密者可能带有个人目的。\n\n### 苹果现有的第三方AI合作\n\n文章指出，苹果与第三方AI公司合作并非新鲜事。苹果已经与OpenAI和谷歌在与“Apple Intelligence”相关的功能上有所合作。例如，一直有传闻称谷歌的Gemini最终将作为ChatGPT的替代选项集成到iPhone的Siri中。此外，苹果还与Anthropic建立了新的合作关系，将Claude Sonnet集成到Xcode中。这表明苹果早已在第三方AI应用上投入巨资，因此此次报告不应令人意外。\n\n### 合作的真正目的：支持与隐私\n\n文章认为，苹果高管在WWDC采访中讨论“Apple Intelligence”时的态度，很难让人相信他们内部会有完全不同的看法。他们强调苹果在AI领域走的是一条不同的道路，专注于隐私而非单纯的追赶。因此，苹果与Anthropic和OpenAI的洽谈，很可能不是为了取代“Apple Intelligence”作为后端，而是为了**支持**它。\n\n目前，当用户通过Siri请求ChatGPT时，数据需要上传到网络。而如果定制版本的模型能在苹果的私有云服务器上运行，将能通过严格的隐私限制来保障用户数据安全，并允许更私密的数据与AI工具共享。文章认为，尽管这份报告可能被解读为苹果在AI领域的失败，但现实可能并非如此严峻。苹果愿意与其他AI公司合作，确保用户能够私密、安全地访问多种流行模型，这应被视为对用户有利的举措。\n\n![A smartphone homescreen displaying app icons, a calendar widget for October, and a textured dark background with colorful borders.](https://photos5.appleinsider.com/gallery/64202-133707-Siri-animation-xl.jpg)\n\n“Apple Intelligence”无疑仍在按计划推进，但它可能会集成来自OpenAI、Anthropic、谷歌等公司的第三方插件，在保持隐私的同时为用户提供丰富的选择。",
+      "shortSummary": "有传闻称苹果正与Anthropic和OpenAI洽谈，可能由它们为新Siri提供支持，部分原因是“Apple Intelligence”发布后的争议。然而，文章分析认为，苹果与第三方AI公司的现有合作表明，这些洽谈更可能是为了将外部AI模型安全私密地集成到苹果的私有云计算服务器中，以支持而非取代“Apple Intelligence”，从而在保障用户隐私的前提下提供更多AI选择。",
+      "translated_title": "苹果据传正与Anthropic和OpenAI洽谈为新Siri提供支持",
+      "images": [
+        {
+          "url": "https://photos5.appleinsider.com/gallery/64202-133707-Siri-animation-xl.jpg",
+          "alt": "A smartphone homescreen displaying app icons, a calendar widget for October, and a textured dark background with colorful borders.",
+          "title": "",
+          "position": 1
+        }
+      ],
       "contentSource": "完整文章",
       "content": ""
     },
@@ -407,174 +551,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": ""
-    },
-    {
-      "title": "Apple Music 十周年庆典：推出500首最受欢迎歌曲倒计时 (原标题: Apple Music's birthday specials include a 500 most-streamed songs countdown)",
-      "link": "https://appleinsider.com/articles/25/06/30/apple-musics-birthday-specials-include-a-500-most-streamed-songs-countdown",
-      "pubDate": "Mon, 30 Jun 2025 13:56:52 GMT",
-      "isoDate": "2025-06-30T13:56:52.000Z",
-      "creator": "William Gallagher",
-      "summary": "# Apple Music 十周年庆典活动\n\n为庆祝Apple Music推出十周年，该流媒体服务将举办为期一周的特别节目，内容涵盖其热门流媒体排行榜倒计时以及关于该服务的纪录片。\n\n## 服务发展历程\n自2015年6月30日推出以来，Apple Music持续提供电台节目和独立曲目，并策划了从现场表演到超级碗的各类活动。\n\n## 十周年庆典日特别节目 (2025年6月30日)\nApple Music宣布了周年庆典日的特别节目安排，同时还揭幕了位于洛杉矶的新音乐人工作室。节目包括：\n\n*   **“Don't Be Boring: The Birth of Apple Music Radio with Zane Lowe and Ebro Darden”**：已于太平洋时间2025年6月30日上午6点至8点直播。\n*   **“10 Years of Apple Music”特别节目**：紧随其后，这是一场八小时的马拉松式广播，融合了音乐和纪录片，旨在讲述“只有Apple才能带来的最伟大的艺术家时刻、独家发布、现场活动和文化里程碑的故事”。\n*   **“Live: 10 Years of Apple Music”**：作为当天的高潮，这是一场由Zane Lowe和Ebro Darden主持的三小时现场表演，邀请了Apple称之为“塑造了服务发展轨迹”的艺术家阵容。\n\n## “10 Years of Apple Music: Top Songs”活动 (2025年7月1日至7月5日)\n在周年庆典之后，Apple将推出为期四天的特别活动“10 Years of Apple Music: Top Songs”。该活动将倒计时公布服务上播放量最高的500首歌曲，每天公布100首。\n\n## 新功能：All Time Replay 播放列表\nApple还为每位Apple Music用户发布了全新的“All Time Replay”播放列表，其中列出了自服务启动以来用户个人播放量最高的歌曲。",
-      "shortSummary": "为庆祝推出十周年，Apple Music将举办为期一周的特别节目。核心活动包括2025年6月30日的马拉松式广播和现场表演，以及7月1日至5日为期四天的“10 Years of Apple Music: Top Songs”活动，届时将倒计时公布服务上播放量最高的500首歌曲。此外，Apple还为用户推出了全新的“All Time Replay”个人播放列表，并揭幕了洛杉矶新音乐人工作室。",
-      "translated_title": "Apple Music 十周年庆典：推出500首最受欢迎歌曲倒计时",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "如何在Apple Music上查看你播放次数最多的歌曲 (原标题: How to get Apple Music to show you your most-played songs of all time)",
-      "link": "https://appleinsider.com/inside/apple-music/tips/how-to-get-apple-music-to-show-you-your-most-played-songs-of-all-time",
-      "pubDate": "Mon, 30 Jun 2025 13:46:47 GMT",
-      "isoDate": "2025-06-30T13:46:47.000Z",
-      "creator": "Amber Neely",
-      "summary": "### Apple Music 推出“Replay All Time”播放列表\n\n为庆祝成立十周年，Apple Music 推出了一项新功能——“Replay All Time”播放列表。这个列表旨在展示用户自加入 Apple Music 服务以来播放次数最多的歌曲，可以看作是年度 Replay 播放列表的“终极版”，涵盖了用户完整的收听历史。\n\n#### 如何访问“Replay All Time”播放列表？\n\n用户可以通过以下步骤找到并收听他们的“Replay All Time”播放列表：\n\n*   打开 Apple Music 应用。\n*   前往“主页”标签页。\n*   在“为你推荐”部分中，该播放列表会作为第一个突出显示的项目出现。\n\n#### Apple Music 的发展与市场份额\n\nApple Music 于 2015 年的 WWDC 大会上作为苹果公司标志性的“One More Thing...”环节的一部分首次发布。尽管在发布之初并未获得特别好的反响，但该服务此后发展迅速。根据 Demand Sage 的数据，Apple Music 目前占据了美国音乐流媒体市场约 31% 的份额。\n\n#### Apple Music 订阅价格\n\nApple Music 提供多种订阅方案以满足不同用户的需求：\n\n*   **个人计划**：每月 10.99 美元。\n*   **学生计划**：针对在校大学生提供 50% 的折扣，每月 5.99 美元。\n*   **家庭计划**：每月 16.99 美元，允许最多六个 Apple 账户在同一个 Apple 家庭组中使用该服务。\n\n此外，Apple Music 也包含在所有级别的 Apple One 捆绑计划中，用户通过这种方式可以以更优惠的价格获取该服务以及其他苹果订阅服务。",
-      "shortSummary": "为庆祝成立十周年，Apple Music 推出了“Replay All Time”播放列表，展示用户自加入服务以来播放次数最多的歌曲。用户可在 Apple Music 应用的“主页”标签页中找到此列表。该服务于2015年发布，现已占据美国音乐流媒体市场约31%的份额。Apple Music 提供个人、学生和家庭等多种订阅计划，个人月费为10.99美元，也可通过Apple One捆绑包获取。",
-      "translated_title": "如何在Apple Music上查看你播放次数最多的歌曲",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "苹果庆祝Apple Music十周年，为艺人开设新工作室 (原标题: Apple celebrates 10 years of Apple Music with new studio for artists)",
-      "link": "https://appleinsider.com/articles/25/06/30/apple-celebrates-10-years-of-apple-music-with-new-studio-for-artists",
-      "pubDate": "Mon, 30 Jun 2025 13:31:04 GMT",
-      "isoDate": "2025-06-30T13:31:04.000Z",
-      "creator": "William Gallagher",
-      "summary": "## 苹果庆祝Apple Music十周年，开设全新艺人工作室\n\n为纪念其流媒体服务Apple Music上线十周年，苹果公司在洛杉矶开设了一座占地15,000平方英尺的全新艺人工作室。Apple Music于2015年6月30日正式上线，在此期间不断发展，推出了Apple Music Classical、空间音频等功能，并于2021年在巴黎开设了首个工作室。\n\n### 洛杉矶新工作室详情\n\n这座位于洛杉矶的新工作室是一栋三层建筑，占地超过15,000平方英尺，内部设施完善，旨在为艺人提供全面的创作和制作支持：\n\n*   **广播工作室**：配备两个支持空间音频的广播工作室。\n*   **声场**：一个4,000平方英尺的声场，可用于举办现场活动和多机位拍摄。\n*   **混音室**：一个专门用于空间音频混音的房间。\n*   **媒体实验室**：一个用于照片和社交媒体内容的实验室。\n*   **编辑室**：专业的编辑空间。\n*   **休息室**：为艺人提供舒适的休息环境（Green Room）。\n*   **隔音间**：多个独立的隔音间，适用于播客录制、歌曲创作和采访。\n\n连接这些区域的是“A-List走廊”和“档案走廊”，这些走廊展示了Apple Music过去十年中的艺术作品和图像，以此庆祝其发展历程。\n\n![画廊墙上展示着各种装裱好的照片，主要描绘了在昏暗温暖灯光下表演的音乐家和捕捉到的生动瞬间。](https://photos5.appleinsider.com/gallery/64192-133689-001-Corridor-xl.jpg)\n*新洛杉矶工作室中庆祝Apple Music第一个十年的两条走廊之一 — 图片来源：Apple*\n\n### 工作室目的与愿景\n\nApple Music联合负责人雷切尔·纽曼（Rachel Newman）表示，通过这座新工作室，苹果进一步兑现了为艺人提供创作、连接和分享愿景空间的承诺。Zane Lowe也回顾了Beats 1（Apple Music Radio的前身）的创立初衷，即建立一个特殊平台，让艺人能够讲述自己的故事，并让粉丝感受到连接。他强调，十年后的Apple Music Radio已达到预期，始终将音乐放在首位，并对未来充满期待。\n\n### 全球创意中心网络\n\n洛杉矶的新设施将作为“全球创意中心网络”的核心，该网络还包括纽约、柏林和纳什维尔的工作室，苹果表示未来还将有更多工作室开放。\n\n文章并未具体说明洛杉矶新工作室的精确位置，但提到苹果在卡尔弗城（Culver City）有为Apple TV+建造设施。",
-      "shortSummary": "为庆祝Apple Music上线十周年，苹果在洛杉矶开设了一座占地15,000平方英尺的全新艺人工作室。该工作室配备了支持空间音频的广播室、大型声场、混音室等先进设施，旨在为音乐人提供创作、连接和分享的专属空间。此举是苹果全球创意中心网络的重要组成部分，进一步巩固了Apple Music在数字音乐领域的地位，并延续其以音乐为先的承诺。",
-      "translated_title": "苹果庆祝Apple Music十周年，为艺人开设新工作室",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64192-133689-001-Corridor-xl.jpg",
-          "alt": "A gallery wall displaying various framed photographs, predominantly featuring musicians performing and candid moments captured in vibrant colors, under dim warm lighting.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "苹果智能眼镜或将于2027年末开始发货 (原标题: Apple's take on smart glasses may finally start shipping in late 2027)",
-      "link": "https://appleinsider.com/articles/25/06/30/apples-take-on-smart-glasses-may-finally-start-shipping-in-late-2027",
-      "pubDate": "Mon, 30 Jun 2025 12:13:36 GMT",
-      "isoDate": "2025-06-30T12:13:36.000Z",
-      "creator": "Malcolm Owen",
-      "summary": "# 苹果智能眼镜最新预测：三款产品路线图\n\n知名分析师郭明錤（Ming-Chi Kuo）发布了关于苹果智能眼镜项目的最新预测，指出传闻已久的苹果智能眼镜可能在2027年末开始发货。\n\n## 1. Ray-Ban风格智能眼镜（首款，无显示屏）\n\n*   **概念与功能：** 这款被认为是苹果首款智能眼镜，设计上更接近Meta Ray-Ban，不具备显示功能，但将提供音频播放和视频录制。控制方式将通过语音识别和手势操作，利用内置摄像头实现。\n*   **AI环境感知：** 摄像头还将支持AI环境感知功能，类似于AirPods摄像头，旨在帮助苹果的人工智能更好地理解世界并回答用户查询。\n*   **设计：** 苹果将提供多种镜框和材质选择。\n*   **生产与发货：** 预计将于2027年第二季度开始大规模生产，2027年出货量预计达到300万至500万台或更多。\n*   **市场影响：** 郭明錤预计苹果的发布将推动头显和智能眼镜市场增长，但他也指出，预计会有多个品牌在此之前发布头显产品。\n*   **发货时间：** 此次预测的发货时间（2027年末）略晚于此前传闻（2026年末或2027年初）。\n\n![戴墨镜的人，发型为双色，穿着图案夹克和项链。墨镜反射出户外风景，有云和天空。](https://photos5.appleinsider.com/gallery/64188-133688-44315-86072-B40431F2-5682-4CEE-B18B-8169EB1D8081-xl-xl.jpg)\n\n## 2. XR眼镜（全功能智能眼镜）\n\n*   **概念：** 这款产品似乎与最初设想的全功能智能眼镜概念相符。\n*   **生产时间：** 预计将于2028年下半年开始大规模生产。\n*   **显示技术：** 将采用基于硅的液晶（LCOS）显示屏和波导技术，实现全彩显示。\n*   **控制方式：** 同样支持语音控制和手势识别。\n*   **未来展望：** 苹果对XR眼镜充满信心，甚至已有第二个变体正在开发中，但其生产时间更晚，且“可见度较低”。\n\n![智能眼镜连接到智能手机，显示电池状态为100%；背景是应用程序图标和蓝色渐变。](https://photos5.appleinsider.com/gallery/64188-133687-53946-108526-Apple-Glass-pairing-xl-xl.jpg)\n\n## 3. 显示配件（系留显示器）\n\n*   **概念：** 这款产品此前曾被认为已取消，但郭明錤称其在2024年第四季度被暂停而非取消。它本质上是一个系留显示器，需要连接到Mac或iPhone等主机设备进行处理。\n*   **显示技术：** 采用“鸟瞰光学”（birdbath optics）和电致变色调光技术，结合半透明镜片和反射镜将图像投射到用户眼中。\n*   **项目状态：** 目前项目状态未知，正在审查以重新定位市场，但重启该项目完全有可能。\n*   **暂停原因：** 暂停的原因是其竞争力不足，例如重量达到120克至130克，而竞争对手的产品重量通常低于100克。\n\n## 关键成功因素\n\n郭明錤强调，AI功能对于所有型号的成功都将是“至关重要”的。\n\n## 分析师可信度\n\n郭明錤在苹果泄密和预测方面有着良好的记录，此次提供的细节与之前的报告基本一致，增加了其预测的可信度。",
-      "shortSummary": "根据知名分析师郭明錤的最新预测，苹果智能眼镜可能在2027年末开始发货。首款Ray-Ban风格的智能眼镜预计2027年第二季度量产，主打音频、视频录制和AI环境感知，无显示屏。全功能的XR眼镜预计2028年下半年量产，将配备LCOS全彩显示屏。此外，一个曾被认为取消的系留显示器项目被证实仅是暂停。AI功能被认为是这些产品成功的关键。苹果的进入有望推动智能眼镜市场发展。",
-      "translated_title": "苹果智能眼镜或将于2027年末开始发货",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64188-133688-44315-86072-B40431F2-5682-4CEE-B18B-8169EB1D8081-xl-xl.jpg",
-          "alt": "Person with sunglasses and two-tone hair, wearing a patterned jacket and necklace. Sunglasses reflect outdoor scenery with clouds and sky.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64188-133687-53946-108526-Apple-Glass-pairing-xl-xl.jpg",
-          "alt": "Smart glasses connected to a smartphone displaying a battery status of 100%; background features app icons and a blue gradient.",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "Apple Music 的十年、数十亿美元罚款和一次失败 (原标题: Apple Music's ten years, billions of dollars in fines, and one failure)",
-      "link": "https://appleinsider.com/articles/25/06/30/apple-musics-ten-years-billions-of-dollars-in-fines-and-one-failure",
-      "pubDate": "Mon, 30 Jun 2025 12:02:09 GMT",
-      "isoDate": "2025-06-30T12:02:09.000Z",
-      "creator": "William Gallagher",
-      "summary": "# Apple Music 的十年历程：成功、罚款与一次失败\n\nApple Music 于2015年6月30日推出，在过去十年中为数百万用户带来了音乐享受，但也让苹果公司为此支付了数十亿美元的罚款，并包含了一个无人问津的社交媒体功能。\n\n## 核心特点与商业模式\n\n*   **付费模式**：Apple Music 不提供免费的广告支持版本，与竞争对手 Spotify 不同。苹果公司高管 Oliver Schusser 表示，苹果将音乐视为艺术，不愿免费提供。\n*   **定价与质量**：\n    *   个人订阅计划最初每月9.99美元，2022年涨至10.99美元。\n    *   Apple Music 的个人订阅价格低于 Spotify（与 Amazon Music 相同），并标准提供更高质量的无损音频。\n    *   Apple Music 为每流媒体播放支付给艺术家的报酬高于 Spotify。\n*   **市场地位**：尽管 Spotify 在流媒体音乐领域占据近乎垄断地位，但苹果认为 Spotify 在欧洲市场份额高达56%，且未向苹果支付任何费用。\n\n![黑白场景，一人正在整理头发，身穿图案夹克，Apple Music 文字清晰可见。](https://photos5.appleinsider.com/gallery/64175-133622-000-lead-Apple-Music-xl.jpg)\nApple 在2015年首次在线推广 Apple Music — 图片来源：Apple\n\n## 流媒体音乐的演变与 Apple 的参与\n\n*   **早期探索**：流媒体音乐的概念可追溯到1881年的 Theatrophone 服务（通过电话收听歌剧）。\n*   **数字音乐时代**：\n    *   MP3.com 出现，提供上传或独立音乐。\n    *   Napster 运营的 Rhapsody 服务于2001年问世。\n    *   Spotify 于2008年推出（2011年进入美国）。\n*   **iTunes 的影响**：在此期间，苹果通过 iTunes 改变了音乐行业，推动了单曲销售，为流媒体服务铺平了道路。\n\n![iTunes 界面显示音乐库、特色艺术家、新发行和热门歌曲列表。包括媒体控件、搜索栏和可滚动的侧边栏，其中包含音乐类别。](https://photos5.appleinsider.com/gallery/64175-133623-888-iTunes-xl.jpg)\n它很棒，它具有革命性——但它不是流媒体\n\n## Apple Music 的诞生与发展\n\n*   **收购 Beats**：2014年，苹果以约30亿美元收购了 Beats，以此启动其流媒体服务（后因 Dr. Dre 泄密，实际支付金额略低于30亿）。\n*   **WWDC 2015 发布**：Tim Cook 在2015年6月的 WWDC 上以“One More Thing”的形式宣布了 Apple Music。Jimmy Iovine（Beats 收购后加入苹果）阐述了其必要性，旨在构建一个“更大、更好的、具有苹果独有优雅和简洁的生态系统”。\n\n![男子在舞台上讲话，戴眼镜，穿深色衣服。特写镜头显示一人手持 iPod，观看歌手唱歌的视频。](https://photos5.appleinsider.com/gallery/64175-133624-888-Jimmy-Iovine-xl.jpg)\nJimmy Iovine 谈论 Apple 如何一直参与音乐 — 图片来源：Apple\n\n## 核心功能与创新\n\n*   **人工精选播放列表**：Apple Music 旨在通过质量差异化，提供人工精选的播放列表，如至今仍存在的“Essentials”系列，这些列表由资深乐迷持续更新。\n\n![Apple Music 界面显示在 Essentials、Pop 和 Guitar 等类别下的精选播放列表和专辑。侧边栏显示音乐库和播放列表。歌曲歌词面板部分可见。](https://photos5.appleinsider.com/gallery/64175-133625-888-Essentials-xl.jpg)\n像艺术家和流派 Essentials 系列这样的人工精选播放列表是 Apple Music 的一个主要优势\n\n*   **Beats 1 电台**：服务推出时还包括24小时广播电台 Beats 1（2020年更名为 Apple Music 1），并新增了 Apple Music Hits 和 Apple Music Country 电台。\n\n## 唯一的失败：Apple Music Connect\n\n*   **社交媒体尝试**：Apple Music Connect 是一个旨在连接粉丝与艺术家的社交媒体平台。\n*   **失败与放弃**：这是 Apple Music 唯一的失败，尽管苹果在最初四年中模糊地坚持，但最终于2019年放弃。\n\n![Eddy Cue 试图向我们推销 Connect，这个未能成功的音乐社交媒体平台 — 图片来源：Apple](https://photos5.appleinsider.com/gallery/64175-133626-888-Connect-xl.jpg)\nEddy Cue 试图向我们推销 Connect，这个未能成功的音乐社交媒体平台 — 图片来源：Apple\n\n## 扩展服务：Apple Music Classical\n\n*   **收购 Primephonic**：苹果收购了古典音乐流媒体服务 Primephonic，旨在创建新的 Apple Music Classical 服务。\n*   **专门优化**：该服务旨在解决古典音乐目录的复杂性（多版本、多指挥家等），提供更适合古典乐迷的搜索功能。\n*   **发布与局限**：Apple Music Classical 于2021年推出，最初仅限 iOS 应用程序，功能略显笨拙，需要与主 Apple Music 应用配合使用。目前已扩展到网页版，但仍未在 Mac 上推出。\n\n![智能手机显示一位手持指挥棒的古典音乐指挥家，其姓名和最新专辑显示在音乐应用界面上。](https://photos5.appleinsider.com/gallery/64175-133627-888-Apple-Music-Classical-xl.jpg)\nApple Music Classical 仍然有点笨拙，而且仍然没有在 Mac 上推出，但它来了。\n\n## 空间音频 (Spatial Audio)\n\n*   **技术创新**：2023年推出，旨在提升音乐体验。\n*   **激励艺术家**：2024年，苹果通过为每流媒体播放额外付费来激励音乐家和制作人将音乐重新制作成空间音频格式。\n*   **效果**：对某些专辑效果不明显，有些则更像噱头，但对另一些则能显著扩展环绕音效。\n\n![一人戴着耳机坐在沙发上，周围有发光的圆形蓝色图案，旁边有笔记本电脑，房间温馨昏暗，有植物和台灯。](https://photos5.appleinsider.com/gallery/64175-133628-888-Sptaila-Audio-xl.jpg)\nApple 在空间音频首次登陆 Apple Music 时对其进行了说明 — 图片来源：Apple\n\n## 欧盟罚款与未来展望\n\n*   **欧盟罚款**：2024年，欧盟因 Spotify 声称苹果滥用其在流媒体音乐市场的垄断地位，对苹果处以20亿美元罚款。\n*   **苹果回应**：苹果对此表示异议，指出 Spotify 在欧洲市场份额巨大，且未向苹果支付任何费用。苹果已对该罚款提出上诉。\n\n![Apple Music 界面显示推荐播放列表、近期发行和带有音乐类别的侧边栏。右侧文本显示歌曲歌词。底部控件显示当前正在播放的歌曲。](https://photos5.appleinsider.com/gallery/64175-133629-888-Apple-Music-today-xl.jpg)\n今天的 Apple Music — 播放列表、Essentials、推荐和每周列表，如 Favorites 和 Heavy Rotation\n\n*   **未来发展**：Apple Music 将继续发展。预计 Apple Intelligence 将应用于 Apple Music，例如生成 AI 播放列表，尽管服务中已存在算法生成的播放列表（如每周的“Favorites”）。苹果在 Apple Music 方面并未止步不前。",
-      "shortSummary": "Apple Music 于2015年推出，十年间为用户带来音乐享受，但也因欧盟罚款付出数十亿美元。该服务不提供免费版本，强调高质量音频和对艺术家的更高报酬。其发展历程包括收购 Beats、推出人工精选播放列表和电台。唯一的失败是社交功能 Connect。后续推出了 Apple Music Classical 和空间音频。2024年，欧盟因 Spotify 的投诉对苹果处以20亿美元罚款。未来，Apple Music 预计将整合 Apple Intelligence，继续创新。",
-      "translated_title": "Apple Music 的十年、数十亿美元罚款和一次失败",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64175-133622-000-lead-Apple-Music-xl.jpg",
-          "alt": "Black and white scene with a person adjusting hair, wearing a patterned jacket, and Apple Music text displayed prominently.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64175-133623-888-iTunes-xl.jpg",
-          "alt": "iTunes interface with music library, featured artists, new releases, and top songs list. Includes media controls, search bar, and scrollable side panel with music categories.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64175-133624-888-Jimmy-Iovine-xl.jpg",
-          "alt": "Man speaking on stage, wearing glasses and dark clothing. Close-up of person holding an iPod, watching a video of a singer with a microphone.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64175-133625-888-Essentials-xl.jpg",
-          "alt": "Apple Music interface displaying curated playlists and albums under categories such as Essentials, Pop, and Guitar. Sidebar shows music library and playlists. A song lyrics panel is partially visible.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64175-133626-888-Connect-xl.jpg",
-          "alt": "Eddy Cue tries to sell us Connect, the music social media platform that didn't take off &mdash;  image credit: Apple",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64175-133627-888-Apple-Music-Classical-xl.jpg",
-          "alt": "Smartphone displays a classical music conductor with a baton, featuring their name and latest albums on a music app interface.",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64175-133628-888-Sptaila-Audio-xl.jpg",
-          "alt": "Person wearing headphones sits on a sofa with glowing circular blue patterns around them, a laptop, and a cozy, dimly lit room with plants and a lamp nearby.",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64175-133629-888-Apple-Music-today-xl.jpg",
-          "alt": "Apple Music interface displaying recommended playlists, recent releases, and a sidebar with music categories. Text on the right shows song lyrics. Bottom controls show a song currently playing.",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "搭载M5芯片的Apple Vision Pro或将于2025年底前推出 (原标题: Apple Vision Pro with M5 may arrive before the end of 2025)",
-      "link": "https://appleinsider.com/articles/25/06/30/apple-vision-pro-with-m5-may-arrive-before-the-end-of-2025",
-      "pubDate": "Mon, 30 Jun 2025 11:33:35 GMT",
-      "isoDate": "2025-06-30T11:33:35.000Z",
-      "creator": "William Gallagher",
-      "summary": "## 苹果Vision Pro未来产品路线图预测\n\n根据知名分析师郭明錤的最新报告，苹果公司正在开发两款新的Apple Vision Pro头显，其中搭载M5芯片的版本预计可能在2025年底前推出。\n\n### 关键预测与时间线\n\n郭明錤的预测与此前关于2026年初发布更轻版本Vision Pro的传闻相悖。他明确指出，2026年将不会有任何新的头显发布，而一系列新产品将从2027年开始陆续推出。\n\n在他的博客文章中，郭明錤表示，包括Apple Vision Pro和其他智能眼镜设计在内，有五款产品已确认发布日期，另有两款待定。\n\n**苹果Vision Pro系列及智能眼镜2025年至2028年路线图（根据郭明錤）：**\n\n*   **M5版Apple Vision Pro：**\n    *   预计将于2025年第三季度开始量产。\n    *   郭明錤预测，其在2027年全年的出货量将在15万至20万台之间。\n    *   他将其描述为一款小众产品，其功能在于保持苹果在市场中的存在，促进生态系统增长，并可能“减少组件库存”。\n\n*   **第二代Apple Vision Pro：** 预计将于2028年下半年推出。\n\n*   **其他智能眼镜（类似Ray-Ban）：** 预计也将于2028年底前发布。\n\n*   **Apple Vision Air：**\n    *   据称将采用全新的外形设计。\n    *   由iPhone A系列处理器驱动。\n    *   价格将显著低于当前型号。\n\n![Timeline forecast of Apple Vision series and smart glasses from 2025 to 2028, with colorful abstract background and Apple logo.](https://photos5.appleinsider.com/gallery/64189-133685-001-Kuo-xl.jpg)\n\n*图片来源：郭明錤* \n\n### 郭明錤的预测准确性\n\n报告指出，尽管郭明錤近年来的预测准确性有所下降，但他很少发布如此具体的声明，并且此前也有过准确的预测记录。",
-      "shortSummary": "分析师郭明錤预测，搭载M5芯片的Apple Vision Pro或将于2025年底前量产并推出。他指出，2026年不会有新款Vision Pro发布，而新产品将从2027年开始陆续上市，包括2028年下半年的第二代Vision Pro和价格更低的Vision Air。M5版Vision Pro在2027年预计出货15-20万台，仍属小众产品。郭明錤还提及了类似Ray-Ban的智能眼镜，并强调其预测的具体性。",
-      "translated_title": "搭载M5芯片的Apple Vision Pro或将于2025年底前推出",
-      "images": [
-        {
-          "url": "https://photos5.appleinsider.com/gallery/64189-133685-001-Kuo-xl.jpg",
-          "alt": "Timeline forecast of Apple Vision series and smart glasses from 2025 to 2028, with colorful abstract background and Apple logo.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": ""
-    },
-    {
-      "title": "Prime Day iPad 早期优惠来袭，价格低至299美元 (原标题: Early Prime Day iPad deals roll in, offering prices as low as $299)",
-      "link": "https://appleinsider.com/articles/25/06/29/early-prime-day-ipad-deals-roll-in-offering-prices-as-low-as-299",
-      "pubDate": "Sun, 29 Jun 2025 22:57:54 GMT",
-      "isoDate": "2025-06-29T22:57:54.000Z",
-      "creator": "Christine McKee",
-      "summary": "# 亚马逊Prime Day iPad 早期优惠\n\n亚马逊在7月Prime Day到来之前，提前推出了Apple iPad系列产品的折扣，其中包括iPad mini 7再次降价100美元。此次早期优惠活动中，iPad产品最高可节省220美元，价格低至299美元。\n\n## 主要优惠亮点\n\n*   **最高优惠达220美元**：消费者在购买特定iPad型号时可享受大幅折扣。\n*   **价格低至299美元**：iPad 11的价格已降至299美元。\n*   **iPad mini 7重回年度最低价**：iPad mini 7（128GB，Wi-Fi版）降价100美元，现价399美元。\n*   **M4 iPad Pro系列优惠**：部分M4 iPad Pro型号最高可节省220美元。\n\n## 当前iPad型号优惠详情\n\n以下是部分当前在售iPad型号的具体优惠信息：\n\n*   **iPad A16 2025 (128GB, Wi-Fi)**：\n    *   优惠价：$299\n    *   节省：$50\n*   **iPad mini 7 (128GB, Wi-Fi)**：\n    *   优惠价：$399\n    *   节省：$100\n*   **M3 iPad Air 11英寸 2025 (128GB, Wi-Fi, 部分颜色)**：\n    *   优惠价：$549\n    *   节省：$50\n*   **M3 iPad Air 13英寸 2025 (128GB, Wi-Fi, 深空灰色)**：\n    *   优惠价：$699\n    *   节省：$100\n*   **M4 iPad Pro 11英寸 (256GB, Wi-Fi, 标准玻璃)**：\n    *   优惠价：$899\n    *   节省：$100\n*   **M4 iPad Pro 11英寸 (512GB, Wi-Fi, 标准玻璃)**：\n    *   优惠价：$1,099\n    *   节省：$100\n*   **M4 iPad Pro 13英寸 (256GB, Wi-Fi, 标准玻璃)**：\n    *   优惠价：$1,099\n    *   节省：$200\n*   **M4 iPad Pro 13英寸 (2TB, Wi-Fi, 标准玻璃, 深空黑色)**：\n    *   优惠价：$2,099\n    *   节省：$200\n*   **M4 iPad Pro 13英寸 (2TB, Wi-Fi + Cellular, 标准玻璃, 深空黑色)**：\n    *   优惠价：$2,279\n    *   节省：$220\n\n## M2 iPad Air 清仓优惠\n\n此外，部分M2 iPad Air型号也提供了大幅折扣：\n\n*   **M2 iPad Air 11英寸 (512GB, Wi-Fi + Cellular)**：\n    *   优惠价：$749\n    *   节省：$300\n*   **M2 iPad Air 11英寸 (1TB, Wi-Fi + Cellular)**：\n    *   优惠价：$849\n    *   节省：$400",
-      "shortSummary": "亚马逊已推出Prime Day iPad早期优惠，最高可节省220美元。iPad价格低至299美元，其中iPad 11为299美元，iPad mini 7降至399美元。M4 iPad Pro系列也有高达220美元的折扣。此外，部分M2 iPad Air型号提供高达400美元的清仓优惠。",
-      "translated_title": "Prime Day iPad 早期优惠来袭，价格低至299美元",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": ""
     }
   ],
-  "lastUpdated": "2025-07-02T06:32:38.986Z"
+  "lastUpdated": "2025-07-02T18:32:54.275Z"
 }
