@@ -5,6 +5,76 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "使用GitHub Copilot和MCP改进工作流程的5种方法 (原标题: 5 ways to transform your workflow using GitHub Copilot and MCP)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/5-ways-to-transform-your-workflow-using-github-copilot-and-mcp/",
+      "pubDate": "Wed, 02 Jul 2025 17:44:02 +0000",
+      "isoDate": "2025-07-02T17:44:02.000Z",
+      "creator": "Klint Finley",
+      "summary": "# 使用GitHub Copilot和MCP改进工作流程的5种方法\n\n本文探讨了如何利用模型上下文协议（Model Context Protocol, MCP）与GitHub Copilot结合，以优化开发工作流程。\n\n## MCP简介\n\n传统的AI编码助手通常独立运行，仅限于当前工作区内的代码。随着模型上下文协议（MCP）的引入，AI开发工作流程正在进一步演进，以整合更多工具和上下文。\n\n*   **什么是MCP？** MCP是由Anthropic开发的一个开放标准，旨在帮助GitHub Copilot等AI助手安全地连接到外部数据源和工具。\n*   **解决LLM挑战：** MCP解决了大型语言模型（LLM）在提供正确上下文以生成准确有用响应方面的常见挑战。\n*   **标准化访问：** 它标准化了AI工具访问外部上下文（如代码库、文档或设计规范）的方式，并使其更容易融入开发工作流程。\n*   **核心价值：** MCP的真正价值在于，它使开发者能够直接在集成开发环境（IDE）中执行以前需要多种工具、上下文切换和手动操作的任务，从而节省时间、保持专注并更快地交付代码。\n*   **场景示例：** 本文将通过实现一个安全的JWT（JSON Web Token）认证系统来演示MCP的端到端工作流程。\n\n## 使用MCP转换工作流程的五种方式\n\n### 1. 使用MCP连接设计与开发（Figma）\n\n设计与开发之间的鸿沟一直是产品团队的摩擦点。MCP提供了一种标准化方式，让GitHub Copilot能够安全地直接访问和解释设计规范。\n\n*   **功能：** Copilot能够自动检索精确的设计参数（如颜色、间距、排版和组件状态），并生成准确、即用的代码，从而减少猜测并简化设计师与开发人员之间的交接。\n*   **GitHub Copilot的代理能力：**\n    *   **代理模式（IDE中）：** 将Copilot Chat转变为实时协作伙伴，可规划、编辑文件、运行测试套件、读取失败、修复问题并循环直到成功。\n    *   **编码代理（GitHub项目中）：** 将Issue交给Copilot，它会在受保护的工作区中编写代码、运行检查/测试，并打开拉取请求供审查。\n*   **JWT认证示例：**\n    *   询问Copilot：“登录表单和认证组件的最新设计更新是什么？”它将从Figma检索相关规范。\n    *   然后提示它创建React组件，如`LoginForm`（包含精确的间距、颜色、排版）、`AuthErrorMessage`（包含正确的错误样式）和`TokenRefreshNotification`，Copilot将提供与Figma设计规范一致的即用代码。\n\n### 2. 利用Obsidian知识库（Obsidian）\n\n在实现JWT认证等复杂功能时，通常需要参考分散在知识库中的过往决策、架构笔记和研究成果。非官方的、社区维护的Obsidian MCP服务器通过将GitHub Copilot直接连接到Obsidian笔记库来弥补这一空白。\n\n*   **功能：**\n    *   **搜索与检索：** 告诉Copilot：“搜索所有提及JWT或令牌验证的文件并解释上下文。”Copilot可以搜索笔记库中的所有Markdown文件，检索特定的架构决策记录（ADR）内容，访问以前安全审查的会议记录，并获取团队编码标准中的实现指南。\n    *   **信息综合：** 可以进一步提示：“获取上次关于认证的架构会议记录内容并总结关键决策。”Copilot将定位相关文件并提取关键信息。\n    *   **文档创建：** 收集所需上下文后，可以要求Copilot综合信息：“创建一个名为‘jwt-implementation-summary.md’的新笔记，结合我们的认证标准和新的JWT方法。”Copilot将直接在笔记库中创建此文档。\n*   **设置要求：** 此集成需要社区的“Obsidian Local REST API”插件和API密钥。\n\n### 3. 使用Playwright测试代码（Playwright）\n\n将MCP与Playwright集成，将测试创建从手动、易错的过程转变为简单、引导式的体验。\n\n*   **功能：**\n    *   **生成测试：** 针对JWT认证系统，可以提示Copilot：“测试JWT认证流程，包括登录、自动令牌刷新和受保护路由访问。”Copilot将分析认证实现并生成全面的测试覆盖。\n    *   **运行与反馈：** Copilot随后使用Playwright运行测试，并立即提供失败反馈，为常见问题（如时序问题或选择器更改）提供修复建议。\n\n### 4. 更快地提交拉取请求（GitHub）\n\n拉取请求是协作开发的基础。GitHub的远程MCP服务器（目前在VS Code或Visual Studio中提供公共测试版）有助于将此过程转变为智能、自动化的工作流程。\n\n*   **功能：**\n    *   **PR创建：** 针对JWT认证示例，可以提示Copilot：“为我的认证功能更改创建一个拉取请求。”\n    *   **智能分析：** Copilot将分析跨多个文件的代码更改、相关问题和项目上下文、团队审查模式和专业领域，以及以前类似的实现。\n    *   **建议与推荐：** Copilot会返回包含概述、所做更改、测试策略甚至相关问题的Markdown文本。它还会根据代码所有权、专业映射和当前工作量，为更改的各个方面建议合适的审查者。\n\n### 5. 监控应用程序性能（Grafana）\n\n在处理完核心认证逻辑后，需要通过监控应用程序在生产环境中的行为来确保其性能。使用MCP通过开源的Grafana MCP服务器连接到Grafana，使这一过程变得更容易。\n\n*   **功能：**\n    *   **查询指标：** 告诉Copilot：“显示过去6小时内auth-service仪表板的认证延迟和错误率面板。”在配置Grafana MCP服务器后，Copilot可以查询Grafana实例以检查认证延迟指标、分析登录端点的错误率、审查现有认证服务的警报规则，并识别失败认证尝试中的模式。\n    *   **数据呈现：** Copilot将面板数据作为base64编码的图像返回，并在需要时提取原始时间序列数据。\n    *   **高级操作：** 通过使用`--enable-write`标志和编辑器角色API密钥启动服务器，可以启用写入操作，允许Copilot根据认证指标分析创建新的警报规则或修改仪表板配置。\n\n## 后续步骤与最佳实践\n\n在深入使用这些强大的集成之前，需要配置开发环境：\n\n*   **安装MCP扩展：** 通过官方扩展在IDE中启用MCP支持。\n*   **配置API访问：** 为每个服务（GitHub、Obsidian、Figma等）设置认证。\n*   **定义上下文边界：** 确定AI应可访问哪些信息。\n*   **安全考虑：** 实施适当的访问控制和数据隐私措施。\n\n**一些最佳实践：**\n\n*   **从小处着手：** 从一个集成开始，逐步扩展使用范围。\n*   **维护文档：** 保持知识库和文档的最新状态，以获得最佳AI协助。\n*   **定期审查Copilot的输出：** 定期审计AI生成的建议，以确保质量和安全性。\n*   **建立团队协作：** 确保团队理解并采用一致的MCP使用模式。\n\nMCP生态系统的不断发展将继续扩展其可能性。",
+      "shortSummary": "模型上下文协议（MCP）通过连接GitHub Copilot与外部系统，革新了开发工作流程。它使Copilot能直接在IDE中访问Figma设计、Obsidian知识库、Playwright测试、GitHub拉取请求和Grafana监控数据。这五种集成方式显著提升了开发效率、上下文理解和团队协作，帮助开发者更快地交付高质量代码，并简化了从设计到部署的整个流程。",
+      "translated_title": "使用GitHub Copilot和MCP改进工作流程的5种方法",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Learn how to streamline your development workflow with five different MCP use cases. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/5-ways-to-transform-your-workflow-using-github-copilot-and-mcp/\">5 ways to transform your workflow using GitHub Copilot and MCP</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "从想法到PR：GitHub Copilot智能代理工作流指南 (原标题: From idea to PR: A guide to GitHub Copilot’s agentic workflows)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/from-idea-to-pr-a-guide-to-github-copilots-agentic-workflows/",
+      "pubDate": "Tue, 01 Jul 2025 18:57:22 +0000",
+      "isoDate": "2025-07-01T18:57:22.000Z",
+      "creator": "Chris Reddington",
+      "summary": "# GitHub Copilot智能代理工作流指南\n\n本文提供了一份关于GitHub Copilot智能代理工作流的实用指南，旨在帮助开发者将GitHub Issue转化为经过测试的拉取请求（PR），从而减少繁琐的样板代码工作。\n\n## 痛点与解决方案\n\n许多开发者日常工作中，大量时间耗费在样板代码、重构以及为新功能发布做准备的“前期工作”上。GitHub Copilot的智能代理工作流旨在解决这一痛点，通过自动化这些重复性任务，让开发者能专注于更有趣、更具创造性的工作。\n\n文章通过一个实际项目演示了这些工作流：为一个Next.js Web应用和配套的SwiftUI iOS应用添加英语、法语和西班牙语本地化支持。该项目利用了Codespaces和Xcode 16环境，并结合了Copilot的编码代理、自定义规划聊天模式（预览版）和新的远程GitHub MCP服务器。\n\n## 核心能力与工具\n\nGitHub Copilot的智能代理工作流整合了多项关键能力，将从问题到PR的整个流程紧密连接起来，同时确保开发者始终掌控全局：\n\n*   **编码代理 (Coding Agent)**\n    *   **功能：** 将分配给Copilot的任何GitHub Issue异步转化为PR，并执行任务。\n    *   **重要性：** 允许开发者将样板工作卸载给AI，从而专注于代码审查和边缘逻辑。\n    *   **启用与使用：** 需启用Copilot编码代理。\n*   **Copilot创建问题 (Create Issues with Copilot)**\n    *   **功能：** 将自然语言提示转化为结构良好的Issue，包含标题、正文、验收标准和文件提示。\n    *   **重要性：** 节省产品经理/工程师的细化时间，并为团队成员或Copilot编码代理提供有效工作所需的上下文。\n    *   **启用与使用：** 访问github.com/copilot并输入提示来创建Issue。\n*   **自定义聊天模式 (Custom Chat Modes) (VS Code预览版)**\n    *   **功能：** 允许开发者编写可重复的AI工作流脚本（如规划、重构、测试编写），这些模式会出现在默认的“询问/编辑/代理”聊天模式旁边。\n    *   **重要性：** 方便打包指令和相关工具，帮助团队遵循相似的约定。\n    *   **启用与使用：** 在仓库中添加`.chatmode.md`文件；在VS Code 1.101预览版中可用。\n*   **远程GitHub MCP服务器 (Remote GitHub MCP Server)**\n    *   **功能：** 允许AI工具访问实时的GitHub上下文和工具，如Issue、PR和代码文件。无需本地安装，支持OAuth 2.0认证。\n    *   **重要性：** 提供流畅的GitHub MCP服务器访问体验，减少本地服务器的管理开销。\n    *   **启用与使用：** 根据远程GitHub MCP服务器文档更新MCP配置。\n*   **Copilot代理模式 (Copilot Agent Mode)**\n    *   **功能：** 作为实时协作伙伴，驻留在编辑器中，与开发者同步工作并根据需求编辑文件。\n    *   **重要性：** 类似于高级开发者进行结对编程，可访问多种工具（读写代码、运行终端命令、执行MCP服务器工具）。\n    *   **可用性：** 在VS Code、Visual Studio、JetBrains（公开预览）、Eclipse（公开预览）和Xcode（公开预览）中可用。\n\n## 实现类似成果的先决条件\n\n*   一个可推送的GitHub仓库。\n*   已启用编码代理的Copilot订阅（适用于所有付费层级，包括Copilot Business和Copilot Pro）。\n*   VS Code 1.101+及最新Copilot扩展。\n*   GitHub远程MCP服务器或本地GitHub MCP服务器。\n\n## 实战演练：本地化Next.js应用\n\n文章详细演示了将本地化请求转化为PR的流程：\n\n### 1. 将请求转化为GitHub Issue\n\n在Copilot Chat的沉浸式视图中，描述所需功能（例如，添加i11n能力，支持英法西语，用户可在个人资料页更改语言并即时生效，并包含概述、验收标准和文件提示）。Copilot会起草一个Issue，包含标题、验收标准和初步行动计划。随后，可将该Issue分配给Copilot，让其在后台处理。\n\n### 2. 编码代理将Issue转化为PR\n\n分配任务后，编码代理会：\n*   创建分支。\n*   启动新会话（若配置了`copilot-setup-steps.yml`，则会先配置开发环境）。\n*   审查任务，探索代码库现状，并制定完成任务的计划（会考虑自定义指令，如`npm run lint`和`npm run test`需通过）。\n*   完成后，会打开一个草稿PR供审查。\n\n### 3. 像往常一样审查PR\n\n无论是同事、协作者还是Copilot编写的代码，都需要审查。\n*   仔细审查PR正文和“文件更改”标签页中的代码。\n*   查看编码代理会话，了解Copilot解决问题的方法。\n*   可在GitHub Codespace中手动测试代码，或运行GitHub Actions工作流中的CI检查。\n*   如果发现问题（如硬编码字符串），可像处理任何其他PR一样，在评论中提供反馈。Copilot会响应评论并继续工作。\n\n## 通过自定义聊天模式提升工作流\n\nVS Code 1.101预览版中新增的自定义聊天模式允许开发者打包指令和相关工具，以实现更便捷的使用。例如，可以基于VS Code团队的“规划”聊天模式示例进行扩展，添加`create_issue`工具，并调整指令以在用户批准后创建GitHub Issue。这有助于团队保持一致且便捷的聊天模式配置。\n\n## 远程MCP：简化本地设置\n\n远程MCP服务器减少了在本地运行这些工具（如通过npm包或Docker容器）的管理开销。GitHub远程MCP服务器还支持OAuth 2.0认证，而非个人访问令牌。使用时需更新MCP配置。值得一提的是，GitHub MCP服务器是开源的。\n\n## 移动开发：Xcode中的Copilot代理模式\n\n文章简要提及了在Xcode中使用Copilot代理模式的案例，例如通过类似提示为应用添加国际化功能，并在模拟器中看到效果。\n\n## 使用建议：应该做和不应该做\n\n*   **✅ 应该做：**\n    *   保持Issue范围紧凑。\n    *   提供明确的验收标准。\n    *   仔细审查所做的更改。\n    *   与Copilot迭代，不要期望一次性完美。\n*   **❌ 不应该做：**\n    *   要求代理“重新架构整个应用”。\n    *   假设代理了解你的意图。\n    *   未经审查就执行代码或合并PR。\n    *   期望第一次就完美。\n\n## 总结与展望\n\nGitHub Copilot的智能代理工作流并非魔法，而是强大的工具。它们能帮助开发者减少技术债务和重复性任务，让开发者能够专注于解决更具挑战性、更有趣和更具创造性的问题。",
+      "shortSummary": "GitHub Copilot的智能代理工作流旨在简化软件开发，将想法快速转化为经过测试的拉取请求。它通过编码代理、自定义聊天模式和远程MCP服务器，自动化了创建问题、编写样板代码和初步测试等繁琐任务。开发者仍能掌控审查和合并过程，从而将精力集中在核心功能开发和创新上，显著提升效率并减少重复劳动。",
+      "translated_title": "从想法到PR：GitHub Copilot智能代理工作流指南",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>A practical guide to GitHub Copilot’s agentic coding agent, chat modes, and remote MCP server so you turn issues into tested PRs with clear steps (and no hype).</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/from-idea-to-pr-a-guide-to-github-copilots-agentic-workflows/\">From idea to PR: A guide to GitHub Copilot’s agentic workflows</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "使用GitHub的依赖图了解您的软件供应链 (原标题: Understand your software’s supply chain with GitHub’s dependency graph)",
+      "link": "https://github.blog/security/supply-chain-security/understand-your-softwares-supply-chain-with-githubs-dependency-graph/",
+      "pubDate": "Tue, 01 Jul 2025 16:00:00 +0000",
+      "isoDate": "2025-07-01T16:00:00.000Z",
+      "creator": "Andrea Griffiths",
+      "summary": "# GitHub依赖图：理解您的软件供应链\n\nGitHub的依赖图提供了一种强大的方式，帮助开发者全面了解其软件项目的外部包依赖关系，无论是直接还是间接的。这使得用户能够更好地理解、保护和管理其代码库的真实构成，尤其是在现代软件项目中，大部分代码可能来源于外部依赖。\n\n## 什么是依赖图？\n\n现代软件项目就像一座冰山。表面上，一个小的清单文件可能只列出少量直接依赖项，但其下方隐藏着一个庞大而复杂的传递性依赖世界，这通常是开发者容易忽视的部分。GitHub依赖图的作用正是映射出这个“水下世界”。\n\n*   **可视化表示**：它将每个包视为一个节点，每个依赖关系视为一条边，从而生成一个完整、可视化且结构化的软件外部代码库表示。\n*   **代码构成**：在许多情况下，一个项目高达95%至97%的代码实际上可能来自第三方。依赖图帮助开发者理解并管理这一现实。\n\n## 为什么依赖图至关重要？\n\n当开源包中发现漏洞时，其影响会向下游项目扩散。如果项目不清楚自身包含某个易受攻击的依赖项，就很难及时采取行动。\n\n*   **安全基础**：依赖图不仅仅是一个可视化工具，它更是GitHub Dependabot警报的基础。\n*   **漏洞通知**：当任何依赖项（包括传递性依赖）中发现安全问题时，GitHub会通过Dependabot通知用户。\n*   **全面洞察**：用户可以获得关于供应链中包含哪些内容、它们是如何进入项目以及可以采取哪些措施的完整视图。\n\n## 实际应用示例：从21到1,000个依赖项\n\n一个项目可能只有21个直接依赖项（在`package.json`等文件中列出），但包含所有传递性依赖后，总数可能达到1,000个。通过依赖图，您可以：\n\n*   **区分依赖类型**：清晰地区分直接依赖和传递性依赖。\n*   **追溯来源**：追踪像Log4j这样的包是如何进入您的代码库的（通常是作为其他依赖的传递依赖）。\n*   **明确责任**：了解哪些是您需要修复的，哪些是上游维护者负责的。\n\n## 通过Dependabot强化供应链安全\n\nDependabot基于依赖图运行。启用依赖图是实现Dependabot漏洞警报和自动修复建议的前提。\n\n*   **专业提示**：建议首先关注直接依赖项。这些是您可以直接控制的，将精力集中在此处比为传递性依赖项烦恼更有效。\n\n## 如何启用依赖图？\n\n您可以在仓库设置中，通过“Security > Dependency Graph”路径启用依赖图。如果启用了Dependabot，依赖图将自动启用。\n\n*   **GitHub Actions支持**：对于不支持自动发现的语言生态系统，社区维护的GitHub Actions可以生成软件物料清单（SBOM）并将其提交到GitHub的依赖提交API。\n\n## 免费提供\n\n依赖图和Dependabot警报对所有GitHub仓库都是免费的。\n\n## 总结\n\n您无法保护您看不到的东西。GitHub的依赖图提供了对代码库中90%以上来自开源库部分的可见性，并帮助您在关键时刻采取行动。\n\n*   立即启用它。\n*   与Dependabot结合使用，实现自动化警报和修复。\n*   最终发现您的软件供应链中究竟包含什么。\n\n您的未来（以及您的安全团队）会感谢您。\n\n## 了解更多\n\n*   探索GitHub依赖图文档：[Explore the documentation](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph)\n\n---\n\n**作者信息**\n\n![Andrea Griffiths](https://github.blog/wp-content/uploads/2025/03/cropped-IMG_1971-200x200.jpeg)\n\n本文由 **Andrea Griffiths** 撰写，她是GitHub的高级开发者倡导者，拥有十多年的开发者工具经验。她将深厚的技术知识与使先进技术更易于访问的使命相结合。在从军队服役和施工管理转型到软件开发后，她带来了独特的视角，弥合了复杂的工程概念与实际实现之间的鸿沟。她与她的威尔士伴侣、两个儿子和两只狗住在佛罗里达州，在那里她继续通过GitHub的全球倡议推动创新和支持开源。您可以在线找到她：@alacolombiadev。\n\n---\n\n**相关文章**\n\n探索更多来自GitHub的内容：\n\n*   **文档**\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n    掌握GitHub所需的一切，尽在一个地方。\n    [前往文档](https://docs.github.com/en)\n\n*   **GitHub**\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n    在GitHub上构建未来，这里是任何人、任何地方都可以构建任何东西的地方。\n    [开始构建](https://github.com/)\n\n*   **客户案例**\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n    了解使用GitHub进行构建的公司和工程团队。\n    [了解更多](https://github.com/customer-stories)\n\n*   **GitHub Universe 2025**\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n    最后机会：节省700美元购买Universe现场通行证，并于10月28-29日在旧金山与我们相聚。\n    [立即注册](https://githubuniverse.com/)",
+      "shortSummary": "GitHub的依赖图提供软件供应链的全面视图，揭示直接和间接依赖。它帮助用户理解、保护和管理项目，尤其是在识别和响应开源漏洞方面。依赖图是Dependabot警报的基础，能自动检测并建议修复安全问题。该功能免费，可通过仓库设置启用，显著提升代码库的可见性和安全性，让开发者更好地掌控其外部代码构成。",
+      "translated_title": "使用GitHub的依赖图了解您的软件供应链",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/03/cropped-IMG_1971-200x200.jpeg",
+          "alt": "Andrea Griffiths",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>The GitHub dependency graph maps every direct and transitive dependency in your project, so you can identify risks, prioritize fixes, and keep your code secure.</p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/understand-your-softwares-supply-chain-with-githubs-dependency-graph/\">Understand your software’s supply chain with GitHub’s dependency graph</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub 咨询数据库数据概览：已知安全漏洞及其应对措施 (原标题: GitHub Advisory Database by the numbers: Known security vulnerabilities and what you can do about them)",
       "link": "https://github.blog/security/github-advisory-database-by-the-numbers-known-security-vulnerabilities-and-what-you-can-do-about-them/",
       "pubDate": "Fri, 27 Jun 2025 16:00:00 +0000",
@@ -287,163 +357,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Tech debt is a big problem that no one has time to solve. GitHub Copilot coding agent can help.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-the-github-billing-team-uses-the-coding-agent-in-github-copilot-to-continuously-burn-down-technical-debt/\">How the GitHub billing team uses the coding agent in GitHub Copilot to continuously burn down technical debt</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub 可用性报告：2025 年 5 月 (原标题: GitHub Availability Report: May 2025)",
-      "link": "https://github.blog/news-insights/company-news/github-availability-report-may-2025/",
-      "pubDate": "Wed, 11 Jun 2025 23:24:41 +0000",
-      "isoDate": "2025-06-11T23:24:41.000Z",
-      "creator": "Jakub Oleksy",
-      "summary": "# GitHub 2025 年 5 月可用性报告\n\nGitHub 在 2025 年 5 月经历了三次导致服务性能下降的事件。\n\n## 事件回顾\n\n### 1. 5 月 1 日事件：附件上传降级\n\n*   **时间：** 2025 年 5 月 1 日 22:09 UTC 至 23:13 UTC（持续 1 小时 4 分钟）。\n*   **受影响服务：** Issues 服务。\n*   **影响：** 用户无法上传附件，估计约 13 万用户受到影响约 45 分钟。\n*   **根本原因：** 新功能在所有客户端 HTTP 请求中添加了自定义头部，导致上传附件到提供商时出现 CORS 错误。\n*   **缓解措施：** 于 22:56 UTC 回滚了添加新头部的功能标志。\n*   **预防措施：** 正在添加新的监控指标，以确保客户端请求更改的安全推出。基于此次事件的经验，已部署了增强版功能，目前在生产环境中运行良好。\n\n### 2. 5 月 28 日事件：GitHub Actions 作业启动延迟\n\n*   **时间：** 2025 年 5 月 28 日约 09:45 UTC 至 14:45 UTC（持续 5 小时）。\n*   **受影响服务：** GitHub Actions，特别是使用 Ubuntu-24 标准托管运行器的公共仓库工作流。\n*   **影响：** 公共仓库中约 19.7% 的 Ubuntu-24 托管运行器作业出现延迟。其他托管运行器、自托管运行器和私有仓库工作流未受影响。\n*   **根本原因：** 故障转移后后端缓存行为配置错误，导致重复的作业分配，降低了受影响托管运行器池的整体容量。\n*   **缓解措施：** 配置问题于 12:45 UTC 修复。同时扩大了运行器池规模，以更快地处理积压的排队作业，直到 14:45 UTC 完全缓解排队影响。\n*   **预防措施：** 正在改进故障转移的弹性和验证，以降低未来发生类似问题的可能性。\n\n### 3. 5 月 30 日事件：Microsoft Teams GitHub 集成服务中断\n\n*   **时间：** 2025 年 5 月 30 日 08:10 UTC 至 16:00 UTC（持续 7 小时 50 分钟）。\n*   **受影响服务：** Microsoft Teams GitHub 集成服务。\n*   **影响：** 除链接预览外，所有功能均出现 100% 的错误率，集成服务无法处理用户请求或发送通知。\n*   **根本原因：** 下游身份验证提供商的身份验证问题。尽管有适当的监控，但警报阈值不够灵敏，导致事件检测和响应延迟。\n*   **缓解措施：** 团队与下游提供商密切合作诊断并解决了身份验证故障，恢复了服务功能。\n*   **预防措施：** 正在迁移到更持久的身份验证方法，以降低未来发生类似问题的风险。提供商响应时间超出预期也导致了此次中断的延长。\n\n## 更多信息\n\n*   请关注 [GitHub 状态页面](https://www.githubstatus.com/) 获取实时状态更新和事件后总结。\n*   访问 [GitHub 工程博客](https://github.blog/engineering/) 了解更多正在进行的工作。\n*   文章作者： ![Jakub Oleksy](https://avatars.githubusercontent.com/u/6147691?v=4&s=200)\n\n### 相关文章\n\n*   GitHub Copilot：认识新的编码代理\n*   实现功能从未如此简单：只需将任务或问题分配给 Copilot。它在后台与 GitHub Actions 一起运行，并将其工作作为拉取请求提交。\n\n### 探索更多 GitHub 内容\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**\n    掌握 GitHub 所需的一切，尽在一处。前往文档\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**\n    在 GitHub 上构建未来，这里是任何人、任何地点构建任何东西的地方。开始构建\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**\n    了解使用 GitHub 进行构建的公司和工程团队。了解更多\n*   ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) **企业内容**\n    为您精心策划的执行洞察。开始使用",
-      "shortSummary": "GitHub 在 2025 年 5 月报告了三起服务中断事件。5 月 1 日，Issues 服务因新功能导致附件上传降级，影响约 13 万用户。5 月 28 日，GitHub Actions 因后端缓存配置错误导致公共仓库作业启动延迟。5 月 30 日，Microsoft Teams GitHub 集成服务因下游身份验证问题完全中断，持续近 8 小时。GitHub 已采取措施修复并预防类似问题，包括回滚功能、改进故障转移弹性和迁移认证方法。",
-      "translated_title": "GitHub 可用性报告：2025 年 5 月",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/6147691?v=4&s=200",
-          "alt": "Jakub Oleksy",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
-          "alt": "Enterprise content",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>In May, we experienced three incidents that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-may-2025/\">GitHub Availability Report: May 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub工程师如何解决平台问题 (原标题: How GitHub engineers tackle platform problems)",
-      "link": "https://github.blog/engineering/infrastructure/how-github-engineers-tackle-platform-problems/",
-      "pubDate": "Tue, 10 Jun 2025 16:00:00 +0000",
-      "isoDate": "2025-06-10T16:00:00.000Z",
-      "creator": "Fabian Aguilar Gomez",
-      "summary": "# GitHub工程师如何解决平台问题\n\n## 引言：产品与平台工程的类比\n*   文章通过高达模型制作类比产品工程师和平台工程师的角色：\n    *   **产品工程师**：使用工具包构建最终产品（高达模型），专注于构建可玩或收藏的工作产品。\n    *   **平台工程师**：提供构建工具（如剪钳、锉刀）并可能搭建展示平台，确保构建者拥有所需工具，即使他们不亲自构建高达模型。\n*   作者的团队一年前转入基础设施组织，职责从解决外部客户问题（如构建新的部署视图）转变为服务内部客户，成为平台工程团队。这意味着他们现在负责构建产品组件，这要求他们重新思考代码测试和问题解决方法。\n\n## 解决平台问题的最佳实践\n\n### 1. 理解你的领域\n*   **定义**：“领域”是指团队和平台组织运作的业务和技术主题区域。\n*   **如何快速掌握**：\n    *   **与同事交流**：与对主题有更多知识和经验的团队安排交接会议，询问术语并深入理解问题。\n    *   **调查旧问题**：研究积压或持续存在的问题，以更好地理解系统的当前限制和潜在改进领域。\n    *   **阅读文档**：文档是知识的宝库，有助于理解系统的工作原理。\n\n### 2. 将概念与平台特定技能相结合\n*   平台团队作为基础层，需要更深入的理解：\n    *   **网络**：理解TCP、UDP、L4负载均衡等网络基础知识，以及`dig`等调试工具，这对于理解网络流量如何影响平台至关重要。\n    *   **操作系统和硬件**：选择合适的虚拟机（VM）或物理硬件对于可扩展性和成本管理至关重要，并需选择正确的操作系统以避免漏洞或接近生命周期结束的系统。\n    *   **基础设施即代码（IaC）**：熟练使用Terraform、Ansible、Consul等自动化工具，它们能显著减少基础设施配置和修改过程中的人为错误。\n    *   **分布式系统**：处理平台问题，尤其是在分布式系统中，需要深入理解故障是不可避免的。因此，采用故障转移和恢复机制等主动解决方案对于保持系统可靠性和防止不良用户体验至关重要。\n\n### 3. 知识共享\n*   通过分享经验和想法，工程师可以引入新视角，从而带来突破和创新。\n*   **重要性**：\n    *   **团队合作**：协作通常能更快地解决问题，并促进新解决方案的创新，因为工程师有机会相互学习并扩展现有想法。\n    *   **防止知识流失**：如果不分享经验教训，信息就无法在团队或组织内传播。当工程师离职或无法联系时，这会成为问题。\n    *   **提升客户成功**：工程师的解决方案应有效地服务客户。通过分享知识和经验教训，团队可以构建可靠、可扩展、安全的平台，从而创造出满足客户需求和期望的更好产品！\n\n## 产品工程与基础设施工程的显著差异\n\n### 1. 影响范围\n*   平台作为系统的基本构建块，任何（无论大小的）变更都可能影响广泛的产品。例如，DNS服务的一个微小改动就可能对GitHub Pages到GitHub Copilot等产品造成广泛影响。\n*   **如何理解影响范围**：\n    *   **与下游团队直接沟通**：与依赖服务的团队直接沟通，提供有关拟议变更可能如何影响其他服务的宝贵见解。\n    *   **事后分析（Postmortems）**：通过查看与平台相关的过去事件，并询问“此事件的影响是什么？”，可以更深入地了解引入了什么变更或故障、平台在其中扮演的角色以及如何修复。\n    *   **监控和遥测**：将重要的监控和日志信息浓缩成小巧且易于消化的介质（例如单一可用性指标SAM），以提供系统的总体健康状况。快速浏览单个仪表盘的能力使工程师能够迅速查明问题来源，并简化调试和事件缓解过程。\n\n### 2. 测试变更\n*   在分布式环境中测试变更（特别是像DNS这样的服务）可能具有挑战性。\n*   **关键步骤**：\n    *   **利用测试站点**：将其作为“真实”机器，可以在其中实施和评估所有变更。\n    *   **基础设施即代码（IaC）测试**：使用Terraform或Ansible等工具时，测试配置和解除配置机器等基本操作至关重要。在需要重新配置机器的情况下，要确保机器不会被意外删除，并且在需要时能够创建新机器。\n    *   **端到端（E2E）测试**：开始将一些网络流量导向这些服务器。团队可以通过直接与其交互来观察主机行为，或者通过分流一小部分流量来评估功能。\n    *   **自愈能力测试**：测试平台从意外负载中恢复的能力，并在影响用户之前识别瓶颈。早期识别瓶颈或错误对于维护平台健康至关重要。\n    *   **逐主机实施**：理想情况下，测试完成后应逐主机实施变更。这种方法允许单独机器回滚，并防止变更应用于未受影响的主机。\n\n## 总结\n*   平台工程可能很困难，GitHub的系统复杂且包含许多服务和活动部件。然而，当一切顺利运行时，所有幕后努力都得到了回报。当平台平稳运行，团队能够更快、更可靠地交付产品时，GitHub就能成为所有开发者的家园。\n\n由 ![Fabian Aguilar Gomez](https://avatars.githubusercontent.com/u/27039604?v=4&s=200) Fabian Aguilar Gomez 撰写\n\n### 相关文章\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握GitHub所需的一切。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在GitHub上构建未来，这里是任何地方的任何人都可以构建任何东西的地方。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用GitHub进行构建的公司和工程团队。\n*   ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) Enterprise content：专为您策划的企业洞察。",
-      "shortSummary": "GitHub工程师通过高达模型类比阐述了平台工程与产品工程的区别，强调平台工程师提供基础工具和基础设施。解决平台问题需深入理解领域知识、掌握网络、操作系统、IaC和分布式系统等平台特定技能，并重视知识共享。平台工程的挑战在于其广泛的影响范围和分布式环境下的测试复杂性。通过理解依赖、事后分析、有效监控和分阶段测试，确保平台稳定运行，从而支持产品团队更快、更可靠地交付产品。",
-      "translated_title": "GitHub工程师如何解决平台问题",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/gundam.jpg?resize=1024%2C840",
-          "alt": "A photograph of several Gundam models on a shelf.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/27039604?v=4&s=200",
-          "alt": "Fabian Aguilar Gomez",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
-          "alt": "Enterprise content",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Our best practices for quickly identifying, resolving, and preventing issues at scale.</p>\n<p>The post <a href=\"https://github.blog/engineering/infrastructure/how-github-engineers-tackle-platform-problems/\">How GitHub engineers tackle platform problems</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub 初学者指南：使用 GitHub Copilot 进行代码审查和重构 (原标题: GitHub for Beginners: Code review and refactoring with GitHub Copilot)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/github-for-beginners-code-review-and-refactoring-with-github-copilot/",
-      "pubDate": "Mon, 09 Jun 2025 13:00:00 +0000",
-      "isoDate": "2025-06-09T13:00:00.000Z",
-      "creator": "Kedasha Kerr",
-      "summary": "# GitHub 初学者指南：使用 GitHub Copilot 进行代码审查和重构\n\n本篇文章是“GitHub 初学者指南”系列的第八集，也是最后一集，深入探讨了 GitHub Copilot 在代码审查和重构中的应用。在任何开发项目中，维护一个清晰高效的代码库至关重要，而 GitHub Copilot 不仅能辅助编写代码，还能使代码审查和重构过程更顺畅、更高效。\n\n## 使用 Copilot 进行代码重构\n\nGitHub Copilot 能够帮助开发者重构代码，使其更易于理解和维护。\n\n### 操作步骤与建议类型\n\n1.  **高亮代码并提问：** 在代码编辑器中高亮需要重构的函数，然后在 Copilot Chat 中发送提示，例如“`please provide refactoring suggestions`”（请提供重构建议）。\n2.  **审查建议：** Copilot 会提供多种重构建议，包括将代码拆分为更小的部分、优化逻辑以提高性能，甚至更新变量名称以符合命名规范。\n3.  **应用更改：** 审查并确认建议后，点击“`Apply in editor`”按钮即可自动更新文件。\n\n### 重构范围与具体示例\n\n*   **局部重构：** 适用于对代码特定区域的关注。\n*   **文件或项目级重构：** Copilot 也可以审查整个文件或项目。例如，对于一个仪表盘组件，可以向 Copilot Chat 提问“`How can I improve this code?`”（我如何改进这段代码？），Copilot 会给出多条改进建议，并可进一步解释。\n*   **提取逻辑：** 可以通过提问“`How can I extract the data fetching logic into a custom hook?`”（如何将数据获取逻辑提取到自定义 Hook 中？）来将特定逻辑（如数据获取）提取到可重用的组件中。操作流程包括将更改保存到新文件、导入 Hook 并删除旧代码。\n*   **识别冗余代码：** 提问“`Is there any redundant code in this file?`”（此文件中是否有任何冗余代码？），Copilot 会扫描代码并识别可纠正的冗余部分。\n*   **其他重构辅助：** Copilot 还能提供性能改进建议、帮助函数模块化、添加注释以提高可读性，以及升级语法到更现代的版本等。\n\n![一张幻灯片，解释 Copilot 可以提供性能改进建议、如何使函数更模块化、添加注释以提高可读性、升级语法等等！](https://github.blog/wp-content/uploads/2025/06/copilot_refactor_help.png?resize=1024%2C573)\n\n## 在 GitHub.com 上进行代码审查\n\nGitHub Copilot 也能直接在 GitHub.com 上进行代码审查，使流程更加无缝。\n\n### 审查流程\n\n1.  **创建拉取请求：** 打开一个拉取请求（Pull Request）。\n2.  **请求 Copilot 审查：** 在右上角的“Reviewers”（审查者）部分，会看到 Copilot 列为可能的审查者。点击“Request”（请求）即可让 Copilot 审查代码。\n\n![一张截图，显示了在右侧“审查者”列表中如何请求 Copilot 进行审查。](https://github.blog/wp-content/uploads/2025/06/code_review.png?resize=1024%2C573)\n\n3.  **查看建议：** Copilot 完成审查后，向下滚动拉取请求即可看到其提出的任何建议。\n4.  **接受建议：** Copilot 总是留下“Comment review”（评论审查），从不留下“Approve”（批准）或“Request changes”（请求更改）审查，这意味着 Copilot 的审查永远不会是必需的，也不会阻止合并。要接受 Copilot 的建议，点击特定建议底部的“`Commit suggestion`”（提交建议），然后在上下文菜单中点击“`Commit changes`”（提交更改），GitHub 会更新拉取请求。\n\n![一张截图，显示了标题为“提交建议”的下拉菜单中的“提交更改”按钮。](https://github.blog/wp-content/uploads/2025/06/commit_code_review.png?resize=1024%2C573)\n\n5.  **批量处理与重新审查：** 可以通过点击单个建议下的“`Add to batch`”（添加到批次）按钮来批量处理多个建议。在集成建议后，可以通过点击“Reviewers”框中 Copilot 名称旁边的圆形箭头来再次请求 Copilot 审查。\n\nCopilot 代码审查可以作为团队最终代码审查前的初步审查。\n\n## 关键组成部分与局限性\n\n### 关键组成部分\n\n使用 Copilot 进行代码审查和重构主要包括以下五个方面：\n\n*   **自动化建议：** 在审查代码时，Copilot 会提出改进和优化建议。\n*   **一致性检查：** 通过建议一致的命名约定和函数结构，帮助维护编码标准。\n*   **重构辅助：** 提供可操作的重构建议，无论是简化复杂函数还是重组代码库。\n*   **错误检测：** 能够发现可能遗漏的潜在错误或低效率问题。\n*   **注释支持：** 帮助生成清晰的代码注释，使其更易于他人理解。\n\n### 局限性\n\n尽管 GitHub Copilot 功能强大，但它仍是一个辅助工具，并非人类审查的替代品：\n\n*   **依赖上下文：** Copilot 的建议质量取决于所提供的上下文，不清晰或文档不完善的代码可能导致建议效果不佳。\n*   **非人类审查替代品：** Copilot 无法替代彻底的人工审查。务必仔细检查其提供的建议，确保它们符合项目目标、标准以及组织政策。\n\n![一张幻灯片，列出了 Copilot 的功能：协助代码审查和重构；帮助维护整洁、高效和一致的代码；节省时间并减少错误；让您更专注于构建。](https://github.blog/wp-content/uploads/2025/06/copilot_can_do.png?resize=1024%2C573)\n\n## 总结\n\nGitHub Copilot 是代码审查和重构的宝贵助手，它能帮助开发者维护整洁、高效且一致的代码，从而节省时间并减少错误。通过将 Copilot 整合到工作流程中，开发者可以更专注于构建出色的功能，而不是纠结于代码维护的细节。",
-      "shortSummary": "GitHub Copilot 是一个强大的代码审查和重构工具。它通过 Copilot Chat 提供重构建议，如优化代码、提取逻辑和识别冗余。在 GitHub.com 上，Copilot 可作为拉取请求的初步审查者，提供评论但不阻塞合并。其核心功能包括自动化建议、一致性检查和错误检测。尽管功能强大，Copilot 仍是辅助工具，不能替代彻底的人工审查，其建议需人工复核。它旨在帮助开发者维护整洁高效的代码，节省时间并减少错误。",
-      "translated_title": "GitHub 初学者指南：使用 GitHub Copilot 进行代码审查和重构",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/copilot_refactor_help.png?resize=1024%2C573",
-          "alt": "A slide explaining that Copilot can help with performance improvement suggestions, how to make functions more modular, adding comments for readability, upgrading syntax, and much more!",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/code_review.png?resize=1024%2C573",
-          "alt": "A screenshot shoring where to request a review from Copilot, under the 'reviewers' list on the right.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/commit_code_review.png?resize=1024%2C573",
-          "alt": "A screenshot showing the 'Commit changes' button in the drop down menu titled 'Commit suggestion.'",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/copilot_can_do.png?resize=1024%2C573",
-          "alt": "A slide listing items Copilot can do: Assists with code review and refactoring; helps maintain clean, efficient, and consistent code; saves you time and reduces errors; and allows you to focus more on building.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/47188731?v=4&s=200",
-          "alt": "Kedasha Kerr",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Learn how to use GitHub Copilot to help review and polish your code.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/github-for-beginners-code-review-and-refactoring-with-github-copilot/\">GitHub for Beginners: Code review and refactoring with GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-07-01T04:46:40.882Z"
+  "lastUpdated": "2025-07-03T04:44:31.033Z"
 }
