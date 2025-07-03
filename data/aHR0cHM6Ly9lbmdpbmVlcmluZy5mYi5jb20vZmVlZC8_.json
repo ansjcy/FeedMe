@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "深入了解Meta在移动端从C到Rust的转型 (原标题: An inside look at Meta’s transition from C to Rust on mobile)",
+      "link": "https://engineering.fb.com/2025/07/01/developer-tools/an-inside-look-at-metas-transition-from-c-to-rust-on-mobile/",
+      "pubDate": "Tue, 01 Jul 2025 16:00:23 +0000",
+      "isoDate": "2025-07-01T16:00:23.000Z",
+      "creator": "",
+      "summary": "# Meta在移动端从C到Rust的转型：深入解析\n\nMeta正在进行一项雄心勃勃的项目，旨在将其核心移动消息库中的C语言代码重写为Rust。这项工作在最新的Meta技术播客中得到了深入探讨。\n\n## 项目背景与目标\n*   **现代化大规模系统：** Meta致力于对其庞大的系统进行现代化改造，特别是那些包含数十年历史C代码的核心消息库。\n*   **核心技术转型：** 项目的核心是将这些旧的C代码库迁移到Rust语言。\n*   **影响范围广泛：** 这一中央消息库被Messenger、Facebook、Instagram以及Meta的AR/VR平台共享，因此此次转型将对Meta的多个核心产品产生深远影响。\n\n## 播客嘉宾与讨论要点\n*   **主持人：** Pascal Hartig。\n*   **项目工程师：** Elaine和Buping，两位负责此大胆重写项目的软件工程师。\n*   **讨论内容包括：**\n    *   如何在没有Rust背景的情况下承担如此大规模的项目。\n    *   他们正在采用的具体方法和策略。\n    *   将“开发者幸福感”作为优化目标的重要性及其含义。\n\n## Meta技术播客\n*   **内容：** 该播客由Meta推出，旨在展示Meta工程师在各个层面的工作，从底层框架到最终用户功能。\n*   **收听方式：** 听众可以在Spotify、Apple Podcasts、Pocket Casts等播客平台下载或收听该集。\n*   **反馈与职业机会：** 听众可以通过Instagram、Threads或X向Meta发送反馈，并访问Meta职业页面了解更多职业机会。",
+      "shortSummary": "Meta正在进行一项雄心勃勃的项目，旨在将其核心移动消息库中数十年历史的C语言代码重写为Rust。这项工作在最新的Meta技术播客中得到了深入探讨，两位负责该项目的工程师分享了他们如何在没有Rust背景的情况下应对这一大规模转型，以及他们如何优化“开发者幸福感”。此举旨在现代化系统，并影响Messenger、Facebook、Instagram以及Meta的AR/VR等多个核心平台。",
+      "translated_title": "深入了解Meta在移动端从C到Rust的转型",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Have you ever worked is legacy code? Are you curious what it takes to modernize systems at a massive scale? Pascal Hartig is joined on the latest Meta Tech Podcast by Elaine and Buping, two software engineers working on a bold project to rewrite the decades-old C code in one of Meta’s core messaging libraries [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/07/01/developer-tools/an-inside-look-at-metas-transition-from-c-to-rust-on-mobile/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/07/01/developer-tools/an-inside-look-at-metas-transition-from-c-to-rust-on-mobile/\">An inside look at Meta&#8217;s transition from C to Rust on mobile</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "Meta 加入 Kotlin 基金会 (原标题: Meta joins Kotlin Foundation)",
       "link": "https://engineering.fb.com/2025/06/30/android/meta-joins-kotlin-foundation/",
       "pubDate": "Mon, 30 Jun 2025 16:00:30 +0000",
@@ -120,20 +133,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Meta develops infrastructure all across the globe to transport information and content for the billions of people using our services around the world. At the core of this infrastructure are aggregation points – like data centers – and the digital cables that connect them. Subsea cables – the unseen digital highways of the internet – [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/05/01/connectivity/taking-the-plunge-the-engineering-journey-of-building-a-subsea-cable/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/05/01/connectivity/taking-the-plunge-the-engineering-journey-of-building-a-subsea-cable/\">Taking the plunge: The engineering journey of building a subsea cable</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "推出 AutoPatchBench：一个用于 AI 驱动安全修复的基准测试 (原标题: Introducing AutoPatchBench: A Benchmark for AI-Powered Security Fixes)",
-      "link": "https://engineering.fb.com/2025/04/29/ai-research/autopatchbench-benchmark-ai-powered-security-fixes/",
-      "pubDate": "Tue, 29 Apr 2025 17:15:17 +0000",
-      "isoDate": "2025-04-29T17:15:17.000Z",
-      "creator": "",
-      "summary": "## 推出 AutoPatchBench：AI 驱动安全修复的基准测试\n\nMeta 近期推出了 AutoPatchBench，这是一个专为评估 AI 程序修复系统而设计的标准化基准测试，尤其侧重于通过模糊测试发现的漏洞。此举旨在促进 AI 在软件安全领域的应用，并鼓励社区协作，共同应对软件漏洞修复的挑战。\n\n### AI 修复模糊测试发现的漏洞的必要性\n\n*   **模糊测试的作用：** 模糊测试是自动化测试的基石，通过向目标程序输入大量伪随机数据，有效揭示内存损坏、无效指针解引用、整数溢出和解析错误等关键安全和可靠性问题。\n*   **手动修复的挑战：** 修复模糊测试发现的崩溃通常是劳动密集型任务，需要复杂的调试和彻底的代码审查来定位和纠正根本原因，耗时且资源密集。这些漏洞往往是严重的安全威胁。\n*   **AI 自动修复的优势：** AI 能够迅速分析模式并提出解决方案，显著减少修复所需的时间和精力，使其成为保护数字环境的重要盟友。\n*   **示例：缓冲区溢出漏洞的修复：** 文章以一个 C 语言中的缓冲区溢出漏洞为例，展示了模糊测试如何发现问题，以及通过使用 `strncpy` 或添加长度检查来修复漏洞的过程。AI 解决方案可以通过 LLM 的代码理解和生成能力自动化这些步骤。\n\n### AutoPatchBench 的开发背景与目标\n\n尽管 AI 越来越多地应用于解决安全挑战（包括修复模糊测试发现的漏洞），但缺乏一个标准化的基准测试来客观评估 AI 驱动的漏洞修复代理，这阻碍了学术界和更广泛社区的进展。\n\n*   **现有基准测试的局限性：**\n    *   Google 的 AI 驱动补丁技术报告开创了使用 LLM 解决模糊测试崩溃的先河，但其数据集是专有的。\n    *   GITS-Eval 和 SWE-Bench 等通用程序修复基准测试不专门针对模糊测试发现的漏洞所带来的独特挑战，这些挑战需要利用模糊测试特有的工件并解决安全问题。\n*   **AutoPatchBench 如何填补空白：** AutoPatchBench 旨在解决这一空白，提供一个专门的基准测试，专注于各种 C/C++ 漏洞（涵盖 11 种崩溃类型），并具备自动化验证能力。它作为 Meta 新的 CyberSecEval 4 基准测试套件的一部分发布。\n\n### AutoPatchBench 内部机制\n\nAutoPatchBench 包含 136 个真实世界的 C/C++ 漏洞，并附带经验证的修复方案，这些方案来源于 ARVO 数据集，并结合了通过模糊测试和白盒差异测试对 AI 生成补丁的额外验证。\n\n*   **ARVO 数据集作为基础：** ARVO 数据集是 AutoPatchBench 的基础，包含来自 Google OSS-Fuzz 识别的 C/C++ 项目的 5,000 多个可复现漏洞。每个条目都详细记录了触发输入、规范的开发者编写补丁，以及在漏洞和已修复状态下重建项目的能力。\n*   **ARVO 数据集的挑战及 AutoPatchBench 的改进：**\n    *   **可复现性问题：** ARVO 数据集中有些样本的崩溃不可持续复现。AutoPatchBench 通过精心筛选来确保可复现性。\n    *   **缺少崩溃堆栈跟踪：** ARVO 中有些样本缺少崩溃堆栈跟踪。AutoPatchBench 确保所有样本都包含有效的堆栈跟踪。\n    *   **缺乏自动化补丁验证：** ARVO 缺乏自动化机制来验证生成补丁的正确性。AutoPatchBench 引入了全面自动化的验证流程。\n*   **样本选择标准：** 为确保 AutoPatchBench 的可靠性和有效性，样本经过严格筛选，满足以下条件：\n    *   有效的 C/C++ 漏洞（修复不涉及模糊测试工具）。\n    *   双容器设置（漏洞代码和修复代码均可无错误构建）。\n    *   崩溃在漏洞容器中持续可复现。\n    *   漏洞容器中存在有效的堆栈跟踪。\n    *   漏洞代码和修复代码均能成功编译。\n    *   崩溃在修复容器中已解决。\n    *   修复后的代码通过全面的模糊测试，未发现新崩溃。\n\n*   **补丁验证流程：**\n    *   **初步验证：** 补丁生成器首先尝试构建修补后的程序（检查语法正确性），并运行最初触发崩溃的输入，确认崩溃不再发生。\n    *   **全面自动化验证：** 这些初步步骤不足以保证补丁的正确性（可能破坏程序功能）。AutoPatchBench 采用综合方法：\n        *   对修补后的代码进行进一步模糊测试，使用原始模糊测试工具。\n        *   进行白盒差异测试，比较修补后程序与真实修复程序的运行时行为，确认补丁在解决底层错误的同时未改变程序预期功能。\n    *   **差异测试的实现细节与挑战：**\n        *   通过查找真实补丁和 LLM 补丁所有调用堆栈的最低共同祖先（LCA），并在 LCA 上方的第一个函数处检查参数、返回值和局部变量。\n        *   利用 LLDB API 导出所有可见状态并识别差异。\n        *   使用多样化的模糊测试输入，提高修复正确性且不改变可见行为的信心。\n        *   **局限性：** 可能出现超时、程序非确定性行为（通过多次运行和过滤非确定性字段解决），以及某些崩溃 PoC 未触发真实补丁断点导致无法比较状态的情况。\n\n### AutoPatchBench 与 AutoPatchBench-Lite\n\n*   **AutoPatchBench：** 包含 136 个样本的综合基准数据集，涵盖广泛的真实世界漏洞。\n*   **AutoPatchBench-Lite：** AutoPatchBench 的一个子集，包含 113 个样本。它专注于根源仅限于单个函数的较简单漏洞，旨在为处于早期开发阶段或专注于处理直接问题的工具提供更易于访问的基准测试。\n\n### 结论与展望\n\nAutoPatchBench 的公开可用性将促进社区协作，推动 AI 辅助程序修复领域的发展，从而开发出更强大的安全解决方案。",
-      "shortSummary": "Meta 发布了 AutoPatchBench，这是一个用于评估 AI 驱动程序修复系统的新基准测试，专注于模糊测试发现的 C/C++ 漏洞。它解决了缺乏标准化评估工具的问题，包含 136 个真实世界的漏洞样本和经验证的修复方案。AutoPatchBench 通过严格的样本筛选和自动化验证（包括模糊测试和白盒差异测试）确保补丁的正确性，旨在推动 AI 在软件安全修复领域的发展和社区协作。",
-      "translated_title": "推出 AutoPatchBench：一个用于 AI 驱动安全修复的基准测试",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>We are introducing AutoPatchBench, a benchmark for the automated repair of vulnerabilities identified through fuzzing. By providing a standardized benchmark, AutoPatchBench enables researchers and practitioners to objectively evaluate and compare the effectiveness of various AI program repair systems.  This initiative facilitates the development of more robust security solutions, and also encourages collaboration within the community [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/04/29/ai-research/autopatchbench-benchmark-ai-powered-security-fixes/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/04/29/ai-research/autopatchbench-benchmark-ai-powered-security-fixes/\">Introducing AutoPatchBench: A Benchmark for AI-Powered Security Fixes</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-07-01T05:30:12.070Z"
+  "lastUpdated": "2025-07-03T05:30:00.864Z"
 }
