@@ -5,6 +5,56 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "CVE-2025-53367: DjVuLibre中一个可利用的越界写入漏洞 (原标题: CVE-2025-53367: An exploitable out-of-bounds write in DjVuLibre)",
+      "link": "https://github.blog/security/vulnerability-research/cve-2025-53367-an-exploitable-out-of-bounds-write-in-djvulibre/",
+      "pubDate": "Thu, 03 Jul 2025 20:52:20 +0000",
+      "isoDate": "2025-07-03T20:52:20.000Z",
+      "creator": "Kevin Backhouse",
+      "summary": "## CVE-2025-53367：DjVuLibre中的越界写入漏洞\n\n### 概述\n\nDjVuLibre 3.5.29 版本已发布，修复了编号为 **CVE-2025-53367 (GHSL-2025-055)** 的越界写入（OOB）漏洞。该漏洞位于 `MMRDecoder::scanruns` 方法中，可能导致用户在 Linux 桌面系统上打开特制文档时，攻击者获得代码执行权限。\n\nDjVu 是一种文档文件格式，功能类似于 PDF，并受许多 Linux 发行版上的默认文档查看器（如 Evince 和 Papers）支持。即使 DjVu 文件被命名为 `.pdf` 扩展名，Evince/Papers 也能自动检测其为 DjVu 文档并调用 DjVuLibre 进行解码。\n\n### 漏洞发现与利用\n\n*   **发现者**：Antonio 在研究 Evince 文档阅读器时通过模糊测试发现了此漏洞。\n*   **概念验证 (POC)**：Kev 已为此漏洞开发了一个概念验证攻击代码。该 POC 可以在完全更新的 Ubuntu 25.04 (x86_64) 系统上运行，并绕过所有标准安全防护（包括 ASLR）。\n*   **攻击演示**：在演示中，Kev 点击了一个恶意 DjVu 文档（文件名为 `poc.pdf`，但实际是 DjVu 格式）。默认文档查看器 `/usr/bin/papers` 加载文档，检测到 DjVu 格式，并使用 DjVuLibre 进行解码。该文件利用越界写入漏洞，触发了 `system(\"google-chrome https://www.youtube.com/…\")` 的调用。\n*   **可靠性**：尽管 POC 能够绕过 ASLR，但其可靠性尚有待提高（有时会连续工作十次，然后突然停止工作几分钟）。研究人员认为可以开发出更可靠的利用方式。\n*   **AppArmor 限制**：POC 触发的是打开 YouTube 视频而非计算器，是因为 `/usr/bin/papers` 在 AppArmor 配置文件下运行。该配置文件禁止启动任意进程，但对 `google-chrome` 做了例外处理。然而，此 AppArmor 配置文件并非特别严格，例如，它允许向用户主目录写入任意文件（除了少数明显的文件如 `~/.bashrc`），因此无法阻止有决心的攻击者获得代码执行。\n\n### 漏洞技术细节\n\n`MMRDecoder::scanruns` 方法受越界写入漏洞影响，因为它未检查 `xr` 指针是否保持在分配缓冲区的边界内。在解码过程中，行程编码数据被写入 `lineruns` 和 `prevruns` 两个缓冲区：\n\n```cpp\n//libdjvu/MMRDecoder.h\nclass DJVUAPI MMRDecoder : public GPEnabled {\n...\npublic:\n  unsigned short *lineruns;\n...\n  unsigned short *prevruns;\n...\n}\n```\n\n变量 `pr` 和 `xr` 指向这些缓冲区中的当前位置。`scanruns` 函数未检查这些指针是否保持在分配缓冲区的边界内：\n\n```cpp\n//libdjvu/MMRDecoder.cpp\nconst unsigned short * MMRDecoder::scanruns(const unsigned short **endptr) {\n...\n  // Swap run buffers\n  unsigned short *pr = lineruns;\n  unsigned short *xr = prevruns;\n  prevruns = pr;\n  lineruns = xr;\n...\n  for(a0=0,rle=0,b1=*pr++;a0 < width;) {\n...\n    *xr = rle; xr++; rle = 0;\n...\n    *xr = rle; xr++; rle = 0;\n...\n    *xr = inc+rle-a0; xr++;\n  }\n```\n\n这可能导致写入超出分配内存的范围，从而引发堆损坏。同样的原因也可能导致 `pr` 发生越界读取。\n\n概念验证攻击代码的源代码将在几周内发布到 GitHub Security Lab 仓库。\n\n### 致谢\n\n感谢 Léon Bottou 和 Bill Riemers 在收到报告后不到两天内迅速响应并发布了修复。\n\n### 时间线\n\n*   **2025-07-01**：通过电子邮件向作者（Léon Bottou, Bill Riemers, Yann LeCun）报告。\n*   **2025-07-01**：收到 Bill Riemers 和 Léon Bottou 的回复。\n*   **2025-07-02**：Léon Bottou 添加了修复提交：[https://sourceforge.net/p/djvu/djvulibre-git/ci/33f645196593d70bd5e37f55b63886c31c82c3da/](https://sourceforge.net/p/djvu/djvulibre-git/ci/33f645196593d70bd5e37f55b63886c31c82c3da/)\n*   **2025-07-03**：DjVuLibre 3.5.29 版本发布：[https://sourceforge.net/p/djvu/www-git/ci/9748b43794440aff40bae066132aa5c22e7fd6a3/](https://sourceforge.net/p/djvu/www-git/ci/9748b43794440aff40bae066132aa5c22e7fd6a3/)\n\n### 研究人员\n\n*   **Kevin Backhouse**\n    ![Kevin Backhouse](https://avatars.githubusercontent.com/u/4358136?v=4&s=200)\n    GitHub 安全实验室团队的安全研究员，通过寻找漏洞并与维护者合作修复，帮助提高开源软件的安全性。\n\n*   **Antonio Morales**\n    ![Antonio Morales](https://avatars.githubusercontent.com/u/55253029?v=4&s=200)",
+      "shortSummary": "CVE-2025-53367是DjVuLibre 3.5.29版本中修复的一个越界写入漏洞，位于`MMRDecoder::scanruns`方法。该漏洞允许攻击者通过诱导用户打开特制的DjVu文档，在Linux桌面系统上实现代码执行。由于Evince和Papers等默认文档查看器会调用DjVuLibre处理DjVu文件，用户面临风险。尽管存在ASLR和AppArmor等安全防护，概念验证（POC）攻击已成功演示。该漏洞已迅速得到修复，新版本DjVuLibre 3.5.29已发布。",
+      "translated_title": "CVE-2025-53367: DjVuLibre中一个可利用的越界写入漏洞",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/4358136?v=4&s=200",
+          "alt": "Kevin Backhouse",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/55253029?v=4&s=200",
+          "alt": "Antonio Morales",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>DjVuLibre has a vulnerability that could enable an attacker to gain code execution on a Linux Desktop system when the user tries to open a crafted document.</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/cve-2025-53367-an-exploitable-out-of-bounds-write-in-djvulibre/\">CVE-2025-53367: An exploitable out-of-bounds write in DjVuLibre</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "使用GitHub Copilot和MCP改进工作流程的5种方法 (原标题: 5 ways to transform your workflow using GitHub Copilot and MCP)",
       "link": "https://github.blog/ai-and-ml/github-copilot/5-ways-to-transform-your-workflow-using-github-copilot-and-mcp/",
       "pubDate": "Wed, 02 Jul 2025 17:44:02 +0000",
@@ -313,51 +363,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>The open source Git project just released Git 2.50. Here is GitHub’s look at some of the most interesting features and changes introduced since last time.</p>\n<p>The post <a href=\"https://github.blog/open-source/git/highlights-from-git-2-50/\">Highlights from Git 2.50</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub 计费团队如何利用 GitHub Copilot 中的编码代理持续消除技术债务 (原标题: How the GitHub billing team uses the coding agent in GitHub Copilot to continuously burn down technical debt)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/how-the-github-billing-team-uses-the-coding-agent-in-github-copilot-to-continuously-burn-down-technical-debt/",
-      "pubDate": "Thu, 12 Jun 2025 16:00:00 +0000",
-      "isoDate": "2025-06-12T16:00:00.000Z",
-      "creator": "Brittany Ellich",
-      "summary": "## GitHub 计费团队如何利用 GitHub Copilot 中的编码代理持续消除技术债务\n\n### 引言：技术债务的挑战\n\n软件在不断演进中会积累技术债务，这源于过去的快速修复、临时方案和妥协。技术债务如同金融债务，拖延越久成本越高，但在紧迫的截止日期和不断涌入的功能需求下，很难优先处理。传统的管理方法（如“园艺周”或延长功能时间线）效果不佳，因为它们将技术债务视为例外而非持续维护，或导致不切实际的估算。核心问题在于将技术债务视为对正常开发流程的干扰。理想状态是能够与日常工作并行，持续地消除技术债务。\n\n### 利用 AI 代理持续管理技术债务\n\nAI 代理（如 GitHub Copilot 中的编码代理）为管理技术债务提供了巨大机会。技术债务任务不再需要堆积在待办事项中。工程师可以专注于新功能和架构变更，同时将技术债务任务分配给 GitHub Copilot。\n\n### 编码代理的具体应用示例（来自 GitHub 计费团队的实践）\n\nGitHub 计费团队已通过 GitHub Copilot 编码代理成功解决了以下实际问题：\n\n*   **提高代码测试覆盖率：** 分配任务给 Copilot 增加测试覆盖，完成后通知审查。\n*   **替换依赖项：** 让 Copilot 处理耗时的库替换工作。\n*   **标准化代码库模式：** 统一错误返回和日志记录方式，提高可维护性。\n*   **优化前端加载模式：** 调整应用，仅在需要数据时才进行 API 调用，而非每次页面加载。\n*   **识别并消除废弃代码：** 让 Copilot 查找并安全移除未使用的函数、过时端点或陈旧配置。\n\n这些实践极大地提升了团队持续处理技术债务的能力，将消除技术债务的时间从数周的间歇性工作缩短到几分钟的发布问题和几小时的拉取请求审查。\n\n### 人机协作：AI 作为副驾驶\n\nAI 代理并非取代人类工程师，而是增强其能力。代理处理重复、耗时的工作（如重构遗留代码、更新依赖、标准化模式），而工程师则可以专注于架构决策、功能创新和解决复杂的业务问题。这使得软件更健康、团队交付更快、工程师工作更有活力。\n\n人类在整个过程中至关重要：AI 代理擅长明确、重复的任务，但大型架构决策和复杂业务逻辑仍需人类判断。每个提示都需要仔细考虑，每次代码更改都需要彻底审查。AI 代理提供速度和一致性，而人类提供战略性思考（优先处理哪个技术债务、评估业务影响、识别潜在问题）。人机协作的精髓在于人类定义问题、设定约束、验证解决方案，代理处理繁琐的实现细节。\n\n### 充分利用 GitHub Copilot 编码代理的技巧\n\n1.  **为你的仓库编写 Copilot 指令：** 显著改善体验，可让代理协助编写，包含开发脚本（格式化、linting）。\n2.  **分块处理任务：** 代理可能进行大范围修改，但审查大量文件的拉取请求效率低下。将大任务分解为更小的、可审查的子任务（例如，针对特定文件或文件夹改进测试覆盖）。\n3.  **掌握有效提示的艺术：** 明确说明上下文、约束和编码标准。\n4.  **始终彻底审查代码：** AI 代理不理解业务逻辑，代码审查是确保质量的核心环节。Copilot 编码代理与现有代码审查工具无缝集成。\n\n### 拥抱 AI 工具的软件工程师的未来\n\n技术债务长期以来是“无声的生产力杀手”，很少被优先处理直到成为危机。AI 编码代理提供了彻底改变这一局面的机会。能够有效与 AI 代理协作的工程师（掌握清晰提示、周到代码审查和战略性任务委派）将拥有巨大优势。他们将能够维护同行难以处理的代码库，解决他人回避的技术债务，并可能消除耗时且昂贵的系统重写。这种转变需要有意识的努力：实验工具、了解其优缺点并将其整合到工作流程中。这将使工程师更高效、更少挫败，专注于工程的创造性方面，并为用户带来更稳定、维护良好的应用程序。\n\n### 作者信息及相关资源\n\n*   作者：Brittany Ellich，GitHub 软件工程师。\n    ![Brittany Ellich](https://avatars.githubusercontent.com/u/25957322?v=4&s=200)\n*   更多来自 GitHub 的资源：\n    *   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切。\n    *   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来。\n    *   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用 GitHub 的公司和工程团队。\n    *   ![Enterprise content](https://github.blog/wp-content/uploads/2022/05/careers.svg) Enterprise content：专为您策划的高管见解。",
-      "shortSummary": "GitHub 计费团队利用 GitHub Copilot 的编码代理持续消除技术债务。传统技术债务管理效率低下，而 AI 代理能并行处理测试覆盖、依赖替换、代码标准化和死代码清理等任务。这并非取代工程师，而是增强其能力，让人类专注于架构和创新，AI 处理重复性工作。关键在于人机协作，工程师提供战略指导和彻底审查，AI 负责高效执行。通过有效提示和分块处理，团队能显著提升生产力，使软件更健康，并避免昂贵的系统重写。",
-      "translated_title": "GitHub 计费团队如何利用 GitHub Copilot 中的编码代理持续消除技术债务",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/25957322?v=4&s=200",
-          "alt": "Brittany Ellich",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2022/05/careers.svg",
-          "alt": "Enterprise content",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Tech debt is a big problem that no one has time to solve. GitHub Copilot coding agent can help.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-the-github-billing-team-uses-the-coding-agent-in-github-copilot-to-continuously-burn-down-technical-debt/\">How the GitHub billing team uses the coding agent in GitHub Copilot to continuously burn down technical debt</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-07-03T04:44:31.033Z"
+  "lastUpdated": "2025-07-05T04:36:47.316Z"
 }
