@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "Git 安全漏洞公告 (原标题: Git security vulnerabilities announced)",
+      "link": "https://github.blog/open-source/git/git-security-vulnerabilities-announced-6/",
+      "pubDate": "Tue, 08 Jul 2025 17:02:11 +0000",
+      "isoDate": "2025-07-08T17:02:11.000Z",
+      "creator": "Taylor Blau",
+      "summary": "# Git 安全漏洞公告\n\nGit 项目今日发布新版本，旨在解决影响所有先前 Git 版本的七个安全漏洞。\n\n## 漏洞详情\n\n### Git 核心漏洞\n\n*   **CVE-2025-48384 (配置值处理)**\n    *   **问题描述：** Git 在读取配置值时会去除末尾的回车符 (CR) 和换行符 (LF)，但在写入时不会引用末尾的 CR，导致其丢失。当初始化路径包含末尾 CR 的子模块时，会使用被去除 CR 的路径，导致子模块被检出到错误的位置。\n    *   **潜在风险：** 如果被去除 CR 的路径与子模块的 hooks 目录之间存在符号链接，攻击者可通过子模块的 `post-checkout` 钩子执行任意代码。\n    *   **发现者/修复者：** David Leadbeater 发现，Justin Tobler 和 Patrick Steinhardt 修复。\n\n*   **CVE-2025-48385 (克隆时的捆绑包获取)**\n    *   **问题描述：** Git 客户端在克隆时可选地从服务器获取捆绑包。客户端未正确验证广告的捆绑包，允许远程端执行协议注入。\n    *   **潜在风险：** 当广告特制的捆绑包时，远程端可导致客户端将捆绑包写入任意位置，可能导致类似前一个 CVE 的代码执行。\n    *   **发现者/修复者：** David Leadbeater 发现，Patrick Steinhardt 修复。\n\n*   **CVE-2025-48386 (仅限 Windows，凭据助手)**\n    *   **问题描述：** Git 在从经过身份验证的远程克隆时使用凭据助手，其中 Wincred 助手使用静态缓冲区内容作为唯一密钥来存储和检索凭据。但它未正确检查缓冲区剩余空间。\n    *   **潜在风险：** 可能导致缓冲区溢出。\n    *   **发现者/修复者：** David Leadbeater 发现，Taylor Blau 和 Jeff King 共同修复。\n\n### Git GUI 和 Gitk 漏洞\n\n本次发布解决了与 Gitk 和 Git GUI 相关的四个新 CVE。这两个工具都是基于 Tcl/Tk 的图形界面。\n\n*   **CVE-2025-27613 (Gitk，任意文件写入/截断)**\n    *   **问题描述：** 在特制仓库中运行 Gitk 且不带额外命令行参数时，Gitk 可写入和截断任意可写文件。\n    *   **影响范围：** “支持每文件编码”选项必须启用，但“显示此行来源”操作无论如何都会受影响。\n    *   **发现者/修复者：** Avi Halachmi 发现，Johannes Sixt 修复。\n\n*   **CVE-2025-27614 (Gitk，任意脚本执行)**\n    *   **问题描述：** 如果用户被诱骗运行 `gitk filename`（其中 filename 具有特定结构），他们可能运行攻击者提供的任意脚本。\n    *   **潜在风险：** 导致任意代码执行。\n    *   **发现者/修复者：** Avi Halachmi 发现并修复。\n\n*   **CVE-2025-46334 (Git GUI，仅限 Windows，路径查找)**\n    *   **问题描述：** 如果恶意仓库包含可执行文件 `sh.exe` 或常见文本转换程序（如 `astextplain`、`exif` 或 `ps2ascii`），Windows 上的路径查找可能会在工作树中找到这些可执行文件。\n    *   **潜在风险：** 如果用户在此类仓库中运行 Git GUI 并从菜单中选择“Git Bash”或“浏览文件”，这些程序可能被调用，导致任意代码执行。\n    *   **发现者/修复者：** Mark Levedahl 发现并修复。\n\n*   **CVE-2025-46335 (Git GUI，任意文件创建/覆盖)**\n    *   **问题描述：** 当用户被诱骗在不受信任的仓库中编辑特命名目录中的文件时，Git GUI 可创建和覆盖任意可写文件。\n    *   **发现者/修复者：** Johannes Sixt 发现并修复。\n\n## 升级建议与缓解措施\n\n保护自己免受这些漏洞影响的最有效方法是升级到 **Git 2.50.1**，这是包含上述漏洞修复的最新版本。\n\n如果无法立即升级，可以通过以下措施降低风险：\n\n*   避免对不受信任的仓库运行 `git clone --recurse-submodules`。\n*   通过将 `transfer.bundleURI` 配置值设置为“false”来禁用自动获取捆绑包 URI。\n*   在 Windows 上避免使用 `wincred` 凭据助手。\n*   避免在不受信任的仓库中运行 Gitk 和 Git GUI。\n\n## GitHub 的应对措施\n\n为了保护用户免受这些漏洞相关的攻击，GitHub 已采取积极措施：\n\n*   已安排发布 GitHub Desktop 的更新版本。\n*   GitHub Codespaces 和 GitHub Actions 将很快更新其 Git 版本。\n*   GitHub 本身，包括 Enterprise Server，不受这些漏洞影响。\n\n## 作者与相关信息\n\n本文由 GitHub 软件工程师 Taylor Blau 撰写。\n\n![Taylor Blau](https://avatars.githubusercontent.com/u/443245?v=4&s=200)\n\n### 相关文章\n\n*   **Git 2.50 亮点**\n*   **聚焦您的开源项目**\n*   **探索更多来自 GitHub**\n    *   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切。\n    *   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来。\n    *   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) 客户案例：了解使用 GitHub 进行构建的公司和工程团队。\n*   ![Git Merge 2025](https://github.blog/wp-content/uploads/2025/05/git-merge-24-Orange.svg) Git Merge 2025：在 Git 20 周年之际，探索其影响、演变和未来。",
+      "shortSummary": "Git 项目发布新版本，修复了影响所有先前 Git 版本的七个安全漏洞。这些漏洞涵盖 Git 核心（如配置处理、捆绑包获取、Windows凭据助手）以及 Git GUI 和 Gitk 工具（涉及任意文件操作、脚本执行和路径查找）。最有效的防护是升级到 Git 2.50.1。若无法立即升级，建议避免对不受信任的仓库使用特定Git功能，并谨慎运行Git GUI/Gitk。GitHub 已采取措施保护用户，其自身服务不受影响。",
+      "translated_title": "Git 安全漏洞公告",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/443245?v=4&s=200",
+          "alt": "Taylor Blau",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/05/git-merge-24-Orange.svg",
+          "alt": "Git Merge 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Today, the Git project released new versions to address seven security vulnerabilities that affect all prior versions of Git.</p>\n<p>The post <a href=\"https://github.blog/open-source/git/git-security-vulnerabilities-announced-6/\">Git security vulnerabilities announced</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "CVE-2025-53367: DjVuLibre中一个可利用的越界写入漏洞 (原标题: CVE-2025-53367: An exploitable out-of-bounds write in DjVuLibre)",
       "link": "https://github.blog/security/vulnerability-research/cve-2025-53367-an-exploitable-out-of-bounds-write-in-djvulibre/",
       "pubDate": "Thu, 03 Jul 2025 20:52:20 +0000",
@@ -343,27 +387,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Reduce context-switching, minimize manual work, and accelerate resolution times with these new AI-powered features.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/5-tips-for-using-github-copilot-with-issues-to-boost-your-productivity/\">5 tips for using GitHub Copilot with issues to boost your productivity</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Git 2.50 的亮点 (原标题: Highlights from Git 2.50)",
-      "link": "https://github.blog/open-source/git/highlights-from-git-2-50/",
-      "pubDate": "Mon, 16 Jun 2025 17:12:27 +0000",
-      "isoDate": "2025-06-16T17:12:27.000Z",
-      "creator": "Taylor Blau",
-      "summary": "Git 开源项目发布了 Git 2.50 版本，包含了来自 98 位贡献者（其中 35 位是新贡献者）的新功能和错误修复。在深入探讨本次发布细节之前，值得一提的是，Git 用户和开发者大会 Git Merge 将于今年 9 月 29-30 日在旧金山举行，门票现已发售。\n\n以下是 Git 2.50 中一些最值得关注的功能和变化：\n\n*   **多余对象包（Cruft Packs）的改进**\n    *   **背景：** Git 2.37 引入了多余对象包（cruft packs）来存储不可达对象。Git 2.43 增加了 `git repack --max-cruft-size` 选项，旨在将不可达对象分散到多个包中。\n    *   **旧问题：** `git repack --max-cruft-size` 的行为令人困惑，与 `git repack --max-pack-size` 不同，并且在实际使用中常常无法达到预期效果，例如，它可能阻止合并小的多余对象包。\n    *   **Git 2.50 的解决方案：**\n        *   引入了新的选项 `--combine-cruft-below-size`：该选项用于确定哪些现有的多余对象包可以合并，从而允许用户逐步减少仓库中多余对象包的数量。\n        *   重新定义了 `--max-cruft-size`：现在它仅作为多余对象包特有的 `--max-pack-size` 覆盖选项，只决定输出包的大小，而不决定哪些包被合并。\n        *   修复了错误：解决了在某些情况下，存储在多个多余对象包中的对象无法“刷新”（更新修改时间）的问题，避免了对象被过早删除。\n\n*   **增量多包可达性位图（Incremental Multi-pack Reachability Bitmaps）**\n    *   **背景：** 多包索引（MIDXs）通过为分散在多个包中的对象提供单一索引，显著加速了大型仓库中的对象查找。多包可达性位图是 MIDX 特有的位图，用于提升可达性信息查询性能。然而，随着仓库增长，更新 MIDX 和位图需要重写整个文件，效率低下。\n    *   **Git 2.47 的进展：** 引入了增量 MIDX 格式，允许 MIDX 层叠。\n    *   **Git 2.50 的突破：** 为增量 MIDX 链带来了多包可达性位图支持，每个 MIDX 层都有自己的 `.bitmap` 文件。这使得在大型仓库中，随着新提交的推送，可以快速高效地添加新的可达性位图。\n    *   **现状：** 此功能仍被认为是高度实验性的，对增量多包索引和位图进行重打包的支持仍处于早期阶段。\n\n*   **ORT 合并引擎取代 Recursive**\n    *   **背景：** ORT（“Ostensibly Recursive’s Twin”）是 Git 旧有合并引擎“recursive”的全新重写，于 Git 2.33 引入，旨在提供更快的速度、更好的可维护性和更多新功能。\n    *   **新功能：** Git 2.50 允许在不实际持久化任何新对象的情况下判断两个事物是否可合并。通过 `merge-tree` 的新 `--quiet` 模式并依赖其退出码即可实现，避免了旧方法 `git merge-tree --write-tree` 可能导致的性能问题。\n    *   **重大里程碑：** ORT 已完全取代了“recursive”合并引擎，后者已从 Git 源代码中移除。ORT 自 Git 2.34 成为默认选项后，经过 16 个版本和两年半的迭代，现在“recursive”已彻底“调试完毕”（即被删除）。\n\n*   **`git cat-file` 的改进**\n    *   **对象类型过滤：** Git 2.50 将部分克隆中使用的对象过滤机制引入到 `git cat-file` 命令中。现在可以更简洁地按对象类型（如树对象）进行过滤，例如使用 `--filter='object:type=tree'`。\n    *   **移除 `--allow-unknown-type`：** 此版本使 `git cat-file` 的 `--allow-unknown-type` 选项静默失效，并移除了 `git hash-object` 写入未知类型对象的支持。这个功能在过去十年中很少被使用，且存在问题。\n\n*   **`git maintenance` 命令的增强**\n    *   **新增任务：** `git maintenance` 命令现在可以执行 `worktree-prune`（清理陈旧或损坏的工作树）、`rerere-gc`（清理旧的 rerere 条目）和 `reflog-expire`（从 reflog 中移除陈旧的不可达对象）等任务。\n    *   **`loose-objects` 任务配置：** 现有的 `loose-objects` 任务的配置得到了增强，可以通过 `maintenance.loose-objects.batchSize` 配置选项来调整为剩余松散对象创建新包的最大大小（之前固定为 50,000）。\n\n*   **`git reflog delete` 子命令**\n    *   **背景：** 之前要删除分支的整个 reflog，需要使用 `git reflog expire $BRANCH --expire=all`。\n    *   **Git 2.50 的改进：** 引入了新的 `delete` 子命令，现在可以使用更直观的 `git reflog delete $BRANCH` 来完成相同的操作。\n\n*   **引用处理的优化**\n    *   **`git update-ref` 性能提升：** 低级命令 `git update-ref` 不再检查提议的引用名称是否也可能是有效的对象 ID，从而为依赖它的高级命令带来了性能提升。\n    *   **引用前缀缓存：** Git 2.50 学习了如何缓存提议引用名称的任何前缀是否存在（例如，如果 `refs/heads/foo` 或 `refs/heads/foo/bar` 已经存在，则不能创建 `ref/heads/foo/bar/baz`）。\n    *   **迭代器查找优化：** Git 2.50 的引用后端学会了“查找”现有迭代器，通过重用相同的迭代器来检查每个可能的前缀，从而节省了时间。\n\n*   **TCP Keepalive 配置选项**\n    *   **背景：** Git 使用 curl 进行 HTTP 连接，并提供了 `http.lowSpeedLimit` 和 `http.lowSpeedTime` 等选项来控制连接。\n    *   **Git 2.50 的新增功能：** 引入了三个新的配置选项：`http.keepAliveIdle`、`http.keepAliveInterval` 和 `http.keepAliveCount`，用于精细控制 curl 的 TCP 探测行为（如果操作系统支持）。",
-      "shortSummary": "Git 2.50 发布，带来了多项重要更新。核心亮点包括：ORT 合并引擎完全取代了旧的 recursive 引擎，提升了合并性能并支持无对象写入的合并判断。多余对象包管理得到显著改进，引入了 `--combine-cruft-below-size` 选项并修复了相关错误。增量多包可达性位图现在支持 MIDX 链，极大地优化了大型仓库的性能。此外，`git cat-file` 增加了对象类型过滤，`git maintenance` 新增了多项任务，`git reflog` 引入了更便捷的 `delete` 子命令，并优化了引用处理和 TCP Keepalive 配置。",
-      "translated_title": "Git 2.50 的亮点",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/443245?v=4&s=200",
-          "alt": "Taylor Blau",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>The open source Git project just released Git 2.50. Here is GitHub’s look at some of the most interesting features and changes introduced since last time.</p>\n<p>The post <a href=\"https://github.blog/open-source/git/highlights-from-git-2-50/\">Highlights from Git 2.50</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-07-07T04:44:22.913Z"
+  "lastUpdated": "2025-07-09T04:44:35.563Z"
 }
