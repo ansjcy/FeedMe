@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Gemini API 中的批处理模式：事半功倍 (原标题: Batch Mode in the Gemini API: Process more for less)",
+      "link": "https://developers.googleblog.com/en/scale-your-ai-workloads-batch-mode-gemini-api/",
+      "pubDate": "Sun, 06 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-06T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Gemini API 批处理模式：事半功倍\n\nGoogle 于2025年7月7日推出了 Gemini API 的批处理模式（Batch Mode），这是一个全新的异步端点，专为高吞吐量、对延迟不敏感的工作负载设计。该模式允许用户提交大型作业，将调度和处理工作卸载给API，并在24小时内获取结果，同时享受比同步API低50%的折扣。\n\n## 核心优势\n\n批处理模式是处理那些数据已准备就绪且无需即时响应任务的理想工具。通过将这些大型作业与实时流量分离，用户可以获得三大关键益处：\n\n*   **成本节约**：批处理作业的定价比给定模型的标准费率低50%。\n*   **更高吞吐量**：批处理模式具有更高的速率限制，能够处理更多请求。\n*   **简便的API调用**：无需管理复杂的客户端排队或重试逻辑。可用结果将在24小时内返回。\n\n## 简单的工作流程\n\nAPI设计简洁直观。用户将所有请求打包到一个文件中，提交作业，并在作业完成后检索结果。以下是开发者目前利用批处理模式完成任务的一些方式：\n\n*   **批量内容生成与处理**：\n    Reforged Labs 专注于深度视频理解，利用 Gemini 2.5 Pro 每月分析和标记大量视频广告。实施批处理模式彻底改变了他们的运营，显著降低了成本，加快了客户交付速度，并实现了获取有意义市场洞察所需的大规模可扩展性。\n    ![批量内容生成与处理](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_qhTloW2.original.png)\n\n*   **模型评估**：\n    Vals AI 对基础模型进行基准测试，涵盖法律、金融、税务和医疗保健等实际用例。他们正在使用批处理模式提交大量评估查询，而不受速率限制的约束。\n    ![模型评估](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_uvTbuTT.original.png)\n\n## 快速上手\n\n用户可以使用 Google GenAI Python SDK 立即开始使用批处理模式。基本流程包括：\n\n1.  创建一个包含多个请求的 JSONL 文件。\n2.  使用 `client.files.upload()` 方法上传该文件。\n3.  使用 `client.batches.create()` 方法创建批处理作业，指定模型和源文件。\n4.  等待作业完成（最长24小时），然后通过 `client.files.download()` 方法下载结果文件并处理其内容。\n\n## 展望\n\nGemini API 的批处理模式正在逐步向所有用户推出。这仅仅是批处理能力的开始，Google 正在积极努力扩展其功能，未来将提供更强大、更灵活的选项。",
+      "shortSummary": "Gemini API 推出批处理模式，专为高吞吐量、非延迟敏感型任务设计。它允许用户提交大型作业，在24小时内获取结果，并享受50%的成本折扣。主要优势包括显著的成本节约、更高的吞吐量和简化的API调用。开发者可利用其进行批量内容生成、模型评估等。该模式已通过Python SDK提供，未来将进一步扩展功能。",
+      "translated_title": "Gemini API 中的批处理模式：事半功倍",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_qhTloW2.original.png",
+          "alt": "Bulk content generation and processing",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_uvTbuTT.original.png",
+          "alt": "Model evaluations",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The new batch mode in the Gemini API is designed for high-throughput, non-latency-critical AI workloads, simplifying large jobs by handling scheduling and processing, and making tasks like data analysis, bulk content creation, and model evaluation more cost-effective and scalable, so developers can process large volumes of data efficiently."
+    },
+    {
       "title": "介绍 Gemma 3n：开发者指南 (原标题: Introducing Gemma 3n: The developer guide)",
       "link": "https://developers.googleblog.com/en/introducing-gemma-3n-developer-guide/",
       "pubDate": "Wed, 25 Jun 2025 16:00:00 GMT",
@@ -216,20 +242,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Developers adapt LLMs like Gemma for diverse languages and cultural contexts, demonstrating AI's potential to bridge global communication gaps by addressing challenges like translating ancient texts, localizing mathematical understanding, and enhancing cultural sensitivity in lyric translation."
-    },
-    {
-      "title": "Gemini Code Assist 在 Apigee API 管理中现已正式发布 (原标题: Gemini Code Assist in Apigee API Management now generally available)",
-      "link": "https://developers.googleblog.com/en/gemini-code-assist-in-apigee-api-management-now-generally-available/",
-      "pubDate": "Tue, 17 Jun 2025 16:00:00 GMT",
-      "isoDate": "2025-06-17T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Gemini Code Assist 在 Apigee API 管理中现已正式发布\n\nGoogle 宣布 Gemini Code Assist 在 Apigee API 管理中现已正式发布，作为 Gemini Code Assist 企业版的一部分。经过成功的预览期和客户反馈，这项强大的 AI 辅助 API 开发能力现已可用于生产环境。\n\n## 加速企业级上下文的 API 开发\n\n在当今的数字化环境中，API 是应用程序、服务和数据之间的关键连接器。然而，大规模创建一致、安全且设计良好的 API 对许多组织来说仍然充满挑战。开发者必须应对复杂的规范，确保符合组织标准，并避免创建重复或不一致的 API。\n\nGemini Code Assist 在 Apigee 中通过结合 Google 的 Gemini 模型与 Apigee 独特的企业上下文能力来解决这些挑战。通过利用组织现有的 API 生态系统（通过 API hub），Gemini Code Assist 确保生成的 API 始终与已建立的模式、安全架构和对象结构保持一致。\n\n## 现已正式发布的主要功能\n\n根据预览期间的客户反馈，Gemini Code Assist 在 Apigee 中增强了多项强大功能：\n\n*   **API 创建的聊天界面：** 使用自然语言 Gemini Code Assist 界面创建 API 规范。只需在大型语言模型 (LLM) 提示前添加 `@Apigee`，即可开始设计或更新 API 规范，从而降低偏好对话式界面而非传统表单工具的开发者的上手难度。\n*   **AI 生成的规范摘要：** 获取生成的 API 规范的纯文本摘要，以便快速理解 API 功能以及企业上下文如何被使用，帮助平台团队无需深入技术规范即可快速评估 API 功能。\n*   **迭代式规范设计：** 通过聊天界面轻松优化生成的 API 规范，这是预览期间最受请求的功能，使开发者能够快速迭代和完善其 API，而无需从头开始。\n*   **增强的企业上下文：** 改进了对嵌套对象的支持，确保地址或货币格式等常见元素在不同父对象中保持一致的格式，帮助平台团队维护治理标准并减少其 API 生态系统中的不一致性。\n*   **重复 API 检测：** 主动识别请求的 API 是否可能与现有功能重复，从而在适当情况下重用现有 API，而不是创建重复的端点，防止开发者浪费时间在冗余工作上，同时帮助平台团队减少 API 蔓延。\n*   **企业级安全性：** 该工具符合 VPC Service Controls 规范，满足严格的企业安全要求，使平台团队能够自信地在其安全隔离的合规框架内部署 AI 辅助开发。\n\n## 无缝开发工作流\n\nGemini Code Assist 在 Apigee 中提供了一个简化的工作流，可在加速 API 开发的同时保持治理：\n\n1.  **创建：** 通过自然语言提示生成 OpenAPI 规范。\n2.  **迭代：** 通过自然语言提示更新 OpenAPI 规范。\n3.  **测试：** 部署模拟服务器进行协作测试。\n4.  **发布：** 通过 API hub 与团队共享规范。\n5.  **实施：** 生成代理或后端实现。\n\n在每个步骤中，企业上下文都确保您的 API 符合组织标准，同时减少重复和不一致。\n\n## 开始使用 Gemini Code Assist 在 Apigee 中\n\nGemini Code Assist 在 Apigee 中作为 Gemini Code Assist 企业版的一部分提供。现有的 Gemini Code Assist 企业客户可以通过 Cloud Code 和 Gemini Chat 在 VS Code 中立即访问这些功能。\n\n要开始使用：\n\n1.  安装适用于 VS Code 的 Cloud Code 和 Gemini Code Assist 扩展。\n2.  连接到您的 Apigee 和 API hub 实例。\n3.  开始使用自然语言提示创建 API。\n\n有关详细说明，请访问文档或探索 Google Cloud 控制台中的交互式教程。\n\n## 持续改进与未来展望\n\n您的反馈推动了 Gemini Code Assist 在 Apigee 中的增强，包括支持其他 IDE（如 IntelliJ）、gRPC 协议、API Hub 的样式规则强制执行以及代理创作和优化功能的扩展。\n\n立即开始使用 Gemini Code Assist 在 Apigee 中构建更一致、安全且设计良好的 API。",
-      "shortSummary": "Gemini Code Assist 在 Apigee API 管理中现已正式发布，作为企业版的一部分。它利用 AI 和企业上下文，通过自然语言提示加速 API 开发，确保 API 的一致性、安全性和合规性。主要功能包括聊天界面创建和迭代 API 规范、AI 摘要、增强的企业上下文支持以及重复 API 检测。这有助于开发者减少冗余工作，并帮助平台团队维护治理标准，从而实现更高效、规范的 API 生态系统。",
-      "translated_title": "Gemini Code Assist 在 Apigee API 管理中现已正式发布",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Gemini Code Assist in Apigee API Management enhances API development with AI-assisted features like natural language API creation, AI-generated summaries, and iterative design, allowing seamless integration with your organization's existing API ecosystem and ensuring consistency, security, and reduced duplication, while offering enterprise-grade security and a streamlined development workflow."
     }
   ],
-  "lastUpdated": "2025-07-07T10:32:12.555Z"
+  "lastUpdated": "2025-07-09T10:32:44.546Z"
 }
