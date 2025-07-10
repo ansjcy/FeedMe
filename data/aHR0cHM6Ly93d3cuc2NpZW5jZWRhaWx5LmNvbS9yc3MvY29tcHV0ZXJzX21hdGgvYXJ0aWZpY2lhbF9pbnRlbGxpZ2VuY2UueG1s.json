@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "科学家发现AI真正理解语言的时刻 (原标题: Scientists discover the moment AI truly understands language)",
+      "link": "https://www.sciencedaily.com/releases/2025/07/250707073353.htm",
+      "pubDate": "Tue, 08 Jul 2025 02:36:49 EDT",
+      "isoDate": "2025-07-08T06:36:49.000Z",
+      "creator": "",
+      "summary": "### 科学家发现AI真正理解语言的时刻\n\n一项发表在《统计力学杂志：理论与实验》(JSTAT) 上的新研究揭示了人工智能语言模型内部学习过程的一个关键奥秘。该研究发现，当神经网络接受训练时，其理解语言的策略会发生一个突然的转变，类似于物理系统中的相变。\n\n**学习策略的演变**\n\n*   **初始阶段（基于位置）**：当训练数据量较少时，神经网络最初依赖于词语在句子中的位置来理解其关系。例如，在英语中，主语通常在动词之前，动词在宾语之前（如“Mary eats the apple”）。这是网络在训练初期自发采用的策略。\n*   **过渡阶段（基于意义）**：随着系统接触到足够的数据，一旦达到一个临界阈值，网络的策略会突然转变。此时，词语的意义成为信息的主要来源。\n*   **类比**：研究人员将这一过程比作儿童学习阅读：最初通过词语位置推断关系，随着学习深入（“不断上学”），重心转向词语的实际含义。\n\n**核心机制：自注意力与Transformer模型**\n\n*   这项研究解释了在自注意力机制的简化模型中发生的这种转变。自注意力机制是Transformer语言模型（如ChatGPT、Gemini、Claude等）的核心组成部分。\n*   Transformer是一种专门处理序列数据（如文本）的神经网络架构，它通过自注意力机制评估序列中每个词语相对于其他词语的重要性。\n*   研究第一作者、哈佛大学博士后研究员Hugo Cui解释说，网络可以使用两种策略来评估词语之间的关系：利用词语位置或依赖词语意义。他指出，令人惊讶的是，在某个阈值之下，网络完全依赖位置；而一旦超过该阈值，则完全依赖意义，而不是两者的混合。\n\n**“相变”概念的引入**\n\n*   Cui将这种策略转变描述为一种“相变”，借鉴了物理学中的概念。统计物理学通过统计方法描述大量粒子（如原子或分子）的集体行为。\n*   类似地，神经网络由大量“节点”或“神经元”组成，它们的智能源于这些神经元的相互作用，这也可以用统计方法来描述。\n*   因此，神经网络行为的这种突然变化可以被视为相变，就像水在特定温度和压力下从液体变为气体一样。\n\n**研究意义**\n\n*   Cui强调，从理论角度理解这种策略转变的发生方式非常重要。尽管研究中使用的网络模型比日常使用的复杂模型更简化，但它们为理解导致模型稳定在某种策略上的条件提供了线索。\n*   这项理论知识有望在未来用于提高神经网络的效率和安全性。\n\n这项题为“点积注意力可解模型中位置学习与语义学习之间的相变”的研究由Hugo Cui、Freya Behrens、Florent Krzakala和Lenka Zdeborová共同完成，已作为“2025年机器学习”特刊的一部分在JSTAT上发表，并被收录在NeurIPS 2024会议的论文集中。",
+      "shortSummary": "一项新研究发现，AI语言模型在学习过程中会经历一个关键的“相变”。最初，它们依赖词语在句子中的位置来理解语言。但随着训练数据量的增加，一旦达到某个阈值，模型会突然转变为主要依赖词语的实际含义。这一发现揭示了ChatGPT等模型如何真正理解语言，并有望提升未来AI系统的效率和安全性。",
+      "translated_title": "科学家发现AI真正理解语言的时刻",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Neural networks first treat sentences like puzzles solved by word order, but once they read enough, a tipping point sends them diving into word meaning instead—an abrupt “phase transition” reminiscent of water flashing into steam. By revealing this hidden switch, researchers open a window into how transformer models such as ChatGPT grow smarter and hint at new ways to make them leaner, safer, and more predictable."
+    },
+    {
       "title": "科学家们刚刚模拟了“不可能”——容错量子代码终被破解 (原标题: Scientists just simulated the “impossible” — fault-tolerant quantum code cracked at last)",
       "link": "https://www.sciencedaily.com/releases/2025/07/250702214157.htm",
       "pubDate": "Wed, 02 Jul 2025 21:41:57 EDT",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "An edible robot leverages a combination of biodegradable fuel and surface tension to zip around the water's surface, creating a safe -- and nutritious -- alternative to environmental monitoring devices made from artificial polymers and electronics."
-    },
-    {
-      "title": "AI真的有创造力吗？原来创造力在于旁观者的眼中 (原标题: Is AI truly creative? Turns out creativity is in the eye of the beholder)",
-      "link": "https://www.sciencedaily.com/releases/2025/05/250508112427.htm",
-      "pubDate": "Thu, 08 May 2025 11:24:27 EDT",
-      "isoDate": "2025-05-08T15:24:27.000Z",
-      "creator": "",
-      "summary": "# AI创造力：旁观者的视角\n\n一项新研究探讨了人们如何看待人工智能（AI）系统的创造力。研究发现，人们认为AI是否具有创造力，取决于他们对“创造行为”的观察程度。\n\n这项研究结果具有多重意义：\n*   **对AI研究与设计的影响**：它为我们如何研究和设计具有创造力的AI系统提供了新的视角。\n*   **对人类创造力认知的启示**：它也引发了关于我们如何感知他人创造力的基本问题。",
-      "shortSummary": "一项新研究表明，人们认为AI是否具有创造力，取决于他们对AI“创造行为”的观察程度。这项发现不仅对未来AI系统的研究与设计有重要意义，也引发了关于人类如何感知创造力的深层思考。",
-      "translated_title": "AI真的有创造力吗？原来创造力在于旁观者的眼中",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "What makes people think an AI system is creative? New research shows that it depends on how much they see of the creative act. The findings have implications for how we research and design creative AI systems, and they also raise fundamental questions about how we perceive creativity in other people."
     }
   ],
-  "lastUpdated": "2025-07-09T09:31:31.662Z"
+  "lastUpdated": "2025-07-10T09:31:29.254Z"
 }
