@@ -5,277 +5,307 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
-      "title": "2025年MLOps必备的10个Python库 (原标题: 10 Must-Know Python Libraries for MLOps in 2025)",
-      "link": "https://machinelearningmastery.com/10-must-know-python-libraries-for-mlops-in-2025/",
-      "pubDate": "Thu, 19 Jun 2025 10:00:08 +0000",
-      "isoDate": "2025-06-19T10:00:08.000Z",
-      "creator": "Jayita Gulati",
-      "summary": "# 2025年MLOps必备的10个Python库\n\nMLOps（机器学习运维）旨在管理机器学习模型从构建、训练、部署到维护的端到端流程。随着机器学习在实际应用中日益普及，拥有合适的工具变得前所未有的重要。2025年，Python依然是机器学习和MLOps领域最受欢迎的语言。本文将探讨2025年每位机器学习专业人士都应了解的10个Python库，它们能帮助数据科学家和机器学习工程师提高工作效率，减少错误，并构建更可靠的系统。\n\n![2025年MLOps必备的10个Python库](https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-10-python-libraries-mlops.png)\n\n以下是这些关键的Python库：\n\n1.  **MLflow**\n    *   **目的：** 帮助跟踪和管理机器学习实验及模型，便于比较结果并与团队共享模型。\n    *   **主要特点：**\n        *   **实验跟踪：** 跟踪和比较机器学习实验的多次运行。\n        *   **模型打包：** 使用MLproject文件以标准格式打包代码。\n        *   **模型注册表：** 集中存储，用于管理模型的生命周期阶段。\n\n2.  **Data Version Control (DVC)**\n    *   **目的：** 允许像管理代码一样对数据和机器学习模型进行版本控制，保持一切井然有序且可复现。\n    *   **主要特点：**\n        *   **数据版本控制：** 跟踪数据集和模型的不同版本。\n        *   **管道管理：** 创建易于重复和更新的机器学习管道。\n        *   **远程存储支持：** 支持将大型文件存储在云端或外部存储中，并与项目关联。\n        *   **Git集成：** 与Git协同工作，可在同一位置管理代码和数据。\n\n3.  **Kubeflow**\n    *   **目的：** 帮助在Kubernetes上运行和管理机器学习工作流，便于大规模构建、训练和部署模型。\n    *   **主要特点：**\n        *   **管道编排：** 使用Kubeflow Pipelines创建和管理机器学习工作流。\n        *   **模型训练：** 支持使用Kubernetes原生自定义资源进行分布式训练。\n        *   **超参数调优：** 自动化超参数调优引擎，支持网格搜索、随机搜索等。\n\n4.  **Apache Airflow**\n    *   **目的：** 允许使用工作流自动化和调度数据及机器学习任务，并提供仪表板来监控和管理这些工作流。\n    *   **主要特点：**\n        *   **DAGs (有向无环图)：** 将工作流定义为Python代码，其中每个节点是一个任务，边表示依赖关系。\n        *   **调度：** 使用类似cron的语法或内置预设，按特定间隔运行任务。\n        *   **监控与UI仪表板：** 附带基于Web的用户界面，用于查看DAGs和监控任务状态。\n        *   **可扩展性：** 具有可插拔架构，通过操作符和钩子支持AWS和Google Cloud等服务。\n\n5.  **BentoML**\n    *   **目的：** 帮助打包机器学习模型，以便将其作为API提供服务。它兼容多种流行的机器学习库。\n    *   **主要特点：**\n        *   **模型服务：** 通过REST API、gRPC或批量推理提供模型服务，设置简单。\n        *   **多框架支持：** 兼容TensorFlow、PyTorch、Scikit-learn、XGBoost、LightGBM等。\n        *   **模型打包：** 将来自多个框架的机器学习模型打包成标准化、版本化的容器。\n\n6.  **FastAPI**\n    *   **目的：** 一个现代、高性能的Python Web框架，用于构建API。它能自动生成交互式文档。\n    *   **主要特点：**\n        *   **高性能：** 基于ASGI构建，速度可与Node.js和Go媲美。\n        *   **API文档：** 使用Swagger UI和ReDoc自动生成交互式文档。\n        *   **Python类型提示：** 使用标准Python类型提示定义请求和响应模式。\n        *   **异步支持：** 内置async和await支持异步端点。\n\n7.  **Prefect**\n    *   **目的：** 帮助构建和运行具有内置错误处理功能的数据和ML管道，即使某些任务失败也能保持工作流运行。\n    *   **主要特点：**\n        *   **Pythonic工作流设计：** 使用Python定义工作流，任务清晰、模块化且可重用。\n        *   **动态调度：** 支持CRON、间隔或事件触发的灵活调度。\n        *   **容错与重试：** 自动重试失败任务，具有可自定义的重试策略和错误处理。\n        *   **可观测性与日志：** 提供管道执行的实时可见性，包括详细日志、警报和仪表板。\n\n8.  **Great Expectations**\n    *   **目的：** 在机器学习模型中使用数据之前检查其清洁度和正确性，并生成报告显示数据检查结果。\n    *   **主要特点：**\n        *   **数据文档：** 生成人类可读的HTML报告，显示应用了哪些检查以及哪些通过或失败。\n        *   **验证工作流与检查点：** 将数据验证作为机器学习或ETL管道的一部分运行，以保持可靠性。\n        *   **与数据生态系统集成：** 与Pandas、SQL数据库、Spark以及Airflow和Prefect等工具协同工作。\n\n9.  **Optuna**\n    *   **目的：** 自动为机器学习模型寻找最佳设置（超参数），通过提前停止表现不佳的测试来节省时间，并显示有用的调优图表。\n    *   **主要特点：**\n        *   **剪枝：** 支持提前停止表现不佳的试验，以节省计算资源。\n        *   **自动化超参数优化：** Optuna自动化寻找最佳超参数的过程，减少手动调优工作。\n        *   **可视化工具：** 提供内置的可视化功能，用于优化历史、参数重要性和中间值，以更好地理解调优过程。\n\n10. **Seldon Core**\n    *   **目的：** 帮助在Kubernetes上部署机器学习模型，以便它们能实时提供预测服务，并监控生产中的模型性能。\n    *   **主要特点：**\n        *   **Kubernetes原生部署：** 将机器学习模型无缝部署为Kubernetes集群上的微服务。\n        *   **多框架支持：** 兼容流行的机器学习框架，包括TensorFlow、PyTorch、XGBoost、Scikit-learn等。\n        *   **监控与日志：** 与Prometheus、Grafana及其他工具集成，提供实时指标、日志和跟踪。\n        *   **高级推理图：** 构建包含多个模型、转换器和路由器的复杂推理管道。\n\n**总结**\n\n在2025年，借助合适的Python库，管理机器学习项目将变得更加容易。这些工具帮助您跟踪实验、版本化数据、训练模型并将其投入生产。使用MLflow、DVC和Kubeflow等库可以节省时间并减少错误，同时使您的工作更有条理，更易于与团队共享。无论您是MLOps新手还是经验丰富，这些库都将帮助您构建更好、更快的机器学习系统。尝试使用它们来改进您的工作流程并获得更好的结果。",
-      "shortSummary": "本文介绍了2025年MLOps（机器学习运维）领域必备的10个Python库。这些工具旨在优化机器学习模型的端到端生命周期管理，涵盖了实验跟踪（MLflow）、数据版本控制（DVC）、模型部署（BentoML, Seldon Core）、工作流编排（Kubeflow, Airflow, Prefect）、API构建（FastAPI）、数据质量（Great Expectations）和超参数优化（Optuna）等方面。它们能帮助专业人士提高效率、确保可复现性、减少错误，并加速机器学习系统的开发与部署。",
-      "translated_title": "2025年MLOps必备的10个Python库",
+      "title": "词嵌入在表格数据特征工程中的应用 (原标题: Word Embeddings for Tabular Data Feature Engineering)",
+      "link": "https://machinelearningmastery.com/word-embeddings-for-tabular-data-feature-engineering/",
+      "pubDate": "Fri, 11 Jul 2025 12:00:16 +0000",
+      "isoDate": "2025-07-11T12:00:16.000Z",
+      "creator": "Matthew Mayo",
+      "summary": "### 词嵌入在表格数据特征工程中的应用\n\n**引言**\n\n词嵌入（Word Embeddings）作为词语的密集向量表示，通过量化捕捉词语间的语义关系，彻底改变了自然语言处理（NLP）领域。尽管其主要应用于传统语言处理任务，但本教程探讨了其在表格数据特征工程中的创新应用。传统表格数据中，分类特征通常通过独热编码或标签编码处理，但这两种方法无法捕捉类别间的语义相似性。例如，在产品类别中，“电子产品”和“小工具”可能比“电子产品”和“家具”更相似，而传统编码无法体现这一点。词嵌入则能有效表示这种语义关联，从而可能提升模型性能。\n\n本教程旨在指导读者如何利用预训练词嵌入为表格数据集生成新特征，特别关注表格数据中包含可映射到现有词嵌入的描述性文本的分类列。\n\n**核心概念**\n\n*   **词嵌入（Word Embeddings）**：词语在向量空间中的数值表示。语义相似的词语在该空间中距离更近。\n*   **Word2Vec**：由Google开发的一种流行词嵌入算法，主要架构包括连续词袋模型（CBOW）和Skip-gram。\n*   **GloVe（Global Vectors for Word Representation）**：另一种广泛使用的词嵌入模型，利用语料库中的全局词-词共现统计信息。\n*   **特征工程（Feature Engineering）**：将原始数据转换为能更好代表潜在问题的新特征，以提高机器学习模型性能的过程。\n\n本方法的核心是使用预训练的Word2Vec模型（例如在Google News上训练的模型），将分类文本条目转换为其对应的词向量。这些向量随后成为表格数据的新数值特征。当分类值具有可利用的内在文本含义时，此技术尤其有用。\n\n**实际应用：使用Word2Vec进行特征工程**\n\n教程以一个假设数据集为例，其中包含一个名为`ItemDescription`的列，用于描述商品。目标是使用预训练的Word2Vec模型将这些描述转换为数值特征。\n\n1.  **导入所需库**：`pandas`、`numpy`和`gensim.models.KeyedVectors`。\n2.  **模拟数据集**：创建一个包含`ItemID`、`Price`、`ItemDescription`（如'electronics', 'gadget', 'appliance'等）和`Sales`的Pandas DataFrame。\n3.  **加载预训练Word2Vec模型**：\n    *   尝试加载大型预训练模型（如`GoogleNews-vectors-negative300.bin`）。\n    *   如果文件不存在，则创建一个小型虚拟模型用于演示目的。\n4.  **创建获取词嵌入的函数**：\n    *   定义`get_word_embedding(description, model)`函数。\n    *   该函数查询模型以获取描述的嵌入向量。\n    *   如果词语未找到，则返回一个零向量。\n5.  **应用函数并生成新特征**：\n    *   确定嵌入维度（`model.vector_size`）。\n    *   为每个维度创建新的列名（例如`desc_embedding_0`, `desc_embedding_1`）。\n    *   将`get_word_embedding`函数应用于DataFrame的`ItemDescription`列。\n    *   将生成的嵌入向量扩展为独立的列，并与原始DataFrame（去除`ItemDescription`列）进行拼接，形成新的特征工程后的DataFrame。\n\n**总结**\n\n通过利用预训练词嵌入，教程成功地将一个分类文本特征转换为丰富的数值表示，该表示捕捉了语义信息。这组新特征可以输入到机器学习模型中，从而可能提高模型性能，尤其是在分类值之间的关系微妙且具有文本含义的任务中。\n\n需要注意的是，嵌入的质量很大程度上取决于所使用的预训练模型及其训练语料库。这项技术不仅限于产品描述，还可以应用于任何包含描述性文本的分类列，例如“职位”、“流派”或“客户反馈”（在适当的文本处理以提取关键词之后）。关键在于分类列中的文本应具有足够的意义，以便通过词嵌入进行有效表示。\n\n![Word Embeddings for Tabular Data Feature Engineering](https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-word-embeddings-tabular-data-feature-engineering.png)",
+      "shortSummary": "本教程介绍了如何将词嵌入技术应用于表格数据进行特征工程。传统方法无法捕捉分类特征间的语义相似性，而词嵌入能将描述性文本（如产品类别）转换为捕捉语义关系的数值向量。通过使用预训练的Word2Vec模型，文章演示了如何将文本描述转换为新的数值特征，并将其整合到表格数据中。这种方法能为机器学习模型提供更丰富的语义信息，从而潜在地提升模型性能，适用于任何包含有意义描述性文本的分类列。",
+      "translated_title": "词嵌入在表格数据特征工程中的应用",
       "images": [
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-10-python-libraries-mlops.png",
-          "alt": "10 Must-Know Python Libraries for MLOps in 2025",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-word-embeddings-tabular-data-feature-engineering.png",
+          "alt": "Word Embeddings for Tabular Data Feature Engineering",
           "title": "",
           "position": 1
         }
       ],
       "contentSource": "完整文章",
-      "content": "MLOps, or machine learning operations, is all about managing the end-to-end process of building, training, deploying, and maintaining machine learning models."
+      "content": "It would be difficult to argue that word embeddings &mdash; dense vector representations of words &mdash; have not dramatically revolutionized the field of natural language processing (NLP) by quantitatively capturing semantic relationships between words."
     },
     {
-      "title": "释放性能：使用 Polars 加速 Pandas 操作 (原标题: Unlocking Performance: Accelerating Pandas Operations with Polars)",
-      "link": "https://machinelearningmastery.com/unlocking-performance-accelerating-pandas-operations-with-polars/",
-      "pubDate": "Wed, 18 Jun 2025 15:06:20 +0000",
-      "isoDate": "2025-06-18T15:06:20.000Z",
+      "title": "决策树不仅仅适用于表格数据 (原标题: Decision Trees Aren’t Just for Tabular Data)",
+      "link": "https://machinelearningmastery.com/decision-trees-arent-just-for-tabular-data/",
+      "pubDate": "Thu, 10 Jul 2025 09:57:51 +0000",
+      "isoDate": "2025-07-10T09:57:51.000Z",
       "creator": "Iván Palomares Carrascosa",
-      "summary": "## Polars 简介\n\nPolars 是目前单机数据处理和操作领域最快的开源库之一。它采用 Rust 原生构建，旨在优化内存消耗和提高速度，同时提供直观且用户友好的 API。本文将介绍如何在 Python 中使用 Polars 库，并展示其如何像 Pandas 一样无缝地高效处理大型数据集。\n\n## 设置与数据加载\n\n文章使用加州住房数据集作为示例，这是一个中等规模的数据集，包含描述加州每个地区房屋和人口特征的数值和分类属性。\n\n*   **安装 Polars**: 如果是首次使用，需要安装 Polars 库：\n    ```bash\n    pip install polars\n    ```\n*   **导入与数据读取**: 导入 Polars 并使用 `pl.read_csv()` 函数读取数据集，其过程与 Pandas 类似：\n    ```python\n    import polars as pl\n    url = \"https://raw.githubusercontent.com/gakudo-ai/open-datasets/refs/heads/main/housing.csv\"\n    df = pl.read_csv(url)\n    ```\n*   **查看数据**: 查看前几行数据的方法 `df.head()` 也与 Pandas 类似。但与 Pandas 不同的是，Polars 提供了一个 `DataFrame` 属性 `df.schema` 来查看数据集的模式（即属性名称及其类型）。\n\n## 加速数据操作\n\nPolars 提供了两种执行模式：即时（eager）模式和惰性（lazy）模式。\n\n### 即时执行模式 (Eager Execution)\n\n在即时模式下，数据操作会立即执行。\n\n*   **缺失值填充**: 使用 `with_columns()` 方法填充 `total_bedrooms` 列中的缺失值，例如使用该列的中位数进行填充：\n    ```python\n    median_bedrooms = df.select(pl.col(\"total_bedrooms\").median()).item()\n    df = df.with_columns(pl.col(\"total_bedrooms\").fill_null(median_bedrooms))\n    ```\n*   **特征工程**: 基于现有特征创建新特征，例如计算每户房间数、每房间卧室数和每户人口数等比率：\n    ```python\n    df = df.with_columns([\n        (pl.col(\"total_rooms\") / pl.col(\"households\")).alias(\"rooms_per_household\"),\n        (pl.col(\"total_bedrooms\") / pl.col(\"total_rooms\")).alias(\"bedrooms_per_room\"),\n        (pl.col(\"population\") / pl.col(\"households\")).alias(\"population_per_household\")\n    ])\n    ```\n\n### 惰性执行模式 (Lazy Execution)\n\n惰性执行模式通过使用 `lazy()` 函数启用，它会在实际计算发生之前优化一系列操作。这种方法可以使复杂的数据处理工作流执行更高效。实际计算在调用 `collect()` 函数时才发生。\n\n*   **惰性模式下的操作**: 将缺失值填充和特征工程操作转换为惰性模式：\n    ```python\n    ldf = df.lazy()\n    ldf = ldf.with_columns(\n        pl.col(\"total_bedrooms\").fill_null(pl.col(\"total_bedrooms\").median())\n    )\n    ldf = ldf.with_columns([\n        (pl.col(\"total_rooms\") / pl.col(\"households\")).alias(\"rooms_per_household\"),\n        (pl.col(\"total_bedrooms\") / pl.col(\"total_rooms\")).alias(\"bedrooms_per_room\"),\n        (pl.col(\"population\") / pl.col(\"households\")).alias(\"population_per_household\")\n    ])\n    # 实际计算在调用 collect() 时应用\n    result_df = ldf.collect()\n    display(result_df.head())\n    ```\n*   **过滤数据**: 过滤中位数房价高于 $500K 的地区：\n    ```python\n    ldf_filtered = ldf.filter(pl.col(\"median_house_value\") > 500000)\n    ```\n*   **分组与聚合**: 按“海洋邻近度”类别对地区进行分组，并计算每组的平均房价。需要注意的是，Polars 惰性模式下的分组函数是 `group_by()`（带下划线），而非 `groupby()`。\n    ```python\n    avg_house_value = ldf.group_by(\"ocean_proximity\").agg(\n        pl.col(\"median_house_value\").mean().alias(\"avg_house_value\")\n    )\n    ```\n    如果未调用 `collect()`，尝试访问结果将显示一个阶段性管道的可视化图表：\n    \n    ![Polars 中的惰性数据操作](https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-06-a-las-13.27.01.png)\n    \n    因此，必须调用 `collect()` 来执行操作并获取结果：\n    ```python\n    avg_house_value_result = avg_house_value.collect()\n    display(avg_house_value_result)\n    ```\n\n## 总结\n\nPolars 是一个轻量级且高效的替代方案，用于管理基于 Pandas-like DataFrame 的复杂数据预处理和清洗工作流。本文通过多个示例展示了如何在 Python 中使用 Polars 库的即时和惰性执行模式，从而自定义数据处理管道的规划和执行方式。\n\n![释放性能：使用 Polars 加速 Pandas 操作](https://machinelearningmastery.com/wp-content/uploads/2025/06/1up8A_6kSdyCjJlb7ZFMHg.jpeg)",
-      "shortSummary": "Polars 是一个用 Rust 原生构建的开源库，旨在高效、低内存地处理单机大型数据集，并提供直观的 API。它可作为 Pandas 的高性能替代品，支持即时和惰性两种执行模式。文章通过加州住房数据集示例，展示了 Polars 在数据加载、缺失值填充、特征工程、过滤和聚合等操作上的应用。惰性模式通过延迟计算并优化操作序列，进一步提升了复杂数据工作流的效率。",
-      "translated_title": "释放性能：使用 Polars 加速 Pandas 操作",
+      "summary": "# 决策树不仅仅适用于表格数据\n\n## 引言\n决策树作为一种多功能、可解释且高效的机器学习技术，数十年来一直是分类和回归任务中广泛使用的模型。它们既可以作为独立模型，也可以作为随机森林和梯度提升机等更强大集成方法的核心组件。除了这些优点，决策树的另一个吸引人之处在于它们能够处理多种数据格式，而不仅仅是完全结构化的表格数据。本文将从理论和实践相结合的角度探讨决策树的这一特性。\n\n## 决策树概述\n决策树是一种用于预测任务（分类和回归）的监督学习模型。它们通过一组带有已知预测输出的标记示例进行训练，例如，一组收集到的动物标本属性及其所属物种。树的构建是一个迭代和递归地将训练数据集划分为子集的过程，旨在使每个子集尽可能地具有类别（或数值标签）的同质性。一旦训练完成，模型就学习到了一组应用于数据属性的层次化决策规则，这些规则可以直观地表示为一棵树。\n\n![决策树不仅仅适用于表格数据](https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-decision-trees-tabular-data-1.png)\n\n对未知标签的示例进行推理预测时，模型会从上到下检查这些规则或条件，最终根据问题是分类还是回归，到达一个指向类别或值预测的“叶节点”。\n\n![决策树概述](https://machinelearningmastery.com/wp-content/uploads/2025/07/decisiontreeexample.png)\n\n## 决策树超越表格数据\n大多数经典机器学习模型（包括决策树）通常处理的是结构化或表格数据，这些数据以实例（行）的形式组织，并通过数值和分类属性（列）进行描述。然而，决策树也能够处理非严格表格的数据集或其部分。\n\n常见的非表格数据示例包括文本、图像和时间序列。通过应用合适的预处理技术，这些数据格式可以转换为更结构化的形式。例如，一段文本序列（如客户对产品的评论）可以通过特征提取或嵌入转换为结构化数据，然后作为决策树分类器的输入，用于分析客户评论背后的积极或消极情绪。\n\n另一种在包含部分非结构化数据的预测任务中利用决策树的策略是使用混合解决方案，将深度学习模型与决策树结合起来。例如，一个卷积神经网络（CNN）可以被训练用于从图像中提取结构化特征（推断出尺寸、形状、颜色等属性），然后这些基于图像的特征被传递给基于树的模型（如随机森林）进行预测，例如估计产品销售额。\n\n在研究领域，已经有一些努力直接调整基于决策树的模型来处理图数据和层次数据等非表格数据，尽管它们在主流应用中仍然罕见。\n\n## 实际示例\n为了增加一些实践性，我们将演示如何在一个结合了纯表格数据和文本数据的数据集上训练一个基于决策树的模型。\n\n该代码示例的核心逻辑如下：\n1.  使用一个包含三个预测属性（其中一个是文本）的客户支持工单数据集。\n2.  文本数据需要预处理才能输入到决策树模型中。\n3.  使用TF-IDF向量化器获取每个文本的向量表示。\n4.  将这个新的文本特征与其它数值特征合并，以训练决策树分类器，并在测试集上进行评估。\n\n您可以通过执行此代码来训练模型，但可能会对其性能感到失望（正确预测和不正确预测的数量大致相同）。这是预期的结果，因为我们使用的是一个只有100个实例的小数据集，而从文本表示中学习通常需要更多的实例。\n\n## 结论\n本文讨论了决策树和基于决策树的机器学习模型（如随机森林）处理非严格表格数据的能力。从文本到图像再到时间序列，机器学习模型和数据可以通过预处理或组合的方式来适应那些乍一看似乎无法处理的数据。",
+      "shortSummary": "决策树不仅限于处理表格数据，还能有效应对文本、图像和时间序列等非结构化数据。这主要通过两种方式实现：一是将非结构化数据通过预处理（如TF-IDF）转换为结构化特征；二是采用混合方案，结合深度学习模型提取特征后，再由决策树进行预测。文章通过一个结合文本和表格数据的实际案例，展示了决策树在处理多源异构数据方面的强大能力。",
+      "translated_title": "决策树不仅仅适用于表格数据",
       "images": [
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/1up8A_6kSdyCjJlb7ZFMHg.jpeg",
-          "alt": "Unlocking Performance: Accelerating Pandas Operations with Polars",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-decision-trees-tabular-data-1.png",
+          "alt": "Decision Trees Aren’t Just for Tabular Data",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-06-a-las-13.27.01.png",
-          "alt": "Lazy data operations in Polars",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/decisiontreeexample.png",
+          "alt": "Outline of a decision tree",
           "title": "",
           "position": 2
         }
       ],
       "contentSource": "完整文章",
-      "content": "<a href=\"https://pola."
+      "content": "Versatile, interpretable, and effective for a variety of use cases, decision trees have been among the most well-established machine learning techniques for decades, widely used for classification and regression tasks."
     },
     {
-      "title": "大型语言模型背后的7个概念，7分钟解释清楚 (原标题: 7 Concepts Behind Large Language Models Explained in 7 Minutes)",
-      "link": "https://machinelearningmastery.com/7-concepts-behind-large-language-models-explained-in-7-minutes/",
-      "pubDate": "Tue, 17 Jun 2025 12:00:25 +0000",
-      "isoDate": "2025-06-17T12:00:25.000Z",
+      "title": "10 个 NumPy 单行代码简化特征工程 (原标题: 10 NumPy One-Liners to Simplify Feature Engineering)",
+      "link": "https://machinelearningmastery.com/10-numpy-one-liners-to-simplify-feature-engineering/",
+      "pubDate": "Tue, 08 Jul 2025 12:00:29 +0000",
+      "isoDate": "2025-07-08T12:00:29.000Z",
       "creator": "Bala Priya C",
-      "summary": "![大型语言模型背后的7个概念](https://machinelearningmastery.com/wp-content/uploads/2025/06/bala-llm-concepts.jpeg)\n\n大型语言模型（LLMs）如GPT-4和Claude能够编写代码、解释复杂主题，并提供上下文相关的响应，这背后有几个核心概念在支撑。本文旨在为开发者、产品经理和好奇者解释这些关键概念。\n\n### 1. 分词（Tokenization）\n\n在文本被神经网络处理之前，它必须被转换为数字表示。分词是这一转换过程，它比简单的空格或标点符号分割更复杂。分词器使用如字节对编码（BPE）、WordPiece或SentencePiece等算法来创建词汇表，以平衡效率和表示质量。\n\n![分词过程](https://www.kdnuggets.com/wp-content/uploads/tokenization.png)\n\n这些算法通过从单个字符开始，并逐步组合最常出现的字符对来构建子词词汇表。例如，“unhappiness”可能被分词为[“un”, “happy”, “ness”]。这种子词方法解决了许多关键问题，包括处理词汇表外（OOV）词汇、管理形态丰富的语言，并创建了模型可以处理的固定词汇量（通常为32K到100K个词元）。有效的分词可以缩短序列长度，从而降低处理需求。例如，GPT-4的8K上下文窗口允许处理8,000个词元，大约相当于6,000个单词。\n\n### 2. 嵌入（Embeddings）\n\n嵌入将离散的词元转换为向量表示，通常在数百或数千个维度中。嵌入是密集的向量表示，能够捕捉语义含义。它们将词语放置在一个多维空间中，使相似的概念聚集在一起。\n\n![词嵌入示例](https://www.kdnuggets.com/wp-content/uploads/word-embeddings1.png)\n\n例如，“king”和“queen”在嵌入空间中是近邻，而“king”和“bicycle”则相距遥远。在构建搜索功能或推荐系统时，嵌入是关键，因为即使两段文本不共享确切的词语，但如果它们的嵌入相似，则它们在语义上是相关的。\n\n### 3. Transformer架构\n\nTransformer架构通过引入“注意力机制”彻底改变了自然语言处理。与传统模型顺序处理文本不同，Transformer可以同时查看句子中的所有部分，并找出哪些词对于理解其他词最重要。例如，在处理“The cat sat on the mat because it was comfortable”时，注意力机制帮助模型理解“it”指的是“the mat”，而不是“the cat”。这使得现代LLM能够处理长距离依赖和文本中复杂的关联，从而保持多段对话的连贯性并理解跨文档的上下文。\n\n### 4. 训练阶段：预训练与微调\n\nLLM的开发分为不同的阶段：\n\n*   **预训练（Pre-training）**：模型从海量数据集中学习语言模式，这是一个昂贵且计算密集型的阶段，旨在让模型普遍理解和生成人类语言。\n*   **微调（Fine-tuning）**：在此阶段，预训练模型被专门化，以执行特定任务或适应特定领域。它不是从零开始学习语言，而是教导一个已具备能力的模型在特定应用（如代码生成、医疗诊断或客户支持）中表现出色。\n\n![预训练与微调](https://www.kdnuggets.com/wp-content/uploads/bala-pt-ft.png)\n\n这种方法效率高，因为它允许公司以相对适中的计算预算，通过使用自己的数据微调现有模型来构建强大的、领域特定的LLM。\n\n### 5. 上下文窗口（Context Windows）\n\n每个LLM都有一个上下文窗口，即它一次可以考虑的最大文本量，可以将其视为模型的“操作内存”。超出此窗口的任何内容对模型来说都是不存在的。这给开发者带来了挑战，例如如何构建一个能够记住跨多个会话对话的聊天机器人，或者如何处理比上下文窗口更长的文档。可能的解决方案包括维护对话摘要、在LLM系统中使用内存、检索增强生成（RAG）和滑动窗口技术。\n\n### 6. 温度与采样（Temperature and Sampling）\n\n*   **温度（Temperature）**：帮助平衡语言模型生成响应中的随机性与可预测性。温度为0时，模型总是选择最可能的下一个词元，产生一致但可能重复的结果。较高的温度引入随机性，使输出更具创造性但可预测性较低。\n*   **采样技术**：如Top-k采样和核采样（nucleus sampling）提供额外的文本生成控制机制。Top-k采样将选择限制在k个最高概率的词元，而核采样则通过累积概率阈值自适应地确定候选集。这些技术有助于平衡创造性和连贯性，为开发者提供对模型行为更精细的控制。\n\n### 7. 模型参数与规模（Model Parameters and Scale）\n\n模型参数是编码LLM所知一切的习得权重。大多数大型语言模型通常拥有数千亿个参数，而更大的模型则达到数万亿。这些参数捕捉语言中的模式，从基本语法到复杂的推理能力。通常，更多的参数意味着更好的性能，但这种关系并非线性。扩大模型规模需要指数级增长的计算资源、数据集和训练时间。对于实际开发而言，参数数量会影响推理成本、延迟和内存需求。例如，一个70亿参数的模型可能在消费级硬件上运行，而一个700亿参数的模型则需要企业级GPU。理解这种权衡有助于开发者根据其特定用例和基础设施限制选择合适的模型大小。\n\n**总结**\n\n这些概念构成了每个LLM系统的技术核心。鼓励读者通过构建应用、阅读经典论文（如“Attention Is All You Need”）、探索嵌入技术、实验不同的分词策略以及观察温度变化对输出的影响来进一步理解和实践。",
-      "shortSummary": "本文解释了大型语言模型（LLMs）背后的七个核心概念。它们包括：将文本转换为数字表示的**分词**；捕捉语义含义的**嵌入**；通过注意力机制处理文本的**Transformer架构**；模型学习的**预训练与微调**阶段；模型处理文本量的限制——**上下文窗口**；控制生成文本随机性和创造性的**温度与采样**；以及影响性能和资源需求的**模型参数与规模**。理解这些概念对于开发和应用LLMs至关重要。",
-      "translated_title": "大型语言模型背后的7个概念，7分钟解释清楚",
+      "summary": "## 10 个 NumPy 单行代码简化特征工程\n\n![10 NumPy One-Liners to Simplify Feature Engineering](https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-bala-feature-eng-one-liners.jpeg)\n\n在构建机器学习模型时，特征工程是获得竞争优势的关键。虽然 Pandas 和 Scikit-learn 提供了强大的工具，但 NumPy 的向量化操作能使特征工程更快、更优雅。本文探讨了 10 种强大的 NumPy 单行代码，利用其广播、高级索引和数学函数来高效创建新特征。\n\n### 1. 使用中位数绝对偏差 (MAD) 进行鲁棒缩放\n\n标准缩放对正态分布数据有效，但容易受异常值影响。MAD 缩放提供了一种鲁棒的替代方案，能够处理大量异常值，尤其适用于金融或网络分析等领域。该方法通过将数据围绕中位数居中，然后除以 MAD（中位数绝对偏差的中位数）来实现，从而提供不受异常值影响的尺度度量。\n\n### 2. 使用分位数对连续变量进行分箱\n\n将连续变量转换为分类箱对于许多算法至关重要，并有助于捕获非线性关系。等宽分箱可能导致组不平衡，而基于分位数的分箱能确保每个箱中样本数量大致相同。这对于树模型或创建可解释特征特别有用。`np.percentile()` 计算分位数边界，`np.digitize()` 将值分配到相应的箱中。\n\n### 3. 无循环的多项式特征\n\n多项式特征有助于捕获变量间的非线性关系和交互效应。传统的循环方法效率低下，而 NumPy 的列表推导式结合 `np.column_stack()` 可以高效生成所有可能的二次多项式组合（包括平方项和交互项），为模型提供非线性关系信息。\n\n### 4. 时间序列的滞后特征\n\n时间序列分析常需要捕获时间依赖性。滞后特征允许模型访问历史值，这对于预测和异常检测至关重要。`np.roll()` 函数可以平移数组元素，结合列表推导式和 `np.column_stack()` 可以同时生成多个滞后版本，并通过切片处理边缘情况，确保训练数据干净。\n\n### 5. 无 Pandas 的独热编码\n\n独热编码是处理机器学习中分类变量的必要步骤。虽然 Pandas 提供了便利方法，但纯 NumPy 实现对于大型数据集而言更快、更节省内存。该技术利用广播将每个类别值与所有可能的类别进行比较，然后将布尔结果转换为整数，创建二进制矩阵。\n\n### 6. 基于坐标的距离特征\n\n地理空间特征通常需要计算与参考点的距离，这在位置模型中很常见。NumPy 的广播功能可以同时从所有位置减去参考点，然后通过平方差求和并取平方根来高效计算欧几里得距离。这对于处理数百万个数据点的大型数据集至关重要。\n\n### 7. 变量对之间的交互特征\n\n特征交互有助于理解单个特征可能遗漏的隐藏模式。手动创建所有成对交互既繁琐又容易出错。该向量化方法通过嵌套列表推导式系统地生成所有唯一的特征对乘积，并使用 `.T` 转置结果，确保每行代表一个样本，每列代表一个交互项。\n\n### 8. 滚动窗口统计\n\n滚动统计可以平滑噪声数据并捕获局部趋势，这对于时间序列分析和信号处理至关重要。基于卷积的方法既优雅又高效。`np.convolve()` 函数结合均匀平均核 (`np.ones(window_size)/window_size`) 和 `mode='valid'` 参数，可以自然地实现滚动窗口操作，轻松扩展到其他窗口函数。\n\n### 9. 异常值指示特征\n\n与其移除异常值，不如创建特征来标记它们的存在，这可以为模型提供有价值的信息，尤其是在欺诈检测或质量控制等领域。该方法使用数据的百分位数（例如 5% 和 95%）作为异常值阈值，将超出此范围的值标记为 1，从而创建二进制特征，指示异常观测值。\n\n### 10. 分类变量的频率编码\n\n频率编码用分类值的出现次数替换原始值，这可能比任意标签编码更具信息量，尤其当类别频率与目标变量相关时。该方法首先使用 `np.unique()` 找到所有唯一类别及其计数，然后为每个原始类别值查找对应的频率计数，生成一个数值特征，表示该类别在数据集中出现的频率。\n\n### 特征工程的最佳实践\n\n在创建新的代表性特征时，应牢记以下几点：\n*   **内存效率：** 处理大型数据集时，考虑特征工程对内存的影响。\n*   **特征选择：** 并非越多特征越好，应使用相关性分析或特征重要性等技术选择最相关的特征。\n*   **验证：** 始终在保留集上验证工程特征，确保它们能提高模型性能且不会导致过拟合。\n*   **领域知识：** 最好的工程特征通常源于对问题领域的深入理解。NumPy 技术是高效实现这些领域洞察的工具。\n\n### 结论\n\n这些 NumPy 单行代码是解决常见特征工程挑战的实用方案。无论处理时间序列、地理空间数据还是传统表格数据集，这些技术都能帮助构建更高效、更易维护的特征工程管道。关键在于了解何时使用每种方法以及如何组合它们以从数据中提取最大信号。最佳的特征工程技术是能帮助模型学习特定问题领域模式的技术。将这些单行代码作为构建块，并通过适当的交叉验证和领域专业知识来验证其有效性。",
+      "shortSummary": "本文介绍了10个NumPy单行代码，旨在简化和加速机器学习中的特征工程。这些技巧利用NumPy的向量化操作、广播和高级索引，高效处理数据预处理任务，包括鲁棒缩放、分位数分箱、生成多项式和滞后特征、独热编码、计算距离、创建交互特征、滚动统计、标记异常值及频率编码。文章强调NumPy在处理大规模数据集时的效率优势，并提供了特征工程的最佳实践，帮助构建更高效、可维护的机器学习管道。",
+      "translated_title": "10 个 NumPy 单行代码简化特征工程",
       "images": [
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/bala-llm-concepts.jpeg",
-          "alt": "7 Concepts Behind Large Language Models Explained in 7 Minutes",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-bala-feature-eng-one-liners.jpeg",
+          "alt": "10 NumPy One-Liners to Simplify Feature Engineering",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "When building machine learning models, most developers focus on model architectures and hyperparameter tuning."
+    },
+    {
+      "title": "你的第一个Python OpenAI API项目：分步指南 (原标题: Your First OpenAI API Project in Python Step-By-Step)",
+      "link": "https://machinelearningmastery.com/your-first-openai-api-project-in-python-step-by-step/",
+      "pubDate": "Mon, 07 Jul 2025 14:16:43 +0000",
+      "isoDate": "2025-07-07T14:16:43.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "## 你的第一个Python OpenAI API项目：分步指南\n\n本文提供了一个详细的分步指南，教你如何使用Python和FastAPI构建第一个OpenAI API项目，以访问GPT-4等先进的大型语言模型（LLMs）。与之前介绍的本地LLM项目（如Ollama）不同，本文侧重于通过云端API调用OpenAI模型。\n\n### 准备工作和推荐阅读\n\n*   建议读者熟悉LLM相关工具和概念。\n*   推荐阅读文章包括《5个入门LLM的必备免费工具》、《10个大型语言模型关键概念解析》以及《Python中LLM的初学者指南（使用Ollama）》。\n*   还建议阅读本系列前一篇关于本地LLM API项目的文章。\n\n### 分步指南\n\n#### 1. 环境要求\n\n*   Python 3.9或更高版本。\n*   具备Python编程基础。\n*   推荐使用Visual Studio Code等IDE。\n*   不建议在Google Colab等云端笔记本环境运行，因为需要管理多个依赖和虚拟环境。\n\n#### 2. 获取OpenAI API密钥\n\n*   访问OpenAI官网注册或登录。\n*   进入“设置”（齿轮图标）->“账单”。\n\n![OpenAI billing settings](https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-24-a-las-11.57.35.png)\n\n*   访问GPT-4等模型需要有效的账单计划（订阅或按量付费），需提供支付信息并完成账户验证。\n*   前往“API密钥”页面，点击“+创建新密钥”生成并复制`sk-XXXXX`格式的密钥。\n\n#### 3. 设置Python项目和虚拟环境\n\n*   在VS Code中创建新项目文件夹，例如`openai_api_hello`。\n*   在文件夹内创建`main.py`（初始为空）和`requirements.txt`。\n*   `requirements.txt`内容：\n    ```\n    fastapi\n    uvicorn\n    openai\n    python-dotenv\n    ```\n*   强烈建议使用虚拟环境隔离项目依赖，避免版本冲突。\n*   在VS Code中设置虚拟环境：\n    1.  打开命令面板（`Command + Shift + P`）。\n    2.  选择`Python:Create Environment`，然后选择`venv`。\n    3.  选择创建新虚拟环境并选择合适的Python版本（如Python 3.11）。\n    4.  选择`requirements.txt`文件以安装列出的依赖。\n*   如果自动安装失败，可在IDE终端运行：`pip install fastapi uvicorn openai python-dotenv`。\n\n#### 4. 编写主Python程序 (`main.py`)\n\n将以下代码粘贴到`main.py`中：\n\n```python\nfrom fastapi import FastAPI, HTTPException\nfrom pydantic import BaseModel\nimport os\nfrom openai import OpenAI\nfrom dotenv import load_dotenv\n\n# IMPORTANT: PASTE YOUR OPENAI API KEY BETWEEN THE \"\" HERE:\nclient = OpenAI(api_key=\"sk-...\") # 将sk-...替换为你的实际API密钥\n\napp = FastAPI()\n\nclass ChatRequest(BaseModel):\n    message: str\n\n@app.post(\"/chat\")\nasync def chat(request: ChatRequest):\n    try:\n        completion = client.chat.completions.create(\n            model=\"gpt-4\",\n            messages=[\n                {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},\n                {\"role\": \"user\", \"content\": request.message}\n            ]\n        )\n        return {\"response\": completion.choices[0].message.content}\n    except Exception as e:\n        raise HTTPException(status_code=500, detail=str(e))\n\n@app.get(\"/\")\ndef root():\n    return {\"message\": \"Hello, World\"}\n```\n\n*   **代码说明:**\n    *   导入必要的库：`FastAPI`用于构建API，`BaseModel`用于数据验证，`OpenAI`用于与OpenAI API交互，`dotenv`用于加载环境变量。\n    *   `client = OpenAI(api_key=\"sk-...\")`：**务必将`sk-...`替换为你的OpenAI API密钥。**\n    *   **API密钥安全存储（可选但推荐）:**\n        *   在项目文件夹中创建`.env`文件，内容为`OPENAI_API_KEY=<YOUR KEY GOES HERE>`。\n        *   将`client = OpenAI(api_key=\"sk-...\")`替换为：\n            ```python\n            load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), \".env\"))\n            api_key = os.getenv(\"OPENAI_API_KEY\")\n            if not api_key:\n                raise RuntimeError(\"OPENAI_API_KEY not found in environment variables\")\n            client = OpenAI(api_key=api_key)\n            ```\n    *   `app = FastAPI()`：创建FastAPI应用实例。\n    *   `class ChatRequest(BaseModel): message: str`：定义Pydantic模型，用于验证传入请求的JSON体，确保包含一个名为`message`的字符串字段。\n    *   `@app.post(\"/chat\") async def chat(request: ChatRequest):`：定义POST请求的`/chat`端点。此函数调用OpenAI API的`chat.completions.create`方法，使用`gpt-4`模型，并传入系统消息和用户消息（来自请求的`message`字段）。返回模型的响应内容，并包含错误处理机制。\n\n#### 5. 运行和测试项目\n\n*   保存`main.py`文件。\n*   在IDE终端中运行：`uvicorn main:app --reload --port 8010`（确保在项目目录下且虚拟环境已激活）。\n*   成功运行后，终端会显示`INFO`消息，指示服务在`http://127.0.0.1:8010`运行。\n*   在浏览器中打开`http://127.0.0.1:8010/docs`，将看到FastAPI的交互式文档界面。\n\n![FastAPI Docs Interface for Your OpenAI API Project](https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-24-a-las-12.41.04.png)\n\n*   **测试API:**\n    1.  点击`POST /chat`旁边的箭头展开。\n    2.  点击“Try it out”按钮。\n    3.  在JSON参数值中输入你的问题，例如：`{\"message\": \"你的问题在这里\"}`。\n\n![Entering a prompt for GPT-4 in our API Project interface](https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-24-a-las-12.43.45.png)\n\n    4.  点击“Execute”按钮。\n    5.  稍等片刻，向下滚动即可看到GPT-4的响应。\n\n![Local LLM Response](https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-24-a-las-12.44.39.png)\n\n*   至此，你的API项目已成功与OpenAI的GPT-4模型进行对话。\n\n### 后续发展建议\n\n*   添加前端用户界面（如使用React、Vue、HTML/JavaScript或Streamlit）。\n*   改进错误处理机制。\n*   尝试其他OpenAI模型，如GPT-3.5。\n\n### 总结\n\n本文详细介绍了如何使用FastAPI构建并运行你的第一个本地OpenAI API项目，以利用GPT-4等先进模型进行快速推理。",
+      "shortSummary": "本文提供了一个详细的分步指南，教你如何使用Python和FastAPI构建第一个OpenAI API项目。你将学习如何获取OpenAI API密钥，设置Python虚拟环境，编写与GPT-4等先进大型语言模型交互的API代码，并通过FastAPI的Web界面进行运行和测试。该项目使你能够通过云端API访问OpenAI的强大模型，而非本地部署。",
+      "translated_title": "你的第一个Python OpenAI API项目：分步指南",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-first-openai-llm-project-step-by-step.png",
+          "alt": "Your First OpenAI API Project in Python Step-By-Step",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/tokenization.png",
-          "alt": "7 Concepts Behind Large Language Models Explained in 7 Minutes",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-24-a-las-11.57.35.png",
+          "alt": "OpenAI billing settings",
           "title": "",
           "position": 2
         },
         {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/word-embeddings1.png",
-          "alt": "7 Concepts Behind Large Language Models Explained in 7 Minutes",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-24-a-las-12.41.04.png",
+          "alt": "FastAPI Docs Interface for Your OpenAI API Project",
           "title": "",
           "position": 3
         },
         {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-pt-ft.png",
-          "alt": "7 Concepts Behind Large Language Models Explained in 7 Minutes",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-24-a-las-12.43.45.png",
+          "alt": "Entering a prompt for GPT-4 in our API Project interface",
           "title": "",
           "position": 4
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-24-a-las-12.44.39.png",
+          "alt": "Local LLM Response",
+          "title": "",
+          "position": 5
         }
       ],
       "contentSource": "完整文章",
-      "content": "If you've been using large language models like GPT-4 or Claude, you've probably wondered how they can write actually usable code, explain complex topics, or even help you debug your morning coffee routine (just kidding!)."
+      "content": "In a <a href=\"https://machinelearningmastery."
     },
     {
-      "title": "位置编码中的插值与使用 YaRN 扩展上下文窗口 (原标题: Interpolation in Positional Encodings and Using YaRN for Larger Context Window)",
-      "link": "https://machinelearningmastery.com/interpolation-in-positional-encodings-and-using-yarn-for-larger-context-window/",
-      "pubDate": "Tue, 17 Jun 2025 05:00:10 +0000",
-      "isoDate": "2025-06-17T05:00:10.000Z",
-      "creator": "Adrian Tam",
-      "summary": "# 位置编码中的插值与使用 YaRN 扩展上下文窗口\n\n本文探讨了 Transformer 模型在处理不同长度序列时，如何应对位置编码带来的挑战。由于 Transformer 模型通常在固定序列长度下训练，但在推理时可能需要处理更长的序列，这使得模型难以处理未在训练中遇到的位置编码。\n\n## 概述\n\n文章分为三个主要部分：\n1.  正弦编码和 RoPE 中的插值与外推\n2.  学习型编码中的插值\n3.  使用 YaRN 扩展上下文窗口\n\n## 正弦编码和 RoPE 中的插值与外推\n\n正弦编码（Sinusoidal encodings）由于使用连续函数，在**外推**方面表现出色。对于更长的序列，可以直接将位置 `p` 替换为更大的值来获取位置编码。\n\n此外，也可以使用**插值**。将 `p` 视为浮点数，通过 `p = (L/L')p'` 的方式，将新序列 `L'` 中的位置 `p'` 映射到原始训练长度 `L` 的范围内。\n\n这些技术同样适用于旋转位置编码（RoPE）。生成正弦位置编码或 RoPE 的函数无需修改即可处理任意长度的序列。然而，为了确保模型能够处理新的编码而性能不下降，可能需要进行微调。例如，Llama 模型使用 RoPE，最大训练序列长度为 16K，而 Code Llama 仅通过 1000 步微调就将其序列长度扩展到了 100K token。\n\n## 学习型编码中的插值\n\n学习型位置编码（Learned positional encodings）通过查找表获取位置编码向量，这意味着序列长度由查找表大小固定，因此无法进行**外推**。\n\n然而，学习型编码仍然可以通过**插值**来处理比训练长度更长的序列。对于长度为 `L'` (大于 `L`) 的序列，位置 `p'` 的编码向量可以通过线性插值计算，即在原始训练长度 `L` 范围内找到对应的浮点位置 `p`，然后插值其相邻的两个整数位置 `n` 和 `m` 的编码向量。\n\n尽管可以实现插值，但文章指出，这种基本插值实现并不能保证模型在不进行再训练的情况下，处理更长序列时性能不会下降。\n\n## 使用 YaRN 扩展上下文窗口\n\n旋转位置编码（RoPE）是当前大型语言模型中最广泛使用的位置编码方法。YaRN 是一种旨在扩展 RoPE 以处理更长序列的方法，并且比上述基本插值方法更有效。\n\nYaRN 的核心创新在于，当序列长度从 `L` 扩展到 `L'` 时，它会**不均匀地缩放 RoPE 正弦频率**。这种方法被称为“NTK-by-parts”插值。YaRN 通过引入一个混合了插值和外推效果的 `θ_i'` 来修改原始 RoPE 公式。此外，YaRN 还引入了一个额外的缩放因子 `sqrt(1/t)`，进一步提升了模型在更长上下文长度下的性能（通过降低困惑度衡量）。\n\n## 总结\n\n本文介绍了模型如何处理比训练时更长的输入序列：\n*   正弦编码和 RoPE 易于进行外推。\n*   学习型编码仅支持插值。\n*   YaRN 提供了一种先进的方法，用于将 RoPE 扩展到更长的序列长度。\n\n这些方法的共同目标是使模型能够在不进行再训练的情况下处理更长的输入序列。\n\n![Building Transformer Models with Attention](https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png)",
-      "shortSummary": "本文探讨了Transformer模型如何处理不同长度序列的位置编码挑战。正弦编码和RoPE擅长外推，也可通过插值处理更长序列，但可能需微调。学习型编码仅支持插值。YaRN是一种先进方法，通过不均匀缩放RoPE频率并引入额外缩放因子，有效扩展RoPE的上下文窗口，提升模型在长序列下的性能。目标是使模型无需再训练即可处理更长输入。",
-      "translated_title": "位置编码中的插值与使用 YaRN 扩展上下文窗口",
+      "title": "保护MLOps的FastAPI端点：认证指南 (原标题: Securing FastAPI Endpoints for MLOps: An Authentication Guide)",
+      "link": "https://machinelearningmastery.com/securing-fastapi-endpoints-for-mlops-an-authentication-guide/",
+      "pubDate": "Fri, 04 Jul 2025 12:14:51 +0000",
+      "isoDate": "2025-07-04T12:14:51.000Z",
+      "creator": "Abid Ali Awan",
+      "summary": "### 保护MLOps的FastAPI端点：认证指南\n\n#### 引言\n在当今AI时代，数据科学家不仅关注模型训练和优化，还需要掌握机器学习操作（MLOps）技能，包括构建模型推理的REST API并将其部署到云端。虽然简单的API可用于测试，但生产环境中的模型部署对安全性有更高要求。本教程旨在通过FastAPI构建一个简单的机器学习应用，并指导如何为其设置认证，确保只有持有正确令牌的用户才能访问模型进行预测。\n\n#### 1. 项目设置\n本教程将构建一个“葡萄酒分类器”。\n*   **环境准备**：\n    *   创建Python虚拟环境。\n    *   安装必要的Python库：`fastapi`、`uvicorn`、`scikit-learn`、`pandas`、`joblib`、`python-dotenv`。\n*   **模型训练**：\n    *   创建`train_model.py`文件。\n    *   使用Scikit-learn的葡萄酒数据集训练一个随机森林分类器。\n    *   将训练好的模型保存为`wine_clf.joblib`。\n\n#### 2. 构建简单的FastAPI应用\n*   创建`main.py`文件以构建REST API。\n*   **模型加载与定义**：加载`wine_clf.joblib`模型和类别名称。\n*   **数据模型**：使用Pydantic定义`WineRequest`（输入数据）和`WineResponse`（预测结果）模型。\n*   **预测端点**：\n    *   定义`/predict` POST端点。\n    *   接收`WineRequest`负载，通过模型进行预测。\n    *   返回`WineResponse`格式的预测类别名称。\n*   **初始状态**：此时的`/predict`端点是未受保护的，任何人都可以访问。\n\n#### 3. 设置API密钥和自定义请求头\n为API实现认证，将使用API密钥。\n*   **API密钥配置**：\n    *   创建`.env`文件，并添加`API_KEY=abid1234`。\n    *   在`main.py`中，使用`python-dotenv`加载`.env`文件。\n    *   定义`API_KEY_NAME`为`X-API-Key`。\n    *   初始化`APIKeyHeader`，用于从请求头中提取API密钥。\n\n#### 4. 实现认证依赖\n*   定义异步函数`get_api_key`作为认证依赖。\n*   该函数从请求头中获取API密钥，并与预设的`API_KEY`进行比较。\n*   如果API密钥不匹配，则抛出`HTTPException`（状态码401 Unauthorized），并包含“Invalid API Key”的详细信息。\n\n#### 5. 使用认证保护端点\n*   通过在`/predict`端点的装饰器中添加`dependencies=[Depends(get_api_key)]`，将认证依赖应用于该端点。\n*   这确保了只有带有有效API密钥的请求才能访问预测服务。\n*   FastAPI会自动生成Swagger UI，可在`http://localhost:8000/docs`访问，用于交互式探索和测试API端点。\n\n![Securing FastAPI Endpoints for MLOps: An Authentication Guide](https://machinelearningmastery.com/wp-content/uploads/2025/07/awan_securing_fastapi_endpoints_2.png)\n![Securing FastAPI Endpoints](https://www.kdnuggets.com/wp-content/uploads/awan_securing_fastapi_endpoints_1.png)\n\n#### 6. 测试受保护的端点\n通过多种情况测试`/predict`端点，验证API密钥认证是否正常工作。\n*   **无API密钥测试**：发送不带`X-API-Key`头的请求，返回`{\"detail\":\"Invalid API Key\"}`。\n*   **错误API密钥测试**：发送带不正确`X-API-Key`的请求，返回`{\"detail\":\"Invalid API Key\"}`。\n*   **正确API密钥测试**：发送带正确`X-API-Key`的请求，成功返回预测结果`{\"predictions\":[\"Cultivar-0\"]}`。\n\n#### 总结\n本教程成功展示了如何使用FastAPI训练模型并提供服务，并通过实现API密钥认证增强了应用的安全性。FastAPI内置的安全特性（如OAuth2认证）使其成为构建安全、可扩展Web应用的优秀选择。",
+      "shortSummary": "本教程详细介绍了如何使用FastAPI为MLOps应用构建安全的机器学习API。首先，文章指导用户训练一个葡萄酒分类模型并构建一个基础的FastAPI预测服务。随后，核心内容聚焦于通过API密钥实现认证，包括环境配置、API密钥头设置、实现认证依赖函数，并将其应用于`/predict`端点。最后，通过多种测试案例验证了认证机制的有效性，确保只有授权用户才能访问模型，从而提升了生产环境部署的安全性。",
+      "translated_title": "保护MLOps的FastAPI端点：认证指南",
       "images": [
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/enkuu-smile_-kbHvA6oXP8E-unsplash-scaled.jpg",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/awan_securing_fastapi_endpoints_2.png",
+          "alt": "Securing FastAPI Endpoints for MLOps: An Authentication Guide",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://www.kdnuggets.com/wp-content/uploads/awan_securing_fastapi_endpoints_1.png",
+          "alt": "Securing FastAPI Endpoints",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "In today's AI world, data scientists are not just focused on training and optimizing machine learning models."
+    },
+    {
+      "title": "Transformer模型中的跳跃连接 (原标题: Skip Connections in Transformer Models)",
+      "link": "https://machinelearningmastery.com/skip-connections-in-transformer-models/",
+      "pubDate": "Fri, 04 Jul 2025 03:33:11 +0000",
+      "isoDate": "2025-07-04T03:33:11.000Z",
+      "creator": "Adrian Tam",
+      "summary": "## Transformer模型中的跳跃连接\n\nTransformer模型由堆叠的Transformer层组成，每层包含一个注意力子层和一个前馈子层。这些子层并非直接连接，而是通过跳跃连接（Skip Connections）将输入与处理后的输出结合起来。本文深入探讨了Transformer模型中的跳跃连接，包括其必要性、如何实现梯度流以及预归一化（Pre-norm）和后归一化（Post-norm）架构的区别。\n\n### 为什么Transformer需要跳跃连接？\n\n深度学习模型，包括Transformer，在层数增加时，由于梯度消失问题，训练变得越来越困难。当梯度反向传播通过多层时，它们可能呈指数级减小，导致早期层难以有效学习。保持良好的梯度流是成功训练深度模型的关键。\n\n跳跃连接，也称为残差连接（Residual Connections），为信息和梯度在网络中流动创建了直接路径。它们允许模型学习残差函数，即期望输出与输入之间的差异，而不是从头开始学习完整的变换。这一概念最初在ResNet论文中提出。\n\n数学上表示为：\n$$y = F(x) + x$$\n其中$F(x)$是学习的函数。当$F(x) = 0$时，输出$y$等于输入$x$，这被称为恒等映射。模型可以从这个基线开始，逐渐将$y$塑造成不同于$x$的形状，而不是寻找一个全新的函数$F(x)$。这是使用跳跃连接的动机。\n\n在反向传播过程中，相对于输入的梯度变为：\n$$\\frac{\\partial L}{\\partial x} = \\frac{\\partial L}{\\partial y} \\cdot \\frac{\\partial y}{\\partial x} = \\frac{\\partial L}{\\partial y} \\cdot \\left(\\frac{\\partial F(x)}{\\partial x} + 1\\right)$$\n“+1”项确保即使$\\partial F/\\partial x$很小，梯度也不会消失。这就是跳跃连接缓解梯度消失问题的原因。在Transformer模型中，跳跃连接应用于每个子层（注意力层和前馈网络）周围，为梯度反向流动提供了路径，使Transformer模型能够更快地收敛，这对于其通常较深的架构和较长的训练时间来说是一个关键优势。\n\n![图片 1](https://machinelearningmastery.com/wp-content/uploads/2025/06/david-emrich-9a0S_8bU0lo-unsplash-scaled.jpg)\n\n下图展示了典型的跳跃连接用法：\n\n![图片 2](https://machinelearningmastery.com/wp-content/uploads/2025/06/bert.png)\n\n图中箭头表示绕过注意力子层和前馈子层的跳跃连接。这些连接将输入直接添加到每个子层的输出中，创建了一个残差学习框架。\n\n### Transformer模型中跳跃连接的实现\n\n残差连接在Transformer模型中通常通过将子层的输入直接加到其输出来实现，然后通常会进行层归一化。例如，在PyTorch中，一个BERT层的实现会像这样：\n\n```python\nclass BertLayer(nn.Module):\n    def __init__(self, dim, intermediate_dim, num_heads):\n        super().__init__()\n        # ... (attention, linear layers, activations, norms)\n\n    def forward(self, x):\n        # 跳跃连接围绕注意力子层\n        attn_output = self.attention(x, x, x)[0]\n        x = x + attn_output  # 残差连接\n        x = self.norm1(x)    # 层归一化\n\n        # 跳跃连接围绕MLP子层\n        mlp_output = self.linear1(x)\n        mlp_output = self.act(mlp_output)\n        mlp_output = self.linear2(mlp_output)\n        x = x + mlp_output   # 残差连接\n        x = self.norm2(x)    # 层归一化\n        return x\n```\n\n在`forward()`方法中，注意力模块的输出`attn_output`被保存并添加到输入`x`中，然后应用层归一化。同样，在MLP子层中，输入`x`（MLP子层的输入）被添加到`mlp_output`中。这种实现方式是后归一化（Post-norm）架构的例子，即归一化在残差连接之后应用。\n\n### 预归一化（Pre-norm）与后归一化（Post-norm）Transformer架构\n\n层归一化相对于跳跃连接的位置显著影响训练稳定性和模型性能。主要有两种架构：\n\n1.  **后归一化（Post-norm）**：\n    *   原始的“Attention Is All You Need”论文采用此架构，层归一化在残差连接之后应用。\n    *   训练稳定性：对于非常深的模型，训练可能不稳定，因为梯度方差可能随深度呈指数增长。\n    *   收敛速度：需要精心设计的学习率调度和预热期。\n    *   模型性能：如果成功训练，通常表现更好。\n\n2.  **预归一化（Pre-norm）**：\n    *   大多数现代Transformer模型采用此架构，归一化在子层之前应用。\n    *   训练稳定性：训练更鲁棒。\n    *   收敛速度：通常收敛更快，对学习率选择不那么敏感。\n    *   模型性能：尽管可能略逊于成功训练的后归一化模型，但对于非常深和大型的模型，更快的收敛速度和稳定性更有价值。\n\n预归一化实现的PyTorch代码示例：\n\n```python\nclass PreNormTransformerLayer(nn.Module):\n    def __init__(self, dim, intermediate_dim, num_heads):\n        super().__init__()\n        # ... (attention, linear layers, activations, norms)\n\n    def forward(self, x):\n        # 预归一化：在子层之前归一化\n        normalized_x = self.norm1(x)\n        attn_output = self.attention(normalized_x, normalized_x, normalized_x)[0]\n        x = x + attn_output  # 残差连接\n\n        normalized_x = self.norm2(x)\n        mlp_output = self.linear1(normalized_x)\n        mlp_output = self.act(mlp_output)\n        mlp_output = self.linear2(mlp_output)\n        x = x + mlp_output   # 残差连接\n        return x\n```\n\n### 总结\n\n跳跃连接是实现深度Transformer模型训练的基础组件。它们通过创建直接的梯度路径来缓解梯度消失问题，并允许模型学习残差函数。预归一化和后归一化架构的选择会显著影响训练稳定性和模型性能。对于大多数现代应用，尤其是深度和大型模型，预归一化因其更好的训练稳定性和更快的收敛速度而成为首选。\n\n![Building Transformer Models with Attention](https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png)",
+      "shortSummary": "跳跃连接（残差连接）是Transformer模型中的关键组件，用于解决深度网络中的梯度消失问题。它们通过创建直接路径，使模型能够学习残差函数。Transformer模型中跳跃连接应用于每个子层。架构上，后归一化（Post-norm）在残差连接后进行归一化，可能不稳定但性能好；预归一化（Pre-norm）在子层前进行归一化，更稳定且收敛快，是现代深度Transformer模型的首选。",
+      "translated_title": "Transformer模型中的跳跃连接",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/david-emrich-9a0S_8bU0lo-unsplash-scaled.jpg",
           "alt": "",
           "title": "",
           "position": 1
         },
         {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/bert.png",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
           "url": "https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png",
           "alt": "Building Transformer Models with Attention",
           "title": "",
-          "position": 2
+          "position": 3
         }
       ],
       "contentSource": "完整文章",
-      "content": "This post is divided into three parts; they are: • Interpolation and Extrapolation in Sinusoidal Encodings and RoPE • Interpolation in Learned Encodings • YaRN for Larger Context Window Sinusoidal encodings excel at extrapolation due to their use of continuous functions: $$ \\begin{aligned} PE(p, 2i) &amp;= \\sin\\left(\\frac{p}{10000^{2i/d}}\\right) \\\\ PE(p, 2i+1) &amp;= \\cos\\left(\\frac{p}{10000^{2i/d}}\\right) \\end{aligned} $$ You can simply substitute $p$ with a larger value to obtain the positional encoding for a longer sequence."
+      "content": "This post is divided into three parts; they are: • Why Skip Connections are Needed in Transformers • Implementation of Skip Connections in Transformer Models • Pre-norm vs Post-norm Transformer Architectures Transformer models, like other deep learning models, stack many layers on top of each other."
     },
     {
-      "title": "如何结合Scikit-learn、CatBoost和SHAP构建可解释的树模型 (原标题: How to Combine Scikit-learn, CatBoost, and SHAP for Explainable Tree Models)",
-      "link": "https://machinelearningmastery.com/how-to-combine-scikit-learn-catboost-and-shap-for-explainable-tree-models/",
-      "pubDate": "Mon, 16 Jun 2025 12:00:01 +0000",
-      "isoDate": "2025-06-16T12:00:01.000Z",
-      "creator": "Vinod Chugani",
-      "summary": "## 如何结合Scikit-learn、CatBoost和SHAP构建可解释的树模型\n\n### 引言\n\n在机器学习工作流中，高性能模型与可解释性之间存在着微妙的平衡。CatBoost等高性能算法虽然能取得卓越成果，但其“黑箱”特性使得利益相关者难以理解模型决策背后的“为什么”。本文旨在通过结合Scikit-learn、CatBoost和SHAP这三个互补的库来解决这一挑战，从而实现模型的准确性和可解释性。\n\n### 核心整合库\n\n*   **Scikit-learn**：提供预处理生态系统和评估框架，是大多数机器学习工作流的基础。\n*   **CatBoost**：提供最先进的梯度提升性能，并原生支持分类特征处理。\n*   **SHAP (SHapley Additive exPlanations)**：将高性能预测转化为透明、可量化的解释。\n\n### 实际应用场景\n\n本教程以Ames Housing数据集为例，预测房屋价格。这是一个完美的用例，因为在房地产领域，专业人士不仅需要知道模型预测的价格，还需要确切了解哪些特征以及它们如何驱动这些预测。\n\n### 学习目标\n\n通过本教程，您将学会：\n*   创建从Scikit-learn预处理到CatBoost建模再到SHAP详细解释的无缝数据管道。\n*   比较不同的特征重要性方法。\n*   解释复杂的特征交互。\n*   量化邻里效应等分类变量的影响。\n*   构建既准确又可解释的树模型框架。\n\n### 先决条件\n\n在开始本教程之前，您需要：\n*   安装Python 3.7或更高版本。\n*   熟悉Python语法和编程概念。\n*   安装以下库：\n    *   Pandas (1.3.0或更高版本)\n    *   NumPy (1.20.0或更高版本)\n    *   scikit-learn (1.0.0或更高版本)\n    *   CatBoost (1.0.0或更高版本)\n    *   SHAP (0.40.0或更高版本)\n    *   Matplotlib (3.3.0或更高版本) 用于可视化。\n*   对机器学习概念（如回归、训练/测试分割、模型评估）有基本了解。\n\n### 构建CatBoost基础模型\n\n在进行解释之前，首先需要一个高性能模型。文章基于之前对CatBoost的探索，重新构建了一个针对Ames Housing数据集的优化回归模型，实现了0.9310的R²分数。该模型展示了CatBoost在不进行大量预处理的情况下，原生处理缺失值和分类数据的能力。这个高性能模型为后续的解释工作奠定了可靠的基础。\n\n### 整合点1：Scikit-learn → CatBoost 工作流\n\n本节展示了Scikit-learn的预处理和评估工具如何与CatBoost无缝协作。尽管CatBoost可以自动处理许多预处理任务，但结合Scikit-learn可以利用更广泛的数据科学工具生态系统，并建立可扩展到更复杂管道的模式。通过Scikit-learn进行数据分割（训练集2063个样本，测试集516个样本），并在训练数据上训练CatBoost模型，最终在测试集上获得了0.9335的R²分数，验证了模型的强大性能，为SHAP解释提供了可靠的基础。\n\n### 整合点2：CatBoost → SHAP 解释\n\nSHAP将高性能的CatBoost模型转化为可解释的系统。与传统的特征重要性（平均而言哪些变量最重要）不同，SHAP通过量化每个特征对每个个体预测的贡献来提供更深入的洞察。这不仅揭示了哪些特征重要，还揭示了它们在不同上下文和值范围内的行为方式。\n\n**特征重要性比较：CatBoost vs. SHAP**\n\n*   **SHAP TreeExplainer**：计算所有516个测试预测的精确解释，涵盖84个特征。\n*   **共同点**：SHAP和CatBoost的重要性排名都将“GrLivArea”（居住面积）和“OverallQual”（整体质量）列为最重要的特征。\n*   **差异**：在中间排名中存在显著差异，例如“Neighborhood”（社区）在SHAP中排名第三，而在CatBoost中排名第四，反之“TotalBsmtSF”（地下室总面积）则相反。这突出了一个关键区别：CatBoost的重要性反映了特征在树分裂中被使用的频率，而SHAP的重要性则衡量了特征对最终预测的实际影响大小。\n*   **量化影响**：SHAP条形图清晰地可视化了特征影响的程度，显示“GrLivArea”的平均影响几乎是其他任何特征的两倍。这意味着居住面积的变化对预测的影响大约是整体质量变化的两倍，是社区效应的近三倍。\n\n![SHAP Global Feature Importance Plot](https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-chugani-combine-sklearn-catboost-shap-explainable-tree-models-1.png)\n\n### 通过依赖图理解特征交互\n\n全局重要性排名无法揭示特征在不同值范围内的行为或它们之间的交互。SHAP依赖图通过展示特征值与其对个体预测影响之间的关系来解决这些限制。这使得分析从“OverallQual很重要”深入到“OverallQual显示阶梯式增长，其影响取决于其他房屋特征”。\n\n**交互作用示例：**\n\n*   **居住面积（GrLivArea）与地下室总面积（TotalBsmtSF）的交互**：\n    *   当居住面积超过2300平方英尺时，地下室面积越大（红色越深），房屋的SHAP值（即对价格的贡献）越高。这表明买家重视全面的空间，而不仅仅是地上建筑面积。\n*   **整体质量（OverallQual）与建造年份（YearBuilt）的交互**：\n    *   虽然质量始终驱动价值，但颜色模式表明质量评级可能根据房屋建造年份具有不同的含义或市场价值。这反映了随着时间推移，建筑标准和买家期望的变化。\n\n![SHAP Dependence Plots: Standalone vs Interactive Effects](https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-chugani-combine-sklearn-catboost-shap-explainable-tree-models-2-1024x813.png)\n\n这些依赖图揭示了CatBoost学习到的关于特征关系的复杂模式，并展示了SHAP依赖分析如何超越基本的特征重要性，提供更深层次的洞察。",
-      "shortSummary": "本文介绍了如何结合Scikit-learn、CatBoost和SHAP库来构建高性能且可解释的树模型。Scikit-learn用于预处理和评估，CatBoost提供强大的梯度提升性能，而SHAP则负责将模型预测转化为透明的解释。通过Ames Housing数据集的案例，文章展示了如何利用SHAP量化特征对个体预测的影响，比较特征重要性，并深入理解特征间的复杂交互，从而揭示“黑箱”模型内部的决策机制，为实际应用提供更深层次的洞察。",
-      "translated_title": "如何结合Scikit-learn、CatBoost和SHAP构建可解释的树模型",
+      "title": "超越传统方法的5种高级RAG架构 (原标题: 5 Advanced RAG Architectures Beyond Traditional Methods)",
+      "link": "https://machinelearningmastery.com/5-advanced-rag-architectures-beyond-traditional-methods/",
+      "pubDate": "Wed, 02 Jul 2025 12:00:35 +0000",
+      "isoDate": "2025-07-02T12:00:35.000Z",
+      "creator": "Nahla Davies",
+      "summary": "## 超越传统方法的5种高级RAG架构\n\n检索增强生成（RAG）通过结合信息检索和连贯、有根据的响应生成，彻底改变了语言模型领域。随着RAG的不断发展，一系列创新架构正在超越传统的简单检索和响应范式，重新定义了AI应用中上下文、准确性和动态信息的使用。\n\n![5 Advanced RAG Architectures Beyond Traditional Methods](https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-5-adv-rag-architectures-scaled.png)\n\n### 1. 双编码器多跳检索（Dual-Encoder Multi-Hop Retrieval）\n\n*   **核心理念**：通过动态分层查询，深入挖掘知识库，而非依赖单次、浅层检索。\n*   **工作原理**：将复杂问题（如“英伟达CEO在2023年对AI芯片短缺说了什么？”）分解为多个子查询。首先识别英伟达CEO，然后查询其公开声明，最后聚焦于与AI芯片短缺相关的评论。\n*   **技术细节**：使用双编码器处理初始和后续查询，以保持语义保真度并减少噪音。一个编码器处理不断演变的查询上下文，另一个则在每一步中搜索文档索引。\n*   **优势**：提供分层相关性，捕捉单一检索中可能丢失的细微差别，模仿人类研究行为，显著提高事实准确性和相关性，尤其适用于多方面、真实世界的问题。\n\n### 2. 上下文感知反馈循环（Context-Aware Feedback Loops）\n\n*   **核心理念**：引入迭代机制，模型根据检索到的文档评估自身响应。\n*   **工作原理**：如果置信度低或检测到矛盾，模型会循环返回，重新组织查询，检索更精确的来源，然后重新生成响应。\n*   **技术细节**：借鉴强化学习原则，通过轻量级置信度评估器和矛盾检查器（通常是小型Transformer模型）驱动反馈循环。\n*   **优势**：将静态生成转变为自适应系统，提高事实精确度、引用完整性，并在嘈杂或模糊数据环境中（特别是处理快速变化的数据时）产生更稳健的输出。\n\n### 3. 模块化记忆增强RAG（Modular Memory-Augmented RAG）\n\n*   **核心理念**：不仅扩展检索范围，更重要的是使上下文具有“粘性”，即能够长期存储和利用信息。\n*   **工作原理**：允许模型随时间存储、分类和优先处理检索到的信息块和生成的输出。记忆段被标记上下文元数据（用户ID、任务类型、日期、会话目标），检索模块选择性地访问相关模块。\n*   **技术细节**：记忆单元可以随时间重新排序或衰减，确保陈旧信息不会污染未来的生成。通过结构化记忆存储，而非将所有历史交互附加到每个新提示，实现跨会话的记忆持久化。\n*   **优势**：模型不再仅仅检索最相似的内容，而是检索当前最相关的内容。随着使用，系统能学习哪些数据对特定用户或工作流最有价值，使其更像一个具有历史、上下文和优先级的个性化助手。\n\n### 4. 具备工具集成能力的代理RAG（Agentic RAG with Tool-Use Integration）\n\n*   **核心理念**：将被动检索转变为主动推理，系统将子任务委托给外部工具或API。\n*   **工作原理**：单个输入可以触发一系列操作：查询搜索引擎、提取结构化数据、通过Python脚本过滤，最终生成基于静态文档和实时数据的响应。\n*   **技术细节**：严重依赖LangChain、ReAct或自定义路由模块等编排框架，让语言模型决定如何获取、分析和整合信息。\n*   **优势**：模型具有自主性和决策能力，能够根据任务类型、数据格式或用户意图规划下一步行动。例如，可以读取表格、使用算术推理工具，并将文本洞察与结构化输出结合，实现计划、执行和解释的能力，非常适合需要精确数据流管理的应用。\n\n### 5. 图结构上下文检索（Graph-Structured Context Retrieval）\n\n*   **核心理念**：在检索循环中引入知识图谱，不仅存储实体和关系，还主动驱动检索逻辑。\n*   **工作原理**：当查询被处理时，系统识别其锚定实体，并使用图遍历来获取语义链接的文档和上下文节点。它获取的是一个由关系、因果链或时间链接构成的文档网络，然后从该图诱导的上下文中重构连贯的叙述。\n*   **技术细节**：从“查找类似文档”转变为“映射出文档共同暗示的内容”。\n*   **优势**：在医学、法律或金融分析等复杂、相互关联的领域中尤其强大，因为所需答案可能并非明确写在单个文档中，而是从领域内多个分散的信息片段中推断出来。检索更智能，更能适应跨学科的复杂查询。\n\n**结论**\n\nRAG的演进展示了信息检索、推理和生成之间日益深化的协同作用。先进的RAG系统是分层的、记忆感知的、反馈驱动的，并具备代理能力。它们能够跨跳推理、从过去的会话中学习、动态使用工具，并像经验丰富的研究员一样导航知识。未来的AI系统将需要超越简单的top-k文档匹配，进入一个检索智能、上下文持久、生成既分析又富有创造力的世界。",
+      "shortSummary": "本文介绍了超越传统方法的五种高级RAG（检索增强生成）架构。这些创新方法包括：双编码器多跳检索，通过分层查询深入挖掘信息；上下文感知反馈循环，使模型能自我评估和迭代优化响应；模块化记忆增强RAG，实现跨会话的上下文持久化和个性化；具备工具集成能力的代理RAG，将检索提升为主动推理和任务执行；以及图结构上下文检索，利用知识图谱进行更智能、关联性更强的检索。这些架构共同推动RAG系统向更智能、更精准、更具适应性的方向发展。",
+      "translated_title": "超越传统方法的5种高级RAG架构",
       "images": [
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-chugani-combine-sklearn-catboost-shap-explainable-tree-models-feature.png",
-          "alt": "How to Combine Scikit-learn, CatBoost, and SHAP for Explainable Tree Models",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-5-adv-rag-architectures-scaled.png",
+          "alt": "5 Advanced RAG Architectures Beyond Traditional Methods",
           "title": "",
           "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-chugani-combine-sklearn-catboost-shap-explainable-tree-models-1.png",
-          "alt": "How to Combine Scikit-learn, CatBoost, and SHAP for Explainable Tree Models",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-chugani-combine-sklearn-catboost-shap-explainable-tree-models-2-1024x813.png",
-          "alt": "How to Combine Scikit-learn, CatBoost, and SHAP for Explainable Tree Models",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-chugani-combine-sklearn-catboost-shap-explainable-tree-models-3-1024x910.png",
-          "alt": "How to Combine Scikit-learn, CatBoost, and SHAP for Explainable Tree Models",
-          "title": "",
-          "position": 4
         }
       ],
       "contentSource": "完整文章",
-      "content": "Machine learning workflows often involve a delicate balance: you want models that perform exceptionally well, but you also need to understand and explain their predictions."
+      "content": "Retrieval-augmented generation (RAG) has shaken up the world of language models by combining the best of two worlds: <a href=\"https://www."
     },
     {
-      "title": "Transformer模型中的位置编码 (原标题: Positional Encodings in Transformer Models)",
-      "link": "https://machinelearningmastery.com/positional-encodings-in-transformer-models/",
-      "pubDate": "Sun, 15 Jun 2025 05:06:17 +0000",
-      "isoDate": "2025-06-15T05:06:17.000Z",
+      "title": "Transformer模型中的专家混合架构 (原标题: Mixture of Experts Architecture in Transformer Models)",
+      "link": "https://machinelearningmastery.com/mixture-of-experts-architecture-in-transformer-models/",
+      "pubDate": "Tue, 01 Jul 2025 03:19:28 +0000",
+      "isoDate": "2025-07-01T03:19:28.000Z",
       "creator": "Adrian Tam",
-      "summary": "# Transformer模型中的位置编码\n\n本文深入探讨了Transformer模型中至关重要的位置编码，它们是捕获语言序列特性的关键创新。\n\n![图片 1](https://machinelearningmastery.com/wp-content/uploads/2025/06/svetlana-gumerova-6fAgnT3Dhl4-unsplash-scaled.jpg)\n*语言模型中的位置编码*\n\n## 理解位置编码的必要性\n\n*   **问题背景**：传统的循环神经网络（RNN）按顺序处理词语，自然地捕捉了词序信息。然而，Transformer模型并行处理所有词元，导致其无法区分词元相同但顺序不同的句子（例如：“狐狸跳过狗”和“狗跳过狐狸”）。\n*   **解决方案**：位置编码通过为序列中的每个词元提供位置信息来解决这一问题。\n*   **工作原理**：\n    *   每个词元首先通过模型的嵌入层转换为一个向量，其大小称为“隐藏维度”。\n    *   位置编码会生成一个与隐藏维度相同大小的向量。\n    *   这些位置编码向量被添加到输入词元嵌入中，通常在注意力模块中进行。\n    *   在点积操作期间，这些编码强调了相邻词元之间的关系，帮助模型理解上下文，从而区分词序不同的句子。\n\n## 常见位置编码类型\n\n文章详细介绍了以下五种主要的位置编码类型：\n\n1.  **正弦位置编码 (Sinusoidal Positional Encodings)**：\n    *   **特点**：在原始Transformer论文中引入，使用正弦和余弦函数构建的确定性向量。\n    *   **公式**：\n        $$ PE(p, 2i) = \\sin\\left(\\frac{p}{10000^{2i/d}}\\right) $$\n        $$ PE(p, 2i+1) = \\cos\\left(\\frac{p}{10000^{2i/d}}\\right) $$\n        其中，$p$ 是位置，$i$ 是维度索引，$d$ 是隐藏维度。常数10000应大于最大序列长度。\n    *   **实现原理**：通过计算 `div_term` ($1/N^{2i/d}$)，然后将 `position` 矩阵与 `div_term` 相乘的结果分别代入正弦和余弦函数，最后交错填充到输出矩阵中。\n    *   **优点**：确定性，能够外推到训练时未见的更长序列；利用正弦函数的性质，可以轻松计算词元间的相对位置。\n    *   **局限性**：不适应数据特性，对非常长的序列可能效果不佳。\n\n2.  **学习位置编码 (Learned Positional Encodings)**：\n    *   **特点**：在BERT和GPT等模型中使用，位置向量在训练过程中学习得到。\n    *   **实现原理**：通过 `nn.Embedding` 层实现，该层充当一个查找表，将整数位置索引映射到学习到的向量。在 `forward` 函数中，根据输入序列长度生成位置索引，然后通过嵌入层查找对应的位置编码，并将其添加到输入 `x` 中。\n    *   **优点**：能够适应数据特性，如果训练得当，可能提供更好的性能。\n    *   **局限性**：无法外推到更长的序列；可能存在过拟合风险；作为模型参数的一部分，会增加模型大小。\n\n3.  **旋转位置编码 (Rotary Positional Encodings, RoPE)**：\n    *   **特点**：Llama模型等大多数现代大型语言模型使用，通过旋转矩阵编码相对位置，每个位置代表一个几何级数的角度。\n    *   **公式**：\n        $$ \\hat{x}_m^{(i)} = x_m^{(i)} \\cos(m\\theta_i) + x_m^{(d/2+i)} \\sin(m\\theta_i) $$\n        $$ \\hat{x}_m^{(d/2+i)} = x_m^{(d/2+i)} \\cos(m\\theta_i) – x_m^{(i)} \\sin(m\\theta_i) $$\n        其中 $\\theta_i = 10000^{-2i/d}$，$m$ 是位置索引。\n        矩阵形式：$\\mathbf{\\hat{x}}_m = \\mathbf{R}_m\\mathbf{x}_m$。\n    *   **实现原理**：`rotate_half` 函数将向量的后半部分取负并与前半部分交换位置。`apply_rotary_pos_emb` 函数将输入 `x` 与预先计算好的 `cos` 和 `sin` 值进行旋转操作。`RotaryPositionalEncoding` 类预计算并缓存正弦和余弦值。\n    *   **优点**：\n        *   旋转矩阵 $\\mathbf{R}_m$ 几何地旋转2D输入向量。\n        *   转置 $\\mathbf{R}_m^\\top = \\mathbf{R}_m^{-1}$ 表示反向旋转，因此相对位置可以轻松计算为 $\\mathbf{R}_{m-n} = \\mathbf{R}_m\\mathbf{R}_n^\\top$。\n        *   由于角度的几何级数，可以外推到更长的序列。\n        *   保留向量范数，有助于训练稳定性。\n\n4.  **相对位置编码 (Relative Positional Encodings)**：\n    *   **特点**：T5和MPT等模型使用，关注词元之间的相对距离而非绝对位置。\n    *   **实现原理**：计算 `context_position` 和 `memory_position` 矩阵的差值得到 `relative_position` 矩阵，表示词元 $i$ 和 $j$ 之间的相对位置。通过 `relative_position_bucket` 将值转换为非负，然后从 `relative_attention_bias` 张量中查找对应的位置编码向量。\n    *   **优点**：自然处理可变长度序列，适用于翻译等任务。\n    *   **相关方法**：**线性偏置注意力 (Attention with Linear Bias, ALiBi)** 是一种相关方法，它不是修改输入序列，而是将一个偏置矩阵添加到注意力分数中，该偏置矩阵基于词元距离按比例缩放。缩放因子为 $m_h=1/2^{8h/H}$。\n\n## 总结\n\n本文详细介绍了Transformer模型中位置编码的重要性及其不同类型：\n\n*   位置编码对于Transformer模型至关重要，因为它们以并行方式处理词元，需要额外的位置信息来理解序列顺序。\n*   不同类型的位置编码各有优缺点：\n    *   **正弦编码**：确定性，可外推到更长序列。\n    *   **学习编码**：简单，但无法外推。\n    *   **RoPE**：在长序列上表现更好，保留向量范数。\n    *   **相对位置编码**：关注词元间距离，适用于可变长度序列。\n\n![Building Transformer Models with Attention](https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png)\n*构建带有注意力的Transformer模型*",
-      "shortSummary": "Transformer模型并行处理词元，缺乏序列顺序信息，因此需要位置编码。位置编码通过向词元嵌入添加位置向量来解决此问题，帮助模型理解上下文和词序。主要类型包括：原始Transformer使用的确定性正弦编码、BERT和GPT中学习到的编码、Llama模型中通过旋转矩阵实现的RoPE，以及T5等模型中基于词元间相对距离的相对位置编码。每种编码都有其独特优势，如外推能力或适应数据特性。",
-      "translated_title": "Transformer模型中的位置编码",
+      "summary": "## Transformer模型中的专家混合架构\n\nTransformer模型在自然语言处理（NLP）任务中表现出色，但随着模型规模的扩大，计算复杂度也显著增加。专家混合（Mixture of Experts, MoE）架构通过引入稀疏性，提供了一种优雅的解决方案，使得模型能够高效扩展，而计算成本不会成比例地增加。\n\n![图片 1](https://machinelearningmastery.com/wp-content/uploads/2025/06/realfish-0MvkW2nYysk-unsplash-scaled.jpg)\n\n### 为什么Transformer需要专家混合架构\n\nMoE概念最早于1991年由Jacobs等人提出。它通过使用多个“专家”模型来处理输入，并利用一个“门控”机制来选择使用哪个专家。MoE架构在2021年的Switch Transformer和2024年的Mixtral模型中得到了复兴。\n\n在Transformer模型中，MoE的关键在于它只激活每个输入参数的一个子集进行计算，这使得可以定义非常大的模型，但在每次计算时只使用其中的一小部分。Transformer模型的“智能”主要体现在多层感知机（MLP）块中，这些块通常包含最多的参数和计算负载。训练MLP块以在各种任务中表现良好是具有挑战性的，因为不同的任务可能需要相互矛盾的行为。\n\n![图片 2](https://machinelearningmastery.com/wp-content/uploads/2025/06/mixtral.png)\n\nMoE通过拥有多个专家，并且每次只激活其中稀疏的子集来引入稀疏性。MoE架构仅修改MLP块，而所有专家共享相同的注意力块。每个Transformer层都拥有一组独立的专家，这使得跨层可以进行混合和匹配的组合。这种设计允许创建大量的专家，同时不会大幅增加参数数量，从而在保持低计算成本的同时实现模型扩展。核心思想是：不同的输入受益于不同的专业计算。通过拥有多个专家网络和选择使用哪些专家的路由机制，模型能够以更少的计算资源实现更好的性能。\n\n### 专家混合架构的工作原理\n\nMoE架构由三个关键组件组成：\n\n1.  **专家网络 (Expert Networks)**：多个独立的神经网络，类似于其他Transformer模型中的MLP块，用于处理输入。\n2.  **路由器 (Router)**：一个决定哪个专家应该处理每个输入的机制。它通常是一个线性层，后接softmax函数，生成一个关于N个专家的概率分布。通过“门控机制”选择top-k个专家。\n3.  **输出组合 (Output Combination)**：选定的top-k个专家处理输入，它们的输出通过路由器提供的归一化概率进行加权求和。\n\nMoE的基本操作流程如下：对于注意力块输出序列中的每个向量`x`，路由器将其与一个矩阵相乘以生成logits。经过softmax变换后，这些logits通过top-k操作进行筛选，生成k个索引和k个概率。这些索引激活相应的专家（在图中表示为MLP块），专家处理原始的注意力块输出。最后，专家输出通过归一化的路由器概率进行加权求和。\n\n概念上，MoE块的计算公式为：\n$$ \\text{MoE}(x) = \\sum_{i \\in \\text{TopK}(p)} p_i \\cdot \\text{Expert}_i(x) $$\n其中`k`是一个模型超参数，即使`k=2`也已被证明足以获得良好的性能。\n\n### Transformer模型中MoE的实现\n\n文章提供了一个PyTorch实现示例，展示了如何用MoE替换传统MLP块的Transformer层。主要包括三个类：\n\n*   **Expert类**：与标准的MLP块功能相同，但MoE子层会使用多个实例。\n*   **MoELayer类**：\n    *   初始化时定义专家数量(`num_experts`)、选择的专家数量(`top_k`)和维度(`dim`)。\n    *   创建`nn.ModuleList`来存储多个`Expert`实例，并定义一个`router`线性层。\n    *   `forward`方法处理输入：将输入重塑以进行专家处理，计算路由概率，使用`torch.topk`选择top-k专家及其归一化概率。\n    *   通过循环遍历选定的专家，处理每个输入向量，并根据路由概率进行加权求和，最后将输出重塑回原始形状。\n*   **MoETransformerLayer类**：\n    *   结合了多头注意力子层和MoE子层，MoE子层在此处替代了传统的MLP子层。\n    *   包含归一化层以确保模型稳定性。\n\n一个完整的MoE Transformer模型由一系列这样的Transformer层组成。文章还提供了简单的测试代码来验证MoE Transformer层的基本功能。\n\n### 进一步阅读\n\n文章推荐了多篇关于专家混合架构的进一步阅读材料，包括“What is mixture of experts?”、“Switch Transformers”、“Mixtral of Experts”和“GLaM”等，以供读者深入了解。\n\n![Building Transformer Models with Attention](https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png)\n\n### 总结\n\n本文详细介绍了Transformer模型中的专家混合架构，包括：\n\n*   MoE对于Transformer模型高效扩展的必要性。\n*   MoE如何通过专家模型、路由器和门控机制协同工作。\n*   如何实现MoE层以替代Transformer模型中的传统MLP层。",
+      "shortSummary": "专家混合（MoE）架构通过引入稀疏性，使Transformer模型能够高效扩展，同时控制计算成本。它通过多个“专家”网络和一个“路由器”机制工作，路由器选择并组合top-k个专家的输出。MoE主要替代Transformer的MLP块，允许模型在不大幅增加参数的情况下处理不同输入，从而以更少的计算资源实现更好的性能。文章还提供了MoE在PyTorch中的实现示例。",
+      "translated_title": "Transformer模型中的专家混合架构",
       "images": [
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/svetlana-gumerova-6fAgnT3Dhl4-unsplash-scaled.jpg",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/realfish-0MvkW2nYysk-unsplash-scaled.jpg",
           "alt": "",
           "title": "",
           "position": 1
         },
         {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mixtral.png",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
           "url": "https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png",
           "alt": "Building Transformer Models with Attention",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "This post is divided into five parts; they are: • Understanding Positional Encodings • Sinusoidal Positional Encodings • Learned Positional Encodings • Rotary Positional Encodings (RoPE) • Relative Positional Encodings Consider these two sentences: \"The fox jumps over the dog\" and \"The dog jumps over the fox\"."
-    },
-    {
-      "title": "使用Scikit-Learn管道、Pandas的ColumnTransformer和NumPy数组进行高级特征工程 (原标题: Advanced Feature Engineering Using Scikit-Learn Pipelines with Pandas’ ColumnTransformer and NumPy Arrays)",
-      "link": "https://machinelearningmastery.com/advanced-feature-engineering-using-scikit-learn-pipelines-with-pandas-columntransformer-and-numpy-arrays/",
-      "pubDate": "Fri, 13 Jun 2025 12:00:25 +0000",
-      "isoDate": "2025-06-13T12:00:25.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "## 使用Scikit-Learn管道、Pandas的ColumnTransformer和NumPy数组进行高级特征工程\n\n![高级特征工程](https://machinelearningmastery.com/wp-content/uploads/2025/05/mlm-palomares-ollama-quantization-feature.png)\n\n本文介绍了如何利用Pandas、NumPy和Scikit-learn这三个强大的Python库，构建健壮、可扩展且模块化的高级特征工程工作流。文章通过一个实际示例，详细阐述了如何将这些工具结合起来，实现数据预处理和机器学习模型的无缝集成。\n\n### 核心组件\n\n*   **Scikit-learn 管道 (Pipelines)**：一种便捷的机制，用于定义一系列操作（通常是数据转换，也可包含机器学习模型），并将这些操作封装为一个单一的对象。这有助于简化工作流并提高代码的可读性。\n*   **Pandas ColumnTransformer**：一个专门的类，用于对数据集中特定列应用自定义的转换。它允许对不同类型的特征（如数值型和类别型）应用不同的预处理方法。\n*   **NumPy 数组 (Arrays)**：在目标问题中扮演关键角色，能够高效处理大量数据。Scikit-learn模型内部最终需要NumPy数组作为输入格式，而非Pandas DataFrame对象，因此NumPy数组是数据流转的关键。\n\n### 实践示例：构建特征工程管道\n\n文章通过一个自制数据集的例子，演示了如何构建一个完整的特征工程管道。\n\n#### 1. 导入必要的库\n\n```python\nimport numpy as np\nimport pandas as pd\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.compose import ColumnTransformer\nfrom sklearn.preprocessing import StandardScaler, OneHotEncoder\nfrom sklearn.ensemble import RandomForestClassifier\n```\n\n#### 2. 创建示例数据集\n\n为了演示，文章创建了一个包含20个实例的模拟公民数据DataFrame，包括数值型特征（`age`、`income`）和类别型特征（`gender`、`city`），以及一个二元目标标签（`label`）。\n\n```python\ndf = pd.DataFrame({\n    'age': np.random.randint(18, 70, size=20),\n    'income': np.random.randint(30000, 120000, size=20),\n    'gender': np.random.choice(['male', 'female'], size=20),\n    'city': np.random.choice(['NY', 'SF', 'LA'], size=20),\n    'label': np.random.choice([0, 1], size=20)\n})\n```\n\n#### 3. 分离特征与标签并定义特征列表\n\n将数据集分为特征 `X` 和标签 `y`，并分别定义数值型和类别型特征的名称列表，这对于后续 `ColumnTransformer` 的使用至关重要。\n\n```python\nX = df.drop('label', axis=1)\ny = df['label']\nnumeric_features = ['age', 'income']\ncategorical_features = ['gender', 'city']\n```\n\n![特征工程前的数据集特征](https://machinelearningmastery.com/wp-content/uploads/2025/05/Captura-de-pantalla-2025-05-29-a-las-9.59.41.png)\n\n#### 4. 定义预处理步骤\n\n文章定义了两个并行的管道，分别用于数值型和类别型特征的预处理，并通过 `ColumnTransformer` 将它们结合起来。\n\n*   **数值型转换器**：使用 `StandardScaler` 进行标准化。\n*   **类别型转换器**：使用 `OneHotEncoder` 进行独热编码，并设置 `handle_unknown='ignore'` 以处理未知类别。\n*   **预处理器 (preprocessor)**：一个 `ColumnTransformer` 对象，将上述两个管道并行应用于各自对应的特征列表。\n\n```python\nnumeric_transformer = Pipeline(steps=[\n    ('scaler', StandardScaler())\n])\ncategorical_transformer = Pipeline(steps=[\n    ('encoder', OneHotEncoder(handle_unknown='ignore'))\n])\n\npreprocessor = ColumnTransformer(\n    transformers=[\n        ('num', numeric_transformer, numeric_features),\n        ('cat', categorical_transformer, categorical_features)\n    ]\n)\n```\n\n#### 5. 应用预处理并查看结果\n\n通过 `preprocessor.fit_transform(X)` 应用定义的预处理管道，并将结果转换为DataFrame以便于可视化。\n\n```python\nX_preprocessed = preprocessor.fit_transform(X)\npreprocessed_feature_names = preprocessor.get_feature_names_out()\nX_preprocessed_df = pd.DataFrame(X_preprocessed, columns=preprocessed_feature_names)\nprint(\"Preprocessed Data:\")\nX_preprocessed_df.head()\n```\n\n![特征工程后的数据集特征](https://machinelearningmastery.com/wp-content/uploads/2025/05/Captura-de-pantalla-2025-05-29-a-las-9.59.48.png)\n\n#### 6. 将特征工程与机器学习模型结合\n\n最后，文章展示了如何将预处理管道 (`preprocessor`) 与一个机器学习模型（例如 `RandomForestClassifier`）组合成一个更高级别的端到端管道。这个管道包含两个顺序步骤：特征工程和模型训练。\n\n```python\nfeng_pipeline = Pipeline(steps=[\n    ('preprocessing', preprocessor),\n    ('classifier', RandomForestClassifier())\n])\n\nfeng_pipeline.fit(X, y)\npredictions = feng_pipeline.predict(X)\nprint(predictions)\n```\n\n这种集成方式使得数据从原始形式到模型训练的整个过程变得流畅，尤其得益于NumPy数组在预处理后作为数据结构传递给模型，无需额外的数据结构修改。\n\n### 总结\n\n本文详细阐述了如何利用Scikit-learn的 `Pipeline` 和 Pandas 的 `ColumnTransformer` 对象，结合 NumPy 数组，对包含不同类型特征的数据集执行高级且定制化的特征工程过程。这种方法不仅提高了工作流的效率和可维护性，也确保了数据在整个机器学习流程中的顺畅传递。",
-      "shortSummary": "本文演示了如何使用Scikit-learn的Pipeline、Pandas的ColumnTransformer和NumPy数组进行高级特征工程。通过构建一个包含数据标准化、独热编码等预处理步骤的并行管道，并将其与机器学习模型（如随机森林）集成，文章展示了如何创建健壮、可扩展且模块化的端到端数据处理和建模工作流。NumPy数组在此过程中确保了数据在不同组件间的无缝传递。",
-      "translated_title": "使用Scikit-Learn管道、Pandas的ColumnTransformer和NumPy数组进行高级特征工程",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/mlm-palomares-ollama-quantization-feature.png",
-          "alt": "Advanced Feature Engineering Using Scikit-Learn Pipelines with Pandas’ ColumnTransformer and NumPy Arrays",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/Captura-de-pantalla-2025-05-29-a-las-9.59.41.png",
-          "alt": "Dataset features before feature engineering",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/05/Captura-de-pantalla-2025-05-29-a-las-9.59.48.png",
-          "alt": "Dataset features after feature engineering",
           "title": "",
           "position": 3
         }
       ],
       "contentSource": "完整文章",
-      "content": "Pandas , NumPy , and Scikit-learn ."
+      "content": "This post covers three main areas: • Why Mixture of Experts is Needed in Transformers • How Mixture of Experts Works • Implementation of MoE in Transformer Models The Mixture of Experts (MoE) concept was first introduced in 1991 by <a href=\"https://www."
     },
     {
-      "title": "使用 Pandas 和 Scikit-learn 处理不平衡数据集 (原标题: Navigating Imbalanced Datasets with Pandas and Scikit-learn)",
-      "link": "https://machinelearningmastery.com/navigating-imbalanced-datasets-with-pandas-and-scikit-learn/",
-      "pubDate": "Thu, 12 Jun 2025 12:00:56 +0000",
-      "isoDate": "2025-06-12T12:00:56.000Z",
+      "title": "你的第一个Python本地大语言模型API项目：分步指南 (原标题: Your First Local LLM API Project in Python Step-By-Step)",
+      "link": "https://machinelearningmastery.com/your-first-local-llm-api-project-in-python-step-by-step/",
+      "pubDate": "Mon, 30 Jun 2025 12:00:58 +0000",
+      "isoDate": "2025-06-30T12:00:58.000Z",
       "creator": "Iván Palomares Carrascosa",
-      "summary": "# 使用 Pandas 和 Scikit-learn 处理不平衡数据集\n\n## 引言\n不平衡数据集在现实世界中并不少见，例如银行金融领域的欺诈检测（欺诈交易远少于合法交易）和医疗诊断（罕见疾病远少于常见健康状况）。这类数据集的主要问题在于，机器学习模型容易偏向多数类，导致模型性能下降，甚至可能退化为“虚拟分类器”。本文将介绍使用 Python 的 Pandas 和 Scikit-learn 库处理不平衡数据集的几种策略。\n\n![Navigating Imbalanced Datasets with Pandas and Scikit-learn](https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-ipc-navigating-imbalanced-datasets.png)\n*图：使用 Pandas 和 Scikit-learn 处理不平衡数据集*\n\n## 实践指南：银行营销数据集\n为了演示处理不平衡数据的实际方法，本文使用了公开可用的银行营销数据集。该数据集包含银行客户信息，并标记了客户是否在接到银行营销电话后订阅了定期存款（“是”或“否”）。\n\n**数据集不平衡性：**\n该数据集之所以不平衡，是因为只有约 11% 的客户订阅了定期存款，而约 89% 的客户拒绝了。具体来说：\n*   **未订阅（“no”）:** 39922 名客户 (88.3%)\n*   **已订阅（“yes”）:** 5289 名客户 (11.7%)\n这表明“yes”类是显著的少数类。\n\n## 处理不平衡数据集的策略\n\n### 策略 1：逆频率依赖加权 (Inverse Frequency-Dependent Weighting)\n这是 Scikit-learn 提供的一种策略，通过调整分类模型训练时的实例权重来处理不平衡数据。\n\n*   **原理：** 在 Scikit-learn 的某些分类器中（例如 `RandomForestClassifier`），设置 `class_weight='balanced'` 参数。这会使实例权重与类频率成反比，从而给予少数类更大的权重，以补偿类不平衡。\n*   **优点：** 模型在训练时会更加关注少数类，减少对多数类的偏向。\n*   **示例：** 使用 `RandomForestClassifier` 并设置 `class_weight='balanced'`，同时对分类特征进行独热编码（使用 Pandas 的 `pd.get_dummies()`）。\n\n### 策略 2：欠采样 (Undersampling)\n这是一种在模型训练前进行的数据预处理策略，主要通过 Pandas 实现。\n\n*   **原理：** 减少多数类实例的数量，使其与少数类实例的数量相匹配。\n*   **优点：** 减少模型对多数类的偏向。\n*   **缺点：**\n    *   可能导致信息丢失，特别是当多数类被大量欠采样时。\n    *   可能增加模型方差，有时甚至导致欠拟合。\n*   **适用场景：** 当数据集足够大，即使欠采样后仍能保留足够代表性和多样性的实例时。\n*   **示例：** 将多数类（“no”）的实例数量随机减少到与少数类（“yes”）相同的数量，然后将欠采样后的多数类与少数类合并，形成一个平衡的数据集。原始数据集约 45K 实例，欠采样后平衡数据集约 10.5K 实例。\n\n### 策略 3：过采样 (Oversampling)\n这也是一种在模型训练前进行的数据预处理策略，主要通过 Pandas 实现。\n\n*   **原理：** 通过随机复制少数类实例（带替换采样）来增加其数量，使其与多数类数量相匹配。\n*   **优点：** 有助于缓解模型对多数类的偏向。\n*   **缺点：**\n    *   如果少数类本身不具代表性，或者重复实例可能引入噪声，则不适用。\n    *   可能导致过拟合，因为模型可能会过度学习重复的少数类实例。\n*   **适用场景：** 当少数类规模较小但具有代表性，且添加重复实例不太可能引入噪声或导致过拟合时。\n*   **示例：** 将少数类（“yes”）的实例数量随机复制增加到与多数类（“no”）相同的数量，然后将多数类与过采样后的少数类合并，形成一个平衡的数据集。\n\n## 总结\n本文探讨了数据集中的类不平衡问题，并介绍了使用 Pandas 和 Scikit-learn 库处理该问题的三种常用策略：训练平衡分类模型（逆频率依赖加权）、欠采样和过采样。值得注意的是，还有其他更高级的策略，如 Scikit-learn 的重采样工具和 SMOTE（合成少数类过采样技术）等。",
-      "shortSummary": "不平衡数据集（如欺诈检测）会导致机器学习模型偏向多数类，影响性能。本文介绍了使用 Pandas 和 Scikit-learn 处理此类问题的三种策略：一是通过 Scikit-learn 的 `class_weight='balanced'` 参数进行逆频率依赖加权，使模型更关注少数类；二是通过 Pandas 进行欠采样，减少多数类实例；三是通过 Pandas 进行过采样，复制少数类实例。这些方法旨在平衡数据分布，提升模型在不平衡数据集上的表现。",
-      "translated_title": "使用 Pandas 和 Scikit-learn 处理不平衡数据集",
+      "summary": "# 你的第一个Python本地大语言模型API项目：分步指南\n\n本文详细介绍了如何使用Python、Ollama和FastAPI在本地机器上搭建并运行一个大语言模型（LLM）API。通过此API，用户可以向本地下载的LLM发送提示并获取响应，实现类似ChatGPT但完全本地化的体验。\n\n## 核心目标与工具\n\n*   **目标**：在本地机器上设置一个LLM API，无需依赖外部云服务。\n*   **关键工具**：\n    *   **Ollama**：一个用户友好的框架，用于在本地运行Llama、Gemma或Mistral等开源LLM。\n    *   **FastAPI**：一个强大且轻量级的Python Web框架，用于构建RESTful API，实现用户与模型的HTTP交互。\n    *   **Python 3.9+**：作为开发语言。\n    *   **Requests**：用于发送HTTP请求。\n    *   **Uvicorn**：一个ASGI服务器，用于运行FastAPI应用。\n\n## 准备工作\n\n本教程假设您已安装Python 3.9或更高版本，并对Python语言有基本到中级的理解。代码设计用于在Visual Studio Code等IDE中实现，不适用于在线Notebook环境，因为需要本地下载和使用LLM。\n\n## 步骤指南\n\n### 1. 安装Ollama并本地下载LLM\n\n1.  **下载Ollama**：根据您的操作系统，从Ollama官网下载并启动相应的版本。\n2.  **下载LLM模型**：打开终端，运行命令 `ollama run llama3`。这将把Llama 3模型（默认是 `llama3:latest`）下载到本地。首次下载可能需要较长时间，具体取决于您的网络带宽。\n    *   **注意**：虽然此命令会自动启动一个对话助手，但本教程将采用不同的方法来构建基于Python的本地LLM API。\n\n### 2. 创建Python项目\n\n1.  **创建项目文件夹**：在文件目录中创建一个名为“local-llm-api”的文件夹。\n2.  **创建文件**：在文件夹内创建两个文件：`main.py` (暂时留空) 和 `requirements.txt`。\n3.  **配置 `requirements.txt`**：将以下内容添加到 `requirements.txt` 并保存：\n    ```\n    fastapi\n    uvicorn\n    requests\n    ```\n4.  **设置虚拟环境（推荐）**：\n    *   在VS Code中，通过 `Command + Shift + P` 打开命令面板。\n    *   输入或选择 `Python:Create Environment`，然后选择 `Venv`。\n    *   选择合适的Python版本（例如Python 3.11）。\n    *   系统会提示您选择 `requirements.txt` 文件以安装列出的依赖项（FastAPI、Uvicorn、Requests）。\n    *   如果上述步骤不成功，可以在IDE终端中运行：`pip install fastapi uvicorn requests`。\n\n### 3. 编写主Python程序 (`main.py`)\n\n将以下代码添加到 `main.py` 文件中：\n\n```python\nfrom fastapi import FastAPI\nfrom pydantic import BaseModel\nimport requests\nimport json\nimport uvicorn\nimport os # Added for environment variable usage\n\napp = FastAPI()\n\nclass Prompt(BaseModel):\n    prompt: str\n\n@app.post(\"/generate\")\ndef generate_text(prompt: Prompt):\n    try:\n        # Use environment variables for host and model, with fallbacks\n        ollama_host = os.getenv(\"OLLAMA_HOST\", \"http://localhost:11434\")\n        ollama_model = os.getenv(\"OLLAMA_MODEL\", \"llama3:latest\")\n\n        response = requests.post(\n            f\"{ollama_host}/api/generate\", # f-string for host\n            json={\"model\": ollama_model, \"prompt\": prompt.prompt}, # Use ollama_model\n            stream=True,\n            timeout=120 # Give model time to respond\n        )\n        response.raise_for_status() # Raise an exception for HTTP errors (4xx or 5xx)\n\n        output = \"\"\n        for line in response.iter_lines():\n            if line:\n                data = line.decode(\"utf-8\").strip()\n                if data.startswith(\"data: \"):\n                    data = data[len(\"data: \"):]\n                if data == \"[DONE]\":\n                    break\n                try:\n                    chunk = json.loads(data)\n                    output += chunk.get(\"response\") or chunk.get(\"text\") or \"\"\n                except json.JSONDecodeError:\n                    print(f\"Warning: Could not decode JSON from line: {data}\") # Added for debugging\n                    continue\n        return {\"response\": output.strip() or \"(Empty response from model)\"}\n    except requests.RequestException as e:\n        return {\"error\": f\"Ollama request failed: {str(e)}\"}\n\nif __name__ == \"__main__\":\n    # For development, reload=True can be useful. For production, use reload=False.\n    uvicorn.run(\"main:app\", host=\"127.0.0.1\", port=8000, reload=False)\n```\n\n**代码解释**：\n\n*   `app = FastAPI()`：创建Web API实例，它将监听并处理请求。\n*   `class Prompt(BaseModel):`：定义JSON输入模式，用于接收LLM的提示。\n*   `@app.post(\"/generate\")`：定义一个API端点，用于发送提示并获取模型响应。\n*   `requests.post(...)`：此核心代码将提示发送到由Ollama获取的本地LLM。请确保 `model` 参数中的模型名称与您已下载的模型名称一致（可通过 `ollama list` 命令查看）。\n*   `for line in response.iter_lines():`：读取流式响应并将其格式化为可读的输出。\n\n### 4. 运行和测试API\n\n1.  **运行程序**：保存 `main.py` 文件，然后点击“运行”图标或在终端中运行 `python main.py`。\n2.  **确认运行**：您应该在IDE的输出中看到类似 `INFO: Uvicorn running on http://127.0.0.1:8000` 的信息，表示REST服务器已启动并运行。\n3.  **访问API文档**：在浏览器中打开 `http://127.0.0.1:8000/docs`。如果一切正常，您将看到FastAPI的交互式文档界面。\n    ![FastAPI Docs Interface for Your Local LLM API](https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-23-a-las-13.19.44-scaled.png)\n4.  **测试LLM**：\n    *   在界面中，点击 `POST /generate` 旁边的箭头展开。\n    *   点击“Try it out”按钮。\n    *   在JSON参数值中输入您的提示（例如，替换 `\"string\"` 为 `{\"prompt\": \"What is the capital of France?\"}`）。\n    ![Entering a prompt](https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-23-a-las-13.25.05.png)\n    *   点击“Execute”按钮。\n    *   稍等片刻，向下滚动即可看到LLM的响应。\n    ![Local LLM Response](https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-23-a-las-13.29.26-scaled.png)\n\n恭喜您，您已成功搭建了自己的本地LLM API！\n\n## 进阶改进思路\n\n*   **构建前端**：可以使用Streamlit等工具构建一个前端界面来消费这个基于FastAPI的API。\n*   **探索微调模型**：针对市场营销、保险、物流等特定领域或用例，探索使用微调模型。\n\n## 总结\n\n本文分步展示了如何利用Ollama下载本地大语言模型，并结合FastAPI构建一个基于REST服务的本地LLM API，从而在您自己的机器上通过Python程序实现快速模型推理。",
+      "shortSummary": "本文提供了在Python中构建本地大语言模型（LLM）API的分步指南。它教你如何使用Ollama在本地运行LLM（如Llama 3），并利用FastAPI创建一个RESTful API来与模型交互。通过设置虚拟环境、编写Python代码并进行测试，用户可以在本地机器上发送提示并接收LLM响应，无需依赖外部云服务。该项目实现了本地化的LLM推理，并提供了进一步改进的建议。",
+      "translated_title": "你的第一个Python本地大语言模型API项目：分步指南",
       "images": [
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-ipc-navigating-imbalanced-datasets.png",
-          "alt": "Navigating Imbalanced Datasets with Pandas and Scikit-learn",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Imbalanced datasets, where a majority of the data samples belong to one class and the remaining minority belong to others, are not that rare."
-    },
-    {
-      "title": "使用FastAPI和Docker部署机器学习模型的逐步指南 (原标题: Step-by-Step Guide to Deploying Machine Learning Models with FastAPI and Docker)",
-      "link": "https://machinelearningmastery.com/step-by-step-guide-to-deploying-machine-learning-models-with-fastapi-and-docker/",
-      "pubDate": "Wed, 11 Jun 2025 16:17:27 +0000",
-      "isoDate": "2025-06-11T16:17:27.000Z",
-      "creator": "Bala Priya C",
-      "summary": "## 使用FastAPI和Docker部署机器学习模型的逐步指南\n\n![使用FastAPI和Docker部署机器学习模型的逐步指南](https://machinelearningmastery.com/wp-content/uploads/2025/06/step-by-step-deploying-ml-models-docker.png)\n\n本文提供了一个将机器学习模型部署到生产环境的详细指南，通过构建一个糖尿病进展预测器并将其封装为可部署的API。该教程涵盖了从模型训练到使用FastAPI构建REST API，再到使用Docker进行容器化，并最终发布到Docker Hub的完整流程。\n\n### 1. 项目概述与目标\n\n*   **目标**：将训练好的机器学习模型部署为可供实际用户使用的生产级API。\n*   **项目**：基于scikit-learn的样本数据集构建一个糖尿病进展预测器。\n*   **最终成果**：\n    *   一个训练好的随机森林模型，用于预测糖尿病进展分数。\n    *   一个使用FastAPI构建的REST API，接受患者数据并返回预测结果。\n    *   一个完全容器化的应用程序，可随时部署到云端。\n\n### 2. 开发环境设置\n\n*   **先决条件**：Python 3.11+ (或 3.9+), Docker已安装并运行，对Python和API有基本了解。\n*   **项目结构**：\n    *   `diabetes-predictor/` (根目录)\n        *   `app/` (FastAPI应用)\n            *   `__init__.py`\n            *   `main.py`\n        *   `models/` (存放训练好的模型)\n            *   `diabetes_model.pkl`\n        *   `train_model.py` (模型训练脚本)\n        *   `requirements.txt` (Python依赖)\n        *   `Dockerfile` (容器配置)\n*   **安装依赖**：\n    1.  创建并激活虚拟环境：`python -m venv diabetes-env`，然后激活。\n    2.  安装所需库：`pip install scikit-learn pandas fastapi uvicorn`。\n\n### 3. 构建机器学习模型 (`train_model.py`)\n\n*   **模型选择**：使用`RandomForestRegressor`，因其鲁棒性、对不同特征尺度的良好处理能力以及提供特征重要性洞察。\n*   **数据集**：加载scikit-learn的糖尿病数据集，包含442条患者记录和10个生理特征，目标是衡量一年后的疾病进展。\n*   **数据准备**：将数据集按80/20比例划分为训练集和测试集 (`random_state=42`确保结果可复现)。\n*   **模型训练**：\n    *   初始化`RandomForestRegressor`，设置`n_estimators=100`, `random_state=42`, `max_depth=10`（防止过拟合）。\n    *   使用训练数据拟合模型。\n*   **模型评估**：\n    *   在测试集上进行预测。\n    *   计算均方误差 (MSE) 和 R² 分数。R² 分数高于0.4被认为是该数据集的良好表现。\n*   **模型保存**：将训练好的模型保存为`models/diabetes_model.pkl`。\n*   **运行脚本**：`python3 train_model.py`。\n\n### 4. 创建FastAPI应用程序 (`app/main.py`)\n\n*   **API结构**：\n    *   创建`app`目录和`__init__.py`。\n    *   导入`FastAPI`, `BaseModel` (Pydantic), `pickle`, `numpy`, `os`。\n*   **输入数据结构**：\n    *   使用Pydantic的`BaseModel`定义`PatientData`类，包含10个浮点型生理特征（如age, sex, bmi等）。\n    *   提供`schema_extra`示例，帮助API用户理解输入格式。\n*   **FastAPI初始化与模型加载**：\n    *   初始化`FastAPI`应用，设置标题、描述和版本。\n    *   加载之前保存的`diabetes_model.pkl`。\n*   **预测端点 (`/predict`)**：\n    *   定义POST请求端点，接受`PatientData`作为输入。\n    *   将输入转换为NumPy数组。\n    *   使用加载的模型进行预测。\n    *   返回包含`predicted_progression_score`（四舍五入到两位小数）和`interpretation`（通过`get_interpretation`函数提供）的JSON响应。\n*   **解释函数 (`get_interpretation`)**：根据预测分数提供人类可读的解释（低于平均、平均、高于平均进展）。\n*   **健康检查端点 (`/`)**：定义GET请求端点，返回API状态和模型信息。\n\n### 5. 本地测试API\n\n*   **运行命令**：在项目根目录运行`uvicorn app.main:app --reload --port 8000`。\n*   **访问**：在浏览器中打开`http://localhost:8000/`。\n*   **测试预测**：使用`curl`命令发送POST请求及示例数据进行测试，验证API功能。\n\n### 6. 使用Docker进行容器化\n\n*   **创建`requirements.txt`**：列出所有Python依赖及其精确版本，确保环境一致性。\n*   **创建`Dockerfile`**：\n    *   基于`python:3.11-slim`镜像，保持容器小巧。\n    *   设置工作目录为`/app`。\n    *   安装系统依赖（如果需要）。\n    *   复制`requirements.txt`并安装Python依赖（使用`--no-cache-dir`减少镜像大小）。\n    *   复制`app/`和`models/`目录到容器中。\n    *   暴露端口8000。\n    *   定义容器启动命令：`uvicorn app.main:app --host 0.0.0.0 --port 8000`。\n*   **构建Docker镜像**：`docker build -t diabetes-predictor .`。\n*   **运行Docker容器**：`docker run -d -p 8000:8000 diabetes-predictor`。\n\n### 7. 发布到Docker Hub\n\n*   **目的**：将容器化应用共享，便于云平台部署。\n*   **设置Docker Hub**：注册Docker Hub账户。\n*   **登录**：在终端运行`docker login`并输入凭据。\n*   **标记镜像**：\n    *   `docker tag diabetes-predictor your-username/diabetes-predictor:v1.0`\n    *   `docker tag diabetes-predictor your-username/diabetes-predictor:latest`\n*   **推送镜像**：\n    *   `docker push your-username/diabetes-predictor:v1.0`\n    *   `docker push your-username/diabetes-predictor:latest`\n*   **验证**：停止本地容器，然后从Docker Hub拉取并运行镜像，再次测试API以确保其正常工作。\n\n### 8. 总结与展望\n\n本文成功构建了一个完整的机器学习部署流程：训练了随机森林模型，使用FastAPI创建了REST API，并用Docker进行了容器化。该模型现在已准备好部署到AWS ECS、Fargate、Google Cloud或Azure等云平台。未来的改进方向包括添加认证和速率限制、模型监控和日志记录以及批量预测端点。",
-      "shortSummary": "本文提供了一个使用FastAPI和Docker部署机器学习模型的逐步指南。教程从训练一个预测糖尿病进展的随机森林模型开始，接着使用FastAPI构建一个REST API，实现数据输入和预测输出。随后，详细介绍了如何使用Dockerfile将整个应用容器化，并将其发布到Docker Hub，以便于云端部署。最终，用户将获得一个功能完整的、可生产部署的机器学习API。",
-      "translated_title": "使用FastAPI和Docker部署机器学习模型的逐步指南",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/step-by-step-deploying-ml-models-docker.png",
-          "alt": "Step-by-Step Guide to Deploying Machine Learning Models with FastAPI and Docker",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "You've trained your machine learning model, and it's performing great on test data."
-    },
-    {
-      "title": "从零开始实现向量搜索：一步步教程 (原标题: Implementing Vector Search from Scratch: A Step-by-Step Tutorial)",
-      "link": "https://machinelearningmastery.com/implementing-vector-search-from-scratch-a-step-by-step-tutorial/",
-      "pubDate": "Tue, 10 Jun 2025 14:49:47 +0000",
-      "isoDate": "2025-06-10T14:49:47.000Z",
-      "creator": "Kanwal Mehreen",
-      "summary": "# 从零开始实现向量搜索：一步步教程\n\n## 搜索的演进与向量搜索的兴起\n\n文章指出，搜索是计算领域最基本的问题之一。传统的关键词搜索方法（如基于词频和稀有度）存在局限性，它们过于字面化，无法理解用户查询的上下文和真实意图。例如，搜索“汽车修理”可能无法匹配到“车辆维护”的文档。为了弥补这一语义鸿沟，向量搜索应运而生。\n\n向量搜索通过将查询和文档转换为数值向量（高维数组，捕捉文本的语义本质）来匹配含义，而非精确的关键词。它在向量空间中寻找与查询向量距离最近的文档向量，从而返回上下文相关的结果。本教程旨在从头开始构建一个向量搜索系统，帮助读者深入理解其工作原理。\n\n## 向量搜索的核心工作原理\n\n向量搜索主要包含三个核心步骤：\n\n1.  **向量表示（Vector Representation）**：\n    *   将数据（如文本、图像）转换为数值向量。\n    *   常用技术包括词嵌入（Word Embeddings）或神经网络。\n    *   每个向量在高维空间中代表数据的语义。\n2.  **相似度计算（Similarity Calculation）**：\n    *   衡量查询向量与数据集中其他向量的“接近”程度。\n    *   常用度量包括余弦相似度（Cosine Similarity）或欧几里得距离（Euclidean Distance）。\n    *   向量越接近，表示相似度越高。\n3.  **检索（Retrieval）**：\n    *   根据相似度得分返回最相似的 Top-k 项。\n    *   例如，查询“机器学习”会找到与“人工智能”或“深度学习”相关的文档。\n\n## 从零开始构建向量搜索系统（Python 实现）\n\n文章通过一个 Python 示例，逐步演示了如何构建一个简单的向量搜索系统：\n\n### 步骤 1：环境设置\n\n*   使用 NumPy 进行向量操作，Matplotlib 进行可视化。\n*   为保持“从零开始”的理念，避免使用 FAISS 或 spaCy 等外部高级库。\n*   词嵌入将通过一个预定义的字典模拟，而非使用 Word2Vec、GloVe 或 BERT 等预训练模型。\n*   导入必要的库：`numpy`、`matplotlib.pyplot`、`collections.defaultdict`、`re`。\n\n### 步骤 2：创建示例数据集和词嵌入\n\n*   **示例数据集**：包含关于技术的几句话，例如：“Machine learning is powerful”、“Artificial intelligence advances rapidly”等。\n*   **简化 2D 词嵌入**：创建一个字典，将每个词映射到一个 2D 向量。这些向量是任意的，但设计上使得相关词（如“machine”和“neural”）在向量空间中彼此接近，便于可视化。\n\n### 步骤 3：将句子转换为向量\n\n*   定义 `tokenize` 函数：将文本转换为小写并分词。\n*   定义 `sentence_to_vector` 函数：通过平均句子中所有词的词向量来将句子转换为单个向量。如果词不在嵌入字典中，则使用零向量。\n*   将所有文档转换为对应的向量表示 (`doc_vectors`)。\n\n### 步骤 4：实现余弦相似度\n\n*   余弦相似度是衡量向量间角度的常用指标，非常适合比较文本嵌入的语义相似性。\n*   计算公式为两个向量的点积除以它们各自范数的乘积。\n*   函数会处理零向量以避免除以零的错误。\n\n### 步骤 5：构建向量搜索函数\n\n*   实现核心的 `vector_search` 函数，该函数接受查询、文档、嵌入和 `top_k` 参数。\n*   将查询转换为向量。\n*   计算查询向量与每个文档向量之间的余弦相似度。\n*   使用 `np.argsort` 对相似度进行排序，并返回 `top_k` 个最相似的文档及其得分。\n*   **示例查询**：“Machine learning technology”的搜索结果展示了语义相关性，即使文档中不包含确切的短语。\n\n```\nQuery: Machine learning technology\nTop results:\nScore: 1.000, Document: Machine learning is powerful\nScore: 0.999, Document: Deep learning transforms technology\nScore: 0.997, Document: Artificial intelligence advances rapidly\n```\n\n### 步骤 6：向量可视化\n\n*   通过 `plot_vectors` 函数将文档向量（蓝色点）和查询向量（红色星号）在 2D 空间中可视化。\n*   可视化结果清晰地展示了相似项如何在向量空间中聚类，以及查询向量如何靠近语义相关的文档向量。\n\n![从零开始实现向量搜索](https://machinelearningmastery.com/wp-content/uploads/2025/06/Vector-Search-from-Scratch.png)\n*图：从零开始实现向量搜索* \n\n![向量搜索：文档和查询向量的可视化](https://machinelearningmastery.com/wp-content/uploads/2025/06/plot.png)\n*图：向量搜索：文档和查询向量的可视化*\n\n## 向量搜索对 RAG 的重要性\n\n文章强调，在检索增强生成（RAG）系统中，向量搜索是检索步骤的基石。它通过将文档和查询转换为向量，即使对于复杂的查询也能获取上下文相关的准确信息。本教程的简单实现模拟了这一过程：查询向量检索语义上接近的文档，这些文档随后可供语言模型用于生成响应。在实际应用中，虽然需要更高维的嵌入和优化的搜索算法（如 HNSW 或 IVF），但核心思想保持不变。\n\n## 结论\n\n本教程成功从零开始实现了向量搜索。读者可以基于此扩展，使用真实的词嵌入（如来自 Hugging Face Transformers）或通过近似最近邻（ANN）技术优化搜索，从而加深对向量搜索的理解。",
-      "shortSummary": "向量搜索通过将查询和文档转换为数值向量并匹配其语义含义，克服了传统关键词搜索的局限性。文章详细介绍了向量搜索的核心原理：向量表示、相似度计算和检索。它通过一个Python教程，从零开始实现了向量搜索系统，包括环境设置、数据与嵌入创建、句子向量化、余弦相似度计算、搜索功能构建及向量可视化。该技术是RAG（检索增强生成）系统的关键组成部分，用于高效检索上下文相关信息。",
-      "translated_title": "从零开始实现向量搜索：一步步教程",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/Vector-Search-from-Scratch.png",
-          "alt": "Implementing Vector Search from Scratch",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-first-local-llm-project-step-by-step.png",
+          "alt": "Your First Local LLM API Project in Python Step-By-Step",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/plot.png",
-          "alt": "Output",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-23-a-las-13.19.44-scaled.png",
+          "alt": "FastAPI Docs Interface for Your Local LLM API",
           "title": "",
           "position": 2
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-23-a-las-13.25.05.png",
+          "alt": "Entering a prompt",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/Captura-de-pantalla-2025-06-23-a-las-13.29.26-scaled.png",
+          "alt": "Local LLM Response",
+          "title": "",
+          "position": 4
         }
       ],
       "contentSource": "完整文章",
-      "content": "There’s no doubt that search is one of the most fundamental problems in computing."
+      "content": "Interested in leveraging a large language model (LLM) API locally on your machine using Python and not-too-overwhelming tools frameworks? In this step-by-step article, you will set up a local API where you'll be able to send prompts to an LLM downloaded on your machine and obtain responses back."
+    },
+    {
+      "title": "Transformer模型中的线性层和激活函数 (原标题: Linear Layers and Activation Functions in Transformer Models)",
+      "link": "https://machinelearningmastery.com/linear-layers-and-activation-functions-in-transformer-models/",
+      "pubDate": "Mon, 30 Jun 2025 01:45:34 +0000",
+      "isoDate": "2025-06-30T01:45:34.000Z",
+      "creator": "Adrian Tam",
+      "summary": "# Transformer模型中的线性层和激活函数\n\n本文探讨了Transformer模型中线性层和激活函数的重要性，它们是实现非线性变换的关键组成部分。\n\n## 引言\n\n尽管注意力操作是Transformer模型的标志，但线性层和激活函数同样不可或缺。本文将深入讲解为何线性层和激活函数能够实现非线性变换、Transformer模型中前馈网络的典型设计以及常见的激活函数及其特性。\n\n![图片 1](https://machinelearningmastery.com/wp-content/uploads/2025/06/svetlana-gumerova-6fAgnT3Dhl4-unsplash-1-scaled.jpg)\n*Transformer模型中的线性层和激活函数*\n\n## 为何需要线性层和激活函数\n\nTransformer模型的核心功能——注意力层，对输入执行的是仿射变换（即线性变换），其输出是输入在每个序列元素上的加权和。然而，神经网络的力量并非仅来源于线性层，而是通过激活函数引入非线性，从而学习复杂的模式。\n\n在Transformer模型中，注意力层之后需要非线性来学习复杂的模式。这通过在每个注意力层之后添加一个前馈网络（FFN）或多层感知机（MLP）网络来实现。一个典型的Transformer块结构如下：\n\n![图片 2](https://machinelearningmastery.com/wp-content/uploads/2025/06/bert.png)\n*BERT模型架构*\n\n上图中的灰色框在Transformer模型中会重复多次。在每个块中（不包括归一化层），输入首先通过注意力层，然后通过前馈网络（在PyTorch中实现为`nn.Linear`）。前馈网络中的激活函数为变换增加了非线性，使模型能够学习更复杂的模式。\n\n前馈网络通常包含多个线性层：\n*   第一个线性层：扩展维度以探索不同的表示。\n*   最后一个线性层：将维度收缩回原始大小。\n*   激活函数：通常应用于第一个线性层的输出。\n\n由于这种设计，我们通常将块的前半部分称为“注意力子层”，后半部分称为“MLP子层”。\n\n## 前馈网络的典型设计\n\n以BERT模型为例，其MLP子层实现如下：\n\n```python\nimport torch.nn as nn\n\nclass BertMLP(nn.Module):\n    def __init__(self, dim, intermediate_dim):\n        super().__init__()\n        self.fc1 = nn.Linear(dim, intermediate_dim)\n        self.fc2 = nn.Linear(intermediate_dim, dim)\n        self.gelu = nn.GELU()\n\n    def forward(self, hidden_states):\n        hidden_states = self.fc1(hidden_states)\n        hidden_states = self.gelu(hidden_states)\n        hidden_states = self.fc2(hidden_states)\n        return hidden_states\n```\n\n该MLP子层包含两个线性模块。当输入序列进入MLP子层时，第一个线性模块扩展维度，然后应用GELU激活函数。结果通过第二个线性模块，将维度收缩回原始大小。中间维度通常是原始维度的4倍，这是Transformer模型中常见的设计模式。\n\n## 激活函数的变体\n\n激活函数向神经网络引入非线性，使其能够学习复杂的模式。虽然传统神经网络常用双曲正切（tanh）、Sigmoid和修正线性单元（ReLU），但Transformer模型通常采用GELU和SwiGLU激活函数。\n\n以下是一些常见激活函数的数学定义：\n$$ \\begin{aligned} \\text{Sigmoid}(x) &= \\frac{1}{1 + e^{-x}} \\\\ \\tanh(x) &= \\frac{e^x – e^{-x}}{e^x + e^{-x}} = 2\\text{Sigmoid}(2x) – 1 \\\\ \\text{ReLU}(x) &= \\max(0, x) \\\\ \\text{GELU}(x) &= x \\cdot \\Phi(x) \\approx \\frac{x}{2}\\Big(1 + \\tanh\\big(\\sqrt{\\frac{2}{\\pi}}(x + 0.044715x^3)\\big)\\Big) \\\\ \\text{Swish}_\\beta(x) &= x \\cdot \\text{Sigmoid}(\\beta x) = \\frac{x}{1 + e^{-\\beta x}} \\\\ \\text{SiLU}(x) &= \\frac{x}{1 + e^{-x}} = \\text{Swish}_1(x) \\\\ \\text{SwiGLU}(x) &= \\text{SiLU}(xW + b) \\cdot (xV + c) \\end{aligned} $$\n\n*   **ReLU (修正线性单元)**：在现代深度学习中很受欢迎，因为它避免了梯度消失问题且计算简单。\n*   **GELU (高斯误差线性单元)**：由于使用了标准正态分布的累积分布函数$\\Phi(x)$，计算成本更高。存在近似公式。GELU是非单调的，这可能需要更长的训练时间，但并非严格要求单调性。\n*   **Swish**：另一种非单调激活函数，参数$\\beta$控制$x=0$处的斜率。当$\\beta=1$时，称为SiLU（Sigmoid线性单元）。\n*   **SwiGLU (Swish-Gated Linear Unit)**：是现代Transformer模型中常见的一种新型激活函数。它是Swish函数与线性函数的乘积，其参数在训练过程中学习。其受欢迎源于其复杂性：展开公式会发现分子中包含二次项，这有助于模型在不增加额外层的情况下学习复杂的模式。\n\n![图片 3](https://machinelearningmastery.com/wp-content/uploads/2025/06/activations.png)\n*一些常见激活函数的图示*\n\n在Python代码中切换激活函数非常简单。PyTorch提供了内置的`nn.Sigmoid`、`nn.ReLU`、`nn.Tanh`和`nn.SiLU`。然而，SwiGLU需要特殊的实现。以下是Llama模型中使用的PyTorch代码：\n\n```python\nimport torch.nn as nn\n\nclass LlamaMLP(nn.Module):\n    def __init__(self, dim, intermediate_dim):\n        super().__init__()\n        self.gate_proj = nn.Linear(dim, intermediate_dim)\n        self.up_proj = nn.Linear(dim, intermediate_dim)\n        self.down_proj = nn.Linear(intermediate_dim, dim)\n        self.act = nn.SiLU()\n\n    def forward(self, hidden_states):\n        gate = self.gate_proj(hidden_states)\n        up = self.up_proj(hidden_states)\n        swish = self.act(up)\n        output = self.down_proj(swish * gate)\n        return hidden_states\n```\n\n此实现使用两个线性层处理输入`hidden_states`。一个输出通过SiLU函数，然后与另一个输出进行元素级乘法，最后通过一个最终的线性层进行处理。这些线性层被命名为“up”或“down”以表示维度扩展/收缩，而连接到SiLU的层被称为“gate”，因为它实现了门控机制。门控是神经网络的一种设计，意味着一个线性层输出与一个权重进行元素级乘法，这里这个权重由Swish激活函数产生。\n\nLlama模型架构如下所示，展示了MLP模块的双分支结构：\n\n![图片 4](https://machinelearningmastery.com/wp-content/uploads/2025/06/llama.png)\n*Llama模型架构*\n\n## 总结\n\n本文深入探讨了Transformer模型中的线性层和激活函数。具体来说，我们学习了：\n*   线性层和激活函数对于非线性变换的必要性。\n*   ReLU、GELU和SwiGLU激活函数的特性和实现。\n*   如何在Transformer模型中构建完整的前馈网络。\n\n![Building Transformer Models with Attention](https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png)\n*《使用注意力构建Transformer模型》电子书封面*",
+      "shortSummary": "Transformer模型中的线性层和激活函数对于实现非线性变换至关重要。注意力层之后，前馈网络（FFN）通过线性层扩展和收缩维度，并结合激活函数引入非线性。Transformer模型常使用GELU和SwiGLU等激活函数来学习复杂模式。特别是SwiGLU（如Llama模型中所示）通过门控机制进一步增强了模型的表达能力。",
+      "translated_title": "Transformer模型中的线性层和激活函数",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/svetlana-gumerova-6fAgnT3Dhl4-unsplash-1-scaled.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/bert.png",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/activations.png",
+          "alt": "",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/llama.png",
+          "alt": "",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2022/11/BTMA-400.png",
+          "alt": "Building Transformer Models with Attention",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "This post is divided into three parts; they are: • Why Linear Layers and Activations are Needed in Transformers • Typical Design of the Feed-Forward Network • Variations of the Activation Functions The attention layer is the core function of a transformer model."
     }
   ],
-  "lastUpdated": "2025-07-11T09:30:07.364Z"
+  "lastUpdated": "2025-07-12T09:30:26.558Z"
 }
