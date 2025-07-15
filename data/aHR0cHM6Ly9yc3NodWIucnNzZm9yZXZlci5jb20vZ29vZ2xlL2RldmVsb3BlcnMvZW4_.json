@@ -5,6 +5,64 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Gemini Embedding 现已在 Gemini API 中普遍可用 (原标题: Gemini Embedding now generally available in the Gemini API)",
+      "link": "https://developers.googleblog.com/en/gemini-embedding-available-gemini-api/",
+      "pubDate": "Sun, 13 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-13T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Gemini Embedding 现已普遍可用\n\nGoogle 于2025年7月14日宣布，其首个 Gemini Embedding 文本模型（`gemini-embedding-001`）现已在 Gemini API 和 Vertex AI 中向开发者普遍可用。\n\n### 核心亮点与性能\n\n*   **领先地位**：自2025年3月实验性发布以来，该嵌入模型在 Massive Text Embedding Benchmark (MTEB) 多语言排行榜上一直名列前茅。\n*   **卓越表现**：在检索、分类等多种任务中，其性能超越了 Google 此前的文本嵌入模型以及其他商业产品。\n*   **统一体验**：`gemini-embedding-001` 在科学、法律、金融和编码等多个领域提供统一的尖端体验。\n\n以下是 Gemini Embedding 与其他商业专有模型的比较：\n\n![嵌入模型对比图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EmbedingsChart_16x9_RD2-V01.original.jpg)\n\n*注：图表中“传统 Google 模型”结合了3个 Gemini API 和 Vertex AI 模型（`text-embedding-004`、`text-embedding-005` 和 `text-multilingual-embedding-002`）的最高分数。更详细的结果可在技术报告中查阅。*\n\n### 模型详情\n\n*   **多功能性**：支持超过100种语言。\n*   **输入长度**：最大输入令牌长度为2048。\n*   **MRL 技术**：利用 Matryoshka Representation Learning (MRL) 技术，允许开发者将输出维度从默认的3072进行缩减，以优化性能和存储成本。\n*   **推荐维度**：为获得最高质量结果，建议使用3072、1536或768的输出维度。\n\n### 费率限制与定价\n\n*   **免费与付费层级**：Gemini API 提供免费和付费层级，开发者可以免费试用 `gemini-embedding-001`，或为生产需求选择更高限制的付费服务。\n*   **定价**：该模型定价为每100万输入令牌0.15美元。\n\n### 如何开始使用\n\n*   开发者现在可以通过 Gemini API 访问 `gemini-embedding-001` 模型。\n*   可以通过 Google AI Studio 免费开始使用。\n*   兼容现有的 `embed_content` 端点。\n*   提供了 Python 代码示例和详细的开发者文档及快速入门指南。\n\n### 模型弃用与迁移建议\n\n*   **实验版弃用**：实验性模型 `gemini-embedding-exp-03-07` 将于2025年8月14日停止支持，用户无需重新嵌入内容。\n*   **传统模型弃用**：\n    *   `embedding-001` 将于2025年8月14日弃用。\n    *   `text-embedding-004` 将于2026年1月14日弃用。\n*   **强烈建议**：Google 强烈建议用户尽快将项目迁移到最新的模型。\n\n### 未来展望\n\n*   Gemini Embedding 即将支持 Batch API，以实现异步数据处理和更低的成本。\n*   未来将发布更多具有更广泛模态和功能的嵌入模型。",
+      "shortSummary": "Google 宣布其首个 Gemini Embedding 文本模型（`gemini-embedding-001`）现已在 Gemini API 和 Vertex AI 中普遍可用。该模型在多语言基准测试中表现出色，支持100多种语言，并提供灵活的输出维度。它提供免费和付费层级，定价为每100万输入令牌0.15美元。Google 鼓励开发者尽快迁移到此新模型，因旧版和实验性模型将陆续弃用。未来还将支持 Batch API，并推出更多功能。",
+      "translated_title": "Gemini Embedding 现已在 Gemini API 中普遍可用",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EmbedingsChart_16x9_RD2-V01.original.jpg",
+          "alt": "Embedings Chart",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The Gemini Embedding text model is now generally available in the Gemini API and Vertex AI. This versatile model has consistently ranked #1 on the MTEB Multilingual leaderboard since its experimental launch in March, supports over 100 languages, has a 2048 maximum input token length, and is priced at $0.15 per 1M input tokens."
+    },
+    {
+      "title": "企业真相在行动：Apigee API hub 赋能强大的开发者门户 (原标题: Enterprise truth in action: Apigee API hub fueling powerful Developer Portals)",
+      "link": "https://developers.googleblog.com/en/apigee-api-hub-fueling-developer-portals/",
+      "pubDate": "Sun, 13 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-13T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# 企业真相在行动：Apigee API hub 赋能强大的开发者门户\n\nGoogle Cloud 的 Apigee 团队致力于提供策略和工具，帮助客户构建强大有效的 API 生态系统。其中，API 的发现机制至关重要。文章详细阐述了 Apigee 平台中两个既独立又紧密相连的组件——Apigee API hub 和开发者门户——如何满足不同角色的需求。Apigee API hub 被视为核心的“真相承载引擎”，它赋能并提升了开发者门户的功能，是企业代理（agentic）策略的基石。\n\n## Apigee API hub：企业所有 API 的真相来源\n\nApigee API hub 被比作 API 程序的“中枢神经系统”。它提供一个集中化的位置，用于编目组织内所有 API 及其数据（无论 API 风格、生命周期阶段或托管环境），从而成为“企业真相”的权威来源。这为治理和一致性奠定了基础，帮助团队防止蔓延、构建更好的 API，并最终为用户提供更优质的体验。\n\n![Apigee API hub metrics](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_VZss8uJ.original.png)\n\nApigee API hub 主要关注组织内部 API 生产者的需求，包括平台工程师、API 架构师、安全专家以及负责构建和管理 API 的开发人员。对于这些用户，Apigee API hub 是唯一的真相来源，其功能包括：\n\n*   **全面的 API 概览和元数据：** Apigee API hub 能够自动发现和编目所有 API，创建一个包含丰富元数据的统一存储库。这包括 API 生命周期阶段、版本、规范和文档等信息，提供 API 生态系统的完整准确视图。这些全面且机器可读的数据正是 AI 代理理解和与企业系统交互所需的，作为服务的核心注册表。\n*   **基于标准的集中式治理：** 该 hub 允许在整个 API 生命周期中建立和执行一致的治理。通过维护单一的真相来源，可以有效确保质量一致性、遵守标准、管理安全性、跟踪 API 成熟度，并就 API 策略做出明智决策，例如识别可货币化的 API。这种统一的真相来源对于建立治理至关重要，不仅适用于人类开发者，也适用于控制和保护 AI 代理如何访问和利用 API 组合，确保安全性、API 风格和数据格式的一致性。\n*   **增强内部协作：** 该 hub 通过提供集中且一致的 API 信息来源，促进内部协作。这有助于促进 API 重用，减少冗余，并简化开发工作流程。\n\n![Apigee API hub refund](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_05Kg96Y.original.png)\n\n## 开发者门户：为 API 消费者量身定制的体验\n\n相比之下，开发者门户就像一个“店面”，API 消费者（即构建应用程序的开发人员）通过它发现并与 API 交互。并非组织内生产的每个 API 都旨在供外部消费。Apigee API hub 作为超集管理所有 API，而开发者门户则暴露其中经过精心选择的子集，并使用自定义的样式和品牌。\n\n![Developer Portals](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_7JWBY5z.original.png)\n\n为了真正有效，这些门户必须由 Apigee API hub 中存在的“企业真相”提供支持。门户提供 hub 功能的精选且用户友好的子集，专注于无缝的 API 消费：\n\n*   **真实有效的 API 发现：** 开发者门户依赖于 Apigee API hub 元数据的准确性和完整性，使开发人员能够轻松找到所需的 API。\n*   **API 消费的“出口”：** Apigee API hub 充当控制中心，提供一个受控的“出口”，有选择地将特定 API 及其相关的“企业真相”发布到开发者门户。这确保只有经过批准和相关的 API 才能供消费。\n\n![Developer Portals 2](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image7_2RPZWOQ.original.png)\n\n## 释放 API 潜力\n\nApigee API hub 和开发者门户虽然独立，但共同构成一个统一的系统。hub 的全面目录和“企业真相”直接赋能并驱动开发人员的门户体验，并且现在，更关键的是，它们成为新兴 AI 代理策略不可或缺的基础。\n\n通过理解 Apigee API hub 作为 API 生产者和代理的核心存储库的作用，以及门户作为面向消费者的子集和受控“出口”的作用，组织可以充分释放其 API 的潜力并加速创新。\n\n文章最后鼓励用户开始使用 Apigee API hub 和开发者门户，并提及一个 GitHub 示例，展示如何将非托管 API 导入 hub 并将其文档发布到开发者门户。此外，还预告了 2025 年 7 月 31 日的线上活动，以深入了解 hub 和门户的功能。",
+      "shortSummary": "Apigee API hub 和开发者门户是 Google Cloud Apigee 平台中两个关键组件。Apigee API hub 是企业所有 API 的“真相来源”，面向 API 生产者，提供集中编目、治理和内部协作，也是 AI 代理策略的基石。开发者门户则是面向 API 消费者的“店面”，展示并允许交互 Apigee API hub 中精选的 API 子集。两者虽独立但紧密相连，共同构成统一系统，赋能 API 发现、管理和消费，帮助组织释放 API 潜力并加速创新。",
+      "translated_title": "企业真相在行动：Apigee API hub 赋能强大的开发者门户",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_VZss8uJ.original.png",
+          "alt": "Apigee API hub metrics",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_05Kg96Y.original.png",
+          "alt": "Apigee API hub refund",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_7JWBY5z.original.png",
+          "alt": "Developer Portals",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image7_2RPZWOQ.original.png",
+          "alt": "Developer Portals 2",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The Apigee API hub and Developer Portals are distinct but interconnected parts of the Apigee platform that help organizations discover and manage APIs for different personas, unlocking API potential and accelerating innovation."
+    },
+    {
       "title": "使用 Firebase Studio 推进代理式 AI 开发 (原标题: Advancing agentic AI development with Firebase Studio)",
       "link": "https://developers.googleblog.com/en/advancing-agentic-ai-development-with-firebase-studio/",
       "pubDate": "Wed, 09 Jul 2025 16:00:00 GMT",
@@ -216,58 +274,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Imagen 4, Google's advanced text-to-image model, is now available in paid preview via the Gemini API and Google AI Studio, offering significant quality improvements, especially for text generation within images. The Imagen 4 family includes Imagen 4 for general tasks and Imagen 4 Ultra for high-precision prompt adherence, with all generated images featuring a non-visible SynthID watermark."
-    },
-    {
-      "title": "Gemini 2.5：机器人与具身智能 (原标题: Gemini 2.5 for robotics and embodied intelligence)",
-      "link": "https://developers.googleblog.com/en/gemini-25-for-robotics-and-embodied-intelligence/",
-      "pubDate": "Mon, 23 Jun 2025 16:00:00 GMT",
-      "isoDate": "2025-06-23T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Gemini 2.5：机器人与具身智能\n\n**引言**\n\nGoogle 于 2025 年 6 月 24 日发布了最新一代的 Gemini 模型（2.5 Pro 和 Flash），这些模型正在机器人领域开辟新的前沿。它们先进的编码、推理和多模态能力，结合空间理解，为下一代交互式智能机器人奠定了基础。本文探讨了开发者如何利用 Gemini 2.5 构建复杂的机器人应用，并提供了实际示例。\n\n**核心应用领域**\n\nGemini 2.5 的能力主要体现在以下三个方面：\n\n### 1. 复杂查询的语义场景理解\n\n对物理世界进行推理是通用且鲁棒控制的核心。Gemini 2.5 在这方面迈出了重要一步，其多模态推理能力得到了显著提升。文章分享了两个利用 Gemini 指向和物体检测能力的示例：\n\n*   **物体定位与补货需求**\n    *   Gemini 2.5 能够根据细粒度的语言描述定位场景中的物体，例如识别需要补货的货架。它甚至能理解超市货架上的空位表示需要补货。\n    *   **示例：** 定位需要补货的货架上的一个箱子。\n    ![Gemini 2.5 能根据细粒度语言描述定位场景中的物体，例如识别需要补货的货架。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-image-locate.original.png)\n\n*   **小物体定位与状态估计（读取仪表）**\n    *   Gemini 2.5 能够定位场景中的小物体并估计其状态，例如读取仪表盘的读数。\n    *   **示例：** 定位所有圆形仪表，并读取中间仪表读数（例如，读数为 0）。\n    ![Gemini 2.5 能定位场景中的小物体并估计其状态，例如读取仪表盘。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-gague-2.original.png)\n\n*   **超越以物体为中心的感知**\n    *   Gemini 2.5 能够准确地跨时间跟踪多个物体，并检测“溢出”等开放式概念，这需要常识知识和上下文特定推理。\n    *   **示例：** 检测视频中物体的边界框（如绿色碗、螃蟹、钱包等）。\n    *   **示例：** 检测并分割“溢出”区域，这对于有用的机器人至关重要。\n    ![Gemini 2.5 能检测与机器人相关的开放式概念，需要常识知识和上下文特定推理。例如，一个有用的机器人需要理解“溢出”的概念。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/spill3_v2.original.png)\n    *   **示例：** 提示 Gemini 2.5 生成一系列点的机器人手臂轨迹，例如将布料移动到溢出物处。\n    ![Gemini 2.5 可以被提示生成一系列点的机器人手臂轨迹。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/spill_traj.original.png)\n\n### 2. 结合空间理解与代码生成控制机器人\n\nGemini 2.5 能够利用其底层的空间理解能力，通过代码生成来控制机器人。通过向 Gemini 2.5 提供机器人控制 API，它能够将场景理解、物体操作和代码编写等高级能力结合起来，实现零样本任务执行，无需额外训练。\n\n*   **示例：高层规划代码生成（“将香蕉放入碗中”）**\n    *   展示了 Gemini 如何利用其空间理解、思考和代码生成能力来选择适当的 API 调用和参数以完成任务。\n    *   Gemini 2.5 能够生成两种可行的放置香蕉方案，并能处理机器人手臂可达性约束，例如在无法直接触及目标时，通过移动碗来完成任务。\n\n*   **利用少量上下文示例进行灵巧机器人控制**\n    *   Gemini 2.5 (Flash) 可以利用少量上下文示例（例如，针对每个任务提供 10 个推理和机器人动作交错的演示）来执行更灵巧的机器人控制任务，如打包盒子和折叠连衣裙。这使得机器人能够即时学习和部署。\n\n### 3. 使用 Live API 构建交互式机器人应用\n\n最近推出的 Live API 支持实时流媒体，可用于构建允许人们通过语音控制机器人的交互式应用。直观的人机交互是使机器人易于使用和安全的重要方面。\n\n*   Live API 支持音频和视频作为输入模态，以及音频/文本作为输出模态，允许同时发送语音输入和机器人摄像头画面。\n*   结合工具使用（Function Calling），Live API 能够超越简单的对话，执行真实世界的动作。例如，机器人 API 函数（如 `robot.open_gripper()`、`robot.close_gripper()` 和 `robot.move_gripper_to()`）可以定义为工具调用，从而实现人们与机器人的实时语音交互。\n\n**安全考量**\n\n2.5 Pro 和 2.5 Flash 模型在 ASIMOV 多模态和物理伤害基准测试中表现出稳健的性能，准确性与 2.0 模型相当。此外，它们在拒绝试图利用具身推理能力但违反安全政策（如宣扬有害刻板印象、歧视或危害未成年人）的提示方面表现出色，经过严格评估，违规率接近零。\n\n**Gemini 在机器人领域的当前应用**\n\n自 3 月份发布 Gemini Robotics-ER 模型以来，社区已将其应用于机器人交互性、感知、规划和函数调用等领域。Agile Robots、Agility Robotics、Boston Dynamics 和 Enchanted Tools 等受信任测试者已展示了 Gemini 在机器人应用中的强大能力。\n\n**可用性与参与**\n\nGemini 2.5 Flash 和 Pro 模型已在 Google AI Studio、Gemini API 和 Vertex AI 中提供。对 Gemini Robotics-ER 感兴趣的开发者可以注册受信任测试者计划。",
-      "shortSummary": "Gemini 2.5 Pro和Flash模型正推动机器人技术发展，通过其先进的编码、推理、多模态能力和空间理解，实现更智能的机器人。其核心应用包括复杂的语义场景理解（如物体识别、状态估计、开放概念检测和轨迹预测）、结合空间推理的代码生成（实现零样本任务执行）以及通过Live API构建交互式语音控制应用。Gemini Robotics-ER模型已发布，并被Agile Robots等公司用于实际应用，同时模型也展现出强大的安全性能。",
-      "translated_title": "Gemini 2.5：机器人与具身智能",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-image-locate.original.png",
-          "alt": "Gemini 2.5 can locate objects in the scene based on fine-grained language descriptions, for example, find a shelf that needs restocking.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-gague-2.original.png",
-          "alt": "Gemini 2.5 can locate small objects in the scene and estimate states of those objects. For example, it can read gauges.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/spill3_v2.original.png",
-          "alt": "Gemini 2.5 can detect open-ended concepts relevant to robotics, requiring commonsense knowledge and context specific reasoning. For example, a helpful robot needs to understand the concept of a “spill”.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/spill_traj.original.png",
-          "alt": "Gemini 2.5 can be prompted into trajectory prediction in the form of a sequence of points.",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Gemini 2.5 Pro and Flash are transforming robotics by enhancing coding, reasoning, and multimodal capabilities, including spatial understanding. These models are used for semantic scene understanding, code generation for robot control, and building interactive applications with the Live API, with a strong emphasis on safety improvements and community applications."
-    },
-    {
-      "title": "使用 KerasHub 轻松实现与 Hugging Face 的端到端机器学习工作流 (原标题: Using KerasHub for easy end-to-end machine learning workflows with Hugging Face)",
-      "link": "https://developers.googleblog.com/en/load-model-weights-from-safetensors-into-kerashub-multi-framework-machine-learning/",
-      "pubDate": "Mon, 23 Jun 2025 16:00:00 GMT",
-      "isoDate": "2025-06-23T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## 使用 KerasHub 轻松实现与 Hugging Face 的端到端机器学习工作流\n\n随着人工智能生态系统的发展，机器学习模型的定义和模型权重的保存方式日益多样化。KerasHub 应运而生，它允许用户在不同的机器学习框架（如 JAX、PyTorch 或 TensorFlow）之间混合和匹配流行的模型架构及其权重，从而简化了端到端的机器学习工作流。\n\n### 模型架构与模型权重（检查点）\n\n在加载模型时，需要区分两个核心组成部分：\n\n*   **模型架构**：指模型的层如何排列以及其中发生的运算，可以理解为模型的“结构”。它通常使用 Python 框架（如 PyTorch、JAX 或 Keras）来表达。\n*   **模型权重**：指模型的“参数”，即在训练过程中不断变化的数值。这些权重的特定值赋予了训练好的模型其独特的特性。\n*   **检查点**：是模型权重在训练过程中某个特定时间点的快照。通常，共享和广泛使用的检查点是模型达到良好训练结果时的版本。通过微调等技术，可以在相同的模型架构上创建新的检查点，这些检查点拥有不同的权重（例如，Google 的 gemma-2-2b-it 模型有超过 600 个微调版本，它们共享相同的架构但权重不同）。\n\n因此，模型架构由代码描述，而模型权重是经过训练的参数，以检查点文件的形式保存。将模型架构与一组模型权重结合，即可创建一个能够产生有用输出的完整功能模型。\n\n### KerasHub 简介\n\nKerasHub 是一个 Python 库，旨在简化模型架构的定义。它包含了许多当前最流行和常用的机器学习模型，并且在不断增加。由于 KerasHub 基于 Keras，它支持当前所有三大主流 Python 机器学习库：PyTorch、JAX 和 TensorFlow，这意味着用户可以使用他们偏好的库来定义模型架构。此外，KerasHub 支持最常见的检查点格式，可以轻松从 Hugging Face Hub 和 Kaggle 等众多检查点仓库加载模型。\n\n### KerasHub 与 Hugging Face transformers 库的兼容性\n\n开发者常用的工作流是使用 Hugging Face transformers 库进行模型微调并上传到 Hugging Face Hub。KerasHub 的 API 模式与 transformers 库的用户会感到熟悉。KerasHub 的一个重要特性是，Hugging Face Hub 上的许多检查点不仅与 transformers 库兼容，也与 KerasHub 兼容，特别是流行的 SafeTensors 格式。\n\nKerasHub 内置了转换器，能够自动将 Hugging Face 模型检查点转换为 KerasHub 兼容的格式。这意味着用户只需几行代码，就可以无缝地将 Hugging Face Hub 上各种预训练的 transformer 模型直接加载到 KerasHub 中。用户可以通过访问 [https://keras.io/keras_hub/presets/](https://keras.io/keras_hub/presets/) 查看支持的模型架构列表，并且所有社区创建的这些模型架构的微调检查点也都是兼容的。如果发现缺少某个模型架构，可以通过在 GitHub 上提交拉取请求来添加。\n\n### 如何将 Hugging Face Hub 检查点加载到 KerasHub\n\n以下是加载 Hugging Face Hub 检查点到 KerasHub 的具体示例：\n\n1.  **设置 Keras 后端**：首先选择机器学习库作为 Keras 的后端（例如 JAX、PyTorch 或 TensorFlow）。\n    ```python\n    import os\n    os.environ[\"KERAS_BACKEND\"] = \"jax\" # or \"torch\" or \"tensorflow\"\n    import keras\n    from keras_hub import models\n    from huggingface_hub import login\n    login('HUGGINGFACE_TOKEN')\n    ```\n2.  **加载 Mistral 模型到 JAX**：\n    *   选择 KerasHub 上的 `mistral_0.2_instruct_7b_en` 架构。\n    *   从 Hugging Face Hub 加载微调过的 `segolilylabs/Lily-Cybersecurity-7B-v0.2` 检查点。\n    ```python\n    gemma_lm = models.MistralCausalLM.from_preset(\"hf://segolilylabs/Lily-Cybersecurity-7B-v0.2\")\n    gemma_lm.generate(\"Lily, how do evil twin wireless attacks work?\", max_length=30)\n    ```\n3.  **在 JAX 上运行 Llama 3.1**：\n    *   使用 `Llama3CausalLM` 架构。\n    *   从 Hugging Face Hub 加载 `IAAR-Shanghai/xVerify-8B-I` 微调检查点。\n    ```python\n    gemma_lm = models.Llama3CausalLM.from_preset(\"hf://IAAR-Shanghai/xVerify-8B-I\")\n    gemma_lm.generate(\"What is the tallest building in NYC?\", max_length=100)\n    ```\n4.  **在 JAX 上加载 Gemma**：\n    *   使用 `Gemma3CausalLM` 架构。\n    *   从 Hugging Face Hub 加载 `erax-ai/EraX-Translator-V1.0` 微调检查点（例如，一个多语言翻译器）。\n    ```python\n    gemma_lm = models.Gemma3CausalLM.from_preset(\"hf://erax-ai/EraX-Translator-V1.0\")\n    gemma_lm.generate(\"Translate to German: \", max_length=30)\n    ```\n\n### 触手可及的灵活性\n\nKerasHub 弥合了不同框架和检查点仓库之间的鸿沟。它允许用户将 Hugging Face Hub 上的模型检查点（即使是使用 PyTorch-based transformers 库创建的）无缝加载到 Keras 模型中，并在 JAX、TensorFlow 或 PyTorch 等任何选择的后端上运行。这种灵活性使得用户能够利用庞大的社区微调模型集合，同时完全自主选择运行的后端框架，从而简化了架构、权重和框架的混合与匹配过程，赋能用户以简单而强大的灵活性进行实验和创新。",
-      "shortSummary": "KerasHub 是一款 Python 库，旨在简化机器学习工作流，允许用户在 JAX、PyTorch 和 TensorFlow 等不同框架间混合匹配模型架构与权重。它支持从 Hugging Face Hub 等仓库加载检查点，即使这些检查点最初由其他框架创建。KerasHub 内置转换器，能无缝兼容 Hugging Face 的 SafeTensors 格式。通过 KerasHub，用户可以轻松加载并运行社区微调模型，极大地提升了模型部署和实验的灵活性。",
-      "translated_title": "使用 KerasHub 轻松实现与 Hugging Face 的端到端机器学习工作流",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "KerasHub enables users to mix and match model architectures and weights across different machine learning frameworks, allowing checkpoints from sources like Hugging Face Hub (including those created with PyTorch) to be loaded into Keras models for use with JAX, PyTorch, or TensorFlow. This flexibility means you can leverage a vast array of community fine-tuned models while maintaining full control over your chosen backend framework."
     }
   ],
-  "lastUpdated": "2025-07-14T10:33:17.046Z"
+  "lastUpdated": "2025-07-15T10:33:35.859Z"
 }
