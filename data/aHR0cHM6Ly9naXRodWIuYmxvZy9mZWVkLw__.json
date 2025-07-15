@@ -5,6 +5,19 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "AI时代的代码审查：为什么开发者将永远掌握合并按钮 (原标题: Code review in the age of AI: Why developers will always own the merge button)",
+      "link": "https://github.blog/ai-and-ml/generative-ai/code-review-in-the-age-of-ai-why-developers-will-always-own-the-merge-button/",
+      "pubDate": "Mon, 14 Jul 2025 16:38:03 +0000",
+      "isoDate": "2025-07-14T16:38:03.000Z",
+      "creator": "Elle Shwer",
+      "summary": "## AI时代的开发者与代码审查\n\n在软件开发中，GitHub于2008年推出的拉取请求（PR）通过将纯文本差异与社交工作流（评论、批准和合并按钮）相结合，将问责制融入现代软件开发。即使在大型语言模型（LLM）能够生成代码、提交PR并回复审查评论的今天，GitHub认为最终的合并决定权和代码责任仍属于开发者。AI改变的是合并前的一切，本文探讨了GitHub如何重新思考AI辅助下的代码审查。\n\n### 代码审查的（不变）目的\n\n代码审查远不止是发现错误。一个好的审查能够：\n*   发现缺陷和安全问题\n*   确保高代码质量\n*   在团队间分享知识，并保持与代码库模式和标准的一致性\n*   保障长期可维护性\n\nAI并不能改变这些核心目的，它只是转移了瓶颈。AI可以快速发现未使用的导入，但无法决定新端点是否损害隐私或何时处理复杂的抽象。合并按钮仍然需要（并将永远需要）开发者的“指纹”。\n\n### 从GitHub Copilot代码审查能力中获得的经验\n\nGitHub Copilot代码审查团队通过深入访谈，发现了三个一致的模式：\n*   **对AI无特殊待遇**：审查者对模型生成的差异与对其他开发者生成的差异一样严格。\n*   **自我审查提升了质量**：在提交PR前使用Copilot进行自我审查的开发者，通常能消除一整类琐碎的细节问题（如修剪导入、缺少测试），从而减少了约三分之一的来回沟通。\n*   **AI不能替代人类判断**：编程常涉及权衡，LLM可以提供信息，但最终决策需由人根据组织目标和标准做出。\n\n核心原则是：AI增强开发者的判断力，而非取代它。这些发现正在指导Copilot代码审查功能的构建。\n\n### GitHub Copilot代码审查普遍可用\n\nGitHub Copilot的代码审查代理现已面向所有Copilot计划普遍可用。它能在人类打开差异文件前，发现错误、性能问题，甚至建议修复方案。用户可以在仓库规则中启用自动审查，或在GitHub、GitHub Mobile或VS Code中按需请求Copilot审查。\n\n### AI当前能（和不能）处理什么\n\nLLM在审查的“繁琐”层面表现出色：\n*   **机械扫描**：检查拼写错误、参数使用情况。\n*   **模式匹配**：识别SQL注入、遗漏的await。\n*   **死板的一致性**：变量命名规范（snake_case vs. camelCase）。\n\n未来它们还能理解产品和领域上下文。但它们在以下方面仍有不足：\n*   **架构和权衡**：是否拆分服务？本地缓存？何时偿还技术债务？\n*   **指导**：解释模式的重要性以及何时打破规则。\n*   **价值观**：是否应该构建此功能？\n\n这些差距确保了开发者始终处于核心控制地位。\n\n### 现代代码审查的行动指南\n\n最有效的AI辅助代码审查方法始于提交拉取请求之前，遵循“己所不欲，勿施于人”的黄金法则。\n\n**1. 在IDE中使用AI进行代码自我审查**\n*   在推送代码前，运行GitHub Copilot代码审查，捕获明显问题，让队友专注于需要开发者洞察力的细微问题。\n*   Copilot可以检查暂存的差异，建议文档字符串，并标记空指针解引用。\n*   在提交PR前修复所有发现的问题，减少队友看到的“噪音”。\n\n**2. 对代码负责**\n*   即使代码由AI生成，一旦提交，开发者仍需对其负责。\n*   这意味着理解代码功能，确保其符合团队标准，并与现有代码库良好集成。\n\n**3. 通过自动化CI门禁运行代码**\n*   持续集成（CI）流水线应已运行单元测试、秘密扫描、CodeQL、依赖检查和风格检查器。\n*   实践个人代码卫生小贴士：在IDE中审查自己的代码，确保变量命名、注释和结构符合团队约定，彻底测试AI生成的代码。\n\n**4. 利用AI专注于判断力至关重要的领域**\n*   AI的真正力量在于处理常规工作，让开发者专注于最有价值的判断。\n*   AI不替代现有自动化检查，确保测试通过、覆盖率达标、静态分析工具完成工作。\n*   LLM擅长发现语法问题、模式、潜在错误和风格不一致，尤其擅长发现LLM自身可能犯的错误。\n\n**5. 明确定义角色**\n*   明确AI反馈何时应被考虑，以及何时人类判断优先。\n*   开发者应负责代码架构、业务目标和组织价值观的一致性。\n*   AI特别适用于审查冗长重复的PR，因为这些PR容易遗漏细节。\n\n### 构建可持续AI辅助审查流程的实施建议\n\n*   **文档化明确指南**：规定何时使用AI进行代码审查，信任哪种反馈，以及开发者与AI审查意见不一致时如何升级。例如，GitHub Copilot允许使用自定义指令设置其与代码交互的规则。\n*   **定期更新指南**：根据团队反馈和不断发展的AI能力进行调整。\n*   **鼓励开放团队讨论**：分享AI辅助审查的积极和消极经验，帮助团队学习和改进。\n*   **持续完善自动化**：利用审查者的反馈改进自动化测试策略，识别可自动化的重复问题解决方案。\n\n### 开发者判断力依然至关重要\n\n尽管AI可以处理代码审查中的大部分常规工作，但开发者的判断力在以下方面仍然不可替代：\n*   **架构权衡**：是否拆分服务？本地缓存？何时偿还技术债务？\n*   **指导和文化**：PR线程是团队的课堂，机器人无法讲述复杂代码背后的故事。\n*   **伦理和产品价值观**：“我们是否应该构建这个功能？”是AI无法回答的问题。\n\n目标是让开发者更高效，让他们专注于自己最擅长的领域。",
+      "shortSummary": "在AI时代，开发者将始终掌握代码合并的最终决定权。GitHub Copilot等AI工具旨在增强而非取代人类在代码审查中的判断力。AI能处理语法、风格和常见缺陷等重复性任务，从而让开发者专注于架构决策、权衡取舍、知识共享和业务价值等更复杂的方面。通过AI进行自我审查可提高代码质量，减少琐碎修改。最终，代码的责任仍归属于点击“合并”的开发者。",
+      "translated_title": "AI时代的代码审查：为什么开发者将永远掌握合并按钮",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>When it comes to merging code, developers will always make the final decision. But we’re rethinking how tools like GitHub Copilot can help. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/code-review-in-the-age-of-ai-why-developers-will-always-own-the-merge-button/\">Code review in the age of AI: Why developers will always own the merge button</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "使用 CodeQL 建模 CORS 框架以发现安全漏洞 (原标题: Modeling CORS frameworks with CodeQL to find security vulnerabilities)",
       "link": "https://github.blog/security/application-security/modeling-cors-frameworks-with-codeql-to-find-security-vulnerabilities/",
       "pubDate": "Thu, 10 Jul 2025 17:38:14 +0000",
@@ -299,33 +312,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>AI agents in GitHub Copilot don’t just assist developers but actively solve problems through multi-step reasoning and execution. Here’s what that means.</p>\n<p>The post <a href=\"https://github.blog/news-insights/product-news/from-pair-to-peer-programmer-our-vision-for-agentic-workflows-in-github-copilot/\">From pair to peer programmer: Our vision for agentic workflows in GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "在AI时代，为什么开发者专业知识比以往任何时候都更重要 (原标题: Why developer expertise matters more than ever in the age of AI)",
-      "link": "https://github.blog/developer-skills/career-growth/why-developer-expertise-matters-more-than-ever-in-the-age-of-ai/",
-      "pubDate": "Tue, 24 Jun 2025 17:04:47 +0000",
-      "isoDate": "2025-06-24T17:04:47.000Z",
-      "creator": "Laura Lindeman",
-      "summary": "## 在AI时代，为什么开发者专业知识比以往任何时候都更重要\n\nAI工具的普及显著提高了开发者的编码速度，例如GitHub Copilot能让开发者编码速度提升高达55%，初级开发者甚至能实现27%至39%的生产力增长。然而，文章强调，仅仅追求速度是不够的。作为开发者，核心在于理解代码的运作原理、其在整体系统中的位置以及故障发生时的处理方式。真正的专业知识在于批判性思维和系统性解决问题的能力，这对于构建弹性、可扩展和安全的软件至关重要。\n\nGitHub首席执行官Thomas Dohmke指出：“初创公司可以用AI生成的代码启动，但没有经验丰富的开发者就无法扩展。” AI是开发者的“超能力”，但前提是开发者必须作为“人在回路中”的关键角色，理解代码的“为什么”，并能够调试、指导AI工具，超越“凭感觉编码”。\n\n### AI生产力红利 + 开发者经验 = 更大的影响力\n\n文章通过以下几点阐述了人类判断力如何倍增AI的价值：\n\n*   **更快的提交（任务完成速度提高达55%）**：开发者通过深思熟虑的代码审查、编写测试和发现边缘情况，确保速度不以牺牲质量为代价。\n*   **降低认知负荷**：释放的思维带宽使开发者能够设计更好的架构、指导队友并解决更高层次的问题。\n*   **初级开发者更容易上手**：资深工程师提供背景信息、建立标准，并将AI建议转化为教学机会，从而培养长期专业知识。\n*   **自动化样板代码**：开发者根据实际项目需求调整脚手架、质疑假设并及早重构，以控制技术债务并确保系统安全。\n\n### 缺乏判断力的速度带来的风险\n\n仅仅追求速度而缺乏判断力可能导致：\n\n*   静态分析无法独立发现的安全漏洞。\n*   无法扩展超越演示阶段的架构选择。\n*   导致人类和模型都难以理解的文档偏差。\n\n### 掌握基础：AI时代开发者应关注的三个关键工作流程\n\n文章指出，要充分利用AI开发工具的价值，开发者必须掌握传统基础知识。一个缺乏基础理解（如拉取请求、代码审查和文档）的初级开发者，即使能快速交付，也可能因缺乏上下文或结构而引入错误、遗漏边缘情况或导致协作混乱。这并非AI问题，而是基础问题。文章强调了以下三个核心技能：\n\n#### 1. 在拉取请求（Pull Request）中追求卓越\n\n拉取请求是开发者协作的核心，旨在清晰地传达意图、解释理由，并方便他人（包括人类和AI）理解和参与工作。一个范围明确的PR应解释变更的“为什么”，而不仅仅是“什么”。\n\n*   **关键实践**：\n    *   保持PR小而专注（建议≤300行）。\n    *   PR描述应解释“为什么”变更，并链接相关问题或对话。\n    *   明确请求何种反馈（例如，快速检查或深入审查）。\n    *   在请求审查前，先自行审查：运行测试、预览变更，并纠正任何不清晰或不完善之处。\n\n*   **PR清单**：\n    *   范围 ≤ 300行（或拆分）。\n    *   标题 = 动词 + 对象（例如：重构认证中间件为异步）。\n    *   描述回答“为什么现在？”并链接到问题。\n    *   用⚠️ **BREAKING** 突出显示破坏性变更。\n    *   请求具体反馈（例如：并发策略是否可行？）。\n\n#### 2. 加强代码审查\n\nAI可以在几秒内生成代码，但如何审查这些代码才是真正专业知识的体现。代码审查不仅能发现错误，还能传授知识、促进团队协作并减少昂贵的错误。开发者通常阅读和审查的代码量远超编写量，因此建立强大的代码审查实践至关重要。\n\n*   **关键实践**：\n    *   在分配给他人之前，先自行审查自己的拉取请求。\n    *   保持拉取请求小而专注，以便于审查、调试和回滚。\n    *   作为审查者，关注清晰度：提问、质疑假设、检查代码如何处理边缘情况或意外数据。\n    *   提供具体的改进示例，并肯定好的设计选择。\n\n*   **审查启发式**：\n    *   首先阅读测试，它们编码了意图。\n    *   追踪数据流，从用户输入到数据库写入再到外部调用。\n    *   寻找全局变量、单例和缓存中的隐藏状态。\n    *   即使性能不在考虑范围内，也要问“负载下会发生什么？”\n    *   赞扬好的模式以强化团队标准。\n\n#### 3. 投资文档\n\n强大的拉取请求和代码审查有助于团队今天构建更好的软件，而文档则使明天构建更好的软件变得更容易。在AI时代，清晰、彻底的文档仍然是开发者最宝贵且常被忽视的技能之一。良好的文档有助于所有人保持一致，包括团队、新贡献者、利益相关者，甚至AI编码代理。\n\n*   **关键实践**：\n    *   保持文档清晰、简洁、结构化。\n    *   使用平实语言，专注于人们实际需要的信息，避免过多不必要的细节。\n    *   使用Diátaxis框架组织文档，将其分为四类：\n        *   **教程**：通过分步指南进行实践学习。\n        *   **操作指南**：针对任务的步骤，使用项目符号或编号列表。\n        *   **解释**：提供更深入的理解。\n        *   **参考**：技术规范，如API规范。\n\n### 开发者进阶工具包\n\n文章提供了一个技能进阶矩阵和一些快速提升的建议：\n\n| 技能       | 初级（Junior）         | 中级（Mid-level）       | 高级（Senior）                     |\n| :--------- | :--------------------- | :---------------------- | :--------------------------------- |\n| 拉取请求   | 描述变更               | 解释原因并链接问题      | 预测性能/安全影响并建议审查重点   |\n| 代码审查   | 留下👍/👎              | 给出可操作的评论        | 指导、建模架构权衡                 |\n| 文档       | 更新README             | 编写面向任务的指南      | 将文档作为产品进行管理并衡量指标 |\n\n**快速提升技巧**：\n\n*   使用`.github/CODEOWNERS`自动路由审查。\n*   使用PR和Issue模板以保持上下文一致性。\n*   学习GitHub Skills课程：使用Markdown进行沟通。\n\n### 总结\n\nAI正在改变我们编写代码的方式，但好奇心、判断力和批判性思维比以往任何时候都更重要。优秀的开发者不会仅仅接受AI的建议，他们会追问“为什么”，提供上下文，理解基本原理，以系统思维、有目的性地编写代码，并精心构建。保持好奇心，持续学习，这正是区分优秀开发者的特质，也是在AI驱动的未来中生存和发展的关键。\n\n**作者**：\n\n*   ![Laura Lindeman](https://avatars.githubusercontent.com/u/3505798?v=4&s=200)\n    Laura Lindeman，GitHub博客的博客编辑与策略师。\n*   ![GitHub Staff](https://avatars.githubusercontent.com/u/9919?v=4&s=200)\n    GitHub，全球领先的开发者体验平台，将安全性融入每一步，助力开发者自信创新。",
-      "shortSummary": "AI工具显著提升了编码速度，但开发者专业知识在构建弹性、可扩展和安全软件方面比以往任何时候都更重要。速度若无判断力，将带来安全漏洞和扩展性问题。开发者需作为“人在回路中”的角色，掌握核心基础技能，如高质量的拉取请求、彻底的代码审查和清晰的文档。这些能力培养批判性思维和系统理解，确保AI带来的速度转化为高质量、可维护的软件，而非仅仅是快速交付。",
-      "translated_title": "在AI时代，为什么开发者专业知识比以往任何时候都更重要",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/3505798?v=4&s=200",
-          "alt": "Laura Lindeman",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/9919?v=4&s=200",
-          "alt": "GitHub Staff",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>AI can help you code faster, but knowing why the code works—and sharpening your human-in-the-loop skills—is what makes you a great developer.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/career-growth/why-developer-expertise-matters-more-than-ever-in-the-age-of-ai/\">Why developer expertise matters more than ever in the age of AI</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-07-13T04:45:47.556Z"
+  "lastUpdated": "2025-07-15T04:48:27.197Z"
 }
