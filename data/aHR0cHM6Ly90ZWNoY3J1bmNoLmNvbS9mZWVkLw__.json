@@ -5,6 +5,26 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "中国当局正在使用新工具入侵被扣押的手机并提取数据 (原标题: Chinese authorities are using a new tool to hack seized phones and extract data)",
+      "link": "https://techcrunch.com/2025/07/16/chinese-authorities-are-using-a-new-tool-to-hack-seized-phones-and-extract-data/",
+      "pubDate": "Wed, 16 Jul 2025 10:00:00 +0000",
+      "isoDate": "2025-07-16T10:00:00.000Z",
+      "creator": "Lorenzo Franceschi-Bicchierai",
+      "summary": "## 中国当局使用新工具入侵手机\n\n移动网络安全公司Lookout发布了一份新报告，独家分享给TechCrunch，详细披露了中国当局正在使用一种名为**Massistant**的新型恶意软件，从被扣押的手机中提取数据。\n\n*   **恶意软件概述**\n    *   **名称：** Massistant\n    *   **开发者：** 中国科技巨头厦门美亚柏科（Xiamen Meiya Pico）\n    *   **类型：** 专为安卓系统设计的取证数据提取软件\n    *   **操作方式：** 需要物理接触设备才能进行数据提取。\n    *   **提取内容：** 包括短信（包括Signal等聊天应用）、图片、位置历史记录、录音、联系人等。\n\n*   **广泛应用与潜在风险**\n    *   Lookout虽然不确定具体哪些中国警方机构正在使用该工具，但其使用被认为是广泛的。\n    *   这意味着中国居民以及前往中国的旅行者都应了解该工具的存在及其带来的风险。\n    *   Lookout研究员Kristina Balaam警告称，任何前往该地区的人都应意识到，他们带入该国的设备很可能被没收，并且设备上的任何数据都可能被收集。\n    *   Balaam在当地中文论坛上发现了一些帖子，用户抱怨在与警方互动后发现他们的设备上安装了该恶意软件，这进一步证实了其广泛使用。\n\n*   **技术细节与操作**\n    *   Massistant需要植入到已解锁的设备上，并与连接到台式电脑的硬件塔协同工作。\n    *   Lookout未能分析其台式机组件，也未找到兼容苹果设备的恶意软件版本。\n    *   然而，厦门美亚柏科在其网站上展示了iPhone连接到其取证硬件设备的插图，这表明该公司可能拥有用于从苹果设备提取数据的iOS版Massistant。\n    *   警方使用Massistant不需要复杂的零日漏洞技术，因为根据Balaam在中文论坛上看到的信息，人们通常会直接交出手机。\n\n*   **法律依据与数据提取**\n    *   自2024年起，中国国家安全警察已拥有法律权力，无需搜查令或活跃的刑事调查即可搜查手机和电脑。\n    *   Balaam指出，如果有人在边境检查站被没收设备，他们必须授予访问权限。\n\n*   **用户自救与局限性**\n    *   **好消息：** Massistant会在被扣押的设备上留下被入侵的证据，这意味着用户有可能识别并删除该恶意软件。它可能以应用程序的形式出现，或者可以使用Android Debug Bridge等更复杂的工具找到并删除。\n    *   **坏消息：** 在安装Massistant时，损害已经造成，当局已经获取了用户的数据。\n\n*   **背景信息**\n    *   Massistant是厦门美亚柏科开发的类似移动取证工具MSSocket的继任者，MSSocket曾于2019年被安全研究人员分析。\n    *   据报道，厦门美亚柏科在中国数字取证市场占有40%的份额，并因向中国政府提供技术而在2021年受到美国政府的制裁。\n    *   该公司未回应TechCrunch的置评请求。\n    *   Balaam表示，Massistant只是中国监控技术制造商生产的大量间谍软件或恶意软件之一，她称之为“一个庞大的生态系统”。Lookout至少追踪了中国15种不同的恶意软件家族。\n\n![一个Massistant设备，显示一个塔式电脑连接着几部iPhone。](https://techcrunch.com/wp-content/uploads/2025/07/whz27x4909.jpeg)\n图片来源：厦门美亚柏科\n这是从厦门美亚柏科官方中文网站截取的Massistant移动取证工具硬件的截图。",
+      "shortSummary": "中国当局正使用厦门美亚柏科开发的新型恶意软件Massistant，从被扣押的手机中提取数据。该工具需物理接触设备，可获取短信、图片、位置等信息，且被认为广泛使用，对中国居民和旅行者构成风险。尽管用户可能检测到其存在，但数据在安装时已被窃取。自2024年起，中国警方有权无需搜查令检查手机。",
+      "translated_title": "中国当局正在使用新工具入侵被扣押的手机并提取数据",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/whz27x4909.jpeg",
+          "alt": "An Massistant device showing a tower computer plugged into several iPhones.",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Researchers warned that Chinese residents, and visitors to China, should be aware of the tool's existence and the risks it poses."
+    },
+    {
       "title": "Grok的AI伴侣当然想发生性关系并烧毁学校 (原标题: Of course, Grok’s AI companions want to have sex and burn down schools)",
       "link": "https://techcrunch.com/2025/07/15/of-course-groks-ai-companions-want-to-have-sex-and-burn-down-schools/",
       "pubDate": "Tue, 15 Jul 2025 23:46:41 +0000",
@@ -332,20 +352,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Reddit users in the UK will have to upload their ID or a selfie to access potentially harmful content."
-    },
-    {
-      "title": "Rivian与谷歌合作，将定制地图引入其电动汽车和应用程序 (原标题: Rivian taps Google to bring custom maps into its EVs and app)",
-      "link": "https://techcrunch.com/2025/07/15/rivian-taps-google-to-bring-custom-maps-into-its-evs-and-app/",
-      "pubDate": "Tue, 15 Jul 2025 14:30:24 +0000",
-      "isoDate": "2025-07-15T14:30:24.000Z",
-      "creator": "Kirsten Korosec",
-      "summary": "## Rivian与谷歌合作推出定制版地图集成\n\nRivian和谷歌的工程师经过18个月的紧密合作，共同推出了一项软件更新，将独特版本的谷歌地图引入Rivian电动汽车及其移动应用程序中。此举是Rivian持续通过软件区分其车辆的最新努力，此前Rivian已与大众汽车建立了合资企业。\n\n### 独特的合作模式\n\n此次与谷歌的合作并非典型的谷歌地图集成，也不同于谷歌在汽车领域的其他合作，如Android Auto或Google built-in（Android Automotive操作系统）。相反，Rivian与谷歌采取了一种更开放的API级别集成模式，允许Rivian在谷歌地图的基础上融入其特有的“DNA”。\n\n### 改进导航体验\n\nRivian的软件主管Wassym Bensaid表示，公司密切关注客户反馈，而导航是此前受到批评的领域之一。通过与谷歌合作，Rivian旨在推出一个全新的、改进的导航产品，以取代其之前基于Mapbox的地图系统。\n\n### 集成Rivian特色功能\n\n新的谷歌地图功能将包括：\n\n*   **核心地图功能**：预计到达时间、实时交通更新、地点信息和卫星图像。\n*   **Rivian定制界面**：融入Rivian的行程规划器、用户界面设计和电动汽车充电站位置。\n*   **电动汽车专属功能**：\n    *   **续航里程估算**：展示电动汽车的续航里程估算。\n    *   **充电站选择**：由A Better Routeplanner提供支持，方便用户选择充电站点。\n    *   **“抵达时续航”**：显示抵达目的地时的预计剩余续航。\n    *   **充电偏好**：用户可以设置充电偏好。\n    *   **充电评分**：根据Rivian车辆的充电数据，为各个充电站点提供评分。\n\n### 移动应用增强\n\n此次更新也将同步推送到Rivian的移动应用程序，带来额外的行程规划功能，包括：\n\n*   地点照片和描述。\n*   卫星视图（需Connect+订阅）。\n*   在应用程序中查看交通状况和交通事件。\n*   用户可继续将目的地和行程从移动应用程序分享到车辆。\n\n### 推出时间\n\n基于谷歌的新地图功能将从即日起通过软件更新的方式，陆续在Rivian车辆和移动应用程序中推出。",
-      "shortSummary": "Rivian与谷歌合作，经过18个月的努力，推出了一项独特的软件更新，将定制版谷歌地图集成到其电动汽车和移动应用程序中。此次合作并非传统的谷歌汽车集成模式，而是允许Rivian在谷歌地图基础上融入其特有的用户界面、行程规划器和电动汽车充电信息等功能。此举旨在改善客户导航体验，并已开始通过软件更新向用户推出。",
-      "translated_title": "Rivian与谷歌合作，将定制地图引入其电动汽车和应用程序",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Rivian vehicles will soon replace its Mapbox-based maps with Google Maps. The integration will still see a lot of Rivian DNA in the new mapping system, though. "
     }
   ],
-  "lastUpdated": "2025-07-16T06:34:15.846Z"
+  "lastUpdated": "2025-07-16T12:49:15.763Z"
 }
