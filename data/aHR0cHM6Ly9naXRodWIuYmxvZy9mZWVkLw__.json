@@ -5,6 +5,151 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "GitHub 2025年6月可用性报告 (原标题: GitHub Availability Report: June 2025)",
+      "link": "https://github.blog/news-insights/company-news/github-availability-report-june-2025/",
+      "pubDate": "Wed, 16 Jul 2025 21:06:17 +0000",
+      "isoDate": "2025-07-16T21:06:17.000Z",
+      "creator": "Natalie Guevara",
+      "summary": "## GitHub 2025年6月可用性报告\n\n在2025年6月，GitHub服务共经历了三次导致性能下降的事件。\n\n### 事件一：2025年6月5日 (UTC时间 17:47 - 19:20，持续1小时33分钟)\n\n*   **受影响服务：** Actions\n*   **影响：**\n    *   47.2%的运行启动延迟，平均延迟14分钟。\n    *   21.0%的运行失败。\n    *   60%的Copilot Coding Agent会话被取消。\n    *   所有使用分支构建的Pages站点部署失败（Pages服务本身不受影响）。\n*   **原因：** 内部Actions服务之间负载激增，暴露出配置错误，导致运行启动关键路径中的请求被限流。\n*   **缓解措施：** 纠正服务配置以防止限流，并更新部署流程以确保正确配置得以保留。\n\n### 事件二：2025年6月12日 (UTC时间 17:55 - 21:07，持续3小时12分钟)\n\n*   **受影响服务：** GitHub Copilot\n*   **影响：**\n    *   Gemini模型不可用，Claude模型可用性降低。\n    *   VS Code、JetBrains IDEs和GitHub Copilot Chat中，聊天完成错误率显著升高，响应时间变慢，出现超时和聊天功能中断。\n*   **原因：** 影响其中一个模型提供商的故障。\n*   **缓解措施：** 暂时禁用受影响的提供商端点以减少用户影响。GitHub正在更新基础设施提供商故障的事件响应手册，并改进监控和警报系统，以减少未来此类问题的检测和缓解时间。\n\n### 事件三：2025年6月17日 (UTC时间 19:32 - 20:03，持续31分钟)\n\n*   **受影响服务：** 内部路由策略部署\n*   **影响：** 导致数据中心内部分网络地址块的可达性问题。\n    *   github.com UI（已认证用户）：3-4%的错误率。\n    *   API（已认证调用者）：40%的错误率。\n    *   UI和API（未认证请求）：接近100%的错误率。\n    *   Actions：2.5%的运行延迟（平均8分钟），3%的运行失败。\n    *   大文件存储（LFS）请求：1%的错误。\n*   **原因：** 向部分网络设备部署内部路由策略。\n*   **缓解措施：** 于19:54 UTC回滚部署，受影响系统的网络可用性恢复。20:03 UTC完全恢复正常运行。GitHub正在扩展路由策略更改的验证流程，以防止类似问题。\n\n### 更多信息\n\n*   请关注GitHub状态页面获取实时更新和事件回顾。\n*   访问GitHub工程博客了解更多工作进展。\n\n### 相关内容\n\n*   **Docs**：掌握GitHub所需的一切。\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n*   **GitHub**：在GitHub上构建未来。\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n*   **Customer stories**：了解使用GitHub进行构建的公司和工程团队。\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n*   **GitHub Universe 2025**：参加10月28-29日在旧金山举行的Universe大会。\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)",
+      "shortSummary": "GitHub在2025年6月经历了三次服务降级事件。6月5日，Actions服务因配置错误导致运行延迟和失败。6月12日，GitHub Copilot因模型提供商故障导致服务中断和错误率升高。6月17日，内部路由策略部署引发网络可达性问题，影响了UI、API和Actions。GitHub已采取措施纠正问题，并计划改进配置管理、事件响应和验证流程，以防止未来再次发生类似事件。",
+      "translated_title": "GitHub 2025年6月可用性报告",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>In June, we experienced three incidents that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-june-2025/\">GitHub Availability Report: June 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "如何在攻击者之前捕获 GitHub Actions 工作流注入 (原标题: How to catch GitHub Actions workflow injections before attackers do)",
+      "link": "https://github.blog/security/vulnerability-research/how-to-catch-github-actions-workflow-injections-before-attackers-do/",
+      "pubDate": "Wed, 16 Jul 2025 16:00:00 +0000",
+      "isoDate": "2025-07-16T16:00:00.000Z",
+      "creator": "Dylan Birtolo",
+      "summary": "# 如何在攻击者之前捕获 GitHub Actions 工作流注入\n\n在代码开发和项目维护中，安全性至关重要，并且从项目初期就考虑安全比后期修补要容易得多。GitHub Actions 工作流注入是 GitHub 仓库中最常见的漏洞之一，但幸运的是，它相对容易解决，GitHub 也提供了相关工具。\n\n![CodeQL 在 2024 年发现的最常见漏洞类型条形图。从多到少依次为：注入、访问控制失效、不安全设计、加密失败、身份识别与认证失败、安全配置错误、软件和数据完整性失败、安全日志记录和监控失败、服务器端请求伪造以及易受攻击和过时的组件。](https://github.blog/wp-content/uploads/2025/07/vulnerabilities.png?resize=768%2C768)\n*此图表来自 2024 年 Octoverse 报告，详细说明了 CodeQL 在 2024 年识别出的最常见 OWASP 分类漏洞类型。最新数据显示了类似的趋势，强调了尽管几十年来持续发出警告，注入攻击的风险依然存在。*\n\n## 培养安全思维\n\n安全是一个持续的过程，需要不断关注以确保代码安全。自动化工具虽然帮助巨大，但并非一劳永逸的解决方案。因此，理解安全漏洞的成因及其解决办法至关重要。没有工具是 100% 有效的，但通过提高理解和加深知识，将能更好地应对威胁。\n\n## 解释 Actions 工作流注入\n\nGitHub Actions 工作流注入是指恶意攻击者能够提交一个由仓库工作流运行的命令。当攻击者控制数据（例如，创建 issue 标题或分支名称），并且你执行了这些不受信任的输入时，就可能发生这种情况。例如，你可能在工作流的 `run` 部分执行了它。\n\n这种漏洞最常见的原因之一是代码中使用了 `${{}}` 语法。在预处理步骤中，此语法会自动扩展，这种扩展可能会通过插入新命令来改变你的代码。然后，当系统执行代码时，这些恶意命令也会被执行。\n\n**示例：**\n考虑以下工作流：\n```yaml\n- name: print title\n  run: echo \"${{ github.event.issue.title }}\"\n```\n假设此工作流在用户创建 issue 时触发。攻击者可以在 issue 标题中加入恶意代码（例如 `touch pwned.txt`），当此工作流运行时，代码就会被执行。更重要的是，此代码将以工作流被授予的权限运行，而这些权限攻击者通常无法获得。这是 Actions 工作流注入的根本问题。\n\nActions 工作流注入的最大问题在于缺乏对这一问题的认识，以及难以找到所有可能导致此漏洞的实例。\n\n## 主动保护代码的方法\n\n预防漏洞的出现比事后修补更容易。在编写代码时，应牢记以下几点来保护自己免受 Actions 工作流注入的侵害。请记住，即使遵循所有这些准则，也不能保证你完全受到保护。\n\n1.  **使用环境变量：**\n    Actions 工作流注入是由于扩展本应被视为不受信任的输入而发生的。当它被插入到工作流中时，如果包含恶意代码，就会改变预期的行为。然后当工作流触发并执行时，攻击者的代码就会运行。\n    一个解决方案是避免在工作流的 `run` 等部分直接使用 `${{}}` 语法。相反，将不受信任的数据扩展到环境变量中，然后在运行工作流时使用该环境变量。\n    以上述示例为例，它将变为：\n    ```yaml\n    - name: print title\n      env:\n        TITLE: ${{ github.event.issue.title }}\n      run: echo \"$TITLE\"\n    ```\n    这并不会使输入变得可信，但有助于保护你免受攻击者利用此漏洞的一些方式。\n\n2.  **最小权限原则：**\n    当 Actions 工作流注入触发时，它会以工作流被授予的权限运行。你可以通过设置工作流的 `GITHUB_TOKEN` 权限来指定工作流的权限。因此，确保你的工作流仅以执行任务所需的最低权限级别运行非常重要。否则，如果攻击者设法将代码注入你的工作流，你可能会授予他们意想不到的权限。\n\n3.  **谨慎使用 `pull_request_target`：**\n    当注入发生在由 `pull_request_target` 触发的工作流中时，其影响通常比 `pull_request` 更具破坏性。`pull_request` 和 `pull_request_target` 工作流触发器之间存在显著差异：\n    *   `pull_request` 工作流触发器在从 fork 触发时，默认阻止对目标仓库的写入权限和秘密访问。（请注意，当工作流从同一仓库中的分支触发时，它有权访问秘密并可能拥有写入权限。）\n    *   相比之下，`pull_request_target` 工作流触发器允许工作流编写者解除一些限制。虽然这在某些场景中很重要，但这意味着使用 `pull_request_target` 而非 `pull_request` 可能会使你的仓库面临更大的风险。\n    因此，除非你有非常特殊的需求，否则应使用 `pull_request` 触发器。如果你使用后者，鉴于其额外的权限，你需要对工作流格外小心。\n\n4.  **问题不只存在于 `main` 分支：**\n    在开发代码时创建多个分支是很常见的，通常用于各种功能或错误修复。不幸的是，如果你使用 `pull_request_target` 触发器，这些分支仍然是潜在的漏洞。攻击者可以针对在分支的拉取请求上运行的工作流，并仍然利用此漏洞。这意味着你不能仅仅因为针对 `main` 分支的工作流是安全的就认为你的仓库是安全的。你需要审查仓库中所有公开可见的分支。\n\n## CodeQL 的作用\n\nCodeQL 是 GitHub 的代码分析工具，可对你的代码进行自动化安全检查。CodeQL 最相关的特定功能是代码扫描功能，它可以提供有关代码的反馈并帮助识别潜在的安全漏洞。GitHub 最近已将扫描 GitHub Actions 工作流文件的功能普遍可用，你可以使用此功能查找多种类型的漏洞，例如潜在的 Actions 工作流注入风险。\n\nCodeQL 擅长发现不受信任数据可能被使用的地方，原因之一是其**污点追踪**功能。CodeQL 会追踪不受信任数据在代码中的流动，并识别可能不像前面示例那样明显的潜在风险。\n\n启用 CodeQL 扫描 Actions 工作流非常简单，只需使用默认设置启用 CodeQL 代码扫描即可，它会自动包含分析 Actions 工作流，并将在任何受保护的分支上运行。然后，你可以检查代码扫描结果以识别潜在风险并开始修复它们。如果你已经在使用 CodeQL 的高级设置，可以通过将 `actions` 语言添加到目标语言来添加对扫描 Actions 工作流的支持。\n\n虽然 CodeQL 是一个非常有效的工具，并且非常擅长发现这种特定漏洞，但它仍然不是 100% 有效的。请记住，没有工具是完美的，你应该专注于保持安全思维并批判性地审视自己的代码。\n\n## 后续步骤\n\nActions 工作流注入是 GitHub 上最普遍的漏洞之一，但它们相对容易解决。消除此漏洞的最大问题仅仅是意识到它们是一个问题，并发现代码中可能的薄弱环节。既然你已经意识到了这个问题，并且有 CodeQL 作为一个有用的工具，你应该能够开始在自己的代码中查找和修复这些漏洞。如果你牢记主动措施，你将能够更好地防止它们在未来编写的代码中出现。\n\n如果你想了解更多关于 Actions 工作流注入的信息，GitHub 之前发布了一个关于如何保护 Actions 工作流安全的四部分系列文章。第二部分专门讨论 Actions 工作流注入，但我们鼓励你阅读整个系列。\n\n需要帮助搜索代码以查找潜在漏洞吗？立即在你的项目中设置代码扫描。\n\n---\n\n**作者：**\n![Dylan Birtolo](https://avatars.githubusercontent.com/u/39363041?v=4&s=200)\nDylan Birtolo 是 GitHub 的高级内容撰稿人，负责分享 GitHub 的所有优点。他从事技术写作近 20 年，其中大部分时间在微软的各个团队工作。业余时间，他与动物打交道，玩很多游戏，并且是一名专业的马上长矛比武者。\n\n---\n\n**探索更多来自 GitHub 的内容：**\n![Docs 图标](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n**文档**\n掌握 GitHub 所需的一切，尽在一个地方。\n[前往文档](https://docs.github.com/)\n\n![GitHub 图标](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n**GitHub**\n在 GitHub 上构建未来，这里是任何地方的任何人都可以构建任何东西的地方。\n[开始构建](https://github.com/)\n\n![客户案例图标](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n**客户案例**\n了解使用 GitHub 进行构建的公司和工程团队。\n[了解更多](https://github.com/customer-stories)\n\n![GitHub Universe 2025 图标](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n**GitHub Universe 2025**\n最后机会：节省 700 美元购买 Universe 现场通行证，并于 10 月 28-29 日在旧金山加入我们。\n[立即注册](https://githubuniverse.com/)",
+      "shortSummary": "GitHub Actions 工作流注入是 GitHub 仓库中常见的漏洞，攻击者通过执行不受信任的输入（如 issue 标题）注入恶意命令。为防范此类攻击，建议使用环境变量处理不受信任数据、遵循最小权限原则、谨慎使用 `pull_request_target` 触发器，并检查所有公开分支。GitHub 的 CodeQL 工具通过污点追踪功能，能自动化检测并帮助修复这些漏洞。安全是一个持续过程，结合工具和安全思维是关键。",
+      "translated_title": "如何在攻击者之前捕获 GitHub Actions 工作流注入",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/07/vulnerabilities.png?resize=768%2C768",
+          "alt": "A bar chart detailing the most common vulnerabilities found by CodeQL in 2024. In order from most to least, they are: injection, broken access control, insecure design, cryptographic failures, identification and authentication failures, security misconfigurations, software and data integrity failures, security logging and monitoring failures, server side request forgery, and vulnerable and outdated components.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/39363041?v=4&s=200",
+          "alt": "Dylan Birtolo",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Strengthen your repositories against actions workflow injections — one of the most common vulnerabilities.</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/how-to-catch-github-actions-workflow-injections-before-attackers-do/\">How to catch GitHub Actions workflow injections before attackers do</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "为爱而码：一场充满乐趣、奇思妙想和无限创意的夏季编程马拉松 (原标题: For the Love of Code: a summer hackathon for joyful, ridiculous, and wildly creative projects)",
+      "link": "https://github.blog/open-source/for-the-love-of-code-2025/",
+      "pubDate": "Wed, 16 Jul 2025 15:00:00 +0000",
+      "isoDate": "2025-07-16T15:00:00.000Z",
+      "creator": "Lee Reilly",
+      "summary": "# 为爱而码：一场充满乐趣、奇思妙想和无限创意的夏季编程马拉松\n\nGitHub 宣布举办一场名为“为爱而码”（For the Love of Code）的全球性夏季编程马拉松，旨在鼓励开发者们出于乐趣、创意和探索精神来构建项目，而不仅仅是为了解决问题。\n\n## 活动时间\n*   2025年7月16日至9月22日。\n\n## 参赛对象\n*   所有经验水平的开发者，包括学生、维护者、业余爱好者、创意编码者、资深专业人士和好奇的初学者。\n*   可选择个人参赛或组队（团队人数上限为10人）。\n*   参赛者需年满13岁并拥有GitHub账户（部分地区可能受法律限制）。\n\n## 参赛内容\n*   参赛者可以构建任何他们想做的项目，包括但不限于：Web应用、命令行工具（CLI）、游戏、AI探索或创意实验。\n*   鼓励独立完成、与朋友合作或借助GitHub Copilot。\n*   鼓励使用开源项目、复用旧想法或原型（只要在活动期间构建或重建）。\n*   可以使用付费工具、许可软件或API，但需在README中注明，并避免提交敏感信息。\n*   非传统软件项目（如硬件破解、交互艺术、生成式项目）只要涉及代码并能在公共GitHub仓库中托管，也符合要求。\n*   禁止构建任何不尊重、不安全、有害或违反GitHub行为准则的内容（如NSFW内容、仇恨言论）。\n\n## 参赛类别（六大主题）\n1.  **按钮、蜂鸣与闪光（Buttons, beeps, and blinkenlights）**\n    *   涉及硬件（真实或模拟）的项目，具有闪烁、蜂鸣、嗡嗡声或带来惊喜的特点。强调互动性、物理性、触觉性和一点点混乱感。\n    *   *示例：* 显示构建状态的交通灯、测试通过时会喊“LGTM!”的焊接小助手、检测老板靠近时显示“实际工作”的屏幕、笔记本开合驱动的摩尔斯电码生成器、在ESP32 T-Display上可视化吉他音符的Rust项目。\n2.  **变革的代理（Agents of change）**\n    *   AI驱动的体验、代理或传统机器人，它们可以提供帮助、制造障碍或产生有趣的误解。涵盖自动化工作流、代码评审或荒谬的助手类项目。\n    *   *示例：* LLM驱动的过度戏剧化更新日志编写器、以讽刺高级开发人员或过于友善的实习生口吻评审PR的代理、AI辅助的餐厅账单分摊应用、Shania Twain风格的Slack或Discord机器人。\n3.  **终端才华（Terminal talent）**\n    *   巧妙、实用或纯粹有趣的命令行工具、扩展和TUI（文本用户界面）项目。具有个性的实用工具、精心设计的界面或让终端更生动的脚本。\n    *   *示例：* 命令行卡拉OK机、基于Issue和PR提供每日运势的GitHub CLI扩展、自动化长期未处理事项的交互式工具、终端动画派对鹦鹉、机械键盘声音模拟器。\n4.  **游戏时间（Game on）**\n    *   可玩、益智或纯粹有趣的项目。涵盖各种互动体验，如游戏原型、机制混搭或类型融合。强调怀旧、巧妙或原创性，乐趣优先，功能其次。\n    *   *示例：* 复古街机游戏、AI生成情节和NPC的冒险游戏、使用Copilot构建的垂直跳跃游戏、Octocats版的Flappy Bird克隆、在GitHub代码行中下落的垂直滚动游戏。\n5.  **世界奇观（World wide wonders）**\n    *   任何能让人微笑、思考、学习或点击“查看源代码”的Web项目。无论是初次HTML尝试、已计划发布的工具，还是具有意外用途的有趣副项目。\n    *   *示例：* 基于GitHub用户名和贡献记录进行“吐槽”的Web应用、具有拨号上网加载效果和像素艺术的90年代风格网站、需要杀死Doom中敌人才能通过的验证码、交互式随机复古科幻仪表板。\n6.  **包罗万象（Everything but the kitchen sink）**\n    *   为那些过于小众、特定或难以归类的创意项目而设的通配符类别。包括扩展、插件、工具、GitHub Actions或意外有用的原型。\n    *   *示例：* 提交代码时播放情景喜剧笑声的Git Hook、为函数提供Yelp式评论的VS Code扩展、如果团队本周没有合并带有正面表情符号的PR就拒绝部署的GitHub Action、纯粹为了重写而用Rust重写的项目、将宠物带入编辑器的VS Code扩展。\n\n## 奖项设置\n*   **互联网永生：** 优秀作品将在GitHub博客上展示。\n*   **GitHub Copilot Pro+：** 每个类别获奖者将获得12个月的GitHub Copilot Pro+订阅。\n*   **荣誉与氛围：** 以及一个终于可以构建心仪项目的绝佳理由。\n*   **真正的奖品：** 从事你热爱的事情。\n*   每位参赛者最多获得一份奖品，但其他优秀作品仍会获得表彰。\n\n## GitHub Copilot的鼓励使用\n*   Copilot不仅是代码补全工具，更是创意伙伴，可用于头脑风暴、解释代码等。\n*   鼓励参赛者探索Copilot的创意用途，包括Agent模式。\n\n## 如何参与\n1.  构建一个充满乐趣的项目（个人、与朋友或与Copilot合作）。\n2.  在2025年9月22日世界协调时间（AoE）晚上11:59之前，将代码推送到公共GitHub仓库。\n3.  通过官方提交表格提交作品。\n4.  在项目进展中添加标签`#ForTheLoveOfCode`，优秀作品将在社交媒体和GitHub Explore页面上展示。\n\n## 规则要点\n*   鼓励使用开源。\n*   鼓励使用GitHub Copilot，但非强制。\n*   最多可提交42个项目。\n*   项目必须在公共GitHub仓库中，并附有清晰的README文件。\n*   请查阅完整的条款和条件以及行为准则。\n\n## 评判标准\n*   由GitHub Stars、Campus Experts和工作人员组成的评审团将根据项目的乐趣性、执行力、技术难度、独创性以及与类别的相关性进行评估。\n*   对GitHub Copilot的意外使用将获得额外加分（非实际分数）。\n*   每个类别将选出三名获奖者，并于2025年10月22日前在GitHub博客上公布。\n\n## 常见问题\n*   **团队合作：** 可以，最多10人。\n*   **提交次数：** 最多42次。\n*   **时间投入：** 随意，可短可长。\n*   **新手参与：** 欢迎，提供了入门资源。\n*   **截止日期后编辑：** 仓库可继续工作，但评判以截止日期版本为准。\n*   **提交表单错误：** 重新提交即可，以最新版本为准。\n*   **README内容：** 应包含工具、依赖、设置说明，并考虑添加`#ForTheLoveOfCode`主题。\n*   **视频/演示：** 非强制，但强烈鼓励（GIF、截图、短视频有助于展示）。\n*   **外部托管演示：** 可以，但代码仍需在公共GitHub仓库中。\n*   **项目展示：** 提交即表示同意GitHub在选中时展示项目并注明出处。",
+      "shortSummary": "GitHub将举办“为爱而码”夏季编程马拉松，时间为2025年7月16日至9月22日。该活动鼓励所有水平的开发者，无论是个人还是团队，构建充满乐趣、创意和独特性的项目，涵盖硬件、AI、游戏和Web应用等六大类别。参赛者可自由选择是否使用GitHub Copilot。优胜者将获得GitHub博客展示和Copilot Pro+订阅。活动旨在激发编程乐趣和创造力，项目将根据乐趣性、执行力和独创性进行评判。",
+      "translated_title": "为爱而码：一场充满乐趣、奇思妙想和无限创意的夏季编程马拉松",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>That idea you've been sitting on? The domain you bought at 2AM? A silly or serious side project? This summer, we invite you to build it — for the joy, for the vibes, For the Love of Code 🧡</p>\n<p>The post <a href=\"https://github.blog/open-source/for-the-love-of-code-2025/\">For the Love of Code: a summer hackathon for joyful, ridiculous, and wildly creative projects</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "从混乱到清晰：使用GitHub Copilot代理改进开发者工作流程 (原标题: From chaos to clarity: Using GitHub Copilot agents to improve developer workflows)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/from-chaos-to-clarity-using-github-copilot-agents-to-improve-developer-workflows/",
+      "pubDate": "Tue, 15 Jul 2025 16:00:00 +0000",
+      "isoDate": "2025-07-15T16:00:00.000Z",
+      "creator": "Chris Reddington",
+      "summary": "## 从混乱到清晰：使用GitHub Copilot代理改进开发者工作流程\n\n现代软件开发项目初期可能结构松散，但随着发展，这些早期努力可能变得脆弱。本文通过一个实际案例，展示了如何利用GitHub Copilot编码代理（agent）来重构和增强一个个人GitHub Actions项目，使其从一个零散的工具转变为一个结构良好、测试覆盖、文档齐全且易于维护的项目。\n\n### 核心案例：`validate-file-exists` GitHub Action\n\n作者在2024年11月（原文如此，可能为笔误）创建了一个名为`validate-file-exists`的GitHub Action，旨在确保仓库中存在特定文件（如`dependabot.yml`）。尽管功能可用，但它缺乏文档、元数据不一致、输入验证不足，并且没有为Copilot提供清晰的自定义指令或设置步骤。本文详细介绍了如何使用Copilot代理模式在VS Code中解决这些问题。\n\n### 关键改进步骤\n\n1.  **改进Copilot自定义指令 (`copilot-instructions.md`)**\n    *   **问题：** 原始指令过于简略，缺乏仓库目的、用法、结构描述以及对Copilot的明确指导。\n    *   **行动：** 基于最佳实践，要求Copilot根据代码库更新指令，使其包含：\n        *   仓库/代码库的清晰摘要和Action功能。\n        *   贡献指南（如何构建、格式化、lint和测试代码库，包括提交前的期望）。\n        *   项目结构概述。\n        *   关键技术原则（严格的TypeScript、TSDoc、专注且可管理的功能）。\n    *   **结果：** Copilot获得了正确的上下文，能够进行有意义的贡献。文章中提供了更新后的指令示例。\n\n2.  **添加`copilot-setup-steps.yaml`**\n    *   **目的：** 为Copilot编码代理提供必要的工作环境，包括安装框架、依赖项和工具。\n    *   **行动：** 根据GitHub文档创建`.github/copilot-setup-steps.yaml`文件。该文件负责检出代码、设置Node.js并安装所需的依赖项。作者将Node.js版本配置为从`.node-version`文件获取，以与CI工作流保持一致。\n    *   **结果：** Copilot编码代理具备了构建、lint和测试代码库所需的依赖项和工具，使其能够在进行更改时检查质量。\n\n3.  **让Copilot发现技术债务**\n    *   **行动：** 使用VS Code中的Copilot Chat，询问Copilot项目中的技术债务，并要求提供优先列表，以便创建GitHub Issue，包含问题陈述、验收标准和文件修改建议。\n    *   **Copilot的建议：**\n        *   包元数据不一致。\n        *   README不匹配（输入名称错误）。\n        *   对空或格式错误的输入缺乏验证。\n    *   **行动：** 要求Copilot为这些问题编写一个Issue，并将其分配给Copilot。\n\n4.  **Copilot编码代理实际操作**\n    *   **过程：** 任务分配后，代理异步地启动了一个新的拉取请求（PR）。它探索了仓库内容以理解问题，制定了计划，并执行了以下操作：\n        *   修复了`package.json`中的名称、描述、URL和作者字段。\n        *   更新了README使用示例以匹配代码。\n        *   添加了输入验证逻辑（拒绝空字符串、仅包含逗号的输入）。\n        *   为这些边缘情况编写了四个新测试。\n        *   确认了linting、格式化和代码覆盖率完好无损。\n        *   更新了PR正文，附带已完成工作的清单。\n    *   **结果：** Copilot在11分钟内完成了所有任务。尽管CI工作流最初因作者未在指令中包含的Markdown linting检查而失败，但通过在PR评论中要求Copilot修复，它成功更新了代码，并通过了检查。\n\n### 额外案例：使用Copilot编码代理和Playwright MCP服务器进行UI更改\n\n作者还展示了Copilot在另一个项目（一个基于Next.js和Tailwind CSS的Trend Radar可视化应用）中进行UI更改的能力。\n\n*   **问题：** 用户必须手动输入点数据。\n*   **期望解决方案：** 允许用户点击雷达放置点，并支持拖放重新定位以更改点的类别或可能性。\n*   **Copilot的工作：** 在几次PR评论迭代后，Copilot编码代理实现了点击放置逻辑、添加了拖放支持、编写了单元测试、截取了屏幕截图并附加到PR中，并更新了PR（并回复评论）以总结已完成的工作。\n*   **重要说明：** Playwright现在默认安装在Copilot编码代理中，这使得Copilot也能够验证视觉行为。\n\n### 总结与展望\n\n此次经历不仅是一次清理会话，更是现代软件协作的实践。GitHub Copilot编码代理被视为新的团队成员。通过为仓库提供清晰的上下文和意图，可以邀请Copilot进行有意义的贡献。作者鼓励开发者尝试使用Copilot代理来清理旧的GitHub Action、重构被忽视的仓库或添加验证和测试。关键在于：\n\n*   编写清晰简洁的`copilot-instructions.md`来指导代理。\n*   使用`copilot-setup-steps.yaml`为代理提供所需的工具。\n*   设定清晰且范围明确的任务。\n\nCopilot现在通过Playwright MCP服务器可以访问浏览器，从而能够与网页交互并添加屏幕截图到PR中。开发者无需启动新项目，即可在现有项目上尝试Copilot及其代理能力。\n\n**作者：**\n\n![Chris Reddington](https://avatars.githubusercontent.com/u/791642?v=4&s=200)\n\nChris Reddington 是GitHub开发者关系团队中一位充满热情的开发者倡导者和高级项目经理。\n\n**更多来自GitHub的资源：**\n\n*   **文档：**\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n    掌握GitHub所需的一切，尽在一处。\n*   **GitHub：**\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n    在GitHub上构建未来，这里是任何人、任何地点构建任何东西的地方。\n*   **客户案例：**\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n    了解使用GitHub进行构建的公司和工程团队。\n*   **GitHub Universe 2025：**\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n    最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山加入我们。",
+      "shortSummary": "本文介绍了如何利用GitHub Copilot编码代理改进开发者工作流程。通过一个GitHub Action项目案例，作者展示了Copilot如何帮助完善自定义指令、配置开发环境、识别并解决技术债务，以及在拉取请求中协作。Copilot还被用于一个UI项目的迭代改进，并能通过Playwright进行视觉验证。文章强调了清晰的指令和任务范围对Copilot协作的重要性，鼓励开发者在现有项目中尝试Copilot的代理能力，将其视为一个高效的团队成员。",
+      "translated_title": "从混乱到清晰：使用GitHub Copilot代理改进开发者工作流程",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/791642?v=4&s=200",
+          "alt": "Chris Reddington",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Explore how you can set Copilot coding agent up for success with custom instruction and Copilot setup steps.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/from-chaos-to-clarity-using-github-copilot-agents-to-improve-developer-workflows/\">From chaos to clarity: Using GitHub Copilot agents to improve developer workflows</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "AI时代的代码审查：为什么开发者将永远掌握合并按钮 (原标题: Code review in the age of AI: Why developers will always own the merge button)",
       "link": "https://github.blog/ai-and-ml/generative-ai/code-review-in-the-age-of-ai-why-developers-will-always-own-the-merge-button/",
       "pubDate": "Mon, 14 Jul 2025 16:38:03 +0000",
@@ -149,170 +294,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Learn how to streamline your development workflow with five different MCP use cases. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/5-ways-to-transform-your-workflow-using-github-copilot-and-mcp/\">5 ways to transform your workflow using GitHub Copilot and MCP</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "从想法到PR：GitHub Copilot智能代理工作流指南 (原标题: From idea to PR: A guide to GitHub Copilot’s agentic workflows)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/from-idea-to-pr-a-guide-to-github-copilots-agentic-workflows/",
-      "pubDate": "Tue, 01 Jul 2025 18:57:22 +0000",
-      "isoDate": "2025-07-01T18:57:22.000Z",
-      "creator": "Chris Reddington",
-      "summary": "# GitHub Copilot智能代理工作流指南\n\n本文提供了一份关于GitHub Copilot智能代理工作流的实用指南，旨在帮助开发者将GitHub Issue转化为经过测试的拉取请求（PR），从而减少繁琐的样板代码工作。\n\n## 痛点与解决方案\n\n许多开发者日常工作中，大量时间耗费在样板代码、重构以及为新功能发布做准备的“前期工作”上。GitHub Copilot的智能代理工作流旨在解决这一痛点，通过自动化这些重复性任务，让开发者能专注于更有趣、更具创造性的工作。\n\n文章通过一个实际项目演示了这些工作流：为一个Next.js Web应用和配套的SwiftUI iOS应用添加英语、法语和西班牙语本地化支持。该项目利用了Codespaces和Xcode 16环境，并结合了Copilot的编码代理、自定义规划聊天模式（预览版）和新的远程GitHub MCP服务器。\n\n## 核心能力与工具\n\nGitHub Copilot的智能代理工作流整合了多项关键能力，将从问题到PR的整个流程紧密连接起来，同时确保开发者始终掌控全局：\n\n*   **编码代理 (Coding Agent)**\n    *   **功能：** 将分配给Copilot的任何GitHub Issue异步转化为PR，并执行任务。\n    *   **重要性：** 允许开发者将样板工作卸载给AI，从而专注于代码审查和边缘逻辑。\n    *   **启用与使用：** 需启用Copilot编码代理。\n*   **Copilot创建问题 (Create Issues with Copilot)**\n    *   **功能：** 将自然语言提示转化为结构良好的Issue，包含标题、正文、验收标准和文件提示。\n    *   **重要性：** 节省产品经理/工程师的细化时间，并为团队成员或Copilot编码代理提供有效工作所需的上下文。\n    *   **启用与使用：** 访问github.com/copilot并输入提示来创建Issue。\n*   **自定义聊天模式 (Custom Chat Modes) (VS Code预览版)**\n    *   **功能：** 允许开发者编写可重复的AI工作流脚本（如规划、重构、测试编写），这些模式会出现在默认的“询问/编辑/代理”聊天模式旁边。\n    *   **重要性：** 方便打包指令和相关工具，帮助团队遵循相似的约定。\n    *   **启用与使用：** 在仓库中添加`.chatmode.md`文件；在VS Code 1.101预览版中可用。\n*   **远程GitHub MCP服务器 (Remote GitHub MCP Server)**\n    *   **功能：** 允许AI工具访问实时的GitHub上下文和工具，如Issue、PR和代码文件。无需本地安装，支持OAuth 2.0认证。\n    *   **重要性：** 提供流畅的GitHub MCP服务器访问体验，减少本地服务器的管理开销。\n    *   **启用与使用：** 根据远程GitHub MCP服务器文档更新MCP配置。\n*   **Copilot代理模式 (Copilot Agent Mode)**\n    *   **功能：** 作为实时协作伙伴，驻留在编辑器中，与开发者同步工作并根据需求编辑文件。\n    *   **重要性：** 类似于高级开发者进行结对编程，可访问多种工具（读写代码、运行终端命令、执行MCP服务器工具）。\n    *   **可用性：** 在VS Code、Visual Studio、JetBrains（公开预览）、Eclipse（公开预览）和Xcode（公开预览）中可用。\n\n## 实现类似成果的先决条件\n\n*   一个可推送的GitHub仓库。\n*   已启用编码代理的Copilot订阅（适用于所有付费层级，包括Copilot Business和Copilot Pro）。\n*   VS Code 1.101+及最新Copilot扩展。\n*   GitHub远程MCP服务器或本地GitHub MCP服务器。\n\n## 实战演练：本地化Next.js应用\n\n文章详细演示了将本地化请求转化为PR的流程：\n\n### 1. 将请求转化为GitHub Issue\n\n在Copilot Chat的沉浸式视图中，描述所需功能（例如，添加i11n能力，支持英法西语，用户可在个人资料页更改语言并即时生效，并包含概述、验收标准和文件提示）。Copilot会起草一个Issue，包含标题、验收标准和初步行动计划。随后，可将该Issue分配给Copilot，让其在后台处理。\n\n### 2. 编码代理将Issue转化为PR\n\n分配任务后，编码代理会：\n*   创建分支。\n*   启动新会话（若配置了`copilot-setup-steps.yml`，则会先配置开发环境）。\n*   审查任务，探索代码库现状，并制定完成任务的计划（会考虑自定义指令，如`npm run lint`和`npm run test`需通过）。\n*   完成后，会打开一个草稿PR供审查。\n\n### 3. 像往常一样审查PR\n\n无论是同事、协作者还是Copilot编写的代码，都需要审查。\n*   仔细审查PR正文和“文件更改”标签页中的代码。\n*   查看编码代理会话，了解Copilot解决问题的方法。\n*   可在GitHub Codespace中手动测试代码，或运行GitHub Actions工作流中的CI检查。\n*   如果发现问题（如硬编码字符串），可像处理任何其他PR一样，在评论中提供反馈。Copilot会响应评论并继续工作。\n\n## 通过自定义聊天模式提升工作流\n\nVS Code 1.101预览版中新增的自定义聊天模式允许开发者打包指令和相关工具，以实现更便捷的使用。例如，可以基于VS Code团队的“规划”聊天模式示例进行扩展，添加`create_issue`工具，并调整指令以在用户批准后创建GitHub Issue。这有助于团队保持一致且便捷的聊天模式配置。\n\n## 远程MCP：简化本地设置\n\n远程MCP服务器减少了在本地运行这些工具（如通过npm包或Docker容器）的管理开销。GitHub远程MCP服务器还支持OAuth 2.0认证，而非个人访问令牌。使用时需更新MCP配置。值得一提的是，GitHub MCP服务器是开源的。\n\n## 移动开发：Xcode中的Copilot代理模式\n\n文章简要提及了在Xcode中使用Copilot代理模式的案例，例如通过类似提示为应用添加国际化功能，并在模拟器中看到效果。\n\n## 使用建议：应该做和不应该做\n\n*   **✅ 应该做：**\n    *   保持Issue范围紧凑。\n    *   提供明确的验收标准。\n    *   仔细审查所做的更改。\n    *   与Copilot迭代，不要期望一次性完美。\n*   **❌ 不应该做：**\n    *   要求代理“重新架构整个应用”。\n    *   假设代理了解你的意图。\n    *   未经审查就执行代码或合并PR。\n    *   期望第一次就完美。\n\n## 总结与展望\n\nGitHub Copilot的智能代理工作流并非魔法，而是强大的工具。它们能帮助开发者减少技术债务和重复性任务，让开发者能够专注于解决更具挑战性、更有趣和更具创造性的问题。",
-      "shortSummary": "GitHub Copilot的智能代理工作流旨在简化软件开发，将想法快速转化为经过测试的拉取请求。它通过编码代理、自定义聊天模式和远程MCP服务器，自动化了创建问题、编写样板代码和初步测试等繁琐任务。开发者仍能掌控审查和合并过程，从而将精力集中在核心功能开发和创新上，显著提升效率并减少重复劳动。",
-      "translated_title": "从想法到PR：GitHub Copilot智能代理工作流指南",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>A practical guide to GitHub Copilot’s agentic coding agent, chat modes, and remote MCP server so you turn issues into tested PRs with clear steps (and no hype).</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/from-idea-to-pr-a-guide-to-github-copilots-agentic-workflows/\">From idea to PR: A guide to GitHub Copilot’s agentic workflows</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "使用GitHub的依赖图了解您的软件供应链 (原标题: Understand your software’s supply chain with GitHub’s dependency graph)",
-      "link": "https://github.blog/security/supply-chain-security/understand-your-softwares-supply-chain-with-githubs-dependency-graph/",
-      "pubDate": "Tue, 01 Jul 2025 16:00:00 +0000",
-      "isoDate": "2025-07-01T16:00:00.000Z",
-      "creator": "Andrea Griffiths",
-      "summary": "# GitHub依赖图：理解您的软件供应链\n\nGitHub的依赖图提供了一种强大的方式，帮助开发者全面了解其软件项目的外部包依赖关系，无论是直接还是间接的。这使得用户能够更好地理解、保护和管理其代码库的真实构成，尤其是在现代软件项目中，大部分代码可能来源于外部依赖。\n\n## 什么是依赖图？\n\n现代软件项目就像一座冰山。表面上，一个小的清单文件可能只列出少量直接依赖项，但其下方隐藏着一个庞大而复杂的传递性依赖世界，这通常是开发者容易忽视的部分。GitHub依赖图的作用正是映射出这个“水下世界”。\n\n*   **可视化表示**：它将每个包视为一个节点，每个依赖关系视为一条边，从而生成一个完整、可视化且结构化的软件外部代码库表示。\n*   **代码构成**：在许多情况下，一个项目高达95%至97%的代码实际上可能来自第三方。依赖图帮助开发者理解并管理这一现实。\n\n## 为什么依赖图至关重要？\n\n当开源包中发现漏洞时，其影响会向下游项目扩散。如果项目不清楚自身包含某个易受攻击的依赖项，就很难及时采取行动。\n\n*   **安全基础**：依赖图不仅仅是一个可视化工具，它更是GitHub Dependabot警报的基础。\n*   **漏洞通知**：当任何依赖项（包括传递性依赖）中发现安全问题时，GitHub会通过Dependabot通知用户。\n*   **全面洞察**：用户可以获得关于供应链中包含哪些内容、它们是如何进入项目以及可以采取哪些措施的完整视图。\n\n## 实际应用示例：从21到1,000个依赖项\n\n一个项目可能只有21个直接依赖项（在`package.json`等文件中列出），但包含所有传递性依赖后，总数可能达到1,000个。通过依赖图，您可以：\n\n*   **区分依赖类型**：清晰地区分直接依赖和传递性依赖。\n*   **追溯来源**：追踪像Log4j这样的包是如何进入您的代码库的（通常是作为其他依赖的传递依赖）。\n*   **明确责任**：了解哪些是您需要修复的，哪些是上游维护者负责的。\n\n## 通过Dependabot强化供应链安全\n\nDependabot基于依赖图运行。启用依赖图是实现Dependabot漏洞警报和自动修复建议的前提。\n\n*   **专业提示**：建议首先关注直接依赖项。这些是您可以直接控制的，将精力集中在此处比为传递性依赖项烦恼更有效。\n\n## 如何启用依赖图？\n\n您可以在仓库设置中，通过“Security > Dependency Graph”路径启用依赖图。如果启用了Dependabot，依赖图将自动启用。\n\n*   **GitHub Actions支持**：对于不支持自动发现的语言生态系统，社区维护的GitHub Actions可以生成软件物料清单（SBOM）并将其提交到GitHub的依赖提交API。\n\n## 免费提供\n\n依赖图和Dependabot警报对所有GitHub仓库都是免费的。\n\n## 总结\n\n您无法保护您看不到的东西。GitHub的依赖图提供了对代码库中90%以上来自开源库部分的可见性，并帮助您在关键时刻采取行动。\n\n*   立即启用它。\n*   与Dependabot结合使用，实现自动化警报和修复。\n*   最终发现您的软件供应链中究竟包含什么。\n\n您的未来（以及您的安全团队）会感谢您。\n\n## 了解更多\n\n*   探索GitHub依赖图文档：[Explore the documentation](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph)\n\n---\n\n**作者信息**\n\n![Andrea Griffiths](https://github.blog/wp-content/uploads/2025/03/cropped-IMG_1971-200x200.jpeg)\n\n本文由 **Andrea Griffiths** 撰写，她是GitHub的高级开发者倡导者，拥有十多年的开发者工具经验。她将深厚的技术知识与使先进技术更易于访问的使命相结合。在从军队服役和施工管理转型到软件开发后，她带来了独特的视角，弥合了复杂的工程概念与实际实现之间的鸿沟。她与她的威尔士伴侣、两个儿子和两只狗住在佛罗里达州，在那里她继续通过GitHub的全球倡议推动创新和支持开源。您可以在线找到她：@alacolombiadev。\n\n---\n\n**相关文章**\n\n探索更多来自GitHub的内容：\n\n*   **文档**\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n    掌握GitHub所需的一切，尽在一个地方。\n    [前往文档](https://docs.github.com/en)\n\n*   **GitHub**\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n    在GitHub上构建未来，这里是任何人、任何地方都可以构建任何东西的地方。\n    [开始构建](https://github.com/)\n\n*   **客户案例**\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n    了解使用GitHub进行构建的公司和工程团队。\n    [了解更多](https://github.com/customer-stories)\n\n*   **GitHub Universe 2025**\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n    最后机会：节省700美元购买Universe现场通行证，并于10月28-29日在旧金山与我们相聚。\n    [立即注册](https://githubuniverse.com/)",
-      "shortSummary": "GitHub的依赖图提供软件供应链的全面视图，揭示直接和间接依赖。它帮助用户理解、保护和管理项目，尤其是在识别和响应开源漏洞方面。依赖图是Dependabot警报的基础，能自动检测并建议修复安全问题。该功能免费，可通过仓库设置启用，显著提升代码库的可见性和安全性，让开发者更好地掌控其外部代码构成。",
-      "translated_title": "使用GitHub的依赖图了解您的软件供应链",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/03/cropped-IMG_1971-200x200.jpeg",
-          "alt": "Andrea Griffiths",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>The GitHub dependency graph maps every direct and transitive dependency in your project, so you can identify risks, prioritize fixes, and keep your code secure.</p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/understand-your-softwares-supply-chain-with-githubs-dependency-graph/\">Understand your software’s supply chain with GitHub’s dependency graph</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub 咨询数据库数据概览：已知安全漏洞及其应对措施 (原标题: GitHub Advisory Database by the numbers: Known security vulnerabilities and what you can do about them)",
-      "link": "https://github.blog/security/github-advisory-database-by-the-numbers-known-security-vulnerabilities-and-what-you-can-do-about-them/",
-      "pubDate": "Fri, 27 Jun 2025 16:00:00 +0000",
-      "isoDate": "2025-06-27T16:00:00.000Z",
-      "creator": "Jonathan Evans",
-      "summary": "GitHub 咨询数据库（Advisory DB）是开发者获取开源软件包已知安全漏洞和恶意软件信息的重要资源。本文分析了 2024 年咨询数据库的趋势，包括已审查咨询的增长、生态系统覆盖范围的扩大以及来源贡献的增加，并阐述了 GitHub 如何提供可操作的数据来保护软件项目。\n\n## 咨询数据库分类\nGitHub 咨询数据库中的已知安全漏洞和恶意软件分为三类：\n\n*   **GitHub 已审查咨询**：由 GitHub 手动审查的软件包咨询，确保其有效性、完整描述以及包含生态系统和软件包信息。每年，GitHub 发布的已审查咨询数量都在增加，这得益于来源的增加、生态系统覆盖范围的扩大以及对数据库建立前发布的咨询进行的审查活动。\n    *   2019 年新增 385 条已审查咨询，到 2024 年增至 5256 条。\n    *   在过去五年中，数据库中的已审查咨询总数从 2019 年的不足 400 条增长到 2024 年 10 月的 20,000 多条。\n    ![每年新增的已审查咨询数量条形图。图表显示从 2019 年的 385 条开始，数量随时间增加，到 2024 年达到 5256 条。](https://github.blog/wp-content/uploads/2025/06/advisory1.png?resize=1024%2C633)\n    ![已审查咨询总数折线图。图表显示从 2019 年的 0 条稳步增长到 2024 年底的 20607 条。](https://github.blog/wp-content/uploads/2025/06/advisory2.png?resize=1024%2C601)\n\n*   **未审查咨询**：这些咨询自动从国家漏洞数据库（NVD）导入。尽管其中许多已被 GitHub 分析师审查，但由于它们不属于受支持的软件包或不构成有效漏洞，因此归入此类别。GitHub 仍发布它们，以避免用户需要查询多个数据库。\n    ![咨询总数随时间变化的折线图。图表显示在 2022 年 4 月 GitHub 开始发布国家漏洞数据库的所有漏洞时出现突然跳跃，随后随时间逐渐增加。](https://github.blog/wp-content/uploads/2025/06/advisory3.png?resize=1024%2C386)\n\n*   **恶意软件咨询**：由 npm 安全团队提供的信息自动发布到 GitHub 咨询数据库，专门针对恶意软件威胁。目前仅限于 npm 生态系统，GitHub 不对此类咨询进行编辑或接受社区贡献。\n    ![恶意软件咨询总数随时间变化的折线图，从 2022 年 5 月到 2024 年 12 月。图表显示恶意软件咨询在此期间总体呈上升趋势，最终达到 13405 条。](https://github.blog/wp-content/uploads/2025/06/advisory4.png?resize=1024%2C509)\n\n## 生态系统覆盖\nGitHub 已审查咨询涵盖了 GitHub 支持的生态系统中的软件包漏洞。这些生态系统通常以相关编程语言的包注册表命名。目前支持的生态系统包括：\n\n| 生态系统           | 总咨询数 | 易受攻击的软件包数 | 首次添加日期 |\n| :----------------- | :------- | :----------------- | :----------- |\n| pip                | 3378     | 1044               | 2019-04-19   |\n| Maven              | 5171     | 955                | 2019-04-22   |\n| Composer           | 4238     | 812                | 2019-04-26   |\n| npm                | 3653     | 2652               | 2019-04-26   |\n| RubyGems           | 840      | 371                | 2019-04-26   |\n| NuGet              | 651      | 489                | 2019-04-26   |\n| Go                 | 2011     | 865                | 2021-04-01   |\n| Rust               | 857      | 553                | 2021-05-25   |\n| Erlang             | 31       | 26                 | 2022-01-27   |\n| GitHub Actions     | 21       | 21                 | 2022-07-29   |\n| Pub                | 10       | 9                  | 2022-08-04   |\n| Swift              | 33       | 21                 | 2023-05-10   |\n\n*   Maven 和 Composer 软件包的漏洞几乎占数据库中咨询的一半。npm、pip 和 Go 构成了其余大部分，而其他生态系统的份额较小。\n    ![饼图显示了不同软件生态系统中咨询的比例。Maven、Composer、npm、Pip 和 Go 是最大的生态系统。](https://github.blog/wp-content/uploads/2025/06/advisory5.png?resize=1024%2C633)\n*   数据库刚推出时，NPM 咨询占据主导地位，但随着覆盖范围的扩大和新生态系统的支持，分布组合发生了变化。\n    ![堆叠面积折线图显示了 2019 年至 2024 年各种生态系统的百分比分布。图表显示最初一半的咨询是针对 NPM 的，但随着时间的推移，Maven 和 Composer 等其他生态系统变得更加突出。](https://github.blog/wp-content/uploads/2025/06/advisory7.png?resize=1024%2C539)\n\n## 咨询来源\nGitHub 咨询数据库的咨询来源于以下渠道：\n\n| 来源                   | 咨询数 | 已审查咨询数 | 唯一来源数 | 覆盖率 |\n| :--------------------- | :----- | :----------- | :--------- | :----- |\n| NVD                    | 267429 | 18295        | 7450       | 6.84%  |\n| GitHub Repository Advisories | 12247  | 5311         | 5644       | 43.37% |\n| Community Contributions | 451    | 241          | 60         | 1092.20% |\\\n| PyPA Advisories        | 3040   | 2739         | 149        | 0.10%  |\n| Go Vulncheck           | 1581   | 1528         | 79         | 6.65%  |\n| NPM Advisories         | 1411   | 1408         | 629        | 99.79% |\n| FriendsOfPHP           | 1406   | 1396         | 400        | 99.29% |\n| RustSec                | 943    | 849          | 17         | 90.03% |\n| RubySec                | 873    | 861          | 4          | 98.63% |\n\n*   **NVD**：巨大的漏洞来源，GitHub 仅审查与受支持生态系统相关的咨询。\n*   **GitHub Repository Advisories**：第二大来源，不限于受支持生态系统，但专注于开源软件。\n*   **Community Contributions**：主要请求更新现有咨询。\n*   **Other Specialized Sources**：如 PyPA Advisories 和 Go Vulncheck，专注于特定生态系统，其咨询大部分与 GitHub 相关并得到审查。\n\n*   46% 的咨询只有一个来源，85% 的咨询有三个或更少来源。\n    ![饼图显示了咨询按来源数量的比例。这表明 46% 的咨询只有一个来源，85% 的咨询有三个或更少来源。](https://github.blog/wp-content/uploads/2025/06/advisory8.png?resize=1024%2C633)\n*   在单一来源的咨询中，近 80% 来自 NVD/CVE，这证明了 NVD/CVE 作为来源的价值，尽管其信息量最大。\n    ![饼图显示了单一来源咨询按来源的比例。图表显示所有单一来源咨询的 80% 来自国家漏洞数据库。](https://github.blog/wp-content/uploads/2025/06/advisory9.png?resize=1024%2C633)\n*   2024 年，从来源导入的咨询数量显著增加了 39%，主要原因是 CVE 记录发布数量的增加。\n    ![咨询导入数量随时间变化的折线图。图表显示导入数量随时间增加。](https://github.blog/wp-content/uploads/2025/06/advisory10.png?resize=1024%2C633)\n\n## CVE 编号机构（CNA）\nGitHub 也是 GitHub 上任何仓库的 CVE 编号机构（CNA）。这意味着 GitHub 为报告的漏洞发布 CVE ID，并在相关仓库咨询发布后将其发布到 CVE 数据库。2024 年，GitHub 发布了 2000 多个 CVE 记录，成为 CVE 项目中第五大 CNA。\n\n*   GitHub CNA 对 GitHub 上的所有仓库开放，不限于受支持的生态系统。\n    ![条形图显示了咨询数据库 CNA 随时间发布的 CVE 记录数量。每年发布的数量都在增加。](https://github.blog/wp-content/uploads/2025/06/advisory11.png?resize=1024%2C633)\n    ![饼图显示了咨询数据库分配的 CVE 中属于受支持生态系统的比例。58% 属于受支持生态系统，42% 不属于。](https://github.blog/wp-content/uploads/2025/06/advisory12.png?resize=1024%2C585)\n\n## 咨询优先级\n为了帮助开发者优先处理漏洞修复工作，GitHub 在咨询中提供了额外数据：\n\n1.  **严重性评级/CVSS**：漏洞的严重程度（低、中/中等、高、关键），以及相应的 CVSS 分数和向量。一半的漏洞（15% 关键，35% 高）需要立即或近期关注。\n    ![堆叠面积折线图显示了按咨询发布年份划分的严重性评级比例。图表显示关键漏洞在早期更常见（20-25%），而中等漏洞随时间变得更常见。](https://github.blog/wp-content/uploads/2025/06/advisory13.png?resize=1024%2C633)\n2.  **CWE**：通用弱点枚举标识符，提供确定漏洞类型的编程方法，允许用户根据漏洞类型过滤警报。\n    | 排名 | CWE ID   | CWE 名称                                                              | 2024 年咨询数量 | 2023 年排名变化 |\n    | :--- | :------- | :-------------------------------------------------------------------- | :-------------- | :-------------- |\n    | 1    | CWE-79   | 网页生成过程中输入不当中和（“跨站脚本”）                                | 936             | +0              |\n    | 2    | CWE-200  | 敏感信息泄露给未经授权的参与者                                        | 320             | +0              |\n    | 3    | CWE-22   | 路径名限制到受限目录不当（“路径遍历”）                                | 259             | +2              |\n    | 4    | CWE-20   | 输入验证不当                                                          | 202             | +0              |\n    | 5    | CWE-94   | 代码生成控制不当（“代码注入”）                                        | 188             | +2              |\n    | 6    | CWE-89   | SQL 命令中使用的特殊元素不当中和（“SQL 注入”）                      | 181             | +3              |\n    | 7    | CWE-352  | 跨站请求伪造（CSRF）                                                  | 161             | -4              |\n    | 8    | CWE-284  | 访问控制不当                                                          | 153             | +4              |\n    | 9    | CWE-400  | 不受控制的资源消耗                                                    | 149             | -3              |\n    | 10   | CWE-287  | 认证不当                                                              | 124             | +1              |\n3.  **EPSS**：漏洞利用预测评分系统，量化漏洞在未来 30 天内被攻击的可能性。关注 EPSS 分数 10% 或更高的漏洞（约占咨询数据库中所有漏洞的 7%），可以覆盖几乎所有可能出现利用活动的漏洞。\n    ![条形图显示了按 EPSS 概率划分的咨询数量。大多数咨询处于低或非常低概率。](https://github.blog/wp-content/uploads/2025/06/advisory14.png?resize=1024%2C633)\n    | EPSS 概率         | 范围内的漏洞数 | 占总漏洞的百分比 | 未来 30 天内预计被攻击的漏洞数 | 占总被攻击漏洞的百分比 |\n    | :---------------- | :------------- | :--------------- | :----------------------------- | :--------------------- |\n    | 高 (>= 10%)       | 1440           | 7.17%            | 74                             | 85.96%                 |\n    | 中等 (>= 1%, < 10%) | 2687           | 13.37%           | 8                              | 9.74%                  |\n    | 低 (>= 0.1%, < 1%) | 10264          | 51.09%           | 3                              | 4.06%                  |\n    | 非常低 (< 0.1%)   | 5701           | 28.37%           | 0                              | 0.23%                  |\n    *   **注意事项**：低概率事件仍可能发生；EPSS 仅表示可能性，不表示确定性；EPSS 分数每日更新，会随新信息而变化。\n\n## 可操作数据\nGitHub 咨询数据库不仅是漏洞存储库，它还为帮助开发者保护项目安全的工具提供支持。例如，Dependabot 服务利用咨询数据库来：\n\n*   **识别漏洞**：检查项目是否使用了已知漏洞的软件包。\n*   **建议修复**：推荐可修复漏洞的软件包更新版本。\n*   **减少干扰**：仅通知用户其正在使用的软件包版本受影响的漏洞。\n\n*   每年发布的咨询中，几乎所有都带有补丁。\n    ![条形图显示了每年发布带有补丁的咨询数量与不带补丁的咨询数量。每年，几乎所有咨询都带有补丁。](https://github.blog/wp-content/uploads/2025/06/advisory15.png?resize=1024%2C633)",
-      "shortSummary": "GitHub 咨询数据库（Advisory DB）是开源安全漏洞和恶意软件的关键资源。它将咨询分为 GitHub 已审查、未审查和恶意软件三类。数据库已显著增长，截至 2024 年 10 月，已审查咨询超过 20,000 条，并覆盖了更多生态系统。GitHub 还是重要的 CVE 编号机构，2024 年发布了 2,000 多个 CVE。它提供 CVSS、CWE 和 EPSS 等工具帮助开发者优先处理漏洞，并为 Dependabot 等服务提供支持，以识别漏洞并建议修复。",
-      "translated_title": "GitHub 咨询数据库数据概览：已知安全漏洞及其应对措施",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/advisory1.png?resize=1024%2C633",
-          "alt": "The bar graph shows the number of reviewed advisories added each year. The graph starts with 385 advisories added in 2019, shows an increase over time, and ends with 5256 advisories added in 2024.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/advisory2.png?resize=1024%2C601",
-          "alt": "The line graph shows the total reviewed advisories steadily increasing from 0 in 2019 to 20607 at the end of 2024.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/advisory3.png?resize=1024%2C386",
-          "alt": "The line graph shows the total number of advisories overtime. The graph shows a sudden jump in April 2022, when GitHub started publishing all vulnerabilities from the National Vulnerability Database feed. It then shows a gradual increase over time.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/advisory4.png?resize=1024%2C509",
-          "alt": "The line graph shows the total malware advisories over time, from May 2022 to December 2024. The line shows a general upward trend in malware advisories over the period, ending at 13405 advisories.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/advisory5.png?resize=1024%2C633",
-          "alt": "The pie chart shows the proportion of advisories across different software ecosystems. Maven, Composer, npm, Pip, and Go are the largest ecosystems.",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/advisory7.png?resize=1024%2C539",
-          "alt": "The stacked area line graph shows the percentage distribution of various ecosystems from 2019 to 2024. The graph starts with half the advisories being for NPM but over time, other ecosystems like Maven and Composer become more prominent.",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/advisory8.png?resize=1024%2C633",
-          "alt": "The pie graph shows the proportion of advisories by the number of sources they have. This shows that 46% of the advisories have only one source and 85% have three or fewer.",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/advisory9.png?resize=1024%2C633",
-          "alt": "The pie graph shows the proportion of advisories that have a single source by the source they came from. The graph shows that 80% of all single sourced advisories come from the National Vulnerability Database.",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Use these insights to automate software security (where possible) to keep your projects safe.</p>\n<p>The post <a href=\"https://github.blog/security/github-advisory-database-by-the-numbers-known-security-vulnerabilities-and-what-you-can-do-about-them/\">GitHub Advisory Database by the numbers: Known security vulnerabilities and what you can do about them</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "从结对编程到对等编程：GitHub Copilot 中智能代理工作流的愿景 (原标题: From pair to peer programmer: Our vision for agentic workflows in GitHub Copilot)",
-      "link": "https://github.blog/news-insights/product-news/from-pair-to-peer-programmer-our-vision-for-agentic-workflows-in-github-copilot/",
-      "pubDate": "Wed, 25 Jun 2025 16:00:00 +0000",
-      "isoDate": "2025-06-25T16:00:00.000Z",
-      "creator": "Tim Rogers",
-      "summary": "# GitHub Copilot：从结对编程到对等编程的智能代理工作流愿景\n\n## 引言：GitHub Copilot 的演进\n\nGitHub Copilot 最初于2021年推出时，被定位为“AI结对程序员”，旨在帮助开发者保持专注、减少样板代码并加速编码。然而，GitHub 的愿景是让 Copilot 不仅仅是一个助手，而是能够主动与开发者协作，包括同步任务、独立解决问题，甚至审查代码。这标志着 Copilot 正从一个辅助工具向一个能够主动解决问题的智能代理转变。\n\n## 智能代理的未来愿景\n\n未来的 GitHub Copilot AI 代理将通过多步骤推理和执行来积极解决问题，具备以下能力：\n\n*   **独立问题解决**：Copilot 将分解复杂任务并采取必要步骤来解决它们，并在此过程中提供更新。\n*   **自适应协作**：无论是与开发者同步工作，还是在后台独立运行，Copilot 都将迭代自己的输出以推动项目进展。\n*   **主动提升代码质量**：Copilot 将主动协助解决问题、测试和代码审查等任务，确保更高质量、更易于维护的代码。\n\nCopilot 的未来在于其在不同模式之间灵活切换的能力——独立执行任务，同时让开发者随时了解情况并保持控制。这种演变将使开发者能够专注于更高层次的决策，而 Copilot 则承担更多的执行工作。\n\n## Copilot 的实际应用：迈向愿景的步伐\n\n### 1. 代理模式（Agent Mode）：IDE 中的实时 AI 队友\n\n代理模式是 GitHub Copilot 中一个独立的 AI 代理，它存在于开发者的代码环境中，感觉就像将电脑交给队友几分钟。当开发者发出指令时，代理会接管控制，解决问题，并通过定期检查点报告其工作。其能力包括：\n\n*   读取整个工作区以理解上下文。\n*   规划多步骤的修复或重构（并首先展示计划）。\n*   应用更改、运行测试，并在紧密的反馈循环中迭代。\n*   在意图不明确时寻求指导。\n*   通过“代理循环”运行和完善自己的工作——规划、应用更改、测试和迭代。\n\n在代理模式下，Copilot 不仅仅响应请求，而是主动朝着开发者的目标努力。开发者定义结果，Copilot 决定最佳方法，并在需要时寻求反馈、测试自己的解决方案并实时完善工作。这就像是快速推进的结对编程：开发者实时观察任务的展开，可以随时介入或重新定向。\n\n### 2. 编码代理（Coding Agent）：在你休息时工作的 AI 队友\n\n并非所有编码都实时发生。有时，开发者需要将任务交给队友，稍后再检查。这就是编码代理的作用——它是 Copilot 转型为独立代理的第一步。编码代理在云端启动自己的安全开发环境。开发者可以向 Copilot 分配多个问题，然后专注于其他工作，而它则处理繁重的工作。其能力包括：\n\n*   克隆仓库并在隔离环境中引导工具。\n*   将问题分解为步骤，实现更改，并编写或更新测试。\n*   通过运行测试和 Linter 验证其工作。\n*   打开草稿拉取请求（PR），并根据 PR 审查意见进行迭代。\n*   流式传输进度更新，以便开发者可以随时查看或介入。\n\n与编码代理合作就像是请另一房间的队友（拥有自己的笔记本电脑和设置）来解决问题。开发者可以自由地处理其他事情，但可以随时查看状态或提供反馈。\n\n## Copilot 智能代理未来的下一阶段：三大支柱\n\nCopilot 的下一阶段将建立在三个融合的支柱之上：\n\n1.  **更智能、更精简的模型**：大型语言模型（LLM）的持续突破不断提高准确性，同时降低延迟和成本。扩展的上下文窗口现在可以覆盖整个单体应用，为 Copilot 提供了推理复杂代码库和返回基于实际代码答案所需的“长程记忆”。\n2.  **更深层的上下文感知**：Copilot 越来越能理解工作背后的完整故事——问题、拉取请求历史、依赖图，甚至私有运行手册和 API 规范（通过 MCP）。通过利用这种更丰富的上下文，它可以建议与项目意图而非仅语法对齐的更改。\n3.  **开放、可组合的基础**：Copilot 被设计为可以无缝集成到开发者的技术栈中。开发者选择编辑器、模型和工具；Copilot 则插入其中，学习开发者的模式并加以放大。开发者处于主导地位，引导 AI 以比以往任何时候都更快的速度构建、测试和发布代码。\n\n## 总结\n\n综合来看，这些支柱将 Copilot 从单一助手转变为一个灵活的 AI 队友——一个可以帮助任何团队（从车库里的三名开发者到全球企业中的数千名开发者）以更少的摩擦和更快的速度规划、编码、测试和发布代码的伙伴。下一波浪潮已经到来。\n\n## 相关信息\n\n*   **作者**：\n    ![Tim Rogers](https://avatars.githubusercontent.com/u/116134?v=4&s=200)\n    Staff Product Manager\n*   **相关文章**：\n    *   GitHub Copilot: Meet the new coding agent\n    *   Implementing features has never been easier: Just assign a task or issue to Copilot. It runs in the background with GitHub Actions and submits its work as a pull request.\n*   **探索更多来自 GitHub**：\n    *   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切，尽在一处。\n    *   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来，这里是任何人都可以构建任何东西的地方。\n    *   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用 GitHub 进行构建的公司和工程团队。\n    *   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025：最后机会：节省700美元购买 Universe 线下通行证，于10月28-29日在旧金山加入我们。",
-      "shortSummary": "GitHub Copilot正从“AI结对程序员”进化为“对等程序员”，旨在通过智能代理实现更深层次的协作。其愿景是让Copilot能独立解决问题、自适应协作并主动提升代码质量。目前已推出“代理模式”在IDE中实时协助，以及“编码代理”在云端独立完成任务。未来发展将基于更智能的模型、更深层的上下文感知和开放可组合的基础，使Copilot成为一个灵活的AI队友，加速软件开发，适用于各种规模的团队。",
-      "translated_title": "从结对编程到对等编程：GitHub Copilot 中智能代理工作流的愿景",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/116134?v=4&s=200",
-          "alt": "Tim Rogers",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>AI agents in GitHub Copilot don’t just assist developers but actively solve problems through multi-step reasoning and execution. Here’s what that means.</p>\n<p>The post <a href=\"https://github.blog/news-insights/product-news/from-pair-to-peer-programmer-our-vision-for-agentic-workflows-in-github-copilot/\">From pair to peer programmer: Our vision for agentic workflows in GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-07-15T04:48:27.197Z"
+  "lastUpdated": "2025-07-17T04:51:16.334Z"
 }
