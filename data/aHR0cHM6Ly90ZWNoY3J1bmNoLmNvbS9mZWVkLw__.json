@@ -5,6 +5,26 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "为了隐私和安全，在授予AI访问您的个人数据前请三思 (原标题: For privacy and security, think twice before granting AI access to your personal data)",
+      "link": "https://techcrunch.com/2025/07/19/for-privacy-and-security-think-twice-before-granting-ai-access-to-your-personal-data/",
+      "pubDate": "Sat, 19 Jul 2025 12:00:13 +0000",
+      "isoDate": "2025-07-19T12:00:13.000Z",
+      "creator": "Zack Whittaker",
+      "summary": "### 警惕AI对个人数据的过度访问\n\n随着人工智能（AI）日益渗透到我们生活的方方面面，从手机应用到搜索引擎，甚至浏览器，AI工具正越来越多地以“正常运作”为由，要求获取大量个人数据。这种程度的访问并非正常，也不应被常态化。\n\n#### 历史教训与AI的相似之处\n过去，用户会质疑一个看似无害的免费“手电筒”或“计算器”应用为何请求访问联系人、照片或实时位置数据。这些应用可能不需要这些数据来运行，但它们会请求，以便通过数据变现。如今，AI工具的做法与此并无二致。\n\n#### Perplexity Comet 浏览器的案例\n以Perplexity最新推出的AI浏览器Comet为例：\n*   Comet旨在通过内置AI搜索引擎帮助用户查找答案，并自动化日常任务，如总结电子邮件和日历事件。\n*   TechCrunch的实际测试发现，当Comet请求访问用户的Google日历时，它会要求获得用户Google账户的广泛权限，包括：\n    *   管理草稿和发送电子邮件\n    *   下载联系人\n    *   查看和编辑所有日历事件\n    *   甚至复制公司整个员工目录的能力。\n*   Perplexity声称大部分数据存储在用户设备本地，但用户仍授予公司访问和使用个人信息的权利，包括用于改进其AI模型。\n\n![Perplexity浏览器连接Google账户时请求的十余项权限列表。](https://techcrunch.com/wp-content/uploads/2025/07/perplexity-connector-ai-permissions.jpg)\n*Comet请求访问用户Google账户的权限。图片来源：TechCrunch*\n\n#### AI应用的数据访问趋势\n*   Perplexity并非唯一一家要求访问用户数据的公司。\n*   许多AI应用承诺通过转录通话或会议来节省时间，但它们要求AI助手访问用户的实时私人对话、日历、联系人等。\n*   Meta也在测试其AI应用可请求访问的权限范围，包括访问用户相机胶卷中尚未上传的照片。\n\n#### “把你的大脑放进罐子里”：AI代理的风险\nSignal总裁Meredith Whittaker将使用AI代理和助手比作“把你的大脑放进罐子里”。她解释道：\n*   某些AI产品承诺执行各种日常任务，如预订餐厅或音乐会门票。\n*   但为此，AI会要求权限打开浏览器（可能访问存储的密码、书签和浏览历史）、使用信用卡进行预订、标记日历日期，甚至打开联系人以便分享预订信息。\n\n#### 严重的安全和隐私风险\n允许AI访问个人数据带来了严重的风险：\n*   **不可逆的数据泄露：** 用户瞬间且不可逆地交出了其最个人信息的完整快照，包括收件箱、消息和多年来的日历条目。\n*   **自主行动的风险：** 用户授予AI代理代表其自主行动的权限，这需要对一项已知容易出错或捏造事实的技术寄予巨大信任。\n*   **信任营利性公司：** 用户还必须信任开发这些AI产品的营利性公司，这些公司依赖用户数据来改进其AI模型。\n*   **人工审查：** 当AI出现问题时，AI公司的人员通常会查看用户的私人提示以找出原因。\n\n#### 结论\n从安全和隐私的角度来看，将AI连接到最个人数据进行简单的成本效益分析，会发现放弃最私密信息的访问权限是不值得的。任何AI应用如果要求如此高水平的权限，都应敲响警钟，就像手电筒应用想要知道你实时位置一样。鉴于用户向AI公司交出的海量数据，请自问所获得的回报是否真的值得。",
+      "shortSummary": "AI工具正以便利为名，要求广泛访问用户的个人数据，如联系人、日历和浏览历史。这带来了严重的隐私和安全风险，因为用户不可逆地交出了敏感信息，并信任可能出错且以营利为目的的AI公司。例如，Perplexity Comet浏览器请求了大量Google账户权限。Signal总裁Meredith Whittaker警告这如同“把大脑放进罐子里”。权衡利弊，为节省时间而牺牲个人隐私通常不值得。用户在授予AI权限前应三思。",
+      "translated_title": "为了隐私和安全，在授予AI访问您的个人数据前请三思",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/perplexity-connector-ai-permissions.jpg",
+          "alt": "a list of more than a dozen permissions that Perplexity's browser asks for access to when connecting to a person's Google Account.",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "AI tools are increasingly asking for gross levels of access to your personal data under the guise of needing it to work."
+    },
+    {
       "title": "消息人士称，Benchmark正洽谈牵头Greptile的A轮融资，对这家AI代码审查公司的估值达1.8亿美元 (原标题: Benchmark in talks to lead Series A for Greptile, valuing AI-code reviewer at $180M, sources say)",
       "link": "https://techcrunch.com/2025/07/18/benchmark-in-talks-to-lead-series-a-for-greptile-valuing-ai-code-reviewer-at-180m-sources-say/",
       "pubDate": "Fri, 18 Jul 2025 23:21:29 +0000",
@@ -316,20 +336,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Diarrha N'Diaye-Mbaye, one of the first among the small number of Black women to raise more than $1 million in venture capital, hinted that one of the problems was tension between her and investors' expectations of a consumer retail business. "
-    },
-    {
-      "title": "OpenAI 在 ChatGPT 中推出通用代理 (原标题: OpenAI launches a general purpose agent in ChatGPT)",
-      "link": "https://techcrunch.com/2025/07/17/openai-launches-a-general-purpose-agent-in-chatgpt/",
-      "pubDate": "Thu, 17 Jul 2025 17:00:03 +0000",
-      "isoDate": "2025-07-17T17:00:03.000Z",
-      "creator": "Maxwell Zeff",
-      "summary": "## OpenAI 推出 ChatGPT 代理：通用 AI 助手\n\nOpenAI 正式在 ChatGPT 中推出一款名为 **ChatGPT 代理**的全新通用人工智能代理。该工具旨在代表用户完成各种基于计算机的任务，标志着 OpenAI 试图将 ChatGPT 从一个问答工具转变为一个能够执行操作和分担任务的代理产品的最大胆尝试。\n\n### 核心功能与能力\n\nChatGPT 代理整合了 OpenAI 现有代理工具的多种能力，包括：\n\n*   **任务自动化**：能够自动导航用户日历、生成可编辑的演示文稿和幻灯片，以及运行代码。\n*   **网页交互**：结合了 Operator 的网页点击能力。\n*   **信息综合**：继承了 Deep Research 从数十个网站综合信息并生成简洁研究报告的能力。\n*   **应用连接**：通过 ChatGPT 连接器，用户可以将 Gmail 和 GitHub 等应用程序连接到代理，以便代理查找相关信息。\n*   **工具访问**：代理可以访问终端并使用 API 访问特定应用程序。\n\nOpenAI 举例说明了 ChatGPT 代理的复杂任务处理能力，例如“计划并购买四人份日式早餐的食材”以及“分析三家竞争对手并创建幻灯片演示”。这些任务要求代理解析网站、规划行动方案并使用工具，远比 OpenAI 之前尝试的代理任务复杂。\n\n### 用户交互与可用性\n\n用户只需通过自然语言向 ChatGPT 提示即可与代理互动。ChatGPT 代理已于周四向 OpenAI 的 Pro、Plus 和 Team 计划订阅者推出。用户可以通过 ChatGPT 下拉菜单中的工具选项选择“代理模式”来激活该工具。\n\n### 性能提升\n\nOpenAI 表示，ChatGPT 代理所基于的模型在多项基准测试中展现了最先进的性能：\n\n*   **Humanity’s Last Exam**：在该项由上百个科目数千个问题组成的测试中，ChatGPT 代理（pass@1）得分 41.6%，大约是 OpenAI 之前的 o3 和 o4-mini 模型得分的两倍。\n*   **FrontierMath**：在最难的数学基准测试之一 FrontierMath 上，当拥有代码执行终端等工具时，ChatGPT 代理得分 27.4%，而之前的最先进模型 o4-mini 仅为 6.3%。\n\n### 安全考量与保障措施\n\n考虑到 ChatGPT 代理带来的新能力可能被恶意行为者滥用，OpenAI 在开发过程中特别注重安全性。OpenAI 已将该模型在生物和化学武器领域指定为“高能力”模型，这意味着它有能力“放大现有途径导致严重危害”。尽管没有直接证据，OpenAI 仍采取预防措施并激活了新的安全保障：\n\n*   **实时监控**：在用户与产品交互时，系统会实时运行一个分类器，检测进入 ChatGPT 代理的每个提示是否与生物学相关。\n*   **二次审查**：如果提示被标记为生物相关，代理的响应会通过第二个监视器进行审查，以确定内容是否可能引发生物威胁。\n*   **禁用记忆功能**：为了防止滥用（例如通过提示注入攻击窃取敏感数据），ChatGPT 代理暂时禁用了 ChatGPT 的记忆功能。OpenAI 表示未来可能会重新考虑添加此功能。\n\n### 实际表现展望\n\n尽管 ChatGPT 代理听起来令人印象深刻，但其在现实世界中的实际能力仍有待观察。此前，代理技术在与现实世界交互时表现出相对脆弱性。然而，OpenAI 坚信他们开发了一个更强大的模型，能够兑现 AI 代理的承诺。\n\n### 演示视频\n\n以下是 OpenAI 发布的关于 ChatGPT 代理的演示视频：\n\n[https://pic.twitter.com/7uN2Nc6nBQ](https://pic.twitter.com/7uN2Nc6nBQ)",
-      "shortSummary": "OpenAI 在 ChatGPT 中推出了名为“ChatGPT 代理”的通用 AI 助手。它能自动执行多种计算机任务，如导航日历、生成演示文稿和运行代码，并结合了网页交互和信息综合能力。该代理已向 Pro、Plus 和 Team 订阅者开放，旨在将 ChatGPT 转型为可执行任务的工具。OpenAI 称其在基准测试中表现出色，并实施了严格的安全措施，包括禁用记忆功能，以防范潜在滥用风险。",
-      "translated_title": "OpenAI 在 ChatGPT 中推出通用代理",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "OpenAI announced the launch of ChatGPT agent, which the company claims to be its most capable AI agent product yet."
     }
   ],
-  "lastUpdated": "2025-07-19T06:32:12.902Z"
+  "lastUpdated": "2025-07-19T12:42:33.368Z"
 }
