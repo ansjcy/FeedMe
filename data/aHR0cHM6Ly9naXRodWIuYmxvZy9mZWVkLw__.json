@@ -9,7 +9,7 @@
       "link": "https://github.blog/news-insights/company-news/github-availability-report-june-2025/",
       "pubDate": "Wed, 16 Jul 2025 21:06:17 +0000",
       "isoDate": "2025-07-16T21:06:17.000Z",
-      "creator": "Natalie Guevara",
+      "creator": "Jakub Oleksy",
       "summary": "## GitHub 2025年6月可用性报告\n\n在2025年6月，GitHub服务共经历了三次导致性能下降的事件。\n\n### 事件一：2025年6月5日 (UTC时间 17:47 - 19:20，持续1小时33分钟)\n\n*   **受影响服务：** Actions\n*   **影响：**\n    *   47.2%的运行启动延迟，平均延迟14分钟。\n    *   21.0%的运行失败。\n    *   60%的Copilot Coding Agent会话被取消。\n    *   所有使用分支构建的Pages站点部署失败（Pages服务本身不受影响）。\n*   **原因：** 内部Actions服务之间负载激增，暴露出配置错误，导致运行启动关键路径中的请求被限流。\n*   **缓解措施：** 纠正服务配置以防止限流，并更新部署流程以确保正确配置得以保留。\n\n### 事件二：2025年6月12日 (UTC时间 17:55 - 21:07，持续3小时12分钟)\n\n*   **受影响服务：** GitHub Copilot\n*   **影响：**\n    *   Gemini模型不可用，Claude模型可用性降低。\n    *   VS Code、JetBrains IDEs和GitHub Copilot Chat中，聊天完成错误率显著升高，响应时间变慢，出现超时和聊天功能中断。\n*   **原因：** 影响其中一个模型提供商的故障。\n*   **缓解措施：** 暂时禁用受影响的提供商端点以减少用户影响。GitHub正在更新基础设施提供商故障的事件响应手册，并改进监控和警报系统，以减少未来此类问题的检测和缓解时间。\n\n### 事件三：2025年6月17日 (UTC时间 19:32 - 20:03，持续31分钟)\n\n*   **受影响服务：** 内部路由策略部署\n*   **影响：** 导致数据中心内部分网络地址块的可达性问题。\n    *   github.com UI（已认证用户）：3-4%的错误率。\n    *   API（已认证调用者）：40%的错误率。\n    *   UI和API（未认证请求）：接近100%的错误率。\n    *   Actions：2.5%的运行延迟（平均8分钟），3%的运行失败。\n    *   大文件存储（LFS）请求：1%的错误。\n*   **原因：** 向部分网络设备部署内部路由策略。\n*   **缓解措施：** 于19:54 UTC回滚部署，受影响系统的网络可用性恢复。20:03 UTC完全恢复正常运行。GitHub正在扩展路由策略更改的验证流程，以防止类似问题。\n\n### 更多信息\n\n*   请关注GitHub状态页面获取实时更新和事件回顾。\n*   访问GitHub工程博客了解更多工作进展。\n\n### 相关内容\n\n*   **Docs**：掌握GitHub所需的一切。\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n*   **GitHub**：在GitHub上构建未来。\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n*   **Customer stories**：了解使用GitHub进行构建的公司和工程团队。\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n*   **GitHub Universe 2025**：参加10月28-29日在旧金山举行的Universe大会。\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)",
       "shortSummary": "GitHub在2025年6月经历了三次服务降级事件。6月5日，Actions服务因配置错误导致运行延迟和失败。6月12日，GitHub Copilot因模型提供商故障导致服务中断和错误率升高。6月17日，内部路由策略部署引发网络可达性问题，影响了UI、API和Actions。GitHub已采取措施纠正问题，并计划改进配置管理、事件响应和验证流程，以防止未来再次发生类似事件。",
       "translated_title": "GitHub 2025年6月可用性报告",
@@ -296,5 +296,5 @@
       "content": "<p>Learn how to streamline your development workflow with five different MCP use cases. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/5-ways-to-transform-your-workflow-using-github-copilot-and-mcp/\">5 ways to transform your workflow using GitHub Copilot and MCP</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-07-17T04:51:16.334Z"
+  "lastUpdated": "2025-07-19T04:40:23.544Z"
 }
