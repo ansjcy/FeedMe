@@ -5,6 +5,84 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "使用 Veo 3 进行构建，现已在 Gemini API 中推出 (原标题: Build with Veo 3, now available in the Gemini API)",
+      "link": "https://developers.googleblog.com/en/veo-3-now-available-gemini-api/",
+      "pubDate": "Wed, 16 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-16T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## 使用 Veo 3 进行构建，现已在 Gemini API 中推出\n\nGoogle 于2025年7月17日宣布，通过 Gemini API 和 Vertex AI 向开发者提供 Veo 3 的付费预览。Veo 3 是 Google 在2025年 Google I/O 大会上首次亮相的视频模型，全球用户已使用它生成了数千万高质量视频。\n\n### Veo 3 的核心能力\nVeo 3 是 Google 首个集成高保真视频输出和原生音频的视频模型，目前支持文本到视频生成，并将很快支持图像到视频。\n\n### 开发者应用案例\n开发者已开始利用 Veo 3 进行实验，探索其在内容构思、快速迭代和提高效率方面的潜力：\n\n*   **Cartwheel:** 开发了一个系统，能将人类的2D视频转换为生产就绪的3D动画。Cartwheel 利用 Veo 3 生成逼真流畅的人体动作，然后将其转化为客户所需的3D动画。\n*   **Volley:** 使用 Veo 3 制作游戏内的过场动画以推进故事。Veo 3 帮助 Volley 的设计师快速迭代游戏内容，为即将推出的 RPG 游戏《Wit's End》提供最佳输出。\n\n### Veo 3 的主要功能\nVeo 3 旨在处理各种视频生成任务，从电影叙事到动态角色动画，不仅能生成令人惊叹的视觉效果，还能生成对话和音效等音频，从而创造更沉浸式的体验：\n\n*   **同步音频 (Synchronized Sound):** 原生生成丰富的音频（对话、效果和音乐），并与视频同步。\n*   **电影级质量 (Cinematic Quality):** 制作高质量、高清晰度的视频，捕捉提示中的创意细节，包括复杂的纹理和微妙的光影效果。\n*   **真实物理效果 (Realistic Physics):** 模拟真实世界物理，实现真实的运动，如自然的角色动作、准确的水流和阴影投射。\n\n### 获取与定价\n\n*   **可用性:** Veo 3 可通过 Gemini API（付费预览）和 Vertex AI 获得。它也在 Google AI Studio 中作为 SDK 模板和交互式 Starter App 提供，方便付费层级用户快速原型开发。此外，Google AI 订阅者可在 Gemini 应用和 Flow 中使用 Veo 3，企业客户则可通过 Vertex AI 访问。\n*   **定价:** 视频和音频输出的定价为每秒0.75美元。未来将推出 Veo 3 Fast，提供更快速、更经济的视频创作选项。\n*   **负责任的构建:** 所有由 Veo 3 模型生成的视频都将包含数字 SynthID 水印。\n*   **入门资源:** 开发者可以通过查阅文档、教程（cookbook）和 Veo 3 入门应用（付费层级）来开始使用。",
+      "shortSummary": "Google已通过Gemini API和Vertex AI向开发者推出Veo 3的付费预览。Veo 3是首个集成高保真视频和原生音频的视频模型，支持文本到视频，并即将支持图像到视频。它提供同步音频、电影级质量和真实物理效果，帮助开发者快速迭代和高效创作。定价为每秒0.75美元，未来将推出更快的Veo 3 Fast。所有生成视频均含SynthID水印，可通过Google AI Studio等平台访问。",
+      "translated_title": "使用 Veo 3 进行构建，现已在 Gemini API 中推出",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Veo 3, Google’s latest AI video generation model, is now available in paid preview via the Gemini API and Google AI Studio. Unveiled at Google I/O 2025, Veo 3 can generate both video and synchronized audio, including dialogue, background sounds, and even animal noises. This model delivers realistic visuals, natural lighting, and physics, with accurate lip syncing and sound that matches on-screen action."
+    },
+    {
+      "title": "解锁 Gemini 的推理：Vertex AI 上 Logprobs 的分步指南 (原标题: Unlock Gemini’s reasoning: A step-by-step guide to logprobs on Vertex AI)",
+      "link": "https://developers.googleblog.com/en/unlock-gemini-reasoning-with-logprobs-on-vertex-ai/",
+      "pubDate": "Tue, 15 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-15T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# 解锁 Gemini 的推理：Vertex AI 上 Logprobs 的分步指南\n\n本文详细介绍了如何在 Vertex AI 上的 Gemini API 中使用 Logprobs 功能，以深入理解模型的决策过程，并将其应用于构建更智能、更可靠的应用程序。\n\n## 什么是 Logprobs？\n\nLogprobs（对数概率）是模型分配给某个词元（token）的概率分数的自然对数。理解其关键概念有助于解释模型置信度：\n\n*   **概率**：介于 0 到 1 之间。\n*   **自然对数**：0 到 1 之间任何数的自然对数都是负数。\n*   **对数概率为 0**：表示 100% 的确定性（即概率为 1）。\n*   **解释**：Logprob 分数越接近 0，表示模型对其选择的置信度越高。\n\n## 环境设置\n\n在开始使用 Logprobs 之前，需要进行以下环境配置：\n\n1.  **安装 Google GenAI SDK**：使用 `pip install -U -q google-genai` 命令安装或升级 Python SDK。\n2.  **配置 Google Cloud 项目**：设置您的 `PROJECT_ID` 和 `location`（例如 `global`）以进行身份验证。\n3.  **初始化客户端和模型**：创建 `genai.Client` 实例，并指定要使用的 Gemini 模型（例如 `gemini-2.5-flash`）。\n\n## 启用和处理 Logprobs\n\n通过在请求的 `generation_config` 中设置以下两个参数来启用 Logprobs：\n\n*   `response_logprobs=True`：指示模型返回其输出中选择的词元的对数概率（默认为 `False`）。\n*   `logprobs=[integer]`：要求模型同时返回指定数量（1 到 20）的每个步骤中排名靠前的替代词元的对数概率。\n\n文章提供了一个示例，展示了如何使用 Logprobs 对句子进行分类，并提供了一个 `print_logprobs` 辅助函数来以可读格式打印结果，详细展示了模型对每个词元的预测及其替代词元。\n\n**输出解读示例**：\n\n如果模型返回 `Token: 'Neutral' (-0.0214)`，以及替代词元如 `'Positive': (-4.8219)` 和 `'Negative': (-5.6293)`，这表明模型对“Neutral”的置信度极高（-0.0214 非常接近 0），而对其他选项的置信度则低得多。\n\n## Logprobs 的应用场景\n\nLogprobs 不仅仅是一个调试工具，它能帮助开发者构建更智能、更可靠、更具上下文感知能力的应用程序。\n\n### 1. 更智能的分类\n\nLogprobs 将分类从简单的答案转变为透明的决策过程，从而构建更强大的系统：\n\n*   **检测歧义以进行人工审查**：当模型对分类结果的置信度不高时（例如，前两个选项的 Logprobs 差异很小），可以将其标记为需要人工审查。\n*   **基于置信度的阈值设置**：将所选词元的 Logprob 转换回原始概率分数（使用 `math.exp()`），然后根据预设的置信度阈值（例如 90%）决定是否接受分类结果。\n\n### 2. 动态自动补全\n\n通过反复查询模型并检查其顶级候选词元的 Logprobs，可以构建一个动态的自动补全功能，实时提供最相关的下一个词建议。\n\n文章通过模拟用户输入“The best thing about living in Toronto is the”来展示此功能。随着上下文的增加，模型对下一个词的预测变得越来越具体和准确。\n\n![自动补全分析](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_Gl9YFyT.original.png)\n\n**分析**：\n\n*   对于“The”这样的通用词，建议是通用的起始词。\n*   当上下文完整为“The best thing about living in Toronto is the”时，模型能自信地预测出多伦多的具体属性，如“diversity”（多样性）和“food”（美食），这展示了其深层的上下文理解能力。\n\n### 3. 定量 RAG 评估\n\nLogprobs 可以用于评估检索增强生成（RAG）系统，衡量其答案与检索到的上下文的一致性。\n\n当大型语言模型（LLM）拥有相关上下文时，其生成事实一致答案的置信度会提高，这反映在更高的 Logprobs 上。通过计算生成答案的平均 Logprob，可以获得一个“基础性”或“置信度”分数。\n\n文章设置了虚构的知识库，并测试了三种场景：良好检索、不良检索和无检索。\n\n![Logprobs 图表](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/logprobs_chart.original.jpg)\n\n**分析**：\n\n结果显示出清晰的相关性。“良好检索”场景的得分最高（最接近零），因为模型对其答案得到文本支持的置信度很高。这使得 Logprobs 成为自动化评估和改进 RAG 系统的强大指标。\n\n## 展望\n\nLogprobs 功能为开发者提供了深入了解模型决策过程的能力，并可应用于分析分类结果、构建动态自动补全功能和评估 RAG 系统。这只是该功能众多应用场景中的一小部分，鼓励开发者进一步探索。更多信息可查阅入门笔记本和 Gemini API 官方文档。",
+      "shortSummary": "本文介绍了 Vertex AI 上 Gemini API 中新推出的 Logprobs 功能。该功能允许开发者查看模型选择的词元及其替代词元的概率分数，从而深入理解模型的推理过程。文章详细讲解了 Logprobs 的概念、启用方法，并展示了其在智能分类（检测歧义、置信度阈值）、动态自动补全和定量 RAG 评估等关键应用场景中的实际价值，帮助开发者构建更智能、更可靠的 AI 应用。",
+      "translated_title": "解锁 Gemini 的推理：Vertex AI 上 Logprobs 的分步指南",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_Gl9YFyT.original.png",
+          "alt": "auto-complete analysis",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/logprobs_chart.original.jpg",
+          "alt": "logprobs_chart",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The `logprobs` feature has been officially introduced in the Gemini API on Vertex AI, provides insight into the model's decision-making by showing probability scores for chosen and alternative tokens. This step-by-step guide will walk you through how to enable and interpret this feature and apply it to powerful use cases such as confident classification, dynamic autocomplete, and quantitative RAG evaluation."
+    },
+    {
+      "title": "斯坦福大学的Marin基础模型：首个使用JAX开发的完全开放模型 (原标题: Stanford’s Marin foundation model: The first fully open model developed using JAX)",
+      "link": "https://developers.googleblog.com/en/stanfords-marin-foundation-model-first-fully-open-model-developed-using-jax/",
+      "pubDate": "Tue, 15 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-15T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# 斯坦福大学Marin基础模型：首个使用JAX开发的完全开放模型\n\n## 引言：扩展AI模型“开放”的定义\n\n当前AI时代，强大的基础模型被开放共享，加速了创新。斯坦福大学CRFM（基础模型研究中心）的Marin项目旨在扩展“开放”的定义，使其涵盖模型背后的整个科学过程。该项目被设计为一个“开放实验室”，目标不仅是共享模型本身，还要公开完整的研发历程，包括代码、数据集、数据方法、实验、超参数和训练日志。这种高水平的透明度通过提供一个独特、完全可复现的资源，补充了现有生态系统，使研究人员能够深入审查、构建和信任所开发的模型。Marin项目致力于为基础模型研究营造一个更透明、更易于访问的未来。\n\n![AI模型开放性谱系](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ai-model-openness-spectrum-stanford-marin-open-.original_4oMY0az.png)\n\n## 核心发布与技术栈\n\n该“开放实验室”的首批发布是Marin-8B-Base和Marin-8B-Instruct模型。秉承项目原则，模型、数据、代码和分词器均在宽松的Apache 2.0许可下发布。实现完全可复现性是一个艰巨的工程问题，需要控制大规模分布式系统中的每一个变异源。项目的成功取决于一个能够在大规模下提供可复现性保证，并最大限度提高效率以训练具有领先性价比的基础模型的技术栈。团队选择了JAX作为基础，并构建了一个新的框架——Levanter，以充分利用JAX的强大功能。\n\n## 构建开放基础模型的核心挑战与解决方案\n\n为了成功创建真正开放、可扩展和可复现的基础模型，CRFM团队解决了以下几个工程挑战：\n\n### 1. 在单个加速器上实现最大速度\n\n*   **问题**：核心训练循环执行数十亿次，Python等解释型语言的开销会造成巨大的性能瓶颈。操作逐步调度还会导致过多的内存流量和开销，尤其是在TPU等硬件上，吞吐量取决于高效执行融合操作。\n*   **解决方案**：\n    *   Levanter将整个多阶段训练步骤（前向传播、损失、反向传播和更新）封装成一个单一函数，并使用`@jax.jit`装饰器。JAX的XLA编译器将整个过程转换为一个高度优化的机器码内核，融合操作以最大限度地利用硬件。\n    *   使用`jax.value_and_grad`在一次传递中计算损失及其梯度，避免冗余计算。\n    *   JAX还支持梯度检查点等高级技术，节省内存并允许使用更大的批次大小。\n    *   Levanter还使用了JAX强大的Pallas-based Splash Attention内核，这是几乎所有大型语言模型核心的关键操作——点积注意力的高度优化实现。\n\n### 2. 管理大规模并行计算的复杂性\n\n*   **问题**：训练最先进的模型需要扩展到数千个加速器芯片。手动管理模型和数据的分区以及设备间的通信极其复杂，代码很快变得难以阅读、调试和适应。\n*   **解决方案**：\n    *   JAX的`@jax.jit`装饰器无缝支持单程序多数据（SPMD）并行化，自动化底层数据分片和通信。XLA编译器自动调度加速器之间的通信，最大限度地减少网络等待时间，最大化计算时间。\n    *   为了使`jit`的功能更易于安全使用，Levanter开发了Haliax库，用于命名张量。通过使用人类可读的名称（如“embed”或“batch”）而不是位置索引来引用张量轴，代码变得自文档化且健壮。\n    *   这种抽象允许通过更改配置文件中的几行代码，轻松定义和修改复杂的分片策略，如完全分片数据并行（FSDP）和张量并行，而无需触及模型代码。\n\n### 3. 构建和管理弹性、高成本效益的计算集群\n\n*   **问题**：大规模训练需要灵活访问大型计算集群。项目严重依赖抢占式TPU实例来管理成本，这意味着需要一种方法来轻松地将许多较小、分散的TPU切片组合成一个逻辑集群，并对频繁中断具有弹性。\n*   **解决方案**：\n    *   利用Google Cloud TPU Multislice技术，允许训练作业使用多个TPU切片，如同一个大型系统。\n    *   Levanter使用Ray来编排此过程，在训练作业期间无缝扩展或缩减TPU切片数量，并确保在任何单个切片被抢占时作业仍保持弹性。\n    *   得益于JAX和XLA，Levanter和Marin在GPU上也获得了类似的高性能结果。\n\n### 4. 通过完美可复现性培养科学信任\n\n*   **问题**：Marin项目的核心目标是实现可验证的科学。这要求即使在训练暂停、重启或在不同机器配置之间移动时也能获得可复现的结果，这是一个重大的技术障碍。\n*   **解决方案**：\n    *   这是驱动Levanter设计的根本要求。项目选择JAX正是因为其强大的可复现性保证，例如其默认使用确定性伪随机数生成器（PRNGs）。\n    *   Marin-8B的训练验证了这一选择，该训练涉及在不同TPU切片和硬件类型之间迁移，同时在抢占发生时成功保持了逐比特的可复现性。\n    *   Levanter还包括一个基于Google Tensorstore库的健壮数据加载系统。Levanter的数据存储提供对任何批次训练数据的确定性、随机访问，无论作业重启或数据源更改如何，这对于支持中期训练等高级训练策略至关重要。JAX的确定性和Levanter的数据存储也使可解释性研究人员能够轻松理解特定数据在训练期间如何影响模型。\n\n### 5. 创建一个内聚的框架\n\n*   **问题**：虽然JAX提供了强大的引擎，但没有现有高级框架能满足项目对可读性、大规模可扩展性和逐比特确定性的严格综合要求。需要一个完整、有主见的系统来编排整个训练过程。\n*   **解决方案**：\n    *   从头开始构建了Levanter，一个JAX原生的框架，旨在成为所需系统：逐比特确定性、可扩展并具有高级分布式策略，以及弹性。\n    *   JAX不仅仅是一个库，它是一个用于构建新工具的“元框架”。Levanter建立在其成熟、高性能的TPU支持以及高级抽象（jit）与低级控制（Pallas）的无缝集成之上。\n    *   这种方法在JAX社区中很常见，该社区已经产生了Flax、Equinox、Orbax和Optax等充满活力的库生态系统，它们协同工作，使像Marin这样的团队能够构建强大的解决方案。\n\n## Marin-8B的训练历程：“Tootsie”过程\n\n上述原则、工具和库在Marin-8B的训练运行中得到了实施和应用。模型架构是Llama风格的Transformer。\n\n![Marin 8B-Base模型架构一览](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Marin-8B-Base-model-architecture_2.original.png)\n\nMarin-8B的训练是一个自适应的旅程，而非静态、单一的运行，内部称之为“Tootsie”过程。这一真实研究工作流程的诚实描绘已公开。该过程涵盖了超过12万亿个token，涉及多个阶段，适应了新数据、技术，甚至不同的硬件配置——在训练过程中在大型、多切片TPU配置（2x v5e-256到1x v4-2048 pods）之间迁移。团队持续优化数据混合，纳入更高质量的来源，并调整学习率和批次大小等超参数以优化性能。这种“混乱”的现实是一个强大的教育工具，而JAX和Levanter堆栈在处理这些重大转变同时保持逐比特可复现性的能力，有力地证明了其鲁棒性。\n\n## 加入Marin社区\n\nMarin项目是参与基础模型开发和为JAX生态系统做出贡献的公开邀请。Marin的旅程回答了“开放的下一步是什么？”这个问题。这项创建“开放实验室”的努力得益于JAX生态系统的技术能力。其性能、可移植性和为可复现性而设计的底层架构是使研究“完整旅程”可访问的关键要素。\n\n通过共享从数据方法到训练日志的一切，项目旨在提供一个完全可复现的资源——一个赋能研究人员深入审查、构建和信任AI工作的资源。项目相信这是迈向AI更透明未来的协作一步。邀请您加入这个“开放实验室”——使用Marin，为研究做出贡献，并帮助构建下一波创新和值得信赖的基础模型。\n\n项目的核心资源是官方网站marin.community。在那里，您可以找到Hugging Face上发布的模型，在GitHub上探索“开放实验室”，阅读Marin文档，并深入了解Levanter训练框架。您还可以在Colab中通过一个简单的推理示例试用Marin。活跃的讨论正在Discord频道中进行，您可以在那里直接与其他开发者互动。对于JAX生态系统的新手，官方JAX文档提供了优秀的资源，包括快速入门指南。",
+      "shortSummary": "斯坦福大学的Marin项目发布了首个使用JAX开发的完全开放基础模型，旨在将AI模型的“开放”定义扩展至整个科学研究过程。该项目发布了Marin-8B模型和Levanter框架，强调代码、数据和训练日志的完全可复现性与透明度。JAX的强大功能解决了速度、并行、集群管理和确定性复现等核心挑战，实现了“开放实验室”愿景。此举旨在促进AI研究的信任、协作与透明化，并邀请社区参与贡献。",
+      "translated_title": "斯坦福大学的Marin基础模型：首个使用JAX开发的完全开放模型",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ai-model-openness-spectrum-stanford-marin-open-.original_4oMY0az.png",
+          "alt": "The Spectrum of AI Model Openness",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Marin-8B-Base-model-architecture_2.original.png",
+          "alt": "Marin 8B-Base model architecture at a glance",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The Marin project aims to expand the definition of 'open' in AI to include the entire scientific process, not just the model itself, by making the complete development journey accessible and reproducible. This effort, powered by the JAX framework and its Levanter tool, allows for deep scrutiny, trust in, and building upon foundation models, fostering a more transparent future for AI research."
+    },
+    {
+      "title": "使用 ADK 和 Gemini CLI 简化你的 Agent ‘氛围构建’流程 (原标题: Simplify your Agent \"vibe building\" flow with ADK and Gemini CLI)",
+      "link": "https://developers.googleblog.com/en/simplify-agent-building-adk-gemini-cli/",
+      "pubDate": "Tue, 15 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-15T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## 使用 ADK 和 Gemini CLI 简化 Agent 开发流程\n\n本文介绍了 Agent Development Kit (ADK) 的最新更新，以及其与 Gemini CLI 结合使用如何显著简化和加速 AI Agent 的开发过程，旨在消除开发中的摩擦，提升开发者的“直觉编程”（vibe coding）体验。\n\n### 消除开发摩擦\n\n对于开发者而言，进入“心流”状态至关重要，而文档阅读、框架选择和上下文切换等因素常常会打断这种状态。ADK 与 Gemini CLI 的结合旨在解决这些痛点，通过在开发者与 Gemini 之间建立无缝对话，将高层级想法迅速转化为功能性 Agent，从而让开发者能将更多时间用于解决实际问题，而非从零开始编写代码。\n\n### 核心机制：优化的 llms-full.txt 文件\n\n此次升级的核心是 ADK 仓库中经过改进的 `llms-full.txt` 文件。该文件可视为 ADK 框架的精简指南，详细列出了所有组件、功能和最佳实践。其主要改进包括：\n\n*   **文件大小缩减**：长度缩短了 50% 以上，减少了 token 消耗。\n*   **LLM 友好性**：更易于大型语言模型（LLMs）理解。\n\n这些改进使得 Gemini CLI 能够**全面理解 ADK 框架**，而不会占用过多的上下文窗口或出现“上下文腐烂”问题。这显著降低了成本，并提高了代码生成的准确性。Gemini CLI 获得了对框架的深度原生理解，能够将高层级计划直接转化为准确、符合习惯的多 Agent 代码，从而**大幅加速原型开发速度**，使开发者能够快速实验和迭代。\n\n### 实战演示：构建 AI GitHub 问题标签 Agent\n\n文章通过一个实际案例展示了 ADK 和 Gemini CLI 的强大功能：构建一个 AI Agent 来自动标记 GitHub 问题，以便于优先级排序和分配。整个过程仅需几个简单步骤：\n\n1.  **步骤 0：下载 llms-full.txt**\n    *   将 `llms-full.txt` 文件从 `adk-python` 仓库下载到工作目录。\n\n2.  **步骤 1：与 Gemini CLI 构思计划**\n    *   开发者向 Gemini CLI 描述构建 AI Agent 的高层级目标（例如，使用 ADK 框架和 Gemini 为 GitHub 仓库问题打标签）。\n    *   Gemini CLI 随即生成一个详细的四阶段计划：\n        *   **阶段 1：项目设置与配置**：初始化项目、安装依赖（`google-adk`、`PyGithub`）、配置 GitHub 认证（PAT）。\n        *   **阶段 2：开发 GitHub 自定义工具**：创建 `github_tools.py` 文件，包含 `get_issue`、`get_available_labels` 和 `apply_label` 等函数，供 Agent 调用。\n        *   **阶段 3：构建标签 Agent**：在 `main.py` 中定义 Agent，配置 Gemini 模型（如 `gemini-1.5-flash`），集成自定义工具，并编写核心指令（prompt）指导 Agent 的工作流程（读取问题 -> 获取标签 -> 分析并选择 -> 应用标签）。\n        *   **阶段 4：创建应用程序入口点**：在 `main.py` 中创建简单的 CLI 接口，接受仓库名和问题编号作为输入，触发 Agent 执行标签任务。\n    *   在此阶段，开发者无需编写任何代码，即可定义完整的逻辑。\n\n3.  **步骤 2：将计划转化为 ADK Agent 代码**\n    *   开发者指示 Gemini CLI 使用 `llms-full.txt` 生成基于上述计划的 Python ADK 代码。\n    *   Gemini CLI 立即生成了完整的、功能性的 Agent 应用程序代码，包括 `labeling_agent` 的定义（使用 `google.adk.agents`、`google.genai` 等）和 `github_tools.py` 中的具体函数实现。文章提到还生成了 `requirements.txt` 和 `label_config.py`。\n    *   由于 `llms-full.txt` 提供了必要的上下文，CLI 自动处理了所有样板代码。\n\n4.  **步骤 3 & 4：在心流中测试和改进**\n    *   代码生成后，开发者可以立即进行本地测试。如果发现 bug 或有改进想法（例如，添加新的标签或在 Agent 完成后生成摘要），可以直接向 Gemini CLI 提出修改请求。\n    *   Gemini CLI 会在保持上下文的情况下重构代码，无需手动编辑，从而保持开发者的心流状态。\n\n5.  **步骤 5：循环迭代**\n    *   新的工作流程形成了一个高效的迭代循环：\n        1.  构思 Agent 逻辑。\n        2.  使用 Gemini CLI 生成 ADK 代码。\n        3.  即时测试。\n        4.  通过简单的对话请求进行改进。\n    *   这种循环允许开发者持续优化 Agent，而不会受到传统开发中常见的摩擦干扰。\n\n### 总结\n\nADK 与 Gemini CLI 的结合提供了一种前所未有的快速、流畅的 Agent 开发体验。通过利用优化的 `llms-full.txt` 文件，Gemini CLI 能够深度理解 ADK 框架，将高层级想法迅速转化为可运行的代码，并支持在开发过程中进行无缝的迭代和改进，从而让开发者能够更专注于解决实际问题。",
+      "shortSummary": "ADK (Agent Development Kit) 与 Gemini CLI 的结合显著简化了 AI Agent 开发。通过优化的 `llms-full.txt` 文件，Gemini CLI 能深度理解 ADK 框架，将高层级想法迅速转化为准确的 Agent 代码。这加速了原型开发，并支持在开发过程中通过对话进行无缝迭代。开发者能将更多精力放在解决实际问题上，而非繁琐的编码工作，从而实现更流畅、高效的“直觉编程”体验。",
+      "translated_title": "使用 ADK 和 Gemini CLI 简化你的 Agent ‘氛围构建’流程",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "The updated Agent Development Kit (ADK) simplifies and accelerates the process of building AI agents by providing the CLI with a deep, cost-effective understanding of the ADK framework, allowing developers to quickly ideate, generate, test, and improve functional agents through conversational prompts, eliminating friction and keeping them in a productive \"flow\" state."
+    },
+    {
       "title": "Gemini Embedding 现已在 Gemini API 中普遍可用 (原标题: Gemini Embedding now generally available in the Gemini API)",
       "link": "https://developers.googleblog.com/en/gemini-embedding-available-gemini-api/",
       "pubDate": "Sun, 13 Jul 2025 16:00:00 GMT",
@@ -165,116 +243,7 @@
       ],
       "contentSource": "完整文章",
       "content": "The new batch mode in the Gemini API is designed for high-throughput, non-latency-critical AI workloads, simplifying large jobs by handling scheduling and processing, and making tasks like data analysis, bulk content creation, and model evaluation more cost-effective and scalable, so developers can process large volumes of data efficiently."
-    },
-    {
-      "title": "介绍 Gemma 3n：开发者指南 (原标题: Introducing Gemma 3n: The developer guide)",
-      "link": "https://developers.googleblog.com/en/introducing-gemma-3n-developer-guide/",
-      "pubDate": "Wed, 25 Jun 2025 16:00:00 GMT",
-      "isoDate": "2025-06-25T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 介绍 Gemma 3n：开发者指南\n\n## 引言\nGemma 模型自去年初发布以来，已发展成为一个拥有超过 1.6 亿次总下载量的繁荣生态系统。在此基础上，Google 正式发布了 **Gemma 3n**，这是一款专为开发者社区设计的移动优先架构模型。Gemma 3n 得到了 Hugging Face Transformers、llama.cpp、Google AI Edge、Ollama、MLX 等流行工具的支持，方便开发者轻松进行微调和部署。本文旨在深入探讨 Gemma 3n 背后的创新、分享新的基准测试结果，并指导开发者如何开始构建。\n\n## Gemma 3n 的新特性\nGemma 3n 代表了设备端 AI 的重大进步，将强大的多模态能力带到边缘设备，其性能此前仅在去年的云端前沿模型中可见。\n\n*   **多模态设计**：Gemma 3n 原生支持图像、音频、视频和文本输入，以及文本输出。\n*   **针对设备优化**：Gemma 3n 模型专注于效率，提供两种基于有效参数的尺寸：E2B（5B 原始参数，2GB 内存占用）和 E4B（8B 原始参数，3GB 内存占用）。通过架构创新，其内存占用可与传统 2B 和 4B 模型媲美。\n*   **突破性架构**：Gemma 3n 的核心是新颖的组件，如用于计算灵活性的 MatFormer 架构、用于内存效率的逐层嵌入 (PLE)、用于架构效率的 LAuReL 和 AltUp，以及针对设备端用例优化的新型音频和基于 MobileNet-v5 的视觉编码器。\n*   **增强的质量**：Gemma 3n 在多语言（支持 140 种文本语言和 35 种多模态理解语言）、数学、编码和推理方面均有质量提升。E4B 版本在 LMArena 评分中达到 1300 分以上，使其成为首个参数量低于 100 亿的模型达到此基准。\n    ![LMArena Text Arena Elo Score rankings for Gemini 1.5 Pro, Gemma 3n E4B llama 4 Maverick 17B 128E GPT 4.1-nano and Phi-4](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemma_3n_Chart_1_RD1-V01_1.original.png)\n\n## MatFormer：一个模型，多种尺寸\nGemma 3n 的核心是 MatFormer (🪆Matryoshka Transformer) 架构，这是一种新颖的嵌套式 Transformer，专为弹性推理而设计。它像俄罗斯套娃一样：一个更大的模型包含更小、功能齐全的自身版本。这种方法将 Matryoshka 表示学习的概念从嵌入扩展到所有 Transformer 组件。\n![MatFormer in Nano V3](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_3h2xBRA.original.jpg)\n在 4B 有效参数 (E4B) 模型的 MatFormer 训练过程中，一个 2B 有效参数 (E2B) 的子模型同时在其内部得到优化。这为开发者提供了两种强大的能力和用例：\n\n1.  **预提取模型**：开发者可以直接下载并使用主 E4B 模型以获得最高能力，或使用已提取的独立 E2B 子模型，后者可提供高达 2 倍的推理速度。\n2.  **通过 Mix-n-Match 自定义尺寸**：为了更精细地控制以适应特定硬件限制，开发者可以使用 Mix-n-Match 方法创建 E2B 和 E4B 之间的一系列自定义尺寸模型。MatFormer Lab 工具已发布，展示如何检索这些通过 MMLU 等基准评估确定的最优模型。\n    ![Custom Sizes with Mix-n-Match](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image4_5lfhlBO.original.png)\n展望未来，MatFormer 架构也为弹性执行铺平了道路，允许单个部署的 E4B 模型在运行时动态切换 E4B 和 E2B 推理路径，从而根据当前任务和设备负载实时优化性能和内存使用（此功能不属于本次发布的实现）。\n\n## 逐层嵌入 (PLE)：提升内存效率\nGemma 3n 模型集成了逐层嵌入 (PLE)。这项创新专为设备端部署而设计，因为它在不增加设备加速器（GPU/TPU）所需高速内存占用的情况下，显著提高了模型质量。\n尽管 Gemma 3n E2B 和 E4B 模型的总参数量分别为 5B 和 8B，但 PLE 允许这些参数的很大一部分（与每层相关的嵌入）在 CPU 上高效加载和计算。这意味着只有核心 Transformer 权重（E2B 约 2B，E4B 约 4B）需要驻留在通常更受限制的加速器内存 (VRAM) 中。\n![Per-Layer Embeddings](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image6_BdtLmLG.original.jpg)\n\n## KV 缓存共享：加速长上下文处理\n处理长输入对于许多高级设备端多模态应用至关重要。Gemma 3n 引入了 KV 缓存共享功能，旨在显著加速流式响应应用的“首个令牌生成时间”。该功能优化了模型处理初始输入阶段（“预填充”阶段）的方式，通过直接共享中间层键和值，与 Gemma 3 4B 相比，预填充性能提高了 2 倍。\n\n## 音频理解：引入语音转文本和翻译\nGemma 3n 使用基于通用语音模型 (USM) 的高级音频编码器。该编码器每 160 毫秒的音频生成一个令牌，然后将其作为输入集成到语言模型中，提供声音上下文的细粒度表示。这种集成的音频能力为设备端开发解锁了关键功能，包括：\n\n*   **自动语音识别 (ASR)**：直接在设备上实现高质量的语音转文本转录。\n*   **自动语音翻译 (AST)**：将口语翻译成另一种语言的文本。在英语与西班牙语、法语、意大利语和葡萄牙语之间的翻译任务中，AST 表现尤其出色。\n\n在发布时，Gemma 3n 编码器可处理长达 30 秒的音频片段，但其底层是一个流式编码器，未来将支持任意长度的音频和低延迟、长流式应用。\n\n## MobileNet-V5：新的最先进视觉编码器\n除了集成的音频功能外，Gemma 3n 还配备了新型高效视觉编码器 MobileNet-V5-300M，为边缘设备上的多模态任务提供了最先进的性能。\n\n*   **主要特性**：原生支持 256x256、512x512 和 768x768 像素的多种输入分辨率；在大量多模态数据集上共同训练，擅长广泛的图像和视频理解任务；在 Google Pixel 设备上每秒处理高达 60 帧，实现实时、设备端视频分析和交互体验。\n*   **架构创新**：包括 MobileNet-V4 块的先进基础、显著扩展的混合深度金字塔模型（比最大的 MobileNet-V4 变体大 10 倍），以及新颖的多尺度融合 VLM 适配器。\n*   **性能提升**：MobileNet-V5-300M 大幅超越了 Gemma 3 中的基线 SoViT。在 Google Pixel Edge TPU 上，它在量化后提供 13 倍的速度提升，所需参数减少 46%，内存占用减少 4 倍，同时在视觉语言任务中提供显著更高的准确性。\n\n## Gemma 3n 的可访问性与生态系统\nGoogle 与 AMD、Hugging Face、NVIDIA 等众多开源开发者合作，确保 Gemma 3n 在流行工具和平台上的广泛支持。此外，Google 还推出了 **Gemma 3n 影响力挑战赛**，鼓励开发者利用 Gemma 3n 独特的设备端、离线和多模态能力，构建造福世界的产品，挑战赛提供 150,000 美元的奖金。\n\n## 立即开始使用 Gemma 3n\n开发者可以通过以下方式探索 Gemma 3n 的潜力：\n\n*   **直接体验**：使用 Google AI Studio 快速试用 Gemma 3n，并可直接部署到 Cloud Run。\n*   **下载模型**：在 Hugging Face 和 Kaggle 上获取模型权重。\n*   **学习与集成**：查阅全面的文档，或从推理和微调指南开始。\n*   **使用喜爱的设备端 AI 工具**：Google AI Edge Gallery/LiteRT-LLM、Ollama、MLX、llama.cpp、Docker、transformers.js 等。\n*   **使用喜爱的开发工具**：Hugging Face Transformers 和 TRL、NVIDIA NeMo Framework、Unsloth 和 LMStudio。\n*   **灵活部署**：Gemma 3n 提供多种部署选项，包括 Google GenAI API、Vertex AI、SGLang、vLLM 和 NVIDIA API Catalog。",
-      "shortSummary": "Gemma 3n 是 Google 发布的移动优先、多模态 AI 模型，专为设备端应用设计。它采用创新的 MatFormer 架构实现灵活尺寸（E2B/E4B），通过逐层嵌入和 KV 缓存共享优化内存与长上下文处理。Gemma 3n 原生支持图像、音频、视频和文本输入，并集成了基于 USM 的高级音频编码器和 MobileNet-V5 视觉编码器，提供语音识别、翻译及最先进的视觉理解能力。该模型高度优化，支持多种流行开发工具，并鼓励开发者参与影响力挑战赛。",
-      "translated_title": "介绍 Gemma 3n：开发者指南",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemma_3n_Chart_1_RD1-V01_1.original.png",
-          "alt": "LMArena Text Arena Elo Score rankings for Gemini 1.5 Pro, Gemma 3n E4B llama 4 Maverick 17B 128E GPT 4.1-nano and Phi-4",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_3h2xBRA.original.jpg",
-          "alt": "MatFormer in Nano V3",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image4_5lfhlBO.original.png",
-          "alt": "Custom Sizes with Mix-n-Match",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image6_BdtLmLG.original.jpg",
-          "alt": "Per-Layer Embeddings",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The Gemma 3n model has been fully released, building on the success of previous Gemma models and bringing advanced on-device multimodal capabilities to edge devices with unprecedented performance. Explore Gemma 3n's innovations, including its mobile-first architecture, MatFormer technology, Per-Layer Embeddings, KV Cache Sharing, and new audio and MobileNet-V5 vision encoders, and how developers can start building with it today."
-    },
-    {
-      "title": "使用新的Data Commons Python客户端库解锁更深层洞察 (原标题: Unlock deeper insights with the new Python client library for Data Commons)",
-      "link": "https://developers.googleblog.com/en/pythondatacommons/",
-      "pubDate": "Wed, 25 Jun 2025 16:00:00 GMT",
-      "isoDate": "2025-06-25T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Data Commons 新Python客户端库：解锁更深层洞察\n\n## 引言\n数据是各领域进步的基石，能够帮助我们衡量现状、识别趋势并预测未来。Google的Data Commons旨在组织全球公开统计数据，使其更易于访问和使用。它是一个开源知识图谱，整合了来自不同来源的大量公共数据，简化了开发者、研究人员和数据分析师的访问和理解。Google搜索也使用Data Commons来回答查询，例如“旧金山的人口是多少？”。\n\n今天，我们宣布基于V2 REST API的Data Commons新Python客户端库正式发布。这个新库将极大地增强数据开发者利用Data Commons的能力。\n\n## 实际影响：与ONE.org合作\n这一里程碑的实现，得益于我们的合作伙伴The ONE Campaign（一个致力于为非洲经济机会和健康生活创造所需投资的全球组织）的愿景和重大贡献。我们将Data Commons构建为一个开源平台，正是为了鼓励社区贡献和实现创新用途，而与The ONE Campaign的合作完美地体现了这一目标。ONE组织倡导、设计并编码了该客户端库，旨在让数据科学家和分析师能够利用Python分析工具和库的丰富生态系统，访问Data Commons的丰富洞察。\n\n## 支持自定义Data Commons实例\nData Commons平台还允许联合国或ONE等组织托管自己的Data Commons实例。这些自定义实例能够将专有数据集与基础的Data Commons知识图谱无缝集成。组织可以利用Data Commons的数据框架和工具，同时完全控制其数据和资源。\n\nV2库中最具影响力的新增功能之一是其对自定义实例的强大支持。这意味着您现在可以使用Python库以编程方式查询任何公共或私有实例——无论是本地托管、组织内部托管还是在Google Cloud Platform上托管。\n\n## 强大的新功能\nPython库使得对Data Commons数据执行常见查询变得非常容易，例如：\n*   探索知识图谱的结构。\n*   从人口统计、经济、教育、能源、环境、健康和住房等领域的200多个数据集中，检索200,000多个统计变量的数据。\n*   轻松将其他数据集中的实体映射到Data Commons中的实体。\n\n与V1库相比，客户端库的V2版本提供了许多技术改进，包括：\n*   **Pandas DataFrame API支持**：作为集成模块，通过单一安装包提供，可与同一客户端中的其他API端点无缝使用。\n*   **新的便捷方法**：针对常见数据查询提供了多个新方法。\n*   **API密钥管理**：API密钥管理和其他有状态操作内置于客户端类中。\n*   **Pydantic集成**：与Pydantic库集成，提高了类型安全性、验证和序列化能力。\n*   **多种响应格式支持**：支持JSON、Python字典和列表等多种响应格式。\n\n以下是一个使用示例，展示了如何绘制国际贫困线以下人口比例的图表：\n```python\nvariable = \"sdg/SI_POV_DAY1\"\nvariable_name = \"Proportion of population below international poverty line\"\ndf = client.observations_dataframe(variable_dcids=variable, date=\"all\", parent_entity=\"Earth\", entity_type=\"Continent\")\ndf = df.pivot(index=\"date\", columns=\"entity_name\", values=\"value\")\nax = df.plot(kind=\"line\")\nax.set_xlabel(\"Year\")\nax.set_ylabel(\"%\")\nax.set_title(variable_name)\nax.legend()\nax.plot()\n```\n![图表显示各大洲国际贫困线以下人口比例](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/DC_blogpost_screenshot1.original.png)\n\n## 开始使用\n要开始使用Data Commons Python库，您可以直接从PyPI安装软件包。我们还提供了全面的资源来帮助您深入了解，包括参考文档和作为Google Colab笔记本提供的在线教程。\n\n对于目前使用V1 Python API的用户，我们强烈建议升级到新的V2 Python库。V1 API计划弃用，采用新库可确保您能够访问最新功能并获得持续支持。\n\n## 开源协作\n这个库是开源协作力量的明证。开源代码可在GitHub上获取，我们欢迎社区根据Google贡献者许可协议做出贡献。",
-      "shortSummary": "Google发布了基于V2 REST API的Data Commons新Python客户端库，现已正式可用。该库旨在帮助数据开发者更深入地利用Data Commons的公共统计数据，支持探索知识图谱、检索海量变量数据，并与Pandas等工具无缝集成。新版本还增强了对自定义Data Commons实例的支持，并得益于ONE.org的重大贡献。建议V1用户升级，以获取最新功能和持续支持。该库是开源项目，欢迎社区贡献。",
-      "translated_title": "使用新的Data Commons Python客户端库解锁更深层洞察",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/DC_blogpost_screenshot1.original.png",
-          "alt": "Graph showing proportion of population below international poverty line across continental regions",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Google has released a new Python client library for Data Commons – an open-source knowledge graph that unifies public statistical data, and enhances how data developers can leverage Data Commons by offering improved features, support for custom instances, and easier access to a vast array of statistical variables – developed with contributions from The ONE Campaign."
-    },
-    {
-      "title": "使用 Gemini 2.5 Flash-Lite 模拟神经操作系统 (原标题: Simulating a neural operating system with Gemini 2.5 Flash-Lite)",
-      "link": "https://developers.googleblog.com/en/simulating-a-neural-operating-system-with-gemini-2-5-flash-lite/",
-      "pubDate": "Tue, 24 Jun 2025 16:00:00 GMT",
-      "isoDate": "2025-06-24T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## 使用 Gemini 2.5 Flash-Lite 模拟神经操作系统\n\n本文探讨了一种新的计算范式，即构建一个生成式、无限的计算机体验原型，该原型模拟了一个操作系统，其中每个屏幕都由大型语言模型实时生成。该原型利用 Gemini 2.5 Flash-Lite 模型，其低延迟对于创建即时响应的交互至关重要。\n\n### 核心技术概念\n\n1.  **模型条件化以实现即时 UI 生成**\n    *   为了实时生成用户界面 (UI)，模型需要清晰的结构和上下文。\n    *   提示被分为两部分：\n        *   **UI 宪法 (UI constitution)**：一个系统提示，包含一组固定的 UI 生成规则，定义了操作系统级别的样式、主屏幕格式以及嵌入地图等元素的逻辑。\n        *   **UI 交互 (UI interaction)**：一个 JSON 对象，捕获用户最近的操作（例如，点击图标），作为模型生成下一个屏幕的具体查询。例如，点击“保存笔记”按钮会生成一个包含 `id`、`type`、`value`、`elementType`、`elementText` 和 `appContext` 等信息的 JSON 对象。\n    *   这种双部分上下文设置方法使模型能够在生成基于特定实时用户输入的新屏幕的同时，保持一致的外观和感觉。\n\n2.  **使用交互追踪实现上下文感知**\n    *   单个交互提供即时上下文，而一系列交互则能提供更丰富的故事。\n    *   原型可以利用过去 N 次交互的追踪来生成更具上下文相关性的屏幕。\n    *   通过调整交互追踪的长度，可以在上下文准确性和 UI 可变性之间进行平衡。\n\n3.  **流式传输 UI 以实现响应式体验**\n    *   为了使系统感觉快速，原型利用模型流式传输和浏览器原生解析器实现渐进式渲染。\n    *   模型分块生成 HTML 代码，系统持续将其附加到组件状态，React 随后重新渲染内容。\n    *   这使得浏览器能够尽快显示有效的 HTML 元素，为用户创造了界面几乎即时呈现在屏幕上的体验。\n\n4.  **通过生成式 UI 图实现状态保持**\n    *   默认情况下，模型每次用户输入都会从头开始生成新屏幕，这可能导致非确定性、无状态的体验。\n    *   为了引入状态性，演示系统可以选择为会话特定的 UI 图构建内存缓存。\n    *   当用户导航到已生成的屏幕时，系统会从图中提供存储的版本，而无需再次查询 Gemini。\n    *   当用户请求缓存中没有的新屏幕时，UI 图会增量增长。\n    *   此方法在不影响生成输出质量的情况下实现了状态保持。\n\n### 即时生成式 UI 的潜在应用\n\n尽管这是一个概念原型，但其底层框架可应用于更实际的用例：\n\n*   **上下文快捷方式**：系统可以观察用户的交互模式，生成一个临时的 UI 面板以加速任务。例如，当用户比较多个网站上的航班时，一个浮动小部件可以即时出现，带有动态生成的按钮，用于比较价格或直接预订航班。\n*   **现有应用程序中的“生成模式”**：开发者可以向其应用程序添加“生成模式”。例如，在 Google 日历中，用户可以激活此模式以查看即时 UI。当移动日历邀请时，系统可以根据与会者的日程生成一个屏幕，以一系列可直接选择的按钮形式呈现最佳替代时间，而不是标准的对话框。这将创建一种混合体验，其中生成式和静态 UI 元素在同一应用程序中无缝共存。\n\n探索此类新颖概念有助于我们理解人机交互新范式的发展。随着模型变得更快、更强大，生成式界面代表了未来研究和开发的一个有前景的领域。",
-      "shortSummary": "本文介绍了一个使用 Gemini 2.5 Flash-Lite 模拟神经操作系统的研究原型。该系统能实时生成用户界面，通过“UI 宪法”和“UI 交互”提供上下文，并利用交互追踪提升相关性。为确保响应速度，系统采用流式传输和渐进式渲染。通过构建内存中的 UI 图，原型实现了状态保持。潜在应用包括上下文快捷方式和现有应用中的“生成模式”，预示着人机交互的新范式。",
-      "translated_title": "使用 Gemini 2.5 Flash-Lite 模拟神经操作系统",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "A research prototype simulating a neural operating system generates UI in real-time adapting to user interactions with Gemini 2.5 Flash-Lite, using interaction tracing for contextual awareness, streaming the UI for responsiveness, and achieving statefulness with an in-memory UI graph."
-    },
-    {
-      "title": "Imagen 4 现已在 Gemini API 和 Google AI Studio 中推出 (原标题: Imagen 4 is now available in the Gemini API and Google AI Studio)",
-      "link": "https://developers.googleblog.com/en/imagen-4-now-available-in-the-gemini-api-and-google-ai-studio/",
-      "pubDate": "Mon, 23 Jun 2025 16:00:00 GMT",
-      "isoDate": "2025-06-23T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Imagen 4 现已在 Gemini API 和 Google AI Studio 中推出\n\nGoogle 于 2025 年 6 月 24 日宣布，其最新、最强大的文本到图像模型 Imagen 4 已在 Gemini API 中推出付费预览，并在 Google AI Studio 中提供有限的免费测试。Imagen 4 在文本渲染方面比之前的图像模型有了显著改进，并进一步提升了文本到图像生成的质量。\n\n### Imagen 4 系列模型\n\nImagen 4 系列包含两个模型，旨在满足不同的创意需求：\n\n*   **Imagen 4：**\n    *   适用于大多数任务的首选模型。\n    *   作为旗舰文本到图像模型，它能够处理各种图像生成任务，并在质量上，尤其是在文本生成方面，比 Imagen 3 有显著提升。\n    *   定价：每张输出图像 0.04 美元。\n\n*   **Imagen 4 Ultra：**\n    *   适用于需要图像精确遵循指令的场景。\n    *   该模型旨在生成与文本提示高度对齐的输出，与其他领先的图像生成模型相比，表现出色。\n    *   定价：每张输出图像 0.06 美元。\n\n未来几周内将推出额外的计费层级，目前用户可以申请更高的 Imagen 4 和 4 Ultra 速率限制。\n\n### Imagen 4 实际应用示例\n\n以下是使用 Imagen 4 Ultra 生成的一些图像示例，展示了该模型在各种风格和内容上的多功能性：\n\n*   **提示：** 一个三格的宇宙史诗漫画。第一格：星云中的微小“星尘”；雷达显示异常（文字“ANOMALY DETECTED”），船体文字“stardust”。飞行员低语。第二格：生物发光巨兽出现；控制台红色文字“WARNING!”。第三格：巨兽在小行星群中追逐飞船；控制台红色文字“SHIELD CRITICAL!”，屏幕文字“EVADE!”。飞行员尖叫，音效“CRUNCH!”，“ROOOOAAARR!”。\n    ![一个由 Imagen 4 生成的三格宇宙史诗漫画](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/3-panel-cosmic-epic-comic-imagen-4.original.png)\n\n*   **提示：** 一张京都复古旅行明信片正面：樱花下的标志性宝塔，远处白雪皑皑的山脉，晴朗的蓝天，色彩鲜艳。\n    ![一个由 Imagen 4 生成的京都复古旅行明信片正面](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/vintage-travel-postcard-kyoto-imagen-4.original.png)\n\n*   **提示：** 一张冒险情侣在日出时分徒步登上山顶的照片，他们举起手臂庆祝胜利，下方山谷的史诗般全景，戏剧性的光线。\n    ![一个由 Imagen 4 生成的冒险情侣在日出时分徒步登上山顶的照片](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/adventurous-couple-photograph-imagen-4.original.png)\n\n*   **提示：** 一张前卫时尚编辑照片：模特身穿一件蓬松、建筑感十足的礼服，站在一个闪烁的外星景观上，双星落日，超现实色彩，高概念，电影感。\n    ![一个由 Imagen 4 生成的前卫时尚编辑照片](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/avant-garde-fashion-photo-shoot-imagen-4.original.png)\n\n### 开始使用 Imagen\n\n为了维护信任和透明度，所有由 Imagen 4 模型生成的图像都将包含一个不可见的数字 SynthID 水印。用户可以通过官方文档和教程开始使用 Imagen 4。Google 期待看到用户通过 Gemini API 和 Google AI Studio 使用 Imagen 4 创造的作品，并计划在未来几周内使这些模型普遍可用。",
-      "shortSummary": "Google 已在 Gemini API 和 Google AI Studio 中推出其最新的文本到图像模型 Imagen 4。Imagen 4 提供显著改进的文本渲染和图像生成质量。该系列包含 Imagen 4（通用型，每张0.04美元）和 Imagen 4 Ultra（高精度型，每张0.06美元）。所有生成图像都将包含不可见的数字水印。用户现可通过文档和教程开始使用，未来几周将普遍可用。",
-      "translated_title": "Imagen 4 现已在 Gemini API 和 Google AI Studio 中推出",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/3-panel-cosmic-epic-comic-imagen-4.original.png",
-          "alt": "A 3-panel cosmic epic comic generated by Imagen 4",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/vintage-travel-postcard-kyoto-imagen-4.original.png",
-          "alt": "Front of a vintage travel postcard for Kyoto generated by Imagen 4",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/adventurous-couple-photograph-imagen-4.original.png",
-          "alt": "Photograph of an adventurous couple hiking on a mountain peak at sunrise generated by Imagen 4",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/avant-garde-fashion-photo-shoot-imagen-4.original.png",
-          "alt": "Avant-garde fashion editorial shot generated by Imagen 4",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Imagen 4, Google's advanced text-to-image model, is now available in paid preview via the Gemini API and Google AI Studio, offering significant quality improvements, especially for text generation within images. The Imagen 4 family includes Imagen 4 for general tasks and Imagen 4 Ultra for high-precision prompt adherence, with all generated images featuring a non-visible SynthID watermark."
     }
   ],
-  "lastUpdated": "2025-07-16T10:33:41.861Z"
+  "lastUpdated": "2025-07-20T10:33:05.139Z"
 }
