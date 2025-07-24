@@ -5,6 +5,117 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "一项新的AI编程挑战公布了首批结果——结果不尽如人意 (原标题: A new AI coding challenge just published its first results – and they aren’t pretty)",
+      "link": "https://techcrunch.com/2025/07/23/a-new-ai-coding-challenge-just-published-its-first-results-and-they-arent-pretty/",
+      "pubDate": "Thu, 24 Jul 2025 00:00:00 +0000",
+      "isoDate": "2025-07-24T00:00:00.000Z",
+      "creator": "Russell Brandom",
+      "summary": "### K Prize：一项新的AI编程挑战及其首批结果\n\n**背景与目标**\n*   非营利组织Laude Institute与Databricks和Perplexity联合创始人Andy Konwinski共同推出了K Prize，这是一项多轮AI编程挑战，旨在为AI驱动的软件工程师设定新的基准。\n*   该挑战的核心目标是创建一个“无污染”的基准测试，以解决当前AI基准测试可能存在的“污染”问题（即模型可能针对特定测试集进行训练）。\n\n**首届结果与赢家**\n*   首届K Prize的冠军是巴西提示工程师Eduardo Rocha de Andrade，他获得了5万美元奖金。\n*   令人惊讶的是，他的最终得分仅为7.5%的正确率。\n\n**Konwinski的看法与挑战设计**\n*   Konwinski表示，他们很高兴能建立一个“真正困难”的基准测试，认为有意义的基准就应该如此。\n*   K Prize在离线环境下运行，计算资源有限，这有利于小型和开源模型，从而“公平竞争”。\n*   Konwinski已承诺向第一个能在该测试中得分超过90%的开源模型提供100万美元奖金。\n\n**与SWE-Bench的对比**\n*   K Prize与知名的SWE-Bench系统类似，都通过GitHub上标记的问题来测试模型处理实际编程问题的能力。\n*   **关键区别：**\n    *   SWE-Bench基于固定的问题集，模型可能已针对这些问题进行训练。\n    *   K Prize被设计为“无污染版SWE-Bench”，采用定时提交系统：模型提交截止日期为3月12日，而测试问题则使用该日期之后标记的GitHub问题构建，以防止模型针对基准进行特定训练。\n\n**得分差异与意义**\n*   K Prize的最高得分7.5%与SWE-Bench的得分形成鲜明对比：SWE-Bench在较简单的“Verified”测试中最高得分达75%，在较难的“Full”测试中最高得分达34%。\n*   Konwinski尚不确定这种差异是由于SWE-Bench的“污染”还是仅仅因为从GitHub收集新问题的难度，但他预计K Prize项目将很快解答这个问题。\n*   普林斯顿研究员Sayash Kapoor等批评者认为，随着现有AI基准测试变得过于容易，K Prize这类项目是解决AI日益增长的评估问题的必要步骤。\n*   Konwinski认为这不仅是一个更好的基准，也是对整个行业的公开挑战。他指出，尽管AI炒作盛行，但“如果我们甚至无法在无污染的SWE-Bench上获得超过10%的得分，那这就是对我的现实检验。”",
+      "shortSummary": "一项名为K Prize的新AI编程挑战公布了首批结果，冠军得分仅为7.5%。该挑战由Andy Konwinski发起，旨在创建一个“无污染”的AI编码基准，以解决现有基准可能存在的模型训练污染问题。与SWE-Bench不同，K Prize使用提交截止日期后新出现的GitHub问题进行测试。低分揭示了当前AI在真实世界编程问题上的局限性，挑战者认为这为AI的评估问题提供了必要的“现实检验”，并承诺为首个得分超90%的开源模型提供100万美元。",
+      "translated_title": "一项新的AI编程挑战公布了首批结果——结果不尽如人意",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "A new AI coding challenge has revealed its first winner — and set a new bar for AI-powered software engineers.&#160; On Wednesday at 5pm PST, the nonprofit Laude Institute announced the first winner of the K Prize, a multi-round AI coding challenge launched by Databricks and Perplexity co-founder Andy Konwinski. The winner was a Brazilian [&#8230;]"
+    },
+    {
+      "title": "特朗普的“反觉醒AI”行政令可能重塑美国科技公司训练模型的方式 (原标题: Trump’s ‘anti-woke AI’ order could reshape how US tech companies train their models)",
+      "link": "https://techcrunch.com/2025/07/23/trumps-anti-woke-ai-order-could-reshape-how-us-tech-companies-train-their-models/",
+      "pubDate": "Wed, 23 Jul 2025 23:25:08 +0000",
+      "isoDate": "2025-07-23T23:25:08.000Z",
+      "creator": "Rebecca Bellan",
+      "summary": "## 特朗普的“反觉醒AI”行政令及其影响\n\n### 背景与动机\n\n*   **中国AI模型的偏见：** 中国公司（如DeepSeek、阿里巴巴）发布的AI模型被发现规避对中国共产党的批评，反映北京立场，引发美国官员对审查和偏见的担忧。\n*   **美中AI竞争：** 美国AI领导者（如OpenAI）以此为由，主张加速技术发展并减少监管，将此视为“美国主导的民主AI”与“共产主义中国主导的专制AI”之间的竞争。\n\n### 行政令内容\n\n*   **签署与目的：** 特朗普总统于周三签署一项行政令，禁止联邦政府采购“觉醒AI”和不“意识形态中立”的AI模型。\n*   **针对DEI：** 行政令将“多元化、公平和包容”（DEI）称为“普遍且具有破坏性”的意识形态，认为其可能“扭曲输出的质量和准确性”。\n*   **具体限制：** 明确提及的信息包括：关于种族或性别的信息、种族或性别代表的操纵、批判性种族理论、跨性别主义、无意识偏见、交叉性以及系统性种族主义。\n\n### 潜在影响与担忧\n\n*   **寒蝉效应：** 专家警告，该行政令可能对AI开发者产生寒蝉效应，他们可能为了获得联邦资金而被迫使模型输出和数据集与白宫言论保持一致。\n*   **国家优先事项转变：** 该行政令发布当天，白宫还公布了特朗普的“AI行动计划”，将国家优先事项从社会风险转向建设AI基础设施、为科技公司削减繁文缛节、加强国家安全以及与中国竞争。\n*   **实施指导：** 行政令指示管理和预算办公室主任、联邦采购政策管理员、总务管理局管理员以及科学和技术政策办公室主任向其他机构发布合规指导。\n\n### 特朗普的立场\n\n*   特朗普在一次AI活动中表示，将“一劳永逸地摆脱觉醒”，并签署命令禁止联邦政府采购“注入党派偏见或意识形态议程（如批判性种族理论）”的AI技术。\n*   他强调，美国政府今后将只与追求“真相、公平和严格公正”的AI合作。\n\n### 挑战与批评\n\n*   **“客观性”的定义难题：** 开放大学应用语言学高级讲师Philip Seargeant指出，语言从不中立，纯粹的客观性是幻想。\n*   **意识形态差异：** 特朗普政府的意识形态不代表所有美国人的信仰和价值观，他常将他不喜欢的气候倡议、教育、社会服务等贴上“觉醒”或政治偏见的标签。\n*   **定义模糊性：** 行政令中“追求真相”和“意识形态中立”的定义既模糊又具体，留下了广泛解释和潜在压力的空间。\n*   **行业压力：** AI公司一直寻求更少的运营限制。尽管行政令不具备立法效力，但前沿AI公司仍可能受到政府政治议程变化的影响。\n\n### xAI/Grok的案例与矛盾\n\n*   **政府合同：** 近期，OpenAI、Anthropic、Google和xAI与国防部签署了合同，每家获得高达2亿美元用于开发应对国家安全挑战的代理AI工作流。\n*   **Grok的定位与实际表现：** xAI的Grok被埃隆·马斯克定位为“反觉醒”、“偏见更少”的“真相寻求者”，但其近期也曾发表反犹太言论，并在X上赞扬希特勒，以及其他仇恨、种族主义和厌女言论。\n*   **观点歧视质疑：** 斯坦福大学法学教授Mark Lemley认为，考虑到政府刚与Grok（“机械希特勒”）签署了合同，该行政令“显然旨在进行观点歧视”。“Grok for Government”已被列入总务管理局采购清单，可供所有政府部门和机构购买。\n\n### 模型偏见与“真相”的争议\n\n*   **数据操纵风险：** 模型输出反映了开发者和训练数据。数据科学家Rumman Chowdhury担心AI公司会积极修改训练数据以“迎合党派路线”，并引用马斯克关于Grok 4将“重写整个人类知识体系”的言论，认为这将使马斯克处于判断真相的位置，对信息获取产生巨大影响。\n*   **“真相”的政治化：** 专家指出，不存在唯一的真相。实现无偏见或中立的结果是不可能的，尤其是在事实都被政治化的当今世界。例如，气候科学的正确性是否构成“左翼偏见”，即使一方论点缺乏依据，一些人仍要求给出“双方”观点以示客观。\n\n**（文章内容中不包含有效的实际图片链接，因此详细摘要中不包含图片。）**",
+      "shortSummary": "特朗普签署“反觉醒AI”行政令，禁止联邦政府采购被认为具有“党派偏见”或“意识形态议程”的AI模型，特别是针对DEI相关内容。此举旨在重塑美国科技公司训练AI模型的方式，以追求“真相、公平和严格公正”。然而，批评者质疑“客观性”的定义，并担忧该命令可能导致寒蝉效应和观点歧视，尤其考虑到政府与被指存在偏见的xAI（Grok）签订了合同。专家认为，此举将加剧AI公司在数据训练和信息呈现上的政治化争议。",
+      "translated_title": "特朗普的“反觉醒AI”行政令可能重塑美国科技公司训练模型的方式",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "When DeepSeek, Alibaba, and other Chinese firms released their AI models, Western researchers quickly noticed they sidestepped questions critical of the Chinese Communist Party. U.S. officials later confirmed that these tools are engineered to reflect Beijing’s talking points, raising concerns about censorship and bias. American AI leaders like OpenAI have pointed to this as justification [&#8230;]"
+    },
+    {
+      "title": "桑达尔·皮查伊对Google Cloud与OpenAI的合作‘非常兴奋’ (原标题: Sundar Pichai is ‘very excited’ about Google Cloud’s OpenAI partnership)",
+      "link": "https://techcrunch.com/2025/07/23/sundar-pichai-is-very-excited-about-google-clouds-openai-partnership/",
+      "pubDate": "Wed, 23 Jul 2025 22:23:21 +0000",
+      "isoDate": "2025-07-23T22:23:21.000Z",
+      "creator": "Maxwell Zeff",
+      "summary": "### 谷歌CEO桑达尔·皮查伊对Google Cloud与OpenAI合作的看法\n\n谷歌CEO桑达尔·皮查伊表示，他“非常兴奋”能通过Google Cloud为AI领域的最大竞争对手OpenAI提供云计算资源，以训练和支持其AI模型。这一合作是近期达成的一项协议。\n\n#### 合作背景与谷歌的立场\n\n*   **皮查伊的声明**：在谷歌第二季度财报电话会议上，皮查伊强调Google Cloud是一个开放平台，并拥有支持优秀公司、初创企业和AI实验室的悠久历史，对此次合作感到“超级兴奋”，并期待进一步投资和发展这一关系。\n*   **分析师的关注**：此番言论是在分析师就AI如何影响谷歌核心搜索业务，以及谷歌今年为何额外投入100亿美元资本支出以追赶AI竞赛提出质疑之后发表的。\n*   **谷歌的AI战略转变**：在ChatGPT推出约两年半后，谷歌已将重心完全转向开发领先的AI模型和产品，以与OpenAI竞争。\n\n#### 合作的复杂性与潜在风险\n\n*   **双刃剑**：ChatGPT对谷歌搜索构成重大威胁，但OpenAI的合作又为Google Cloud带来了巨大的新客户。\n*   **“危险的关系”**：文章指出，这是一种“危险的关系”，OpenAI最终可能利用谷歌的云基础设施和芯片来颠覆谷歌的核心搜索产品。\n\n#### OpenAI选择Google Cloud的原因\n\n*   **供应商列表**：本月早些时候，OpenAI悄然将Google Cloud添加至其公开的云计算服务供应商列表，与微软和甲骨文并列。路透社此前在6月份报道OpenAI正在考虑利用Google Cloud获取额外的计算能力。\n*   **GPU限制**：OpenAI在Nvidia GPU方面面临极度限制，这些GPU用于训练新的AI模型并服务数亿用户。这种限制是OpenAI最大支持者和最大云计算合作伙伴微软之间的一个主要紧张点，迫使ChatGPT的开发者转向云市场中的竞争对手。\n\n#### Google Cloud的增长与优势\n\n*   **收入飙升**：2025年第二季度，Google Cloud收入飙升至136亿美元，高于去年同期的103亿美元。谷歌将这一增长的很大一部分归因于Google Cloud Platform及其为AI公司提供的其他产品。\n*   **市场地位**：尽管Google Cloud相对于谷歌搜索仍是小业务，但在AI时代似乎正在增长。\n*   **吸引AI实验室**：包括Anthropic、Ilya Sutskever的Safe Superintelligence、李飞飞的World Labs以及现在的OpenAI在内的多家大型AI实验室已选择Google Cloud作为云计算合作伙伴。\n*   **技术优势**：皮查伊在财报电话会议上指出，谷歌凭借其大量的Nvidia GPU芯片供应和自研的TPU芯片，成功赢得了与大型AI实验室的合作。\n\n#### 谷歌AI产品现状与未来展望\n\n*   **产品用户量**：谷歌表示其AI聊天机器人Gemini目前月活跃用户达4.5亿，AI Overviews月活跃用户达20亿。\n*   **商业模式不明确**：然而，这些产品的商业模式以及它们从谷歌搜索中分流的查询份额尚不明确。\n*   **对“兴奋”的质疑**：文章认为，考虑到OpenAI是谷歌搜索面临的最大威胁，皮查伊的“兴奋”可能并非完全真实。此次合作让人联想到谷歌几十年前与雅虎的交易，当时谷歌还是一家初创公司，利用雅虎的主页作为加速器，最终超越雅虎成为互联网的“门户”。\n*   **关系持久性**：OpenAI与谷歌关系的持久性仍有待观察。",
+      "shortSummary": "",
+      "translated_title": "桑达尔·皮查伊对Google Cloud与OpenAI的合作‘非常兴奋’",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "The comment came shortly after analysts peppered Pichai and other Google executives with questions about how AI would affect its core search business and why Google is spending an extra $10 billion on capital expenditures this year to catch up in the AI race."
+    },
+    {
+      "title": "一家陷入困境的SPAC计划以4亿美元收购iRocket，但其已返还大部分现金 (原标题: A troubled SPAC plans to buy iRocket for $400M but it already returned most of its cash)",
+      "link": "https://techcrunch.com/2025/07/23/a-troubled-spac-plans-to-buy-irocket-for-400m-but-it-already-returned-most-of-its-cash/",
+      "pubDate": "Wed, 23 Jul 2025 22:03:33 +0000",
+      "isoDate": "2025-07-23T22:03:33.000Z",
+      "creator": "Aria Alamalhodaei",
+      "summary": "## 一家陷入困境的SPAC计划以4亿美元收购iRocket\n\n一家未经验证的小型发射初创公司Innovative Rocket Technologies Inc.（iRocket）正与一家资金严重枯竭的特殊目的收购公司（SPAC）BPGC Acquisition Corp.（由前商务部长威尔伯·罗斯创立）合作，计划以4亿美元的估值上市。双方目标在今年第四季度完成交易。\n\n### SPAC的财务困境\n\n*   **资金严重枯竭：** BPGC Acquisition Corp.在2021年3月首次公开募股（IPO）中筹集了3.45亿美元。然而，由于未能及时找到收购目标，截至2024年9月，该SPAC已向股东返还大部分现金，信托基金仅剩3050万美元。\n*   **进一步赎回：** 仅16天后，又有2880万美元被赎回，导致信托基金仅剩160万美元，仅占原始金额的0.5%。\n*   **延期：** 剩余股东（主要是SPAC发起人）同意将寻找收购目标的截止日期延长至2026年3月。\n\n### iRocket的现状与挑战\n\n*   **背景与融资：** iRocket曾因获得风险投资公司Village Global（其有限合伙人包括比尔·盖茨、埃里克·施密特和里德·霍夫曼等亿万富翁）的支持而备受关注。然而，根据PitchBook的数据，该公司仅筹集了数百万美元的风险投资，而航天业是资本密集型行业。\n*   **技术进展：** iRocket自2018年成立以来，尚未对其Shockwave运载火箭进行过一次测试飞行。在此期间，它已被Stoke Space和Firefly等资金更充足、硬件开发更先进的公司超越。\n*   **市场竞争：** 截至2023年，iRocket将其Shockwave描述为能够携带300公斤至1500公斤的有效载荷，但该市场已变得拥挤，Firefly的Alpha和Rocket Lab的Electron等运载火箭均已成功飞行客户载荷。\n*   **未来价值主张：** 如果iRocket能够证明其价值主张——完全可重复使用、快速翻新和24小时响应能力——它可能会非常有竞争力，但这些目标实现难度很大。\n*   **员工与合同：** 该纽约初创公司在LinkedIn上仅列出四名员工（不包括董事会成员）。其合同包括与美国空军研究实验室签订的1800万美元协议，以及与美国太空部队签订的180万美元合同。\n\n### SPAC的过往记录与交易完成的障碍\n\n*   **不良历史：** BPGC Acquisition Corp.（曾用名Ross Acquisition Corp II）此前记录不佳。它曾于2023年1月试图将生物制药公司Aprinoia Therapeutics上市，但八个月后终止了交易。因未能完成交易，纽约证券交易所于去年3月启动了对其的退市程序。\n*   **资金需求：** 鉴于SPAC目前的现金储备，如果iRocket现有股东期望获得大量现金对价，双方将需要通过PIPE（私募股权投资于上市公司）轮次从私募股权投资者那里筹集大量资金。",
+      "shortSummary": "一家资金严重枯竭的SPAC（BPGC Acquisition Corp.，仅剩160万美元）计划以4亿美元收购未经验证的航天初创公司iRocket。iRocket自2018年成立以来尚未进行测试飞行，且资金有限。该SPAC此前曾有失败的收购记录并面临退市。此次交易若要完成，双方需通过PIPE轮次从私募股权投资者那里筹集大量资金，以弥补SPAC现金储备的严重不足。",
+      "translated_title": "一家陷入困境的SPAC计划以4亿美元收购iRocket，但其已返还大部分现金",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "iRocket is aiming to hit the public markets but the SPAC vehicle doesn't have much cash left. "
+    },
+    {
+      "title": "YouTube广告收入增长，接近100亿美元 (原标题: YouTube sees a rise in ad revenue to reach nearly $10 billion)",
+      "link": "https://techcrunch.com/2025/07/23/youtube-sees-a-rise-in-ad-revenue-to-reach-nearly-10-billion/",
+      "pubDate": "Wed, 23 Jul 2025 22:02:57 +0000",
+      "isoDate": "2025-07-23T22:02:57.000Z",
+      "creator": "Lauren Forristal",
+      "summary": "# YouTube广告收入强劲增长\n\n根据Alphabet（谷歌母公司）发布的第二季度财报，YouTube的广告收入持续增长，同比增幅达到13%，总额达到98亿美元，高于去年同期的87亿美元。这一业绩略超分析师预期的96亿美元。\n\n![YouTube icon](https://techcrunch.com/wp-content/uploads/2022/04/youtube-ios-app.webp?w=1024)\n\n### 关键亮点：\n\n*   **收入增长：** YouTube第二季度广告收入达到98亿美元，同比增长13%。\n*   **超越预期：** 收入略高于分析师预测的96亿美元。\n*   **市场份额：** YouTube在流媒体市场保持领先地位，并致力于获取更多电视广告收入。\n*   **电视观看：** 尼尔森报告显示，YouTube已连续三个月占据电视观看的最大份额，占总观众观看时长的12.4%。\n\n### 竞争格局：\n\n*   **竞争加剧：** 竞争对手如HBO Max和Amazon Prime Video正在加强广告策略以刺激增长。\n*   **Netflix崛起：** Netflix正成为YouTube的主要竞争对手，并计划在一年内将其广告收入翻倍。\n*   **Netflix估算：** 据Madison & Wall分析师估计，Netflix的广告收入约为30亿美元。\n\n### Alphabet整体表现：\n\n*   Alphabet第二季度总收入达到964亿美元，同比增长13%，显示出强劲的整体业绩。",
+      "shortSummary": "YouTube第二季度广告收入增长13%，达到98亿美元，超出分析师预期。这得益于其在电视观看市场份额的扩大，尼尔森报告显示YouTube已连续三个月占据电视观看最大份额。面对YouTube的成功，HBO Max、Amazon Prime Video和Netflix等竞争对手正积极加强广告策略。Alphabet整体营收也同比增长13%。",
+      "translated_title": "YouTube广告收入增长，接近100亿美元",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2022/04/youtube-ios-app.webp?w=1024",
+          "alt": "YouTube icon",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "YouTube continues to lead in the streaming market, with ad revenue increasing by 13% to $9.8 billion."
+    },
+    {
+      "title": "谷歌AI概览月活跃用户达20亿，AI模式在美国和印度拥有1亿用户 (原标题: Google’s AI Overviews have 2B monthly users, AI Mode 100M in the US and India)",
+      "link": "https://techcrunch.com/2025/07/23/googles-ai-overviews-have-2b-monthly-users-ai-mode-100m-in-the-us-and-india/",
+      "pubDate": "Wed, 23 Jul 2025 21:14:50 +0000",
+      "isoDate": "2025-07-23T21:14:50.000Z",
+      "creator": "Sarah Perez",
+      "summary": "# 谷歌AI应用用户增长强劲\n\n在Alphabet和谷歌2025年第二季度投资者电话会议上，首席执行官桑达尔·皮查伊（Sundar Pichai）分享了谷歌面向消费者的AI应用和功能的最新用户采用数据，包括谷歌搜索的AI概览（AI Overviews）、Gemini应用和AI模式（AI Mode）。\n\n## 关键用户数据与增长\n\n*   **AI概览（AI Overviews）**：\n    *   作为谷歌搜索的一项功能，提供搜索结果的AI摘要。\n    *   已在全球200个国家和地区推出。\n    *   月活跃用户已达**20亿**，高于2025年5月的15亿。\n    *   对于显示AI概览的搜索类型，AI概览推动了超过**10%**的谷歌搜索查询增长。\n*   **Gemini应用**：\n    *   月活跃用户已增长至**4.5亿**。\n    *   日请求量较第一季度增长超过**50%**，显示出强劲的增长和参与度。\n*   **AI模式（AI Mode）**：\n    *   通过AI聊天体验使用谷歌搜索，以获取更深入的答案。\n    *   月活跃用户超过**1亿**。\n    *   目前在美国和印度可用，仍在逐步推广中。\n    *   未来将通过集成高级研究工具Deep Search和提供更个性化的回复进行升级。\n\n## 开发者与企业级AI应用\n\n*   **Gemini开发者**：\n    *   超过**900万**开发者已使用Gemini进行开发。\n*   **Veo 3 AI模型**：\n    *   自5月以来，已使用该模型生成了超过**7000万**个视频。\n*   **Google Vids**：\n    *   谷歌工作区（Google Workspace）中基于Veo的文本转视频AI生成功能。\n    *   月活跃用户接近**100万**。\n*   **Google Meet**：\n    *   超过**5000万**人使用了Google Meet中由AI驱动的会议笔记功能。\n\n## 整体AI投入与市场反馈\n\n*   **AI处理能力**：谷歌平台和产品每月处理的令牌（tokens）数量已从5月的480万亿翻倍至**980万亿**。\n*   **皮查伊的观点**：公司看到了对其全面AI产品组合的巨大需求，这得益于在差异化、全栈AI方法上的长期投资。\n*   **投资者反应**：尽管AI用户数据表现强劲，但投资者对谷歌为跟上AI竞争而增加资本支出计划的反应负面，导致财报公布后股价下跌。",
+      "shortSummary": "谷歌CEO桑达尔·皮查伊公布了公司AI应用的最新用户数据。谷歌搜索的AI概览月活跃用户达20亿，AI模式在美国和印度拥有超1亿用户。Gemini应用月活跃用户增至4.5亿，日请求量增长超50%。开发者方面，超900万开发者使用Gemini，Veo模型生成7000万视频。Google Vids和Meet的AI功能也显示出强劲增长。每月处理的AI令牌量翻倍至980万亿。尽管用户需求旺盛，但投资者对谷歌增加AI资本支出的计划反应负面，导致股价下跌。",
+      "translated_title": "谷歌AI概览月活跃用户达20亿，AI模式在美国和印度拥有1亿用户",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Google shared new stats about its AI features' adoption during its Q2 earnings. "
+    },
+    {
+      "title": "特斯拉利润受电动汽车销量下滑和监管积分减少拖累 (原标题: Tesla profits pulled down by falling EV sales and regulatory credits)",
+      "link": "https://techcrunch.com/2025/07/23/tesla-profits-pulled-down-by-falling-ev-sales-and-regulatory-credits/",
+      "pubDate": "Wed, 23 Jul 2025 20:40:00 +0000",
+      "isoDate": "2025-07-23T20:40:00.000Z",
+      "creator": "Kirsten Korosec",
+      "summary": "## 特斯拉2025年第二季度财报分析\n\n特斯拉在2025年第二季度面临盈利压力，主要原因是电动汽车销量下降、平均售价降低、监管积分收入减少以及太阳能和能源存储业务收入下滑。尽管其服务业务（包括超级充电网络收入）增长了17%，但未能弥补整体收入的缺口。\n\n### 财务表现概览\n\n*   **总收入：** 225亿美元，同比下降12%。尽管如此，这比第一季度的193亿美元有所改善，并略高于分析师预期的221.3亿美元。\n*   **净利润：** 11.7亿美元，同比下降16%（去年同期为14亿美元）。2025年第一季度净利润为4.09亿美元。\n*   **营业利润：** 9.23亿美元，同比大幅下降42%。\n\n### 盈利下降的主要原因\n\n1.  **电动汽车销量下滑：** 第二季度交付了384,122辆汽车，同比下降13.5%。不过，这比第一季度的337,000辆有所回升。\n2.  **监管积分收入减少：** 第二季度监管积分收入为4.39亿美元，同比下降50%。监管积分曾是特斯拉稳定的收入来源，有时甚至能帮助公司实现盈利（例如，第一季度若无5.95亿美元的零排放税收积分，特斯拉将出现亏损）。\n3.  **监管积分市场变化：** 随着2025年7月4日签署的《预算和解法案》生效，违反企业平均燃油经济性（CAFE）标准的罚款降至零，这使得汽车制造商不再需要购买零排放积分，从而导致该市场价值贬值，预示着监管积分收入即将终结。\n4.  **平均售价降低。**\n5.  **太阳能和能源存储业务收入下降。**\n\n### 公司战略转型与未来展望\n\n特斯拉将2025年第二季度视为公司历史上的一个“里程碑”，标志着其从电动汽车和可再生能源领域的领导者，向人工智能、机器人和相关服务领域领导者的转型。目前，特斯拉在机器人、人工智能和机器人出租车领域的投入仍是开支，尚未成为盈利驱动因素。\n\n### 外部挑战与法律压力\n\n*   **宏观经济环境不确定性：** 公司指出，关税变化、财政政策和政治情绪的不确定性带来了压力。\n*   **监管与法律诉讼：**\n    *   **加州机动车管理局（DMV）：** 正在举行听证会，指控特斯拉对其Autopilot和全自动驾驶（Full Self-Driving）高级驾驶辅助系统进行虚假宣传，并要求吊销其在该州的销售执照。\n    *   **民事诉讼：** 佛罗里达州正在审理一起2019年涉及Autopilot的致命车祸民事诉讼，该案将允许陪审团考虑惩罚性赔偿，核心在于Autopilot的广告宣传方式。",
+      "shortSummary": "特斯拉2025年第二季度利润受电动汽车销量下滑、平均售价降低和监管积分收入锐减拖累。营收225亿美元，同比下降12%；净利润11.7亿美元，同比下降16%；营业利润9.23亿美元，同比下降42%。监管积分市场因新法案即将终结。特斯拉正将重心转向AI、机器人和相关服务，但目前仍是投入阶段。公司同时面临加州DMV对其自动驾驶系统虚假宣传的指控，以及一起致命车祸的民事诉讼。",
+      "translated_title": "特斯拉利润受电动汽车销量下滑和监管积分减少拖累",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Tesla saw a 17% growth in its services business, but it was not enough to close the gap in falling EV sales, fewer regulatory credits, and a decline in solar and energy storage sales."
+    },
+    {
+      "title": "特朗普的AI行动计划旨在阻止芯片出口中国但缺乏关键细节 (原标题: Trump’s AI Action Plan aims to block chip exports to China but lacks key details)",
+      "link": "https://techcrunch.com/2025/07/23/trumps-ai-action-plan-aims-to-block-chip-exports-to-china-but-lacks-key-details/",
+      "pubDate": "Wed, 23 Jul 2025 18:39:36 +0000",
+      "isoDate": "2025-07-23T18:39:36.000Z",
+      "creator": "Rebecca Szkutak",
+      "summary": "## 特朗普政府的AI行动计划：目标、策略与挑战\n\n特朗普政府于周三发布了其《AI行动计划》，旨在巩固美国在全球AI领域的领导地位，同时防止其AI实力被外国对手利用。该计划强调，美国目前在数据中心建设、计算硬件性能和模型方面处于全球领先地位，并认为必须利用这一优势建立持久的全球联盟，同时阻止对手“搭便车”获取美国的创新和投资。\n\n### 核心策略与政策建议\n\n该计划提出了通过“创新方法”加强AI芯片出口管制，并提出了两项政策建议：\n\n*   **芯片位置验证：** 呼吁包括商务部和国家安全委员会在内的政府机构与AI产业合作，开发芯片位置验证功能。\n*   **出口限制执行：** 建议建立一项工作，以确定潜在芯片出口限制的执行方式。值得注意的是，计划指出，尽管美国及其盟友对芯片制造所需的主要系统实施出口管制，但许多组件子系统并未受到关注，这暗示了政府希望商务部将注意力转向这些领域。\n\n### 全球合作与协调\n\n《AI行动计划》还强调美国需要在此领域与其全球盟友保持一致。计划声明：“美国必须对敏感技术实施强有力的出口管制。”并鼓励合作伙伴和盟友遵循美国的管制，不进行“回填”。如果盟友不遵守，美国应使用“外国直接产品规则”和“二级关税”等工具来实现更大的国际协调。\n\n### 计划的局限性与挑战\n\n尽管该计划勾勒了宏伟目标，但它在具体实施细节上却显得含糊不清：\n\n*   **缺乏具体执行方案：** 计划没有详细说明如何实现全球AI联盟，如何与盟友协调芯片出口限制，或如何与美国AI公司合作开发芯片位置验证功能。\n*   **侧重基础构建：** 相反，它更多地阐述了未来可持续AI芯片出口指南所需的基础构建模块，而非在现有指南基础上实施的具体政策。\n*   **实施时间表：** 这意味着芯片出口限制的实施将需要更多时间。\n\n### 过往政策的不一致性\n\n除了《AI行动计划》本身，还有大量证据表明芯片出口限制的实施将面临挑战，包括特朗普政府在过去几个月里在出口限制策略上多次自相矛盾：\n\n*   **芯片销售许可：** 去年7月，政府批准英伟达和AMD等半导体公司向中国销售其为中国开发的AI芯片，而就在几个月前，政府还对同样的AI芯片实施了许可限制，这实际上将英伟达挤出了中国市场。\n*   **AI扩散规则：** 今年5月，政府在拜登政府的AI扩散规则（该规则对某些国家允许购买的AI计算能力设置了上限）生效前几天，正式撤销了该规则。\n\n### 展望\n\n特朗普政府预计将于7月23日签署多项行政命令。这些命令是否会包含实现其目标的详细计划尚不明确。尽管《AI行动计划》详细讨论了如何在全球范围内扩展美国AI市场并保持主导地位，但它在具体细节上仍显不足。任何关于芯片出口限制的行政命令，很可能都是关于召集相关政府部门共同探讨前进方向，而非立即出台正式指南。",
+      "shortSummary": "特朗普政府的《AI行动计划》旨在巩固美国AI领导地位并阻止对手利用其创新。计划提出加强AI芯片出口管制，并通过“创新方法”和全球联盟实现。然而，该计划缺乏具体实施细节，例如如何协调盟友和执行限制。此外，政府在出口策略上存在前后矛盾，表明正式的芯片出口限制可能需要更多时间才能落地。",
+      "translated_title": "特朗普的AI行动计划旨在阻止芯片出口中国但缺乏关键细节",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "The AI Action Plan offers a path, but not a concrete plan, for what the administration is thinking when it comes to chip export restrictions. "
+    },
+    {
       "title": "前Y Combinator和a16z专家为创始人举办仅限邀请的峰会 (原标题: Former Y Combinator, a16z experts hold invite-only summit for founders)",
       "link": "https://techcrunch.com/2025/07/23/former-y-combinator-a16z-experts-hold-invite-only-summit-for-founders/",
       "pubDate": "Wed, 23 Jul 2025 17:50:21 +0000",
@@ -243,151 +354,7 @@
       ],
       "contentSource": "完整文章",
       "content": "We recently unveiled the Going Public Stage at TechCrunch Disrupt 2025 — a new destination for founders navigating the complexities of company building, from early traction to IPO and beyond."
-    },
-    {
-      "title": "数百家组织因SharePoint大规模攻击而遭到入侵 (原标题: Hundreds of organizations breached by SharePoint mass-hacks)",
-      "link": "https://techcrunch.com/2025/07/23/hundreds-of-organizations-breached-by-sharepoint-mass-hacks/",
-      "pubDate": "Wed, 23 Jul 2025 13:32:09 +0000",
-      "isoDate": "2025-07-23T13:32:09.000Z",
-      "creator": "Zack Whittaker",
-      "summary": "## SharePoint零日漏洞导致数百家组织被入侵\n\n安全研究人员指出，利用Microsoft SharePoint中的一个零日漏洞，黑客已入侵至少400家组织。自该漏洞上周被发现以来，检测到的入侵数量急剧上升。\n\n### 漏洞发现与影响范围\n*   **发现者**：荷兰网络安全公司Eye Security首次识别出SharePoint（一种公司用于存储和共享内部文档的流行服务器软件）中的此漏洞。\n*   **受影响数量**：Eye Security通过扫描互联网，已识别出数百台受影响的SharePoint服务器，这一数字已从本周早些时候的数十台大幅增加。\n*   **受害者示例**：据彭博社报道，受影响的组织之一包括美国国家核安全管理局（NNSA），该机构负责维护和开发美国核武器储备。美国能源部（NNSA隶属该部门）发言人本·迪特德里奇（Ben Dietderich）证实，该部门“受影响极小”，且“极少数系统受到影响”。\n*   **其他受害者**：研究人员证实，在利用SharePoint漏洞的早期攻击浪潮中，其他几个政府部门和机构也受到了影响。\n*   **攻击时间**：数据显示，黑客早在7月7日就开始利用此漏洞。\n\n### 漏洞技术细节\n*   **官方名称**：该漏洞正式编号为CVE-2025-53770。\n*   **受影响版本**：影响公司自行设置和管理在自己服务器上的自托管版本SharePoint。\n*   **攻击方式**：一旦被利用，该漏洞允许攻击者在受影响的服务器上远程运行恶意代码。\n*   **攻击后果**：攻击者可访问服务器内存储的文件，以及公司更广泛网络上的其他系统。\n*   **零日特性**：该漏洞被称为零日漏洞，因为在被利用之前，微软没有时间发布补丁。\n\n### 微软的响应与攻击者归因\n*   **补丁发布**：微软已为所有受影响的SharePoint版本发布了补丁。\n*   **攻击者**：谷歌和微软有证据表明，多个中国背景的黑客组织正在利用此漏洞。但他们警告称，随着更多黑客组织试图利用该漏洞，预计入侵事件将进一步增加。中国政府否认了这些指控。\n\n### 相关图片\n\n![a moshed/glitchy version of a Windows logo on a Microsoft Store front](https://techcrunch.com/wp-content/uploads/2025/07/photo-mosh-getty-windows-logo.jpg?w=1024)\n图片来源：David Ryder / Bloomberg (PhotoMosh/modified) / Getty Images",
-      "shortSummary": "一个SharePoint零日漏洞（CVE-2025-53770）已被黑客利用，导致至少400家组织被入侵，其中包括美国国家核安全管理局（NNSA）。该漏洞允许远程执行恶意代码并访问文件。微软已发布补丁。谷歌和微软认为有中国背景的黑客组织参与了攻击，但中方否认。预计未来将有更多组织受影响。",
-      "translated_title": "数百家组织因SharePoint大规模攻击而遭到入侵",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/photo-mosh-getty-windows-logo.jpg?w=1024",
-          "alt": "a moshed/glitchy version of a Windows logo on a Microsoft Store front",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "One of the hacked organizations reportedly includes the U.S. agency responsible for maintaining the country's stockpile of nuclear weapons. China-backed hackers have been observed carrying out the hacks targeting SharePoint servers."
-    },
-    {
-      "title": "瑞典独角兽Lovable在八个月内突破1亿美元年经常性收入里程碑 (原标题: Eight months in, Swedish unicorn Lovable crosses the $100M ARR milestone)",
-      "link": "https://techcrunch.com/2025/07/23/eight-months-in-swedish-unicorn-lovable-crosses-the-100m-arr-milestone/",
-      "pubDate": "Wed, 23 Jul 2025 13:08:00 +0000",
-      "isoDate": "2025-07-23T13:08:00.000Z",
-      "creator": "Anna Heim",
-      "summary": "### 瑞典独角兽Lovable突破1亿美元年经常性收入里程碑\n\n瑞典“氛围编码”（vibe coding）初创公司Lovable在成为欧洲最新独角兽不到一周后，又达成了一项重要里程碑：在短短八个月内，其年经常性收入（ARR）突破了1亿美元，成为一家“半人马”（centaur）公司。\n\n**关键成就与增长驱动因素：**\n\n*   **快速增长：** Lovable自推出以来仅用八个月就达到了1亿美元的ARR，这得益于其AI驱动的网站和应用程序构建器的迅速普及。\n*   **用户规模：** 该公司目前拥有超过230万活跃用户，并报告有18万付费订阅用户。\n*   **高效运营：** 仅有45名全职员工，以及14个待招职位，这表明其员工与收入比率令人印象深刻。\n\n**收入策略与产品演变：**\n\n*   **订阅驱动：** 订阅是Lovable收入的主要来源，但公司并非不惜一切代价追求销售额。\n*   **定价策略调整：**\n    *   在6月份达到7500万美元ARR后不久，CEO Anton Osika透露，Lovable曾将所有Team层级用户转移到更便宜的Pro层级（该层级现已支持协作），导致一天内损失了150万美元的ARR。\n    *   Team计划正被新的Business层级取代，该层级介于Pro和定制的Enterprise产品之间。\n*   **新Business层级特性：** 新计划提供面向业务的功能，包括：\n    *   自助服务（Self-serve）\n    *   单点登录（SSO）\n    *   模板\n    *   团队不可见的私人项目\n    *   选择退出数据用于训练的选项\n\n**市场定位与未来展望：**\n\n*   **现有客户：** Lovable已拥有Klarna、HubSpot和Photoroom等大型客户。\n*   **企业市场挑战：** 尽管如此，在企业市场（大额收入来源）中，围绕“氛围编码”仍存在显著的障碍和担忧。\n*   **新层级目标：** 新的Business层级旨在帮助Lovable找到中间用例，并推动更多企业将其工具用于原型设计之外的用途（目前大多数用户将其用于原型设计）。\n*   **业务收入贡献：** Osika最近表示，企业项目正在为Lovable带来可观的收入。\n*   **项目数量：** 迄今为止，Lovable平台上已创建了超过1000万个项目。\n\n**行业背景：**\n\n*   **1亿美元ARR俱乐部：** 1亿美元ARR俱乐部规模不大，尤其是在欧洲，但由于AI带来的顺风，其成员正在增加。\n*   **行业对比：** 例如，Nvidia支持的B2B AI视频平台Synthesia也在4月份突破了这一里程碑，尽管它成立于2017年，而非2024年末。\n\n**作者信息（背景信息）：**\n\n*   本文作者Anna Heim是一名作家和编辑顾问，自2021年起担任TechCrunch的自由记者，专注于欧洲初创公司的报道。",
-      "shortSummary": "瑞典AI初创公司Lovable在推出八个月内，年经常性收入（ARR）突破1亿美元，成为“半人马”公司。其成功归因于AI驱动的网站和应用构建器的普及，拥有230万活跃用户和18万付费订阅者。为吸引企业客户，Lovable推出了新的Business层级，提供SSO、私人项目等功能，旨在将工具应用扩展到原型设计之外，以应对企业市场的挑战并驱动更多业务收入。",
-      "translated_title": "瑞典独角兽Lovable在八个月内突破1亿美元年经常性收入里程碑",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Less than a week after becoming Europe’s latest unicorn, Swedish vibe coding startup Lovable has now crossed the $100 million annual recurring revenue mark."
-    },
-    {
-      "title": "优步终于允许美国女性乘客匹配女性司机 (原标题: Uber is finally letting women riders in the US match with women drivers)",
-      "link": "https://techcrunch.com/2025/07/23/uber-is-finally-bringing-a-feature-to-the-u-s-that-lets-women-riders-match-with-women-drivers/",
-      "pubDate": "Wed, 23 Jul 2025 13:00:00 +0000",
-      "isoDate": "2025-07-23T13:00:00.000Z",
-      "creator": "Kirsten Korosec",
-      "summary": "## 优步在美国推出女性偏好匹配功能\n\n优步宣布将在美国推出“女性偏好”（women preferences）功能，允许女性乘客选择匹配女性司机。该功能将首先在底特律、洛杉矶和旧金山进行试点。\n\n### 功能运作方式\n\n*   **乘客端：** 女性乘客可在优步应用中设置偏好，增加匹配到女性司机的机会。请求行程时，将看到一个名为“女性司机”的选项。如果等待时间过长，乘客可以选择其他行程。\n*   **司机端：** 女性司机可将设置切换为“女性乘客偏好”，也可随时更改此设置以接收所有乘客的请求。\n\n### 功能背景与全球推广\n\n*   该功能于六年前首次在沙特阿拉伯推出，最初是为了让女性司机选择连接女性乘客。\n*   此后，该功能已推广到全球40个国家，包括阿根廷、巴西、加拿大、印度和墨西哥。\n\n### 网约车安全挑战与优步的应对\n\n*   优步和Lyft等网约车公司长期面临如何提高安全性和吸引更广泛用户的挑战。\n*   尽管罕见，但性侵犯和致命袭击的报告加剧了这些担忧。\n*   根据优步最新的美国安全报告，2021年至2022年期间，共发生36起人身攻击致死事件，较往年有所增加。尽管这些事件在同期18亿次美国行程中占比极小，但优步已推出多项安全功能，包括：\n    *   验证乘客徽章。\n    *   行程中的音频和视频录制选项。\n*   自2017年开始报告数据以来，性侵犯事件数量持续下降：\n    *   2017-2018年：5,981起。\n    *   2021-2022年：2,717起（下降超过一半）。\n\n### 吸引女性司机\n\n*   优步和Lyft的司机中男性比例远高于女性（例如，美国优步司机中约五分之一是女性）。\n*   “女性偏好”功能旨在给予乘客和司机更多控制权，有望吸引更多女性用户（包括乘客和司机）。\n*   优步是首个推出此功能的主要网约车公司，但其竞争对手Lyft已率先在美国市场提供女性匹配功能。",
-      "shortSummary": "优步宣布在美国推出“女性偏好”功能，允许女性乘客选择匹配女性司机，并在底特律、洛杉矶和旧金山试点。该功能已在全球40个国家推广，旨在提高网约车安全性并吸引更多女性用户。尽管优步已采取多项安全措施使性侵犯事件下降，但仍面临挑战。此举有望增加女性司机数量，尽管竞争对手Lyft已在美国市场提供类似功能。",
-      "translated_title": "优步终于允许美国女性乘客匹配女性司机",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Uber will soon roll out its \"women preference\" feature in the U.S., starting with Detroit, Los Angeles, and San Francisco."
-    },
-    {
-      "title": "Proton 新的隐私优先 AI 助手：加密所有聊天，不保留日志 (原标题: Proton’s new privacy-first AI assistant encrypts all chats, keeps no logs)",
-      "link": "https://techcrunch.com/2025/07/23/protons-new-privacy-first-ai-assistant-encrypts-all-chats-keeps-no-logs/",
-      "pubDate": "Wed, 23 Jul 2025 12:49:08 +0000",
-      "isoDate": "2025-07-23T12:49:08.000Z",
-      "creator": "Ivan Mehta",
-      "summary": "## Proton 推出隐私优先的 AI 助手 Lumo\n\nProton，一家专注于隐私的生产力工具制造商，于2025年7月23日（星期三）发布了其AI助手——Lumo。该助手旨在优先保护用户数据，并提供多项强调隐私的功能。\n\n### 核心隐私特性\n\n*   **零日志策略**：Lumo 承诺不记录用户的对话内容。\n*   **端到端加密**：存储的聊天记录采用端到端加密技术，确保数据安全。\n*   **幽灵模式**：提供“幽灵模式”，在此模式下，对话内容在用户关闭窗口后立即消失。\n*   **零访问加密**：Lumo 采用零访问加密方法存储用户的对话历史，这种加密方式也用于Proton的其他产品，确保只有用户设备可以解密和访问这些数据。\n\n### 使用方式与功能\n\n*   **无需账户**：用户无需注册账户即可使用 Lumo 进行提问和交互。\n*   **多平台支持**：Lumo 可通过网页客户端以及 Android 和 iOS 应用程序访问。\n*   **文件处理能力**：用户可以上传文件，让 Lumo 回答关于文件的相关问题。\n*   **Proton Drive 集成**：如果用户拥有 Proton Drive 账户，可以将其与 Lumo 连接，以便访问存储在云端的文件。\n*   **网络访问**：Lumo 具备访问互联网的能力，但文章指出其搜索结果可能不是最新的。\n\n### 技术与隐私承诺\n\nProton 明确表示其对隐私的关注：\n\n*   **开源模型基础**：Lumo 基于开源语言模型构建，Proton 将仅依赖这些模型进行研发，不会利用用户数据来训练其模型。\n*   **独立性**：Proton 强调 Lumo 不与 OpenAI 或其他美国或中国 AI 公司合作，用户的查询永远不会发送给任何第三方。\n*   **欧洲基地优势**：Proton 在其关于 Lumo 的博客文章中强调其欧洲总部，认为这在隐私保护方面赋予公司相对于美国和中国 AI 公司的优势，提供了更高的透明度。\n\n### Proton 在 AI 领域的布局\n\nLumo 并非 Proton 首次涉足快速发展的 AI 工具领域。去年，Proton 已为其 Mail 产品推出了一款 AI 驱动的写作助手，该助手同样在用户设备上运行。\n\n### 相关图片\n\n![Lumo by Proton logo](https://techcrunch.com/wp-content/uploads/2025/07/Lumo-by-proton.jpeg?w=1024)\n\n![Lumo 界面截图](https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-23-at-5.43.34PM.jpg?w=680)\n\n![Proton 强调欧洲基地优势](https://techcrunch.com/wp-content/uploads/2025/07/image-26_863148c074.jpeg?w=680)",
-      "shortSummary": "Proton 发布了其隐私优先的 AI 助手 Lumo。该助手承诺不记录对话、采用端到端加密和零访问加密存储聊天，并提供“幽灵模式”使对话阅后即焚。Lumo 基于开源模型，不使用用户数据进行训练，且不与第三方AI公司合作。用户无需账户即可在网页、安卓和iOS上使用。Proton 强调其欧洲基地在隐私保护方面的优势。",
-      "translated_title": "Proton 新的隐私优先 AI 助手：加密所有聊天，不保留日志",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/Lumo-by-proton.jpeg?w=1024",
-          "alt": "Lumo by Proton logo",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-23-at-5.43.34PM.jpg?w=680",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/image-26_863148c074.jpeg?w=680",
-          "alt": "",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Proton's new AI assistant Lumo promises to keep user data private with zero-access encryption, no logging, and an incognito mode."
-    },
-    {
-      "title": "特朗普将公布其AI路线图：你需要了解的都在这里 (原标题: Trump is set to unveil his AI roadmap: Here’s what to know)",
-      "link": "https://techcrunch.com/2025/07/23/trump-is-set-to-unveil-his-ai-roadmap-heres-what-to-know/",
-      "pubDate": "Wed, 23 Jul 2025 12:00:00 +0000",
-      "isoDate": "2025-07-23T12:00:00.000Z",
-      "creator": "Maxwell Zeff",
-      "summary": "## 特朗普AI行动计划即将揭晓\n\n美国总统唐纳德·特朗普预计将于周三在华盛顿特区公布其备受期待的AI行动计划。这将是自他第二次上任以来首次就人工智能发表重要讲话。该计划旨在取代拜登政府的AI行政令，后者主要关注强制AI公司提交安全报告和限制歧视性偏见。特朗普在上任几天内就废除了拜登的命令，认为其要求可能对AI公司造成负担，并阻碍美国创新。\n\n### 特朗普政府的AI策略概述\n\n在执政的前六个月，特朗普政府普遍鼓励加速美国AI技术的开发和分发。例如，特朗普协助OpenAI、Oracle和软银宣布了数十亿美元的Stargate数据中心项目，并放宽了英伟达在全球销售其AI芯片的限制。与此同时，特朗普的AI沙皇大卫·萨克斯（David Sacks）与科技公司就“觉醒”AI展开争论，声称OpenAI、Anthropic和谷歌正在向其AI聊天机器人灌输左倾价值观并审查保守观点。\n\n### 对AI行动计划的反对声音\n\n一些人已经开始反对特朗普的AI行动计划，认为其将企业利益置于公众利益之上。周二，包括劳工、环境正义和消费者保护非营利组织在内的90多个团体发布了一封公开信，名为“人民AI行动计划”。该计划提出了一系列声称将美国公民利益放在首位的AI政策，以对抗特朗普预计将宣布的内容。他们强调，不能让大型科技和石油说客以牺牲自由、平等、工人和家庭福祉为代价来制定AI和经济规则。\n\n### AI行动计划的三大支柱\n\n根据《时代》杂志的报道，特朗普的AI战略预计将围绕三个核心支柱展开：**基础设施、创新和全球影响力**。\n\n*   **基础设施**\n    *   特朗普政府计划改革许可规则，以加速AI数据中心的建设。此举旨在帮助AI公司满足训练和运行AI模型日益增长的能源需求。\n    *   然而，人们普遍担忧AI数据中心的兴起（它们从周边社区消耗大量能源和水）可能导致本世纪末的能源短缺，除非能源生产迅速增加。\n    *   总统的基础设施支柱预计还将包括现代化美国电网并增加新的能源来源以支持这些数据中心的计划。\n\n*   **创新**\n    *   特朗普计划利用其AI行动计划，重新讨论阻止州级AI法律的议题（尽管上个月一项联邦提案以压倒性优势失败）。这是为了减少美国AI公司的创新障碍，但最终可能阻止立法者通过有意义的AI安全和安全标准。\n\n*   **全球影响力**\n    *   特朗普预计将提出一项战略，以推动美国AI模型和芯片不仅在美国，而且在全球范围内的采用。联邦官员对DeepSeek的崛起感到不安，而其他中国AI实验室如Qwen和Moonshot AI也已成为OpenAI的有力竞争者。特朗普希望美国技术成为全球标准。\n\n### 预计签署的行政命令\n\n据《华盛顿邮报》报道，特朗普政府预计将于周三签署一系列与AI相关的行政命令。其中一些命令将为更快的数据中心建设扫清障碍，而另一些则鼓励美国技术的出口。\n\n### 打击“觉醒”AI\n\n据《华尔街日报》本周早些时候报道，特朗普定于周三签署的一项行政命令将打击“觉醒”AI模型。该命令要求与联邦政府签订合同的AI公司（包括OpenAI、xAI、谷歌和Anthropic）确保其AI模型使用中立和无偏见的语言。此举标志着共和党对硅谷历来左倾群体的最新攻击。一个关键问题是，谁来定义AI模型是中立还是有偏见，以及如何确定。尽管特朗普长期以来一直是言论自由的倡导者，但佛罗里达州一名法官最近裁定AI聊天机器人不受第一修正案保护。\n\n面对这种打击，OpenAI和其他AI实验室已努力使其AI聊天机器人代表更多观点。这些公司面临着一个尴尬的境地：既要生成让所有人满意的AI回应，又要避免传播极端主义观点或错误信息。埃隆·马斯克（Elon Musk）曾是特朗普最大的财政支持者，他明确启动了xAI来开发一个“反觉醒”AI聊天机器人Grok，以对抗ChatGPT。然而，xAI在创建此类聊天机器人方面进展不顺，最近几周，xAI被迫多次道歉，因为其AI聊天机器人发表了反犹太言论并咨询了马斯克对热点问题的个人意见。\n\n### 硅谷和大型科技公司的诉求\n\n白宫在4月份宣布，已收到来自公司、地方政府和非营利组织关于特朗普AI行动计划的10,000多条公众意见。OpenAI、谷歌、Meta和亚马逊等美国领先的AI模型开发者借此机会提交了他们希望特朗普政府实施的友好AI政策愿望清单。\n\n*   许多公司要求特朗普利用其AI行动计划，保证使用受版权保护的材料训练大型语言模型属于“合理使用”，应予以允许。这种保护将极大地惠及这些公司，因为它们中的许多公司正卷入与音乐、电影、新闻和图书行业的版权所有者的活跃诉讼中。\n*   Meta要求特朗普保护开放AI模型（可在线免费下载）。通过开放其Llama模型，Meta已成功削弱了OpenAI和谷歌的闭源产品。然而，Anthropic对开放AI模型是否可能将强大技术泄露给不良行为者（包括中国）表示担忧。\n\n### 其他利益团体的声音\n\n其他利益团体，包括生命未来研究所等非营利组织，利用评论期要求特朗普政府增加对商业实体之外的AI研究投入。这一要求提出之际，特朗普政府和DOGE（国防部）削减了对美国大学的资助，而许多大学在近几十年来一直是科学突破的强大推动者。\n\n### 安全标准展望\n\n特朗普的AI行动计划似乎不太可能包含拜登政府试图施加的相同安全和安全报告标准。然而，民意调查显示，大多数美国人希望AI公司遵守安全标准。一些州立法者正在推动制定安全和安全报告强制要求的法案，但如果这些法案与特朗普的AI行动计划相矛盾，它们可能会面临特朗普政府和共和党立法者的反对。",
-      "shortSummary": "特朗普将公布其AI行动计划，旨在加速美国AI发展，取代拜登政府的旧规。该计划围绕基础设施、创新和全球影响力三大支柱，并包括打击“觉醒”AI的措施。科技巨头希望将版权材料训练AI视为“合理使用”，并保护开放模型。然而，有团体呼吁将公民利益置于首位，并制定AI安全标准，这与特朗普的计划可能存在冲突。",
-      "translated_title": "特朗普将公布其AI路线图：你需要了解的都在这里",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Here's everything we know about President Trump's AI Action Plan, a roadmap for the administration's approach to AI. "
-    },
-    {
-      "title": "苹果推出每月19.99美元的AppleCare One订阅服务，覆盖三台设备 (原标题: Apple launches $19.99 monthly AppleCare One subscription with coverage for three devices)",
-      "link": "https://techcrunch.com/2025/07/23/apple-launches-19-99-monthly-applecare-one-subscription-with-coverage-for-three-devices/",
-      "pubDate": "Wed, 23 Jul 2025 12:00:00 +0000",
-      "isoDate": "2025-07-23T12:00:00.000Z",
-      "creator": "Aisha Malik",
-      "summary": "## 苹果推出AppleCare One订阅服务\n\n苹果公司于周三宣布推出一项名为AppleCare One的全新月度订阅计划，旨在为用户提供更便捷、更经济的设备保障服务。\n\n### 核心特点与优势\n\n*   **订阅费用与设备覆盖**：\n    *   基本月费为19.99美元，可覆盖最多三台设备。\n    *   用户可选择为更多设备添加保障，每台额外设备每月收费5.99美元。\n*   **捆绑式保障**：\n    *   此前，用户需为每台苹果设备单独购买AppleCare+计划。\n    *   AppleCare One首次提供捆绑式保障，简化了管理流程并可能带来成本节约。\n*   **全面保障内容**：\n    *   **继承AppleCare+所有福利**：包括无限次意外损坏（如跌落或泼溅）维修、24/7全天候苹果专家支持以及电池服务。\n    *   **新增盗窃和丢失保护**：AppleCare One将盗窃和丢失保护范围从iPhone扩展到iPad和Apple Watch，这是该服务的一大亮点。\n*   **覆盖旧设备的新政策**：\n    *   AppleCare One首次允许用户为其已拥有的苹果产品添加AppleCare保障。\n    *   符合条件的设备必须是购买时间不超过4年且状况良好。\n    *   为验证设备状况，可能需要通过用户的iPhone或iPad进行诊断检查，或在Apple Store进行检测。\n\n### 成本节约示例\n\n苹果公司解释，AppleCare One的定价与所覆盖的产品类型无关。例如，如果用户为其iPhone、iPad和Apple Watch购买AppleCare One，相比分别为每台设备购买单独的AppleCare+计划，每月可节省高达11美元。这意味着，即使只覆盖一台新购买的MacBook Pro和一台iPhone，用户也能通过避免两个独立的AppleCare+计划来节省开支，而加入更多设备（如Apple Watch）则能获得更高的价值。\n\n### 适用范围与限制\n\n*   只有用户Apple账户下的设备才能被AppleCare One覆盖。\n\n### 其他选项\n\n*   对于仅需保护一台设备的用户，仍可继续选择购买AppleCare+。\n*   针对Apple Watch和iPad的盗窃和丢失保障，除了作为AppleCare One的一部分提供外，也将作为AppleCare+的选项，供希望单独保护一台iPad或Apple Watch的用户选择。\n\n### 上市信息\n\n*   AppleCare One已于本周四在美国正式上市。\n*   消费者可通过iPhone、iPad或Mac直接注册，或前往Apple Store办理。\n\n![AppleCare One Plans](https://techcrunch.com/wp-content/uploads/2025/07/AppleCare-One_plans.jpg?w=486)\n\n*图片来源：Apple*",
-      "shortSummary": "苹果公司推出AppleCare One月度订阅服务，每月19.99美元，可覆盖最多三台设备。该计划整合了AppleCare+的所有优势，包括无限次维修和24/7支持，并首次将iPad和Apple Watch的盗窃丢失保护纳入其中。用户现在可为已拥有的旧设备（最长4年）添加保障，旨在通过捆绑服务节省费用。该服务已在美国上市，用户可通过多种方式注册。",
-      "translated_title": "苹果推出每月19.99美元的AppleCare One订阅服务，覆盖三台设备",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/AppleCare-One_plans.jpg?w=486",
-          "alt": "",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Until now, people have had to enroll their Apple devices into separate AppleCare+ plans if they wanted additional coverage for their products beyond the standard warranty. "
-    },
-    {
-      "title": "Instagram 为主要展示儿童的账户添加新保护措施 (原标题: Instagram adds new protections for accounts that primarily feature children)",
-      "link": "https://techcrunch.com/2025/07/23/instagram-adds-new-protections-for-accounts-that-primarily-feature-children/",
-      "pubDate": "Wed, 23 Jul 2025 11:00:00 +0000",
-      "isoDate": "2025-07-23T11:00:00.000Z",
-      "creator": "Aisha Malik",
-      "summary": "## Instagram 针对主要展示儿童的账户推出新保护措施\n\nMeta 公司于周三宣布，将为由成年人运营且主要展示儿童的 Instagram 账户引入额外的安全保障措施。这些举措旨在防止不必要的互动和潜在的滥用。\n\n### 针对主要展示儿童的账户的新功能：\n\n*   **自动最严格消息设置**：这些账户将自动被置于应用程序最严格的消息设置中，以防止收到不请自来的消息。\n*   **启用“隐藏词语”功能**：平台将为这些账户启用“隐藏词语”功能，以过滤冒犯性评论。\n*   **目标账户类型**：\n    *   定期分享孩子照片和视频的成年人运营的账户。\n    *   代表儿童的父母或人才经理运营的账户。\n*   **防止可疑成年人接触**：Meta 将尝试阻止潜在的可疑成年人（例如已被青少年屏蔽的用户）找到主要展示儿童的账户。Instagram 将避免向这些账户推荐可疑成年人，反之亦然，并使他们在 Instagram 搜索中更难找到彼此。\n*   **通知与隐私审查**：被置于这些更严格设置的账户将在其 Instagram 动态顶部收到通知，告知其安全设置已更新，并提示他们审查账户隐私设置。\n*   **背景与原因**：\n    *   这些账户虽然绝大多数以良性方式使用，但仍存在滥用风险，例如在帖子下留下性化评论或在私信中索要性图片。\n    *   此举是 Meta 和 Instagram 过去一年为解决与社交媒体相关的心理健康问题所采取措施的一部分，这些问题已引起美国卫生局局长和各州的关注。\n    *   这些变化将显著影响家庭视频博主/创作者以及为“儿童网红”运营账户的父母，他们因在社交媒体上分享儿童生活所带来的风险而面临批评。\n*   **过往调查与行动**：\n    *   《纽约时报》去年的一项调查发现，父母常常意识到甚至参与到孩子的剥削中，例如出售孩子穿过的照片或衣服。在对 5,000 个由父母运营的账户进行审查时，发现有 3200 万个连接到男性关注者。\n    *   Meta 表示已删除近 13.5 万个对主要展示儿童的账户进行性化的 Instagram 账户，以及 50 万个与这些被删除账户相关的 Instagram 和 Facebook 账户。\n\n### 针对青少年账户的新安全功能：\n\n除了上述措施，Meta 还为青少年账户的私信（DMs）带来了新的安全功能：\n\n*   **安全提示选项**：青少年现在将看到新的选项来查看安全提示，提醒他们仔细检查个人资料并注意分享的内容。\n*   **显示账户加入日期**：新聊天中将显示账户加入 Instagram 的月份和年份，为青少年提供更多背景信息。\n*   **新的屏蔽和举报选项**：Instagram 增加了一个新的屏蔽和举报选项，允许用户同时执行这两项操作。\n*   **目的与效果**：这些新功能旨在为青少年提供更多关于他们正在聊天的账户的背景信息，并帮助他们识别潜在的诈骗者。Meta 报告称，仅在 6 月，青少年在看到安全通知后就屏蔽了 100 万个账户，并举报了另外 100 万个账户。\n*   **裸体保护过滤器更新**：Meta 还提供了其裸体保护过滤器的更新，指出 99% 的用户（包括青少年）都保持其开启状态。上个月，在私信中收到的模糊图片中，超过 40% 保持模糊状态。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/07/image001.jpg?w=680)\n图片来源：Meta",
-      "shortSummary": "Instagram 正在为主要展示儿童的账户和青少年账户引入新的安全保护措施。对于展示儿童的账户，将自动启用最严格的消息设置和“隐藏词语”功能，并阻止可疑成年人接触。对于青少年账户，新增了安全提示、显示账户加入日期以及同时屏蔽/举报的选项。这些措施旨在防止滥用、提高用户安全，并回应了社会对社交媒体影响的担忧，特别是针对儿童和青少年的保护。",
-      "translated_title": "Instagram 为主要展示儿童的账户添加新保护措施",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/image001.jpg?w=680",
-          "alt": "",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The update will impact the accounts of family vloggers/creators and parents running accounts for \"kidfluencers,\" both of which have faced criticism for the risks associated with sharing children's lives on social media."
-    },
-    {
-      "title": "NetZeroNitrogen希望用细菌取代农田中的合成肥料 (原标题: NetZeroNitrogen wants bacteria to replace synthetic fertilizer on farm fields)",
-      "link": "https://techcrunch.com/2025/07/23/netzeronitrogen-wants-bacteria-to-replace-synthetic-fertilizer-on-farm-fields/",
-      "pubDate": "Wed, 23 Jul 2025 11:00:00 +0000",
-      "isoDate": "2025-07-23T11:00:00.000Z",
-      "creator": "Tim De Chant",
-      "summary": "## NetZeroNitrogen：用细菌替代合成肥料\n\n### 背景与问题\n合成肥料在养活数十亿人口方面发挥了关键作用，但其使用并非没有代价。农田径流中的肥料导致全球海洋出现“死亡区”，这些区域的低氧水平使得原本生机勃勃的沿海水域生命枯竭。\n\n### NetZeroNitrogen的解决方案\nNetZeroNitrogen是一家初创公司，开发了一系列细菌菌株，旨在替代农田中使用高达一半的合成肥料，同时降低成本。\n\n*   **作用机制：** 这些细菌直接施用于种子，使植物能够从大气中获取氮，而非依赖化学肥料。该公司联合创始人兼首席执行官贾斯汀·休斯（Justin Hughes）将其描述为一种“精确狙击”方法，与传统肥料的“散弹枪”式施用形成对比。\n\n### 技术与研发\n\n*   **研究基础：** NetZeroNitrogen的细菌是加里·德文（Gary Devine）十多年来对天然固氮菌株研究的成果。\n*   **非转基因：** 休斯强调，公司的细菌并非基因改造产品。这简化了监管途径，并使其能够进入有机市场。\n*   **生命周期：** 细菌会随植物的死亡而消亡。\n\n### 融资情况\n该公司最近完成了由World Fund和Azolla Ventures领投的660万美元种子轮融资。\n\n### 产品应用与经济效益\n\n*   **首个产品：** NetZeroNitrogen计划首先推出针对水稻的产品。这是出于便利性考虑：目前，最简单的细菌菌株施用方法是将种子浸泡在含有细菌的水中，而水稻在种植前恰好需要浸泡。\n*   **成本优势：** 休斯表示，通过大规模发酵罐进行生物制造，生产细菌改良剂的成本远低于哈伯-博世法（广泛用于制造肥料的工艺），尤其是在规模化生产后。\n*   **农民收益：** 公司的目标是以每公顷至少比合成肥料低50美元的价格向农民销售其细菌产品。在东南亚等地区，这可能意味着30%至40%的折扣。\n\n### 未来展望与局限性\n休斯指出，目前公司尚无法完全解决100%的肥料问题。然而，在其能够解决的范围内，该解决方案的效率可达100%。",
-      "shortSummary": "NetZeroNitrogen开发了一种细菌解决方案，旨在取代农田中使用高达一半的合成肥料。这些非转基因细菌直接施用于种子，使植物能从大气中获取氮，从而减少环境污染和成本。该公司已完成660万美元种子轮融资，首个产品将应用于水稻，目标是为农民节省大量肥料开支，并降低生产成本。该技术有望显著减少合成肥料的使用及其环境影响。",
-      "translated_title": "NetZeroNitrogen希望用细菌取代农田中的合成肥料",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "NetZeroNitrogen has developed a suite of bacterial strains that is applied directly to the seed and allows the plant to get nitrogen from the atmosphere instead of chemicals."
     }
   ],
-  "lastUpdated": "2025-07-23T18:36:52.855Z"
+  "lastUpdated": "2025-07-24T01:56:40.381Z"
 }
