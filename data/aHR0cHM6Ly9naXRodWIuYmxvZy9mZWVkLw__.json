@@ -5,6 +5,107 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "如何在 Azure Pipelines 中简化 GitHub API 调用 (原标题: How to streamline GitHub API calls in Azure Pipelines)",
+      "link": "https://github.blog/enterprise-software/ci-cd/how-to-streamline-github-api-calls-in-azure-pipelines/",
+      "pubDate": "Thu, 24 Jul 2025 16:00:00 +0000",
+      "isoDate": "2025-07-24T16:00:00.000Z",
+      "creator": "Tiago Pascoal",
+      "summary": "## Azure Pipelines 中简化 GitHub API 调用\n\n本文探讨了如何在 Azure Pipelines 中通过构建自定义 Azure DevOps 扩展来简化 GitHub API 调用，从而消除 JWT 生成和令牌管理的复杂性，实现强大的自动化和增强的安全控制。\n\n### Azure Pipelines 与 GitHub 的集成\n\nAzure Pipelines 是一个基于云的持续集成/持续交付 (CI/CD) 服务，与 GitHub 深度集成。它能够响应 GitHub 仓库的推送或拉取请求触发管道，并将执行结果通过 GitHub 状态检查报告回 GitHub，帮助开发者监控代码健康状况并强制执行规则集。\n\n### 常见用例和场景\n\n在 Azure Pipelines 中调用 GitHub API 的常见场景包括：\n\n*   **设置提交或拉取请求的状态检查：** 报告管道步骤（如测试、构建、安全扫描）的成功或失败，以强制执行策略并提供反馈。\n*   **向拉取请求添加评论：** 自动发布管道结果、测试覆盖率报告或部署信息。\n*   **更新仓库中的文件：** 自动更新文档、配置文件或版本号（如 `CHANGELOG.md`）。\n*   **管理 GitHub Issues：** 根据管道结果自动创建、更新或关闭问题（如测试失败时创建 Bug 报告）。\n*   **与 GitHub Advanced Security 集成：** 将代码扫描结果发送到 GitHub 的代码扫描功能，实现集中式漏洞管理。\n*   **管理发布和资产：** 成功部署后自动创建 GitHub 发布并上传构建产物。\n*   **使用 GitHub 部署跟踪部署：** 在 GitHub 界面中提供部署历史和状态的可视性。\n*   **触发 GitHub Actions 工作流：** 编排混合 CI/CD 场景，由 Azure Pipelines 处理部分任务，然后触发 GitHub Actions 进行后续处理。\n\n### 理解 GitHub API：REST 与 GraphQL\n\nGitHub API 提供两种主要的接口：\n\n*   **REST API：** 遵循 RESTful 原则，提供直接的 HTTP 端点，适用于管理仓库、问题、拉取请求等常见操作。易于上手，支持个人访问令牌、GitHub Apps 或 OAuth 令牌认证。\n*   **GraphQL API：** 提供更灵活高效的数据检索方式。允许在单个请求中精确指定所需数据，减少数据过度获取或不足，特别适用于检索复杂、嵌套的数据结构。\n\n### 如何选择正确的认证方法\n\nGitHub 提供三种主要的 API 认证方法：\n\n1.  **个人访问令牌 (PATs)：**\n    *   **优点：** 创建和使用简单，快速上手，适用于个人自动化，可配置权限和过期日期。\n    *   **缺点：** 与用户账户生命周期绑定，权限可能粗粒度（经典 PATs），需要手动轮换，一旦泄露可能暴露所有可访问的组织/仓库。\n2.  **OAuth 令牌：**\n    *   **优点：** 标准 OAuth 2.0 流程，适用于需要代表不同用户操作的第三方应用，用户批准权限。\n    *   **缺点：** 需要安全存储刷新令牌，需要服务器基础设施，比 PATs 更复杂，仍与用户账户绑定。\n3.  **GitHub Apps：**\n    *   **优点：** 作为独立实体运行，具有细粒度、仓库级别的权限，基于安装的访问控制，短生命周期令牌（最长 1 小时），更高的速率限制，提供最佳安全模型，不依赖用户账户，有审计跟踪。\n    *   **缺点：** 初始设置更复杂，需要实现 JWT，可能不适用于简单场景，需要私钥管理。\n\n**结论：** 鉴于其细粒度权限、安全特性和更高的速率限制，GitHub Apps 是 Azure Pipelines 中机器到机器集成的理想选择。其短生命周期令牌和基于安装的访问模型提供了比 PATs 和 OAuth 令牌更好的安全控制，特别适合 CI/CD 场景中的自动化。\n\n### 注册和安装 GitHub App\n\n使用 GitHub App 进行认证需要以下步骤：\n\n1.  **注册 GitHub App：** 在 GitHub Enterprise、组织或账户中注册应用，并选择适当的权限。权限决定了应用在企业、组织和仓库中的操作能力。请注意，权限更改可能需要所有者管理员重新授权。通常建议将应用设置为私有。\n2.  **保存私钥：** 如果生成了私钥，请将其安全保存。私钥用于向 GitHub 认证以生成安装令牌。\n3.  **安装 GitHub App：** 将应用安装到将与之交互的账户或组织上，并选择应用可以访问的仓库（所有仓库或特定仓库）。\n\n### GitHub App 认证流程\n\nGitHub Apps 使用两步认证过程访问 GitHub API：\n\n1.  **应用认证：** 应用首先使用其私钥签名的 JSON Web Token (JWT) 进行自我认证。此 JWT 仅证明应用的身份，不提供对 GitHub 资源的直接访问。\n2.  **获取安装令牌：** 为了调用 GitHub API，应用需要获取一个安装令牌。安装令牌是使用应用的 JWT 认证生成的、具有作用域（企业、组织或账户）的访问令牌。这些令牌生命周期短（有效一小时），并且只能访问其安装范围内的资源，并使用安装时授予的最大权限。\n\n获取安装令牌有两种方法：使用已知的安装 ID，或通过调用安装 API 来检索 ID。一旦应用获得安装 ID，它就使用该 ID 请求新的令牌。生成的安装令牌继承了应用的权限和该安装的仓库访问权限，也可以选择请求具有更低权限或仅限于特定仓库的令牌。\n\n### 在 Azure Pipelines 中生成安装令牌\n\n管道作者在 Azure Pipelines 中生成安装令牌有三种主要选项：\n\n1.  **使用命令行工具：** 例如，`gh-token` 是一个流行的开源工具，可以处理整个令牌生成过程。\n2.  **编写自定义脚本：** 使用 `bash/curl` 或 PowerShell 脚本实现令牌生成过程，提供完全控制但需要更多实现工作。\n3.  **使用 Azure Pipeline 任务：** 可以从 Azure DevOps 市场寻找合适的任务，或创建自定义任务来实现 GitHub App 认证流。\n\n### 用于 GitHub App 认证的 Azure DevOps 扩展\n\n在 Azure Pipelines 和 GitHub 之间创建集成时，应用私钥的安全性至关重要。在 Azure Pipelines 中，有多种存储敏感数据的选项：\n\n*   Azure Pipeline 秘密存储（通过秘密变量访问）\n*   Azure Pipelines 安全文件\n*   Azure Pipelines 服务连接\n\n**服务连接的优势：**\n\n服务连接为管理外部服务认证提供了多项关键优势，包括：\n\n*   集中式访问控制\n*   支持多种认证方案\n*   可在项目内的多个管道之间共享连接\n*   内置安全控制，用于管理谁可以查看或修改连接详细信息\n*   将敏感凭据对管道作者隐藏，同时仍允许使用\n*   跨多个项目共享连接，减少重复和管理开销\n\n对于 GitHub App 认证，服务连接尤为重要，因为它们可以安全地存储应用的私钥，允许管理员配置和强制连接行为，并提供比直接在管道或变量组中存储秘密更好的安全性。\n\n### 创建自定义 Azure DevOps 扩展\n\nAzure DevOps 扩展是为 Azure DevOps 服务添加新功能的包。本例中，需要创建一个提供两个关键组件的扩展：\n\n1.  **自定义服务连接类型：** 用于安全存储 GitHub App 凭据和其他设置。\n2.  **自定义任务：** 使用这些凭据生成安装令牌。\n\n一个扩展由描述其功能的清单文件和实际实现代码组成。",
+      "shortSummary": "本文介绍如何在 Azure Pipelines 中通过自定义 Azure DevOps 扩展简化 GitHub API 调用。核心在于利用 GitHub Apps 进行身份验证，以消除 JWT 生成和令牌管理的复杂性。GitHub Apps 提供细粒度权限、短生命期令牌和更高安全性，是 CI/CD 场景下机器到机器集成的理想选择。该方法通过集中式凭据管理、标准化集成和跨项目重用，增强了安全性、可维护性并节省了时间。",
+      "translated_title": "如何在 Azure Pipelines 中简化 GitHub API 调用",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Build a custom Azure DevOps extension that eliminates the complexity of JWT generation and token management, enabling powerful automation and enhanced security controls.</p>\n<p>The post <a href=\"https://github.blog/enterprise-software/ci-cd/how-to-streamline-github-api-calls-in-azure-pipelines/\">How to streamline GitHub API calls in Azure Pipelines</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "使用 GitHub Models 解决开源 AI 项目的推理问题 (原标题: Solving the inference problem for open source AI projects with GitHub Models)",
+      "link": "https://github.blog/ai-and-ml/llms/solving-the-inference-problem-for-open-source-ai-projects-with-github-models/",
+      "pubDate": "Wed, 23 Jul 2025 16:00:00 +0000",
+      "isoDate": "2025-07-23T16:00:00.000Z",
+      "creator": "Sean Goedecke",
+      "summary": "## 使用 GitHub Models 解决开源 AI 项目的推理问题\n\n本文介绍了 GitHub Models，一个旨在解决开源 AI 项目中 AI 推理（inference）难题的免费、兼容 OpenAI 的 API。\n\n### 现有问题与挑战\n在开源项目中集成 AI 功能时，开发者和用户常面临以下障碍：\n*   **付费 API 密钥：** 要求用户提供 OpenAI 或 Anthropic 等付费 API 密钥，对许多业余爱好者和学生来说成本过高，阻碍了项目采用。\n*   **本地模型运行：** 运行大型语言模型（LLM）需要大量内存，普通笔记本电脑或 GitHub Actions runner（14 GB 容器）难以承受。\n*   **模型分发：** 捆绑多 GB 的模型权重会显著增加安装包大小，并拖慢持续集成（CI）流程。\n这些额外的要求都会筛选掉潜在用户和贡献者。\n\n### GitHub Models 解决方案\nGitHub Models 提供了一个免费的、与 OpenAI 兼容的推理 API，每个 GitHub 账户都可以使用，无需新的密钥、控制台或 SDK。\n\n*   **核心功能：**\n    *   一个 REST 端点，遵循 OpenAI 已知的 `chat/completions` 规范。\n    *   提供 GitHub 托管的一系列精选模型，包括 GPT-4o、DeepSeek-R1、Llama 3 等。\n    *   任何拥有 GitHub 个人访问令牌（PAT）的用户，或在仓库中通过权限选择启用的内置 `GITHUB_TOKEN`，都可以调用。\n    *   **成本：** 个人账户和开源组织提供免费层级；付费层级提供更高的吞吐量和更大的上下文窗口。\n*   **兼容性：** 由于 API 镜像了 OpenAI，任何接受 `baseURL` 参数的客户端（如 OpenAI-JS、OpenAI Python、LangChain、llamaccp 或自定义 curl 脚本）都可以无缝使用。\n\n### 如何开始使用 GitHub Models\nGitHub Models 与 OpenAI `chat/completions` API 兼容，因此几乎所有推理 SDK 都能使用。\n\n*   **通过 OpenAI SDK 示例：**\n    ```javascript\n    import OpenAI from \"openai\";\n    const openai = new OpenAI({\n      baseURL: \"https://models.github.ai/inference/chat/completions\",\n      apiKey: process.env.GITHUB_TOKEN // 或任何带有 models:read 权限的 PAT\n    });\n    const res = await openai.chat.completions.create({\n      model: \"openai/gpt-4o\",\n      messages: [{ role: \"user\", content: \"Hi!\" }]\n    });\n    console.log(res.choices[0].message.content);\n    ```\n*   **GitHub Actions 中的零配置 CI：**\n    *   在工作流文件中请求 `models:read` 权限，内置的 `GITHUB_TOKEN` 将自动获得调用 GitHub Models 的权限。\n    *   这使得开发者可以构建一键安装的 AI 驱动型 Actions，例如：\n        *   代码审查或 PR 分类机器人\n        *   智能问题标签工作流\n        *   每周仓库活动报告生成器\n    *   示例 `.github/workflows/triage.yml` 配置：\n        ```yaml\n        permissions:\n          contents: read\n          issues: write\n          models: read # 👈 为 GITHUB_TOKEN 解锁 GitHub Models\n        jobs:\n          triage:\n            runs-on: ubuntu-latest\n            steps:\n              - uses: actions/checkout@v4\n              - name: Smart issue triage\n                run: node scripts/triage.js\n        ```\n\n### 优势与扩展性\n*   **降低门槛：** 任何拥有 GitHub 账户的用户都可以运行 AI 驱动的代码，无需提供付费 API 密钥，极大地降低了用户和贡献者的入门障碍。\n*   **促进贡献：** 更容易的设置意味着更广泛的 GitHub 用户群体可以参与贡献。\n*   **项目扩展：**\n    *   GitHub Models 推理 API 对所有人免费。\n    *   如果需要更高的推理量，用户可以在设置中开启付费使用，以获得显著更大的上下文窗口和更高的每分钟请求数（RPM）。\n    *   付费层级提供更高的 RPM、支持 128k token 的上下文窗口，并在独立部署中运行以降低延迟。\n    *   可在“设置 > 模型”中为组织或企业启用付费使用。\n\n### 总结\nLLM 正在改变软件开发和交付方式，但要求用户提供付费 API 密钥是一个主要障碍。GitHub Models 通过为 GitHub 上的每位开发者提供免费的高质量 AI 推理，消除了开源 AI 采用的最大障碍。这为更多的贡献、更快的上手和更满意的用户打开了大门。\n\n### 相关资源\n*   GitHub Models 文档\n*   API 参考\n\n### 作者\n*   ![Sean Goedecke](https://avatars.githubusercontent.com/u/19204567?v=4&s=200) Sean Goedecke，GitHub 软件工程师，GitHub Models 团队成员。\n\n### 相关文章\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用 GitHub 的公司和工程团队。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025：参加旧金山大会。",
+      "shortSummary": "GitHub Models 提供了一个免费、兼容 OpenAI 的推理 API，旨在解决开源 AI 项目中因付费 API 密钥或本地模型部署造成的障碍。它允许任何 GitHub 用户通过 PAT 或 `GITHUB_TOKEN` 访问 GitHub 托管的精选模型，无需额外配置。这降低了用户和贡献者的门槛，尤其在 GitHub Actions 中可实现零配置 AI 功能。项目可根据需求升级到付费层级以获得更高性能。GitHub Models 极大地促进了开源 AI 项目的普及和协作。",
+      "translated_title": "使用 GitHub Models 解决开源 AI 项目的推理问题",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/19204567?v=4&s=200",
+          "alt": "Sean Goedecke",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>How using GitHub’s free inference API can make your AI-powered open source software more accessible.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/llms/solving-the-inference-problem-for-open-source-ai-projects-with-github-models/\">Solving the inference problem for open source AI projects with GitHub Models</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "我们需要一个欧洲主权技术基金 (原标题: We need a European Sovereign Tech Fund)",
+      "link": "https://github.blog/open-source/maintainers/we-need-a-european-sovereign-tech-fund/",
+      "pubDate": "Wed, 23 Jul 2025 07:01:00 +0000",
+      "isoDate": "2025-07-23T07:01:00.000Z",
+      "creator": "Felix Reda",
+      "summary": "开源软件（OSS）是全球经济和社会赖以生存的关键数字基础设施，然而其维护工作却长期资金不足，远低于对实体基础设施的投入。为了解决这一问题，GitHub的开发者政策团队委托Open Forum Europe、Fraunhofer ISI和欧洲大学学院进行了一项研究，探讨如何将德国成功的“主权技术局”模式推广至欧盟层面，从而建立一个“欧盟主权技术基金”（EU-STF）。\n\n**开源软件的重要性与维护挑战**\n\n*   **巨大价值：** 开源软件对全球经济的价值估计高达8.8万亿美元，对欧盟经济每年贡献至少650-950亿欧元。基础开源技术广泛应用于经济、社会和公共管理部门。\n*   **普遍存在：** 96%的代码库包含开源软件，77%的代码库由开源软件组成。\n*   **资金不足：** 尽管其价值巨大，但开源维护却严重缺乏资金。对500多名开源维护者的调查显示，三分之一的维护者无偿工作，另有三分之一收入微薄无法维持生计。更令人担忧的是，三分之一的受访者是独立维护者，近四分之三的项目由三人或更少的人维护。这导致了如xz后门和Log4Shell等严重安全事件的发生，凸显了过度依赖小型、过劳且未受重视团队的风险。\n\n**设计一个有影响力的基金**\n\n借鉴德国主权技术局在两年内（2022-2024年）向60个开源项目投资超过2300万欧元的成功经验，欧盟主权技术基金应具备以下五个主要活动领域：\n\n1.  识别欧盟最关键的开源依赖项。\n2.  投资于维护工作。\n3.  投资于安全加固。\n4.  投资于改进和创新。\n5.  加强整个开源生态系统。\n\n**机构设置与资金需求**\n\n研究提出了两种机构设置方案：\n\n*   **“登月计划”模式：** 设立一个集中的欧盟机构。\n*   **“务实”模式：** 由欧盟成员国组成联盟，提供初始资金并申请欧盟预算的额外资源。\n\n无论哪种模式，为确保基金成功，即将到来的欧盟多年期预算（2028-2035年）应至少贡献3.5亿欧元。这笔资金虽不足以完全满足开源维护需求，但可作为杠杆，吸引行业和国家政府的共同出资，从而产生持久影响。\n\n**欧盟主权技术基金的七项设计标准**\n\n借鉴德国主权技术局和美国开放技术基金等项目的经验，研究确定了EU-STF必须满足的七项设计标准：\n\n1.  **集中融资：** 行业、国家政府和欧盟应将资金汇集到同一基金中，以简化维护者的申请流程。例如：\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n2.  **低官僚化：** 采用轻量级申请流程，主动识别关键项目，并限制受资助者的报告要求，确保他们能专注于项目改进。\n3.  **政治独立性：** 基金应足够独立，避免受制于区块链、量子计算或人工智能等短期技术趋势，从而专注于保障和维护公共软件基础设施的核心使命。\n4.  **灵活资助：** 能够资助个人、非营利组织或公司进行开源维护工作，且不应限制受资助者的居住地（如德国主权技术局不限制德国人）。关键在于“开源制造”，而非“欧盟制造”。\n5.  **社区聚焦：** 与开源社区合作，共同定义资助优先事项和设计资助流程，以建立专业知识和信任。\n6.  **战略对齐：** 基金需证明其对欧盟战略目标（如经济竞争力、数字主权和网络安全，包括帮助企业遵守《网络弹性法案》下的供应链安全义务）的积极影响。\n7.  **透明度：** 基金在治理和资助决策方面必须达到最高透明度标准，以赢得开源社区和决策者的信任。\n\n**促成欧盟主权技术基金的实现**\n\n目前，欧盟正在就2028-2035年的新多年期预算（多年度财政框架）进行谈判。GitHub的开发者政策团队正在向欧盟立法者介绍这项研究成果，并动员行业合作伙伴（如梅赛德斯-奔驰）支持，以证明建立一个公私部门合作保障开源基础设施的新型工具的必要性。文章呼吁个人、开源组织和公司向欧盟委员会、欧洲议会代表和本国政府表达对EU-STF成立的支持。作者为GitHub开发者政策总监Felix Reda。\n\n![Felix Reda](https://avatars.githubusercontent.com/u/161162366?v=4&s=200)",
+      "shortSummary": "开源软件是全球关键数字基础设施，但其维护长期资金不足。为解决此问题，文章呼吁建立一个欧洲主权技术基金（EU-STF），借鉴德国成功经验。该基金旨在识别并资助欧盟最关键的开源依赖项，加强维护、安全和生态系统。提议至少3.5亿欧元的初始资金，并强调集中融资、低官僚化、政治独立和社区合作等设计原则。呼吁各方支持，以确保欧洲数字基础设施的安全与可持续性。",
+      "translated_title": "我们需要一个欧洲主权技术基金",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/161162366?v=4&s=200",
+          "alt": "Felix Reda",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Open source software is critical infrastructure, but it’s underfunded. With a new feasibility study, GitHub’s developer policy team is building a coalition of policymakers and industry to close the maintenance funding gap.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/we-need-a-european-sovereign-tech-fund/\">We need a European Sovereign Tech Fund</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "使用AI调试UI：GitHub Copilot代理模式与MCP服务器的结合 (原标题: Debugging UI with AI: GitHub Copilot agent mode meets MCP servers)",
       "link": "https://github.blog/ai-and-ml/github-copilot/debugging-ui-with-ai-github-copilot-agent-mode-meets-mcp-servers/",
       "pubDate": "Tue, 22 Jul 2025 21:58:35 +0000",
@@ -187,114 +288,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Discover how to increase the coverage of your CodeQL CORS security by modeling developer headers and frameworks.</p>\n<p>The post <a href=\"https://github.blog/security/application-security/modeling-cors-frameworks-with-codeql-to-find-security-vulnerabilities/\">Modeling CORS frameworks with CodeQL to find security vulnerabilities</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "超越提示词编写：如何成为你AI结对编程伙伴的更好搭档 (原标题: Beyond prompt crafting: How to be a better partner for your AI pair programmer)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/beyond-prompt-crafting-how-to-be-a-better-partner-for-your-ai-pair-programmer/",
-      "pubDate": "Wed, 09 Jul 2025 16:00:00 +0000",
-      "isoDate": "2025-07-09T16:00:00.000Z",
-      "creator": "Christopher Harrison",
-      "summary": "# 超越提示词编写：如何成为你AI结对编程伙伴的更好搭档\n\n本文探讨了如何通过提供更丰富的上下文信息，而非仅仅依赖精心设计的提示词，来提升GitHub Copilot的代码建议质量。\n\n## 上下文是成功的关键\n\n文章通过一个寻找早午餐地点的故事类比，强调了上下文的重要性。就像人类对话一样，AI工具（如Copilot）需要持续的、迭代的上下文信息才能给出符合预期的结果。如果Copilot未能提供预期的建议，很可能是因为它缺乏必要的上下文，就像故事中最初缺乏“想吃华夫饼”这一关键信息一样。\n\n## GitHub Copilot 如何处理代码\n\n理解Copilot的工作方式对于提供有效上下文至关重要：\n\n*   **阅读代码和注释**：Copilot像人类开发者一样“阅读”它被指向的文件中的代码和注释。\n*   **不运行代码**：除了代理模式（agent mode），Copilot在生成代码建议时不会构建或运行代码。\n*   **缺乏“机构知识”**：Copilot不具备人类开发者所拥有的经验背景信息，例如代码的历史原因、内部库的使用规范或必须遵循的模式。\n*   **需要结构化上下文**：如果缺乏这些背景信息，Copilot可能会生成语法正确但与项目特定格式或结构不符的代码（例如，生成原始SQL而非使用数据抽象层）。\n\n## 提升 Copilot 建议质量的方法\n\n文章提出了几种超越提示词编写，为Copilot提供更好上下文的方法：\n\n### 1. 使用代码注释改进上下文\n\n*   **破除误解**：打破“高质量代码不需要注释”的普遍观念。即使代码对一位开发者可读，也可能对所有开发者并非如此。\n*   **提升可读性**：少量注释能大大提高代码可读性，这同样适用于Copilot。\n*   **Copilot 的“阅读”方式**：Copilot通过阅读注释来更好地理解代码的功能和实现方式，从而生成遵循现有模式和实践的高质量建议。\n*   **专业提示**：在打开文件时，养成添加注释的习惯，甚至可以请Copilot生成注释初稿，再进行补充。\n\n### 2. 利用自定义指令文件 (`copilot-instructions.md`)\n\n*   **项目级背景信息**：自定义指令文件用于提供项目层面的背景信息，如使用的技术栈、框架、编码标准以及项目构建的背景。\n*   **文件位置与格式**：将此文件放置在 `.github/copilot-instructions.md`，使用 Markdown 格式，可以创建如“项目结构”、“技术”、“编码标准”等章节。\n*   **全局性应用**：这些指令会随每个聊天请求发送给Copilot，因此应仅限于项目整体相关的信息，避免过于详细，以免干扰Copilot判断重点。\n*   **示例结构**：文章提供了一个单体仓库的示例大纲，包含后端、前端、代码标准和项目结构等部分，指导Copilot理解工作环境。\n\n### 3. 为特定任务提供具体指令 (`.instructions.md`)\n\n*   **任务特定性**：除了项目级指令，还可以创建针对特定任务类型的指令文件（例如，Flask 路由的创建、单元测试的编写）。\n*   **文件位置**：这些文件通常放置在 `.github/instructions/` 目录下。\n*   **链接与模式匹配**：指令文件可以包含指向项目内其他文件（作为示例原型）或其它指令文件的超链接。此外，还可以通过文件模式（如 `applyTo: server/tests/test_*.py`）将指令隐式应用于特定类型的文件。\n*   **长期投资**：构建这些指令文件虽然需要时间，但能带来更高质量的代码和更高的生产力。\n\n### 4. 完全可复用的提示文件 (实验性功能)\n\n*   **脚本化提示**：VS Code团队正在开发一项实验性功能——提示文件（prompt files），允许创建脚本化的Copilot提示。\n*   **可配置性**：可以配置这些提示适用的Copilot模式（ask, edit, agent）、调用的工具以及向开发者提出的问题。\n*   **团队协作**：团队可以创建这些文件以提高提示的复用性和一致性。\n\n### 5. 通过模型上下文协议 (MCP) 扩展 Copilot 能力\n\n*   **开放协议**：MCP（Model Context Protocol）是一个开源协议，允许组织将其服务或数据暴露给生成式AI工具。\n*   **“求助”功能**：将MCP服务器添加到IDE后，Copilot可以“求助”这些服务器来查找信息或执行任务。\n*   **权威来源**：例如，Playwright MCP服务器可以帮助创建端到端测试，GitHub MCP服务器提供对GitHub服务（仓库、问题、拉取请求）的访问。\n*   **自定义 MCP 服务器**：组织可以创建自己的MCP服务器，让Copilot查询内部代码库或库套件，从而根据内部环境提供代码建议。MCP确保了信息的准确性、相关性和时效性。\n\n## 总结\n\n提示词编写固然重要，是开发者使用GitHub Copilot应学习的首要技能。但它只是Copilot生成高质量答案的一部分。通过采纳上述最佳实践——包括良好的代码注释、自定义指令文件以及利用MCP服务器——开发者可以帮助Copilot更好地理解其意图和期望的实现方式，从而确保获得“华夫饼”而非“煎蛋卷”般的代码建议。",
-      "shortSummary": "超越提示词编写，为AI结对编程伙伴（如GitHub Copilot）提供丰富上下文至关重要。这包括通过代码注释提升可读性，利用项目级自定义指令（`copilot-instructions.md`）和特定任务指令（`.instructions.md`）提供背景信息和规范。此外，通过模型上下文协议（MCP）可让Copilot访问外部服务或内部知识库，确保其建议准确且符合项目需求。这些方法共同帮助Copilot理解你的真正意图，从而生成更高质量的代码。",
-      "translated_title": "超越提示词编写：如何成为你AI结对编程伙伴的更好搭档",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Ensuring quality code suggestions from Copilot goes beyond the perfect prompt. Context is key to success when working with your AI pair programmer.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/beyond-prompt-crafting-how-to-be-a-better-partner-for-your-ai-pair-programmer/\">Beyond prompt crafting: How to be a better partner for your AI pair programmer</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Git 安全漏洞公告 (原标题: Git security vulnerabilities announced)",
-      "link": "https://github.blog/open-source/git/git-security-vulnerabilities-announced-6/",
-      "pubDate": "Tue, 08 Jul 2025 17:02:11 +0000",
-      "isoDate": "2025-07-08T17:02:11.000Z",
-      "creator": "Taylor Blau",
-      "summary": "# Git 安全漏洞公告\n\nGit 项目今日发布新版本，旨在解决影响所有先前 Git 版本的七个安全漏洞。\n\n## 漏洞详情\n\n### Git 核心漏洞\n\n*   **CVE-2025-48384 (配置值处理)**\n    *   **问题描述：** Git 在读取配置值时会去除末尾的回车符 (CR) 和换行符 (LF)，但在写入时不会引用末尾的 CR，导致其丢失。当初始化路径包含末尾 CR 的子模块时，会使用被去除 CR 的路径，导致子模块被检出到错误的位置。\n    *   **潜在风险：** 如果被去除 CR 的路径与子模块的 hooks 目录之间存在符号链接，攻击者可通过子模块的 `post-checkout` 钩子执行任意代码。\n    *   **发现者/修复者：** David Leadbeater 发现，Justin Tobler 和 Patrick Steinhardt 修复。\n\n*   **CVE-2025-48385 (克隆时的捆绑包获取)**\n    *   **问题描述：** Git 客户端在克隆时可选地从服务器获取捆绑包。客户端未正确验证广告的捆绑包，允许远程端执行协议注入。\n    *   **潜在风险：** 当广告特制的捆绑包时，远程端可导致客户端将捆绑包写入任意位置，可能导致类似前一个 CVE 的代码执行。\n    *   **发现者/修复者：** David Leadbeater 发现，Patrick Steinhardt 修复。\n\n*   **CVE-2025-48386 (仅限 Windows，凭据助手)**\n    *   **问题描述：** Git 在从经过身份验证的远程克隆时使用凭据助手，其中 Wincred 助手使用静态缓冲区内容作为唯一密钥来存储和检索凭据。但它未正确检查缓冲区剩余空间。\n    *   **潜在风险：** 可能导致缓冲区溢出。\n    *   **发现者/修复者：** David Leadbeater 发现，Taylor Blau 和 Jeff King 共同修复。\n\n### Git GUI 和 Gitk 漏洞\n\n本次发布解决了与 Gitk 和 Git GUI 相关的四个新 CVE。这两个工具都是基于 Tcl/Tk 的图形界面。\n\n*   **CVE-2025-27613 (Gitk，任意文件写入/截断)**\n    *   **问题描述：** 在特制仓库中运行 Gitk 且不带额外命令行参数时，Gitk 可写入和截断任意可写文件。\n    *   **影响范围：** “支持每文件编码”选项必须启用，但“显示此行来源”操作无论如何都会受影响。\n    *   **发现者/修复者：** Avi Halachmi 发现，Johannes Sixt 修复。\n\n*   **CVE-2025-27614 (Gitk，任意脚本执行)**\n    *   **问题描述：** 如果用户被诱骗运行 `gitk filename`（其中 filename 具有特定结构），他们可能运行攻击者提供的任意脚本。\n    *   **潜在风险：** 导致任意代码执行。\n    *   **发现者/修复者：** Avi Halachmi 发现并修复。\n\n*   **CVE-2025-46334 (Git GUI，仅限 Windows，路径查找)**\n    *   **问题描述：** 如果恶意仓库包含可执行文件 `sh.exe` 或常见文本转换程序（如 `astextplain`、`exif` 或 `ps2ascii`），Windows 上的路径查找可能会在工作树中找到这些可执行文件。\n    *   **潜在风险：** 如果用户在此类仓库中运行 Git GUI 并从菜单中选择“Git Bash”或“浏览文件”，这些程序可能被调用，导致任意代码执行。\n    *   **发现者/修复者：** Mark Levedahl 发现并修复。\n\n*   **CVE-2025-46335 (Git GUI，任意文件创建/覆盖)**\n    *   **问题描述：** 当用户被诱骗在不受信任的仓库中编辑特命名目录中的文件时，Git GUI 可创建和覆盖任意可写文件。\n    *   **发现者/修复者：** Johannes Sixt 发现并修复。\n\n## 升级建议与缓解措施\n\n保护自己免受这些漏洞影响的最有效方法是升级到 **Git 2.50.1**，这是包含上述漏洞修复的最新版本。\n\n如果无法立即升级，可以通过以下措施降低风险：\n\n*   避免对不受信任的仓库运行 `git clone --recurse-submodules`。\n*   通过将 `transfer.bundleURI` 配置值设置为“false”来禁用自动获取捆绑包 URI。\n*   在 Windows 上避免使用 `wincred` 凭据助手。\n*   避免在不受信任的仓库中运行 Gitk 和 Git GUI。\n\n## GitHub 的应对措施\n\n为了保护用户免受这些漏洞相关的攻击，GitHub 已采取积极措施：\n\n*   已安排发布 GitHub Desktop 的更新版本。\n*   GitHub Codespaces 和 GitHub Actions 将很快更新其 Git 版本。\n*   GitHub 本身，包括 Enterprise Server，不受这些漏洞影响。\n\n## 作者与相关信息\n\n本文由 GitHub 软件工程师 Taylor Blau 撰写。\n\n![Taylor Blau](https://avatars.githubusercontent.com/u/443245?v=4&s=200)\n\n### 相关文章\n\n*   **Git 2.50 亮点**\n*   **聚焦您的开源项目**\n*   **探索更多来自 GitHub**\n    *   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切。\n    *   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来。\n    *   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) 客户案例：了解使用 GitHub 进行构建的公司和工程团队。\n*   ![Git Merge 2025](https://github.blog/wp-content/uploads/2025/05/git-merge-24-Orange.svg) Git Merge 2025：在 Git 20 周年之际，探索其影响、演变和未来。",
-      "shortSummary": "Git 项目发布新版本，修复了影响所有先前 Git 版本的七个安全漏洞。这些漏洞涵盖 Git 核心（如配置处理、捆绑包获取、Windows凭据助手）以及 Git GUI 和 Gitk 工具（涉及任意文件操作、脚本执行和路径查找）。最有效的防护是升级到 Git 2.50.1。若无法立即升级，建议避免对不受信任的仓库使用特定Git功能，并谨慎运行Git GUI/Gitk。GitHub 已采取措施保护用户，其自身服务不受影响。",
-      "translated_title": "Git 安全漏洞公告",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/443245?v=4&s=200",
-          "alt": "Taylor Blau",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/05/git-merge-24-Orange.svg",
-          "alt": "Git Merge 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Today, the Git project released new versions to address seven security vulnerabilities that affect all prior versions of Git.</p>\n<p>The post <a href=\"https://github.blog/open-source/git/git-security-vulnerabilities-announced-6/\">Git security vulnerabilities announced</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "CVE-2025-53367: DjVuLibre中一个可利用的越界写入漏洞 (原标题: CVE-2025-53367: An exploitable out-of-bounds write in DjVuLibre)",
-      "link": "https://github.blog/security/vulnerability-research/cve-2025-53367-an-exploitable-out-of-bounds-write-in-djvulibre/",
-      "pubDate": "Thu, 03 Jul 2025 20:52:20 +0000",
-      "isoDate": "2025-07-03T20:52:20.000Z",
-      "creator": "Kevin Backhouse",
-      "summary": "## CVE-2025-53367：DjVuLibre中的越界写入漏洞\n\n### 概述\n\nDjVuLibre 3.5.29 版本已发布，修复了编号为 **CVE-2025-53367 (GHSL-2025-055)** 的越界写入（OOB）漏洞。该漏洞位于 `MMRDecoder::scanruns` 方法中，可能导致用户在 Linux 桌面系统上打开特制文档时，攻击者获得代码执行权限。\n\nDjVu 是一种文档文件格式，功能类似于 PDF，并受许多 Linux 发行版上的默认文档查看器（如 Evince 和 Papers）支持。即使 DjVu 文件被命名为 `.pdf` 扩展名，Evince/Papers 也能自动检测其为 DjVu 文档并调用 DjVuLibre 进行解码。\n\n### 漏洞发现与利用\n\n*   **发现者**：Antonio 在研究 Evince 文档阅读器时通过模糊测试发现了此漏洞。\n*   **概念验证 (POC)**：Kev 已为此漏洞开发了一个概念验证攻击代码。该 POC 可以在完全更新的 Ubuntu 25.04 (x86_64) 系统上运行，并绕过所有标准安全防护（包括 ASLR）。\n*   **攻击演示**：在演示中，Kev 点击了一个恶意 DjVu 文档（文件名为 `poc.pdf`，但实际是 DjVu 格式）。默认文档查看器 `/usr/bin/papers` 加载文档，检测到 DjVu 格式，并使用 DjVuLibre 进行解码。该文件利用越界写入漏洞，触发了 `system(\"google-chrome https://www.youtube.com/…\")` 的调用。\n*   **可靠性**：尽管 POC 能够绕过 ASLR，但其可靠性尚有待提高（有时会连续工作十次，然后突然停止工作几分钟）。研究人员认为可以开发出更可靠的利用方式。\n*   **AppArmor 限制**：POC 触发的是打开 YouTube 视频而非计算器，是因为 `/usr/bin/papers` 在 AppArmor 配置文件下运行。该配置文件禁止启动任意进程，但对 `google-chrome` 做了例外处理。然而，此 AppArmor 配置文件并非特别严格，例如，它允许向用户主目录写入任意文件（除了少数明显的文件如 `~/.bashrc`），因此无法阻止有决心的攻击者获得代码执行。\n\n### 漏洞技术细节\n\n`MMRDecoder::scanruns` 方法受越界写入漏洞影响，因为它未检查 `xr` 指针是否保持在分配缓冲区的边界内。在解码过程中，行程编码数据被写入 `lineruns` 和 `prevruns` 两个缓冲区：\n\n```cpp\n//libdjvu/MMRDecoder.h\nclass DJVUAPI MMRDecoder : public GPEnabled {\n...\npublic:\n  unsigned short *lineruns;\n...\n  unsigned short *prevruns;\n...\n}\n```\n\n变量 `pr` 和 `xr` 指向这些缓冲区中的当前位置。`scanruns` 函数未检查这些指针是否保持在分配缓冲区的边界内：\n\n```cpp\n//libdjvu/MMRDecoder.cpp\nconst unsigned short * MMRDecoder::scanruns(const unsigned short **endptr) {\n...\n  // Swap run buffers\n  unsigned short *pr = lineruns;\n  unsigned short *xr = prevruns;\n  prevruns = pr;\n  lineruns = xr;\n...\n  for(a0=0,rle=0,b1=*pr++;a0 < width;) {\n...\n    *xr = rle; xr++; rle = 0;\n...\n    *xr = rle; xr++; rle = 0;\n...\n    *xr = inc+rle-a0; xr++;\n  }\n```\n\n这可能导致写入超出分配内存的范围，从而引发堆损坏。同样的原因也可能导致 `pr` 发生越界读取。\n\n概念验证攻击代码的源代码将在几周内发布到 GitHub Security Lab 仓库。\n\n### 致谢\n\n感谢 Léon Bottou 和 Bill Riemers 在收到报告后不到两天内迅速响应并发布了修复。\n\n### 时间线\n\n*   **2025-07-01**：通过电子邮件向作者（Léon Bottou, Bill Riemers, Yann LeCun）报告。\n*   **2025-07-01**：收到 Bill Riemers 和 Léon Bottou 的回复。\n*   **2025-07-02**：Léon Bottou 添加了修复提交：[https://sourceforge.net/p/djvu/djvulibre-git/ci/33f645196593d70bd5e37f55b63886c31c82c3da/](https://sourceforge.net/p/djvu/djvulibre-git/ci/33f645196593d70bd5e37f55b63886c31c82c3da/)\n*   **2025-07-03**：DjVuLibre 3.5.29 版本发布：[https://sourceforge.net/p/djvu/www-git/ci/9748b43794440aff40bae066132aa5c22e7fd6a3/](https://sourceforge.net/p/djvu/www-git/ci/9748b43794440aff40bae066132aa5c22e7fd6a3/)\n\n### 研究人员\n\n*   **Kevin Backhouse**\n    ![Kevin Backhouse](https://avatars.githubusercontent.com/u/4358136?v=4&s=200)\n    GitHub 安全实验室团队的安全研究员，通过寻找漏洞并与维护者合作修复，帮助提高开源软件的安全性。\n\n*   **Antonio Morales**\n    ![Antonio Morales](https://avatars.githubusercontent.com/u/55253029?v=4&s=200)",
-      "shortSummary": "CVE-2025-53367是DjVuLibre 3.5.29版本中修复的一个越界写入漏洞，位于`MMRDecoder::scanruns`方法。该漏洞允许攻击者通过诱导用户打开特制的DjVu文档，在Linux桌面系统上实现代码执行。由于Evince和Papers等默认文档查看器会调用DjVuLibre处理DjVu文件，用户面临风险。尽管存在ASLR和AppArmor等安全防护，概念验证（POC）攻击已成功演示。该漏洞已迅速得到修复，新版本DjVuLibre 3.5.29已发布。",
-      "translated_title": "CVE-2025-53367: DjVuLibre中一个可利用的越界写入漏洞",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/4358136?v=4&s=200",
-          "alt": "Kevin Backhouse",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/55253029?v=4&s=200",
-          "alt": "Antonio Morales",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>DjVuLibre has a vulnerability that could enable an attacker to gain code execution on a Linux Desktop system when the user tries to open a crafted document.</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/cve-2025-53367-an-exploitable-out-of-bounds-write-in-djvulibre/\">CVE-2025-53367: An exploitable out-of-bounds write in DjVuLibre</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-07-23T04:50:05.037Z"
+  "lastUpdated": "2025-07-25T04:50:00.562Z"
 }
