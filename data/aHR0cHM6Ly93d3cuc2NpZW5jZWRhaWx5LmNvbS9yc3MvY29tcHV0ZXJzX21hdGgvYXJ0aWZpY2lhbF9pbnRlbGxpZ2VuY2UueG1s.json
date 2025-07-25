@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "一个简单的变动骗过了AI——揭示了医疗伦理中的危险缺陷 (原标题: A simple twist fooled AI—and revealed a dangerous flaw in medical ethics)",
+      "link": "https://www.sciencedaily.com/releases/2025/07/250723045711.htm",
+      "pubDate": "Thu, 24 Jul 2025 01:58:50 EDT",
+      "isoDate": "2025-07-24T05:58:50.000Z",
+      "creator": "",
+      "summary": "## AI在医疗伦理中的缺陷：一项新研究揭示了大型语言模型的盲点\n\n### 引言\n\n一项由西奈山伊坎医学院与以色列拉宾医疗中心及其他合作者共同进行的研究表明，即使是最先进的人工智能（AI）模型在面对复杂的医疗伦理情景时，也可能犯下令人惊讶的简单错误。这些发现对在医疗保健环境中何时以及如何依赖大型语言模型（LLMs），如ChatGPT，提出了重要问题。研究结果已于7月22日在线发表在《NPJ数字医学》杂志上。\n\n该研究团队的灵感来源于丹尼尔·卡尼曼的著作《思考，快与慢》，该书对比了快速、直觉的反应与较慢、分析性的推理。研究人员观察到，当经典的横向思维谜题被巧妙地修改后，大型语言模型会表现出失误。基于这一洞察，该研究测试了AI系统在面对经过刻意修改的著名伦理困境时，如何在两种思维模式之间切换。\n\n### 研究方法与关键发现\n\n*   **测试方法**：研究团队使用了一系列商业可用的LLMs，结合了创造性的横向思维谜题和略微修改的著名医疗伦理案例进行测试。\n*   **核心问题：AI的默认思维模式**：\n    *   共同高级作者、西奈山伊坎医学院人工智能与人类健康温德赖希系生成式AI主任Eyal Klang博士指出：“AI可能非常强大和高效，但我们的研究表明，它可能会默认选择最熟悉或最直觉的答案，即使该答案忽略了关键细节。”\n    *   他强调，在日常生活中，这种思维方式可能不被察觉，但在医疗保健领域，决策往往带有严重的伦理和临床影响，错过这些细微之处可能对患者造成真实后果。\n\n### 案例分析\n\n1.  **案例一：“外科医生困境”的变体**：\n    *   **经典版本**：一个男孩与父亲发生车祸受伤，被送往医院，外科医生惊呼：“我不能给这个男孩做手术——他是我儿子！”谜底是外科医生是男孩的母亲，许多人由于性别偏见而未考虑这种可能性。\n    *   **研究修改版本**：研究人员明确指出男孩的父亲就是外科医生，消除了歧义。\n    *   **AI错误**：即便如此，一些AI模型仍然回答说外科医生一定是男孩的母亲。这个错误揭示了LLMs如何固守熟悉的模式，即使新信息与之矛盾。\n\n2.  **案例二：血液输血伦理困境的变体**：\n    *   **经典困境**：宗教信仰的父母拒绝为孩子进行挽救生命的输血。\n    *   **研究修改版本**：研究人员修改了情景，明确指出父母已经同意输血。\n    *   **AI错误**：许多模型仍然建议推翻一个已经不存在的拒绝，再次表明它们依赖熟悉的模式。\n\n### 研究启示与未来展望\n\n*   **AI在医疗实践中的作用与限制**：\n    *   共同高级通讯作者、西奈山伊坎医学院人工智能与人类健康温德赖希系主任Girish N. Nadkarni博士表示：“我们的发现并非暗示AI在医疗实践中没有立足之地，但它们确实强调了深思熟虑的人类监督的必要性，尤其是在需要伦理敏感性、细致判断或情商的情况下。”\n    *   他强调，这些工具无疑非常有帮助，但并非万无一失。医生和患者都应该明白，AI最好作为临床专业知识的补充，而不是替代品，尤其是在处理复杂或高风险决策时。\n    *   最终目标是建立更可靠、更符合伦理的方式，将AI整合到患者护理中。\n*   **人类监督的重要性**：主要作者、拉宾医疗中心达维多夫癌症中心血液学研究所研究员Shelly Soffer博士指出：“对熟悉案例的简单修改暴露了临床医生无法承受的盲点。”她强调，这凸显了在患者护理中部署AI时，人类监督必须保持核心地位。\n*   **未来研究方向**：研究团队计划通过测试更广泛的临床案例来扩展他们的工作。他们还在开发一个“AI保障实验室”，以系统地评估不同模型如何处理现实世界的医疗复杂性。\n\n### 研究团队与相关机构\n\n*   **论文信息**：该论文题为“大型语言模型在医疗伦理推理中的陷阱”（Pitfalls of Large Language Models in Medical Ethics Reasoning）。\n*   **研究作者**：Shelly Soffer, MD; Vera Sorin, MD; Girish N. Nadkarni, MD, MPH; 和 Eyal Klang, MD。\n*   **西奈山伊坎医学院Windreich人工智能与人类健康系**：\n    *   由Girish N. Nadkarni博士领导，他是AI在医疗保健中安全、有效和伦理使用的国际权威。\n    *   该系是美国医学院中首个此类机构，致力于在人工智能与人类健康的交叉领域推动变革性进展。\n    *   该系致力于以负责任、有效、伦理和安全的方式利用AI，以改变研究、临床护理、教育和运营。\n    *   通过汇集世界一流的AI专业知识、尖端基础设施和无与伦比的计算能力，该系正在推动多尺度、多模态数据整合方面的突破，同时简化快速测试和转化为实践的途径。\n    *   该系受益于西奈山内部的动态合作，包括与西奈山哈索·普拉特纳数字健康研究所的合作，该研究所通过推进数据驱动方法来改善患者护理和健康结果，补充了其使命。\n    *   创新核心是著名的西奈山伊坎医学院，它作为学习和合作的中心枢纽。\n    *   2024年，该系创新的NutriScan AI应用程序（由西奈山医疗系统临床数据科学团队与系教职员工合作开发）为西奈山医疗系统赢得了著名的赫斯特健康奖。NutriScan旨在促进住院患者营养不良的更快识别和治疗。该机器学习工具提高了营养不良诊断率和资源利用率，展示了AI在医疗保健中的影响力应用。\n*   **西奈山医疗系统成员医院**：西奈山医院；西奈山布鲁克林；西奈山晨边；西奈山皇后区；西奈山南拿骚；西奈山西；以及西奈山纽约眼耳医院。",
+      "shortSummary": "一项新研究发现，即使是最先进的AI模型在处理复杂的医疗伦理情景时也会犯简单错误。研究通过修改经典伦理困境发现，大型语言模型倾向于依赖熟悉模式，即使面对矛盾信息也如此。这揭示了AI在医疗领域存在的危险缺陷，强调了在医疗实践中，尤其是在涉及伦理敏感和细致判断的决策时，人类监督至关重要。AI应作为临床专业知识的补充，而非替代。",
+      "translated_title": "一个简单的变动骗过了AI——揭示了医疗伦理中的危险缺陷",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Even the most powerful AI models, including ChatGPT, can make surprisingly basic errors when navigating ethical medical decisions, a new study reveals. Researchers tweaked familiar ethical dilemmas and discovered that AI often defaulted to intuitive but incorrect responses—sometimes ignoring updated facts. The findings raise serious concerns about using AI for high-stakes health decisions and underscore the need for human oversight, especially when ethical nuance or emotional intelligence is involved."
+    },
+    {
       "title": "科学家发现AI真正理解语言的时刻 (原标题: Scientists discover the moment AI truly understands language)",
       "link": "https://www.sciencedaily.com/releases/2025/07/250707073353.htm",
       "pubDate": "Tue, 08 Jul 2025 02:36:49 EDT",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "A team of researchers has unveiled a cutting-edge Amphibious Robotic Dog capable of roving across both land and water with remarkable efficiency."
-    },
-    {
-      "title": "由鱼食制成的环保水生机器人 (原标题: Eco-friendly aquatic robot is made from fish food)",
-      "link": "https://www.sciencedaily.com/releases/2025/05/250508112558.htm",
-      "pubDate": "Thu, 08 May 2025 11:25:58 EDT",
-      "isoDate": "2025-05-08T15:25:58.000Z",
-      "creator": "",
-      "summary": "# 可食用机器人：环保水质监测的新选择\n\n一种新型的可食用机器人正在为环境监测领域带来创新。这款机器人利用可生物降解燃料和表面张力在水面快速移动，为传统的水质监测设备提供了一种安全且营养的替代方案。\n\n## 主要特点与优势：\n\n*   **环保材料：** 该机器人由可生物降解的材料制成，与传统由人造聚合物和电子元件构成的监测设备相比，大大减少了环境污染。\n*   **独特驱动方式：** 它巧妙地结合了可生物降解燃料和水面张力，使其能够在水体表面高效移动。\n*   **安全且有益：** 作为一种“可食用”的机器人，它不仅对环境无害，甚至可能为水生生物提供营养，从而成为一种安全的监测工具。\n*   **替代传统设备：** 旨在取代那些可能对生态系统造成长期影响的传统监测装置。",
-      "shortSummary": "一种由鱼食制成的环保水生机器人被开发出来，它利用可生物降解燃料和表面张力在水面移动。这款可食用机器人为环境监测设备提供了一种安全且有营养的替代方案，旨在取代由人造聚合物和电子元件制成的传统监测装置，从而减少环境污染。",
-      "translated_title": "由鱼食制成的环保水生机器人",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "An edible robot leverages a combination of biodegradable fuel and surface tension to zip around the water's surface, creating a safe -- and nutritious -- alternative to environmental monitoring devices made from artificial polymers and electronics."
     }
   ],
-  "lastUpdated": "2025-07-24T09:33:24.026Z"
+  "lastUpdated": "2025-07-25T09:33:03.651Z"
 }
