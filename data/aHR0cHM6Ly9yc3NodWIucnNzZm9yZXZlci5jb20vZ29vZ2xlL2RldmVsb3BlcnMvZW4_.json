@@ -5,6 +5,148 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "代理式体验：MCP 是您 AI 未来的正确工具吗？ (原标题: The agentic experience: Is MCP the right tool for your AI future?)",
+      "link": "https://developers.googleblog.com/en/the-agentic-experience-is-mcp-the-right-tool-for-your-ai-future/",
+      "pubDate": "Wed, 23 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-23T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## 企业AI集成与Apigee的角色\n\n随着企业竞相将人工智能（AI）投入运营，挑战不仅在于构建和部署大型语言模型（LLM），还在于如何将其无缝集成到现有API生态系统中，同时保持企业级的安全性、治理和合规性。Apigee致力于在此旅程中引领企业，通过增强生成式AI代理的安全性、可扩展性和治理能力，从而简化其与应用程序的集成。\n\n### 模型上下文协议（MCP）的兴起与局限\n\n模型上下文协议（MCP）已成为集成离散API作为工具的事实标准方法。然而，MCP正在迅速演变，并且尚未完全满足企业对身份验证（AuthN）、授权（AuthZ）和可观测性（Observability）的需求。将API转化为代理式工具的旅程，远不止一个单一协议所能涵盖。\n\n### Apigee如何赋能企业级AI\n\nApigee作为Google Cloud的原生API管理平台，能够将您现有的企业API带入AI领域。Apigee承诺将继续引导企业在不断变化的AI格局中进行代理式转型，并确保为所有AI工作负载提供一流的企业级功能。\n\n#### 使MCP具备企业级能力\n\n在网络中利用MCP服务需要特定的安全约束。例如，您可能希望为MCP服务器本身添加身份验证，并根据消费应用程序授权对特定工具的访问。此外，您可能需要提供一流的可观测性信息，以跟踪哪些工具正在被谁使用。最后，您需要确保MCP服务器所提供的下游API也具备最低限度的安全保障。\n\nApigee提供了一个MCP服务器的开源示例，它精确地提供了这种类型的API安全性，并且所有这些功能现在都可用于您的MCP服务并得到支持。\n\n#### 通过Apigee API产品实现安全与治理\n\n此示例展示了如何利用Apigee的API产品对工具进行身份验证和授权控制。此外，最终位于MCP服务器背后的API（在此案例中部署到Cloud Run）本身也托管在Apigee上，因此它们获得了与Apigee上托管的其他任何API相同的安全性、分发和可观测性功能。这弥合了托管API与探索性AI交互之间的鸿沟，利用Apigee丰富的功能集来保护、扩展和治理您的AI旅程。此演示展示了如何立即启动并运行MCP服务器，同时提供所需的必要企业级控制。即使MCP标准发生变化，此设置也易于适应，因为它最终只是像其他任何后端一样通过Apigee提供服务。\n\n如下图所示，Apigee将API产品引入这些代理和MCP工具，并将其转化为AI产品。这些AI产品拥有自己的消费者和开发者，就像其他任何API一样。\n\n![API产品到AI产品](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_2ySlzKi.original.png)\n\n#### 参考架构与资源\n\nApigee的GitHub仓库提供了快速入门指南、示例工件和文档，将帮助您构建和部署Apigee中的参考MCP服务架构，并理解通过利用API产品将API暴露为AI代理工具的步骤。\n\n### 未来展望\n\nAI集成之旅将随着时间推移而不断调整和变化：MCP正在演变，例如从最初无身份验证到使用OAuth进行授权和资源服务的转变。Google Apigee致力于与这种演变同步发展。\n\n了解更多关于如何使用Apigee操作生成式AI应用程序，并查阅Apigee的AI策略文档。",
+      "shortSummary": "Apigee帮助企业将AI代理（如LLMs）安全、可扩展地集成到现有API生态系统中。尽管模型上下文协议（MCP）是工具集成方法，但其缺乏企业级安全功能。Apigee提供了一个开源MCP服务器示例，利用其API管理平台为MCP服务提供认证、授权和可观测性，确保企业级安全与治理，并支持API产品化，从而简化AI集成并适应未来变化。",
+      "translated_title": "代理式体验：MCP 是您 AI 未来的正确工具吗？",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_2ySlzKi.original.png",
+          "alt": "API product to AI product",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Apigee helps enterprises integrate large language models (LLMs) into existing API ecosystems securely and scalably, addressing challenges like authentication and authorization not fully covered by the evolving Model Context Protocol (MCP), and offering an open-source MCP server example that demonstrates how to implement enterprise-ready API security for AI agents."
+    },
+    {
+      "title": "介绍 Opal：描述、创建和分享你的 AI 迷你应用 (原标题: Introducing Opal: describe, create, and share your AI mini-apps)",
+      "link": "https://developers.googleblog.com/en/introducing-opal/",
+      "pubDate": "Wed, 23 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-23T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## 介绍 Opal：描述、创建和分享你的 AI 迷你应用\n\n**发布日期：** 2025年7月24日\n\nGoogle Labs 宣布推出 **Opal**，这是一款全新的实验性工具，旨在简化 AI 模型、提示和工具的整合，从而轻松构建和分享功能强大的 AI 应用。\n\n### Opal 是什么？\n\nOpal 是一个来自 Google Labs 的创新实验性工具，它允许用户通过简单的自然语言和可视化编辑，构建并分享强大的 AI 迷你应用。这些迷你应用能够将提示、AI 模型调用和各种工具串联起来，形成完整的工作流程。\n\n### 主要用途\n\nOpal 旨在加速 AI 想法和工作流程的实现，其主要用途包括：\n\n*   加速 AI 概念和工作流程的原型开发。\n*   通过功能性应用展示概念验证（PoC）。\n*   构建自定义 AI 应用以显著提高工作效率。\n\n### 可用性\n\nOpal 目前已在美国地区以**公开测试版**形式推出。Google Labs 强调，通过与社区的合作，能够更好地构建和完善这款新产品。\n\n### 核心功能（无需代码）\n\n尽管 Opal 仍处于实验阶段，但它已具备强大的功能，旨在将用户的想法变为现实，且无需编写代码：\n\n1.  **创建工作流程：**\n    *   Opal 简化并可视化了软件开发中“工作流程”的概念，即用户完成特定目标所采取的步骤序列。\n    *   它通过将提示、AI 模型调用和其他工具串联起来，帮助用户构建强大的多步骤应用。\n    *   用户只需描述逻辑，Opal 即可自动构建相应的可视化工作流程。\n\n2.  **进行编辑：**\n    *   Opal 将用户的指令转化为可视化工作流程，提供精细的控制，而无需用户接触任何代码。\n    *   用户可以通过对话式自然语言命令、可视化编辑器或两者结合的方式，构建和修改他们的 AI 迷你应用。\n    *   无论是调整某个步骤的提示、添加新功能还是调用工具，都可以通过可视化编辑器或直接描述变更来实现。\n\n3.  **分享应用：**\n    *   一旦应用构建完成并准备就绪，用户可以将其作为独立应用分享给他人。\n    *   其他用户可以使用自己的 Google 账户立即使用这些分享的应用。\n\n### 开始使用 Opal\n\n为了帮助用户快速上手，Opal 提供了一个**演示画廊**，其中包含各种入门模板。用户可以直接使用这些预构建的 AI 应用，也可以根据自身具体需求进行修改和定制。\n\n![Opal 模板画廊](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Just_Gallery.original.png)\n\n### 愿景\n\nOpal 引入了一种全新的 AI 创作方式。它旨在赋能创作者、创新者和实践者，通过将简单的提示转化为强大的迷你应用，从而构建他们所设想的工具。",
+      "shortSummary": "Opal 是 Google Labs 推出的一款实验性工具，旨在帮助用户通过自然语言和可视化编辑，无需代码即可描述、创建和分享 AI 迷你应用。它能将提示、AI 模型和工具串联成工作流程，加速 AI 想法原型开发，并构建自定义应用以提升生产力。Opal 目前在美国提供公开测试版，并提供模板画廊以方便用户快速上手。",
+      "translated_title": "介绍 Opal：描述、创建和分享你的 AI 迷你应用",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Just_Gallery.original.png",
+          "alt": "Gallery of Opal templates",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Opal is a new experimental tool from Google Labs that helps you compose prompts into dynamic, multi-step mini-apps using natural language, removing the need for code, allowing users to build and deploy shareable AI apps with powerful features and seamless integration with existing Google tools."
+    },
+    {
+      "title": "AI人物播客第五季上线：认识塑造未来的人工智能建设者 (原标题: People of AI podcast Season 5 is here: Meet the builders shaping the future)",
+      "link": "https://developers.googleblog.com/en/people-of-ai-podcast-season-5/",
+      "pubDate": "Wed, 23 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-23T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## AI人物播客第五季：聚焦AI建设者\n\nGoogle的“AI人物播客”（People of AI podcast）第五季已于2025年7月24日回归，本季将深入探讨不断变化的AI世界，并带来一个全新的视角：聚焦AI的“建设者”（Builders）。这些建设者包括开发者、初创公司、创始人以及所有积极塑造AI未来的人。\n\n### 聚焦“建设者”的原因\n\nAI领域正在迅速发展，对“可能”的定义、开发者角色以及日常工作方式都在快速演变。几年前还在研究论文中的概念，如今已迅速成为数百万用户日常使用的产品和应用的核心部分。生成式AI已触手可及，并嵌入到用户喜爱的工具中，以科幻般的方式激发着人们的想象力。因此，本季播客将重点转向这些正在构建AI的“建设者”。\n\n### 首集亮点：探索AI前沿\n\n首集节目邀请到Google DeepMind研究副总裁Clement Farabet。节目深入探讨了AI的演变，从卷积神经网络（CNNs）到Transformer模型，再到大型语言模型（LLMs）的强大能力，以及这些进步如何为智能体系统（agentic systems）铺平道路。Clement Farabet以工程师、企业家和自称“疯狂科学家”的独特视角，分享了构建能够真正学习、行动、在现实世界中提供帮助并负责任的AI智能体的激动人心的可能性和关键挑战。\n\n### 第五季新变化\n\n除了新的焦点，本季播客主持人Ashley Oldacre将与资深播客主持人Christina Warren搭档，为对话带来深刻的技术见解和全新视角。他们将带领听众深入了解那些正在改变一切的初创公司、研究人员和行业领袖的幕后故事，揭示建设者们正在努力解决的问题以及AI如何融入解决方案。\n\n### 本季部分嘉宾预告\n\n本季将邀请多位行业专家和创新者，包括：\n\n*   **AI开发与教育：** 听取资深开发者Muhammad Farooq和Jerome Hardaway关于未来开发和AI教育的见解。\n*   **AI电影创作：** 了解导演Eliza McNitt和Google DeepMind的Veo团队（Ben Wiley, Kory Mathewson）如何创作出首部AI制作电影《ANCESTRA》的幕后创意过程。\n*   **AI助手未来：** 与Bibo Xu（Project Astra）和Jérôme Monceaux（Enchanted Tools）讨论AI助手的未来发展。\n*   **AI跨领域应用：** 探索创新者Max Child和James Wilsterman（Volley）、Andrew Carr（Cartwheel）以及Dr. Dhruv Joshi（Cloudphysician）如何将AI融入游戏、动画和医疗保健领域。\n\n### 播客目标\n\n“AI人物播客”第五季是了解推动AI革命的真实世界创新者的绝佳机会。他们的故事将激励听众进行创造性思考，克服挑战，并为负责任且有影响力的AI未来做出贡献。\n\n### 订阅与关注\n\n请在goo.gle/PAI订阅“AI人物播客”，并在LinkedIn和X上关注Google AI Developers，获取最新动态和幕后内容。",
+      "shortSummary": "Google的“AI人物播客”第五季已上线，本季将聚焦AI的“建设者”，即塑造AI未来的开发者、初创公司和创始人。节目将深入探讨AI的快速演变，包括生成式AI和智能体系统，并邀请Google DeepMind的Clement Farabet等行业领袖分享见解。新主持人Christina Warren加入，共同揭示AI创新者如何解决现实问题，并探讨AI在各领域的应用，旨在激励听众为负责任的AI未来贡献力量。",
+      "translated_title": "AI人物播客第五季上线：认识塑造未来的人工智能建设者",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Co-hosted by Ashley Oldacre and Christina Warren, People of AI podcast's Season 5 will focus on the builders in the space of AI, highlighting the unique journeys, challenges, and triumphs of these innovators."
+    },
+    {
+      "title": "在 Firebase Studio 中为流行框架释放新的 AI 能力 (原标题: Unleashing new AI capabilities for popular frameworks in Firebase Studio)",
+      "link": "https://developers.googleblog.com/en/new-ai-capabilities-for-popular-frameworks-in-firebase-studio/",
+      "pubDate": "Tue, 22 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-22T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Firebase Studio 推出新 AI 功能，赋能流行框架\n\nFirebase Studio 是一个基于云的 AI 工作空间，旨在帮助开发者构建和发布下一代 AI 驱动的应用程序。继之前推出多功能代理模式、模型上下文协议（MCP）基础支持以及与 Gemini CLI 集成之后，Google 在 I/O Connect India 大会上公布了多项新更新，旨在结合 Gemini 的强大功能与这些新特性，帮助开发者利用其喜爱的框架和语言，将想法快速转化为应用程序。\n\n这些新更新包括：\n\n*   **AI 优化模板加速代理开发**\n*   **与 Firebase 后端服务无缝集成**\n*   **通过分叉工作区更好地控制不断演进的代码库**\n\n选择在印度发布这些公告具有特殊意义，因为印度拥有全球最大的应用程序开发者社区之一。例如，Google Android 开发者专家 Pankaj Rai 利用 Firebase Studio 构建了学生指导平台 Mentor Sarthi，并将其个人造型应用 GlamMEAi 推广到网络平台，而无需学习网络开发。\n\n### 详细功能介绍：\n\n1.  **引入 AI 优化模板，助力极速构建**\n    *   Firebase Studio 更新了 Flutter、Angular、React、Next.js 和通用 Web 的工作区模板，新增了利用 Gemini 的 AI 功能，帮助开发者构建和部署美观、强大的应用程序。\n    *   使用 AI 优化模板创建项目时，工作区将默认进入自主代理模式，并采用重新设计过的布局，帮助开发者快速进入工作流。\n    *   开发者可以获得 Gemini 的协助，独立规划和执行任务，无需等待分步批准。同时，仍可根据任务需求切换到“询问”和“代理”模式，无论是生成整个应用程序、优化功能、运行测试、生成文档还是添加新功能。\n    *   每个模板中都添加了 `airules.md` 文件，为 Gemini 提供专门的指令，以指导代码生成并为每种特定类型的应用程序创建文档。这使得 Gemini 能更好地了解相关的编码标准、错误处理方法、依赖项和开发最佳实践。\n    *   未来几周，Firebase Studio 将更新 Go、Node.js、.NET 等更多流行框架和语言的模板。\n\n2.  **与 Firebase 服务无缝集成**\n    *   从即日起，开发者只需向 Gemini 发出提示，即可将 Firebase 后端服务集成到应用程序中。\n    *   如果使用 App Prototyping Agent 进行“氛围编码”或使用 AI 优化模板，只需告诉 Gemini 应用程序需要实现什么功能，它就会推荐相应的 Firebase 服务。\n    *   Gemini 将自动导入所需的库或包，更新代码以集成所需服务，并指导完成任何额外的设置或配置步骤，从而节省开发者的时间和点击次数。\n    *   所有这些功能均可免费开始使用。\n\n3.  **分叉工作区，赋能实验与协作**\n    *   现在，开发者可以分叉工作区，创建一份完全相同的副本，包括保留原始工作区中的所有代理聊天历史记录。\n    *   这提供了一个可靠的备份，可以随时恢复，让开发者能够自信地构建新功能和尝试新事物，而无需担心犯下不可逆转的错误。\n    *   分叉工作区还可用于调试和故障排除，而不会影响主开发工作区，并通过与他人共享“进行中”的工作区来使协作更加顺畅。\n\n4.  **增强提示功能并增加项目上传大小**\n    *   Firebase Studio 持续改进 AI 辅助开发体验，提供更大的控制和灵活性。\n    *   新增的“增强提示”功能允许开发者在 Firebase Studio 内与 Gemini 协作并完善其提示和应用程序想法。\n    *   项目上传大小已显著增加到 100MB，使得开发者可以将更大、更复杂的现有项目导入 Firebase Studio。\n\nFirebase Studio 致力于使 AI 辅助开发更加直观、快速和愉悦，无论开发者拥有数十年的编码经验还是完全没有经验，都能将他们最雄心勃勃的应用程序想法变为现实。",
+      "shortSummary": "Firebase Studio 推出重大更新，旨在通过 AI 赋能应用开发。新功能包括：AI 优化模板，加速 Flutter、React 等框架的开发；与 Firebase 后端服务无缝集成，Gemini 可自动推荐并导入服务；支持分叉工作区，便于实验、备份和协作；以及增强提示功能和将项目上传大小提升至 100MB。这些更新旨在让 AI 辅助开发更直观、高效，帮助全球开发者将创意变为现实。",
+      "translated_title": "在 Firebase Studio 中为流行框架释放新的 AI 能力",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "New AI capabilities for popular frameworks in Firebase Studio include AI-optimized templates, streamlined integration with Firebase backend services, and the ability to fork workspaces for experimentation and collaboration, making AI-assisted app development more intuitive and faster for developers worldwide."
+    },
+    {
+      "title": "Gemini 2.5 Flash-Lite 现已稳定版发布并普遍可用 (原标题: Gemini 2.5 Flash-Lite is now stable and generally available)",
+      "link": "https://developers.googleblog.com/en/gemini-25-flash-lite-is-now-stable-and-generally-available/",
+      "pubDate": "Mon, 21 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-21T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Gemini 2.5 Flash-Lite 稳定版发布\n\n2025年7月22日，谷歌正式发布了 Gemini 2.5 Flash-Lite 的稳定版本。作为 Gemini 2.5 模型家族中速度最快、成本最低（输入每百万代币0.10美元，输出每百万代币0.40美元）的模型，它的推出旨在推动“每美元智能”的边界，并提供可选的原生推理能力，以应对更严苛的用例。该模型与此前的 2.5 Pro 和 2.5 Flash 一起，完善了可用于大规模生产的 Gemini 2.5 模型系列。\n\n### 核心优势\n\nGemini 2.5 Flash-Lite 在性能和成本之间取得了平衡，同时不牺牲质量，尤其适用于对延迟敏感的任务，如翻译和分类。其突出特点包括：\n\n*   **一流的速度**：在广泛的提示样本上，Gemini 2.5 Flash-Lite 的延迟均低于 2.0 Flash-Lite 和 2.0 Flash。\n*   **成本效益**：它是目前成本最低的 2.5 模型，定价为每百万输入代币0.10美元，每百万输出代币0.40美元，使得处理大量请求变得经济实惠。此外，音频输入价格相比预览版降低了40%。\n*   **智能且小巧**：在编码、数学、科学、推理和多模态理解等广泛基准测试中，其整体质量均高于 2.0 Flash-Lite。\n*   **功能全面**：使用 2.5 Flash-Lite 进行开发，可获得100万代币的上下文窗口、可控的思考预算，并支持原生工具，如 Google 搜索接地（Grounding）、代码执行和 URL 上下文。\n\n### 模型能力对比\n\n![Gemini 2.5 Flash-Lite、2.5 Flash 和 2.5 Pro 的能力对比表](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_ga_family_1-1__dark.original.png)\n\n### Gemini 2.5 Flash-Lite 的实际应用\n\n自 2.5 Flash-Lite 发布以来，已有一些成功的部署案例：\n\n*   **Satlyt**：正在构建一个去中心化的空间计算平台，用于实时总结在轨遥测数据、自主任务管理和卫星间通信解析。2.5 Flash-Lite 的速度使其关键的在轨诊断延迟降低了45%，功耗比基线模型降低了30%。\n*   **HeyGen**：利用 AI 创建视频内容头像。他们使用 Gemini 2.5 Flash-Lite 自动化视频规划、分析和优化内容，并将视频翻译成180多种语言，为用户提供全球化的个性化体验。\n*   **DocsHound**：将产品演示转化为文档。通过 Gemini 2.5 Flash-Lite 处理长视频并以低延迟提取数千张截图，将素材快速转化为全面的文档和 AI 代理训练数据，远快于传统方法。\n*   **Evertune**：帮助品牌了解其在 AI 模型中的表现。Gemini 2.5 Flash-Lite 大幅加快了他们的分析和报告生成速度，使其能够快速扫描和合成大量模型输出，为客户提供动态、及时的洞察。\n\n### 如何开始使用\n\n您可以通过在代码中指定“gemini-2.5-flash-lite”来开始使用该模型。如果您正在使用预览版本，可以直接切换到“gemini-2.5-flash-lite”，它们是相同的底层模型。预览别名计划于8月25日移除。现在即可在 Google AI Studio 和 Vertex AI 中试用 Gemini 2.5 Flash-Lite 的稳定版本。",
+      "shortSummary": "Gemini 2.5 Flash-Lite 稳定版已于2025年7月22日发布，是 Gemini 2.5 模型家族中速度最快、成本最低的模型（输入每百万代币0.10美元，输出0.40美元）。它在性能、成本和质量之间取得平衡，尤其适用于延迟敏感任务。该模型提供100万代币上下文窗口和原生工具支持，并在编码、推理等多方面表现出色。Satlyt、HeyGen、DocsHound 和 Evertune 等公司已成功将其应用于各自领域，显著提升了效率。用户可在 Google AI Studio 和 Vertex AI 中使用。",
+      "translated_title": "Gemini 2.5 Flash-Lite 现已稳定版发布并普遍可用",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_ga_family_1-1__dark.original.png",
+          "alt": "Comparative table showing capabilities of Gemini 2.5 Flash-Lite, 2.5 Flash, and 2.5 Pro",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Gemini 2.5 Flash-Lite, previously in preview, is now stable and generally available. This cost-efficient model is ~1.5x faster than 2.0 Flash-Lite and 2.0 Flash, offers high quality, and includes 2.5 family features like a 1 million-token context window and multimodality."
+    },
+    {
+      "title": "Gemini 2.5 的对话式图像分割 (原标题: Conversational image segmentation with Gemini 2.5)",
+      "link": "https://developers.googleblog.com/en/conversational-image-segmentation-gemini-2-5/",
+      "pubDate": "Sun, 20 Jul 2025 16:00:00 GMT",
+      "isoDate": "2025-07-20T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Gemini 2.5 的对话式图像分割：深度理解视觉世界\n\n### AI视觉理解的演进\n\n人工智能对图像的视觉理解能力已取得巨大进步。最初，AI通过边界框识别物体“在哪里”；随后，分割模型能精确勾勒物体形状；近期，开放词汇模型允许使用“蓝色滑雪靴”或“木琴”等非预定义标签进行分割。然而，真正的挑战——对话式图像分割（与文献中的指称表达分割密切相关）——要求更深层次的理解，即解析复杂的描述性短语，例如识别“最远的那辆车”，而不仅仅是“一辆车”。\n\n如今，Gemini 2.5 凭借其先进的视觉理解能力，将对话式图像分割提升到新水平，能够“理解”用户要求其“看到”的内容。\n\n### 利用对话式图像分割查询\n\n这项功能的强大之处在于其支持的查询类型。通过超越简单的单词标签，用户可以以更直观、更强大的方式与视觉数据交互。以下是五类查询示例：\n\n1.  **物体关系**\n    Gemini 可以根据物体之间复杂的相互关系来识别它们，例如：\n    *   关系理解：“拿着雨伞的人”\n    *   排序：“从左数第三本书”\n    *   比较属性：“花束中最枯萎的花”\n\n2.  **条件逻辑**\n    用户可以使用条件逻辑进行查询，例如“素食食物”或带有否定词的查询，如“没有坐着的人”。\n    ![在办公室会议中，自然语言查询“没有坐着的人”被用来在两名站立的个体上叠加分割掩码。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/people_seating.original.png)\n\n3.  **抽象概念**\n    Gemini 的世界知识在此类查询中发挥作用。它可以分割那些没有简单、固定视觉定义的抽象概念，如“损坏”、“一团糟”或“机会”。\n    ![在厨房台面上，自然语言分割叠加层根据抽象查询“需要清理的区域”突出显示了溢出物。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/spill_seg.original.png)\n\n4.  **图像内文本**\n    当仅凭外观不足以区分物体的精确类别时，用户可以通过图像中存在的文字标签来指代它。这需要模型具备 OCR 能力，而这正是 Gemini 2.5 的优势之一。\n    ![在面包店环境中，模型使用自然语言分割在“开心果果仁蜜饼”上叠加掩码，根据图像内文本将其与附近的其他糕点区分开来。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/baklava_seg.original.png)\n\n5.  **多语言标签**\n    Gemini 不受单一语言限制，可以处理多种不同语言的标签。\n    ![一盘食物上带有自然语言分割叠加层，识别出各种组成部分，模型根据提示“tous les objects en français”提供了相应的法语标签。](https://storage.com/gweb-developer-goog-blog-assets/images/breakfast_francais_2.original.png)\n\n### 对话式图像分割的实际应用\n\n这些查询类型能够开启新的使用场景：\n\n1.  **释放创造力：交互式媒体编辑**\n    这项能力改变了创意工作流程。设计师现在可以用语言指导软件，而不是使用复杂的选择工具，从而实现更流畅、直观的过程，例如要求选择“建筑物投下的阴影”。\n    ![公园的鸟瞰图展示了自然语言分割叠加层，识别出“建筑物的阴影”。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/shadow_seg.original.png)\n\n2.  **构建更安全的世界：智能安全与合规监控**\n    在工作场所安全方面，需要识别的是情况而不仅仅是物体。通过“突出显示工厂车间未戴安全帽的员工”这样的提示，Gemini 将整个条件指令理解为一个单一查询，生成一个精确的、仅针对不合规个体的最终掩码。\n    ![在建筑工地，应用自然语言分割叠加层以识别“未戴安全帽的人”。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/construction_seg.original.png)\n\n3.  **理赔的未来：细致的保险损害评估**\n    “损害”是一个具有多种视觉形式的抽象概念。保险理赔员现在可以使用“分割受天气损坏的房屋”等提示，Gemini 将利用其世界知识识别与该类型损害相关的特定凹痕和纹理，并将其与简单的反光或锈迹区分开来。\n    ![在住宅区的航拍照片中，自然语言分割被用来在每栋“受损房屋”上叠加掩码。](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/tornado3_seg.original.png)\n\n### 对开发者的意义\n\n1.  **灵活的语言**：超越僵化、预定义的类别。自然语言方法提供了灵活性，可以为特定行业和用户的“长尾”视觉查询构建解决方案。\n2.  **简化的开发者体验**：通过单一 API 即可在几分钟内开始构建。无需寻找、训练和托管单独的专业分割模型，降低了构建复杂视觉应用的门槛。\n\n### 立即开始构建\n\nGoogle 相信，将语言与视觉直接进行像素级连接将开启新一代智能应用。开发者可以通过 Google AI Studio 的交互式空间理解演示或 Python Colab 环境开始使用。更多信息可查阅 Gemini API 开发者指南。\n\n### 推荐最佳实践\n\n为获得最佳结果，建议遵循以下实践：\n*   使用 `gemini-2.5-flash` 模型。\n*   禁用思考集 (`thinkingBudget=0`)。\n*   遵循推荐的提示，并请求 JSON 作为输出格式，提供包含 2D 边界框、分割掩码和文本标签的 JSON 列表。\n\n### 致谢\n\n文章感谢 Weicheng Kuo、Rich Munoz、Huizhong Chen 等人在 Gemini 分割方面的工作，以及 Junyan Xu、Guillaume Vernade 和整个 Gemini 图像理解团队的贡献。",
+      "shortSummary": "Gemini 2.5 推出了革命性的对话式图像分割功能，使AI能深度理解复杂的自然语言查询。它超越了传统分割，支持基于物体关系、条件逻辑、抽象概念、图像内文本和多语言标签的精确分割。这项技术极大地提升了交互式媒体编辑、智能安全监控和保险损害评估等领域的应用潜力。对于开发者而言，它提供了灵活的语言处理能力和简化的开发体验，通过单一API即可快速构建复杂的视觉应用。",
+      "translated_title": "Gemini 2.5 的对话式图像分割",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/people_seating.original.png",
+          "alt": "Within an office meeting, the natural language query \"the people who are not sitting\" is used to overlay segmentation masks on the two individuals who are standing.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/spill_seg.original.png",
+          "alt": "On a kitchen counter, a natural language segmentation overlay highlights a spill in response to the abstract query, \"area that should be cleaned up\".",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/baklava_seg.original.png",
+          "alt": "In a bakery setting, the model uses natural language segmentation to overlay masks on \"the pistachio baklava\" , distinguishing it from other nearby pastries based on in-image text.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/breakfast_francais_2.original.png",
+          "alt": "A plate of food has natural language segmentation overlays identifying various components, with the model providing corresponding labels in French as requested by the prompt \"tous les objects en français\".",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/shadow_seg.original.png",
+          "alt": "An aerial view of a park demonstrates a natural language segmentation overlay identifying \"the shadow of the building\".",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/construction_seg.original.png",
+          "alt": "At a construction site, a natural language segmentation overlay is applied to identify \"the people not wearing a hard hat\".",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/tornado3_seg.original.png",
+          "alt": "In an aerial photo of a subdivision, natural language segmentation is used to overlay masks on each \"damaged house\".",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Gemini's advanced capability for conversational image segmentation allows intuitive interaction with visual data by understanding complex phrases, conditional logic, and abstract concepts, streamlining developer experience and opening doors for new applications in media editing, safety monitoring, and damage assessment."
+    },
+    {
       "title": "使用 Veo 3 进行构建，现已在 Gemini API 中推出 (原标题: Build with Veo 3, now available in the Gemini API)",
       "link": "https://developers.googleblog.com/en/veo-3-now-available-gemini-api/",
       "pubDate": "Wed, 16 Jul 2025 16:00:00 GMT",
@@ -81,169 +223,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "The updated Agent Development Kit (ADK) simplifies and accelerates the process of building AI agents by providing the CLI with a deep, cost-effective understanding of the ADK framework, allowing developers to quickly ideate, generate, test, and improve functional agents through conversational prompts, eliminating friction and keeping them in a productive \"flow\" state."
-    },
-    {
-      "title": "Gemini Embedding 现已在 Gemini API 中普遍可用 (原标题: Gemini Embedding now generally available in the Gemini API)",
-      "link": "https://developers.googleblog.com/en/gemini-embedding-available-gemini-api/",
-      "pubDate": "Sun, 13 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-13T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Gemini Embedding 现已普遍可用\n\nGoogle 于2025年7月14日宣布，其首个 Gemini Embedding 文本模型（`gemini-embedding-001`）现已在 Gemini API 和 Vertex AI 中向开发者普遍可用。\n\n### 核心亮点与性能\n\n*   **领先地位**：自2025年3月实验性发布以来，该嵌入模型在 Massive Text Embedding Benchmark (MTEB) 多语言排行榜上一直名列前茅。\n*   **卓越表现**：在检索、分类等多种任务中，其性能超越了 Google 此前的文本嵌入模型以及其他商业产品。\n*   **统一体验**：`gemini-embedding-001` 在科学、法律、金融和编码等多个领域提供统一的尖端体验。\n\n以下是 Gemini Embedding 与其他商业专有模型的比较：\n\n![嵌入模型对比图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EmbedingsChart_16x9_RD2-V01.original.jpg)\n\n*注：图表中“传统 Google 模型”结合了3个 Gemini API 和 Vertex AI 模型（`text-embedding-004`、`text-embedding-005` 和 `text-multilingual-embedding-002`）的最高分数。更详细的结果可在技术报告中查阅。*\n\n### 模型详情\n\n*   **多功能性**：支持超过100种语言。\n*   **输入长度**：最大输入令牌长度为2048。\n*   **MRL 技术**：利用 Matryoshka Representation Learning (MRL) 技术，允许开发者将输出维度从默认的3072进行缩减，以优化性能和存储成本。\n*   **推荐维度**：为获得最高质量结果，建议使用3072、1536或768的输出维度。\n\n### 费率限制与定价\n\n*   **免费与付费层级**：Gemini API 提供免费和付费层级，开发者可以免费试用 `gemini-embedding-001`，或为生产需求选择更高限制的付费服务。\n*   **定价**：该模型定价为每100万输入令牌0.15美元。\n\n### 如何开始使用\n\n*   开发者现在可以通过 Gemini API 访问 `gemini-embedding-001` 模型。\n*   可以通过 Google AI Studio 免费开始使用。\n*   兼容现有的 `embed_content` 端点。\n*   提供了 Python 代码示例和详细的开发者文档及快速入门指南。\n\n### 模型弃用与迁移建议\n\n*   **实验版弃用**：实验性模型 `gemini-embedding-exp-03-07` 将于2025年8月14日停止支持，用户无需重新嵌入内容。\n*   **传统模型弃用**：\n    *   `embedding-001` 将于2025年8月14日弃用。\n    *   `text-embedding-004` 将于2026年1月14日弃用。\n*   **强烈建议**：Google 强烈建议用户尽快将项目迁移到最新的模型。\n\n### 未来展望\n\n*   Gemini Embedding 即将支持 Batch API，以实现异步数据处理和更低的成本。\n*   未来将发布更多具有更广泛模态和功能的嵌入模型。",
-      "shortSummary": "Google 宣布其首个 Gemini Embedding 文本模型（`gemini-embedding-001`）现已在 Gemini API 和 Vertex AI 中普遍可用。该模型在多语言基准测试中表现出色，支持100多种语言，并提供灵活的输出维度。它提供免费和付费层级，定价为每100万输入令牌0.15美元。Google 鼓励开发者尽快迁移到此新模型，因旧版和实验性模型将陆续弃用。未来还将支持 Batch API，并推出更多功能。",
-      "translated_title": "Gemini Embedding 现已在 Gemini API 中普遍可用",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EmbedingsChart_16x9_RD2-V01.original.jpg",
-          "alt": "Embedings Chart",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The Gemini Embedding text model is now generally available in the Gemini API and Vertex AI. This versatile model has consistently ranked #1 on the MTEB Multilingual leaderboard since its experimental launch in March, supports over 100 languages, has a 2048 maximum input token length, and is priced at $0.15 per 1M input tokens."
-    },
-    {
-      "title": "企业真相在行动：Apigee API hub 赋能强大的开发者门户 (原标题: Enterprise truth in action: Apigee API hub fueling powerful Developer Portals)",
-      "link": "https://developers.googleblog.com/en/apigee-api-hub-fueling-developer-portals/",
-      "pubDate": "Sun, 13 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-13T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 企业真相在行动：Apigee API hub 赋能强大的开发者门户\n\nGoogle Cloud 的 Apigee 团队致力于提供策略和工具，帮助客户构建强大有效的 API 生态系统。其中，API 的发现机制至关重要。文章详细阐述了 Apigee 平台中两个既独立又紧密相连的组件——Apigee API hub 和开发者门户——如何满足不同角色的需求。Apigee API hub 被视为核心的“真相承载引擎”，它赋能并提升了开发者门户的功能，是企业代理（agentic）策略的基石。\n\n## Apigee API hub：企业所有 API 的真相来源\n\nApigee API hub 被比作 API 程序的“中枢神经系统”。它提供一个集中化的位置，用于编目组织内所有 API 及其数据（无论 API 风格、生命周期阶段或托管环境），从而成为“企业真相”的权威来源。这为治理和一致性奠定了基础，帮助团队防止蔓延、构建更好的 API，并最终为用户提供更优质的体验。\n\n![Apigee API hub metrics](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_VZss8uJ.original.png)\n\nApigee API hub 主要关注组织内部 API 生产者的需求，包括平台工程师、API 架构师、安全专家以及负责构建和管理 API 的开发人员。对于这些用户，Apigee API hub 是唯一的真相来源，其功能包括：\n\n*   **全面的 API 概览和元数据：** Apigee API hub 能够自动发现和编目所有 API，创建一个包含丰富元数据的统一存储库。这包括 API 生命周期阶段、版本、规范和文档等信息，提供 API 生态系统的完整准确视图。这些全面且机器可读的数据正是 AI 代理理解和与企业系统交互所需的，作为服务的核心注册表。\n*   **基于标准的集中式治理：** 该 hub 允许在整个 API 生命周期中建立和执行一致的治理。通过维护单一的真相来源，可以有效确保质量一致性、遵守标准、管理安全性、跟踪 API 成熟度，并就 API 策略做出明智决策，例如识别可货币化的 API。这种统一的真相来源对于建立治理至关重要，不仅适用于人类开发者，也适用于控制和保护 AI 代理如何访问和利用 API 组合，确保安全性、API 风格和数据格式的一致性。\n*   **增强内部协作：** 该 hub 通过提供集中且一致的 API 信息来源，促进内部协作。这有助于促进 API 重用，减少冗余，并简化开发工作流程。\n\n![Apigee API hub refund](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_05Kg96Y.original.png)\n\n## 开发者门户：为 API 消费者量身定制的体验\n\n相比之下，开发者门户就像一个“店面”，API 消费者（即构建应用程序的开发人员）通过它发现并与 API 交互。并非组织内生产的每个 API 都旨在供外部消费。Apigee API hub 作为超集管理所有 API，而开发者门户则暴露其中经过精心选择的子集，并使用自定义的样式和品牌。\n\n![Developer Portals](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_7JWBY5z.original.png)\n\n为了真正有效，这些门户必须由 Apigee API hub 中存在的“企业真相”提供支持。门户提供 hub 功能的精选且用户友好的子集，专注于无缝的 API 消费：\n\n*   **真实有效的 API 发现：** 开发者门户依赖于 Apigee API hub 元数据的准确性和完整性，使开发人员能够轻松找到所需的 API。\n*   **API 消费的“出口”：** Apigee API hub 充当控制中心，提供一个受控的“出口”，有选择地将特定 API 及其相关的“企业真相”发布到开发者门户。这确保只有经过批准和相关的 API 才能供消费。\n\n![Developer Portals 2](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image7_2RPZWOQ.original.png)\n\n## 释放 API 潜力\n\nApigee API hub 和开发者门户虽然独立，但共同构成一个统一的系统。hub 的全面目录和“企业真相”直接赋能并驱动开发人员的门户体验，并且现在，更关键的是，它们成为新兴 AI 代理策略不可或缺的基础。\n\n通过理解 Apigee API hub 作为 API 生产者和代理的核心存储库的作用，以及门户作为面向消费者的子集和受控“出口”的作用，组织可以充分释放其 API 的潜力并加速创新。\n\n文章最后鼓励用户开始使用 Apigee API hub 和开发者门户，并提及一个 GitHub 示例，展示如何将非托管 API 导入 hub 并将其文档发布到开发者门户。此外，还预告了 2025 年 7 月 31 日的线上活动，以深入了解 hub 和门户的功能。",
-      "shortSummary": "Apigee API hub 和开发者门户是 Google Cloud Apigee 平台中两个关键组件。Apigee API hub 是企业所有 API 的“真相来源”，面向 API 生产者，提供集中编目、治理和内部协作，也是 AI 代理策略的基石。开发者门户则是面向 API 消费者的“店面”，展示并允许交互 Apigee API hub 中精选的 API 子集。两者虽独立但紧密相连，共同构成统一系统，赋能 API 发现、管理和消费，帮助组织释放 API 潜力并加速创新。",
-      "translated_title": "企业真相在行动：Apigee API hub 赋能强大的开发者门户",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_VZss8uJ.original.png",
-          "alt": "Apigee API hub metrics",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_05Kg96Y.original.png",
-          "alt": "Apigee API hub refund",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_7JWBY5z.original.png",
-          "alt": "Developer Portals",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image7_2RPZWOQ.original.png",
-          "alt": "Developer Portals 2",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The Apigee API hub and Developer Portals are distinct but interconnected parts of the Apigee platform that help organizations discover and manage APIs for different personas, unlocking API potential and accelerating innovation."
-    },
-    {
-      "title": "使用 Firebase Studio 推进代理式 AI 开发 (原标题: Advancing agentic AI development with Firebase Studio)",
-      "link": "https://developers.googleblog.com/en/advancing-agentic-ai-development-with-firebase-studio/",
-      "pubDate": "Wed, 09 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-09T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 使用 Firebase Studio 推进代理式 AI 开发\n\n在 Google Cloud Summit London 大会上，Google Cloud 宣布了 Firebase Studio 的重大进展。Firebase Studio 是一个基于云的 AI 工作区，旨在通过集成强大的 AI 功能，重新定义 AI 辅助开发，并帮助开发者构建下一代代理式应用程序。\n\n## 主要更新亮点\n\nFirebase Studio 的最新更新包括：\n\n*   **多功能代理模式 (Agent modes)**：提供与 Gemini 交互的不同方式。\n*   **模型上下文协议 (Model Context Protocol, MCP) 的基础支持**：增强工作流的可扩展性。\n*   **Gemini CLI 集成**：将强大的 AI 功能直接融入开发者的工作流程。\n\n## 1. 引入自主代理模式：您的 AI 伙伴，由您定义\n\nFirebase Studio 现已提供三种与 Gemini 交互的模式，包括全新的自主代理模式。开发者可以根据需求在这些模式之间无缝切换，以加速开发任务，这得益于 Gemini 2.5 强大的代码理解和推理能力。\n\n![Agent Mode](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_xvxrYmH.original.png)\n\n### 模式详解：\n\n*   **Ask 模式 (对话与规划)**\n    *   **用途：** 用于与 Gemini 进行讨论和规划，非常适合头脑风暴、代码规划和协作讨论复杂问题。\n    *   **特点：** 纯粹的对话模式，不会对文件进行任何修改。\n*   **Agent 模式 (建议与批准)**\n    *   **用途：** Gemini 可以提出对应用程序的修改建议。\n    *   **特点：** 开发者始终处于控制之中，必须在任何文件被修改之前批准所有建议的更改。这提供了完整的监督，并允许轻松地在更改集成到项目之前进行代码审查。\n*   **Agent (Auto-run) 模式 (自主运行)**\n    *   **用途：** Gemini 可以自主推理并生成整个应用程序，或向现有应用程序添加功能。\n    *   **示例：** 它可以跨多个文件进行代码更改、编写测试、修复错误和重构组件，所有这些都只需一个提示。\n    *   **安全：** 为了安全起见，在删除文件、运行终端命令或使用外部工具之前，始终需要获得开发者的许可。\n\n### 个性化指导：\n\n代理模式可以利用项目级别的规则文件（如 `.idx/airules.md`、`GEMINI.md` 或 `.cursorrules`）提供个性化指导，确保 Gemini 遵循特定的设计模式和偏好。系统会自动检测并加载这些文件中的指令，提供高度可定制的体验。\n\n## 2. 通过模型上下文协议 (MCP) 释放可扩展性\n\n除了新的代理模式，Firebase Studio 还在预览对模型上下文协议 (MCP) 的基础支持。现在，开发者可以将 MCP 服务器添加到工作区，从而扩展和个性化 Firebase 中 Gemini 的工作流程。例如，可以使用 Firebase MCP 服务器在构建或调试应用程序时，通过自然语言探索 Cloud Firestore 中的数据；或者使用 Context7 获取特定库的上下文（如使用 MediaPipe 的设备端机器学习构建应用程序）。\n\n## 3. Gemini CLI 集成到 Firebase Studio\n\nGemini CLI 是一个功能强大且免费的工具，可用于代码生成、内容生成和研究等多种任务。它提供慷慨的使用层级、高级 AI 功能、与 Google Search 的实时上下文集成以及开源架构，支持定制和贡献。现在，Gemini CLI 已直接集成到 Firebase Studio 中。\n\n如果开发者在终端上花费大量时间进行代码生成、调试、执行命令或管理项目文件等任务，Gemini CLI 提供无缝的 AI 驱动体验，无需切换到单独的聊天窗口。\n\n## 实际影响：Firebase Studio 的应用案例\n\nFirebase Studio 的 AI 功能已被广泛应用于简化工作流程并加速产品发布。实际案例包括：\n\n*   为氢经济创建采购平台。\n*   为用户提供个性化时尚造型师。\n*   帮助宝可梦爱好者通过 AI 驱动的卡片扫描和识别管理卡片收藏。\n*   通过引人注目的可视化和以人为本的分析，将建筑设计变为现实。\n\nGoogle Cloud 承诺将继续推出新功能和更新，帮助开发者快速轻松地交付专业品质的应用程序。鼓励开发者探索 Firebase Studio 的新功能，并在 X 和 LinkedIn 上使用 #FirebaseStudio 分享他们的作品。",
-      "shortSummary": "Firebase Studio 推出重大更新，旨在通过集成 AI 推进代理式 AI 开发。主要亮点包括：三种多功能代理模式（Ask、Agent、Agent Auto-run），提供从对话到自主代码生成的能力；对模型上下文协议 (MCP) 的基础支持，增强工作流可扩展性；以及 Gemini CLI 的直接集成，实现终端内无缝的 AI 辅助开发。这些更新旨在简化开发流程，加速应用发布，并已在多个实际案例中展现出显著效果。",
-      "translated_title": "使用 Firebase Studio 推进代理式 AI 开发",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_xvxrYmH.original.png",
-          "alt": "Agent Mode",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Updates in Firebase Studio include new Agent modes, foundational support for the Model Context Protocol (MCP), and Gemini CLI integration, all designed to redefine AI-assisted development allow developers to create full-stack applications from a single prompt and integrate powerful AI capabilities directly into their workflow."
-    },
-    {
-      "title": "发布 GenAI Processors：构建强大灵活的 Gemini 应用 (原标题: Announcing GenAI Processors: Build powerful and flexible Gemini applications)",
-      "link": "https://developers.googleblog.com/en/genai-processors/",
-      "pubDate": "Wed, 09 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-09T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 发布 GenAI Processors：构建强大灵活的 Gemini 应用\n\nGoogle DeepMind 于 2025 年 7 月 10 日发布了 GenAI Processors，这是一个新的开源 Python 库。该库旨在解决使用大型语言模型（LLM）构建复杂 AI 应用（特别是处理多模态输入和需要实时响应的应用）时面临的挑战。这类应用通常涉及复杂的拼接数据处理步骤、异步 API 调用和自定义逻辑，随着复杂性增加，代码可能变得脆弱且难以维护。\n\n## GenAI Processors 核心概念\n\nGenAI Processors 提供了一个抽象层，定义了一个统一的 `Processor` 接口，用于处理从输入处理、预处理到模型调用和输出处理的所有环节。其核心是将所有输入和输出视为 `ProcessorParts` 的异步流（即双向流）。`ProcessorParts` 是标准化的数据部分（例如，一段音频、文本转录、图像帧）及其相关元数据，它们在管道中流动。这种基于流的 API 允许无缝地链接和组合不同的操作，从低级数据操作到高级模型调用。\n\n![GenAI Processors library](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_kBE2xzY.original.png)\n\nGenAI Processors 库旨在优化 `Processor` 的并发执行。在执行流中，任何部分都可以在其图中所有祖先计算完成后并发生成。该流程保持输出流相对于输入流的顺序，并将以最小化首个令牌时间（TTFT）的方式执行。这种并发优化是自动进行的：将 `Processor` 应用于输入流将尽可能自动触发并发执行。\n\n## 应用示例与优势\n\n该库使得构建实时应用变得简单，例如：\n\n*   **实时代理（Live Agent）**：只需几行代码，即可使用 Gemini Live API 构建能够实时处理音频和视频流的代理。文章提供了结合摄像头和麦克风输入、通过 Gemini Live API 处理并播放音频输出的代码示例。\n*   **基于标准文本 LLM 的实时代理**：利用 GenAI Processor 库的双向流能力和 Google Speech API，可以构建一个将麦克风输入转换为文本、通过 LLM 生成响应、再将文本转换为音频并播放的代理。\n\n即使对于非流式用例，一旦数据可用就立即处理也能显著减少延迟和首个令牌时间（TTFT），这对于提供良好用户体验至关重要。GenAI Processors 通过利用 Python 的原生特性，提供了一种在不增加代码复杂性的情况下编写响应式应用程序的方法。例如，旅行规划器和研究代理等基于回合的代理可以利用 GenAI Processors 的并发功能来提高响应速度。\n\n## 核心设计原则\n\nGenAI Processors 的核心是 `Processor` 概念：一个封装特定工作单元的基本构建块。它接收输入流，执行操作，并输出结果流。这种简单、一致的 API 是该库强大和灵活的基石。\n\n其核心设计决策及其为开发者带来的好处包括：\n\n*   **模块化设计**：将复杂工作流分解为自包含的 `Processor` 单元，确保代码可重用性、可测试性，并显著简化复杂管道的维护。\n*   **异步与并发**：充分利用 Python 的 `asyncio` 来高效处理 I/O 密集型和计算密集型任务，从而实现响应式应用程序，无需手动线程或复杂的并发管理。\n*   **与 Gemini API 集成**：专用的处理器，如 `GenaiModel`（用于基于回合的交互）和 `LiveProcessor`（用于实时流式传输），简化了与 Gemini API 的交互，包括 Live API 的复杂性，减少了样板代码并加速了集成。\n*   **可扩展性**：通过继承基类或使用装饰器，可以轻松创建自定义处理器，将自己的数据处理逻辑、外部 API 或专业操作无缝集成到管道中。\n*   **统一的多模态处理**：`ProcessorPart` 包装器提供了一个一致的接口，用于在管道中处理各种数据类型（文本、图像、音频、JSON 等）。\n*   **流操作实用程序**：内置用于分割、连接和合并异步流的实用程序，为复杂管道中的数据流提供精细控制。\n\n## 如何开始\n\n开始使用 GenAI Processors 非常简单。可以通过 pip 安装：`pip install genai-processors`。\n\n为了帮助用户熟悉该库，官方提供了一系列 Colab 笔记本，引导用户了解核心概念并演示如何构建各种类型的处理器和应用程序。建议从 Content API Colab 和 Processor Intro Colab 开始。用户还可以探索仓库中的 `examples/` 目录，获取构建更复杂应用程序（如研究代理和实时评论代理）的实际演示。\n\n## 展望与社区贡献\n\nGenAI Processors 目前处于早期阶段，但它为解决 AI 应用中复杂工作流和编排挑战提供了坚实的基础。虽然 Google GenAI SDK 支持多种语言，但 GenAI Processors 目前仅支持 Python。\n\n`core/` 目录包含基本处理器，官方积极鼓励社区为 `contrib/` 目录贡献更专业的功能。Google DeepMind 期待与开发者社区合作，扩展该库并构建更复杂的 AI 系统。\n\n鼓励开发者查看 GitHub 上的 GenAI Processors 仓库：[https://github.com/google-gemini/genai-processors](https://github.com/google-gemini/genai-processors)。\n\n## 致谢\n\nGenAI Processors 是一个优秀团队奉献和辛勤工作的结果。文章对 Juliette Love, KP Sawhney, Antoine He, Will Thompson, Arno Eigenwillig, Ke Wang, Parth Kothari, Tim Blyth, Philipp Schmid, Patrick Löber, Omar Sanseviero, Alexey Kolganov, Adam Langley, Evan Senter, Seth Odoom, Thierry Coppey, 和 Murat Ozturk 等在将此库变为现实中发挥关键作用的个人表示感谢。",
-      "shortSummary": "Google DeepMind 发布了 GenAI Processors，这是一个新的开源 Python 库，旨在简化复杂、多模态、实时 LLM 应用的构建。它提供了一个统一的 `Processor` 接口，将所有输入输出视为异步流，支持无缝链接和并发执行。该库通过模块化设计、异步处理和与 Gemini API 的深度集成，帮助开发者构建更强大、响应更快的 AI 应用，尤其适用于实时代理等场景。目前支持 Python，并鼓励社区贡献。",
-      "translated_title": "发布 GenAI Processors：构建强大灵活的 Gemini 应用",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_kBE2xzY.original.png",
-          "alt": "GenAI Processors library",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "GenAI Processors is a new open-source Python library from Google DeepMind designed to simplify the development of AI applications, especially those handling multimodal input and requiring real-time responsiveness, by providing a consistent \"Processor\" interface for all steps from input handling to model calls and output processing, for seamless chaining and concurrent execution."
-    },
-    {
-      "title": "T5Gemma：一种新的编码器-解码器Gemma模型集合 (原标题: T5Gemma: A new collection of encoder-decoder Gemma models)",
-      "link": "https://developers.googleblog.com/en/t5gemma/",
-      "pubDate": "Tue, 08 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-08T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "### T5Gemma：编码器-解码器架构的新篇章\n\n**引言**\n\n在大型语言模型（LLMs）快速发展的背景下，虽然解码器模型占据了主导地位并展现出强大的生成能力，但经典的编码器-解码器架构（如T5）因其高推理效率、设计灵活性和更丰富的编码器输入理解能力，在摘要、翻译和问答等实际应用中仍是热门选择。然而，这种强大的架构相对受到的关注较少。\n\n本文介绍了 **T5Gemma**，这是一个新的编码器-解码器LLM集合。它通过一种名为“适应性”（adaptation）的技术，将预训练的解码器模型转换为编码器-解码器架构。T5Gemma基于Gemma 2框架，包括适应后的Gemma 2 2B和9B模型，以及一系列新训练的T5尺寸模型（Small、Base、Large和XL）。项目团队发布了预训练和指令微调的T5Gemma模型，以期为社区研究和开发开启新机遇。\n\n**从解码器到编码器-解码器：模型适应性**\n\nT5Gemma的核心问题是：能否基于预训练的解码器模型构建顶级的编码器-解码器模型？答案是肯定的，通过探索“模型适应性”技术。其核心思想是利用已预训练的解码器模型权重来初始化编码器-解码器模型的参数，然后通过UL2或PrefixLM预训练进一步适应它们。\n\n![模型适应性概览](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Chart-1.original.png)\n\n这种适应方法具有高度灵活性，允许创造性地组合模型尺寸。例如，可以搭配一个大型编码器和一个小型解码器（如9B编码器与2B解码器）来创建“不平衡”模型。这使得模型能够针对特定任务（如摘要，其中对输入的深度理解比生成输出的复杂性更关键）微调质量-效率权衡。\n\n**性能表现：质量与效率的平衡**\n\n实验结果表明，T5Gemma模型在多个基准测试（如SuperGLUE，衡量学习到的表示质量）中，其性能与解码器Gemma模型相当或更优，几乎主导了质量-推理效率的帕累托前沿。\n\n![编码器-解码器模型基准测试](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Encoder-decoder_models_benchmarks.original.png)\n\n这种性能优势不仅是理论上的，也转化为实际的质量和速度。在测量GSM8K（数学推理）的实际延迟时，T5Gemma展现出明显优势。例如，T5Gemma 9B-9B在相似延迟下实现了比Gemma 2 9B更高的精度。更令人印象深刻的是，T5Gemma 9B-2B在精度上比2B-2B模型有显著提升，而其延迟几乎与小得多的Gemma 2 2B模型相同。这些实验最终表明，编码器-解码器适应性提供了一种灵活而强大的方式来平衡质量和推理速度。\n\n**基础与微调能力**\n\nT5Gemma在预训练和指令微调后均展现出强大的能力：\n\n*   **预训练后**：T5Gemma在需要推理的复杂任务上取得了显著进展。例如，T5Gemma 9B-9B在GSM8K（数学推理）上比原始Gemma 2 9B模型高出9分以上，在DROP（阅读理解）上高出4分。这表明，通过适应性初始化的编码器-解码器架构有潜力创建更强大、性能更好的基础模型。\n\n    ![预训练模型详细结果](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/pretrained-model-results.original.png)\n\n*   **指令微调后**：与Gemma 2 IT相比，T5Gemma IT的性能差距全面显著扩大。例如，T5Gemma 2B-2B IT的MMLU分数比Gemma 2 2B跃升近12点，其GSM8K分数从58.0%增至70.7%。适应性架构不仅可能提供更好的起点，还能更有效地响应指令微调，最终形成一个更强大、更有用的最终模型。\n\n    ![微调+RLHF模型结果](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/results-for-fine-tuned-RLHFed-models.original.png)\n\n**T5Gemma检查点发布**\n\n项目团队非常高兴地发布了构建强大、通用编码器-解码器模型的新方法，即通过适应预训练的解码器LLM（如Gemma 2）。为加速进一步研究并允许社区在此基础上进行开发，团队发布了一套T5Gemma检查点。发布内容包括：\n\n*   **多种尺寸**：T5尺寸模型（Small、Base、Large和XL）、Gemma 2模型（2B和9B），以及介于T5 Large和T5 XL之间的一个额外模型。\n*   **多种变体**：预训练和指令微调模型。\n*   **灵活配置**：一个强大且高效的不平衡9B-2B检查点，用于探索编码器和解码器尺寸之间的权衡。\n*   **不同训练目标**：使用PrefixLM或UL2目标训练的模型，分别提供最先进的生成性能或表示质量。\n\n希望这些检查点能为研究模型架构、效率和性能提供宝贵资源。\n\n**入门指南**\n\n文章提供了相关链接，包括研究论文、Hugging Face和Kaggle上的模型权重下载、Colab notebook以及Vertex AI上的模型推理指南。",
-      "shortSummary": "T5Gemma是基于Gemma 2框架的新型编码器-解码器大语言模型集合，通过将预训练的解码器模型转换为编码器-解码器架构实现。它在推理效率和质量上表现出色，在多个基准测试中优于或媲美同类解码器模型，尤其在数学推理等复杂任务上展现显著提升。该项目发布了多种尺寸和配置的预训练及指令微调模型，旨在促进编码器-解码器架构的研究与应用。",
-      "translated_title": "T5Gemma：一种新的编码器-解码器Gemma模型集合",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Chart-1.original.png",
-          "alt": "decoder-only model",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Encoder-decoder_models_benchmarks.original.png",
-          "alt": "Encoder-decoder models benchmarks",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/pretrained-model-results.original.png",
-          "alt": "Detailed results for pretrained models",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/results-for-fine-tuned-RLHFed-models.original.png",
-          "alt": "Results for fine-tuned + RLHFed models",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "T5Gemma is a new family of encoder-decoder LLMs developed by converting and adapting pretrained decoder-only models based on the Gemma 2 framework, offering superior performance and efficiency compared to its decoder-only counterparts, particularly for tasks requiring deep input understanding, like summarization and translation."
-    },
-    {
-      "title": "Gemini API 中的批处理模式：事半功倍 (原标题: Batch Mode in the Gemini API: Process more for less)",
-      "link": "https://developers.googleblog.com/en/scale-your-ai-workloads-batch-mode-gemini-api/",
-      "pubDate": "Sun, 06 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-06T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Gemini API 批处理模式：事半功倍\n\nGoogle 于2025年7月7日推出了 Gemini API 的批处理模式（Batch Mode），这是一个全新的异步端点，专为高吞吐量、对延迟不敏感的工作负载设计。该模式允许用户提交大型作业，将调度和处理工作卸载给API，并在24小时内获取结果，同时享受比同步API低50%的折扣。\n\n## 核心优势\n\n批处理模式是处理那些数据已准备就绪且无需即时响应任务的理想工具。通过将这些大型作业与实时流量分离，用户可以获得三大关键益处：\n\n*   **成本节约**：批处理作业的定价比给定模型的标准费率低50%。\n*   **更高吞吐量**：批处理模式具有更高的速率限制，能够处理更多请求。\n*   **简便的API调用**：无需管理复杂的客户端排队或重试逻辑。可用结果将在24小时内返回。\n\n## 简单的工作流程\n\nAPI设计简洁直观。用户将所有请求打包到一个文件中，提交作业，并在作业完成后检索结果。以下是开发者目前利用批处理模式完成任务的一些方式：\n\n*   **批量内容生成与处理**：\n    Reforged Labs 专注于深度视频理解，利用 Gemini 2.5 Pro 每月分析和标记大量视频广告。实施批处理模式彻底改变了他们的运营，显著降低了成本，加快了客户交付速度，并实现了获取有意义市场洞察所需的大规模可扩展性。\n    ![批量内容生成与处理](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_qhTloW2.original.png)\n\n*   **模型评估**：\n    Vals AI 对基础模型进行基准测试，涵盖法律、金融、税务和医疗保健等实际用例。他们正在使用批处理模式提交大量评估查询，而不受速率限制的约束。\n    ![模型评估](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_uvTbuTT.original.png)\n\n## 快速上手\n\n用户可以使用 Google GenAI Python SDK 立即开始使用批处理模式。基本流程包括：\n\n1.  创建一个包含多个请求的 JSONL 文件。\n2.  使用 `client.files.upload()` 方法上传该文件。\n3.  使用 `client.batches.create()` 方法创建批处理作业，指定模型和源文件。\n4.  等待作业完成（最长24小时），然后通过 `client.files.download()` 方法下载结果文件并处理其内容。\n\n## 展望\n\nGemini API 的批处理模式正在逐步向所有用户推出。这仅仅是批处理能力的开始，Google 正在积极努力扩展其功能，未来将提供更强大、更灵活的选项。",
-      "shortSummary": "Gemini API 推出批处理模式，专为高吞吐量、非延迟敏感型任务设计。它允许用户提交大型作业，在24小时内获取结果，并享受50%的成本折扣。主要优势包括显著的成本节约、更高的吞吐量和简化的API调用。开发者可利用其进行批量内容生成、模型评估等。该模式已通过Python SDK提供，未来将进一步扩展功能。",
-      "translated_title": "Gemini API 中的批处理模式：事半功倍",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_qhTloW2.original.png",
-          "alt": "Bulk content generation and processing",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_uvTbuTT.original.png",
-          "alt": "Model evaluations",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The new batch mode in the Gemini API is designed for high-throughput, non-latency-critical AI workloads, simplifying large jobs by handling scheduling and processing, and making tasks like data analysis, bulk content creation, and model evaluation more cost-effective and scalable, so developers can process large volumes of data efficiently."
     }
   ],
-  "lastUpdated": "2025-07-20T10:33:05.139Z"
+  "lastUpdated": "2025-07-25T10:36:18.181Z"
 }
