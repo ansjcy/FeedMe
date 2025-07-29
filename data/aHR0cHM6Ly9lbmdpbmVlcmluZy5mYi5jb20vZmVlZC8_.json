@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "使用 ExecuTorch 加速 Meta 系列应用中的设备端机器学习 (原标题: Accelerating on-device ML on Meta’s family of apps with ExecuTorch)",
+      "link": "https://engineering.fb.com/2025/07/28/android/executorch-on-device-ml-meta-family-of-apps/",
+      "pubDate": "Mon, 28 Jul 2025 20:30:33 +0000",
+      "isoDate": "2025-07-28T20:30:33.000Z",
+      "creator": "",
+      "summary": "## 使用 ExecuTorch 加速 Meta 系列应用中的设备端机器学习\n\nExecuTorch 是 Meta 开发的 PyTorch 边缘设备推理框架，并获得了 Arm、Apple 和 Qualcomm 等行业领导者的支持。它是一个开源解决方案，旨在加速 Meta 旗下应用（FoA）在移动和边缘设备上的设备端机器学习（ML）模型运行。\n\n### 设备端机器学习的重要性\n\n在 Meta 的应用中，设备端机器学习日益重要，主要原因包括：\n*   **改善延迟**：模型在本地运行，减少了网络往返时间。\n*   **维护用户隐私**：数据保留在用户设备上，无需上传到服务器。\n*   **实现离线功能**：即使没有网络连接，部分功能也能正常使用。\n\n### ExecuTorch 的核心优势\n\nExecuTorch 基于 PyTorch 2.x 技术构建，将模型转换为稳定、紧凑的表示形式，以实现高效的设备端部署。其主要特点包括：\n*   **紧凑的运行时**：占用资源少。\n*   **模块化和可扩展性**：开发者可以轻松选择和自定义组件。\n*   **高可移植性**：确保跨平台兼容性。\n*   **PyTorch 兼容性**：与现有 PyTorch 生态系统无缝集成。\n\n### ExecuTorch 在 Meta 应用中的实际应用\n\nExecuTorch 已在 Instagram、WhatsApp、Messenger 和 Facebook 等 Meta 应用中广泛部署，为数十亿用户提供服务，并显著提升了设备端 ML 模型的性能和效率，简化了从研究到生产的路径。\n\n#### 1. Instagram 的“抠图”功能 (Cutouts)\n*   **功能描述**：允许用户将照片和视频转换为动画个性化贴纸，分享到 Reels 或 Stories。\n*   **ExecuTorch 优化**：通过启用 SqueezeSAM（Meta Segment Anything Model (SAM) 的轻量级版本），在 Android 和 iOS 上显著提升了“抠图”功能的运行速度。\n*   **成果**：日活跃用户 (DAU) 显著增加。\n\n#### 2. WhatsApp 视频和通话质量优化\n*   **功能描述**：开发带宽估算模型，优化视频流质量，确保视频通话流畅性。\n*   **ExecuTorch 优化**：提升了带宽估算模型的性能、可靠性和效率。\n*   **成果**：大幅减少了模型加载时间和平均推理时间，降低了应用无响应 (ANR) 指标，并通过模糊测试增强了安全性。Meta 正在将其他关键 WhatsApp 模型（如设备端降噪和视频增强）迁移到 ExecuTorch。\n\n#### 3. Messenger 端到端加密 (E2EE) 中的设备端机器学习\n*   **功能描述**：确保只有对话双方能看到消息内容，Meta 也无法查看。\n*   **ExecuTorch 优化**：将服务器端模型迁移到设备端，使数据传输保持加密。部署了设备端语言识别 (LID) 模型，该模型能快速检测文本语言，支持翻译、消息摘要和个性化内容推荐等任务。\n*   **成果**：设备端 LID 运行速度显著加快，节省了服务器和网络容量。同时，其他 Messenger 模型（如视频通话质量优化和图像抠图）也已迁移到设备端，提高了基础设施效率并支持全球功能扩展。\n\n#### 4. Facebook 背景音乐推荐\n*   **功能描述**：核心 AI 模型 SceneX 执行图像识别/分类、字幕、AI 生成背景和图像安全检查等任务。\n*   **ExecuTorch 优化**：将 SceneX 迁移到 ExecuTorch 后，可根据图片为 Facebook Stories 推荐背景音乐。\n*   **成果**：SceneX 在低端到高端设备上的性能全面提升。其他图像质量增强和通话背景降噪模型也处于 A/B 测试阶段。\n\n### ExecuTorch 社区与未来展望\n\nMeta 鼓励行业贡献者和开发者参与 ExecuTorch 项目，通过其 GitHub 页面分享反馈，并加入 ExecuTorch Discord 服务器社区。Meta 期待与社区共同推动设备端机器学习的创新，塑造设备端 AI 的未来。",
+      "shortSummary": "ExecuTorch 是 Meta 开发的开源 PyTorch 边缘设备推理框架，旨在加速其应用系列中的设备端机器学习。它通过提升性能、保护用户隐私和实现离线功能，显著改善了用户体验。ExecuTorch 已成功应用于 Instagram 抠图、WhatsApp 视频通话质量优化、Messenger 端到端加密中的语言识别以及 Facebook 背景音乐推荐等功能，实现了模型运行更快、效率更高、资源消耗更低，并简化了从研究到生产的流程。",
+      "translated_title": "使用 ExecuTorch 加速 Meta 系列应用中的设备端机器学习",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>ExecuTorch is the PyTorch inference framework for edge devices developed by Meta with support from industry leaders like Arm, Apple, and Qualcomm.  Running machine learning (ML) models on-device is increasingly important for Meta’s family of apps (FoA). These on-device models improve latency, maintain user privacy by keeping data on users’ devices, and enable offline functionality. [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/07/28/android/executorch-on-device-ml-meta-family-of-apps/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/07/28/android/executorch-on-device-ml-meta-family-of-apps/\">Accelerating on-device ML on Meta’s family of apps with ExecuTorch</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "策略区域：Meta 如何在批处理系统中大规模实施目的限制 (原标题: Policy Zones: How Meta enforces purpose limitation at scale in batch processing systems)",
       "link": "https://engineering.fb.com/2025/07/23/security/policy-zones-meta-purpose-limitation-batch-processing-systems/",
       "pubDate": "Wed, 23 Jul 2025 23:00:05 +0000",
@@ -169,20 +182,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Back in 2017, engineers at Meta sought to create a type checker for Instagram&#8217;s typed Python codebase. Years later, as the type system continued to evolve, that type checker eventually became Pyrefly.  Pyrefly is a new type checker and IDE experience for Python, written with Rust, and now available for the entire Python community to [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/05/15/developer-tools/open-sourcing-pyrefly-a-faster-python-type-checker-written-in-rust/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/05/15/developer-tools/open-sourcing-pyrefly-a-faster-python-type-checker-written-in-rust/\">Open-sourcing Pyrefly: A faster Python type checker written in Rust</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "Pyrefly 介绍：一种新的 Python 类型检查器和 IDE 体验 (原标题: Introducing Pyrefly: A new type checker and IDE experience for Python)",
-      "link": "https://engineering.fb.com/2025/05/15/developer-tools/introducing-pyrefly-a-new-type-checker-and-ide-experience-for-python/",
-      "pubDate": "Thu, 15 May 2025 18:30:08 +0000",
-      "isoDate": "2025-05-15T18:30:08.000Z",
-      "creator": "",
-      "summary": "## Pyrefly 介绍：一种新的 Python 类型检查器和 IDE 体验\n\nMeta 宣布推出 Pyrefly 的 Alpha 版本，这是一个用 Rust 编写的开源 Python 类型检查器和 IDE 扩展。\n\n### Pyrefly 是什么？\n*   **静态类型检查器**：分析 Python 代码以确保类型一致性，并在代码运行前帮助捕获错误。\n*   **集成与灵活性**：支持 IDE 集成（如 VSCode 扩展）和命令行 (CLI) 使用，方便融入开发工作流。\n*   **开源**：在 GitHub 上以 MIT 许可证发布，鼓励社区协作和贡献。\n\n### 为什么构建 Pyrefly？\n*   **背景**：Pyrefly 源于 Meta 在 2017 年为处理 Instagram 庞大的类型化 Python 代码库而创建的 Pyre 类型检查器（用 OCaml 编写）。\n*   **演进需求**：随着类型系统的发展以及对响应式 IDE 类型检查的需求，Pyre 无法满足，因此需要一种新的方法。\n*   **目标**：创建一种可扩展的类型检查器，能够提供代码导航、大规模检查以及将类型导出到其他服务的能力。\n\n### Pyrefly 的核心原则\n1.  **性能**：\n    *   旨在将通常在 CI 上进行的检查转移到每次按键时进行。\n    *   能够以极高的速度检查代码（在大型代码库上可达每秒 180 万行）。\n    *   用 Rust 实现，并针对所有规模的代码库进行高性能设计，注重增量更新。\n2.  **IDE 优先**：\n    *   确保 IDE 和命令行共享一致的视图。\n    *   从一开始就设计抽象层，以捕获差异而避免不必要的开销，这比后期改造 Pyre 更有效。\n3.  **类型推断**：\n    *   即使代码未完全注解，用户也能从类型中受益。\n    *   自动推断返回类型和局部变量类型，并在 IDE 中显示。\n    *   在 IDE 中支持双击插入推断出的类型。\n4.  **开源**：\n    *   Python 语言及其类型规范都是开源的，这极大地促进了 Pyrefly 的开发。\n    *   Pyrefly 本身也是开源的，鼓励通过拉取请求和问题报告进行贡献，并设有 Discord 频道进行讨论。\n\n### 如何开始使用 Pyrefly？\n*   **安装**：通过命令行 `pip install pyrefly` 进行安装。\n*   **迁移**：将现有类型检查器配置迁移到 Pyrefly。\n*   **增强 IDE**：下载适用于 VSCode 的 Pyrefly 扩展，享受快速的 IDE 体验。\n*   **反馈**：在 GitHub 上提交反馈。\n\n### Pyrefly 的未来\n*   **社区合作**：将与 Python 社区合作，推动语言发展并改善开发者体验。\n*   **知识共享**：Meta 将分享其在动态语言中利用类型所带来的生产力和安全性方面的经验和工具。\n*   **发展阶段**：目前处于 Alpha 阶段，目标是在今年夏天移除 Alpha 标签。用户的反馈对于实现这一目标至关重要。\n\n### 致谢\nPyrefly 由 Meta 的 Python 语言工具团队创建。",
-      "shortSummary": "Pyrefly 是 Meta 推出的一款新的开源 Python 静态类型检查器和 IDE 扩展，由 Rust 编写。它旨在通过在代码运行前检查类型一致性、捕获错误来提升开发者体验。Pyrefly 强调高性能（每秒处理百万行代码）、IDE 优先集成和自动类型推断。作为 Pyre 的演进，它目前处于 Alpha 阶段，可在 GitHub 上获取，并计划在今年夏天移除 Alpha 标签，积极寻求社区反馈和贡献。",
-      "translated_title": "Pyrefly 介绍：一种新的 Python 类型检查器和 IDE 体验",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Today we are announcing an alpha version of Pyrefly, an open source Python type checker and IDE extension crafted in Rust. Pyrefly is a static type checker that analyzes Python code to ensure type consistency and help you catch errors throughout your codebase before your code runs. It also supports IDE integration and CLI usage [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/05/15/developer-tools/introducing-pyrefly-a-new-type-checker-and-ide-experience-for-python/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/05/15/developer-tools/introducing-pyrefly-a-new-type-checker-and-ide-experience-for-python/\">Introducing Pyrefly: A new type checker and IDE experience for Python</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-07-27T05:32:53.452Z"
+  "lastUpdated": "2025-07-29T05:36:18.548Z"
 }
