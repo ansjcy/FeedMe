@@ -5,6 +5,285 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "Germ 为 Bluesky 带来端到端加密消息 (原标题: Germ brings end-to-end encrypted messages to Bluesky)",
+      "link": "https://techcrunch.com/2025/07/30/germ-brings-end-to-end-encrypted-messages-to-bluesky/",
+      "pubDate": "Wed, 30 Jul 2025 18:25:03 +0000",
+      "isoDate": "2025-07-30T18:25:03.000Z",
+      "creator": "Sarah Perez",
+      "summary": "## Germ 为 Bluesky 带来端到端加密消息\n\n### 引言\n*   Germ 是一家新成立的初创公司，旨在为 Bluesky 社交网络提供端到端加密消息服务。\n*   其目标是为用户提供比 Bluesky 现有私信更安全的聊天选项。\n*   经过两年多的开发，该服务本周将面向 Bluesky 推出加密私信的测试版，并计划逐步邀请测试者，最终进行公开发布。\n\n### 技术与集成\n*   Germ 旨在提供一个替代方案，以挑战 iMessage、Signal 和 WhatsApp 等全球主导的端到端加密平台。\n*   它利用了新的技术标准，包括互联网工程任务组 (IETF) 批准的“消息层安全”(MLS) 和支持 Bluesky 的“AT 协议”(AT Proto)。\n*   Germ 与 AT Proto 集成，无需用户提供电话号码，这与一些现有消息应用不同。\n*   这使得 Germ 用户可以与 Bluesky 以及更广泛的开放社交网络（如 Flashes 和 Skylight）上的朋友进行安全聊天。\n*   Germ 正在构建的许多技术都是开源的，未来可能使 Bluesky 自身在其应用中引入加密消息。\n\n### 用户体验与控制\n*   **消息接收控制：** 用户可以灵活选择，例如只接受 Bluesky 上关注的人的私信，或者配置为只有自己能发起聊天。\n*   **阻止功能：** 当用户在 Germ 中阻止某人时，可以选择仅在 Germ 中阻止，或同时在 Bluesky 和其他基于 AT Proto 的应用中阻止。\n*   **“魔法链接”系统：** Germ 通过生成一个独特的“魔法链接”来实现服务，用户将其粘贴到 Bluesky 个人简介中。\n*   **App Clips 技术：** iOS 用户点击此链接后，可以立即开始聊天，而无需从 App Store 下载新应用。这利用了 Apple 的 App Clips 技术，允许运行部分应用代码。\n*   **安全认证：** 该链接本身是一个加密密钥，用于验证用户的 AT Proto 身份，确认用户与 Bluesky 句柄相关联。\n*   **完整应用：** 用户可以从 App Clip 中选择安装 Germ iOS 完整应用，以获得更多控制、访问朋友列表和 Bluesky 配对功能。\n\n### 创始人与愿景\n*   Germ 的概念来自联合创始人 Tessa Brown (CEO) 和 Mark Xue。\n*   **Tessa Brown：** 一位传播学者，曾任教于斯坦福大学。她的研究使她认识到，访问私密通信对于社交网络的健康至关重要。她坚信端到端加密消息是社交媒体和通信未来的核心。\n*   **Mark Xue：** 曾是 Apple 的隐私工程师，参与过 FaceTime 和 iMessage 等技术。他认为使用电话号码作为安全通信的基础已过时，并希望构建新的解决方案。\n*   Brown 对在 Bluesky 社区内发展感到兴奋，因为 Bluesky 具有日益增长的文化影响力，吸引了包括巴拉克·奥巴马、希拉里·克林顿等美国政界知名人士的加入。\n*   她希望 Germ 的协议未来能被 Bluesky 及其他平台更广泛地采用，因为 Germ 在构建加密消息技术方面领先于 Bluesky 团队。\n\n### 发展前景与融资\n*   目前 Germ 应用免费使用，但未来可能会引入高级订阅服务，提供更高级的功能，包括私人 AI 服务和个性化工具等。\n*   这家四人初创公司已从天使投资人（包括 MLS 的一位联合作者和其他信任与安全专家）以及 K5 Global 和 Mozilla Ventures 等机构投资者那里获得了种子前融资。\n*   公司希望未来能筹集更多资金，以开发 Android 版本。\n\n### 图片\n*   ![Germ 应用截图，展示其下载和注册流程。](https://techcrunch.com/wp-content/uploads/2025/07/app-clip.png?w=339)\n*   ![Germ Network 首席执行官 Tessa Brown 在旧金山 TechCrunch Disrupt 活动中自拍。](https://techcrunch.com/wp-content/uploads/2025/07/tessa.jpg?w=680)",
+      "shortSummary": "Germ 是一家新公司，正为 Bluesky 社交网络推出端到端加密消息服务，旨在提供比现有私信更安全的聊天选项。该服务利用 MLS 和 AT 协议，无需电话号码，用户可通过“魔法链接”和 Apple App Clips 快速开始安全聊天。Germ 由 Tessa Brown 和 Mark Xue 创立，他们致力于构建更私密、安全的通信未来。目前处于测试阶段，未来可能推出高级订阅服务，并计划开发 Android 版本。",
+      "translated_title": "Germ 为 Bluesky 带来端到端加密消息",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/app-clip.png?w=339",
+          "alt": "a screenshot of the Germ app, showing its download and onboarding process.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/tessa.jpg?w=680",
+          "alt": "a photo of Germ CEO Tessa Brown, taking a selfie at TechCrunch Disrupt in San Francisco",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Germ's new app lets users send end-to-end encrypted messages on Bluesky. TechCrunch speaks with the Germ founders to hear why they came up with the idea."
+    },
+    {
+      "title": "黑客在安联人寿网络攻击中窃取了社会安全号码 (原标题: Hackers stole Social Security numbers during Allianz Life cyberattack)",
+      "link": "https://techcrunch.com/2025/07/30/hackers-stole-social-security-numbers-during-allianz-life-cyberattack/",
+      "pubDate": "Wed, 30 Jul 2025 18:00:08 +0000",
+      "isoDate": "2025-07-30T18:00:08.000Z",
+      "creator": "Zack Whittaker",
+      "summary": "# 安联人寿网络攻击：社会安全号码被盗\n\n美国保险巨头安联人寿（Allianz Life）于2025年7月16日遭遇了一次网络攻击，导致大量客户的个人身份信息被盗，其中包括关键的社会安全号码。\n\n## 事件详情\n\n*   **攻击时间与披露：** 此次数据泄露事件发生在2025年7月16日，安联人寿于上周末向公众披露了这一情况。\n*   **受影响范围：** 攻击者窃取了其140万客户中“大部分”的个人身份信息，此外还包括金融专业人士以及部分安联人寿员工的数据。\n*   **被盗数据类型：** 根据向美国德克萨斯州和马萨诸塞州总检察长提交的文件显示，被盗信息包括姓名、出生日期、邮政地址和社会安全号码。\n*   **攻击方式：** 黑客通过社会工程攻击手段，成功入侵了安联人寿的客户关系数据库。这种攻击通常涉及欺骗技巧，例如冒充员工以获取帮助台的系统访问权限。\n\n## 公司回应与后续措施\n\n*   安联人寿发言人布雷特·温伯格（Brett Weinberg）未具体说明所有被泄露的数据类型，但确认公司预计将于8月1日开始通知受影响的个人。\n*   通知信函将包含与受影响个人相关的具体信息，包括可能受影响的数据类型。\n\n## 行业背景\n\n安联人寿是近期继Aflac和Erie等公司之后，又一家遭遇数据泄露的保险公司。这表明擅长社会工程攻击的多个黑客组织正在加剧其网络攻击活动。\n\n![The tower skyscraper built in 2020 in Milan CityLife district area called Isozaki Tower (Allianz) seen from the MiCo Convention centre in a night view. Milan (Italy), December 2nd 2021.](https://techcrunch.com/wp-content/uploads/2025/07/allianz-cyberattack-1358736087.jpg?w=1024)\n*图片来源：Samantha Zucchi / Mondadori Portfolio / Getty Images*",
+      "shortSummary": "美国保险巨头安联人寿于2025年7月16日遭遇网络攻击，黑客通过社会工程手段窃取了其客户关系数据库中大量客户的社会安全号码、姓名、出生日期和地址。受影响者包括140万客户中的大部分、金融专业人士及部分员工。安联人寿预计将于8月1日开始通知受影响个人。此次事件是近期多起针对保险公司的社会工程攻击之一。",
+      "translated_title": "黑客在安联人寿网络攻击中窃取了社会安全号码",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/allianz-cyberattack-1358736087.jpg?w=1024",
+          "alt": "The tower skyscraper built in 2020 in Milan CityLife district area called Isozaki Tower (Allianz) seen from the MiCo Convention centre in a night view. Milan (Italy), December 2nd 2021.",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The U.S. insurance giant tells state regulators that Social Security numbers were among the personal information stolen in its mid-July cyberattack."
+    },
+    {
+      "title": "扎克伯格暗示Meta不会开源所有‘超级智能’AI模型 (原标题: Zuckerberg signals Meta won’t open source all of its ‘superintelligence’ AI models)",
+      "link": "https://techcrunch.com/2025/07/30/zuckerberg-says-meta-likely-wont-open-source-all-of-its-superintelligence-ai-models/",
+      "pubDate": "Wed, 30 Jul 2025 17:56:58 +0000",
+      "isoDate": "2025-07-30T17:56:58.000Z",
+      "creator": "Rebecca Bellan",
+      "summary": "### 扎克伯格暗示Meta将调整AI模型开源策略\n\nMeta首席执行官马克·扎克伯格周三分享了他对“个人超级智能”的愿景，即人们应能利用AI实现个人目标。在此愿景中，扎克伯格也透露了Meta在追求“超级智能”时，将调整其AI模型的发布方式。\n\n#### 核心观点与策略转变\n\n*   **愿景共享与安全考量**：扎克伯格表示，“我们相信超级智能的益处应尽可能广泛地与世界分享。”但他同时强调，“超级智能将带来新的安全问题。我们需要严格地降低这些风险，并谨慎选择开源的内容。”\n*   **开源策略的转变信号**：这一措辞意义重大。扎克伯格此前一直将Meta的Llama系列开放模型定位为公司与OpenAI、xAI和Google DeepMind等竞争对手的关键差异化优势。他曾表示，Meta的目标是创建与封闭模型一样好甚至更好的开放AI模型，并期望未来的Llama模型能成为行业最先进的模型。然而，他去年也曾预留余地，表示如果AI能力发生质变且开源不负责任，则不会开源。\n*   **“开放”定义的争议**：尽管许多人认为Llama并不完全符合严格的开源AI定义（部分原因在于Meta未发布其庞大的训练数据集），但扎克伯格的最新言论表明，开源可能不再是Meta尖端AI的默认选项。\n\n#### 转变背后的原因\n\n*   **竞争压力与追赶**：Meta的竞争对手通常保持模型封闭，以更好地控制产品变现。尽管扎克伯格曾指出Meta的业务不依赖于销售AI模型访问权（主要收入来自互联网广告），因此开源Llama不会损害其收入。但这一观点是在Meta感到落后于竞争对手（尤其是在开发Llama 3时，高管们痴迷于超越OpenAI的GPT-4模型）之前提出的。\n*   **大规模投资与内部重组**：2025年6月，Meta开始认真推进其AGI（通用人工智能）计划，包括：\n    *   向Scale AI投资143亿美元。\n    *   收购Scale的创始人兼首席执行官。\n    *   重组AI部门，成立新的“Meta超级智能实验室”（Meta Superintelligence Labs）。\n*   **转向封闭模型的迹象**：近期有报道指出，Meta的巨额投资导致其暂停了最新Llama模型“Behemoth”的测试，转而专注于开发一个封闭模型。\n*   **产品集成与变现策略**：扎克伯格的“个人超级智能”使命（与竞争对手“自动化所有有价值工作”的路线不同）正在形成其AI变现策略。他明确表示，Meta计划通过其自身产品（如增强现实眼镜和虚拟现实头显）来提供“个人超级智能”。他认为，能够理解我们所见所闻、并全天与我们互动的个人设备（如眼镜）将成为主要的计算设备。\n\n#### Meta的官方回应\n\n当被问及Meta可能保留其最先进模型为封闭模型时，Meta发言人表示，公司仍致力于开源AI，但也预计未来会训练封闭源模型。发言人称：“我们对开源AI的立场没有改变。我们计划继续发布领先的开源模型。我们历史上也并非发布了所有开发成果，未来也预计将继续训练开放和封闭模型的混合体。”",
+      "shortSummary": "扎克伯格暗示Meta将调整其AI开源策略，尤其针对“超级智能”模型。尽管Meta仍致力于开源，但出于安全考量、追赶竞争对手以及通过自家AR/VR产品实现“个人超级智能”的变现需求，未来可能不会开源所有最先进的AI模型，而是采取开放与封闭模型混合并行的策略。此举标志着Meta在AI发展和商业化路径上的重要转变。",
+      "translated_title": "扎克伯格暗示Meta不会开源所有‘超级智能’AI模型",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Meta is shifting how it plans to ensure widespread access to superintelligence, a suggestion that the company’s most advanced AI may remain closed so that Meta can stay in the driver’s seat."
+    },
+    {
+      "title": "Ramp在达到160亿美元估值仅45天后，估值飙升至225亿美元 (原标题: Ramp hits $22.5B valuation just 45 days after reaching $16B)",
+      "link": "https://techcrunch.com/2025/07/30/ramp-hits-22-5b-valuation-just-45-days-after-reaching-16b/",
+      "pubDate": "Wed, 30 Jul 2025 16:19:02 +0000",
+      "isoDate": "2025-07-30T16:19:02.000Z",
+      "creator": "Julie Bort",
+      "summary": "## Ramp估值飙升与“自主金融”愿景\n\n费用管理初创公司Ramp的联合创始人兼CEO Eric Glyman于周三宣布，公司完成了一轮新的5亿美元融资，使其投后估值达到了惊人的225亿美元。\n\n### 估值快速增长\n\n*   **最新估值**：225亿美元（投后）。\n*   **融资额**：5亿美元。\n*   **领投方**：Iconiq Growth。\n*   **参与方**：Founders Fund和D1 Capital Partners。\n*   **时间间隔**：此次融资距离Ramp上一轮融资仅45天。\n*   **此前估值**：\n    *   今年6月，Ramp以160亿美元的估值融资2亿美元。\n    *   今年3月，Ramp的估值为130亿美元。\n\n### “自主金融”愿景\n\n*   Glyman在他的博客文章中阐述了其对AI代理驱动的“自主金融”的愿景。\n*   他预测“自主金融”将在2028年成为行业常态。\n*   为实现这一愿景，Ramp已推出其首个AI代理，并计划在未来推出更多。\n\n### 公司财务与客户数据\n\n*   **累计融资总额**：Ramp迄今已累计融资19亿美元。\n*   **现金流状况**：公司在今年早些时候实现了现金流为正。\n*   **年化收入**：今年3月，Glyman透露Ramp的年化收入已达到7亿美元。\n*   **客户数量**：目前，Ramp声称拥有40,000家客户。",
+      "shortSummary": "费用管理初创公司Ramp在短短45天内估值从160亿美元飙升至225亿美元，完成5亿美元新融资。本轮融资由Iconiq Growth领投。Ramp的CEO Eric Glyman提出了AI代理驱动的“自主金融”愿景，并已推出首个AI代理。公司累计融资19亿美元，今年初实现现金流为正，年化收入达7亿美元，拥有40,000家客户。",
+      "translated_title": "Ramp在达到160亿美元估值仅45天后，估值飙升至225亿美元",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "In 2025, Ramp keeps raising money at increasing valuations as its CEO pursues an AI-powered future."
+    },
+    {
+      "title": "Edits使用指南：Meta推出的短视频编辑应用，旨在对抗CapCut (原标题: A guide to using Edits, Meta’s CapCut rival for short-form video editing)",
+      "link": "https://techcrunch.com/2025/07/30/a-guide-to-using-edits-metas-new-capcut-rival-for-short-form-video-editing/",
+      "pubDate": "Wed, 30 Jul 2025 16:17:11 +0000",
+      "isoDate": "2025-07-30T16:17:11.000Z",
+      "creator": "Aisha Malik",
+      "summary": "Meta近期发布了一款名为Edits的全新视频编辑应用，旨在与字节跳动的热门短视频编辑应用CapCut竞争。此举是在TikTok在美国的未来不确定性背景下，Meta为抓住CapCut可能缺席的市场机会而推出的。\n\n### Edits应用概览\n\n#### 1. 如何开始使用\n\n*   **下载与登录**：Edits可在iOS和Android平台下载。打开应用后，需要使用Instagram账户登录。\n*   **主要功能分区**：应用界面分为五个主要选项卡：\n    *   **Ideas（创意）**：供创作者记录视频想法，并保存Reels合集。\n    *   **Inspiration（灵感）**：发现热门音频和其他流行Reels的中心。\n    *   **Projects（项目）**：存储和管理正在进行中的视频项目，也可从手机相册上传视频。\n    *   **Record（录制）**：允许创作者直接在Edits应用内开始拍摄视频内容。\n    *   **Insights（洞察）**：提供内容表现概览，显示观看量、触达率和粉丝数等指标。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/05/edits-1.jpeg?w=680)\n\n#### 2. Edits提供的工具和功能\n\nEdits内置了多种编辑工具，旨在简化短视频创作过程：\n\n*   **绿幕（Green screen）**：一键替换和编辑视频背景。\n*   **时间轴（Timeline）**：精确排列和调整视频片段。\n*   **字幕（Captions）**：为视频添加多语言自动字幕。\n*   **音频库（Audio library）**：从Instagram的音乐库中添加音乐。\n*   **抠图（Cutouts）**：通过精确跟踪隔离特定对象。\n*   **动画（Animate）**：使用AI将静态图像转换为视频。\n*   **全部应用（Apply all）**：一次性将滤镜、效果、转场和调整应用于所有片段。\n*   **时间轴帧率选择器（Timeline frame rate selector）**：将视频转换为所需帧率以提高播放流畅度。\n*   **对齐指南（Alignment guides）**：确保视频发布后观众能看到重要部分，并精确放置文本、表情符号或其他元素。\n*   **节拍标记（Beat markers）**：添加自动检测的节拍标记，帮助编辑时将片段、文本和叠加层与音频对齐。\n*   **滤镜（Filters）**：提供30种不同的滤镜选项，为视频增添独特外观。\n*   **转场（Transitions）**：提供30种不同的转场效果，无缝连接不同视频片段。\n*   **提词器（Teleprompter）**：录制时可跟随预设脚本。\n*   **重塑风格（Restyle）**：使用AI通过预设库改变视频的外观和风格。\n*   **关键帧（Keyframes）**：动画化片段的位置、旋转和缩放。\n*   **剪切静音（Cut Silences）**：自动移除Reels中不必要的静音部分。\n*   **从文件导入音频（Import Audio from Files）**：直接将自己的独特声音导入Edits。\n*   **片段预览（Clip Preview）**：在相机录制时预览片段。\n\n![图片 2](https://techcrunch.com/wp-content/uploads/2025/05/edits-2.jpeg?w=680)\n\n#### 3. Edits与CapCut的比较\n\n尽管Edits和CapCut都是出色的短视频编辑工具，但两者存在一些差异：\n\n*   **编辑功能**：CapCut提供更强大的编辑选项，包括更多AI功能，这在一定程度上是由于Edits相对较新。Meta预计将在未来持续增强Edits的功能。\n*   **音乐库**：CapCut拥有比Edits更广泛的音乐库。\n*   **订阅模式**：Edits目前免费使用，而CapCut提供免费版本，但部分高级工具需付费订阅。Instagram负责人Adam Mosseri表示，未来版本的Edits可能会包含付费功能。\n*   **平台可用性**：Edits目前仅支持移动端，而CapCut也提供网页版。Edits未来可能会扩展到其他平台。",
+      "shortSummary": "Meta发布了Edits，一款新的短视频编辑应用，旨在与CapCut竞争。Edits需通过Instagram登录，提供创意、项目、录制和洞察等功能，并包含绿幕、字幕、AI动画等多种编辑工具。与CapCut相比，Edits目前功能相对较少，音乐库规模较小，且仅限移动端，但目前免费。Meta计划未来继续增强Edits的功能，并可能引入付费特性。",
+      "translated_title": "Edits使用指南：Meta推出的短视频编辑应用，旨在对抗CapCut",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/05/edits-1.jpeg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/05/edits-2.jpeg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Meta shared that it was working on Edits in January after ByteDance-owned CapCut was removed from U.S. app stores."
+    },
+    {
+      "title": "一家新泽西初创公司如何找到一种电气化方法来大幅削减铜成本 (原标题: How a New Jersey startup found an electrifying way to slash copper costs)",
+      "link": "https://techcrunch.com/2025/07/30/how-a-new-jersey-startup-found-an-electrifying-way-to-slash-copper-costs/",
+      "pubDate": "Wed, 30 Jul 2025 16:09:47 +0000",
+      "isoDate": "2025-07-30T16:09:47.000Z",
+      "creator": "Tim De Chant",
+      "summary": "## Still Bright：电气化创新削减铜成本\n\n### 引言\n\n随着全球经济向非化石燃料转型，对铜的需求正以前所未有的速度激增。预计未来几年，人类所需的铜量将是其有史以来开采总量的两倍，这使得铜价面临巨大上涨压力。传统的铜开采和精炼方法不仅成本高昂，而且难以满足如此庞大的需求，同时还伴随着环境污染问题。针对这一挑战，一家成立于2022年的新泽西初创公司Still Bright声称已找到一种新颖且更清洁的方法来大幅削减铜的生产成本。\n\n### Still Bright的创新技术\n\nStill Bright开发了一种革命性的铜提取方法，其核心优势在于：\n\n*   **高回收率：** 该技术能够从典型矿石中回收几乎所有的铜，而无需进行预处理步骤。传统预处理过程可能导致高达20%的金属损失，Still Bright的方法有效避免了这一问题。\n*   **废物再利用：** 这种方法甚至可以用于处理尾矿——矿山废弃的、仍含有少量金属的堆积物，从而实现资源的进一步回收利用。\n*   **清洁环保：**\n    *   与大多数通过燃烧矿石中不需要的部分来提取铜的传统公司不同（这种方法会向大气中释放大量污染物），Still Bright采用了一种环保的湿法冶金工艺。\n    *   其技术原理是将含铜矿石浸泡在一种钒基溶液中，该溶液能够有效地将金属从矿石中萃取出来。\n    *   当钒溶液被“用尽”后，Still Bright的系统会利用电力对其进行再生，形成一个高效的闭环系统，大大减少了废物的产生和环境污染。\n*   **技术灵感：** 公司的核心技术灵感来源于一种名为“钒液流电池”的长时储能技术。Still Bright的首席技术官Jon Vardner在研究钒液流电池和利用钒提取铜的两个独立项目时，巧妙地将两者结合，从而诞生了这项创新。\n\n### 技术优势与成本效益\n\nStill Bright的技术不仅环保，还具备显著的经济和运营优势：\n\n*   **模块化与小型化：** Still Bright的系统采用模块化设计，可以灵活地安装在不同规模的矿山。由于其钒基处理过程速度极快（通常只需几分钟到一小时），因此所需的设备尺寸远小于传统精炼厂，却能达到相同的铜产量。\n*   **显著的成本节约：** Still Bright的设备成本比典型的火法冶金设备便宜70%到90%。虽然目前其工艺运行成本与传统精炼厂大致相同，但公司预计未来会有很大的降价空间，目标是成为最便宜的铜生产商之一。\n\n### 融资与未来展望\n\n为了将生产规模从目前的每年几吨提升到数百吨，Still Bright已成功完成1870万美元的种子轮融资。本轮融资由Material Impact和Breakthrough Energy Ventures领投，Azolla Ventures、Fortescue、Impact Science Ventures和SOSV也参与了投资。\n\nStill Bright对未来的发展有着清晰的规划：\n\n*   **产能提升：** 目前的试点装置年产2吨铜。公司计划在2027或2028年建造一个示范装置，年产能将达到500吨。最终的商业规模系统目标是年产10,000吨铜。\n*   **市场机遇：** Still Bright希望能够在大规模精炼铜后，受益于美国可能对进口铜征收的关税，并将由此产生的收入用于开发和部署商业规模的生产单元。\n\nStill Bright的创新方法为全球日益增长的铜需求提供了一个可持续且经济高效的解决方案，有望在未来的金属生产领域发挥关键作用。",
+      "shortSummary": "新泽西初创公司Still Bright开发了一种创新且清洁的铜提取技术，以应对全球铜需求激增和成本上升。该技术利用钒基溶液，能从矿石和尾矿中高效回收几乎所有铜，避免传统方法造成的污染和高达20%的金属损失。其设备成本比传统方法低70-90%，处理速度快，有望成为最便宜的铜生产商之一。公司已获得1870万美元种子轮融资，计划在未来几年大幅提升产能，最终目标年产10,000吨铜。",
+      "translated_title": "一家新泽西初创公司如何找到一种电气化方法来大幅削减铜成本",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Still Bright is now loaded up with $18.7 million in seed money to build out its demonstration unit."
+    },
+    {
+      "title": "PlayerZero 融资 1500 万美元，旨在阻止 AI 代理发布有缺陷的代码 (原标题: PlayerZero raises $15M to prevent AI agents from shipping buggy code )",
+      "link": "https://techcrunch.com/2025/07/30/playerzero-raises-15m-to-prevent-ai-agents-from-shipping-buggy-code/",
+      "pubDate": "Wed, 30 Jul 2025 16:00:00 +0000",
+      "isoDate": "2025-07-30T16:00:00.000Z",
+      "creator": "Julie Bort",
+      "summary": "# PlayerZero：AI 时代的代码免疫系统\n\n## 引言：AI 编程带来的新挑战\n随着硅谷加速迈向 AI 代理主导软件编程的未来，一个新的问题应运而生：如何在 AI 生成的代码投入生产前发现其中的缺陷（bug）。甚至像 OpenAI 这样的公司也面临着此类问题。\n\n## PlayerZero 的解决方案\n新获得融资的初创公司 PlayerZero 提供了一个解决方案：利用经过训练的 AI 代理，在代码投入生产之前发现并修复问题。公司首席执行官兼唯一创始人 Animesh Koratana 告诉 TechCrunch，他们的目标是为大型代码库提供一个“免疫系统”。\n\n## 创始人与愿景\nPlayerZero 由 26 岁的 Animesh Koratana 在斯坦福 DAWN 机器学习实验室期间创立，其导师是 Databricks 的联合创始人 Matei Zaharia。Koratana 早在“AI 糟粕”（AI slop）一词出现之前就预见到，AI 代理将像人类一样产生有缺陷的代码，并且由于 AI 生成代码的巨大数量，这个问题将更加严重。他意识到，人类将无法实际检查所有 AI 编写的代码，尤其对于企业所依赖的大型复杂代码库而言，这个问题尤为突出。\n\n## 融资情况\nPlayerZero 于周三宣布完成了 1500 万美元的 A 轮融资，由 Foundation Capital 的 Ashu Garg（Databricks 的早期支持者）领投。此前，该公司还获得了 500 万美元的种子轮融资，由 Green Bay Ventures 领投，并有多位知名天使投资人参与，包括 Matei Zaharia、Dropbox 首席执行官 Drew Houston、Figma 首席执行官 Dylan Field 和 Vercel 首席执行官 Guillermo Rauch。\n\n## 技术原理与工作方式\nKoratana 表示，PlayerZero 训练的模型“能够深入理解代码库，并理解它们的构建方式和架构”。该技术会研究企业过去出现的错误、问题和解决方案的历史记录。当出现问题时，PlayerZero 的产品能够“找出原因并修复它，然后从这些错误中学习，以防止它们再次发生”。Koratana 将其产品比作大型代码库的免疫系统。\n\n## 市场验证与客户\n将他的导师 Zaharia 争取为天使投资人是融资的第一步，但真正验证其想法的时刻是当他向另一位著名开发者 Guillermo Rauch（Vercel 创始人、流行开源 JavaScript 框架 Next.js 的创建者）展示演示时。Rauch 最初持怀疑态度，但在看到 PlayerZero 的代码在生产环境中实际运行后，他表示：“如果你真的能像你想象的那样解决这个问题，那将是一件非常了不起的事情。”\n\n尽管 PlayerZero 并非唯一一家试图解决 AI 生成代码缺陷问题的公司（例如 Anysphere 的 Cursor 最近推出了 Bugbot），但 PlayerZero 因其对大型代码库的重视而获得了关注。虽然其最初构想是为 AI 代理成为主要程序员的世界而设计，但目前已被多家使用代码协作者的大型企业所采用。例如，订阅计费公司 Zuora 是 PlayerZero 的重要客户之一，该公司正在其工程团队中广泛使用这项技术，包括监控其最重要的代码——计费系统。",
+      "shortSummary": "PlayerZero 获得 1500 万美元 A 轮融资，旨在解决 AI 代理生成代码中的缺陷问题。该公司由 Animesh Koratana 创立，利用 AI 代理在代码投入生产前发现并修复错误，为大型企业代码库提供“免疫系统”。PlayerZero 已被 Zuora 等大型企业采用，以确保 AI 辅助编程的质量和可靠性，应对未来 AI 大规模生成代码的挑战。",
+      "translated_title": "PlayerZero 融资 1500 万美元，旨在阻止 AI 代理发布有缺陷的代码",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "PlayerZero landed angel investors like Databricks' Matei Zaharia, Dropbox's Drew Houston, Figma's  Dylan Field, and Vercel's Guillermo Rauch, its founder says."
+    },
+    {
+      "title": "明尼苏达州启动国民警卫队，应对圣保罗网络攻击扰乱公共服务 (原标题: Minnesota activates National Guard as cyberattack on Saint Paul disrupts public services)",
+      "link": "https://techcrunch.com/2025/07/30/minnesota-activates-national-guard-as-cyberattack-on-saint-paul-disrupts-public-services/",
+      "pubDate": "Wed, 30 Jul 2025 15:50:47 +0000",
+      "isoDate": "2025-07-30T15:50:47.000Z",
+      "creator": "Zack Whittaker",
+      "summary": "# 明尼苏达州圣保罗市网络攻击事件\n\n## 概述\n2025年7月30日，明尼苏达州州长蒂姆·沃尔兹（Tim Walz）宣布启动该州国民警卫队，以应对其首府圣保罗市遭受的网络攻击。此次攻击始于7月25日，目前仍在持续扰乱城市运营和部分公共服务。\n\n## 攻击详情与影响\n*   **攻击性质未披露**：圣保罗市官员尚未公布此次网络攻击的具体性质。\n*   **服务中断**：攻击导致城市运营和部分公共服务持续中断。\n*   **城市应对措施**：圣保罗市市长梅尔文·卡特（Melvin Carter）表示，为遏制入侵者，城市已将政府系统下线，这导致了全市范围的Wi-Fi中断。\n*   **数据风险**：卡特市长指出，虽然城市存储的居民数据不多，但存在城市雇员数据被盗的风险。\n*   **受害者背景**：圣保罗市是美国最大的城市之一，拥有超过30万居民，也是近年来被黑客和勒索软件团伙攻击的最新一个主要城市。\n\n## 国民警卫队介入\n*   **启动原因**：应圣保罗市请求，州长沃尔兹授权国民警卫队的网络部队提供援助。沃尔兹表示，此次攻击的“规模和复杂性”超出了该市的应对能力。\n*   **警卫队职责**：国民警卫队将协助圣保罗市从网络攻击中恢复，并“确保重要服务的连续性以及圣保罗居民的安全”。\n\n## 相关图片\n![明尼苏达州圣保罗市雄伟的州议会大厦夜景，在夜空下被灯光戏剧性地照亮](https://techcrunch.com/wp-content/uploads/2025/07/st-paul-minnesota-2223153515.jpg?w=1024)\n图片来源：Gummy Bone / Getty Images",
+      "shortSummary": "明尼苏达州州长蒂姆·沃尔兹已启动国民警卫队，以应对圣保罗市遭受的网络攻击。此次攻击始于7月25日，已扰乱城市运营和公共服务。市长表示，为遏制入侵，政府系统已下线，导致全市Wi-Fi中断，并存在雇员数据被盗风险。国民警卫队将协助城市恢复并确保服务连续性，因为攻击的复杂性超出了城市应对能力。",
+      "translated_title": "明尼苏达州启动国民警卫队，应对圣保罗网络攻击扰乱公共服务",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/st-paul-minnesota-2223153515.jpg?w=1024",
+          "alt": "A scenic view of the majestic Minnesota State Capitol building in St. Paul, dramatically illuminated against the night sky",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Gov. Tim Walz activated the state military's cyber forces to help ensure public services continue to run as the city of Saint Paul battles an ongoing cyberattack."
+    },
+    {
+      "title": "Skechers推出带隐藏AirTag隔层的儿童鞋 (原标题: Skechers is making kids’ shoes with a hidden AirTag compartment)",
+      "link": "https://techcrunch.com/2025/07/30/skechers-is-making-kids-shoes-with-a-hidden-airtag-compartment/",
+      "pubDate": "Wed, 30 Jul 2025 15:13:18 +0000",
+      "isoDate": "2025-07-30T15:13:18.000Z",
+      "creator": "Amanda Silberling",
+      "summary": "# Skechers推出带AirTag隔层的儿童鞋\n\nSkechers近日推出了一系列专为儿童设计的运动鞋，其独特之处在于鞋内设有一个隐藏的隔层，父母可以将Apple AirTag放入其中。\n\n## 主要特点与功能\n*   **隐藏式隔层：** 鞋跟内部设有一个可掀开的小插片，下方即是用于放置AirTag的秘密隔层。\n*   **位置追踪：** 父母可以通过AirTag追踪孩子（或至少是孩子的鞋子）的位置。\n*   **非苹果合作：** 这款鞋子不附带AirTag，也不是Skechers与苹果公司的官方合作产品，而是Skechers自主开发的一款第三方配件。\n\n## AirTag的使用背景与争议\n*   **苹果官方定位：** 苹果公司将AirTag宣传为用于追踪钥匙、钱包或行李等物品的工具，而非用于追踪人类。\n*   **家长实际应用：** 尽管如此，许多父母已经开始利用AirTag来关注孩子的位置。市面上也已出现多种兼容AirTag的产品，如手环、鞋垫、胸针，甚至仿Crocs Jibbitz等。\n*   **技术限制：** AirTag并非为追踪快速移动目标（例如校车上的孩子）而设计。它不具备内置GPS功能，而是通过蓝牙信标技术向附近的苹果设备发出信号，从而估算其位置。\n*   **滥用风险：** AirTag曾被不法分子用于跟踪他人（例如藏在包或车内），这引发了一起集体诉讼。\n*   **苹果的反跟踪措施：** 苹果已实施了一些反跟踪功能，例如当一个陌生的AirTag随身移动时，用户的iPhone或Apple Watch会收到通知。\n\n## 潜在影响与伦理考量\n*   **儿童产品特性：** 由于Skechers的这款产品仅提供儿童尺码，因此不太可能被用于未经同意地监控成年人。\n*   **技术常态化：** 然而，此类监控技术的持续常态化可能会产生超出儿童看护范围的更广泛影响。\n*   **未来应用可能性：** Skechers或其他鞋类品牌未来可能会为患有痴呆症等可能无意中走失的成年人开发类似产品。\n*   **隐私担忧：** 尽管这些用途可能出于善意，但此类产品也可能被用于未经成年人同意的情况下进行追踪。",
+      "shortSummary": "Skechers推出一款带隐藏AirTag隔层的儿童运动鞋，旨在帮助父母追踪孩子位置。该产品并非苹果官方合作，AirTag需另购。尽管苹果将AirTag定位为物品追踪器，但家长已广泛用于孩子。此举引发了对隐私和潜在滥用（如跟踪）的担忧。虽然苹果已加入反跟踪功能，但此类技术的常态化可能带来更广泛的伦理问题，包括未经同意的成人追踪。",
+      "translated_title": "Skechers推出带隐藏AirTag隔层的儿童鞋",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Skechers launches kids' shoes with built-in AirTag holder. "
+    },
+    {
+      "title": "两名加州大学伯克利分校辍学生如何为其AI营销自动化初创公司筹集2800万美元 (原标题: How 2 UC Berkeley dropouts raised $28 million for their AI marketing automation startup)",
+      "link": "https://techcrunch.com/2025/07/30/how-2-uc-berkeley-dropouts-raised-28-million-for-their-ai-marketing-automation-startup/",
+      "pubDate": "Wed, 30 Jul 2025 15:00:00 +0000",
+      "isoDate": "2025-07-30T15:00:00.000Z",
+      "creator": "Julie Bort",
+      "summary": "# AI营销自动化初创公司Conversion：两名伯克利辍学生如何筹集2800万美元\n\n## 公司概览与融资\nConversion是一家由两名加州大学伯克利分校辍学生在五年前创立的AI驱动营销自动化初创公司。该公司近期完成了2800万美元的A轮融资，由Abstract领投，True Ventures和HOF Capital参与。加上此前的200万美元种子轮融资，Conversion的总融资额已达3000万美元。\n\n## 创业历程\nConversion的创业故事颇具戏剧性：\n*   **CEO的早期萌芽：** 联合创始人兼CEO Neil Tewari（现年24岁）在高中时因上课观看TechCrunch Disrupt直播被抓，被罚留校。他没有打电话给父母，而是联系了一位家庭密友。在回家的路上，Tewari向这位朋友解释了自己对创业的兴趣，四年后，这位朋友成为了Conversion的第一位投资者。\n*   **与CTO的相遇：** Tewari在伯克利大学的室友James Jiao（现任Conversion联合创始人兼CTO）也梦想着创立自己的公司。两人尝试开发各种产品，包括帮助营销人员购买产品植入广告的工具。\n*   **发现核心创意：** 他们在注册HubSpot以协助营销任务时，偶然发现了Conversion的创意。他们决定在HubSpot之上构建一些额外的自动化功能，最初只是为了自己使用。\n*   **客户验证：** 联合创始人非常喜欢他们内部开发的营销工具，于是开始思考是否可以将其商业化。他们花了大约两个月时间，对160位营销副总裁（来自50至500名员工的企业）进行了“客户发现”访谈，得到了远超预期的积极反馈。营销团队虽然深度嵌入了现有工具，但普遍抱怨无法自动化的部分。这让他们找到了创业方向。\n*   **辍学创业：** 在家庭朋友的引荐下，他们获得了200万美元的种子轮融资。19岁时，两人从大学辍学，全身心投入到Conversion的工作中。\n*   **艰苦的早期生活：** 为了节约资金，创始人在早期与五名室友合租一套两居室、一卫的公寓，房间里住两人，沙发和壁橱里也睡着人。\n\n## 产品与AI整合\n*   **AI核心：** 随着ChatGPT的兴起，许多传统营销自动化工具开始添加AI和聊天集成，但并非所有功能都支持这些集成。营销团队渴望能够“丰富联系人信息”和“自动化工作流”等功能。\n*   **Conversion的优势：** Conversion从一开始就将AI融入产品，这意味着它能够执行诸如组织潜在客户、自动化个性化后续邮件等任务。\n*   **市场表现：** 随着对AI兴趣的飙升，Conversion的前景也随之看好。在过去两年中，该公司年经常性收入（ARR）已接近1000万美元，约90%的客户是中型企业，这些企业通常会放弃传统的应用程序转而使用Conversion。\n\n## 市场竞争与战略\n*   **竞争格局：** Conversion面临激烈的市场竞争，除了HubSpot、Adobe Marketo、Salesforce Pardot等传统营销自动化工具外，还有Jasper、Writer AI、Iterable、Copy.ai等其他AI原生初创公司。\n*   **差异化策略：** 尽管市场拥挤，Tewari对公司充满信心。他们的策略是瞄准那些使用旧营销工具的企业，而不是首次选择工具的初创公司。\n\n## 现状\nConversion目前运营良好，两位创始人已搬入各自独立的公寓，拥有自己的房间，不再有室友睡在壁橱里。",
+      "shortSummary": "AI营销自动化初创公司Conversion由两名加州大学伯克利分校辍学生创立，已筹集总计3000万美元，其中包括2800万美元的A轮融资。该公司将AI深度融入其产品，能自动化潜在客户管理和个性化邮件等任务，帮助中型企业取代传统营销工具。Conversion年经常性收入已接近1000万美元，其策略是瞄准使用旧工具的企业，在竞争激烈的市场中寻求增长。",
+      "translated_title": "两名加州大学伯克利分校辍学生如何为其AI营销自动化初创公司筹集2800万美元",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "A marketing automation startup called Conversation has a founding story that sounds like it could have been an episode of the HBO show “Silicon Valley.”"
+    },
+    {
+      "title": "生成式AI应用在2025年上半年收入翻倍，下载量增至17亿次 (原标题: GenAI apps doubled their revenue, grew to 1.7B downloads in first half of 2025)",
+      "link": "https://techcrunch.com/2025/07/30/gen-ai-apps-doubled-their-revenue-grew-to-1-7b-downloads-in-first-half-of-2025/",
+      "pubDate": "Wed, 30 Jul 2025 14:14:46 +0000",
+      "isoDate": "2025-07-30T14:14:46.000Z",
+      "creator": "Ivan Mehta",
+      "summary": "## 生成式AI应用在2025年上半年实现爆炸式增长\n\n根据市场情报公司Sensor Tower的报告，生成式AI（GenAI）应用在2025年上半年（H1 2025）实现了下载量和应用内收入的显著增长。\n\n### 关键增长数据（H1 2025 vs H2 2024）\n\n*   **下载量翻倍**：GenAI应用的下载量从2024年下半年（H2 2024）的10亿次增至2025年上半年的17亿次。\n*   **应用内收入翻倍**：应用内收入从H2 2024的9.32亿美元增至H1 2025的18.7亿美元。\n*   **用户使用时长大幅增加**：用户在GenAI应用上花费的时间从H2 2024的85亿小时跃升至H1 2025的156亿小时，共计4260亿次会话。\n\n### 市场表现概览\n\n*   **亚洲市场领先**：\n    *   亚洲是GenAI应用增长最快的市场，下载量增长了80%，市场份额达到42.6%，主要得益于印度和中国大陆等市场。\n    *   欧洲和北美地区的下载量增长率分别为51%和39%。\n\n    ![图片 1](https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-30-at-6.07.17PM.jpg?w=680)\n    *图片来源：Sensor Tower*\n\n    ![图片 2](https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-30-at-6.08.07PM.jpg?w=680)\n    *图片来源：Sensor Tower*\n\n*   **应用内购买市场**：\n    *   拉丁美洲的应用内购买增长率最高。\n    *   北美洲在市场份额方面仍保持领先，占40%。\n\n### ChatGPT的持续增长与用户粘性\n\n*   **收入主导地位**：ChatGPT是除中国外所有国家应用内收入最高的应用。然而，中国的DeepSeek在发布后几周内的下载量表现更佳。\n*   **用户使用时长领先**：ChatGPT在AI助手中用户使用时长领先，H1 2025平均每月使用超过12天。其他受欢迎的应用包括Character AI、PolyBuzz、DeepSeek和Perplexity。\n\n    ![图片 3](https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-30-at-4.39.49PM.jpg?w=680)\n    *图片来源：Sensor Tower*\n\n*   **惊人的用户粘性**：\n    *   Sensor Tower指出，OpenAI的ChatGPT应用的使用频率与X（原Twitter）和Reddit相当，仅次于Google。\n    *   与去年相比，ChatGPT的周末使用量也有所改善，表明用户在工作之外也依赖这款AI聊天应用。\n\n    ![图片 4](https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-30-at-4.41.54PM.jpg?w=680)\n    *图片来源：Sensor Tower*\n\n*   **使用模式趋近搜索引擎**：报告称，ChatGPT的使用模式越来越接近Google，成为消费者在工作内外的主要搜索工具。在H1 2025，ChatGPT的平均每日使用时长为16分钟，而顶级搜索引擎和浏览器为18.2分钟，两者差距正在缩小。\n\n    ![图片 5](https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-30-at-6.00.30PM.jpg?w=680)\n    *图片来源：Sensor Tower*\n\n*   **多功能应用场景**：除了搜索，用户还使用ChatGPT获取健康与保健、购物、个人理财和膳食准备建议。2025年第二季度，超过三分之一的ChatGPT提示与生活方式和娱乐相关。\n*   **跨平台访问**：在美国，超过15%的ChatGPT用户通过网页和移动设备访问，高于Temu和Threads等平台。尽管如此，它仍落后于Google、Facebook、YouTube、Google Docs和Amazon等拥有超过25%跨平台用户的服务。\n\n### 应用名称中“AI”的趋势\n\n*   **“AI”词汇的普及**：Sensor Tower报告显示，“AI”一词在App Store和Play Store的应用描述中出现了超过10万次。\n*   **下载量提升**：在H1 2025，提及“AI”的应用被下载了75亿次，约占总下载量的10%。\n*   **广泛应用于各类别**：在过去12个月中，AI助手、AI内容生成、照片编辑、营养与饮食、备考、辅导与学习、翻译以及其他兴趣服务等类别的应用越来越多地添加了AI相关术语。\n*   **短期下载提振**：尽管在应用名称中添加“AI”能带来短期的下载量提升，但这种效果通常是暂时的。\n\n    ![图片 6](https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-30-at-6.03.17PM.jpg?w=680)\n    *图片来源：Sensor Tower*",
+      "shortSummary": "Sensor Tower报告显示，2025年上半年生成式AI应用实现爆炸式增长。下载量从10亿增至17亿次，应用内收入翻倍至18.7亿美元，用户使用时长也大幅提升。亚洲在下载量增长方面领先，北美洲则在收入市场份额上保持主导。ChatGPT是收入最高的应用，用户粘性极高，使用模式正趋近主流搜索引擎，并被广泛用于生活娱乐等场景。同时，应用名称中添加“AI”已成为趋势，能带来短期下载量提振。",
+      "translated_title": "生成式AI应用在2025年上半年收入翻倍，下载量增至17亿次",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-30-at-6.07.17PM.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-30-at-6.08.07PM.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-30-at-4.39.49PM.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-30-at-4.41.54PM.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-30-at-6.00.30PM.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-30-at-6.03.17PM.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "People are downloading and spending money on GenAI apps more than ever. "
+    },
+    {
+      "title": "YouTube 放宽获利视频的脏话规定 (原标题: YouTube loosens profanity rules for monetized videos)",
+      "link": "https://techcrunch.com/2025/07/30/youtube-loosens-profanity-rules-for-monetized-videos/",
+      "pubDate": "Wed, 30 Jul 2025 14:01:21 +0000",
+      "isoDate": "2025-07-30T14:01:21.000Z",
+      "creator": "Ivan Mehta",
+      "summary": "## YouTube 放宽营利视频脏话规定\n\nYouTube 正在调整其与脏话相关的规定，允许创作者在视频中包含脏话并进行营利，前提是脏话的使用仅限于视频的前七秒。\n\n![YouTube logo](https://techcrunch.com/wp-content/uploads/2024/07/YouTube-Thumb-Text-4-1.png?w=1024)\n\n### 规定调整背景与历史\n\n*   **2022年11月**：YouTube 曾修改规定，如果创作者在视频的前8-15秒内使用脏话，其视频可能无法获得任何广告收入。\n*   **2023年3月**：由于大量反对意见，公司再次修改规定，允许此类视频获得有限的广告收入，除非视频的大部分内容都包含脏话。\n\n### 最新调整的原因\n\nYouTube 变现负责人 Conor Kavanagh 在周二晚间的一段视频中宣布了最新的变化。他解释说，两年前的规定是为了使 YouTube 视频与广播标准保持一致。当时，广告商期望 YouTube 上的广告与脏话之间保持距离。\n\n然而，Kavanagh 指出：\n*   “这些期望已经改变。”\n*   “广告商已经能够根据他们期望的脏话程度来定位内容。”\n\n### 注意事项\n\n尽管规定有所放宽，但如果创作者在视频标题或缩略图中使用中度或强烈脏话，其视频的变现能力仍可能受到限制。",
+      "shortSummary": "YouTube 放宽了获利视频的脏话规定，允许创作者在视频前七秒内使用脏话。此举扭转了此前更严格的政策，原因是广告商的期望发生变化，且他们现在能根据脏话程度定位内容。但标题或缩略图中的脏话仍可能限制视频获利。",
+      "translated_title": "YouTube 放宽获利视频的脏话规定",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2024/07/YouTube-Thumb-Text-4-1.png?w=1024",
+          "alt": "YouTube logo",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "YouTube is tweaking its profanity-related rules to allow creators to monetize videos with swearing in them, provided the profanity is contained to the first seven seconds of the video."
+    },
+    {
+      "title": "AIR 获得 2300 万美元融资，将其电动垂直起降飞行器引入美国 (原标题: AIR lands $23M to bring its eVTOLs to the US)",
+      "link": "https://techcrunch.com/2025/07/30/air-secures-23m-to-boost-u-s-expansion-and-evtol-innovation/",
+      "pubDate": "Wed, 30 Jul 2025 13:15:00 +0000",
+      "isoDate": "2025-07-30T13:15:00.000Z",
+      "creator": "Kate Park",
+      "summary": "## AIR 获得 2300 万美元融资，加速电动垂直起降飞行器发展并进军美国市场\n\n### 公司概况与双轨发展策略\n\n以色列电动垂直起降飞行器（eVTOL）初创公司 AIR 采取双轨发展策略，同时开发载人飞行器（用于个人或商业出租）和无人飞行器（用于物流和国防）。这两种飞行器共享相同的机身和核心系统，以实现同步开发和规模化生产。公司目前提供：\n\n*   **AIR ONE**：一款载人 eVTOL，专为个人使用设计。自2023年末首次交付货运eVTOL以来，AIR ONE已获得超过2500份预订单。\n*   **无人 eVTOL**：用于货物运输、复杂物流和国防应用。公司计划今年交付15架货运eVTOL。\n\n### 融资情况与资金用途\n\nAIR 近期完成了由 Entrée Capital 领投、现有投资者 Dr. Shmuel Harlap 参与的 A 轮融资，成功筹集 **2300 万美元**。公司首席执行官兼联合创始人 Rani Plaut 表示，这笔新资金将用于：\n\n*   扩大其在以色列的生产设施。\n*   招聘更多员工。\n*   支持公司向美国市场的扩张。\n\n此次融资正值美国发布一项促进国内无人机和 eVTOL 发展的行政命令，以及 FAA 更新 MOSAIC 规则以扩大认证途径之际。\n\n### 认证路径与法规遵循\n\n*   **无人货运飞行器**：目前在实验适航证书（EAC）下运行，用于物流和军民两用任务。EAC 允许飞机在严格的条件和限制下进行开发、测试或研究飞行。公司计划在完成认证流程后，将 EAC 转换为“型号”认证（Type certification），这意味着飞机符合所有适用的安全和监管标准，可以进行商业生产和运营。\n*   **AIR ONE (载人型)**：预计将根据新的 MOSAIC 规则获得轻型运动飞机（LSA）认证。LSA 认证的飞机被限制在人口稠密区域之外和受控空域之外飞行。Plaut 表示，AIR ONE 从设计之初就符合 MOSAIC LSA 标准，旨在实现更简化的认证途径。公司目标是在2026年规则生效后，成为首批获得 LSA 认证并交付给私人客户的载人 eVTOL。\n\n### 美国市场机遇与竞争格局\n\n美国市场为 eVTOL 公司提供了巨大的企业和政府合同机会，尤其是在当前美国政府采取强硬国防立场的情况下。然而，AIR 将面临激烈竞争：\n\n*   **主要竞争对手**：Joby Aviation 和 Archer Aviation 已与航空公司建立合作，提供空中出租车服务；它们与 Beta Technologies 也已获得军事合同，测试其飞机的侦察和物流能力。\n*   **AIR 的劣势**：目前尚未在美国本土生产 eVTOL，这对于赢得政府合同至关重要。\n\n### AIR 的竞争优势\n\n尽管面临竞争，AIR 认为其设计架构和成本控制使其具有优势：\n\n*   **共享设计 DNA**：载人型和无人型飞行器共享统一的设计架构，实现跨平台升级，简化开发、制造和可扩展性。\n*   **紧凑尺寸与折叠翼机制**：无需机场或复杂操作，只需平坦地面即可起降，可停放在大多数车库或车道中，解决了重要的基础设施障碍。\n*   **简化操作流程（SOPs）**：无人机型遵循简化的 SOPs，即使是受过最低限度培训的地面人员也能操作。\n*   **成本控制**：通过应用汽车级制造原则实现可扩展生产，缩小成本差距。\n\n### 未来展望\n\nAIR 希望利用本轮融资支持其在美国建立高产量制造中心的计划，以进一步巩固其市场地位。",
+      "shortSummary": "以色列eVTOL初创公司AIR获得2300万美元A轮融资，用于扩大生产和进军美国市场。该公司开发载人（AIR ONE）和无人（货运/国防）两种eVTOL，共享核心系统。AIR ONE已获2500多份预订单，目标是成为首批获LSA认证的载人eVTOL。尽管面临激烈竞争，AIR凭借其统一设计、紧凑尺寸和成本控制等优势，计划在美国建立制造中心，以抓住企业和政府合同机遇。",
+      "translated_title": "AIR 获得 2300 万美元融资，将其电动垂直起降飞行器引入美国",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Israel-based eVTOL startup AIR has raised $23 million to scale production of both its piloted and uncrewed cargo aircraft, and enter the U.S."
+    },
+    {
+      "title": "Observe 持续适应软件可观测性不断变化的世界 (原标题: Observe continues to adapt to the changing world of software observability)",
+      "link": "https://techcrunch.com/2025/07/30/observe-continues-to-adapt-to-the-changing-world-of-software-observability/",
+      "pubDate": "Wed, 30 Jul 2025 13:00:00 +0000",
+      "isoDate": "2025-07-30T13:00:00.000Z",
+      "creator": "Rebecca Szkutak",
+      "summary": "# Observe 持续适应软件可观测性不断变化的世界\n\nObserve 是一家可观测性平台公司，成立于2017年，旨在应对软件可观测性领域的变化。随着公司更频繁地发布新版本软件并产生大量数据，Observe 不断发展。目前，该公司正在积极响应最新的技术重大转变：人工智能（AI）。\n\n## AI 对 Observe 的影响\n\nAI 的进步对 Observe 而言既是机遇也是挑战：\n\n*   **机遇**：Observe 的可观测性产品集成了 AI 代理，帮助客户更快地发现和修复问题。\n*   **挑战**：AI 使得公司发布软件的速度更快，数据量也随之膨胀，这使得可观测性变得更加复杂。首席执行官 Jeremy Burton 指出，随着 AI 代理的持续发展，未来网络中可能会有成百上千的代理相互作用，一旦出现问题，追踪根源将变得异常困难。\n\n## Observe 的适应策略\n\nObserve 正在积极适应行业变化，采取了以下关键举措：\n\n*   **发布 Model Context Protocol (MCP) 服务器**：\n    *   今年早些时候发布，允许开发人员从 AI 编码工具和大型语言模型中访问其可观测性数据。\n    *   旨在满足开发人员当前的工作习惯，帮助他们更轻松地完成任务。\n    *   Burton 提到，已有客户利用 MCP 服务器进行“相当激进的工作流程”，例如让 AI 分析故障工单，使用 Observe 找出问题，描述有问题的代码，并建议修复方案，这在几年前还属于科幻范畴。\n*   **支持 Apache Iceberg**：\n    *   正在努力支持 Apache Iceberg，这是一种开源数据表格式，允许企业拥有并标准化自己的数据。\n    *   Observe 预计将在今年年底前支持该格式，以满足客户对数据所有权和标准化的需求。\n\n## 业务表现与未来展望\n\n*   **财务增长**：Observe 在2024年收入几乎翻了三倍，客户总保留率达到93%。\n*   **客户基础**：拥有包括 CapitalOne、Paramount 和 Dialpad 在内的大型企业客户。\n*   **融资情况**：在由 Sutter Hill Ventures 领投，Madrona Ventures、Alumni Ventures 以及 Snowflake 等战略投资者参与的 C 轮融资中，筹集了1.56亿美元。\n*   **资金用途**：这笔资金将用于研发和招聘。\n*   **未来计划**：Observe 希望很快推出 Apache Iceberg 支持的私人预览版。Burton 表示，尽管已取得一些成就，但感觉才刚刚开始。",
+      "shortSummary": "Observe 是一家可观测性平台，正积极适应 AI 带来的软件开发和数据量激增。该公司将 AI 代理整合到产品中以加速问题解决，并发布了 MCP 服务器，使开发者能通过 AI 工具访问可观测性数据。Observe 还计划支持 Apache Iceberg。2024年其收入几乎翻三倍，并成功筹集1.56亿美元用于研发和招聘，以应对日益复杂的软件可观测性挑战。",
+      "translated_title": "Observe 持续适应软件可观测性不断变化的世界",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Observe just raised a $156 million Series C round as the company looks to offer support for Apache Iceberg by the end of the year. "
+    },
+    {
+      "title": "谷歌表示将签署欧盟人工智能行为准则 (原标题: Google says it will sign EU’s AI code of practice)",
+      "link": "https://techcrunch.com/2025/07/30/google-says-it-will-sign-eus-ai-code-of-practice/",
+      "pubDate": "Wed, 30 Jul 2025 12:57:03 +0000",
+      "isoDate": "2025-07-30T12:57:03.000Z",
+      "creator": "Ram Iyer",
+      "summary": "## 谷歌签署欧盟人工智能行为准则\n\n谷歌已确认将签署欧盟的通用人工智能行为准则，这是一个旨在帮助人工智能开发者实施流程和系统以遵守欧盟《人工智能法案》的自愿性框架。\n\n*   **背景与对比**\n    *   谷歌的承诺与Meta形成对比，Meta本月早些时候表示不会签署该准则，称欧盟实施其人工智能立法的行为是“越权”，并指出欧洲在人工智能领域“走错了路”。\n    *   谷歌的承诺是在针对“具有系统性风险的通用人工智能模型”的规则于8月2日生效前几天做出的。\n    *   可能受这些规则影响的公司包括Anthropic、谷歌、Meta和OpenAI等主要公司，以及其他几个大型生成模型。这些公司将有两年时间完全遵守《人工智能法案》。\n\n*   **谷歌的保留意见**\n    *   谷歌全球事务总裁肯特·沃克（Kent Walker）在周三的一篇博客文章中承认，行为准则的最终版本比欧盟最初提出的要好，但他仍然对《人工智能法案》和该准则表示保留。\n    *   沃克写道：“我们仍然担心《人工智能法案》和行为准则可能会减缓欧洲人工智能的开发和部署。特别是，偏离欧盟版权法、减缓审批的步骤或暴露商业秘密的要求可能会阻碍欧洲模型的开发和部署，损害欧洲的竞争力。”\n\n*   **行为准则的主要内容**\n    *   通过签署欧盟的行为准则，人工智能公司将同意遵循一系列指导方针，其中包括：\n        *   提供关于其人工智能工具和服务的最新文档。\n        *   不得使用盗版内容训练人工智能。\n        *   遵守内容所有者的请求，不在其数据集中使用其作品。\n\n*   **欧盟《人工智能法案》概述**\n    *   作为一项针对人工智能应用的里程碑式风险管理法规，欧盟的《人工智能法案》禁止一些“不可接受的风险”用例，例如认知行为操纵或社会评分。\n    *   该法案还定义了一系列“高风险”用途，包括生物识别和面部识别，以及人工智能在教育和就业等领域的应用。\n    *   该法案还要求开发者注册人工智能系统并履行风险和质量管理义务。",
+      "shortSummary": "谷歌已确认将签署欧盟的通用人工智能行为准则，以遵守欧盟《人工智能法案》。此举与Meta此前拒绝签署形成对比。谷歌虽承诺签署，但仍担忧该法案可能阻碍欧洲人工智能发展，尤其是在版权和商业秘密方面。该准则要求公司提供文档、避免盗版内容训练，并尊重内容所有者的数据使用请求。欧盟《人工智能法案》禁止“不可接受的风险”用途，并对“高风险”应用提出要求。",
+      "translated_title": "谷歌表示将签署欧盟人工智能行为准则",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "By signing the EU’s code of practice, AI companies would agree to follow a slate of guidelines, which include providing updated documentation about their AI tools and services; no training AI on pirated content; and complying with requests from content owners to not use their works in their datasets."
+    },
+    {
       "title": "脚注：TikTok在美国推出众包事实核查功能 (原标题: Footnotes, TikTok’s crowdsourced fact-checks, launches in the US)",
       "link": "https://techcrunch.com/2025/07/30/tiktoks-crowdsourced-fact-checks-called-footnotes-launch-in-the-u-s/",
       "pubDate": "Wed, 30 Jul 2025 11:00:00 +0000",
@@ -54,7 +333,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "The social network is bringing new parental controls to Family Pairing, its feature that allows parents to link their accounts with their teen's account to customize safety settings."
+      "content": "The social network announced on Wednesday that it's releasing a slew of new features, including enhanced parental controls, additional tools for creators, and a new interactive well-being feature."
     },
     {
       "title": "太空军在40亿美元卫星通信竞赛中押注商业公司 (原标题: Space Force bets on commercial entrants in $4B satcom contest)",
@@ -101,262 +380,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Both Luma and Runway have reportedly held conversations with self-driving car and robotics companies as they look toward the future. "
-    },
-    {
-      "title": "谷歌称英国政府未要求为其用户数据设置加密后门 (原标题: Google says UK government has not demanded an encryption backdoor for its users’ data)",
-      "link": "https://techcrunch.com/2025/07/29/google-says-uk-government-not-demanded-encryption-backdoor-for-its-users-data/",
-      "pubDate": "Tue, 29 Jul 2025 19:50:00 +0000",
-      "isoDate": "2025-07-29T19:50:00.000Z",
-      "creator": "Zack Whittaker",
-      "summary": "## 英国政府对科技公司加密后门的要求\n\n### 背景与苹果公司的案例\n*   **英国政府立场转变**：据报道，在受到美国政府严厉谴责后，英国政府正在放弃此前要求苹果公司为其全球客户数据构建秘密后门的要求。\n*   **苹果面临的秘密命令**：\n    *   今年早些时候，《华盛顿邮报》报道称，英国内政部通过英国监控法庭寻求一项秘密法庭命令，要求苹果允许英国当局访问全球任何客户的端到端加密云数据，包括iPhone和iPad备份。\n    *   苹果公司以只有用户而非苹果才能访问其服务器上存储的数据的方式进行加密。\n    *   根据英国法律，受秘密监控法庭命令约束的科技公司（如苹果）被法律禁止透露命令的细节或其存在，尽管相关细节已公开泄露。\n    *   批评者称针对苹果的秘密命令“严酷”，认为其将对用户的隐私产生全球性影响。\n    *   苹果公司已就该命令的合法性提出上诉。\n\n### 对其他科技公司的调查与回应\n*   **美国参议员的关注**：美国参议员罗恩·怀登（Ron Wyden）致信美国情报官员图尔西·加巴德（Tulsi Gabbard），询问其他科技巨头是否也收到了英国政府的秘密后门要求。\n*   **Meta的回应**：Meta（WhatsApp和Facebook Messenger的母公司）已于3月17日告知怀登办公室，公司“未收到任何关于为我们的加密服务设置后门的命令，例如报道中关于苹果的命令。”\n*   **谷歌的回应**：\n    *   谷歌最初拒绝向怀登办公室透露是否收到此类命令，只表示如果收到“技术能力通知”，将禁止披露该事实。\n    *   随后，谷歌向TechCrunch证实，公司“未收到技术能力通知”，这是谷歌首次确认其未受到类似的英国命令。\n    *   谷歌发言人卡尔·瑞安（Karl Ryan）表示：“我们从未在产品中构建任何机制或‘后门’来规避端到端加密。如果说一个产品是端到端加密的，那它就是。”\n\n### 美国参议员的呼吁\n*   怀登的信函（由《华盛顿邮报》首次报道并与TechCrunch分享）呼吁加巴德公开其对“英国监控法律及其据报道对美国公司提出的秘密要求所构成的国家安全风险”的评估。",
-      "shortSummary": "英国政府据报道曾要求苹果公司为其用户数据设置加密后门，但谷歌已明确表示未收到此类要求，这是其首次公开确认。Meta也否认收到类似命令。此前，苹果公司因被要求访问其全球用户的加密数据而面临争议，并已提出上诉。美国参议员罗恩·怀登正呼吁美国情报官员评估英国监控法律对国家安全的风险，强调科技公司在隐私保护方面的立场。",
-      "translated_title": "谷歌称英国政府未要求为其用户数据设置加密后门",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Google refused to tell a U.S. senator whether the company had received a secret U.K. surveillance order demanding access to encrypted data, similar to an order served on Apple earlier this year."
-    },
-    {
-      "title": "Anthropic据报道估值接近1700亿美元，或将进行50亿美元融资 (原标题: Anthropic reportedly nears $170B valuation with potential $5B round)",
-      "link": "https://techcrunch.com/2025/07/29/anthropic-reportedly-nears-170b-valuation-with-potential-5b-round/",
-      "pubDate": "Tue, 29 Jul 2025 18:59:36 +0000",
-      "isoDate": "2025-07-29T18:59:36.000Z",
-      "creator": "Marina Temkin",
-      "summary": "## Anthropic估值与融资动态\n\n据彭博社报道，人工智能公司Anthropic正接近达成一项30亿至50亿美元的融资协议，这将使其大型语言模型开发商的估值达到1700亿美元。\n\n### 关键融资信息\n\n*   **潜在估值**：1700亿美元，这将是其此前615亿美元估值的近三倍。\n*   **融资规模**：预计在30亿至50亿美元之间。\n*   **主要投资者**：Iconiq Capital正在牵头本轮融资，并有可能加入第二位主要投资者。\n*   **潜在参与方**：据报道，Anthropic还与卡塔尔投资局（Qatar Investment Authority）和新加坡主权财富基金GIC进行了洽谈。\n\n### 此前融资情况\n\n*   **上一轮估值**：2024年3月，Anthropic在由Lightspeed Venture Partners牵头的35亿美元融资后，估值达到615亿美元。\n*   **其他参与者**：上一轮融资的参与者包括Bessemer Venture Partners、Cisco Investments、D1 Capital Partners、Fidelity Management & Research Company、General Catalyst、Jane Street、Menlo Ventures和Salesforce Ventures。\n\n### CEO对融资来源的看法\n\n*   **首席执行官的顾虑**：尽管Anthropic的使命是开发注重安全的AI模型，但其首席执行官Dario Amodei在给员工的一份备忘录中承认，他对接受独裁政府主权财富基金的资金“并不感到兴奋”。\n*   **原因**：为了满足开发AI模型所需的巨额资金需求，公司不得不转向中东资本。\n*   **Amodei的观点**：Amodei在泄露的备忘录中写道：“不幸的是，我认为‘任何坏人都不能从我们的成功中受益’是一个很难经营企业的原则。”\n\nAnthropic尚未立即回应置评请求。",
-      "shortSummary": "Anthropic据报道正洽谈一笔30亿至50亿美元的融资，估值有望达到1700亿美元，由Iconiq Capital牵头。这将使其估值几乎翻三倍。尽管CEO Dario Amodei对接受独裁政府主权财富基金的资金表示不悦，但为满足AI开发巨额资金需求，公司不得不寻求中东资本。",
-      "translated_title": "Anthropic据报道估值接近1700亿美元，或将进行50亿美元融资",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-2153561878.jpg?w=1024",
-          "alt": "Dario Amodei, co-founder and chief executive officer of Anthropi.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2024/03/Marina-Temkin.jpg",
-          "alt": "Marina Temkin",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The new round is being led by Iconiq Capital, with the possibility of a co-lead investor joining."
-    },
-    {
-      "title": "SOSV押注等离子体将改变一切，从半导体到航天器 (原标题: SOSV bets plasma will change everything from semiconductors to spacecraft)",
-      "link": "https://techcrunch.com/2025/07/29/sosv-bets-plasma-will-change-everything-from-semiconductors-to-spacecraft/",
-      "pubDate": "Tue, 29 Jul 2025 18:26:17 +0000",
-      "isoDate": "2025-07-29T18:26:17.000Z",
-      "creator": "Tim De Chant",
-      "summary": "## SOSV押注等离子体技术将带来变革\n\n风险投资公司SOSV正大力投资等离子体技术，认为它将成为一种多功能工具，能够从根本上改变多个行业。该公司计划在未来五年内投资超过25家与等离子体相关的初创企业。\n\n### 新实验室与合作\nSOSV正在与新泽西州经济发展局（NJEDA）以及美国能源部普林斯顿等离子体物理实验室（Princeton Plasma Physics Laboratory）合作，开设一个新的Hax实验室空间，以支持等离子体技术的发展。\n\n### 等离子体的广泛应用潜力\nSOSV的普通合伙人Duncan Turner表示，等离子体的应用潜力巨大，远超预期：\n\n*   **核聚变能源**：这是等离子体初创企业的明显切入点。核聚变通过将燃料压缩成致密等离子体，使其原子融合并释放能量。Turner认为，在聚变领域仍有大量尚未发掘的潜力。\n*   **半导体制造**：等离子体已在半导体制造中发挥作用，但新的应用有望解锁新的材料和工艺。\n*   **航天器推进**：等离子体推进器比传统推进器更省燃料，可为航天器带来益处。\n*   **化学品生产**：利用等离子体可以开辟全新的方式来制造化学品，例如用于化肥的氨，或从二氧化碳中生产燃料。\n*   **现有投资案例**：SOSV已投资了两家公司，其中包括Yplasma，该公司利用等离子体执行器来冷却数据中心芯片并控制风力涡轮机叶片上的气流。\n\nTurner指出，等离子体的应用潜力巨大，可能涉及数百家公司。\n\n### 图片\n![等离子体放电](https://techcrunch.com/wp-content/uploads/2025/07/GettyImages-1205041726.jpg?w=1024)\n图片来源：LYagovy / Getty Images",
-      "shortSummary": "SOSV正大力投资等离子体技术，计划在未来五年内支持超过25家相关初创企业，并开设新实验室。该公司认为等离子体是多功能工具，有望彻底改变核聚变能源、半导体制造、航天器推进以及化学品生产等领域。SOSV已投资Yplasma等公司，并预计该领域将涌现数百家企业。",
-      "translated_title": "SOSV押注等离子体将改变一切，从半导体到航天器",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/GettyImages-1205041726.jpg?w=1024",
-          "alt": "Electricity lights up krypton gas, showing a plasma discharge.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "SOSV is investing in more than 25 plasma-related startups over the next five years."
-    },
-    {
-      "title": "Cash App 用户现在可以为团体支付汇集资金——甚至包括非用户 (原标题: Cash App users can now pool money for group payments — even with non-users)",
-      "link": "https://techcrunch.com/2025/07/29/cash-app-users-can-now-pool-money-for-group-payments-even-with-non-users/",
-      "pubDate": "Tue, 29 Jul 2025 17:16:17 +0000",
-      "isoDate": "2025-07-29T17:16:17.000Z",
-      "creator": "Lauren Forristal",
-      "summary": "# Cash App 推出“资金池”功能\n\nCash App 于周二推出了一项名为“资金池”（pools）的新点对点支付功能，旨在方便用户与朋友或家人共同分摊费用。\n\n## 功能概述\n\n*   **目的**：允许用户汇集资金，用于支付团体开销，例如：\n    *   杂货账单\n    *   餐厅账单\n    *   度假费用\n    *   团体礼物\n*   **可用性**：\n    *   初期向部分用户开放。\n    *   未来几个月将更广泛地推广。\n\n## 如何使用\n\n1.  **创建资金池**：用户可通过支付选项卡创建资金池。\n2.  **设定目标金额**：设定一个预期的总金额。\n3.  **邀请贡献者**：\n    *   **Cash App 用户**：通过其 $cashtag 邀请。\n    *   **非 Cash App 用户**：通过短信发送链接邀请，非用户可以通过 Apple Pay 或 Google Pay 进行支付。\n4.  **管理资金池**：资金池的组织者可以随时关闭资金池，并将汇集的资金转入其 Cash App 余额。\n\n## 战略意义\n\n*   **促进参与**：非 Cash App 用户能够通过 Apple Pay 和 Google Pay 贡献资金，这一点尤为重要，因为它鼓励了更广泛的参与。\n*   **业务增长需求**：\n    *   Cash App 在第一季度报告称，消费者对其应用的使用率低于预期，导致毛利润未达预测。\n    *   此举旨在推动平台增长。\n*   **市场竞争**：此功能是 Cash App 为与 Venmo 和 PayPal 竞争而采取的措施，因为这两款应用都已提供资金汇集功能。",
-      "shortSummary": "Cash App 推出了新功能“资金池”，允许用户与朋友或家人共同汇集资金，用于支付团体开销，如餐饮、旅行和礼物。该功能初期面向部分用户开放，并支持非 Cash App 用户通过 Apple Pay 或 Google Pay 贡献资金。此举旨在促进用户增长，并与已提供类似功能的 Venmo 和 PayPal 竞争，此前 Cash App 的第一季度利润未达预期。",
-      "translated_title": "Cash App 用户现在可以为团体支付汇集资金——甚至包括非用户",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Cash App's new feature lets users pool money with a group to pay for expenses like vacations and gifts."
-    },
-    {
-      "title": "Google NotebookLM 推出视频概述功能 (原标题: Google’s NotebookLM rolls out Video Overviews)",
-      "link": "https://techcrunch.com/2025/07/29/googles-notebooklm-rolls-out-video-overviews/",
-      "pubDate": "Tue, 29 Jul 2025 17:11:20 +0000",
-      "isoDate": "2025-07-29T17:11:20.000Z",
-      "creator": "Aisha Malik",
-      "summary": "### Google NotebookLM 推出视频概述功能\n\nGoogle 于周二宣布，其基于人工智能的笔记和研究助手 NotebookLM 正在推出“视频概述”（Video Overviews）功能。这项新功能旨在帮助用户将密集的富媒体内容（如原始笔记、PDF和图片）转化为易于理解的视觉演示。\n\n#### 核心功能与对比\n\n*   **视频概述**：允许用户将笔记、PDF和图片等内容转换为视觉演示。该功能通过从上传的文档中提取图片、图表、引文和数字，创建新的视觉内容来解释信息。\n*   **音频概述**：此前，NotebookLM 已提供“音频概述”（Audio Overviews）功能，用户可以根据上传的文档（如课程阅读材料或法律简报）生成由AI虚拟主持人播讲的播客。\n*   Google 将“视频概述”视为“音频概述”的视觉替代方案，旨在提供更直观的理解方式。\n\n#### 用途与优势\n\nGoogle 表示，“视频概述”特别适用于：\n\n*   解释数据\n*   演示流程\n*   使抽象概念更易于理解\n\n#### 自定义与可用性\n\n*   **自定义选项**：用户可以像自定义“音频概述”一样，对“视频概述”进行个性化设置，包括指定关注的主题、学习目标和目标受众。\n*   用户可以提出各种问题，从宽泛的“我对这个主题一无所知；请帮我理解论文中的图表”到具体的“我已经是X领域的专家，我的团队从事Y工作；请重点关注Z”。\n*   **可用性**：“视频概述”目前正在向所有英语用户推出，Google 表示未来将支持更多语言。\n\n#### Studio 面板更新\n\nGoogle 还宣布了 NotebookLM Studio 面板的几项重要更新：\n\n*   **多输出存储**：用户现在可以在单个笔记本中创建和存储同类型的多个 Studio 输出。\n*   **快速访问**：Studio 面板顶部将新增四个快速访问瓷砖，用户可以一键创建“音频概述”、“视频概述”、“思维导图”和“报告”。\n*   **多任务处理**：用户现在可以在 Studio 面板内进行多任务处理，例如，在听“音频概述”的同时探索“思维导图”或查看“学习指南”。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-29-at-1.01.05PM.png?w=680)\n图片来源：Google",
-      "shortSummary": "Google NotebookLM推出“视频概述”功能，将笔记、PDF和图片等富媒体内容转化为视觉演示。这是继“音频概述”后的新进展，旨在帮助用户更直观地理解复杂信息，尤其适用于解释数据、演示流程和抽象概念。用户可自定义内容焦点和目标。此外，NotebookLM的Studio面板也得到更新，支持多任务处理和更便捷的输出创建。该功能已面向英语用户推出。",
-      "translated_title": "Google NotebookLM 推出视频概述功能",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-29-at-1.01.05PM.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "With this new capability, NotebookLM is taking a more visual approach to helping users understand different topics and ideas. "
-    },
-    {
-      "title": "谷歌拒绝透露英国是否秘密要求其为用户数据提供后门 (原标题: Google won’t say if UK secretly demanded a backdoor for user data)",
-      "link": "https://techcrunch.com/2025/07/29/google-wont-say-if-uk-secretly-demanded-a-backdoor-for-user-data/",
-      "pubDate": "Tue, 29 Jul 2025 17:07:56 +0000",
-      "isoDate": "2025-07-29T17:07:56.000Z",
-      "creator": "Zack Whittaker",
-      "summary": "### 英国政府对科技公司秘密数据访问要求\n\n*   **背景**：据报道，英国政府在美国政府的严厉斥责后，正在放弃此前要求苹果公司为其提供秘密后门以访问全球客户数据的要求。然而，一位美国参议员正寻求了解其他科技巨头（如谷歌）是否也收到了英国政府的秘密后门要求，而谷歌迄今拒绝透露。\n\n*   **对苹果的秘密要求**：\n    *   今年早些时候，《华盛顿邮报》报道称，英国内政部在英国的监控法庭寻求一项秘密法庭命令，要求苹果允许英国当局访问全球任何客户（包括其iPhone和iPad备份）存储的端到端加密云数据。\n    *   苹果公司以只有客户而非苹果可以访问其服务器上存储的数据的方式进行加密。\n    *   批评者称这项针对苹果的秘密命令是“严酷的”，认为它将对用户隐私产生全球性影响。苹果公司已对该命令的合法性提出上诉。\n\n*   **英国法律的限制**：根据英国法律，受秘密监控法庭命令约束的科技公司（如苹果）被法律禁止透露命令的细节或命令本身的存在，尽管今年早些时候该要求的细节已公开泄露。\n\n*   **美国参议员的关注**：\n    *   美国参议员罗恩·怀登（参议院情报委员会成员）致信美国高级情报官员图尔西·加巴德，指出尽管科技公司不能透露是否收到了英国的命令，但至少有一家科技巨头已确认没有收到。\n\n*   **Meta的回应**：\n    *   Meta公司（使用端到端加密保护WhatsApp和Facebook Messenger之间的用户消息）于3月17日告知怀登办公室，该公司“没有收到像报道中针对苹果那样的要求为我们的加密服务提供后门的命令”。\n\n*   **谷歌的回应**：\n    *   谷歌拒绝告知怀登办公室是否收到了英国政府要求访问加密数据（如安卓备份）的命令。\n    *   怀登表示，谷歌“只表示，如果它收到了技术能力通知，它将被禁止披露这一事实”。\n    *   谷歌发言人卡尔·瑞安向TechCrunch表示：“我们从未在我们的产品中构建任何机制或‘后门’来规避端到端加密。如果说一个产品是端到端加密的，那它就是。”\n    *   当TechCrunch明确询问时，谷歌不愿透露迄今是否收到了英国政府的命令。\n\n*   **怀登的呼吁**：怀登的信件呼吁加巴德公开其对“英国监控法律及其据报对美国公司提出的秘密要求所构成的国家安全风险的评估”。",
-      "shortSummary": "英国政府此前要求苹果提供秘密后门以访问用户数据，但在美国政府介入后有所退让。美国参议员罗恩·怀登正调查其他科技公司是否也收到类似要求。Meta已明确表示未收到此类命令，但谷歌拒绝透露，称若收到则被禁止披露。谷歌同时声明其产品未构建后门。怀登呼吁评估英国监控法律对美国公司的国家安全风险。",
-      "translated_title": "谷歌拒绝透露英国是否秘密要求其为用户数据提供后门",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Google said it has \"never built a backdoor\" for its services, but refused to rule out that it had received a secret U.K. surveillance order demanding access to encrypted data."
-    },
-    {
-      "title": "OpenAI 在 ChatGPT 中推出学习模式 (原标题: OpenAI launches Study Mode in ChatGPT)",
-      "link": "https://techcrunch.com/2025/07/29/openai-launches-study-mode-in-chatgpt/",
-      "pubDate": "Tue, 29 Jul 2025 17:00:00 +0000",
-      "isoDate": "2025-07-29T17:00:00.000Z",
-      "creator": "Maxwell Zeff",
-      "summary": "## OpenAI 推出 ChatGPT 学习模式\n\nOpenAI 于周二宣布推出 ChatGPT 的一项新功能——**学习模式（Study Mode）**。此模式旨在帮助学生培养批判性思维能力，而非仅仅提供问题的答案。\n\n### 学习模式的功能与目的\n*   **培养批判性思维**：学习模式的核心目标是促进学生独立思考，而不是直接给出答案。\n*   **互动式学习**：启用学习模式后，ChatGPT 会向用户提问以测试他们的理解程度。\n*   **鼓励深度参与**：在某些情况下，除非学生积极参与材料学习，否则 ChatGPT 将拒绝提供直接答案。\n\n### 推出计划\n*   **即时推出**：学习模式已于周二开始向 ChatGPT 的免费、Plus、Pro 和 Team 计划的登录用户推出。\n*   **未来覆盖教育用户**：OpenAI 预计在未来几周内，将学习模式引入其 Edu 订阅用户（主要指学校为其全体学生购买的计划）。\n\n### 背景与必要性\n*   **应对学生使用 AI 的挑战**：此举是 OpenAI 针对数百万在校学生使用 ChatGPT 的现状所做的努力。\n*   **平衡辅助与批判性思维**：研究表明，ChatGPT 虽能作为有益的导师，但也可能损害学生的批判性思维能力。例如，一项研究发现，使用 ChatGPT 撰写论文的人在过程中表现出较低的大脑活动。\n*   **从担忧到接受**：ChatGPT 于 2022 年首次推出时，其在学校的广泛使用曾引发教育工作者的担忧，导致许多美国学区禁止使用生成式 AI。然而，到 2023 年，一些学校撤销了禁令，教师们也逐渐接受 ChatGPT 将成为学生生活一部分的事实。\n*   **提升学习工具属性**：通过学习模式，OpenAI 希望将 ChatGPT 改进为一种真正的学习工具，而不仅仅是一个答案引擎。\n\n### 类似工具与局限性\n*   **行业趋势**：Anthropic 公司也于四月为其 AI 聊天机器人 Claude 推出了类似的“学习模式（Learning Mode）”。\n*   **用户自主性**：学习模式存在局限性，学生可以轻松切换回 ChatGPT 的常规模式以获取直接答案。\n*   **缺乏强制控制**：OpenAI 教育副总裁 Leah Belsky 表示，公司目前不提供工具让家长或管理员将学生锁定在学习模式中，但未来可能会探索行政或家长控制选项。\n*   **依赖学生意愿**：这意味着学习模式的有效性将取决于学生自身的学习意愿，而非强制性措施。\n\n### 未来展望\nOpenAI 表示，学习模式是其改进 ChatGPT 学习功能的第一步，并计划未来发布更多关于学生如何在教育过程中使用生成式 AI 的信息。",
-      "shortSummary": "OpenAI 在 ChatGPT 中推出“学习模式”，旨在培养学生的批判性思维，而非直接提供答案。该模式通过提问和要求学生参与来测试理解。它已向免费和付费用户推出，并将很快覆盖教育订阅用户。此举旨在解决 AI 可能损害批判性思维的担忧，将 ChatGPT 打造为更有效的学习工具。尽管学生可轻易切换模式，OpenAI 仍希望通过此功能促进更深层次的学习。",
-      "translated_title": "OpenAI 在 ChatGPT 中推出学习模式",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "OpenAI's Study Mode aims to help students develop their own critical thinking skills, rather than just giving answers."
-    },
-    {
-      "title": "Spotify暗示未来将推出更具对话性的语音AI界面 (原标题: Spotify hints at a more chatty voice AI interface in the future)",
-      "link": "https://techcrunch.com/2025/07/29/spotify-hints-at-a-more-chatty-voice-ai-interface-in-the-future/",
-      "pubDate": "Tue, 29 Jul 2025 16:58:53 +0000",
-      "isoDate": "2025-07-29T16:58:53.000Z",
-      "creator": "Sarah Perez",
-      "summary": "### Spotify未来语音AI界面展望\n\nSpotify正在探索利用生成式AI技术，在未来推出更具对话性的流媒体服务界面。公司首席产品和技术官Gustav Söderström在第二季度财报电话会议上透露了这一愿景。\n\n**AI对业务的影响**\n\n*   **新的数据集：** Spotify目前已允许用户使用自然语言（如普通英语）请求音乐。Söderström指出，这为公司提供了一个全新的、非常有价值的数据集，可以关联用户短语与歌曲。\n*   **数据洞察：** 与Spotify现有的基于播放列表的“歌曲到歌曲”关联数据（类似于亚马逊的“购买此商品的用户也购买了…”）不同，语音交互数据带来了全新的洞察，并且正在迅速收集。\n*   **更强的互动性：** 随着AI技术的发展，Spotify的消费者体验将变得“更具互动性”。用户目前已经可以与Spotify进行文字或语音交流，未来这种互动将进一步扩展。\n*   **AI推理能力：** 未来的AI将不仅仅是预测用户可能想听什么（音乐、播客、有声读物），而是能够基于用户的收听历史和与AI DJ的对话进行“推理”。这表明Spotify正着眼于更复杂的、多步骤的AI推理模型。\n\n**AI DJ与语音数据**\n\n*   **数据来源：** 相关的语音数据主要来源于Spotify的AI DJ功能。\n*   **功能介绍：** 自2025年5月起，Premium订阅用户可以通过应用内的按钮向英文AI DJ发出语音请求，从而更改音乐、流派或播放列表的情绪。\n\n**AI在Spotify内部的应用**\n\n*   除了面向消费者的功能，Spotify还在内部利用生成式AI来加速产品原型开发，并在财务等其他业务领域提高效率。\n\n**第二季度财务表现**\n\n*   **用户增长：** 本季度，Spotify付费订阅用户达到2.76亿，同比增长12%；月活跃用户达到6.96亿。\n*   **财务亏损：** 然而，公司未能达到营收目标，转为亏损。\n*   **股价下跌：** 由于疲软的业绩指引以及CEO Daniel Ek对公司广告业务的不满言论，股价下跌了10%。",
-      "shortSummary": "Spotify正利用生成式AI开发未来更具对话性的语音界面。通过AI DJ收集的用户语音数据，Spotify获得了新的洞察，旨在提供更互动、能“推理”用户偏好的体验。AI也用于内部效率提升。尽管用户增长，Spotify本季度因营收未达标而亏损，股价下跌。",
-      "translated_title": "Spotify暗示未来将推出更具对话性的语音AI界面",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Spotify says AI will allow for \"much more interactive\" consumer experiences in its app. "
-    },
-    {
-      "title": "Tea 应用在第二次数据泄露暴露超过一百万条私人消息后禁用私信功能 (原标题: Tea app disables DMs after second data breach exposed over a million private messages)",
-      "link": "https://techcrunch.com/2025/07/29/tea-apps-data-breach-gets-much-worse-exposing-over-a-million-private-messages/",
-      "pubDate": "Tue, 29 Jul 2025 16:28:47 +0000",
-      "isoDate": "2025-07-29T16:28:47.000Z",
-      "creator": "Lauren Forristal",
-      "summary": "## Tea 应用遭遇第二次数据泄露，私信功能被禁用\n\n### 应用简介\nTea 是一款约会安全应用，旨在为女性提供一个平台，用于交流她们约会过的男性信息。该应用于2023年上线，目前在Apple App Store免费应用榜单中排名第二，据Sensor Tower估计，其月活跃用户约为200万。\n\n### 第一次数据泄露\n上周，Tea 应用首次遭遇数据泄露事件。此次事件导致72,000张敏感图片被泄露，其中包括用于账户验证的自拍和身份照片，以及来自帖子和消息的图片。据报道，这些个人数据在4chan上被用户分享。Tea 应用当时发布声明称，此次泄露仅影响了在2024年2月之前注册的用户。\n\n### 第二次数据泄露与私信禁用\n本周早些时候，404 Media 报道了Tea 应用的第二次安全问题，此次泄露暴露了更多用户数据，促使该应用于周二下午禁用了其直接消息（DM）功能。\n\n*   **发现者：** 独立安全研究员 Kasra Rahjerdi 向404 Media 提供了线索，其中包括用户之间分享电话号码以及讨论堕胎和不忠伴侣的消息。\n*   **泄露内容：** Rahjerdi 的调查结果显示，从2023年初到上周，共有超过110万条消息被记录并泄露。\n*   **应用回应：** 针对此次报告，Tea 应用在Instagram上宣布已暂时禁用其直接消息功能。该公司表示，“出于谨慎考虑，我们已将受影响的系统下线”，这很可能是继第二次安全事件后采取的预防措施。\n\n### 图片\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/07/cupoftea-artempodrez-.jpg?w=1024)\n\n### 影响与背景\n此次连续的数据泄露事件对Tea 应用的用户隐私和信任造成了严重打击，尽管其在应用商店中仍保持着较高的排名和庞大的用户基础。",
-      "shortSummary": "约会安全应用 Tea 遭遇第二次数据泄露，导致超过110万条用户私信（含敏感内容）被曝光。此前，该应用已发生过一次包含72,000张敏感图片的泄露事件。作为回应，Tea 应用已暂时禁用其私信功能。该应用旨在帮助女性分享约会信息，目前拥有约200万月活跃用户，在Apple App Store排名第二。",
-      "translated_title": "Tea 应用在第二次数据泄露暴露超过一百万条私人消息后禁用私信功能",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/cupoftea-artempodrez-.jpg?w=1024",
-          "alt": "",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Dating safety app Tea experienced a second data breach in as many weeks, exposing over a million sensitive messages between users."
-    },
-    {
-      "title": "YouTube在美国推出年龄估算技术，以识别青少年并施加额外保护 (原标题: YouTube rolls out age-estimation tech to identify US teens and apply additional protections)",
-      "link": "https://techcrunch.com/2025/07/29/youtube-rolls-out-age-estimatation-tech-to-identify-u-s-teens-and-apply-additional-protections/",
-      "pubDate": "Tue, 29 Jul 2025 16:00:00 +0000",
-      "isoDate": "2025-07-29T16:00:00.000Z",
-      "creator": "Sarah Perez",
-      "summary": "## YouTube在美国推出年龄估算技术以保护青少年\n\nYouTube于周二宣布，已开始在美国推出一项年龄估算技术，旨在识别青少年用户，从而提供更符合其年龄的体验。这项技术将利用多种信号来判断用户的可能年龄，而不仅仅依赖用户注册时填写的生日信息。\n\n### 为青少年用户提供的额外保护\n\n当YouTube识别出用户为青少年时，将引入一系列新的保护措施和体验，包括：\n\n*   **禁用个性化广告**：确保青少年用户不会接触到基于其行为习惯的定向广告。\n*   **限制重复观看**：设置安全措施，限制青少年用户重复观看某些类型的内容，例如可能引发身体形象问题或展示社交攻击性的视频。YouTube自2023年起已开始限制此类视频的重复观看。\n*   **启用数字健康工具**：提供屏幕使用时间和就寝提醒等数字健康工具。YouTube自2018年以来一直在开发这些工具。\n\n这些保护措施此前已存在，但仅适用于那些已验证自己为青少年的用户，而未涵盖那些可能隐瞒真实年龄的用户。新系统将弥补这一空白。\n\n### 错误识别与年龄验证\n\n如果新系统错误地将非未成年用户识别为未满18岁，YouTube表示将提供选项让用户通过以下方式验证其年龄：\n\n*   信用卡\n*   政府颁发的身份证件\n*   自拍\n\n只有通过此方法直接验证年龄或被推断年龄超过18岁的用户，才能在平台上观看受年龄限制的内容。\n\n### 推广计划与背景\n\n这项由机器学习驱动的技术将在未来几周内首先向一小部分美国用户推出，经过监控后将更广泛地推广。引入年龄推断技术的计划于今年2月宣布，是YouTube 2025年路线图的一部分。\n\n此举是YouTube为年轻用户提供更安全环境的最新一步，此前已于2015年推出了YouTube Kids应用，并于2024年推出了受监督账户。这些功能推出之际，美国社交媒体正面临日益严格的政府审查，平台制造商（包括苹果和谷歌）与大型科技公司（如Meta）的游说者就年龄验证和儿童安全责任问题展开了博弈。\n\n### 各州及国际监管趋势\n\n与此同时，美国已有十几个州通过或提出了旨在规范未成年人使用社交媒体的法律，其中许多法律要求进行年龄验证或获得父母同意，包括路易斯安那州、阿肯色州、佛罗里达州、佐治亚州、犹他州、德克萨斯州、马里兰州、田纳西州和康涅狄格州等。然而，一些法律（如犹他州和阿肯色州的法律）目前因诉讼而被阻止执行，而其他法律仍在等待实施。\n\n此外，英国也于本周开始执行自己的年龄验证检查，此前其《在线安全法》已于2023年通过。\n\n### 技术细节\n\nYouTube并未分享用于推断用户年龄的具体信号，但指出将考虑一些数据，例如YouTube活动和用户账户的活跃时长，以判断用户是否未满18岁。新系统将仅适用于已登录用户，因为未登录用户已无法访问受年龄限制的内容。该功能将跨平台可用，包括网页、移动设备和联网电视。",
-      "shortSummary": "YouTube在美国推出年龄估算技术，旨在识别青少年用户并提供更符合其年龄的体验。该技术将禁用个性化广告、限制重复观看特定内容，并提供数字健康工具。如果用户被错误识别，可选择通过信用卡、政府ID或自拍验证年龄。此举是YouTube保障年轻用户安全的最新举措，也反映了美国政府对社交媒体儿童安全监管日益加强的趋势，并与各州及英国的类似立法行动相呼应。",
-      "translated_title": "YouTube在美国推出年龄估算技术，以识别青少年并施加额外保护",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "YouTube is introducing age-detection technology to identify teens on the platform in the U.S. and apply protections. "
-    },
-    {
-      "title": "谷歌AI模式新增‘Canvas’功能、Search Live实时帮助等 (原标题: Google’s AI Mode gets new ‘Canvas’ feature, real-time help with Search Live, and more)",
-      "link": "https://techcrunch.com/2025/07/29/googles-ai-mode-gets-new-canvas-feature-real-time-help-with-search-live-and-more/",
-      "pubDate": "Tue, 29 Jul 2025 16:00:00 +0000",
-      "isoDate": "2025-07-29T16:00:00.000Z",
-      "creator": "Aisha Malik",
-      "summary": "Google于周二宣布，其实验性功能AI模式将新增多项功能，旨在帮助用户在搜索中更深入地探索主题。\n\n### 新增功能概览\n\n1.  **Canvas 功能**\n    *   **用途**: 帮助用户构建学习计划，并在多个会话中组织信息，所有操作都在侧边面板中进行。\n    *   **操作**: 用户可以点击新的“创建Canvas”按钮开始。AI模式将自动在Canvas侧边面板中整合信息，用户可以通过后续提示不断细化输出，直到满足需求。\n    *   **未来**: 用户将能够上传文件，如课堂笔记或教学大纲，以进一步定制学习指南。\n    *   **可用性**: 未来几周内，美国地区参与AI模式实验室实验的用户将能体验到Canvas功能。\n    ![Canvas in AI Mode](https://techcrunch.com/wp-content/uploads/2025/07/Canvas-in-AI-Mode.png?w=680)\n\n2.  **Search Live (集成 Project Astra)**\n    *   **用途**: 将Project Astra的功能直接引入AI模式，通过Google Lens（谷歌的视觉搜索工具）提供实时帮助。\n    *   **操作**: 在Google应用中打开Lens，点击“Live”图标，然后将摄像头对准物体并提问。用户可以利用摄像头提供的视觉上下文，与AI模式中的搜索进行来回对话。\n    *   **优势**: 谷歌搜索产品副总裁Robby Stein表示，这就像拥有一个随时待命的专家，能够看到你所看到的，并实时解释复杂的概念，同时方便地访问有用的网络链接。\n    *   **可用性**: 本周起，Search Live功能将面向美国地区参与AI模式实验室实验的移动用户推出。\n    ![Search Live with video input](https://techcrunch.com/wp-content/uploads/2025/07/Search-Live-with-video-3-of-3.png?w=680)\n\n3.  **桌面端Lens与屏幕内容交互**\n    *   **用途**: 用户很快就能在AI模式中使用Lens来询问桌面屏幕上的内容。例如，用户在查看几何问题时，可以更好地理解其中一个图表。\n    *   **操作**: 从地址栏点击“询问Google此页面”，然后选择图表。用户将获得一个AI概述，其中包含关键信息的快照，直接显示在侧边面板中。本周起，用户还可以通过在Lens搜索结果顶部选择AI模式或点击AI概述底部的“深入探索”按钮，在AI模式中提出更多问题。\n    ![Desktop Lens interaction](https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-29-at-11.42.03AM.png?w=680)\n\n4.  **图片与PDF文件上传支持**\n    *   **图片**: 用户已能在Google应用中通过AI模式询问图片相关问题，现在该功能也扩展到了桌面端。\n    *   **PDF**: 谷歌还增加了对桌面端PDF文件上传的支持，用户可以就文档提出详细问题。例如，上传学校讲座的PDF幻灯片，并提出后续问题以加深对课堂材料的理解。\n    *   **未来**: 谷歌表示，今年晚些时候，AI模式将支持PDF和图片之外的更多文件类型，包括Google Drive文件。",
-      "shortSummary": "谷歌AI模式新增多项功能：‘Canvas’帮助用户组织学习计划和信息；‘Search Live’通过摄像头提供实时视觉辅助，实现专家级对话；桌面端用户可利用Lens询问屏幕内容，并上传图片和PDF文件进行AI分析。这些更新旨在深化用户在搜索中的互动和理解，未来还将支持更多文件类型。",
-      "translated_title": "谷歌AI模式新增‘Canvas’功能、Search Live实时帮助等",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/Canvas-in-AI-Mode.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/Search-Live-with-video-3-of-3.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/Screenshot-2025-07-29-at-11.42.03AM.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The tech giant is rolling out a new Canvas feature, the ability to get real-time help with Search Live, and the option to search what you see while browsing. "
-    },
-    {
-      "title": "电信巨头Orange警告称持续网络攻击可能导致服务中断 (原标题: Telecom giant Orange warns of disruption amid ongoing cyberattack)",
-      "link": "https://techcrunch.com/2025/07/29/telecom-giant-orange-warns-of-disruption-amid-ongoing-cyberattack/",
-      "pubDate": "Tue, 29 Jul 2025 15:00:28 +0000",
-      "isoDate": "2025-07-29T15:00:28.000Z",
-      "creator": "Lorenzo Franceschi-Bicchierai",
-      "summary": "# 电信巨头Orange遭遇网络攻击并警告服务中断\n\n法国电信巨头Orange，作为全球最大的电话服务提供商之一，于周一（2025年7月29日）宣布，其于7月25日检测到一起未指明的网络攻击，并已成为受害者。\n\n![Orange SA标志](https://techcrunch.com/wp-content/uploads/2025/07/orange-telecom-france.jpg?w=1024)\n图片来源：Nathan Laine/Bloomberg / Getty Images\n\n**攻击详情与影响：**\n*   攻击发生在Orange的“某个信息系统”上。\n*   为了“隔离潜在受影响的服务并最大程度地减少影响”，Orange采取了隔离措施。\n*   此举导致公司部分平台、商业客户以及主要在法国的一些公共部门服务出现中断。\n\n**Orange的应对措施：**\n*   公司正在实施解决方案，预计服务将在周三逐步恢复。\n*   Orange声明“没有证据表明任何内部或客户数据已被窃取”。\n*   公司正在与受影响的客户进行沟通并告知情况。\n*   Orange已向“相关部门”提起申诉，但未提供具体细节。\n\n**未回应的问题与背景：**\n*   TechCrunch就网络攻击的性质以及Orange是否有技术手段检测数据外泄等问题向Orange提出置评请求，但未获回应。\n*   根据欧盟的《通用数据保护条例》（GDPR），受其管辖的欧洲公司在怀疑发生数据泄露的三天内，必须通知当地数据保护机构。\n*   Orange在全球26个国家拥有2.91亿客户，并雇佣了12.7万名员工。",
-      "shortSummary": "法国电信巨头Orange于7月29日宣布，其在7月25日检测到一起未指明的网络攻击。此次攻击导致公司部分平台、商业客户及法国部分公共服务中断。Orange已隔离受影响系统，并预计服务将于周三逐步恢复。公司表示目前没有证据表明内部或客户数据被窃取，并已向相关部门提起申诉。",
-      "translated_title": "电信巨头Orange警告称持续网络攻击可能导致服务中断",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/07/orange-telecom-france.jpg?w=1024",
-          "alt": "An Orange SA logo sits on display outside the Orange Paris Opera boutique mobile phone store in Paris, France, on Wednesday, July 29, 2020.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The telecom giant, one of the largest in the world with customers in Europe and Africa, said customers are experiencing ongoing disruption to its services due to an unspecified hack."
-    },
-    {
-      "title": "埃隆·马斯克的Boring公司将在纳什维尔地下建造特斯拉隧道 (原标题: Elon Musk’s Boring Company to build Tesla tunnels under Nashville)",
-      "link": "https://techcrunch.com/2025/07/29/elon-musks-boring-company-to-build-tesla-tunnels-under-nashville/",
-      "pubDate": "Tue, 29 Jul 2025 14:56:16 +0000",
-      "isoDate": "2025-07-29T14:56:16.000Z",
-      "creator": "Sean O'Kane",
-      "summary": "# 埃隆·马斯克的Boring公司将在纳什维尔地下建造特斯拉隧道\n\n埃隆·马斯克的隧道挖掘公司The Boring Company与田纳西州州长比尔·李宣布了一项计划，将在纳什维尔建造一条10英里长的“环线”，连接市中心、会议中心和该地区的机场。\n\n## 项目概览\n*   **连接区域**：纳什维尔市中心、会议中心和机场。\n*   **长度**：10英里。\n*   **资金来源**：The Boring Company及其未具名的私人合作伙伴将提供私人资金。\n*   **审批流程**：公司和地方官员将启动一个“公共程序”，以评估潜在路线、与社区利益相关者互动并敲定项目初始10英里阶段的计划。\n*   **建设时间**：施工将在获得批准后开始。\n*   **运营目标**：州长办公室表示，如果一切顺利，环线的第一段最早可能在2026年秋季投入运营。\n*   **城市地位**：如果该项目成功，纳什维尔将成为The Boring Company继拉斯维加斯之后第二个开通此类系统的城市。\n\n## 拉斯维加斯经验\n*   The Boring Company过去几年一直在拉斯维加斯围绕会议中心挖掘和开通隧道。\n*   该公司声称迄今已在拉斯维加斯通过特斯拉提供了300万次乘车服务。\n\n## Boring公司的发展历程与挑战\n*   **成立背景**：马斯克在2016年末堵车时在Twitter上提出想法后，于2017年初成立了The Boring Company。\n*   **早期愿景**：最初的视频（现已设为私人）展示了一种通过电梯和雪橇系统将车辆从地面交通网格中移除，并将其降入三维地下隧道网络的设想。\n*   **未实现的项目**：\n    *   在特朗普政府时期，马斯克曾声称The Boring Company获得了“口头政府批准”，将在纽约市和华盛顿特区之间挖掘隧道，利用超级高铁技术将行程缩短至29分钟，但这些计划均未实现。\n    *   在当地居民的反对下，The Boring Company放弃了在大洛杉矶地区挖掘大型隧道系统的计划。\n    *   芝加哥也发生了类似情况。\n    *   该公司还“放鸽子”了全国其他许多城市。\n*   **超级高铁概念**：马斯克承认超级高铁的想法源于他对加州高铁系统的不满，但该概念也已被搁置。\n*   **运营模式演变**：即使是拉斯维加斯的隧道，特斯拉车辆也是由人类驾驶，而非马斯克痴迷的自动驾驶。The Boring Company现在更像是一个“美化版”的会议中心人员输送系统。\n\n## 潜在优势与安全争议\n*   **施工影响**：与典型的单轨列车相比，其施工对纳什维尔日常交通的干扰应该较小。\n*   **资金成本**：至少以目前的形式，该项目不会花费纳税人的钱。\n*   **安全记录（官方说法）**：田纳西州州长办公室在公告中引用了The Boring Company在拉斯维加斯的安全记录，称该环线“最近获得了国土安全部和运输安全管理局99.57%的安全和安保评级”。\n*   **安全担忧（内部声音）**：\n    *   州长办公室在公告中小心翼翼地避免提及马斯克的隧道挖掘项目在施工过程中遇到的麻烦。\n    *   《财富》杂志记者杰西卡·马修斯去年报道称，一名The Boring Company员工曾告诉其安全经理：“我眼睁睁看着我的朋友们因为我们快速的节奏而受伤……我拒绝成为公司历史上的第一例死亡事故。任何隧道都不值得一个人的生命。”\n    *   同一位安全经理也向《财富》杂志公开表示：“他们被告知的工作条件简直难以忍受……我无法解决任何问题。”\n    *   The Boring Company的运营速度（被田纳西州州长办公室赞扬）一直是部分员工关注的问题。",
-      "shortSummary": "埃隆·马斯克的Boring公司计划在纳什维尔建造一条10英里长的特斯拉隧道环线，连接市中心、会议中心和机场。该项目将由私人出资，目标是2026年秋季投入运营，使纳什维尔成为继拉斯维加斯之后第二个拥有此类系统的城市。尽管官方赞扬其在拉斯维加斯的安全记录，但Boring公司过去曾放弃多个项目，且面临员工对其快速施工节奏和安全条件的担忧。该项目将不花费纳税人的钱，并有望减少交通干扰。",
-      "translated_title": "埃隆·马斯克的Boring公司将在纳什维尔地下建造特斯拉隧道",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Construction could start fast — but that speed has endangered Boring Company workers in the past."
-    },
-    {
-      "title": "杰克·多西的蓝牙消息应用Bitchat现已登陆App Store (原标题: Jack Dorsey’s Bluetooth messaging app Bitchat now on App Store)",
-      "link": "https://techcrunch.com/2025/07/29/jack-dorseys-bluetooth-messaging-app-bitchat-now-on-app-store/",
-      "pubDate": "Tue, 29 Jul 2025 14:51:39 +0000",
-      "isoDate": "2025-07-29T14:51:39.000Z",
-      "creator": "Amanda Silberling",
-      "summary": "## Bitchat：杰克·多西的蓝牙消息应用\n\n**概述**\n\nBitchat是由Twitter和Block创始人杰克·多西（Jack Dorsey）开发的一款消息应用，现已在iOS App Store上架。多西声称他在7月初的一个周末编写了该应用的基础代码。\n\n**核心功能与特点**\n\n*   **蓝牙网状网络通信**：Bitchat通过蓝牙网状网络运行，这意味着用户可以在蓝牙连接范围内（通常约100米）发送消息，而无需蜂窝信号或Wi-Fi连接。\n*   **极简用户体验（UX）**：\n    *   没有登录系统。\n    *   用户立即进入即时消息框。\n    *   可以查看附近用户的消息（如果有人在使用）。\n    *   显示名称可以随时更改。\n\n**应用场景与历史**\n\n*   **非新鲜概念**：尽管Bitchat因多西的声誉而引起关注，但蓝牙驱动的消息应用概念并非新鲜事物。\n*   **常见用途**：这类应用在蜂窝服务受限的场合（如大型音乐节）或自然灾害后（蜂窝服务和Wi-Fi可能受影响）很受欢迎。\n*   **历史案例**：蓝牙消息应用Bridgefy曾在中国香港的民主抗议活动中被使用，因为它无需互联网即可运行，使得当局更难检测。\n\n**安全与信任问题**\n\n*   **冒充问题**：\n    *   多西最初将Bitchat宣传为安全的私人消息平台。\n    *   安全研究员Alex Radocea指出，在Bitchat中很容易冒充他人，质疑其安全性。\n    *   Radocea强调：“在密码学中，细节至关重要。一个‘感觉良好’的协议可能存在根本性的实质缺陷，从而损害其声称保护的一切。”\n    *   多西后来承认该软件尚未经过外部安全审查，因此可能包含漏洞。\n*   **虚假应用**：\n    *   Google Play商店中存在多个冒充多西Bitchat应用的虚假应用，并已获得数千次下载。\n    *   多西虽未直接回应，但转发了另一位用户在X上的帖子，警告Bitchat尚未登陆Google Play，并提醒用户“谨防假冒”。",
-      "shortSummary": "杰克·多西的蓝牙消息应用Bitchat已登陆iOS App Store。该应用通过蓝牙网状网络运行，无需蜂窝或Wi-Fi，可在约100米范围内通信，用户体验极简。尽管多西宣传其安全，但研究员指出存在易于冒充他人的安全漏洞，且多西承认未进行外部安全审查。此外，Google Play商店中存在大量假冒的Bitchat应用，多西已警告用户谨防假冒。",
-      "translated_title": "杰克·多西的蓝牙消息应用Bitchat现已登陆App Store",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Jack Dorsey's Bitchat is now available on the App Store, but security researchers have questioned the app's privacy claims."
-    },
-    {
-      "title": "微软正与OpenAI谈判，以在AGI里程碑后继续获取其技术 (原标题: Microsoft in talks to maintain access to OpenAI’s tech beyond AGI milestone )",
-      "link": "https://techcrunch.com/2025/07/29/microsoft-in-talks-to-maintain-access-to-openais-tech-beyond-agi-milestone/",
-      "pubDate": "Tue, 29 Jul 2025 14:44:10 +0000",
-      "isoDate": "2025-07-29T14:44:10.000Z",
-      "creator": "Rebecca Bellan",
-      "summary": "## 微软与OpenAI就AGI后技术访问权进行谈判\n\n### 核心谈判内容\n\n微软正与OpenAI进行深入谈判，旨在达成一项新协议。该协议将确保即使OpenAI达到其定义的“高级通用智能”（AGI）里程碑，微软也能持续获取其技术。此举被视为OpenAI向完全商业化企业转型过程中的一个关键障碍清除。\n\n### 谈判进展与潜在障碍\n\n*   据彭博社援引匿名消息报道，双方谈判进展顺利，可能在数周内达成协议。\n*   然而，谈判也面临潜在障碍，包括监管审查以及埃隆·马斯克为阻止OpenAI营利性转型而提起的诉讼。\n\n### OpenAI的当前结构与商业化目标\n\n*   OpenAI目前是一个使命驱动的非营利组织，监管着一个有上限的营利性公司。这种结构旨在限制其完全商业化或大规模融资的能力。\n*   尽管OpenAI已融资数十亿美元并像传统科技公司一样运营，但它仍希望摆脱这些结构性限制，实现更全面的商业化。\n\n### 微软的角色、投资与战略诉求\n\n*   微软是OpenAI最大的支持者，已投资137.5亿美元，并拥有ChatGPT制造商的部分知识产权。\n*   微软在OpenAI向营利性公司转型过程中扮演了重要角色，其要求导致谈判已持续数月。\n*   **微软的主要诉求包括：**\n    *   在重组后的OpenAI公司中获得更大的股权。\n    *   确保在当前协议（该协议将于2030年或OpenAI宣布达到AGI时终止）之后，仍能持续获取OpenAI的技术。\n*   **战略重要性：** 微软已围绕OpenAI的模型构建了Azure OpenAI服务，并将OpenAI的技术整合到Windows、Office和GitHub的Copilot等产品中。如果OpenAI突然宣布达到AGI并切断访问，微软将失去巨大的战略优势。\n\n### OpenAI对未来的期望\n\n*   据报道，OpenAI已告知其投资者，随着公司的发展，预计将向微软支付较低的收入分成。\n*   OpenAI还希望确保微软能安全地部署其技术，尤其是在接近AGI时。\n\n### 微软从OpenAI商业化中获益\n\n*   OpenAI当前的结构限制了投资者回报。如果OpenAI转变为更标准的商业结构，微软将有机会获得正式股权和显著的投资回报，同时也能持续获取OpenAI的技术。\n*   彭博社报道称，两家公司正在谈判微软在OpenAI中获得低至中30%范围的股权。",
-      "shortSummary": "微软正与OpenAI深入谈判一项新协议，旨在确保即使OpenAI达到AGI，微软也能持续获取其技术。此举将帮助OpenAI向完全商业化转型。作为最大投资者，微软寻求在重组后的OpenAI中获得更大股权，并保障其Azure OpenAI服务和Copilot等产品的技术供应。当前谈判涉及微软获得OpenAI低至中30%的股权，但面临监管审查和马斯克诉讼等挑战。",
-      "translated_title": "微软正与OpenAI谈判，以在AGI里程碑后继续获取其技术",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Microsoft is reportedly in advanced talks with OpenAI for a new agreement that would give it ongoing access to the startup’s technology even if OpenAI achieves what it defines as AGI, or advanced general intelligence. If the deal goes through, it would clear a key hurdle in OpenAI’s transition toward becoming a fully commercial enterprise."
     }
   ],
-  "lastUpdated": "2025-07-30T12:50:32.543Z"
+  "lastUpdated": "2025-07-30T18:38:00.469Z"
 }
