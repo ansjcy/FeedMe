@@ -5,6 +5,63 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "GitHub MCP 服务器实用指南 (原标题: A practical guide on how to use the GitHub MCP server)",
+      "link": "https://github.blog/ai-and-ml/generative-ai/a-practical-guide-on-how-to-use-the-github-mcp-server/",
+      "pubDate": "Wed, 30 Jul 2025 16:00:00 +0000",
+      "isoDate": "2025-07-30T16:00:00.000Z",
+      "creator": "Andrea Griffiths",
+      "summary": "# GitHub MCP 服务器实用指南\n\n本文提供了一份关于如何从本地 Docker 镜像升级到 GitHub 托管的 Model Context Protocol (MCP) 服务器的实用指南，旨在帮助用户自动化拉取请求、持续集成和安全分类等任务，且无需令牌。\n\n## GitHub MCP 服务器简介\n\n本地运行 MCP 服务器虽然可行，但管理 Docker、轮换访问令牌和拉取更新等操作繁琐。GitHub 托管的 MCP 端点消除了这些基础设施的烦恼，让开发者能够专注于代码交付。本教程将引导用户从本地 MCP 设置升级到 GitHub 托管端点，从而获得 OAuth 认证、自动更新以及访问更丰富的 AI 工作流所需的工具集。用户还将学习如何通过只读模式自定义工具访问、通过动态工具集简化 AI 工作流，并为使用 GitHub Copilot 进行代理间协作做好准备。\n\nGitHub 远程 MCP 服务器是 GitHub 完全托管、始终保持最新状态的 MCP 实现。用户只需将 IDE 或代理主机指向 `https://api.githubcopilot.com/mcp/`，并通过 OAuth 进行一次性认证，GitHub 将处理其余所有事务。\n\n### 默认启用的工具集（可禁用）\n\n*   **代码库智能：** 无需本地克隆即可搜索代码、流式传输文件和打开拉取请求。\n*   **问题和拉取请求自动化：** 从单个代理提示中归档、分类、标记、审查甚至合并。\n*   **CI/CD 可见性：** 在聊天中检查工作流运行、获取日志并重新运行失败的作业。\n*   **安全洞察：** 发现代码扫描和 Dependabot 警报，确保在漏洞被利用前修复。\n*   **细粒度控制：** 切换特定工具集或将服务器设置为只读模式以提高安全性。\n\n## 为什么选择托管 MCP 服务器？\n\n本地开源 MCP 服务器虽然可用，但存在隐性成本。以下是切换到远程托管服务器后的变化：\n\n| 特性           | 本地 Docker 服务器          | 托管 MCP 端点                   |\n| :------------- | :-------------------------- | :------------------------------ |\n| 维护与升级     | 手动维护 Docker 镜像，手动升级 | GitHub 自动修补和升级           |\n| 认证           | 管理个人访问令牌 (PATs)     | 通过 OAuth 一次性登录，范围自动处理 |\n| 可访问性       | 仅在 localhost 上暴露服务器 | 可从任何 IDE 或远程开发环境访问   |\n| 写入权限       | 除非自定义二进制文件，否则完全写入权限 | 内置只读开关和按工具集标志控制    |\n\n对于大多数团队而言，托管服务器消除了基础设施工作，使团队能够专注于自动化。但如果需要气隙环境，仍需坚持使用本地设置。\n\n## 开始前的准备\n\n*   GitHub Copilot 或 Copilot Enterprise 席位\n*   VS Code 1.92+（或其他支持 MCP 的客户端）\n*   网络访问 `https://api.githubcopilot.com`\n*   一个用于实验的测试仓库\n\n## 步骤 1：安装远程 MCP 服务器\n\n与基于本地 Docker 的安装相比，设置 GitHub 远程 MCP 服务器非常简单。它由 GitHub 托管，无需管理 Docker 容器或手动处理更新，提供简化的云原生体验。\n\n### 在 VS Code 或 VS Code Insiders 上安装：\n\n1.  打开命令面板并运行：`> GitHub MCP: Install Remote Server`\n2.  完成 OAuth 流程以连接您的 GitHub 账户。\n3.  重启服务器以完成设置。\n\n### 对于任何其他客户端：\n\n1.  将服务器 URL 设置为：`https://api.githubcopilot.com/mcp/`\n2.  在提示时进行认证。\n\n### 验证连接：\n\n使用 `curl -I https://api.githubcopilot.com/mcp/healthz` 进行快速检查。如果看到 `HTTP/1.1 200 OK`，则表示连接成功。安装后，远程服务器将取代本地服务器，无需 Docker 或令牌，只需简单的集成。\n\n## 步骤 2：配置访问控制\n\n### 使用只读模式进行安全探索\n\n在敏感环境、生产测试或向利益相关者演示时，可以将服务器切换到只读模式：\n\n```json\n{\n  \"servers\": {\n    \"github\": {\n      \"type\": \"http\",\n      \"url\": \"https://api.githubcopilot.com/mcp/\",\n      \"mode\": \"read-only\"\n    }\n  }\n}\n```\n\n在此模式下，代理可以读取问题、拉取请求和代码，但无法推送更改。这非常适合需要上下文而无风险的代码审查。\n\n**用例：拉取请求查看器**\n无需修改任何内容即可审查拉取请求。此设置提供安全的只读访问，非常适合浏览更改、留下评论或收集上下文，而不会有更改代码的风险。\n\n1.  访问 GitHub MCP 服务器仓库。\n2.  导航到“Remote Server”部分。\n3.  选择拉取请求只读变体。\n4.  点击“Install Read Only”。\n\n您将看到 `listPullRequests`、`getPullRequest` 和 `searchPullRequests` 等工具，但没有写入权限。由于这些工具不进行更改，VS Code 会跳过权限提示，提供无缝体验。\n\n### 通过选择性工具集限制范围\n\n通过以下命令仅暴露所需的工具，使开发人员和代理都保持专注：\n\n```json\n\"toolsets\": [\"context\", \"issues\", \"pull_requests\"]\n```\n\n将此数组添加到 `mode` 字段旁边即可隐藏其他所有内容。\n\n## 步骤 3：通过三个实践示例进行尝试\n\n这些实际示例展示了 Copilot 代理模式如何在实践中处理日常开发任务，如管理拉取请求、调试工作流和分类安全警报，而无需本地设置或手动挖掘。只需提示即可。\n\n### 示例 1：添加 CODEOWNERS 文件并打开拉取请求\n\n打开您的仓库，然后询问 Copilot 代理：\n提示：“为 `/api/**` 添加一个 CODEOWNERS 文件，分配给 `@backend-team`，然后打开一个草稿拉取请求。”\n\n代理将：\n*   使用 `repos.create_file` 添加 CODEOWNERS 文件。\n*   调用 `pull_requests.open` 创建拉取请求。\n*   执行 `pull_requests.request_reviewers` 分配审阅者。\n\n无需本地克隆，无需手动创建文件。只需提示即可完成。\n\n### 示例 2：调试失败的工作流\n\n提示：“昨晚 `release.yml` 作业为什么失败了？”\n代理将使用 `actions.get_workflow_run_logs` 拉取日志，分析堆栈跟踪，并建议修复方案。这就像有一位高级工程师审查您的 CI/CD 故障。\n\n### 示例 3：分类安全警报\n\n提示：“列出我所有仓库中的关键 Dependabot 警报，并为每个警报创建问题。”\n服务器将通过 `dependabot.list_dependabot_alerts` 返回警报，然后代理仅在需要时创建有针对性的问题。\n\n## 步骤 4：GitHub 远程 MCP 服务器故障排除技巧\n\n| 症状             | 可能原因                   | 修复方法                               |\n| :--------------- | :------------------------- | :------------------------------------- |\n| 安装时 401 Unauthorized | 遗留的 `GITHUB_TOKEN` 环境变量 | 取消设置该变量并重新运行 OAuth 流程    |\n| 工具不显示       | 企业代理阻止 `api.githubcopilot.com` | 添加代理设置或将该域列入白名单         |\n| 模型超时         | 启用了大型工具集           | 仅限于所需的工具集                     |\n\n## 步骤 5：使用动态工具集简化工作流\n\n完整的 MCP 服务器包含 70 多个工具，虽然功能强大，但这可能会让您和 AI 模型感到不知所措。这就是动态工具集的用武之地。\n\n**工作原理：**\n大型语言模型 (LLM) 最初只包含少量元工具：`listAvailableToolsets`、`enableToolset` 和 `getToolsetTools`。它会根据手头的任务（例如“处理拉取请求”）确定所需工具，然后仅获取并启用这些工具。VS Code 会通过工具更改通知自动加载它们。这使得您的界面（和您的 AI）保持专注和高效。\n\n## 步骤 6：安全和代理工作流的下一步发展\n\nGitHub MCP 服务器正在积极发展。以下是即将推出的功能：\n\n### MCP 中的秘密扫描\n\n很快，MCP 服务器将能够检测并阻止 AI 生成的秘密，就像 GitHub 阻止您在拉取请求中推送秘密一样。如果需要，您可以覆盖，但默认设置会保护您的数据，无论是来自提示注入还是意外情况。\n\n### 将问题分配给 Copilot\n\n与 Copilot 编码代理的直接集成意味着您将能够：\n*   将问题直接分配给 Copilot。\n*   从 VS Code 触发完成。\n*   观察代理间工作流在不同工具之间展开。\n\n未来是代理与代理之间的协作，而 GitHub MCP 是其基础。\n\n## 贡献与总结\n\nGitHub MCP 项目是完全开源的，并且发展迅速。欢迎：\n*   **探索仓库：** 了解工具的构建方式并贡献您自己的工具。\n*   **提交问题：** 帮助塑造协议和工具。\n*   **加入讨论：** 在 GitHub 和 Discord 上与其他构建者联系。\n\n无论您是构建工具、提供反馈还是探索 AI 驱动的开发，MCP 生态系统都有您的位置。\n\nGitHub 远程 MCP 服务器消除了基础设施开销，让您能够专注于构建更好的自动化。不再需要管理 Docker，不再需要轮换令牌，只需一次 OAuth 认证即可开始交付。记住：最好的基础设施是您无需管理的基础设施。\n\n阅读完整的文档以开始使用，或深入研究上述示例并立即开始实验。",
+      "shortSummary": "GitHub MCP 服务器提供托管服务，简化AI工作流。它替代了本地Docker设置，消除了令牌管理和手动更新的繁琐。通过OAuth认证，用户可获得自动更新和丰富的AI工具集，支持代码库智能、PR自动化、CI/CD可见性及安全洞察。该服务提供只读模式和动态工具集等细粒度控制。未来将集成AI生成秘密扫描和Copilot代理间协作，旨在实现代理间的无缝协作，让开发者专注于代码交付。",
+      "translated_title": "GitHub MCP 服务器实用指南",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Upgrade from a local MCP Docker image to GitHub’s hosted server and automate pull requests, continuous integration, and security triage in minutes — no tokens required.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/a-practical-guide-on-how-to-use-the-github-mcp-server/\">A practical guide on how to use the GitHub MCP server</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "从首次提交到大型项目：收听我们的全新开源播客 (原标题: From first commits to big ships: Tune into our new open source podcast)",
+      "link": "https://github.blog/open-source/maintainers/from-first-commits-to-big-ships-tune-into-our-new-open-source-podcast/",
+      "pubDate": "Tue, 29 Jul 2025 16:31:29 +0000",
+      "isoDate": "2025-07-29T16:31:29.000Z",
+      "creator": "Abigail Cabunoc Mayes",
+      "summary": "# GitHub推出全新开源播客：从首次提交到大型项目\n\nGitHub隆重推出全新播客，旨在深入探讨开源世界的运作机制，以及为何如此多的人持续投入其中共同建设。播客将深入挖掘代码背后的故事：塑造开源生态系统的项目、人物和理念。\n\n## 播客宗旨与GitHub愿景\nGitHub认为开源一直是未来创新的启动平台。尤其在2025年，软件领域的一切新事物，从AI代理到边缘运行时再到气候技术仪表板，都始于公共仓库，任何人都可以轻松地进行分叉、重混和改进。投资开源公共领域，不仅是赞助代码，更是为全球的研发引擎提供支持。播客将围绕这一核心理念，探索构成当今开源的一切要素。\n\n## 核心贡献者团队\n播客由一支由资深开源贡献者组成的轮值主持团队共同呈现，包括：\n*   **Cassidy Williams**\n*   **Kedasha Kerr**\n*   **Andrea Griffiths**\n*   **Abby Cabunoc Mayes** (本文作者)\n\n他们都对开源世界的不同领域做出了长期贡献。团队将共同探讨当前开源领域中令人兴奋、充满挑战和不断演变的话题，涵盖社区建设、开放科学、开发者教育以及公开构建等。每位主持人都会为对话带来独特的视角。\n\n## 首期节目亮点\n在首期节目中，主持人团队进行了自我介绍，分享了他们如何参与到开源中，以及是什么让他们坚持不懈。\n*   Kedasha讨论了在看似充斥着初学者开发者内容的今天，创建初学者内容的重要性。\n*   Cassidy分享了她十几岁时偶然听到的一段对话如何激发了她对代码的热爱。\n\n节目还特别介绍了本周引起他们关注的一些优秀开源项目：\n*   **Anime.JS**：一个视觉效果惊艳的JavaScript动画库，激发创造力。\n*   **Docs**：由法国和德国政府开发的协作式开源文档编辑器。\n*   **CSS Zero**：一个无需构建的前端启动套件，简化了Web开发。\n\n## 播客内容与未来展望\n播客将每两周更新一期，分享来自开源生态系统中的维护者、贡献者和构建者的故事。内容将涵盖工具、标准以及那些带来乐趣（有时也带来混乱）的副项目。\n\n听众还将听到特邀嘉宾的分享，例如：\n*   **Jason Lengstorf**：为开发者制作电视节目。\n*   **Keeley Hammond**：Electron的核心维护者。\n\n他们将分享各自的旅程和见解。无论您是刚刚入门，还是已经维护项目多年，播客都将为您提供有价值的内容。\n\n## 即将推出\n下一期节目将深入探讨**模型上下文协议（Model Context Protocol, MCP）**：\n*   它是什么？\n*   为什么它很重要？\n*   它如何帮助提高AI工具的透明度和互操作性？\n\n节目将探索MCP如何建立在开放标准的悠久历史之上，以及它为当今开发者解锁了哪些可能性。\n\n## 作者与相关资源\n本文由 **Abigail Cabunoc Mayes** 撰写。\n![Abigail Cabunoc Mayes](https://avatars.githubusercontent.com/u/617994?v=4&s=200)\nAbigail Cabunoc Mayes 在 GitHub 工作，致力于帮助开源生态系统在当下和未来蓬勃发展。\n\n**相关文章与资源：**\n*   **我们需要一个欧洲主权技术基金**：探讨开源软件作为关键基础设施却资金不足的问题，以及GitHub开发者政策团队如何建立联盟以弥补维护资金缺口。\n*   **Docs**：掌握GitHub所需的一切，一站式获取。\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n    [前往Docs](https://docs.github.com/)\n*   **GitHub**：在GitHub上构建未来，这里是任何人、任何地点、构建任何事物的平台。\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n    [开始构建](https://github.com/)\n*   **客户案例**：了解使用GitHub进行构建的公司和工程团队。\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n    [了解更多](https://github.com/customer-stories)\n*   **GitHub Universe 2025**：最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山加入我们。\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n    [立即注册](https://github.com/universe)",
+      "shortSummary": "GitHub推出全新开源播客，探讨开源生态系统的故事、人物和理念。播客由多位资深开源贡献者轮流主持，每两周更新一期。内容涵盖社区建设、开发者教育和精选开源项目（如Anime.JS、Docs、CSS Zero）。未来将邀请特邀嘉宾并深入探讨Model Context Protocol等前沿话题。播客旨在为开源社区提供洞察和灵感，无论初学者还是资深维护者都能从中受益。",
+      "translated_title": "从首次提交到大型项目：收听我们的全新开源播客",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/617994?v=4&s=200",
+          "alt": "Abigail Cabunoc Mayes",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Introducing the brand new GitHub Podcast: A show dedicated to the topics, trends, stories, and culture in and around the open source developer community on GitHub.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/from-first-commits-to-big-ships-tune-into-our-new-open-source-podcast/\">From first commits to big ships: Tune into our new open source podcast</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "扩大影响力：GitHub Copilot 如何赋能小农户 (原标题: Scaling for impact: How GitHub Copilot supercharges smallholder farmers)",
       "link": "https://github.blog/open-source/social-impact/scaling-for-impact-how-github-copilot-supercharges-smallholder-farmers/",
       "pubDate": "Mon, 28 Jul 2025 19:53:32 +0000",
@@ -262,64 +319,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Strengthen your repositories against actions workflow injections — one of the most common vulnerabilities.</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/how-to-catch-github-actions-workflow-injections-before-attackers-do/\">How to catch GitHub Actions workflow injections before attackers do</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "为爱而码：一场充满乐趣、奇思妙想和无限创意的夏季编程马拉松 (原标题: For the Love of Code: a summer hackathon for joyful, ridiculous, and wildly creative projects)",
-      "link": "https://github.blog/open-source/for-the-love-of-code-2025/",
-      "pubDate": "Wed, 16 Jul 2025 15:00:00 +0000",
-      "isoDate": "2025-07-16T15:00:00.000Z",
-      "creator": "Lee Reilly",
-      "summary": "# 为爱而码：一场充满乐趣、奇思妙想和无限创意的夏季编程马拉松\n\nGitHub 宣布举办一场名为“为爱而码”（For the Love of Code）的全球性夏季编程马拉松，旨在鼓励开发者们出于乐趣、创意和探索精神来构建项目，而不仅仅是为了解决问题。\n\n## 活动时间\n*   2025年7月16日至9月22日。\n\n## 参赛对象\n*   所有经验水平的开发者，包括学生、维护者、业余爱好者、创意编码者、资深专业人士和好奇的初学者。\n*   可选择个人参赛或组队（团队人数上限为10人）。\n*   参赛者需年满13岁并拥有GitHub账户（部分地区可能受法律限制）。\n\n## 参赛内容\n*   参赛者可以构建任何他们想做的项目，包括但不限于：Web应用、命令行工具（CLI）、游戏、AI探索或创意实验。\n*   鼓励独立完成、与朋友合作或借助GitHub Copilot。\n*   鼓励使用开源项目、复用旧想法或原型（只要在活动期间构建或重建）。\n*   可以使用付费工具、许可软件或API，但需在README中注明，并避免提交敏感信息。\n*   非传统软件项目（如硬件破解、交互艺术、生成式项目）只要涉及代码并能在公共GitHub仓库中托管，也符合要求。\n*   禁止构建任何不尊重、不安全、有害或违反GitHub行为准则的内容（如NSFW内容、仇恨言论）。\n\n## 参赛类别（六大主题）\n1.  **按钮、蜂鸣与闪光（Buttons, beeps, and blinkenlights）**\n    *   涉及硬件（真实或模拟）的项目，具有闪烁、蜂鸣、嗡嗡声或带来惊喜的特点。强调互动性、物理性、触觉性和一点点混乱感。\n    *   *示例：* 显示构建状态的交通灯、测试通过时会喊“LGTM!”的焊接小助手、检测老板靠近时显示“实际工作”的屏幕、笔记本开合驱动的摩尔斯电码生成器、在ESP32 T-Display上可视化吉他音符的Rust项目。\n2.  **变革的代理（Agents of change）**\n    *   AI驱动的体验、代理或传统机器人，它们可以提供帮助、制造障碍或产生有趣的误解。涵盖自动化工作流、代码评审或荒谬的助手类项目。\n    *   *示例：* LLM驱动的过度戏剧化更新日志编写器、以讽刺高级开发人员或过于友善的实习生口吻评审PR的代理、AI辅助的餐厅账单分摊应用、Shania Twain风格的Slack或Discord机器人。\n3.  **终端才华（Terminal talent）**\n    *   巧妙、实用或纯粹有趣的命令行工具、扩展和TUI（文本用户界面）项目。具有个性的实用工具、精心设计的界面或让终端更生动的脚本。\n    *   *示例：* 命令行卡拉OK机、基于Issue和PR提供每日运势的GitHub CLI扩展、自动化长期未处理事项的交互式工具、终端动画派对鹦鹉、机械键盘声音模拟器。\n4.  **游戏时间（Game on）**\n    *   可玩、益智或纯粹有趣的项目。涵盖各种互动体验，如游戏原型、机制混搭或类型融合。强调怀旧、巧妙或原创性，乐趣优先，功能其次。\n    *   *示例：* 复古街机游戏、AI生成情节和NPC的冒险游戏、使用Copilot构建的垂直跳跃游戏、Octocats版的Flappy Bird克隆、在GitHub代码行中下落的垂直滚动游戏。\n5.  **世界奇观（World wide wonders）**\n    *   任何能让人微笑、思考、学习或点击“查看源代码”的Web项目。无论是初次HTML尝试、已计划发布的工具，还是具有意外用途的有趣副项目。\n    *   *示例：* 基于GitHub用户名和贡献记录进行“吐槽”的Web应用、具有拨号上网加载效果和像素艺术的90年代风格网站、需要杀死Doom中敌人才能通过的验证码、交互式随机复古科幻仪表板。\n6.  **包罗万象（Everything but the kitchen sink）**\n    *   为那些过于小众、特定或难以归类的创意项目而设的通配符类别。包括扩展、插件、工具、GitHub Actions或意外有用的原型。\n    *   *示例：* 提交代码时播放情景喜剧笑声的Git Hook、为函数提供Yelp式评论的VS Code扩展、如果团队本周没有合并带有正面表情符号的PR就拒绝部署的GitHub Action、纯粹为了重写而用Rust重写的项目、将宠物带入编辑器的VS Code扩展。\n\n## 奖项设置\n*   **互联网永生：** 优秀作品将在GitHub博客上展示。\n*   **GitHub Copilot Pro+：** 每个类别获奖者将获得12个月的GitHub Copilot Pro+订阅。\n*   **荣誉与氛围：** 以及一个终于可以构建心仪项目的绝佳理由。\n*   **真正的奖品：** 从事你热爱的事情。\n*   每位参赛者最多获得一份奖品，但其他优秀作品仍会获得表彰。\n\n## GitHub Copilot的鼓励使用\n*   Copilot不仅是代码补全工具，更是创意伙伴，可用于头脑风暴、解释代码等。\n*   鼓励参赛者探索Copilot的创意用途，包括Agent模式。\n\n## 如何参与\n1.  构建一个充满乐趣的项目（个人、与朋友或与Copilot合作）。\n2.  在2025年9月22日世界协调时间（AoE）晚上11:59之前，将代码推送到公共GitHub仓库。\n3.  通过官方提交表格提交作品。\n4.  在项目进展中添加标签`#ForTheLoveOfCode`，优秀作品将在社交媒体和GitHub Explore页面上展示。\n\n## 规则要点\n*   鼓励使用开源。\n*   鼓励使用GitHub Copilot，但非强制。\n*   最多可提交42个项目。\n*   项目必须在公共GitHub仓库中，并附有清晰的README文件。\n*   请查阅完整的条款和条件以及行为准则。\n\n## 评判标准\n*   由GitHub Stars、Campus Experts和工作人员组成的评审团将根据项目的乐趣性、执行力、技术难度、独创性以及与类别的相关性进行评估。\n*   对GitHub Copilot的意外使用将获得额外加分（非实际分数）。\n*   每个类别将选出三名获奖者，并于2025年10月22日前在GitHub博客上公布。\n\n## 常见问题\n*   **团队合作：** 可以，最多10人。\n*   **提交次数：** 最多42次。\n*   **时间投入：** 随意，可短可长。\n*   **新手参与：** 欢迎，提供了入门资源。\n*   **截止日期后编辑：** 仓库可继续工作，但评判以截止日期版本为准。\n*   **提交表单错误：** 重新提交即可，以最新版本为准。\n*   **README内容：** 应包含工具、依赖、设置说明，并考虑添加`#ForTheLoveOfCode`主题。\n*   **视频/演示：** 非强制，但强烈鼓励（GIF、截图、短视频有助于展示）。\n*   **外部托管演示：** 可以，但代码仍需在公共GitHub仓库中。\n*   **项目展示：** 提交即表示同意GitHub在选中时展示项目并注明出处。",
-      "shortSummary": "GitHub将举办“为爱而码”夏季编程马拉松，时间为2025年7月16日至9月22日。该活动鼓励所有水平的开发者，无论是个人还是团队，构建充满乐趣、创意和独特性的项目，涵盖硬件、AI、游戏和Web应用等六大类别。参赛者可自由选择是否使用GitHub Copilot。优胜者将获得GitHub博客展示和Copilot Pro+订阅。活动旨在激发编程乐趣和创造力，项目将根据乐趣性、执行力和独创性进行评判。",
-      "translated_title": "为爱而码：一场充满乐趣、奇思妙想和无限创意的夏季编程马拉松",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>That idea you've been sitting on? The domain you bought at 2AM? A silly or serious side project? This summer, we invite you to build it — for the joy, for the vibes, For the Love of Code 🧡</p>\n<p>The post <a href=\"https://github.blog/open-source/for-the-love-of-code-2025/\">For the Love of Code: a summer hackathon for joyful, ridiculous, and wildly creative projects</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "从混乱到清晰：使用GitHub Copilot代理改进开发者工作流程 (原标题: From chaos to clarity: Using GitHub Copilot agents to improve developer workflows)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/from-chaos-to-clarity-using-github-copilot-agents-to-improve-developer-workflows/",
-      "pubDate": "Tue, 15 Jul 2025 16:00:00 +0000",
-      "isoDate": "2025-07-15T16:00:00.000Z",
-      "creator": "Chris Reddington",
-      "summary": "## 从混乱到清晰：使用GitHub Copilot代理改进开发者工作流程\n\n现代软件开发项目初期可能结构松散，但随着发展，这些早期努力可能变得脆弱。本文通过一个实际案例，展示了如何利用GitHub Copilot编码代理（agent）来重构和增强一个个人GitHub Actions项目，使其从一个零散的工具转变为一个结构良好、测试覆盖、文档齐全且易于维护的项目。\n\n### 核心案例：`validate-file-exists` GitHub Action\n\n作者在2024年11月（原文如此，可能为笔误）创建了一个名为`validate-file-exists`的GitHub Action，旨在确保仓库中存在特定文件（如`dependabot.yml`）。尽管功能可用，但它缺乏文档、元数据不一致、输入验证不足，并且没有为Copilot提供清晰的自定义指令或设置步骤。本文详细介绍了如何使用Copilot代理模式在VS Code中解决这些问题。\n\n### 关键改进步骤\n\n1.  **改进Copilot自定义指令 (`copilot-instructions.md`)**\n    *   **问题：** 原始指令过于简略，缺乏仓库目的、用法、结构描述以及对Copilot的明确指导。\n    *   **行动：** 基于最佳实践，要求Copilot根据代码库更新指令，使其包含：\n        *   仓库/代码库的清晰摘要和Action功能。\n        *   贡献指南（如何构建、格式化、lint和测试代码库，包括提交前的期望）。\n        *   项目结构概述。\n        *   关键技术原则（严格的TypeScript、TSDoc、专注且可管理的功能）。\n    *   **结果：** Copilot获得了正确的上下文，能够进行有意义的贡献。文章中提供了更新后的指令示例。\n\n2.  **添加`copilot-setup-steps.yaml`**\n    *   **目的：** 为Copilot编码代理提供必要的工作环境，包括安装框架、依赖项和工具。\n    *   **行动：** 根据GitHub文档创建`.github/copilot-setup-steps.yaml`文件。该文件负责检出代码、设置Node.js并安装所需的依赖项。作者将Node.js版本配置为从`.node-version`文件获取，以与CI工作流保持一致。\n    *   **结果：** Copilot编码代理具备了构建、lint和测试代码库所需的依赖项和工具，使其能够在进行更改时检查质量。\n\n3.  **让Copilot发现技术债务**\n    *   **行动：** 使用VS Code中的Copilot Chat，询问Copilot项目中的技术债务，并要求提供优先列表，以便创建GitHub Issue，包含问题陈述、验收标准和文件修改建议。\n    *   **Copilot的建议：**\n        *   包元数据不一致。\n        *   README不匹配（输入名称错误）。\n        *   对空或格式错误的输入缺乏验证。\n    *   **行动：** 要求Copilot为这些问题编写一个Issue，并将其分配给Copilot。\n\n4.  **Copilot编码代理实际操作**\n    *   **过程：** 任务分配后，代理异步地启动了一个新的拉取请求（PR）。它探索了仓库内容以理解问题，制定了计划，并执行了以下操作：\n        *   修复了`package.json`中的名称、描述、URL和作者字段。\n        *   更新了README使用示例以匹配代码。\n        *   添加了输入验证逻辑（拒绝空字符串、仅包含逗号的输入）。\n        *   为这些边缘情况编写了四个新测试。\n        *   确认了linting、格式化和代码覆盖率完好无损。\n        *   更新了PR正文，附带已完成工作的清单。\n    *   **结果：** Copilot在11分钟内完成了所有任务。尽管CI工作流最初因作者未在指令中包含的Markdown linting检查而失败，但通过在PR评论中要求Copilot修复，它成功更新了代码，并通过了检查。\n\n### 额外案例：使用Copilot编码代理和Playwright MCP服务器进行UI更改\n\n作者还展示了Copilot在另一个项目（一个基于Next.js和Tailwind CSS的Trend Radar可视化应用）中进行UI更改的能力。\n\n*   **问题：** 用户必须手动输入点数据。\n*   **期望解决方案：** 允许用户点击雷达放置点，并支持拖放重新定位以更改点的类别或可能性。\n*   **Copilot的工作：** 在几次PR评论迭代后，Copilot编码代理实现了点击放置逻辑、添加了拖放支持、编写了单元测试、截取了屏幕截图并附加到PR中，并更新了PR（并回复评论）以总结已完成的工作。\n*   **重要说明：** Playwright现在默认安装在Copilot编码代理中，这使得Copilot也能够验证视觉行为。\n\n### 总结与展望\n\n此次经历不仅是一次清理会话，更是现代软件协作的实践。GitHub Copilot编码代理被视为新的团队成员。通过为仓库提供清晰的上下文和意图，可以邀请Copilot进行有意义的贡献。作者鼓励开发者尝试使用Copilot代理来清理旧的GitHub Action、重构被忽视的仓库或添加验证和测试。关键在于：\n\n*   编写清晰简洁的`copilot-instructions.md`来指导代理。\n*   使用`copilot-setup-steps.yaml`为代理提供所需的工具。\n*   设定清晰且范围明确的任务。\n\nCopilot现在通过Playwright MCP服务器可以访问浏览器，从而能够与网页交互并添加屏幕截图到PR中。开发者无需启动新项目，即可在现有项目上尝试Copilot及其代理能力。\n\n**作者：**\n\n![Chris Reddington](https://avatars.githubusercontent.com/u/791642?v=4&s=200)\n\nChris Reddington 是GitHub开发者关系团队中一位充满热情的开发者倡导者和高级项目经理。\n\n**更多来自GitHub的资源：**\n\n*   **文档：**\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n    掌握GitHub所需的一切，尽在一处。\n*   **GitHub：**\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n    在GitHub上构建未来，这里是任何人、任何地点构建任何东西的地方。\n*   **客户案例：**\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n    了解使用GitHub进行构建的公司和工程团队。\n*   **GitHub Universe 2025：**\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n    最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山加入我们。",
-      "shortSummary": "本文介绍了如何利用GitHub Copilot编码代理改进开发者工作流程。通过一个GitHub Action项目案例，作者展示了Copilot如何帮助完善自定义指令、配置开发环境、识别并解决技术债务，以及在拉取请求中协作。Copilot还被用于一个UI项目的迭代改进，并能通过Playwright进行视觉验证。文章强调了清晰的指令和任务范围对Copilot协作的重要性，鼓励开发者在现有项目中尝试Copilot的代理能力，将其视为一个高效的团队成员。",
-      "translated_title": "从混乱到清晰：使用GitHub Copilot代理改进开发者工作流程",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/791642?v=4&s=200",
-          "alt": "Chris Reddington",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Explore how you can set Copilot coding agent up for success with custom instruction and Copilot setup steps.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/from-chaos-to-clarity-using-github-copilot-agents-to-improve-developer-workflows/\">From chaos to clarity: Using GitHub Copilot agents to improve developer workflows</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-07-29T04:55:09.017Z"
+  "lastUpdated": "2025-07-31T04:52:09.407Z"
 }
