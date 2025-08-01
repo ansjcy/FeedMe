@@ -5,6 +5,19 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "入职你的AI结对程序员：成功设置GitHub Copilot编码代理 (原标题: Onboarding your AI peer programmer: Setting up GitHub Copilot coding agent for success)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/onboarding-your-ai-peer-programmer-setting-up-github-copilot-coding-agent-for-success/",
+      "pubDate": "Thu, 31 Jul 2025 17:12:43 +0000",
+      "isoDate": "2025-07-31T17:12:43.000Z",
+      "creator": "Christopher Harrison",
+      "summary": "## 入职你的AI结对程序员：成功设置GitHub Copilot编码代理\n\nGitHub Copilot被定位为AI结对程序员或团队中的AI成员，其编码代理（coding agent）功能能够自主处理问题并提出解决方案。要确保Copilot编码代理的成功，需要进行类似于新开发人员入职的配置和优化。\n\n### GitHub Copilot中的代理工作流：编码代理 vs. 代理模式\n\nGitHub Copilot提供两种核心代理能力：\n\n*   **编码代理 (Coding Agent)**：一个自主工具。你向Copilot分配一个问题，它会在后台启动Actions容器，迭代工作，并最终返回一个拉取请求（PR）。这是一种异步的、面向拉取请求的交互模式。\n*   **代理模式 (Agent Mode)**：一个交互式助手。它在编辑器或github.com上实时执行较小的、多步骤的任务。这是一种对话式的、即时的交互模式。\n\n### Copilot编码代理的工作流程：从问题到可审查的拉取请求\n\n当一个问题被分配给Copilot时，它会遵循以下模式：\n\n1.  为将要创建的代码创建一个分支。\n2.  创建一个拉取请求来跟踪其工作并与团队沟通。\n3.  为其工作创建一个受限环境（在GitHub Actions内部运行）。\n4.  阅读问题或提示以理解请求的任务。\n5.  探索项目以确定解决问题的最佳方法。\n6.  迭代地朝着解决方案工作。\n7.  完成工作，更新拉取请求，并通知团队拉取请求已准备好审查。\n\n理解这个流程有助于我们确保Copilot的成功。\n\n### 使用GitHub Actions配置Copilot的环境\n\n为了让Copilot高效工作，它需要访问团队使用的所有工具、服务、库和框架。这可以通过自定义工作流文件来实现：\n\n*   **工作原理**：编码代理在GitHub Actions中运行的容器内工作。你可以利用Actions的YAML配置能力来确保容器正确设置。\n*   **配置步骤**：\n    *   在`.github/workflows/copilot-setup-steps.yml`路径下创建一个名为`copilot-setup-steps`的作业。\n    *   在该作业中列出安装环境所需的所有步骤（例如，安装Python和SQLite依赖）。\n    *   每次将问题分配给Copilot时，它都会运行此工作流来配置其环境。\n*   **专业提示**：可以重用现有的用于开发环境（如运行测试或验证脚本）的工作流。\n*   **重要提示**：如果某些操作应以特定方式完成，请明确告知Copilot，避免其自行推断导致意外版本或错误。\n\n### 通过精心编写的问题和提示设置Copilot的成功\n\n问题或提示是Copilot创建拉取请求的入口点。问题定义越清晰，拉取请求的质量就越高。一个好的问题应包含：\n\n*   清晰定义的问题陈述或用户故事。\n*   如果是bug，提供完整的错误信息、堆栈跟踪、输出以及重现步骤。\n*   任何相关的历史或之前尝试过的方法。\n*   关于如何处理问题的建议。\n\n**示例**：一个将测试从unittest迁移到pytest的良好问题描述，详细说明了需求、现有资源和推荐方法。\n\n### 使你的仓库受欢迎（对开发者和AI）\n\n优化项目结构和文档对Copilot和新入职的开发者同样重要。Copilot在处理问题时会探索代码库，查找README文件并阅读文档，然后进行代码库搜索。\n\n*   **优化内容**：\n    *   拥有健壮且最新的项目和服务README文件。\n    *   代码中包含描述操作的注释。\n    *   遵循良好的命名规范（类、函数、变量）。\n    *   逻辑化的项目结构，遵循文件夹名称和实体分组的最佳实践。\n*   **专业提示**：通过查看Copilot创建的PR中的“View session”按钮，你可以了解Copilot的工作方式，从而进一步优化任务分配和环境配置。\n\n### 使用Copilot自定义指令记录机构知识\n\n自定义指令是指导Copilot的最佳方式，它们可以包含代码格式规则或团队“固有”但未书面记录的机构知识。Copilot编码代理支持两种类型的指令文件：\n\n1.  **仓库级指令文件 (`copilot-instructions.md`)**：\n    *   存储在代码库的`.github/copilot-instructions.md`中。\n    *   适用于所有请求。\n    *   应包含：项目概览、构建方式、用户故事、使用的框架和库、项目结构、全局编码指南和规则。\n    *   **示例**：一个关于经典街机项目的指令文件，包含标准玩家流程、框架、编码指南和项目结构。\n\n2.  **目标指令文件 (`.instructions.md`)**：\n    *   存储在代码库的`.github/instructions/`文件夹（或其子文件夹）中。\n    *   可以通过`applyTo`部分设置glob模式，以指定规则适用的文件类型（例如，`**/games/*.py`）。\n    *   包含特定于这些文件的指令，如继承的基类和测试要求。\n    *   **示例**：一个针对游戏文件的指令文件，要求所有游戏继承自`BaseGame`，并包含单元测试要求。",
+      "shortSummary": "本文介绍了如何成功设置和使用GitHub Copilot编码代理。关键在于通过GitHub Actions配置其运行环境，编写清晰详细的问题和提示以指导其工作，优化项目结构和文档以提高其理解效率。此外，利用仓库级和目标文件级的自定义指令，可以向Copilot传达编码规范和机构知识，确保其生成的代码符合团队标准，从而使其成为高效的AI结对程序员。",
+      "translated_title": "入职你的AI结对程序员：成功设置GitHub Copilot编码代理",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Learn how to configure Copilot coding agent’s environment, optimize project structure, use custom instructions, and extend its capabilities with MCP servers.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/onboarding-your-ai-peer-programmer-setting-up-github-copilot-coding-agent-for-success/\">Onboarding your AI peer programmer: Setting up GitHub Copilot coding agent for success</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub MCP 服务器实用指南 (原标题: A practical guide on how to use the GitHub MCP server)",
       "link": "https://github.blog/ai-and-ml/generative-ai/a-practical-guide-on-how-to-use-the-github-mcp-server/",
       "pubDate": "Wed, 30 Jul 2025 16:00:00 +0000",
@@ -269,57 +282,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>In June, we experienced three incidents that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-june-2025/\">GitHub Availability Report: June 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "如何在攻击者之前捕获 GitHub Actions 工作流注入 (原标题: How to catch GitHub Actions workflow injections before attackers do)",
-      "link": "https://github.blog/security/vulnerability-research/how-to-catch-github-actions-workflow-injections-before-attackers-do/",
-      "pubDate": "Wed, 16 Jul 2025 16:00:00 +0000",
-      "isoDate": "2025-07-16T16:00:00.000Z",
-      "creator": "Dylan Birtolo",
-      "summary": "# 如何在攻击者之前捕获 GitHub Actions 工作流注入\n\n在代码开发和项目维护中，安全性至关重要，并且从项目初期就考虑安全比后期修补要容易得多。GitHub Actions 工作流注入是 GitHub 仓库中最常见的漏洞之一，但幸运的是，它相对容易解决，GitHub 也提供了相关工具。\n\n![CodeQL 在 2024 年发现的最常见漏洞类型条形图。从多到少依次为：注入、访问控制失效、不安全设计、加密失败、身份识别与认证失败、安全配置错误、软件和数据完整性失败、安全日志记录和监控失败、服务器端请求伪造以及易受攻击和过时的组件。](https://github.blog/wp-content/uploads/2025/07/vulnerabilities.png?resize=768%2C768)\n*此图表来自 2024 年 Octoverse 报告，详细说明了 CodeQL 在 2024 年识别出的最常见 OWASP 分类漏洞类型。最新数据显示了类似的趋势，强调了尽管几十年来持续发出警告，注入攻击的风险依然存在。*\n\n## 培养安全思维\n\n安全是一个持续的过程，需要不断关注以确保代码安全。自动化工具虽然帮助巨大，但并非一劳永逸的解决方案。因此，理解安全漏洞的成因及其解决办法至关重要。没有工具是 100% 有效的，但通过提高理解和加深知识，将能更好地应对威胁。\n\n## 解释 Actions 工作流注入\n\nGitHub Actions 工作流注入是指恶意攻击者能够提交一个由仓库工作流运行的命令。当攻击者控制数据（例如，创建 issue 标题或分支名称），并且你执行了这些不受信任的输入时，就可能发生这种情况。例如，你可能在工作流的 `run` 部分执行了它。\n\n这种漏洞最常见的原因之一是代码中使用了 `${{}}` 语法。在预处理步骤中，此语法会自动扩展，这种扩展可能会通过插入新命令来改变你的代码。然后，当系统执行代码时，这些恶意命令也会被执行。\n\n**示例：**\n考虑以下工作流：\n```yaml\n- name: print title\n  run: echo \"${{ github.event.issue.title }}\"\n```\n假设此工作流在用户创建 issue 时触发。攻击者可以在 issue 标题中加入恶意代码（例如 `touch pwned.txt`），当此工作流运行时，代码就会被执行。更重要的是，此代码将以工作流被授予的权限运行，而这些权限攻击者通常无法获得。这是 Actions 工作流注入的根本问题。\n\nActions 工作流注入的最大问题在于缺乏对这一问题的认识，以及难以找到所有可能导致此漏洞的实例。\n\n## 主动保护代码的方法\n\n预防漏洞的出现比事后修补更容易。在编写代码时，应牢记以下几点来保护自己免受 Actions 工作流注入的侵害。请记住，即使遵循所有这些准则，也不能保证你完全受到保护。\n\n1.  **使用环境变量：**\n    Actions 工作流注入是由于扩展本应被视为不受信任的输入而发生的。当它被插入到工作流中时，如果包含恶意代码，就会改变预期的行为。然后当工作流触发并执行时，攻击者的代码就会运行。\n    一个解决方案是避免在工作流的 `run` 等部分直接使用 `${{}}` 语法。相反，将不受信任的数据扩展到环境变量中，然后在运行工作流时使用该环境变量。\n    以上述示例为例，它将变为：\n    ```yaml\n    - name: print title\n      env:\n        TITLE: ${{ github.event.issue.title }}\n      run: echo \"$TITLE\"\n    ```\n    这并不会使输入变得可信，但有助于保护你免受攻击者利用此漏洞的一些方式。\n\n2.  **最小权限原则：**\n    当 Actions 工作流注入触发时，它会以工作流被授予的权限运行。你可以通过设置工作流的 `GITHUB_TOKEN` 权限来指定工作流的权限。因此，确保你的工作流仅以执行任务所需的最低权限级别运行非常重要。否则，如果攻击者设法将代码注入你的工作流，你可能会授予他们意想不到的权限。\n\n3.  **谨慎使用 `pull_request_target`：**\n    当注入发生在由 `pull_request_target` 触发的工作流中时，其影响通常比 `pull_request` 更具破坏性。`pull_request` 和 `pull_request_target` 工作流触发器之间存在显著差异：\n    *   `pull_request` 工作流触发器在从 fork 触发时，默认阻止对目标仓库的写入权限和秘密访问。（请注意，当工作流从同一仓库中的分支触发时，它有权访问秘密并可能拥有写入权限。）\n    *   相比之下，`pull_request_target` 工作流触发器允许工作流编写者解除一些限制。虽然这在某些场景中很重要，但这意味着使用 `pull_request_target` 而非 `pull_request` 可能会使你的仓库面临更大的风险。\n    因此，除非你有非常特殊的需求，否则应使用 `pull_request` 触发器。如果你使用后者，鉴于其额外的权限，你需要对工作流格外小心。\n\n4.  **问题不只存在于 `main` 分支：**\n    在开发代码时创建多个分支是很常见的，通常用于各种功能或错误修复。不幸的是，如果你使用 `pull_request_target` 触发器，这些分支仍然是潜在的漏洞。攻击者可以针对在分支的拉取请求上运行的工作流，并仍然利用此漏洞。这意味着你不能仅仅因为针对 `main` 分支的工作流是安全的就认为你的仓库是安全的。你需要审查仓库中所有公开可见的分支。\n\n## CodeQL 的作用\n\nCodeQL 是 GitHub 的代码分析工具，可对你的代码进行自动化安全检查。CodeQL 最相关的特定功能是代码扫描功能，它可以提供有关代码的反馈并帮助识别潜在的安全漏洞。GitHub 最近已将扫描 GitHub Actions 工作流文件的功能普遍可用，你可以使用此功能查找多种类型的漏洞，例如潜在的 Actions 工作流注入风险。\n\nCodeQL 擅长发现不受信任数据可能被使用的地方，原因之一是其**污点追踪**功能。CodeQL 会追踪不受信任数据在代码中的流动，并识别可能不像前面示例那样明显的潜在风险。\n\n启用 CodeQL 扫描 Actions 工作流非常简单，只需使用默认设置启用 CodeQL 代码扫描即可，它会自动包含分析 Actions 工作流，并将在任何受保护的分支上运行。然后，你可以检查代码扫描结果以识别潜在风险并开始修复它们。如果你已经在使用 CodeQL 的高级设置，可以通过将 `actions` 语言添加到目标语言来添加对扫描 Actions 工作流的支持。\n\n虽然 CodeQL 是一个非常有效的工具，并且非常擅长发现这种特定漏洞，但它仍然不是 100% 有效的。请记住，没有工具是完美的，你应该专注于保持安全思维并批判性地审视自己的代码。\n\n## 后续步骤\n\nActions 工作流注入是 GitHub 上最普遍的漏洞之一，但它们相对容易解决。消除此漏洞的最大问题仅仅是意识到它们是一个问题，并发现代码中可能的薄弱环节。既然你已经意识到了这个问题，并且有 CodeQL 作为一个有用的工具，你应该能够开始在自己的代码中查找和修复这些漏洞。如果你牢记主动措施，你将能够更好地防止它们在未来编写的代码中出现。\n\n如果你想了解更多关于 Actions 工作流注入的信息，GitHub 之前发布了一个关于如何保护 Actions 工作流安全的四部分系列文章。第二部分专门讨论 Actions 工作流注入，但我们鼓励你阅读整个系列。\n\n需要帮助搜索代码以查找潜在漏洞吗？立即在你的项目中设置代码扫描。\n\n---\n\n**作者：**\n![Dylan Birtolo](https://avatars.githubusercontent.com/u/39363041?v=4&s=200)\nDylan Birtolo 是 GitHub 的高级内容撰稿人，负责分享 GitHub 的所有优点。他从事技术写作近 20 年，其中大部分时间在微软的各个团队工作。业余时间，他与动物打交道，玩很多游戏，并且是一名专业的马上长矛比武者。\n\n---\n\n**探索更多来自 GitHub 的内容：**\n![Docs 图标](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n**文档**\n掌握 GitHub 所需的一切，尽在一个地方。\n[前往文档](https://docs.github.com/)\n\n![GitHub 图标](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n**GitHub**\n在 GitHub 上构建未来，这里是任何地方的任何人都可以构建任何东西的地方。\n[开始构建](https://github.com/)\n\n![客户案例图标](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n**客户案例**\n了解使用 GitHub 进行构建的公司和工程团队。\n[了解更多](https://github.com/customer-stories)\n\n![GitHub Universe 2025 图标](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n**GitHub Universe 2025**\n最后机会：节省 700 美元购买 Universe 现场通行证，并于 10 月 28-29 日在旧金山加入我们。\n[立即注册](https://githubuniverse.com/)",
-      "shortSummary": "GitHub Actions 工作流注入是 GitHub 仓库中常见的漏洞，攻击者通过执行不受信任的输入（如 issue 标题）注入恶意命令。为防范此类攻击，建议使用环境变量处理不受信任数据、遵循最小权限原则、谨慎使用 `pull_request_target` 触发器，并检查所有公开分支。GitHub 的 CodeQL 工具通过污点追踪功能，能自动化检测并帮助修复这些漏洞。安全是一个持续过程，结合工具和安全思维是关键。",
-      "translated_title": "如何在攻击者之前捕获 GitHub Actions 工作流注入",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/07/vulnerabilities.png?resize=768%2C768",
-          "alt": "A bar chart detailing the most common vulnerabilities found by CodeQL in 2024. In order from most to least, they are: injection, broken access control, insecure design, cryptographic failures, identification and authentication failures, security misconfigurations, software and data integrity failures, security logging and monitoring failures, server side request forgery, and vulnerable and outdated components.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/39363041?v=4&s=200",
-          "alt": "Dylan Birtolo",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Strengthen your repositories against actions workflow injections — one of the most common vulnerabilities.</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/how-to-catch-github-actions-workflow-injections-before-attackers-do/\">How to catch GitHub Actions workflow injections before attackers do</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-07-31T04:52:09.407Z"
+  "lastUpdated": "2025-08-01T04:59:44.073Z"
 }
