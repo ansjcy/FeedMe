@@ -5,6 +5,107 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "SAP正在收购SmartRecruiters (原标题: SAP is acquiring SmartRecruiters)",
+      "link": "https://techcrunch.com/2025/08/03/sap-is-acquiring-smartrecruiters/",
+      "pubDate": "Sun, 03 Aug 2025 17:12:51 +0000",
+      "isoDate": "2025-08-03T17:12:51.000Z",
+      "creator": "Anthony Ha",
+      "summary": "## SAP收购SmartRecruiters\n\n*   **收购公告**\n    *   SAP于周五宣布，已达成协议收购招聘软件公司SmartRecruiters。\n\n*   **收购目的与优势**\n    *   SAP在新闻稿中表示，SmartRecruiters“强大、用户友好的界面和无缝的工作流程”将补充SAP现有的HR工具。\n    *   SAP产品和工程主管、执行董事会成员Muhammad Alam表示，此次收购将使客户能够在一个单一系统中管理整个候选人生命周期——从招聘、面试到入职及后续阶段。\n    *   此举旨在简化招聘人员、招聘经理，尤其是候选人的体验。\n\n*   **交易细节**\n    *   此次收购的条款尚未披露。\n    *   交易预计将于今年第四季度完成。\n\n*   **SmartRecruiters背景**\n    *   SmartRecruiters上一次公布的融资是2021年的1.1亿美元E轮融资，当时公司估值为15亿美元。",
+      "shortSummary": "SAP宣布将收购招聘软件公司SmartRecruiters。此次收购旨在通过整合SmartRecruiters的用户友好界面和无缝工作流程，增强SAP现有的HR工具，使客户能在一个系统中管理完整的候选人生命周期，从而简化招聘体验。交易条款未披露，预计将于今年第四季度完成。SmartRecruiters在2021年E轮融资时估值为15亿美元。",
+      "translated_title": "SAP正在收购SmartRecruiters",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "SAP has reached an agreement to acquire SmartRecruiters, with SmartRecruiters' software complementing SAP's existing HR tools."
+    },
+    {
+      "title": "深入OpenAI：探寻如何让AI为你做任何事 (原标题: Inside OpenAI’s quest to make AI do anything for you)",
+      "link": "https://techcrunch.com/2025/08/03/inside-openais-quest-to-make-ai-do-anything-for-you/",
+      "pubDate": "Sun, 03 Aug 2025 14:00:00 +0000",
+      "isoDate": "2025-08-03T14:00:00.000Z",
+      "creator": "Maxwell Zeff",
+      "summary": "### 深入OpenAI：探寻如何让AI为你做任何事\n\nOpenAI正致力于开发能够像人类一样在计算机上执行任务的通用AI代理，这被视为其长期愿景的核心。尽管ChatGPT的成功在某种程度上是“意外”，但AI代理的开发是公司多年来深思熟虑的成果。\n\n#### 数学推理的突破与MathGen团队\n2022年，研究员Hunter Lightman加入OpenAI后，在一个名为MathGen的团队工作，致力于提升模型在数学推理方面的能力。当时模型在这方面表现不佳，但如今MathGen团队被认为是OpenAI在AI推理模型领域取得行业领先地位的关键。OpenAI的模型在数学推理上已显著进步，其中一个模型甚至在国际数学奥林匹克竞赛中获得金牌。OpenAI相信这些推理能力将推广到其他领域，最终驱动其梦想中的通用代理。\n\n#### 强化学习的复兴与Q*项目\nAI推理模型和代理的兴起与一种名为强化学习（RL）的机器学习训练技术紧密相关。RL通过模拟环境向AI模型提供反馈，判断其选择的正确性。虽然RL已应用数十年（如2016年Google DeepMind的AlphaGo），但OpenAI花费数年才开发出必要的模型和训练技术。\n\nOpenAI在2018年推出了GPT系列的首个大型语言模型，擅长文本处理，但早期在基础数学方面表现不佳。直到2023年，OpenAI通过结合大型语言模型（LLMs）、强化学习和一种名为“测试时计算”（test-time computation）的技术，取得了突破性进展，最初代号为“Q*”，后更名为“Strawberry”。“测试时计算”赋予模型额外的计算时间和能力来规划和解决问题，并在提供答案前验证步骤，这促成了“思维链”（chain-of-thought, CoT）方法的引入，显著提升了AI在未见过数学问题上的表现。研究员El Kishky描述模型开始“推理”，能发现错误并回溯，甚至表现出“沮丧”。尽管这些技术并非全新，但OpenAI独特地将它们结合，创造了Strawberry，并直接促成了o1推理模型的开发。\n\n#### 推理能力的扩展与代理团队\nOpenAI很快意识到AI推理模型的规划和事实核查能力对驱动AI代理至关重要。公司确定了两个提升AI模型的新方向：在模型后训练阶段使用更多计算能力，以及在回答问题时给予AI模型更多时间和处理能力。\n\n2023年Strawberry突破后，OpenAI成立了一个由研究员Daniel Selsam领导的“代理”团队，以推动这一新范式的发展。该团队的工作最终融入了o1推理模型的更大项目，由OpenAI联合创始人Ilya Sutskever、首席研究官Mark Chen和首席科学家Jakub Pachocki等领导。OpenAI为此投入了宝贵的资源（人才和GPU），公司“自下而上”的研究文化和对实现AGI的使命感，使其能够优先发展o1。事实证明，尝试新的训练方法是明智的，因为到2024年末，许多领先的AI实验室在传统预训练扩展模型上遇到了收益递减的问题，而推理模型的进展成为AI领域的主要动力。\n\n#### AI“推理”的定义\n关于AI是否“真正”在推理，存在不同看法。El Kishky从计算机科学角度定义为“教模型如何有效地消耗计算资源来获得答案”。Lightman则更关注模型的结果和能力，认为如果模型能完成困难任务，就说明它在进行必要的“推理近似”。其他AI研究员也倾向于关注能力而非机制，例如AI2的Nathan Lambert将AI推理模型比作飞机，它们都受自然启发，但通过不同机制运作，同样能达到目的。研究人员普遍认为，AI推理模型目前尚未被完全理解，需要更多研究。\n\n#### 主观任务的挑战与未来\n目前市场上的AI代理在明确、可验证的领域（如编码）表现最佳。OpenAI的Codex和Anthropic的模型在AI编码工具中很受欢迎。然而，通用AI代理（如ChatGPT Agent）在处理复杂、主观的任务（如在线购物或寻找长期停车位）时仍面临挑战，表现出耗时和错误。\n\nLightman指出，主观任务的局限性是一个“数据问题”。OpenAI正在探索如何在较难验证的任务上进行训练。研究员Noam Brown透露，OpenAI拥有新的通用RL技术，可以教授AI模型难以验证的技能，这正是IMO金牌模型（一个生成多个代理同时探索想法并选择最佳答案的系统）的构建方式。这些技术有望提升OpenAI模型在数学及其他推理领域的表现，并可能体现在即将推出的GPT-5模型中。\n\nOpenAI希望通过GPT-5巩固其在AI领域的领先地位，为开发者和消费者提供最佳的AI代理模型。公司还致力于简化产品使用，开发能够直观理解用户需求、自动调用工具并判断推理时长的AI代理。这描绘了ChatGPT的终极版本：一个能在互联网上为你做任何事，并理解你如何希望它完成任务的代理。\n\n#### 竞争格局\n尽管OpenAI几年前无疑引领了AI行业，但现在面临着来自Google、Anthropic、xAI和Meta等强大竞争对手的挑战。问题不再是OpenAI能否实现其代理未来，而是能否在竞争对手之前实现。\n\n**图片：**\n*   OpenAI首席执行官Sam Altman于2023年11月6日在旧金山举行的OpenAI DevDay活动上发表讲话。\n    ![OpenAI CEO Sam Altman speaks during the OpenAI DevDay event on November 06, 2023 in San Francisco, California.](https://techcrunch.com/wp-content/uploads/2023/11/GettyImages-1778704897.jpg?w=680)\n*   2016年3月13日，在韩国首尔举行的Google DeepMind挑战赛中，韩国职业围棋选手李世石（右）准备与谷歌的人工智能程序AlphaGo进行第四场比赛。\n    ![图片 2](https://techcrunch.com/wp-content/uploads/2025/08/GettyImages-515358462.jpg?w=680)\n*   OpenAI联合创始人兼首席科学家Ilya Sutskever于2023年6月5日在特拉维夫大学发表讲话。\n    ![Ilya Sutskever, Russian Israeli-Canadian computer scientist and co-founder and Chief Scientist of OpenAI.](https://techcrunch.com/wp-content/uploads/2024/06/019A7E29-3482-4F68-9A29-624BA22F0334.jpeg?w=680)\n*   OpenAI开发者日舞台上的OpenAI标志。\n    ![The OpenAI logo on screen at their developer day stage.](https://techcrunch.com/wp-content/uploads/2023/11/img_5619.jpg?w=680)\n*   AI应用。\n    ![图片 5](https://techcrunch.com/wp-content/uploads/2025/08/GettyImages-2197821080.jpg?w=680)",
+      "shortSummary": "OpenAI正致力于开发通用AI代理，使其能像人类一样执行计算机任务。通过结合强化学习、大型语言模型和测试时计算，OpenAI在数学推理方面取得突破，诞生了o1模型。尽管在编码等明确任务上表现出色，但当前代理在处理主观任务时仍面临挑战。OpenAI正探索新的RL技术以克服此限制，并计划通过GPT-5巩固其市场地位，实现能直观理解用户意图的终极AI代理。公司面临谷歌、Anthropic等激烈竞争。",
+      "translated_title": "深入OpenAI：探寻如何让AI为你做任何事",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2023/11/GettyImages-1778704897.jpg?w=680",
+          "alt": "OpenAI CEO Sam Altman speaks during the OpenAI DevDay event on November 06, 2023 in San Francisco, California.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/GettyImages-515358462.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2024/06/019A7E29-3482-4F68-9A29-624BA22F0334.jpeg?w=680",
+          "alt": "Ilya Sutskever, Russian Israeli-Canadian computer scientist and co-founder and Chief Scientist of OpenAI.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2023/11/img_5619.jpg?w=680",
+          "alt": "The OpenAI logo on screen at their developer day stage.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/GettyImages-2197821080.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "OpenAI developed the first AI reasoning model less than a year ago, but the technology has shifted Silicon Valley's focus to agents."
+    },
+    {
+      "title": "《Vogue》杂志AI生成广告引发的骚动不只关乎时尚 (原标题: The uproar over Vogue’s AI-generated ad isn’t just about fashion)",
+      "link": "https://techcrunch.com/2025/08/03/the-uproar-over-vogues-ai-generated-ad-isnt-just-about-fashion/",
+      "pubDate": "Sun, 03 Aug 2025 13:00:00 +0000",
+      "isoDate": "2025-08-03T13:00:00.000Z",
+      "creator": "Rebecca Bellan, Dominic-Madori Davis",
+      "summary": "### 《Vogue》杂志AI生成广告引发的骚动不只关乎时尚\n\n时尚界正经历一场由人工智能（AI）引发的深刻变革，其核心是AI模型的使用及其对人类劳动力和行业标准的影响。最近，《Vogue》杂志刊登的Guess品牌AI生成广告引发了广泛争议，这并非孤立事件，而是AI技术在创意产业中日益普及所带来的诸多问题的缩影。\n\n#### AI模型引发的担忧与争议\n\n*   **早期迹象与个人感受：** 商业模特Sarah Murray回忆2023年Levi's与AI工作室Lalaland.ai合作创造“多样化”数字模特时，她感到“悲伤和疲惫”。她认为，在模特行业本已充满挑战的情况下，AI带来的“数字完美标准”加剧了竞争。\n*   **《Vogue》事件：** 《Vogue》七月刊中Guess广告的AI生成模特，其完美形象符合北美审美标准，但其非人类身份引发了网络热议。尽管《Vogue》表示该广告符合其广告标准，但许多人认为广告与编辑内容之间的界限模糊，这标志着时尚界对AI技术的认可，预示着行业将发生剧变。\n*   **核心问题：** 当AI能以极低的成本和时间完成高质量创意工作时，人类的价值何在？时尚行业的模特、摄影师、造型师和场景设计师等将面临怎样的未来？\n\n#### 品牌为何青睐AI模型？\n\n*   **成本效益：** 模特兼WAYE组织创始人Sinead Bovell指出，“电商模特”最受自动化威胁，因为电商拍摄是大多数模特的主要收入来源。艺术技术专家Paul Mouginot表示，与真人模特合作成本高昂，尤其是在拍摄大量服装、鞋履和配饰时。AI允许品牌从平面产品拍摄开始，将其置于逼真的虚拟模特上，甚至在连贯的场景中定位模特，生成类似真实时尚大片的图像。\n*   **规模化需求：** AI广告公司Silverside AI的联合创始人PJ Pereira指出，社交媒体和电商时代，品牌每年需要的内容量从4个激增到400甚至40万个，传统流程无法满足这种规模化需求。AI提供了一种新的系统来应对这一挑战，尽管这引发了人们对AI抢夺艺术家和模特工作的担忧。\n*   **行业实践：** 法国零售商Veepee自2013年起就使用虚拟模特销售服装。H&M、Mango和Calvin Klein等知名品牌也已采用AI模特。时尚作家Amy Odell直言，使用AI模特“就是便宜得多”。\n\n#### AI对人类模特的影响\n\n*   **“人工多样性”与“机器人文化挪用”：** Sarah Murray认为，品牌声称AI只是补充人类人才，但实际上却可能取代他们。她指出，Levi's等品牌没有雇佣多样化人才，而是通过AI“人工生成”多样性。Bovell称之为“机器人文化挪用”，即品牌可以生成特定的（尤其是多样化的）身份来讲述品牌故事，即使技术创造者并非该身份。\n*   **合同条款的担忧：** 模特们担心合同中出现的新条款可能意味着他们正在放弃肖像权，允许品牌使用他们的面部和可识别特征来训练未来的AI系统。\n*   **劳动力替代：** 尽管Sara Ziff等倡导者正推动《时尚工作者法案》，要求品牌在使用模特数字复制品时获得明确同意并提供补偿，这可能让模特在同一天参与多场拍摄并增加收入，但每当雇用一个虚拟形象，就意味着人类劳动力被取代。“少数参与者获得的利益可能意味着许多人失去机会。”\n*   **更高的门槛：** Bovell认为，AI的出现提高了模特行业的门槛。她建议模特利用平台建立个人品牌，通过播客或品牌代言等方式创造新的收入来源，讲述“独特的人类故事”，因为“AI永远不会有独特的人类故事”。\n\n#### 另一视角与未来展望\n\n*   **人类对“感官现实”的渴望：** Mouginot认为，尽管一些平台可能完全停止与人类模特合作，但人类对“物体的感官现实、一丝不完美和人际连接”仍有渴望。许多成功的模特正是因为其独特的、略带不完美但极具魅力的特征而脱颖而出，这些细微之处难以被AI完全复制。\n*   **“AI工匠”与细节：** 创业公司和创意工作室Artcare的CEO兼联合创始人Sandrine Decorde将其团队称为“AI工匠”，他们使用工具微调AI生成模型，使其具有独特的“人性触感”。Artcare目前大量工作涉及为品牌制作AI生成的婴儿和儿童形象，Decorde认为这在道德上是合理的，因为儿童模特行业存在剥削和虐待问题，而市场需求又很高。\n*   **对抗同质化：** Decorde指出，许多AI生成模型（如Vogue Guess广告背后的Seraphinne Vallora公司所创造的）过于同质化。Pereira强调，他的公司会“有意识地”对抗AI中的同质化，并警告说，如果更多内容由不具备这种意识的人制作，输出会反过来放大偏见。\n*   **AI未来的不确定性：** 模特预订平台Ubooker的创始人Claudia Wagner认为，AI建模技术在时尚界仍处于实验阶段。她认为Guess的广告在技术上有趣，但缺乏影响力或新意，更多是品牌为了“成为当前叙事的一部分”。\n    *   **数据与销售：** Pereira的经验表明，尽管AI生成内容可能收到负面评论，但其在点击率和销售额方面可能表现出色，这表明存在“沉默的大多数”接受者。\n    *   **整合与选择：** AI的使用将融入创意工作流程。一些品牌乐于使用完全人工模型，另一些则偏好许可真实人物肖像来构建合成拍摄，还有一些品牌因担心受众不接受而避免使用AI。\n    *   **人类核心地位：** Wagner认为，当真实性和身份是品牌故事的一部分时，人类人才仍然是核心，尤其对于那些通常缓慢采用新技术的奢侈品和传统品牌。\n    *   **《Vogue》的影响力：** 《Vogue》刊登AI模特广告的举动令人震惊，Bovell猜测这可能是《Vogue》测试高时尚与AI融合的方式。Odell强调，《Vogue》的举动至关重要，如果它开始刊登AI模特的编辑内容，可能会使这种做法被行业接受，就像当年Kim Kardashian登上《Vogue》一样。\n\n---\n**图片：**\n\n*   **Sinead Bovell，创始人兼模特**\n    ![图片 1](https://techcrunch.com/wp-content/uploads/2025/08/PHOTO-2025-08-01-15-05-08.jpeg?w=584)\n    图片来源：Sinead Bovell\n\n*   **Sarah Murray**\n    ![图片 2](https://techcrunch.com/wp-content/uploads/2025/08/IMG_2343-rotated.jpeg?w=510)\n    图片来源：Sarah Murray提供\n\n*   **Artcare AI生成模特**\n    ![图片 3](https://techcrunch.com/wp-content/uploads/2025/08/ARTCARE-AI-mannequins-7.jpg?w=680)\n    图片来源：Artcare\n\n*   **Seraphinne Vallora Instagram页面截图**\n    ![图片 4](https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-01-at-2.56.07PM.png?w=680)\n    图片来源：Seraphinne Vallora\n\n*   **H&M数字模特**\n    ![图片 5](https://techcrunch.com/wp-content/uploads/2025/08/hm-ai-model.webp?w=544)\n    图片来源：H&M",
+      "shortSummary": "《Vogue》杂志刊登AI生成广告引发轩然大波，凸显AI对时尚界的深远影响。品牌青睐AI模特因其成本低廉和内容规模化需求，但此举威胁到人类模特就业，并引发“人工多样性”和“机器人文化挪用”的担忧。尽管AI技术仍处实验阶段，且面临同质化挑战，但其在时尚行业的应用已不可逆转。未来，人类的真实性与独特故事仍将是品牌叙事的核心，而行业正探索AI与人类协作的新模式。",
+      "translated_title": "《Vogue》杂志AI生成广告引发的骚动不只关乎时尚",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/PHOTO-2025-08-01-15-05-08.jpeg?w=584",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/IMG_2343-rotated.jpeg?w=510",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/ARTCARE-AI-mannequins-7.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-01-at-2.56.07PM.png?w=680",
+          "alt": "",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/hm-ai-model.webp?w=544",
+          "alt": "",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "“Modeling as a profession is already challenging enough without having to compete with now new digital standards of perfection that can be achieved with AI,” Sarah Murray told TechCrunch."
+    },
+    {
       "title": "蒂姆·库克据称告诉员工苹果‘必须’赢得AI竞争 (原标题: Tim Cook reportedly tells employees Apple ‘must’ win in AI)",
       "link": "https://techcrunch.com/2025/08/02/tim-cook-reportedly-tells-employees-apple-must-win-in-ai/",
       "pubDate": "Sat, 02 Aug 2025 21:21:22 +0000",
@@ -278,60 +379,7 @@
       ],
       "contentSource": "完整文章",
       "content": "The app features TikTok's new \"Sunshine Programme,\" which allows users to support charitable organizations. "
-    },
-    {
-      "title": "条款清单、市场牵引力与真相炸弹：深入了解 TechCrunch Disrupt 2025 的 A 轮融资心态 (原标题: Term sheets, traction, and truth bombs: inside the Series A mindset at TechCrunch Disrupt 2025)",
-      "link": "https://techcrunch.com/2025/08/01/term-sheets-traction-and-truth-bombs-inside-the-series-a-mindset-at-techcrunch-disrupt-2025/",
-      "pubDate": "Fri, 01 Aug 2025 14:30:00 +0000",
-      "isoDate": "2025-08-01T14:30:00.000Z",
-      "creator": "TechCrunch Events",
-      "summary": "# TechCrunch Disrupt 2025：A 轮融资心态深度解析\n\nTechCrunch Disrupt 2025 将于 2025 年 10 月 27 日至 29 日在旧金山 Moscone West 举行，本次大会将深入探讨在当前市场环境下如何成功获得 A 轮融资，提供来自投资人的真实、 unfiltered 视角。\n\n![TechCrunch Disrupt 2025 Katie Stanton, Thomas Krane, and Sangeen Zeb](https://techcrunch.com/wp-content/uploads/2025/08/TC25_Stanton-Krane-Zeb-Speaker-16x9-Dark.png?w=680)\n\n## A 轮融资已变：2026 年如何取胜\n\n一场名为“A 轮融资已变——2026 年如何取胜”的 Builder Stage 环节将汇聚三位早期投资领域的重量级人物：\n\n*   **Katie Stanton** (Moxxie Ventures)\n*   **Thomas Krane** (Insight Partners)\n*   **Sangeen Zeb** (GV)\n\n他们拥有审阅数千份商业计划书、主导多轮重大融资以及引导初创公司从起步走向规模化突破的丰富经验。本次对话将超越表面新闻，深入探讨：\n\n*   **关键指标**：哪些数据真正重要。\n*   **增长故事**：如何有效地讲述公司的增长历程。\n*   **投资者决策**：什么因素会导致投资者放弃，以及什么能让一个提案从“也许”变为“我们加入”。\n\n## 洞察“火箭飞船”的风险投资人\n\n*   **Katie Stanton (Moxxie Ventures)**：\n    *   拥有大多数运营者梦寐以求的履历，曾任职于 Twitter 和奥巴马白宫。\n    *   已投资超过 100 家早期公司，包括 Airtable、Calm 和 Carta。\n    *   Moxxie Ventures 的建立基于坚定的信念和“创始人优先”的直觉。\n*   **Thomas Krane (Insight Partners)**：\n    *   在 Insight Partners 工作超过十年，从分析师晋升为董事总经理。\n    *   投资了软件和网络安全领域的一些知名公司，如 JFrog 和 SentinelOne（已成功 IPO）。\n    *   深知可扩展的市场牵引力（scalable traction）是怎样的，以及如何为其提供资金。\n*   **Sangeen Zeb (GV)**：\n    *   GV 的普通合伙人，专注于企业级解决方案和人工智能领域。\n    *   担任 Vercel 和 Harvey 等公司的董事会成员。\n    *   帮助主导了科技界一些最受关注的增长故事的投资。\n\n## A 轮融资：不仅仅是一轮融资，更是一次重置\n\n在当前市场趋紧、风险更高的背景下，这场会议是创始人不容错过的。它将帮助创始人了解如何在自己的条件下进行融资，并为长期发展奠定基础。\n\n立即预订 TechCrunch Disrupt 2025 的席位，可节省高达 675 美元，并与 10,000 多名初创公司和风险投资领袖齐聚一堂，共同促成交易和塑造未来。",
-      "shortSummary": "TechCrunch Disrupt 2025 将举办一场关于如何在当前市场成功获得 A 轮融资的深度会议。Moxxie Ventures 的 Katie Stanton、Insight Partners 的 Thomas Krane 和 GV 的 Sangeen Zeb 等知名投资人将分享关于关键指标、增长叙事以及投资者决策的独到见解。本次会议旨在帮助创始人在日益严峻的 A 轮融资环境中，理解如何有效融资并为长期发展做准备。",
-      "translated_title": "条款清单、市场牵引力与真相炸弹：深入了解 TechCrunch Disrupt 2025 的 A 轮融资心态",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/TC25_Stanton-Krane-Zeb-Speaker-16x9-Dark.png?w=680",
-          "alt": "TechCrunch Disrupt 2025 Katie Stanton, Thomas Krane, and Sangeen Zeb",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "This conversation goes deeper than the headlines. From the metrics that matter and how to tell your growth story, to what causes investors to walk away — you’ll hear what actually moves a pitch from “maybe” to “we’re in.”"
-    },
-    {
-      "title": "OpenAI据报道以3000亿美元估值筹集83亿美元 (原标题: OpenAI reportedly raises $8.3B at $300B valuation)",
-      "link": "https://techcrunch.com/2025/08/01/openai-reportedly-raises-8-3b-at-300b-valuation/",
-      "pubDate": "Fri, 01 Aug 2025 14:09:14 +0000",
-      "isoDate": "2025-08-01T14:09:14.000Z",
-      "creator": "Rebecca Bellan",
-      "summary": "## OpenAI巨额融资与强劲增长\n\n![OpenAI logo图案](https://techcrunch.com/wp-content/uploads/2023/11/openAI-pattern-01.jpg?w=1024)\n\n根据《纽约时报》的报道，ChatGPT的开发者OpenAI已成功筹集83亿美元资金，公司估值达到3000亿美元。此次融资是OpenAI今年旨在筹集400亿美元更广泛战略的一部分，并且本轮融资超额认购，比原计划提前数月完成。\n\n### 融资详情\n\n*   **本轮融资额**：83亿美元\n*   **公司估值**：3000亿美元\n*   **牵头投资者**：Dragoneer Investment Group，出资28亿美元。\n*   **新参与投资者**：包括私募股权巨头Blackstone和TPG，共同基金经理T. Rowe Price，以及Altimeter Capital、Andreessen Horowitz、Coatue Management、D1 Capital Partners、Fidelity Management、Founders Fund、Sequoia Capital、Tiger Global和Thrive Capital等。\n*   **早期投资者反馈**：据报道，一些早期投资者对他们在本次融资中获得的较小配额感到不满，因为OpenAI优先引入新的战略支持者。\n*   **整体融资目标**：OpenAI最初在3月份宣布计划通过软银牵头的一轮融资筹集400亿美元，并已从风险投资公司筹集了25亿美元。原计划在年底前再筹集75亿美元，但由于投资者对其惊人增长的追捧，提前完成了更多融资。\n\n### 业绩与增长\n\n*   **年化收入**：\n    *   The Information报道：已达到120亿美元。\n    *   《纽约时报》报道：更接近130亿美元。\n*   **ChatGPT周活跃用户**：已超过7亿。\n*   **未来收入预测**：预计到今年年底将达到200亿美元。\n\n### 市场与战略利好\n\n*   **政策支持**：特朗普政府的AI行动计划。\n*   **战略合作**：与微软的谈判，这可能有助于OpenAI实现成为一家真正的营利性公司的目标。",
-      "shortSummary": "OpenAI据报道已以3000亿美元估值筹集83亿美元，作为其今年400亿美元融资目标的一部分。此次超额认购的融资由Dragoneer Investment Group领投，并吸引了包括Blackstone和T. Rowe Price在内的众多新投资者。OpenAI展现出强劲增长，年化收入已达约130亿美元，预计年底将增至200亿美元，ChatGPT周活跃用户超7亿。公司正受益于市场追捧和潜在的战略合作。",
-      "translated_title": "OpenAI据报道以3000亿美元估值筹集83亿美元",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2023/11/openAI-pattern-01.jpg?w=1024",
-          "alt": "pattern of openAI logo",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The oversubscribed round came months ahead of schedule, and is part of OpenAI's strategy to raise $40 billion."
-    },
-    {
-      "title": "Instagram现在要求用户至少拥有1,000名粉丝才能进行直播 (原标题: Instagram now requires users to have at least 1,000 followers to go live)",
-      "link": "https://techcrunch.com/2025/08/01/instagram-now-requires-users-to-have-at-least-1000-followers-to-go-live/",
-      "pubDate": "Fri, 01 Aug 2025 14:00:43 +0000",
-      "isoDate": "2025-08-01T14:00:43.000Z",
-      "creator": "Aisha Malik",
-      "summary": "# Instagram直播新规：千粉门槛\n\nInstagram已确认，从2025年8月1日起，用户必须拥有至少1,000名粉丝的公开账户才能在该平台进行直播。\n\n## 政策变更详情\n*   **新要求**：用户必须拥有公开账户，并且粉丝数量达到或超过1,000人。\n*   **旧政策**：此前，Instagram允许所有用户进行直播，无论其粉丝数量多少，也无论账户是公开还是私密。\n*   **生效日期**：新规于太平洋时间2025年8月1日上午7:00生效。\n\n## 影响与用户反应\n*   **受影响群体**：\n    *   粉丝数量低于1,000人的小型创作者。\n    *   习惯与朋友随意直播的普通用户。\n*   **提示信息**：不符合条件的用户在尝试直播时，将看到新的通知，表明其账户不再符合直播资格，并解释新规定：“我们更改了使用此功能的条件。只有拥有1,000名或更多粉丝的公开账户才能创建直播视频。”\n*   **用户不满**：许多用户已在社交媒体上表达了对这一变化的不满，并呼吁Instagram撤销此决定。\n\n## 与其他平台的比较\n*   **TikTok**：Instagram的这一变化使其直播功能更接近TikTok，后者也要求用户至少拥有1,000名粉丝才能进行直播。\n*   **YouTube**：相比之下，YouTube要求频道至少有50名订阅者才能进行直播。\n\n## 变更原因（推测）\n尽管Instagram母公司Meta没有提供具体的变更原因，但指出此举旨在“改善整体直播观看体验”。\n*   **提升质量**：此举可能通过只允许拥有一定受众基础的用户进行直播，从而限制低质量直播的出现。\n*   **成本考量**：Meta也可能出于成本考虑。由于托管直播流成本高昂，Meta可能不希望支持只有少数观众的直播。",
-      "shortSummary": "Instagram现已要求用户拥有至少1,000名粉丝的公开账户才能进行直播。此举改变了此前任何人都能直播的政策，对小型创作者和普通用户造成影响，并引发用户不满。新规使Instagram的直播门槛与TikTok相似，旨在改善观看体验并可能降低Meta的运营成本。",
-      "translated_title": "Instagram现在要求用户至少拥有1,000名粉丝才能进行直播",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Until now, Instagram allowed anyone to go live, regardless of their follower count or whether their account was public or private."
     }
   ],
-  "lastUpdated": "2025-08-03T12:46:20.997Z"
+  "lastUpdated": "2025-08-03T18:33:10.244Z"
 }
