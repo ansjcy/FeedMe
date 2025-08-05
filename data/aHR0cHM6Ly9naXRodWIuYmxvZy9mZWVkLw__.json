@@ -5,6 +5,44 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "使用GitHub Models在Actions中自动化你的项目 (原标题: Automate your project with GitHub Models in Actions)",
+      "link": "https://github.blog/ai-and-ml/generative-ai/automate-your-project-with-github-models-in-actions/",
+      "pubDate": "Mon, 04 Aug 2025 16:00:00 +0000",
+      "isoDate": "2025-08-04T16:00:00.000Z",
+      "creator": "Kevin Lewis",
+      "summary": "## 使用GitHub Models在Actions中自动化你的项目\n\nGitHub Models将人工智能（AI）引入GitHub Actions工作流，帮助您在项目所在位置自动化分类、总结等任务。本文探讨了三种集成和自动化使用GitHub Models的方法，从最直接到最强大。\n\n### 前置条件：添加正确的权限\n\n在使用GitHub Models之前，您的工作流需要获得访问AI模型的权限。在工作流的权限块中添加以下行即可：\n\n```yaml\npermissions:\n  contents: read\n  issues: write\n  models: read\n```\n\n这些权限允许工作流读取仓库内容、读写问题和评论，最重要的是，启用对GitHub Models的访问。\n\n### 示例一：在Bug报告中请求更多信息\n\n此示例展示了如何使用AI推理操作以及如何利用AI创建分支逻辑，以自动化处理信息不足的Bug报告。\n\n*   **目标**：自动检查新的Bug报告是否包含足够信息，并在信息不足时自动回复。\n*   **工具**：`actions/ai-inference` 操作，允许调用领先的AI模型来分析或生成文本。\n*   **工作流 (`bug-reproduction-instructions.yml`) 设置**：\n    *   **触发器**：当新问题被打开时 (`on: issues: types: [opened]`)。\n    *   **权限**：`contents: read`, `issues: write`, `models: read`。\n    *   **步骤**：\n        1.  **获取问题**：使用`actions/github-script`获取问题的标题和正文。\n        2.  **分析问题以进行复现**：\n            *   仅当问题标记为“bug”时执行 (`if: contains(..., 'bug')`)。\n            *   使用`actions/ai-inference@v1`，配置`mistral-ai/ministral-3b`模型（可替换为GitHub Models目录中的40多种模型）。\n            *   `system-prompt`定义了有效复现说明的特征（复现步骤、预期/实际行为、环境细节）。如果信息足够，AI返回“pass”；否则，返回缺失信息的简要描述。\n        3.  **评论问题**：\n            *   仅当问题标记为“bug”且AI返回的值不是“pass”时执行。\n            *   使用`actions/github-script@v7`将AI的回复作为评论发布到问题中。\n*   **核心思想**：通过提示AI模型在满足特定条件时返回固定字符串（如“pass”），可以在工作流中创建AI驱动的条件逻辑。\n\n![An issue on GitHub named \"Doesn't work on firefox\" with no description and a bug label. The github-actions bot responds asking for more information - specifically reproduction steps, expected and actual behavior, and browser and operating system details.](https://github.blog/wp-content/uploads/2025/07/image1_5f1e88.png?resize=1024%2C755)\n\n### 示例二：从合并的拉取请求创建发布说明\n\n此示例展示了如何使用`gh CLI`与`gh-models`扩展来自动化发布说明的生成。\n\n*   **目标**：当拉取请求合并时，自动汇总其内容并添加到发布说明问题中。\n*   **工具**：`gh CLI`及`gh-models`扩展。\n*   **设置**：创建一个名为“release”的标签，并创建一个名为“Publish next release changelog”的问题，并为其添加“release”标签。\n*   **工作流 (`release-notes.yml`) 设置**：\n    *   **触发器**：当拉取请求关闭时 (`on: pull_request: types: [closed]`)。\n    *   **条件**：仅当拉取请求已合并时运行 (`if: github.event.pull_request.merged == true`)。\n    *   **权限**：`pull-requests: read`, `issues: write`, `contents: read`, `models: read`。\n    *   **步骤**：\n        1.  **检出仓库**：使用`actions/checkout@v4`。\n        2.  **安装gh-models扩展**：运行`gh extension install https://github.com/github/gh-models`，需要工作流令牌。\n        3.  **汇总拉取请求并追加到发布问题**：\n            *   使用`gh pr view`获取PR的标题、正文、评论和评审信息，并保存到文件。\n            *   将PR数据通过管道传递给`gh models run xai/grok-3-mini`，并提供一个提示，要求生成一个简洁的单行变更日志条目。\n            *   获取带有“release”标签的发布问题编号和当前正文。\n            *   将AI生成的摘要（包含PR编号）追加到发布问题正文。\n            *   使用`gh issue edit`更新发布问题。\n\n![A pull request named Publish Next Release Changelog. The description has two bullet list items - each one describing a change in 8-12 words with a link to the merged pull request.](https://github.blog/wp-content/uploads/2025/07/image2_f6eb85.png?resize=1024%2C438)\n\n### 示例三：汇总和优先排序问题\n\n此示例演示了如何使用`GitHub CLI`、`gh-models`扩展和提示文件来自动化更复杂的定时工作流，以每周汇总、主题化和优先排序新问题。\n\n*   **目标**：每周生成一个问题，汇总、主题化并优先排序过去一周新打开的问题。\n*   **工具**：`gh CLI`、`gh-models`扩展和独立的提示文件。\n*   **工作流 (`weekly-issue-summary.yml`) 设置**：\n    *   **触发器**：手动触发 (`workflow_dispatch`) 或每周一上午9点定时触发 (`schedule: - cron: '0 9 * * 1'`)。\n    *   **权限**：`issues: write`, `contents: read`, `models: read`。\n    *   **步骤**：\n        1.  **检出仓库**：使用`actions/checkout@v4`。\n        2.  **安装gh-models扩展**：运行`gh extension install https://github.com/github/gh-models`。\n        3.  **获取过去一周的问题并汇总**：\n            *   使用`gh search issues`获取过去一周内创建的开放问题（标题、正文、URL），并保存到文件。\n            *   将问题数据通过管道传递给`gh models run --file prompts/issue-summary.prompt.yml`。\n        4.  **提示文件 (`prompts/issue-summary.prompt.yml`)**：\n            *   定义模型（如`openai/gpt-4.1`）、系统和用户提示。\n            *   系统提示：“你是一个有用的问题汇总器。”\n            *   用户提示：“请将以下问题总结为几个简短的要点。如果提供链接，请包含。如果可能，提取一般主题并帮助团队根据影响进行优先排序。”\n            *   使用`{{input}}`占位符接收管道数据。\n            *   优势：通过`.prompt.yml`文件，可以利用GitHub Models的仓库集成，通过丰富的UI迭代提示。\n        5.  **创建问题**：使用`gh issue create`创建新问题，标题包含日期范围，并使用AI生成的摘要作为正文。\n\n![An issue with the title \"Issue Summary - June 16 to June 23\". It has three sections - an issue summary which details and links each issue that has been opened, general themes which contains three groupings for the issues, and suggested prioritization. The top issue is on data integrity - issue 37.](https://github.blog/wp-content/uploads/2025/07/image3_6c2c47.png?resize=972%2C1024)\n\n### 总结\n\n无论是从简单的AI推理操作开始，使用带有内联提示的`gh-models CLI`，还是创建功能齐全、提示驱动的工作流，GitHub Models都使您能够轻松地通过AI扩展您的项目流程。只需添加正确的权限，选择一个上述示例，即可在您的下一个工作流中尝试GitHub Models。",
+      "shortSummary": "GitHub Models将AI集成到GitHub Actions，实现项目自动化。通过设置特定权限，用户可利用AI处理任务。文章展示了三种应用：一是使用`actions/ai-inference`自动请求Bug报告补充信息；二是利用`gh CLI`和`gh-models`从PR生成发布说明；三是结合定时任务和提示文件，每周汇总并优先排序新问题。这些方法使开发者能更高效地管理项目，简化工作流程。",
+      "translated_title": "使用GitHub Models在Actions中自动化你的项目",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/07/image1_5f1e88.png?resize=1024%2C755",
+          "alt": "An issue on GitHub named \"Doesn't work on firefox\" with no description and a bug label. The github-actions bot responds asking for more information - specifically reproduction steps, expected and actual behavior, and browser and operating system details.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/07/image2_f6eb85.png?resize=1024%2C438",
+          "alt": "A pull request named Publish Next Release Changelog. The description has two bullet list items - each one describing a change in 8-12 words with a link to the merged pull request.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/07/image3_6c2c47.png?resize=972%2C1024",
+          "alt": "An issue with the title \"Issue Summary - June 16 to June 23\". It has three sections - an issue summary which details and links each issue that has been opened, general themes which contains three groupings for the issues, and suggested prioritization. The top issue is on data integrity - issue 37.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/1461554?v=4&s=200",
+          "alt": "Kevin Lewis",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Learn how to integrate AI features with GitHub Models directly in GitHub Actions workflows.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/automate-your-project-with-github-models-in-actions/\">Automate your project with GitHub Models in Actions</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "入职你的AI结对程序员：成功设置GitHub Copilot编码代理 (原标题: Onboarding your AI peer programmer: Setting up GitHub Copilot coding agent for success)",
       "link": "https://github.blog/ai-and-ml/github-copilot/onboarding-your-ai-peer-programmer-setting-up-github-copilot-coding-agent-for-success/",
       "pubDate": "Thu, 31 Jul 2025 17:12:43 +0000",
@@ -244,45 +282,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Explore how I use agentic tools like GitHub Copilot agent mode and the Playwright MCP server to accelerate troubleshooting and debugging of UI issues, while revisiting the importance of clear requirements.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/debugging-ui-with-ai-github-copilot-agent-mode-meets-mcp-servers/\">Debugging UI with AI: GitHub Copilot agent mode meets MCP servers</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub 2025年6月可用性报告 (原标题: GitHub Availability Report: June 2025)",
-      "link": "https://github.blog/news-insights/company-news/github-availability-report-june-2025/",
-      "pubDate": "Wed, 16 Jul 2025 21:06:17 +0000",
-      "isoDate": "2025-07-16T21:06:17.000Z",
-      "creator": "Jakub Oleksy",
-      "summary": "## GitHub 2025年6月可用性报告\n\n在2025年6月，GitHub服务共经历了三次导致性能下降的事件。\n\n### 事件一：2025年6月5日 (UTC时间 17:47 - 19:20，持续1小时33分钟)\n\n*   **受影响服务：** Actions\n*   **影响：**\n    *   47.2%的运行启动延迟，平均延迟14分钟。\n    *   21.0%的运行失败。\n    *   60%的Copilot Coding Agent会话被取消。\n    *   所有使用分支构建的Pages站点部署失败（Pages服务本身不受影响）。\n*   **原因：** 内部Actions服务之间负载激增，暴露出配置错误，导致运行启动关键路径中的请求被限流。\n*   **缓解措施：** 纠正服务配置以防止限流，并更新部署流程以确保正确配置得以保留。\n\n### 事件二：2025年6月12日 (UTC时间 17:55 - 21:07，持续3小时12分钟)\n\n*   **受影响服务：** GitHub Copilot\n*   **影响：**\n    *   Gemini模型不可用，Claude模型可用性降低。\n    *   VS Code、JetBrains IDEs和GitHub Copilot Chat中，聊天完成错误率显著升高，响应时间变慢，出现超时和聊天功能中断。\n*   **原因：** 影响其中一个模型提供商的故障。\n*   **缓解措施：** 暂时禁用受影响的提供商端点以减少用户影响。GitHub正在更新基础设施提供商故障的事件响应手册，并改进监控和警报系统，以减少未来此类问题的检测和缓解时间。\n\n### 事件三：2025年6月17日 (UTC时间 19:32 - 20:03，持续31分钟)\n\n*   **受影响服务：** 内部路由策略部署\n*   **影响：** 导致数据中心内部分网络地址块的可达性问题。\n    *   github.com UI（已认证用户）：3-4%的错误率。\n    *   API（已认证调用者）：40%的错误率。\n    *   UI和API（未认证请求）：接近100%的错误率。\n    *   Actions：2.5%的运行延迟（平均8分钟），3%的运行失败。\n    *   大文件存储（LFS）请求：1%的错误。\n*   **原因：** 向部分网络设备部署内部路由策略。\n*   **缓解措施：** 于19:54 UTC回滚部署，受影响系统的网络可用性恢复。20:03 UTC完全恢复正常运行。GitHub正在扩展路由策略更改的验证流程，以防止类似问题。\n\n### 更多信息\n\n*   请关注GitHub状态页面获取实时更新和事件回顾。\n*   访问GitHub工程博客了解更多工作进展。\n\n### 相关内容\n\n*   **Docs**：掌握GitHub所需的一切。\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n*   **GitHub**：在GitHub上构建未来。\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n*   **Customer stories**：了解使用GitHub进行构建的公司和工程团队。\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n*   **GitHub Universe 2025**：参加10月28-29日在旧金山举行的Universe大会。\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)",
-      "shortSummary": "GitHub在2025年6月经历了三次服务降级事件。6月5日，Actions服务因配置错误导致运行延迟和失败。6月12日，GitHub Copilot因模型提供商故障导致服务中断和错误率升高。6月17日，内部路由策略部署引发网络可达性问题，影响了UI、API和Actions。GitHub已采取措施纠正问题，并计划改进配置管理、事件响应和验证流程，以防止未来再次发生类似事件。",
-      "translated_title": "GitHub 2025年6月可用性报告",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>In June, we experienced three incidents that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-june-2025/\">GitHub Availability Report: June 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-08-03T04:55:06.005Z"
+  "lastUpdated": "2025-08-05T04:56:38.374Z"
 }
