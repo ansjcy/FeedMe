@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "为所有人构建人机界面 (原标题: Building a human-computer interface for everyone)",
+      "link": "https://engineering.fb.com/2025/08/04/virtual-reality/building-a-human-computer-interface-for-everyone-meta-tech-podcast/",
+      "pubDate": "Mon, 04 Aug 2025 14:00:25 +0000",
+      "isoDate": "2025-08-04T14:00:25.000Z",
+      "creator": "",
+      "summary": "## 为所有人构建人机界面：Meta Reality Labs 的研究\n\nMeta Reality Labs 的最新研究正坚定地指向腕戴式设备，特别是利用表面肌电图（sEMG）技术，作为未来人机交互（HCI）的关键方向。这项研究旨在实现仅通过细微手部动作即可控制任何设备。\n\n### 核心挑战：通用性\n\n在人机交互领域，通用性一直是最大的挑战之一。目前，驱动设备的机器学习模型通常是为特定个体的手势进行训练的，但它们难以将相同的学习应用于其他人。这意味着，新型人机交互设备通常是“一对一”的，即只适用于特定用户。\n\n### Meta 团队的应对策略\n\nMeta 的 EMG 工程和研究团队正在积极应对这一通用性挑战，并重新构想我们与技术互动的方式。该团队致力于开发一种能够适用于所有人的腕戴式输入设备。\n\n### Meta Tech Podcast 深入探讨\n\n在最新一期的 Meta Tech Podcast 中，Pascal Hartig 与 Meta EMG 工程和研究团队的研究科学家 Sean B.、Lauren G. 和 Jesse M. 进行了深入交流。他们讨论了以下关键议题：\n\n*   **通用人机神经运动接口的创建之路**：如何打造一个首创的、能够普遍适用的接口。\n*   **软硬件工程与神经科学的融合**：探讨当软件、硬件工程与神经科学相结合时会发生什么，以及这种交叉学科如何推动创新。\n\n### 播客收听方式\n\n该播客节目可在以下平台下载或收听：\n\n*   Spotify\n*   Apple Podcasts\n*   Pocket Casts\n\nMeta Tech Podcast 由 Meta 推出，旨在展示 Meta 工程师在各个层面的工作，从底层框架到最终用户功能。听众可以通过 Instagram、Threads 或 X 提供反馈。如果对 Meta 的职业机会感兴趣，可以访问 Meta 招聘页面。",
+      "shortSummary": "Meta Reality Labs 正在研究利用腕戴式 sEMG 设备，通过细微手部动作实现通用设备控制。当前人机交互面临的最大挑战是通用性，即设备通常“一对一”地为特定用户设计。Meta 的 EMG 团队正致力于解决这一问题，旨在开发一个适用于所有人的通用人机神经运动接口。相关研究和进展在 Meta Tech Podcast 中有详细讨论，涵盖了软硬件工程与神经科学的融合。",
+      "translated_title": "为所有人构建人机界面",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>What if you could control any device using only subtle hand movements? New research from Meta’s Reality Labs is pointing even more firmly toward wrist-worn devices using surface electromyography (sEMG) becoming the future of human-computer interaction. But how do you develop a wrist-worn input device that works for everyone? Generalization has been one of the [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/08/04/virtual-reality/building-a-human-computer-interface-for-everyone-meta-tech-podcast/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/08/04/virtual-reality/building-a-human-computer-interface-for-everyone-meta-tech-podcast/\">Building a human-computer interface for everyone</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "使用 ExecuTorch 加速 Meta 系列应用中的设备端机器学习 (原标题: Accelerating on-device ML on Meta’s family of apps with ExecuTorch)",
       "link": "https://engineering.fb.com/2025/07/28/android/executorch-on-device-ml-meta-family-of-apps/",
       "pubDate": "Mon, 28 Jul 2025 20:30:33 +0000",
@@ -169,20 +182,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>As Meta has launched new, innovative products leveraging generative AI (GenAI), we need to make sure the underlying infrastructure components evolve along with it. Applying infrastructure knowledge and optimizations have allowed us to adapt to changing product requirements, delivering a better product along the way. Ultimately, our infrastructure systems need to balance our need to [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/05/20/web/metas-full-stack-hhvm-optimizations-for-genai/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/05/20/web/metas-full-stack-hhvm-optimizations-for-genai/\">Meta&#8217;s Full-stack HHVM optimizations for GenAI</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "开源 Pyrefly：一个用 Rust 编写的更快 Python 类型检查器 (原标题: Open-sourcing Pyrefly: A faster Python type checker written in Rust)",
-      "link": "https://engineering.fb.com/2025/05/15/developer-tools/open-sourcing-pyrefly-a-faster-python-type-checker-written-in-rust/",
-      "pubDate": "Thu, 15 May 2025 18:30:33 +0000",
-      "isoDate": "2025-05-15T18:30:33.000Z",
-      "creator": "",
-      "summary": "## Pyrefly：Meta 开源的 Rust 编写的 Python 类型检查器\n\n### 项目起源与发展\n\n*   **2017年启动**：Pyrefly 最初由 Meta 的工程师于2017年开发，旨在为 Instagram 的类型化 Python 代码库提供类型检查。\n*   **持续演进**：随着类型系统的不断发展，该类型检查器最终演变为 Pyrefly。\n\n### Pyrefly 是什么？\n\n*   **新一代工具**：Pyrefly 是一个全新的 Python 类型检查器和 IDE 体验工具。\n*   **技术栈**：它使用 Rust 语言编写，旨在提供更快的性能。\n*   **开源可用**：现在，Pyrefly 已向整个 Python 社区开源，可供广泛使用。\n\n### 核心功能与优势\n\n*   **多用途支持**：Pyrefly 支持命令行界面（CLI）使用和集成开发环境（IDE）集成。\n*   **提前发现错误**：其主要设计目标是在运行时之前帮助开发者捕获 Python 代码库中的错误。\n*   **可扩展性**：该工具能够扩展到任何规模的 Python 代码库，包括大型单体仓库（monorepos）。\n\n### Meta Tech Podcast 专题讨论\n\n*   **播客介绍**：Meta Tech Podcast 曾专门讨论 Pyrefly 的发布。\n*   **团队访谈**：节目中，Pascal Hartig 采访了 Pyrefly 团队的 Maggie、Rebecca 和 Neil，深入探讨了该工具的构建过程以及如何实现可扩展的增量类型检查器。\n*   **收听渠道**：该播客节目可在 Spotify、Apple Podcasts、Pocket Casts 等平台收听。\n\n### 相关链接\n\n文章中提及了与 Pyrefly 相关的其他资源和标准：\n\n*   Pyrefly\n*   Pyre\n*   Ruff\n*   PEP 484",
-      "shortSummary": "Pyrefly 是 Meta 开源的一个用 Rust 编写的全新 Python 类型检查器和 IDE 体验工具。它起源于2017年为 Instagram 代码库开发的类型检查器，旨在帮助开发者在运行时前捕获错误。Pyrefly 支持 CLI 和 IDE 集成，可扩展到任何规模的 Python 代码库，并已在 Meta Tech Podcast 上进行专题讨论。",
-      "translated_title": "开源 Pyrefly：一个用 Rust 编写的更快 Python 类型检查器",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Back in 2017, engineers at Meta sought to create a type checker for Instagram&#8217;s typed Python codebase. Years later, as the type system continued to evolve, that type checker eventually became Pyrefly.  Pyrefly is a new type checker and IDE experience for Python, written with Rust, and now available for the entire Python community to [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/05/15/developer-tools/open-sourcing-pyrefly-a-faster-python-type-checker-written-in-rust/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/05/15/developer-tools/open-sourcing-pyrefly-a-faster-python-type-checker-written-in-rust/\">Open-sourcing Pyrefly: A faster Python type checker written in Rust</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-08-03T05:33:52.328Z"
+  "lastUpdated": "2025-08-05T05:36:44.226Z"
 }
