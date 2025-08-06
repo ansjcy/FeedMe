@@ -5,6 +5,59 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "微软将OpenAI最小的开源模型引入Windows用户 (原标题: Microsoft brings OpenAI’s smallest open model to Windows users)",
+      "link": "https://techcrunch.com/2025/08/06/microsoft-brings-openais-smallest-open-model-to-windows-users/",
+      "pubDate": "Wed, 06 Aug 2025 12:47:31 +0000",
+      "isoDate": "2025-08-06T12:47:31.000Z",
+      "creator": "Ram Iyer",
+      "summary": "### 微软将OpenAI的gpt-oss-20b模型引入Windows 11\n\n微软正通过其Windows AI Foundry平台，向Windows 11用户免费提供OpenAI的最新开源GPT模型gpt-oss-20b。该平台允许用户在其电脑上使用AI功能、API和流行的开源模型。\n\n*   **模型特性与优化**\n    *   gpt-oss-20b被描述为“工具友好且轻量级”。\n    *   它专为代理任务（如代码执行和工具使用）进行了优化，即使在带宽受限的环境中，也适用于构建自主助手或将AI嵌入实际工作流程。\n    *   该模型能在多种Windows硬件上高效运行，未来还将支持更多设备。\n\n*   **技术要求与训练**\n    *   gpt-oss-20b于近期发布，可在配备至少16GB VRAM的消费级PC和笔记本电脑上运行（现代Nvidia或Radeon GPU通常具备此条件）。\n    *   OpenAI表示，该模型通过高计算强化学习进行训练，使其在驱动AI代理和调用工具（如网络搜索或Python代码执行）方面表现出色，作为其思维链过程的一部分。\n\n*   **局限性**\n    *   该模型仅支持文本处理，无法像OpenAI的其他模型那样处理或生成图像和音频。\n    *   其存在较高的幻觉率：在OpenAI内部用于衡量模型对人物知识准确性的基准测试PersonQA中，gpt-oss-20b对53%的问题产生了幻觉。\n\n*   **可用性扩展**\n    *   微软计划很快将该模型引入macOS以及其他未具体指明的设备。\n    *   gpt-oss-20b及其较旧的模型gpt-oss-120b也通过微软的Azure AI Foundry平台提供。\n    *   这两个新模型也已在亚马逊的AWS上可用。\n\n![a moshed/glitchy version of a Windows logo on a Microsoft Store front](https://techcrunch.com/wp-content/uploads/2025/07/photo-mosh-getty-windows-logo.jpg?w=1024)\n图片来源：David Ryder / Bloomberg (PhotoMosh/modified) / Getty Images",
+      "shortSummary": "微软正通过Windows AI Foundry向Windows 11用户免费提供OpenAI的开源GPT模型gpt-oss-20b。该模型轻量级且工具友好，专为代理任务优化，需16GB VRAM。它仅支持文本，但幻觉率较高（53%）。该模型也已在Azure AI Foundry和AWS上可用，未来将支持macOS。",
+      "translated_title": "微软将OpenAI最小的开源模型引入Windows用户",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/07/photo-mosh-getty-windows-logo.jpg?w=1024",
+          "alt": "a moshed/glitchy version of a Windows logo on a Microsoft Store front",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Microsoft will bring OpenAI's new free and open GPT model, gpt-oss-20b, to Windows 11 users via Windows AI Foundry, its platform that lets users tap AI features, APIs, and popular open-source models on their computers. "
+    },
+    {
+      "title": "谷歌称黑客通过入侵其Salesforce数据库窃取了客户数据 (原标题: Google says hackers stole its customers’ data by breaching its Salesforce database)",
+      "link": "https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/",
+      "pubDate": "Wed, 06 Aug 2025 12:05:25 +0000",
+      "isoDate": "2025-08-06T12:05:25.000Z",
+      "creator": "Zack Whittaker",
+      "summary": "## 谷歌客户数据泄露事件\n\n谷歌已证实，其部分客户信息在最近一次数据库泄露事件中被盗。\n\n*   **受影响系统与数据**\n    *   泄露发生在谷歌的一个Salesforce数据库系统，该系统用于存储中小型企业的联系信息和相关备注。\n    *   谷歌表示，威胁行为者获取的数据仅限于基本的、大部分公开的商业信息，例如企业名称和联系方式。\n    *   谷歌未披露受影响的客户数量，也未立即回应置评请求。目前尚不清楚谷歌是否收到赎金要求等沟通。\n\n*   **攻击者身份与方法**\n    *   此次攻击由一个名为ShinyHunters（正式代号UNC6040）的黑客组织实施。\n    *   根据谷歌的博客文章，ShinyHunters组织依赖语音钓鱼（vishing）技术，诱骗公司员工授予他们访问基于云的Salesforce数据库的权限。\n\n*   **ShinyHunters的作案手法**\n    *   该组织以针对大型公司及其基于云的数据库而闻名。\n    *   谷歌表示，ShinyHunters组织可能正在准备一个数据泄露网站，一些勒索软件团伙会利用这种网站发布被盗数据，以勒索企业受害者支付赎金。\n    *   据称，该组织与其他团体存在重叠，包括“The Com”，这是一个已知的网络犯罪分子集体，他们利用黑客攻击、勒索，有时甚至威胁暴力来入侵网络。\n\n*   **背景**\n    *   此次事件是针对Salesforce云系统的一系列泄露事件中的最新一起，此前思科、澳洲航空巨头Qantas以及零售巨头Pandora等公司的客户数据也曾被盗。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2019/01/GettyImages-828901244.jpg?w=1024)",
+      "shortSummary": "谷歌证实，其Salesforce数据库遭到名为ShinyHunters的黑客组织入侵，导致部分中小型企业客户的基本联系信息被盗。该组织通过语音钓鱼诱骗员工获取访问权限，并可能准备公布数据以进行勒索。此次事件是Salesforce云系统系列泄露中的最新一起，被盗数据主要为公开的商业信息，受影响客户数量未披露。",
+      "translated_title": "谷歌称黑客通过入侵其Salesforce数据库窃取了客户数据",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2019/01/GettyImages-828901244.jpg?w=1024",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Google confirmed that one of its cloud-stored Salesforce databases was breached, exposing its customer data. Google attributed the breach to a hacking group, ShinyHunters, known for breaking into Salesforce databases."
+    },
+    {
+      "title": "Qwant和Ecosia推出Staan，一个旨在挑战科技巨头的欧洲搜索引擎索引 (原标题: Qwant and Ecosia debut Staan, a European search index that aims to take on Big Tech)",
+      "link": "https://techcrunch.com/2025/08/06/qwant-and-ecosia-debut-staan-a-european-search-index-that-aims-to-take-on-big-tech/",
+      "pubDate": "Wed, 06 Aug 2025 11:45:38 +0000",
+      "isoDate": "2025-08-06T11:45:38.000Z",
+      "creator": "Ivan Mehta",
+      "summary": "# Qwant和Ecosia推出Staan：欧洲搜索新力量\n\n欧洲搜索引擎Qwant和Ecosia于周三宣布，它们已开始通过共同开发的搜索索引Staan提供搜索查询服务。Staan旨在成为Google和Bing的更便宜、更注重隐私的替代方案。\n\n## 合作背景与目标\n\n*   **合资企业：** 去年，法国注重隐私的搜索引擎Qwant与德国非营利搜索引擎Ecosia成立了一家名为“欧洲搜索视角”（European Search Perspective, EUSP）的合资企业，共同开发欧洲搜索索引。\n*   **市场目标：** EUSP的目标是到今年年底，为法国约50%的搜索查询和德国约33%的搜索查询提供服务。\n\n## Staan的功能与应用\n\n*   **Qwant的应用：** Qwant已开始利用Staan为其部分功能提供支持，例如搜索结果的AI摘要。\n*   **Ecosia的计划：** Ecosia也计划很快在其平台上添加一些AI功能。\n*   **拓展应用：** EUSP正在与多家公司洽谈，以推动其索引在应用程序内搜索中的采用，特别是针对聊天机器人。\n    *   **成本优势：** Ecosia首席执行官Christian Kroll表示，Staan可以为AI聊天机器人提供深度研究和AI摘要功能，其成本仅为Google和Bing解决方案的十分之一。他指出：“如果你正在使用ChatGPT或任何其他AI聊天机器人，它们都通过网络搜索进行知识基础构建……我们的索引可以为深度研究和AI摘要功能提供支持。Google和Bing的解决方案也很昂贵，而我们的索引可以以十分之一的成本提供强大的搜索功能。”\n\n## 战略意义：构建欧洲技术栈\n\n*   **独立性：** EUSP，如同Proton一样，正在推动开发一个不依赖美国或中国技术的欧洲技术栈。\n*   **紧迫性：** 两家公司在一份声明中指出，时机“再紧迫不过了”。2024年美国大选的结果提醒欧洲政策制定者和创新者，欧洲在核心数字基础设施方面仍然面临多大的风险。\n*   **风险规避：** 欧洲大部分的搜索、云和AI层都建立在美国科技巨头的技术栈之上，这使得从新闻业到气候技术等整个行业都受制于政治或商业议程。\n*   **隐私保护：** Kroll补充说，通过Staan索引与欧洲隐私法律的结合，EUSP可以提供比美国同行更注重隐私的搜索解决方案。",
+      "shortSummary": "欧洲搜索引擎Qwant和Ecosia推出了Staan，这是一个共同开发的欧洲搜索索引，旨在成为Google和Bing的更便宜、更注重隐私的替代方案。该合资企业“欧洲搜索视角”（EUSP）计划到年底覆盖大部分法德搜索查询，并为AI功能和应用内搜索提供支持。Staan的成本优势显著，且旨在构建独立的欧洲技术栈，减少对美国科技巨头的依赖，同时提供更强的隐私保护。",
+      "translated_title": "Qwant和Ecosia推出Staan，一个旨在挑战科技巨头的欧洲搜索引擎索引",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "European search engines Qwant and Ecosia said on Wednesday that they have both started serving search queries through an index they developed together, Staan, that aims to be a cheaper, more privacy-focused alternative to Google and Bing."
+    },
+    {
       "title": "Clay 确认以 31 亿美元估值完成 1 亿美元融资 (原标题: Clay confirms it closed $100M round at $3.1B valuation)",
       "link": "https://techcrunch.com/2025/08/05/clay-confirms-it-closed-100m-round-at-3-1b-valuation/",
       "pubDate": "Tue, 05 Aug 2025 21:12:06 +0000",
@@ -361,60 +414,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Just two days left save up to $675 on your TechCrunch Disrupt 2025 ticket. Join 10,000 tech and VC leaders October 27-29, San Francisco. Register here."
-    },
-    {
-      "title": "Spotify首次在美国向家庭套餐成员开放有声读物访问权限 (原标题: Spotify expands audiobooks access to family plan members in the US for the first time)",
-      "link": "https://techcrunch.com/2025/08/05/spotify-expands-audibook-access-to-family-plan-members-in-the-u-s-for-the-first-time/",
-      "pubDate": "Tue, 05 Aug 2025 14:00:00 +0000",
-      "isoDate": "2025-08-05T14:00:00.000Z",
-      "creator": "Sarah Perez",
-      "summary": "## Spotify在美国推出Audiobooks+计划，首次向家庭套餐成员开放有声读物\n\nSpotify正在扩大其有声读物在美国市场的访问权限，于周二宣布推出每月11.99美元的Audiobooks+计划。该计划允许订阅者或其家庭/双人套餐的成员在基础套餐之上，每月额外获得15小时的有声读物收听时长。\n\n### 关键亮点与新功能\n\n*   **首次向家庭成员开放**：尽管Spotify早在2022年就在美国推出了有声读物服务，但这是家庭和双人套餐的成员首次能够访问有声读物。此前，只有Premium订阅的主账户持有人每月可享受15小时的有声读物收听时长，并可按需购买额外时长。\n*   **额外收听时长**：Audiobooks+计划为订阅者提供了每月额外增加15小时有声读物收听时长的选项，这在Premium计划现有月度配额的基础上增加。\n*   **实现机制**：这一功能通过名为“Audiobooks+ for Plan Members”的附加服务实现，使得除主卡持有人之外的订阅计划成员也能首次访问Spotify的有声读物目录。\n\n### 全球推广与市场背景\n\n美国是最新加入Audiobooks+计划的市场之一，此前该计划已在爱尔兰、加拿大、英国、澳大利亚、新西兰、法国、比利时、荷兰、卢森堡、德国、奥地利、瑞士和列支敦士登等国家推出。\n\n### 商业动机与公司表现\n\n*   **应对挑战**：此次计划的扩展是在Spotify经历了一个艰难的季度之后宣布的，该季度公司业绩未达预期，并发布了疲软的业绩指引，首席执行官丹尼尔·埃克将其归因于广告业务的疲软。\n*   **用户增长亮点**：尽管面临挑战，Spotify的用户增长表现强劲。第二季度活跃用户增长11%至6.96亿，付费订阅用户增长12%至2.76亿。\n*   **营收目标**：推出新的Audiobooks+计划旨在从现有客户中获取更多收入。\n\n### 解决历史问题与有声读物趋势\n\n*   **解决家庭套餐限制**：去年12月，出版商HarperCollins的首席执行官布莱恩·默里曾暗示Spotify正在解决家庭套餐中限制有声读物流媒体仅限于信用卡持有人的“技术问题”。上个月，Spotify在非美国市场推出Audiobooks+时，兑现了这一承诺，首次向计划成员开放了有声读物访问权限。\n*   **收听时长增长**：Spotify虽然未公布具体有多少Premium订阅者收听有声读物，但指出在美国、英国和澳大利亚，有声读物收听时长同比增长超过35%，这还是在这些附加计划推出之前的数据。\n\n### 其他近期变动与未来展望\n\n*   **订阅价格上涨**：在此次新订阅计划发布之前，Spotify周一宣布其在中东、非洲、欧洲、拉丁美洲和亚太地区市场的订阅价格将从10.99欧元上涨至11.99欧元。\n*   **未来计划**：Spotify表示未来将继续尝试为图书爱好者提供其他选项，包括直接销售。\n\n![Spotify iOS版Audiobooks+功能截图](https://techcrunch.com/wp-content/uploads/2025/08/Audiobooks-Consumer-Screen-2.jpg)",
-      "shortSummary": "Spotify在美国推出每月11.99美元的Audiobooks+计划，首次允许家庭和双人套餐成员每月额外享受15小时的有声读物。此举旨在从现有用户中获取更多收入，解决此前家庭套餐成员无法访问有声读物的问题。尽管Spotify近期财报不佳，但用户增长强劲，且有声读物收听时长已显著增长。美国是最新加入该计划的市场。",
-      "translated_title": "Spotify首次在美国向家庭套餐成员开放有声读物访问权限",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Audiobooks-Consumer-Screen-2.jpg",
-          "alt": "a photo containing three screenshots of the Audiobooks+ feature in Spotify on iOS.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Though Spotify launched its audiobooks service in the U.S. back in 2022, household members on Duo and Family plans have long been left out. Spotify says that will now change."
-    },
-    {
-      "title": "SonicWall 敦促客户禁用 SSLVPN，因勒索软件攻击报告增多 (原标题: SonicWall urges customers to disable SSLVPN amid reports of ransomware attacks)",
-      "link": "https://techcrunch.com/2025/08/05/sonicwall-urges-customers-to-disable-sslvpn-amid-reports-of-ransomware-attacks/",
-      "pubDate": "Tue, 05 Aug 2025 13:48:43 +0000",
-      "isoDate": "2025-08-05T13:48:43.000Z",
-      "creator": "Zack Whittaker",
-      "summary": "## SonicWall 敦促客户禁用 SSLVPN 以应对勒索软件攻击\n\n企业安全公司 SonicWall 正在敦促其客户禁用其最新一代防火墙设备的核心功能，原因是安全研究人员报告称，针对 SonicWall 客户的勒索软件事件有所增加。\n\n*   **事件概述**\n    *   SonicWall 观察到针对其已启用 VPN 的 Generation 7 防火墙的安全事件“显著增加”。\n    *   公司正在积极调查这些事件，以确定它们是否与先前披露的漏洞有关，或者是否存在新的漏洞。\n    *   此警报发布之际，安全研究人员表示已发现黑客正在利用 SonicWall 设备获取受害者网络的初始访问权限。\n\n*   **安全研究发现**\n    *   **Arctic Wolf 报告**：\n        *   自 7 月中旬以来，已发现针对 SonicWall 客户的入侵事件。\n        *   现有证据表明存在一个“零日漏洞”（即在供应商发布补丁之前已被发现并利用的安全漏洞）。\n        *   研究人员观察到 SonicWall 防火墙被利用与随后部署文件加密恶意软件（勒索软件）之间的时间间隔很短。\n    *   **Huntress Labs 警告**：\n        *   “很可能”是 SonicWall 防火墙中的零日漏洞导致了这些攻击。\n        *   利用该漏洞的黑客已被发现获取了公司域控制器的访问权限，域控制器管理着网络上的设备和用户。\n        *   Huntress 认为 Akira 勒索软件团伙是部分针对 SonicWall 客户的攻击幕后黑手。Akira 以针对 Fortinet 防火墙等企业产品入侵大型网络而闻名。\n        *   Huntress 称其为“一个关键的、持续的威胁”。\n\n*   **SonicWall 建议**\n    *   SonicWall 敦促客户禁用其 SSLVPN 功能，以降低风险。\n\n*   **背景信息**\n    *   黑客越来越多地将防火墙和 VPN 等企业产品作为目标，这些产品充当数字守门人，允许合法员工访问公司网络。\n    *   但这些产品的安全缺陷可能允许恶意黑客进入，从而使攻击者能够发起数据窃取或破坏性攻击。\n\n*   **相关图片**\n    ![黄色挂锁图案在红色背景上](https://techcrunch.com/wp-content/uploads/2023/11/padlock-red-background-ransomware.jpg?w=1024)",
-      "shortSummary": "SonicWall 警告客户，其 Generation 7 防火墙正遭受勒索软件攻击，可能源于一个零日漏洞。安全公司 Arctic Wolf 和 Huntress Labs 发现自 7 月中旬起有入侵，并怀疑 Akira 勒索团伙参与其中。攻击者正获取网络初始访问权限，甚至域控制器权限。SonicWall 敦促客户禁用 SSLVPN 功能以应对此“关键、持续的威胁”。",
-      "translated_title": "SonicWall 敦促客户禁用 SSLVPN，因勒索软件攻击报告增多",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2023/11/padlock-red-background-ransomware.jpg?w=1024",
-          "alt": "yellow padlocks patterned on a red background",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Security researchers say they have evidence that ransomware gangs are hacking into large companies that rely on fully patched SonicWall firewalls. The researchers say it's likely the flaw is a \"zero-day\" bug currently unknown to SonicWall."
-    },
-    {
-      "title": "美国将OpenAI、谷歌和Anthropic列入联邦机构批准的AI供应商名单 (原标题: US adds OpenAI, Google, and Anthropic to list of approved AI vendors for federal agencies)",
-      "link": "https://techcrunch.com/2025/08/05/us-adds-openai-google-and-anthropic-to-list-of-approved-ai-vendors-for-federal-agencies/",
-      "pubDate": "Tue, 05 Aug 2025 13:43:12 +0000",
-      "isoDate": "2025-08-05T13:43:12.000Z",
-      "creator": "Dominic-Madori Davis",
-      "summary": "### 美国政府批准AI供应商\n\n美国政府已将Google、OpenAI和Anthropic三家公司列入获批供应商名单，允许它们向民用联邦机构提供人工智能服务。\n\n**关键信息点：**\n\n*   **新增供应商：** Google、OpenAI和Anthropic。\n*   **服务对象：** 美国民用联邦机构。\n*   **服务方式：** 这些公司的AI工具将通过一个新的联邦合同平台——**多重奖励计划（Multiple Award Schedule, MAS）**提供。\n*   **MAS的优势：**\n    *   允许政府机构通过预先谈判的合同获取AI工具供应商的服务。\n    *   避免了机构需要与每个供应商单独进行谈判的繁琐过程。\n*   **负责机构与评估：**\n    *   总务管理局（General Services Administration, GSA）负责管理MAS平台。\n    *   GSA对这些科技公司进行了安全性和性能方面的评估。\n*   **背景与政策：**\n    *   此举是在唐纳德·特朗普总统发布关于AI发展的行政命令之后进行的。\n    *   这些行政命令包括：\n        *   调整环境标准，以增加数据中心的能源供应。\n        *   指示联邦机构仅使用“无意识形态偏见”的人工智能。",
-      "shortSummary": "美国政府已将OpenAI、谷歌和Anthropic列为联邦机构的AI服务批准供应商。这些公司将通过新的多重奖励计划（MAS）平台提供AI工具，使机构能通过预先谈判的合同获取服务，简化了采购流程。此举旨在遵循关于AI发展和使用无偏见AI的行政命令，并基于对供应商安全性与性能的评估。",
-      "translated_title": "美国将OpenAI、谷歌和Anthropic列入联邦机构批准的AI供应商名单",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The companies will see their AI tools offered via a new federal contracting platform, the Multiple Award Schedule (MAS), which would let government agencies access AI tool sellers with pre-negotiated contracts, rather than negotiating with vendors individually. "
     }
   ],
-  "lastUpdated": "2025-08-06T06:37:47.426Z"
+  "lastUpdated": "2025-08-06T12:52:03.235Z"
 }
