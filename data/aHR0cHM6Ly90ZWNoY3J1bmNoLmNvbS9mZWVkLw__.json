@@ -5,6 +5,343 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "亚马逊升级版AI数字助理Alexa+的初步印象 (原标题: First impressions of Alexa+, Amazon’s upgraded, AI-powered digital assistant)",
+      "link": "https://techcrunch.com/2025/08/06/first-impressions-of-alexa-amazons-upgraded-ai-powered-digital-assistant/",
+      "pubDate": "Wed, 06 Aug 2025 18:27:16 +0000",
+      "isoDate": "2025-08-06T18:27:16.000Z",
+      "creator": "Sarah Perez",
+      "summary": "## Alexa+ 初体验：亚马逊升级版AI数字助理\n\n### 引言：重建智能家居的契机\n\n文章作者在2024年3月的一场火灾中失去了家园，这为他提供了一个重新开始并打造现代化智能家居的机会。此前，作者家中拥有大量Alexa设备。现在，他希望通过测试亚马逊升级版、由AI驱动的数字助理Alexa+，来评估其是否仍是家庭智能助理的最佳选择。本系列文章旨在提供Alexa在真实世界场景中的表现洞察，而非公司演示。\n\n### Alexa+ 概述：AI时代的变革\n\n在ChatGPT时代，亚马逊的Alexa助手显得不再那么革命性。然而，亚马逊于2025年2月宣布对数字语音助手进行全面改造，推出了由生成式AI驱动的Alexa+。该服务于3月开始逐步向用户推出，现已覆盖“数百万”用户。Alexa+采用模型无关（model-agnostic）架构，可根据需要调用Anthropic和Amazon Nova等模型。亚马逊宣称，升级后的Alexa+不仅能设置计时器、闹钟和控制智能家居设备，还能：\n\n*   利用生成式AI理解用户账户信息、日程和偏好。\n*   记忆信息、处理文件、总结Ring摄像头的录像。\n*   通过与合作伙伴集成，执行预订晚餐、叫Uber或购买音乐会门票等代理AI（agentic AI）操作。\n*   与亚马逊的杂货服务集成，通过语音创建购物清单并安排配送。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/08/alexa-devices.jpeg?w=680)\n\n### 设置与应用体验\n\n作者在获得内测资格后，在一台全新的Echo Spot设备上测试了Alexa+。由于暂时无法连接智能家居设备，初期测试主要集中在AI的智能性和实用性上。\n\n*   **设备设置**：Echo Spot的设置比以往设备更简单，只需扫描二维码即可在Alexa应用中启动，并自动连接Wi-Fi。\n*   **Alexa+ 升级**：作者接受了免费升级到Alexa+，并被告知可随时降级。入职流程包括一段简短视频，解释了Alexa将如何通过使用学习，并指导用户如何与其对话。作者还连接了Google账户，授权Alexa访问收件箱和日历。\n*   **服务集成**：作者选择了OpenTable、Ticketmaster、Uber和Thumbtack等服务与Alexa+集成，并逐一授予了权限。他赞赏这种对数据共享的控制感。Fodor's旅行规划服务已集成，而Uber Eats、Grubhub和Vagaro等服务将在未来加入。\n\n![图片 2](https://techcrunch.com/wp-content/uploads/2025/08/artifact-expression-2000x1125-1.jpg?w=680)\n\n![图片 3](https://techcrunch.com/wp-content/uploads/2025/08/IMG_2016.jpg?w=642)\n\n![图片 4](https://techcrunch.com/wp-content/uploads/2025/08/IMG_2022.png?w=313)\n\n![图片 5](https://techcrunch.com/wp-content/uploads/2025/08/IMG_2023.png?w=313)\n\n![图片 6](https://techcrunch.com/wp-content/uploads/2025/08/IMG_2024.png?w=313)\n\n*   **Alexa 应用界面问题**：尽管多次更新，Alexa应用的用户界面仍显不足，既平淡又过于拥挤，缺乏色彩和传统的移动应用导航模式。例如，设置首选音乐服务（如Spotify）的选项被深埋在“音乐及更多”菜单中，而非常见的个人资料或设置中。此外，Audible的链接显示为已断开或不存在，但仍保留在列表中，导致错误信息。\n\n![图片 7](https://techcrunch.com/wp-content/uploads/2025/08/IMG_2025.png?w=313)\n\n![图片 8](https://techcrunch.com/wp-content/uploads/2025/08/IMG_2026.png?w=313)\n\n![图片 9](https://techcrunch.com/wp-content/uploads/2025/08/IMG_2029.png?w=313)\n\n### Alexa+ 功能测试\n\n作者对Alexa+的几项核心功能进行了测试：\n\n1.  **家庭日程管理**：\n    *   **表现**：Alexa在查询日程和事件方面表现出色，例如“我今天日程上有什么？”。后续问题无需再次说“Alexa”，对话更自然，但响应有时略有延迟。\n    *   **问题**：在添加新会议时，Alexa会打断用户提问会议标题。此外，Alexa在告知如何查找语音聊天历史记录时给出了错误信息。\n\n2.  **“记住”功能**：\n    *   **表现**：该功能旨在存储信息（如常旅客号码），但测试结果不佳。Alexa多次在用户尚未说出号码时就声称已保存，随后又否认。最终保存成功后，Alexa将数字读作一个长数值，而非逐位报出，实用性差。\n\n3.  **邮件摘要与处理**：\n    *   **表现**：Alexa+能够理解并总结用户上传或转发的邮件。作者转发了一封孩子学校的邮件，Alexa成功总结了欢迎信内容、开学日期和新生入学信息。\n    *   **问题**：当被要求将“重要日期”添加到日历时，Alexa只识别并添加了邮件中列出的12个重要日期中的3个，遗漏了其他同样重要的事件，如“教师见面会”和“开放日”。这表明用户不能完全依赖Alexa来筛选所有重要信息。\n\n![图片 10](https://techcrunch.com/wp-content/uploads/2025/08/IMG_2035.jpg?w=680)\n\n4.  **价格追踪与购物辅助**：\n    *   **表现**：Alexa+承诺帮助用户追踪亚马逊商品价格并在降价时通知。作者尝试追踪一款护肤品和一款手袋。\n    *   **问题**：虽然Alexa成功设置了交易追踪器，但当被问及“现在多少钱？”或“蓝色款是否缺货？”时，Alexa要么保持沉默，要么重复已设置追踪器，未能提供当前价格或库存信息。\n\n![图片 11](https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-06-at-11.58.22AM.jpg?w=680)\n\n### 初步结论与展望\n\n初步测试显示，Alexa+在某些方面（如自然对话和邮件摘要）有所进步，但仍存在诸多不足，包括应用界面设计、信息记忆的准确性、日历事件的全面性以及购物信息查询的即时性。作者将在后续系列文章中继续测试其代理AI功能和智能家居集成。",
+      "shortSummary": "作者在房屋重建后，开始测试亚马逊升级版AI数字助理Alexa+，以评估其作为智能家居核心的潜力。Alexa+整合了生成式AI，旨在提供更高级的日程管理、信息记忆、邮件摘要和价格追踪等功能，并计划实现代理AI操作。初步测试显示，Alexa+在自然对话和邮件摘要方面有所改进，但在日历添加、记忆数字、应用界面及购物信息查询上仍存在不足。该系列后续将继续深入测试其代理AI和智能家居集成功能。",
+      "translated_title": "亚马逊升级版AI数字助理Alexa+的初步印象",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/alexa-devices.jpeg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/artifact-expression-2000x1125-1.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/IMG_2016.jpg?w=642",
+          "alt": "",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/IMG_2022.png?w=313",
+          "alt": "",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/IMG_2023.png?w=313",
+          "alt": "",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/IMG_2024.png?w=313",
+          "alt": "",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/IMG_2025.png?w=313",
+          "alt": "",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/IMG_2026.png?w=313",
+          "alt": "",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "To find out whether Alexa is still the best smart assistant for my family, I'm going to test Amazon's AI-powered devices, experiment with AI queries, and write out my thoughts in a multi-part series."
+    },
+    {
+      "title": "谷歌Gemini推出全新‘引导学习’工具，挑战ChatGPT的学习模式 (原标题: Google takes on ChatGPT’s Study Mode with new ‘Guided Learning’ tool in Gemini)",
+      "link": "https://techcrunch.com/2025/08/06/google-takes-on-chatgpts-study-mode-with-new-guided-learning-tool-in-gemini/",
+      "pubDate": "Wed, 06 Aug 2025 18:18:10 +0000",
+      "isoDate": "2025-08-06T18:18:10.000Z",
+      "creator": "Aisha Malik",
+      "summary": "### 谷歌Gemini推出全新“引导学习”工具\n\n**背景与目的**\n\n*   随着新学年的临近，谷歌于周三宣布在Gemini中推出一项名为“引导学习”（Guided Learning）的新工具。\n*   该工具旨在充当AI导师，帮助用户建立深入的理解，而不仅仅是提供答案。\n*   此举是在OpenAI推出ChatGPT的“学习模式”（Study Mode）仅一周多之后。OpenAI的学习模式也旨在超越简单的问题回答，帮助用户培养批判性思维能力。\n*   两家公司的发布都旨在回应人们对AI聊天机器人通过直接给出答案来损害学习过程的担忧，将聊天机器人定位为学习工具而非简单的答案引擎。\n\n**“引导学习”工具的特点**\n\n*   **逐步分解问题：** Gemini将逐步分解问题，并根据用户的需求调整解释。\n*   **多模态互动：** 该功能通过图片、图表、视频和互动测验来响应，帮助用户建立和测试知识，而不是直接给出答案。\n*   **深入理解：** 谷歌表示，该功能将帮助用户揭示概念背后的“为什么”和“如何”。\n*   **协作学习伙伴：** 谷歌学习与可持续发展副总裁Maureen Heymans表示，“引导学习”是一个“协作思考伙伴”，帮助用户在每一步中掌握知识，无论是准备考试、撰写论文还是探索摄影爱好。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-06-at-2.09.41PM.png?w=680)\n*图片来源：Google*\n\n**Gemini整体学习能力的提升**\n\n*   除了新功能，谷歌还宣布正在努力使Gemini整体上更好地帮助用户学习。\n*   Gemini现在将自动将图片、图表和YouTube视频直接整合到回复中，以帮助用户更好地理解复杂主题。\n*   用户还可以要求Gemini根据他们的测验结果或其他课堂材料创建抽认卡和学习指南。\n\n**学生福利**\n\n*   谷歌周三还宣布，将向美国、日本、印度尼西亚、韩国和巴西的学生提供为期一年的谷歌AI Pro计划免费订阅。\n*   该计划包括扩展访问Gemini 2.5 Pro、NotebookLM、Veo 3、Deep Research等。",
+      "shortSummary": "谷歌在Gemini中推出“引导学习”工具，旨在作为AI导师，帮助用户深入理解知识而非仅提供答案。此举与ChatGPT的学习模式类似，旨在解决AI直接给出答案可能损害学习的担忧。该工具通过逐步解释、多媒体内容和互动测验来促进学习，并能生成学习卡片。此外，谷歌还向特定国家的学生提供一年的AI Pro计划免费订阅，以增强学习体验。",
+      "translated_title": "谷歌Gemini推出全新‘引导学习’工具，挑战ChatGPT的学习模式",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-06-at-2.09.41PM.png?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Google is also offering students in the U.S., Japan, Indonesia, Korea, and Brazil a free one-year subscription to its AI Pro plan. "
+    },
+    {
+      "title": "OpenAI几乎免费向政府提供ChatGPT (原标题: OpenAI is practically giving ChatGPT to the government for free)",
+      "link": "https://techcrunch.com/2025/08/06/openai-is-practically-giving-chatgpt-to-the-government-for-free/",
+      "pubDate": "Wed, 06 Aug 2025 17:09:16 +0000",
+      "isoDate": "2025-08-06T17:09:16.000Z",
+      "creator": "Rebecca Bellan",
+      "summary": "## OpenAI与美国政府的合作：几乎免费提供ChatGPT\n\nOpenAI正积极寻求将其AI工具整合到美国联邦机构的工作流程中，旨在超越Anthropic和谷歌等竞争对手。该公司已与美国总务管理局（GSA，政府的中央采购机构）达成协议，在未来一年内，以每机构仅1美元的极低价格向参与的联邦机构提供ChatGPT Enterprise。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/08/GettyImages-2194585046.jpg?w=1024)\n\n### 合作背景与机制\n*   **批准供应商：** 此合作达成前一天，GSA已将OpenAI、谷歌和Anthropic列入获批的AI供应商名单，允许它们向民用联邦机构提供服务。\n*   **采购平台：** 这些公司的工具将通过“多重奖励合同”（MAS）平台提供。MAS是一个联邦合同平台，允许政府机构通过预先谈判的合同获取AI工具，从而避免与供应商单独谈判。\n*   **价格策略：** OpenAI的折扣力度巨大，目前尚不清楚其他AI公司是否会提供类似折扣。GSA联邦采购服务专员乔什·格鲁恩鲍姆（Josh Gruenbaum）鼓励“其他美国AI技术公司效仿OpenAI，与我们合作”。\n\n### OpenAI的额外优惠\n除了ChatGPT Enterprise的访问权限，OpenAI还提供：\n*   额外60天的高级模型无限制使用。\n*   联邦雇员可访问新的政府用户社区。\n*   定制的入门培训资源，帮助员工熟悉OpenAI的工具。\n\n### 数据安全考量\n数据安全是政府机构的首要任务，他们尤其关注敏感信息泄露到模型训练集中的风险。GSA发言人表示，政府对AI采取“谨慎、安全优先”的方法，以确保敏感信息得到保护，同时使机构能够从AI驱动的效率中受益。TechCrunch已向GSA询问了政府数据如何得到保护的详细信息，包括是否使用了本地部署或私有云部署等措施来增强安全性。\n\n### 政治背景与影响\nOpenAI的此次折扣是在特朗普政府发布其AI行动计划几周后推出的。该计划旨在促进数据中心建设，并将更多AI工具整合到政府中。此外，这也遵循了特朗普的一项行政命令，该命令禁止“觉醒AI”（woke AI）和“非意识形态中立”的AI模型进入政府合同。TechCrunch已联系OpenAI，以了解其与GSA的合作以及将如何处理特朗普的行政命令。",
+      "shortSummary": "OpenAI与美国总务管理局（GSA）达成协议，以每年每机构1美元的极低价格向联邦机构提供ChatGPT Enterprise，旨在将AI工具整合到政府工作流程中，并超越竞争对手。此举发生在OpenAI被列为政府批准AI供应商之后，并提供额外的高级模型使用和培训。数据安全是政府关注的重点。此次合作也与特朗普政府的AI行动计划及其禁止“非意识形态中立”AI的行政命令背景相关。",
+      "translated_title": "OpenAI几乎免费向政府提供ChatGPT",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/GettyImages-2194585046.jpg?w=1024",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "GSA Federal Acquisition Service commissioner Josh Gruenbaum in a statement encouraged “other American AI technology companies to follow OpenAI’s lead and work with us.”"
+    },
+    {
+      "title": "谷歌AI编程助手Jules正式发布 (原标题: Google’s AI coding agent Jules is now out of beta)",
+      "link": "https://techcrunch.com/2025/08/06/googles-ai-coding-agent-jules-is-now-out-of-beta/",
+      "pubDate": "Wed, 06 Aug 2025 16:00:00 +0000",
+      "isoDate": "2025-08-06T16:00:00.000Z",
+      "creator": "Jagmeet Singh",
+      "summary": "# 谷歌AI编程助手Jules正式发布\n\n谷歌于周三正式发布了其AI编程代理Jules，结束了其在今年5月首次公开预览后两个多月的测试阶段。Jules最初于去年12月作为Google Labs项目公布，并在谷歌I/O开发者大会上向测试用户提供了公开预览。\n\n## Jules是什么？\nJules是一款由Gemini 2.5 Pro驱动的异步、基于代理的编程工具。它能够与GitHub集成，将代码库克隆到Google Cloud虚拟机中，并利用AI来修复或更新代码，从而让开发者能够专注于其他任务。\n\n## 退出测试版的原因\nGoogle Labs产品总监Kathy Korevec表示，经过测试阶段数百次UI和质量更新后，该工具的稳定性显著提高，这是决定其退出测试版的主要原因。她对Jules的长期发展充满信心。\n\n## 定价模式\n随着更广泛的推出，谷歌为Jules引入了结构化的定价层级：\n*   **“入门访问”免费计划**：每日任务上限为15个，并发任务上限为3个（测试版期间为60个任务）。\n*   **付费层级**：作为Google AI Pro和Ultra计划的一部分，定价分别为每月19.99美元和124.99美元，订阅者可获得5倍和20倍更高的任务限制。\nKorevec指出，Jules的打包和定价是基于过去几个月收集到的“实际使用”洞察。\n\n## 隐私政策更新\n谷歌更新了Jules的隐私政策，使其在AI训练方面更加明确：\n*   **公共代码库**：其数据可能用于训练。\n*   **私人代码库**：不会发送任何数据用于训练。\nKorevec解释说，此次更新主要是为了回应用户反馈，使政策更清晰，而非改变实际的训练方式。\n\n## 测试版成果与改进\n在测试期间，谷歌表示数千名开发者处理了数万项任务，公开分享了超过14万项代码改进。根据初步反馈，Google Labs团队增加了新功能，包括：\n*   重用先前的设置以加快任务执行。\n*   与GitHub issues集成。\n*   支持多模态输入。\n\n## Jules的独特优势：异步工作\nJules通过在虚拟机中异步运行，使其区别于Cursor、Windsurf和Lovable等同步AI编程工具。这些同步工具要求用户在每次提示后都观察输出。Korevec解释说，Jules就像“多了一双手”，用户可以启动任务后关闭电脑，稍后再回来查看结果，而同步代理则会绑定会话。\n\n## 近期功能更新\n本周，Jules获得了更深度的GitHub集成，现在可以像打开分支一样自动打开拉取请求（pull requests）。此外，还新增了一项名为“环境快照”（Environment Snapshots）的功能，可以保存依赖项和安装脚本作为快照，以实现更快、更一致的任务执行。\n\n## 测试版洞察与发展方向\n根据市场情报提供商SimilarWeb的数据，Jules在公开测试版期间全球访问量达到228万次，其中45%来自移动设备。印度是流量最大的市场，其次是美国和越南。\nKorevec表示，在测试期间，团队观察到许多用户使用Jules来修复“vibe-coded”项目中的bug，或使其更具生产就绪性。Jules最初要求用户拥有现有代码库，但谷歌很快意识到许多潜在用户可能希望在没有代码库的情况下探索它，因此迅速使其支持空仓库，从而增加了其范围和使用率。\nGoogle Labs团队还注意到越来越多的用户通过移动设备访问Jules的网页应用。尽管Jules没有专用的移动应用，但Korevec表示，由于这是一个新兴的重要用例，他们正在积极探索移动端用户所需的功能。\n\n## 谷歌内部应用\n除了测试用户，谷歌内部也已使用Jules协助开发一些项目，并且正在大力推动在公司内部更多项目中使用该工具。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/08/google-jules-open-pr-update.jpg)",
+      "shortSummary": "谷歌AI编程助手Jules已正式结束测试版发布。这款由Gemini 2.5 Pro驱动的异步工具，能与GitHub集成，在虚拟机中利用AI修复或更新代码，让开发者专注于其他任务。Jules引入了新的分级定价和更明确的隐私政策。其异步工作模式是主要优势，允许用户启动任务后离开。测试版期间，Jules处理了大量任务并获得了功能改进，并观察到移动端使用量增长。谷歌也正将其更广泛地用于内部项目。",
+      "translated_title": "谷歌AI编程助手Jules正式发布",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/google-jules-open-pr-update.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Powered by Gemini 2.5 Pro, Jules is an asynchronous, agent-based coding tool that integrates with GitHub, clones codebases into Google Cloud virtual machines, and uses AI to fix or update code while developers focus on other tasks."
+    },
+    {
+      "title": "支付平台Lava融资580万美元，为‘代理原生经济’构建数字钱包 (原标题: Payment platform Lava raises $5.8M to build digital wallets for the ‘agent-native economy’)",
+      "link": "https://techcrunch.com/2025/08/06/billing-platform-lava-raises-5-8m-to-build-digital-wallets-for-the-agent-native-economy/",
+      "pubDate": "Wed, 06 Aug 2025 15:45:00 +0000",
+      "isoDate": "2025-08-06T15:45:00.000Z",
+      "creator": "Dominic-Madori Davis",
+      "summary": "# Lava Payments：为AI代理原生经济构建数字钱包\n\n## 简介与使命\nLava Payments 是一家新成立的初创公司，旨在通过为现代网络构建解决方案来挑战支付巨头，该方案允许人工智能（AI）代理为其客户处理交易。该公司已成功完成 580 万美元的种子轮融资。\n\n## 创始人背景与痛点\nLava Payments 的创始人 Mitchell Jones 在离开他之前由 Y Combinator 支持的金融科技初创公司 Lendtable 后，开始尝试 AI。在实验过程中，他发现即使是构建一个简单的表单填充代理，也很快花费了超过 400 美元。他遇到的核心问题是，他反复使用相同的底层模型和工具，但每次都通过不同的封装或平台，导致他不得不重新订阅、重新认证并单独支付，即使他已经为核心模型的访问付费。他认为这种模式“根本上是破碎的”，他希望有一个单一的钱包、一套积分，以及在不同工具和提供商之间无缝切换的能力，以便按使用量付费。\n\n## Lava 解决方案\nLava Payments 应运而生，旨在解决上述痛点。Lava 是一个数字钱包，允许商家使用“使用积分”（usage credits）来促进交易。其核心理念是，一套积分可以在多个商家和服务之间通用，从而使自主代理能够无需人工干预即可轻松进行支付。\n\n### 工作原理\n*   商家可以为客户启用 Lava 钱包，并允许客户向其中充值（积分）。\n*   一旦客户完成充值，他们就可以在任何接受 Lava 的商家以及像 GPT 和 Claude 这样的基础模型上，以“按需付费”（pay as you go）的方式使用这些资金。\n*   这意味着用户无需为每种工具单独付费，而是购买一次性使用积分，AI 代理在执行各种任务时可以直接从中扣费。这消除了用户需要反复批准交易的麻烦。\n\n### 核心优势\nJones 强调，如果没有 Lava，AI 代理在需要支付时会不断受阻，无法在互联网上顺畅运行。他以 Google 地图为例，用户无需每次打开地图都向 Google 付费，因为他们已经向互联网服务提供商（如 Verizon 或 AT&T）支付了网络访问费用。Lava 旨在为 AI 代理提供类似的无摩擦支付体验。\n\n## 融资详情与投资者\nLava Payments 于周三宣布完成了 580 万美元的种子轮融资，由 Lerer Hippeau 领投。其他参与本轮融资的投资者包括 Harlem Capital、Streamlined Ventures 和 Westbound。\n\nJones 透露，他与 Lerer Hippeau 的主要投资者 Will McKelvey 是高中同学，McKelvey 长期关注他的职业生涯，并一直希望有一天能与他合作，Lava Payments 正是这个机会。\n\n## 创始人背景与未来展望\nMitchell Jones 出生于俄亥俄州代顿的一个工薪家庭。他听从父母的建议，努力工作、储蓄并接受良好教育。他毕业于耶鲁大学，曾在高盛和 Meta 等公司工作，并创立了金融科技公司 Parable 和 Lendtable（后者是 YC S20 校友）。\n\nLava Payments 计划将新获得的资金用于招聘、产品开发和制定市场进入策略。Jones 表示，他希望 Lava 成为“为 AI 网络提供动力的隐形层”，尤其是在 AI 代理越来越多地出现在支付环节时。他强调：“我们应该让代理能够无摩擦地移动、交易和构建。”他的愿景是确保“每个人，即使是像我这样来自代顿的孩子，都能使用 AI。”",
+      "shortSummary": "Lava Payments 获得 580 万美元种子轮融资，旨在为“代理原生经济”构建数字钱包。创始人 Mitchell Jones 发现 AI 代理在支付时面临碎片化和重复付费问题。Lava 提供一个统一的数字钱包，允许用户购买一次性使用积分，供 AI 代理在不同工具和服务间无缝支付，无需频繁人工干预。此举旨在消除 AI 代理的支付摩擦，成为 AI 网络背后的隐形支付层。",
+      "translated_title": "支付平台Lava融资580万美元，为‘代理原生经济’构建数字钱包",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Lava is a digital wallet that lets merchants use credits to facilitate transactions."
+    },
+    {
+      "title": "美国宪法关键章节从政府网站上删除 (原标题: Key sections of the US Constitution deleted from government’s website)",
+      "link": "https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
+      "pubDate": "Wed, 06 Aug 2025 15:29:39 +0000",
+      "isoDate": "2025-08-06T15:29:39.000Z",
+      "creator": "Zack Whittaker, Dominic-Madori Davis",
+      "summary": "## 美国宪法关键章节从政府网站上删除\n\n### 事件概述\n\n据互联网侦探和TechCrunch发现，美国宪法第一条的几个章节似乎已从美国政府官方网站上删除。根据Wayback Machine的记录，这些更改是在过去一个月内进行的，该机器显示国会网站上在7月17日仍有完整的原始文本。\n\n### 受影响的章节\n\nReddit上的多个帖子指出了美国宪法第一条的这些变化：\n\n*   **第八节**：大部分内容已被删除。\n*   **第九节和第十节**：已完全删除。\n\n这些被删除的章节主要涉及国会的权力限制，以及各州的权力限制。值得注意的是，被删除的内容包括与**人身保护令**（habeas corpus）相关的条款，该条款旨在保护公民免受非法拘禁。第八节末尾的半冒号也表明其后原本应有文本，但现在已缺失。\n\n![美国宪法与美国国旗](https://techcrunch.com/wp-content/uploads/2025/08/constitution-us-flag-471093167.jpg?w=1024)\n\n### 官方回应\n\n美国国会图书馆在周三发布推文称，这些章节的缺失是“由于编码错误”，并预计将“很快解决”。TechCrunch联系国会图书馆时，一位发言人并未说明导致编码错误的原因或其是如何引入的。白宫发言人戴维斯·英格尔（Davis Ingle）除了国会图书馆的帖子外，拒绝发表进一步评论。\n\n### 潜在影响与背景\n\n尽管在网站上更改美国宪法文本不会改变或影响美国法律，但这一事件仍引发关注。此前，特朗普政府高级官员斯蒂芬·米勒（Stephen Miller）曾于今年早些时候威胁要暂停人身保护令。此次网站内容的删除，恰好发生在这一背景之下。\n\n![显示美国宪法几周前与现在差异的截图，黄色部分已被删除](https://techcrunch.com/wp-content/uploads/2025/08/habeas-corpus-removal-constitution.jpg)\n\n### 补充信息\n\n文章已更新，包含了国会图书馆的更多细节以及白宫的回应。",
+      "shortSummary": "美国政府网站上，美国宪法第一条的多个关键章节，包括第八、第九和第十节，以及涉及人身保护令的部分，已被删除。国会图书馆称这是“编码错误”，并表示将很快解决。尽管网站更改不影响美国法律，但此事件引发关注，尤其是在此前有官员威胁暂停人身保护令的背景下。",
+      "translated_title": "美国宪法关键章节从政府网站上删除",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/constitution-us-flag-471093167.jpg?w=1024",
+          "alt": "a photo of the US Constitution next to a US flag",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/habeas-corpus-removal-constitution.jpg",
+          "alt": "a screenshot showing a diff between the US constitution a few weeks ago, and the yellow chunk of text that has since been removed.",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Internet sleuths say the U.S. Constitution's website is now missing key sections from its website, including a key legal provision relating to habeas corpus, which protects citizens from unlawful detention."
+    },
+    {
+      "title": "Tavily 融资 2500 万美元，旨在连接 AI 代理到网络 (原标题: Tavily raises $25M to connect AI agents to the web)",
+      "link": "https://techcrunch.com/2025/08/06/tavily-raises-25m-to-connect-ai-agents-to-the-web/",
+      "pubDate": "Wed, 06 Aug 2025 15:15:58 +0000",
+      "isoDate": "2025-08-06T15:15:58.000Z",
+      "creator": "Marina Temkin",
+      "summary": "### Tavily 融资 2500 万美元，旨在连接 AI 代理到网络\n\n**背景与问题：**\n*   许多行业的公司正在内部实施 AI 代理，以自动化广泛的任务，例如金融领域的欺诈检测和销售组织的数据收集。\n*   为了有效运行，这些 AI 代理需要访问互联网并从相关来源查找信息，同时必须遵守公司政策并模仿人类研究员的工作方式。\n*   将代理直接连接到大型语言模型（如 ChatGPT）而没有公司特定的安全措施，可能导致不当结果。Insight Partners 的董事总经理 George Mathew 强调，企业治理、风险和合规性至关重要，否则将出现“狂野西部”的局面。\n\n**Tavily 的解决方案与融资：**\n*   Tavily 是一家初创公司，旨在以符合公司特定政策的方式将 AI 代理连接到网络。\n*   Insight Partners 领投了 Tavily 的 2000 万美元 A 轮融资，使这家成立一年的公司总融资达到 2500 万美元。\n\n**公司发展历程：**\n*   Tavily 由数据科学家 Rotem Weiss 于去年创立。\n*   最初是一个名为 GPT Researcher 的开源项目（2023 年创建），该项目在 ChatGPT 连接到互联网之前就获取实时网络数据，并获得了近 20,000 个 GitHub 星标，非常受欢迎。\n*   在 ChatGPT 和其他大型语言模型引入网络搜索功能后，Weiss 推出了 Tavily，将重心从消费者转向企业客户。\n\n**产品与目标：**\n*   Tavily 为 Groq、Cohere、MongoDB 和 Writer 等公司提供一套工具，使其 AI 代理能够搜索、抓取并从公共和私人来源提取结构化洞察。\n*   尽管大多数 AI 代理尚未连接到互联网，但 Tavily 的目标是帮助“下一个十亿”代理接入网络。\n\n**竞争格局：**\n*   Tavily 并非唯一为 AI 代理提供搜索工具的初创公司。\n*   主要竞争对手包括：\n    *   Exa：去年从 Lightspeed、Nvidia 和 Y Combinator 获得了 1700 万美元的 A 轮融资。\n    *   Firecrawl：另一家提供网络搜索连接层的小型初创公司。\n    *   OpenAI 和 Perplexity：也为独立开发者提供搜索解决方案。",
+      "shortSummary": "Tavily 成功融资 2500 万美元，其中 Insight Partners 领投了 2000 万美元的 A 轮融资。这家由 Rotem Weiss 创立的公司，旨在为企业 AI 代理提供符合政策的网络连接服务。面对 AI 代理需要安全、合规地访问互联网的需求，Tavily 提供工具帮助企业客户（如 Groq、Cohere）搜索、抓取并提取结构化信息。其目标是连接更多 AI 代理到网络，并在竞争激烈的市场中脱颖而出。",
+      "translated_title": "Tavily 融资 2500 万美元，旨在连接 AI 代理到网络",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "The one-year-old startup raised a Series A led by Insight Partners."
+    },
+    {
+      "title": "公民实验室主任警告网络行业美国走向威权主义 (原标题: Citizen Lab director warns cyber industry about US authoritarian descent)",
+      "link": "https://techcrunch.com/2025/08/06/citizen-lab-director-warns-cyber-industry-about-us-authoritarian-descent/",
+      "pubDate": "Wed, 06 Aug 2025 15:01:00 +0000",
+      "isoDate": "2025-08-06T15:01:00.000Z",
+      "creator": "Lorenzo Franceschi-Bicchierai",
+      "summary": "公民实验室（Citizen Lab）主任罗恩·戴伯特（Ron Deibert）向网络安全界发出警告，呼吁他们加入对抗威权主义的斗争。他将在拉斯维加斯举行的黑帽网络安全大会上发表主旨演讲，指出美国正“堕入一种技术与法西斯主义的融合”，并强调大型科技平台在其中扮演的角色，以及它们如何“推动一种真正令人恐惧的集体不安全感”。\n\n### 核心观点：美国政治的威权主义倾向\n\n*   戴伯特认为，美国近期政治事件是“急剧堕入威权主义”的表现。\n*   他强调，这种趋势通常不被网络安全界视为其问题，但他呼吁该行业至少应意识到正在发生的事情，并避免助长这种趋势，甚至帮助扭转它。\n\n### 网络安全与政治的交织\n\n*   传统上，美国网络安全行业将政治置于一边，但现在政治已完全进入该领域。\n*   **案例：** 前CISA主任克里斯·克雷布斯（Chris Krebs）因公开驳斥特朗普关于2020年大选舞弊的虚假言论，被特朗普下令调查并最终被解雇。克雷布斯的继任者珍·伊斯特利（Jen Easterly）也呼吁网络安全界参与并发声，指出如果对有经验的领导者被排挤保持沉默，将危及他们所保护的机构。伊斯特利本人也曾是政治压力的受害者。\n*   戴伯特的新书《追逐阴影：网络间谍、颠覆与全球民主之战》（“Chasing Shadows: Cyber Espionage, Subversion, and the Global Fight for Democracy”）也传递了类似的信息。他认为，当周围环境发生变化时，网络安全专业人员必须认识到他们原先设定的安全问题可能在更广泛的背景下变得微不足道。\n\n### 对大型科技公司威胁情报团队的担忧\n\n*   戴伯特担心Meta、谷歌和苹果等大型公司可能会削弱其威胁情报团队，从而减少打击政府或“商业/雇佣兵”间谍软件的努力。\n*   这些团队专门追踪政府黑客（如中国国家安全部、俄罗斯FSB和GRU）以及NSO Group、Paragon等公司。\n*   他们负责检测针对自身用户的攻击，例如WhatsApp在2019年发现NSO Group入侵其1400多名用户，以及苹果发现政府间谍软件攻击并通知受害者。\n*   戴伯特认为，这些团队在保持独立性方面做得“非常出色”，但其未来令人担忧，因为这些公司也削减了内容审核和安全团队。\n\n### 全球公民社会面临的网络安全“市场失灵”\n\n*   戴伯特指出，全球公民社会在网络安全方面存在“巨大的市场失灵”，因为他们通常无法负担为政府和企业客户提供服务的大型安全公司的帮助。\n*   他预测，随着支持机构的消失和对公民社会攻击的加剧，这种市场失灵将变得更加严重。\n*   他强调，网络安全界为弥补这种市场失灵所做的任何贡献（例如无偿工作）对于全球自由民主的未来都至关重要。\n\n戴伯特敦促网络安全专业人士认识到当前形势的严峻性，积极参与到维护民主和公民社会的斗争中。",
+      "shortSummary": "公民实验室主任罗恩·戴伯特警告网络安全界，美国正“堕入威权主义”，呼吁行业对抗这一趋势。他指出，大型科技平台助长了集体不安全感，并担忧其威胁情报团队可能被削弱，从而影响打击政府间谍软件的能力。戴伯特强调，网络安全界需正视政治对行业的影响，并解决全球公民社会面临的网络安全“市场失灵”问题，通过无偿工作等方式支持自由民主。",
+      "translated_title": "公民实验室主任警告网络行业美国走向威权主义",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Ron Deibert, the head of the prominent digital human rights groups Citizen Lab, sounds the alarm at the Black Hat security conference about the \"dramatic descent into authoritarianism,\" but one that the cyber community can help to defend against. "
+    },
+    {
+      "title": "苹果将宣布进一步承诺向美国制造业投资1000亿美元 (原标题: Apple to announce $100B further commitment for US manufacturing)",
+      "link": "https://techcrunch.com/2025/08/06/apple-to-announce-100b-further-commitment-for-u-s-manufacturing/",
+      "pubDate": "Wed, 06 Aug 2025 14:30:45 +0000",
+      "isoDate": "2025-08-06T14:30:45.000Z",
+      "creator": "Dominic-Madori Davis",
+      "summary": "## 苹果加大对美国制造业的承诺\n\n根据路透社援引白宫官员的报道，苹果公司计划大幅增加其对美国制造业的投资。\n\n### 新的投资承诺\n\n*   苹果公司定于周三宣布，将额外投入1000亿美元，以促进其产品在美国的生产。\n\n### 此前承诺及具体内容\n\n*   此前，苹果已承诺在未来四年内在美国投资5000亿美元。这笔巨额投资包括多项举措：\n    *   **新制造工厂**：在休斯顿开设一家新的先进制造工厂，专门生产支持Apple Intelligence的服务器。\n    *   **内容制作**：在美国20个州制作Apple TV+节目。\n    *   **供应链合作**：与美国供应商建立并深化合作关系。\n\n### 背景与原因\n\n*   此消息发布之际，美国总统特朗普曾威胁对iPhone制造商征收关税，除非苹果将其更多制造业务从亚洲（主要在印度、中国和越南）迁至美国。\n\n### 关税影响\n\n*   苹果公司已受到关税的显著影响。首席执行官蒂姆·库克在上个月的财报电话会议中透露：\n    *   **已产生费用**：6月份，公司因关税产生了8亿美元的成本。\n    *   **预期费用**：预计在下一个季度，关税成本将达到11亿美元。",
+      "shortSummary": "苹果公司计划额外投资1000亿美元用于美国制造业，此前已承诺在四年内投资5000亿美元。此举旨在回应美国总统特朗普关于将更多生产迁回美国的关税威胁。苹果目前主要在亚洲生产，已因关税承担了高额成本，6月为8亿美元，预计下季度将达11亿美元。",
+      "translated_title": "苹果将宣布进一步承诺向美国制造业投资1000亿美元",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "This is on top of Apple's previously announced plan to invest $500 billion into the U.S. over the next four years."
+    },
+    {
+      "title": "Instagram 推出新功能‘Instagram 地图’，挑战 Snapchat (原标题: Instagram takes on Snapchat with new ‘Instagram Map’)",
+      "link": "https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
+      "pubDate": "Wed, 06 Aug 2025 14:00:00 +0000",
+      "isoDate": "2025-08-06T14:00:00.000Z",
+      "creator": "Aisha Malik",
+      "summary": "## Instagram 推出新功能，挑战 Snapchat 和 TikTok\n\nMeta 旗下的社交网络 Instagram 正在推出一系列新功能，旨在增强用户体验并直接挑战其主要竞争对手 Snapchat 和 TikTok。这些新功能包括“Instagram 地图”（Instagram Map）、“转发”（Reposts）以及在全球范围内推出 Reels 中的“朋友”选项卡。\n\n### Instagram 地图\n\nInstagram 地图是一项新功能，允许用户分享他们最近的活跃位置，并发现基于位置的内容。此举被视为 Instagram 继 2016 年复制 Snapchat 的 Stories 功能后，再次模仿其核心功能 Snap Map。Snap Map 最近的月活跃用户已超过 4 亿，是 Snapchat 的核心产品之一。\n\n*   **隐私设置与位置共享：**\n    *   位置共享默认关闭。\n    *   用户位置仅在打开应用时更新，不提供实时位置更新（与 Snap Map 可选择实时更新不同）。\n    *   Instagram 确实通过私信（DMs）提供实时位置共享，但与 Apple 的 Find My 和 Snap Map 可无限期共享不同，Instagram 最长只能共享一小时。\n*   **功能与用户体验：**\n    *   使朋友之间更容易协调和聚会。\n    *   允许用户探索朋友和喜爱创作者分享或互动过的基于位置的内容（例如，朋友在音乐节发布的故事，或创作者关于新餐厅的 Reels）。\n    *   无论用户是否选择分享位置，都可以使用地图探索基于位置的内容。\n    *   用户可以在地图上留下短消息，即“Notes”（类似于私信动态顶部的短消息）。\n*   **发布与背景：**\n    *   该功能已于周三在美国推出，全球范围即将上线。\n    *   用户可以在其 DM 收件箱顶部找到 Instagram 地图。\n    *   Instagram 去年就被发现正在开发此地图功能，因此此次发布并不意外。\n    *   此功能也有望吸引曾是 Zenly（Snap 收购后于 2023 年关闭的社交地图应用）粉丝的用户。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/08/The-Instagram-map_zoomed-in.png?w=680)\n\n### 转发（Reposts）\n\nInstagram 推出的“转发”功能借鉴了 TikTok 的内容分享机制，并创建了类似 Twitter（现为 X）“转发”的功能。此功能允许 Instagram 用户转发公开的 Reels 和动态帖子。\n\n*   **可见性与益处：**\n    *   转发内容可能显示在朋友的动态中。\n    *   转发内容也会显示在用户个人资料的“转发”新选项卡中。\n    *   该功能为用户提供了一种分享兴趣的方式，也为创作者提供了触达更广泛受众的机会。\n*   **操作：**\n    *   用户只需点击转发图标即可转发 Reels 或帖子。\n    *   用户还可以选择通过在屏幕上出现的思想气泡中输入内容来为转发添加备注。\n\n![图片 2](https://techcrunch.com/wp-content/uploads/2025/08/Full-repost-suite-gradient.png?w=680)\n\n### Reels 中的“朋友”选项卡全球推出\n\nInstagram 此前已在美国推出 Reels 中的“朋友”选项卡，现在正将其在全球范围内推出。该选项卡允许用户查看朋友点赞、评论、转发和创建的公开 Reels。\n\n*   **隐私控制：**\n    *   为了满足希望私密浏览和互动内容的用户，Instagram 正在推出选择退出功能，用户可以选择不让其互动内容显示在“朋友”选项卡中。\n    *   用户可以隐藏其点赞、评论和转发。\n    *   此外，用户还可以选择静音特定关注者的点赞、评论和转发。",
+      "shortSummary": "Instagram 推出多项新功能以增强用户体验并挑战竞争对手。核心功能包括“Instagram 地图”，允许用户分享位置和探索基于位置的内容，直接对标 Snapchat 的 Snap Map。同时，Instagram 还推出了“转发”功能，使用户能分享公开的 Reels 和帖子，类似于 TikTok 和 Twitter 的分享机制。此外，Reels 中的“朋友”选项卡现已全球可用，展示朋友的互动内容，并提供隐私控制。这些更新旨在提升社交互动和内容发现。",
+      "translated_title": "Instagram 推出新功能‘Instagram 地图’，挑战 Snapchat",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/The-Instagram-map_zoomed-in.png?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Full-repost-suite-gradient.png?w=680",
+          "alt": "",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Instagram notes that location sharing is off by default on Instagram Map, and a user's location only updates when they open the app, meaning it doesn't provide real-time location updates. "
+    },
+    {
+      "title": "Tinder探索重新设计、约会‘模式’和大学专属功能以提升用户参与度 (原标题: Tinder explores a redesign, dating ‘modes,’ and college-specific features to boost engagement)",
+      "link": "https://techcrunch.com/2025/08/06/tinder-explores-a-redesign-dating-modes-and-college-specific-features-to-boost-engagement/",
+      "pubDate": "Wed, 06 Aug 2025 13:40:04 +0000",
+      "isoDate": "2025-08-06T13:40:04.000Z",
+      "creator": "Ivan Mehta",
+      "summary": "# Tinder通过新功能和重新设计提升用户参与度\n\nTinder正面临付费用户下降的挑战，其母公司Match Group在2025年第二季度付费用户整体下降5%，其中Tinder下降7%。为扭转这一趋势并刺激用户付费，Tinder正在推出多项新举措。\n\n## 核心新功能与改进\n\n1.  **“模式”（Modes）功能**：\n    *   允许用户实时切换不同的约会目标，以探索新的联系。这类似于Tinder之前允许用户在个人资料中直接表明关系目标的功能。\n2.  **全面重新设计（Redesign）**：\n    *   Tinder将进行更广泛的界面重新设计，目标是在第三季度推出“更简洁、更快速、更现代”的UI更新。\n    *   计划在今年秋季测试重新设计的“谁喜欢你”选项卡的第一版，旨在帮助用户与更可能感兴趣的人建立联系，并增加收入。\n3.  **大学专属功能**：\n    *   为吸引Z世代年轻用户，Tinder正考虑推出更多针对大学生的功能，例如允许用户仅在自己的大学或选定的其他大学内进行搜索。\n4.  **点赞个人资料特定部分**：\n    *   新增功能允许用户点赞个人资料的特定部分，鼓励用户基于这些点赞发起对话，类似于Match旗下的Hinge应用。\n5.  **AI驱动的匹配（AI-powered Matching）**：\n    *   该功能已于今年早些时候在新西兰首次亮相，并计划推广到更多地区。\n    *   它根据用户的Tinder个人资料信息、问题回答以及（可选）相机胶卷照片中的洞察力，提供精选匹配。\n    *   此功能旨在吸引30岁以下的用户，特别是那些不希望仅凭外貌被评判，并愿意投入时间回答问题以获得定制结果的用户。\n6.  **“双重约会”（Double Date）选项**：\n    *   该功能于6月推出，允许用户与朋友组队，然后与另一对情侣进行匹配。\n    *   Tinder表示该功能取得了积极效果，92%的使用者年龄在30岁以下。\n\n![Tinder双重约会功能](https://techcrunch.com/wp-content/uploads/2025/06/Tinder_DoubleDate_PressAsset.png?w=680)\n\n## 财务表现与战略投资\n\n*   **2025年第二季度业绩**：Match Group的收入同比持平，为8.64亿美元；盈利从去年同期的1.333亿美元下降至1.225亿美元。\n*   **第三季度展望**：公司提供了好于预期的第三季度展望，预计收入将达到9.1亿至9.2亿美元，这提振了其股价。\n*   **产品开发投资**：Match Group宣布将投资5000万美元用于产品开发，旨在更好地连接年轻的Z世代用户，并利用人工智能改进其产品。\n\n## 领导层变动与重组\n\n*   **新任CEO**：Spencer Rascoff（Zillow Group联合创始人兼Match董事会成员）于2月被任命为Match Group首席执行官，这是他担任该职位后的第一个完整季度。\n*   **Tinder CEO离职**：Faye Iosotaluno于7月卸任Tinder首席执行官一职，由Rascoff兼任。\n*   **裁员**：公司于5月裁员13%（约325人），并关闭了空缺职位。",
+      "shortSummary": "Tinder正面临付费用户下降的困境，为提升用户参与度和营收，公司正积极推出多项新举措。这些包括引入允许用户切换约会目标的“模式”功能、进行全面的应用界面重新设计、开发针对大学生的专属功能、推出AI驱动的匹配系统，以及成功推广“双重约会”选项。尽管第二季度业绩平平，但Match Group对第三季度营收持乐观态度，并计划投资5000万美元用于产品开发，以吸引Z世代用户并利用AI技术。公司近期也经历了领导层变动和裁员。",
+      "translated_title": "Tinder探索重新设计、约会‘模式’和大学专属功能以提升用户参与度",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/06/Tinder_DoubleDate_PressAsset.png?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Tinder will redesign and debut college-specific features, like searching for people within the college, to appeal to younger users."
+    },
+    {
+      "title": "Cohere的新AI代理平台North承诺确保企业数据安全 (原标题: Cohere’s new AI agent platform, North, promises to keep enterprise data secure)",
+      "link": "https://techcrunch.com/2025/08/06/coheres-new-ai-agent-platform-north-promises-to-keep-enterprise-data-secure/",
+      "pubDate": "Wed, 06 Aug 2025 13:32:24 +0000",
+      "isoDate": "2025-08-06T13:32:24.000Z",
+      "creator": "Rebecca Bellan",
+      "summary": "## Cohere的AI代理平台North：确保企业数据安全\n\nAI代理工具虽然有望减轻日常工作中的繁琐任务，但大多数组织因数据安全顾虑而迟迟不愿采用。大型企业、受严格监管的行业公司以及政府机构尤其担心其数据（或更糟，客户数据）可能被无意泄露或用于训练基础模型。\n\n### North平台的核心承诺：私有部署\n\n*   加拿大AI公司Cohere推出了新的AI代理平台North，旨在缓解这些担忧。\n*   North承诺支持私有部署，使企业和政府能够将其及客户数据安全地保留在自己的防火墙内。\n*   Cohere联合创始人Nick Frosst强调，为了让大型语言模型（LLM）尽可能有用，它们必须能够访问有用的数据，这意味着它们需要部署在客户环境中。\n*   North可以安装在组织的私有基础设施上，包括本地部署、混合云、虚拟私有云（VPC）或气隙环境，确保Cohere不会看到或与客户数据交互。\n*   North设计为可在最少两块GPU上运行，甚至可以在客户的“壁橱里的GPU”上部署。\n\n### 安全与合规性\n\n*   North包含多项安全协议，如：\n    *   细粒度访问控制\n    *   代理自主策略\n    *   持续的红队测试\n    *   第三方安全测试\n*   该平台符合国际合规标准，包括通用数据保护条例（GDPR）、服务组织控制2（SOC-2）和ISO 27001。\n\n### 客户与试点\n\n*   Cohere已通过North与多家客户进行了试点，包括加拿大皇家银行（RBC）、戴尔（Dell）、LG、Ensemble Health Partners以及Palantir。\n*   Cohere迄今已筹集9.7亿美元，最新估值为55亿美元。\n\n### North的功能与技术\n\n*   **核心功能：**\n    *   聊天和搜索：用于客户支持查询、总结会议记录、撰写营销文案，以及从内部资源和网络获取信息。\n    *   所有响应都包含引用和“推理”思维链，以便员工审计和验证输出。\n*   **高级功能：**\n    *   资产创建：可以制作表格、文档、幻灯片。\n    *   市场研究：可以进行大量市场研究（Cohere于5月收购了专注于企业市场研究自动化工具的Ottogrid）。\n*   **底层技术：**\n    *   由Cohere现有的技术提供支持，例如：\n        *   Command：其生成式AI模型家族，North由其针对企业推理训练的变体提供支持。\n        *   Compass：其多模态搜索技术栈。\n\n### 集成与未来\n\n*   North可以连接到现有的工作场所工具，如Gmail、Slack、Salesforce、Outlook和Linear。\n*   它还可以与任何模型上下文协议（MCP）服务器集成，以访问特定行业或内部应用程序。\n*   Frosst表示，随着用户对模型的信心建立，使用方式将从“增强”平稳过渡到“自动化”。\n\n### 图片：\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/08/table.png?w=680)",
+      "shortSummary": "Cohere推出AI代理平台North，旨在解决企业数据安全担忧。该平台支持私有部署，确保客户数据留在防火墙内，并符合GDPR等合规标准。North提供聊天、搜索、内容创建和市场研究等功能，由Cohere的Command和Compass技术驱动，可与现有工作工具集成。它旨在帮助企业安全地利用AI，从增强逐步实现自动化。",
+      "translated_title": "Cohere的新AI代理平台North承诺确保企业数据安全",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/table.png?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Canadian AI firm Cohere aims to alleviate data privacy concerns with its new AI agent platform, North, which can be deployed privately so that enterprises and governments can keep their, and their customers', data safe behind their own firewalls. "
+    },
+    {
+      "title": "两人因向中国走私AI芯片被捕 — 英伟达称不设‘自毁开关’ (原标题: Two arrested for smuggling AI chips to China — Nvidia says no to kill switches)",
+      "link": "https://techcrunch.com/2025/08/06/two-arrested-for-smuggling-ai-chips-to-china-nvidia-says-no-to-kill-switches/",
+      "pubDate": "Wed, 06 Aug 2025 13:02:40 +0000",
+      "isoDate": "2025-08-06T13:02:40.000Z",
+      "creator": "Rebecca Szkutak",
+      "summary": "### 两人因向中国走私AI芯片被捕，英伟达拒绝“自毁开关”\n\n美国司法部（DOJ）于周二宣布，两名中国公民因涉嫌非法向中国走私价值数千万美元的高性能AI芯片而被捕。\n\n**逮捕与指控**\n*   **被捕人员**：耿川（Chuan Geng）和杨世伟（Shiwei Yang）。\n*   **逮捕时间**：8月2日，在加利福尼亚州被捕。\n*   **指控罪名**：违反《出口管制改革法案》（Export Control Reform Act），这是一项重罪，最高可判处20年监禁。\n*   **涉案公司**：两人被控通过其在加利福尼亚州的公司ALX Solutions，故意且知情地将包括GPU在内的“敏感技术”从美国运往中国。\n\n**走私芯片详情**\n*   **芯片类型**：司法部未明确指出芯片制造商，但根据投诉描述，这些芯片是“市场上最强大的芯片”，且“专为AI应用设计”，这强烈暗示被走私的芯片由英伟达（Nvidia）制造。\n*   **路透社报道**：明确指出被走私的芯片是英伟达的H100 GPU。\n*   **走私路径**：司法部对出口文件的审查发现，ALX Solutions将芯片及其他技术运送至新加坡和马来西亚的货运公司，但收款方却是香港和中国的实体。\n*   **规避限制**：部门还发现了关于将技术运往马来西亚以专门规避美国出口限制的通信记录。\n\n**英伟达的回应**\n*   英伟达发言人表示：“走私是行不通的。”\n*   **公司政策**：英伟达主要向知名合作伙伴（包括原始设备制造商OEM）销售产品，以确保所有销售都符合美国出口管制规定。\n*   **后果**：任何被转移的产品将无法获得服务、支持或更新。\n\n**美国出口管制与AI竞争**\n*   **背景**：此事件发生在美国试图平衡促进全球AI创新与对中国实施出口限制之际。许多西方国家认为中国在AI竞赛中构成重大威胁。\n*   **特朗普政府的AI行动计划**：强调了加强出口管制的重要性，但缺乏具体细节。\n\n**关于芯片“自毁开关”的争议**\n*   **政府提议**：美国政府近期提出在芯片中植入追踪技术以帮助打击走私的可能性。\n*   **芯片制造商反对**：芯片制造商对此举持强烈反对态度。\n*   **英伟达立场**：英伟达在周二的博客文章中明确表示，其GPU不包含“自毁开关”或“后门”。\n*   **反对理由**：\n    *   嵌入此类工具只会损害安全性。\n    *   这将成为黑客和敌对行为者的“礼物”。\n    *   会破坏全球数字基础设施，并削弱对美国技术的信任。\n    *   现有法律明智地要求公司修复漏洞，而非制造漏洞。\n    *   英伟达认为，这并非明智的政策，而是过度反应，将对美国的经济和国家安全利益造成不可挽回的损害。\n*   英伟达拥有超过30年的处理器设计经验。",
+      "shortSummary": "美国司法部逮捕了两名中国公民，指控他们通过加州公司非法向中国走私价值数千万美元的高性能AI芯片，据信是英伟达H100 GPU，以规避美国出口管制。英伟达对此表示，走私产品将得不到支持，并明确反对政府在芯片中植入“自毁开关”或追踪技术，认为这将损害安全、破坏信任并危害美国经济和国家安全利益。此案凸显了美国在AI创新与对华出口限制之间的平衡困境。",
+      "translated_title": "两人因向中国走私AI芯片被捕 — 英伟达称不设‘自毁开关’",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "The U.S. Department of Justice (DOJ) said on Tuesday that two Chinese nationals have been arrested for their alleged involvement in illegally shipping \"tens of millions of dollars\" worth of high-performance AI chips to China."
+    },
+    {
+      "title": "照片分享应用Locket寄希望于新的名人功能来推动增长 (原标题: Photo-sharing app Locket is banking on a new celebrity-focused feature to fuel its growth)",
+      "link": "https://techcrunch.com/2025/08/06/photo-sharing-app-locket-is-banking-on-a-new-celebrity-focused-feature-to-fuel-its-growth/",
+      "pubDate": "Wed, 06 Aug 2025 13:00:00 +0000",
+      "isoDate": "2025-08-06T13:00:00.000Z",
+      "creator": "Lauren Forristal",
+      "summary": "# Locket应用推出“名人Locket”功能以推动增长\n\nLocket是一款照片分享应用，允许用户将图片分享给朋友，并以小部件的形式显示在朋友的手机主屏幕上。该应用于2022年推出，旨在成为BeReal的竞争对手，提供更真实的社交连接方式。用户最多可以选择20位密友，在一个私密空间中分享未经滤镜的自拍和生活动态。\n\n## Locket的现状与成就\n*   **用户规模**：Locket声称其总下载量已超过8000万，日活跃用户超过900万，迄今已分享了超过100亿张照片。\n*   **财务表现**：该公司向TechCrunch透露，在相对适度的1250万美元融资背景下，Locket已于2024年实现盈利，这是一项显著的成就。\n\n## 新功能：“名人Locket”（Celebrity Lockets）\n为了进一步推动增长，Locket在过去六个月中一直在悄悄测试一项名为“名人Locket”的功能，并于周三正式宣布推出。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/08/widget-jvke.png?w=330)\n*图片来源：Locket*\n\n### 功能详情\n*   **主要关注对象**：该功能主要面向音乐艺术家，让他们能够通过分享即将举行的演出、新专辑发布及其他新闻来与粉丝互动。\n*   **已测试艺术家**：Locket已与Suki Waterhouse和JVKE等艺术家进行了测试，未来还将有更多艺术家加入。\n*   **互动方式**：名人可以在其社交媒体平台分享链接，或粉丝可以在应用内搜索并添加他们，然后名人即可直接将照片发送到粉丝的主屏幕上。\n*   **创始人观点**：Locket创始人Matt Moss表示：“帖子直接发送到粉丝的主屏幕，提供了其他平台无法复制的即时性和亲密感，将已被动关注者转变为积极参与者。”\n*   **粉丝连接数量**：Locket允许艺术家选择连接的粉丝数量，范围从1,000到15,000个名额。\n*   **案例**：Suki Waterhouse在应用中拥有5,000名粉丝，并帮助Locket吸引了数百名新用户，其中17%的粉丝是Locket的新用户。\n*   **创始人进一步阐述**：Moss表示：“粉丝们会感到特别，因为他们是几千人中的一员，而不仅仅是另一个关注者。这也保留了Locket作为产品今天的亲密感和品牌特质……我们知道我们的社区使用Locket与朋友分享音乐，因此能够与他们最喜欢的艺术家建立联系是平台自然而然的演变。”\n\n## 潜在挑战与市场对比\n尽管Moss表示测试者的反馈良好，但目前尚不清楚这项功能是否能帮助Locket增加用户数量。BeReal曾尝试过类似的功能“RealPeople”，但反响并非完全积极，一些用户表示他们更喜欢这个“反社交媒体”应用，将其作为逃离名人的方式。",
+      "shortSummary": "照片分享应用Locket正推出“名人Locket”功能以促进增长。该功能允许名人（主要是音乐艺术家）直接向粉丝的主屏幕小部件分享照片，提供独特的即时性和亲密感。Locket已于2024年实现盈利，拥有超过900万日活跃用户，希望通过此举将已被动关注者转变为积极参与者。然而，其成功尚不确定，因为BeReal的类似功能曾因用户寻求逃离名人内容而反响不一。",
+      "translated_title": "照片分享应用Locket寄希望于新的名人功能来推动增长",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/widget-jvke.png?w=330",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Celebrity Lockets is a new feature where celebrities can engage with their most loyal followers on their home screens."
+    },
+    {
+      "title": "最后机会：TechCrunch Disrupt 2025 门票优惠今晚截止 (原标题: Final call: TechCrunch Disrupt 2025 ticket savings end tonight)",
+      "link": "https://techcrunch.com/2025/08/06/final-call-techcrunch-disrupt-2025-ticket-savings-end-tonight/",
+      "pubDate": "Wed, 06 Aug 2025 13:00:00 +0000",
+      "isoDate": "2025-08-06T13:00:00.000Z",
+      "creator": "TechCrunch Events",
+      "summary": "## TechCrunch Disrupt 2025：20周年盛会与门票优惠最后机会\n\nTechCrunch Disrupt 2025 将于 **2025年10月27日至29日** 在旧金山的 **Moscone West** 举行，标志着其塑造创业世界的20周年。这是一场汇聚了10,000多名科技创新者、创始人、风险投资家和生态系统建设者的盛会，提供三天高影响力的活动、交流和创业活力。\n\n### 门票优惠即将结束\n\n这是节省高达675美元门票费用的最后机会。优惠将于**今晚太平洋时间11:59截止**，之后价格将上涨。建议立即注册以锁定优惠。\n\n![TechCrunch Disrupt 2025 24 hours left](https://techcrunch.com/wp-content/uploads/2025/05/TC25_24Hours-16X9-Dark.png?w=680)\n\n### 为何不容错过20周年Disrupt\n\nTechCrunch Disrupt 在过去20年里一直是突破性创新和下一代交易的启动平台。它不仅仅是一场科技会议，更是：\n\n*   诞生颠覆性创新的地方。\n*   建立强大联系的场所。\n*   将想法转化为行动的平台。\n*   初创公司脱颖而出、投资者发现下一个重大机遇、行业领袖保持领先的舞台。\n\n### 部分特邀演讲嘉宾\n\n大会将邀请众多行业领袖发表演讲，包括：\n\n*   Roelof Botha (Sequoia Capital)\n*   Jeff Cardenas (Apptronik)\n*   David George (Andreessen Horowitz)\n*   Alex Kendall (Wayve)\n*   Eunice Kim (Netflix)\n*   Tekedra Mawakana (Waymo)\n*   Alejandro Matamala Ortiz (Runway)\n*   Ryan Petersen (Flexport)\n*   Mati Staniszewski (ElevenLabs)\n*   Astro Teller (X, The Moonshot Factory)\n*   Ethan Thornton (Mach Industries)\n*   Nirav Tolia (Nextdoor)\n*   Raquel Urtasun (Waabi)\n*   Eric Yuan (Zoom)\n*   Sangeen Zeb (GV (Google Ventures))\n\n更多新演讲嘉宾将每周公布。\n\n![Charles E. Hudson from Precursor Ventures is one of the judges at Startup Battlefield at TechCrunch Disrupt 2022 in San Francisco.](https://techcrunch.com/wp-content/uploads/2022/10/TechCrunch-Disrupt-Haje-Kamps-559.jpg?w=680)\n\n### Disrupt 活动亮点\n\n1.  **四大行业舞台 + Disrupt 主舞台**：\n    *   **Builders Stage**：创始人成长、扩展和领导的工具、趋势和策略。\n    *   **AI Stage**：两天聚焦代理、创造力、防御、电动汽车、硬件和监管。\n    *   **Space Stage**：科技与宇宙的交汇。\n    *   **Going Public Stage**：成功上市公司的经验教训。\n2.  **互动环节**：\n    *   小型圆桌会议和分组讨论，与创业专家进行坦诚对话，获取深度见解。\n    ![图片 3](https://techcrunch.com/wp-content/uploads/2024/05/breakout_1200x600.png?w=680)\n3.  **Startup Battlefield 200**：\n    *   20家由TechCrunch精选的顶尖初创公司将在Disrupt主舞台进行现场路演，争夺10万美元的无股权奖金，并获得风险投资家的实时反馈。\n4.  **探索未来**：\n    *   参观博览会大厅，与创造未来科技的初创公司会面。创始人也可申请参展，与投资者、媒体和潜在客户建立联系。\n5.  **建立正确的人脉**：\n    *   通过 Braindate 服务，帮助参与者进行一对一或小组形式的关键对话，推动目标实现。\n\n### 投资者和创始人的额外福利\n\n*   **Deal Flow Café**：投资者和创始人可以在此喝咖啡，讨论交易、融资和激发合作。\n*   **投资者通行证持有者**：享受博览会大厅的定制导览，正式引荐符合投资重点的初创公司，并可在第二天参加独家StrictlyVC会议的预留座位。\n*   **创始人通行证持有者**：获得与积极寻找投资机会的投资者面对面交流的机会。\n\n![TechCrunch Disrupt 2024 networking student](https://techcrunch.com/wp-content/uploads/2024/10/Networking_disrupt.png?w=680)\n\n### 立即行动\n\n门票优惠将于今晚太平洋时间11:59消失。请立即注册，锁定您的TechCrunch Disrupt 2025门票优惠，不要错过这场备受期待的科技盛会。",
+      "shortSummary": "TechCrunch Disrupt 2025 将于10月27日至29日在旧金山举行，庆祝其20周年。这是科技创新者、创始人、风投和生态系统建设者的盛会。门票优惠高达675美元，将于今晚太平洋时间11:59截止。大会将有顶级演讲嘉宾、四大行业舞台、Startup Battlefield 200、互动环节和专属人脉建立机会。立即注册，锁定优惠，参与这场塑造创业世界的年度盛会。",
+      "translated_title": "最后机会：TechCrunch Disrupt 2025 门票优惠今晚截止",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/05/TC25_24Hours-16X9-Dark.png?w=680",
+          "alt": "TechCrunch Disrupt 2025 24 hours left",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2022/10/TechCrunch-Disrupt-Haje-Kamps-559.jpg?w=680",
+          "alt": "Charles E. Hudson from Precursor Ventures is one of the judges at Startup Battlefield at TechCrunch Disrupt 2022 in San Francisco.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2024/05/breakout_1200x600.png?w=680",
+          "alt": "",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2024/10/Networking_disrupt.png?w=680",
+          "alt": "TechCrunch Disrupt 2024 networking student",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "TechCrunch Disrupt 2025 marks 20 years of shaping the startup world — and tonight’s your last chance to save up to $675 on your ticket. From October 27–29, Disrupt returns to Moscone West in San Francisco. Join 10,000+ tech innovators, founders, VCs, and ecosystem builders for three days of high-impact programming, networking, and startup energy. [&#8230;]"
+    },
+    {
       "title": "微软将OpenAI最小的开源模型引入Windows用户 (原标题: Microsoft brings OpenAI’s smallest open model to Windows users)",
       "link": "https://techcrunch.com/2025/08/06/microsoft-brings-openais-smallest-open-model-to-windows-users/",
       "pubDate": "Wed, 06 Aug 2025 12:47:31 +0000",
@@ -22,7 +359,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "Microsoft will bring OpenAI's new free and open GPT model, gpt-oss-20b, to Windows 11 users via Windows AI Foundry, its platform that lets users tap AI features, APIs, and popular open-source models on their computers. "
+      "content": "Microsoft will bring OpenAI's new free and open GPT model, gpt-oss-20b, to Windows 11 users via Windows AI Foundry, its platform that lets users tap AI features, APIs, and popular open source models on their computers. "
     },
     {
       "title": "谷歌称黑客通过入侵其Salesforce数据库窃取了客户数据 (原标题: Google says hackers stole its customers’ data by breaching its Salesforce database)",
@@ -42,7 +379,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "Google confirmed that one of its cloud-stored Salesforce databases was breached, exposing its customer data. Google attributed the breach to a hacking group, ShinyHunters, known for breaking into Salesforce databases."
+      "content": "Google attributed the breach to a hacking group, ShinyHunters, known for targeting big companies and their cloud-based databases."
     },
     {
       "title": "Qwant和Ecosia推出Staan，一个旨在挑战科技巨头的欧洲搜索引擎索引 (原标题: Qwant and Ecosia debut Staan, a European search index that aims to take on Big Tech)",
@@ -95,326 +432,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "This is a juicy competitive move for both companies after AWS faced an onslaught of criticism over its progress with AI."
-    },
-    {
-      "title": "琳达·亚卡里诺离开X后加入健康科技平台eMed担任CEO (原标题: Linda Yaccarino joins health tech platform eMed as CEO after leaving X)",
-      "link": "https://techcrunch.com/2025/08/05/linda-yaccarino-joins-health-tech-platform-emed-as-ceo-after-leaving-x/",
-      "pubDate": "Tue, 05 Aug 2025 18:20:11 +0000",
-      "isoDate": "2025-08-05T18:20:11.000Z",
-      "creator": "Amanda Silberling",
-      "summary": "## 琳达·亚卡里诺出任eMed首席执行官\n\n![Linda Yaccarino, CEO, X/Twitter speaks onstage during Vox Media's 2023 Code Conference](https://techcrunch.com/wp-content/uploads/2023/09/1705119879.jpg?w=1024)\n\n琳达·亚卡里诺（Linda Yaccarino）在辞去X（前身为Twitter）首席执行官一职后，将担任健康科技初创公司eMed Population Health的首席执行官。eMed是一家AI初创公司，致力于为使用GLP-1s药物的患者构建技术平台。\n\n### 亚卡里诺的背景与转型\n\n*   **在X的任职经历：** 亚卡里诺在X担任了两年首席执行官。尽管她与埃隆·马斯克（Elon Musk）都倾向于最小化内容审核，但她成功地对这个社交网络的广告收入模式产生了积极影响。\n*   **此前职业生涯：** 在加入X之前，她曾是NBCUniversal的资深广告主管。\n*   **加入eMed的原因：** 尽管亚卡里诺没有健康科技领域的经验，eMed在新闻稿中表示，他们看重她“无可否认的谈判新伙伴关系的能力”。此外，她在X的任期使她在科技界广为人知，这也有助于吸引更多关注到这家初创公司。\n\n### eMed的业务焦点\n\n*   **过去业务：** eMed此前曾开发一个技术平台，用于指导用户正确进行居家COVID-19快速抗原检测。\n*   **当前焦点：** 目前，eMed专注于GLP-1s，这是一类药物，如Ozempic，可用于体重管理和治疗II型糖尿病。\n*   **公司愿景：** eMed的目标是通过其开创性的服务和平台，改善全球医疗保健成果。\n\n### 亚卡里诺对未来的展望\n\n亚卡里诺在一份新闻稿中表示：“要在当今的医疗保健市场中成为领导者，公司需要拥有无畏的韧性，这不仅能让它们成长，还能让它们勇敢地站出来，重新定义整个行业。”她强调，eMed已做好充分准备，成为这一坚韧的领导者，努力实现改善全球医疗保健成果的最终目标。",
-      "shortSummary": "琳达·亚卡里诺在辞去X首席执行官一职后，将出任健康科技AI初创公司eMed Population Health的首席执行官。eMed专注于为使用GLP-1s（如Ozempic）药物的患者构建技术平台，这些药物用于体重管理和II型糖尿病治疗。尽管亚卡里诺缺乏健康科技经验，但eMed看重她卓越的谈判能力和在科技界的知名度。她表示将致力于通过创新服务和平台，重新定义医疗行业并改善全球医疗保健成果。",
-      "translated_title": "琳达·亚卡里诺离开X后加入健康科技平台eMed担任CEO",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2023/09/1705119879.jpg?w=1024",
-          "alt": "Linda Yaccarino, CEO, X/Twitter speaks onstage during Vox Media's 2023 Code Conference",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Though Yaccarino does not have experience in health tech, eMed said in a press release that they sought her out for her \"undeniable ability to negotiate new partnerships.\""
-    },
-    {
-      "title": "Substack竞争对手Ghost通过最新公开发布连接开放社交网络 (原标题: Substack rival Ghost connects to the open social web with its latest public release)",
-      "link": "https://techcrunch.com/2025/08/05/substack-rival-ghost-connects-to-the-open-social-web-with-its-latest-public-release/",
-      "pubDate": "Tue, 05 Aug 2025 17:16:02 +0000",
-      "isoDate": "2025-08-05T17:16:02.000Z",
-      "creator": "Sarah Perez",
-      "summary": "# Ghost 6 发布：连接开放社交网络\n\n经过数月的测试，新闻通讯平台 Ghost 正式发布了其新版本软件 Ghost 6。此版本允许其发布者将长篇内容原生共享到更广泛的开放社交网络中。\n\n## 核心功能：开放社交网络集成\n\nGhost 6 的主要亮点是其与去中心化开放社交网络的深度集成。除了通过网页、RSS 和电子邮件发布内容外，Ghost 用户现在还可以原生连接到以下服务：\n\n*   去中心化的 X 竞争对手 **Mastodon**\n*   Meta 的 **Threads**\n*   **Flipboard**\n*   已集成 ActivityPub 的 **WordPress** 站点、**Surf** 和 **WriteFreely** 等。\n\n### Bluesky 连接\n\n值得注意的是，Ghost 6 也提到了发布到 Bluesky 的能力，但这通过与 **Bridgy Fed** 的集成实现。Bridgy Fed 是一项连接开放社交网络（称为 fediverse，由 ActivityPub 驱动）与 ATmosphere（由 Bluesky 等应用使用的 AT 协议驱动）的服务。出版平台 Micro.blog 的创始人 Manton Reece 指出，Micro.blog 正在直接集成 AT 协议，而 Ghost 采用的是桥接方式。\n\n## ActivityPub 的背景与优势\n\nActivityPub 长期以来一直用于驱动开放、去中心化的社交媒体应用。在埃隆·马斯克收购 Twitter（现称 X）后，人们对基于此协议的开发兴趣大增，以应对 X 的竞争。Meta 于 2023 年推出了其 X 替代品 Instagram Threads，并在移动设备上迅速追赶 X。同时，博客平台 WordPress（包括托管版本 WordPress.com）现在也提供 ActivityPub 集成，允许用户在 Mastodon 等服务上关注 WordPress 博客。其他应用如 Flipboard 的旗舰应用、新应用 Surf 以及出版平台 Medium 也已集成到开放社交网络中。\n\nGhost 强调了连接 ActivityPub 的潜在网络效应，因为它允许联合应用上的用户关注 Ghost 发布者的帖子，并通过点赞、回复或转发进行互动。这有望扩大发布者的触达范围并增加读者群。\n\n![Substack竞争对手Ghost通过最新公开发布连接开放社交网络。](https://techcrunch.com/wp-content/uploads/2025/08/sw-1.png?w=680)\n*图片来源：Ghost*\n\n## Ghost 6 其他重要更新\n\n除了 ActivityPub 集成这一主要卖点外，Ghost 6 还包含一系列其他重要更改和新增功能：\n\n*   **内容发现**：软件中新增了一个“收件箱”部分，用户可以在其中关注其他在 Ghost 或 WordPress 上发布的文章。\n*   **短内容发布**：发布者可以从 Ghost 的管理界面向 fediverse 发布短内容，从而增加关注者并与读者建立联系。\n*   **原生分析套件**：Ghost 现在内置了原生分析套件，可实时跟踪网站、新闻通讯和订阅的表现、参与度和转化情况。\n*   **支付与个性化**：软件支持多种支付方式、打赏和捐赠、品牌新闻通讯以及可根据个人读者定制的内容等。\n\n![Ghost ActivityPub 集成界面](https://techcrunch.com/wp-content/uploads/2025/08/ghost-activity-pub-01.webp?w=680)\n*图片来源：Ghost*\n\n![Ghost 原生分析套件界面](https://techcrunch.com/wp-content/uploads/2025/08/analytics.png?w=680)\n*图片来源：Ghost*\n\n## 市场背景与定价调整\n\nGhost 6 的发布恰逢其主要竞争对手新闻通讯平台 Substack 发生了一起令人不齿的事件——Substack 向用户推送通知，鼓励他们订阅一份纳粹新闻通讯。此前，包括知名科技出版物 Platformer 的 Casey Newton 在内的多位作者已因 Substack 托管此类内容而离开。\n\n其他知名的 Ghost 出版物包括 404 Media、Spyglass、David Sirota 的 The Lever、Tangle、Jason Calacanis 的 Inside 和 SFist 等。\n\n随着此次发布，Ghost 调整了其 Pro（托管）计划的定价；最便宜的计划现在起价分别为每月 15 美元和 29 美元，高于此前的 9 美元和 25 美元。然而，拥有大量订阅者的 Ghost 发布者将享受更低的价格。",
-      "shortSummary": "Ghost 6 发布，核心是与开放社交网络（如 Mastodon、Threads 和支持 ActivityPub 的 WordPress 站点）的原生集成。这使发布者能将长内容共享到去中心化网络，扩大触达范围并与读者互动。新版本还包括原生分析套件、内容发现功能和短内容发布能力。此次发布正值竞争对手 Substack 遭遇争议之际，Ghost 也调整了其 Pro 计划的定价。",
-      "translated_title": "Substack竞争对手Ghost通过最新公开发布连接开放社交网络",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/sw-1.png?w=680",
-          "alt": "Substack rival Ghost now connects with the open social web with its latest public release. ",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/ghost-activity-pub-01.webp?w=680",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/analytics.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "While the ActivityPub integration is a main selling point for Ghost 6, this major release includes a number of other changes and new additions."
-    },
-    {
-      "title": "OpenAI 发布两款‘开放’AI推理模型 (原标题: OpenAI launches two ‘open’ AI reasoning models)",
-      "link": "https://techcrunch.com/2025/08/05/openai-launches-two-open-ai-reasoning-models/",
-      "pubDate": "Tue, 05 Aug 2025 17:00:00 +0000",
-      "isoDate": "2025-08-05T17:00:00.000Z",
-      "creator": "Maxwell Zeff",
-      "summary": "# OpenAI发布两款“开放”AI推理模型\n\nOpenAI于周二宣布推出两款与公司o系列能力相似的开放权重AI推理模型：gpt-oss-120b和gpt-oss-20b。这些模型可从在线开发者平台Hugging Face免费下载，OpenAI称其在多项开放模型基准测试中表现“领先”。\n\n## 模型概览与能力\n*   **模型尺寸与运行环境：**\n    *   **gpt-oss-120b：** 较大且功能更强大，可在单个英伟达GPU上运行。\n    *   **gpt-oss-20b：** 轻量级，可在配备16GB内存的消费级笔记本电脑上运行。\n*   **开放性：** 这是OpenAI自五年多前发布GPT-2以来首次推出“开放”语言模型。\n*   **混合能力：** 这些开放模型能够向云端AI模型发送复杂查询。这意味着如果开放模型无法完成特定任务（如图像处理），开发者可以将其连接到OpenAI更强大的闭源模型。\n\n## 战略转变与背景\nOpenAI此前普遍倾向于专有、闭源的开发方式，通过API销售AI模型访问权限建立了庞大业务。然而，首席执行官Sam Altman在1月份表示，他认为OpenAI在开源技术方面“站在了历史的错误一边”。\n\n*   **竞争压力：** OpenAI面临来自中国AI实验室日益增长的压力，包括DeepSeek、阿里巴巴的通义千问和月之暗面，这些实验室已经开发出世界上最强大和最受欢迎的一些开放模型。Meta的Llama模型在过去一年中已落后。\n*   **政府呼吁：** 2024年7月，特朗普政府敦促美国AI开发者开源更多技术，以促进符合美国价值观的AI在全球范围内的应用。\n*   **OpenAI的目标：** 通过发布gpt-oss，OpenAI希望同时赢得开发者和特朗普政府的青睐，因为两者都关注到中国AI实验室在开源领域的崛起。Altman表示，OpenAI的使命是“确保AGI造福全人类”，并对世界能够基于美国创建的、基于民主价值观的、免费且广泛受益的开放AI堆栈进行构建感到兴奋。\n\n![Open AI CEO Sam Altman](https://techcrunch.com/wp-content/uploads/2025/04/GettyImages-2197366846.jpg?w=680)\n图片来源：Tomohiro Ohsumi / Getty Images\n\n## 模型性能表现\nOpenAI旨在使其开放模型成为其他开放权重AI模型中的领导者，并声称已实现这一目标。\n\n*   **Codeforces（竞技编程测试）：**\n    *   gpt-oss-120b得分2622，gpt-oss-20b得分2516。\n    *   表现优于DeepSeek的R1，但逊于OpenAI的o3和o4-mini模型。\n\n![OpenAI’s open model performance on codeforces.](https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-05-at-12.21.54PM.png?w=680)\n图片来源：OpenAI\n\n*   **Humanity’s Last Exam (HLE，跨学科众包问题测试)：**\n    *   gpt-oss-120b得分19%，gpt-oss-20b得分17.3%。\n    *   同样逊于o3，但优于DeepSeek和通义千问的领先开放模型。\n\n![OpenAI’s open model performance on HLE.](https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-05-at-12.18.20PM.png?w=680)\n图片来源：OpenAI\n\n## 幻觉问题\n值得注意的是，OpenAI的开放模型比其最新的AI推理模型o3和o4-mini的幻觉现象显著更多。OpenAI表示，这是“预期的，因为较小的模型比大型前沿模型拥有较少的世界知识，并且更容易产生幻觉”。\n*   在PersonQA（OpenAI衡量模型人物知识准确性的内部基准）测试中：\n    *   gpt-oss-120b对49%的问题产生幻觉。\n    *   gpt-oss-20b对53%的问题产生幻觉。\n    *   这比OpenAI的o1模型（16%）的幻觉率高出三倍多，也高于o4-mini模型（36%）。\n\n## 模型训练\nOpenAI表示其开放模型采用与专有模型相似的训练流程。\n*   **混合专家（MoE）架构：** 每个开放模型都利用MoE，针对任何给定问题激活更少的参数，从而提高运行效率。例如，gpt-oss-120b总参数为1170亿，但每个token仅激活51亿参数。\n*   **高计算量强化学习（RL）：** 模型使用大量英伟达GPU集群，通过模拟环境进行后训练，以区分对错。这与OpenAI的o系列模型训练方式相似。\n*   **思维链（Chain-of-Thought）过程：** 开放模型具有类似的思维链过程，会花费额外的时间和计算资源来推导答案。\n*   **应用：** 经过后训练，OpenAI的开放AI模型擅长驱动AI代理，并能调用工具（如网络搜索或Python代码执行）作为其思维链过程的一部分。\n*   **局限性：** 这些开放模型仅支持文本，无法像OpenAI的其他模型那样处理或生成图像和音频。\n\n## 许可与数据\nOpenAI以Apache 2.0许可发布gpt-oss-120b和gpt-oss-20b，该许可通常被认为是最宽松的之一。这意味着企业可以商业化使用OpenAI的开放模型，而无需支付费用或获得许可。然而，与AI2等AI实验室提供的完全开源产品不同，OpenAI表示不会发布用于创建这些开放模型的训练数据。这一决定并不意外，因为目前有多起针对AI模型提供商（包括OpenAI）的诉讼，指控这些公司不当使用受版权保护的作品进行模型训练。\n\n## 安全考量\nOpenAI在最近几个月多次推迟了开放模型的发布，部分原因是为了解决安全问题。除了公司常规的安全政策外，OpenAI还在一份白皮书中表示，他们调查了恶意行为者是否可以微调gpt-oss模型，使其在网络攻击或生物/化学武器制造方面更具帮助性。经过OpenAI和第三方评估者的测试，公司表示gpt-oss可能会略微增加生物能力。然而，他们没有发现证据表明这些开放模型即使在微调后也能达到这些领域的“高能力”危险阈值。\n\n## 未来展望\n尽管OpenAI的模型在开放模型中表现领先，但开发者们正热切期待DeepSeek R2（其下一代AI推理模型）以及Meta Superintelligence Lab的新开放模型的发布。",
-      "shortSummary": "OpenAI发布了两款开放权重AI推理模型gpt-oss-120b和gpt-oss-20b，可在Hugging Face免费下载，这是其自GPT-2以来首次推出开放模型。此举旨在应对中国AI实验室的竞争并响应美国政府的开源呼吁。这些模型在开放基准测试中表现出色，但幻觉率较高，且逊于OpenAI的闭源o系列。它们采用MoE和强化学习训练，仅支持文本，并以Apache 2.0许可发布，但不公开训练数据。OpenAI已解决相关安全问题。",
-      "translated_title": "OpenAI 发布两款‘开放’AI推理模型",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/04/GettyImages-2197366846.jpg?w=680",
-          "alt": "Open AI CEO Sam Altman",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-05-at-12.21.54PM.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-05-at-12.18.20PM.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "For the first time in more than five years, OpenAI is launching a new open language model that appears to be state of the art."
-    },
-    {
-      "title": "Cloudflare‘点名批评’Perplexity后，一些人对其进行辩护 (原标题: Some people are defending Perplexity after Cloudflare ‘named and shamed’ it)",
-      "link": "https://techcrunch.com/2025/08/05/some-people-are-defending-perplexity-after-cloudflare-named-and-shamed-it/",
-      "pubDate": "Tue, 05 Aug 2025 16:33:03 +0000",
-      "isoDate": "2025-08-05T16:33:03.000Z",
-      "creator": "Julie Bort",
-      "summary": "### Cloudflare与Perplexity的争议：AI抓取与用户驱动获取的界限\n\nCloudflare指控AI搜索引擎Perplexity在规避网站的阻止机制后，秘密抓取网站内容，引发了广泛争议。然而，许多人站出来为Perplexity辩护，认为这种行为虽然有争议，但可以接受。这场争论的核心在于：代表用户访问网站的AI代理，应该被视为机器人，还是像发出相同请求的人类？\n\n#### Cloudflare的指控\n\n*   **测试案例：** Cloudflare设置了一个新网站，配置了明确阻止Perplexity已知AI抓取机器人的`robots.txt`文件，然后向Perplexity询问该网站的内容。\n*   **Perplexity的回应：** Perplexity成功回答了问题。Cloudflare研究人员发现，当其网络爬虫被阻止时，Perplexity使用了“旨在模仿macOS上Google Chrome的通用浏览器”来规避限制。\n*   **Cloudflare CEO的立场：** Cloudflare首席执行官Matthew Prince在X上发布了研究结果，称“一些所谓的‘信誉良好’的AI公司行为更像朝鲜黑客。是时候点名、羞辱并彻底阻止它们了。”\n\n#### Perplexity及其辩护者的回应\n\n*   **用户驱动论：** 许多在X和Hacker News上为Perplexity辩护的人指出，Cloudflare记录的似乎是AI在用户询问特定公共网站时访问该网站的行为。他们认为，如果人类可以请求并查看网站内容，那么代表人类访问网站的LLM（大型语言模型）不应被归入不同的法律类别。\n*   **Perplexity的官方回应：** Perplexity发言人此前否认这些机器人属于该公司，并称Cloudflare的博客文章是其销售宣传。随后，Perplexity发布了一篇博客文章进行辩护，声称该行为来自其偶尔使用的第三方服务。\n*   **核心论点：** Perplexity的辩护与其在线支持者的观点相似，认为“自动化抓取和用户驱动获取之间的区别不仅仅是技术性的——它关乎谁能访问开放网络上的信息。”他们还指责Cloudflare的系统“根本不足以区分合法的AI助手和实际威胁。”\n\n#### Cloudflare的反驳与行业对比\n\n*   **OpenAI的例子：** Cloudflare和Prince指出，OpenAI作为领先的AI公司，遵循最佳实践，尊重`robots.txt`，并且不试图规避指令或网络级阻止。ChatGPT Agent还使用新提出的开放标准Web Bot Auth签署HTTP请求。\n*   **Web Bot Auth：** 这是一个由互联网工程任务组（IETF）开发并由Cloudflare支持的标准，旨在创建一种加密方法来识别AI代理的网络请求。\n\n#### 机器人活动对互联网的影响及新困境\n\n*   **机器人活动激增：** 随着AI模型训练对大量内容的需求，抓取内容的机器人已成为一大威胁，尤其是对小型网站。Imperva的报告显示，机器人活动首次超过了人类在线活动，AI流量占50%以上，其中大部分来自LLM。恶意机器人目前占所有互联网流量的37%。\n*   **历史背景与激励：** 过去，互联网普遍接受网站可以通过验证码和安全服务（如Cloudflare）阻止大多数恶意机器人活动。网站也有明确的激励与“好”机器人（如Googlebot）合作，通过`robots.txt`指导其索引，因为Google的索引能为网站带来流量。\n*   **LLM带来的新挑战：** 现在，LLM正在“吞噬”越来越多的网站流量。Gartner预测，到2026年，搜索引擎流量将下降25%。目前，人类倾向于在最能为网站带来价值（即准备进行交易时）时点击LLM提供的网站链接。\n*   **商业利益与AI代理：** 如果人类像科技行业预测的那样，广泛采用AI代理来安排旅行、预订晚餐和购物，那么网站阻止这些代理是否会损害其商业利益？\n*   **X上的两难：** 争议在X上完美体现：\n    *   一方用户表示：“我希望Perplexity在我发出请求/任务时，能代表我访问任何公共内容！”\n    *   另一方则反驳：“如果网站所有者不希望这样呢？他们只希望你直接访问主页，查看他们的内容”，指出内容创建者希望获得流量和潜在广告收入，而不是让Perplexity“拿走”这些。\n    *   有人预测：“这就是为什么我认为‘代理浏览’很难真正实现——这个问题比人们想象的要困难得多。大多数网站所有者只会选择阻止。”",
-      "shortSummary": "Cloudflare指控AI搜索引擎Perplexity规避其阻止机制抓取网站，引发争议。Perplexity及其支持者辩称，这是代表用户进行的“用户驱动获取”，而非恶意抓取，应与人类访问网站同等对待。Cloudflare则强调OpenAI等公司尊重`robots.txt`。这场争论凸显了AI代理与网站互动的新困境：随着AI流量超越人类，网站所有者在保护内容和潜在收入的同时，如何平衡用户对AI代理访问信息的需求。",
-      "translated_title": "Cloudflare‘点名批评’Perplexity后，一些人对其进行辩护",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "In a debate likely to get louder as AI agent usage grows, some people say Perplexity crawling blocked websites isn't a simple matter. "
-    },
-    {
-      "title": "欧盟人工智能法案旨在为人工智能创新创造公平竞争环境：这是它的内容 (原标题: The EU AI Act aims to create a level playing field for AI innovation: Here’s what it is)",
-      "link": "https://techcrunch.com/2025/08/05/the-eu-ai-act-aims-to-create-a-level-playing-field-for-ai-innovation-heres-what-it-is/",
-      "pubDate": "Tue, 05 Aug 2025 16:24:10 +0000",
-      "isoDate": "2025-08-05T16:24:10.000Z",
-      "creator": "Anna Heim",
-      "summary": "# 欧盟人工智能法案：为AI创新创造公平竞争环境\n\n欧盟人工智能法案（EU AI Act）被欧盟委员会誉为“世界上第一部全面的人工智能法律”。经过多年的酝酿，它正逐步成为欧盟27个成员国4.5亿居民的现实。该法案不仅是欧洲内部事务，也适用于本地和外国公司，并影响人工智能系统的提供者和部署者。\n\n## 存在目的与核心目标\n\n欧盟人工智能法案旨在确保在欧盟各国范围内，针对人工智能领域建立统一的法律框架，从而保障基于人工智能的商品和服务的自由跨境流通，避免各地出现分歧的限制。通过及时立法，欧盟寻求在该地区创造一个公平的竞争环境，并培养信任，这也有望为新兴公司创造机会。\n\n尽管人工智能在大多数行业仍处于广泛采用的相对早期阶段，但欧盟人工智能法案为人工智能应如何以及不应如何服务社会设定了高标准。根据欧洲立法者的说法，该框架的主要目标是：\n\n*   促进以人为本和值得信赖的人工智能的采用。\n*   确保高度保护健康、安全、欧盟基本权利宪章所载的基本权利（包括民主、法治和环境保护）。\n*   防止人工智能系统在欧盟内部造成有害影响。\n*   支持创新。\n\n这表明该法案旨在在创新与危害预防、人工智能普及与环境保护等不同目标之间维持一种微妙的平衡。\n\n## 平衡不同目标的方法：风险导向\n\n为了平衡危害预防与人工智能的潜在益处，欧盟人工智能法案采取了风险导向的方法：\n\n*   **禁止**少数“不可接受风险”的用例。\n*   **标记**一系列“高风险”用途，要求严格监管。\n*   对“有限风险”场景施加较轻的义务。\n\n## 实施时间表\n\n欧盟人工智能法案的实施于2024年8月1日启动，但将通过一系列错开的合规截止日期逐步生效。在大多数情况下，它对新进入者的适用时间将早于已在欧盟提供人工智能产品和服务的公司。\n\n*   **2025年2月2日：** 第一个截止日期生效，重点是执行对少数被禁止的人工智能用途的禁令，例如未经目标地抓取互联网或闭路电视的面部图像以建立或扩展数据库。\n*   **2026年中期：** 除非时间表改变，大多数条款将在此之前适用。\n\n## 2025年8月2日的变化：通用人工智能模型\n\n自2025年8月2日起，欧盟人工智能法案适用于“具有系统性风险的通用人工智能模型”（GPAI）。GPAI模型是使用大量数据训练的AI模型，可用于广泛的任务。这些模型可能带来系统性风险，例如“通过降低化学或生物武器开发的门槛，或对自主[GPAI]模型失去控制的意外问题”。\n\n在截止日期之前，欧盟发布了针对GPAI模型提供商的指导方针，其中包括欧洲公司以及Anthropic、Google、Meta和OpenAI等非欧洲参与者。然而，由于这些公司已经有模型在市场上，它们将有更长的合规期，直到2027年8月2日，而新进入者则没有。\n\n## 惩罚措施\n\n欧盟人工智能法案附带的惩罚措施被立法者设定为“有效、相称且具有威慑力”，即使对于大型全球参与者也是如此。具体细节将由欧盟各国制定，但法规规定了总体精神——惩罚将根据认定的风险水平而异，并设定了每个级别的阈值：\n\n*   **禁止的人工智能应用侵权：** 最高罚款可达3500万欧元或前一财政年度全球年营业额的7%（以较高者为准）。\n*   **GPAI模型提供商：** 欧盟委员会可处以最高1500万欧元或年营业额3%的罚款。\n\n## 现有参与者的合规意向与行业反应\n\n自愿性GPAI行为准则（包括承诺不使用盗版内容训练模型）是衡量公司在被迫遵守之前如何与框架法案互动的一个良好指标。\n\n*   **Meta：** 2025年7月，Meta宣布不会签署旨在帮助GPAI提供商遵守欧盟人工智能法案的自愿性GPAI行为准则。\n*   **Google：** 尽管有所保留，Google很快确认将签署。\n*   **其他签署方：** 迄今为止的签署方包括Aleph Alpha、Amazon、Anthropic、Cohere、Google、IBM、Microsoft、Mistral AI和OpenAI等。但正如Google的例子所示，签署不等于完全认可。\n\n## 科技公司为何反对这些规则？\n\n一些科技公司对这些规则表示担忧：\n\n*   **Google（全球事务总裁Kent Walker）：** 尽管签署了自愿准则，但他仍表示担忧，认为“人工智能法案和准则可能减缓欧洲人工智能的开发和部署”。\n*   **Meta（首席全球事务官Joel Kaplan）：** 态度更为激进，称“欧洲在人工智能方面正走向错误的方向”，并认为欧盟实施人工智能法案是“越权”，行为准则“为模型开发者引入了许多法律不确定性，以及远远超出人工智能法案范围的措施”。\n*   **欧洲公司：** 法国人工智能领军企业Mistral AI的首席执行官Arthur Mensch是2025年7月签署公开信的欧洲CEO团体之一，他们敦促布鲁塞尔在欧盟人工智能法案的关键义务生效前“暂停两年”。\n\n## 欧盟的立场\n\n2025年7月初，欧盟对要求暂停的游说努力做出了负面回应，表示仍将坚持实施欧盟人工智能法案的时间表。它按计划推进了2025年8月2日的截止日期。",
-      "shortSummary": "欧盟人工智能法案是全球首部全面的人工智能法律，旨在为AI创新创造公平竞争环境，并确保以人为本和值得信赖的AI发展。它通过风险导向方法（禁止、高风险、有限风险）来平衡创新与危害预防。该法案适用于欧盟及外国公司，分阶段实施，并对违规行为设定了高额罚款。尽管一些科技巨头对其可能阻碍创新表示担忧，欧盟仍坚持其严格的实施时间表。",
-      "translated_title": "欧盟人工智能法案旨在为人工智能创新创造公平竞争环境：这是它的内容",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The European Union’s Artificial Intelligence Act, known as the EU AI Act, has been described as “the world's first comprehensive AI law” by the European Commission."
-    },
-    {
-      "title": "谷歌的NotebookLM现已向年轻用户开放，AI教育领域的竞争日益激烈 (原标题: Google’s NotebookLM is now available to younger users as competition in the AI education space intensifies)",
-      "link": "https://techcrunch.com/2025/08/05/googles-notebooklm-is-now-available-to-younger-users-as-competition-in-the-ai-education-space-intensifies/",
-      "pubDate": "Tue, 05 Aug 2025 16:03:39 +0000",
-      "isoDate": "2025-08-05T16:03:39.000Z",
-      "creator": "Lauren Forristal",
-      "summary": "## 谷歌NotebookLM向年轻用户开放，AI教育竞争加剧\n\n谷歌的AI笔记应用NotebookLM已取消年龄限制，现向更广泛的年轻用户群体开放，以应对日益激烈的AI教育市场竞争。\n\n### 开放对象与目的\n\n*   **开放对象**：\n    *   Google Workspace for Education用户（不限年龄）\n    *   消费者用户（13岁及以上）\n*   **开放目的**：\n    *   为年轻学生提供AI研究工具，帮助他们更好地理解课堂材料。\n\n### 主要功能\n\nNotebookLM为学生提供了多项增强学习体验的功能：\n\n*   **音频概览（Audio Overviews）**：将笔记转换为播客式音频。\n*   **思维导图（Mind Maps）**：通过交互式视觉工具总结想法。\n*   **视频概览（Video Overviews）**：近期新增功能，允许用户将笔记、PDF和图像转化为视觉演示。\n\n### 隐私与安全措施\n\n鉴于对AI在教育领域中数据隐私和潜在滥用的担忧，谷歌已采取以下保障措施：\n\n*   **内容政策**：对18岁以下用户执行更严格的内容政策，以防止不当回复。\n*   **数据处理**：用户聊天和上传内容不会被人为审查，也不会用于AI训练。\n\n### 市场竞争\n\nNotebookLM向年轻用户的开放，紧随OpenAI为ChatGPT推出学习模式之后，这表明科技公司正在加速在AI教育领域的竞争。",
-      "shortSummary": "谷歌的AI笔记应用NotebookLM现已向13岁及以上消费者和教育用户开放，此前仅限18岁以上。此举旨在为年轻学生提供AI研究工具，帮助他们理解学习材料，并提供音频概览、思维导图等功能。谷歌强调用户隐私，承诺不审查或使用年轻用户数据进行AI训练。此举是在OpenAI推出ChatGPT学习模式之后，标志着AI教育领域的竞争日益激烈。",
-      "translated_title": "谷歌的NotebookLM现已向年轻用户开放，AI教育领域的竞争日益激烈",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The removal of age restrictions is intended to provide younger students with access to the AI research tool, allowing them to better understand their class materials."
-    },
-    {
-      "title": "WhatsApp新增功能以防范诈骗 (原标题: WhatsApp adds new features to protect against scams)",
-      "link": "https://techcrunch.com/2025/08/05/whatsapp-adds-new-features-to-protect-against-scams/",
-      "pubDate": "Tue, 05 Aug 2025 16:00:00 +0000",
-      "isoDate": "2025-08-05T16:00:00.000Z",
-      "creator": "Aisha Malik",
-      "summary": "## WhatsApp推出新诈骗防护功能\n\nWhatsApp于周二宣布，正在推出一系列新功能，旨在帮助用户识别和防范其消息服务上的诈骗行为。该公司同时表示，已封禁超过680万个与全球范围内针对用户的犯罪诈骗中心相关的WhatsApp账户。\n\n### 群聊安全功能\n\n为了保护用户免受群聊诈骗，WhatsApp推出了“安全概览”功能。当一个不在用户联系人列表中的人将用户添加到可能不熟悉的群组时，此功能将显示：\n\n*   **关键信息：** 提供关于该群组的重要信息。\n*   **安全提示：** 包含保持安全的建议。\n*   **联系人识别：** 显示添加者是否为用户联系人，以及群组中是否有用户的联系人。\n\n用户可以选择查看聊天内容以获取更多上下文。在此期间，来自该群组的通知将默认静音，直到用户明确表示希望留在群组中。\n\n![WhatsApp群聊安全概览](https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-05-at-10.20.23AM.png?w=680)\n\n### 个人聊天安全功能\n\n针对诈骗者可能先在互联网其他地方发起对话，然后要求转到WhatsApp等私人消息服务进行沟通的策略，WhatsApp正在测试新的警报方式：\n\n*   **对话前警报：** 在用户开始与潜在诈骗者对话之前发出警告。\n*   **额外背景信息：** 当用户与非联系人开始聊天时，显示关于对方的额外背景信息，以帮助用户做出判断。\n\n### 与OpenAI合作打击诈骗\n\nWhatsApp还分享了其如何与OpenAI合作，成功捣毁了柬埔寨的一个诈骗中心。这些诈骗活动包括：\n\n*   提供虚假点赞以获取报酬。\n*   诱骗他人参与“租滑板车”金字塔骗局。\n*   引诱人们投资加密货币。\n\n据OpenAI报告，诈骗者利用ChatGPT生成包含WhatsApp聊天链接的初始短信，然后迅速将目标引导至Telegram，在那里他们被分配“点赞TikTok视频”等任务。诈骗者通过分享受害者“理论上”已赚取的金额来建立信任，随后要求受害者将资金存入加密货币账户作为下一步任务。\n\n### 用户防诈骗建议\n\nWhatsApp建议用户采取以下措施保护自己免受诈骗：\n\n1.  **仔细思考：** 在回复消息之前，花时间思考信息是否看起来合法。\n2.  **质疑请求：** 询问请求是否合理，以及对方是否在催促你采取行动。\n3.  **验证身份：** 如果对方声称是朋友或家人，应使用其他沟通方式（如打电话）验证其身份。",
-      "shortSummary": "WhatsApp推出新功能以帮助用户识别和防范诈骗，并已封禁680多万个诈骗账户。新功能包括群聊安全概览，当用户被陌生人拉入群聊时提供信息并静音通知；以及个人聊天警报，在用户与非联系人对话前提供背景信息。WhatsApp还与OpenAI合作，成功打击了利用ChatGPT进行诱骗的诈骗活动。建议用户仔细辨别信息，验证身份，避免仓促行动。",
-      "translated_title": "WhatsApp新增功能以防范诈骗",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-05-at-10.20.23AM.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The company announced that it took down over 6.8 million WhatsApp accounts linked to criminal scam centers targeting people around the world."
-    },
-    {
-      "title": "收购Windsurf三周后，Cognition向员工提供离职选择 (原标题: Three weeks after acquiring Windsurf, Cognition offers staff the exit door)",
-      "link": "https://techcrunch.com/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
-      "pubDate": "Tue, 05 Aug 2025 15:24:19 +0000",
-      "isoDate": "2025-08-05T15:24:19.000Z",
-      "creator": "Rebecca Bellan",
-      "summary": "### Cognition收购Windsurf后的员工变动\n\n**背景与收购事件**\n\n*   人工智能编码初创公司Cognition在三周前收购了其竞争对手Windsurf。\n*   Windsurf在被Cognition收购前经历了一段动荡时期：\n    *   曾差点被OpenAI收购。\n    *   其CEO、联合创始人及研究主管通过一项24亿美元的“反向人才收购”（reverse-acquihire）交易被Google挖走，Google雇佣了其核心人才而非收购公司本身。\n    *   最终被Cognition收购。\n*   在收购Windsurf时，Cognition曾表示，作为交易的一部分，Windsurf所有员工都将获得经济补偿，并强调公司很高兴能吸纳Windsurf的“世界级人才”来开发顶尖的编码工具。\n\n**近期员工变动**\n\n*   据《The Information》报道，Cognition上周解雇了30名员工。\n*   公司目前正向Windsurf团队中剩余的大约200名员工提供买断协议。\n*   买断协议的金额相当于九个月的工资。\n*   员工必须在8月10日之前决定是否接受买断。\n\n**留职条件与公司文化**\n\n*   选择留下的员工据称需要每周在办公室工作六天，且每周工作时间超过80小时。\n*   文章指出，这种严苛的工作条件在顶尖AI公司中已司空见惯。\n*   Cognition首席执行官Scott Wu在一封邮件中写道：“我们不相信工作与生活的平衡——构建软件工程的未来是我们都深切关心的使命，我们不可能将两者分开。”\n*   这表明，Cognition收购Windsurf的真正目的似乎是其知识产权（IP），而非其人才。\n\n**图片**\n\n*   ![Scott Wu, Cognition首席执行官](https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-05-at-11.02.07AM.png?w=1024)\n    *   图片说明：Cognition首席执行官Scott Wu。",
-      "shortSummary": "AI编码公司Cognition在收购Windsurf三周后，解雇了30名员工，并向剩余约200名员工提供九个月工资的买断协议。选择留职的员工需接受每周六天、超80小时的严苛工作条件。此举表明Cognition收购Windsurf主要看重其知识产权而非人才，与此前承诺吸纳“世界级人才”的说法相悖。Windsurf此前曾经历被OpenAI收购未果、核心人才流失至Google等动荡。",
-      "translated_title": "收购Windsurf三周后，Cognition向员工提供离职选择",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Screenshot-2025-08-05-at-11.02.07AM.png?w=1024",
-          "alt": "Scott Wu, CEO of Cognition",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Cognition is also laying off 30 employees. Those who don't take the buyout are expected to work 80+ hour weeks."
-    },
-    {
-      "title": "ElevenLabs 推出 AI 音乐生成器，声称可用于商业用途 (原标题: ElevenLabs launches an AI music generator, which it claims is cleared for commercial use)",
-      "link": "https://techcrunch.com/2025/08/05/elevenlabs-launches-an-ai-music-generator-which-it-claims-is-cleared-for-commercial-use/",
-      "pubDate": "Tue, 05 Aug 2025 15:10:35 +0000",
-      "isoDate": "2025-08-05T15:10:35.000Z",
-      "creator": "Amanda Silberling",
-      "summary": "# ElevenLabs 推出 AI 音乐生成器\n\n## 概述\n人工智能音频生成公司 ElevenLabs 于周二宣布推出一款新的音乐生成模型，并声称该模型已获得商业使用许可。此举标志着 ElevenLabs 在其三年发展历程中，首次将其业务范围从核心的 AI 音频工具（如文本转语音、对话机器人和语音翻译工具）扩展到音乐生成领域。\n\n## 商业模式与版权策略\n*   **背景与挑战：** 鉴于 AI 音乐生成工具训练材料的版权问题，初创公司进入这一领域并非易事。此前，Suno 和 Udio 等公司因涉嫌使用受版权保护的材料训练其音乐生成模型，已被美国唱片业协会（RIAA）起诉。这些公司目前正在与主要唱片公司商谈许可协议。\n*   **ElevenLabs 的解决方案：** ElevenLabs 宣布与 Merlin Network 和 Kobalt Music Group 达成合作协议。这两家公司是独立的音乐人数字出版平台，ElevenLabs 将使用它们的材料进行 AI 训练。\n    *   **Merlin Network：** 据其官网介绍，Merlin 代表着 Adele、Nirvana、Mitski、Carly Rae Jepsen 和 Phoebe Bridgers 等知名艺术家。\n    *   **Kobalt Music Group：** Kobalt 代表着 Beck、Bon Iver 和 Childish Gambino 等明星。\n*   **Kobalt 的立场与艺术家权益：** Kobalt 的代表向 TechCrunch 透露，艺术家必须自愿选择加入，其音乐才能被许可用于 AI。Kobalt 表示，这项协议能让其客户直接受益：\n    *   开辟了不断增长市场中的新收入来源。\n    *   包含收入分成，使艺术家能分享收益。\n    *   提供强有力的保障，防止侵权和滥用。\n    *   提供与其他出版和录音版权所有者相当的优惠条款。\n\n## 音乐样本与潜在担忧\nElevenLabs 在发布新模型的同时，也分享了其 AI 生成音乐的样本。其中一个样本包含一段合成语音的饶舌，内容是关于“带着野心从底层崛起”并离开家乡，从“康普顿到宇宙”的旅程。文章指出，听到计算机模仿 Dr. Dre、N.W.A. 和 Kendrick Lamar 等真实经历过这些生活体验的艺术家的影响和语言，令人感到不安。",
-      "shortSummary": "ElevenLabs 推出了一款新的 AI 音乐生成器，并声称其可用于商业用途，标志着该公司业务从文本转语音等领域向音乐生成扩展。为应对版权问题，ElevenLabs 已与 Merlin Network 和 Kobalt Music Group 达成协议，使用其平台上的音乐进行 AI 训练，但前提是艺术家需自愿选择加入。Kobalt 表示，此举将为艺术家带来新的收入来源、收入分成及版权保护。",
-      "translated_title": "ElevenLabs 推出 AI 音乐生成器，声称可用于商业用途",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The AI audio-generation unicorn ElevenLabs announced the launch of a new model that allows users to generate music that's cleared for commercial use."
-    },
-    {
-      "title": "特朗普称将宣布半导体和芯片关税 (原标题: Trump says he’ll announce semiconductor and chip tariffs)",
-      "link": "https://techcrunch.com/2025/08/05/trump-says-hell-announce-semiconductor-and-chip-tariffs/",
-      "pubDate": "Tue, 05 Aug 2025 15:07:12 +0000",
-      "isoDate": "2025-08-05T15:07:12.000Z",
-      "creator": "Rebecca Szkutak",
-      "summary": "## 特朗普宣布半导体和芯片关税计划\n\n![抽象蓝色大脑悬浮在硅芯片上](https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-1223301957.jpg?w=1024)\n\n美国总统唐纳德·特朗普周二在CNBC的“Squawk Box”节目中表示，他的政府计划最早于下周宣布对半导体和芯片征收关税。尽管具体细节尚不明确，但此类关税可能会对美国硬件和人工智能公司造成相当大的冲击。\n\n### 国内芯片制造背景与挑战\n\n*   **CHIPs和科学法案：** 2022年签署的《美国芯片和科学法案》提供了520亿美元的补贴，旨在促进国内芯片制造。当时，美国仅生产全球约10%的芯片，但全球超过一半的半导体公司总部设在美国。\n*   **进展与投资：** 自法案签署以来，国内芯片制造取得了一定进展。英特尔和台积电（TSMC）均已获得《芯片法案》的资助。台积电还承诺在未来四年内在美国的芯片制造工厂上投入“至少”1000亿美元。\n*   **建设挑战：** 建立芯片制造工厂需要时间。英特尔最近再次宣布推迟其俄亥俄州芯片制造工厂的建设，这凸显了快速扩大生产所面临的挑战。\n\n### 人工智能芯片出口限制的不确定性\n\n此次关税宣布之际，业界正在等待政府对人工智能芯片出口限制的决定——这些规则控制哪些国家可以购买用于人工智能系统的先进半导体。\n\n*   **拜登政府规则的废除：** 特朗普政府已于5月正式废除了拜登政府的芯片人工智能出口规则。这些规则曾基于国家安全考虑，建立了针对特定国家的多层级芯片出口限制方法。\n*   **特朗普政府的AI行动计划：** 特朗普政府于7月发布了其《人工智能行动计划》，强调美国需要实施芯片出口限制，但对具体措施的细节描述不足。\n*   **当前辩论：** 据Semafor援引行业消息人士的报道，特朗普政府目前正在讨论是否应继续执行废除和替换拜登人工智能出口规则的计划。",
-      "shortSummary": "美国前总统特朗普表示，他的政府计划最早于下周宣布对半导体和芯片征收关税。此举可能对美国硬件和人工智能公司造成冲击。这一宣布正值美国通过《芯片法案》努力提升国内芯片制造能力，以及业界等待政府对人工智能芯片出口限制做出决定的关键时刻。特朗普政府此前已废除了拜登政府的AI芯片出口规则，但具体替代方案仍在讨论中。",
-      "translated_title": "特朗普称将宣布半导体和芯片关税",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-1223301957.jpg?w=1024",
-          "alt": "abstract blue brain hovering over silicon chip",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "This announcement comes as the Trump administration is also mulling over its approach to AI chip export restrictions. "
-    },
-    {
-      "title": "黑客利用语音钓鱼攻击窃取思科客户个人信息 (原标题: Hacker used a voice phishing attack to steal Cisco customers’ personal information)",
-      "link": "https://techcrunch.com/2025/08/05/hacker-used-a-voice-phishing-attack-to-steal-cisco-customers-personal-information/",
-      "pubDate": "Tue, 05 Aug 2025 15:03:03 +0000",
-      "isoDate": "2025-08-05T15:03:03.000Z",
-      "creator": "Lorenzo Franceschi-Bicchierai",
-      "summary": "### 思科客户信息泄露事件\n\n*   **事件概述**\n    *   思科公司于2025年7月24日发现了一起数据泄露事件。\n    *   此次事件归咎于一次“语音钓鱼”（vishing）攻击，黑客欺骗了一名思科代表，从而获得了访问权限。\n\n*   **攻击方式**\n    *   攻击者通过语音钓鱼电话，诱骗思科员工授予其访问权限。\n\n*   **受影响数据**\n    *   黑客访问并导出了来自第三方云端客户关系管理（CRM）系统数据库的“一部分基本档案信息”。\n    *   被盗数据包括：客户姓名、组织名称、地址、思科分配的用户ID、电子邮件地址、电话号码以及账户相关元数据（如账户创建日期）。\n    *   思科未具体说明有多少Cisco.com用户受到影响。\n\n*   **潜在关联**\n    *   此次泄露事件可能是一系列针对公司Salesforce数据的攻击之一，此前受影响的公司包括美国保险巨头Allianz Life、奢侈品零售商Tiffany and Co.以及澳大利亚航空公司Qantas等。思科是Salesforce的客户。\n\n*   **图片**\n    *   ![The CISCO brand logo during the Mobile World Congress Barcelona 2023.](https://techcrunch.com/wp-content/uploads/2025/01/Cisco-Getty.jpg?w=1024)",
-      "shortSummary": "思科公司披露，黑客通过语音钓鱼攻击欺骗其代表，窃取了Cisco.com用户的个人信息。攻击者从第三方云端CRM系统获取了客户姓名、地址、邮箱、电话等基本档案数据。思科未透露受影响用户数量，但指出此次事件可能与针对Salesforce数据的系列攻击有关。",
-      "translated_title": "黑客利用语音钓鱼攻击窃取思科客户个人信息",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/01/Cisco-Getty.jpg?w=1024",
-          "alt": "The CISCO brand logo during the Mobile World Congress Barcelona 2023.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Cisco disclosed a data breach including customer names, organization names, addresses, email addresses, and phone numbers of Cisco.com users."
-    },
-    {
-      "title": "TechCrunch Disrupt 2025：Chef Robotics、NEA和ICONIQ分享创业公司增长秘诀 (原标题: Crack the code to startup traction with insights from Chef Robotics, NEA, and ICONIQ at TechCrunch Disrupt 2025)",
-      "link": "https://techcrunch.com/2025/08/05/crack-the-code-to-startup-traction-with-insights-from-chef-robotics-nea-and-iconiq-at-techcrunch-disrupt-2025/",
-      "pubDate": "Tue, 05 Aug 2025 14:30:00 +0000",
-      "isoDate": "2025-08-05T14:30:00.000Z",
-      "creator": "TechCrunch Events",
-      "summary": "## 破解创业公司增长的密码：来自Chef Robotics、NEA和ICONIQ的洞察\n\n文章指出，找到产品市场契合度（Product-Market Fit, PMF）并非一个简单的里程碑，而是一个复杂且决定成败的旅程。在即将到来的TechCrunch Disrupt 2025大会上，一位经验丰富的创始人与两位帮助初创公司实现突破性增长的投资者将共同探讨如何正确实现PMF。\n\n### 核心议题与专家阵容\n\n此次小组讨论将在“Builders Stage”舞台举行，由以下三位行业领袖共同参与，深入剖析初创公司生命周期中最关键也最难以捉摸的阶段——产品市场契合度：\n\n*   **Rajat Bhageria** (Chef Robotics创始人兼CEO)：将从创始人的角度分享经验。他的公司Chef Robotics通过AI驱动的自动化技术，正在食品生产领域实现转型和规模化增长。\n*   **Ann Bordetsky** (NEA合伙人)：凭借在Uber和Twitter的背景，她擅长发现能够带来突破性成功的创新能力和创业精神。\n*   **Murali Joshi** (ICONIQ合伙人)：作为福布斯Midas Brink榜单的入选者，他曾帮助Drata、1Password和Fivetran等公司获得超过25亿美元的投资。\n\n他们将共同提供一个难得的幕后视角，揭示产品市场契合度的真实面貌，以及如何判断何时真正实现了它。\n\n### 讨论重点\n\n专家们将深入探讨以下关键策略：\n\n*   **智能测试策略**：如何有效进行产品测试以获取有价值的洞察。\n*   **实时迭代**：如何在快速变化的市场中进行敏捷的产品迭代。\n*   **倾听用户反馈**：如何在不被大量信息干扰的情况下，准确理解并响应用户需求。\n\n### 目标受众与活动详情\n\n此次小组讨论特别面向所有创始人，无论他们是仍处于原型开发阶段，还是试图扩大已有增长势头的产品。它旨在帮助那些厌倦了猜测、准备打造客户离不开的产品的创始人。\n\n*   **活动名称：** TechCrunch Disrupt 2025\n*   **日期：** 2025年10月27日至29日\n*   **地点：** 美国旧金山Moscone West\n*   **参与者：** 预计将有超过10,000名初创公司和风险投资领域的领导者参加，共同探讨科技领域最重要的议题。\n\n### 注册与优惠\n\n文章鼓励读者抓住机会注册参会，因为门票价格将在8月6日太平洋时间晚上11:59之后上涨，提前注册可节省高达675美元。\n\n![TechCrunch Disrupt 2025 Rajat Bhageria, Ann Bordetsky, Murali Joshi](https://techcrunch.com/wp-content/uploads/2025/08/TC25_Bhageria-Bordetsky-Joshi-Speaker-16x9-Dark.png?w=680)",
-      "shortSummary": "在TechCrunch Disrupt 2025大会上，Chef Robotics创始人Rajat Bhageria、NEA合伙人Ann Bordetsky和ICONIQ合伙人Murali Joshi将在“Builders Stage”共同探讨如何实现产品市场契合度。他们将分享智能测试、实时迭代和用户反馈策略，旨在帮助创始人破解创业公司增长密码。大会将于2025年10月27日至29日在旧金山举行，是初创公司和风投领袖的重要交流平台，提前注册可享优惠。",
-      "translated_title": "TechCrunch Disrupt 2025：Chef Robotics、NEA和ICONIQ分享创业公司增长秘诀",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/TC25_Bhageria-Bordetsky-Joshi-Speaker-16x9-Dark.png?w=680",
-          "alt": "TechCrunch Disrupt 2025 Rajat Bhageria, Ann Bordetsky, Murali Joshi",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Ann Bordetsky (NEA), Rajat Bhageria (Chef Robotics), and Murali Joshi (ICONIQ) join the Builders Stage at TechCrunch Disrupt 2025. Register now to save."
-    },
-    {
-      "title": "Roku 推出 Howdy，一项每月2.99美元的无广告流媒体服务 (原标题: Roku launches Howdy, a $2.99 ad-free streaming service)",
-      "link": "https://techcrunch.com/2025/08/05/roku-launches-howdy-a-2-99-ad-free-streaming-service/",
-      "pubDate": "Tue, 05 Aug 2025 14:20:21 +0000",
-      "isoDate": "2025-08-05T14:20:21.000Z",
-      "creator": "Aisha Malik",
-      "summary": "### Roku 推出 Howdy：无广告流媒体服务\n\nRoku 正式推出一项名为 Howdy 的无广告订阅流媒体服务。\n\n**服务详情**\n*   **费用**：每月2.99美元。\n*   **内容库**：提供近10,000小时的内容，来源于其合作伙伴，包括 Lionsgate、Warner Bros. Discovery 和 FilmRise，以及部分 Roku 原创作品。\n*   **精选内容**：用户可以观看《疯狂的麦克斯：狂暴之路》、《弱点》、《单身毒妈》、《孩子们都在大厅里》等影片，以及浪漫喜剧、医疗剧和90年代喜剧等。\n*   **定位**：Roku 创始人兼首席执行官 Anthony Wood 表示，Howdy 是无广告的，旨在补充而非竞争高级服务。\n\n**战略背景与增长潜力**\n*   **近期收购**：此举发生在 Roku 以1.85亿美元收购流媒体服务 Frndly TV 两个月之后。Frndly TV 提供直播电视、点播视频和基于云的 DVR 服务。\n*   **现有服务整合**：Howdy 将加入 Roku 现有的免费、广告支持的流媒体服务 Roku Channel。\n*   **市场地位**：Roku Channel 被报告为最受欢迎的 FAST（免费广告支持流媒体电视）服务，领先于 Tubi 和 Pluto TV。Roku 表示，每天有超过1.25亿人使用该平台。\n*   **增长驱动力**：Howdy 的一个关键增长驱动因素将是 Roku 的自然用户覆盖范围，该公司今年早些时候表示已拥有超过9000万流媒体家庭。\n\n**财务表现**\n*   **第二季度财报**：Roku 上周公布的第二季度财务报告显示，营收增长15%，超出预期。\n*   **流媒体时长**：平台上的流媒体总时长达到354亿小时，比去年同期增长了52亿小时。",
-      "shortSummary": "Roku 推出了名为 Howdy 的无广告流媒体订阅服务，月费2.99美元。该服务提供近10,000小时的电影和电视内容，包括来自 Lionsgate、Warner Bros. Discovery 等合作伙伴的作品以及部分 Roku 原创内容。Roku 首席执行官表示，Howdy 旨在补充而非竞争高级服务。此举利用了 Roku 超过9000万流媒体家庭的庞大用户基础，并继其收购 Frndly TV 之后推出，进一步拓展了其流媒体生态系统。",
-      "translated_title": "Roku 推出 Howdy，一项每月2.99美元的无广告流媒体服务",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The service features a library of nearly 10,000 hours of content from Lionsgate, Warner Bros. Discovery, and FilmRise, alongside select Roku Original titles."
-    },
-    {
-      "title": "DeepMind认为其新的Genie 3世界模型是通向AGI的垫脚石 (原标题: DeepMind thinks its new Genie 3 world model presents a stepping stone toward AGI)",
-      "link": "https://techcrunch.com/2025/08/05/deepmind-thinks-genie-3-world-model-presents-stepping-stone-towards-agi/",
-      "pubDate": "Tue, 05 Aug 2025 14:10:14 +0000",
-      "isoDate": "2025-08-05T14:10:14.000Z",
-      "creator": "Rebecca Bellan",
-      "summary": "# DeepMind发布Genie 3世界模型，迈向通用人工智能（AGI）\n\nGoogle DeepMind 近日发布了其最新的基础世界模型 **Genie 3**，该模型旨在训练通用人工智能（AI）智能体，被DeepMind视为通向“通用人工智能”（AGI，即类人智能）的关键垫脚石。\n\n## Genie 3 的核心特性与能力\n\n*   **首个实时交互式通用世界模型**：DeepMind 研究总监 Shlomi Fruchter 强调，Genie 3 是首个此类模型，超越了之前存在的狭窄世界模型，不局限于任何特定环境，能够生成逼真或想象的世界，以及介于两者之间的一切。\n*   **技术基础**：Genie 3 基于其前身 Genie 2（可为智能体生成新环境）和 DeepMind 最新的视频生成模型 Veo 3（据称对物理有深刻理解）。\n*   **高性能生成**：通过简单的文本提示，Genie 3 能够以 720p 分辨率、24 帧/秒的速度生成长达数分钟的交互式 3D 环境，这比 Genie 2 只能生成 10 到 20 秒有了显著提升。\n*   **“可提示世界事件”**：模型具备通过提示改变生成世界的能力。\n*   **物理一致性**：Genie 3 的模拟能够长时间保持物理一致性，因为它能记住之前生成的内容，DeepMind 表示研究人员并未明确将此能力编程到模型中。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/08/Real-time-Interactivity.gif?w=680)\n\n## 应用前景与AGI关联\n\n*   **多领域应用**：Genie 3 在教育体验、游戏或创意概念原型设计方面具有潜在应用。\n*   **AGI关键**：其真正的价值在于训练用于通用任务的智能体，这被认为是实现 AGI 的核心。DeepMind 开放式团队的研究科学家 Jack Parker-Holder 指出，世界模型对具身智能体（embodied agents）尤其关键，因为模拟真实世界场景极具挑战性。\n\n![图片 2](https://techcrunch.com/wp-content/uploads/2025/08/Prompt-to-World.gif?w=680)\n\n## 工作原理与物理理解\n\n*   **自学物理**：Genie 3 不依赖硬编码的物理引擎，而是通过记住生成的内容并对长时间范围进行推理，自学世界如何运作（物体如何移动、坠落和互动）。\n*   **自回归架构**：模型是自回归的，意味着它一次生成一帧，必须回顾之前生成的内容来决定接下来会发生什么，这是其架构的关键部分。\n*   **记忆与一致性**：这种记忆力赋予了 Genie 3 模拟世界的一致性，进而使其能够掌握物理规律，类似于人类理解杯子摇摇欲坠即将掉落，或应该躲避坠落物。\n\n## 推动AI智能体发展\n\n*   **经验学习**：DeepMind 认为该模型有潜力推动 AI 智能体发挥其极限，迫使它们从自身经验中学习，类似于人类在现实世界中的学习方式。\n*   **SIMA 测试**：DeepMind 使用其通用可扩展指令多世界智能体（SIMA）的最新版本对 Genie 3 进行了测试。在仓库环境中，SIMA 智能体被指示执行“接近亮绿色垃圾压实机”或“走到停放的红色叉车”等任务。Parker-Holder 表示，在所有情况下，SIMA 智能体都能够实现目标，这得益于 Genie 3 保持了模拟的一致性。\n\n![图片 3](https://techcrunch.com/wp-content/uploads/2025/08/Prompt-Event.gif?w=480)\n\n## 局限性\n\n尽管取得了进展，Genie 3 仍存在一些局限：\n\n*   **物理模拟不完美**：例如，演示中滑雪者下山的场景未能准确反映雪与滑雪者之间的互动方式。\n*   **智能体行动范围有限**：虽然可提示世界事件允许广泛的环境干预，但这些干预不一定由智能体本身执行。\n*   **多智能体交互复杂**：在共享环境中精确建模多个独立智能体之间的复杂交互仍然困难。\n*   **连续交互时间短**：Genie 3 目前只能支持几分钟的连续交互，而进行适当训练则需要数小时。\n\n## 展望\n\n尽管存在局限，Genie 3 仍然是教导智能体超越被动反应、使其能够规划、探索、寻求不确定性并通过试错改进的重要一步。这种自我驱动的具身学习被许多人认为是迈向通用智能的关键。Parker-Holder 将其比作 AlphaGo 在 2016 年围棋比赛中下出“第 37 步”的传奇时刻，并表示 Genie 3 有望为具身智能体开启一个新时代。",
-      "shortSummary": "DeepMind发布了Genie 3，一个通用世界模型，旨在训练AI智能体，是迈向通用人工智能（AGI）的关键一步。它能从文本提示生成实时、交互式、物理一致的3D环境，并自学世界运作规律。Genie 3通过记忆确保模拟连贯性，并已成功用于测试SIMA智能体。尽管存在交互时间短、物理模拟不完美等局限，但它代表了AI智能体自主学习和规划能力的重要进展，有望开启具身智能体的新时代。",
-      "translated_title": "DeepMind认为其新的Genie 3世界模型是通向AGI的垫脚石",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Real-time-Interactivity.gif?w=680",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Prompt-to-World.gif?w=680",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Prompt-Event.gif?w=480",
-          "alt": "",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Google DeepMind has revealed Genie 3, its latest foundation world model that the AI lab says presents a crucial stepping stone on the path to artificial general intelligence, or human-like intelligence. "
-    },
-    {
-      "title": "TechCrunch Disrupt 2025 门票优惠仅剩2天，可节省675美元 (原标题: Only 2 days left to save $675 on your TechCrunch Disrupt 2025 ticket)",
-      "link": "https://techcrunch.com/2025/08/05/only-2-days-left-to-save-675-on-your-disrupt-2025-ticket/",
-      "pubDate": "Tue, 05 Aug 2025 14:00:00 +0000",
-      "isoDate": "2025-08-05T14:00:00.000Z",
-      "creator": "TechCrunch Events",
-      "summary": "# TechCrunch Disrupt 2025：不容错过的创业盛会\n\nTechCrunch Disrupt 2025 将迎来其推动创业世界发展20周年，这是一场汇聚全球科技界创新者和决策者的盛会。活动将于 **2025年10月27日至29日** 在旧金山的 **Moscone West** 举行，预计将吸引超过10,000名行业精英。现在是锁定门票优惠的最后机会，您可节省高达675美元，优惠截止日期为 **太平洋时间8月6日晚上11:59**。\n\n![TechCrunch Disrupt 2025 2 days left](https://techcrunch.com/wp-content/uploads/2025/05/TC25_2Days-16X9-Dark.png?w=680)\n\n## 为什么参加 Disrupt 2025？\n\nDisrupt 不仅仅是一个科技活动，更是机遇与动力的交汇点。参与者将获得深刻见解、新颖思维和快速发展的社交网络。在这里，一次对话可能改变您的公司方向，一次会议可能激发您的下一个重大创意。无论您是初创、扩张，还是仅仅出于好奇，都将获得实用的工具和持久的联系。本届大会将深入探讨人工智能（AI）领域，包括实际演示和专家主导的会议。\n\n## 部分已确认演讲嘉宾\n\n大会每周都会增加新的演讲嘉宾，请持续关注。\n\n*   Ryan Petersen, Flexport\n*   Roelof Botha, Sequoia Capital\n*   Jeff Cardenas, Apptronik\n*   David George, Andreessen Horowitz\n*   Alex Kendall, Wayve\n*   Eunice Kim, Netflix\n*   Tekedra Mawakana, Waymo\n*   Alejandro Matamala Ortiz, Runway\n*   Mati Staniszewski, ElevenLabs\n*   Astro Teller, X, The Moonshot Factory\n*   Ethan Thornton, Mach Industries\n*   Nirav Tolia, Nextdoor\n*   Raquel Urtasun, Waabi\n*   Eric Yuan, Zoom\n*   Sangeen Zeb, GV (Google Ventures)\n\n![StrictlyVC San Francisco 2025 Ryan Petersen](https://techcrunch.com/wp-content/uploads/2025/04/54430820378_2a8380bffc_h.jpg?w=680)\n\n## Disrupt 现场活动亮点\n\n### 1. 行业舞台 (Industry Stages)\n\n深入探讨创始人如何在竞争激烈的市场中成长、扩张和领导所需的工具、趋势和策略。新会议将持续添加到议程中。\n\n*   **建设者舞台 (Builders Stage)**：聚焦创业策略、增长手册和创始人现实。\n*   **AI舞台 (AI Stage)**：两天关于人工智能的深度洞察。\n*   **太空舞台 (Space Stage)**：科技与宇宙的交汇。\n*   **上市舞台 (Going Public Stage)**：成功上市创始人的真实故事。\n\n### 2. 互动环节 (Interactive Sessions)\n\n与创业专业人士进行小组讨论，提问并获得坦诚的答案，深入探讨。\n\n### 3. 创业战场200 (Startup Battlefield 200)\n\n观看全球20家最佳早期初创公司在 Disrupt 舞台上进行现场路演，争夺10万美元的无股权奖金。顶级风险投资家组成的评审团将提供实时反馈，这些独到见解在其他地方难以获得。\n\n![图片 3](https://techcrunch.com/wp-content/uploads/2024/05/sb200_trophy.png?w=680)\n\n### 4. 探索与连接 (Explore and Connect)\n\n展览大厅 (Expo Hall) 汇集了塑造未来的初创公司、工具和技术。如果您是准备展示创新的初创公司，请尽快预订您的展位。\n\n### 5. 精准社交 (Network Intentionally)\n\nDisrupt 旨在促进有效连接。Braindate 的智能匹配系统将您与合适的人进行配对，促成高质量的对话。\n\n### 6. 投资者-创始人对接 (Investor-Founder Connections)\n\nDisrupt 不仅是科技未来展开的地方，更是合适的投资者与合适的创始人相遇的平台。正确的匹配能改变一切。\n\n*   **交易流咖啡馆 (Deal Flow Café)**：创始人与投资者进行休闲、高价值对话的理想场所，当然少不了咖啡。\n*   **投资者**：可获得展览大厅的定制导览，并正式引荐与您投资重点最匹配的初创公司。您还将在 Disrupt 第二天的专属 StrictlyVC 会议中获得预留席位。\n*   **创始人**：直接与正在积极寻找下一个重大投资的投资者建立联系。无论您是正在融资还是为未来做准备，交易流咖啡馆都是动力开始的地方。\n\n![A group of founders networking in the Investor Lounge called the Deal Flow Cafe at TechCrunch Disrupt 2024. Moscone West, San Francisco, California.](https://techcrunch.com/wp-content/uploads/2025/01/disrupt-2024-founders-networking.jpg?w=680)\n\n## 立即行动，锁定优惠\n\n节省高达675美元的机会将于太平洋时间8月6日晚上11:59截止。立即注册您的 Disrupt 2025 通行证，共同塑造科技的未来。",
-      "shortSummary": "TechCrunch Disrupt 2025 将于2025年10月27日至29日在旧金山举行，庆祝其20周年。本次大会汇聚了超过10,000名科技界精英，聚焦AI、创业策略和投资者-创始人对接。活动包括行业舞台、创业战场200、互动环节和交易流咖啡馆等。现在注册可节省高达675美元，优惠截止日期为太平洋时间8月6日晚上11:59。这是与顶尖思想家和创新者建立联系、获取深刻见解的绝佳机会。",
-      "translated_title": "TechCrunch Disrupt 2025 门票优惠仅剩2天，可节省675美元",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/05/TC25_2Days-16X9-Dark.png?w=680",
-          "alt": "TechCrunch Disrupt 2025 2 days left",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/04/54430820378_2a8380bffc_h.jpg?w=680",
-          "alt": "StrictlyVC San Francisco 2025 Ryan Petersen",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2024/05/sb200_trophy.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/01/disrupt-2024-founders-networking.jpg?w=680",
-          "alt": "A group of founders networking in the Investor Lounge called the Deal Flow Cafe at TechCrunch Disrupt 2024. Moscone West, San Francisco, California.",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Just two days left save up to $675 on your TechCrunch Disrupt 2025 ticket. Join 10,000 tech and VC leaders October 27-29, San Francisco. Register here."
     }
   ],
-  "lastUpdated": "2025-08-06T12:52:03.235Z"
+  "lastUpdated": "2025-08-06T18:36:51.285Z"
 }
