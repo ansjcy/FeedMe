@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "差异风险评分：AI驱动的风险感知软件开发 (原标题: Diff Risk Score: AI-driven risk-aware software development)",
+      "link": "https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/",
+      "pubDate": "Wed, 06 Aug 2025 17:50:51 +0000",
+      "isoDate": "2025-08-06T17:50:51.000Z",
+      "creator": "",
+      "summary": "# 差异风险评分 (DRS)：AI驱动的风险感知软件开发\n\n## 概述\nMeta 开发的差异风险评分 (Diff Risk Score, DRS) 是一项基于人工智能的技术，旨在预测代码更改导致生产事故（即 SEV）的可能性。DRS 基于经过微调的 Llama 大型语言模型 (LLM) 构建，通过评估代码更改和相关元数据来生成风险评分，并突出显示潜在的风险代码片段。\n\n## 核心价值与应用\nDRS 目前已为Meta的许多风险感知功能提供支持，这些功能优化了产品质量、开发者生产力以及计算容量效率。\n\n### 解决软件开发风险\n软件开发，特别是对于复杂、快速迭代和大规模的产品和技术而言，充满了风险。Meta 作为一家全球性公司，需要最佳工具来降低风险，保护用户体验和广告商成果。DRS 是 Meta 将 AI 应用于软件开发流程的首批成果之一，旨在通过预测代码更改是否可能导致 SEV，从而改进代码编写和推送的各个方面。\n\n### 关键用例：代码解冻\n历史上，为了降低敏感时期（如“网络星期五”购物周）的事故风险，Meta 的一些团队会“冻结”代码库的主要部分，阻止工程师发布代码。虽然这带来了明显的可靠性优势，但却以大幅降低生产力为代价。\n\nDRS 实现了更精细的方法，允许开发人员在这些时期提交风险较低的更改，同时最大限度地减少生产事故，从而保护用户体验、业务和生产力。\n\n*   **显著成效**：DRS 在多个敏感时期带来了显著的生产力提升。例如，在 2024 年一次重要的合作伙伴活动期间，DRS 帮助 Meta 成功提交了 10,000 多个代码更改（这些更改在以往的代码冻结期间是无法提交的），且对生产环境的影响极小，从而实现了持续创新和客户成功。\n*   **双重收益**：通过这种方式管理生产力和风险，Meta 获得了双重收益：提交了更多代码，并减少了工程师用于检测、理解和缓解生产事故的时间。\n\n## 未来展望\nDRS 的成功推动了 Meta 内部创建新的风险感知功能，这些功能涵盖了从规划到发布后监控的整个开发生命周期。对构建此类功能的需求也促使 Meta 建立了风险感知平台 (Risk Awareness Platform, RAP)，以提供风险分析 API 和工具集成。\n\nMeta 设想了风险感知在未来几个月和几年的四个主要发展方向：\n\n1.  **扩展 DRS 驱动的功能**：尽管风险感知平台已经涌现出大量由 DRS 驱动的功能（如优化构建和测试选择、提高可靠性、选择代码审查员以及分析发布风险），但这仅仅是开始。软件工程中的一个关键问题是在可靠性阈值下最大化创新率，因此风险理解的应用几乎是无穷无尽的。Meta 将继续构建更多风险感知功能并提高其质量。\n2.  **超越代码更改风险**：将风险预测扩展到配置更改风险。虽然代码更改是 Meta 发生 SEV 的主要原因，但配置更改是另一个重要类别。RAP 已扩展，包含预测各种配置更改风险的模型。\n3.  **自动化风险缓解**：Meta 计划使用 AI 代理主动生成风险缓解更改，而不仅仅是标记风险差异或推荐回滚机制。这适用于“动态”代码（即差异或拉取请求）和“静态”代码，以降低基线代码库风险。未来，这些代理还将能够灵活地处理代码和配置更改。\n4.  **自然语言输出解释**：Meta 将越来越多地使用自然语言输出来向人类解释这些风险感知技术的作用和原因。通过帮助工程师理解风险评分背后的原理，Meta 将赋能他们缓解风险或向模型提供反馈以提高准确性，从而形成一个改进风险模型和最终用户体验的学习循环。\n\n## 总结\nMeta 对风险感知软件开发的未来充满期待，并期待与行业同行共同学习和进步。",
+      "shortSummary": "Meta 的差异风险评分 (DRS) 是一项 AI 驱动的技术，利用微调的 Llama LLM 预测代码更改导致生产事故的风险。它显著提升了开发者生产力，通过实现“代码解冻”等功能，允许在敏感时期提交低风险更改，同时保障系统可靠性。DRS 已有众多应用，未来将扩展至配置风险、自动化风险缓解，并利用自然语言解释 AI 决策，以持续优化软件开发流程。",
+      "translated_title": "差异风险评分：AI驱动的风险感知软件开发",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>The state of the research Diff Risk Score (DRS) is an AI-powered technology built at Meta that predicts the likelihood of a code change causing a production incident, also known as a SEV. Built on a fine-tuned Llama LLM, DRS evaluates code changes and metadata to produce a risk score and highlight potentially risky code [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/08/06/developer-tools/diff-risk-score-drs-ai-risk-aware-software-development-meta/\">Diff Risk Score: AI-driven risk-aware software development</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "为所有人构建人机界面 (原标题: Building a human-computer interface for everyone)",
       "link": "https://engineering.fb.com/2025/08/04/virtual-reality/building-a-human-computer-interface-for-everyone-meta-tech-podcast/",
       "pubDate": "Mon, 04 Aug 2025 14:00:25 +0000",
@@ -169,20 +182,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>In this post, we explore how Instagram has successfully scaled its algorithm to include over 1000 ML models without sacrificing recommendation quality or reliability.  We delve into the intricacies of managing such a vast array of models, each with its own performance characteristics and product goals.  We share insights and lessons learned along the way—from [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/05/21/production-engineering/journey-to-1000-models-scaling-instagrams-recommendation-system/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/05/21/production-engineering/journey-to-1000-models-scaling-instagrams-recommendation-system/\">Journey to 1000 models: Scaling Instagram&#8217;s recommendation system</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "Meta 为生成式AI（GenAI）进行的HHVM全栈优化 (原标题: Meta’s Full-stack HHVM optimizations for GenAI)",
-      "link": "https://engineering.fb.com/2025/05/20/web/metas-full-stack-hhvm-optimizations-for-genai/",
-      "pubDate": "Tue, 20 May 2025 16:00:29 +0000",
-      "isoDate": "2025-05-20T16:00:29.000Z",
-      "creator": "",
-      "summary": "# Meta 为生成式AI（GenAI）进行的HHVM全栈优化\n\n随着Meta推出利用生成式AI（GenAI）的创新产品，其底层基础设施组件也必须随之演进。通过应用基础设施知识和优化，Meta能够适应不断变化的产品需求，并提供更好的产品体验。最终，基础设施系统需要在提供高质量体验和可持续运行系统之间取得平衡。\n\n## 背景与挑战\n\n*   **Web Foundation团队职责**：该团队负责运营Meta的单体Web层，运行Hack语言。他们确保Web层基础设施的健康和良好设计，处理事件响应，并构建维护网站正常运行所需的组件。\n*   **“好公民”原则**：为确保共享层稳定，团队制定了指导方针，其中核心规则是请求运行时限制——每个请求的执行时间不得超过30秒。这是HHVM（HipHop虚拟机）运行时的结果，因为每个请求对应一个有限的worker线程。请求耗时过长会导致可用线程减少，进而影响用户可用性。\n*   **传统Web服务器特性**：\n    *   主要为前端请求（渲染网页、GraphQL查询）优化。\n    *   延迟通常在数百毫秒到几秒，远低于30秒的限制。\n    *   每秒可处理约500个查询。\n    *   约三分之二的时间用于I/O，三分之一用于CPU工作。Hack语言支持异步I/O（asyncio）以提高性能。\n*   **GenAI产品（特别是LLM）的新要求**：\n    *   核心推理流程：模型以令牌流形式响应，可能需要几秒甚至几分钟才能完成（用户体验为聊天机器人“正在输入”）。\n    *   需要尽快将响应流式传输给用户。\n    *   总请求延迟显著延长（以秒计）。\n    *   对基础设施的影响：调用LLM前的关键路径开销最小，但请求的其余部分持续时间很长，大部分时间都在等待I/O。\n\n## 优化措施\n\n为了应对GenAI带来的新要求，Web Foundation团队重新审视了单体Web层的运行规则，并推出了一个专用的Web租户（WWW的独立部署），允许进行定制配置，以更好地适应工作负载的需求。主要优化包括：\n\n1.  **请求超时设置**：\n    *   在隔离的Web层上，可以增加GenAI请求的运行时限制。\n    *   这使得长时间运行的流量得以隔离，避免对生产层其他部分造成负面影响，防止推理时间超过30秒的请求超时。\n\n2.  **线程池大小调整**：\n    *   请求运行时间延长意味着worker线程的可用性降低（每个请求与一个线程1:1对应）。\n    *   由于Web服务器内存有限，通过总内存除以每个请求的内存限制，可以得出最大并发请求数，从而确定可同时执行的请求数量。\n    *   最终，GenAI主机上的线程数增加到约1000个，而普通Web服务器上只有几百个。\n\n3.  **JIT缓存和“Jump-Start”**：\n    *   HHVM是一种即时编译（JIT）语言，首次执行函数时需要编译为机器码。\n    *   “Jump-Start”技术允许Web服务器使用先前预热的服务器的输出来预填充JIT缓存。\n    *   通过允许GenAI主机使用主Web层的Jump-Start配置文件，即使代码重叠不完全相同，也能大大加快执行速度。\n\n4.  **请求预热（Warm-up）**：\n    *   HHVM支持在服务器启动时执行虚拟请求，这些请求的结果会被丢弃。\n    *   目的是预热Web服务器内的非代码缓存（如配置值和服务发现信息）。\n    *   通过在预热请求中获取并缓存这些信息，可以避免用户在首次访问时感知到这些初始获取的延迟。\n\n5.  **影子流量（Shadow Traffic）**：\n    *   Meta大量使用实时配置来控制功能发布，这意味着启动时消耗的Jump-Start配置文件可能无法覆盖服务器未来执行的所有代码路径。\n    *   为了在稳定状态下保持覆盖率，团队增加了请求影子功能，确保门控更改仍然被JIT缓存覆盖。\n\n这些全栈优化使得Meta能够有效支持其不断增长的GenAI产品需求，同时保持基础设施的性能和可持续性。",
-      "shortSummary": "Meta为支持生成式AI（GenAI）产品，对HHVM（HipHop虚拟机）基础设施进行了全栈优化。通过将GenAI推理流量分离到专用Web层，并针对其长时间运行、I/O密集型特性进行定制，Meta实现了30%的延迟改善。主要优化包括增加请求超时、调整线程池大小、利用JIT缓存的Jump-Start功能、执行请求预热以及引入影子流量，以确保GenAI服务的性能和稳定性，同时不影响现有Web服务。",
-      "translated_title": "Meta 为生成式AI（GenAI）进行的HHVM全栈优化",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>As Meta has launched new, innovative products leveraging generative AI (GenAI), we need to make sure the underlying infrastructure components evolve along with it. Applying infrastructure knowledge and optimizations have allowed us to adapt to changing product requirements, delivering a better product along the way. Ultimately, our infrastructure systems need to balance our need to [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/05/20/web/metas-full-stack-hhvm-optimizations-for-genai/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/05/20/web/metas-full-stack-hhvm-optimizations-for-genai/\">Meta&#8217;s Full-stack HHVM optimizations for GenAI</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-08-05T05:36:44.226Z"
+  "lastUpdated": "2025-08-07T05:35:57.383Z"
 }
