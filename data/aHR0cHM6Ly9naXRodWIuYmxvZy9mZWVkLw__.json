@@ -5,6 +5,75 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "如何使用 GitHub Copilot 提升代码审查和拉取请求的水平 (原标题: How to use GitHub Copilot to level up your code reviews and pull requests)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-to-use-github-copilot-to-level-up-your-code-reviews-and-pull-requests/",
+      "pubDate": "Fri, 08 Aug 2025 16:00:00 +0000",
+      "isoDate": "2025-08-08T16:00:00.000Z",
+      "creator": "Melissa Pastore",
+      "summary": "# 如何使用 GitHub Copilot 提升代码审查和拉取请求的水平\n\n作为 GitHub 的软件工程师，作者亲历了 GitHub Copilot 从简单的代码补全工具发展成为功能更强大的 AI 编码助手。其应用场景已扩展到日常工作的各个方面，包括拉取请求（Pull Requests, PRs）和代码审查。Copilot 在软件开发生命周期的这些关键环节中展现出极高的实用价值。\n\n## Copilot 在代码审查和拉取请求中的实际应用\n\n### 1. 代码审查中的 Copilot 建议\n\n在审查队友的拉取请求时，Copilot 能提供代码改进建议或确认代码是否遵循最佳实践，从而节省手动编写重构代码的时间。\n\n*   **代码重构**：当发现重复代码时，可以点击 Copilot 图标并提示其进行重构。例如，作者曾提示 Copilot 重构 Ruby on Rails 中的重复代码，Copilot 的建议与作者预期一致，节省了数分钟时间，使其能专注于更高层次的反馈。\n*   **最佳实践检查**：由于经常在 Ruby、TypeScript 和 Go 等不同语言之间切换上下文，作者会利用 Copilot 提醒特定语言的最佳实践。例如，通过提示 Copilot 检查 Go 代码是否遵循变量赋值的最佳实践，Copilot 迅速生成了可操作的改进建议。\n\n![GitHub Copilot 在 Go 语言代码审查中提供变量声明优化建议](https://github.blog/wp-content/uploads/2025/08/Screenshot-2025-07-09-at-4.31.23-PM.png?resize=1024%2C448)\n*图片描述：一张 GitHub 拉取请求的截图，展示了 Copilot 对 Go 语言文件中的代码进行审查，建议将 `var result int` 更改为更简洁的短变量声明 `result := add(1, 2)`。右侧的 Copilot 面板总结了更改并解释了建议的理由。*\n\n### 2. 为拉取请求格式化表格和数据\n\n为了给审阅者提供更多上下文，作者喜欢在拉取请求描述中添加图片、屏幕录像和电子表格。将这些信息格式化为 Markdown 表格通常很繁琐，此时 Copilot 可以代劳。\n\n*   **Markdown 表格生成**：作者曾将页面加载时间数据（前后对比）提供给 Copilot，并要求其格式化为 GitHub Flavored Markdown 表格。Copilot 迅速生成了清晰、易于粘贴的表格，极大地简化了数据共享。\n\n### 3. 让 Copilot 协助撰写拉取请求摘要\n\n撰写拉取请求描述往往是提交代码前的最后一道障碍。Copilot 可以通过在拉取请求描述编辑器栏中提供初始草稿来帮助启动这一过程，即使后续需要编辑，有一个起点也能减轻任务的难度。\n\n![GitHub Copilot 在拉取请求页面提供摘要生成选项](https://github.blog/wp-content/uploads/2025/08/Screenshot-2025-07-09-at-4.31.54-PM.png?resize=1024%2C438)\n*图片描述：一张 GitHub 拉取请求页面的截图，标题为“Test PR #1”，显示了对话选项卡。Copilot 菜单提供了生成摘要或拉取请求更改大纲的选项。*\n\n### 4. 利用 Copilot 进行代码自查和理解陌生代码\n\nCopilot 在审查和解释代码方面表现出色，作者将其应用于日常工作中的两个方面：\n\n*   **提交前自查**：在将拉取请求标记为“准备好审查”之前，作者会利用 Copilot 对自己的更改进行快速审查，它经常能发现作者可能遗漏的问题或提出更好的编写方式。用户还可以在仓库的自定义指令中添加注释，指导 Copilot 在审查拉取请求时关注的重点。\n*   **解释不熟悉的代码**：在审查他人代码时，如果遇到不理解的更改，作者会请 Copilot 解释。这有助于快速获取上下文，尤其是在不熟悉该部分代码库时，从而能为队友提供更周到、更彻底的审查。\n\n## Copilot 对代码审查和拉取请求的影响\n\n尽管 Copilot 无法替代深思熟虑的人工代码审查，但它已成为作者作为软件工程师日常工作中不可或缺的工具。从生成智能建议和代码重构，到快速 Markdown 格式化和起草拉取请求摘要，Copilot 通过使反馈更具操作性、代码审查过程更快更彻底，从而简化了围绕代码编写的工作。通过将 Copilot 整合到软件开发生命周期的每个阶段，作者能够专注于更高层次的工程问题和协作。",
+      "shortSummary": "GitHub Copilot 已从代码补全发展为强大的AI工具，显著提升了代码审查和拉取请求的效率。它能提供代码重构和最佳实践建议，协助格式化PR描述中的数据表格，并帮助撰写PR摘要。此外，Copilot还能进行代码自查和解释不熟悉的代码，从而加快审查流程，使反馈更具操作性。Copilot 并非人工审查的替代品，但它简化了开发工作，让工程师能专注于更复杂的工程挑战。",
+      "translated_title": "如何使用 GitHub Copilot 提升代码审查和拉取请求的水平",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/Screenshot-2025-07-09-at-4.31.23-PM.png?resize=1024%2C448",
+          "alt": "Screenshot of a GitHub pull request for a Go file, suggesting a change to use the short variable declaration “result := add(1, 2)” instead of “var result int”. A Copilot panel on the right summarizes the changes and explains the reasoning behind the suggestion.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/Screenshot-2025-07-09-at-4.31.54-PM.png?resize=1024%2C438",
+          "alt": "Screenshot of a GitHub pull request page titled \"Test PR #1\" showing the conversation tab, with a Copilot menu offering options to generate a summary or an outline of the pull request changes.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/64283754?v=4&s=200",
+          "alt": "Melissa Pastore",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Discover practical ways GitHub Copilot streamlines code reviews, pull requests, and daily engineering tasks with real prompts, examples, and workflow tips from our engineering team.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-to-use-github-copilot-to-level-up-your-code-reviews-and-pull-requests/\">How to use GitHub Copilot to level up your code reviews and pull requests</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "初级开发者并未过时：在AI时代如何蓬勃发展 (原标题: Junior developers aren’t obsolete: Here’s how to thrive in the age of AI)",
+      "link": "https://github.blog/ai-and-ml/generative-ai/junior-developers-arent-obsolete-heres-how-to-thrive-in-the-age-of-ai/",
+      "pubDate": "Thu, 07 Aug 2025 21:05:55 +0000",
+      "isoDate": "2025-08-07T21:05:55.000Z",
+      "creator": "Gwen Davis",
+      "summary": "## 初级开发者在AI时代蓬勃发展\n\n### 引言：AI对初级开发者的影响与机遇\n\n人工智能（AI）正在深刻改变软件工程领域的工作方式。尽管2023年的一项研究预测，到2027年，初级应用开发者近26%的任务将被AI增强或完全自动化，但这并不意味着初级开发者会过时。相反，文章指出，新入行的学习者由于天生就熟悉AI工具，反而处于有利地位，能够更好地适应软件开发方式的变革。\n\nGitHub首席执行官Thomas Dohmke强调，实习生和初级开发者已经熟练掌握市场上最好的AI代码生成工具，他们与AI“产生共鸣”并用AI进行构建。罗汉普顿大学计算教育教授Miles Berry也认为，今天的学习者必须培养与AI协作的技能，而非担心被其取代。他强调，批判性思维、好奇心以及与AI和资深团队成员的协作至关重要，因为“创造力和好奇心是区分我们与机器的核心”。\n\n### 在AI时代脱颖而出的五种方法\n\n为了在AI时代作为初级开发者脱颖而出，文章提出了以下五种策略：\n\n1.  **利用AI加速学习，而非仅加速编码**\n    *   **将GitHub Copilot用作编程导师：** 大多数开发者使用Copilot进行自动补全，但初学者可以将其设置为强大的学习工具。通过设置个性化指令（例如，充当导师，教授概念和最佳实践，但不提供完整解决方案，并提醒检查AI生成内容的正确性），Copilot可以引导你理解概念。\n    *   **向Copilot提问：** 将Copilot Chat视为私人教练，询问它解释不熟悉的概念、调试步骤、分解复杂语法，或比较不同方法（如`for`循环与`map`），解释错误消息，或帮助编写测试用例。\n    *   **练习不依赖自动补全的问题解决：** 暂时关闭内联补全功能，以锻炼解决问题和批判性思维能力。你仍可使用Copilot Chat提问和获取帮助，但不会过早看到完整解决方案。这有助于在学习新概念时深入思考。\n\n2.  **构建展示技能（和AI熟练度）的公开项目**\n    *   个人项目是你的作品集，GitHub提供了展示和提升技能的平台。使用Copilot Chat的`/new`命令可以快速搭建新项目。\n    *   请求Copilot为项目添加MIT许可证并发布为GitHub上的公共项目。\n    *   通过问题、提交和项目看板跟踪进度，在README中记录旅程和里程碑，并通过反馈和AI协助进行迭代和改进。\n\n3.  **通过核心GitHub工作流提升开发者工具包**\n    *   尽管AI改变了游戏规则，但扎实的基础仍然是成功的关键。以下核心工作流是初级开发者晋升的跳板：\n        *   **使用GitHub Actions自动化：** 自动化构建和部署是所有开发者的最佳实践。利用GitHub Actions自动构建、测试和部署项目。\n        *   **贡献开源：** 加入全球开发者社区，通过贡献开源项目学习新技能、丰富简历并获得实际经验。\n        *   **通过拉取请求（Pull Requests）协作：** 编码是团队运动。练习专业团队使用的拉取请求工作流：审查他人代码、讨论反馈并自信地合并。\n    *   **AI辅助故障排除：** 在学习GitHub工作流时遇到问题（如YAML语法错误、权限问题、构建失败）是正常的。Copilot Chat可以帮助解释错误日志、调试YAML格式、指导配置认证、密钥或CI/CD步骤。\n\n4.  **通过代码审查提升专业技能**\n    *   从同行审查中学习是开发者成长最快的方式之一。每次拉取请求都是获取反馈的机会，不仅针对代码，也针对思维、沟通和协作方式。\n    *   **有效利用代码审查的技巧：** 提问以理解决策或探索替代方法；寻找重复出现的模式以内化最佳实践；记录收到的反馈和处理方式；保持谦逊，感谢并跟进。\n\n5.  **利用AI更智能、更快速地调试**\n    *   调试是软件开发中最耗时的部分之一。GitHub Copilot可以提供帮助：\n        *   询问“这个函数为什么会抛出错误？”以获得实时解释。\n        *   使用`/fix`高亮代码并生成潜在修复方案。\n        *   运行`/tests`创建测试用例并验证逻辑。\n        *   对晦涩的错误使用`/explain`来理解根本原因。\n        *   甚至可以组合命令进行深度调试（例如，`/explain`理解问题，`/fix`生成解决方案，`/doc`为团队编写文档）。\n\n### 更多资源与总结\n\n文章还推荐了GitHub Skills、GitHub Education和GitHub Copilot文档等资源，以帮助开发者成长。总而言之，无论你是第一次提交拉取请求还是在构建第五个副项目，GitHub都是磨练技能、开放协作和构建求职作品集的理想场所。AI正在重塑软件世界，但凭借正确的工具和心态，初级开发者完全可以蓬勃发展。",
+      "shortSummary": "初级开发者在AI时代并非过时，反而因熟悉AI工具而拥有独特优势。文章提出五种策略助其蓬勃发展：利用AI加速学习（如将Copilot作导师）、构建展示AI技能的公开项目、掌握核心GitHub工作流（自动化、开源贡献、PR协作）、通过代码审查提升专业技能，以及利用AI更智能地调试。关键在于培养与AI协作的能力、批判性思维和好奇心。通过这些方法，初级开发者能有效适应行业变化，在AI时代取得成功。",
+      "translated_title": "初级开发者并未过时：在AI时代如何蓬勃发展",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>The role of junior developer is evolving. If you're at this stage in your career, here's how to keep up and stand out.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/junior-developers-arent-obsolete-heres-how-to-thrive-in-the-age-of-ai/\">Junior developers aren’t obsolete: Here’s how to thrive in the age of AI</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "使用GitHub Models在Actions中自动化你的项目 (原标题: Automate your project with GitHub Models in Actions)",
       "link": "https://github.blog/ai-and-ml/generative-ai/automate-your-project-with-github-models-in-actions/",
       "pubDate": "Mon, 04 Aug 2025 16:00:00 +0000",
@@ -225,64 +294,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>How using GitHub’s free inference API can make your AI-powered open source software more accessible.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/llms/solving-the-inference-problem-for-open-source-ai-projects-with-github-models/\">Solving the inference problem for open source AI projects with GitHub Models</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "我们需要一个欧洲主权技术基金 (原标题: We need a European Sovereign Tech Fund)",
-      "link": "https://github.blog/open-source/maintainers/we-need-a-european-sovereign-tech-fund/",
-      "pubDate": "Wed, 23 Jul 2025 07:01:00 +0000",
-      "isoDate": "2025-07-23T07:01:00.000Z",
-      "creator": "Felix Reda",
-      "summary": "开源软件（OSS）是全球经济和社会赖以生存的关键数字基础设施，然而其维护工作却长期资金不足，远低于对实体基础设施的投入。为了解决这一问题，GitHub的开发者政策团队委托Open Forum Europe、Fraunhofer ISI和欧洲大学学院进行了一项研究，探讨如何将德国成功的“主权技术局”模式推广至欧盟层面，从而建立一个“欧盟主权技术基金”（EU-STF）。\n\n**开源软件的重要性与维护挑战**\n\n*   **巨大价值：** 开源软件对全球经济的价值估计高达8.8万亿美元，对欧盟经济每年贡献至少650-950亿欧元。基础开源技术广泛应用于经济、社会和公共管理部门。\n*   **普遍存在：** 96%的代码库包含开源软件，77%的代码库由开源软件组成。\n*   **资金不足：** 尽管其价值巨大，但开源维护却严重缺乏资金。对500多名开源维护者的调查显示，三分之一的维护者无偿工作，另有三分之一收入微薄无法维持生计。更令人担忧的是，三分之一的受访者是独立维护者，近四分之三的项目由三人或更少的人维护。这导致了如xz后门和Log4Shell等严重安全事件的发生，凸显了过度依赖小型、过劳且未受重视团队的风险。\n\n**设计一个有影响力的基金**\n\n借鉴德国主权技术局在两年内（2022-2024年）向60个开源项目投资超过2300万欧元的成功经验，欧盟主权技术基金应具备以下五个主要活动领域：\n\n1.  识别欧盟最关键的开源依赖项。\n2.  投资于维护工作。\n3.  投资于安全加固。\n4.  投资于改进和创新。\n5.  加强整个开源生态系统。\n\n**机构设置与资金需求**\n\n研究提出了两种机构设置方案：\n\n*   **“登月计划”模式：** 设立一个集中的欧盟机构。\n*   **“务实”模式：** 由欧盟成员国组成联盟，提供初始资金并申请欧盟预算的额外资源。\n\n无论哪种模式，为确保基金成功，即将到来的欧盟多年期预算（2028-2035年）应至少贡献3.5亿欧元。这笔资金虽不足以完全满足开源维护需求，但可作为杠杆，吸引行业和国家政府的共同出资，从而产生持久影响。\n\n**欧盟主权技术基金的七项设计标准**\n\n借鉴德国主权技术局和美国开放技术基金等项目的经验，研究确定了EU-STF必须满足的七项设计标准：\n\n1.  **集中融资：** 行业、国家政府和欧盟应将资金汇集到同一基金中，以简化维护者的申请流程。例如：\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n2.  **低官僚化：** 采用轻量级申请流程，主动识别关键项目，并限制受资助者的报告要求，确保他们能专注于项目改进。\n3.  **政治独立性：** 基金应足够独立，避免受制于区块链、量子计算或人工智能等短期技术趋势，从而专注于保障和维护公共软件基础设施的核心使命。\n4.  **灵活资助：** 能够资助个人、非营利组织或公司进行开源维护工作，且不应限制受资助者的居住地（如德国主权技术局不限制德国人）。关键在于“开源制造”，而非“欧盟制造”。\n5.  **社区聚焦：** 与开源社区合作，共同定义资助优先事项和设计资助流程，以建立专业知识和信任。\n6.  **战略对齐：** 基金需证明其对欧盟战略目标（如经济竞争力、数字主权和网络安全，包括帮助企业遵守《网络弹性法案》下的供应链安全义务）的积极影响。\n7.  **透明度：** 基金在治理和资助决策方面必须达到最高透明度标准，以赢得开源社区和决策者的信任。\n\n**促成欧盟主权技术基金的实现**\n\n目前，欧盟正在就2028-2035年的新多年期预算（多年度财政框架）进行谈判。GitHub的开发者政策团队正在向欧盟立法者介绍这项研究成果，并动员行业合作伙伴（如梅赛德斯-奔驰）支持，以证明建立一个公私部门合作保障开源基础设施的新型工具的必要性。文章呼吁个人、开源组织和公司向欧盟委员会、欧洲议会代表和本国政府表达对EU-STF成立的支持。作者为GitHub开发者政策总监Felix Reda。\n\n![Felix Reda](https://avatars.githubusercontent.com/u/161162366?v=4&s=200)",
-      "shortSummary": "开源软件是全球关键数字基础设施，但其维护长期资金不足。为解决此问题，文章呼吁建立一个欧洲主权技术基金（EU-STF），借鉴德国成功经验。该基金旨在识别并资助欧盟最关键的开源依赖项，加强维护、安全和生态系统。提议至少3.5亿欧元的初始资金，并强调集中融资、低官僚化、政治独立和社区合作等设计原则。呼吁各方支持，以确保欧洲数字基础设施的安全与可持续性。",
-      "translated_title": "我们需要一个欧洲主权技术基金",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/161162366?v=4&s=200",
-          "alt": "Felix Reda",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Open source software is critical infrastructure, but it’s underfunded. With a new feasibility study, GitHub’s developer policy team is building a coalition of policymakers and industry to close the maintenance funding gap.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/we-need-a-european-sovereign-tech-fund/\">We need a European Sovereign Tech Fund</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "使用AI调试UI：GitHub Copilot代理模式与MCP服务器的结合 (原标题: Debugging UI with AI: GitHub Copilot agent mode meets MCP servers)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/debugging-ui-with-ai-github-copilot-agent-mode-meets-mcp-servers/",
-      "pubDate": "Tue, 22 Jul 2025 21:58:35 +0000",
-      "isoDate": "2025-07-22T21:58:35.000Z",
-      "creator": "Chris Reddington",
-      "summary": "本文探讨了如何利用GitHub Copilot代理模式和Playwright MCP服务器来加速UI问题的排查与调试，并强调了明确需求的重要性。\n\n### 项目背景与问题\n\n*   **项目：** 作者的OctoArcade Next.js应用，一个GitHub主题的迷你游戏集合。\n*   **发现的问题：**\n    *   导航栏与游戏内容重叠。\n    *   游戏画布与页脚之间存在意外间隙。\n*   **解决方案：** 借助GitHub Copilot代理模式和Playwright MCP服务器进行视觉检查，识别并修复了这些UI问题，包括全局头部修复。\n*   **结果：** 实现了自动化（“hands-off”）调试，解决了之前耗费精力的问题。\n\n### Copilot自定义指令设置\n\n*   **重要性：** 自定义指令文件（如`.github/copilot-instructions.md`）为Copilot提供了关于期望、编码风格和工作实践的重要上下文。\n*   **维护：** 务必保持指令文件最新，包含仓库结构、构建/测试步骤和提交期望等信息。\n*   **更新指令：** 可以通过向Copilot代理模式提问来更新指令文件，例如：“Based on the #codebase, please can you update the custom instructions file for accuracy? Please make sure to keep the structure (i.e. headings etc.) as-is. Thanks!”\n\n### 使用Playwright MCP进行代理式UI调试\n\n*   **Playwright MCP服务器：** 一个强大的端到端测试和UI自动化工具，支持模型上下文协议（MCP）。\n*   **与Copilot集成：** Copilot代理模式和Copilot编码代理可以通过Playwright MCP访问结构化工具。\n*   **Copilot能力：**\n    *   加载网页。\n    *   模拟用户操作（点击、导航）。\n    *   检查渲染布局，无需视觉模型。\n    *   发现布局问题并提出CSS或组件修复建议。\n*   **设置：** 在VS Code的MCP配置中添加Playwright。\n*   **可用工具示例：** `browser_snapshot`（捕获可访问性快照）、`browser_navigate`（导航到URL）、`browser_click`、`browser_type`、`browser_hover`（与元素交互）、`browser_resize`（测试不同视口大小）、`browser_take_screenshot`（视觉文档）。\n\n### 调试过程与经验教训\n\n1.  **描述问题并让代理模式工作：**\n    *   **初始问题：** 页面主内容被导航栏遮挡，游戏页面间距不一致。\n    *   **初始提示：** 尽可能明确地描述UI错误，并要求Copilot使用Playwright进行调查。\n    *   **迭代：** Copilot最初未能加载实际游戏，需要后续提示提供更多上下文。\n    *   **经验：** 提供越多的上下文和具体信息，Copilot的表现越好，就像与团队成员协作一样。\n    *   **Copilot的行动：** 启动浏览器，导航应用页面，诊断问题，并建议改进导航栏的渲染方式（使用根布局的导航栏）。\n    *   **自动化调试：** Copilot尝试修复、重新运行应用并进行视觉检查，甚至迭代修复了linting错误。\n\n2.  **迭代UI需求：**\n    *   **新问题：** OctoPong游戏板与页脚之间存在小间隙。\n    *   **挑战：** 作者最初的需求不明确，导致Copilot的修复引入了新的副作用（如游戏组件消失、游戏超出视口）。\n    *   **关键洞察：** 上下文至关重要，清晰地表达需求是关键。正确定义需求通常需要多次尝试和反馈。\n\n### 实用技巧\n\n*   **保持Copilot自定义指令最新：** 代理依赖这些文件获取仓库上下文和最佳实践。\n*   **利用MCP增强Copilot能力：** Playwright MCP实现真正的端到端测试和UI检查，对调试复杂Web应用至关重要。\n*   **明确需求：** 像任何协作者一样，Copilot只知道你告诉它的信息。列出你的“必须实现”项、预期行为和边缘情况。\n*   **小步迭代：** 频繁提交更改，以便回溯和诊断问题。\n\n### 结论与后续步骤\n\n*   **总结：** 代理工具（如Copilot和Playwright MCP）在提供正确上下文时能显著加速故障排除。描述需求很困难，但迭代、反馈和一些失误都是学习和解决bug过程的一部分。\n*   **行动建议：**\n    *   更新仓库的Copilot自定义指令文件。\n    *   在VS Code中安装并启动Playwright MCP服务器，为Copilot提供浏览器访问权限进行UI测试。\n    *   在Copilot代理模式的新聊天中清晰描述bug或功能。\n    *   让Copilot提出并应用修复，但始终审查代码更改和测试结果。\n    *   根据观察迭代需求，并根据需要进行澄清。\n    *   频繁提交代码，在分支中工作并保存每一步的进度。\n\n文章鼓励读者分享使用Playwright MCP或其他MCP服务器的经验，并关注GitHub的后续直播和学习资源。",
-      "shortSummary": "本文探讨了如何利用GitHub Copilot代理模式和Playwright MCP服务器加速UI调试。作者通过修复其OctoArcade应用中的界面问题，展示了这些AI工具如何进行视觉检查和自动修复。核心经验是，向AI工具提供清晰、详细的需求至关重要，调试过程常需迭代细化需求。Playwright MCP赋予Copilot模拟用户交互和检查UI的能力，实现高效的自动化调试。",
-      "translated_title": "使用AI调试UI：GitHub Copilot代理模式与MCP服务器的结合",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Explore how I use agentic tools like GitHub Copilot agent mode and the Playwright MCP server to accelerate troubleshooting and debugging of UI issues, while revisiting the importance of clear requirements.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/debugging-ui-with-ai-github-copilot-agent-mode-meets-mcp-servers/\">Debugging UI with AI: GitHub Copilot agent mode meets MCP servers</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-08-07T04:53:43.898Z"
+  "lastUpdated": "2025-08-09T04:39:10.491Z"
 }
