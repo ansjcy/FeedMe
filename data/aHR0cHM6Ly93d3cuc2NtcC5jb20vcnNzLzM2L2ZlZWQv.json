@@ -5,6 +5,23 @@
   "link": "https://www.scmp.com/rss/36/feed",
   "items": [
     {
+      "title": "宇树科技创始人：机器人领域的‘ChatGPT时刻’或在两年内到来 (原标题: Unitree founder: ChatGPT moment in robotics could come within 2 years)",
+      "link": "https://www.scmp.com/tech/article/3321354/robotics-chatgpt-moment-could-come-within-two-years-founder-chinas-unitree-says?utm_source=rss_feed",
+      "pubDate": "Sun, 10 Aug 2025 07:01:00 +0000",
+      "isoDate": "2025-08-10T07:01:00.000Z",
+      "creator": "Coco Feng",
+      "summary": "## 机器人领域的“ChatGPT时刻”或在两年内到来\n\n中国机器人行业领军企业宇树科技（Unitree Robotics）的创始人王兴兴预测，机器人行业的“ChatGPT时刻”可能在短短两年内到来，前提是强大的AI技术能够推动机器人的运动能力。\n\n### “ChatGPT时刻”的定义\n\n王兴兴将这一时刻定义为：机器人首次能够在从未去过的场所执行任务，例如清洁房间或将一瓶水递给特定的人。\n\n### 时间预测\n\n他于周六在北京举行的世界机器人大会上表示：“如果事情发展迅速，可能在未来一两年内发生，或者两到三年。”\n\n### 当前挑战与不足\n\n尽管机器人硬件（如灵巧的机械手）和训练数据都已足够支持这一壮举，但王兴兴指出，关键的“具身智能AI”却“完全不足”。\n\n### 对现有方法的看法\n\n王兴兴对目前流行的视觉语言动作（VLA）模型是否能胜任表示“怀疑”，认为它们采用了相对“笨拙”的架构。他提到，虽然宇树科技也使用这类模型，并结合强化学习来改进下游任务中预训练的VLA，但这种方法需要大量的优化。\n\n### 未来方向与潜力\n\n王兴兴认为，另一种方法——基于文本提示生成视频或交互模型，并让机器人遵循这些模型来执行任务——在机器人运动控制方面成功的“可能性更高”。他引用谷歌最近推出的通用型Genie 3“世界模型”为例，该模型能够生成包含物理属性信息的动态世界模型，这正是该领域技术发展的一个范例。",
+      "shortSummary": "宇树科技创始人王兴兴预测，机器人行业的“ChatGPT时刻”可能在未来一到三年内到来。他将此定义为机器人首次在陌生环境中独立完成任务。尽管硬件和数据已足够，但王兴兴指出“具身智能AI”是当前主要瓶颈。他认为，基于文本提示生成视频或交互模型来控制机器人运动，是实现这一突破的更有前景的方向，并以谷歌的Genie 3“世界模型”为例。",
+      "translated_title": "宇树科技创始人：机器人领域的‘ChatGPT时刻’或在两年内到来",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "The “ChatGPT moment” for the robotics industry could arrive in as little as two years if powerful artificial intelligence technology develops to propel robots’ movements, according to the founder of China’s industry leader Unitree Robotics.\nWang Xingxing defined this moment as the first time a robot could perform a task, such as cleaning a room or bringing a bottle of water to a targeted person, in a venue that it had never been to before.\n“If things develop fast, it could happen in the next...",
+      "enclosure": {
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/08/10/7e1296c3-6248-4ecc-b8f0-8087de6a59e5_96b13b94.jpg",
+        "type": "image/jpeg"
+      }
+    },
+    {
       "title": "阿里巴巴人工智能实验室成为中国竞争对手人才挖角的目标 (原标题: Alibaba’s AI lab becomes target for talent poaching by Chinese rivals)",
       "link": "https://www.scmp.com/tech/big-tech/article/3321270/alibabas-world-leading-ai-lab-becomes-target-talent-poaching-chinese-rivals?utm_source=rss_feed",
       "pubDate": "Sun, 10 Aug 2025 02:00:08 +0000",
@@ -396,24 +413,7 @@
         "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/08/06/ceef7fdc-9236-46ba-90fb-82016aad859c_0abd18a0.jpg",
         "type": "image/jpeg"
       }
-    },
-    {
-      "title": "“无禁用开关和后门”：英伟达重申其AI芯片的安全性 (原标题: ‘No kill switches and back doors’: Nvidia reasserts security of its AI chips)",
-      "link": "https://www.scmp.com/tech/big-tech/article/3320945/no-kill-switches-and-back-doors-nvidia-reasserts-security-its-ai-chips-blog-post?utm_source=rss_feed",
-      "pubDate": "Wed, 06 Aug 2025 11:00:08 +0000",
-      "isoDate": "2025-08-06T11:00:08.000Z",
-      "creator": "Wency Chen",
-      "summary": "## 英伟达重申其AI芯片的安全性\n\n*   **核心声明**：半导体巨头英伟达（Nvidia）在一篇博客文章中明确指出，其AI处理器“没有后门、没有禁用开关、没有间谍软件”。公司强调，构建值得信赖的系统不应包含这些弱点，且永远不会如此。\n*   **安全理念与影响**：英伟达首席安全官大卫·雷伯（David Reber Jnr）表示，在芯片中植入弱点将“破坏全球数字基础设施并损害对美国技术的信任”。他指出，嵌入后门和禁用开关无异于“给黑客和敌对行为者送礼”，并强调现有法律要求公司修复漏洞而非制造漏洞。\n*   **广泛应用**：英伟达设计芯片已有30多年历史，其图形处理器（GPU）广泛应用于各行各业，包括医疗保健、金融、科学研究、自动驾驶系统和AI基础设施。\n*   **背景与回应**：英伟达的这篇博客文章重申了公司对其H20 GPU所谓安全风险的强烈否认。此前，中国国家互联网信息办公室（CAC）于上周对英伟达进行了问询。英伟达代表在CAC召见该公司讨论安全担忧后，通过电子邮件向《南华早报》表示：“英伟达的芯片中没有‘后门’，不会让任何人远程访问或控制它们。”",
-      "shortSummary": "英伟达重申其AI芯片的安全性，否认存在“后门、禁用开关或间谍软件”。公司表示，植入此类弱点将损害全球数字信任并助长黑客行为。此声明是在中国国家互联网信息办公室（CAC）对其H20 GPU进行安全问询后，英伟达对其芯片安全风险指控的再次否认。",
-      "translated_title": "“无禁用开关和后门”：英伟达重申其AI芯片的安全性",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Semiconductor giant Nvidia reasserted the security of its AI processors in a blog post on Tuesday, pointing out that inserting weaknesses into chips would “undermine global digital infrastructure and fracture trust in US technology”.\n“There are no back doors in Nvidia chips. No kill switches. No spyware,” the post said. “That’s not how trustworthy systems are built – and never will be.”\nAccording to the post written by Nvidia chief security officer David Reber Jnr, graphics processing units...",
-      "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/08/06/3d358df6-25d5-4b43-9bc8-5e7a5199b75d_6f716089.jpg",
-        "type": "image/jpeg"
-      }
     }
   ],
-  "lastUpdated": "2025-08-10T03:04:35.609Z"
+  "lastUpdated": "2025-08-10T07:18:34.248Z"
 }
