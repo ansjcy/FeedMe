@@ -5,6 +5,86 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "Grok的分享与Claude的泄露：从系统提示中我们可以学到的5件事 (原标题: Grok’s Share and Claude’s Leak: 5 Things We Can Learn From System Prompts)",
+      "link": "https://machinelearningmastery.com/groks-share-and-claudes-leak-5-things-we-can-learn-from-system-prompts/",
+      "pubDate": "Fri, 08 Aug 2025 14:16:59 +0000",
+      "isoDate": "2025-08-08T14:16:59.000Z",
+      "creator": "Matthew Mayo",
+      "summary": "# Grok的分享与Claude的泄露：从系统提示中我们可以学到的5件事\n\n## 引言\n语言模型（LLM）的基础指令，即系统提示，为用户、AI从业者和开发者提供了宝贵的见解，以优化互动、推动模型进步并开发有用的应用程序。最近，Claude和Grok的系统提示通过不同机制被公开。尽管这些提示并非一成不变，但理解它们仍能帮助我们更好地与各类语言模型互动。本文将通过具体示例，揭示从这些系统提示中可以学到的五个具体教训。\n\n## 1. 有效提示的重要性\n*   **核心教训：** 用户应采用特定的提示技巧，以获得最有帮助和最准确的响应。\n*   **Claude的指导：** Claude明确指出有效提示的价值，包括：\n    *   清晰和详细的输入。\n    *   使用正面和负面示例。\n    *   鼓励分步推理。\n    *   请求特定的XML标签。\n    *   指定所需的长度或格式。\n*   **启示：**\n    *   **对用户：** 投入时间精心设计精确和结构化的提示对于最大化语言模型的效用至关重要。\n    *   **对开发者：** 为用户提供有效的提示指导或工具可以显著提升用户体验和模型的感知性能。\n\n## 2. 激活专业操作模式\n*   **核心教训：** 用户有时可以直接控制和激活语言模型中的高级或替代处理模式，以满足特定需求（如深度分析或实时信息检索）。\n*   **Grok的示例：** Grok 3展示了两种可由用户激活的模式：\n    *   **“思考模式”（Think mode）：** 在给出最终响应前进行深入思考。\n    *   **“深度搜索模式”（DeepSearch mode）：** 迭代搜索网络并分析信息。\n    *   这些模式通过用户界面中的特定按钮激活。\n*   **启示：**\n    *   **对用户：** 应探索不同模型界面提供的特定功能和模式，以优化各种任务的互动。\n    *   **对未来模型开发：** 预示着提供更精细的用户控制，超越简单的输入/输出。\n\n## 3. 利用用户反馈进行迭代增强\n*   **核心教训：** 即使语言模型无法从单次对话中学习，用户反馈机制对于持续的模型改进也至关重要。\n*   **Claude的示例：** Claude指示用户，即使模型不能保留或学习当前对话，他们仍可通过“踩”按钮向Anthropic提供反馈。\n*   **启示：**\n    *   **对用户：** 应积极利用语言模型界面提供的反馈功能，为模型的改进做出贡献。\n    *   **对模型改进者：** 强调在系统设计中构建健壮且易于访问的反馈循环的重要性，以实现基于真实用户体验的数据收集和完善的持续循环。\n\n## 4. 通过API进行程序化访问\n*   **核心教训：** 语言模型主要通过应用程序编程接口（API）访问并集成到自定义应用程序中，API通常允许指定模型版本。\n*   **示例：**\n    *   Claude可通过API访问，例如使用模型字符串“claude-3-7-sonnet-20250219”访问Claude 3.7 Sonnet。\n    *   xAI提供Grok 3的API服务。\n*   **启示：**\n    *   **对开发者：** 理解和利用各自的API是关键，包括熟悉文档、可用模型、通信成本和参数，以有效地将AI功能集成到产品中。\n    *   未来应用程序开发可能越来越多地涉及协调不同语言模型和版本以完成特定任务。\n\n## 5. 利用专业能力和数据集成\n*   **核心教训：** 现代语言模型通常配备了超越基本文本生成的专业能力和集成，使开发者能够构建更复杂和上下文感知的应用程序。\n*   **Grok的示例：** Grok展示了多种能力：\n    *   分析单个X（Twitter）用户资料、X帖子及其链接。\n    *   处理用户上传的内容，包括图像、PDF、文本文件等（多模态输入）。\n    *   根据需要搜索网络和X上的实时信息。\n    *   具有记忆功能，可访问与用户之前的跨会话对话详情。\n*   **启示：**\n    *   **对开发者：** 在构建应用程序时，应超越LLM的核心文本生成能力，探索其专业工具、数据集成和内置功能（如记忆、聊天会话和提示缓存）。\n    *   这有助于创建更丰富、更具上下文相关性和更强大的应用程序，这些应用程序可以与多种类型的数据源交互，并在用户交互中保持状态。\n\n## 总结\n当代语言模型的工作细节对许多读者来说可能并不陌生。然而，模型如何通过详细的系统提示确保用户和模型本身都了解这些细节，这可能是一个新颖之处。语言模型并非魔法；它们或多或少是下一词预测神经网络，必须通过各种技术层进行管理，其中之一就是系统提示。尽可能多地了解这些层可以帮助我们更好地使用、改进和构建语言模型。\n\n![Grok's Share and Claude's Leak: 5 Things We Can Learn From System Prompts](https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-learn-from-system-prompts.png)",
+      "shortSummary": "Grok和Claude的系统提示揭示了语言模型使用的五大教训。这些包括：有效提示对获取最佳输出的重要性；用户激活专业操作模式的能力；用户反馈在模型迭代改进中的关键作用；通过API进行程序化访问以集成到应用中；以及利用专业能力和数据集成构建复杂应用。理解这些系统提示有助于用户优化互动，并指导开发者提升模型性能和应用开发。",
+      "translated_title": "Grok的分享与Claude的泄露：从系统提示中我们可以学到的5件事",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-learn-from-system-prompts.png",
+          "alt": "Grok's Share and Claude's Leak: 5 Things We Can Learn From System Prompts",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The foundational instructions that govern the operation and user/model interaction of language models (also known as system prompts) are able to offer insights into how we &mdash; as users, AI practitioners, and developers &mdash; can optimize our interactions, approach future model advancements, and develop useful language model-driven applications."
+    },
+    {
+      "title": "时间序列特征工程的7个Pandas技巧 (原标题: 7 Pandas Tricks for Time-Series Feature Engineering)",
+      "link": "https://machinelearningmastery.com/7-pandas-tricks-for-time-series-feature-engineering/",
+      "pubDate": "Thu, 07 Aug 2025 18:53:10 +0000",
+      "isoDate": "2025-08-07T18:53:10.000Z",
+      "creator": "Matthew Mayo",
+      "summary": "## 时间序列特征工程的7个Pandas技巧\n\n### 引言\n特征工程是构建高效机器学习模型的关键步骤，在处理时间序列数据时尤为重要。通过从时间数据中创建有意义的特征，可以释放仅凭原始时间戳无法实现的预测能力。Pandas提供了一套强大且灵活的操作，用于处理和创建时间序列特征。本文将探讨7个实用的Pandas技巧，这些技巧可以帮助转换时间序列数据，从而增强模型并提高预测能力。文章使用一个简单的合成数据集来演示每种技术。\n\n### 数据准备\n首先，文章创建了一个示例时间序列DataFrame。该数据集代表了2025年7月每日的销售数据，将用于后续所有示例。数据集包含日期索引和随机分配的销售值。\n\n![时间序列特征工程的7个Pandas技巧](https://machinelearningmastery.com/wp-content/uploads/2025/08/mlm-7-pandas-tricks-ts-feature-engineering.png)\n\n### 7个Pandas技巧\n\n1.  **提取日期时间组件 (Extracting Datetime Components)**\n    *   这是最简单但最有用的时间序列特征工程技术之一，它将日期时间对象分解为其组成部分，如星期几、月份等。\n    *   这些组件可以捕捉不同粒度（如每周、每年）的季节性和趋势。\n    *   Pandas通过`.dt`访问器使其变得非常容易，例如`df.index.dayofweek`和`df.index.month`。\n    *   此外，为了更好地处理周期性特征，文章还展示了如何使用正弦和余弦变换来编码这些组件，以保留其循环性质。\n\n2.  **创建滞后特征 (Creating Lag Features)**\n    *   滞后特征是来自先前时间步的值，它们在时间序列预测中至关重要，因为它们代表了系统过去的状态，通常对未来具有高度预测性。\n    *   `shift()`方法非常适合创建这类特征，例如`df['sales'].shift(1)`用于获取前一天的销售额。\n    *   需要注意的是，这种操作会在序列的开头创建`NaN`值，在建模前需要进行处理。\n\n3.  **计算滚动窗口统计量 (Calculating Rolling Window Statistics)**\n    *   滚动窗口计算（也称为移动平均）有助于平滑短期波动并突出长期趋势。\n    *   可以使用`rolling()`方法轻松计算固定大小窗口内的各种统计量，如均值、中位数或标准差。\n    *   示例：`df['sales'].rolling(window=3).mean()`计算3天滚动均值。\n\n4.  **生成扩展窗口统计量 (Generating Expanding Window Statistics)**\n    *   与滚动窗口不同，扩展窗口包含从时间序列开始到当前时间点的所有数据。\n    *   这对于捕获随时间累积的统计量非常有用，包括运行总计和总体平均值。\n    *   通过`expanding()`方法实现，例如`df['sales'].expanding().sum()`计算累计销售额。\n\n5.  **测量事件之间的时间 (Measuring Time Between Events)**\n    *   事件发生以来的时间或连续数据点之间的时间间隔通常是一个有用的特征。\n    *   可以使用索引上的`diff()`方法计算连续时间戳之间的差异。\n    *   虽然对于规则的时间序列可能不那么明显，但对于时间间隔不规则的数据，此功能非常强大。\n\n6.  **使用正弦/余弦编码周期性特征 (Encoding Cyclical Features with Sine/Cosine)**\n    *   星期几或月份等周期性特征对机器学习模型构成挑战，因为数值上的距离可能无法反映实际的周期性接近度（例如，星期六和星期天在数值上相距较远，但周期性上相邻）。\n    *   通过使用正弦和余弦变换将它们转换为二维，可以保留关系的周期性性质。\n    *   例如，`np.sin(2 * np.pi * df['day_of_week'] / 7)`。\n\n7.  **创建交互特征 (Creating Interaction Features)**\n    *   通过组合两个或更多现有特征来创建交互特征，可以帮助捕捉更复杂的关系。\n    *   例如，计算某天的销售额与3天滚动平均值之间的差异 (`df['sales'] - df['rolling_mean_3']`)。\n    *   这种特征的可能性是无限的，领域知识和创造力越强，这些特征就越有洞察力。\n\n### 总结\n时间序列特征工程是艺术与科学的结合。领域专业知识无疑是无价的，但熟练掌握Pandas等工具也同样重要，它们为创建能够提升模型性能并最终解决问题的特征奠定了基础。本文涵盖的七个技巧——从提取日期时间组件到创建复杂的交互特征——是任何时间序列分析或预测任务的强大构建块。通过利用Pandas及其强大的时间序列功能，可以更有效地发现时间数据中隐藏的模式。",
+      "shortSummary": "本文介绍了7个使用Pandas进行时间序列特征工程的实用技巧。这些技巧包括：提取日期时间组件、创建滞后特征、计算滚动和扩展窗口统计量、测量事件之间的时间、使用正弦/余弦编码周期性特征，以及创建交互特征。通过这些方法，可以从原始时间序列数据中提取有意义的特征，从而提升机器学习模型的预测能力，更好地捕捉时间数据中的模式和趋势。",
+      "translated_title": "时间序列特征工程的7个Pandas技巧",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/08/mlm-7-pandas-tricks-ts-feature-engineering.png",
+          "alt": "7 Pandas Tricks for Time-Series Feature Engineering",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Feature engineering is one of the most important steps when it comes to building effective machine learning models, and this is no less important when dealing with time-series data."
+    },
+    {
+      "title": "时间序列转换工具包：预测分析的特征工程 (原标题: Time-Series Transformation Toolkit: Feature Engineering for Predictive Analytics)",
+      "link": "https://machinelearningmastery.com/time-series-transformation-toolkit-feature-engineering-for-predictive-analytics/",
+      "pubDate": "Wed, 06 Aug 2025 12:00:35 +0000",
+      "isoDate": "2025-08-06T12:00:35.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "## 时间序列转换工具包：预测分析的特征工程\n\n![Time-Series Transformation Toolkit: Advanced Feature Engineering for Predictive Analytics](https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-ipc-time-series-transformation-toolkit.png)\n\n### 引言\n\n在时间序列分析和预测中，数据转换是至关重要的一步。它有助于揭示潜在模式、稳定数据属性（如方差），并显著提升预测模型的性能。例如，产品销售的时间序列可能表现出强烈的每周季节性和促销活动的影响。在这种情况下，将原始时间戳转换为分类特征（如星期几或节假日标志）可以帮助模型更有效地捕捉时间依赖性和上下文信息。\n\n本文旨在演示一种中等高级的特征工程方法，用于构建有意义的时间特征并应用各种转换以进行预测分析。文章将探讨如何：\n\n*   向时间序列添加多个滞后特征（lagging features）。\n*   纳入滚动统计（rolling statistics），例如滑动时间窗口上的滚动平均值。\n*   应用差分（differencing）来捕捉时间间隔内计数值的变化。\n\n### 实践演示：自行车共享数据集\n\n文章使用常见的自行车共享数据集进行实践演示。该数据集包含每日记录，特征包括日期（dteday）、每日自行车租赁计数（cnt）、平均温度（temp）、星期几（weekday）、是否为节假日（holiday）以及是否为工作日（workingday）。\n\n**1. 数据加载与初步处理：**\n\n*   加载数据集并解析日期列。\n*   将`dteday`列设置为DataFrame的索引，以便进行时间序列操作。\n*   创建新的特征：`is_weekend`（判断是否为周末）和`month`（提取月份）。\n\n**2. 核心特征工程技术：**\n\n*   **滞后特征 (Lagging Features):**\n    *   **目的：** 为当前记录引入过去记录的“短期记忆”。例如，前几天的租赁计数可以作为预测属性。\n    *   **方法：** 使用Pandas的`shift(n)`函数，它将指定属性的值向前或向后移动`n`个时间步。\n    *   **示例：** 创建`cnt_lag1`、`cnt_lag2`和`cnt_lag7`，分别表示前1天、前2天和前7天的租赁计数。\n\n*   **滚动统计 (Rolling Statistics):**\n    *   **目的：** 使用滑动时间窗口计算平均值或其他聚合值，以洞察值随时间的变化趋势和变异性模式。\n    *   **方法：** 通常结合`shift(1)`和`rolling(window=n).mean()`或`.std()`。\n    *   **示例：** 创建`cnt_roll7_mean`和`cnt_roll7_std`，分别表示前7天租赁计数的滚动平均值和滚动标准差。\n\n*   **差分 (Differencing):**\n    *   **目的：** 揭示值随时间的变化情况，而不仅仅是其原始大小。通过计算当前值与过去某个时间点的值之间的差异来完成。\n    *   **方法：** 将当前属性值减去其`shift(n)`后的值。\n    *   **示例：** 创建`cnt_diff1`和`cnt_diff7`，分别表示当前租赁计数与前1天和前7天租赁计数之间的差异。\n\n**3. 处理缺失值 (NaNs):**\n\n*   **问题：** 由于滞后和滚动操作，数据集的最初几行会出现缺失值（NaN），因为没有足够的历史信息来执行转换。\n*   **解决方案：** 使用`dropna()`函数删除包含这些新生成特征中缺失值的行。对于大型时间序列，删除前几行通常不会显著影响预测性能。\n\n通过上述特征工程操作，原始时间序列数据集被转换为包含大量有用附加信息的格式，极大地增强了其进行预测分析的潜力。\n\n### 结论\n\n本文展示了使用滞后、滚动统计和差分等策略从时间序列数据中提取和解锁有意义的时间特征。当正确应用时，这些策略能将原始时间序列数据转化为更适合预测分析过程的格式，尤其是在构建用于预测的机器学习模型时，能显著提升模型的表现。\"\n  \"short_summary\": \"本文介绍了时间序列数据的高级特征工程技术，旨在提升预测分析模型的性能。主要探讨了三种方法：滞后特征（捕捉短期记忆）、滚动统计（揭示趋势和变异性）和差分（显示值随时间的变化）。通过在自行车共享数据集上的实践演示，文章展示了如何应用这些技术，将原始时间序列数据转化为更适合机器学习预测的格式，从而有效增强模型的预测能力。",
+      "shortSummary": "本文介绍了时间序列数据的高级特征工程技术，旨在提升预测分析模型的性能。主要探讨了三种方法：滞后特征（捕捉短期记忆）、滚动统计（揭示趋势和变异性）和差分（显示值随时间的变化）。通过在自行车共享数据集上的实践演示，文章展示了如何应用这些技术，将原始时间序列数据转化为更适合机器学习预测的格式，从而有效增强模型的预测能力。",
+      "translated_title": "时间序列转换工具包：预测分析的特征工程",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/06/mlm-ipc-time-series-transformation-toolkit.png",
+          "alt": "Time-Series Transformation Toolkit: Advanced Feature Engineering for Predictive Analytics",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "In time series analysis and forecasting , transforming data is often necessary to uncover underlying patterns, stabilize properties like variance, and improve the performance of predictive models."
+    },
+    {
+      "title": "Q学习简明介绍 (原标题: A Gentle Introduction to Q-Learning)",
+      "link": "https://machinelearningmastery.com/a-gentle-introduction-to-q-learning/",
+      "pubDate": "Tue, 05 Aug 2025 12:00:44 +0000",
+      "isoDate": "2025-08-05T12:00:44.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "## Q学习简明介绍\n\n![Q学习简明介绍](https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-ipc-gentle-introduction-q-learning.png)\n\n### 引言\n\n强化学习（Reinforcement Learning, RL）是人工智能（AI）中一个相对不那么为人所知但潜力巨大的领域，它专注于解决复杂的决策问题。在强化学习中，智能体（即智能软件实体）通过与环境的交互来学习，并通过执行一系列基于决策的动作来最大化累积奖励。Q学习是强化学习中最广泛使用的算法之一，它使智能体能够在不需要环境完整模型的情况下，学习不同状态下动作的价值。本文旨在以清晰、启发性的方式，对Q学习的原理和算法基本特征进行简明介绍。\n\n### Q学习基础\n\nQ学习属于时序差分学习（Temporal Difference Learning, TD Learning）算法家族。TD学习的特点是智能体直接从经验中学习，通过重复采样来估计价值函数。同时，它还采用“自举”（bootstrapping）机制，即根据其他已学习的估计来更新其价值估计，而无需等待最终结果，因此不需要对环境或未来奖励有完整的预知。\n\n**示例：仓库配送机器人**\n\n例如，一个仓库配送机器人需要学习从入口到不同存储箱的最有效路径。通过TD学习，机器人会采样可能的动作（如向前、向左），在仓库中导航，观察路径的终点，并为每次移动接收时间或惩罚反馈。此外，它通过自举更新当前位置的价值估计，该估计基于其导航到的下一个位置的估计价值，而不是等到整个配送轨迹完成后才评估每个决策的好坏。\n\nQ学习是一种强化学习方法，它无需环境模型，通过尝试选项并从结果中学习，帮助智能体找出能获得最大奖励的最佳选择。“Q”代表“质量”，目标是学习在不同情境下哪些行动序列最有价值。与需要预先理解“世界”运作方式的方法不同，Q学习直接从经验中学习。此外，Q学习比其他一些仅从当前策略中学习的算法更灵活，它通过比较替代策略的结果来采用更广泛的学习方法。\n\n### 一个简明示例：仓库网格\n\n以下示例以简明的方式（不涉及复杂数学，但提及贝尔曼方程供深入阅读）说明Q学习的工作原理。\n\n**场景：3x3仓库网格**\n\n假设仓库设施由一个3x3的物理位置网格表示：\n\n[ A ] [ B ] [ C ]\n[ D ] [ E ] [ F ]\n[ G ] [ H ] [ Goal ]\n\n机器人从位置A开始，目标是到达右下角的“Goal”位置。每次移动都会消耗时间，从而产生少量惩罚。此外，撞墙或走错方向会受到惩罚，而到达目标则会获得奖励。在每个步骤和位置（状态），机器人可以尝试四种可能的动作：向上、向下、向右或向左移动。\n\n**Q表：核心记忆**\n\nQ学习中的一个关键元素是“查找表”，类似于一个记忆笔记本，机器人在此记录每个状态下每个可能动作的奖励。奖励以数值表示，数值越高越好，并且会动态更新：机器人根据其经验迭代地更新或微调这些值。\n\n**学习过程**\n\n最初，机器人一无所知，所有奖励值默认为零或某个初始值。它必须通过随机尝试动作并观察结果来建立对环境的近似视图。例如，如果它从A点尝试向下移动到D点，如果这是一条繁忙且充满障碍的路线，可能耗时较长，不是最佳的即时行动。但如果它后来尝试从A点向右移动到B点，然后向下到E点，再到H点，最终在合理时间内到达“Goal”状态，它就会更新表中的值，以反映这些状态-动作选择是好的。\n\n在Q学习中，不仅考虑立即选择的动作的短期效果，还在一定程度上考虑后续动作的传播效应。总之，每当机器人（智能体）尝试一条路径时，它都会稍微更新其表中的值，根据迄今为止效果更好的情况进行校准。从长远来看，通过应用这种行为，智能体最终会从自身经验中学习，更新所谓的Q表，以反映产生更好结果的行动方案。它不仅学习从初始位置的最佳路线，还学习避免什么（例如，撞墙、进入死角等），所有这些都无需对环境有完整的知识表示或详细的仓库地图。\n\n### 总结\n\nQ学习类似于通过多次玩游戏来学习，其中必须不断做出选择，记住哪些选择产生了更好的结果，并逐步将最初的随机选择调整为更智能的选择以提高结果。本文对这一强化学习领域进行了简明且不涉及数学的介绍，Q学习曾是该领域的一项突破性进展。",
+      "shortSummary": "Q学习是强化学习中的一种核心算法，它使智能体无需环境的完整模型，通过与环境的交互和经验学习来优化决策。该算法属于时序差分学习，通过构建和动态更新“Q表”来记录和评估不同状态下行动的“质量”。智能体通过反复试错和“自举”机制，逐步学习并找到最大化累积奖励的最佳行动序列，从而在未知环境中实现智能导航和决策，类似于通过反复实践掌握一项技能。",
+      "translated_title": "Q学习简明介绍",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-ipc-gentle-introduction-q-learning.png",
+          "alt": "A Gentle Introduction to Q-Learning ",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Reinforcement learning is a relatively lesser-known area of artificial intelligence (AI) compared to highly popular subfields today, such as machine learning, deep learning, and natural language processing."
+    },
+    {
       "title": "构建用于文本生成的仅解码器Transformer模型 (原标题: Building a Decoder-Only Transformer Model for Text Generation)",
       "link": "https://machinelearningmastery.com/building-a-decoder-only-transformer-model-for-text-generation/",
       "pubDate": "Mon, 04 Aug 2025 16:02:37 +0000",
@@ -177,99 +257,7 @@
       ],
       "contentSource": "完整文章",
       "content": "This post is divided into four parts; they are: • Why Attnetion Matters: Limitations of Basic Seq2Seq Models • Implementing Seq2Seq Model with Attention • Training and Evaluating the Model • Using the Model Traditional seq2seq models use an encoder-decoder architecture where the encoder compresses the input sequence into a single context vector, which the decoder then uses to generate the output sequence."
-    },
-    {
-      "title": "超越 Pandas：处理大型数据集的 7 种高级数据操作技术 (原标题: Beyond Pandas: 7 Advanced Data Manipulation Techniques for Large Datasets)",
-      "link": "https://machinelearningmastery.com/beyond-pandas-7-advanced-data-manipulation-techniques-for-large-datasets/",
-      "pubDate": "Mon, 28 Jul 2025 14:43:35 +0000",
-      "isoDate": "2025-07-28T14:43:35.000Z",
-      "creator": "Shittu Olumide",
-      "summary": "## 超越 Pandas：处理大型数据集的 7 种高级数据操作技术\n\n![Beyond Pandas: 7 Advanced Data Manipulation Techniques for Large Datasets](https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-olumide-7-advanced-data-manipulation-techniques-large-datasets.png)\n\n### 引言\n\nPandas 是 Python 数据处理的常用工具，但当数据集规模增大时，它会遇到内存限制和性能瓶颈。本文旨在介绍七种超越 Pandas 的工具和技术，它们专为处理大型数据、实现更快执行和更高效的数据管道而设计。\n\n### 1. 使用 Dask 进行并行化 DataFrame 操作\n\n*   **核心功能**：当数据集无法完全载入内存时，Dask 提供 Pandas 风格的接口，但能在后台将数据分块并并行处理。\n*   **工作原理**：\n    *   **惰性求值**：构建任务图，仅在需要时执行操作，减少不必要的计算。\n    *   **核外计算**：通过从磁盘流式传输数据，处理大于 RAM 的数据集。\n    *   **并行执行**：过滤、连接和分组等操作可在多个 CPU 核心上并行运行。\n*   **适用场景**：数据集超出内存限制，需要并行处理。\n*   **示例**：使用 `dask.dataframe` 加载大型 CSV 并进行分组聚合，通过 `.compute()` 触发计算。\n\n### 2. 使用 Polars 加速处理\n\n*   **核心功能**：一个用 Rust 编写的 DataFrame 库，利用 Apache Arrow 内存格式实现极高速度。\n*   **工作原理**：编译查询计划，在多线程上运行，并采用惰性 API，构建链式转换，仅在需要时执行。\n*   **突出特点**：\n    *   **极致速度**：比 Pandas 更快地处理数据。\n    *   **管道思维**：通过表达式构建转换链，避免 Python 瓶颈和逐行迭代。\n*   **适用场景**：在单机上需要最大速度，如仪表板、分析管道或大型数据导出前的清洗。\n*   **示例**：使用 `polars` 的惰性 API 读取、过滤、分组和聚合数据，通过 `.collect()` 触发执行。\n\n### 3. 使用 Apache Arrow\n\n*   **核心功能**：一种列式内存格式，旨在实现工具间高效的数据传输，而非直接的数据分析工具。\n*   **工作原理**：以列式布局存储数据，优化了工具之间（如 Pandas、Polars、PySpark、数据库引擎）的数据传递，实现零拷贝和无序列化开销。\n*   **适用场景**：关注数据在不同工具之间、文件读写或与云服务连接时的性能边界。\n*   **示例**：将 Pandas DataFrame 转换为 Arrow Table，然后直接加载到 Polars 中，实现即时、零拷贝和内存高效的转换。\n\n### 4. 使用 SQL 引擎（如 DuckDB, SQLite）查询\n\n*   **核心功能**：通过 SQL 对大型数据集进行高效分析查询，无需搭建复杂的处理管道。\n*   **工作原理（DuckDB）**：专为分析工作负载优化，可直接查询 Parquet、CSV 或 Arrow 表，无需先加载到内存。在本地运行，无需服务器或集群。智能地将过滤器下推到文件级别。\n*   **适用场景**：数据量过大不适合 Pandas 但又无需 Spark，需要直接从磁盘查询数据，或需要快速、可重复的 SQL 分析而无需基础设施。\n*   **示例**：使用 `duckdb` 直接查询 Parquet 文件，进行过滤和聚合。\n\n### 5. 使用 PySpark 进行分布式处理\n\n*   **核心功能**：为分布式计算设计，通过 Python 接口提供 Apache Spark 的能力，处理跨多核或多机器的数据。\n*   **工作原理**：支持 RDDs 和 DataFrames（推荐使用 DataFrames），操作惰性求值并在底层优化，然后跨集群执行。\n*   **适用场景**：数据集大到无法在单机上处理，在分布式环境（如云平台或本地集群）中工作，需要容错、重试逻辑和可扩展性。\n*   **注意事项**：对于小型任务不总是最快，但在规模和弹性更重要时表现出色。\n*   **示例**：使用 `pyspark.sql.SparkSession` 读取大型 CSV，进行过滤和分组聚合。\n\n### 6. 使用 Vaex 优化\n\n*   **核心功能**：专为高性能单机分析而设计的 DataFrame 库，特别适用于处理亿级行以上的大型数据集，且内存效率高。\n*   **工作原理**：使用内存映射文件，按需从磁盘读取数据块，结合 C++ 优化的后端，实现闪电般的过滤、聚合和连接操作。惰性执行，无需显式 `.compute()`。\n*   **适用场景**：处理数千万或数亿行的大数据集，但不想承担 Dask 或 Spark 的开销；需要快速的分析型查询（过滤、分箱、直方图、连接）；需要在单机上高效运行且不占用所有 RAM。\n*   **示例**：使用 `vaex.open()` 打开大型 CSV，进行惰性过滤和分组。\n\n### 7. 使用生成器进行分块和流式处理\n\n*   **核心功能**：在内存极度受限的情况下，利用 Python 内置的生成器和文件迭代器进行低级别、逐行的数据流式处理。\n*   **工作原理**：不将整个文件加载到 RAM，而是逐行处理数据，保持恒定的内存使用量，并完全控制处理流程。\n*   **适用场景**：在内存紧张的环境（如云函数、边缘计算）中操作；需要将数据逐行流式传输到其他系统；构建轻量级 ETL 管道而无需大型框架的开销。\n*   **示例**：定义一个函数，逐行读取大型 CSV，进行过滤和轻量级转换，并使用 `yield` 返回处理后的记录。\n\n### 总结\n\n选择合适的工具至关重要。Dask 适用于最小改动地扩展 Pandas 代码；Polars 在单机上提供极致速度；Apache Arrow 确保工具间高效数据传输；DuckDB 允许直接对大文件进行 SQL 查询；PySpark 应对大规模分布式处理；Vaex 提供单机上的内存映射高性能分析；而 Python 生成器则适用于内存受限的流式处理。有时，结合使用这些工具（如 Arrow 与 Polars，或 DuckDB 导出到 Arrow）是最佳方法。关键在于了解可选项，并构建一个与数据协同而非对抗的技术栈。\"\n  \"short_summary\": \"当 Pandas 无法满足大型数据集处理需求时，有多种高级技术可供选择。Dask 提供并行化处理以应对内存限制；Polars 以 Rust 编写，通过 Apache Arrow 实现单机极致速度；Apache Arrow 优化了不同工具间的数据传输；DuckDB 允许直接对磁盘文件进行高效 SQL 查询；PySpark 专为分布式计算设计；Vaex 提供内存映射的高性能单机分析；而 Python 生成器则适用于内存极度受限的流式处理。选择合适的工具或组合使用，是高效处理大型数据的关键。",
-      "shortSummary": "当 Pandas 无法满足大型数据集处理需求时，有多种高级技术可供选择。Dask 提供并行化处理以应对内存限制；Polars 以 Rust 编写，通过 Apache Arrow 实现单机极致速度；Apache Arrow 优化了不同工具间的数据传输；DuckDB 允许直接对磁盘文件进行高效 SQL 查询；PySpark 专为分布式计算设计；Vaex 提供内存映射的高性能单机分析；而 Python 生成器则适用于内存极度受限的流式处理。选择合适的工具或组合使用，是高效处理大型数据的关键。",
-      "translated_title": "超越 Pandas：处理大型数据集的 7 种高级数据操作技术",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-olumide-7-advanced-data-manipulation-techniques-large-datasets.png",
-          "alt": "Beyond Pandas: 7 Advanced Data Manipulation Techniques for Large Datasets",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "If you've worked with data in Python, chances are you've used Pandas many times."
-    },
-    {
-      "title": "图像增强技术：提升计算机视觉模型性能 (原标题: Image Augmentation Techniques to Boost Your CV Model Performance)",
-      "link": "https://machinelearningmastery.com/image-augmentation-techniques-to-boost-your-cv-model-performance/",
-      "pubDate": "Fri, 25 Jul 2025 14:23:13 +0000",
-      "isoDate": "2025-07-25T14:23:13.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "# 图像增强技术：提升计算机视觉模型性能\n\n![文章主图：图像增强技术概览](https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-ipc-image-augmentation-techniques-computer-vision.png)\n\n本文深入探讨了图像增强技术在计算机视觉领域中的应用，旨在提高模型的泛化能力和数据多样性。文章详细介绍了四种常见的图像增强策略及其在Keras API中的实现方法，并展示了如何将这些技术整合到卷积神经网络（CNN）中。\n\n## 图像增强的目的与益处\n\n图像增强技术，如翻转、旋转图像等，通过增加原始训练和验证数据集的多样性，显著提升计算机视觉模型的性能。这有助于模型更好地泛化到未见过的数据，从而提高其准确性。\n\n## 四种常见图像增强策略\n\n这些策略被设计为随机应用于图像数据集，以获得多样化的图像设置，从而训练出更鲁棒的模型。\n\n![图像增强技术示意图](https://machinelearningmastery.com/wp-content/uploads/2025/07/Captura-de-pantalla-2025-07-18-a-las-15.33.45.png)\n\n### 1. 水平翻转 (Horizontal Flip)\n*   **目的：** 帮助模型对物体左右方向的变化保持不变性。例如，如果训练数据中的鸟都朝左，模型可能难以识别朝右的鸟。水平翻转通过模拟镜像效果，使模型学习到更全面的图像属性。\n*   **用例：** 特别适用于分析自然场景、人脸或对称物体（或可能出现镜像的物体）的模型。\n*   **Keras 实现：**\n    ```python\n    from keras.layers import RandomFlip\n    layer = RandomFlip(\"horizontal\")\n    ```\n    （`RandomFlip` 类也支持垂直翻转。）\n\n### 2. 旋转 (Rotation)\n*   **目的：** 提高模型对图像方向变化的鲁棒性，使其在图像未完全对齐时也能表现良好。\n*   **用例：** 适用于卫星照片、无人机拍摄的农作物航拍图或医学图像等场景。\n*   **Keras 实现：**\n    ```python\n    from keras.layers import RandomRotation\n    layer = RandomRotation(factor=0.1)\n    ```\n    （`factor=0.1` 表示在 [-36, 36] 度范围内进行随机旋转。）\n\n### 3. 缩放 (Zoom)\n*   **目的：** 模拟图像中主要物体与相机之间距离的变化，使模型能够识别不同尺度下（更近或更远）的相同或相似物体。\n*   **用例：** 特别适用于需要检测物体或对物体尺度可能变化的图像进行分类的计算机视觉模型，例如交通监控摄像头或自动驾驶车辆收集的图像。\n*   **Keras 实现：**\n    ```python\n    from keras.layers import RandomZoom\n    layer = RandomZoom(height_factor=0.2, width_factor=0.2)\n    ```\n    （这会将图像高度和宽度在原始尺度的 80% 到 120% 之间随机缩放。）\n\n### 4. 亮度调整 (Brightness Adjustment)\n*   **目的：** 增强模型对不同光照水平图像的鲁棒性，例如在一天中不同时间或不同天气条件下拍摄的同一地点或物体的图像。\n*   **用例：** 对监控系统等应用极为有用。\n*   **Keras 实现：**\n    文章介绍了两种实现方式：\n    *   **自定义 Keras 层：** 继承自 `Keras.Layer` 并使用 `tf.image.random_brightness()` 函数。\n        ```python\n        import tensorflow as tf\n        from keras.layers import Layer\n\n        class RandomBrightness(Layer):\n            def __init__(self, max_delta, **kwargs):\n                super().__init__(**kwargs)\n                self.max_delta = max_delta\n\n            def call(self, inputs):\n                return tf.image.random_brightness(inputs, max_delta=self.max_delta)\n\n            def get_config(self):\n                config = super().get_config()\n                config.update({\"max_delta\": self.max_delta})\n                return config\n\n        # 实例化示例\n        brightness_layer = RandomBrightness(max_delta=0.2)\n        ```\n        （`max_delta=0.2` 表示将应用高达 20% 的随机亮度变化。）\n    *   **使用内置的 `tf.keras.layers.RandomBrightness` 层：** 这种方法更简洁，通过将图像像素乘以一个随机因子来实现亮度调整。\n        ```python\n        from keras.layers import RandomBrightness\n        layer = RandomBrightness(factor=0.2)\n        ```\n        （`factor=0.2` 表示亮度将在 [0.8, 1.2] 范围内随机调整。）\n\n## 将图像增强整合到神经网络中\n\n文章提供了一个简单的卷积神经网络（CNN）架构示例，将上述四种图像增强技术作为数据增强管道的第一部分。\n\n```python\nimport tensorflow as tf\nfrom keras.models import Sequential\nfrom keras.layers import (\n    Layer, Input, RandomFlip, RandomRotation, RandomZoom,\n    Conv2D, MaxPooling2D, Flatten, Dense\n)\n\n# 自定义亮度增强层（如前所述）\nclass RandomBrightness(Layer):\n    def __init__(self, max_delta, **kwargs):\n        super().__init__(**kwargs)\n        self.max_delta = max_delta\n\n    def call(self, inputs):\n        return tf.image.random_brightness(inputs, max_delta=self.max_delta)\n\n    def get_config(self):\n        config = super().get_config()\n        config.update({\"max_delta\": self.max_delta})\n        return config\n\n# 定义数据增强管道\ndata_augmentation = Sequential([\n    Input(shape=(128, 128, 3)),\n    RandomFlip(\"horizontal\"),\n    RandomRotation(0.1),\n    RandomZoom(height_factor=0.2, width_factor=0.2),\n    RandomBrightness(max_delta=0.2)\n], name=\"data_augmentation\")\n\n# 包含增强层的简单 CNN 模型\nmodel = Sequential([\n    data_augmentation,\n    Conv2D(32, (3, 3), activation='relu'),\n    MaxPooling2D(),\n    Conv2D(64, (3, 3), activation='relu'),\n    MaxPooling2D(),\n    Flatten(),\n    Dense(64, activation='relu'),\n    Dense(10, activation='softmax') # 示例 CNN，用于10分类\n])\nmodel.summary()\n```\n\n![图像增强效果示例](https://machinelearningmastery.com/wp-content/uploads/2025/07/48cdbb28-6c53-4a90-90ab-33730ad8053c.png)\n\n需要注意的是，上述代码仅为示例。在实际应用中，可能无需应用所有增强技术，选择其中一部分可能就足够了。\n\n## 总结\n\n在图像数据可能存在变异性的计算机视觉模型中，图像增强技术能够帮助构建更鲁棒的模型，使其从多样化的数据条件中学习，从而提高模型的泛化能力。本文展示了几种图像增强策略，强调了它们的使用方法和在 Keras 中的实现，并演示了如何将这些增强步骤作为层集成到 CNN 架构中。",
-      "shortSummary": "本文介绍了图像增强技术如何提升计算机视觉模型的泛化能力和数据多样性。文章详细阐述了四种常见策略：水平翻转、旋转、缩放和亮度调整，包括它们的目的、应用场景及在Keras中的实现方法。最后，展示了如何将这些增强层整合到卷积神经网络中，以构建更鲁棒的模型。",
-      "translated_title": "图像增强技术：提升计算机视觉模型性能",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-ipc-image-augmentation-techniques-computer-vision.png",
-          "alt": "Image Augmentation Techniques to Boost Your CV Model Performance",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/Captura-de-pantalla-2025-07-18-a-las-15.33.45.png",
-          "alt": "Image augmentation techniques",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/48cdbb28-6c53-4a90-90ab-33730ad8053c.png",
-          "alt": "Image Augmentation Techniques to Boost Your CV Model Performance",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "In this article, you will learn: • the purpose and benefits of image augmentation techniques in computer vision for improving model generalization and diversity."
-    },
-    {
-      "title": "悄然毁掉机器学习项目的10个关键错误 (原标题: 10 Critical Mistakes that Silently Ruin Machine Learning Projects)",
-      "link": "https://machinelearningmastery.com/10-critical-mistakes-that-silently-ruin-machine-learning-projects/",
-      "pubDate": "Wed, 23 Jul 2025 14:10:24 +0000",
-      "isoDate": "2025-07-23T14:10:24.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "## 机器学习项目中的10个关键错误\n\n![机器学习项目中悄然毁掉项目的10个关键错误](https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-ipc-10-critical-mistakes-ruin-ml-projects.png)\n\n### 引言\n\n机器学习项目既令人兴奋又充满挑战。从数据收集、准备到模型部署和监控，许多环节都需要细致关注，以避免代价高昂的挫折、不准确的模型或资源浪费。本文概述了10个关键错误，如果未能正确识别和解决，这些错误可能会使机器学习项目偏离轨道——有时是以微妙且难以察觉的方式。这份清单涵盖了机器学习生命周期的不同阶段，从目标设定到部署系统的维护。\n\n### 机器学习项目生命周期中的10个错误\n\n1.  **目标不明确或模糊**\n    *   项目目标必须清晰且可衡量，例如预测超市未来30天销售额或实时视频动作识别系统。\n    *   缺乏明确可衡量的目标，将导致无法评估成功或协调利益相关者，从而浪费资源或构建解决错误问题的机器学习解决方案。\n\n2.  **数据质量差**\n    *   原始数据通常远非完美，常包含缺失值、噪声实例和不一致性，且可能无法代表所有相关的应用场景。\n    *   在“不完美数据”上训练模型，将导致模型产生不可靠的结果，印证了“垃圾进，垃圾出”的原则。\n\n3.  **数据预处理不当**\n    *   数据预处理是提高原始数据质量的关键步骤。\n    *   未能正确识别和执行必要的预处理步骤（如数值特征归一化、分类特征编码、处理不平衡数据）会严重影响模型性能。\n    *   数据泄露（例如，在训练期间使用测试集信息或无意中将目标变量包含在特征工程中）尤其危险，且通常不易察觉。\n\n4.  **选择错误的机器学习技术或模型类型**\n    *   模型复杂度应与问题复杂度匹配。\n    *   对复杂问题使用过于简单的模型会导致欠拟合，模型无法学习重要模式。\n    *   对简单任务使用不必要的复杂模型会导致过拟合，模型过度记忆训练数据而无法泛化到新数据。\n    *   盲目选择流行架构而不考虑问题背景，可能导致不必要的资源浪费。\n\n5.  **超参数调优不佳**\n    *   对于中高复杂度的机器学习模型，超参数调优是关键步骤。\n    *   在没有采用结构化方法（如网格搜索或贝叶斯优化）来寻找最佳配置的情况下，任意或使用默认超参数值，即使技术选择正确，也可能导致次优模型。\n\n6.  **模型评估不完整或不足**\n    *   仅依赖单一评估指标或在单一数据分割上测试模型，可能给出虚假的高性能感。\n    *   不使用交叉验证等适当评估机制，或未能确保模型暴露于各种真实世界可能遇到的情况，会影响评估的鲁棒性。\n\n7.  **模型不透明：缺乏可解释性或透明度**\n    *   在高风险领域（如金融、法律、医疗保健），模型行为、输入和预测限制必须能够向利益相关者解释，否则信任可能会受损。\n\n8.  **部署策略不当**\n    *   模型部署到生产环境是一个工程过程，需要技术专长和周密的规划，包括模型预测延迟、基础设施和再训练管道。\n    *   即使性能良好的模型，如果部署过程不当，在生产环境中也可能变得毫无用处。\n\n9.  **忽视用户采纳和反馈**\n    *   部署后，终端用户成为模型的主要交互点。如果用户不理解或不信任模型的预测，他们就不会继续使用。\n    *   应在项目早期（特别是设计阶段）让用户参与。可操作的输出是成功的关键指标，用户反馈有助于持续改进模型和发现需要修订的领域。\n\n10. **缺乏持续维护或监控**\n    *   机器学习模型部署后常被忽视监控和维护，这可能使之前的所有努力付诸东流。\n    *   真实世界数据会演变，模型性能会因数据漂移或环境变化而随时间衰减。\n    *   监控、设置警报和建立再训练管道对于对抗性能下降至关重要，否则，在团队发现问题时，损害可能已经造成。\n\n### 总结\n\n本文探讨了机器学习系统开发的生命周期，强调了10个可能导致项目失败的关键（有时是微妙的）错误，并概述了避免这些错误的有效方法。",
-      "shortSummary": "本文概述了悄然毁掉机器学习项目的10个关键错误。这些错误贯穿项目生命周期，包括：目标模糊、数据质量差、预处理不当、模型选择错误、超参数调优不足、评估不完整、模型缺乏可解释性、部署策略不当、忽视用户反馈以及缺乏持续维护和监控。识别并解决这些问题对于确保机器学习项目的成功至关重要。",
-      "translated_title": "悄然毁掉机器学习项目的10个关键错误",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-ipc-10-critical-mistakes-ruin-ml-projects.png",
-          "alt": "10 Critical Mistakes that Silently Ruin Machine Learning Projects",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Machine learning projects can be as exciting as they are challenging."
-    },
-    {
-      "title": "使用Scikit-LLM进行零样本和少样本分类 (原标题: Zero-Shot and Few-Shot Classification with Scikit-LLM)",
-      "link": "https://machinelearningmastery.com/zero-shot-and-few-shot-classification-with-scikit-llm/",
-      "pubDate": "Tue, 22 Jul 2025 12:00:07 +0000",
-      "isoDate": "2025-07-22T12:00:07.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "## 使用Scikit-LLM进行零样本和少样本分类\n\n![Zero-Shot and Few-Shot Classification with Scikit-LLM](https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-ipc-zero-few-shot-classification.png)\n\n本文介绍了如何利用 Scikit-LLM 库，将大型语言模型（LLMs）如 OpenAI 的 GPT 集成到 Scikit-learn 框架中，以实现零样本（Zero-Shot）和少样本（Few-Shot）文本分类。\n\n### Scikit-LLM 简介\n\nScikit-LLM 是一个 Python 库，旨在将 OpenAI 的 GPT-3.5 和 GPT-4 等大型语言模型与 Scikit-learn 机器学习框架相结合。它提供了一个简洁的接口，允许用户通过自然语言提示将 LLMs 用作零样本或少样本分类器，从而简化了文本分类、情感分析和主题标注等下游文本分析任务。\n\n### 零样本分类与少样本分类的区别\n\n在深入实践之前，理解这两种分类方法的区别至关重要：\n\n*   **零样本分类（Zero-shot classification）**：\n    *   LLM 在没有来自数据集的任何预先标记示例的情况下对文本进行分类。\n    *   模型仅通过可能的类别标签进行提示。\n*   **少样本分类（Few-shot classification）**：\n    *   在提示中提供少量标记示例，通常每个可能类别提供几个示例。\n    *   这些示例用于引导 LLM 的推理，使其更准确地进行分类。\n\n### 逐步操作指南\n\n以下是使用 Scikit-LLM 实现零样本和少样本分类的详细步骤：\n\n1.  **安装 Scikit-LLM**：\n    ```bash\n    !pip install scikit-llm\n    ```\n2.  **导入所需类**：\n    ```python\n    from skllm.config import SKLLMConfig\n    from skllm import ZeroShotGPTClassifier\n    ```\n3.  **配置 OpenAI API 密钥**：\n    *   使用 OpenAI 模型需要 API 密钥。用户需在 OpenAI 平台注册并创建新的 API 密钥。\n    *   请注意，如果未开通付费计划，使用示例中的模型可能会受到限制。\n    ```python\n    SKLLMConfig.set_openai_key(\"YOUR_API_KEY_HERE\")\n    ```\n4.  **示例数据集**：\n    *   文章使用一个包含用户评论及其情感标签的小型数据集作为示例：\n    ```python\n    X = [\n        \"I love this product! It works great and exceeded my expectations.",
-      "shortSummary": "Scikit-LLM 是一个 Python 库，用于将大型语言模型（LLMs）集成到 Scikit-learn 框架中，实现文本分类。它支持零样本和少样本分类：零样本分类无需预先标记的训练数据，仅通过类别标签进行提示；少样本分类则通过在提示中提供少量标记示例来引导模型推理。两种方法都简化了 LLM 在文本分析任务中的应用，但它们在利用示例数据的方式上有所不同。",
-      "translated_title": "使用Scikit-LLM进行零样本和少样本分类",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/07/mlm-ipc-zero-few-shot-classification.png",
-          "alt": "Zero-Shot and Few-Shot Classification with Scikit-LLM",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "In this article, you will learn: • how Scikit-LLM integrates large language models like OpenAI's GPT with the Scikit-learn framework for text analysis."
     }
   ],
-  "lastUpdated": "2025-08-09T09:27:42.694Z"
+  "lastUpdated": "2025-08-10T09:29:20.873Z"
 }
