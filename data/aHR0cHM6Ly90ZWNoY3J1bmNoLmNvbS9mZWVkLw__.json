@@ -5,6 +5,32 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "一个曾经微小的研究实验室如何帮助英伟达成为一家4万亿美元的公司 (原标题: How a once-tiny research lab helped Nvidia become a $4 trillion-dollar company)",
+      "link": "https://techcrunch.com/2025/08/12/how-a-once-tiny-research-lab-helped-nvidia-become-a-4-trillion-dollar-company/",
+      "pubDate": "Tue, 12 Aug 2025 12:30:00 +0000",
+      "isoDate": "2025-08-12T12:30:00.000Z",
+      "creator": "Rebecca Szkutak",
+      "summary": "# 英伟达研究实验室的崛起与转型\n\n英伟达（Nvidia）的研究实验室在公司发展成为一家市值4万亿美元、推动人工智能（AI）繁荣的巨头过程中发挥了关键作用。该实验室从2009年比尔·戴利（Bill Dally）加入时的约十几人，专注于光线追踪技术，发展到如今拥有400多名员工。目前，该实验室正致力于开发驱动机器人和AI所需的技术，部分研究成果已应用于产品中，例如近期为机器人开发者推出的一系列世界AI模型、库和基础设施。\n\n## 比尔·戴利的角色与实验室扩张\n\n比尔·戴利，现任英伟达首席科学家，自2003年起便为英伟达提供咨询服务。2009年，在英伟达CEO黄仁勋（Jensen Huang）和当时研究实验室负责人大卫·柯克（David Kirk）的“全力说服”下，戴利决定永久加入英伟达。他认为这是“完美契合”其兴趣和才能的决定，并相信这是他能为世界做出最大贡献的地方。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/08/NEW-Bill-Dally.jpg?w=680)\n*比尔·戴利 / 英伟达*\n\n戴利接管实验室后，首要任务是扩张。研究人员迅速将工作范围扩展到光线追踪之外，包括电路设计和超大规模集成（VLSI）等领域。此后，实验室的扩张从未停止。\n\n## 早期对AI的关注\n\n英伟达在AI热潮兴起之前就已预见到其潜力。早在2010年，即当前AI狂潮的十多年前，英伟达就开始探索AI GPU的概念。戴利表示，他们当时就意识到AI将“彻底改变世界”，并说服黄仁勋“加倍投入”。公司开始专门为AI优化GPU，开发大量支持软件，并与全球从事AI研究的学者合作，远早于AI被广泛认为是“相关”领域。\n\n## 转向物理AI与机器人\n\n随着英伟达在AI GPU市场占据主导地位，公司开始寻找AI数据中心之外的新需求领域，这促使他们将目光投向了物理AI和机器人技术。戴利表示，机器人最终将成为世界上的重要角色，英伟达的目标是成为“所有机器人的大脑”，为此需要开发关键技术。\n\n## 桑贾·菲德勒的贡献\n\n桑贾·菲德勒（Sanja Fidler），英伟达AI研究副总裁，于2018年加入英伟达研究实验室。此前，她已在麻省理工学院与学生团队合作研究机器人仿真模型。黄仁勋对她的工作表现出浓厚兴趣，并邀请她“来和我一起工作”，而非“和我们一起工作”或“为我们工作”，这体现了英伟达独特的文化。\n\n![图片 2](https://techcrunch.com/wp-content/uploads/2025/08/SanjaFidler_1-2.jpg?w=544)\n*桑贾·菲德勒 / 英伟达*\n\n菲德勒加入后，在多伦多创建了名为Omniverse的英伟达研究实验室，专注于为物理AI构建仿真。\n\n## 世界模型的开发与未来展望\n\n构建这些模拟世界的首要挑战是获取必要的3D数据，包括大量潜在图像和将这些图像转换为模拟器可用3D渲染的技术。英伟达为此投资了“可微分渲染”技术，该技术使渲染能够适应AI，实现从3D到图像/视频以及反向的转换。\n\n*   **GANverse3D**: Omniverse于2021年发布了其首个将图像转换为3D模型的版本。\n*   **Neuric神经重建引擎**: 随后，他们着手处理视频到3D模型的转换，利用机器人和自动驾驶汽车的视频，通过2022年首次宣布的Neuric神经重建引擎创建3D模型和仿真。\n*   **Cosmos世界AI模型**: 这些技术是英伟达在今年1月CES展会上宣布的Cosmos系列世界AI模型家族的支柱。\n\n目前，实验室的重点是提高这些模型的速度。对于机器人而言，响应时间需要比视频游戏更快，目标是让模型比当前快100倍，这将极大地提升它们在机器人或物理AI应用中的实用性。\n\n近期，英伟达在SIGGRAPH计算机图形学大会上宣布了一系列新的世界AI模型，旨在创建可用于训练机器人的合成数据，并发布了面向机器人开发者的新库和基础设施软件。\n\n尽管取得了显著进展，且当前机器人（尤其是人形机器人）备受关注，但英伟达研究团队保持现实态度。戴利和菲德勒都认为，人形机器人进入家庭至少还需要几年时间，菲德勒将其与自动驾驶汽车的发展时间线相比较。戴利强调，AI是实现这一目标的关键推动力，从用于机器人感知的视觉AI，到对任务和运动规划以及操作至关重要的生成式AI。随着每个小问题的解决和训练网络所需数据量的增长，这些机器人将不断发展。",
+      "shortSummary": "英伟达的研究实验室从小型团队发展壮大，帮助公司成为4万亿美元的AI巨头。该实验室早在2010年就专注于AI GPU，并推动公司在AI领域取得领先。目前，其核心工作转向物理AI和机器人技术，旨在开发“机器人大脑”。通过可微分渲染和世界模型（如Cosmos系列），实验室致力于创建高效的机器人仿真和训练数据。尽管进展显著，但人形机器人进入家庭仍需数年，AI是推动机器人发展的关键。",
+      "translated_title": "一个曾经微小的研究实验室如何帮助英伟达成为一家4万亿美元的公司",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/NEW-Bill-Dally.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/SanjaFidler_1-2.jpg?w=544",
+          "alt": "",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Nvidia's research lab developed the technology that took the company from a video game GPU startup to a $4 trillion-dollar company. "
+    },
+    {
       "title": "TDK以2100万美元支持Ultraviolette，将印度制造的电动摩托车推向全球 (原标题: TDK backs Ultraviolette with $21M to take India-made electric motorcycles global)",
       "link": "https://techcrunch.com/2025/08/11/tdk-backs-ultraviolette-with-21m-to-take-india-made-electric-motorcycles-global/",
       "pubDate": "Tue, 12 Aug 2025 04:30:00 +0000",
@@ -375,27 +401,7 @@
       ],
       "contentSource": "完整文章",
       "content": "The automaker is investing $2 billion into the Louisville Assembly Plant with a $30,000 EV pickup slated for 2027."
-    },
-    {
-      "title": "英伟达、AMD若向美国支付分成，或可向中国出售高端AI芯片 (原标题: Nvidia, AMD may sell high-end AI chips to China if they pay US a cut)",
-      "link": "https://techcrunch.com/2025/08/11/nvidia-amd-may-sell-high-end-ai-chips-to-china-if-they-pay-us-a-cut/",
-      "pubDate": "Mon, 11 Aug 2025 13:09:13 +0000",
-      "isoDate": "2025-08-11T13:09:13.000Z",
-      "creator": "Ram Iyer",
-      "summary": "## 英伟达、AMD或可向中国出售高端AI芯片，但需向美国政府支付分成\n\n### 核心协议与背景\n据《金融时报》援引匿名消息来源报道，英伟达（Nvidia）和AMD已同意向美国政府支付其在中国销售高端AI芯片收入的15%，以换取在该国销售这些芯片的许可。此举标志着AI芯片竞争的叙事从最初的美国国家安全问题转向了关税。\n\n### 涉及的芯片与许可\n*   **英伟达**：将分享其H20 AI芯片在中国的销售收入。\n*   **AMD**：将分享其MI308芯片的销售分成。\n*   报道指出，美国政府已开始为这两家公司的芯片销售发放许可。\n\n### 政策演变与公司回应\n*   **特朗普政府时期**：曾于4月限制某些高性能AI推理芯片对华销售，但在英伟达承诺在美国投资高达5000亿美元用于数据中心后，于几个月后暂停了禁令。\n*   **拜登政府时期**：英伟达在7月表示将恢复其H20 AI芯片对华销售，该芯片是为应对拜登政府的限制而专门为中国市场设计的。\n*   **英伟达发言人声明**：公司遵守美国政府为其参与全球市场设定的规则，并希望出口管制规则能让美国在中国和全球市场保持竞争力。\n\n### 决策背后的考量与争议\n*   **贸易谈判关联**：美国商务部长霍华德·卢特尼克表示，英伟达的政策转变与中美之间关于稀土元素的贸易谈判有关，稀土是制造电动汽车可充电电池等组件所必需的。\n*   **批评声音**：此举也引发了批评。上个月，国家安全专家和前政府官员致信卢特尼克，敦促政府改变这一决定。\n\n### 图片\n![2025年7月20日，中国北京，第三届中国国际供应链博览会上的英伟达展位](https://techcrunch.com/wp-content/uploads/2025/08/GettyImages-2227140868.jpg?w=1024)",
-      "shortSummary": "英伟达和AMD已同意向美国政府支付其在中国销售高端AI芯片（如英伟达H20和AMD MI308）收入的15%，以获得销售许可。此举标志着美国对华AI芯片政策从国家安全转向关税。美国政府已开始发放许可，尽管有国家安全专家对此表示担忧，但此举可能与中美稀土贸易谈判有关。",
-      "translated_title": "英伟达、AMD若向美国支付分成，或可向中国出售高端AI芯片",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/GettyImages-2227140868.jpg?w=1024",
-          "alt": "the NVIDIA booth at the 3rd China International Supply Chain Expo in Beijing, China, on July 20, 2025",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The global AI chip race narrative used to be about U.S. national security, but apparently now it's about tariffs: Nvidia and AMD have agreed to pay the U.S. government 15% of the revenue they make from sales of high-end AI chips to China in exchange for licenses to sell those chips in the country, the Financial Times reported, citing anonymous sources. "
     }
   ],
-  "lastUpdated": "2025-08-12T06:34:27.894Z"
+  "lastUpdated": "2025-08-12T12:45:17.982Z"
 }
