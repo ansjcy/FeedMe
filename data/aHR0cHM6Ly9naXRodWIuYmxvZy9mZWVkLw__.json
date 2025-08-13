@@ -5,6 +5,107 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "我们为何开源MCP服务器，以及这对您意味着什么 (原标题: Why we open sourced our MCP server, and what it means for you)",
+      "link": "https://github.blog/open-source/maintainers/why-we-open-sourced-our-mcp-server-and-what-it-means-for-you/",
+      "pubDate": "Tue, 12 Aug 2025 13:52:49 +0000",
+      "isoDate": "2025-08-12T13:52:49.000Z",
+      "creator": "Kedasha Kerr",
+      "summary": "# 模型上下文协议 (MCP) 与 GitHub 开源服务器\n\n## 核心问题与MCP的诞生\n当大型语言模型 (LLMs) 无法连接到外部应用和工具时，它们容易产生幻觉或基于过时信息给出不准确的答案。为了解决这一核心问题，**模型上下文协议 (MCP)** 应运而生。MCP 是一个开放协议，旨在标准化 LLM 应用程序如何连接并使用外部工具和数据源。它类似于语言服务器协议 (LSP)，两者都遵循客户端-服务器架构，简化了系统间的交互，并提供了标准化的通信模式。MCP 被誉为“LLMs 的 LSP”。\n\n## GitHub 开源其 MCP 服务器\nGitHub 现已开源其自身的 MCP 服务器。该服务器充当 GitHub 与任何 LLM 之间的“事实来源接口”，有效减少了幻觉，并解锁了新的自动化工作流。文章指出，相关内容可在 GitHub Podcast 的最新一集中了解。\n\n## MCP 架构\nMCP 基于客户端-服务器架构，其中 MCP 主机（例如 Copilot Chat 等 AI 应用程序）与 MCP 服务器保持一对一连接。关键概念包括：\n*   **MCP 主机 (MCP Host)**：希望通过 MCP 访问数据的 LLM 应用程序（例如 VS Code, Copilot Chat）。\n*   **MCP 客户端 (MCP Clients)**：在主机应用程序内部与 MCP 服务器保持一对一连接。\n*   **MCP 服务器 (MCP Servers)**：通过 MCP 暴露特定功能的轻量级程序。\n\n## GitHub MCP 服务器的功能\nGitHub MCP 服务器将 AI 工具直接连接到 GitHub 平台。用户不再需要执行 REST 或 GraphQL API 调用，而是可以将兼容 MCP 的客户端或代理指向服务器，并以自然语言请求所需内容。例如，您可以要求它：\n*   列出仓库中所有未解决的问题。\n*   显示等待审查的拉取请求。\n*   获取仓库或文件的元数据。\n*   创建或评论问题。\n\n其核心在于，自然语言请求能够自动转换为结构化、语义明确的 API 调用。这消除了创建自定义 API 端点或解析 Markdown 描述的需要。由于服务器支持 MCP，它可以与任何兼容的主机协同工作，包括 Copilot Workspace、VS Code 插件、基于 LLM 的产品、自定义聊天 UI 和自建代理。\n\n## 工作原理\n该架构概念简单但功能强大：\n1.  **服务器 (Server)**：GitHub 的 MCP 服务器是一个独立的服务，监听结构化的 MCP 请求。\n2.  **客户端 (Client)**：主机和服务器之间的连接器，负责将用户意图转换为有效的 MCP 请求。\n3.  **主机 (Host)**：AI 前端（如 IDE 助手或聊天 UI），负责呈现对话并将结构化提示发送到下游。\n\n当用户提出问题时，主机将其翻译为语义请求，客户端将其打包为 MCP 请求，服务器从 GitHub 获取真实数据并以结构化 JSON 格式返回。这种设计实现了语言模型、用户体验以及其可访问的数据或工具之间的清晰分离，每一层都具有模块化、可测试和可互换的特性。\n\n## 如何开始使用 GitHub 远程 MCP 服务器\n现在即可开始使用 GitHub 的 MCP 服务器。您需要：\n*   **MCP 主机**：VS Code 或任何其他支持 MCP 的 LLM 应用程序。\n*   **MCP 客户端**：Copilot 代理、LLM 聊天 UI 或支持 MCP 的自定义客户端。\n*   **GitHub MCP 服务器**：可从官方 GitHub MCP 服务器仓库获取。\n\n在 VS Code 中安装 GitHub MCP 服务器的步骤：\n1.  添加服务器配置片段：\n    ```json\n    {\n      \"servers\": {\n        \"github\": {\n          \"type\": \"http\",\n          \"url\": \"https://api.githubcopilot.com/mcp/\"\n        }\n      }\n    }\n    ```\n2.  创建配置文件：在项目根目录创建 `/vscode` 目录，并在其中创建 `mcp.json` 文件。\n3.  将上述代码粘贴到 `mcp.json` 文件中。\n4.  完成设置：点击出现的启动按钮，并在提示时完成 OAuth 流程。\n\n## 实际应用案例\n早期采用者已利用 MCP 服务器创建了许多实用工具：\n*   **Markdown 自动化**：一个团队使用 MCP 服务器将数十个 GitHub Issue 转换为社区微站点的 Markdown 内容文件，实现了自动化处理。\n*   **每周团队摘要**：一个轻量级机器人扫描特定 GitHub 仓库，编译每周摘要，并将其发布到 Slack，保持团队同步。\n*   **对话式项目助手**：一个开源团队构建了基于聊天的界面，贡献者可以提出自然语言问题，代理使用 MCP 转换为 GitHub 查询并返回实时数据摘要。\n*   **个人 LLM 仪表板**：一位开发者将自己的 GitHub 账户连接到本地仪表板上的 MCP 感知代理，提供主动提示，如需要审查的拉取请求、过时问题和基于合并更改的草稿发布说明。\n\n通过为 AI 模型提供真实、结构化的上下文，MCP 服务器使工具变得更智能、更安全。\n\n## 更多资源\n*   阅读关于如何使用 MCP 服务器的实用指南。\n*   深入了解如何构建安全可扩展的远程 MCP 服务器。\n*   订阅 GitHub Podcast，收听最新一集。\n\n文章作者：\n![Kedasha Kerr](https://avatars.githubusercontent.com/u/47188731?v=4&s=200)\nKedasha Kerr 是 GitHub 的开发者倡导者。\n\n相关内容：\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**：掌握 GitHub 所需的一切。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**：在 GitHub 上构建未来。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**：了解使用 GitHub 的公司和工程团队。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) **GitHub Universe 2025**：参加旧金山的年度大会。",
+      "shortSummary": "GitHub 已开源其模型上下文协议（MCP）服务器，旨在解决大型语言模型（LLMs）因缺乏外部工具和数据连接而产生的幻觉问题。MCP 是一个开放协议，标准化了 LLM 应用与外部资源交互的方式，类似于 LLM 的语言服务器协议（LSP）。GitHub 的 MCP 服务器充当 GitHub 与 LLM 之间的“事实来源”接口，允许用户通过自然语言请求获取实时、结构化的 GitHub 数据，从而实现自动化并提高 AI 工具的智能性和安全性。它支持多种实际应用，从自动化文档生成到个性化仪表板。",
+      "translated_title": "我们为何开源MCP服务器，以及这对您意味着什么",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/47188731?v=4&s=200",
+          "alt": "Kedasha Kerr",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Learn how maintainers are using the GitHub MCP Server and what they are building in this episode of the GitHub Podcast.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/why-we-open-sourced-our-mcp-server-and-what-it-means-for-you/\">Why we open sourced our MCP server, and what it means for you</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "大规模保障供应链安全：从71个重要开源项目开始 (原标题: Securing the supply chain at scale: Starting with 71 important open source projects)",
+      "link": "https://github.blog/open-source/maintainers/securing-the-supply-chain-at-scale-starting-with-71-important-open-source-projects/",
+      "pubDate": "Mon, 11 Aug 2025 16:00:00 +0000",
+      "isoDate": "2025-08-11T16:00:00.000Z",
+      "creator": "Kevin Crosby",
+      "summary": "# 大规模保障供应链安全：从71个重要开源项目开始\n\n## 引言：软件供应链安全挑战\n\n2021年12月Log4j零日漏洞的爆发，凸显了资源不足的开源库对整个软件供应链的巨大影响。如今，平均每个云工作负载包含超过500个依赖项，其中许多由无偿志愿者维护，因此支持和保护这一生态系统的需求变得前所未有的紧迫。\n\n## GitHub安全开源基金会\n\n### 成立背景与目标\n\n为应对这一挑战，GitHub于2024年11月启动了GitHub安全开源基金会。该基金旨在通过为维护者提供资金支持，让他们参与为期三周的项目，从而获得安全教育、指导、工具、认证以及安全意识维护者社区等资源。通过将资金与程序化安全成果挂钩，基金的目标是扩大安全影响力、降低风险并大规模保障软件供应链安全。\n\n### 运作方式\n\n*   **项目结构**：每个项目参与一个为期三周的“冲刺”培训，并持续12个月的参与。\n*   **课程设计**：由GitHub安全实验室设计和策划，由GitHub及其合作伙伴的安全专家提供培训。培训分为每周不同的重点领域，包括：\n    *   开源安全基础\n    *   威胁建模和安全编码\n    *   漏洞管理和AI安全\n*   **资金支持**：每个项目通过GitHub Sponsors获得10,000美元（冲刺期间6,000美元，6个月和12个月安全检查时各2,000美元）。\n*   **额外资源**：项目还受邀加入新的安全社区，并可利用GitHub安全实验室的办公时间，获得可立即实施的安全资源和Azure云基础设施积分。\n\n### 早期成果与影响\n\n基金会的前两期项目汇集了来自71个重要且快速增长的开源项目的125名维护者，并取得了显著的早期成果：\n\n*   **漏洞修复**：修复了CodeQL检测到的1,100多个漏洞，降低了风险暴露面。\n*   **漏洞披露**：参与者发布了50多个新的通用漏洞披露（CVE），从而告知并保护了下游依赖方。\n*   **秘密管理**：阻止了92个新秘密泄露，并检测和解决了176个已泄露的秘密。\n*   **能力提升**：100%的维护者表示他们获得了可操作的后续步骤，可用于未来一年的路线图。\n*   **最佳实践采纳**：80%的项目启用了三个或更多基于GitHub的安全功能。\n*   **面向未来**：63%的项目表示他们对AI和MCP（多方计算）安全有了更好的理解，并利用GitHub Copilot进行漏洞扫描、安全审计、定义和实施模糊测试策略等。\n\n这些成果表明了项目会话带来的直接安全影响，并且这种势头才刚刚开始。维护者们已经接受了安全文化，建立了安全积压，并积极与社区中的维护者以及其直接项目贡献者和消费者分享见解，从而使整个生态系统受益，安全影响力将持续增长。第三期项目将于2025年9月启动，旨在吸引更多深入依赖树和独立管理关键依赖项的维护者。\n\n## 重点项目类别及案例分析\n\n### 1. AI和机器学习框架/边缘LLM工具\n\n*   **重要性**：这些项目是当前AI工作（如LLMs、代理、编排层和模型工具链）的基石，每月有数千万次安装和克隆。一个提示注入缺陷或中毒的权重文件可能一夜之间影响数千个下游应用程序，攻击者可能获得“远程DevOps”权限。\n*   **Ollama项目亮点**：该项目使本地运行大型语言模型成为可能。Ollama利用此机会对其系统的每个活动部分（包括GitHub Actions、DNS安全、模型分发、模型在Ollama引擎中的执行、自动更新检查等）进行了威胁建模，并修剪了未使用的依赖项。\n*   **AutoGPT的GravitasML项目亮点**：该项目是为LLMs构建的MIT许可XML解析器。AutoGPT团队在冲刺结束后，将CodeQL集成到AutoGPT平台和GravitasML的每个拉取请求中，并构建了一个轻量级“安全代理”来提示贡献者加强控制。他们还修订了安全策略，建立了正式的事件响应工作流程，并规划了28项后续任务（从模糊测试XML解析器到完成OSS Scorecard），以构建更安全的LLM代理的持久路线图。\n\n### 2. 前端和全栈框架/UI库\n\n*   **重要性**：这些框架承载用户界面，通常捆绑自己的服务器端路由，安装量达数百万。提升其安全性可关闭潜在的XSS、模板注入和供应链跳点。单个组件套件中的漏洞提交可能泄露来自每个SaaS仪表板的JWT或会话cookie。\n*   **shadcn/ui项目亮点**：这个React组件库受到OpenAI等领先组织的信任。在为期三周的冲刺中，该项目审计了每个GitHub Actions工作流和秘密，更新了SECURITY.md、许可证和依赖项，并根据“安全设计UX”研讨会创建了一个框架，用于识别恶意威胁行为者可能攻击其项目的方式，并制定了降低风险或完全阻止的策略。他们启用了CodeQL（首次扫描就发现了一个不安全的`dangerouslySetInnerHTML`路径），并起草了正式的漏洞报告流程和威胁模型，为未来的贡献者制定了清晰、公开的安全路线图。该项目还利用GitHub Copilot设置并实施了模糊测试。\n\n### 3. Web服务器、网络和网关\n\n*   **重要性**：如果一个进程监听443端口，很可能这些Web服务器或网关项目是其堆栈的一部分。加固它们可以保护所有通过网络传输的cookie、身份验证头和JSON负载。未签名的二进制文件或薄弱的发布管道使得下游依赖方难以响应供应链安全事件。\n*   **Node.js项目亮点**：在冲刺期间，Node.js安全工作组修订了项目的威胁模型，并启动了一个拉取请求，将CodeQL集成到核心代码中——这得益于一个新的工作流，该工作流自动审查代码扫描警报并标记最不明确的错误进行重构。这些升级以及未来版本中计划的签名检查，将影响所有使用Node二进制文件的服务器端JavaScript工作负载。\n\n### 4. DevOps、构建系统、容器工具\n\n*   **重要性**：这些工具涉及每次提交和部署。如果攻击者在此处立足，他们就控制了整个管道。通过使用Sigstore签署二进制文件，这些项目为平台工程师提供了加密证明，证明生产环境中运行的位是由真正的维护者构建的，而不是中间的攻击者。\n*   **Turborepo项目亮点**：在为期三周的冲刺中，Turborepo启用了GitHub私有漏洞报告，收紧了过于宽松的工作流令牌，并发布了生产就绪的IRP（事件响应计划），同时使用CodeQL扫描每个拉取请求。这些防护措施保护了数千个monorepo所依赖的Rust驱动的构建缓存。该团队已经起草了公开威胁模型和提供商通知手册，以便在零日漏洞传播之前悄悄处理。\n\n### 5. 安全框架、身份和合规工具\n\n*   **重要性**：这些库是互联网的锁、账本和审计日志。使这些项目更安全会波及整个生态系统，使每个人都更安全。当身份服务器被攻破时，攻击者可以伪造合法的令牌或发布标记为“安全”的篡改图像。对这些供应链关键项目的维护者进行前期安全资助，其成本远低于全球范围内的供应链安全事件处理。\n*   **Log4j项目亮点**：Apache Log4j团队加强了每个GitHub Actions工作流以防脚本注入，起草了全新的威胁模型，并深化了与开源社区的协作。接下来，他们将捆绑一个CodeQL包，用于标记下游代码中不安全的日志模式，并推出内部模糊测试。他们与ASF安全团队紧密合作，旨在树立一个标准，影响许多其他ASF项目。\n\n### 6. 开发者工具和CLI辅助工具\n\n*   **重要性**：这些流行的辅助工具在全球的笔记本电脑和CI节点上运行。加固它们可以切断网络钓鱼路径和横向移动路径。虽然大部分供应链安全工作集中在运行时库上，但对维护者及其所依赖工具的攻击表明，开发者工具对于安全加固工作至关重要。受损的shell插件可能导致任意代码执行，例如在开发者启动shell时窃取SSH密钥。\n*   **Charset-Normalizer项目亮点**：这个每天在PyPI上被下载约2000万次的编码辅助工具，通过放弃弱SMS 2FA转而使用更强的基于通行密钥的MFA，启用GitHub秘密扫描，并修补之前未注意到的高风险GitHub Actions，从而加强了防御。维护者现在正在为每个版本自动化SBOM生成——这项工作将很快使Python最普遍的传递依赖项之一既可审计又符合CRA（网络弹性法案）规定。\n*   **nvm项目亮点**：这个Node版本管理器利用冲刺发布了其首个事件响应计划，并规划了公开漏洞披露策略的路线图——将近期审计的经验教训转化为具体的防护措施。nvm的维护者首次在该项目中学习了如何使用Copilot进行安全指导和输入。接下来，维护者将连接自定义CodeQL查询和模糊测试工具，以对nvm的Bash内部进行压力测试，然后将该操作手册分享给Express等OpenJS兄弟项目，以便各地的开发环境都能继承这些升级。\n*   **JUnit项目亮点**：在为期三周的冲刺中，JUnit在其所有存储库中推出了端到端CodeQL扫描，并修复了第一波发现的问题，正式制定了公开事件响应计划，并通过将`GITHUB_TOKEN`切换为明确的最小权限来锁定每个工作流。\n\n## 未来展望\n\nGitHub安全开源基金会的工作仍在继续，第三期项目即将启动，将有更多关键的开源项目和维护者加入，共同提升整个软件生态系统的安全性。",
+      "shortSummary": "GitHub安全开源基金会已帮助71个重要开源项目显著提升安全态势。该基金通过提供资金、专家指导和可操作的策略，支持维护者参与为期三周的安全项目。早期成果包括修复1100多个漏洞、发布50多个CVE、阻止秘密泄露，并加速了安全最佳实践的采纳。基金会通过加固AI/ML框架、前端库、Web服务器、DevOps工具、安全框架和开发者工具等关键领域，有效降低了软件供应链风险，并促进了安全文化的建立。",
+      "translated_title": "大规模保障供应链安全：从71个重要开源项目开始",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Learn how the GitHub Secure Open Source Fund helped 71 open source projects significantly improve their security posture through direct funding, expert guidance, and actionable playbooks.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/securing-the-supply-chain-at-scale-starting-with-71-important-open-source-projects/\">Securing the supply chain at scale: Starting with 71 important open source projects</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "再见，GitHub ♥️ (原标题: Auf Wiedersehen, GitHub ♥️)",
+      "link": "https://github.blog/news-insights/company-news/goodbye-github/",
+      "pubDate": "Mon, 11 Aug 2025 14:56:37 +0000",
+      "isoDate": "2025-08-11T14:56:37.000Z",
+      "creator": "Thomas Dohmke",
+      "summary": "## Thomas Dohmke 宣布离开 GitHub\n\n在领导 GitHub 超过十年，并将其带入 Copilot 和 AI 时代后，现任首席执行官 Thomas Dohmke 宣布将于 2025 年底离职，重新回归创业领域。他将继续留任至 2025 年底，以协助完成过渡。GitHub 及其领导团队将继续作为微软 CoreAI 组织的一部分履行其使命。\n\n### GitHub 的发展与成就\n\nDohmke 在任期间，GitHub 取得了显著的增长和技术突破：\n\n*   **规模与社区**：GitHub 现已拥有超过 10 亿个代码库和分支，以及超过 1.5 亿开发者，其在全球公司的市场地位无可匹敌。每年都有更多的开源项目和贡献，AI 项目在过去一年中翻了一番。\n*   **平台优化**：大幅提升了可访问性和可用性，将 GitHub 引入欧盟、澳大利亚，并为在美国获得 FedRAMP 认证而回归美国，同时修复了大量细节问题。\n*   **GitHub Advanced Security**：通过 AI 的力量，将行业推向“发现即修复”的模式，将平均修复时间缩短了 60%，使团队修复漏洞的速度提高了 3 倍。\n*   **GitHub Actions**：已成熟成为全球领先的 CI 解决方案，每月运行时间达到 30 亿分钟，同比增长 64%。\n*   **GitHub Copilot**：从一个简单的自动补全工具发展成为会话式编程（Copilot Chat & Voice）、代码审查和修复，以及通过 GitHub Spark 进行全栈应用创建的强大工具。目前，GitHub Copilot 拥有超过 2000 万用户，是 AI 时代最成功、最活跃市场的领导者。\n    *   它是微软首个多模型解决方案，与 Anthropic、Google 和 OpenAI 合作。\n    *   推出了 Copilot Free，以及 VS Code 中的同步代理模式和 GitHub 原生的异步编码代理。\n    *   被认为是自个人电脑问世以来软件开发领域最大的变革。\n\n### 未来愿景\n\nDohmke 坚信，通过开发者 AI 的新时代，无论个人掌握何种语言或编程熟练度，都能将创意变为现实。他预见世界将很快出现 10 亿开发者，由数十亿 AI 代理赋能，将人类的智慧融入到一场新的软件淘金热中，而 GitHub 正是这一进程的起点。\n\n### 感谢与展望\n\nThomas Dohmke 对 GitHub 团队（Hubbers）表达了深切的自豪和感谢，认为与他们共事是巨大的荣幸，并相信他们共同“扭转了技术的发展弧线，使其变得更好”。\n\n### 作者信息\n\nThomas Dohmke 是 GitHub 的首席执行官，拥有机械工程博士学位，并是一位著名的 TED 演讲者。他致力于构建工具以提升开发者的幸福感。\n\n![Thomas Dohmke](https://secure.gravatar.com/avatar/f9a3d6bee42f4503d3169861b9ecdfab5b2faebc73eb6344d2c3fa15727da799?s=200&d=mm&r=g)\n\n### 相关内容\n\n*   **我们需要一个欧洲主权技术基金**：探讨开源软件作为关键基础设施的资金缺口。\n*   **探索更多来自 GitHub 的内容**：\n    *   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切。\n    *   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来。\n    *   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用 GitHub 的公司和工程团队。\n    *   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025：在旧金山参加年度大会的最后机会。",
+      "shortSummary": "GitHub 首席执行官 Thomas Dohmke 宣布将于 2025 年底离职，回归创业。在他领导下，GitHub 取得了巨大发展，用户数和代码库激增，并成功推出了 GitHub Copilot，使其成为 AI 时代开发者工具的领导者。Dohmke 坚信 AI 将赋能十亿开发者，开启软件开发新纪元。他感谢团队的贡献，并对GitHub的未来充满信心。",
+      "translated_title": "再见，GitHub ♥️",
+      "images": [
+        {
+          "url": "https://secure.gravatar.com/avatar/f9a3d6bee42f4503d3169861b9ecdfab5b2faebc73eb6344d2c3fa15727da799?s=200&d=mm&r=g",
+          "alt": "Thomas Dohmke",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>tl;dr: I am stepping down as GitHub CEO to build my next adventure. GitHub is thriving and has a bright future ahead. The following is the internal post I sent to GitHub employees (Hubbers) this morning announcing my departure.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/goodbye-github/\">Auf Wiedersehen, GitHub ♥️</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "如何使用 GitHub Copilot 提升代码审查和拉取请求的水平 (原标题: How to use GitHub Copilot to level up your code reviews and pull requests)",
       "link": "https://github.blog/ai-and-ml/github-copilot/how-to-use-github-copilot-to-level-up-your-code-reviews-and-pull-requests/",
       "pubDate": "Fri, 08 Aug 2025 16:00:00 +0000",
@@ -224,77 +325,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Empowering 10 million farm families by 2030 to generate $1 billion in new revenue. How GitHub helps One Acre Fund’s mission — driving real impact across Africa.</p>\n<p>The post <a href=\"https://github.blog/open-source/social-impact/scaling-for-impact-how-github-copilot-supercharges-smallholder-farmers/\">Scaling for impact: How GitHub Copilot supercharges smallholder farmers</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "如何构建安全且可扩展的远程MCP服务器 (原标题: How to build secure and scalable remote MCP servers)",
-      "link": "https://github.blog/ai-and-ml/generative-ai/how-to-build-secure-and-scalable-remote-mcp-servers/",
-      "pubDate": "Fri, 25 Jul 2025 17:12:02 +0000",
-      "isoDate": "2025-07-25T17:12:02.000Z",
-      "creator": "Den Delimarsky",
-      "summary": "## 如何构建安全且可扩展的远程MCP服务器\n\n本文探讨了构建安全且可扩展的远程模型上下文协议（MCP）服务器的关键方面。MCP允许AI代理连接到外部工具和数据源，而无需实现特定的API连接器，为大型语言模型（LLM）提供所需的上下文。\n\n### 为什么MCP的安全性至关重要\n\n与传统API不同，MCP服务器充当AI代理与无限数据源（包括敏感企业资源）之间的桥梁。安全漏洞不仅会危及数据，还可能使恶意行为者操纵AI行为并访问连接的系统。为了应对常见的攻击向量（如困惑代理问题、令牌传递漏洞和会话劫持），最新的MCP规范包含了安全指南和最佳实践。\n\n### 理解MCP授权\n\nMCP规范采用OAuth 2.1进行安全授权，利用了现代安全能力：\n\n*   **授权服务器发现**：MCP服务器实现OAuth 2.0受保护资源元数据（PRM）（RFC 9728），以公布其支持的授权服务器。\n*   **动态客户端注册**：使用OAuth 2.0动态客户端注册协议（RFC 7591）实现自动客户端注册，消除了AI代理动态连接时的手动设置需求。\n*   **资源指示符**：规范强制要求RFC 8707资源指示符，确保令牌绑定到特定的MCP服务器，防止令牌重用攻击。\n\n开发者可以利用现有的OAuth库和现成的授权服务器/身份提供商，无需从头开始构建安全基础设施。\n\n### 完整的授权流程\n\n连接到受保护的MCP服务器的流程遵循标准的OAuth模式：\n\n1.  **发现阶段**：MCP客户端尝试在没有凭据的情况下访问MCP服务器。\n2.  **服务器响应**：MCP服务器返回HTTP 401 Unauthorized响应，并在WWW-Authenticate头中包含元数据URL。\n3.  **元数据检索**：MCP客户端获取并解析受保护资源元数据，获取授权服务器端点。\n4.  **客户端注册**：MCP客户端自动向授权服务器注册（如果支持）。\n5.  **授权请求**：MCP客户端使用PKCE（Proof Key for Code Exchange）和资源参数启动OAuth流程。\n6.  **用户同意**：用户通过授权服务器授权访问。\n7.  **令牌交换**：MCP客户端交换授权码以获取访问令牌。\n8.  **认证请求**：MCP客户端向MCP服务器发出的所有后续请求都包含Bearer令牌。\n\n### 在MCP中实现授权\n\n大多数OAuth提供商无需额外配置即可用于MCP服务器授权。在实现授权时，需要考虑以下关键组件和行为：\n\n*   **PRM端点**：MCP服务器必须实现`/.well-known/oauth-protected-resource`端点以公布支持的授权服务器范围。MCP TypeScript SDK已原生集成此功能。\n*   **令牌验证中间件**：确保MCP服务器只接受为其签发的令牌，通过以下方式：\n    *   从授权头中提取Bearer令牌。\n    *   使用OAuth提供商的JWKS（JSON Web Key Sets）端点验证令牌签名。\n    *   检查令牌过期和受众声明。\n    *   确保令牌是专门为您的MCP服务器签发的。\n*   **错误处理**：MCP服务器需要返回正确的HTTP状态码（例如，缺少/无效令牌返回HTTP 401 Unauthorized，权限不足返回HTTP 403 Forbidden），并附带适当的WWW-Authenticate头。\n\nAnthropic和MCP社区正在将这些功能直接集成到MCP SDK中，以简化开发。\n\n### 处理多用户场景\n\nMCP服务器中的多租户引入了独特的安全挑战，需要强制执行严格的边界以防止未经授权的访问和数据泄露，解决“困惑代理”问题。\n\n*   **用户身份验证和验证**：OAuth令牌是安全识别用户的基础，其声明（如`sub`）包含用户信息，但必须严格验证。\n*   **强制授权策略**：将用户标识符映射到内部用户配置文件以确定其特定权限，并确保令牌的受众（`aud`）正确，防止令牌被用于其他MCP服务器。\n*   **数据隔离**：每个数据库查询、下游API请求、缓存查找和日志条目都必须限定在当前用户范围内，遵循最小权限原则。\n\n强烈建议使用现有、经过充分测试的库和框架来处理用户会话和数据范围限定。\n\n### 使用AI网关进行扩展\n\nAI网关位于MCP客户端和MCP服务器之间，充当防护罩和流量导向器，集中处理交叉关注点：\n\n*   **速率限制**：防止失控AI代理的资源耗尽。\n*   **JWT令牌验证**：在请求到达服务器前进行验证。\n*   **安全头注入**：保护免受常见Web漏洞侵害。\n*   **请求/响应转换**：优雅地处理协议演变。\n*   **缓存**：针对不经常变化的昂贵操作。\n*   **熔断器**：当下游服务出现问题时快速失败。\n\n这种关注点分离提高了可维护性和诊断效率。\n\n### 生产就绪模式\n\n部署MCP服务器到生产环境时，应采纳以下最佳实践：\n\n*   **更好的秘密管理**：\n    *   MCP服务器需要处理自身的一系列秘密来与各种服务、数据库或API通信。\n    *   生产环境中，环境变量是安全反模式。\n    *   现代方法是使用专用的秘密管理服务（如Azure Key Vault、AWS Secrets Manager或HashiCorp Vault）。\n    *   最安全的方式是使用**工作负载身份**（“无秘密”或“无密钥”），应用程序由云平台分配安全身份，在运行时检索所需秘密，无需在配置中处理长期凭据。\n    *   这支持动态、短生命周期的秘密，实现启动验证和运行时秘密轮换。\n    *   最小权限原则：每个MCP服务器实例只访问其任务绝对需要的秘密。\n*   **可观测性和监控**：\n    *   通过日志、指标和跟踪实现对操作的全面可见性。\n    *   **结构化日志**：跨请求边界保持一致性，使用唯一的关联ID追踪请求的完整旅程。\n    *   **分布式跟踪**：使用OpenTelemetry等标准，提供请求生命周期的详细视图，帮助识别性能瓶颈。\n    *   **安全事件日志**：捕获每次认证尝试、授权失败和异常访问模式，因为MCP服务器是高价值目标。",
-      "shortSummary": "本文详细介绍了如何构建安全且可扩展的远程模型上下文协议（MCP）服务器。MCP使AI代理能连接外部数据源。安全性至关重要，规范采用OAuth 2.1进行授权，并强调了授权流程、令牌验证和多用户场景下的数据隔离。为实现可扩展性，建议使用AI网关集中处理流量和安全策略。生产实践包括采用工作负载身份进行高级秘密管理，以及通过结构化日志、分布式跟踪和安全事件日志实现全面的可观测性。",
-      "translated_title": "如何构建安全且可扩展的远程MCP服务器",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>More context can mean more attack surfaces for your projects. Be prepared for what lies ahead with this guide.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/how-to-build-secure-and-scalable-remote-mcp-servers/\">How to build secure and scalable remote MCP servers</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "如何在 Azure Pipelines 中简化 GitHub API 调用 (原标题: How to streamline GitHub API calls in Azure Pipelines)",
-      "link": "https://github.blog/enterprise-software/ci-cd/how-to-streamline-github-api-calls-in-azure-pipelines/",
-      "pubDate": "Thu, 24 Jul 2025 16:00:00 +0000",
-      "isoDate": "2025-07-24T16:00:00.000Z",
-      "creator": "Tiago Pascoal",
-      "summary": "## Azure Pipelines 中简化 GitHub API 调用\n\n本文探讨了如何在 Azure Pipelines 中通过构建自定义 Azure DevOps 扩展来简化 GitHub API 调用，从而消除 JWT 生成和令牌管理的复杂性，实现强大的自动化和增强的安全控制。\n\n### Azure Pipelines 与 GitHub 的集成\n\nAzure Pipelines 是一个基于云的持续集成/持续交付 (CI/CD) 服务，与 GitHub 深度集成。它能够响应 GitHub 仓库的推送或拉取请求触发管道，并将执行结果通过 GitHub 状态检查报告回 GitHub，帮助开发者监控代码健康状况并强制执行规则集。\n\n### 常见用例和场景\n\n在 Azure Pipelines 中调用 GitHub API 的常见场景包括：\n\n*   **设置提交或拉取请求的状态检查：** 报告管道步骤（如测试、构建、安全扫描）的成功或失败，以强制执行策略并提供反馈。\n*   **向拉取请求添加评论：** 自动发布管道结果、测试覆盖率报告或部署信息。\n*   **更新仓库中的文件：** 自动更新文档、配置文件或版本号（如 `CHANGELOG.md`）。\n*   **管理 GitHub Issues：** 根据管道结果自动创建、更新或关闭问题（如测试失败时创建 Bug 报告）。\n*   **与 GitHub Advanced Security 集成：** 将代码扫描结果发送到 GitHub 的代码扫描功能，实现集中式漏洞管理。\n*   **管理发布和资产：** 成功部署后自动创建 GitHub 发布并上传构建产物。\n*   **使用 GitHub 部署跟踪部署：** 在 GitHub 界面中提供部署历史和状态的可视性。\n*   **触发 GitHub Actions 工作流：** 编排混合 CI/CD 场景，由 Azure Pipelines 处理部分任务，然后触发 GitHub Actions 进行后续处理。\n\n### 理解 GitHub API：REST 与 GraphQL\n\nGitHub API 提供两种主要的接口：\n\n*   **REST API：** 遵循 RESTful 原则，提供直接的 HTTP 端点，适用于管理仓库、问题、拉取请求等常见操作。易于上手，支持个人访问令牌、GitHub Apps 或 OAuth 令牌认证。\n*   **GraphQL API：** 提供更灵活高效的数据检索方式。允许在单个请求中精确指定所需数据，减少数据过度获取或不足，特别适用于检索复杂、嵌套的数据结构。\n\n### 如何选择正确的认证方法\n\nGitHub 提供三种主要的 API 认证方法：\n\n1.  **个人访问令牌 (PATs)：**\n    *   **优点：** 创建和使用简单，快速上手，适用于个人自动化，可配置权限和过期日期。\n    *   **缺点：** 与用户账户生命周期绑定，权限可能粗粒度（经典 PATs），需要手动轮换，一旦泄露可能暴露所有可访问的组织/仓库。\n2.  **OAuth 令牌：**\n    *   **优点：** 标准 OAuth 2.0 流程，适用于需要代表不同用户操作的第三方应用，用户批准权限。\n    *   **缺点：** 需要安全存储刷新令牌，需要服务器基础设施，比 PATs 更复杂，仍与用户账户绑定。\n3.  **GitHub Apps：**\n    *   **优点：** 作为独立实体运行，具有细粒度、仓库级别的权限，基于安装的访问控制，短生命周期令牌（最长 1 小时），更高的速率限制，提供最佳安全模型，不依赖用户账户，有审计跟踪。\n    *   **缺点：** 初始设置更复杂，需要实现 JWT，可能不适用于简单场景，需要私钥管理。\n\n**结论：** 鉴于其细粒度权限、安全特性和更高的速率限制，GitHub Apps 是 Azure Pipelines 中机器到机器集成的理想选择。其短生命周期令牌和基于安装的访问模型提供了比 PATs 和 OAuth 令牌更好的安全控制，特别适合 CI/CD 场景中的自动化。\n\n### 注册和安装 GitHub App\n\n使用 GitHub App 进行认证需要以下步骤：\n\n1.  **注册 GitHub App：** 在 GitHub Enterprise、组织或账户中注册应用，并选择适当的权限。权限决定了应用在企业、组织和仓库中的操作能力。请注意，权限更改可能需要所有者管理员重新授权。通常建议将应用设置为私有。\n2.  **保存私钥：** 如果生成了私钥，请将其安全保存。私钥用于向 GitHub 认证以生成安装令牌。\n3.  **安装 GitHub App：** 将应用安装到将与之交互的账户或组织上，并选择应用可以访问的仓库（所有仓库或特定仓库）。\n\n### GitHub App 认证流程\n\nGitHub Apps 使用两步认证过程访问 GitHub API：\n\n1.  **应用认证：** 应用首先使用其私钥签名的 JSON Web Token (JWT) 进行自我认证。此 JWT 仅证明应用的身份，不提供对 GitHub 资源的直接访问。\n2.  **获取安装令牌：** 为了调用 GitHub API，应用需要获取一个安装令牌。安装令牌是使用应用的 JWT 认证生成的、具有作用域（企业、组织或账户）的访问令牌。这些令牌生命周期短（有效一小时），并且只能访问其安装范围内的资源，并使用安装时授予的最大权限。\n\n获取安装令牌有两种方法：使用已知的安装 ID，或通过调用安装 API 来检索 ID。一旦应用获得安装 ID，它就使用该 ID 请求新的令牌。生成的安装令牌继承了应用的权限和该安装的仓库访问权限，也可以选择请求具有更低权限或仅限于特定仓库的令牌。\n\n### 在 Azure Pipelines 中生成安装令牌\n\n管道作者在 Azure Pipelines 中生成安装令牌有三种主要选项：\n\n1.  **使用命令行工具：** 例如，`gh-token` 是一个流行的开源工具，可以处理整个令牌生成过程。\n2.  **编写自定义脚本：** 使用 `bash/curl` 或 PowerShell 脚本实现令牌生成过程，提供完全控制但需要更多实现工作。\n3.  **使用 Azure Pipeline 任务：** 可以从 Azure DevOps 市场寻找合适的任务，或创建自定义任务来实现 GitHub App 认证流。\n\n### 用于 GitHub App 认证的 Azure DevOps 扩展\n\n在 Azure Pipelines 和 GitHub 之间创建集成时，应用私钥的安全性至关重要。在 Azure Pipelines 中，有多种存储敏感数据的选项：\n\n*   Azure Pipeline 秘密存储（通过秘密变量访问）\n*   Azure Pipelines 安全文件\n*   Azure Pipelines 服务连接\n\n**服务连接的优势：**\n\n服务连接为管理外部服务认证提供了多项关键优势，包括：\n\n*   集中式访问控制\n*   支持多种认证方案\n*   可在项目内的多个管道之间共享连接\n*   内置安全控制，用于管理谁可以查看或修改连接详细信息\n*   将敏感凭据对管道作者隐藏，同时仍允许使用\n*   跨多个项目共享连接，减少重复和管理开销\n\n对于 GitHub App 认证，服务连接尤为重要，因为它们可以安全地存储应用的私钥，允许管理员配置和强制连接行为，并提供比直接在管道或变量组中存储秘密更好的安全性。\n\n### 创建自定义 Azure DevOps 扩展\n\nAzure DevOps 扩展是为 Azure DevOps 服务添加新功能的包。本例中，需要创建一个提供两个关键组件的扩展：\n\n1.  **自定义服务连接类型：** 用于安全存储 GitHub App 凭据和其他设置。\n2.  **自定义任务：** 使用这些凭据生成安装令牌。\n\n一个扩展由描述其功能的清单文件和实际实现代码组成。",
-      "shortSummary": "本文介绍如何在 Azure Pipelines 中通过自定义 Azure DevOps 扩展简化 GitHub API 调用。核心在于利用 GitHub Apps 进行身份验证，以消除 JWT 生成和令牌管理的复杂性。GitHub Apps 提供细粒度权限、短生命期令牌和更高安全性，是 CI/CD 场景下机器到机器集成的理想选择。该方法通过集中式凭据管理、标准化集成和跨项目重用，增强了安全性、可维护性并节省了时间。",
-      "translated_title": "如何在 Azure Pipelines 中简化 GitHub API 调用",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Build a custom Azure DevOps extension that eliminates the complexity of JWT generation and token management, enabling powerful automation and enhanced security controls.</p>\n<p>The post <a href=\"https://github.blog/enterprise-software/ci-cd/how-to-streamline-github-api-calls-in-azure-pipelines/\">How to streamline GitHub API calls in Azure Pipelines</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "使用 GitHub Models 解决开源 AI 项目的推理问题 (原标题: Solving the inference problem for open source AI projects with GitHub Models)",
-      "link": "https://github.blog/ai-and-ml/llms/solving-the-inference-problem-for-open-source-ai-projects-with-github-models/",
-      "pubDate": "Wed, 23 Jul 2025 16:00:00 +0000",
-      "isoDate": "2025-07-23T16:00:00.000Z",
-      "creator": "Sean Goedecke",
-      "summary": "## 使用 GitHub Models 解决开源 AI 项目的推理问题\n\n本文介绍了 GitHub Models，一个旨在解决开源 AI 项目中 AI 推理（inference）难题的免费、兼容 OpenAI 的 API。\n\n### 现有问题与挑战\n在开源项目中集成 AI 功能时，开发者和用户常面临以下障碍：\n*   **付费 API 密钥：** 要求用户提供 OpenAI 或 Anthropic 等付费 API 密钥，对许多业余爱好者和学生来说成本过高，阻碍了项目采用。\n*   **本地模型运行：** 运行大型语言模型（LLM）需要大量内存，普通笔记本电脑或 GitHub Actions runner（14 GB 容器）难以承受。\n*   **模型分发：** 捆绑多 GB 的模型权重会显著增加安装包大小，并拖慢持续集成（CI）流程。\n这些额外的要求都会筛选掉潜在用户和贡献者。\n\n### GitHub Models 解决方案\nGitHub Models 提供了一个免费的、与 OpenAI 兼容的推理 API，每个 GitHub 账户都可以使用，无需新的密钥、控制台或 SDK。\n\n*   **核心功能：**\n    *   一个 REST 端点，遵循 OpenAI 已知的 `chat/completions` 规范。\n    *   提供 GitHub 托管的一系列精选模型，包括 GPT-4o、DeepSeek-R1、Llama 3 等。\n    *   任何拥有 GitHub 个人访问令牌（PAT）的用户，或在仓库中通过权限选择启用的内置 `GITHUB_TOKEN`，都可以调用。\n    *   **成本：** 个人账户和开源组织提供免费层级；付费层级提供更高的吞吐量和更大的上下文窗口。\n*   **兼容性：** 由于 API 镜像了 OpenAI，任何接受 `baseURL` 参数的客户端（如 OpenAI-JS、OpenAI Python、LangChain、llamaccp 或自定义 curl 脚本）都可以无缝使用。\n\n### 如何开始使用 GitHub Models\nGitHub Models 与 OpenAI `chat/completions` API 兼容，因此几乎所有推理 SDK 都能使用。\n\n*   **通过 OpenAI SDK 示例：**\n    ```javascript\n    import OpenAI from \"openai\";\n    const openai = new OpenAI({\n      baseURL: \"https://models.github.ai/inference/chat/completions\",\n      apiKey: process.env.GITHUB_TOKEN // 或任何带有 models:read 权限的 PAT\n    });\n    const res = await openai.chat.completions.create({\n      model: \"openai/gpt-4o\",\n      messages: [{ role: \"user\", content: \"Hi!\" }]\n    });\n    console.log(res.choices[0].message.content);\n    ```\n*   **GitHub Actions 中的零配置 CI：**\n    *   在工作流文件中请求 `models:read` 权限，内置的 `GITHUB_TOKEN` 将自动获得调用 GitHub Models 的权限。\n    *   这使得开发者可以构建一键安装的 AI 驱动型 Actions，例如：\n        *   代码审查或 PR 分类机器人\n        *   智能问题标签工作流\n        *   每周仓库活动报告生成器\n    *   示例 `.github/workflows/triage.yml` 配置：\n        ```yaml\n        permissions:\n          contents: read\n          issues: write\n          models: read # 👈 为 GITHUB_TOKEN 解锁 GitHub Models\n        jobs:\n          triage:\n            runs-on: ubuntu-latest\n            steps:\n              - uses: actions/checkout@v4\n              - name: Smart issue triage\n                run: node scripts/triage.js\n        ```\n\n### 优势与扩展性\n*   **降低门槛：** 任何拥有 GitHub 账户的用户都可以运行 AI 驱动的代码，无需提供付费 API 密钥，极大地降低了用户和贡献者的入门障碍。\n*   **促进贡献：** 更容易的设置意味着更广泛的 GitHub 用户群体可以参与贡献。\n*   **项目扩展：**\n    *   GitHub Models 推理 API 对所有人免费。\n    *   如果需要更高的推理量，用户可以在设置中开启付费使用，以获得显著更大的上下文窗口和更高的每分钟请求数（RPM）。\n    *   付费层级提供更高的 RPM、支持 128k token 的上下文窗口，并在独立部署中运行以降低延迟。\n    *   可在“设置 > 模型”中为组织或企业启用付费使用。\n\n### 总结\nLLM 正在改变软件开发和交付方式，但要求用户提供付费 API 密钥是一个主要障碍。GitHub Models 通过为 GitHub 上的每位开发者提供免费的高质量 AI 推理，消除了开源 AI 采用的最大障碍。这为更多的贡献、更快的上手和更满意的用户打开了大门。\n\n### 相关资源\n*   GitHub Models 文档\n*   API 参考\n\n### 作者\n*   ![Sean Goedecke](https://avatars.githubusercontent.com/u/19204567?v=4&s=200) Sean Goedecke，GitHub 软件工程师，GitHub Models 团队成员。\n\n### 相关文章\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用 GitHub 的公司和工程团队。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025：参加旧金山大会。",
-      "shortSummary": "GitHub Models 提供了一个免费、兼容 OpenAI 的推理 API，旨在解决开源 AI 项目中因付费 API 密钥或本地模型部署造成的障碍。它允许任何 GitHub 用户通过 PAT 或 `GITHUB_TOKEN` 访问 GitHub 托管的精选模型，无需额外配置。这降低了用户和贡献者的门槛，尤其在 GitHub Actions 中可实现零配置 AI 功能。项目可根据需求升级到付费层级以获得更高性能。GitHub Models 极大地促进了开源 AI 项目的普及和协作。",
-      "translated_title": "使用 GitHub Models 解决开源 AI 项目的推理问题",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/19204567?v=4&s=200",
-          "alt": "Sean Goedecke",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>How using GitHub’s free inference API can make your AI-powered open source software more accessible.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/llms/solving-the-inference-problem-for-open-source-ai-projects-with-github-models/\">Solving the inference problem for open source AI projects with GitHub Models</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-08-11T04:52:34.251Z"
+  "lastUpdated": "2025-08-13T04:40:59.565Z"
 }
