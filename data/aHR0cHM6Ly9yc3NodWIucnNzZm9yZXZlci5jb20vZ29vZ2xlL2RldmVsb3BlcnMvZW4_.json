@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Gemini CLI + VS Code：原生差异比较和上下文感知工作流 (原标题: Gemini CLI + VS Code: Native diffing and context-aware workflows)",
+      "link": "https://developers.googleblog.com/en/gemini-cli-vs-code-native-diffing-context-aware-workflows/",
+      "pubDate": "Tue, 12 Aug 2025 16:00:00 GMT",
+      "isoDate": "2025-08-12T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Gemini CLI + VS Code：原生差异比较和上下文感知工作流\n\nGemini CLI 的最新更新为 VS Code 带来了更深层次的集成，旨在提升开发者的命令行应用体验。此次更新将智能功能直接引入 VS Code 集成终端，通过理解上下文并提供即时建议，彻底改变了开发者与项目互动的方式。\n\n## 新特性：更深层次的集成\n\n此次更新从根本上改变了 Gemini CLI 与编辑器的交互方式，使开发工作流更加流畅高效。\n\n*   **工作区与选择上下文感知**\n    当 VS Code IDE 连接到 Gemini CLI 时，CLI 可以直接访问您的工作区。它能够感知您打开的文件并访问选定的文本。这使得 CLI 能够提供有针对性且与上下文相关的建议，因为它能准确理解您当前正在处理的内容。\n\n*   **原生编辑器内差异比较 (Native In-editor Diffing)**\n    Gemini CLI 的建议现在可以直接在 VS Code 内部触发全屏差异比较视图。这提供了全面的并排更改审查。至关重要的是，您可以在接受更改之前直接在此差异视图中修改代码，从而获得完全的控制和灵活性。\n\n## 如何开始\n\n准备好体验了吗？设置过程非常简单。\n\n1.  **先决条件**\n    *   Gemini CLI 版本 0.1.20 或更高。\n    *   在 VS Code 的集成终端中运行 CLI。\n\n2.  **一次性设置**\n    在您的集成终端中运行 `/ide install` 命令，以安装必要的配套扩展。\n\n3.  **切换集成状态**\n    完成一次性设置后，您可以轻松管理集成：\n    *   激活：运行 `/ide enable`\n    *   停用：运行 `/ide disable`\n\n立即启用 IDE 集成，体验使用 Gemini CLI 和 VS Code 构建项目的新方式。",
+      "shortSummary": "Gemini CLI 最新更新深度集成 VS Code，提供智能、上下文感知的开发体验。核心功能包括：CLI 直接访问工作区和选定文本，实现精准建议；以及原生编辑器内全屏差异比较，允许直接修改代码。用户需满足版本要求并在VS Code终端运行`/ide install`进行一次性设置，随后可轻松启用或禁用集成，大幅提升开发效率和控制力。",
+      "translated_title": "Gemini CLI + VS Code：原生差异比较和上下文感知工作流",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "The latest Gemini CLI update provides a deep IDE integration within VS Code for intelligent, context-aware suggestions, and native in-editor diffing, allowing developers to review and modify proposed changes directly within the diff view for a more efficient workflow."
+    },
+    {
+      "title": "认识Jules最犀利的批评者和最有价值的盟友 (原标题: Meet Jules’ sharpest critic and most valuable ally)",
+      "link": "https://developers.googleblog.com/en/meet-jules-sharpest-critic-and-most-valuable-ally/",
+      "pubDate": "Mon, 11 Aug 2025 16:00:00 GMT",
+      "isoDate": "2025-08-11T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Jules AI 编码代理的新“批评者”功能\n\n## 介绍\nJules 是一款 AI 编码代理，能够构建、重构和搭建代码，让开发者专注于其他任务。然而，这种便利性有时会导致细微的错误、遗漏的边缘情况和未经测试的假设。为了解决这些问题，Jules 引入了一项新功能——“批评者”（critic），它能在代码提交给用户之前对其进行审查和批判。\n\n## 批评者的角色与“批评者增强生成”\n“批评者”功能简单而强大：当 Jules 构建代码时，批评者会对其提出质疑。每一个提议的更改在完成之前都会经过对抗性审查。可以把批评者看作 Jules 的同行评审员，它深入了解代码质量原则，并敢于指出潜在的问题，例如重复发明了有风险的轮子。\n\n这项功能直接集成到代码生成过程中，被称为“批评者增强生成”（critic-augmented generation）。在当前版本中，它是一个一次性过程，在单个通道中评估最终输出。未来的里程碑目标是使其成为一个真正的多步骤代理，能够使用工具调用，或在子任务之后、规划之前触发。目前，它一次性审查完整的生成内容。这将借鉴多步骤研究，其中批评者使用外部工具（如代码解释器或搜索引擎）验证输出，并从结果中学习。\n\n## 批评者的具体作用\n批评者不直接修复代码，而是标记出问题，然后将其反馈给 Jules 进行改进。例如：\n*   一个通过所有测试但引入了微妙逻辑错误的补丁：批评者会指出“输出符合预期情况，但在未见输入上失败。”\n*   一个能编译但默默丢弃了所需字段的更改：批评者会指出“函数签名已更新，但未处理所有参数。”\n*   一个能工作但使用了低效方法的代码：批评者会指出“算法产生正确结果，但具有不必要的 O(n²) 复杂度。”\n\n由于此过程发生在补丁生成之后和提交之前（如果仍有问题，可能会多次进行），Jules 可以实时重新规划。我们的目标是减少低质量的拉取请求（PRs），提高测试覆盖率，增强安全性。\n\n## 与传统工具的区别\n批评者功能与传统的代码检查工具（如 Linter）和测试不同：\n*   **Linter**：遵循浅层、固定的规则。\n*   **测试**：验证特定的断言。\n*   **批评者**：理解代码背后的意图和上下文。它更接近于一种无参考评估方法，在不需要黄金标准实现的情况下判断代码的正确性和健壮性。\n\n它还借鉴了“LLM-as-a-judge”（大语言模型作为评判者）的研究，即一个模型评估另一个模型的工作质量和正确性。这种自动化评判与生成过程紧密集成时特别有用，能将审查转化为实时的反馈循环。\n\n## 工作流程\n批评者功能的工作流程如下：\n1.  用户提示 Jules 开始一项任务。\n2.  批评者功能在单个通道中审查候选补丁及其描述，并做出总体判断。\n3.  Jules 根据反馈进行响应，在完成之前进行改进。之后，批评者可以再次审查更新后的补丁，并继续标记任何它认为必要的问题，直到不再存在问题。\n4.  用户收到已经过内部审查的代码。\n\n这借鉴了“行动者-批评者”（actor-critic）强化学习（RL）的原理，其中“行动者”生成，“批评者”评估。在 RL 中，这个循环根据学习信号更新行动者和批评者。在我们的“LLM-as-critic”设置中，模式类似：提出，然后评估。然而，反馈不是更新学习参数，而是影响当前状态和下一步行动。同样的原则也支撑着“LLM-as-a-judge”的研究，其中批评者的评估在不重新训练的情况下指导质量。\n\n## 重要性\n在快速迭代的世界中，批评者将审查过程提前，并融入到生成行为本身。这意味着用户审查的代码已经过内部的质询、完善和压力测试。当然，用户在使用前仍应仔细审查生成的代码。\n\n优秀的开发者不仅编写代码，他们还会质疑代码。现在，Jules 也能做到。",
+      "shortSummary": "Jules AI编码代理推出一项“批评者”功能，在用户看到代码前对其进行审查。该功能作为Jules的同行评审员，能识别并标记AI生成代码中的细微错误、低效或逻辑问题。Jules会根据批评者的反馈实时重构代码，以提高质量、测试覆盖率和安全性。它不同于传统Linter或测试，能理解代码意图和上下文，借鉴了“LLM作为评判者”的理念。最终，用户将获得经过内部审查、更高质量的代码。",
+      "translated_title": "认识Jules最犀利的批评者和最有价值的盟友",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Jules' critic functionality addresses potential issues like subtle bugs and missed edge cases in AI-generated code by acting as a peer reviewer within the generation process. This \"critic-augmented generation\" means proposed code changes undergo adversarial review, allowing Jules to improve its output and ultimately deliver higher-quality, pre-reviewed code."
+    },
+    {
       "title": "Google 开发者计划正在演进 (原标题: The Google Developer Program is evolving)",
       "link": "https://developers.googleblog.com/en/google-developer-program-join-connect-code/",
       "pubDate": "Thu, 31 Jul 2025 16:00:00 GMT",
@@ -183,40 +209,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Co-hosted by Ashley Oldacre and Christina Warren, People of AI podcast's Season 5 will focus on the builders in the space of AI, highlighting the unique journeys, challenges, and triumphs of these innovators."
-    },
-    {
-      "title": "在 Firebase Studio 中为流行框架释放新的 AI 能力 (原标题: Unleashing new AI capabilities for popular frameworks in Firebase Studio)",
-      "link": "https://developers.googleblog.com/en/new-ai-capabilities-for-popular-frameworks-in-firebase-studio/",
-      "pubDate": "Tue, 22 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-22T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Firebase Studio 推出新 AI 功能，赋能流行框架\n\nFirebase Studio 是一个基于云的 AI 工作空间，旨在帮助开发者构建和发布下一代 AI 驱动的应用程序。继之前推出多功能代理模式、模型上下文协议（MCP）基础支持以及与 Gemini CLI 集成之后，Google 在 I/O Connect India 大会上公布了多项新更新，旨在结合 Gemini 的强大功能与这些新特性，帮助开发者利用其喜爱的框架和语言，将想法快速转化为应用程序。\n\n这些新更新包括：\n\n*   **AI 优化模板加速代理开发**\n*   **与 Firebase 后端服务无缝集成**\n*   **通过分叉工作区更好地控制不断演进的代码库**\n\n选择在印度发布这些公告具有特殊意义，因为印度拥有全球最大的应用程序开发者社区之一。例如，Google Android 开发者专家 Pankaj Rai 利用 Firebase Studio 构建了学生指导平台 Mentor Sarthi，并将其个人造型应用 GlamMEAi 推广到网络平台，而无需学习网络开发。\n\n### 详细功能介绍：\n\n1.  **引入 AI 优化模板，助力极速构建**\n    *   Firebase Studio 更新了 Flutter、Angular、React、Next.js 和通用 Web 的工作区模板，新增了利用 Gemini 的 AI 功能，帮助开发者构建和部署美观、强大的应用程序。\n    *   使用 AI 优化模板创建项目时，工作区将默认进入自主代理模式，并采用重新设计过的布局，帮助开发者快速进入工作流。\n    *   开发者可以获得 Gemini 的协助，独立规划和执行任务，无需等待分步批准。同时，仍可根据任务需求切换到“询问”和“代理”模式，无论是生成整个应用程序、优化功能、运行测试、生成文档还是添加新功能。\n    *   每个模板中都添加了 `airules.md` 文件，为 Gemini 提供专门的指令，以指导代码生成并为每种特定类型的应用程序创建文档。这使得 Gemini 能更好地了解相关的编码标准、错误处理方法、依赖项和开发最佳实践。\n    *   未来几周，Firebase Studio 将更新 Go、Node.js、.NET 等更多流行框架和语言的模板。\n\n2.  **与 Firebase 服务无缝集成**\n    *   从即日起，开发者只需向 Gemini 发出提示，即可将 Firebase 后端服务集成到应用程序中。\n    *   如果使用 App Prototyping Agent 进行“氛围编码”或使用 AI 优化模板，只需告诉 Gemini 应用程序需要实现什么功能，它就会推荐相应的 Firebase 服务。\n    *   Gemini 将自动导入所需的库或包，更新代码以集成所需服务，并指导完成任何额外的设置或配置步骤，从而节省开发者的时间和点击次数。\n    *   所有这些功能均可免费开始使用。\n\n3.  **分叉工作区，赋能实验与协作**\n    *   现在，开发者可以分叉工作区，创建一份完全相同的副本，包括保留原始工作区中的所有代理聊天历史记录。\n    *   这提供了一个可靠的备份，可以随时恢复，让开发者能够自信地构建新功能和尝试新事物，而无需担心犯下不可逆转的错误。\n    *   分叉工作区还可用于调试和故障排除，而不会影响主开发工作区，并通过与他人共享“进行中”的工作区来使协作更加顺畅。\n\n4.  **增强提示功能并增加项目上传大小**\n    *   Firebase Studio 持续改进 AI 辅助开发体验，提供更大的控制和灵活性。\n    *   新增的“增强提示”功能允许开发者在 Firebase Studio 内与 Gemini 协作并完善其提示和应用程序想法。\n    *   项目上传大小已显著增加到 100MB，使得开发者可以将更大、更复杂的现有项目导入 Firebase Studio。\n\nFirebase Studio 致力于使 AI 辅助开发更加直观、快速和愉悦，无论开发者拥有数十年的编码经验还是完全没有经验，都能将他们最雄心勃勃的应用程序想法变为现实。",
-      "shortSummary": "Firebase Studio 推出重大更新，旨在通过 AI 赋能应用开发。新功能包括：AI 优化模板，加速 Flutter、React 等框架的开发；与 Firebase 后端服务无缝集成，Gemini 可自动推荐并导入服务；支持分叉工作区，便于实验、备份和协作；以及增强提示功能和将项目上传大小提升至 100MB。这些更新旨在让 AI 辅助开发更直观、高效，帮助全球开发者将创意变为现实。",
-      "translated_title": "在 Firebase Studio 中为流行框架释放新的 AI 能力",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "New AI capabilities for popular frameworks in Firebase Studio include AI-optimized templates, streamlined integration with Firebase backend services, and the ability to fork workspaces for experimentation and collaboration, making AI-assisted app development more intuitive and faster for developers worldwide."
-    },
-    {
-      "title": "Gemini 2.5 Flash-Lite 现已稳定版发布并普遍可用 (原标题: Gemini 2.5 Flash-Lite is now stable and generally available)",
-      "link": "https://developers.googleblog.com/en/gemini-25-flash-lite-is-now-stable-and-generally-available/",
-      "pubDate": "Mon, 21 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-21T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Gemini 2.5 Flash-Lite 稳定版发布\n\n2025年7月22日，谷歌正式发布了 Gemini 2.5 Flash-Lite 的稳定版本。作为 Gemini 2.5 模型家族中速度最快、成本最低（输入每百万代币0.10美元，输出每百万代币0.40美元）的模型，它的推出旨在推动“每美元智能”的边界，并提供可选的原生推理能力，以应对更严苛的用例。该模型与此前的 2.5 Pro 和 2.5 Flash 一起，完善了可用于大规模生产的 Gemini 2.5 模型系列。\n\n### 核心优势\n\nGemini 2.5 Flash-Lite 在性能和成本之间取得了平衡，同时不牺牲质量，尤其适用于对延迟敏感的任务，如翻译和分类。其突出特点包括：\n\n*   **一流的速度**：在广泛的提示样本上，Gemini 2.5 Flash-Lite 的延迟均低于 2.0 Flash-Lite 和 2.0 Flash。\n*   **成本效益**：它是目前成本最低的 2.5 模型，定价为每百万输入代币0.10美元，每百万输出代币0.40美元，使得处理大量请求变得经济实惠。此外，音频输入价格相比预览版降低了40%。\n*   **智能且小巧**：在编码、数学、科学、推理和多模态理解等广泛基准测试中，其整体质量均高于 2.0 Flash-Lite。\n*   **功能全面**：使用 2.5 Flash-Lite 进行开发，可获得100万代币的上下文窗口、可控的思考预算，并支持原生工具，如 Google 搜索接地（Grounding）、代码执行和 URL 上下文。\n\n### 模型能力对比\n\n![Gemini 2.5 Flash-Lite、2.5 Flash 和 2.5 Pro 的能力对比表](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_ga_family_1-1__dark.original.png)\n\n### Gemini 2.5 Flash-Lite 的实际应用\n\n自 2.5 Flash-Lite 发布以来，已有一些成功的部署案例：\n\n*   **Satlyt**：正在构建一个去中心化的空间计算平台，用于实时总结在轨遥测数据、自主任务管理和卫星间通信解析。2.5 Flash-Lite 的速度使其关键的在轨诊断延迟降低了45%，功耗比基线模型降低了30%。\n*   **HeyGen**：利用 AI 创建视频内容头像。他们使用 Gemini 2.5 Flash-Lite 自动化视频规划、分析和优化内容，并将视频翻译成180多种语言，为用户提供全球化的个性化体验。\n*   **DocsHound**：将产品演示转化为文档。通过 Gemini 2.5 Flash-Lite 处理长视频并以低延迟提取数千张截图，将素材快速转化为全面的文档和 AI 代理训练数据，远快于传统方法。\n*   **Evertune**：帮助品牌了解其在 AI 模型中的表现。Gemini 2.5 Flash-Lite 大幅加快了他们的分析和报告生成速度，使其能够快速扫描和合成大量模型输出，为客户提供动态、及时的洞察。\n\n### 如何开始使用\n\n您可以通过在代码中指定“gemini-2.5-flash-lite”来开始使用该模型。如果您正在使用预览版本，可以直接切换到“gemini-2.5-flash-lite”，它们是相同的底层模型。预览别名计划于8月25日移除。现在即可在 Google AI Studio 和 Vertex AI 中试用 Gemini 2.5 Flash-Lite 的稳定版本。",
-      "shortSummary": "Gemini 2.5 Flash-Lite 稳定版已于2025年7月22日发布，是 Gemini 2.5 模型家族中速度最快、成本最低的模型（输入每百万代币0.10美元，输出0.40美元）。它在性能、成本和质量之间取得平衡，尤其适用于延迟敏感任务。该模型提供100万代币上下文窗口和原生工具支持，并在编码、推理等多方面表现出色。Satlyt、HeyGen、DocsHound 和 Evertune 等公司已成功将其应用于各自领域，显著提升了效率。用户可在 Google AI Studio 和 Vertex AI 中使用。",
-      "translated_title": "Gemini 2.5 Flash-Lite 现已稳定版发布并普遍可用",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini_2-5_ga_family_1-1__dark.original.png",
-          "alt": "Comparative table showing capabilities of Gemini 2.5 Flash-Lite, 2.5 Flash, and 2.5 Pro",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Gemini 2.5 Flash-Lite, previously in preview, is now stable and generally available. This cost-efficient model is ~1.5x faster than 2.0 Flash-Lite and 2.0 Flash, offers high quality, and includes 2.5 family features like a 1 million-token context window and multimodality."
     }
   ],
-  "lastUpdated": "2025-08-12T10:31:55.599Z"
+  "lastUpdated": "2025-08-14T10:33:01.294Z"
 }
