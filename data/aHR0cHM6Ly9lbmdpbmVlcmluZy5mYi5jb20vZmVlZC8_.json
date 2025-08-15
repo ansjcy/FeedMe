@@ -5,6 +5,68 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "为数据仓库数据访问和安全创建AI代理解决方案 (原标题: Creating AI agent solutions for warehouse data access and security)",
+      "link": "https://engineering.fb.com/2025/08/13/data-infrastructure/agentic-solution-for-warehouse-data-access/",
+      "pubDate": "Wed, 13 Aug 2025 22:05:07 +0000",
+      "isoDate": "2025-08-13T22:05:07.000Z",
+      "creator": "",
+      "summary": "Meta正在改进其数据仓库，以提高生产力和安全性，同时服务于人类用户和AI代理。本文详细介绍了Meta如何开发AI代理来简化数据访问请求并帮助数据所有者管理安全。\n\n## 背景与挑战\n\n*   **传统方法：** 过去，Meta通过将数据仓库组织成层次结构（图1）来扩展数据访问和管理，并使用基于角色的访问控制。数据流被视为图（图2），数据访问决策是局部的、规则驱动的。\n*   **日益增长的复杂性：** 随着数据量和AI系统的发展，数据访问模式变得更加复杂。AI系统能够处理数据图的不同部分，使得人工驱动的决策变得困难且耗时。人类和代理跨领域协作增加了系统复杂性（图3）。\n*   **AI作为解决方案：** 尽管AI是复杂性的驱动因素，但Meta认为AI也能提供解决方案。需要一种代理化解决方案，将其原生集成到数据产品中，并建立严格的防护措施。\n\n## 多代理系统设计\n\nMeta将解决方案建模为一个多代理系统（图4），包含两种主要代理：\n\n*   **数据用户代理：** 协助数据用户获取所需数据。\n    *   由三个专业子代理组成，由一个分类代理协调（图5）：\n        1.  **建议替代方案：** 当用户遇到受限表时，提供非受限或限制较少的替代方案，帮助用户重写查询以使用非受限列，或利用精选分析。这些见解通常是隐性的，LLM和代理能够大规模地综合和引导用户。\n        2.  **促进低风险数据探索：** 为数据探索阶段提供上下文感知、任务特定的低风险数据访问，通常只涉及少量数据。\n        3.  **协助获取访问权限：** 帮助用户制定权限请求并与数据所有者代理协商（目前仍有人工干预）。\n*   **数据所有者代理：** 帮助数据所有者管理访问和维护安全。\n    *   由多个子代理组成（图6）：\n        1.  **安全操作：** 像初级工程师一样，根据数据所有者提供的SOP（标准操作程序）处理传入的权限请求。\n        2.  **主动配置访问规则：** 利用语义和内容，改进传统的角色挖掘过程。\n\n## 代理的输入与管理\n\n*   **数据仓库作为资源：** 数据仓库的层次结构被转换为文本形式，类似于嵌套文件夹，为LLM提供只读的摘要视图（图7）。SOP（规则、维基、历史交互）也以文本形式作为代理的输入。\n*   **上下文管理：** 区分三种场景（图8）：\n    *   **自动上下文：** 系统根据用户访问行为自动获取精确上下文。\n    *   **静态上下文：** 用户明确选择特定范围或扩展自动上下文。\n    *   **动态上下文：** 代理通过元数据（如数据语义）或相似性搜索进一步过滤资源。\n*   **意图管理：** 用户意图通过两种方式建模（图9）：\n    *   **显式意图：** 用户通过假定关联角色等方式明确传达其业务需求。\n    *   **隐式意图：** 系统在短时间内从用户活动中推断意图（例如，根据夜间处理管道故障推断数据访问意图）。\n\n## 深度探索：部分数据预览\n\n部分数据预览是一个端到端用例，旨在数据探索阶段实现任务特定、上下文感知的数据访问。它通过代理工作流协调四个关键能力（图10）：\n\n1.  **上下文：** 分析用户活动以理解业务需求，并与数据控制对齐，提供任务特定、上下文感知的控制。\n2.  **查询级访问控制：** 分析查询的结构，例如是否涉及聚合或随机抽样。\n3.  **数据访问预算：** 根据员工通常访问的数据量分配每日刷新的预算，作为第一道防线。\n4.  **基于规则的风险管理：** 采用基于规则的风险控制，防御AI代理的攻击或故障。\n\n### 系统架构\n\n*   **数据用户代理：** 利用用户活动工具（diffs、任务、帖子、SEVs、仪表板、文档）和用户配置文件工具，根据用户活动、配置文件和查询形状形成用户意图，然后调用数据所有者代理（图11）。\n*   **数据所有者代理：** 分析查询，获取相关资源的元数据（表摘要、列描述、数据语义、SOPs）。利用LLM模型生成决策和推理，并通过输出防护措施确保决策符合基于规则的风险计算。\n*   所有决策和日志都安全存储，用于未来参考和分析。\n\n### LLM与代理的优势\n\nLLM的语言和推理能力对于建模难以分析建模的上下文和任务特定业务需求至关重要。代理帮助构建动态、端到端的工作流。同时，通过分析性规则风险计算等防护措施，确保代理在既定边界内运行，并强调透明度和可追溯性。\n\n## 评估与反馈\n\n*   **评估：** 通过使用真实请求、用户活动和配置文件数据策划评估数据集来评估系统准确性和性能。每天运行评估以捕获潜在的回归（图12）。\n*   **反馈循环（数据飞轮）：** 用户查询、代理处理轨迹、上下文和最终输出都安全存储，用于反馈和审计。为数据所有者创建了数据工具，允许他们查看和审查决策并提供反馈，从而更新评估并评估整体流程（图13）。\n\n## 未来展望\n\n未来工作包括：\n\n*   **代理协作：** 支持代理代表用户直接访问数据的场景。\n*   **工具演进：** 持续改进数据仓库和工具，使其能被代理有效使用（最初为员工或服务构建）。",
+      "shortSummary": "Meta正在通过AI代理解决方案提升数据仓库的数据访问和安全性。该方案采用多代理系统，数据用户代理协助获取数据，数据所有者代理管理权限。系统利用LLM进行上下文和意图管理，实现细粒度、风险受控的数据访问，尤其在数据探索阶段。通过防护措施、审计和反馈循环，确保代理安全高效运行，以应对日益复杂的数据管理挑战。",
+      "translated_title": "为数据仓库数据访问和安全创建AI代理解决方案",
+      "images": [
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image3.png",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image5.png",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image4.png",
+          "alt": "",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image7.png",
+          "alt": "",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image10.png",
+          "alt": "",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image8.png",
+          "alt": "",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image9.png",
+          "alt": "",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image2.png",
+          "alt": "",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>In this post, we explore the ways we’re evolving Meta’s data warehouse to facilitate productivity and security to serve both human users and AI agents.  We detail how we’re developing agents that help users making data access requests to get to the data they need, and that help data owners process requests and maintain security.  [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/08/13/data-infrastructure/agentic-solution-for-warehouse-data-access/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/08/13/data-infrastructure/agentic-solution-for-warehouse-data-access/\">Creating AI agent solutions for warehouse data access and security</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "联邦平台与隐私浪潮：Meta 如何大规模分发合规相关任务 (原标题: Federation Platform and Privacy Waves: How Meta distributes compliance-related tasks at scale)",
       "link": "https://engineering.fb.com/2025/08/11/security/federation-platform-privacy-waves-meta-distributes-compliance-tasks/",
       "pubDate": "Mon, 11 Aug 2025 16:00:21 +0000",
@@ -169,20 +231,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>We are proud to announce that Meta has officially joined the Kotlin Foundation as a gold member, marking a significant milestone in our ongoing commitment to Kotlin and the broader Android development ecosystem. Over the past several years, Meta engineers have been actively migrating our extensive Android codebase—comprising tens of millions of lines—from Java to [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/06/30/android/meta-joins-kotlin-foundation/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/06/30/android/meta-joins-kotlin-foundation/\">Meta joins Kotlin Foundation</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "将马尔贝克海底电缆延伸至巴西南部 (原标题: Extending the Malbec subsea cable to Southern Brazil)",
-      "link": "https://engineering.fb.com/2025/05/22/connectivity/extending-malbec-subsea-cable-southern-brazil/",
-      "pubDate": "Thu, 22 May 2025 16:00:08 +0000",
-      "isoDate": "2025-05-22T16:00:08.000Z",
-      "creator": "",
-      "summary": "## 马尔贝克海底电缆延伸项目概述\n\nMeta正与V.tal合作，计划于2027年前将马尔贝克（Malbec）海底电缆延伸至巴西的阿雷格里港（Porto Alegre）。此次延伸将使马尔贝克成为首条登陆南里奥格兰德州（Rio Grande do Sul）的海底电缆，旨在为巴西南部及邻近国家（包括阿根廷、智利、巴拉圭和乌拉圭）的数百万人口带来更强的连接性。\n\n### 项目详情与背景\n\n*   **合作方**：Meta与V.tal。\n*   **目标地点**：巴西阿雷格里港。\n*   **预计运营时间**：2027年。\n*   **电缆概况**：马尔贝克电缆全长2500公里，于2021年投入使用，主要提供南美洲南部锥体地区与巴西之间的连接。\n*   **新延伸线路**：将连接阿雷格里港与巴西的里约热内卢、圣保罗以及阿根廷的布宜诺斯艾利斯。\n\n### 重要意义与影响\n\n1.  **提升区域连接性**：\n    *   首次登陆南里奥格兰德州，显著增强该州及巴西南部地区的数字基础设施规模和可靠性。\n    *   改善阿根廷、智利、巴拉圭和乌拉圭等邻国的在线体验。\n    *   为数百万用户提供更优质的互联网服务。\n\n2.  **打造数字枢纽**：\n    *   将阿雷格里港确立为重要的数字枢纽，吸引数字基础设施公司入驻。\n    *   降低企业成本，改善消费者服务。\n    *   V.tal首席执行官Felipe Campos指出，这将是一个独特的数字基础设施，将吸引运营商、互联网服务提供商及其他海底电缆公司的兴趣。\n\n3.  **支持技术发展**：\n    *   此次投资是Meta数字基础设施投资的一部分，旨在满足日益增长的数字容量、弹性和全球覆盖需求。\n    *   南里奥格兰德州州长Eduardo Leite表示，该项目与州的经济、包容和可持续发展计划高度契合，并将促进人工智能（AI）项目的发展，确保AI及其他新兴技术惠及所有人。\n\n4.  **容量与服务提供**：\n    *   马尔贝克电缆将带来超过84太比特的国际容量，并提供与巴西北部和阿根廷的直接连接。\n    *   本地服务提供商将能够获取马尔贝克电缆的容量，以满足巴西南部各州数百万人口的额外带宽需求，并通过与邻国提供商的连接，进一步巩固巴西作为南美洲连接枢纽的地位。\n\n### 相关投资\n\nMeta此前已于今年早些时候在阿雷格里港激活了一个存在点（PoP），这有助于高效地在本地交付内容，从而降低互联网服务提供商的网络管理成本，并提高客户的服务质量。",
-      "shortSummary": "Meta与V.tal合作，计划于2027年前将马尔贝克海底电缆延伸至巴西阿雷格里港。这将是首条登陆南里奥格兰德州的海底电缆，旨在显著提升巴西南部及阿根廷、智利、巴拉圭、乌拉圭等邻国的数字连接性、可靠性与在线体验。该项目将把阿雷格里港打造为重要的数字枢纽，促进当地数字经济发展，并支持AI等新兴技术应用，为数百万用户带来更好的互联网服务。",
-      "translated_title": "将马尔贝克海底电缆延伸至巴西南部",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Meta is partnering with V.tal to extend the Malbec subsea cable to Porto Alegre, Brazil by 2027. With this new extension, Malbec will become the first subsea cable to land in the state of Rio Grande do Sul, bringing more connectivity to millions of people in Southern Brazil and neighboring countries. Malbec will improve the [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/05/22/connectivity/extending-malbec-subsea-cable-southern-brazil/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/05/22/connectivity/extending-malbec-subsea-cable-southern-brazil/\">Extending the Malbec subsea cable to Southern Brazil</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-08-13T05:28:26.435Z"
+  "lastUpdated": "2025-08-15T05:28:23.366Z"
 }
