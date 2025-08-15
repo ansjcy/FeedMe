@@ -5,6 +5,206 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "GitHub Copilot 中的 GPT-5：我如何在 60 秒内构建一个游戏 (原标题: GPT-5 in GitHub Copilot: How I built a game in 60 seconds)",
+      "link": "https://github.blog/ai-and-ml/generative-ai/gpt-5-in-github-copilot-how-i-built-a-game-in-60-seconds/",
+      "pubDate": "Thu, 14 Aug 2025 16:30:00 +0000",
+      "isoDate": "2025-08-14T16:30:00.000Z",
+      "creator": "Kedasha Kerr",
+      "summary": "## GitHub Copilot 中的 GPT-5：革新开发工作流\n\n本文探讨了 OpenAI 最新的 GPT-5 模型在 GitHub Copilot 中的应用，以及 GitHub 模型上下文协议（MCP）服务器如何共同改变开发者的工作方式。作者分享了如何利用这些工具在短时间内构建游戏并自动化 GitHub 工作流的经验。\n\n### GPT-5 的强大能力\n\nGPT-5 是 OpenAI 迄今为止最先进的模型，现已集成到 GitHub Copilot 中，可在 VS Code 的问答、编辑和代理模式下使用。其显著特点包括：\n\n*   **卓越的推理能力**：能够处理复杂任务并提供高质量的建议。\n*   **惊人的速度**：响应时间极快，几乎即时提供建议，显著提升开发流程的流畅性。\n*   **易于启用**：在 Copilot 界面中打开模型选择器，选择 GPT-5 (Preview) 即可开始使用。企业用户需由管理员选择启用。\n\n![A screenshot showing GPT-5 (Preview) available in the model picker drop-down menu within GitHub Copilot.](https://github.blog/wp-content/uploads/2025/08/gpt5.png?resize=521%2C501)\n\n### 60 秒构建 Magic Tiles 游戏实测\n\n作者通过一个实时测试展示了 GPT-5 的强大功能：在不到 60 秒内构建了一个 Magic Tiles 游戏原型。其方法论是“规范驱动开发”：\n\n1.  **让 AI 创建产品需求**：首先向 GPT-5 询问游戏的核心 MVP 规范，包括任务分解、核心玩法循环、最小功能集、数据模型结构和清晰的构建清单。这强调了为大型语言模型提供上下文的重要性。\n2.  **通过简单提示进行构建**：在获得 MVP 规范后，只需简单地提示“构建这个”。GPT-5 智能地选择了 HTML、CSS 和 JavaScript，并创建了一个基于 Canvas 的游戏，包含输入处理、得分、连击追踪、速度提升和游戏结束功能。整个构建过程在不到一分钟内完成。\n3.  **使用自然语言迭代**：当需要添加用户说明时，作者直接用自然语言提问，GPT-5 立即更新了 HTML 并提供了后续功能建议，实现了流畅的对话式开发体验。\n\n### GitHub 模型上下文协议（MCP）服务器\n\nMCP 是一种连接 AI 助手与外部工具和应用程序的标准，它充当 LLM 与 GitHub 仓库、Gmail 账户、SQL 服务器、Figma 项目等之间沟通的桥梁。通过 MCP，LLM 不再孤立，而是成为强大的自动化引擎。\n\n**设置 MCP 服务器**：\n\n设置 GitHub MCP 服务器非常简单，只需不到 5 分钟：\n\n1.  在工作区根目录创建 `.vscode/mcp.json` 配置文件。\n2.  点击 MCP 配置中的“启动”按钮，通过标准的 GitHub OAuth 流程进行认证。\n3.  认证后，GitHub MCP 服务器工具即可在 Copilot 界面中使用。\n\n**MCP 自动化实例**：\n\n*   **用自然语言创建仓库**：作者通过简单地向 Copilot 提问，便成功创建了 GitHub 仓库，并将本地代码推送到新仓库，无需切换到浏览器。\n*   **从自然语言批量创建议题**：作者让 Copilot 建议应用改进，然后指示其为“低投入快速改进”创建 GitHub 议题。Copilot 立即创建了五个格式正确的议题，包含描述性标题、详细说明、实施建议和适当的标签。这极大地简化了项目想法的捕获和管理。\n\n### 革命性的工作流\n\nGPT-5 和 GitHub MCP 服务器的结合带来了以下革命性优势：\n\n*   **速度与上下文保留**：GPT-5 的处理速度有助于开发者保持“心流”状态，提升开发体验的流畅性。\n*   **自然语言作为开发界面**：消除了在不同工具之间切换、手动格式化或进行上下文切换的摩擦，实现了意图驱动的自动化。\n*   **人机协作自动化**：AI 处理繁琐部分，而开发者保留控制权，例如可以取消 AI 直接推送到主分支的操作。\n\n### 行动计划\n\n鼓励开发者立即尝试 GPT-5 和 GitHub MCP 服务器：\n\n*   在 GitHub Copilot 中启用 GPT-5，尝试代理模式和规范驱动的开发方法。\n*   设置 GitHub MCP 服务器，并通过自然语言自动化 GitHub 工作流，例如创建仓库、生成议题、自动化分支和拉取请求。\n\n未来，这种组合预示着从手动、界面驱动的工作流向对话式、意图驱动的自动化的重大转变。作者计划在下次直播中从头开始构建一个自定义 MCP 服务器。\n\n![Kedasha Kerr](https://avatars.githubusercontent.com/u/47188731?v=4&s=200) Kedasha Kerr 是 GitHub 的开发者倡导者，致力于分享经验并帮助开发者社区。\n\n探索更多 GitHub 资源：\n\n![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) 文档\n\n![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub\n\n![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) 客户案例\n\n![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025",
+      "shortSummary": "GPT-5 已集成到 GitHub Copilot，显著提升开发速度和代码质量。作者展示了如何利用 GPT-5 在 60 秒内构建游戏，采用“规范驱动开发”和自然语言迭代。同时，GitHub 模型上下文协议（MCP）服务器使 AI 能通过自然语言自动化 GitHub 工作流，如创建仓库和批量生成议题。这些工具共同实现了更流畅、高效且人机协作的开发体验，标志着向意图驱动自动化的转变。",
+      "translated_title": "GitHub Copilot 中的 GPT-5：我如何在 60 秒内构建一个游戏",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/gpt5.png?resize=521%2C501",
+          "alt": "A screenshot showing GPT-5 (Preview) available in the model picker drop-down menu within GitHub Copilot.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/47188731?v=4&s=200",
+          "alt": "Kedasha Kerr",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>How GitHub's new MCP server and GPT-5 are revolutionizing developer workflows — with live build examples.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/gpt-5-in-github-copilot-how-i-built-a-game-in-60-seconds/\">GPT-5 in GitHub Copilot: How I built a game in 60 seconds</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "2025年第一季度创新图谱更新：条形图竞赛、数据可视化兴起及关键研究 (原标题: Q1 2025 Innovation Graph update: Bar chart races, data visualization on the rise, and key research)",
+      "link": "https://github.blog/news-insights/policy-news-and-insights/q1-2025-innovation-graph-update-bar-chart-races-data-visualization-on-the-rise-and-key-research/",
+      "pubDate": "Thu, 14 Aug 2025 16:00:00 +0000",
+      "isoDate": "2025-08-14T16:00:00.000Z",
+      "creator": "Kevin Xu",
+      "summary": "# GitHub创新图谱2025年第一季度更新\n\nGitHub创新图谱旨在为开发者、研究人员和政策制定者提供一种便捷的方式，以探索和分析全球开源软件开发趋势。它提供了一个可靠、透明的数据集，用于追踪全球范围内的公共协作活动。本次最新季度更新包含了截至2025年3月的数据，使得创新图谱涵盖了超过五年的全球软件经济洞察。数据可视化和人工智能（AI）持续获得发展势头，创新图谱正日益成为任何希望将其工作建立在可信、真实开发者数据基础之上的人员的宝贵资源。\n\n## 新功能与趋势\n\n*   **条形图竞赛视频上线**\n    *   我们已在“Git推送”、“仓库”、“开发者”和“组织”等全球指标页面添加了条形图竞赛视频，以更生动地展示数据趋势。\n\n*   **数据可视化进入热门话题排行榜**\n    *   在2025年第一季度，“data-visualization”主题首次进入按唯一推送者数量排名的前50名，位列第50位。\n    *   ![显示“data-visualization”仓库主题在2025年第一季度排名第50位的图表截图。这是它首次也是唯一一次出现在图表上。](https://github.blog/wp-content/uploads/2025/08/data_visualization_topic.png?resize=1024%2C156)\n    *   从2020年第一季度的第100位开始，这是一个艰辛的旅程，其排名稳步上升。\n    *   ![显示“data-visualization”仓库主题随时间排名的折线图。其排名从2020年第一季度的第100位稳步上升到2025年第一季度的第50位，在2022年第一季度曾短暂飙升至约第70位。](https://github.blog/wp-content/uploads/2025/08/data_visualization_historical_rank.png?resize=1024%2C368)\n\n*   **AI和LLM主题的快速增长**\n    *   并非所有仓库主题都像“ai”和“llm”那样拥有如此迅速的上升轨迹。\n    *   “ai”主题从2023年第三季度的第25位迅速上升到2025年第一季度的第8位。\n    *   ![显示“ai”仓库主题随时间快速上升的凸起图，从2023年第三季度的第25位上升到2025年第一季度的第8位。](https://github.blog/wp-content/uploads/2025/08/ai_topic.png?resize=518%2C1024)\n    *   “llm”主题从2024年第二季度的第24位迅速上升到2025年第一季度的第11位。\n    *   ![显示“llm”仓库主题随时间快速上升的凸起图，从2024年第二季度的第24位上升到2025年第一季度的第11位。](https://github.blog/wp-content/uploads/2025/08/llm_topic.png?resize=410%2C1024)\n\n## 关键研究综述\n\n以下是一些近期引起我们兴趣并利用了GitHub和创新图谱数据的研究报告和论文：\n\n1.  **2025年AI指数报告**\n    *   由斯坦福大学以人为本AI研究所（HAI）发布，追踪AI发展和扩散趋势。\n    *   报告第1.6节分析了GitHub上公共AI相关软件项目随时间的变化，显示2024年急剧增加。\n\n2.  **企业加速器与全球创业增长**\n    *   研究发现，参与企业加速器项目使初创公司未来融资增加超过40%。\n    *   创新图谱数据被用作衡量区域技术劳动力能力的指标。\n\n3.  **软件工作的构建块解释编码职业和语言流行度**\n    *   研究人员分析了StackOverflow，开发了一个大规模、细粒度的软件开发任务分类法。\n    *   发现Python开发者更有可能从事与更高薪资相关的任务，这可能因为Python的多功能性使他们更容易掌握不同且不熟悉的领域技能。\n    *   创新图谱数据用于评估StackOverflow用户使用的编程语言分布的代表性。\n\n4.  **谁在使用AI编码？生成式AI的全球扩散与影响**\n    *   研究人员训练了一个分类器来检测AI生成的Python函数，发现美国开发者在GitHub上提交的Python函数中有30%是AI生成的。\n    *   这导致季度总提交量增加了2.4%，每年估计产生96-144亿美元的价值。\n\n5.  **社会能力评估框架：衡量高级AI对脆弱性、韧性和转型的含义**\n    *   研究人员开发了一种基于指标的方法，从三个维度评估社会对高级AI的韧性：结构性因素（“脆弱性”）、预防、吸收和从AI风险中恢复的能力（“韧性”），以及利用AI系统减轻AI风险并重构社会以实现系统性安全的能力（“转型”）。\n    *   创新图谱在原型框架中被引用为衡量社会在网络安全领域人力资本的数据来源。",
+      "shortSummary": "GitHub创新图谱2025年第一季度更新，涵盖五年多数据。本次更新新增了条形图竞赛视频，并显示“数据可视化”主题首次进入前50名。AI和LLM主题持续快速增长。此外，多项利用创新图谱数据的研究被突出，涵盖AI发展趋势、企业加速器对创业的促进、编程语言流行度、AI生成代码的影响以及社会对高级AI的韧性评估。",
+      "translated_title": "2025年第一季度创新图谱更新：条形图竞赛、数据可视化兴起及关键研究",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/data_visualization_topic.png?resize=1024%2C156",
+          "alt": "Screenshot of a chart that shows that the “data-visualization” repository topic is at rank 50 in Q1 2025. This is the first and only time it appears on the chart.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/data_visualization_historical_rank.png?resize=1024%2C368",
+          "alt": "A line chart that shows the rank of the “data-visualization” repository topic over time. Its rank rose steadily from rank 100 in Q1 2020 to rank 50 in Q1 2025, with a temporary spike to approximately rank 70 in Q1 2022.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/ai_topic.png?resize=518%2C1024",
+          "alt": "A bump chart that shows the rapid rise of the “ai” repository topic over time, starting at rank 25 in Q3 2023 to rank 8 in Q1 2025.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/llm_topic.png?resize=410%2C1024",
+          "alt": "A bump chart that shows the rapid rise of the “llm” repository topic over time, starting at rank 24 in Q2 2024 to rank 11 in Q1 2025.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/4744405?v=4&s=200",
+          "alt": "Kevin Xu",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Discover the latest trends and insights on public software development activity on GitHub with the quarterly release of data for the Innovation Graph, updated through March 2025.</p>\n<p>The post <a href=\"https://github.blog/news-insights/policy-news-and-insights/q1-2025-innovation-graph-update-bar-chart-races-data-visualization-on-the-rise-and-key-research/\">Q1 2025 Innovation Graph update: Bar chart races, data visualization on the rise, and key research</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "GitHub 可用性报告：2025 年 7 月 (原标题: GitHub Availability Report: July 2025)",
+      "link": "https://github.blog/news-insights/company-news/github-availability-report-july-2025/",
+      "pubDate": "Wed, 13 Aug 2025 21:00:00 +0000",
+      "isoDate": "2025-08-13T21:00:00.000Z",
+      "creator": "Jakub Oleksy",
+      "summary": "# GitHub 2025 年 7 月可用性报告\n\nGitHub 在 2025 年 7 月经历了一起导致服务性能下降的事件。\n\n## 事件详情\n*   **发生时间**：2025 年 7 月 28 日世界协调时 21:41，持续 5 小时 34 分钟，直至 7 月 29 日世界协调时 03:15。\n*   **受影响服务**：GitHub Enterprise Importer (GEI)。\n*   **影响**：GEI 处于降级状态，无法处理迁移任务。\n*   **原因**：调查发现，GEI 基础设施的一个组件在例行内部改进实施期间被错误地移除服务，且无法恢复到之前的配置。\n*   **解决方案**：需要配置新的资源来解决此事件。\n\n## 已实施的改进\nGitHub 已识别并实施了以下改进措施：\n*   增强基础设施恢复能力。\n*   进行单元测试。\n*   利用测试数据进行更有效的验证。\n\n## 客户所需操作：更新 IP 允许列表\n由于上述改进，客户需要将新的 IP 范围添加到其已启用的 IP 允许列表中。\n\n### 新的 GEI IP 范围（需添加）：\n*   `20.99.172.64/28`\n*   `135.234.59.224/28`\n\n### 不再使用的 GEI IP 范围（可移除）：\n*   `40.71.233.224/28`\n*   `20.125.12.8/29`\n\n### 需要更新的 IP 允许列表类型：\n*   您的目标 `github.com` 组织或企业上的 IP 允许列表。\n*   如果您从 `github.com` 运行迁移，则需更新您的源 `github.com` 组织或企业上的 IP 允许列表。\n*   如果您从 GitHub Enterprise Server、Bitbucket Server 或 Bitbucket Data Center 实例运行迁移，则需更新您配置的 Azure Blob Storage 或 Amazon S3 存储账户上的允许列表。\n*   如果您从 Azure DevOps 运行迁移，则需更新您的 Azure DevOps 组织上的允许列表。\n\n## 通知与支持\n在过去 90 天内使用 GitHub Enterprise Importer 运行过迁移的用户已收到关于此更改的电子邮件提醒。如有任何迁移相关问题，请联系客户支持。\n\n## 更多信息\n*   请关注 GitHub 状态页面以获取实时更新和事件后总结。\n*   访问 GitHub 工程博客了解更多工作进展。\n\n---\n**作者：**\n![Jakub Oleksy](https://avatars.githubusercontent.com/u/6147691?v=4&s=200) Jakub Oleksy\n\n---\n**探索更多 GitHub 资源：**\n\n*   **文档**\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n    掌握 GitHub 所需的一切，尽在一处。\n*   **GitHub**\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n    在 GitHub 上构建未来，这里是任何人、任何地点构建任何事物的平台。\n*   **客户案例**\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n    了解使用 GitHub 进行构建的公司和工程团队。\n*   **GitHub Universe 2025**\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n    最后机会：节省 700 美元购买 Universe 现场通行证，于 10 月 28-29 日在旧金山加入我们。",
+      "shortSummary": "GitHub 2025 年 7 月报告了一起持续 5 小时 34 分钟的事件，导致 GitHub Enterprise Importer (GEI) 迁移服务降级。原因是例行改进中基础设施组件被错误移除。为解决此问题，GitHub 配置了新资源并实施了恢复、测试和验证改进。用户需更新 IP 允许列表，添加新的 GEI IP 范围并移除旧范围。受影响用户已收到邮件通知。",
+      "translated_title": "GitHub 可用性报告：2025 年 7 月",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/6147691?v=4&s=200",
+          "alt": "Jakub Oleksy",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>In July, we experienced one incident that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-july-2025/\">GitHub Availability Report: July 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "从私有到公开：联合国组织如何分四步开源其技术 (原标题: From private to public: How a United Nations organization open sourced its tech in four steps)",
+      "link": "https://github.blog/open-source/social-impact/from-private-to-public-how-a-united-nations-organization-open-sourced-its-tech-in-four-steps/",
+      "pubDate": "Wed, 13 Aug 2025 16:00:00 +0000",
+      "isoDate": "2025-08-13T16:00:00.000Z",
+      "creator": "Joshua Ku",
+      "summary": "# 联合国组织开源技术之旅\n\n本文详细介绍了联合国专门机构国际电信联盟电信发展局（ITU BDT）如何通过与GitHub合作，在六个月内将其技术从封闭的Azure DevOps环境成功过渡到开放源代码社区的经验。这一转变旨在赋能全球合作伙伴，促进更广泛的贡献，并利用开源生态系统扩大其影响力，尤其对于预算和团队有限的联合国组织及非营利机构而言，开源具有显著优势。\n\n经过六个月的演示、讲解、研讨会和反馈会议，BDT在开源软件产品方面显著提升了专业知识，包括：\n*   审查了开发和发布软件文档的最佳实践。\n*   获得了选择合适许可证和创建必要支持文档的专业知识。\n*   掌握了管理贡献和确保代码库安全性的技能。\n*   获得了关于开源软件各方面的宝贵建议。\n\n以下是实现这一转变的四个关键步骤：\n\n## 1. 进行研究\n\n团队首先研究了他们喜欢和不喜欢的开源代码库，以确定要借鉴的经验。一个好的代码库应能让访问者通过README文件迅速了解项目需求及参与的益处，并展示对贡献者和社区的价值。研究内容包括：\n*   其他项目如何构建问题。\n*   社区如何运作。\n*   贡献指南是什么。\n*   模拟作为贡献者遇到的困难，并思考改进方案。\n\n通过研究各种成熟度不同的代码库，团队对开源世界的广阔范围有了清晰的认识。推荐的灵感来源包括Ersilia和Terraform，它们也是活跃社区的典范。\n\n## 2. 完善开放和公开的心态并应用于软件领域\n\n在从其他代码库获得启发后，下一步是处理自己的代码。这包括：\n*   **代码清理**：决定哪些代码可以公开，哪些需要清除敏感信息（如内部引用、商业或不兼容许可证的内容），并在必要时创建示例数据。使用示例数据时，务必提供数据格式指南。\n*   **项目塑造**：明确回答以下关键问题：\n    *   为什么有人会想要贡献？\n    *   是否有清晰的入门指南？\n    *   有哪些工作流程和流程来支持贡献者的成功？\n*   **关键文档**：\n    *   **“入门指南”（Getting Started guide）**：包含如何从零开始准备本地环境的信息，确保新开发者知道需要安装什么才能开始贡献。\n    *   **`CONTRIBUTING.md` 文件**：一份关于项目贡献者期望和责任的指南。\n*   **自动化测试**：在引入外部开发者贡献时，自动化测试和代码检查（linting）对于确保代码质量至关重要。\n\n## 3. 确定许可证\n\n选择开源许可证至关重要，否则他人无法合法使用您的项目。`choosealicense.com` 是一个优秀的资源，可帮助选择合适的许可证。不同的许可证有不同的义务：\n*   **义务极少**：如CC0许可证。\n*   **要求署名**：如Apache 2.0、BSD或MIT许可证。\n*   **要求共享源代码**：如GPL或AGPL许可证。\n\n选择许可证时，需考虑与项目中所有依赖项的许可证兼容性，并确保其有助于开源社区利用您的项目（例如，如果项目旨在嵌入其他项目）。ITU团队最终选择了BSD-2许可证，因为它是一种宽松的许可证，明确要求源代码和二进制文件的再分发必须附带署名。\n\n## 4. 吸引贡献者\n\n为了吸引贡献者，可以识别项目中任何“小痛点”（small papercuts），将其设置为易于解决的问题。这些问题可以转化为GitHub Issue，并标记为`good first issue`，这有助于刚接触开源或新加入代码库的开发者快速上手并熟悉代码库。\n\n## 总结与展望\n\nBDT与GitHub的合作探索了如何最好地开源其软件产品。认识到开源在增强全球访问、包容性和协作方面的机遇，团队旨在更广泛地提供软件工具，并吸引更广泛的开发者社区参与。通过此次合作，团队获得了关于如何使其代码库符合开源最佳实践的指导，并参与了实践环节，学习如何管理贡献和与外部开发者协作。这种结构化的方法为开源参与奠定了坚实的基础。在此进展的基础上，ITU团队致力于开源更多软件产品，并已更好地准备好清晰自信地继续这项工作。从私有到公开可能令人望而生畏，但通过循序渐进，您可以转变思维方式，并看到您的项目不断发展。\n\n**作者**：\n![Joshua Ku](https://avatars.githubusercontent.com/u/106406727?v=4&s=200)",
+      "shortSummary": "联合国国际电信联盟电信发展局（ITU BDT）通过与GitHub合作，成功将其技术从封闭环境开源。为期六个月的项目分四步进行：研究现有开源项目、清理并公开代码、选择合适的开源许可证，以及通过“好上手问题”吸引贡献者。此举旨在扩大影响力，促进全球合作与包容性，使BDT能更好地利用开源生态系统，并为未来开源更多项目奠定基础。",
+      "translated_title": "从私有到公开：联合国组织如何分四步开源其技术",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/106406727?v=4&s=200",
+          "alt": "Joshua Ku",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Learn how the International Telecommunication Union made the switch to open source, and how you can too!</p>\n<p>The post <a href=\"https://github.blog/open-source/social-impact/from-private-to-public-how-a-united-nations-organization-open-sourced-its-tech-in-four-steps/\">From private to public: How a United Nations organization open sourced its tech in four steps</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "我们为何开源MCP服务器，以及这对您意味着什么 (原标题: Why we open sourced our MCP server, and what it means for you)",
       "link": "https://github.blog/open-source/maintainers/why-we-open-sourced-our-mcp-server-and-what-it-means-for-you/",
       "pubDate": "Tue, 12 Aug 2025 13:52:49 +0000",
@@ -211,121 +411,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Learn how to integrate AI features with GitHub Models directly in GitHub Actions workflows.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/automate-your-project-with-github-models-in-actions/\">Automate your project with GitHub Models in Actions</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "入职你的AI结对程序员：成功设置GitHub Copilot编码代理 (原标题: Onboarding your AI peer programmer: Setting up GitHub Copilot coding agent for success)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/onboarding-your-ai-peer-programmer-setting-up-github-copilot-coding-agent-for-success/",
-      "pubDate": "Thu, 31 Jul 2025 17:12:43 +0000",
-      "isoDate": "2025-07-31T17:12:43.000Z",
-      "creator": "Christopher Harrison",
-      "summary": "## 入职你的AI结对程序员：成功设置GitHub Copilot编码代理\n\nGitHub Copilot被定位为AI结对程序员或团队中的AI成员，其编码代理（coding agent）功能能够自主处理问题并提出解决方案。要确保Copilot编码代理的成功，需要进行类似于新开发人员入职的配置和优化。\n\n### GitHub Copilot中的代理工作流：编码代理 vs. 代理模式\n\nGitHub Copilot提供两种核心代理能力：\n\n*   **编码代理 (Coding Agent)**：一个自主工具。你向Copilot分配一个问题，它会在后台启动Actions容器，迭代工作，并最终返回一个拉取请求（PR）。这是一种异步的、面向拉取请求的交互模式。\n*   **代理模式 (Agent Mode)**：一个交互式助手。它在编辑器或github.com上实时执行较小的、多步骤的任务。这是一种对话式的、即时的交互模式。\n\n### Copilot编码代理的工作流程：从问题到可审查的拉取请求\n\n当一个问题被分配给Copilot时，它会遵循以下模式：\n\n1.  为将要创建的代码创建一个分支。\n2.  创建一个拉取请求来跟踪其工作并与团队沟通。\n3.  为其工作创建一个受限环境（在GitHub Actions内部运行）。\n4.  阅读问题或提示以理解请求的任务。\n5.  探索项目以确定解决问题的最佳方法。\n6.  迭代地朝着解决方案工作。\n7.  完成工作，更新拉取请求，并通知团队拉取请求已准备好审查。\n\n理解这个流程有助于我们确保Copilot的成功。\n\n### 使用GitHub Actions配置Copilot的环境\n\n为了让Copilot高效工作，它需要访问团队使用的所有工具、服务、库和框架。这可以通过自定义工作流文件来实现：\n\n*   **工作原理**：编码代理在GitHub Actions中运行的容器内工作。你可以利用Actions的YAML配置能力来确保容器正确设置。\n*   **配置步骤**：\n    *   在`.github/workflows/copilot-setup-steps.yml`路径下创建一个名为`copilot-setup-steps`的作业。\n    *   在该作业中列出安装环境所需的所有步骤（例如，安装Python和SQLite依赖）。\n    *   每次将问题分配给Copilot时，它都会运行此工作流来配置其环境。\n*   **专业提示**：可以重用现有的用于开发环境（如运行测试或验证脚本）的工作流。\n*   **重要提示**：如果某些操作应以特定方式完成，请明确告知Copilot，避免其自行推断导致意外版本或错误。\n\n### 通过精心编写的问题和提示设置Copilot的成功\n\n问题或提示是Copilot创建拉取请求的入口点。问题定义越清晰，拉取请求的质量就越高。一个好的问题应包含：\n\n*   清晰定义的问题陈述或用户故事。\n*   如果是bug，提供完整的错误信息、堆栈跟踪、输出以及重现步骤。\n*   任何相关的历史或之前尝试过的方法。\n*   关于如何处理问题的建议。\n\n**示例**：一个将测试从unittest迁移到pytest的良好问题描述，详细说明了需求、现有资源和推荐方法。\n\n### 使你的仓库受欢迎（对开发者和AI）\n\n优化项目结构和文档对Copilot和新入职的开发者同样重要。Copilot在处理问题时会探索代码库，查找README文件并阅读文档，然后进行代码库搜索。\n\n*   **优化内容**：\n    *   拥有健壮且最新的项目和服务README文件。\n    *   代码中包含描述操作的注释。\n    *   遵循良好的命名规范（类、函数、变量）。\n    *   逻辑化的项目结构，遵循文件夹名称和实体分组的最佳实践。\n*   **专业提示**：通过查看Copilot创建的PR中的“View session”按钮，你可以了解Copilot的工作方式，从而进一步优化任务分配和环境配置。\n\n### 使用Copilot自定义指令记录机构知识\n\n自定义指令是指导Copilot的最佳方式，它们可以包含代码格式规则或团队“固有”但未书面记录的机构知识。Copilot编码代理支持两种类型的指令文件：\n\n1.  **仓库级指令文件 (`copilot-instructions.md`)**：\n    *   存储在代码库的`.github/copilot-instructions.md`中。\n    *   适用于所有请求。\n    *   应包含：项目概览、构建方式、用户故事、使用的框架和库、项目结构、全局编码指南和规则。\n    *   **示例**：一个关于经典街机项目的指令文件，包含标准玩家流程、框架、编码指南和项目结构。\n\n2.  **目标指令文件 (`.instructions.md`)**：\n    *   存储在代码库的`.github/instructions/`文件夹（或其子文件夹）中。\n    *   可以通过`applyTo`部分设置glob模式，以指定规则适用的文件类型（例如，`**/games/*.py`）。\n    *   包含特定于这些文件的指令，如继承的基类和测试要求。\n    *   **示例**：一个针对游戏文件的指令文件，要求所有游戏继承自`BaseGame`，并包含单元测试要求。",
-      "shortSummary": "本文介绍了如何成功设置和使用GitHub Copilot编码代理。关键在于通过GitHub Actions配置其运行环境，编写清晰详细的问题和提示以指导其工作，优化项目结构和文档以提高其理解效率。此外，利用仓库级和目标文件级的自定义指令，可以向Copilot传达编码规范和机构知识，确保其生成的代码符合团队标准，从而使其成为高效的AI结对程序员。",
-      "translated_title": "入职你的AI结对程序员：成功设置GitHub Copilot编码代理",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Learn how to configure Copilot coding agent’s environment, optimize project structure, use custom instructions, and extend its capabilities with MCP servers.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/onboarding-your-ai-peer-programmer-setting-up-github-copilot-coding-agent-for-success/\">Onboarding your AI peer programmer: Setting up GitHub Copilot coding agent for success</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub MCP 服务器实用指南 (原标题: A practical guide on how to use the GitHub MCP server)",
-      "link": "https://github.blog/ai-and-ml/generative-ai/a-practical-guide-on-how-to-use-the-github-mcp-server/",
-      "pubDate": "Wed, 30 Jul 2025 16:00:00 +0000",
-      "isoDate": "2025-07-30T16:00:00.000Z",
-      "creator": "Andrea Griffiths",
-      "summary": "# GitHub MCP 服务器实用指南\n\n本文提供了一份关于如何从本地 Docker 镜像升级到 GitHub 托管的 Model Context Protocol (MCP) 服务器的实用指南，旨在帮助用户自动化拉取请求、持续集成和安全分类等任务，且无需令牌。\n\n## GitHub MCP 服务器简介\n\n本地运行 MCP 服务器虽然可行，但管理 Docker、轮换访问令牌和拉取更新等操作繁琐。GitHub 托管的 MCP 端点消除了这些基础设施的烦恼，让开发者能够专注于代码交付。本教程将引导用户从本地 MCP 设置升级到 GitHub 托管端点，从而获得 OAuth 认证、自动更新以及访问更丰富的 AI 工作流所需的工具集。用户还将学习如何通过只读模式自定义工具访问、通过动态工具集简化 AI 工作流，并为使用 GitHub Copilot 进行代理间协作做好准备。\n\nGitHub 远程 MCP 服务器是 GitHub 完全托管、始终保持最新状态的 MCP 实现。用户只需将 IDE 或代理主机指向 `https://api.githubcopilot.com/mcp/`，并通过 OAuth 进行一次性认证，GitHub 将处理其余所有事务。\n\n### 默认启用的工具集（可禁用）\n\n*   **代码库智能：** 无需本地克隆即可搜索代码、流式传输文件和打开拉取请求。\n*   **问题和拉取请求自动化：** 从单个代理提示中归档、分类、标记、审查甚至合并。\n*   **CI/CD 可见性：** 在聊天中检查工作流运行、获取日志并重新运行失败的作业。\n*   **安全洞察：** 发现代码扫描和 Dependabot 警报，确保在漏洞被利用前修复。\n*   **细粒度控制：** 切换特定工具集或将服务器设置为只读模式以提高安全性。\n\n## 为什么选择托管 MCP 服务器？\n\n本地开源 MCP 服务器虽然可用，但存在隐性成本。以下是切换到远程托管服务器后的变化：\n\n| 特性           | 本地 Docker 服务器          | 托管 MCP 端点                   |\n| :------------- | :-------------------------- | :------------------------------ |\n| 维护与升级     | 手动维护 Docker 镜像，手动升级 | GitHub 自动修补和升级           |\n| 认证           | 管理个人访问令牌 (PATs)     | 通过 OAuth 一次性登录，范围自动处理 |\n| 可访问性       | 仅在 localhost 上暴露服务器 | 可从任何 IDE 或远程开发环境访问   |\n| 写入权限       | 除非自定义二进制文件，否则完全写入权限 | 内置只读开关和按工具集标志控制    |\n\n对于大多数团队而言，托管服务器消除了基础设施工作，使团队能够专注于自动化。但如果需要气隙环境，仍需坚持使用本地设置。\n\n## 开始前的准备\n\n*   GitHub Copilot 或 Copilot Enterprise 席位\n*   VS Code 1.92+（或其他支持 MCP 的客户端）\n*   网络访问 `https://api.githubcopilot.com`\n*   一个用于实验的测试仓库\n\n## 步骤 1：安装远程 MCP 服务器\n\n与基于本地 Docker 的安装相比，设置 GitHub 远程 MCP 服务器非常简单。它由 GitHub 托管，无需管理 Docker 容器或手动处理更新，提供简化的云原生体验。\n\n### 在 VS Code 或 VS Code Insiders 上安装：\n\n1.  打开命令面板并运行：`> GitHub MCP: Install Remote Server`\n2.  完成 OAuth 流程以连接您的 GitHub 账户。\n3.  重启服务器以完成设置。\n\n### 对于任何其他客户端：\n\n1.  将服务器 URL 设置为：`https://api.githubcopilot.com/mcp/`\n2.  在提示时进行认证。\n\n### 验证连接：\n\n使用 `curl -I https://api.githubcopilot.com/mcp/healthz` 进行快速检查。如果看到 `HTTP/1.1 200 OK`，则表示连接成功。安装后，远程服务器将取代本地服务器，无需 Docker 或令牌，只需简单的集成。\n\n## 步骤 2：配置访问控制\n\n### 使用只读模式进行安全探索\n\n在敏感环境、生产测试或向利益相关者演示时，可以将服务器切换到只读模式：\n\n```json\n{\n  \"servers\": {\n    \"github\": {\n      \"type\": \"http\",\n      \"url\": \"https://api.githubcopilot.com/mcp/\",\n      \"mode\": \"read-only\"\n    }\n  }\n}\n```\n\n在此模式下，代理可以读取问题、拉取请求和代码，但无法推送更改。这非常适合需要上下文而无风险的代码审查。\n\n**用例：拉取请求查看器**\n无需修改任何内容即可审查拉取请求。此设置提供安全的只读访问，非常适合浏览更改、留下评论或收集上下文，而不会有更改代码的风险。\n\n1.  访问 GitHub MCP 服务器仓库。\n2.  导航到“Remote Server”部分。\n3.  选择拉取请求只读变体。\n4.  点击“Install Read Only”。\n\n您将看到 `listPullRequests`、`getPullRequest` 和 `searchPullRequests` 等工具，但没有写入权限。由于这些工具不进行更改，VS Code 会跳过权限提示，提供无缝体验。\n\n### 通过选择性工具集限制范围\n\n通过以下命令仅暴露所需的工具，使开发人员和代理都保持专注：\n\n```json\n\"toolsets\": [\"context\", \"issues\", \"pull_requests\"]\n```\n\n将此数组添加到 `mode` 字段旁边即可隐藏其他所有内容。\n\n## 步骤 3：通过三个实践示例进行尝试\n\n这些实际示例展示了 Copilot 代理模式如何在实践中处理日常开发任务，如管理拉取请求、调试工作流和分类安全警报，而无需本地设置或手动挖掘。只需提示即可。\n\n### 示例 1：添加 CODEOWNERS 文件并打开拉取请求\n\n打开您的仓库，然后询问 Copilot 代理：\n提示：“为 `/api/**` 添加一个 CODEOWNERS 文件，分配给 `@backend-team`，然后打开一个草稿拉取请求。”\n\n代理将：\n*   使用 `repos.create_file` 添加 CODEOWNERS 文件。\n*   调用 `pull_requests.open` 创建拉取请求。\n*   执行 `pull_requests.request_reviewers` 分配审阅者。\n\n无需本地克隆，无需手动创建文件。只需提示即可完成。\n\n### 示例 2：调试失败的工作流\n\n提示：“昨晚 `release.yml` 作业为什么失败了？”\n代理将使用 `actions.get_workflow_run_logs` 拉取日志，分析堆栈跟踪，并建议修复方案。这就像有一位高级工程师审查您的 CI/CD 故障。\n\n### 示例 3：分类安全警报\n\n提示：“列出我所有仓库中的关键 Dependabot 警报，并为每个警报创建问题。”\n服务器将通过 `dependabot.list_dependabot_alerts` 返回警报，然后代理仅在需要时创建有针对性的问题。\n\n## 步骤 4：GitHub 远程 MCP 服务器故障排除技巧\n\n| 症状             | 可能原因                   | 修复方法                               |\n| :--------------- | :------------------------- | :------------------------------------- |\n| 安装时 401 Unauthorized | 遗留的 `GITHUB_TOKEN` 环境变量 | 取消设置该变量并重新运行 OAuth 流程    |\n| 工具不显示       | 企业代理阻止 `api.githubcopilot.com` | 添加代理设置或将该域列入白名单         |\n| 模型超时         | 启用了大型工具集           | 仅限于所需的工具集                     |\n\n## 步骤 5：使用动态工具集简化工作流\n\n完整的 MCP 服务器包含 70 多个工具，虽然功能强大，但这可能会让您和 AI 模型感到不知所措。这就是动态工具集的用武之地。\n\n**工作原理：**\n大型语言模型 (LLM) 最初只包含少量元工具：`listAvailableToolsets`、`enableToolset` 和 `getToolsetTools`。它会根据手头的任务（例如“处理拉取请求”）确定所需工具，然后仅获取并启用这些工具。VS Code 会通过工具更改通知自动加载它们。这使得您的界面（和您的 AI）保持专注和高效。\n\n## 步骤 6：安全和代理工作流的下一步发展\n\nGitHub MCP 服务器正在积极发展。以下是即将推出的功能：\n\n### MCP 中的秘密扫描\n\n很快，MCP 服务器将能够检测并阻止 AI 生成的秘密，就像 GitHub 阻止您在拉取请求中推送秘密一样。如果需要，您可以覆盖，但默认设置会保护您的数据，无论是来自提示注入还是意外情况。\n\n### 将问题分配给 Copilot\n\n与 Copilot 编码代理的直接集成意味着您将能够：\n*   将问题直接分配给 Copilot。\n*   从 VS Code 触发完成。\n*   观察代理间工作流在不同工具之间展开。\n\n未来是代理与代理之间的协作，而 GitHub MCP 是其基础。\n\n## 贡献与总结\n\nGitHub MCP 项目是完全开源的，并且发展迅速。欢迎：\n*   **探索仓库：** 了解工具的构建方式并贡献您自己的工具。\n*   **提交问题：** 帮助塑造协议和工具。\n*   **加入讨论：** 在 GitHub 和 Discord 上与其他构建者联系。\n\n无论您是构建工具、提供反馈还是探索 AI 驱动的开发，MCP 生态系统都有您的位置。\n\nGitHub 远程 MCP 服务器消除了基础设施开销，让您能够专注于构建更好的自动化。不再需要管理 Docker，不再需要轮换令牌，只需一次 OAuth 认证即可开始交付。记住：最好的基础设施是您无需管理的基础设施。\n\n阅读完整的文档以开始使用，或深入研究上述示例并立即开始实验。",
-      "shortSummary": "GitHub MCP 服务器提供托管服务，简化AI工作流。它替代了本地Docker设置，消除了令牌管理和手动更新的繁琐。通过OAuth认证，用户可获得自动更新和丰富的AI工具集，支持代码库智能、PR自动化、CI/CD可见性及安全洞察。该服务提供只读模式和动态工具集等细粒度控制。未来将集成AI生成秘密扫描和Copilot代理间协作，旨在实现代理间的无缝协作，让开发者专注于代码交付。",
-      "translated_title": "GitHub MCP 服务器实用指南",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Upgrade from a local MCP Docker image to GitHub’s hosted server and automate pull requests, continuous integration, and security triage in minutes — no tokens required.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/a-practical-guide-on-how-to-use-the-github-mcp-server/\">A practical guide on how to use the GitHub MCP server</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "从首次提交到大型项目：收听我们的全新开源播客 (原标题: From first commits to big ships: Tune into our new open source podcast)",
-      "link": "https://github.blog/open-source/maintainers/from-first-commits-to-big-ships-tune-into-our-new-open-source-podcast/",
-      "pubDate": "Tue, 29 Jul 2025 16:31:29 +0000",
-      "isoDate": "2025-07-29T16:31:29.000Z",
-      "creator": "Abigail Cabunoc Mayes",
-      "summary": "# GitHub推出全新开源播客：从首次提交到大型项目\n\nGitHub隆重推出全新播客，旨在深入探讨开源世界的运作机制，以及为何如此多的人持续投入其中共同建设。播客将深入挖掘代码背后的故事：塑造开源生态系统的项目、人物和理念。\n\n## 播客宗旨与GitHub愿景\nGitHub认为开源一直是未来创新的启动平台。尤其在2025年，软件领域的一切新事物，从AI代理到边缘运行时再到气候技术仪表板，都始于公共仓库，任何人都可以轻松地进行分叉、重混和改进。投资开源公共领域，不仅是赞助代码，更是为全球的研发引擎提供支持。播客将围绕这一核心理念，探索构成当今开源的一切要素。\n\n## 核心贡献者团队\n播客由一支由资深开源贡献者组成的轮值主持团队共同呈现，包括：\n*   **Cassidy Williams**\n*   **Kedasha Kerr**\n*   **Andrea Griffiths**\n*   **Abby Cabunoc Mayes** (本文作者)\n\n他们都对开源世界的不同领域做出了长期贡献。团队将共同探讨当前开源领域中令人兴奋、充满挑战和不断演变的话题，涵盖社区建设、开放科学、开发者教育以及公开构建等。每位主持人都会为对话带来独特的视角。\n\n## 首期节目亮点\n在首期节目中，主持人团队进行了自我介绍，分享了他们如何参与到开源中，以及是什么让他们坚持不懈。\n*   Kedasha讨论了在看似充斥着初学者开发者内容的今天，创建初学者内容的重要性。\n*   Cassidy分享了她十几岁时偶然听到的一段对话如何激发了她对代码的热爱。\n\n节目还特别介绍了本周引起他们关注的一些优秀开源项目：\n*   **Anime.JS**：一个视觉效果惊艳的JavaScript动画库，激发创造力。\n*   **Docs**：由法国和德国政府开发的协作式开源文档编辑器。\n*   **CSS Zero**：一个无需构建的前端启动套件，简化了Web开发。\n\n## 播客内容与未来展望\n播客将每两周更新一期，分享来自开源生态系统中的维护者、贡献者和构建者的故事。内容将涵盖工具、标准以及那些带来乐趣（有时也带来混乱）的副项目。\n\n听众还将听到特邀嘉宾的分享，例如：\n*   **Jason Lengstorf**：为开发者制作电视节目。\n*   **Keeley Hammond**：Electron的核心维护者。\n\n他们将分享各自的旅程和见解。无论您是刚刚入门，还是已经维护项目多年，播客都将为您提供有价值的内容。\n\n## 即将推出\n下一期节目将深入探讨**模型上下文协议（Model Context Protocol, MCP）**：\n*   它是什么？\n*   为什么它很重要？\n*   它如何帮助提高AI工具的透明度和互操作性？\n\n节目将探索MCP如何建立在开放标准的悠久历史之上，以及它为当今开发者解锁了哪些可能性。\n\n## 作者与相关资源\n本文由 **Abigail Cabunoc Mayes** 撰写。\n![Abigail Cabunoc Mayes](https://avatars.githubusercontent.com/u/617994?v=4&s=200)\nAbigail Cabunoc Mayes 在 GitHub 工作，致力于帮助开源生态系统在当下和未来蓬勃发展。\n\n**相关文章与资源：**\n*   **我们需要一个欧洲主权技术基金**：探讨开源软件作为关键基础设施却资金不足的问题，以及GitHub开发者政策团队如何建立联盟以弥补维护资金缺口。\n*   **Docs**：掌握GitHub所需的一切，一站式获取。\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n    [前往Docs](https://docs.github.com/)\n*   **GitHub**：在GitHub上构建未来，这里是任何人、任何地点、构建任何事物的平台。\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n    [开始构建](https://github.com/)\n*   **客户案例**：了解使用GitHub进行构建的公司和工程团队。\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n    [了解更多](https://github.com/customer-stories)\n*   **GitHub Universe 2025**：最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山加入我们。\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n    [立即注册](https://github.com/universe)",
-      "shortSummary": "GitHub推出全新开源播客，探讨开源生态系统的故事、人物和理念。播客由多位资深开源贡献者轮流主持，每两周更新一期。内容涵盖社区建设、开发者教育和精选开源项目（如Anime.JS、Docs、CSS Zero）。未来将邀请特邀嘉宾并深入探讨Model Context Protocol等前沿话题。播客旨在为开源社区提供洞察和灵感，无论初学者还是资深维护者都能从中受益。",
-      "translated_title": "从首次提交到大型项目：收听我们的全新开源播客",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/617994?v=4&s=200",
-          "alt": "Abigail Cabunoc Mayes",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Introducing the brand new GitHub Podcast: A show dedicated to the topics, trends, stories, and culture in and around the open source developer community on GitHub.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/from-first-commits-to-big-ships-tune-into-our-new-open-source-podcast/\">From first commits to big ships: Tune into our new open source podcast</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "扩大影响力：GitHub Copilot 如何赋能小农户 (原标题: Scaling for impact: How GitHub Copilot supercharges smallholder farmers)",
-      "link": "https://github.blog/open-source/social-impact/scaling-for-impact-how-github-copilot-supercharges-smallholder-farmers/",
-      "pubDate": "Mon, 28 Jul 2025 19:53:32 +0000",
-      "isoDate": "2025-07-28T19:53:32.000Z",
-      "creator": "Paull Young",
-      "summary": "## One Acre Fund 简介与使命\n\nOne Acre Fund 始于 2006 年肯尼亚西部的 40 个农户家庭，现已发展成为一项强大的运动。如今，该组织在东非和南部非洲的十个国家为 500 万农户家庭提供服务。他们的宏伟目标是到 2030 年每年支持 1000 万农户家庭，并通过利用开源技术和人工智能，为这些社区创造惊人的 10 亿美元新收入。\n\n### 科技赋能农业\n\n对于小农户（通常耕作一英亩或更少土地的农民）而言，集约化农业对其繁荣至关重要。这种在相同土地上生产更多食物的过程，不仅能带来更高的作物产量，还能刺激经济、加强社区并帮助农民扩大规模。One Acre Fund 的核心使命是赋能这些农民，为他们提供一条摆脱贫困的直接途径。与传统小额信贷不同，他们不只提供现金贷款，而是直接提供重要的农业资源，如化肥和种子，以及培训和服务，为农民提供成功所需的工具。他们还帮助农民改善土壤健康和种植树木，不仅提高产量，还能帮助农民更好地应对气候变化带来的天气变化。\n\n> “过去，农民害怕使用技术。但随着我们为他们提供培训，他们现在渴望使用它。”\n> — Blaise Murame，One Acre Fund 区域负责人\n\n技术是 One Acre Fund 快速增长的核心。他们已从完全模拟的方法（在田间使用纸质记录与农民会面）转变为高度数字化的系统。这一转变彻底改变了他们的运营，使从物流和交付到农民注册以及培训材料开发的一切都变得更加高效。农民最初犹豫不决，但在及时获得资源和工具并比以往更快地实现目标后，现在渴望拥抱这项技术。\n\n## GitHub Copilot 的赋能作用\n\nOne Acre Fund 技术飞跃的一个重要部分来自于他们对 GitHub Copilot 的采用。\n\n> “自从 GitHub Copilot 问世以来，我们过去需要三周的开发工作现在可以在一周内完成。这影响了我们的目标——我们能够设定比去年更多的目标。”\n> — Yididiya Gebredingel，One Acre Fund 开发人员\n\n通过引入 GitHub Copilot，One Acre Fund 能够更快地推进开发，并专注于真正在实地产生影响的部分。这种加速使他们能够设定并实现更多目标，开发人员完成项目的速度提高了三倍，超过 30% 的工作由 AI 辅助完成。\n\n## 开源技术的重要性\n\n作为一个非营利组织，与世界上最贫困的人群打交道意味着在微薄的利润下运营。这使得其解决方案的成本效益至关重要。开源技术提供了理想的平衡，既提供了“解决方案的成熟度，又提供了解决方案的灵活性”，同时避免了随着规模扩大而呈指数级增长的许可费用负担。拥抱开源社区是 One Acre Fund 的一项战略举措，他们已将其大部分核心运营系统迁移到开源，以利用协作开发和社区支持。\n\n> “作为一个非营利组织，我们无法承受随着规模扩大而呈指数级增长的许可费用。开源为我们提供了解决方案成熟度和解决方案灵活性之间的正确平衡。”\n> — Sarah Hylden，One Acre Fund 全球运营总监\n\n## 总结与展望\n\n最终，One Acre Fund 相信，如果你有一个行之有效的干预措施，可以为农民创造可持续的脱贫之路，并且你知道它有效，那么你就有道德义务去扩大它的规模。在 GitHub Copilot 的帮助下，他们正在这样做——更快地行动，对数百万农户家庭的生活产生更大的影响。\n\n### 相关资源\n\n*   ![Paull Young](https://avatars.githubusercontent.com/u/157849754?v=4&s=200)\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切，尽在一处。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来，这里是任何人、任何地方构建任何东西的平台。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) 客户案例：了解使用 GitHub 进行构建的公司和工程团队。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025：最后机会：节省 700 美元购买 Universe 现场通行证，于 10 月 28-29 日在旧金山与我们相聚。",
-      "shortSummary": "One Acre Fund 是一家非营利组织，通过提供农资、培训和技术，帮助非洲小农户摆脱贫困。他们采用 GitHub Copilot 和开源技术，显著加速了软件开发，将项目完成速度提升三倍，并有效控制了成本。这使得组织能更快地扩大规模，目标是到 2030 年每年支持 1000 万农户，为他们创造 10 亿美元新收入，从而对数百万农户的生活产生深远影响。",
-      "translated_title": "扩大影响力：GitHub Copilot 如何赋能小农户",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/157849754?v=4&s=200",
-          "alt": "Paull Young",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Empowering 10 million farm families by 2030 to generate $1 billion in new revenue. How GitHub helps One Acre Fund’s mission — driving real impact across Africa.</p>\n<p>The post <a href=\"https://github.blog/open-source/social-impact/scaling-for-impact-how-github-copilot-supercharges-smallholder-farmers/\">Scaling for impact: How GitHub Copilot supercharges smallholder farmers</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-08-13T04:40:59.565Z"
+  "lastUpdated": "2025-08-15T04:40:48.621Z"
 }
