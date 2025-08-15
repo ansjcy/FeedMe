@@ -5,6 +5,26 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "介绍 Gemma 3 270M：超高效AI的紧凑型模型 (原标题: Introducing Gemma 3 270M: The compact model for hyper-efficient AI)",
+      "link": "https://developers.googleblog.com/en/introducing-gemma-3-270m/",
+      "pubDate": "Wed, 13 Aug 2025 16:00:00 GMT",
+      "isoDate": "2025-08-13T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## 介绍 Gemma 3 270M：超高效AI的紧凑型模型\n\n**发布日期：** 2025年8月14日\n\nGemma系列开放模型近期发展迅速，继Gemma 3、Gemma 3 QAT和移动优先的Gemma 3n之后，谷歌推出了Gemma 3 270M。这款模型是Gemma 3工具包中的一个高度专业化新成员，旨在为开发者提供构建AI的实用工具，并已助力Gemma系列下载量突破2亿。\n\n### Gemma 3 270M 概览\n\nGemma 3 270M是一个拥有2.7亿参数的紧凑型模型，从头开始设计，专注于任务特定的微调，并内置了强大的指令遵循和文本结构化能力。它在IFEval基准测试中表现出色，为同等规模的模型设立了新的性能标准，使复杂的AI能力在设备端和研究应用中更易于访问。\n\n![Gemma 3 270M](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemma3-270M_Chart01_RD3-V01.original.jpg)\n\n### 核心能力\n\n1.  **紧凑而强大的架构：**\n    *   总参数：2.7亿（1.7亿嵌入参数，1亿用于Transformer块）。\n    *   大词汇量：25.6万个词元，能够处理特定和罕见的词元，是特定领域和语言微调的强大基础模型。\n\n2.  **极致的能源效率：**\n    *   功耗极低。在Pixel 9 Pro SoC上的内部测试显示，INT4量化模型进行25次对话仅消耗0.75%的电池电量，是Gemma系列中最节能的模型。\n\n3.  **指令遵循能力：**\n    *   发布了经过指令微调的模型和预训练检查点。\n    *   虽然不适用于复杂的对话场景，但它能很好地遵循通用指令。\n\n4.  **生产就绪的量化：**\n    *   提供量化感知训练（QAT）检查点，支持以INT4精度运行模型，性能下降极小，这对于部署在资源受限设备上至关重要。\n\n### “物尽其用”的理念\n\nGemma 3 270M体现了“物尽其用”的工程哲学。它是一个高质量的基础模型，开箱即用就能很好地遵循指令，其真正的力量通过微调得以释放。经过专业化处理后，它能以卓越的准确性、速度和成本效益执行文本分类和数据提取等任务。通过使用紧凑而强大的模型，可以构建精简、快速且运营成本显著降低的生产系统。\n\n### 实际应用案例\n\n*   **Adaptive ML与SK Telecom的合作：** Adaptive ML通过微调Gemma 3 4B模型来应对多语言内容审核的挑战。结果显示，专业化的Gemma模型在特定任务上超越了许多大型专有模型的性能。\n*   **创意应用：** Gemma 3 270M被用于驱动一个基于Transformers.js的睡前故事生成器网络应用。其小巧的尺寸和高性能使其非常适合离线、基于网络的创意任务。\n\n### 何时选择 Gemma 3 270M\n\nGemma 3 270M继承了Gemma 3系列的先进架构和强大的预训练基础，为自定义应用提供了坚实的基础。它是以下场景的理想选择：\n\n*   **高吞吐量、明确定义的任务：** 适用于情感分析、实体提取、查询路由、非结构化到结构化文本处理、创意写作和合规性检查等功能。\n*   **对毫秒和微分成本敏感：** 大幅降低或消除生产中的推理成本，并为用户提供更快的响应。微调后的270M模型可以在轻量级、廉价的基础设施上或直接在设备上运行。\n*   **需要快速迭代和部署：** Gemma 3 270M的小尺寸允许快速进行微调实验，帮助您在数小时而非数天内找到适合您用例的完美配置。\n*   **需要确保用户隐私：** 由于模型可以完全在设备上运行，您可以构建处理敏感信息的应用程序，而无需将数据发送到云端。\n*   **需要一系列专业化任务模型：** 可以在不超出预算的情况下，构建和部署多个自定义模型，每个模型都经过专业训练以执行不同的任务。\n\n### 开始微调\n\nGemma 3 270M与Gemma 3系列其他模型采用相同架构，并提供快速入门的指南和工具。您可以在Gemma文档中找到使用Gemma 3 270M进行完整微调的指南。\n\n*   **下载模型：** 可从Hugging Face、Ollama、Kaggle、LM Studio或Docker获取预训练和指令微调模型。\n*   **试用模型：** 可在Vertex AI或使用llama.cpp、Gemma.cpp、LiteRT、Keras和MLX等流行推理工具进行试用。\n*   **开始微调：** 使用Hugging Face、UnSloth和JAX等您喜欢的工具。\n*   **部署解决方案：** 微调完成后，您可以将专业化模型部署到任何地方，从本地环境到Google Cloud Run。\n\nGemmaverse的理念是创新无大小。通过Gemma 3 270M，谷歌赋能开发者构建更智能、更快、更高效的AI解决方案。",
+      "shortSummary": "Gemma 3 270M是谷歌推出的一款紧凑型、2.7亿参数的AI模型，专为任务特定微调设计。它具备强大的指令遵循能力和极高的能源效率，可在设备端运行，大幅降低推理成本并保护用户隐私。该模型非常适合需要高效率、快速迭代和专业化AI解决方案的场景，使先进AI更易于部署和访问，推动创新。",
+      "translated_title": "介绍 Gemma 3 270M：超高效AI的紧凑型模型",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemma3-270M_Chart01_RD3-V01.original.jpg",
+          "alt": "Gemma 3 270M",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Google's new Gemma 3 270M is a compact, 270-million parameter model offering energy efficiency, production-ready quantization, and strong instruction-following, making it a powerful solution for task-specific fine-tuning in on-device and research settings."
+    },
+    {
       "title": "Gemini CLI + VS Code：原生差异比较和上下文感知工作流 (原标题: Gemini CLI + VS Code: Native diffing and context-aware workflows)",
       "link": "https://developers.googleblog.com/en/gemini-cli-vs-code-native-diffing-context-aware-workflows/",
       "pubDate": "Tue, 12 Aug 2025 16:00:00 GMT",
@@ -196,20 +216,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Opal is a new experimental tool from Google Labs that helps you compose prompts into dynamic, multi-step mini-apps using natural language, removing the need for code, allowing users to build and deploy shareable AI apps with powerful features and seamless integration with existing Google tools."
-    },
-    {
-      "title": "AI人物播客第五季上线：认识塑造未来的人工智能建设者 (原标题: People of AI podcast Season 5 is here: Meet the builders shaping the future)",
-      "link": "https://developers.googleblog.com/en/people-of-ai-podcast-season-5/",
-      "pubDate": "Wed, 23 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-23T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## AI人物播客第五季：聚焦AI建设者\n\nGoogle的“AI人物播客”（People of AI podcast）第五季已于2025年7月24日回归，本季将深入探讨不断变化的AI世界，并带来一个全新的视角：聚焦AI的“建设者”（Builders）。这些建设者包括开发者、初创公司、创始人以及所有积极塑造AI未来的人。\n\n### 聚焦“建设者”的原因\n\nAI领域正在迅速发展，对“可能”的定义、开发者角色以及日常工作方式都在快速演变。几年前还在研究论文中的概念，如今已迅速成为数百万用户日常使用的产品和应用的核心部分。生成式AI已触手可及，并嵌入到用户喜爱的工具中，以科幻般的方式激发着人们的想象力。因此，本季播客将重点转向这些正在构建AI的“建设者”。\n\n### 首集亮点：探索AI前沿\n\n首集节目邀请到Google DeepMind研究副总裁Clement Farabet。节目深入探讨了AI的演变，从卷积神经网络（CNNs）到Transformer模型，再到大型语言模型（LLMs）的强大能力，以及这些进步如何为智能体系统（agentic systems）铺平道路。Clement Farabet以工程师、企业家和自称“疯狂科学家”的独特视角，分享了构建能够真正学习、行动、在现实世界中提供帮助并负责任的AI智能体的激动人心的可能性和关键挑战。\n\n### 第五季新变化\n\n除了新的焦点，本季播客主持人Ashley Oldacre将与资深播客主持人Christina Warren搭档，为对话带来深刻的技术见解和全新视角。他们将带领听众深入了解那些正在改变一切的初创公司、研究人员和行业领袖的幕后故事，揭示建设者们正在努力解决的问题以及AI如何融入解决方案。\n\n### 本季部分嘉宾预告\n\n本季将邀请多位行业专家和创新者，包括：\n\n*   **AI开发与教育：** 听取资深开发者Muhammad Farooq和Jerome Hardaway关于未来开发和AI教育的见解。\n*   **AI电影创作：** 了解导演Eliza McNitt和Google DeepMind的Veo团队（Ben Wiley, Kory Mathewson）如何创作出首部AI制作电影《ANCESTRA》的幕后创意过程。\n*   **AI助手未来：** 与Bibo Xu（Project Astra）和Jérôme Monceaux（Enchanted Tools）讨论AI助手的未来发展。\n*   **AI跨领域应用：** 探索创新者Max Child和James Wilsterman（Volley）、Andrew Carr（Cartwheel）以及Dr. Dhruv Joshi（Cloudphysician）如何将AI融入游戏、动画和医疗保健领域。\n\n### 播客目标\n\n“AI人物播客”第五季是了解推动AI革命的真实世界创新者的绝佳机会。他们的故事将激励听众进行创造性思考，克服挑战，并为负责任且有影响力的AI未来做出贡献。\n\n### 订阅与关注\n\n请在goo.gle/PAI订阅“AI人物播客”，并在LinkedIn和X上关注Google AI Developers，获取最新动态和幕后内容。",
-      "shortSummary": "Google的“AI人物播客”第五季已上线，本季将聚焦AI的“建设者”，即塑造AI未来的开发者、初创公司和创始人。节目将深入探讨AI的快速演变，包括生成式AI和智能体系统，并邀请Google DeepMind的Clement Farabet等行业领袖分享见解。新主持人Christina Warren加入，共同揭示AI创新者如何解决现实问题，并探讨AI在各领域的应用，旨在激励听众为负责任的AI未来贡献力量。",
-      "translated_title": "AI人物播客第五季上线：认识塑造未来的人工智能建设者",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Co-hosted by Ashley Oldacre and Christina Warren, People of AI podcast's Season 5 will focus on the builders in the space of AI, highlighting the unique journeys, challenges, and triumphs of these innovators."
     }
   ],
-  "lastUpdated": "2025-08-14T10:33:01.294Z"
+  "lastUpdated": "2025-08-15T10:31:07.596Z"
 }
