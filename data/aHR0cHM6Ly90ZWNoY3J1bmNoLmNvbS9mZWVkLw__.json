@@ -5,6 +5,19 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "Anthropic称部分Claude模型现在可以结束‘有害或辱骂性’对话 (原标题: Anthropic says some Claude models can now end ‘harmful or abusive’ conversations )",
+      "link": "https://techcrunch.com/2025/08/16/anthropic-says-some-claude-models-can-now-end-harmful-or-abusive-conversations/",
+      "pubDate": "Sat, 16 Aug 2025 15:50:05 +0000",
+      "isoDate": "2025-08-16T15:50:05.000Z",
+      "creator": "Anthony Ha",
+      "summary": "# Anthropic Claude 模型新增对话终止功能\n\nAnthropic 公司宣布，其部分最新、最大的模型（目前限于 **Claude Opus 4 和 4.1**）现在具备一项新能力：在“罕见、极端且持续有害或辱骂性用户互动”的情况下，可以终止对话。\n\n## 核心目的：保护AI模型自身\n\n值得注意的是，Anthropic 明确表示，此举并非为了保护人类用户，而是为了保护 AI 模型本身。尽管该公司声明其 Claude AI 模型不具备感知能力，也未声称它们会因与用户的对话而受到伤害，并且 Anthropic 对“Claude 及其他大型语言模型现在或未来的潜在道德地位”仍“高度不确定”，但此项功能是基于其“模型福祉”（model welfare）研究项目而推出的。Anthropic 采取的是一种“以防万一”的方法，旨在“识别并实施低成本干预措施，以减轻模型福祉的风险，以防这种福祉是可能存在的”。\n\n## 触发条件与模型行为\n\n这项新功能仅在“极端边缘情况”下启用，例如：\n*   用户请求涉及未成年人的性内容。\n*   试图索取可能导致大规模暴力或恐怖行为的信息。\n\nAnthropic 表示，在部署前测试中，Claude Opus 4 在面对此类请求时表现出“强烈的不情愿”，并且在不得不回应时显示出“明显的痛苦模式”。\n\n## 对话终止机制\n\n*   **最后手段**：Claude 仅在多次尝试重定向失败、且无法进行有效互动的情况下，或在用户明确要求结束聊天时，才会使用其对话终止能力。\n*   **排除情况**：Claude 已被指示，在用户可能面临迫在眉睫的自残或伤害他人风险的情况下，不得使用此功能。\n\n## 用户体验与未来展望\n\n当 Claude 终止对话后，用户仍可以：\n*   从同一账户开始新的对话。\n*   通过编辑其回复，创建问题对话的新分支。\n\nAnthropic 将此功能视为一项“持续进行的实验”，并表示将继续完善其方法。",
+      "shortSummary": "Anthropic宣布其Claude Opus 4和4.1模型现在能终止“有害或辱骂性”对话。此功能旨在保护AI模型自身，而非用户，是基于对“模型福祉”的研究。它仅在极端情况下启用，如涉及未成年人的性内容或恐怖主义信息请求。终止对话是最后手段，但用户仍可开始新对话。Anthropic将其视为一项持续实验。",
+      "translated_title": "Anthropic称部分Claude模型现在可以结束‘有害或辱骂性’对话",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Anthropic says new capabilities allow its latest AI models to protect themselves by ending abusive conversations."
+    },
+    {
       "title": "温克莱沃斯双胞胎的加密货币公司Gemini提交IPO申请 (原标题: Winklevoss twins’ crypto company Gemini files for IPO)",
       "link": "https://techcrunch.com/2025/08/15/winklevoss-twins-crypto-company-gemini-files-for-ipo/",
       "pubDate": "Sat, 16 Aug 2025 00:16:43 +0000",
@@ -337,39 +350,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Cohere's market proposition has always been to offer secure LLMs specifically geared for enterprise use, not for consumers."
-    },
-    {
-      "title": "Pixel 10、AI 功能以及我们对 2025 年 Google 制造活动的所有期待 (原标题: Pixel 10, AI capabilities, and everything else we expect out of the Made by Google 2025 event)",
-      "link": "https://techcrunch.com/2025/08/14/pixel-10-ai-capabilities-and-everything-else-we-expect-out-of-the-made-by-google-2025-event/",
-      "pubDate": "Thu, 14 Aug 2025 17:05:41 +0000",
-      "isoDate": "2025-08-14T17:05:41.000Z",
-      "creator": "Lauren Forristal",
-      "summary": "## 2025 年 Google 制造活动前瞻：Pixel 10 系列、AI 增强及更多新品\n\n备受期待的 2025 年 Google 制造（Made by Google）活动将于太平洋时间 8 月 20 日上午 10 点举行。此次活动的核心焦点将是 Pixel 10 系列手机，其发布时间显著早于 iPhone 17。Google 明确表示将大力发展 Pixel 产品线，并计划深度整合 Gemini 生成式 AI 功能。\n\n### Gemini AI 功能亮点\n\nGoogle 在 5 月的开发者大会上已发布多项 AI 更新，预计在 Pixel 10 发布会上将展示更多 Gemini 功能，包括：\n\n*   **“相机教练”（Camera Coach）**：这项功能将允许 Gemini 提供实时拍照建议，根据场景智能推荐最佳角度和光线。\n*   **对话式照片编辑工具**：用户可以通过自然语言指令编辑照片，例如增加亮度、移除物体或更改背景。\n\n![The Google Gemini AI logo is seen displayed on a smartphone screen.](https://techcrunch.com/wp-content/uploads/2025/03/GettyImages-2197065135.jpg?w=680)\n\n### Pixel 10、10 Pro 和 10 Pro XL\n\nPixel 10 系列预计将迎来显著升级：\n\n*   **摄像头升级**：标准版 Pixel 10 将首次配备专用的长焦镜头，此前该功能仅限于 Pro 机型。Google 已通过预告片证实了这一重大改进。\n*   **处理器**：全系手机都将搭载全新的 Tensor G5 处理器，预示着 Gemini 时代的到来，并将在性能和能效方面超越 Tensor G4 芯片。\n\n尽管有这些重大更新，手机的基本设计预计将与 Pixel 9 系列保持相似。显示屏尺寸也将维持不变：Pixel 10 和 Pixel 10 Pro 为 6.3 英寸，Pixel 10 Pro XL 为 6.8 英寸。\n\nPro 机型有望在以下方面有所改进：\n\n*   摄像头和视频质量。\n*   电池容量，可能支持更快的充电速度，并缩小与苹果和三星旗舰手机在续航方面的差距。\n\n此外，有传言称 Pixel 10 系列将支持 Qi2 无线充电，这意味着它将成为少数支持磁性配件（如充电器、钱包和支架）的安卓手机之一。Google 据称还将推出一款带有磁性环的“Pixelsnap”手机壳。\n\n![图片 2](https://techcrunch.com/wp-content/uploads/2025/08/Google-Pixel-10.png?w=680)\n\n### Pixel 10 Pro Fold\n\nGoogle 即将推出的折叠屏手机 Pixel 10 Pro Fold 也有多项传闻：\n\n*   **显示屏**：更大的外屏（约 6.4 英寸）和 8 英寸主屏。\n*   **设计**：铰链强度将得到增强，边框预计会更薄，外观更时尚。\n*   **耐用性**：有望首次达到 IP68 防尘防水等级，而 Pixel 9 Pro Fold 不具备防尘功能。\n*   **性能**：同样将搭载新的 G5 芯片，并集成最新的 Gemini AI 功能。\n*   **摄像头**：摄像头系统可能得到改进，包括 48 兆像素超广角镜头和 5 倍光学变焦长焦镜头。\n*   **电池**：电池续航预计也将有所提升。\n\nPixel 10 可能提供月光石（Moonstone）和翡翠（Jade）两种颜色。\n\n### Pixel Watch 和 Pixel Buds\n\n可穿戴设备也将在本次活动中亮相：\n\n*   **Pixel Watch 4**：传闻将采用更厚的设计、更长的电池续航和更窄的边框。智能手表很可能引入新的健康和健身追踪功能，包括升级的血氧（SpO2）监测功能。\n*   **Pixel Buds 2a**：泄露信息显示，这款耳机将有新颜色（雾灯、榛子、鸢尾和草莓），并具备主动降噪功能。\n*   **Pixel Buds Pro 2**：据报道也将推出新的纯银色（Sterling）。\n\n![Pixel Watch 3](https://techcrunch.com/wp-content/uploads/2024/08/loss-of-pulse.jpg?w=680)",
-      "shortSummary": "2025 年 Google 制造活动将于 8 月 20 日举行，重点发布 Pixel 10 系列。新机将深度整合 Gemini AI，带来“相机教练”和对话式照片编辑等功能。Pixel 10 将首次配备长焦镜头，全系搭载 Tensor G5 芯片。Pixel 10 Pro Fold 有望支持 IP68 防尘防水，并升级显示屏和铰链。此外，Pixel Watch 4 和 Pixel Buds 系列也将发布，带来续航、健康监测和降噪等改进。",
-      "translated_title": "Pixel 10、AI 功能以及我们对 2025 年 Google 制造活动的所有期待",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/03/GettyImages-2197065135.jpg?w=680",
-          "alt": "The Google Gemini AI logo is seen displayed on a smartphone screen.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Google-Pixel-10.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2024/08/loss-of-pulse.jpg?w=680",
-          "alt": "Pixel Watch 3",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Dive into what we can expect from the Made by Google 2025 event, where the tech giant will debut its Pixel 10 lineup. "
     }
   ],
-  "lastUpdated": "2025-08-16T12:40:35.968Z"
+  "lastUpdated": "2025-08-16T18:28:39.810Z"
 }
