@@ -5,6 +5,38 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "宣布 Imagen 4 Fast 以及 Imagen 4 系列在 Gemini API 中的普遍可用性 (原标题: Announcing Imagen 4 Fast and the general availability of the Imagen 4 family in the Gemini API)",
+      "link": "https://developers.googleblog.com/en/announcing-imagen-4-fast-and-imagen-4-family-generally-available-in-the-gemini-api/",
+      "pubDate": "Thu, 14 Aug 2025 16:00:00 GMT",
+      "isoDate": "2025-08-14T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Imagen 4 系列在 Gemini API 中普遍可用\n\nGoogle 近日宣布，其最先进的文本到图像模型 Imagen 4 现已在 Gemini API 和 Google AI Studio 中普遍可用。此次发布标志着文本到图像生成质量的重大飞跃，尤其在文本渲染方面相比之前的模型有了显著改进。\n\n### Imagen 4 系列模型\n\n为了满足不同的创意需求，Imagen 4 系列提供了多种模型，让用户可以在质量、速度和成本之间取得平衡：\n\n*   **Imagen 4 Fast**：\n    *   **特点**：专为速度而设计，是快速图像生成和高吞吐量任务的理想选择。\n    *   **成本**：每张输出图像仅需 0.02 美元，价格亲民。\n*   **Imagen 4**：\n    *   **特点**：旗舰模型，适用于各种高质量图像生成任务，在文本渲染等领域有显著提升。\n*   **Imagen 4 Ultra**：\n    *   **特点**：当创意愿景需要最高水平的细节和严格遵循提示时，Imagen 4 Ultra 能提供高度一致的结果。\n\n### 更高分辨率带来更多细节\n\n为了进一步拓展创意边界，Imagen 4 和 Imagen 4 Ultra 现在支持生成高达 2K 分辨率的图像。这使得创建细节惊人、清晰锐利的视觉效果成为可能，非常适合营销素材或复杂的艺术作品。\n\n### Imagen 4 Fast 实际应用示例\n\n以下是一些使用 Imagen 4 Fast 创建的图像示例，展示了该模型在各种风格和内容上的多功能性：\n\n*   **风景/自然图像**：\n    *   **描述**：黎明时分的壮丽山脉景观，前景是清澈的湖泊，倒映着白雪皑皑的山峰。\n    *   **图片**：\n        ![Imagen 4 Fast demo - landscape](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Imagen-4-fast-demo-landscape.original.png)\n\n*   **四格漫画**：\n    *   **描述**：一个复古风格的四格漫画。第一格显示一只友好的猫坐在 Chromebook 旁边，屏幕上是 https://ai.dev 网站，配文：“Imagen 4 现已普遍可用！” 第二格显示一只狗说：“我们还推出了 Imagen 4 FAST，它以每张图像仅 0.02 美元的价格提供低延迟图像！” 第三格显示猫说：“2K 图像升级也可用！” 第四格显示猫和狗击掌，配文：“立即在 AI Studio 中尝试 Imagen 4！”\n    *   **图片**：\n        ![Imagen 4 Fast demo - four panel comic strip](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/imagen-4-fast-demo-four-panel-comic-strip.original.png)\n\n*   **复古科幻电影海报**：\n    *   **描述**：一张复古科幻电影海报，采用喷绘艺术风格。海报上有一艘细节丰富的宇宙飞船，向右飞过一个充满恒星的深空中的充满活力的星云。飞船的两个引擎发出明亮的蓝色发光轨迹。海报顶部的标题是“SUPER GALACTICA: THE LAST NEBULA”，采用粗体、斜面、金属铬字体，带有阴影。下方副标题“STARFALLS REVENGE”以更简洁、干净的白色字体书写。整个图像具有复古、风化的外观，带有破旧的米白色边框。最底部以小字体写着：“此海报由 AI 创建，此免责声明亦然 :)”。\n    *   **图片**：\n        ![Imagen 4 Fast demo - retro sci-fi movie poster](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/imagen-4-fast-demo-retro-sci-fi-movie-poster.original.png)\n\n### 负责任的 AI\n\n作为对负责任 AI 承诺的一部分，所有由 Imagen 4 系列生成的图像都使用 SynthID 进行了不可察觉的水印处理。Google 鼓励用户查阅官方文档和操作指南，开始使用 Imagen 4 进行创作。",
+      "shortSummary": "Google 宣布其先进的文本到图像模型 Imagen 4 及其新推出的 Imagen 4 Fast 已在 Gemini API 和 Google AI Studio 中普遍可用。Imagen 4 系列在图像质量，特别是文本渲染方面有显著提升。Imagen 4 Fast 专为速度和成本效益设计，每张图像仅需 0.02 美元。Imagen 4 和 Imagen 4 Ultra 支持高达 2K 分辨率。所有 Imagen 4 生成的图像都使用 SynthID 进行水印处理，以确保负责任的 AI 应用。",
+      "translated_title": "宣布 Imagen 4 Fast 以及 Imagen 4 系列在 Gemini API 中的普遍可用性",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Imagen-4-fast-demo-landscape.original.png",
+          "alt": "Imagen 4 Fast demo - landscape",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/imagen-4-fast-demo-four-panel-comic-strip.original.png",
+          "alt": "Imagen 4 Fast demo - four panel comic strip",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/imagen-4-fast-demo-retro-sci-fi-movie-poster.original.png",
+          "alt": "Imagen 4 Fast demo - retro sci-fi movie poster",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Google announces the general availability of Imagen 4, its advanced text-to-image model, in the Gemini API and Google AI Studio, featuring significant improvements in text rendering. The new Imagen 4 Fast model, designed for speed and rapid image generation, is now available alongside Imagen 4 and Imagen 4 Ultra, with Imagen 4 and Imagen 4 Ultra also supporting up to 2K resolution image generation."
+    },
+    {
       "title": "介绍 Gemma 3 270M：超高效AI的紧凑型模型 (原标题: Introducing Gemma 3 270M: The compact model for hyper-efficient AI)",
       "link": "https://developers.googleblog.com/en/introducing-gemma-3-270m/",
       "pubDate": "Wed, 13 Aug 2025 16:00:00 GMT",
@@ -196,27 +228,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Apigee helps enterprises integrate large language models (LLMs) into existing API ecosystems securely and scalably, addressing challenges like authentication and authorization not fully covered by the evolving Model Context Protocol (MCP), and offering an open-source MCP server example that demonstrates how to implement enterprise-ready API security for AI agents."
-    },
-    {
-      "title": "介绍 Opal：描述、创建和分享你的 AI 迷你应用 (原标题: Introducing Opal: describe, create, and share your AI mini-apps)",
-      "link": "https://developers.googleblog.com/en/introducing-opal/",
-      "pubDate": "Wed, 23 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-23T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## 介绍 Opal：描述、创建和分享你的 AI 迷你应用\n\n**发布日期：** 2025年7月24日\n\nGoogle Labs 宣布推出 **Opal**，这是一款全新的实验性工具，旨在简化 AI 模型、提示和工具的整合，从而轻松构建和分享功能强大的 AI 应用。\n\n### Opal 是什么？\n\nOpal 是一个来自 Google Labs 的创新实验性工具，它允许用户通过简单的自然语言和可视化编辑，构建并分享强大的 AI 迷你应用。这些迷你应用能够将提示、AI 模型调用和各种工具串联起来，形成完整的工作流程。\n\n### 主要用途\n\nOpal 旨在加速 AI 想法和工作流程的实现，其主要用途包括：\n\n*   加速 AI 概念和工作流程的原型开发。\n*   通过功能性应用展示概念验证（PoC）。\n*   构建自定义 AI 应用以显著提高工作效率。\n\n### 可用性\n\nOpal 目前已在美国地区以**公开测试版**形式推出。Google Labs 强调，通过与社区的合作，能够更好地构建和完善这款新产品。\n\n### 核心功能（无需代码）\n\n尽管 Opal 仍处于实验阶段，但它已具备强大的功能，旨在将用户的想法变为现实，且无需编写代码：\n\n1.  **创建工作流程：**\n    *   Opal 简化并可视化了软件开发中“工作流程”的概念，即用户完成特定目标所采取的步骤序列。\n    *   它通过将提示、AI 模型调用和其他工具串联起来，帮助用户构建强大的多步骤应用。\n    *   用户只需描述逻辑，Opal 即可自动构建相应的可视化工作流程。\n\n2.  **进行编辑：**\n    *   Opal 将用户的指令转化为可视化工作流程，提供精细的控制，而无需用户接触任何代码。\n    *   用户可以通过对话式自然语言命令、可视化编辑器或两者结合的方式，构建和修改他们的 AI 迷你应用。\n    *   无论是调整某个步骤的提示、添加新功能还是调用工具，都可以通过可视化编辑器或直接描述变更来实现。\n\n3.  **分享应用：**\n    *   一旦应用构建完成并准备就绪，用户可以将其作为独立应用分享给他人。\n    *   其他用户可以使用自己的 Google 账户立即使用这些分享的应用。\n\n### 开始使用 Opal\n\n为了帮助用户快速上手，Opal 提供了一个**演示画廊**，其中包含各种入门模板。用户可以直接使用这些预构建的 AI 应用，也可以根据自身具体需求进行修改和定制。\n\n![Opal 模板画廊](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Just_Gallery.original.png)\n\n### 愿景\n\nOpal 引入了一种全新的 AI 创作方式。它旨在赋能创作者、创新者和实践者，通过将简单的提示转化为强大的迷你应用，从而构建他们所设想的工具。",
-      "shortSummary": "Opal 是 Google Labs 推出的一款实验性工具，旨在帮助用户通过自然语言和可视化编辑，无需代码即可描述、创建和分享 AI 迷你应用。它能将提示、AI 模型和工具串联成工作流程，加速 AI 想法原型开发，并构建自定义应用以提升生产力。Opal 目前在美国提供公开测试版，并提供模板画廊以方便用户快速上手。",
-      "translated_title": "介绍 Opal：描述、创建和分享你的 AI 迷你应用",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Just_Gallery.original.png",
-          "alt": "Gallery of Opal templates",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Opal is a new experimental tool from Google Labs that helps you compose prompts into dynamic, multi-step mini-apps using natural language, removing the need for code, allowing users to build and deploy shareable AI apps with powerful features and seamless integration with existing Google tools."
     }
   ],
-  "lastUpdated": "2025-08-15T10:31:07.596Z"
+  "lastUpdated": "2025-08-17T10:29:00.496Z"
 }
