@@ -5,6 +5,32 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "Notion 终于支持离线工作了 (原标题: Finally, Notion now works without an internet connection)",
+      "link": "https://techcrunch.com/2025/08/20/finally-notion-now-works-without-an-internet-connection/",
+      "pubDate": "Wed, 20 Aug 2025 11:16:57 +0000",
+      "isoDate": "2025-08-20T11:16:57.000Z",
+      "creator": "Ivan Mehta",
+      "summary": "## Notion 离线模式上线\n\nNotion 终于解决了其云优先架构导致离线使用受限的问题，现在其桌面和移动应用程序已支持离线模式，这是用户呼声最高的功能之一。\n\n### 主要功能与改进\n\n*   **核心离线能力**：\n    *   用户现在可以在没有网络连接的情况下，在 Notion 的桌面和移动应用上查看、编辑和创建笔记。\n    *   应用程序允许用户下载页面以供离线访问。\n    *   一旦重新联网，应用程序会自动同步用户在离线状态下所做的任何更改。\n*   **离线限制**：某些区块类型，如嵌入内容（embeds）、表单（forms）或按钮（buttons），在没有网络连接时将无法使用。\n\n### 高级计划的额外功能\n\n*   **自动下载**：对于订阅了 Notion Plus、Business 或 Enterprise 计划的用户，应用程序将自动下载他们最近查看过和收藏的页面。\n*   **管理下载**：用户可以通过设置面板中新增的“离线”（Offline）菜单来关闭自动下载或管理已下载的内容。\n\n### 技术挑战与实现\n\n*   **复杂性原因**：Notion 首席执行官 Ivan Zhao 解释说，该功能迟迟未能推出，是因为 Notion 使用了一个复杂的数据库来存储不同的区块。\n*   **冲突解决机制**：公司需要构建一个冲突解决机制，以管理多位用户在离线状态下同时对同一文档进行更改时可能出现的冲突。\n\n### 图片展示\n\n*   ![图片 1](https://techcrunch.com/wp-content/uploads/2025/08/Offline_mode_auto_download_1d48c1.jpeg?w=960)\n*   ![图片 2](https://techcrunch.com/wp-content/uploads/2025/08/videoframe_4700.jpeg?w=680)",
+      "shortSummary": "Notion 终于为其桌面和移动应用推出了用户期待已久的离线模式。现在，用户无需网络连接即可查看、编辑和创建笔记，所有更改将在重新联网后自动同步。高级订阅用户还可享受常用页面自动下载功能。Notion 首席执行官解释，该功能延迟上线是因其复杂的数据库结构，需要开发冲突解决机制以处理多用户离线编辑情况。",
+      "translated_title": "Notion 终于支持离线工作了",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Offline_mode_auto_download_1d48c1.jpeg?w=960",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/videoframe_4700.jpeg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "For years, one of the most annoying issues with using Notion was that you couldn't get much done offline because of its cloud-first architecture. The company has finally solved that problem, adding support for an offline mode to its apps."
+    },
+    {
       "title": "Deel赢得一场诉讼，但并非针对Rippling (原标题: Deel scores a lawsuit win, but not against Rippling)",
       "link": "https://techcrunch.com/2025/08/19/deel-scores-a-lawsuit-win-but-not-against-rippling/",
       "pubDate": "Tue, 19 Aug 2025 22:47:51 +0000",
@@ -386,20 +412,7 @@
       ],
       "contentSource": "完整文章",
       "content": "The new options are designed to appeal to playlist experts and other music fans, who have collectively created nearly 9 billion playlists on Spotify's platform to date."
-    },
-    {
-      "title": "Eight Sleep 融资1亿美元，用于拓展其AI驱动的睡眠技术 (原标题: Eight Sleep raises $100M to expand its AI-powered sleep tech)",
-      "link": "https://techcrunch.com/2025/08/19/eight-sleep-grabs-100m-to-bring-ai-into-your-bed/",
-      "pubDate": "Tue, 19 Aug 2025 10:00:00 +0000",
-      "isoDate": "2025-08-19T10:00:00.000Z",
-      "creator": "Kate Park",
-      "summary": "### Eight Sleep 融资1亿美元，拓展AI驱动睡眠技术\n\nEight Sleep，一家成立于2014年的纽约初创公司，近日宣布成功完成一轮1亿美元的融资。本轮投资者包括HSG、Valor Equity Partners、Founders Fund、Y Combinator，以及F1车手查尔斯·勒克莱尔和迈凯伦F1首席执行官扎克·布朗等知名人士。据Pitchbook估计，Eight Sleep迄今已累计融资约2.6亿美元。公司表示，其估值自上一轮（2021年8600万美元的C轮融资，投后估值5亿美元）以来已翻倍，正“接近独角兽地位”。联合创始人兼首席营销官Alexandra Zatarain表示，若能成功执行AI路线图、实现国际扩张并开发针对特定病症的干预措施，独角兽地位将水到渠成。\n\n#### 市场背景与公司愿景\n\n美国约三分之一的成年人长期睡眠不足，这推动了对监测、分析和改善睡眠工具的需求。Eight Sleep致力于将床垫转变为预防性健康设备，通过AI驱动的睡眠技术产品来满足这一需求。\n\n#### 核心产品与技术\n\n*   **Pod智能床垫：** Eight Sleep的旗舰产品Pod集成了软件和AI，用于追踪和改善睡眠质量。其功能包括：\n    *   测量睡眠阶段、心率、呼吸模式和身体运动。\n    *   根据洞察自动调节床垫温度、高度和硬度。\n    *   可检测打鼾并自动升高床底以作回应。\n*   **Sleep Agent（睡眠智能代理）：** 公司正将业务扩展到Pod之外，推出AI驱动的Sleep Agent系统。该系统利用大型语言模型为每个用户创建数千个“数字孪生”，预测结果，旨在优化夜间恢复。Zatarain表示，这种方法将睡眠技术从被动追踪转变为主动、个性化的干预。\n*   **Autopilot（自动驾驶）：** Eight Sleep的核心差异化优势在于其Autopilot功能。它从第一晚开始为用户建立个人蓝图，并持续适应，考虑季节性、旅行、压力、训练、疾病甚至前一晚的糟糕睡眠等因素，并且能为床的两侧独立工作。\n\n#### 业务表现与数据积累\n\n自2019年推出Pod产品以来，Eight Sleep已创造超过5亿美元的Pod销售额，营收增长了十倍，并收集了超过10亿小时的睡眠数据洞察。公司目前拥有100多名全职员工。\n\n#### 资金用途与未来发展方向\n\n新一轮资金将用于加速公司在医疗健康领域的增长，进一步利用Pod的健康监测能力：\n\n*   **医疗领域拓展：**\n    *   推出“健康检查”（Health Check）功能，系统无需穿戴设备即可监测心血管和呼吸模式，准确率高达99%。\n    *   Zatarain强调，Eight Sleep并非取代医生，而是提供每晚高精度的健康监测，以便用户在趋势变化时及早采取行动。这些数据可以补充医疗护理。\n    *   最近推出的“潮热模式”（Hot Flash Mode）利用AI驱动的冷却来缓解更年期症状。\n    *   正在开发针对睡眠呼吸暂停的非接触式解决方案，并寻求FDA批准，利用Pod的实时生物识别监测提供个性化干预。\n*   **国际市场扩张：**\n    *   Eight Sleep目前已向30多个国家/地区发货，包括加拿大、英国、欧盟国家、澳大利亚、墨西哥和阿联酋。\n    *   公司正计划进入中国市场。首席营销官表示，中国作为全球最大的消费市场之一，健康意识日益增强的中产阶级越来越重视睡眠和整体健康。\n\n#### 竞争格局与数据隐私\n\n睡眠技术市场竞争激烈，包括Oura、Fitbit、Apple等可穿戴设备制造商，ResMed等医疗公司，以及Sleep Number、ChiliSleep等智能床垫和睡眠表面制造商。\n\n关于敏感健康数据，Zatarain表示公司遵守各地法规，包括数据存储规定。她强调：“隐私是基础。所有数据都经过加密，从不出售，并且完全私密。我们遵守GDPR和CCPA，与许多设备不同，我们不使用麦克风。我们的生物识别传感器嵌入在床面中——无需穿戴设备，无侵入性，只有被动、高精度的洞察。”",
-      "shortSummary": "Eight Sleep 成功融资1亿美元，使其总融资额达到约2.6亿美元，估值翻倍，正接近独角兽地位。这家公司提供AI驱动的智能睡眠技术，其旗舰产品Pod能监测睡眠并自动调节床垫环境。新推出的Sleep Agent利用AI提供个性化干预。公司计划利用新资金拓展医疗健康领域，如心血管监测和更年期症状缓解，并进一步扩大国际市场，包括进入中国。Eight Sleep强调数据隐私和无侵入性监测。",
-      "translated_title": "Eight Sleep 融资1亿美元，用于拓展其AI驱动的睡眠技术",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The sleep tech company raised  from HSG, Valor Equity Partners, Founders Fund, Y Combinator, and big F1 names like Charles Leclerc and Zak Brown."
     }
   ],
-  "lastUpdated": "2025-08-20T06:32:16.349Z"
+  "lastUpdated": "2025-08-20T12:43:38.825Z"
 }
