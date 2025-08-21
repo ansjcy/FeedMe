@@ -5,6 +5,118 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "谁来维护未来？为新一代重新思考开源领导力 (原标题: Who will maintain the future? Rethinking open source leadership for a new generation)",
+      "link": "https://github.blog/open-source/maintainers/who-will-maintain-the-future-rethinking-open-source-leadership-for-a-new-generation/",
+      "pubDate": "Wed, 20 Aug 2025 16:00:00 +0000",
+      "isoDate": "2025-08-20T16:00:00.000Z",
+      "creator": "Abigail Cabunoc Mayes",
+      "summary": "文章探讨了开源社区面临的“老龄化”和领导力继任问题，并提出了吸引和培养新一代贡献者（尤其是Z世代）的策略。\n\n### 开源社区的“老龄化”问题\n作者以个人经历为例，指出社区在缺乏早期新人引入时，会面临领导力空白。这种模式在开源领域也同样存在：\n*   **数据洞察：** Tidelift 2024年维护者调查显示，46-65岁维护者的比例自2021年以来翻了一番，而26岁以下贡献者的比例从25%降至10%。\n*   **核心问题：** 这种“老龄化”本身并非问题，但缺乏继任计划将导致倦怠、知识流失和长期脆弱性。\n\n### Z世代贡献者画像：Sam\n为了更好地理解如何支持新一代，文章引入了一个名为“Sam”的Z世代虚拟人物：\n*   **基本信息：** Sam，23岁，居住在加拿大城市，生活主要在线上。\n*   **核心诉求：** 希望为有意义的气候科技项目做贡献，但不知从何开始。他们自学编程，擅长社区管理，但觉得公共代码库令人生畏。他们渴望目标、灵活性和归属感。\n*   **面临挑战：** 经济压力、不明确的路径，以及对开源领导力运作方式的不了解。\n\n### 参与之山：吸引Z世代的六步框架\n文章提出了一个名为“参与之山”的框架，该模型概述了贡献者在开源项目中的六个阶段，并对比了传统方法与Z世代贡献者（如Sam）的实际需求：\n\n1.  **发现 (Discovery)**\n    *   **传统方法：** 通过公共仓库、开源许可、项目网站、文档和社交媒体进行基本营销。\n    *   **Sam的需求：** 通过TikTok、Discord和YouTube等平台发现项目。他们希望目的性明确，而不是隐藏在README中。他们的学习始于移动设备。（数据：84%的Z世代使用YouTube，86%认为目的性对工作满意度很重要）。\n\n2.  **首次接触 (First Contact)**\n    *   **传统方法：** 良好的README、清晰的贡献文档和新人提问的沟通渠道。\n    *   **Sam的需求：** 移动友好、视觉优先的登录体验。项目应以其使命为导向。他们更喜欢像Discord这样可以先“潜水”的休闲开放聊天。（数据：72.8%的Z世代偏爱视觉学习，Z世代更喜欢Discord等社区驱动平台）。\n\n3.  **参与 (Participation)**\n    *   **传统方法：** 个人邀请、快速响应问题、“良好首个问题”和清晰的贡献文档。\n    *   **Sam的需求：** 实时反馈。沙盒环境供尝试。明确的学习空间，允许犯错，而非只求表现。（数据：Z世代学生倾向于观察他人完成任务后再尝试）。例如：FreeCodeCamp和Kubernetes的贡献者游乐场。\n\n4.  **持续参与 (Sustained Participation)**\n    *   **传统方法：** 认可贡献者，将任务与兴趣匹配，并展示其工作与项目使命的关联。\n    *   **Sam的需求：** 可分享的认可：徽章、提及、作品集。他们更关心产生影响，而非攀爬层级。（数据：86%的Z世代员工优先考虑导师指导和技能发展）。\n\n5.  **网络化参与 (Networked Participation)**\n    *   **传统方法：** 导师制、社交活动和建立承诺与联系的正式角色。\n    *   **Sam的需求：** 可分享的命名角色，如Discord版主或社区向导。非主题频道和休闲联系。同伴主导的领导力，以传播影响力。（数据：70%的Z世代加入社区是为了归属感和发言权）。例如：Rust的共识驱动治理。\n\n6.  **领导力 (Leadership)**\n    *   **传统方法：** 邀请成为维护者，分享治理权，提供角色职责文档。\n    *   **Sam的需求：** 共享管理权，而非自上而下的控制。补偿或职业发展。清晰的价值交换。（数据：52%的Z世代入不敷出）。他们更可能在有实际支持（导师指导、可见性或带薪时间）时做出贡献。例如：TensorFlow的贡献者阶梯和For Good First Issue的使命导向。\n\n### 采取行动\n开源的未来离不开下一代。项目需要积极适应，让Sam这样的贡献者感到受欢迎、被支持和被看见。\n*   **具体行动：** 将README制作成60秒的解释视频；为首次贡献者创建沙盒空间；启动Discord或非主题频道以培养归属感；让项目使命响亮而明确。\n*   **核心问题：** 问自己：“一个蓬勃发展的项目在Sam看来是怎样的？要怎样才能让他们留下五年，而不是五周？”\n\n![一张幻灯片展示了提升Z世代开源实践的方法。其中包括“发现”阶段的TikTok、YouTube或Discord以及价值观驱动；“首次接触”阶段的使命导向、移动友好和视觉化；“参与”阶段的沙盒环境和实时反馈；“持续参与”阶段的可分享认可；“网络化参与”阶段的可扩展角色和非主题空间；以及“领导力”阶段的薪酬。](https://github.blog/wp-content/uploads/2025/08/slide.jpg?resize=1024%2C576)\n\n维护开源不仅仅是维持运营，更是为下一代创造空间。",
+      "shortSummary": "开源社区正面临“老龄化”和领导力继任挑战，年轻贡献者比例下降。为确保未来可持续性，开源项目需适应Z世代需求。这包括：通过TikTok、Discord等平台进行项目发现；提供移动友好、视觉优先的入门体验；创建沙盒环境和实时反馈机制以促进参与；提供可分享的认可和职业发展机会；以及建立共享管理和补偿机制。核心在于理解Z世代对目的、归属感和灵活性的追求，从而构建更具吸引力和包容性的社区，确保新一代贡献者长期留存。",
+      "translated_title": "谁来维护未来？为新一代重新思考开源领导力",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/slide.jpg?resize=1024%2C576",
+          "alt": "A slide showing open source practices to level up Gen Z. These include Tik Tok, YouTube, or Discord and Values driven for 'Discovery'; Leads with purpose and Mobile-friendly and visual for \"First contact\"; Sandbox environments and Real-time feedback for \"Participation\"; Recognition they can share for \"Sustained participation\"; Roles that scale and Off-topic spaces for \"Networked participation\"; and Compensation for \"Leadership\".",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/617994?v=4&s=200",
+          "alt": "Abigail Cabunoc Mayes",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Open source is aging. We can better support Gen Z contributors through purpose, flexibility, and pathways to leadership.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/who-will-maintain-the-future-rethinking-open-source-leadership-for-a-new-generation/\">Who will maintain the future? Rethinking open source leadership for a new generation</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "代理面板：在GitHub上随时随地启动Copilot编码代理任务 (原标题: Agents panel: Launch Copilot coding agent tasks anywhere on GitHub)",
+      "link": "https://github.blog/news-insights/product-news/agents-panel-launch-copilot-coding-agent-tasks-anywhere-on-github/",
+      "pubDate": "Tue, 19 Aug 2025 19:53:14 +0000",
+      "isoDate": "2025-08-19T19:53:14.000Z",
+      "creator": "Tim Rogers",
+      "summary": "# GitHub推出“代理面板”：随时随地启动Copilot编码代理任务\n\n## 概述\n过去一年，AI代理已成为开发者日常工作流中不可或缺的一部分。GitHub最近推出了异步、自主的Copilot编码代理，允许开发者将问题分配给Copilot，由其在后台工作并创建草稿拉取请求供审查。为了进一步提升用户体验，GitHub现推出全新的“代理面板”，使开发者能够从GitHub.com的任何页面快速将任务委托给Copilot，并跟踪其进度，而无需中断当前工作流。Copilot编码代理也已集成到VS Code、GitHub Mobile和GitHub MCP服务器中。\n\n## 代理面板：您的任务控制中心\n“代理面板”现已在GitHub.com的每个页面上可用，是GitHub上代理工作流的“任务控制中心”。它是一个轻量级浮层，允许您在不离开当前页面的情况下，向Copilot分配新任务并跟踪现有任务。只需点击导航栏中的新“代理”按钮即可开始。\n\n![GitHub中新的代理面板截图，显示了开发者如何从GitHub的任何地方跟踪、管理和启动Copilot编码代理工作流。此截图显示了编码代理正在处理的近期任务，并提供了查看所有任务的选项。开发者还可以在框中输入自然语言提示，并指定编码代理应在哪个仓库和分支上工作。](https://github.blog/wp-content/uploads/2025/08/Agents-panel-with-callout-2.png?resize=1013%2C1024)\n\n通过代理面板，您可以：\n*   **🛠️ 分配后台任务**：无需切换页面即可将任务委托给Copilot。\n*   **👀 实时监控**：实时查看正在运行的任务状态。\n*   **🔗 快速跳转**：在准备好审查时，直接跳转到相关的拉取请求。\n\n您可以通过点击“查看所有任务”以全屏模式打开面板，或通过书签访问`github.com/copilot/agents`。\n\n## 启动新任务\n您可以通过代理面板使用简单的提示启动新的Copilot任务。只需从GitHub的任何页面打开面板，用自然语言描述您的目标，并选择相关仓库。Copilot将接管后续工作，包括制定计划、起草更改、运行测试，然后准备拉取请求。\n\n**示例提示：**\n*   **描述简单任务**：\n    *   “为LoginController添加集成测试”\n    *   “重构WidgetGenerator以提高代码复用性”\n    *   “添加深色/浅色模式切换器”\n*   **提供上下文**（引用GitHub Issue或拉取请求）：\n    *   “修复#877，以拉取请求#855为例”\n    *   “修复#1050，并确保更新README中的截图”\n*   **并行运行多个任务**：\n    *   “为utils.go添加单元测试覆盖” + “为helpers.go添加单元测试覆盖”\n\n## Copilot编码代理简介\nCopilot编码代理允许您通过GitHub.com、GitHub Mobile、VS Code或任何支持MCP的工具，将编码任务委托出去，并在完成后获得草稿拉取请求。\n\n![GitHub Copilot生成的拉取请求截图，显示了已完成工作的摘要。](https://github.blog/wp-content/uploads/2025/08/CleanShot-2025-08-14-at-16.51.35.png?resize=1024%2C368)\n![GitHub Copilot编码代理正在进行中的任务截图，显示了Copilot展示其工作并测试代码输出以确保没有破坏任何东西。](https://github.blog/wp-content/uploads/2025/08/CleanShot-2025-08-14-at-16.53.09.png?resize=1024%2C331)\n![开发者要求GitHub Copilot将其生成的测试移动到主测试套件的截图。](https://github.blog/wp-content/uploads/2025/08/CleanShot-2025-08-14-at-16.54.22.png?resize=835%2C406)\n\n**其主要特性包括：**\n*   **云端运行**：可在云端运行，支持并行处理多个任务，即使您的计算机关闭也能继续工作。\n*   **安全环境**：由GitHub Actions提供支持，可运行构建、测试和代码检查，无需逐一请求每个步骤。\n*   **开发者控制**：通过详细日志和基于拉取请求的审批保持控制，并通过在审查中提及`@copilot`来提供反馈。\n*   **模型上下文协议 (MCP)**：\n    *   Copilot通过GitHub MCP服务器拥有对仓库数据的读取权限。\n    *   通过Playwright MCP服务器可查看网页进行测试和验证。\n    *   可连接到您自己的MCP服务器。\n\n## 其他委托任务方式\n除了代理面板，您还可以通过以下方式启动Copilot编码代理任务：\n*   **GitHub Issues**：在GitHub.com或GitHub Mobile上将问题分配给Copilot。\n*   **Visual Studio Code**：通过GitHub Pull Requests扩展委托任务并跟踪运行中的任务。\n*   **其他IDE**：在JetBrains IDEs和Visual Studio的Copilot Chat中要求Copilot打开拉取请求。\n*   **支持MCP的工具**：通过集成模型上下文协议的兼容应用程序触发任务。\n\n## 可用性\nCopilot编码代理和GitHub上的新代理面板现已向所有付费Copilot订阅者开放公开预览。您的管理员可能需要启用Copilot编码代理策略。",
+      "shortSummary": "GitHub推出了新的“代理面板”，允许开发者在GitHub.com的任何页面上，通过简单提示将编码任务委托给Copilot编码代理。该面板作为任务控制中心，方便用户启动、监控和管理Copilot自动生成草稿拉取请求的工作流，无需中断当前操作。Copilot编码代理支持跨平台使用，包括VS Code和GitHub Mobile，旨在提升开发效率，让AI代理更深入地融入日常开发流程。",
+      "translated_title": "代理面板：在GitHub上随时随地启动Copilot编码代理任务",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/Agents-panel-with-callout-2.png?resize=1013%2C1024",
+          "alt": "A screenshot of the new Agents panel in GitHub that allows developers to track, manage, and start Copilot coding agent workflows from anywhere on GitHub. This screenshot shows recent tasks that coding agent, an agentic workflow that generates draft pull requests based on requirements set out by a developer, is working on with the option to view all tasks. Developers can also enter a natural language prompt in a box and specify which repository and which branch coding agent should work on.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/CleanShot-2025-08-14-at-16.51.35.png?resize=1024%2C368",
+          "alt": "A screenshot of a pull request generated by GitHub Copilot, an AI coding tool, in a GitHub developer workflow. The pull request is a draft awaiting approval and shows a generated summary of the work that has been completed. The screenshot also shows the developer assigned to review the pull request as well as assignees that include a developer and GitHub Copilot.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/CleanShot-2025-08-14-at-16.53.09.png?resize=1024%2C331",
+          "alt": "A screenshot showing an ongoing task that GitHub Copilot coding agent, an agentic workflow tool on GitHub, is working on. This screenshot shows GitHub Copilot showing its work, and testing its code outputs to ensure it didn’t break anything.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/CleanShot-2025-08-14-at-16.54.22.png?resize=835%2C406",
+          "alt": "A screenshot showing a developer asking GitHub Copilot to move tests that it generated to the main test suite within a diff view of code outputs from GitHub Copilot coding agent.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/116134?v=4&s=200",
+          "alt": "Tim Rogers",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Delegate coding tasks to Copilot and track progress wherever you are on GitHub. Copilot works in the background, creates a pull request, and tags you for review when finished.</p>\n<p>The post <a href=\"https://github.blog/news-insights/product-news/agents-panel-launch-copilot-coding-agent-tasks-anywhere-on-github/\">Agents panel: Launch Copilot coding agent tasks anywhere on GitHub</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Git 2.51 的亮点 (原标题: Highlights from Git 2.51)",
       "link": "https://github.blog/open-source/git/highlights-from-git-2-51/",
       "pubDate": "Mon, 18 Aug 2025 17:04:36 +0000",
@@ -317,76 +429,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>tl;dr: I am stepping down as GitHub CEO to build my next adventure. GitHub is thriving and has a bright future ahead. The following is the internal post I sent to GitHub employees (Hubbers) this morning announcing my departure.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/goodbye-github/\">Auf Wiedersehen, GitHub ♥️</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "如何使用 GitHub Copilot 提升代码审查和拉取请求的水平 (原标题: How to use GitHub Copilot to level up your code reviews and pull requests)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/how-to-use-github-copilot-to-level-up-your-code-reviews-and-pull-requests/",
-      "pubDate": "Fri, 08 Aug 2025 16:00:00 +0000",
-      "isoDate": "2025-08-08T16:00:00.000Z",
-      "creator": "Melissa Pastore",
-      "summary": "# 如何使用 GitHub Copilot 提升代码审查和拉取请求的水平\n\n作为 GitHub 的软件工程师，作者亲历了 GitHub Copilot 从简单的代码补全工具发展成为功能更强大的 AI 编码助手。其应用场景已扩展到日常工作的各个方面，包括拉取请求（Pull Requests, PRs）和代码审查。Copilot 在软件开发生命周期的这些关键环节中展现出极高的实用价值。\n\n## Copilot 在代码审查和拉取请求中的实际应用\n\n### 1. 代码审查中的 Copilot 建议\n\n在审查队友的拉取请求时，Copilot 能提供代码改进建议或确认代码是否遵循最佳实践，从而节省手动编写重构代码的时间。\n\n*   **代码重构**：当发现重复代码时，可以点击 Copilot 图标并提示其进行重构。例如，作者曾提示 Copilot 重构 Ruby on Rails 中的重复代码，Copilot 的建议与作者预期一致，节省了数分钟时间，使其能专注于更高层次的反馈。\n*   **最佳实践检查**：由于经常在 Ruby、TypeScript 和 Go 等不同语言之间切换上下文，作者会利用 Copilot 提醒特定语言的最佳实践。例如，通过提示 Copilot 检查 Go 代码是否遵循变量赋值的最佳实践，Copilot 迅速生成了可操作的改进建议。\n\n![GitHub Copilot 在 Go 语言代码审查中提供变量声明优化建议](https://github.blog/wp-content/uploads/2025/08/Screenshot-2025-07-09-at-4.31.23-PM.png?resize=1024%2C448)\n*图片描述：一张 GitHub 拉取请求的截图，展示了 Copilot 对 Go 语言文件中的代码进行审查，建议将 `var result int` 更改为更简洁的短变量声明 `result := add(1, 2)`。右侧的 Copilot 面板总结了更改并解释了建议的理由。*\n\n### 2. 为拉取请求格式化表格和数据\n\n为了给审阅者提供更多上下文，作者喜欢在拉取请求描述中添加图片、屏幕录像和电子表格。将这些信息格式化为 Markdown 表格通常很繁琐，此时 Copilot 可以代劳。\n\n*   **Markdown 表格生成**：作者曾将页面加载时间数据（前后对比）提供给 Copilot，并要求其格式化为 GitHub Flavored Markdown 表格。Copilot 迅速生成了清晰、易于粘贴的表格，极大地简化了数据共享。\n\n### 3. 让 Copilot 协助撰写拉取请求摘要\n\n撰写拉取请求描述往往是提交代码前的最后一道障碍。Copilot 可以通过在拉取请求描述编辑器栏中提供初始草稿来帮助启动这一过程，即使后续需要编辑，有一个起点也能减轻任务的难度。\n\n![GitHub Copilot 在拉取请求页面提供摘要生成选项](https://github.blog/wp-content/uploads/2025/08/Screenshot-2025-07-09-at-4.31.54-PM.png?resize=1024%2C438)\n*图片描述：一张 GitHub 拉取请求页面的截图，标题为“Test PR #1”，显示了对话选项卡。Copilot 菜单提供了生成摘要或拉取请求更改大纲的选项。*\n\n### 4. 利用 Copilot 进行代码自查和理解陌生代码\n\nCopilot 在审查和解释代码方面表现出色，作者将其应用于日常工作中的两个方面：\n\n*   **提交前自查**：在将拉取请求标记为“准备好审查”之前，作者会利用 Copilot 对自己的更改进行快速审查，它经常能发现作者可能遗漏的问题或提出更好的编写方式。用户还可以在仓库的自定义指令中添加注释，指导 Copilot 在审查拉取请求时关注的重点。\n*   **解释不熟悉的代码**：在审查他人代码时，如果遇到不理解的更改，作者会请 Copilot 解释。这有助于快速获取上下文，尤其是在不熟悉该部分代码库时，从而能为队友提供更周到、更彻底的审查。\n\n## Copilot 对代码审查和拉取请求的影响\n\n尽管 Copilot 无法替代深思熟虑的人工代码审查，但它已成为作者作为软件工程师日常工作中不可或缺的工具。从生成智能建议和代码重构，到快速 Markdown 格式化和起草拉取请求摘要，Copilot 通过使反馈更具操作性、代码审查过程更快更彻底，从而简化了围绕代码编写的工作。通过将 Copilot 整合到软件开发生命周期的每个阶段，作者能够专注于更高层次的工程问题和协作。",
-      "shortSummary": "GitHub Copilot 已从代码补全发展为强大的AI工具，显著提升了代码审查和拉取请求的效率。它能提供代码重构和最佳实践建议，协助格式化PR描述中的数据表格，并帮助撰写PR摘要。此外，Copilot还能进行代码自查和解释不熟悉的代码，从而加快审查流程，使反馈更具操作性。Copilot 并非人工审查的替代品，但它简化了开发工作，让工程师能专注于更复杂的工程挑战。",
-      "translated_title": "如何使用 GitHub Copilot 提升代码审查和拉取请求的水平",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/Screenshot-2025-07-09-at-4.31.23-PM.png?resize=1024%2C448",
-          "alt": "Screenshot of a GitHub pull request for a Go file, suggesting a change to use the short variable declaration “result := add(1, 2)” instead of “var result int”. A Copilot panel on the right summarizes the changes and explains the reasoning behind the suggestion.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/Screenshot-2025-07-09-at-4.31.54-PM.png?resize=1024%2C438",
-          "alt": "Screenshot of a GitHub pull request page titled \"Test PR #1\" showing the conversation tab, with a Copilot menu offering options to generate a summary or an outline of the pull request changes.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/64283754?v=4&s=200",
-          "alt": "Melissa Pastore",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Discover practical ways GitHub Copilot streamlines code reviews, pull requests, and daily engineering tasks with real prompts, examples, and workflow tips from our engineering team.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-to-use-github-copilot-to-level-up-your-code-reviews-and-pull-requests/\">How to use GitHub Copilot to level up your code reviews and pull requests</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "初级开发者并未过时：在AI时代如何蓬勃发展 (原标题: Junior developers aren’t obsolete: Here’s how to thrive in the age of AI)",
-      "link": "https://github.blog/ai-and-ml/generative-ai/junior-developers-arent-obsolete-heres-how-to-thrive-in-the-age-of-ai/",
-      "pubDate": "Thu, 07 Aug 2025 21:05:55 +0000",
-      "isoDate": "2025-08-07T21:05:55.000Z",
-      "creator": "Gwen Davis",
-      "summary": "## 初级开发者在AI时代蓬勃发展\n\n### 引言：AI对初级开发者的影响与机遇\n\n人工智能（AI）正在深刻改变软件工程领域的工作方式。尽管2023年的一项研究预测，到2027年，初级应用开发者近26%的任务将被AI增强或完全自动化，但这并不意味着初级开发者会过时。相反，文章指出，新入行的学习者由于天生就熟悉AI工具，反而处于有利地位，能够更好地适应软件开发方式的变革。\n\nGitHub首席执行官Thomas Dohmke强调，实习生和初级开发者已经熟练掌握市场上最好的AI代码生成工具，他们与AI“产生共鸣”并用AI进行构建。罗汉普顿大学计算教育教授Miles Berry也认为，今天的学习者必须培养与AI协作的技能，而非担心被其取代。他强调，批判性思维、好奇心以及与AI和资深团队成员的协作至关重要，因为“创造力和好奇心是区分我们与机器的核心”。\n\n### 在AI时代脱颖而出的五种方法\n\n为了在AI时代作为初级开发者脱颖而出，文章提出了以下五种策略：\n\n1.  **利用AI加速学习，而非仅加速编码**\n    *   **将GitHub Copilot用作编程导师：** 大多数开发者使用Copilot进行自动补全，但初学者可以将其设置为强大的学习工具。通过设置个性化指令（例如，充当导师，教授概念和最佳实践，但不提供完整解决方案，并提醒检查AI生成内容的正确性），Copilot可以引导你理解概念。\n    *   **向Copilot提问：** 将Copilot Chat视为私人教练，询问它解释不熟悉的概念、调试步骤、分解复杂语法，或比较不同方法（如`for`循环与`map`），解释错误消息，或帮助编写测试用例。\n    *   **练习不依赖自动补全的问题解决：** 暂时关闭内联补全功能，以锻炼解决问题和批判性思维能力。你仍可使用Copilot Chat提问和获取帮助，但不会过早看到完整解决方案。这有助于在学习新概念时深入思考。\n\n2.  **构建展示技能（和AI熟练度）的公开项目**\n    *   个人项目是你的作品集，GitHub提供了展示和提升技能的平台。使用Copilot Chat的`/new`命令可以快速搭建新项目。\n    *   请求Copilot为项目添加MIT许可证并发布为GitHub上的公共项目。\n    *   通过问题、提交和项目看板跟踪进度，在README中记录旅程和里程碑，并通过反馈和AI协助进行迭代和改进。\n\n3.  **通过核心GitHub工作流提升开发者工具包**\n    *   尽管AI改变了游戏规则，但扎实的基础仍然是成功的关键。以下核心工作流是初级开发者晋升的跳板：\n        *   **使用GitHub Actions自动化：** 自动化构建和部署是所有开发者的最佳实践。利用GitHub Actions自动构建、测试和部署项目。\n        *   **贡献开源：** 加入全球开发者社区，通过贡献开源项目学习新技能、丰富简历并获得实际经验。\n        *   **通过拉取请求（Pull Requests）协作：** 编码是团队运动。练习专业团队使用的拉取请求工作流：审查他人代码、讨论反馈并自信地合并。\n    *   **AI辅助故障排除：** 在学习GitHub工作流时遇到问题（如YAML语法错误、权限问题、构建失败）是正常的。Copilot Chat可以帮助解释错误日志、调试YAML格式、指导配置认证、密钥或CI/CD步骤。\n\n4.  **通过代码审查提升专业技能**\n    *   从同行审查中学习是开发者成长最快的方式之一。每次拉取请求都是获取反馈的机会，不仅针对代码，也针对思维、沟通和协作方式。\n    *   **有效利用代码审查的技巧：** 提问以理解决策或探索替代方法；寻找重复出现的模式以内化最佳实践；记录收到的反馈和处理方式；保持谦逊，感谢并跟进。\n\n5.  **利用AI更智能、更快速地调试**\n    *   调试是软件开发中最耗时的部分之一。GitHub Copilot可以提供帮助：\n        *   询问“这个函数为什么会抛出错误？”以获得实时解释。\n        *   使用`/fix`高亮代码并生成潜在修复方案。\n        *   运行`/tests`创建测试用例并验证逻辑。\n        *   对晦涩的错误使用`/explain`来理解根本原因。\n        *   甚至可以组合命令进行深度调试（例如，`/explain`理解问题，`/fix`生成解决方案，`/doc`为团队编写文档）。\n\n### 更多资源与总结\n\n文章还推荐了GitHub Skills、GitHub Education和GitHub Copilot文档等资源，以帮助开发者成长。总而言之，无论你是第一次提交拉取请求还是在构建第五个副项目，GitHub都是磨练技能、开放协作和构建求职作品集的理想场所。AI正在重塑软件世界，但凭借正确的工具和心态，初级开发者完全可以蓬勃发展。",
-      "shortSummary": "初级开发者在AI时代并非过时，反而因熟悉AI工具而拥有独特优势。文章提出五种策略助其蓬勃发展：利用AI加速学习（如将Copilot作导师）、构建展示AI技能的公开项目、掌握核心GitHub工作流（自动化、开源贡献、PR协作）、通过代码审查提升专业技能，以及利用AI更智能地调试。关键在于培养与AI协作的能力、批判性思维和好奇心。通过这些方法，初级开发者能有效适应行业变化，在AI时代取得成功。",
-      "translated_title": "初级开发者并未过时：在AI时代如何蓬勃发展",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>The role of junior developer is evolving. If you're at this stage in your career, here's how to keep up and stand out.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/junior-developers-arent-obsolete-heres-how-to-thrive-in-the-age-of-ai/\">Junior developers aren’t obsolete: Here’s how to thrive in the age of AI</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-08-19T04:33:41.159Z"
+  "lastUpdated": "2025-08-21T04:34:13.371Z"
 }
