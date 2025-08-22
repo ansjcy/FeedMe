@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "科学家刚刚破解了隐藏在单个原子中的量子代码 (原标题: Scientists just cracked the quantum code hidden in a single atom)",
+      "link": "https://www.sciencedaily.com/releases/2025/08/250821094524.htm",
+      "pubDate": "Fri, 22 Aug 2025 03:35:14 EDT",
+      "isoDate": "2025-08-22T07:35:14.000Z",
+      "creator": "",
+      "summary": "## 科学家破解单个原子中的量子代码，大幅减少量子计算机硬件需求\n\n### 引言：量子计算面临的挑战\n\n构建大规模量子计算机面临着严峻的挑战。量子比特（qubits）在运行时会产生自发错误，需要通过编码来抑制。随着有用（或逻辑）量子比特数量的增长，所需的物理量子比特数量会呈指数级增加，这使得构建实用的量子机器成为一个巨大的工程难题。\n\n### 重大突破：悉尼大学团队实现高效量子逻辑门\n\n悉尼大学纳米研究所量子控制实验室的科学家们首次展示了一种新型量子逻辑门，能够大幅减少其操作所需的物理量子比特数量。这一突破性进展为解决量子计算机的扩展性问题提供了新的途径。\n\n### 核心技术：GKP编码——量子计算的“罗塞塔石碑”\n\n*   **GKP代码的引入**：研究团队通过在单个原子上构建纠缠逻辑门，使用了被称为GKP（Gottesman-Kitaev-Preskill）代码的纠错码。该代码被誉为量子计算的“罗塞塔石碑”。\n*   **工作原理**：GKP代码能够将平滑、连续的量子振荡转化为清晰、数字化的离散状态，从而更容易发现和修复错误，并实现高度紧凑的逻辑量子比特编码。\n*   **理论到现实**：这项研究于8月21日发表在《自然物理学》上，首次将GKP代码的理论可能性变为物理现实。科学家们通过利用捕获离子（一个带电的镱原子）的自然振荡来存储GKP代码，并首次实现了它们之间的量子纠缠门。\n\n### 实验细节与创新\n\n*   **研究团队**：该研究由悉尼地平线研究员Tingrei Tan博士领导。\n*   **精确控制**：科学家们通过对捕获离子的谐波运动进行精确控制，成功弥合了GKP量子比特的编码复杂性，从而展示了它们的纠缠。\n*   **通用逻辑门集**：Tan博士表示，他们的实验首次实现了GKP量子比特的通用逻辑门集，能够精确控制捕获离子的自然振动，从而操纵单个GKP量子比特或将其配对纠缠。\n*   **软件创新**：第一作者Vassili Matsos（博士生）成功在一个捕获离子中存储了两个可纠错的逻辑量子比特，并展示了它们之间的纠缠。他们使用了Q-CTRL（量子控制实验室的衍生公司）开发的量子控制软件，结合基于物理的模型来设计量子门，以最小化GKP逻辑量子比特的失真，同时保持GKP代码的精细结构。\n\n### 量子技术里程碑\n\n*   **单原子逻辑门**：Matsos通过纠缠单个原子的两个“量子振动”（即量子态），仅用一个原子就创建了一个逻辑门。这一成果是量子技术的一个重要里程碑。\n*   **硬件需求大幅减少**：这一结果极大地减少了创建这些可编程量子机器所需的量子硬件。\n*   **未来展望**：Tan博士指出，GKP纠错码长期以来承诺减少硬件需求，以应对量子计算机扩展的资源开销挑战。他们的实验证明了这些高质量的量子控制是操纵多个逻辑量子比特的关键工具，为以高度硬件高效的方式实现大规模量子信息处理奠定了基础。\n\n### 实验设置与研究意义\n\nTan博士的团队在实验中使用了保罗阱（Paul trap）中的单个镱离子。通过复杂的激光阵列在室温下捕获原子，并控制其自然振动以生成复杂的GKP代码。这项研究有力证明了量子逻辑门可以在减少物理量子比特数量的情况下开发，从而显著提高其效率。\n\n### 资金来源\n\n该研究获得了澳大利亚研究理事会、悉尼地平线奖学金、美国海军研究办公室、美国陆军研究办公室、美国空军科学研究办公室、洛克希德·马丁公司、悉尼量子学院以及H.和A.哈雷的私人资助。作者声明无竞争利益。",
+      "shortSummary": "悉尼大学科学家首次在单个原子中成功实现了量子逻辑门，大幅减少了量子计算机所需的物理量子比特数量。他们利用GKP纠错码，通过精确控制捕获离子（镱原子）的自然振动，在一个原子中存储并纠缠了两个逻辑量子比特。这一突破性成果为构建更高效、可扩展的量子计算机奠定了基础，解决了量子计算面临的硬件资源挑战。",
+      "translated_title": "科学家刚刚破解了隐藏在单个原子中的量子代码",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "A research team has created a quantum logic gate that uses fewer qubits by encoding them with the powerful GKP error-correction code. By entangling quantum vibrations inside a single atom, they achieved a milestone that could transform how quantum computers scale."
+    },
+    {
       "title": "这个简单的磁性技巧可能会永远改变量子计算 (原标题: This simple magnetic trick could change quantum computing forever)",
       "link": "https://www.sciencedaily.com/releases/2025/08/250816113508.htm",
       "pubDate": "Sat, 16 Aug 2025 23:50:10 EDT",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Engineers built E-BAR, a mobile robot designed to physically support the elderly and prevent them from falling as they move around their homes. E-BAR acts as a set of robotic handlebars that follows a person from behind, allowing them to walk independently or lean on the robot's arms for support."
-    },
-    {
-      "title": "机器人手实现类人抓取 (原标题: Robotic hand moves objects with human-like grasp)",
-      "link": "https://www.sciencedaily.com/releases/2025/05/250513112155.htm",
-      "pubDate": "Tue, 13 May 2025 11:21:55 EDT",
-      "isoDate": "2025-05-13T15:21:55.000Z",
-      "creator": "",
-      "summary": "### 机器人手实现类人抓取\n\n*   **核心突破：** 一种新型机器人手展现出类人般的抓取能力，能够自发地以类似人类的方式移动和抓取物体。\n*   **工作原理：** 这种先进的抓取能力并非依赖于复杂的编程，而是得益于其采用的柔顺材料和结构设计。这些材料和结构使得机器人手能够自然地适应不同物体的形状和特性。\n*   **抓取范围：** 该机器人手已成功演示了对24种不同物体的抓取操作，显示了其广泛的适用性。\n*   **创新之处：** 区别于传统机器人通过精确编程来执行任务，这款机器人手通过其物理特性实现“智能”抓取，使其动作更具自发性和适应性。",
-      "shortSummary": "一种新型机器人手能够以类人方式自发抓取物体。其独特之处在于，这种能力并非通过编程实现，而是得益于柔顺材料和结构的应用。该机器人手已成功抓取24种不同物体，展现了其在无需复杂编程下实现智能抓取的能力。",
-      "translated_title": "机器人手实现类人抓取",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "A robotic hand can pick up 24 different objects with human-like movements that emerge spontaneously, thanks to compliant materials and structures rather than programming."
     }
   ],
-  "lastUpdated": "2025-08-21T09:28:58.003Z"
+  "lastUpdated": "2025-08-22T09:28:28.839Z"
 }
