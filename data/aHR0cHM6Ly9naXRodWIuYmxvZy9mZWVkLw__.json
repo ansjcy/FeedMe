@@ -5,6 +5,94 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "构建你的第一个MCP服务器：如何用自定义能力扩展AI工具 (原标题: Building your first MCP server: How to extend AI tools with custom capabilities)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/building-your-first-mcp-server-how-to-extend-ai-tools-with-custom-capabilities/",
+      "pubDate": "Fri, 22 Aug 2025 16:52:27 +0000",
+      "isoDate": "2025-08-22T16:52:27.000Z",
+      "creator": "Chris Reddington",
+      "summary": "## 模型上下文协议（MCP）：扩展AI工具的标准化方法\n\n文章介绍了模型上下文协议（MCP），这是一种标准化方法，旨在扩展AI工具（如GitHub Copilot）的自定义能力，使其能够访问外部系统、私有数据并执行特定操作。\n\n### 为什么MCP对开发者很重要？\n\n当前的AI工具存在以下局限性：\n\n*   **数据访问受限**：无法原生访问私有数据进行检索增强生成（RAG），如GitHub仓库信息、最新文档或实时数据。\n*   **行动能力不足**：无法执行创建拉取请求、探索本地运行应用的UI或与API交互等操作。\n\n在MCP出现之前，将第三方工具和服务集成到AI中没有标准方法，可能需要为不同的AI工具使用不同的插件和集成模式。MCP通过提供一个统一的标准，解决了这一问题，允许将工具和能力插入任何支持该协议的AI工具中。\n\n### MCP的客户端-服务器模式\n\nMCP遵循开发者熟悉的客户端-服务器模式：\n\n*   **主机（Host）**：你正在使用的AI工具，例如VS Code中的GitHub Copilot。主机通过客户端启动与MCP服务器的连接。\n*   **客户端（Clients）**：存在于主机应用程序内部，与服务器之间是1:1关系。当VS Code连接到新的MCP服务器时，会创建一个新的客户端来维护连接。\n*   **服务器（Server）**：你自定义的MCP服务器，提供工具、资源和提示。例如，文章作者构建了一个提供回合制游戏能力的MCP服务器。\n\n### 构建回合制游戏MCP服务器\n\n为了学习和演示MCP，作者构建了一个可视化的回合制游戏服务器，允许用户与Copilot玩井字棋和石头剪刀布。该项目包含以下组件，均使用TypeScript编写：\n\n*   **Next.js Web应用和API**：用于本地运行的演示/学习目的。\n*   **MCP服务器**：使用MCP TypeScript SDK实现。\n*   **共享库**：包含通用类型定义和组件，在Web应用、API和MCP服务器之间复用。\n\n**工作原理：**\n\n1.  在VS Code中注册MCP服务器，使Copilot了解新的能力和工具。\n2.  用户在VS Code中与GitHub Copilot交互，可以显式调用工具或让Copilot自动发现。\n3.  Copilot调用大型语言模型（LLM）。\n4.  LLM根据提示上下文和可用工具，可能会调用MCP服务器。\n5.  MCP服务器执行请求的工具（例如，在游戏中移动），并返回结果。\n6.  Copilot使用这些结果继续对话。\n\n通过在MCP应用主机（如VS Code中的GitHub Copilot）中注册MCP服务器，AI代理便能访问这些服务器中内置的能力。\n\n![一个MCP服务器配置的截图，显示了回合制游戏MCP服务器正在运行。它显示了一个弹出窗口，列出了MCP服务器的几个工具，包括analyze_game、create_rock_paper_scissors_game、create_tic_tac_toe_game、play_rock_paper_scissor、play_tic_tac_toe和wait_for_player_move。](https://github.blog/wp-content/uploads/2025/08/rdt1.png?resize=1024%2C576)\n\n### 在VS Code中设置MCP服务器\n\n可以通过创建`.vscode/mcp.json`文件来配置MCP服务器。例如，可以配置Playwright MCP服务器和回合制游戏MCP服务器。作者的演示项目采用单体仓库（monorepo）方法，将Web应用、API和MCP服务器捆绑在一起，便于本地克隆和运行。对于更健壮的设置，MCP服务器通常会作为包（如npm或Docker镜像）分发。\n\n### MCP的三个核心构建块\n\n通过构建项目，作者熟悉了MCP服务器的三个基本概念：\n\n1.  **工具（Tools）**：定义AI可以执行的动作。每个工具都有清晰的描述和输入schema。例如，游戏服务器中的工具包括`analyze_game`（获取游戏状态）、`create_tic_tac_toe_game`（开始井字棋游戏）和`play_tic_tac_toe`（AI在井字棋中移动）。AI（Copilot/LLM）不计算实际游戏动作，而是MCP服务器执行特定工具的处理程序来运行CPU游戏逻辑。\n2.  **资源（Resources）**：AI可以访问的上下文信息，通常具有基于URI的标识符。例如，自定义URI方案如`game://tic-tac-toe/{Game-ID}`用于获取特定井字棋游戏的状态。MCP服务器将这些资源URI转换为对本地API服务器的API调用，并传递原始响应作为工具调用的上下文。\n3.  **提示（Prompts）**：为用户提供可重用的指导。除了用户自定义提示外，MCP服务器可以附带预定义的提示，如不同难度级别的策略指南、游戏规则或故障排除帮助。用户可以通过VS Code中的斜杠命令（如`/strategy`）访问这些提示。\n\n### 实际应用和注意事项\n\n尽管游戏演示项目旨在简化学习，但其模式适用于其他MCP服务器：\n\n*   **GitHub MCP服务器**：获取GitHub Issues/PRs信息、列出Dependabot警报，或创建/管理Issues/PRs。\n*   **Playwright MCP服务器**：自动化浏览器导航、交互、截图和内容检查。\n*   **自定义API服务器**：连接到内部服务、数据库或业务逻辑。\n\n**其他考量：**\n\n*   **认证和安全**：生产环境的MCP服务器可能需要处理认证和授权。GitHub MCP服务器支持OAuth流程和个人访问令牌。演示服务器为简化起见未包含认证。\n*   **信任第三方MCP服务器**：安装前需进行尽职调查，确认发布者并审查代码。\n*   **语言和SDK选项**：MCP提供多种语言的SDK，包括TypeScript、Python、Go和Rust等，允许开发者根据技术栈选择。\n\n### 总结\n\nMCP通过标准化AI工具的扩展性，打破了AI助手与外部系统之间的壁垒。它提供了一个清晰的框架，通过工具、资源和提示来设计MCP服务器的能力。无论是构建内部开发工具、集成外部API还是创建自定义工作流，MCP都为以一致、强大的方式扩展AI工具提供了基础。\n\n**下一步：** 探索GitHub MCP服务器、试用Playwright MCP服务器、为内部API或开发工具构建简单服务器，并尝试自定义提示。",
+      "shortSummary": "模型上下文协议（MCP）提供了一种标准化方法，用于扩展AI工具（如GitHub Copilot）的自定义能力。它通过客户端-服务器模式，使AI能够访问外部系统、私有数据和实时信息，并执行创建拉取请求、与API交互等操作。MCP的核心构建块包括定义AI可执行动作的“工具”、提供上下文信息的“资源”以及指导用户使用的“提示”。通过MCP，开发者可以打破AI助手与外部系统之间的壁垒，使其在特定开发环境中更具实用性和效率。",
+      "translated_title": "构建你的第一个MCP服务器：如何用自定义能力扩展AI工具",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/rdt1.png?resize=1024%2C576",
+          "alt": "A screenshot of an MCP server configuration with the turn-based-game MCP server running. It shows a popup listing several tools from the MCP server including analyze_game, create_rock_paper_scissors_game, create_tic_tac_toe_game, play_rock_paper_scissor, play_tic_tac_toe and wait_for_player_move.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/791642?v=4&s=200",
+          "alt": "Chris Reddington",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Learn Model Context Protocol by building a turn-based game server that shows how to extend GitHub Copilot with custom tools, resources, and prompts.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/building-your-first-mcp-server-how-to-extend-ai-tools-with-custom-capabilities/\">Building your first MCP server: How to extend AI tools with custom capabilities</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "探索GitHub Universe的精华：9个旨在激发创造力、连接与乐趣的空间 (原标题: Explore the best of GitHub Universe: 9 spaces built to spark creativity, connection, and joy)",
+      "link": "https://github.blog/news-insights/company-news/explore-the-best-of-github-universe-9-spaces-built-to-spark-creativity-connection-and-joy/",
+      "pubDate": "Thu, 21 Aug 2025 18:02:34 +0000",
+      "isoDate": "2025-08-21T18:02:34.000Z",
+      "creator": "Jeimy Ruiz",
+      "summary": "# GitHub Universe 2025：活动概览\n\nGitHub Universe 2025 将于今年十月重返旧金山 Fort Mason Center，承诺带来一场比以往任何时候都更盛大、更大胆、更具互动性的开发者盛会。除了100多场专家主导的会议（完整会议目录将于九月初发布）外，活动还精心设计了九个独特的空间，旨在激发与会者的创造力、促进连接并带来乐趣，无论您是搭建乐高、与同行交流，还是探索新的职业资源。\n\n# 提升技能与探索最新GitHub工具\n\n### 🧭 GitHub Central\n![GitHub Universe的GitHub Central照片。](https://github.blog/wp-content/uploads/2025/08/image7.jpg?resize=1024%2C683)\n在早上的主题演讲结束后，您可以前往 GitHub Central。这里将提供实时演示、客户案例和产品旅程，与三大内容主题（更高效、更安全、更具创造性地使用 GitHub 进行构建）紧密结合。您将有机会探索 GitHub Copilot、GitHub Actions、GitHub Advanced Security 等工具。GitHub Central 融合了自助式工作站、与 GitHub 专家进行的现场会议以及各种惊喜，是您发现和获取灵感的中心。无论您是企业架构师还是刚开始接触自动化，都将带着实用的想法和可靠的策略满载而归。\n\n### 💡 GitHub Expert Center\n![GitHub Universe的GitHub Expert Center照片。](https://github.blog/wp-content/uploads/2025/08/image4.jpg?resize=1024%2C683)\nGitHub Expert Center 是您进行技术深度探讨、获取快速建议和进行一对一交流的首选之地。从人工智能和 GitHub Actions 专家，到安全和规模化采用专家，GitHub 专家们将在现场随时解答您所有的 GitHub 产品问题。您可以提前预约，也可以在会议间隙随时前往。\n\n# 促进成长与拓展人脉\n\n### 🌍 Open Source Zone\n![GitHub Universe的Open Source Zone照片。](https://github.blog/wp-content/uploads/2025/08/image5.jpg?resize=1024%2C683)\n在 Open Source Zone，您可以与来自全球的贡献者、维护者和社区领袖建立联系。发现 GitHub Accelerator 项目中的新星，向维护者社区的领军人物学习，并探索那些正在改变世界软件构建方式的项目。\n\n### 💼 Career Corner\n![一个人在GitHub Universe的Career Corner拍照。](https://github.blog/wp-content/uploads/2025/08/image3.jpg?resize=1024%2C683)\n如果您正寻求职业发展，Career Corner 提供与职业教练进行一对一咨询的机会，获取个性化建议，涵盖简历润色、GitHub 和 LinkedIn 个人资料优化，以及面试准备等。\n\n### 📚 GitHub Learn\nGitHub Learn 汇集了教程、认证和基于角色的学习路径，帮助您按照自己的节奏成长。您可以探索来自 GitHub、Microsoft Learn 等平台的内容，以培养适用于各级别开发者的实际、就业就绪技能。\n\n# 动手实践，尽享乐趣\n\n### 🎯 Recess\n![GitHub Universe上两个人正在交谈和喝咖啡。](https://github.blog/wp-content/uploads/2025/08/image9.jpg?resize=1024%2C683)\n从会议中短暂休息，与志同道合的人建立联系。Recess 是您结识其他与会者或与同事分享非开发兴趣（从搭建乐高到与高管边吃冰淇淋边聊天）的机会。\n\n### 🔮 Makerspace\nMakerspace 是代码与艺术、音乐、机器人等领域碰撞的地方。这是一个供您玩耍、探索和重新构想代码潜力的空间，无需正式培训，只需带上您的好奇心。\n\n### 🛠️ Hack your badge\n每张现场门票都包含一个可编程的徽章，旨在进行定制和编码。您可以按照教程操作，从其他黑客那里获得灵感，创造一件独特的硬件艺术品，以纪念您的 Universe 体验。\n\n### 🛍️ The Shop\n![GitHub Universe的商店照片。](https://github.blog/wp-content/uploads/2025/08/image6.jpg?resize=1024%2C683)\nThe Shop 是您购买 GitHub Copilot 周边、独家开发者主题商品和粉丝最爱收藏品的地方，还有一些只有在现场才能发现的惊喜。\n\n# 票务信息与重要日期\n\n您可以完全定制您的 GitHub Universe 活动体验。现在是购买现场门票的最佳时机，与热爱构建和扩展的同行交流：\n*   在9月8日之前，享受早鸟优惠，立省400美元。\n*   购买三张或更多门票可享七五折优惠。\n*   购买八张或更多门票可享六五折优惠。\n*   团体折扣可与早鸟优惠叠加。\n名额有限，请立即购票。\n\n# 额外资源\n\n文章还提供了帮助说服经理的定制邮件模板、获取最新演讲者和会议信息的注册链接、浏览去年会议以了解体验的选项，以及常见问题解答。",
+      "shortSummary": "GitHub Universe 2025将于十月在旧金山举行，将成为一场互动性更强的开发者盛会。活动设有九个独特空间，旨在激发创造力、促进连接和带来乐趣。与会者可探索GitHub最新工具、与专家交流、拓展开源人脉、获取职业指导，并参与动手实践。早鸟票优惠（立省400美元）截止9月8日，并提供团体折扣。立即购票，体验定制化的开发者盛会。",
+      "translated_title": "探索GitHub Universe的精华：9个旨在激发创造力、连接与乐趣的空间",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/image7.jpg?resize=1024%2C683",
+          "alt": "A photo of GitHub Central at GitHub Universe.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/image4.jpg?resize=1024%2C683",
+          "alt": "A photo of the GitHub Expert Center at GitHub Universe.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/image5.jpg?resize=1024%2C683",
+          "alt": "A photo of the Open Source Zone at GitHub Universe.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/image3.jpg?resize=1024%2C683",
+          "alt": "A person gets their photo taken in the Career Corner at GitHub Universe.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/image9.jpg?resize=1024%2C683",
+          "alt": "Two people talking and drinking coffee at GitHub Universe.",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/image6.jpg?resize=1024%2C683",
+          "alt": "Photo of the Shop at GitHub Universe.",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/94011710?v=4&s=200",
+          "alt": "Jeimy Ruiz",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>See what’s happening at Universe 2025, from experimental dev tools and career coaching to community-powered spaces. Save $400 on your pass with Early Bird pricing.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/explore-the-best-of-github-universe-9-spaces-built-to-spark-creativity-connection-and-joy/\">Explore the best of GitHub Universe: 9 spaces built to spark creativity, connection, and joy</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "谁来维护未来？为新一代重新思考开源领导力 (原标题: Who will maintain the future? Rethinking open source leadership for a new generation)",
       "link": "https://github.blog/open-source/maintainers/who-will-maintain-the-future-rethinking-open-source-leadership-for-a-new-generation/",
       "pubDate": "Wed, 20 Aug 2025 16:00:00 +0000",
@@ -372,64 +460,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Learn how maintainers are using the GitHub MCP Server and what they are building in this episode of the GitHub Podcast.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/why-we-open-sourced-our-mcp-server-and-what-it-means-for-you/\">Why we open sourced our MCP server, and what it means for you</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "大规模保障供应链安全：从71个重要开源项目开始 (原标题: Securing the supply chain at scale: Starting with 71 important open source projects)",
-      "link": "https://github.blog/open-source/maintainers/securing-the-supply-chain-at-scale-starting-with-71-important-open-source-projects/",
-      "pubDate": "Mon, 11 Aug 2025 16:00:00 +0000",
-      "isoDate": "2025-08-11T16:00:00.000Z",
-      "creator": "Kevin Crosby",
-      "summary": "# 大规模保障供应链安全：从71个重要开源项目开始\n\n## 引言：软件供应链安全挑战\n\n2021年12月Log4j零日漏洞的爆发，凸显了资源不足的开源库对整个软件供应链的巨大影响。如今，平均每个云工作负载包含超过500个依赖项，其中许多由无偿志愿者维护，因此支持和保护这一生态系统的需求变得前所未有的紧迫。\n\n## GitHub安全开源基金会\n\n### 成立背景与目标\n\n为应对这一挑战，GitHub于2024年11月启动了GitHub安全开源基金会。该基金旨在通过为维护者提供资金支持，让他们参与为期三周的项目，从而获得安全教育、指导、工具、认证以及安全意识维护者社区等资源。通过将资金与程序化安全成果挂钩，基金的目标是扩大安全影响力、降低风险并大规模保障软件供应链安全。\n\n### 运作方式\n\n*   **项目结构**：每个项目参与一个为期三周的“冲刺”培训，并持续12个月的参与。\n*   **课程设计**：由GitHub安全实验室设计和策划，由GitHub及其合作伙伴的安全专家提供培训。培训分为每周不同的重点领域，包括：\n    *   开源安全基础\n    *   威胁建模和安全编码\n    *   漏洞管理和AI安全\n*   **资金支持**：每个项目通过GitHub Sponsors获得10,000美元（冲刺期间6,000美元，6个月和12个月安全检查时各2,000美元）。\n*   **额外资源**：项目还受邀加入新的安全社区，并可利用GitHub安全实验室的办公时间，获得可立即实施的安全资源和Azure云基础设施积分。\n\n### 早期成果与影响\n\n基金会的前两期项目汇集了来自71个重要且快速增长的开源项目的125名维护者，并取得了显著的早期成果：\n\n*   **漏洞修复**：修复了CodeQL检测到的1,100多个漏洞，降低了风险暴露面。\n*   **漏洞披露**：参与者发布了50多个新的通用漏洞披露（CVE），从而告知并保护了下游依赖方。\n*   **秘密管理**：阻止了92个新秘密泄露，并检测和解决了176个已泄露的秘密。\n*   **能力提升**：100%的维护者表示他们获得了可操作的后续步骤，可用于未来一年的路线图。\n*   **最佳实践采纳**：80%的项目启用了三个或更多基于GitHub的安全功能。\n*   **面向未来**：63%的项目表示他们对AI和MCP（多方计算）安全有了更好的理解，并利用GitHub Copilot进行漏洞扫描、安全审计、定义和实施模糊测试策略等。\n\n这些成果表明了项目会话带来的直接安全影响，并且这种势头才刚刚开始。维护者们已经接受了安全文化，建立了安全积压，并积极与社区中的维护者以及其直接项目贡献者和消费者分享见解，从而使整个生态系统受益，安全影响力将持续增长。第三期项目将于2025年9月启动，旨在吸引更多深入依赖树和独立管理关键依赖项的维护者。\n\n## 重点项目类别及案例分析\n\n### 1. AI和机器学习框架/边缘LLM工具\n\n*   **重要性**：这些项目是当前AI工作（如LLMs、代理、编排层和模型工具链）的基石，每月有数千万次安装和克隆。一个提示注入缺陷或中毒的权重文件可能一夜之间影响数千个下游应用程序，攻击者可能获得“远程DevOps”权限。\n*   **Ollama项目亮点**：该项目使本地运行大型语言模型成为可能。Ollama利用此机会对其系统的每个活动部分（包括GitHub Actions、DNS安全、模型分发、模型在Ollama引擎中的执行、自动更新检查等）进行了威胁建模，并修剪了未使用的依赖项。\n*   **AutoGPT的GravitasML项目亮点**：该项目是为LLMs构建的MIT许可XML解析器。AutoGPT团队在冲刺结束后，将CodeQL集成到AutoGPT平台和GravitasML的每个拉取请求中，并构建了一个轻量级“安全代理”来提示贡献者加强控制。他们还修订了安全策略，建立了正式的事件响应工作流程，并规划了28项后续任务（从模糊测试XML解析器到完成OSS Scorecard），以构建更安全的LLM代理的持久路线图。\n\n### 2. 前端和全栈框架/UI库\n\n*   **重要性**：这些框架承载用户界面，通常捆绑自己的服务器端路由，安装量达数百万。提升其安全性可关闭潜在的XSS、模板注入和供应链跳点。单个组件套件中的漏洞提交可能泄露来自每个SaaS仪表板的JWT或会话cookie。\n*   **shadcn/ui项目亮点**：这个React组件库受到OpenAI等领先组织的信任。在为期三周的冲刺中，该项目审计了每个GitHub Actions工作流和秘密，更新了SECURITY.md、许可证和依赖项，并根据“安全设计UX”研讨会创建了一个框架，用于识别恶意威胁行为者可能攻击其项目的方式，并制定了降低风险或完全阻止的策略。他们启用了CodeQL（首次扫描就发现了一个不安全的`dangerouslySetInnerHTML`路径），并起草了正式的漏洞报告流程和威胁模型，为未来的贡献者制定了清晰、公开的安全路线图。该项目还利用GitHub Copilot设置并实施了模糊测试。\n\n### 3. Web服务器、网络和网关\n\n*   **重要性**：如果一个进程监听443端口，很可能这些Web服务器或网关项目是其堆栈的一部分。加固它们可以保护所有通过网络传输的cookie、身份验证头和JSON负载。未签名的二进制文件或薄弱的发布管道使得下游依赖方难以响应供应链安全事件。\n*   **Node.js项目亮点**：在冲刺期间，Node.js安全工作组修订了项目的威胁模型，并启动了一个拉取请求，将CodeQL集成到核心代码中——这得益于一个新的工作流，该工作流自动审查代码扫描警报并标记最不明确的错误进行重构。这些升级以及未来版本中计划的签名检查，将影响所有使用Node二进制文件的服务器端JavaScript工作负载。\n\n### 4. DevOps、构建系统、容器工具\n\n*   **重要性**：这些工具涉及每次提交和部署。如果攻击者在此处立足，他们就控制了整个管道。通过使用Sigstore签署二进制文件，这些项目为平台工程师提供了加密证明，证明生产环境中运行的位是由真正的维护者构建的，而不是中间的攻击者。\n*   **Turborepo项目亮点**：在为期三周的冲刺中，Turborepo启用了GitHub私有漏洞报告，收紧了过于宽松的工作流令牌，并发布了生产就绪的IRP（事件响应计划），同时使用CodeQL扫描每个拉取请求。这些防护措施保护了数千个monorepo所依赖的Rust驱动的构建缓存。该团队已经起草了公开威胁模型和提供商通知手册，以便在零日漏洞传播之前悄悄处理。\n\n### 5. 安全框架、身份和合规工具\n\n*   **重要性**：这些库是互联网的锁、账本和审计日志。使这些项目更安全会波及整个生态系统，使每个人都更安全。当身份服务器被攻破时，攻击者可以伪造合法的令牌或发布标记为“安全”的篡改图像。对这些供应链关键项目的维护者进行前期安全资助，其成本远低于全球范围内的供应链安全事件处理。\n*   **Log4j项目亮点**：Apache Log4j团队加强了每个GitHub Actions工作流以防脚本注入，起草了全新的威胁模型，并深化了与开源社区的协作。接下来，他们将捆绑一个CodeQL包，用于标记下游代码中不安全的日志模式，并推出内部模糊测试。他们与ASF安全团队紧密合作，旨在树立一个标准，影响许多其他ASF项目。\n\n### 6. 开发者工具和CLI辅助工具\n\n*   **重要性**：这些流行的辅助工具在全球的笔记本电脑和CI节点上运行。加固它们可以切断网络钓鱼路径和横向移动路径。虽然大部分供应链安全工作集中在运行时库上，但对维护者及其所依赖工具的攻击表明，开发者工具对于安全加固工作至关重要。受损的shell插件可能导致任意代码执行，例如在开发者启动shell时窃取SSH密钥。\n*   **Charset-Normalizer项目亮点**：这个每天在PyPI上被下载约2000万次的编码辅助工具，通过放弃弱SMS 2FA转而使用更强的基于通行密钥的MFA，启用GitHub秘密扫描，并修补之前未注意到的高风险GitHub Actions，从而加强了防御。维护者现在正在为每个版本自动化SBOM生成——这项工作将很快使Python最普遍的传递依赖项之一既可审计又符合CRA（网络弹性法案）规定。\n*   **nvm项目亮点**：这个Node版本管理器利用冲刺发布了其首个事件响应计划，并规划了公开漏洞披露策略的路线图——将近期审计的经验教训转化为具体的防护措施。nvm的维护者首次在该项目中学习了如何使用Copilot进行安全指导和输入。接下来，维护者将连接自定义CodeQL查询和模糊测试工具，以对nvm的Bash内部进行压力测试，然后将该操作手册分享给Express等OpenJS兄弟项目，以便各地的开发环境都能继承这些升级。\n*   **JUnit项目亮点**：在为期三周的冲刺中，JUnit在其所有存储库中推出了端到端CodeQL扫描，并修复了第一波发现的问题，正式制定了公开事件响应计划，并通过将`GITHUB_TOKEN`切换为明确的最小权限来锁定每个工作流。\n\n## 未来展望\n\nGitHub安全开源基金会的工作仍在继续，第三期项目即将启动，将有更多关键的开源项目和维护者加入，共同提升整个软件生态系统的安全性。",
-      "shortSummary": "GitHub安全开源基金会已帮助71个重要开源项目显著提升安全态势。该基金通过提供资金、专家指导和可操作的策略，支持维护者参与为期三周的安全项目。早期成果包括修复1100多个漏洞、发布50多个CVE、阻止秘密泄露，并加速了安全最佳实践的采纳。基金会通过加固AI/ML框架、前端库、Web服务器、DevOps工具、安全框架和开发者工具等关键领域，有效降低了软件供应链风险，并促进了安全文化的建立。",
-      "translated_title": "大规模保障供应链安全：从71个重要开源项目开始",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Learn how the GitHub Secure Open Source Fund helped 71 open source projects significantly improve their security posture through direct funding, expert guidance, and actionable playbooks.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/securing-the-supply-chain-at-scale-starting-with-71-important-open-source-projects/\">Securing the supply chain at scale: Starting with 71 important open source projects</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "再见，GitHub ♥️ (原标题: Auf Wiedersehen, GitHub ♥️)",
-      "link": "https://github.blog/news-insights/company-news/goodbye-github/",
-      "pubDate": "Mon, 11 Aug 2025 14:56:37 +0000",
-      "isoDate": "2025-08-11T14:56:37.000Z",
-      "creator": "Thomas Dohmke",
-      "summary": "## Thomas Dohmke 宣布离开 GitHub\n\n在领导 GitHub 超过十年，并将其带入 Copilot 和 AI 时代后，现任首席执行官 Thomas Dohmke 宣布将于 2025 年底离职，重新回归创业领域。他将继续留任至 2025 年底，以协助完成过渡。GitHub 及其领导团队将继续作为微软 CoreAI 组织的一部分履行其使命。\n\n### GitHub 的发展与成就\n\nDohmke 在任期间，GitHub 取得了显著的增长和技术突破：\n\n*   **规模与社区**：GitHub 现已拥有超过 10 亿个代码库和分支，以及超过 1.5 亿开发者，其在全球公司的市场地位无可匹敌。每年都有更多的开源项目和贡献，AI 项目在过去一年中翻了一番。\n*   **平台优化**：大幅提升了可访问性和可用性，将 GitHub 引入欧盟、澳大利亚，并为在美国获得 FedRAMP 认证而回归美国，同时修复了大量细节问题。\n*   **GitHub Advanced Security**：通过 AI 的力量，将行业推向“发现即修复”的模式，将平均修复时间缩短了 60%，使团队修复漏洞的速度提高了 3 倍。\n*   **GitHub Actions**：已成熟成为全球领先的 CI 解决方案，每月运行时间达到 30 亿分钟，同比增长 64%。\n*   **GitHub Copilot**：从一个简单的自动补全工具发展成为会话式编程（Copilot Chat & Voice）、代码审查和修复，以及通过 GitHub Spark 进行全栈应用创建的强大工具。目前，GitHub Copilot 拥有超过 2000 万用户，是 AI 时代最成功、最活跃市场的领导者。\n    *   它是微软首个多模型解决方案，与 Anthropic、Google 和 OpenAI 合作。\n    *   推出了 Copilot Free，以及 VS Code 中的同步代理模式和 GitHub 原生的异步编码代理。\n    *   被认为是自个人电脑问世以来软件开发领域最大的变革。\n\n### 未来愿景\n\nDohmke 坚信，通过开发者 AI 的新时代，无论个人掌握何种语言或编程熟练度，都能将创意变为现实。他预见世界将很快出现 10 亿开发者，由数十亿 AI 代理赋能，将人类的智慧融入到一场新的软件淘金热中，而 GitHub 正是这一进程的起点。\n\n### 感谢与展望\n\nThomas Dohmke 对 GitHub 团队（Hubbers）表达了深切的自豪和感谢，认为与他们共事是巨大的荣幸，并相信他们共同“扭转了技术的发展弧线，使其变得更好”。\n\n### 作者信息\n\nThomas Dohmke 是 GitHub 的首席执行官，拥有机械工程博士学位，并是一位著名的 TED 演讲者。他致力于构建工具以提升开发者的幸福感。\n\n![Thomas Dohmke](https://secure.gravatar.com/avatar/f9a3d6bee42f4503d3169861b9ecdfab5b2faebc73eb6344d2c3fa15727da799?s=200&d=mm&r=g)\n\n### 相关内容\n\n*   **我们需要一个欧洲主权技术基金**：探讨开源软件作为关键基础设施的资金缺口。\n*   **探索更多来自 GitHub 的内容**：\n    *   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切。\n    *   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来。\n    *   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用 GitHub 的公司和工程团队。\n    *   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025：在旧金山参加年度大会的最后机会。",
-      "shortSummary": "GitHub 首席执行官 Thomas Dohmke 宣布将于 2025 年底离职，回归创业。在他领导下，GitHub 取得了巨大发展，用户数和代码库激增，并成功推出了 GitHub Copilot，使其成为 AI 时代开发者工具的领导者。Dohmke 坚信 AI 将赋能十亿开发者，开启软件开发新纪元。他感谢团队的贡献，并对GitHub的未来充满信心。",
-      "translated_title": "再见，GitHub ♥️",
-      "images": [
-        {
-          "url": "https://secure.gravatar.com/avatar/f9a3d6bee42f4503d3169861b9ecdfab5b2faebc73eb6344d2c3fa15727da799?s=200&d=mm&r=g",
-          "alt": "Thomas Dohmke",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>tl;dr: I am stepping down as GitHub CEO to build my next adventure. GitHub is thriving and has a bright future ahead. The following is the internal post I sent to GitHub employees (Hubbers) this morning announcing my departure.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/goodbye-github/\">Auf Wiedersehen, GitHub ♥️</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-08-21T04:34:13.371Z"
+  "lastUpdated": "2025-08-23T04:32:46.241Z"
 }
