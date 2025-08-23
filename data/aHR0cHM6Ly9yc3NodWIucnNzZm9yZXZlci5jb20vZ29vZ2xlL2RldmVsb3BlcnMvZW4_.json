@@ -5,6 +5,58 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Gemini Code Assist 的新功能 (原标题: What's new in Gemini Code Assist)",
+      "link": "https://developers.googleblog.com/en/new-in-gemini-code-assist/",
+      "pubDate": "Wed, 20 Aug 2025 16:00:00 GMT",
+      "isoDate": "2025-08-20T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Gemini Code Assist 的新功能：Agent 模式、IDE 改进和 CLI 更新\n\nGoogle 于 2025 年 8 月 21 日宣布了 Gemini Code Assist 的多项重要更新，旨在通过强大的智能代理功能、集成开发环境（IDE）的优化以及命令行界面（CLI）的增强，彻底改变开发者的工作方式。\n\n## 1. Agent 模式全面可用\n\nGemini Code Assist 的 Agent 模式现已在 VS Code 和 IntelliJ 中全面推出，为开发者提供了智能协作式方法来处理复杂的、多步骤的任务。\n\n*   **核心功能**：\n    *   **智能任务处理**：例如，重构购物车模型的视图和控制器以显示折扣代码，Agent 模式会提出详细的计划供开发者审查和批准，确保完全控制。它结合了 AI 的力量和开发者的专业知识，提高效率并生成更好的代码。\n*   **VS Code 中的 Agent 模式**：\n    *   此前在 Insiders 频道推出，现在已进入预览阶段并向所有人开放。\n    *   它是一个由 Gemini CLI 提供支持的全新聊天体验，通过以下方式提升生产力：\n        *   支持多文件编辑。\n        *   提供完整的项目上下文。\n        *   内置工具和与生态系统工具（使用 MCP）的集成。\n        *   集成“人在回路”（Human in the Loop, HiTL）机制。\n    *   **增强功能**：\n        *   直接使用集成的 Gemini 内联差异（Inline diff）编辑代码，直观高亮修改。\n        *   聊天中内联差异提高了代码编辑的清晰度。\n        *   聊天历史中 Agent 模式的持久性，提供一致体验。\n        *   简化直观的用户友好配额更新。\n        *   实时显示 shell 命令输出。\n        *   支持批量工具调用审批和编辑。\n        *   更快的 UI 性能和渲染。\n        *   Agent 模式的切换状态在 IDE 重启后保持不变。\n    *   ![VS Code prompts](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_9I8wDqd.original.png)\n    *   ![Gemini Code Assist Agent Mode in VS Code](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_CT8FmrZ.original.png)\n*   **IntelliJ 中的 Agent 模式**：\n    *   现已在稳定版中可用。\n    *   允许开发者在完全控制每次更改的情况下完成复杂的、多步骤的任务。\n    *   代理在进行任何修改前会提出计划供审查，开发者可以编辑、请求更改、批准或拒绝建议。\n    *   支持启用自动批准模式，让代理代为操作，完成后可审查和回滚更改。\n\n## 2. IDE 改进\n\nGemini Code Assist 在 IDE 体验方面进行了多项改进，以提升开发者的生产力。\n\n*   **聊天交互控制**：\n    *   新增功能，可停止正在进行的聊天响应，立即终止不必要冗长或错误的响应。\n    *   **IntelliJ**：引入了“思考令牌”（thinking tokens），让开发者在 Gemini 提供响应前，更深入地了解其思考过程。\n    *   ![IntelliJ tokens](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_n0A7ZgJ.original.png)\n*   **代码补全**：\n    *   **VS Code**：代码补全建议的性能得到显著提升，帮助开发者更快、更高效地编写代码。\n*   **预览功能普遍可用**：\n    *   许多之前推出的预览功能现已普遍可用，确保日常工作流的稳定性和可靠性，包括：\n        *   回滚到检查点。\n        *   将选定的代码片段添加到上下文。\n        *   使用选定的终端输出提示 Gemini Code Assist。\n        *   在工作区中指定文件名。\n        *   将文件从 Gemini Code Assist 的使用中排除。\n\n## 3. Gemini CLI 更新\n\n自 6 月底推出以来，Gemini CLI 社区活跃，贡献了 2800 多个拉取请求，提交了约 3400 个问题，并获得了超过 70,000 颗星。最近的更新主要集中在安全性、隐私和持续改进上。\n\n*   **Gemini CLI GitHub Actions**：\n    *   现已推出（测试版，广泛可用），是一个免费、强大的 AI 编码助手，可作为仓库的自主代理处理常规编码任务，也可作为按需协作工具。\n    *   由新问题或拉取请求等事件触发，在后台异步工作，利用项目完整上下文自动处理任务。\n    *   **三大核心用例**：智能问题分类、加速拉取请求审查、按需协作。\n*   **更深度的 VS Code 集成**：\n    *   Gemini CLI 现在能感知开发者打开的文件，并访问选定的文本，从而提供更有针对性和上下文相关的建议。\n    *   通过原生的编辑器内差异功能，开发者可以并排查看建议的更改，并在接受前进行编辑。\n    *   需使用 Gemini CLI 0.1.20 或更高版本，并进行一次性设置。\n*   **其他改进**：\n    *   提升了 Gemini CLI 的可靠性和一致性。\n    *   推出了自定义斜杠命令（Custom Slash Commands），允许定义可重用提示，简化与 Gemini CLI 的交互。\n*   **公共路线图**：已发布 Gemini CLI v1 的公共路线图，以保持透明度。\n\n这些更新旨在提供更好的编码体验，并提高开发者的生产力。开发者可以免费试用 Gemini Code Assist，并在发布说明中了解更多详细信息。",
+      "shortSummary": "Gemini Code Assist 发布重大更新，包括 Agent 模式的全面可用，现已支持 VS Code 和 IntelliJ，提供智能多步骤任务处理和代码协作。IDE 方面，改进了聊天控制、VS Code 代码补全性能，并使多项预览功能普遍可用。Gemini CLI 也迎来更新，推出了 GitHub Actions，并深化了与 VS Code 的集成，提供上下文感知建议和编辑器内差异功能，旨在全面提升开发者效率和工作流。",
+      "translated_title": "Gemini Code Assist 的新功能",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_9I8wDqd.original.png",
+          "alt": "VS Code prompts",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_CT8FmrZ.original.png",
+          "alt": "Gemini Code Assist Agent Mode in VS Code",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_n0A7ZgJ.original.png",
+          "alt": "IntelliJ tokens",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Gemini Code Assist's Agent Mode, now available in VS Code (Preview) and IntelliJ (Stable), streamlines complex coding tasks by proposing detailed plans for user review and approval. This intelligent, collaborative approach, enhanced with features like inline diffs and persistent chat history, aims to boost developer productivity and efficiency."
+    },
+    {
+      "title": "Gemini API 的 URL 上下文工具现已全面推出 (原标题: URL context tool for Gemini API now generally available)",
+      "link": "https://developers.googleblog.com/en/url-context-tool-for-gemini-api-now-generally-available/",
+      "pubDate": "Sun, 17 Aug 2025 16:00:00 GMT",
+      "isoDate": "2025-08-17T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Gemini API 的 URL 上下文工具现已全面推出\n\n**发布日期：** 2025年8月18日\n\nGoogle 宣布 Gemini API 的 URL 上下文工具现已全面推出，并新增多项功能，可供大规模生产使用。该工具旨在帮助开发者通过提供 URL 来为 Gemini 模型提供额外的上下文信息，从而避免手动上传内容，进而构建更强大、更具上下文感知能力的生成式 AI 应用。\n\n## 核心功能与优势\n\n*   **增强模型上下文理解：** 默认情况下，Gemini 模型拥有静态知识库且无法直接访问互联网。虽然通过 Google Search 进行接地（Grounding）可以实现广泛的实时信息发现，但 URL 上下文工具更进一步，允许模型摄取并理解特定网页的完整内容，而不仅仅是搜索摘要。\n*   **强大的组合：** 结合 Google Search 的发现能力和 URL 上下文工具的深度分析能力，为执行复杂的、多步骤的任务奠定了基础。\n\n## 扩展的内容支持\n\n此次发布显著扩展了 URL 上下文工具支持的上下文内容类型，使其适用于更广泛的应用场景：\n\n*   **PDF 支持：** 现在可以直接提供 PDF 链接。Gemini 不仅能从中提取文本，还能理解表格和整体结构，使报告、论文和手册等内容完全可用于模型接地。\n*   **图像支持：** 工具现在可以处理和分析 PNG、JPEG、BMP 和 WebP 等格式的图像。这利用了 Gemini 的多模态能力来理解视觉信息，为图表、示意图等的分析开辟了新途径。\n*   **网络和数据文件：** 继续稳健支持标准网页（HTML）、结构化数据（JSON、XML、CSV）以及文本文件（纯文本、RTF、CSS、JavaScript）。\n\n## 生产规模就绪\n\nURL 上下文工具已为大规模生产使用做好准备，并更新了限制和定价策略：\n\n*   **可扩展性：** 速率限制现在基于所选的 Gemini 模型，允许更大的规模。\n*   **成本透明：** 费用根据添加到上下文的输入令牌数量收取，按照模型的标准费率计算，确保成本清晰可预测。\n\n## 开启新的用例\n\nURL 上下文工具为开发者开启了广泛的智能体工作流，包括但不限于：\n\n*   **个性化客户互动：** 使用客户的网页信息来接地 AI 聊天代理，使其能提供准确且相关的咨询答案。\n*   **文档比较：** 分析多个报告、文章或 PDF，以识别差异并追踪趋势。\n*   **内容合成与创建：** 结合来自多个源 URL 的信息，生成准确的摘要、博客文章或报告。\n*   **代码与文档分析：** 指向 GitHub 仓库或技术文档，以解释代码、生成设置说明或回答技术问题。\n\n## URL 上下文工具的实际应用\n\n目前已有开发者利用 URL 上下文工具构建了令人惊叹的应用：\n\n*   **Gemini CLI：** 这是一个开源的 AI 代理，允许直接在终端中访问 Gemini。其 `web-fetch` 命令利用 URL 上下文工具，使开发者能够快速轻松地与网页内容交互，例如总结网页、提取关键信息或将其翻译成其他语言。\n\n    ![Gemini CLI 中的 Web fetch 工具](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/web-fetch-tool-gemini-cli.original.png)\n\n*   **Gladly.ai：** 作为一家客户服务平台，Gladly 利用 URL 上下文工具创建高度个性化的客户体验。通过提供客户网站的链接，基于 Gladly AI 平台构建的代理可以访问并理解最新的产品信息、促销活动和支持文章，从而为客户咨询提供更准确和相关的答案。\n\n## 立即开始\n\n开发者可以通过提供的 Python 代码示例开始使用 URL 上下文工具，并可查阅 URL 上下文文档、体验迷你演示应用，或在 Google AI Studio 的“工具”下找到 URL 上下文的开关进行尝试。",
+      "shortSummary": "Gemini API 的 URL 上下文工具现已全面推出，使开发者能通过URL而非手动上传来为Gemini模型提供上下文。此工具扩展了对PDF、图片及多种网络和数据文件的支持，增强了模型的上下文感知能力。它已为生产规模应用做好准备，可用于个性化客户互动、文档比较、内容合成和代码分析等多种高级AI应用，结合Google搜索实现深度分析和复杂任务。",
+      "translated_title": "Gemini API 的 URL 上下文工具现已全面推出",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/web-fetch-tool-gemini-cli.original.png",
+          "alt": "Web fetch tool in Gemini CLI",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The Gemini API's URL Context tool is now generally available, allowing developers to ground prompts using web content instead of manual uploads. This release expands support to PDFs and images."
+    },
+    {
       "title": "宣布 Imagen 4 Fast 以及 Imagen 4 系列在 Gemini API 中的普遍可用性 (原标题: Announcing Imagen 4 Fast and the general availability of the Imagen 4 family in the Gemini API)",
       "link": "https://developers.googleblog.com/en/announcing-imagen-4-fast-and-imagen-4-family-generally-available-in-the-gemini-api/",
       "pubDate": "Thu, 14 Aug 2025 16:00:00 GMT",
@@ -83,6 +135,50 @@
       "content": "Jules' critic functionality addresses potential issues like subtle bugs and missed edge cases in AI-generated code by acting as a peer reviewer within the generation process. This \"critic-augmented generation\" means proposed code changes undergo adversarial review, allowing Jules to improve its output and ultimately deliver higher-quality, pre-reviewed code."
     },
     {
+      "title": "使用JAX在TPU上免费训练GPT2模型 (原标题: Train a GPT2 model with JAX on TPU for free)",
+      "link": "https://developers.googleblog.com/en/train-gpt2-model-with-jax-on-tpu/",
+      "pubDate": "Mon, 11 Aug 2025 16:00:00 GMT",
+      "isoDate": "2025-08-11T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## 使用JAX在TPU上免费训练GPT2模型\n\n本文旨在指导读者如何使用JAX从零开始构建和预训练一个GPT-2模型，并利用Google的TPU资源（可在Colab或Kaggle上免费使用）。文章基于Cloud Next 2025的一次研讨会内容，假设读者对机器学习概念有基本了解，并为JAX新手提供了入门指南。\n\n### JAX生态系统概述\n\nJAX生态系统采用模块化方法，其核心提供强大的数值处理能力，并在此基础上构建了丰富的库以满足不同应用需求：\n*   **Flax**：用于构建神经网络（本文使用其新接口NNX）。\n*   **Orbax**：用于检查点和模型持久化。\n*   **Optax**：用于优化算法。\n\nJAX的内置函数转换（如自动求导、向量化和JIT编译）、卓越的性能以及易用的API使其成为训练大型语言模型（LLM）的理想选择。\n\n### 构建GPT-2模型\n\n文章参考了OpenAI发布的GPT-2模型代码和权重，以及社区项目如nanoGPT。\n\n**GPT-2模型架构图：**\n![GPT-2模型架构图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image4_N4168XT.original.png)\n\n本文使用NNX来构建GPT-2模型，重点关注其核心组件——Transformer Block。Transformer Block能够捕捉序列中的长距离依赖并建立丰富的上下文理解。一个GPT-2 Transformer Block包含：\n*   2个LayerNorm层\n*   1个多头注意力（Multi-Head Attention, MHA）层\n*   2个Dropout层\n*   2个线性投影层\n*   2个残差连接\n\n文章提供了`TransformerBlock`类的`__init__`和`__call__`函数的Python代码示例，展示了如何定义和组装这些层。JAX的一大优势是其通过SPMD（单程序多数据）自动并行运行代码的能力，这对于在多个TPU核心上运行代码至关重要。\n\n为了使用TPU，读者需要在Colab或Kaggle中选择TPU运行时，或使用Cloud TPU VM。免费的Colab和Kaggle通常提供8个独立TPU核心的TPU v2或v3。\n\n**TPU v3板图：**\n![TPU v3板图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_PYQXoSD.original.png)\n\n### 训练GPT-2模型\n\n为了高效训练GPT-2模型，文章利用SPMD和JAX的数据并行性。关键步骤包括：\n\n1.  **定义硬件网格（Mesh）**：使用`jax.make_mesh((8, 1), ('batch', 'model'))`定义一个8个核心的2D加速器网格，包含'batch'和'model'轴，用于数据和模型参数的分区。\n2.  **模型参数分区**：在`TransformerBlock`的`__init__`函数中，通过`nnx.with_partitioning`指示JAX如何沿'model'轴分片模型参数（例如，LayerNorm的尺度/偏差张量和MHA/线性层的核张量）。这为未来的模型张量并行化奠定了基础。\n3.  **损失函数与训练步骤**：\n    *   `loss_fn`：计算交叉熵损失。\n    *   `train_step`：计算损失梯度并通过优化器更新权重。\n    *   这两个计算密集型函数都使用`@nnx.jit`装饰器进行JIT编译，以实现最佳性能。\n4.  **优化器配置**：使用Optax库中的AdamW优化器，并结合余弦衰减学习率调度。\n5.  **训练循环**：\n    *   在训练循环中，通过`jax.device_put`函数将输入数据沿'batch'轴分区，实现数据并行。\n    *   JAX会自动插入通信集合操作（如AllReduce），并尽可能重叠计算与通信。\n\n**GPT-2 124M模型测试运行图：**\n![GPT-2 124M模型测试运行图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_yIkuQBk.original.png)\n\n训练过程可以通过Weights and Biases进行监控。在Kaggle TPU v3上训练GPT-2 124M模型大约需要7小时，而在Trillium上则可缩短至约1.5小时（Trillium具有更大的HBM，允许更大的批次大小）。最终损失与nanoGPT的基线结果大致一致。\n\n**nanoGPT基线比较表：**\n![nanoGPT基线比较表](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/nanoGPT-baseline-comparison-table_FgWDn7b.original.png)\n\n此外，还可以通过`tpu-info`命令或Weights and Biases仪表板监控TPU利用率。\n\n**‘tpu-info’命令输出图：**\n![‘tpu-info’命令输出图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_MzgrJxz.original.png)\n\n模型训练完成后，可以使用Orbax的`PyTreeCheckpointer`保存模型状态。\n\n### 后续步骤\n\n完整的代码笔记本包含了数据加载、超参数和指标等更多细节。虽然GPT-2在今天看来是一个小型模型，但本文所学知识为读者进一步探索大型语言模型训练和扩展奠定了基础。读者可以参考“How to scale your model”指南，或使用MaxText训练前沿LLM，亦可参考JAX LLM示例或Stanford Marin模型从头构建最新模型。",
+      "shortSummary": "本文指导读者如何使用JAX在免费TPU（Colab/Kaggle）上从零开始构建和预训练GPT-2模型。文章介绍了JAX生态系统及其核心库（Flax、Orbax、Optax），并详细展示了如何使用NNX构建GPT-2的Transformer Block。通过JAX的SPMD和数据并行性，文章解释了如何在多TPU核心上高效训练模型，包括参数分区、优化器配置和训练循环。最终模型性能与nanoGPT相当，并提供了进一步扩展大型语言模型的方向。",
+      "translated_title": "使用JAX在TPU上免费训练GPT2模型",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image4_N4168XT.original.png",
+          "alt": "architecture diagram for the GPT2 model",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_PYQXoSD.original.png",
+          "alt": "TPU v3 board",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_yIkuQBk.original.png",
+          "alt": "test run for the GPT2 124M model",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/nanoGPT-baseline-comparison-table_FgWDn7b.original.png",
+          "alt": "nanoGPT baseline comparison table",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_MzgrJxz.original.png",
+          "alt": "‘tpu-info’ command",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Build and train a GPT2 model from scratch using JAX on Google TPUs, with a complete Python notebook for free-tier Colab or Kaggle. Learn how to define a hardware mesh, partition model parameters and input data for data parallelism, and optimize the model training process."
+    },
+    {
       "title": "Google 开发者计划正在演进 (原标题: The Google Developer Program is evolving)",
       "link": "https://developers.googleblog.com/en/google-developer-program-join-connect-code/",
       "pubDate": "Thu, 31 Jul 2025 16:00:00 GMT",
@@ -145,90 +241,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "LangExtract is a new open-source Python library powered by Gemini models for extracting structured information from unstructured text, offering precise source grounding, reliable structured outputs using controlled generation, optimized long-context extraction, interactive visualization, and flexible LLM backend support."
-    },
-    {
-      "title": "Gemini Embedding：赋能RAG和上下文工程 (原标题: Gemini Embedding: Powering RAG and context engineering)",
-      "link": "https://developers.googleblog.com/en/gemini-embedding-powering-rag-context-engineering/",
-      "pubDate": "Tue, 29 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-29T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Gemini Embedding：赋能RAG和上下文工程\n\n自Gemini Embedding文本模型全面上市以来，开发者们迅速采纳它来构建先进的AI应用。除了传统的分类、语义搜索和检索增强生成（RAG）等用例，许多人现在正利用“上下文工程”技术为AI代理提供完整的操作上下文。嵌入技术在此过程中至关重要，因为它能高效识别并将文档、对话历史和工具定义等关键信息直接整合到模型的“工作记忆”中。\n\n以下示例展示了各行各业的组织如何利用Gemini Embedding模型来驱动复杂的系统：\n\n## Gemini Embedding 的实际应用\n\n### 1. 赋能全球内容智能——Box\n\n*   **公司：** Box，一个智能内容管理平台。\n*   **应用：** 整合Gemini Embedding以实现关键用例：从复杂文档中回答问题并提取洞察。\n*   **性能提升：** 在评估中，`gemini-embedding-001`在超过81%的时间内找到了正确答案，召回率比其他嵌入模型提高了3.6%。\n*   **核心优势：** 模型内置的多语言支持对全球用户而言是一项有前景的进步，使Box AI能够从不同语言和区域的内容中解锁洞察。\n*   **图片：** ![Box AI - Gemini Embedding](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Box-AI-Gemini-Embedding.original.png)\n\n### 2. 提高金融数据分析的准确性——re:cap\n\n*   **公司：** re:cap，一家金融科技公司。\n*   **应用：** 使用嵌入技术对大量B2B银行交易进行分类。\n*   **性能提升：** 通过与之前的Google模型（`text-embedding-004`和`text-embedding-005`）在21,500笔交易数据集上进行基准测试，`gemini-embedding-001`的F1分数分别提高了1.9%和1.45%。F1分数平衡了模型的精确度和召回率，对分类任务至关重要。\n*   **核心优势：** Gemini Embedding等强大模型直接带来了显著的性能提升，帮助re:cap为其客户提供更敏锐的流动性洞察。\n*   **图片：** ![re:cap - Gemini Embedding](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/re-cap.original.png)\n\n### 3. 实现法律发现中的语义精度——Everlaw\n\n*   **公司：** Everlaw，一个为法律专业人士提供可验证RAG以分析大量发现文档的平台。\n*   **应用：** 需要在数百万份专业文本中实现精确的语义匹配。\n*   **性能提升：** 内部基准测试显示，`gemini-embedding-001`表现最佳，在从140万份包含行业特定和复杂法律术语的文档中发现相关答案方面达到了87%的准确率，超过了Voyage（84%）和OpenAI（73%）模型。\n*   **核心优势：** Gemini Embedding的Matryoshka特性使Everlaw能够使用紧凑的表示，将基本信息集中在更少的维度中，从而最大限度地减少性能损失，降低存储成本，并提高检索和搜索效率。\n*   **图片：** ![Everlaw - Gemini Embedding](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/everlaw.original.png)\n\n### 4. 提升开发者代码库搜索能力——Roo Code\n\n*   **公司：** Roo Code，一个开源AI编码助手。\n*   **应用：** 使用Gemini Embedding模型为其代码库索引和语义搜索提供支持。开发者需要一种能理解意图而非仅仅语法的搜索。\n*   **性能提升：** 通过将`gemini-embedding-001`与Tree-sitter结合进行逻辑代码分割，Roo Code即使对于不精确的查询也能提供高度相关的结果。初步测试发现，Gemini Embedding显著改进了其LLM驱动的代码搜索。\n*   **核心优势：** 使代码搜索更灵活、准确，并与开发者工作流程更一致。\n*   **图片：** ![ROO Code - Gemini Embedding](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ROOCode.original.png)\n\n### 5. 提供个性化心理健康支持——Mindlid\n\n*   **公司：** Mindlid，一个AI健康伴侣。\n*   **应用：** 利用`gemini-embedding-001`理解对话历史，从而提供实时适应用户的上下文感知和有意义的洞察。\n*   **性能提升：** 实现了持续的亚秒级延迟（中位数：420毫秒）和可衡量的82%前3召回率，比OpenAI的`text-embedding-3-small`召回率提升了4%。\n*   **核心优势：** 提高了AI支持的相关性和速度，提供最相关的信息。\n*   **图片：** ![Mindlid - Gemini Embedding](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Mindlid.original.png)\n\n### 6. 增强AI助手的上下文和效率——Interaction Co. (Poke)\n\n*   **公司：** Interaction Co.，正在构建Poke，一个AI电子邮件助手。\n*   **应用：** Poke使用Gemini Embedding执行两个关键功能：检索用户“记忆”和识别相关电子邮件以增强上下文。\n*   **性能提升：** 整合`gemini-embedding-001`后，Poke的语言模型以更快的速度和更高的精度检索数据。他们报告称，与Voyage-2相比，嵌入100封电子邮件的平均时间减少了90.4%，仅需21.45秒。\n*   **核心优势：** 大幅提升了电子邮件自动化中数据检索的速度和精度。\n*   **图片：** ![Poke - Gemini Embedding](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Poke.original.png)\n\n## 未来智能代理的基础\n\n随着AI系统变得更加自主，它们的有效性将取决于我们提供给它们的上下文质量。像`gemini-embedding-001`这样的高性能嵌入模型是构建下一代能够推理、检索信息并代表我们行动的智能代理的基础。\n\n**注意：** 性能指标由开发者提供，未经Google独立证实。",
-      "shortSummary": "Gemini Embedding模型已广泛应用于RAG和上下文工程等高级AI应用，通过高效整合关键信息，显著提升了AI系统的性能。文章展示了其在多个行业的成功案例：Box提升全球内容智能，re:cap提高金融数据分析准确性，Everlaw实现法律发现语义精度，Roo Code优化代码搜索，Mindlid提供个性化心理健康支持，以及Poke增强AI邮件助手效率。Gemini Embedding是构建未来智能代理的关键基础。",
-      "translated_title": "Gemini Embedding：赋能RAG和上下文工程",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Box-AI-Gemini-Embedding.original.png",
-          "alt": "Box AI - Gemini Embedding",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/re-cap.original.png",
-          "alt": "re:cap - Gemini Embedding",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/everlaw.original.png",
-          "alt": "Everlaw - Gemini Embedding",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ROOCode.original.png",
-          "alt": "ROO Code - Gemini Embedding",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Mindlid.original.png",
-          "alt": "Mindlid - Gemini Embedding",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Poke.original.png",
-          "alt": "Poke - Gemini Embedding",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The Gemini Embedding model enhances AI applications, particularly through context engineering, which is being successfully adopted by various organizations across industries to power context-aware systems, leading to significant improvements in performance, accuracy, and efficiency."
-    },
-    {
-      "title": "机器人专家与 JAX 的旅程：在最优控制和仿真中寻找效率 (原标题: A roboticist's journey with JAX: Finding efficiency in optimal control and simulation)",
-      "link": "https://developers.googleblog.com/en/a-roboticists-journey-with-jax/",
-      "pubDate": "Mon, 28 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-28T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 机器人专家与 JAX 的旅程：在最优控制和仿真中寻找效率\n\nJAX 正在被越来越多的开发者用于广泛的计算任务，其作用已超越最初对大规模 AI 的关注。尽管它仍然是开发大型语言模型 (LLMs) 和基础模型的流行框架，但 JAX 也在各种科学领域获得发展势头，尤其是在机器人学中，它在仿真、控制以及学习方法集成方面展现出强大的能力。\n\n最近，西北大学机器人学博士生兼研究员 Max Muchen Sun 的经历清晰地展示了 JAX 如何解决机器人研究中的关键挑战，特别是在复杂控制算法的计算效率以及模型驱动和学习驱动方法无缝结合方面。\n\n## Max 的 JAX 之旅：效率与集成\n\nMax 对 JAX 的兴趣始于对计算效率的追求。在导师 Ian Abraham 的引导下，他开始接触 JAX。他们当时正在研究遍历控制 (ergodic control)，这是一种用于覆盖问题的控制框架，其计算复杂性远高于标准控制公式。为了实现实时遍历控制，Max 最初使用标准 NumPy 并利用了向量化和广播特性。\n\n### JAX 的核心优势\n\n1.  **`vmap` 的强大功能**：\n    *   `vmap` 是 Max 第一个关注的 JAX 特性。\n    *   它结合并进一步泛化了标准 NumPy 的向量化和广播机制，通过函数转换和组合抽象，使得并行化推理和实现变得更加容易。\n2.  **`scan` 的效率提升**：\n    *   `scan` 最初不太直观，但最终成为模拟动态系统轨迹的有效工具。\n    *   在轨迹优化中，系统动力学的正向仿真是一个核心操作，需要重复执行并经常成为计算瓶颈。\n    *   使用 `scan`，轨迹仿真速度比基于标准 NumPy 的实现快两个数量级。这种易用性和显著的速度优势使 Max 完全投入到 JAX 生态系统中。\n\n### 模型驱动与学习驱动方法的融合\n\nMax 博士研究的核心重点是将模型驱动控制与学习驱动表示相结合，用于自主探索和多智能体协作。他认为模型驱动方法并非独立的解决方案，而是提高学习效率和鲁棒性的结构。JAX 的可组合性使其成为融合模型驱动和学习驱动流程的理想选择。\n\n#### 项目案例：\n\n*   **机器人探索 (RSS 论文)**：\n    *   Max 将生成模型中的流匹配 (flow matching) 与模型驱动的最优控制相结合，用于机器人探索。\n    *   通过基于 LQR 的更新，利用流梯度将状态空间流映射到控制，类似于动态系统上的反向传播。\n    *   最初，流匹配模块在 PyTorch 中构建，LQR 使用 C++，但集成缓慢。\n    *   切换到 JAX 后，他使用 `vmap` 和 `grad` 重新实现了流匹配部分，并利用了 JAX 工具如 OTT (Optimal Transport Toolbox)。唯一缺少的是一个 JAX 原生 LQR 管道。\n*   **多智能体协作 (ICRA 论文)**：\n    *   Max 将模型驱动的博弈论控制流程集成到生成轨迹模型中，以从演示中学习多智能体协作。\n    *   他没有将博弈论控制作为完整的解决方案（通常计算成本高昂且需要手动指定损失），而是将博弈论计算作为结构化层嵌入到条件变分自编码器 (CVAE) 中。这在不牺牲性能的情况下提高了数据效率。\n    *   两个组件都在 JAX 中实现：CVAE 使用 Flax，控制层从头开始构建。JAX 使其无缝衔接：`grad` 可以直接通过平衡点进行微分。他还构建了一个基于 JAX 的 iLQGames 求解器用于生成合成数据。\n\n### LQRax 的诞生\n\n在这些项目之后，Max 意识到他正在大量重用用于动态系统计算（尤其是基于 LQR 的计算）的 JAX 代码。由于他以非标准方式使用 LQR 来集成学习驱动和模型驱动控制，他将其打包成一个独立的 JAX 原生求解器——**LQRax**。\n\n*   **LQRax 的特性**：支持 GPU 加速、`vmap`、`scan` 和 `grad`，实现了向量化和可微分的 LQR。\n*   **应用示例**：Max 在 LQRax 中包含了遍历控制和博弈论控制的示例，以强调模型驱动方法如何补充学习。\n\n### JAX 的使用环境与未来展望\n\nMax 在 CPU 和 GPU 上都使用 JAX，其方式与机器学习社区有所不同。例如，在流匹配项目中，LQR 在 CPU 上运行更快，而流匹配梯度在 GPU 上更快。他没有使用 TPU，因为通常所有计算都在本地进行。几年前，他尝试在 Nvidia Jetson 上安装 JAX，当时很困难。他很高兴 JAX 现在支持这些嵌入式平台，这对于机器人学至关重要。他正在使用 Jetson 在四足机器人上测试人群导航算法，并计划很快将 JAX 集成到该项目中。\n\n展望未来，Max 将继续使用 JAX，原因与他最初开始使用时相同：\n\n1.  **计算效率**：尤其是基于 GPU 的并行化，在机器人学中变得越来越重要。除了训练，它还支持新的模型驱动控制可能性，如大规模并行仿真和实时参数更新，类似于具身主动学习。\n2.  **模型集成**：JAX 使将模型驱动结构直观地集成到学习流程中成为可能，无论是用于动力学、损失塑形还是可微分求解器。这种灵活性让他对进一步推动研究充满热情。\n\n## JAX 机器人生态系统\n\nMax 的经验展示了 JAX 为机器人社区提供的几个关键优势。`vmap` 实现的并行操作显著加速，以及 `scan` 实现的轨迹仿真加速，对于实时控制和复杂规划至关重要。此外，JAX 的函数式范式和自动微分能力使其非常适合将经典的模型驱动技术与现代学习驱动组件相结合。\n\nMax 的 LQRax 包是 JAX 原生机器人工具活跃生态系统的重要补充。在仿真领域，JAX 通过 Brax 和新的 MuJoCo XLA (MJX) 等大规模并行引擎提供了强大的基础，MJX 将流行的标准 MuJoCo 物理引擎直接引入 JAX。社区中也出现了专业工具，例如用于控制驱动多体动力学的 JaxSim 库。\n\n在轨迹优化领域，LQRax 作为 Trajax 等先驱之后的一个受欢迎的现代库，为研究人员构建下一代控制系统提供了支持。它完美地体现了 JAX 精神，提供了一个强大、可组合的工具，弥合了模型驱动控制和深度学习之间的鸿沟。",
-      "shortSummary": "JAX正日益成为机器人学领域的重要工具，Max Muchen Sun的经验证明了其在最优控制和仿真中的高效性。JAX的`vmap`和`scan`功能显著提升了计算效率，加速了并行操作和轨迹仿真。它还使得模型驱动与学习驱动方法无缝集成成为可能，Max开发的`LQRax`库便是例证。JAX在CPU、GPU及嵌入式平台上的支持，使其成为构建下一代智能机器人系统的理想选择，推动了实时控制和复杂规划的发展。",
-      "translated_title": "机器人专家与 JAX 的旅程：在最优控制和仿真中寻找效率",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Max's journey introduces LQRax, a JAX-native LQR solver, which exemplifies the growing JAX robotics ecosystem that includes tools like Brax, MJX, and JaxSim, highlighting the benefits of JAX for computational efficiency in optimal control and simulation, and for seamlessly integrating model-based and learning-based approaches."
-    },
-    {
-      "title": "代理式体验：MCP 是您 AI 未来的正确工具吗？ (原标题: The agentic experience: Is MCP the right tool for your AI future?)",
-      "link": "https://developers.googleblog.com/en/the-agentic-experience-is-mcp-the-right-tool-for-your-ai-future/",
-      "pubDate": "Wed, 23 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-23T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## 企业AI集成与Apigee的角色\n\n随着企业竞相将人工智能（AI）投入运营，挑战不仅在于构建和部署大型语言模型（LLM），还在于如何将其无缝集成到现有API生态系统中，同时保持企业级的安全性、治理和合规性。Apigee致力于在此旅程中引领企业，通过增强生成式AI代理的安全性、可扩展性和治理能力，从而简化其与应用程序的集成。\n\n### 模型上下文协议（MCP）的兴起与局限\n\n模型上下文协议（MCP）已成为集成离散API作为工具的事实标准方法。然而，MCP正在迅速演变，并且尚未完全满足企业对身份验证（AuthN）、授权（AuthZ）和可观测性（Observability）的需求。将API转化为代理式工具的旅程，远不止一个单一协议所能涵盖。\n\n### Apigee如何赋能企业级AI\n\nApigee作为Google Cloud的原生API管理平台，能够将您现有的企业API带入AI领域。Apigee承诺将继续引导企业在不断变化的AI格局中进行代理式转型，并确保为所有AI工作负载提供一流的企业级功能。\n\n#### 使MCP具备企业级能力\n\n在网络中利用MCP服务需要特定的安全约束。例如，您可能希望为MCP服务器本身添加身份验证，并根据消费应用程序授权对特定工具的访问。此外，您可能需要提供一流的可观测性信息，以跟踪哪些工具正在被谁使用。最后，您需要确保MCP服务器所提供的下游API也具备最低限度的安全保障。\n\nApigee提供了一个MCP服务器的开源示例，它精确地提供了这种类型的API安全性，并且所有这些功能现在都可用于您的MCP服务并得到支持。\n\n#### 通过Apigee API产品实现安全与治理\n\n此示例展示了如何利用Apigee的API产品对工具进行身份验证和授权控制。此外，最终位于MCP服务器背后的API（在此案例中部署到Cloud Run）本身也托管在Apigee上，因此它们获得了与Apigee上托管的其他任何API相同的安全性、分发和可观测性功能。这弥合了托管API与探索性AI交互之间的鸿沟，利用Apigee丰富的功能集来保护、扩展和治理您的AI旅程。此演示展示了如何立即启动并运行MCP服务器，同时提供所需的必要企业级控制。即使MCP标准发生变化，此设置也易于适应，因为它最终只是像其他任何后端一样通过Apigee提供服务。\n\n如下图所示，Apigee将API产品引入这些代理和MCP工具，并将其转化为AI产品。这些AI产品拥有自己的消费者和开发者，就像其他任何API一样。\n\n![API产品到AI产品](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_2ySlzKi.original.png)\n\n#### 参考架构与资源\n\nApigee的GitHub仓库提供了快速入门指南、示例工件和文档，将帮助您构建和部署Apigee中的参考MCP服务架构，并理解通过利用API产品将API暴露为AI代理工具的步骤。\n\n### 未来展望\n\nAI集成之旅将随着时间推移而不断调整和变化：MCP正在演变，例如从最初无身份验证到使用OAuth进行授权和资源服务的转变。Google Apigee致力于与这种演变同步发展。\n\n了解更多关于如何使用Apigee操作生成式AI应用程序，并查阅Apigee的AI策略文档。",
-      "shortSummary": "Apigee帮助企业将AI代理（如LLMs）安全、可扩展地集成到现有API生态系统中。尽管模型上下文协议（MCP）是工具集成方法，但其缺乏企业级安全功能。Apigee提供了一个开源MCP服务器示例，利用其API管理平台为MCP服务提供认证、授权和可观测性，确保企业级安全与治理，并支持API产品化，从而简化AI集成并适应未来变化。",
-      "translated_title": "代理式体验：MCP 是您 AI 未来的正确工具吗？",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_2ySlzKi.original.png",
-          "alt": "API product to AI product",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Apigee helps enterprises integrate large language models (LLMs) into existing API ecosystems securely and scalably, addressing challenges like authentication and authorization not fully covered by the evolving Model Context Protocol (MCP), and offering an open-source MCP server example that demonstrates how to implement enterprise-ready API security for AI agents."
     }
   ],
-  "lastUpdated": "2025-08-18T10:34:34.391Z"
+  "lastUpdated": "2025-08-23T10:28:11.314Z"
 }
