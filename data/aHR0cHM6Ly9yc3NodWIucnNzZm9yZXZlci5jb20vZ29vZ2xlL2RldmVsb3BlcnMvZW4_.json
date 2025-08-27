@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "隆重推出 Gemini 2.5 Flash Image，我们最先进的图像模型 (原标题: Introducing Gemini 2.5 Flash Image, our state-of-the-art image model)",
+      "link": "https://developers.googleblog.com/en/introducing-gemini-2-5-flash-image/",
+      "pubDate": "Mon, 25 Aug 2025 16:00:00 GMT",
+      "isoDate": "2025-08-25T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# 隆重推出 Gemini 2.5 Flash Image：我们最先进的图像模型\n\nGoogle 于2025年8月26日发布了 Gemini 2.5 Flash Image（代号 nano-banana），这是一款最先进的图像生成和编辑模型，旨在解决用户对更高质量图像和更强大创意控制的需求。\n\n## 核心功能与改进\n\nGemini 2.5 Flash Image 在 Gemini 2.0 Flash 的低延迟、成本效益和易用性基础上，引入了多项创新功能：\n\n*   **多图像融合**：能够将多张输入图像融合为一张，例如将物体放入新场景，或用单一提示重新设计房间的配色方案或纹理。\n*   **角色一致性**：在不同提示和编辑中保持角色或物体外观的一致性，适用于在不同环境中放置同一角色、展示产品多角度视图或生成一致的品牌资产。\n    \n    ![角色一致性示例](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-image-editing-character-consistency.original.png)\n    \n*   **基于提示的图像编辑**：通过自然语言实现有针对性的转换和精确的局部编辑。例如，模糊背景、移除污渍、改变姿势或为黑白照片添加颜色。\n    \n    ![基于提示的图像编辑示例](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-flash-prompt-based-image-editing.original.png)\n    \n*   **原生世界知识**：模型受益于 Gemini 的世界知识，能够对现实世界进行深度语义理解，从而解锁新的用例，如将手绘图表转化为交互式教育导师，并遵循复杂的编辑指令。\n*   **视觉模板遵循**：擅长遵循视觉模板，可用于生成房地产列表卡片、员工徽章或动态产品模型。\n\n## 可用性与定价\n\n*   **可用平台**：Gemini 2.5 Flash Image 目前可通过 Gemini API 和 Google AI Studio 面向开发者提供，并通过 Vertex AI 面向企业用户提供。\n*   **定价**：每100万输出 token 定价为 $30.00，每张图像为1290个输出 token（即每张图像 $0.039）。其他输入和输出模式遵循 Gemini 2.5 Flash 的定价。\n\n## Google AI Studio 集成\n\nGoogle AI Studio 的“构建模式”已进行重大更新，使用户能够更轻松地构建应用。用户可以快速测试模型功能，通过自定义 AI 驱动应用进行混音，或仅用一个提示将想法变为现实。完成的应用可以直接从 Google AI Studio 部署或保存到 GitHub。\n\n## 合作伙伴与安全\n\n*   **合作伙伴**：OpenRouter.ai 和 fal.ai 已与 Google 合作，将 Gemini 2.5 Flash Image 引入更广泛的开发者社区。\n*   **安全措施**：所有使用 Gemini 2.5 Flash Image 创建或编辑的图像都将包含一个不可见的 SynthID 数字水印，以便识别为 AI 生成或编辑的内容。\n\n## 未来展望\n\nGoogle 正在积极改进长文本渲染、更可靠的角色一致性以及图像中细节的事实表示。鼓励开发者通过开发者论坛或 X 提供反馈。\n\n该模型目前处于预览阶段，预计在未来几周内将趋于稳定。",
+      "shortSummary": "Google 发布了 Gemini 2.5 Flash Image，这是一款先进的图像生成和编辑模型。它支持多图像融合、角色一致性、基于自然语言的精确编辑和利用 Gemini 的世界知识。该模型已通过 Gemini API、Google AI Studio 和 Vertex AI 提供，定价为每张图像 $0.039。所有生成图像均包含 SynthID 数字水印。Google 正持续改进其功能，并鼓励开发者积极使用和反馈。",
+      "translated_title": "隆重推出 Gemini 2.5 Flash Image，我们最先进的图像模型",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-image-editing-character-consistency.original.png",
+          "alt": "gemini-2-5-image-editing-character-consistency",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-flash-prompt-based-image-editing.original.png",
+          "alt": "gemini-2-5-flash-prompt-based-image-editing",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Gemini 2.5 Flash Image is a new state-of-the-art image generation and editing model that allows for blending multiple images, maintaining character consistency, and targeted transformations using natural language, leveraging Gemini's world knowledge, now available through the Gemini API, Google AI Studio, and Vertex AI."
+    },
+    {
       "title": "Gemini Code Assist 的新功能 (原标题: What's new in Gemini Code Assist)",
       "link": "https://developers.googleblog.com/en/new-in-gemini-code-assist/",
       "pubDate": "Wed, 20 Aug 2025 16:00:00 GMT",
@@ -228,20 +254,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Google introduces Veo 3 Fast, an optimized model for speed and price, along with new image-to-video capabilities for both Veo 3 and Veo 3 Fast, enabling developers to efficiently create high-quality video content from text or still images, with varying pricing based on the model and audio inclusion, now available in the Gemini API."
-    },
-    {
-      "title": "介绍 LangExtract：一个由 Gemini 驱动的信息提取库 (原标题: Introducing LangExtract: A Gemini powered information extraction library)",
-      "link": "https://developers.googleblog.com/en/introducing-langextract-a-gemini-powered-information-extraction-library/",
-      "pubDate": "Tue, 29 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-29T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "LangExtract 简介\n\n在当今数据丰富的世界中，有价值的洞察常常隐藏在非结构化文本中，例如详细的临床笔记、冗长的法律文件、客户反馈和新闻报道。手动筛选或构建定制代码来处理这些数据既耗时又容易出错，而简单地使用现代大型语言模型（LLMs）可能会引入错误。为了解决这一挑战，LangExtract 应运而生。\n\nLangExtract 概述\n\nLangExtract 是一个新推出的开源 Python 库，旨在帮助开发者以编程方式提取所需的确切信息，同时确保输出结构化并可靠地追溯到其来源。它为各种 LLM（如 Gemini 模型）提供了一个轻量级接口，用于根据自定义指令将大量非结构化文本处理成结构化信息，确保灵活性和可追溯性。\n\n核心功能与优势\n\nLangExtract 提供了一系列独特的功能，使其在信息提取方面非常有用：\n\n*   **精确源定位**：每个提取的实体都被映射回其在源文本中的精确字符偏移量。这提供了可追溯性，通过在原始文本中视觉高亮显示每次提取，使得评估和验证提取的信息变得更加容易。\n*   **可靠的结构化输出**：用户可以使用 LangExtract 的数据表示定义所需的输出，并提供“少量示例”（few-shot examples）。LangExtract 利用这些示例来强制执行模式，并利用 Gemini 等支持模型中的“受控生成”（Controlled Generation）功能，确保输出始终保持结构化。\n*   **优化长上下文信息提取**：从大型文档中检索信息可能很复杂。LangExtract 通过采用分块策略、并行处理和对更小、更集中的上下文进行多次提取，来处理这一问题，从而提高多事实检索场景中的召回率。\n*   **交互式可视化**：LangExtract 可以在几分钟内将原始文本转换为交互式、自包含的 HTML 可视化，方便用户在上下文中审查提取的实体，并支持探索数千个注释。\n*   **灵活支持 LLM 后端**：用户可以使用他们偏好的模型，无论是基于云的 LLM（如 Google 的 Gemini 系列）还是开源的设备端模型。\n*   **跨领域灵活性**：只需几个精心选择的示例，即可为任何领域定义信息提取任务，无需对 LLM 进行微调。LangExtract 可以“学习”用户所需的输出，并将其应用于大量新的文本输入。\n*   **利用 LLM 世界知识**：除了提取有根据的实体外，LangExtract 还可以利用模型的“世界知识”来补充提取的信息。这些信息可以是明确的（即源自源文本）或推断的（即源自模型的固有世界知识）。此类补充知识的准确性和相关性，特别是推断出的知识，很大程度上受所选 LLM 能力和引导提取的提示示例的精确性影响。\n\n快速入门示例 (莎士比亚)\n\nLangExtract 提供了一个简单的流程来从文本中提取信息：\n\n1.  **安装库**：通过 `pip install langextract` 命令进行安装。\n2.  **定义提取任务**：提供清晰的提示和高质量的“少量示例”来指导模型。\n3.  **运行提取**：使用 `lx.extract()` 函数对输入文本执行提取。\n4.  **保存与可视化**：将结果保存到 JSONL 文件，然后生成交互式 HTML 文件以查看注释。这种可视化功能非常适合演示或评估提取质量。\n\n专业领域应用\n\nLangExtract 的核心思想最初应用于医疗信息提取，并能有效处理临床文本，例如识别药物、剂量及其属性，并映射它们之间的关系。这一能力是促成该库研究的核心部分。\n\n为了展示 LangExtract 在专业领域的强大功能，开发团队还在 Hugging Face 上开发了一个名为 RadExtract 的交互式结构化放射学报告演示。该演示展示了 LangExtract 如何处理自由文本的放射学报告，并自动将其关键发现转换为结构化格式，同时突出重要发现。这种方法在放射学中非常重要，因为结构化报告可以增强清晰度、确保完整性并改善研究和临床护理的数据互操作性。\n\n**免责声明**：上述药物提取示例和结构化报告演示仅用于说明 LangExtract 的基本功能。它们不代表已完成或批准的产品，不用于诊断或建议任何疾病或状况的治疗，也不应用于医疗建议。\n\n资源与下一步\n\nLangExtract 团队期待看到开发者如何利用 LangExtract 从文本中解锁洞察。用户可以深入研究文档，探索 GitHub 存储库中的示例，并立即开始转换非结构化数据。",
-      "shortSummary": "LangExtract 是一个由 Gemini 驱动的新型开源 Python 库，旨在帮助开发者从非结构化文本中高效提取结构化信息。它利用大型语言模型（如 Gemini）和少量示例，确保输出的精确性、可追溯性和结构化。该库能优化长上下文信息提取，灵活支持多种 LLM 后端，并适用于不同领域。LangExtract 还提供交互式可视化功能，简化了从文本中获取洞察的过程，尤其适用于医疗、金融等专业领域。",
-      "translated_title": "介绍 LangExtract：一个由 Gemini 驱动的信息提取库",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "LangExtract is a new open-source Python library powered by Gemini models for extracting structured information from unstructured text, offering precise source grounding, reliable structured outputs using controlled generation, optimized long-context extraction, interactive visualization, and flexible LLM backend support."
     }
   ],
-  "lastUpdated": "2025-08-26T10:30:41.792Z"
+  "lastUpdated": "2025-08-27T10:28:33.210Z"
 }
