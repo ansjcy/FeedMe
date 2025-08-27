@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "在Buck2上启用Kotlin增量编译 (原标题: Enabling Kotlin incremental compilation on Buck2)",
+      "link": "https://engineering.fb.com/2025/08/26/open-source/enabling-kotlin-incremental-compilation-on-buck2/",
+      "pubDate": "Tue, 26 Aug 2025 16:00:52 +0000",
+      "isoDate": "2025-08-26T16:00:52.000Z",
+      "creator": "",
+      "summary": "## 在Buck2上启用Kotlin增量编译\n\nMeta工程团队成功地将Kotlin增量编译器集成到其构建系统Buck2中，以解决大型Kotlin模块导致的构建时间过长问题，显著提升了开发效率和构建速度。\n\n### 背景与动机\n\n尽管Buck2鼓励使用小型模块以实现快速构建，但随着代码库的增长和团队的变化，一些Kotlin模块变得庞大，开始对构建时间产生显著影响。为了解决这一问题，团队决定深入研究Kotlin增量编译器。\n\n### 关键成果\n\n*   **构建速度提升**：关键模块的构建速度提升高达3倍。\n*   **开发者效率**：平均开发者构建时间提升约30%。\n*   **特定模块优化**：对于不涉及注解处理的模块，速度几乎翻倍。\n\n### 实施步骤与挑战\n\n#### 1. 集成Kotlin的构建工具API (Build Tools API)\n\n*   **挑战**：命令行接口（CLI）不支持增量编译，而内部编译器API不稳定且不保证向后兼容性。\n*   **解决方案**：采用了Kotlin 1.9.20中引入的实验性Build Tools API (KEEP)，该API是官方的编译器集成点，支持增量编译。团队认为其最终会稳定，并提前介入提供反馈。\n*   **Shading冲突**：Build Tools API依赖于`kotlin-compiler-embeddable`（经过混淆处理的版本），而Meta的Android工具链历史上使用`kotlin-compiler`（未混淆版本），导致`NoClassDefFoundError`。最初通过对Build Tools API进行反混淆处理来解决，随后将整个工具链迁移到使用混淆处理的Kotlin编译器，以实现更稳定的设置。\n\n#### 2. 保留前次构建输出\n\n*   **挑战**：Buck2默认在重建模块前删除前次构建的输出，而增量编译器需要访问这些输出。\n*   **解决方案**：通过配置Buck2的增量操作（incremental actions），跳过对前次输出的自动清理。这使得构建操作可以访问上次运行的所有内容，但需要手动清理不再有用的文件。\n\n#### 3. 使增量编译器缓存可重定位\n\n*   **挑战**：在Buck2支持的分布式构建环境中，如果编译器缓存不可重定位，可能导致路径不匹配的错误和冲突。\n*   **解决方案**：在增量编译设置中明确配置了根项目目录和构建目录，确保编译器缓存的稳定性和可靠性，无论构建在哪里执行。\n\n#### 4. 配置增量编译器\n\n*   **原理**：增量编译器通过跟踪模块内部文件和依赖项的变化来决定需要重新编译的内容。\n*   **模块内部变化**：利用Buck2增量操作提供的哈希摘要，比较前后两次构建的哈希值，生成修改文件列表并传递给编译器，避免编译器自行检测变化。\n*   **依赖项变化**：通过生成类路径快照（ABI）来检测依赖项的变化。Buck2中新增了一个专门的操作来从库输出生成类路径快照，并将其作为输入传递给消费模块。由于这是一个独立的操作，可以远程执行或从缓存中获取，减轻了本地机器的负担。\n\n#### 5. 使编译器插件与增量编译器协同工作\n\n*   **挑战1：结果不完整**：自定义编译器插件未针对部分输入设计，在只处理文件子集时会产生不完整的结果。\n*   **解决方案1**：将插件也改造为增量模式，使其能够正确处理部分输入。\n*   **挑战2：多轮编译**：增量编译器可能在单次构建中进行多轮编译，每次处理不同的文件集，导致插件被多次触发并可能覆盖早期输出。\n*   **解决方案2**：更新插件，使其在多轮编译中累积结果而非替换。\n\n#### 6. 验证注解处理器功能\n\n*   **解决方案**：大多数注解处理器使用Kotlin符号处理（KSP2）。KSP2作为一个独立的工具，利用Kotlin分析API分析源代码，独立于标准编译流程运行，并自带增量处理支持，因此无需修改即可继续使用。\n\n#### 7. 启用针对ABI的编译\n\n*   **挑战**：为了最大化缓存命中率，Buck2针对类ABI而非完整的JAR文件构建Android模块。Kotlin目标使用`jvm-abi-gen`编译器插件生成ABI，但在启用增量编译后，该插件缺乏增量支持，且ABI提取会发生两次（插件和类路径快照）。\n*   **当前解决方案**：实现了一个自定义的（但非最优的）解决方案，将新生成的ABI与之前的结果合并。\n*   **未来展望**：正在积极探索更好的长期替代方案，理想情况是重用已收集的类路径快照信息，或将此功能直接内置到Kotlin编译器中（参见KT-62881）。\n\n#### 8. 测试\n\n*   **方法**：通过A/B测试在Meta的代码库上衡量Kotlin增量编译的真实影响，确保结果的可靠性。\n*   **结果**：在最大的模块上，增量编译带来了显著的性能提升，证实了其价值。\n\n### 后续计划\n\nKotlin增量编译目前已在Buck2中得到支持，并正在Meta的代码库中积极推广。目前仅供内部使用，但团队正努力将其引入最近开源的工具链中，并探索在整个Android工具链中扩展增量能力的方法。",
+      "shortSummary": "Meta已成功在Buck2构建系统中启用Kotlin增量编译，显著提升了构建速度和开发者效率。通过集成Kotlin Build Tools API、保留前次输出、使缓存可重定位、优化编译器配置、改造编译器插件以及利用KSP2，团队实现了关键模块构建速度提升高达3倍，平均开发者构建时间缩短30%。目前该功能正在内部推广，并计划开源，以进一步扩展Android工具链的增量能力。",
+      "translated_title": "在Buck2上启用Kotlin增量编译",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>The Kotlin incremental compiler has been a true gem for developers chasing faster compilation since its introduction in build tools. Now, we’re excited to bring its benefits to Buck2 –  Meta’s build system – to unlock even more speed and efficiency for Kotlin developers. Unlike a traditional compiler that recompiles an entire module every time, [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/08/26/open-source/enabling-kotlin-incremental-compilation-on-buck2/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/08/26/open-source/enabling-kotlin-incremental-compilation-on-buck2/\">Enabling Kotlin incremental compilation on Buck2</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "为数据仓库数据访问和安全创建AI代理解决方案 (原标题: Creating AI agent solutions for warehouse data access and security)",
       "link": "https://engineering.fb.com/2025/08/13/data-infrastructure/agentic-solution-for-warehouse-data-access/",
       "pubDate": "Wed, 13 Aug 2025 22:05:07 +0000",
@@ -218,20 +231,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Have you ever worked is legacy code? Are you curious what it takes to modernize systems at a massive scale? Pascal Hartig is joined on the latest Meta Tech Podcast by Elaine and Buping, two software engineers working on a bold project to rewrite the decades-old C code in one of Meta’s core messaging libraries [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/07/01/developer-tools/an-inside-look-at-metas-transition-from-c-to-rust-on-mobile/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/07/01/developer-tools/an-inside-look-at-metas-transition-from-c-to-rust-on-mobile/\">An inside look at Meta&#8217;s transition from C to Rust on mobile</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "Meta 加入 Kotlin 基金会 (原标题: Meta joins Kotlin Foundation)",
-      "link": "https://engineering.fb.com/2025/06/30/android/meta-joins-kotlin-foundation/",
-      "pubDate": "Mon, 30 Jun 2025 16:00:30 +0000",
-      "isoDate": "2025-06-30T16:00:30.000Z",
-      "creator": "",
-      "summary": "## Meta 加入 Kotlin 基金会：推动 Android 开发生态系统\n\nMeta 近日宣布正式成为 Kotlin 基金会的黄金会员，这标志着其对 Kotlin 及其更广泛的 Android 开发生态系统承诺的一个重要里程碑。\n\n### Meta 对 Kotlin 的长期投入\n\n*   **大规模代码迁移**：在过去几年中，Meta 工程师一直在积极地将其庞大的 Android 代码库（包含数千万行代码）从 Java 迁移到 Kotlin。\n*   **内部工具开发**：为了促进这一大规模转型，Meta 开发了一款名为 **Kotlinator** 的内部工具。该工具能够自动化大部分转换过程，同时确保生成的 Kotlin 代码符合惯例并与内部框架兼容。\n*   **参与行业工作组**：Meta 持续在企业 Java-to-Kotlin 工作组中分享其在迁移方面的努力。\n\n### 公开贡献与开源项目\n\n*   **开源工具链**：Meta 通过开源项目公开分享其工作，例如在 Buck2 中的 Kotlin 和 Android 构建工具链。\n*   **提升开发效率**：这些工具链旨在提供工具和最佳实践，以提高构建速度和可扩展性，最终惠及更广泛的开发者社区。\n\n### 作为 Kotlin 基金会成员的未来贡献\n\n*   **支持生态系统发展**：Meta 加入 Kotlin 基金会符合其支持和推进 Kotlin 生态系统的更广泛战略。\n*   **资助计划**：Meta 将为 Kotlin 基金会的资助计划做出贡献。该计划旨在支持开源库作者，并鼓励学生和开发者进行创新。\n*   **促进社区协作**：Meta 的成员资格强调了其致力于培养一个强大、协作的 Kotlin 社区，并提升该语言在不同平台上的能力。\n\n### 了解更多 Meta 开源工作\n\n如需了解更多关于 Meta 开源工作的信息，可以访问 Meta 开源网站，订阅其 YouTube 频道，或关注其在 Facebook、Instagram、Threads、X 和 LinkedIn 上的账号。",
-      "shortSummary": "Meta 已正式加入 Kotlin 基金会成为黄金会员，此举标志着其对 Kotlin 和 Android 开发生态系统承诺的重要里程碑。过去几年，Meta 已将数千万行 Android 代码从 Java 迁移到 Kotlin，并开发了内部工具 Kotlinator 辅助此过程。Meta 还通过开源项目如 Buck2 中的 Kotlin 构建工具链，公开分享其工作以提升开发效率。作为基金会成员，Meta 将支持其资助计划，旨在促进 Kotlin 社区的协作与创新，并提升语言能力。",
-      "translated_title": "Meta 加入 Kotlin 基金会",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>We are proud to announce that Meta has officially joined the Kotlin Foundation as a gold member, marking a significant milestone in our ongoing commitment to Kotlin and the broader Android development ecosystem. Over the past several years, Meta engineers have been actively migrating our extensive Android codebase—comprising tens of millions of lines—from Java to [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/06/30/android/meta-joins-kotlin-foundation/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/06/30/android/meta-joins-kotlin-foundation/\">Meta joins Kotlin Foundation</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-08-25T05:27:29.605Z"
+  "lastUpdated": "2025-08-27T05:25:07.388Z"
 }
