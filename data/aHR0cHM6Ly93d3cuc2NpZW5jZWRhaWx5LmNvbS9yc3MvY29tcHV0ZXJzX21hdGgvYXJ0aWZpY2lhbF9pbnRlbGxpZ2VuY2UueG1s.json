@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "加州理工学院突破使量子存储持续时间延长30倍 (原标题: Caltech breakthrough makes quantum memory last 30 times longer)",
+      "link": "https://www.sciencedaily.com/releases/2025/08/250827234137.htm",
+      "pubDate": "Wed, 27 Aug 2025 23:49:15 EDT",
+      "isoDate": "2025-08-28T03:49:15.000Z",
+      "creator": "",
+      "summary": "# 加州理工学院量子记忆突破：存储时间延长30倍\n\n## 引言：量子计算的挑战与量子记忆的需求\n\n传统的计算机使用比特（0或1）存储信息，而量子计算机则基于量子比特，其独特之处在于能够同时处于0和1的叠加态。这种量子物理特性是量子计算解决经典计算机无法处理问题的核心潜力所在。当前许多量子计算机依赖于超导电子系统，其中电子在极低温下无电阻流动，形成超导量子比特。这些量子比特在执行逻辑运算方面表现出色，但其存储量子态（即特定量子系统的数学描述）的能力却相对较弱。为了解决这一瓶颈，量子工程师一直在寻求构建“量子记忆”以延长超导量子比特的存储时间。\n\n## 加州理工学院的混合方法：电声转换\n\n加州理工学院的一个科学家团队现已开发出一种混合量子记忆方法，通过有效地将电信息转换为声波，使超导量子比特的量子态存储时间比其他现有技术延长了30倍。这项由加州理工学院研究生Alkim Bozkurt和Omid Golami在电气工程与应用物理助理教授Mohammad Mirhosseini的指导下完成的新研究，已发表在《自然物理》杂志上。\n\nMirhosseini教授指出，拥有量子态后，可能无法立即对其进行操作，因此需要一种方法在需要执行逻辑运算时能够重新访问它，这就需要量子记忆。\n\n## 技术细节：机械振荡器作为量子记忆\n\n*   **前期研究基础**：Mirhosseini团队此前已证明，声波（特别是声子，即振动的粒子，类似于光子是光的粒子）可以作为存储量子信息的有效方法。他们在经典实验中测试的设备，因其在与超导量子比特相同的极高千兆赫频率下工作、在维持量子态所需的低温下表现良好以及具有长寿命，被认为是与超导量子比特配对的理想选择。\n*   **当前实现**：研究人员在芯片上制造了一个超导量子比特，并将其连接到一个被称为机械振荡器的微型设备上。这个振荡器本质上是一个微型音叉，由柔性板组成，这些板在千兆赫频率下通过声波振动。当这些板上施加电荷时，它们可以与携带量子信息的电信号相互作用，从而将信息“管道”输入设备进行存储，并在之后“管道”输出，即被“记住”。\n*   **关键发现**：研究人员仔细测量了信息进入设备后，振荡器失去其宝贵量子内容所需的时间。结果表明，这些振荡器的寿命比目前最好的超导量子比特长约30倍。\n\n## 新方法的优势\n\n这种构建量子记忆的方法相比以往策略具有多项优势：\n\n*   **设备紧凑性**：声波的传播速度远低于电磁波，使得设备可以更加紧凑。\n*   **能量保持**：与电磁波不同，机械振动不会在自由空间中传播，这意味着能量不会从系统中泄漏出去。\n*   **存储时间延长与干扰减少**：这有助于延长存储时间，并减轻附近设备之间不必要的能量交换。\n*   **可扩展性潜力**：这些优势表明，未来有可能将许多这样的“音叉”集成到单个芯片上，为制造可扩展的量子记忆提供了一种潜在途径。\n\n## 未来展望与挑战\n\nMirhosseini教授表示，这项工作已经证明了电磁波和声波之间实现作为记忆元件所需的最小交互量。然而，为了使该平台真正适用于量子计算，需要能够更快地将量子数据输入和输出系统。这意味着必须找到方法，将交互速率提高到当前系统能力的3到10倍。幸运的是，他的团队已经有了实现这一目标的想法。\n\n## 研究贡献者与支持\n\n该论文“微波光子的机械量子记忆”的其他作者包括Mirhosseini实验室的前访问本科生Yue Yu，以及加州理工学院电气工程系的量子信息与物质研究所博士后研究员Hao Tian。这项工作得到了美国空军科学研究办公室和国家科学基金会的资助。Bozkurt获得了Eddleman研究生奖学金的支持。",
+      "shortSummary": "加州理工学院科学家开发出一种混合量子记忆方法，通过将电信号转换为声波，使超导量子比特的量子态存储时间延长了30倍。该技术利用微型机械振荡器（类似音叉）存储信息，克服了超导量子比特存储能力弱的缺点。新方法具有设备紧凑、能量损耗低和潜在可扩展性等优势，为未来量子计算机的实用化迈出了重要一步，尽管仍需提高数据交互速率。",
+      "translated_title": "加州理工学院突破使量子存储持续时间延长30倍",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "While superconducting qubits are great at fast calculations, they struggle to store information for long periods. A team at Caltech has now developed a clever solution: converting quantum information into sound waves. By using a tiny device that acts like a miniature tuning fork, the researchers were able to extend quantum memory lifetimes up to 30 times longer than before. This breakthrough could pave the way toward practical, scalable quantum computers that can both compute and remember."
+    },
+    {
       "title": "为什么微小的蜜蜂大脑可能掌握着更智能AI的关键 (原标题: Why tiny bee brains could hold the key to smarter AI)",
       "link": "https://www.sciencedaily.com/releases/2025/08/250824031528.htm",
       "pubDate": "Sun, 24 Aug 2025 03:15:28 EDT",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Scientists have successfully relocated protons outside of an antimatter laboratory with the help of an autonomous, open Penning trap. This breakthrough marks a significant step toward transporting antiprotons produced at the European Organization for Nuclear Research (CERN) to high-precision laboratories, which operate independently of the research facility. Extremely precise measurements to compare matter and antimatter are only possible far from accelerator facilities."
-    },
-    {
-      "title": "新计算机语言助力发现隐藏污染物 (原标题: New computer language helps spot hidden pollutants)",
-      "link": "https://www.sciencedaily.com/releases/2025/05/250513172036.htm",
-      "pubDate": "Tue, 13 May 2025 17:20:36 EDT",
-      "isoDate": "2025-05-13T21:20:36.000Z",
-      "creator": "",
-      "summary": "## MassQL：发现隐藏污染物的利器\n\n### 引言\n\n加州大学河滨分校（UC Riverside）开发了一种名为“Mass Query Language”（MassQL）的新型编程语言。该语言旨在帮助生物学家和化学家以极快的速度发现此前未知的环境污染物，而无需他们具备编程技能。通过简化对海量化学数据集的搜索，MassQL已成功识别出许多隐藏在普通环境中的有毒化合物。\n\n### MassQL 的功能与原理\n\n*   **数据处理核心**：质谱数据如同化学指纹，能显示样本（如空气、水或血液）中分子的种类和含量，广泛应用于从水体污染物到新药化学成分的识别。\n*   **工作机制**：MassQL 类似于质谱数据的搜索引擎，使研究人员能够发现传统上需要高级编程技能才能识别的模式。\n*   **开发目标**：该语言的创建者、加州大学河滨分校计算机科学助理教授Mingxun Wang表示，其目的是让通常不具备计算机科学背景的化学家和生物学家，能够按照自己的意愿挖掘数据，而无需花费数月或数年学习编程。\n*   **技术细节**：MassQL 的技术细节及其在识别公共水域中阻燃化学品方面的应用案例，已发表在《自然方法》（Nature Methods）期刊上。\n\n### 实际应用案例：水体污染物检测\n\n*   **研究示范**：加州大学河滨分校的博士后学生Nina Zhao（现就职于加州大学圣地亚哥分校）利用MassQL，筛选了全球公开的水样质谱数据，以寻找通常存在于阻燃剂中的有机磷酸酯。\n*   **数据挑战**：Wang教授指出，这些数据中包含数十亿个分子测量值，无法手动处理。MassQL 像一个过滤器，成功从中筛选出数千种化学物质。\n*   **重要发现**：除了在水样中发现已知的化学物质外，研究人员还发现了此前未被描述或编目的有机磷化合物，以及有机磷酸酯随时间分解产生的产物。\n*   **健康影响**：Zhao表示，这些化学物质可能对人类和动物健康以及整个生态系统造成严重问题。它们最初被设计为阻燃剂或增塑剂，但可能导致内分泌和生殖系统紊乱，以及心血管问题。\n*   **环境意义**：在制定处理或清除环境中这些有毒化学品的计划之前，科学家需要了解它们的存在。MassQL 在这方面为科学家提供了极大的便利。\n\n### MassQL 的广泛适用性与未来展望\n\n*   **追踪能力**：MassQL 允许科学家追踪空气、土壤、水甚至人体内所有已检测到的化学物质。只要存在，就能搜索其中的化学物质。\n*   **开发挑战**：创建MassQL 的一个挑战是让生命科学家就软件使用的术语定义达成共识。约70位科学家参与了开发阶段的咨询，提供了关于最重要信息术语及其在MassQL 语言中表达方式的反馈，以确保化学家和计算机科学家都能理解并操作。\n*   **多领域应用**：除了Zhao的项目，该论文还详细介绍了MassQL 在30多个领域的应用潜力，包括：\n    *   检测脂肪酸作为酒精中毒的标志物。\n    *   寻找新药以解决日益严峻的抗生素耐药性危机。\n    *   了解细菌用于相互交流的化学物质。\n    *   在游乐场中发现“永久性化学品”。\n*   **创造者愿景**：Wang教授最初是为了提高效率，希望创建一个能够处理多种查询的通用语言。他表示，对MassQL 可能带来的科学发现充满期待。",
-      "shortSummary": "加州大学河滨分校开发了一种名为MassQL的新计算机语言，旨在帮助生物学家和化学家快速发现隐藏的环境污染物，无需编程。该语言像搜索引擎一样分析海量质谱数据，已成功识别出水体中的有毒有机磷酸酯及其分解产物，包括此前未知的化合物。MassQL能追踪空气、水、土壤和人体内的化学物质，对环境管理和公共健康至关重要。它简化了数据挖掘，有望加速多领域的科学发现。",
-      "translated_title": "新计算机语言助力发现隐藏污染物",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Biologists and chemists have a new programming language to uncover previously unknown environmental pollutants at breakneck speed -- without requiring them to code."
     }
   ],
-  "lastUpdated": "2025-08-27T09:30:50.639Z"
+  "lastUpdated": "2025-08-28T09:28:16.312Z"
 }
