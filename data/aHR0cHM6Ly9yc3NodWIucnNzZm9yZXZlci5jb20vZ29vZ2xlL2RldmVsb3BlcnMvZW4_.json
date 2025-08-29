@@ -5,6 +5,94 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "如何提示 Gemini 2.5 Flash 图像生成以获得最佳效果 (原标题: How to prompt Gemini 2.5 Flash Image Generation for the best results)",
+      "link": "https://developers.googleblog.com/en/how-to-prompt-gemini-2-5-flash-image-generation-for-the-best-results/",
+      "pubDate": "Wed, 27 Aug 2025 16:00:00 GMT",
+      "isoDate": "2025-08-27T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "Gemini 2.5 Flash Image 是 Google 最新、最快、最高效的原生多模态模型，于2025年8月28日发布。其独特之处在于原生多模态架构，能够在一个统一的步骤中处理文本和图像，从而实现强大的功能，超越了简单的图像生成。\n\n### Gemini 2.5 Flash 的核心能力\n\n*   **文本到图像 (Text-to-image)**：根据简单或复杂的文本描述生成高质量图像。\n*   **图像+文本到图像 (Image + text-to-image)**：提供图像并使用文本提示来添加、删除、修改元素，改变风格或调整颜色。\n*   **多图像到图像 (Multi-image to image)**：使用多个输入图像来合成新场景或将一种图像的风格转移到另一种图像上。\n*   **迭代优化 (Iterative refinement)**：通过对话逐步细化图像，进行多次微调。\n*   **文本渲染 (Text rendering)**：生成包含清晰、位置得当文本的图像，适用于标志、图表和海报。\n\n### 提示词的核心原则\n\n获取最佳结果的关键在于：**描述场景，而不仅仅是罗列关键词。** 模型的核心优势在于其深厚的语言理解能力。一个叙述性、描述性的段落几乎总能比简单的、不连贯的词语列表生成更好、更连贯的图像。\n\n### 从文本创建图像的技巧与示例\n\n1.  **写实场景 (Photorealistic scenes)**\n    *   **描述**：像摄影师一样思考，提及相机角度、镜头类型、光线和细节。\n    *   **模板**：`A photorealistic [shot type] of [subject], [action or expression], set in [environment]. The scene is illuminated by [lighting description], creating a [mood] atmosphere. Captured with a [camera/lens details], emphasizing [key textures and details]. The image should be in a [aspect ratio] format.`\n    *   **示例输出**：\n        ![photorealistic close-up portrait of an elderly Japanese ceramicist](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/photorealistic_example.original.png)\n\n2.  **风格化插画与贴纸 (Stylized illustrations & stickers)**\n    *   **描述**：明确风格，并请求白色背景（如果需要）。\n    *   **模板**：`A [style] sticker of a [subject], featuring [key characteristics] and a [color palette]. The design should have [line style] and [shading style]. The background must be white.`\n    *   **示例输出**：\n        ![kawaii-style sticker of a happy red panda](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/red_panda_sticker.original.png)\n\n3.  **图像中的准确文本 (Accurate text in images)**\n    *   **描述**：清晰说明所需文本、字体风格和整体设计。\n    *   **模板**：`Create a [image type] for [brand/concept] with the text \"[text to render]\" in a [font style]. The design should be [style description], with a [color scheme].`\n    *   **示例输出**：\n        ![modern, minimalist logo for a coffee shop](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/logo_example.original.png)\n\n4.  **产品模型与商业摄影 (Product mockups & commercial photography)**\n    *   **描述**：创建干净、专业的电商或广告产品照片。\n    *   **模板**：`A high-resolution, studio-lit product photograph of a [product description] on a [background surface/description]. The lighting is a [lighting setup, e.g., three-point softbox setup] to [lighting purpose]. The camera angle is a [angle type] to showcase [specific feature]. Ultra-realistic, with sharp focus on [key detail]. [Aspect ratio].`\n    *   **示例输出**：\n        ![minimalist ceramic coffee mug](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/product_mockup.original.png)\n\n5.  **极简主义与负空间设计 (Minimalist & negative space design)**\n    *   **描述**：为网站、演示文稿或营销材料创建背景，以便叠加文本。\n    *   **模板**：`A minimalist composition featuring a single [subject] positioned in the [bottom-right/top-left/etc.] of the frame. The background is a vast, empty [color] canvas, creating significant negative space. Soft, subtle lighting. [Aspect ratio].`\n    *   **示例输出**：\n        ![red maple leaf](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/minimalist_design.original.png)\n\n6.  **连续艺术（漫画分镜/故事板）(Sequential art (comic panel / storyboard))**\n    *   **描述**：通过清晰的场景描述创建引人入胜的视觉叙事。\n    *   **模板**：`A single comic book panel in a [art style] style. In the foreground, [character description and action]. In the background, [setting details]. The panel has a [dialogue/caption box] with the text \"[Text]\". The lighting creates a [mood] mood. [Aspect ratio].`\n    *   **示例输出**：\n        ![comic book panel](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/comic_panel.original.png)\n\n### 用文本编辑图像的技巧与示例\n\nGemini 2.5 Flash Image 的多模态特性在此处表现出色，可以提供一张或多张图像以及文本提示进行编辑、合成和风格迁移。\n\n1.  **图像编辑：添加与删除元素 (Image editing: Adding & removing elements)**\n    *   **描述**：提供图像并描述所需更改，模型将分析原始图像的风格、光线和视角以使编辑看起来自然。\n    *   **模板**：`Using the provided image of [subject], please [add/remove/modify] [element] to/from the scene. Ensure the change is [description of how the change should integrate].`\n    *   **示例输入与输出**：\n        ![Cat_Gemini2.5-Prompt](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Cat_Gemini2.5-PromptUpdate.original.png)\n\n2.  **图像修复：编辑特定区域 (Inpainting: editing a specific area)**\n    *   **描述**：指示模型仅编辑图像的某个部分，同时保持其余部分不变。\n    *   **模板**：`Using the provided image, change only the [specific element] to [new element/description]. Keep everything else in the image exactly the same, preserving the original style, lighting, and composition.`\n    *   **示例输入与输出**：\n        ![Livingroom_Gemini2.5-Prompt](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Livingroom_Gemini2.5-PromptUpdate.original.png)\n\n3.  **风格迁移 (Style transfer)**\n    *   **描述**：提供照片并要求模型以特定艺术风格或艺术运动重新创建其内容。\n    *   **模板**：`Transform the provided photograph of [subject] into the artistic style of [artist/art style]. Preserve the original composition but render it with [description of stylistic elements].`\n    *   **示例输入与输出**：\n        ![City_Gemini2.5-Prompt](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Car_Gemini2.5-PromptUpdate.original.png)\n\n4.  **高级合成：组合多张图像 (Advanced composition: Combining multiple images)**\n    *   **描述**：提供多张图像作为上下文，以创建全新的复合场景，适用于产品模型或创意拼贴。\n    *   **模板**：`Create a new image by combining the elements from the provided images. Take the [element from image 1] and place it with/on the [element from image 2]. The final image should be a [description of the final scene].`\n    *   **示例输入与输出**：\n        ![Model_Gemini2.5-Prompt](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Model_Gemini2.5-PromptUpdate.original.png)\n\n### 最佳实践\n\n*   **高度具体化**：提供越详细的描述，控制力越强。\n*   **修复角色一致性漂移**：如果角色特征在多次迭代编辑后开始漂移，可以通过详细描述重新开始对话以保持一致性。\n*   **提供上下文和意图**：解释图像的用途，例如“为高端极简护肤品牌创建标志”。\n*   **迭代和细化**：不要期望一次成功，利用模型的对话性进行小幅修改。\n*   **使用“语义负面提示”**：积极描述所需场景，而非说明不想要什么，例如“一条空旷、荒芜的街道，没有交通迹象”而非“没有汽车”。\n*   **宽高比**：编辑时，Gemini 2.5 Flash Image 通常会保留输入图像的宽高比。如果需要特定比例，请在提示中明确说明，或提供具有正确尺寸的参考图像。\n*   **控制相机**：使用摄影和电影语言来控制构图，如广角镜头、微距拍摄、低角度透视等。\n\n### 局限性\n\n尽管 Gemini 2.5 Flash Image 是一个强大且多功能的工具，但对于高度细微的请求，首次尝试可能需要一些迭代才能达到完美。生成复杂排版或在多张图像中保持角色特征的绝对一致性有时需要通过后续提示进行细化。Google 正在积极改进这些领域。",
+      "shortSummary": "Gemini 2.5 Flash Image是Google最新、最快的原生多模态模型，能统一处理文本和图像。它支持文本生成图像、图像编辑、多图合成、迭代优化及文本渲染。核心原则是“描述场景而非罗列关键词”，强调详细描述以获得最佳效果。其多模态能力在图像编辑、局部修改、风格迁移和多图组合方面表现突出。为提升生成质量，建议提供具体细节、上下文，并进行迭代优化。",
+      "translated_title": "如何提示 Gemini 2.5 Flash 图像生成以获得最佳效果",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/photorealistic_example.original.png",
+          "alt": "photorealistic close-up portrait of an elderly Japanese ceramicist",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/red_panda_sticker.original.png",
+          "alt": "kawaii-style sticker of a happy red panda",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/logo_example.original.png",
+          "alt": "modern, minimalist logo for a coffee shop",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/product_mockup.original.png",
+          "alt": "minimalist ceramic coffee mug",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/minimalist_design.original.png",
+          "alt": "red maple leaf",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/comic_panel.original.png",
+          "alt": "comic book panel",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Cat_Gemini2.5-PromptUpdate.original.png",
+          "alt": "Cat_Gemini2.5-Prompt",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Livingroom_Gemini2.5-PromptUpdate.original.png",
+          "alt": "Livingroom_Gemini2.5-Prompt",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Detailed prompting techniques and best practices for various applications, including photorealistic scenes, stylized illustrations, product mockups, and more using Google's newly released Gemini 2.5 Flash Image; a natively multimodal model capable of generating, editing, and composing images using text, supporting capabilities like text-to-image, image editing, style transfer, and multi-image composition."
+    },
+    {
+      "title": "停止对LLM进行“凭感觉测试”，是时候进行真实评估了。 (原标题: Stop “vibe testing” your LLMs. It's time for real evals.)",
+      "link": "https://developers.googleblog.com/en/streamline-llm-evaluation-with-stax/",
+      "pubDate": "Tue, 26 Aug 2025 16:00:00 GMT",
+      "isoDate": "2025-08-26T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# 停止“凭感觉测试”你的LLM，是时候进行真正的评估了\n\n## 挑战：LLM开发中的“感觉测试”\n\n在LLM开发过程中，开发者常陷入一种“感觉测试”的循环：调整提示词，运行几次，然后凭直觉判断输出是否“感觉更好”。这种不确定性源于LLM的非确定性——相同输入不总产生相同输出，导致传统单元测试不足。此外，构建评估流程还需处理数据集、API调用和输出解析等复杂任务。\n\n## 解决方案：Stax——LLM评估工具\n\n为了摆脱这种主观判断，Google DeepMind和Google Labs推出了Stax，一个实验性的开发者工具，旨在简化LLM评估生命周期，将评估专业知识与创新实践相结合。\n\n## 为什么需要专门的评估（Evals）？\n\n*   **针对特定用例：** 通用基准测试衡量模型在广泛任务上的表现，但无法评估AI应用在特定数据和标准下的实际效果。\n*   **核心竞争力：** 正确的评估能将独特的业务目标编码为可复用的基准，成为关键的差异化因素。\n*   **清晰的指标：** 评估提供明确的量化指标，帮助开发者理解哪些改进是真正有效的，而非耗时地进行“感觉测试”。\n\n## 评估方法论的演进\n\n为了实现真实、可重复的评估，LLM领域主要采用两种方法：\n\n1.  **人工评估：** 被认为是黄金标准，但通常速度慢且成本高昂。\n2.  **自动评估器（LLM作为评判者）：** 利用强大的LLM（如Gemini模型）结合特定指令来“评分”另一个模型的输出。这是一种可扩展、一致的方法，用于检查相关性、语气或事实准确性等。\n\n## Stax如何工作？\n\nStax赋能开发者对“AI堆栈”进行严格测试，从而做出数据驱动的决策，增强部署AI系统的信心。\n\n*   **导入或构建数据：**\n    *   可以直接上传包含测试用例的CSV文件。\n    *   通过Stax界面轻松创建反映实际用例的提示词和真实答案数据集。\n\n*   **开箱即用的自动评估器：**\n    *   提供预构建的自动评估器，用于检查常见的指标，如连贯性、事实性和简洁性。\n    *   用户可以在几分钟内获得有意义的结果。\n\n*   **构建自定义自动评估器（核心功能）：**\n    *   由于没有“一刀切”的评估方法能判断AI是否符合公司品牌语调或特定应用规则，Stax允许用户轻松定义自己的评估标准并构建自定义自动评估器。\n    *   例如，可以为“有帮助但不啰嗦”的聊天机器人、确保摘要不包含PII、或代码生成符合团队风格指南等需求构建专属评估器。\n    *   用户可以定义输出“好”的“秘诀”，Stax则能针对整个数据集进行大规模测试。\n\n## 停止猜测，开始评估\n\nStax帮助开发者告别“凭运气”部署LLM功能的时代。现在是时候像对待生产堆栈的其他部分一样，对LLM进行严格测试和使用强大的工具。Stax助力用户理解、迭代和改进其LLM驱动的功能。访问stax.withgoogle.com并加入Discord频道以开始评估。",
+      "shortSummary": "Stax是Google DeepMind和Google Labs开发的LLM评估工具，旨在取代主观的“感觉测试”。鉴于LLM的非确定性，传统测试不足。Stax允许用户上传数据、使用预设或自定义的“LLM作为评判者”评估器，根据特定用例和标准进行客观、可重复的评估。它帮助开发者获得清晰指标，更自信地迭代和部署LLM应用，将评估从艺术转变为严谨的工程实践。",
+      "translated_title": "停止对LLM进行“凭感觉测试”，是时候进行真实评估了。",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Stax, an experimental developer tool, addresses the insufficient nature of \"vibe testing\" LLMs by streamlining the LLM evaluation lifecycle, allowing users to rigorously test their AI stack and make data-driven decisions through human labeling and scalable LLM-as-a-judge auto-raters."
+    },
+    {
+      "title": "超越终端：Gemini CLI 登陆 Zed (原标题: Beyond the terminal: Gemini CLI comes to Zed)",
+      "link": "https://developers.googleblog.com/en/gemini-cli-is-now-integrated-into-zed/",
+      "pubDate": "Tue, 26 Aug 2025 16:00:00 GMT",
+      "isoDate": "2025-08-26T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Gemini CLI 与 Zed 集成：将 AI 直接带入代码编辑器\n\n2025年8月27日，Google 宣布 Gemini CLI 已成功集成到 Zed 代码编辑器中，旨在将强大的 AI 能力直接融入开发者的日常编码环境。\n\n### Gemini CLI 概述\n\nGemini CLI 从设计之初就强调其可扩展性，支持以下新兴标准和特性：\n\n*   **可扩展性核心**：通过 MCP、基于 Markdown 的指令、颜色主题、自定义扩展、自定义工具、自定义配置和 Open Telemetry 实现。\n*   **轻量级编排器**：能够与任何工具链无缝集成，这促使社区贡献、集成和扩展的数量呈爆炸式增长。\n*   **社区活跃度**：在 Gemini CLI 发布后的八周内，社区已合并了 1000 个拉取请求，显著扩展了其功能。\n*   **关键地位**：Gemini CLI 正迅速成为许多工程系统（包括 Google 内部系统）的关键组成部分。\n*   **开源性质**：Gemini CLI 是一个开源项目，鼓励社区参与和贡献。\n\n### 选择 Zed 的原因\n\nZed 被认为是 Gemini CLI 的理想集成伙伴，原因如下：\n\n*   **受欢迎度**：Zed 的高性能、开源代码编辑器在 Gemini CLI 团队内部已广受欢迎。\n*   **自然契合**：其 Rust-based 环境与 Gemini 的模型结合，提供与编辑器本身一样快速和响应的 AI 体验。\n*   **深度合作**：双方团队积极合作，实现了此次深度集成。\n\n### 集成带来的核心优势\n\n此次集成将终端和 IDE 这两种基本工具结合起来，帮助开发者以更快的速度和更高的精度完成常见任务：\n\n*   **代码生成与重构**：只需编写注释并按下快捷键，即可即时生成函数或重构现有代码。\n*   **即时解答**：高亮显示令人困惑的代码段或错误消息，即可立即获得解释。\n*   **终端自然对话**：在 Zed 的集成终端中使用 `gemini` 命令，可以像日常对话一样提出更广泛的问题。\n\n### 新型 AI 协作模式\n\n此次集成不仅仅是功能的叠加，它代表了一种全新的、更高效的 AI 协作方式，让开发者始终处于主导地位：\n\n*   **实时跟踪 AI 代理**：当 Gemini 正在工作时，开发者可以实时跟踪 AI 在多个文件中进行的更改，清晰地了解其执行过程。\n*   **像拉取请求一样审查代码**：AI 完成工作后，Zed 会在一个强大的审查界面中展示所有更改。开发者可以查看每个提议编辑的清晰差异，并像进行代码审查一样控制接受、修改或拒绝这些更改。\n*   **无缝交接**：审查完成后，开发者可以直接返回到代码中，无需繁琐的复制粘贴，保持工作流程的连贯性。\n*   **提供超越文件系统的上下文**：开发者不仅可以提供本地文件作为上下文，还可以指向文档 URL 或 API 规范，为 AI 提供解决更复杂问题所需的额外信息。\n\n### 开始使用与社区参与\n\nGoogle 鼓励开发者尝试 Gemini CLI 与 Zed 的集成，并期待看到开发者们利用这一新工具创造出什么。Gemini CLI 作为一个开源项目，欢迎开发者在 GitHub 上寻求帮助、检查源代码、提交问题以及贡献代码，共同改进项目。",
+      "shortSummary": "Gemini CLI 现已集成到 Zed 代码编辑器，将 AI 能力直接带入开发环境。Gemini CLI 是一个高度可扩展的开源 AI 编排器，通过与 Zed 高性能 Rust 环境的结合，使开发者能够快速生成和重构代码、获取即时解释，并在终端中进行自然对话。此次集成引入了新型 AI 协作模式，支持实时跟踪 AI 更改、像拉取请求一样审查代码，并提供外部上下文，显著提升了开发效率和体验。",
+      "translated_title": "超越终端：Gemini CLI 登陆 Zed",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Google and Zed have partnered to integrate Gemini CLI directly into the Zed code editor, bringing AI capabilities directly into the editor for developers and allowing for faster and more focused coding, enabling tasks like in-place code generation, instant answers, and natural chat within the terminal with a seamless review workflow for AI-generated changes."
+    },
+    {
       "title": "隆重推出 Gemini 2.5 Flash Image，我们最先进的图像模型 (原标题: Introducing Gemini 2.5 Flash Image, our state-of-the-art image model)",
       "link": "https://developers.googleblog.com/en/introducing-gemini-2-5-flash-image/",
       "pubDate": "Mon, 25 Aug 2025 16:00:00 GMT",
@@ -159,102 +247,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Jules' critic functionality addresses potential issues like subtle bugs and missed edge cases in AI-generated code by acting as a peer reviewer within the generation process. This \"critic-augmented generation\" means proposed code changes undergo adversarial review, allowing Jules to improve its output and ultimately deliver higher-quality, pre-reviewed code."
-    },
-    {
-      "title": "使用JAX在TPU上免费训练GPT2模型 (原标题: Train a GPT2 model with JAX on TPU for free)",
-      "link": "https://developers.googleblog.com/en/train-gpt2-model-with-jax-on-tpu/",
-      "pubDate": "Mon, 11 Aug 2025 16:00:00 GMT",
-      "isoDate": "2025-08-11T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## 使用JAX在TPU上免费训练GPT2模型\n\n本文旨在指导读者如何使用JAX从零开始构建和预训练一个GPT-2模型，并利用Google的TPU资源（可在Colab或Kaggle上免费使用）。文章基于Cloud Next 2025的一次研讨会内容，假设读者对机器学习概念有基本了解，并为JAX新手提供了入门指南。\n\n### JAX生态系统概述\n\nJAX生态系统采用模块化方法，其核心提供强大的数值处理能力，并在此基础上构建了丰富的库以满足不同应用需求：\n*   **Flax**：用于构建神经网络（本文使用其新接口NNX）。\n*   **Orbax**：用于检查点和模型持久化。\n*   **Optax**：用于优化算法。\n\nJAX的内置函数转换（如自动求导、向量化和JIT编译）、卓越的性能以及易用的API使其成为训练大型语言模型（LLM）的理想选择。\n\n### 构建GPT-2模型\n\n文章参考了OpenAI发布的GPT-2模型代码和权重，以及社区项目如nanoGPT。\n\n**GPT-2模型架构图：**\n![GPT-2模型架构图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image4_N4168XT.original.png)\n\n本文使用NNX来构建GPT-2模型，重点关注其核心组件——Transformer Block。Transformer Block能够捕捉序列中的长距离依赖并建立丰富的上下文理解。一个GPT-2 Transformer Block包含：\n*   2个LayerNorm层\n*   1个多头注意力（Multi-Head Attention, MHA）层\n*   2个Dropout层\n*   2个线性投影层\n*   2个残差连接\n\n文章提供了`TransformerBlock`类的`__init__`和`__call__`函数的Python代码示例，展示了如何定义和组装这些层。JAX的一大优势是其通过SPMD（单程序多数据）自动并行运行代码的能力，这对于在多个TPU核心上运行代码至关重要。\n\n为了使用TPU，读者需要在Colab或Kaggle中选择TPU运行时，或使用Cloud TPU VM。免费的Colab和Kaggle通常提供8个独立TPU核心的TPU v2或v3。\n\n**TPU v3板图：**\n![TPU v3板图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_PYQXoSD.original.png)\n\n### 训练GPT-2模型\n\n为了高效训练GPT-2模型，文章利用SPMD和JAX的数据并行性。关键步骤包括：\n\n1.  **定义硬件网格（Mesh）**：使用`jax.make_mesh((8, 1), ('batch', 'model'))`定义一个8个核心的2D加速器网格，包含'batch'和'model'轴，用于数据和模型参数的分区。\n2.  **模型参数分区**：在`TransformerBlock`的`__init__`函数中，通过`nnx.with_partitioning`指示JAX如何沿'model'轴分片模型参数（例如，LayerNorm的尺度/偏差张量和MHA/线性层的核张量）。这为未来的模型张量并行化奠定了基础。\n3.  **损失函数与训练步骤**：\n    *   `loss_fn`：计算交叉熵损失。\n    *   `train_step`：计算损失梯度并通过优化器更新权重。\n    *   这两个计算密集型函数都使用`@nnx.jit`装饰器进行JIT编译，以实现最佳性能。\n4.  **优化器配置**：使用Optax库中的AdamW优化器，并结合余弦衰减学习率调度。\n5.  **训练循环**：\n    *   在训练循环中，通过`jax.device_put`函数将输入数据沿'batch'轴分区，实现数据并行。\n    *   JAX会自动插入通信集合操作（如AllReduce），并尽可能重叠计算与通信。\n\n**GPT-2 124M模型测试运行图：**\n![GPT-2 124M模型测试运行图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_yIkuQBk.original.png)\n\n训练过程可以通过Weights and Biases进行监控。在Kaggle TPU v3上训练GPT-2 124M模型大约需要7小时，而在Trillium上则可缩短至约1.5小时（Trillium具有更大的HBM，允许更大的批次大小）。最终损失与nanoGPT的基线结果大致一致。\n\n**nanoGPT基线比较表：**\n![nanoGPT基线比较表](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/nanoGPT-baseline-comparison-table_FgWDn7b.original.png)\n\n此外，还可以通过`tpu-info`命令或Weights and Biases仪表板监控TPU利用率。\n\n**‘tpu-info’命令输出图：**\n![‘tpu-info’命令输出图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_MzgrJxz.original.png)\n\n模型训练完成后，可以使用Orbax的`PyTreeCheckpointer`保存模型状态。\n\n### 后续步骤\n\n完整的代码笔记本包含了数据加载、超参数和指标等更多细节。虽然GPT-2在今天看来是一个小型模型，但本文所学知识为读者进一步探索大型语言模型训练和扩展奠定了基础。读者可以参考“How to scale your model”指南，或使用MaxText训练前沿LLM，亦可参考JAX LLM示例或Stanford Marin模型从头构建最新模型。",
-      "shortSummary": "本文指导读者如何使用JAX在免费TPU（Colab/Kaggle）上从零开始构建和预训练GPT-2模型。文章介绍了JAX生态系统及其核心库（Flax、Orbax、Optax），并详细展示了如何使用NNX构建GPT-2的Transformer Block。通过JAX的SPMD和数据并行性，文章解释了如何在多TPU核心上高效训练模型，包括参数分区、优化器配置和训练循环。最终模型性能与nanoGPT相当，并提供了进一步扩展大型语言模型的方向。",
-      "translated_title": "使用JAX在TPU上免费训练GPT2模型",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image4_N4168XT.original.png",
-          "alt": "architecture diagram for the GPT2 model",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_PYQXoSD.original.png",
-          "alt": "TPU v3 board",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_yIkuQBk.original.png",
-          "alt": "test run for the GPT2 124M model",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/nanoGPT-baseline-comparison-table_FgWDn7b.original.png",
-          "alt": "nanoGPT baseline comparison table",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_MzgrJxz.original.png",
-          "alt": "‘tpu-info’ command",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Build and train a GPT2 model from scratch using JAX on Google TPUs, with a complete Python notebook for free-tier Colab or Kaggle. Learn how to define a hardware mesh, partition model parameters and input data for data parallelism, and optimize the model training process."
-    },
-    {
-      "title": "Google 开发者计划正在演进 (原标题: The Google Developer Program is evolving)",
-      "link": "https://developers.googleblog.com/en/google-developer-program-join-connect-code/",
-      "pubDate": "Thu, 31 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-31T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Google 开发者计划正在演进\n\nGoogle 于2025年8月1日宣布了Google开发者计划的最新进展，旨在通过强大的AI工具和资源，帮助开发者更快、更智能地进行构建。此次更新引入了多项增强功能，以更深入地融入开发者工作流程，并连接他们所需的专业知识。\n\n## 访问 Google AI 工具的更大灵活性\n\n为了让高级资源更易于访问，Google 推出了 Google 开发者计划月度订阅计划，费用为每月 24.99 美元*。该计划提供所有 AI 增强型高级福利，包括：\n*   用于 Vertex AI 和 Google AI Studio 的 Google Cloud 积分。\n*   Gemini Code Assist Standard。\n*   30 个 Firebase Studio 工作区，用于将全栈应用程序投入生产。\n*   以及更多其他福利。\n\n开发者可以通过新的福利仪表板轻松激活所有福利。\n\n![Google Developer Program pricing](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/google-developer-program-pricing.original.png)\n![Google Developer Program benefits](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/google-developer-program-benefits.original.png)\n\n*注：Google 开发者计划月度订阅计划目前仅在美国可用，未来几周将推广到其他国家。\n\n## 统一的协作中心：Google 开发者计划论坛\n\nGoogle 还推出了新的 Google 开发者计划论坛，网址为 `discuss.google.dev`。这个新平台将开发者的 Google 开发者计划资料、社区和兴趣整合在一起，使得提问、分享知识、与同行联系、寻求错误帮助以及分享发现变得更加容易。\n\n现有的 Google Cloud、Workspace Developer、AppSheet 和 Looker 社区及其所有历史内容和讨论已迁移到这个新的中心论坛。\n\n![Google Developer Program forums](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/google-developer-program-forums.original.png)\n\n## 加速您的 AI 之旅：加入 Google Cloud & NVIDIA 社区\n\n在 Google I/O 大会上，Google 宣布了新的 Google Cloud & NVIDIA 社区，专为有兴趣在 Google Cloud 上利用 NVIDIA 尖端技术的实践者而建。社区成员可以获得独家学习路径，例如亲身体验 GKE 和 NVIDIA NIM 进行 AI 推理任务。此外，在完成学习路径后，限时可获得 Google Cloud 积分。\n\n未来几周将推出新的学习路径。\n\n![Accelerate your AI journey: Join the Google Cloud & NVIDIA community](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/google-cloud-nvidia-community-google-developer-.original.png)\n\n## 立即开始\n\n无论开发者是寻求更灵活的工具访问方式，渴望与社区建立更紧密的联系，还是希望通过 AI 提升生产力，Google 开发者计划都能提供相应支持。访问 `developers.google.com/program` 了解更多信息并探索您的 Google 开发者计划福利。",
-      "shortSummary": "Google 开发者计划于2025年8月1日宣布重大演进，旨在通过AI工具赋能开发者。核心更新包括：推出每月24.99美元的月度计划（美国），提供Google Cloud积分、Gemini Code Assist等高级AI福利；上线统一的Google开发者计划论坛（discuss.google.dev），整合现有社区；以及成立Google Cloud & NVIDIA社区，提供AI学习路径和积分。这些举措旨在提供更灵活的工具访问、更强的社区连接和AI驱动的生产力提升。",
-      "translated_title": "Google 开发者计划正在演进",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/google-developer-program-pricing.original.png",
-          "alt": "Google Developer Program pricing",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/google-developer-program-benefits.original.png",
-          "alt": "Google Developer Program benefits",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/google-developer-program-forums.original.png",
-          "alt": "Google Developer Program forums",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/google-cloud-nvidia-community-google-developer-.original.png",
-          "alt": "Accelerate your AI journey: Join the Google Cloud & NVIDIA community",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The Google Developer Program is rolling out major updates to make its tools and community more accessible and powerful. These enhancements include a new flexible monthly subscription tier, a centralized GDP Forum for collaboration, and increased Gemini CLI access for all members."
-    },
-    {
-      "title": "Veo 3 Fast 和新的图像到视频功能 (原标题: Veo 3 Fast and new image-to-video capabilities)",
-      "link": "https://developers.googleblog.com/en/veo-3-fast-image-to-video-capabilities-now-available-gemini-api/",
-      "pubDate": "Wed, 30 Jul 2025 16:00:00 GMT",
-      "isoDate": "2025-07-30T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Veo 3 Fast 和新的图像到视频功能发布\n\n### 发布概览\n\n*   **日期：** 2025年7月31日\n*   **核心内容：** 在Veo 3发布后，谷歌现推出Veo 3 Fast模型，并为Veo 3和Veo 3 Fast引入了图像到视频（image-to-video）功能。\n*   **可用性：** 这两款模型及其图像到视频功能均已通过Gemini API提供付费预览。\n\n### Veo 3 Fast：更快、更高效的模型\n\nVeo 3 Fast是Veo 3的优化版本，旨在提高速度和降低成本，使开发者能够更快地迭代，同时高效地生成高质量输出。\n\n*   **主要特点：**\n    *   比Veo 3更快、更具成本效益。\n    *   支持文本到视频（text-to-video）和图像到视频（image-to-video）两种模式。\n    *   在优化速度和业务用例的同时，保持高质量视频输出（含音频）。\n*   **理想应用场景：**\n    *   **程序化广告：** 为自动生成广告创意的后端服务提供支持。\n    *   **快速原型设计：** 快速进行不同创意概念的A/B测试。\n    *   **规模化内容创作：** 构建需要快速生产社交媒体内容的应用程序。\n*   **定价：** 0.40美元/秒（含音频）。\n\n### 新的图像到视频功能\n\n开发者现在可以使用Veo 3和Veo 3 Fast，通过输入图像生成高质量的视频内容（含音频）。这项新功能能够将静态图像转换为动态视频片段，同时保持内容的一致性。\n\n*   **操作方式：**\n    *   只需提供一张图像和文本提示，即可引导模型实现所需的动作、叙事和音频。\n*   **定价：** 图像到视频的输出定价与文本到视频的输出相同（Veo 3为0.75美元/秒，含音频）。\n*   **主要优势：**\n    *   **高质量视频生成：** 从单张图像创建流畅、电影级的视频，保持风格一致性和细节，并包含音频。\n    *   **精确提示：** 结合图像输入和描述性文本提示，精确指导视频内容的动作、风格和演变。\n    *   **无缝API集成：** 通过直观的Gemini API访问此强大新功能，易于集成到现有工作流程和应用程序中。\n\n### 实际应用案例：OpusClip\n\nOpusClip利用Veo 3的图像到视频功能，增强客户的视频编辑体验并生成B-roll视频。Veo 3能够将静态图像作为第一帧，通过生成流畅、电影般的运动使其生动起来，帮助创作者以最小的努力获得引人入胜的视频内容。\n\n### 展望与行动\n\n谷歌对开发者将利用Veo 3、Veo 3 Fast和通过Gemini API提供的图像到视频功能创造出什么感到非常兴奋。鼓励开发者查阅Gemini API视频生成文档或Veo食谱，立即开始构建。",
-      "shortSummary": "谷歌推出了Veo 3 Fast模型，该模型针对速度和成本进行了优化，并为Veo 3和Veo 3 Fast引入了新的图像到视频功能。Veo 3 Fast更快速、经济，适用于程序化广告、快速原型设计和规模化内容创作。图像到视频功能允许用户将静态图像转换为高质量、连贯的动态视频，并可通过文本提示进行精确控制。这两项功能均已通过Gemini API提供付费预览。",
-      "translated_title": "Veo 3 Fast 和新的图像到视频功能",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Google introduces Veo 3 Fast, an optimized model for speed and price, along with new image-to-video capabilities for both Veo 3 and Veo 3 Fast, enabling developers to efficiently create high-quality video content from text or still images, with varying pricing based on the model and audio inclusion, now available in the Gemini API."
     }
   ],
-  "lastUpdated": "2025-08-27T10:28:33.210Z"
+  "lastUpdated": "2025-08-29T10:29:23.220Z"
 }
