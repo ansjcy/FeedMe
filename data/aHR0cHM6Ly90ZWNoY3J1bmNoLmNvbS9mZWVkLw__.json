@@ -5,6 +5,19 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "英伟达称两家神秘客户贡献了第二季度39%的营收 (原标题: Nvidia says two mystery customers accounted for 39% of Q2 revenue)",
+      "link": "https://techcrunch.com/2025/08/30/nvidia-says-two-mystery-customers-accounted-for-39-of-q2-revenue/",
+      "pubDate": "Sat, 30 Aug 2025 21:40:49 +0000",
+      "isoDate": "2025-08-30T21:40:49.000Z",
+      "creator": "Anthony Ha",
+      "summary": "## 英伟达第二季度营收创纪录，主要由AI数据中心推动\n\n*   英伟达在截至7月27日的第二季度报告了创纪录的467亿美元营收，同比增长56%。\n*   这一显著增长主要得益于人工智能（AI）数据中心业务的蓬勃发展。\n\n## 营收高度集中于少数客户\n\n*   根据提交给美国证券交易委员会的文件，英伟达第二季度近40%的营收来自仅两家客户。\n*   具体而言，一家未具名的“客户A”贡献了总营收的23%，而另一家“客户B”则贡献了16%。\n*   在整个财年上半年，客户A和客户B分别占英伟达总营收的20%和15%。\n*   此外，公司还指出，另有四家客户分别贡献了第二季度营收的14%、11%、11%和10%。\n\n## 客户类型与供应链结构\n\n*   英伟达表示，这些贡献巨额营收的客户都是“直接”客户，例如原始设备制造商（OEMs）、系统集成商或分销商，他们直接从英伟达购买芯片。\n*   间接客户，如大型云服务提供商和消费互联网公司，通常通过这些直接客户购买英伟达芯片。\n*   这意味着，微软、甲骨文、亚马逊或谷歌等大型云提供商不太可能是文件中的“客户A”或“客户B”，尽管这些公司可能间接促成了巨大的支出。\n\n## 云服务提供商的间接贡献\n\n*   据CNBC报道，英伟达首席财务官Nicole Kress表示，大型云服务提供商贡献了英伟达数据中心营收的50%，而数据中心营收又占公司总营收的88%。这表明大型云服务商在英伟达的整体业务中扮演着至关重要的角色，尽管它们可能不是直接的“神秘客户”。\n\n## 未来展望与潜在风险\n\n*   Gimme Credit分析师Dave Novosel向《财富》杂志表示，营收高度集中于如此小部分的客户确实存在“重大风险”。\n*   然而，积极的一面是，这些客户“拥有充裕的现金”，能够产生“巨额自由现金流”，并且预计在未来几年内将“在数据中心上大笔支出”，这在一定程度上缓解了营收集中的风险。",
+      "shortSummary": "英伟达第二季度营收创纪录，其中39%来自两家未具名的“直接”客户，分别贡献23%和16%。这些客户是OEMs、集成商或分销商，而非大型云服务商直接采购。大型云服务商间接贡献了英伟达数据中心营收的50%。尽管营收集中存在风险，但分析师指出这些客户财务状况良好，预计将继续大力投资数据中心，从而缓解了部分风险。",
+      "translated_title": "英伟达称两家神秘客户贡献了第二季度39%的营收",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Nearly 40% of Nvidia’s second quarter revenue came from just two companies, identified in a filing as \"Customer A\" and \"Customer B.\""
+    },
+    {
       "title": "塔可钟正在重新考虑在免下车服务中依赖人工智能 (原标题: Taco Bell is having second thoughts about relying on AI at the drive-through )",
       "link": "https://techcrunch.com/2025/08/30/taco-bell-is-having-second-thoughts-about-relying-on-ai-at-the-drive-through/",
       "pubDate": "Sat, 30 Aug 2025 16:50:00 +0000",
@@ -278,27 +291,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "The deal allows the U.S. to take more equity in Intel if the company doesn't retain at least 51% ownership in its foundry business. "
-    },
-    {
-      "title": "Anthropic用户面临新选择——选择退出或分享聊天记录用于AI训练 (原标题: Anthropic users face a new choice – opt out or share your chats for AI training)",
-      "link": "https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/",
-      "pubDate": "Thu, 28 Aug 2025 20:43:12 +0000",
-      "isoDate": "2025-08-28T20:43:12.000Z",
-      "creator": "Connie Loizos",
-      "summary": "## Anthropic数据政策重大调整：用户需选择是否分享聊天记录用于AI训练\n\nAnthropic正在对其用户数据处理方式进行重大调整，要求所有Claude用户在**9月28日**前决定是否允许其对话内容用于AI模型训练。此前，Anthropic的消费者聊天数据不用于模型训练，但现在这一政策将发生根本性改变。\n\n### 核心变化与影响\n\n*   **数据使用目的**：Anthropic现在希望利用用户对话和编程会话来训练其AI系统。\n*   **数据保留期**：对于未选择退出的用户，数据保留期将延长至**五年**。此前，消费者用户的提示和对话输出通常会在30天内自动删除，除非法律或政策要求保留更长时间，或输入被标记为违反政策（最长保留两年）。\n*   **受影响用户**：新政策适用于Claude Free、Pro和Max用户，包括使用Claude Code的用户。\n*   **不受影响用户**：商业客户，如使用Claude Gov、Claude for Work、Claude for Education或API访问的用户将不受影响。这与OpenAI保护企业客户免受数据训练政策影响的做法类似。\n\n### Anthropic的官方解释与实际动机\n\nAnthropic在其更新博文中将这些变化归结为“用户选择”，声称用户不选择退出将有助于：\n\n*   **提高模型安全性**：使系统更准确地检测有害内容，减少误报无害对话。\n*   **提升模型技能**：帮助未来的Claude模型在编程、分析和推理等技能上有所改进，最终为所有用户带来更好的模型。\n\n然而，文章指出，更深层的原因可能是Anthropic对数据的迫切需求。与所有大型语言模型公司一样，Anthropic需要大量高质量的对话数据来训练其AI模型，以提升其竞争力，对抗OpenAI和Google等竞争对手。\n\n### 行业背景与数据隐私挑战\n\n这些变化也反映了数据政策的更广泛行业趋势，AI公司正面临日益严格的数据保留审查。\n\n*   **OpenAI的案例**：OpenAI目前正因《纽约时报》等提起的诉讼，面临法院命令，要求无限期保留所有消费者ChatGPT对话（包括已删除的）。OpenAI首席运营官Brad Lightcap称此为“一项全面且不必要的要求”，与公司对用户的隐私承诺相冲突。此命令影响ChatGPT Free、Plus、Pro和Team用户，但企业客户和签订“零数据保留”协议的用户仍受保护。\n*   **用户困惑与知情同意**：文章强调，这些快速变化的政策给用户带来了巨大困惑，许多用户对此一无所知。公司往往将这些重大更新置于不显眼的位置。\n\n### 用户同意机制的设计缺陷\n\nAnthropic新政策的实施方式引发了对用户知情同意的担忧：\n\n*   **新用户**：将在注册时选择偏好。\n*   **现有用户**：将面临一个弹窗，其中包含大字体的“消费者条款和政策更新”和一个醒目的黑色“接受”按钮。而用于训练权限的切换开关则以小字体显示在下方，并**默认设置为“开启”**。\n*   **设计担忧**：这种设计可能导致用户在快速点击“接受”时，没有注意到自己已同意数据共享。\n\n隐私专家长期以来一直警告，AI的复杂性使得用户难以真正理解并给出有效同意。美国联邦贸易委员会（FTC）也曾警告称，如果AI公司“秘密更改服务条款或隐私政策，或将披露信息隐藏在超链接、法律术语或小字中”，可能面临执法行动。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/08/Claude-screenshot.png?w=680)\n图片来源：Anthropic",
-      "shortSummary": "Anthropic要求所有Claude用户在9月28日前决定是否允许其聊天记录用于AI模型训练，否则数据保留期将延长至五年。此举旨在提升模型能力和安全性，但也反映了公司对高质量训练数据的迫切需求，以应对竞争。与OpenAI类似，商业用户不受影响。文章指出，许多用户可能因设计问题（如默认开启的训练权限开关）在不知情的情况下同意数据共享，引发了对用户知情同意和隐私的担忧。",
-      "translated_title": "Anthropic用户面临新选择——选择退出或分享聊天记录用于AI训练",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/Claude-screenshot.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Anthropic is making some major changes to how it handles user data. Users have until September 28 to take action."
     }
   ],
-  "lastUpdated": "2025-08-30T18:26:41.590Z"
+  "lastUpdated": "2025-08-31T01:43:16.481Z"
 }
