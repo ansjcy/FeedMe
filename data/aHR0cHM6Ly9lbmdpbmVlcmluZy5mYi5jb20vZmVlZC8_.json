@@ -5,6 +5,44 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "Instagram 提升通知质量的新排名框架 (原标题: A New Ranking Framework for Better Notification Quality on Instagram)",
+      "link": "https://engineering.fb.com/2025/09/02/ml-applications/a-new-ranking-framework-for-better-notification-quality-on-instagram/",
+      "pubDate": "Tue, 02 Sep 2025 16:00:08 +0000",
+      "isoDate": "2025-09-02T16:00:08.000Z",
+      "creator": "",
+      "summary": "# Instagram 提升通知质量的新排名框架\n\nMeta 正在利用机器学习 (ML) 和多样性算法来改进 Instagram 上的通知质量和用户体验。通过引入一个多样性感知通知排名框架，旨在减少通知的单一性，提供更丰富、更具吸引力的通知组合，从而降低通知总量并提高参与率。\n\n## 引言\n\n通知是促使用户返回 Instagram 并增强参与度的强大工具。无论是朋友点赞照片、亲密朋友发布故事，还是推荐可能喜欢的 Reels，通知都能实时呈现重要时刻。Instagram 利用 ML 模型决定何时向谁发送通知以及包含哪些内容，这些模型旨在优化用户积极参与度，如点击率 (CTR) 和使用时长。\n\n## 现有机器学习模型的局限性\n\n尽管以参与度为优化的模型能有效促进互动，但它们可能过度优先考虑用户之前互动过的产品类型和作者。这会导致用户过度接触相同的创作者或产品类型，而忽略其他有价值且多样的体验。长此以往，通知可能会变得像垃圾邮件，增加用户禁用通知的可能性，从而错失更平衡、满意和丰富的体验。\n\n## 挑战：平衡多样性与个性化\n\n核心挑战在于如何引入有意义的通知多样性，同时又不牺牲用户对 Instagram 个性化和相关性的期望。\n\n## Instagram 的多样性感知通知排名框架\n\n为了解决这一问题，Instagram 引入了一个多样性感知通知排名框架，旨在提供更具多样性、更好策划且重复性更低的通知。该框架显著降低了每日通知量，同时提高了点击率，并带来了多项益处：\n\n*   **可扩展性**：能够为每个维度纳入定制化的软惩罚（降权）逻辑，实现更具适应性和复杂的多元化策略。\n*   **灵活性**：通过可调节的权重，灵活调整内容、作者和产品类型等维度的降权强度。\n*   **整合性**：平衡个性化与多样性，确保通知既相关又多样。\n\n## 缺乏多样性的风险（过度曝光）\n\n通知中过度曝光的问题主要体现在两个方面：\n\n*   **对同一作者的过度曝光**：用户可能收到大部分来自同一朋友的通知，即使他们也与其他朋友互动。这会让人感到重复和单一，降低通知的整体价值。\n*   **对同一产品界面的过度曝光**：用户可能主要收到来自同一产品界面（如 Stories）的通知，即使 Feed 或 Reels 也能提供价值。例如，如果用户最近更多地与 Stories 互动，系统可能会只发送 Stories 通知，而忽略其更广泛的兴趣。\n\n## 框架工作原理\n\nInstagram 的多样性感知通知排名框架旨在通过平衡用户参与的预测潜力与内容多样性的需求来增强通知体验。该框架在现有参与度 ML 模型之上引入了一个**多样性层**，对这些模型生成的候选分数应用乘法惩罚，如下图所示：\n\n![图片 1](https://engineering.fb.com/wp-content/uploads/2025/09/A-new-ranking-framework-for-better-notification-quality-on-Instagram.png)\n\n**图 1**：Instagram 的多样性感知排名框架，其中多样性层位于现有建模层之上，并对与最近发送的通知过于相似的通知进行惩罚。\n\n多样性层评估每个通知候选与最近发送的通知在多个维度（如内容、作者、通知类型和产品界面）上的相似性。然后，它应用经过精心校准的惩罚（以乘法降权因子表示），以降低过于相似或重复的候选的排名。调整后的分数用于重新排名候选，使系统能够选择既保持高参与潜力又引入有意义多样性的通知。最终，质量门槛会选择通过排名和多样性标准的最优候选。\n\n### 数学公式\n\n在多样性层中，我们对每个候选的基础相关性分数应用一个乘法降权因子。给定一个通知候选 `c`，其最终分数计算为其基础排名分数 `R(c)` 与多样性降权乘数 `D(c)` 的乘积。`D(c)` 是一个介于 [0,1] 之间的惩罚因子，根据与最近发送通知的相似性来降低分数。\n\n我们定义了一组语义维度（例如，作者、产品类型）以促进多样性。对于每个维度 `i`，我们使用最大边际相关性 (MMR) 方法计算候选 `c` 与历史通知集合 `H` 之间的相似性信号 `p_i(c)`。在基线实现中，`p_i(c)` 是一个二进制值：如果相似性超过阈值 `τ_i` 则为 1，否则为 0。\n\n最终的降权乘数 `D(c)` 是通过对所有维度 `i` 的 `(1 - w_i * p_i(c))` 乘积计算得出的，其中 `w_i` 控制其相应维度的降权强度。这种公式确保了与先前已发送通知在一个或多个维度上相似的候选被按比例降权，从而减少冗余并促进内容多样性。\n\n## 未来展望\n\nInstagram 将继续发展其多样性感知通知排名系统，下一步是引入更具适应性、动态的降权策略。例如，当用户收到更多通知（特别是相似类型或快速连续的通知）时，系统将逐步对新的通知候选应用更强的惩罚，从而有效缓解高通知量或紧密间隔发送造成的压倒性体验。\n\n从长远来看，Instagram 计划将大型语言模型 (LLMs) 引入多样性管道。LLMs 可以帮助系统超越表面规则，理解消息之间的语义相似性，并以更多样化、用户友好的方式重新措辞内容。这将允许系统通过更丰富的语言和改进的相关性来个性化通知体验，同时保持主题、语气和时间上的多样性。",
+      "shortSummary": "Instagram 推出了一项新的多样性感知通知排名框架，旨在解决传统机器学习模型导致的通知过度曝光问题。该框架在现有模型之上增加了一个多样性层，通过对重复内容和作者施加惩罚，减少了通知总量，同时提高了用户参与度。这为用户提供了更丰富、更个性化的通知体验。未来，该系统将引入自适应降权策略并整合大型语言模型，以进一步提升通知质量和多样性。",
+      "translated_title": "Instagram 提升通知质量的新排名框架",
+      "images": [
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/09/A-new-ranking-framework-for-better-notification-quality-on-Instagram.png",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://s0.wp.com/latex.php?latex=%5Ctext%7BScore%7D%28c%29+%3D+R%28c%29+%5Ctimes+D%28c%29+&bg=ffffff&fg=000&s=0&c=20201002",
+          "alt": "\\text{Score}(c) = R(c) \\times D(c) ",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://s0.wp.com/latex.php?latex=p_i%28c%29+%3D+%5Cmathrm%7Bmax%7D_%7Bh+%5Cin+H%7D%5Cmathrm%7Bsim%7D_i%28c%2C+h%29+&bg=ffffff&fg=000&s=0&c=20201002",
+          "alt": "p_i(c) = \\mathrm{max}_{h \\in H}\\mathrm{sim}_i(c, h) ",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://s0.wp.com/latex.php?latex=D%28c%29+%3D+%5Cprod_%7Bi%3D1%7D%5E%7Bm%7D+%5Cleft%28+1+-+w_i+%5Ccdot+p_i%28c%29+%5Cright%29+&bg=ffffff&fg=000&s=0&c=20201002",
+          "alt": "D(c) = \\prod_{i=1}^{m} \\left( 1 - w_i \\cdot p_i(c) \\right) ",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>We’re sharing how Meta is applying machine learning (ML) and diversity algorithms to improve notification quality and user experience.  We’ve introduced a diversity-aware notification ranking framework to reduce uniformity and deliver a more varied and engaging mix of notifications. This new framework reduces the volume of notifications and drives higher engagement rates through more diverse [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/09/02/ml-applications/a-new-ranking-framework-for-better-notification-quality-on-instagram/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/09/02/ml-applications/a-new-ranking-framework-for-better-notification-quality-on-instagram/\">A New Ranking Framework for Better Notification Quality on Instagram</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "在Buck2上启用Kotlin增量编译 (原标题: Enabling Kotlin incremental compilation on Buck2)",
       "link": "https://engineering.fb.com/2025/08/26/open-source/enabling-kotlin-incremental-compilation-on-buck2/",
       "pubDate": "Tue, 26 Aug 2025 16:00:52 +0000",
@@ -218,20 +256,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Meta has developed an open-source AI tool to design concrete mixes that are stronger, more sustainable, and ready to build with faster—speeding up construction while reducing environmental impact. The AI tool leverages Bayesian optimization, powered by Meta’s BoTorch and Ax frameworks, and was developed with Amrize and the University of Illinois Urbana-Champaign (U of I) [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/07/16/data-center-engineering/ai-make-lower-carbon-faster-curing-concrete/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/07/16/data-center-engineering/ai-make-lower-carbon-faster-curing-concrete/\">Using AI to make lower-carbon, faster-curing concrete</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "深入了解Meta在移动端从C到Rust的转型 (原标题: An inside look at Meta’s transition from C to Rust on mobile)",
-      "link": "https://engineering.fb.com/2025/07/01/developer-tools/an-inside-look-at-metas-transition-from-c-to-rust-on-mobile/",
-      "pubDate": "Tue, 01 Jul 2025 16:00:23 +0000",
-      "isoDate": "2025-07-01T16:00:23.000Z",
-      "creator": "",
-      "summary": "# Meta在移动端从C到Rust的转型：深入解析\n\nMeta正在进行一项雄心勃勃的项目，旨在将其核心移动消息库中的C语言代码重写为Rust。这项工作在最新的Meta技术播客中得到了深入探讨。\n\n## 项目背景与目标\n*   **现代化大规模系统：** Meta致力于对其庞大的系统进行现代化改造，特别是那些包含数十年历史C代码的核心消息库。\n*   **核心技术转型：** 项目的核心是将这些旧的C代码库迁移到Rust语言。\n*   **影响范围广泛：** 这一中央消息库被Messenger、Facebook、Instagram以及Meta的AR/VR平台共享，因此此次转型将对Meta的多个核心产品产生深远影响。\n\n## 播客嘉宾与讨论要点\n*   **主持人：** Pascal Hartig。\n*   **项目工程师：** Elaine和Buping，两位负责此大胆重写项目的软件工程师。\n*   **讨论内容包括：**\n    *   如何在没有Rust背景的情况下承担如此大规模的项目。\n    *   他们正在采用的具体方法和策略。\n    *   将“开发者幸福感”作为优化目标的重要性及其含义。\n\n## Meta技术播客\n*   **内容：** 该播客由Meta推出，旨在展示Meta工程师在各个层面的工作，从底层框架到最终用户功能。\n*   **收听方式：** 听众可以在Spotify、Apple Podcasts、Pocket Casts等播客平台下载或收听该集。\n*   **反馈与职业机会：** 听众可以通过Instagram、Threads或X向Meta发送反馈，并访问Meta职业页面了解更多职业机会。",
-      "shortSummary": "Meta正在进行一项雄心勃勃的项目，旨在将其核心移动消息库中数十年历史的C语言代码重写为Rust。这项工作在最新的Meta技术播客中得到了深入探讨，两位负责该项目的工程师分享了他们如何在没有Rust背景的情况下应对这一大规模转型，以及他们如何优化“开发者幸福感”。此举旨在现代化系统，并影响Messenger、Facebook、Instagram以及Meta的AR/VR等多个核心平台。",
-      "translated_title": "深入了解Meta在移动端从C到Rust的转型",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Have you ever worked is legacy code? Are you curious what it takes to modernize systems at a massive scale? Pascal Hartig is joined on the latest Meta Tech Podcast by Elaine and Buping, two software engineers working on a bold project to rewrite the decades-old C code in one of Meta’s core messaging libraries [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/07/01/developer-tools/an-inside-look-at-metas-transition-from-c-to-rust-on-mobile/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/07/01/developer-tools/an-inside-look-at-metas-transition-from-c-to-rust-on-mobile/\">An inside look at Meta&#8217;s transition from C to Rust on mobile</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-09-01T05:26:26.239Z"
+  "lastUpdated": "2025-09-03T05:23:22.165Z"
 }
