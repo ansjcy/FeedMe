@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "AI驱动的规范开发：从新的开源工具包开始 (原标题: Spec-driven development with AI: Get started with a new open source toolkit)",
+      "link": "https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/",
+      "pubDate": "Tue, 02 Sep 2025 16:48:03 +0000",
+      "isoDate": "2025-09-02T16:48:03.000Z",
+      "creator": "Den Delimarsky",
+      "summary": "## AI驱动的规范开发：从新的开源工具包开始\n\n### 引言：AI编码的挑战与规范的重要性\n当前，AI编码代理日益强大，但普遍存在一个问题：生成的代码看似正确，却往往无法正常工作。这种“凭感觉编码”的方式适用于快速原型，但在构建关键任务应用或处理现有代码库时并不可靠。问题不在于AI的编码能力，而在于我们的方法。我们常常将AI编码代理视为搜索引擎，但它们更像是需要明确指令的、字面意义上的结对程序员。它们擅长模式识别，但仍需要清晰无歧义的指示。\n\n为此，我们正在重新思考规范——不再是静态文档，而是随项目演进的、活的、可执行的工件。规范成为共享的真理来源：当出现不明确之处时，回到规范；当项目变得复杂时，完善规范；当任务过于庞大时，将其分解。\n\n### Spec Kit：AI驱动规范开发的新工具包\nSpec Kit是我们新推出的开源工具包，旨在通过结构化的流程，将规范驱动开发引入您的AI编码工作流，支持GitHub Copilot、Claude Code和Gemini CLI等工具。\n\n### Spec Kit的四阶段规范驱动流程\nSpec Kit将您的规范置于工程流程的中心。其核心洞察在于：每个阶段都有特定的任务，并且只有当前任务得到充分验证后，才能进入下一阶段。您的主要角色是引导，而编码代理则负责大部分的编写工作。该流程分为四个阶段，并设有清晰的检查点：\n\n1.  **规定（Specify）**\n    *   **目标：** 您提供关于要构建什么以及为什么构建的高层描述，编码代理将生成详细的规范。\n    *   **内容：** 关注用户旅程、用户体验以及成功的定义。例如，谁将使用它？它为用户解决了什么问题？他们将如何与它互动？哪些结果是重要的？\n    *   **特点：** 这不是关于技术栈或应用设计，而是关于映射您希望创建的用户体验。它是一个活的工件，会随着您对用户及其需求的了解而演进。\n\n2.  **规划（Plan）**\n    *   **目标：** 您提供所需的技术栈、架构和约束，编码代理将生成全面的技术计划。\n    *   **内容：** 包括公司标准技术、与遗留系统的集成、合规性要求或性能目标等。您可以要求生成多个计划变体进行比较。\n    *   **优势：** 如果将内部文档提供给编码代理，它能将您的架构模式和标准直接整合到计划中，确保AI在开始工作前理解“游戏规则”。\n\n3.  **任务（Tasks）**\n    *   **目标：** 编码代理根据规范和计划，将其分解为实际的工作。\n    *   **内容：** 生成小而可审查的任务块，每个任务解决一个特定的问题。每个任务都应能独立实现和测试，这为AI提供了一种验证工作和保持进度的机制，类似于AI代理的测试驱动开发过程。\n    *   **示例：** 任务不再是“构建身份验证”，而是具体的“创建验证电子邮件格式的用户注册端点”。\n\n4.  **实施（Implement）**\n    *   **目标：** 您的编码代理逐一（或并行）处理任务。\n    *   **开发者角色：** 您作为开发者，审查聚焦于解决特定问题的代码变更，而不是数千行的代码转储。编码代理知道要构建什么（因为规范告诉它），知道如何构建（因为计划告诉它），也知道具体要做什么（因为任务告诉它）。\n    *   **关键：** 您的角色不仅是引导，更是验证。在每个阶段，您都需要反思和完善：规范是否捕捉了您真正想构建的内容？计划是否考虑了实际约束？AI是否遗漏了什么或错过了边缘情况？该流程内置了明确的检查点，供您批判生成的内容、发现差距并在继续前进之前进行纠正。AI生成工件，您确保它们是正确的。\n\n### 为何此方法有效？\n这种方法之所以成功，是因为语言模型的工作原理：它们擅长模式补全，但不擅长“读心术”。像“为我的应用添加照片分享功能”这样模糊的提示，会迫使模型猜测数千个未说明的需求，导致AI做出不准确的假设。相比之下，预先提供清晰的规范、技术计划和聚焦的任务，能为编码代理提供更高的清晰度，从而提高其整体效率。它不再猜测您的需求，而是知道要构建什么、如何构建以及按什么顺序构建。\n\n此方法适用于不同的技术栈（Python、JavaScript、Go等），因为核心挑战都是将意图转化为可工作的代码。规范清晰地捕捉意图，计划将其转化为技术决策，任务将其分解为可实现的部分，而AI编码代理则负责实际编码。\n\n对于大型组织，此方法解决了另一个关键问题：如何管理安全策略、合规规则、设计系统约束和集成需求？这些信息往往分散在各处。通过Spec Kit，所有这些内容都整合到规范和计划中，AI可以实际使用它们。安全要求不再是事后考虑，而是从第一天起就融入规范；设计系统也不再是后期附加，而是指导实施的技术计划的一部分。\n\n这种方法的迭代性赋予了它力量。传统开发可能使您早期决策受限，而规范驱动开发则使改变方向变得简单：只需更新规范，重新生成计划，然后让编码代理处理其余部分。\n\n### 适用场景\n规范驱动开发在以下三种场景中特别有效：\n\n1.  **全新项目（Greenfield，从零到一）：** 在启动新项目时，虽然直接开始编码很诱人，但前期投入少量工作创建规范和计划，能确保AI构建出您真正想要的东西，而非基于常见模式的通用解决方案。\n2.  **现有系统功能开发（Feature work，从N到N+1）：** 这是规范驱动开发最强大的应用场景。在复杂现有代码库中添加功能非常困难。通过为新功能创建规范，可以明确其与现有系统的交互方式。计划随后编码架构约束，确保新代码与项目原生融合，而非附加物。这使得持续开发更快、更安全。\n3.  **遗留系统现代化（Legacy modernization）：** 当需要重建遗留系统时，原始意图往往已随时间流逝。通过Spec Kit提供的规范驱动开发流程，您可以将核心业务逻辑捕获到现代规范中，在计划中设计全新的架构，然后让AI从头开始重建系统，而无需继承技术债务。核心优势在于将稳定的“是什么”与灵活的“如何做”分离，从而实现迭代开发而无需昂贵的重写。\n\n### 未来展望\n我们正在从“代码是真理来源”转向“意图是真理来源”。有了AI，规范成为真理来源，并决定了构建什么。这并非因为文档变得更重要，而是因为AI使规范变得可执行。当您的规范自动转化为可工作的代码时，它就决定了构建什么。Spec Kit是我们使这一转变成为现实的实验。我们将其开源，因为这种方法超越了任何单一工具或公司，真正的创新在于流程。未来我们将探讨如何将规范驱动开发实践与上下文工程相结合，以构建更高级的AI工具。\n\n我们期待听到您的使用体验和改进建议！如果您正在使用规范驱动模式进行开发，请与我们分享您的经验。我们特别关注：\n*   使工作流更具吸引力和可用性。\n*   可能的VS Code集成。\n*   比较和差异化多个实现。\n*   在组织中大规模管理规范和任务。\n\n我们很高兴看到您利用AI找到更好的方法，将人类的创造力转化为可工作的软件。\n\n### 作者信息\n由 ![Den Delimarsky](https://avatars.githubusercontent.com/u/53200638?v=4&s=200) 首席产品经理 Den Delimarsky 撰写。\n\n### 更多来自GitHub的探索\n*   **文档：** ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) 掌握GitHub所需的一切，尽在一个地方。前往文档\n*   **GitHub：** ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) 在GitHub上构建未来，这里是任何人、任何地方构建任何东西的平台。开始构建\n*   **客户案例：** ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) 了解使用GitHub进行构建的公司和工程团队。了解更多\n*   **GitHub Universe 2025：** ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) 最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山与我们相聚。立即注册",
+      "shortSummary": "AI编码常因指令模糊而失败。Spec Kit是一个开源工具包，通过将规范作为核心，实现AI驱动的规范开发。它包含“规定、规划、任务、实施”四个阶段，确保AI在明确的意图、技术计划和细化任务指导下生成高质量代码。开发者在每个阶段验证和完善，将“意图”而非“代码”作为真理来源。此方法适用于新项目、功能开发和遗留系统现代化，解决了AI“凭感觉编码”的问题，提高了开发效率和准确性。",
+      "translated_title": "AI驱动的规范开发：从新的开源工具包开始",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/53200638?v=4&s=200",
+          "alt": "Den Delimarsky",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Developers can use their AI tool of choice for spec-driven development with this open source toolkit.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/\">Spec-driven development with AI: Get started with a new open source toolkit</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "揭秘：探索驱动 GitHub Copilot 的 AI 模型 (原标题: Under the hood: Exploring the AI models powering GitHub Copilot)",
       "link": "https://github.blog/ai-and-ml/github-copilot/under-the-hood-exploring-the-ai-models-powering-github-copilot/",
       "pubDate": "Fri, 29 Aug 2025 16:14:42 +0000",
@@ -410,69 +454,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Open source is aging. We can better support Gen Z contributors through purpose, flexibility, and pathways to leadership.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/who-will-maintain-the-future-rethinking-open-source-leadership-for-a-new-generation/\">Who will maintain the future? Rethinking open source leadership for a new generation</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "代理面板：在GitHub上随时随地启动Copilot编码代理任务 (原标题: Agents panel: Launch Copilot coding agent tasks anywhere on GitHub)",
-      "link": "https://github.blog/news-insights/product-news/agents-panel-launch-copilot-coding-agent-tasks-anywhere-on-github/",
-      "pubDate": "Tue, 19 Aug 2025 19:53:14 +0000",
-      "isoDate": "2025-08-19T19:53:14.000Z",
-      "creator": "Tim Rogers",
-      "summary": "# GitHub推出“代理面板”：随时随地启动Copilot编码代理任务\n\n## 概述\n过去一年，AI代理已成为开发者日常工作流中不可或缺的一部分。GitHub最近推出了异步、自主的Copilot编码代理，允许开发者将问题分配给Copilot，由其在后台工作并创建草稿拉取请求供审查。为了进一步提升用户体验，GitHub现推出全新的“代理面板”，使开发者能够从GitHub.com的任何页面快速将任务委托给Copilot，并跟踪其进度，而无需中断当前工作流。Copilot编码代理也已集成到VS Code、GitHub Mobile和GitHub MCP服务器中。\n\n## 代理面板：您的任务控制中心\n“代理面板”现已在GitHub.com的每个页面上可用，是GitHub上代理工作流的“任务控制中心”。它是一个轻量级浮层，允许您在不离开当前页面的情况下，向Copilot分配新任务并跟踪现有任务。只需点击导航栏中的新“代理”按钮即可开始。\n\n![GitHub中新的代理面板截图，显示了开发者如何从GitHub的任何地方跟踪、管理和启动Copilot编码代理工作流。此截图显示了编码代理正在处理的近期任务，并提供了查看所有任务的选项。开发者还可以在框中输入自然语言提示，并指定编码代理应在哪个仓库和分支上工作。](https://github.blog/wp-content/uploads/2025/08/Agents-panel-with-callout-2.png?resize=1013%2C1024)\n\n通过代理面板，您可以：\n*   **🛠️ 分配后台任务**：无需切换页面即可将任务委托给Copilot。\n*   **👀 实时监控**：实时查看正在运行的任务状态。\n*   **🔗 快速跳转**：在准备好审查时，直接跳转到相关的拉取请求。\n\n您可以通过点击“查看所有任务”以全屏模式打开面板，或通过书签访问`github.com/copilot/agents`。\n\n## 启动新任务\n您可以通过代理面板使用简单的提示启动新的Copilot任务。只需从GitHub的任何页面打开面板，用自然语言描述您的目标，并选择相关仓库。Copilot将接管后续工作，包括制定计划、起草更改、运行测试，然后准备拉取请求。\n\n**示例提示：**\n*   **描述简单任务**：\n    *   “为LoginController添加集成测试”\n    *   “重构WidgetGenerator以提高代码复用性”\n    *   “添加深色/浅色模式切换器”\n*   **提供上下文**（引用GitHub Issue或拉取请求）：\n    *   “修复#877，以拉取请求#855为例”\n    *   “修复#1050，并确保更新README中的截图”\n*   **并行运行多个任务**：\n    *   “为utils.go添加单元测试覆盖” + “为helpers.go添加单元测试覆盖”\n\n## Copilot编码代理简介\nCopilot编码代理允许您通过GitHub.com、GitHub Mobile、VS Code或任何支持MCP的工具，将编码任务委托出去，并在完成后获得草稿拉取请求。\n\n![GitHub Copilot生成的拉取请求截图，显示了已完成工作的摘要。](https://github.blog/wp-content/uploads/2025/08/CleanShot-2025-08-14-at-16.51.35.png?resize=1024%2C368)\n![GitHub Copilot编码代理正在进行中的任务截图，显示了Copilot展示其工作并测试代码输出以确保没有破坏任何东西。](https://github.blog/wp-content/uploads/2025/08/CleanShot-2025-08-14-at-16.53.09.png?resize=1024%2C331)\n![开发者要求GitHub Copilot将其生成的测试移动到主测试套件的截图。](https://github.blog/wp-content/uploads/2025/08/CleanShot-2025-08-14-at-16.54.22.png?resize=835%2C406)\n\n**其主要特性包括：**\n*   **云端运行**：可在云端运行，支持并行处理多个任务，即使您的计算机关闭也能继续工作。\n*   **安全环境**：由GitHub Actions提供支持，可运行构建、测试和代码检查，无需逐一请求每个步骤。\n*   **开发者控制**：通过详细日志和基于拉取请求的审批保持控制，并通过在审查中提及`@copilot`来提供反馈。\n*   **模型上下文协议 (MCP)**：\n    *   Copilot通过GitHub MCP服务器拥有对仓库数据的读取权限。\n    *   通过Playwright MCP服务器可查看网页进行测试和验证。\n    *   可连接到您自己的MCP服务器。\n\n## 其他委托任务方式\n除了代理面板，您还可以通过以下方式启动Copilot编码代理任务：\n*   **GitHub Issues**：在GitHub.com或GitHub Mobile上将问题分配给Copilot。\n*   **Visual Studio Code**：通过GitHub Pull Requests扩展委托任务并跟踪运行中的任务。\n*   **其他IDE**：在JetBrains IDEs和Visual Studio的Copilot Chat中要求Copilot打开拉取请求。\n*   **支持MCP的工具**：通过集成模型上下文协议的兼容应用程序触发任务。\n\n## 可用性\nCopilot编码代理和GitHub上的新代理面板现已向所有付费Copilot订阅者开放公开预览。您的管理员可能需要启用Copilot编码代理策略。",
-      "shortSummary": "GitHub推出了新的“代理面板”，允许开发者在GitHub.com的任何页面上，通过简单提示将编码任务委托给Copilot编码代理。该面板作为任务控制中心，方便用户启动、监控和管理Copilot自动生成草稿拉取请求的工作流，无需中断当前操作。Copilot编码代理支持跨平台使用，包括VS Code和GitHub Mobile，旨在提升开发效率，让AI代理更深入地融入日常开发流程。",
-      "translated_title": "代理面板：在GitHub上随时随地启动Copilot编码代理任务",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/Agents-panel-with-callout-2.png?resize=1013%2C1024",
-          "alt": "A screenshot of the new Agents panel in GitHub that allows developers to track, manage, and start Copilot coding agent workflows from anywhere on GitHub. This screenshot shows recent tasks that coding agent, an agentic workflow that generates draft pull requests based on requirements set out by a developer, is working on with the option to view all tasks. Developers can also enter a natural language prompt in a box and specify which repository and which branch coding agent should work on.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/CleanShot-2025-08-14-at-16.51.35.png?resize=1024%2C368",
-          "alt": "A screenshot of a pull request generated by GitHub Copilot, an AI coding tool, in a GitHub developer workflow. The pull request is a draft awaiting approval and shows a generated summary of the work that has been completed. The screenshot also shows the developer assigned to review the pull request as well as assignees that include a developer and GitHub Copilot.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/CleanShot-2025-08-14-at-16.53.09.png?resize=1024%2C331",
-          "alt": "A screenshot showing an ongoing task that GitHub Copilot coding agent, an agentic workflow tool on GitHub, is working on. This screenshot shows GitHub Copilot showing its work, and testing its code outputs to ensure it didn’t break anything.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/CleanShot-2025-08-14-at-16.54.22.png?resize=835%2C406",
-          "alt": "A screenshot showing a developer asking GitHub Copilot to move tests that it generated to the main test suite within a diff view of code outputs from GitHub Copilot coding agent.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/116134?v=4&s=200",
-          "alt": "Tim Rogers",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Delegate coding tasks to Copilot and track progress wherever you are on GitHub. Copilot works in the background, creates a pull request, and tags you for review when finished.</p>\n<p>The post <a href=\"https://github.blog/news-insights/product-news/agents-panel-launch-copilot-coding-agent-tasks-anywhere-on-github/\">Agents panel: Launch Copilot coding agent tasks anywhere on GitHub</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-09-01T04:37:20.525Z"
+  "lastUpdated": "2025-09-03T04:32:01.169Z"
 }
