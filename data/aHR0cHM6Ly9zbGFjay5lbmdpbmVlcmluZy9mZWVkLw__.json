@@ -5,6 +5,38 @@
   "link": "https://slack.engineering",
   "items": [
     {
+      "title": "构建 Slack 的异常事件响应 (原标题: Building Slack’s Anomaly Event Response)",
+      "link": "https://slack.engineering/building-slacks-anomaly-event-response/",
+      "pubDate": "Thu, 04 Sep 2025 10:00:02 +0000",
+      "isoDate": "2025-09-04T10:00:02.000Z",
+      "creator": "Nathan Lehotsky",
+      "summary": "## 构建 Slack 的异常事件响应 (AER)\n\n### 引言：应对网络安全挑战\n\n随着网络攻击日益复杂和迅速，检测到响应的时间差变得至关重要。传统的被动安全方法让攻击者占据优势，迫使安全团队专注于损害评估而非主动预防。为解决这一挑战，Slack 开发了 **异常事件响应 (AER)**，这是一种新的主动防御机制。AER 结合实时监控和高级分析，能够自主识别平台上出现的高置信度威胁行为。当检测到可疑活动时，系统会自动终止相关用户会话，将安全检测和响应时间从数天/小时缩短到几分钟。这使得 AER 成为一种强大的原生安全能力，能够在攻击链完全执行之前中断它们，从而防止数据泄露和系统入侵，而无需额外的安全工具或人力。\n\n### 保护 Slack 的共同责任\n\nSlack 是数千万用户每周进行工作沟通和协作的中心，每天产生数十亿次交互。为了确保客户安全，Slack 为企业客户提供全面的审计日志，并进一步提供**异常审计日志**，利用高级分析标记工作区中的异常活动，如不规则登录、上传恶意软件或意外数据传输。虽然这些日志是早期预警系统，但它们仍需要安全人员审查或与第三方解决方案集成才能转化为可操作的洞察。AER 旨在弥合这一差距，提供一个开箱即用的自动化解决方案，任何企业网格客户都可以单独使用或作为其更广泛安全策略的一部分。Slack 坚信安全是平台与客户之间的共同责任，AER 赋能客户，同时平台也积极中和威胁。\n\n### 设计理念\n\n在设计 AER 时，Slack 专注于支持平台面临的最常见威胁类型，优先考虑具有广泛适用性的检测。AER 旨在识别以下类型的异常行为：\n\n*   从 Tor 出口节点访问 Slack\n*   过度下载（潜在的数据泄露指标）\n*   通过非 Slack 原生自动化工具进行数据抓取\n*   会话指纹不匹配\n*   异常 API 调用量和模式\n*   异常用户代理（指示从非标准或虚拟客户端访问）\n\n考虑到每个客户的使用方式和风险状况不同，AER 被设计为可配置的，允许组织选择哪些检测是重要的，哪些应仅记录而不采取响应行动。这种可配置性也延伸到通知偏好设置。用户可以通过“工具和设置”→“组织设置”→“安全”→“安全设置”导航到“异常事件响应设置”部分进行配置。\n\n![A modal window titled \"Anomaly event response\" with various checkboxes for detecting anomaly events like \"Accessing Slack from a Tor exit node\" and \"Data scraping,\" and for sending notifications to \"Org Primary Owner\" and \"Security Admins\" via email and Slack.](https://slack.engineering/wp-content/uploads/sites/7/2025/06/Settings-Modal.png?w=1020)\n\n### 系统架构与技术深入\n\nAER 采用多层架构，专为实时异常检测、异步作业编排和动态通知而设计。其核心由三个组件构成：\n\n![A flowchart illustrating an \"Automated Event Response\" process. It starts with \"Suspicious User Activity,\" followed by \"Activity Analyzed,\" then \"Anomaly Detected.\" This leads to \"AER Controller,\" which determines if it's a \"Supported Anomaly.\" If so, \"User Sessions Terminated\" occurs. From \"User Sessions Terminated,\" two paths emerge: \"Audit Logged\" (which is \"Always\" done) and \"Customer Notified\" (which is \"Configurable\").](https://slack.engineering/wp-content/uploads/sites/7/2025/06/aer-simple-diagram.png?w=1020)\n\n1.  **检测引擎：**\n    *   大规模监控 Slack 事件（每天数十亿次）。\n    *   结合基于规则的启发式方法和动态阈值，这些阈值根据每个企业的历史使用模式进行校准。\n    *   这种自适应方法显著减少了误报，并允许持续微调检测灵敏度。\n\n2.  **决策框架：**\n    *   评估识别出可疑行为时创建的每个审计负载。\n    *   根据客户的 AER 配置和内部规则执行验证检查。\n    *   分析会话以确定恶意行为是否在用户会话终止后持续存在，同时保护合法用户免受连续终止循环。\n    *   一旦异常被验证且客户已启用该事件类型的检测，就会将异步作业排队以执行自主响应。\n\n3.  **响应编排：**\n    *   终止属于行为用户的所有活动会话。\n    *   生成 `user_sessions_reset_by_anomaly_event_response` 审计日志，其中包含触发响应的异常类型、行为用户上下文和会话 ID，以便进行调查。\n    *   根据客户的通知偏好路由额外通知。行为用户始终收到会话终止的电子邮件通知。\n    *   客户可配置将通知发送给组织主要所有者和安全管理员。\n    *   内置智能通知逻辑，可识别组织中身兼多职的人员，避免重复通知。\n    *   通知方式包括电子邮件和 Slack 安全机器人（通过私信）。\n\n![A Slack notification from \"Slack Security\" stating that \"@Matt Brewer has been signed out of all their active sessions in response to a potentially suspicious anomaly event: unexpected_scraping. It provides links to view details in audit logs and learn more.\"](https://slack.engineering/wp-content/uploads/sites/7/2025/06/Screenshot-2025-03-25-at-12.10.25%E2%80%AFPM.png?w=1020)\n\n### 主要发现与影响\n\n自 2025 年 2 月推出以来，AER 的自动化干预已验证了主动安全措施的重要性，并证明了其在实时中断可疑活动方面的有效性。根据 IBM 的报告，2024 年数据泄露的平均成本达到 488 万美元，云协作平台的平均事件响应时间为 277 天。AER 能够将这一响应窗口显著缩短，从而对安全产生重大影响。通过自动终止从事异常活动的用户会话，AER 可以防止可能未被发现的潜在安全事件。这为企业客户带来了增强的数据保护，同时降低了安全团队的开销。AER 提供了一种可扩展、自适应的防御机制，确保 Slack 仍然是一个安全可靠的协作平台。\n\n### 结论\n\nAER 通过弥合检测与响应之间的差距，中和了传统上对攻击者有利的延迟。AER 所体现的共同责任模型代表了企业安全的未来，即平台提供商和客户共同努力创建多层防御。通过提供开箱即用的高级安全，同时为具有复杂安全运营的组织提供定制化选项，AER 确保所有客户都能从实时威胁中断中受益，无论其规模或安全资源如何。Slack 致力于持续完善 AER 的检测机制、扩展响应能力并整合客户反馈，以提供持续发展、默默而有效地工作的安全解决方案。",
+      "shortSummary": "Slack 推出了异常事件响应 (AER) 系统，旨在通过实时监控和高级分析，自动检测并响应平台上的高置信度威胁行为。当检测到可疑活动时，AER 会自动终止相关用户会话，将安全检测和响应时间从数天/小时缩短到几分钟。这有效中断攻击链，防止数据泄露和系统入侵，从而增强企业数据保护并降低安全开销。AER 是可配置的，支持平台与客户共同承担安全责任的模型。",
+      "translated_title": "构建 Slack 的异常事件响应",
+      "images": [
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/06/Settings-Modal.png?w=1020",
+          "alt": "A modal window titled \"Anomaly event response\" with various checkboxes for detecting anomaly events like \"Accessing Slack from a Tor exit node\" and \"Data scraping,\" and for sending notifications to \"Org Primary Owner\" and \"Security Admins\" via email and Slack.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/06/aer-simple-diagram.png?w=1020",
+          "alt": "A flowchart illustrating an \"Automated Event Response\" process. It starts with \"Suspicious User Activity,\" followed by \"Activity Analyzed,\" then \"Anomaly Detected.\" This leads to \"AER Controller,\" which determines if it's a \"Supported Anomaly.\" If so, \"User Sessions Terminated\" occurs. From \"User Sessions Terminated,\" two paths emerge: \"Audit Logged\" (which is \"Always\" done) and \"Customer Notified\" (which is \"Configurable\").",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/06/Screenshot-2025-03-25-at-12.10.25%E2%80%AFPM.png?w=1020",
+          "alt": "A Slack notification from \"Slack Security\" stating that \"@Matt Brewer has been signed out of all their active sessions in response to a potentially suspicious anomaly event: unexpected_scraping. It provides links to view details in audit logs and learn more.\"",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "As cyberattacks evolve to unprecedented levels of sophistication and speed, the time gap between breach detection and response has never been more critical. Traditional security approaches often operate reactively, identifying compromises only after damage has occurred. This delay grants attackers a tactical advantage, forcing security teams to focus on damage assessment and remediation rather than&#8230;"
+    },
+    {
       "title": "优化我们的端到端（E2E）流水线 (原标题: Optimizing Our E2E Pipeline)",
       "link": "https://slack.engineering/speedup-e2e-testing/",
       "pubDate": "Mon, 14 Apr 2025 09:00:30 +0000",
@@ -34,7 +66,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "<p>In the world of DevOps and Developer Experience (DevXP), speed and efficiency can make a big difference on an engineer’s day-to-day tasks. Today, we’ll dive into how Slack’s DevXP team took some existing tools and used them to optimize an end-to-end (E2E) testing pipeline. This lowered build times and reduced redundant processes, saving both time&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/speedup-e2e-testing/\">Optimizing Our E2E Pipeline</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+      "content": "In the world of DevOps and Developer Experience (DevXP), speed and efficiency can make a big difference on an engineer’s day-to-day tasks. Today, we’ll dive into how Slack’s DevXP team took some existing tools and used them to optimize an end-to-end (E2E) testing pipeline. This lowered build times and reduced redundant processes, saving both time&#8230;"
     },
     {
       "title": "我们如何构建安全私密的智能企业搜索 (原标题: How we built enterprise search to be secure and private)",
@@ -47,7 +79,7 @@
       "translated_title": "我们如何构建安全私密的智能企业搜索",
       "images": [],
       "contentSource": "RSS",
-      "content": "<p>Many don’t know that “Slack” is in fact a backronym—it stands for “Searchable Log of all Communication and Knowledge”. And these days, it’s not just a searchable log: with Slack AI, Slack is now an intelligent log, leveraging the latest in generative AI to securely surface powerful, time-saving insights. We built Slack AI from the&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/how-we-built-enterprise-search-to-be-secure-and-private/\">How we built enterprise search to be secure and private</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+      "content": "Many don’t know that “Slack” is in fact a backronym—it stands for “Searchable Log of all Communication and Knowledge”. And these days, it’s not just a searchable log: with Slack AI, Slack is now an intelligent log, leveraging the latest in generative AI to securely surface powerful, time-saving insights. We built Slack AI from the&#8230;"
     },
     {
       "title": "Slack 的自动化无障碍测试 (原标题: Automated Accessibility Testing at Slack)",
@@ -73,7 +105,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "<p>At Slack, customer love is our first priority and accessibility is a core tenet of customer trust. We have our own Slack Accessibility Standards that product teams follow to guarantee their features are compliant with Web Content Accessibility Guidelines (WCAG). Our dedicated accessibility team supports developers in following these guidelines throughout the development process. We&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/automated-accessibility-testing-at-slack/\">Automated Accessibility Testing at Slack</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+      "content": "At Slack, customer love is our first priority and accessibility is a core tenet of customer trust. We have our own Slack Accessibility Standards that product teams follow to guarantee their features are compliant with Web Content Accessibility Guidelines (WCAG). Our dedicated accessibility team supports developers in following these guidelines throughout the development process. We&#8230;"
     },
     {
       "title": "迁移自动化：借助AI简化Jenkins到GHA的迁移 (原标题: Migration Automation: Easing the Jenkins → GHA shift with help from AI)",
@@ -86,7 +118,7 @@
       "translated_title": "迁移自动化：借助AI简化Jenkins到GHA的迁移",
       "images": [],
       "contentSource": "RSS",
-      "content": "<p>Overview The past few months have been exciting times for Slack’s CI infrastructure. After years of developer frustration with Jenkins (everything from security issues to downtime to generally poor UX) internal pressure led us to move a majority of Slack’s CI jobs from Jenkins to GitHub Actions.  My intern project at Slack this summer involved&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/migration-automation-easing-the-jenkins-%e2%86%92-gha-shift-with-help-from-ai/\">Migration Automation: Easing the Jenkins → GHA shift with help from AI</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+      "content": "Overview The past few months have been exciting times for Slack’s CI infrastructure. After years of developer frustration with Jenkins (everything from security issues to downtime to generally poor UX) internal pressure led us to move a majority of Slack’s CI jobs from Jenkins to GitHub Actions.  My intern project at Slack this summer involved&#8230;"
     },
     {
       "title": "故意破坏 (原标题: Break Stuff on Purpose)",
@@ -99,7 +131,7 @@
       "translated_title": "故意破坏",
       "images": [],
       "contentSource": "RSS",
-      "content": "<p> “A complex system can fail in an infinite number of ways.” -“Systemantics” by John Gall &#160; Incidents are stressful but inevitable. Even services designed for availability will eventually encounter a failure. Engineers naturally find it daunting to defend their systems against the “infinite number of ways” things can go wrong.  Our team found ourselves in&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/break-stuff-on-purpose/\">Break Stuff on Purpose</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+      "content": " “A complex system can fail in an infinite number of ways.” -“Systemantics” by John Gall &#160; Incidents are stressful but inevitable. Even services designed for availability will eventually encounter a failure. Engineers naturally find it daunting to defend their systems against the “infinite number of ways” things can go wrong.  Our team found ourselves in&#8230;"
     },
     {
       "title": "Slack 审计日志与异常 (原标题: Slack Audit Logs and Anomalies)",
@@ -161,7 +193,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "<p>What are Slack Audit Logs? Like many Software as a Service (SaaS) offerings, Slack provides audit logs to Enterprise Grid customers that record when entities take an action on the platform. For example, when a user logs in, when a user updates their profile, when an app downloads a file, etc. The actual list of&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/slack-audit-logs-and-anomalies/\">Slack Audit Logs and Anomalies</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+      "content": "What are Slack Audit Logs? Like many Software as a Service (SaaS) offerings, Slack provides audit logs to Enterprise Grid customers that record when entities take an action on the platform. For example, when a user logs in, when a user updates their profile, when an app downloads a file, etc. The actual list of&#8230;"
     },
     {
       "title": "Astra 动态分块：我们如何通过重新设计 Astra 的关键部分来节省成本 (原标题: Astra Dynamic Chunks: How We Saved by Redesigning a Key Part of Astra)",
@@ -174,7 +206,7 @@
       "translated_title": "Astra 动态分块：我们如何通过重新设计 Astra 的关键部分来节省成本",
       "images": [],
       "contentSource": "RSS",
-      "content": "<p>Introduction Slack handles a lot of log data. In fact, we consume over 6 million log messages per second. That equates to over 10 GB of data per second! And it’s all stored using Astra, our in-house, open-source log search engine. To make this data searchable, Astra groups it by time and splits the data&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/astra-dynamic-chunks-how-we-saved-by-redesigning-a-key-part-of-astra/\">Astra Dynamic Chunks: How We Saved by Redesigning a Key Part of Astra</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
+      "content": "Introduction Slack handles a lot of log data. In fact, we consume over 6 million log messages per second. That equates to over 10 GB of data per second! And it’s all stored using Astra, our in-house, open-source log search engine. To make this data searchable, Astra groups it by time and splits the data&#8230;"
     },
     {
       "title": "天下没有免费的午餐！ (原标题: There’s No Such Thing as a Free Lunch!)",
@@ -190,5 +222,5 @@
       "content": "<p>Incident Management takes time Incidents need responders that are trained and experienced.  At Slack, training is a foundation of our incident management program. Self-service training and live courses based mainly on prepared content are one piece of the puzzle, but there can be a missing piece in many organizations. How can staff get practical experience&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/theres-no-such-thing-as-a-free-lunch/\">There’s No Such Thing as a Free Lunch!</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-09-03T04:31:24.321Z"
+  "lastUpdated": "2025-09-05T04:31:52.422Z"
 }

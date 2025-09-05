@@ -5,6 +5,75 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "通过MCP启发构建更智能的交互：从笨拙的工具调用到无缝的用户体验 (原标题: Building smarter interactions with MCP elicitation: From clunky tool calls to seamless user experiences)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/building-smarter-interactions-with-mcp-elicitation-from-clunky-tool-calls-to-seamless-user-experiences/",
+      "pubDate": "Thu, 04 Sep 2025 16:00:00 +0000",
+      "isoDate": "2025-09-04T16:00:00.000Z",
+      "creator": "Chris Reddington",
+      "summary": "## 通过MCP启发构建更智能的交互：从笨拙的工具调用到无缝的用户体验\n\n本文深入探讨了如何利用模型上下文协议（MCP）中的“启发”（Elicitation）机制，显著提升软件的用户体验，特别是针对AI驱动的交互。作者以一个回合制游戏（如井字棋、石头剪刀布）的MCP服务器为例，展示了如何从最初存在诸多“痛点”的交互方式，演变为更加自然和无缝的用户体验。\n\n### 什么是启发（Elicitation）？\n\n启发机制的核心思想是“如果缺少所需信息，就主动去获取”。它超越了简单的信息收集，旨在创建直观的交互：AI（通过MCP服务器）能够在任务执行过程中暂停，主动询问并获取所需信息，然后继续任务，从而避免了依赖硬编码的默认假设。\n\n**注意**：启发功能是MCP规范中的一个相对较新的特性（于2025年6月修订中添加），目前并非所有AI应用宿主都支持（例如，Visual Studio Code中的GitHub Copilot支持此功能）。\n\n### 实施过程中的挑战与改进\n\n作者在回合制游戏MCP服务器中实施启发功能时，遇到了以下挑战并进行了改进：\n\n1.  **初始实现与工具蔓延**：\n    *   最初，作者为新游戏创建（如难度、玩家姓名、先手顺序、游戏轮数）实现了基本的启发功能。\n    *   为了比较新旧方法，启发功能被实现为新的独立工具（例如 `create-tic-tac-toe-game-interactive`），导致服务器中出现大量功能重叠的工具（如 `create-tic-tac-toe-game` 和 `create-tic-tac-toe-game-interactive`）。\n    *   **问题**：AI代理（如Copilot）在面对名称和描述相似的工具时，难以选择正确的工具，导致行为不可预测。\n\n2.  **解决方案：工具整合与DRY原则**：\n    *   通过大量重构和整合，作者将工具数量从八个减少到四个，遵循“不要重复自己”（DRY）原则。\n    *   现在，当用户提示“我们玩一局井字棋”时，工具调用会识别出需要更多信息，从而触发启发机制，确保用户做出明确选择，而非使用预设的默认值。\n\n    ![GitHub Copilot Chat在Visual Studio Code中触发启发体验，请求用户提供额外偏好以自定义体验的截图](https://github.blog/wp-content/uploads/2025/09/image1.png?resize=1024%2C576)\n\n3.  **处理部分信息与实时调试**：\n    *   在直播中发现一个bug：无论用户是否已提供所需信息，启发步骤都会被触发。\n    *   **修复**：直播后，作者添加了检查机制，在工具调用后判断哪些信息已提供，只请求缺失的信息。同时，统一了工具和启发模式之间的属性名称，提高了清晰度。\n    *   例如，如果用户说“我们玩井字棋，我先走”，系统只会询问游戏难度和玩家姓名。\n\n### 启发机制在MCP服务器中的工作原理\n\n当MCP服务器调用 `create_game` 工具时，其内部流程如下：\n\n*   **检查必要参数**：判断用户是否指定了游戏类型或ID。\n*   **传递可选参数**：将已识别的参数传递给独立方法，检查是否缺少难度、玩家姓名或回合顺序等信息。\n*   **启动启发**：如果信息缺失，暂停工具执行，并仅从用户处收集缺失信息（这是直播后添加的改进）。\n*   **呈现模式驱动的提示**：用户会看到针对每个缺失参数格式化的问题。\n*   **收集响应**：MCP客户端（本例中为VS Code）负责处理UI交互。\n*   **完成原始请求**：一旦服务器收集到所有信息，工具将使用用户的偏好执行 `createGame` 方法。\n\n    ![GitHub Copilot Chat在Visual Studio Code中出现新的UI模态框，提示用户选择偏好，本例中用户选择难度为“困难”的截图](https://github.blog/wp-content/uploads/2025/09/image2.png?resize=1024%2C576)\n\n**结果**：用户可以获得个性化的游戏设置，例如“Chris vs AI (Hard)”，并由AI先手，而不是默认的“Player vs AI (Medium)”。\n\n### 关键经验教训\n\n1.  **用户体验至关重要**：启发机制虽然增加了复杂性，但通过主动询问用户偏好，提供了比强制使用默认值更好的体验。\n2.  **工具命名比想象中更重要**：在构建和使用MCP服务器中的工具时，清晰的命名和描述至关重要，模糊的名称会导致AI行为不可预测。\n3.  **迭代开发制胜**：先构建基本功能，在使用中识别痛点，然后通过添加启发等功能来改进用户体验，并利用AI编码代理进行清理。\n\n### 总结\n\n构建更好的AI工具不仅仅关乎底层模型，更在于创造能够解释上下文、提出好问题并准确满足用户需求的体验。启发机制是朝着这个方向迈出的重要一步，预示着MCP生态系统将支持更丰富、更智能的交互。",
+      "shortSummary": "本文探讨了如何通过MCP启发（elicitation）机制提升AI交互的用户体验。该机制使AI在信息不足时能主动暂停并向用户请求必要数据，从而避免了僵硬的默认设置和笨拙的工具调用。作者通过一个回合制游戏MCP服务器的开发实践，解决了工具命名混淆和重复请求等问题，实现了工具整合与仅请求缺失信息。文章强调了用户体验、清晰的工具命名和迭代开发的重要性，旨在构建更智能、个性化的AI交互，让用户体验更自然、无缝。",
+      "translated_title": "通过MCP启发构建更智能的交互：从笨拙的工具调用到无缝的用户体验",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/09/image1.png?resize=1024%2C576",
+          "alt": "A screenshot of GitHub Copilot Chat in Visual Studio Code where the user has asked \"Let's play a game of tictactoe\". Copilot has triggered the elicitation experience, requesting additional preferences to customize the experience.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/09/image2.png?resize=1024%2C576",
+          "alt": "A screenshot of GitHub Copilot Chat in Visual Studio Code where a new UI modal appears, prompting the user for their preferences. This example shows the user selecting the Difficulty as hard.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/791642?v=4&s=200",
+          "alt": "Chris Reddington",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Explore how MCP elicitation transforms AI tool interactions by gathering missing information upfront. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/building-smarter-interactions-with-mcp-elicitation-from-clunky-tool-calls-to-seamless-user-experiences/\">Building smarter interactions with MCP elicitation: From clunky tool calls to seamless user experiences</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "为 Copilot 编写更优自定义指令的 5 个技巧 (原标题: 5 tips for writing better custom instructions for Copilot)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/5-tips-for-writing-better-custom-instructions-for-copilot/",
+      "pubDate": "Wed, 03 Sep 2025 16:00:00 +0000",
+      "isoDate": "2025-09-03T16:00:00.000Z",
+      "creator": "Christopher Harrison",
+      "summary": "# 为 Copilot 编写更优自定义指令的 5 个技巧\n\n本文旨在提供五个关键技巧，帮助开发者为 GitHub Copilot 编写更有效的自定义指令，从而获得更优质的代码建议。核心理念是，Copilot 就像一位新加入的团队成员，需要充分的上下文信息才能高效工作。`copilot-instructions.md` 文件是 Copilot 聊天或代理请求的中心，用于提供项目背景和团队经验。\n\n作者强调，不必过度追求完美，因为生成式 AI 具有概率性。目标是尽可能地引导 Copilot 找到期望的答案。以下建议并非强制要求，而是基于经验的推荐，旨在显著提高 Copilot 建议的质量。\n\n## 1. 提供项目概览\n\n为 Copilot 提供一个项目的“电梯演讲”至关重要。指令文件的开头应简要说明应用是什么、目标受众以及主要功能。这有助于为 Copilot 设定高层次的项目背景。\n\n*   **示例：Contoso Companions**\n    *   一个支持宠物领养机构的网站。\n    *   机构可以管理地点、可用宠物和宣传活动。\n    *   潜在领养者可以搜索宠物、发现机构并提交领养申请。\n\n## 2. 明确项目使用的技术栈\n\n在明确项目目标后，下一步是详细列出用于构建项目的技术。这包括后端和前端技术、调用的 API 以及目标测试套件。建议使用列表形式突出显示所使用的技术，并可添加关于其使用方式的简短说明，帮助 Copilot 理解代码创建的环境。\n\n*   **示例技术栈：**\n    *   **后端：** Flask (API), Postgres (数据存储), SQLAlchemy (ORM)。开发、预发布和生产环境使用独立数据库。端到端测试会创建、填充并移除新数据库。\n    *   **前端：** Astro (核心站点和路由), Svelte (交互性), TypeScript (所有前端代码)。\n    *   **测试：** Python 使用 Unittest，TypeScript 使用 Vitest，端到端测试使用 Playwright。\n\n## 3. 阐明编码规范\n\n清晰的编码规范指导 Copilot 如何编写代码，例如 JavaScript/TypeScript 是否使用分号、Python 是否使用类型提示、使用制表符还是空格。作者倾向于将规范单独列为一个部分，因为许多规范适用于所有使用的语言，且更具可读性。也可以使用 `.instructions` 文件为特定类型的文件或单元测试提供指导。\n\n*   **专业提示：** “不完美”的指令文件也比什么都没有强得多。指令文件应随时间演进。\n*   **示例项目和代码规范：**\n    *   支持类型提示的语言始终使用类型提示。\n    *   JavaScript/TypeScript 使用分号。\n    *   单元测试和端到端测试是必需的，且在 PR 前必须通过，并应关注核心功能和可访问性。\n    *   始终遵循良好的安全实践和 RESTful API 设计原则。\n    *   可用时使用脚本执行操作。\n\n## 4. 解释项目结构\n\n项目结构多种多样，在自定义指令文件中列出项目结构，不仅可以节省 Copilot 的工作，还能提供关于文件夹内容的更多上下文。\n\n*   **示例项目结构：**\n    *   `server/`：Flask 后端代码\n    *   `models/`：SQLAlchemy ORM 模型\n    *   `routes/`：按资源组织的 API 端点\n    *   `tests/`：API 的单元测试\n    *   `utils/`：实用函数和辅助工具，包括数据库调用\n    *   `client/`：Astro/Svelte 前端代码\n    *   `src/components/`：可重用 Svelte 组件\n    *   `src/layouts/`：Astro 布局模板\n    *   `src/pages/`：Astro 页面和路由\n    *   `src/styles/`：CSS 样式表\n    *   `scripts/`：开发、部署和测试脚本\n    *   `docs/`：项目文档，需始终保持同步\n\n## 5. 指明可用的资源\n\n几乎每个项目都有辅助开发的脚本或资源。在自定义指令文件中提供这些资源的指针，可以提高 Copilot 的准确性和速度。\n\n*   **示例资源：**\n    *   `scripts` 文件夹：`start-app.sh` (安装库并启动应用), `setup-env.sh` (安装库), `test-project.sh` (安装库，运行单元和端到端测试)。\n    *   MCP 服务器：Playwright (用于生成 Playwright 测试或与站点交互), GitHub (用于与仓库和待办事项列表交互)。\n\n## 额外提示：让 GitHub Copilot 帮助你创建自定义指令文件\n\nCopilot 可以帮助你生成初始的 `copilot-instructions.md` 文件。文章提供了一个详细的提示示例，用于指导 Copilot 创建该文件，包括目标、限制、指导和遵循的步骤。使用此提示不仅可以节省时间，还可以帮助你理清项目思路和目标。\n\n## 总结\n\n拥有一个良好的指令文件是提高 Copilot 代码建议质量的重要第一步。`copilot-instructions.md` 文件应被视为任何使用 Copilot 的项目的必需品。从项目概览、技术栈、编码规范、项目结构和可用资源这几个基本部分开始，然后可以进一步探索更具体的 `.instructions` 文件。",
+      "shortSummary": "为 GitHub Copilot 编写有效的自定义指令能显著提升代码建议质量。核心在于通过 `copilot-instructions.md` 文件提供清晰的上下文。关键技巧包括：提供项目概览、明确技术栈、阐明编码规范、解释项目结构，以及指明可用资源。这些指导帮助 Copilot 更好地理解项目，生成更准确的代码。即使不完美，一个指令文件也远胜于无。Copilot 甚至可以协助生成这些指令文件。",
+      "translated_title": "为 Copilot 编写更优自定义指令的 5 个技巧",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>This guide offers five essential tips for writing effective GitHub Copilot custom instructions, covering project overview, tech stack, coding guidelines, structure, and resources, to help developers get better code suggestions.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/5-tips-for-writing-better-custom-instructions-for-copilot/\">5 tips for writing better custom instructions for Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "AI驱动的规范开发：从新的开源工具包开始 (原标题: Spec-driven development with AI: Get started with a new open source toolkit)",
       "link": "https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/",
       "pubDate": "Tue, 02 Sep 2025 16:48:03 +0000",
@@ -342,119 +411,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Learn Model Context Protocol by building a turn-based game server that shows how to extend GitHub Copilot with custom tools, resources, and prompts.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/building-your-first-mcp-server-how-to-extend-ai-tools-with-custom-capabilities/\">Building your first MCP server: How to extend AI tools with custom capabilities</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "探索GitHub Universe的精华：9个旨在激发创造力、连接与乐趣的空间 (原标题: Explore the best of GitHub Universe: 9 spaces built to spark creativity, connection, and joy)",
-      "link": "https://github.blog/news-insights/company-news/explore-the-best-of-github-universe-9-spaces-built-to-spark-creativity-connection-and-joy/",
-      "pubDate": "Thu, 21 Aug 2025 18:02:34 +0000",
-      "isoDate": "2025-08-21T18:02:34.000Z",
-      "creator": "Jeimy Ruiz",
-      "summary": "# GitHub Universe 2025：活动概览\n\nGitHub Universe 2025 将于今年十月重返旧金山 Fort Mason Center，承诺带来一场比以往任何时候都更盛大、更大胆、更具互动性的开发者盛会。除了100多场专家主导的会议（完整会议目录将于九月初发布）外，活动还精心设计了九个独特的空间，旨在激发与会者的创造力、促进连接并带来乐趣，无论您是搭建乐高、与同行交流，还是探索新的职业资源。\n\n# 提升技能与探索最新GitHub工具\n\n### 🧭 GitHub Central\n![GitHub Universe的GitHub Central照片。](https://github.blog/wp-content/uploads/2025/08/image7.jpg?resize=1024%2C683)\n在早上的主题演讲结束后，您可以前往 GitHub Central。这里将提供实时演示、客户案例和产品旅程，与三大内容主题（更高效、更安全、更具创造性地使用 GitHub 进行构建）紧密结合。您将有机会探索 GitHub Copilot、GitHub Actions、GitHub Advanced Security 等工具。GitHub Central 融合了自助式工作站、与 GitHub 专家进行的现场会议以及各种惊喜，是您发现和获取灵感的中心。无论您是企业架构师还是刚开始接触自动化，都将带着实用的想法和可靠的策略满载而归。\n\n### 💡 GitHub Expert Center\n![GitHub Universe的GitHub Expert Center照片。](https://github.blog/wp-content/uploads/2025/08/image4.jpg?resize=1024%2C683)\nGitHub Expert Center 是您进行技术深度探讨、获取快速建议和进行一对一交流的首选之地。从人工智能和 GitHub Actions 专家，到安全和规模化采用专家，GitHub 专家们将在现场随时解答您所有的 GitHub 产品问题。您可以提前预约，也可以在会议间隙随时前往。\n\n# 促进成长与拓展人脉\n\n### 🌍 Open Source Zone\n![GitHub Universe的Open Source Zone照片。](https://github.blog/wp-content/uploads/2025/08/image5.jpg?resize=1024%2C683)\n在 Open Source Zone，您可以与来自全球的贡献者、维护者和社区领袖建立联系。发现 GitHub Accelerator 项目中的新星，向维护者社区的领军人物学习，并探索那些正在改变世界软件构建方式的项目。\n\n### 💼 Career Corner\n![一个人在GitHub Universe的Career Corner拍照。](https://github.blog/wp-content/uploads/2025/08/image3.jpg?resize=1024%2C683)\n如果您正寻求职业发展，Career Corner 提供与职业教练进行一对一咨询的机会，获取个性化建议，涵盖简历润色、GitHub 和 LinkedIn 个人资料优化，以及面试准备等。\n\n### 📚 GitHub Learn\nGitHub Learn 汇集了教程、认证和基于角色的学习路径，帮助您按照自己的节奏成长。您可以探索来自 GitHub、Microsoft Learn 等平台的内容，以培养适用于各级别开发者的实际、就业就绪技能。\n\n# 动手实践，尽享乐趣\n\n### 🎯 Recess\n![GitHub Universe上两个人正在交谈和喝咖啡。](https://github.blog/wp-content/uploads/2025/08/image9.jpg?resize=1024%2C683)\n从会议中短暂休息，与志同道合的人建立联系。Recess 是您结识其他与会者或与同事分享非开发兴趣（从搭建乐高到与高管边吃冰淇淋边聊天）的机会。\n\n### 🔮 Makerspace\nMakerspace 是代码与艺术、音乐、机器人等领域碰撞的地方。这是一个供您玩耍、探索和重新构想代码潜力的空间，无需正式培训，只需带上您的好奇心。\n\n### 🛠️ Hack your badge\n每张现场门票都包含一个可编程的徽章，旨在进行定制和编码。您可以按照教程操作，从其他黑客那里获得灵感，创造一件独特的硬件艺术品，以纪念您的 Universe 体验。\n\n### 🛍️ The Shop\n![GitHub Universe的商店照片。](https://github.blog/wp-content/uploads/2025/08/image6.jpg?resize=1024%2C683)\nThe Shop 是您购买 GitHub Copilot 周边、独家开发者主题商品和粉丝最爱收藏品的地方，还有一些只有在现场才能发现的惊喜。\n\n# 票务信息与重要日期\n\n您可以完全定制您的 GitHub Universe 活动体验。现在是购买现场门票的最佳时机，与热爱构建和扩展的同行交流：\n*   在9月8日之前，享受早鸟优惠，立省400美元。\n*   购买三张或更多门票可享七五折优惠。\n*   购买八张或更多门票可享六五折优惠。\n*   团体折扣可与早鸟优惠叠加。\n名额有限，请立即购票。\n\n# 额外资源\n\n文章还提供了帮助说服经理的定制邮件模板、获取最新演讲者和会议信息的注册链接、浏览去年会议以了解体验的选项，以及常见问题解答。",
-      "shortSummary": "GitHub Universe 2025将于十月在旧金山举行，将成为一场互动性更强的开发者盛会。活动设有九个独特空间，旨在激发创造力、促进连接和带来乐趣。与会者可探索GitHub最新工具、与专家交流、拓展开源人脉、获取职业指导，并参与动手实践。早鸟票优惠（立省400美元）截止9月8日，并提供团体折扣。立即购票，体验定制化的开发者盛会。",
-      "translated_title": "探索GitHub Universe的精华：9个旨在激发创造力、连接与乐趣的空间",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/image7.jpg?resize=1024%2C683",
-          "alt": "A photo of GitHub Central at GitHub Universe.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/image4.jpg?resize=1024%2C683",
-          "alt": "A photo of the GitHub Expert Center at GitHub Universe.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/image5.jpg?resize=1024%2C683",
-          "alt": "A photo of the Open Source Zone at GitHub Universe.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/image3.jpg?resize=1024%2C683",
-          "alt": "A person gets their photo taken in the Career Corner at GitHub Universe.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/image9.jpg?resize=1024%2C683",
-          "alt": "Two people talking and drinking coffee at GitHub Universe.",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/image6.jpg?resize=1024%2C683",
-          "alt": "Photo of the Shop at GitHub Universe.",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/94011710?v=4&s=200",
-          "alt": "Jeimy Ruiz",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>See what’s happening at Universe 2025, from experimental dev tools and career coaching to community-powered spaces. Save $400 on your pass with Early Bird pricing.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/explore-the-best-of-github-universe-9-spaces-built-to-spark-creativity-connection-and-joy/\">Explore the best of GitHub Universe: 9 spaces built to spark creativity, connection, and joy</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "谁来维护未来？为新一代重新思考开源领导力 (原标题: Who will maintain the future? Rethinking open source leadership for a new generation)",
-      "link": "https://github.blog/open-source/maintainers/who-will-maintain-the-future-rethinking-open-source-leadership-for-a-new-generation/",
-      "pubDate": "Wed, 20 Aug 2025 16:00:00 +0000",
-      "isoDate": "2025-08-20T16:00:00.000Z",
-      "creator": "Abigail Cabunoc Mayes",
-      "summary": "文章探讨了开源社区面临的“老龄化”和领导力继任问题，并提出了吸引和培养新一代贡献者（尤其是Z世代）的策略。\n\n### 开源社区的“老龄化”问题\n作者以个人经历为例，指出社区在缺乏早期新人引入时，会面临领导力空白。这种模式在开源领域也同样存在：\n*   **数据洞察：** Tidelift 2024年维护者调查显示，46-65岁维护者的比例自2021年以来翻了一番，而26岁以下贡献者的比例从25%降至10%。\n*   **核心问题：** 这种“老龄化”本身并非问题，但缺乏继任计划将导致倦怠、知识流失和长期脆弱性。\n\n### Z世代贡献者画像：Sam\n为了更好地理解如何支持新一代，文章引入了一个名为“Sam”的Z世代虚拟人物：\n*   **基本信息：** Sam，23岁，居住在加拿大城市，生活主要在线上。\n*   **核心诉求：** 希望为有意义的气候科技项目做贡献，但不知从何开始。他们自学编程，擅长社区管理，但觉得公共代码库令人生畏。他们渴望目标、灵活性和归属感。\n*   **面临挑战：** 经济压力、不明确的路径，以及对开源领导力运作方式的不了解。\n\n### 参与之山：吸引Z世代的六步框架\n文章提出了一个名为“参与之山”的框架，该模型概述了贡献者在开源项目中的六个阶段，并对比了传统方法与Z世代贡献者（如Sam）的实际需求：\n\n1.  **发现 (Discovery)**\n    *   **传统方法：** 通过公共仓库、开源许可、项目网站、文档和社交媒体进行基本营销。\n    *   **Sam的需求：** 通过TikTok、Discord和YouTube等平台发现项目。他们希望目的性明确，而不是隐藏在README中。他们的学习始于移动设备。（数据：84%的Z世代使用YouTube，86%认为目的性对工作满意度很重要）。\n\n2.  **首次接触 (First Contact)**\n    *   **传统方法：** 良好的README、清晰的贡献文档和新人提问的沟通渠道。\n    *   **Sam的需求：** 移动友好、视觉优先的登录体验。项目应以其使命为导向。他们更喜欢像Discord这样可以先“潜水”的休闲开放聊天。（数据：72.8%的Z世代偏爱视觉学习，Z世代更喜欢Discord等社区驱动平台）。\n\n3.  **参与 (Participation)**\n    *   **传统方法：** 个人邀请、快速响应问题、“良好首个问题”和清晰的贡献文档。\n    *   **Sam的需求：** 实时反馈。沙盒环境供尝试。明确的学习空间，允许犯错，而非只求表现。（数据：Z世代学生倾向于观察他人完成任务后再尝试）。例如：FreeCodeCamp和Kubernetes的贡献者游乐场。\n\n4.  **持续参与 (Sustained Participation)**\n    *   **传统方法：** 认可贡献者，将任务与兴趣匹配，并展示其工作与项目使命的关联。\n    *   **Sam的需求：** 可分享的认可：徽章、提及、作品集。他们更关心产生影响，而非攀爬层级。（数据：86%的Z世代员工优先考虑导师指导和技能发展）。\n\n5.  **网络化参与 (Networked Participation)**\n    *   **传统方法：** 导师制、社交活动和建立承诺与联系的正式角色。\n    *   **Sam的需求：** 可分享的命名角色，如Discord版主或社区向导。非主题频道和休闲联系。同伴主导的领导力，以传播影响力。（数据：70%的Z世代加入社区是为了归属感和发言权）。例如：Rust的共识驱动治理。\n\n6.  **领导力 (Leadership)**\n    *   **传统方法：** 邀请成为维护者，分享治理权，提供角色职责文档。\n    *   **Sam的需求：** 共享管理权，而非自上而下的控制。补偿或职业发展。清晰的价值交换。（数据：52%的Z世代入不敷出）。他们更可能在有实际支持（导师指导、可见性或带薪时间）时做出贡献。例如：TensorFlow的贡献者阶梯和For Good First Issue的使命导向。\n\n### 采取行动\n开源的未来离不开下一代。项目需要积极适应，让Sam这样的贡献者感到受欢迎、被支持和被看见。\n*   **具体行动：** 将README制作成60秒的解释视频；为首次贡献者创建沙盒空间；启动Discord或非主题频道以培养归属感；让项目使命响亮而明确。\n*   **核心问题：** 问自己：“一个蓬勃发展的项目在Sam看来是怎样的？要怎样才能让他们留下五年，而不是五周？”\n\n![一张幻灯片展示了提升Z世代开源实践的方法。其中包括“发现”阶段的TikTok、YouTube或Discord以及价值观驱动；“首次接触”阶段的使命导向、移动友好和视觉化；“参与”阶段的沙盒环境和实时反馈；“持续参与”阶段的可分享认可；“网络化参与”阶段的可扩展角色和非主题空间；以及“领导力”阶段的薪酬。](https://github.blog/wp-content/uploads/2025/08/slide.jpg?resize=1024%2C576)\n\n维护开源不仅仅是维持运营，更是为下一代创造空间。",
-      "shortSummary": "开源社区正面临“老龄化”和领导力继任挑战，年轻贡献者比例下降。为确保未来可持续性，开源项目需适应Z世代需求。这包括：通过TikTok、Discord等平台进行项目发现；提供移动友好、视觉优先的入门体验；创建沙盒环境和实时反馈机制以促进参与；提供可分享的认可和职业发展机会；以及建立共享管理和补偿机制。核心在于理解Z世代对目的、归属感和灵活性的追求，从而构建更具吸引力和包容性的社区，确保新一代贡献者长期留存。",
-      "translated_title": "谁来维护未来？为新一代重新思考开源领导力",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/slide.jpg?resize=1024%2C576",
-          "alt": "A slide showing open source practices to level up Gen Z. These include Tik Tok, YouTube, or Discord and Values driven for 'Discovery'; Leads with purpose and Mobile-friendly and visual for \"First contact\"; Sandbox environments and Real-time feedback for \"Participation\"; Recognition they can share for \"Sustained participation\"; Roles that scale and Off-topic spaces for \"Networked participation\"; and Compensation for \"Leadership\".",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/617994?v=4&s=200",
-          "alt": "Abigail Cabunoc Mayes",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Open source is aging. We can better support Gen Z contributors through purpose, flexibility, and pathways to leadership.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/who-will-maintain-the-future-rethinking-open-source-leadership-for-a-new-generation/\">Who will maintain the future? Rethinking open source leadership for a new generation</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-09-03T04:32:01.169Z"
+  "lastUpdated": "2025-09-05T04:32:40.582Z"
 }
