@@ -5,6 +5,52 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "从微调到生产：使用 Dataflow 构建可扩展的嵌入式管道 (原标题: From Fine-Tuning to Production: A Scalable Embedding Pipeline with Dataflow)",
+      "link": "https://developers.googleblog.com/en/deploying-embeddinggemma-at-scale-with-dataflow/",
+      "pubDate": "Wed, 03 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-03T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# 从微调到生产：使用 Dataflow 构建可扩展的嵌入式管道\n\n本文深入探讨了如何利用 Google 的高效开源嵌入模型 EmbeddingGemma，结合 Google Cloud Dataflow 和向量数据库（如 AlloyDB），构建一个可扩展、实时的知识摄取管道。该管道旨在支持语义搜索和检索增强生成（RAG）等现代 AI 应用，实现从模型微调到生产环境的无缝过渡。\n\n## 嵌入式技术与 Dataflow 的强大结合\n\n### 嵌入式技术的核心作用\n*   **数据表示**：嵌入（Embeddings）是数据的数值向量表示，能够捕捉词语和概念之间的深层语义关系。\n*   **AI 应用基石**：它们是理解信息、进行语义搜索以及为大型语言模型（LLMs）提供相关上下文（RAG系统）的基础。\n*   **知识摄取需求**：构建这些应用需要一个强大的知识摄取管道，能够处理非结构化数据，将其转换为嵌入，并加载到专门的向量数据库中。\n\n### EmbeddingGemma 的优势\n*   **高效与开源**：EmbeddingGemma 是 Google 新推出的高效、308M 参数的开源嵌入模型。\n*   **多场景适用**：其小巧的尺寸使其非常适合设备端应用，同时在云端也通过微调解锁了强大的定制能力。\n*   **自包含与安全性**：作为开源模型，EmbeddingGemma 可以完全托管在 Dataflow 内部，消除了对外部网络调用的需求，简化了管理，并能安全处理大规模私有数据集。\n*   **可微调性**：允许用户根据特定数据嵌入需求进行定制。\n*   **卓越的质量**：在 Massive Text Embedding Benchmark (MTEB) 多语言排行榜上，它是 500M 参数以下文本专用多语言嵌入模型中排名最高的。\n\n### Dataflow 的核心优势\nDataflow 是一个全托管、自动扩缩的平台，用于统一的批处理和流式数据处理。将 EmbeddingGemma 直接集成到 Dataflow 管道中，可带来以下优势：\n*   **数据局部性带来的效率**：处理直接在 Dataflow 工作器上进行，避免了对独立推理服务的远程过程调用（RPC），解决了配额和多系统自动扩缩的问题，减少了资源占用。\n*   **统一系统**：单一系统处理自动扩缩、观察和监控，简化了运维开销。\n*   **可扩展性和简洁性**：Dataflow 根据需求自动扩缩管道，Apache Beam 的转换功能减少了样板代码。\n\n## 使用 Dataflow ML 构建摄取管道\n\n一个典型的知识摄取管道包含四个阶段：从数据源读取、数据预处理、生成嵌入和写入向量数据库。\n\n![Dataflow 的 MLTransform](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EGDataflow_Graph_RD1-V01.original.jpg)\n\n借助 Dataflow 的 `MLTransform`（一个用于数据准备的强大 `PTransform`），整个工作流只需几行代码即可实现。\n\n### 使用 MLTransform 生成 Gemma 嵌入\n\n文章提供了一个示例，展示如何配置 `MLTransform` 以使用 Hugging Face 模型（如 EmbeddingGemma），然后将结果写入 AlloyDB，以便进行语义搜索。AlloyDB 等数据库能够将语义搜索与结构化搜索结合，提供高质量和相关的结果。\n\n核心步骤包括：\n1.  **定义模型**：指定用于生成嵌入的模型名称，例如 `google/embeddinggemma-300m`。用户可以轻松将其替换为自己的微调模型。\n2.  **定义嵌入转换**：使用 `SentenceTransformerEmbeddings` 定义转换，指定要嵌入的列。\n3.  **定义写入配置**：使用 `AlloyDBVectorWriterConfig` 定义写入到向量数据库的配置。Dataflow 支持通过配置对象写入多种向量数据库，包括 AlloyDB、CloudSQL 和 BigQuery。\n4.  **构建并运行管道**：通过 Apache Beam 管道，将数据创建、嵌入生成（通过 `MLTransform`）和写入向量数据库（通过 `VectorDatabaseWriteTransform`）串联起来。\n\n这种简单而强大的模式允许用户在单个、可扩展、经济高效且托管的管道中并行处理海量数据集，使用 EmbeddingGemma 生成嵌入，并填充向量数据库。\n\n## 立即开始\n\n结合最新的 Gemma 模型、Dataflow 的可扩展性以及 AlloyDB 等向量数据库的向量搜索能力，用户可以轻松构建复杂的下一代 AI 应用。文章鼓励读者探索 Dataflow ML 文档，特别是关于数据准备和生成嵌入的部分，并尝试使用 EmbeddingGemma 的示例 notebook。对于大规模服务器端应用，建议通过 Gemini API 探索最先进的 Gemini Embedding 模型以获得最大性能和容量。",
+      "shortSummary": "Google Cloud Dataflow与EmbeddingGemma模型结合，提供了一个可扩展、实时的知识摄取管道。EmbeddingGemma是Google高效、可微调的开源嵌入模型，在MTEB排行榜表现卓越。Dataflow作为全托管、自动扩缩的数据处理平台，可将EmbeddingGemma直接集成，实现高效的数据局部性处理和统一管理。通过Dataflow的MLTransform，用户能轻松将非结构化数据转换为嵌入，并写入AlloyDB等向量数据库，支持语义搜索和RAG等AI应用，简化从微调到生产的流程。",
+      "translated_title": "从微调到生产：使用 Dataflow 构建可扩展的嵌入式管道",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EGDataflow_Graph_RD1-V01.original.jpg",
+          "alt": "Dataflow's MLTransform",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Learn how to use Google's EmbeddingGemma, an efficient open model, with Google Cloud's Dataflow and vector databases like AlloyDB to build scalable, real-time knowledge ingestion pipelines."
+    },
+    {
+      "title": "介绍 EmbeddingGemma：用于设备端嵌入的最佳开源模型 (原标题: Introducing EmbeddingGemma: The Best-in-Class Open Model for On-Device Embeddings)",
+      "link": "https://developers.googleblog.com/en/introducing-embeddinggemma/",
+      "pubDate": "Wed, 03 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-03T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "Google DeepMind 推出了 **EmbeddingGemma**，这是一款全新的开源嵌入模型，旨在为设备端 AI 提供同类最佳的性能。\n\n### 核心特性与优势\n\n*   **卓越性能与效率**：\n    *   拥有 3.08 亿参数，其设计高度高效，使其成为同等规模模型中的佼佼者。\n    *   在 Massive Text Embedding Benchmark (MTEB) 上，是 5 亿参数以下排名最高的开源多语言文本嵌入模型。\n    *   基于 Gemma 3 架构，经过 100 多种语言训练，量化后可在不到 200MB 的 RAM 中运行。\n    *   性能可与参数量近乎两倍的流行模型相媲美。\n    ![MTEB Score](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EmbeddingGemma_Chart01_RD3-V01.original.png)\n\n*   **灵活的离线工作能力**：\n    *   体积小巧、速度快、效率高，支持可定制的输出维度（通过 Matryoshka 表示从 768 到 128）。\n    *   具有 2K 令牌上下文窗口，可在手机、笔记本电脑、台式机等日常设备上运行。\n    *   与 Gemma 3n 协同工作，为移动 RAG 管道和语义搜索等应用解锁新用例。\n\n*   **广泛的工具集成**：\n    *   已与 sentence-transformers, llama.cpp, MLX, Ollama, LiteRT, transformers.js, LMStudio, Weaviate, Cloudflare, LlamaIndex, LangChain 等流行工具集成，方便开发者快速上手。\n\n### 如何赋能移动优先的 RAG 管道\n\n*   EmbeddingGemma 生成文本的数值表示（嵌入），将其转换为高维空间中的向量以表示含义。\n*   在 RAG 管道中，嵌入的质量对于检索相关上下文至关重要。高质量的嵌入能确保检索到准确的文档，从而生成上下文相关的答案。\n*   EmbeddingGemma 的高性能确保了高质量的表示，为准确可靠的设备端应用提供支持。\n    ![MTEB Multilingual v2](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EmbeddingGemma_Chart02_RD3-V01.original.png)\n\n### 卓越的尺寸性能\n\n*   在检索、分类和聚类等任务上，EmbeddingGemma 在同等大小的流行嵌入模型中表现出色，尤其在多语言嵌入生成方面性能强劲。\n\n### 小巧、快速、高效的设计\n\n*   3.08 亿参数模型由约 1 亿模型参数和 2 亿嵌入参数组成，专为性能和最小资源消耗而设计。\n*   利用 Matryoshka 表示学习 (MRL) 提供多种嵌入尺寸（768、512、256 或 128 维度），兼顾质量、速度和存储成本。\n*   在 EdgeTPU 上，256 个输入令牌的嵌入推理时间小于 15 毫秒，实现实时响应。\n*   通过量化感知训练 (QAT)，显著降低 RAM 使用量至 200MB 以下，同时保持模型质量。\n\n### 离线优先的设计理念\n\n*   赋能开发者构建设备端、灵活且注重隐私的应用，直接在设备硬件上生成文档嵌入，确保敏感用户数据安全。\n*   使用与 Gemma 3n 相同的分词器进行文本处理，减少 RAG 应用的内存占用。\n\n### 新的解锁能力\n\n*   无需互联网连接即可同时搜索个人文件、文本、电子邮件和通知。\n*   通过与 Gemma 3n 结合，实现个性化、行业特定和离线启用的聊天机器人。\n*   分类用户查询以进行相关函数调用，帮助移动代理理解。\n*   支持针对特定领域、任务或语言进行微调。\n\n### 如何选择合适的嵌入模型\n\n*   **设备端、离线用例**：EmbeddingGemma 是最佳选择，针对隐私、速度和效率进行了优化。\n*   **大多数大规模、服务器端应用**：通过 Gemini API 探索最先进的 Gemini Embedding 模型，以获得最高质量和最大性能。\n\n### 立即开始使用 EmbeddingGemma\n\n*   模型权重可在 Hugging Face、Kaggle 和 Vertex AI 上获取。\n*   提供详细文档、推理和微调指南，以及 Gemma Cookbook 中的快速入门 RAG 示例。\n*   支持 transformers.js, MLX, llama.cpp, LiteRT, Ollama, LMStudio, Weaviate 等流行设备端 AI 工具。",
+      "shortSummary": "Google DeepMind 发布了 EmbeddingGemma，这是一款同类最佳的开源嵌入模型，专为设备端 AI 设计。它拥有 3.08 亿参数，高效、多语言，能在离线状态下运行，并支持 RAG 和语义搜索。EmbeddingGemma 性能卓越，可与更大模型媲美，且内存占用极低（<200MB RAM），提供灵活的嵌入尺寸。它确保数据隐私，并已集成到多种流行工具中，为移动优先的 AI 应用提供了强大支持。",
+      "translated_title": "介绍 EmbeddingGemma：用于设备端嵌入的最佳开源模型",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EmbeddingGemma_Chart01_RD3-V01.original.png",
+          "alt": "MTEB Score",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EmbeddingGemma_Chart02_RD3-V01.original.png",
+          "alt": "MTEB Multilingual v2",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Introducing EmbeddingGemma: a new embedding model designed for efficient on-device AI applications from Google. This open model is the highest-ranking text-only multilingual embedding model under 500M parameters on the MTEB benchmark, enabling powerful features like RAG and semantic search directly on mobile devices without an internet connection."
+    },
+    {
       "title": "如何提示 Gemini 2.5 Flash 图像生成以获得最佳效果 (原标题: How to prompt Gemini 2.5 Flash Image Generation for the best results)",
       "link": "https://developers.googleblog.com/en/how-to-prompt-gemini-2-5-flash-image-generation-for-the-best-results/",
       "pubDate": "Wed, 27 Aug 2025 16:00:00 GMT",
@@ -221,33 +267,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Google's new Gemma 3 270M is a compact, 270-million parameter model offering energy efficiency, production-ready quantization, and strong instruction-following, making it a powerful solution for task-specific fine-tuning in on-device and research settings."
-    },
-    {
-      "title": "Gemini CLI + VS Code：原生差异比较和上下文感知工作流 (原标题: Gemini CLI + VS Code: Native diffing and context-aware workflows)",
-      "link": "https://developers.googleblog.com/en/gemini-cli-vs-code-native-diffing-context-aware-workflows/",
-      "pubDate": "Tue, 12 Aug 2025 16:00:00 GMT",
-      "isoDate": "2025-08-12T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Gemini CLI + VS Code：原生差异比较和上下文感知工作流\n\nGemini CLI 的最新更新为 VS Code 带来了更深层次的集成，旨在提升开发者的命令行应用体验。此次更新将智能功能直接引入 VS Code 集成终端，通过理解上下文并提供即时建议，彻底改变了开发者与项目互动的方式。\n\n## 新特性：更深层次的集成\n\n此次更新从根本上改变了 Gemini CLI 与编辑器的交互方式，使开发工作流更加流畅高效。\n\n*   **工作区与选择上下文感知**\n    当 VS Code IDE 连接到 Gemini CLI 时，CLI 可以直接访问您的工作区。它能够感知您打开的文件并访问选定的文本。这使得 CLI 能够提供有针对性且与上下文相关的建议，因为它能准确理解您当前正在处理的内容。\n\n*   **原生编辑器内差异比较 (Native In-editor Diffing)**\n    Gemini CLI 的建议现在可以直接在 VS Code 内部触发全屏差异比较视图。这提供了全面的并排更改审查。至关重要的是，您可以在接受更改之前直接在此差异视图中修改代码，从而获得完全的控制和灵活性。\n\n## 如何开始\n\n准备好体验了吗？设置过程非常简单。\n\n1.  **先决条件**\n    *   Gemini CLI 版本 0.1.20 或更高。\n    *   在 VS Code 的集成终端中运行 CLI。\n\n2.  **一次性设置**\n    在您的集成终端中运行 `/ide install` 命令，以安装必要的配套扩展。\n\n3.  **切换集成状态**\n    完成一次性设置后，您可以轻松管理集成：\n    *   激活：运行 `/ide enable`\n    *   停用：运行 `/ide disable`\n\n立即启用 IDE 集成，体验使用 Gemini CLI 和 VS Code 构建项目的新方式。",
-      "shortSummary": "Gemini CLI 最新更新深度集成 VS Code，提供智能、上下文感知的开发体验。核心功能包括：CLI 直接访问工作区和选定文本，实现精准建议；以及原生编辑器内全屏差异比较，允许直接修改代码。用户需满足版本要求并在VS Code终端运行`/ide install`进行一次性设置，随后可轻松启用或禁用集成，大幅提升开发效率和控制力。",
-      "translated_title": "Gemini CLI + VS Code：原生差异比较和上下文感知工作流",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The latest Gemini CLI update provides a deep IDE integration within VS Code for intelligent, context-aware suggestions, and native in-editor diffing, allowing developers to review and modify proposed changes directly within the diff view for a more efficient workflow."
-    },
-    {
-      "title": "认识Jules最犀利的批评者和最有价值的盟友 (原标题: Meet Jules’ sharpest critic and most valuable ally)",
-      "link": "https://developers.googleblog.com/en/meet-jules-sharpest-critic-and-most-valuable-ally/",
-      "pubDate": "Mon, 11 Aug 2025 16:00:00 GMT",
-      "isoDate": "2025-08-11T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Jules AI 编码代理的新“批评者”功能\n\n## 介绍\nJules 是一款 AI 编码代理，能够构建、重构和搭建代码，让开发者专注于其他任务。然而，这种便利性有时会导致细微的错误、遗漏的边缘情况和未经测试的假设。为了解决这些问题，Jules 引入了一项新功能——“批评者”（critic），它能在代码提交给用户之前对其进行审查和批判。\n\n## 批评者的角色与“批评者增强生成”\n“批评者”功能简单而强大：当 Jules 构建代码时，批评者会对其提出质疑。每一个提议的更改在完成之前都会经过对抗性审查。可以把批评者看作 Jules 的同行评审员，它深入了解代码质量原则，并敢于指出潜在的问题，例如重复发明了有风险的轮子。\n\n这项功能直接集成到代码生成过程中，被称为“批评者增强生成”（critic-augmented generation）。在当前版本中，它是一个一次性过程，在单个通道中评估最终输出。未来的里程碑目标是使其成为一个真正的多步骤代理，能够使用工具调用，或在子任务之后、规划之前触发。目前，它一次性审查完整的生成内容。这将借鉴多步骤研究，其中批评者使用外部工具（如代码解释器或搜索引擎）验证输出，并从结果中学习。\n\n## 批评者的具体作用\n批评者不直接修复代码，而是标记出问题，然后将其反馈给 Jules 进行改进。例如：\n*   一个通过所有测试但引入了微妙逻辑错误的补丁：批评者会指出“输出符合预期情况，但在未见输入上失败。”\n*   一个能编译但默默丢弃了所需字段的更改：批评者会指出“函数签名已更新，但未处理所有参数。”\n*   一个能工作但使用了低效方法的代码：批评者会指出“算法产生正确结果，但具有不必要的 O(n²) 复杂度。”\n\n由于此过程发生在补丁生成之后和提交之前（如果仍有问题，可能会多次进行），Jules 可以实时重新规划。我们的目标是减少低质量的拉取请求（PRs），提高测试覆盖率，增强安全性。\n\n## 与传统工具的区别\n批评者功能与传统的代码检查工具（如 Linter）和测试不同：\n*   **Linter**：遵循浅层、固定的规则。\n*   **测试**：验证特定的断言。\n*   **批评者**：理解代码背后的意图和上下文。它更接近于一种无参考评估方法，在不需要黄金标准实现的情况下判断代码的正确性和健壮性。\n\n它还借鉴了“LLM-as-a-judge”（大语言模型作为评判者）的研究，即一个模型评估另一个模型的工作质量和正确性。这种自动化评判与生成过程紧密集成时特别有用，能将审查转化为实时的反馈循环。\n\n## 工作流程\n批评者功能的工作流程如下：\n1.  用户提示 Jules 开始一项任务。\n2.  批评者功能在单个通道中审查候选补丁及其描述，并做出总体判断。\n3.  Jules 根据反馈进行响应，在完成之前进行改进。之后，批评者可以再次审查更新后的补丁，并继续标记任何它认为必要的问题，直到不再存在问题。\n4.  用户收到已经过内部审查的代码。\n\n这借鉴了“行动者-批评者”（actor-critic）强化学习（RL）的原理，其中“行动者”生成，“批评者”评估。在 RL 中，这个循环根据学习信号更新行动者和批评者。在我们的“LLM-as-critic”设置中，模式类似：提出，然后评估。然而，反馈不是更新学习参数，而是影响当前状态和下一步行动。同样的原则也支撑着“LLM-as-a-judge”的研究，其中批评者的评估在不重新训练的情况下指导质量。\n\n## 重要性\n在快速迭代的世界中，批评者将审查过程提前，并融入到生成行为本身。这意味着用户审查的代码已经过内部的质询、完善和压力测试。当然，用户在使用前仍应仔细审查生成的代码。\n\n优秀的开发者不仅编写代码，他们还会质疑代码。现在，Jules 也能做到。",
-      "shortSummary": "Jules AI编码代理推出一项“批评者”功能，在用户看到代码前对其进行审查。该功能作为Jules的同行评审员，能识别并标记AI生成代码中的细微错误、低效或逻辑问题。Jules会根据批评者的反馈实时重构代码，以提高质量、测试覆盖率和安全性。它不同于传统Linter或测试，能理解代码意图和上下文，借鉴了“LLM作为评判者”的理念。最终，用户将获得经过内部审查、更高质量的代码。",
-      "translated_title": "认识Jules最犀利的批评者和最有价值的盟友",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Jules' critic functionality addresses potential issues like subtle bugs and missed edge cases in AI-generated code by acting as a peer reviewer within the generation process. This \"critic-augmented generation\" means proposed code changes undergo adversarial review, allowing Jules to improve its output and ultimately deliver higher-quality, pre-reviewed code."
     }
   ],
-  "lastUpdated": "2025-09-04T10:27:46.848Z"
+  "lastUpdated": "2025-09-06T10:25:23.543Z"
 }
