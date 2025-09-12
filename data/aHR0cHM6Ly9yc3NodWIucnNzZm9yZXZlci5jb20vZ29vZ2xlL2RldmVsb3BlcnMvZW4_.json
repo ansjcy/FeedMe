@@ -5,6 +5,104 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Gemini 批量 API 现已支持嵌入和 OpenAI 兼容性 (原标题: Gemini Batch API now supports Embeddings and OpenAI Compatibility)",
+      "link": "https://developers.googleblog.com/en/gemini-batch-api-now-supports-embeddings-and-openai-compatibility/",
+      "pubDate": "Tue, 09 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-09T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Gemini 批量 API 新功能：支持嵌入和 OpenAI 兼容性\n\nGoogle Cloud 于 2025 年 9 月 10 日宣布，对 Gemini 批量 API 进行重大扩展，新增了两项关键功能：\n\n1.  **支持新推出的 Gemini 嵌入模型。**\n2.  **提供 OpenAI SDK 兼容性，方便开发者提交和处理批量请求。**\n\n### Gemini 批量 API 概述\n\nGemini 批量 API 最初旨在实现异步处理，特别适用于高吞吐量和对延迟容忍的用例。其核心优势在于：\n\n*   **成本效益：** 处理费率比实时 API 降低 50%。\n*   **效率提升：** 能够处理大规模数据请求。\n\n### 批量 API 嵌入支持\n\n新推出的 Gemini 嵌入模型已广泛应用于生产部署。现在，通过批量 API 使用该模型，开发者可以获得更多优势：\n\n*   **更高的速率限制。**\n*   **更低的价格：** 每 100 万输入 token 仅需 $0.075，价格减半。\n*   **解锁新用例：** 特别适用于对成本敏感、对延迟容忍或需要异步处理的场景。\n\n**使用示例 (Python 代码):**\n\n文章提供了使用 `google.genai` 客户端进行批量嵌入的详细代码示例，包括：\n\n1.  创建包含请求的 JSONL 文件。\n2.  通过 `client.files.upload` 上传请求文件。\n3.  使用 `client.batches.create_embeddings` 创建批量嵌入作业。\n4.  等待作业完成并下载结果。\n\n### 批量 API 的 OpenAI 兼容性\n\n对于已经使用 OpenAI SDK 兼容层的开发者，切换到 Gemini 批量 API 变得异常简单，只需更新少量代码即可：\n\n*   **便捷性：** 开发者可以通过指定 Gemini API 密钥和特定的 `base_url` (`https://generativelanguage.googleapis.com/v1beta/openai/`)，继续使用 OpenAI SDK 来提交和管理批量请求。\n\n**使用示例 (Python 代码):**\n\n文章展示了如何使用 `openai` 客户端创建批量作业，包括：\n\n1.  上传符合 OpenAI 批量输入格式的 JSONL 文件。\n2.  使用 `openai_client.batches.create` 方法创建批量作业，指定 `input_file_id`、`endpoint` 和 `completion_window`。\n3.  轮询作业状态，并在完成后下载结果。\n\n### 未来展望\n\nGoogle 表示将持续扩展其批量处理服务，以进一步优化 Gemini API 的使用成本，鼓励开发者关注后续更新。",
+      "shortSummary": "Gemini 批量 API 现已扩展，支持新推出的 Gemini 嵌入模型和 OpenAI SDK 兼容性。此更新允许开发者以更低的成本（费率降低 50%，嵌入模型价格减半）和更高的速率限制，异步处理大规模、对延迟不敏感的任务。通过简单的代码修改，使用 OpenAI SDK 的开发者也能轻松切换。Google 将继续优化批量服务以降低成本。",
+      "translated_title": "Gemini 批量 API 现已支持嵌入和 OpenAI 兼容性",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Batch API now supports Embeddings and OpenAI CompatibilityToday we are extending the Gemini Batch AP..."
+    },
+    {
+      "title": "宣布 Genkit Go 1.0 及增强型 AI 辅助开发 (原标题: Announcing Genkit Go 1.0 and Enhanced AI-Assisted Development)",
+      "link": "https://developers.googleblog.com/en/announcing-genkit-go-10-and-enhanced-ai-assisted-development/",
+      "pubDate": "Mon, 08 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-08T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "Google 激动地宣布发布 **Genkit Go 1.0**，这是其针对 Go 生态系统的开源 AI 开发框架的首个稳定、生产就绪版本。同时，还推出了 **`genkit init:ai-tools`** 命令，旨在极大提升 AI 辅助开发工作流。\n\n### Genkit 简介\nGenkit 是一个开源框架，用于构建全栈 AI 驱动的应用程序。它提供：\n*   统一的多种模型提供商接口。\n*   简化的 API，支持多模态内容、结构化输出、工具调用、检索增强生成（RAG）和代理工作流。\n*   通过 Genkit Go，开发者现在可以利用 Go 语言的速度、安全性和可靠性，构建和部署生产就绪的 AI 应用程序。\n\n### Genkit Go 1.0 的新特性\n1.  **生产就绪：**\n    *   Genkit Go 1.0 致力于为 Go 中构建 AI 应用程序提供稳定、可靠的基础。\n    *   API 稳定且经过良好测试，确保部署到生产环境的应用程序的可靠性。\n    *   遵循 Go 的兼容性承诺，Genkit 1.* 版本的程序即使在未来的“点”发布（如 1.1、1.2）出现时，也将继续正确编译和运行。\n2.  **类型安全的 AI 流程：**\n    *   “流程”（Flows）是 Genkit 最强大的功能之一，它们是用于 AI 用例的函数，提供可观察性、易测试性和简化的部署。\n    *   开发者可以使用 Go 结构体和 JSON Schema 验证来定义类型安全的 AI 流程，例如生成结构化食谱，确保数据的一致性和准确性。\n3.  **统一的模型接口：**\n    *   Genkit Go 提供了一个单一、一致的接口，用于与多个 AI 模型提供商协作，包括 Google AI、Vertex AI、OpenAI、Anthropic 和 Ollama 等。\n4.  **工具调用：**\n    *   Genkit Go 使得为 AI 模型提供访问外部函数和 API 的能力变得轻而易举，例如定义一个用于获取天气信息的工具。\n5.  **简易部署：**\n    *   开发者可以通过最少的设置，将 AI 流程部署为 HTTP 端点。\n\n### 丰富的开发者工具\nGenkit Go 配备了一套全面的开发工具，旨在使 AI 应用程序的构建快速而直观：\n1.  **独立 CLI 安装：**\n    *   通过一个独立的 CLI 二进制文件，可以快速开始，无需其他运行时安装（支持 macOS、Linux 和 Windows）。\n    *   CLI 支持任何 Genkit 应用程序（JavaScript、Go、Python），并提供运行和评估流程等便捷命令。\n2.  **交互式开发者 UI：**\n    *   提供可视化界面，用于测试和调试 AI 应用程序。\n    *   功能包括：交互式运行流程、通过详细跟踪进行调试、监控性能（延迟、令牌使用、成本）以及试验提示和模型配置。\n    *   可以通过 CLI 命令 `genkit start -- go run .` 与 Go 应用程序一同启动。\n\n### 介绍 `genkit init:ai-tools` 命令\n*   **革新 AI 辅助开发：** 此命令为 JavaScript 和 Go 开发者提供了无缝集成 Genkit 框架和工具的 AI 编码助手配置。\n*   **运行效果：**\n    *   检测并保留现有的 AI 助手配置。\n    *   安装 Genkit MCP 服务器，其中包含强大的开发工具，如 `lookup_genkit_docs`（搜索 Genkit 文档）、`list_flows`（列出当前 Genkit 应用中的所有流程）、`run_flow`（执行流程）和 `get_trace`（获取执行跟踪）。\n    *   创建一个 `GENKIT.md` 文件，其中包含针对 AI 助手的全面语言特定指令。\n*   **支持的 AI 工具：**\n    *   Gemini CLI (Google 的 CLI AI 编码助手)\n    *   Firebase Studio (Firebase 的代理式云开发环境)\n    *   Claude Code (Anthropic 的编码助手)\n    *   Cursor (AI 驱动的代码编辑器)\n    *   对于其他工具，可以选择“generic”选项以获取可手动集成的 `GENKIT.md` 文件。\n*   **增强的开发体验：** 通过 AI 助手集成，开发者可以：\n    *   询问 Genkit Go API 相关问题并获得准确、最新的答案。\n    *   生成符合最佳实践的 Go 特定 Genkit 代码。\n    *   通过 AI 助手分析跟踪来调试流程。\n    *   使用 AI 生成的输入来测试应用程序。\n    *   获取 Go 特定模式和惯用代码的帮助。\n\n### 快速入门\n文章提供了快速创建项目、安装 Genkit 和 CLI、设置 AI 助手集成、创建第一个流程以及启动开发者 UI 的步骤。\n\n### 更多资源\n开发者可以通过官方文档、入门指南、Go API 参考、GitHub 示例和 Genkit Discord 社区获取更多信息和支持。\n\nGenkit Go 1.0 将 Go 的性能和可靠性与 Genkit 生产就绪的 AI 框架和工具相结合，旨在赋能开发者构建强大的 AI 应用程序。",
+      "shortSummary": "Google 发布 Genkit Go 1.0，这是 Go 生态系统的首个稳定、生产就绪的开源 AI 开发框架。它提供类型安全的 AI 流程、统一的模型接口、工具调用和丰富的开发者工具。同时推出的 `genkit init:ai-tools` 命令，能自动配置 AI 编码助手，无缝集成 Genkit，提供文档查询、流程管理、调试和代码生成等功能，显著提升 AI 辅助开发体验。Genkit Go 1.0 结合了 Go 的性能与 Genkit 的 AI 框架，助力开发者构建强大的 AI 应用。",
+      "translated_title": "宣布 Genkit Go 1.0 及增强型 AI 辅助开发",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "We are launching 1.0 stable release of Genkit Go, empowering Go developers to build performant, production-ready AI-powered applications with Genkit. Recent enhancements include support for integrating and building MCP tools, expanding third-party model provider support, and production AI monitoring with Firebase.\n\nAdditionally, we are announcing a new feature in the Genkit CLI to provide AI development tools, like the Gemini CLI and Cursor, with the latest knowledge of Genkit - supercharging Genkit development experience when using AI assistance."
+    },
+    {
+      "title": "A2A 扩展：赋能自定义代理功能 (原标题: A2A Extensions: Empowering Custom Agent Functionality)",
+      "link": "https://developers.googleblog.com/en/a2a-extensions-empowering-custom-agent-functionality/",
+      "pubDate": "Mon, 08 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-08T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# A2A 扩展：赋能自定义代理功能\n\nA2A 协议提供了一个强大且标准化的代理间通信框架，但它也认识到“一刀切”的方法可能不适用于所有场景。为此，A2A 引入了“扩展”功能，允许开发者在 A2A 服务器中添加自定义的、特定领域的功能和方法，超越核心协议。此外，它还使客户端能够添加远程代理应支持的额外要求，这在代理需要提供专业化功能时非常有用。\n\n## 如何开始使用？\n\n入门非常简单。一个代理只需在其“代理卡”（一个概述其功能的 JSON 文件）中声明对某个扩展的支持。由于任何人都可以定义、发布和实现扩展（每个扩展都由一个唯一的 URI 标识），因此 A2A 生态系统非常开放和社区驱动。这种方法确保 A2A 协议保持高度灵活性和适应性，使开发者能够构建更强大、更专业的多种代理系统。\n\n![A2A 扩展](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-09-04_at_13.03.31.original.png)\n图 1: A2A 扩展\n\n## A2A 扩展的实际应用案例\n\n随着 A2A 协议的普及，我们看到了广泛的扩展用例：\n\n### 1. A2A 中的可追溯性扩展\n\n*   **目的**：确保不同的 AI 代理能够可靠、无误地协作，通过提供深度可见性来跟踪交互并有效诊断问题，从而实现对其通信的评估。\n*   **工作原理：ResponseTrace**\n    *   **核心**：ResponseTrace 消息是此扩展的核心，它是一个结构化日志，捕获代理执行的操作序列。它被设计为轻量级且独立于主 A2A 协议，仅专注于记录代理发出的请求。\n    *   **组成**：ResponseTrace 由一系列“步骤”（Steps）组成，每个步骤代表一个操作，可以是以下两种类型之一：\n        1.  **工具调用 (ToolInvocation)**：对特定工具（如函数或 API）的调用。\n        2.  **代理调用 (AgentInvocation)**：对另一个代理的调用，可以是另一个 A2A 代理或不同类型的代理。\n    *   **层级结构**：这些步骤是分层的。如果一个代理调用了另一个也支持可追溯性的代理，则第二个代理的跟踪可以嵌套在第一个代理内部，从而提供整个工作流的完整端到端视图。\n\n### 2. Twilio 的延迟扩展\n\n*   **目的**：Twilio 构建了一个延迟感知扩展，以帮助其基于 Twilio ConversationRelay 构建的语音代理进行模型选择。\n*   **特点**：这是一个领域特定功能的经典示例。广播代理的延迟信息不属于核心协议的代理卡规范，但 Twilio 为此构建了一个扩展，以帮助选择最合适的代理或优雅地进行适应。\n\n### 3. 其他有趣的应用程序\n\n*   **Identity Machines**：通过 A2A 扩展实现代理间调用的零信任握手。它们展示了代理任务委托如何基于信任和独立的策略门（如目的、预算、能力、模型、PII 状态等自定义参数）进行锚定，在代理接受任务之前强制执行这些策略。\n*   **Ethereum 的 ERC-8004 提案**：旨在为 AI 代理创建一个信任层，允许它们跨不同的组织边界进行交互。该标准引入了链上注册表，用于身份、声誉和验证，以实现来自各种生态系统的代理之间的安全和可互操作的通信。",
+      "shortSummary": "A2A 扩展通过允许开发者添加自定义的、特定领域的功能和方法，增强了 A2A 代理间通信协议。它使代理能够超越核心协议，支持专业化需求，并通过“代理卡”声明实现开放和社区驱动的生态系统。实际应用包括用于评估和诊断的通信可追溯性、Twilio 的延迟感知模型选择，以及 Identity Machines 实现的零信任握手和 Ethereum 提出的代理信任层（ERC-8004）。这极大地提升了多代理系统的灵活性和适应性。",
+      "translated_title": "A2A 扩展：赋能自定义代理功能",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-09-04_at_13.03.31.original.png",
+          "alt": "A2A Extensions",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "A2A Extensions provide a flexible way to add custom functionalities to agent-to-agent communication, going beyond the core A2A protocol. They enable specialized features and are openly defined and implemented."
+    },
+    {
+      "title": "超越反向传播：JAX 的符号能力开启科学计算新领域 (原标题: Beyond backpropagation: JAX's symbolic power unlocks new frontiers in scientific computing)",
+      "link": "https://developers.googleblog.com/en/jax-symbolic-power-unlocks-new-frontiers-in-scientific-computing/",
+      "pubDate": "Mon, 08 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-08T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# JAX 在科学计算中的新突破：超越反向传播\n\nJAX 不仅是大型 AI 模型开发的热门框架，其在更广泛的科学领域，特别是计算密集型领域（如物理信息机器学习）的应用也日益增长。JAX 的核心优势在于其可组合的变换（higher-order functions），例如 `grad` 函数可以接收一个函数并返回其梯度计算函数，并且这些变换可以自由嵌套和组合，这使得 JAX 在处理高阶导数和其他复杂变换时表现出色。\n\n## 解决偏微分方程 (PDEs) 的挑战\n\n新加坡国立大学和 Sea AI Lab 的研究员 Zekun Shi 和 Min Lin 的经验表明，JAX 如何解决科学研究中的根本挑战，尤其是在求解复杂偏微分方程 (PDEs) 时面临的计算瓶颈。他们的工作专注于使用神经网络求解高阶 PDEs。尽管神经网络作为通用函数逼近器具有巨大潜力，但其主要障碍在于需要评估高阶导数，有时高达四阶甚至更高，包括混合偏导数。\n\n### 传统框架的局限性\n\n标准深度学习框架主要针对通过反向传播（backward mode AD）进行模型训练而优化，因此不适合计算高阶导数。重复应用反向传播来计算高阶导数的成本与导数阶数 (k) 呈指数级增长，与域维度 (d) 呈多项式增长。这种“维度诅咒”和导数阶数的指数级扩展使得处理大型、复杂的实际问题几乎不可能。\n\n![维度诅咒](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_LSGbsBj.original.jpg)\n*计算图随导数阶数 k 呈指数级增长*\n\n### JAX 的独特解决方案：泰勒模式自动微分 (Taylor Mode AD)\n\n研究人员发现，JAX 是一个“游戏规则改变者”，因为它提供了其他深度学习库所不具备的泰勒模式自动微分 (Taylor mode AD) 能力。JAX 的关键架构特点是其强大的函数表示和变换机制，通过追踪 Python 代码并编译以实现高性能。这种通用设计支持从即时编译到标准导数计算的广泛应用，其底层灵活性使得在其他框架中难以实现的高级操作成为可能。\n\n对于研究人员而言，最关键的应用是 JAX 对泰勒模式 AD 的支持。泰勒模式 AD 通过前向推进函数的泰勒级数展开，并在单次通过中高效计算高阶导数，而不是通过重复、昂贵的反向传播。\n\n![二阶导数的泰勒模式](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_z0BG98v.original.jpg)\n*二阶导数的泰勒模式 - 无指数级扩展*\n\n### 随机泰勒导数估计器 (STDE)\n\n利用 JAX 的泰勒模式 AD，研究人员开发了一种算法——随机泰勒导数估计器 (STDE)，以高效地随机化和估计任何微分算子。该方法的核心思想是利用泰勒模式 AD 高效计算 PDEs 中出现的高阶导数张量的收缩。通过构建特殊的随机切向量（或“jets”），他们可以在一次高效的前向传播中获得任意复杂微分算子的无偏估计。\n\n该方法在 NeurIPS 2024 上获得了最佳论文奖，名为“Stochastic Taylor Derivative Estimator: Efficient amortization for arbitrary differential operators”。\n\n### 显著的成果\n\n使用 JAX 中的 STDE 方法，研究人员实现了：\n*   **速度提升：** 相比基线方法，速度提升超过 1000 倍。\n*   **内存减少：** 内存使用减少超过 30 倍。\n*   **问题解决能力：** 能够在单个 NVIDIA A100 GPU 上，在短短 8 分钟内解决一个 100 万维的 PDE，这在以前是无法完成的任务。\n\n这些成果在仅针对标准机器学习工作负载的框架中是无法实现的，因为其他框架虽然高度优化反向传播，但对端到端计算图表示的关注不如 JAX。\n\n## JAX 的通用能力与未来展望\n\n除了泰勒模式 AD，JAX 的模块化设计以及对通用数据类型和函数变换的支持对研究至关重要。在另一项工作“Automatic Functional Differentiation in JAX”中，研究人员甚至将 JAX 推广到处理无限维向量（希尔伯特空间中的函数），通过将其描述为自定义数组并注册到 JAX 中。这使得他们能够重用现有机制来计算泛函和算子的变分导数，这是其他框架完全无法实现的功能。\n\n因此，研究团队不仅在本项目中，还在量子化学等广泛研究领域采用了 JAX。其作为通用、可扩展和符号强大的系统的基本设计，使其成为推动科学计算前沿的理想选择。\n\nJAX 团队鼓励科学界探索 JAX 的科学计算生态系统，分享使用 JAX 解决科学难题的故事，并提供功能需求以指导 JAX 的发展路线图。",
+      "shortSummary": "JAX正从AI领域扩展到科学计算，尤其在解决复杂偏微分方程(PDEs)方面展现出巨大潜力。传统框架因高阶导数计算成本高昂而受限，而JAX凭借其独特的泰勒模式自动微分(AD)能力，能高效计算高阶导数。研究人员利用JAX开发了随机泰勒导数估计器(STDE)，实现了超过1000倍的速度提升和30倍内存减少，成功解决了百万维PDE等此前无法处理的问题。JAX的通用性和符号能力使其成为推动科学计算前沿的强大工具。",
+      "translated_title": "超越反向传播：JAX 的符号能力开启科学计算新领域",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_LSGbsBj.original.jpg",
+          "alt": "curse of dimensionality",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_z0BG98v.original.jpg",
+          "alt": "Taylor-mode for second-order derivative",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "JAX, a framework known for large-scale AI model development, is proving to be a powerful tool in scientific computing, particularly for solving complex Partial Differential Equations (PDEs), now being leveraged by researchers to achieve significant speed-ups and memory reductions in solving high-order PDEs and demonstrating its potential to unlock new frontiers in scientific discovery."
+    },
+    {
+      "title": "Veo 3 和 Veo 3 Fast – 新定价、新配置和更高分辨率 (原标题: Veo 3 and Veo 3 Fast – new pricing, new configurations and better resolution)",
+      "link": "https://developers.googleblog.com/en/veo-3-and-veo-3-fast-new-pricing-new-configurations-and-better-resolution/",
+      "pubDate": "Sun, 07 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-07T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Veo 3 和 Veo 3 Fast 更新概览\n\n2025年9月8日，Veo平台宣布了三项重大更新，旨在提升视频生成能力并降低成本，同时确保Veo 3和Veo 3 Fast模型在Gemini API中稳定用于规模化生产。\n\n### 主要更新点：\n*   **支持垂直格式输出**：新增9:16宽高比，适用于移动优先和社交媒体场景。\n*   **1080p高清输出**：提供更高分辨率的视频生成选项。\n*   **全新更低定价**：Veo 3和Veo 3 Fast的视频生成价格大幅下调。\n\n### 价格调整\n此次更新显著降低了使用Veo 3和Veo 3 Fast生成高质量视频的成本：\n*   **Veo 3**：价格从每秒$0.75降至**每秒$0.40**。\n*   **Veo 3 Fast**：价格从每秒$0.40降至**每秒$0.15**。\n\n### 新功能：垂直视频和1080p高清输出\n\n**1. 垂直视频支持 (9:16 宽高比)**\n*   现在，用户可以设置`aspectRatio`参数为`9:16`，以生成专为移动设备和社交平台优化的垂直格式视频。\n\n**2. 1080p高清分辨率**\n*   通过将`resolution`参数设置为`1080p`，用户可以生成更高质量的Veo 3和Veo 3 Fast视频。\n\n### MediaSim 演示应用\n\nGoogle AI Studio中提供了一个名为MediaSim的演示应用，展示了如何结合Gemini的多模态理解、生成和图像编辑能力，以及Veo 3的视频和音频生成能力，来创建多模态媒体模拟。该应用集成了tldraw SDK，提供了一个交互式画布。\n\n### 开发者资源与示例\n\n此次发布旨在让开发者更经济高效地构建支持高质量视频生成的应用程序。所有通过Veo生成的视频将继续包含数字SynthID水印。\n\n**Python 示例代码：**\n以下是一个使用`google-genai`库创建视频的基本Python示例，演示了如何设置模型、提示词、负面提示词、宽高比和分辨率：\n\n```python\nimport time\nfrom google import genai\nfrom google.genai import types\n\nclient = genai.Client()\noperation = client.models.generate_videos(\n    model=\"veo-3.0-fast-generate-001\",\n    prompt=\"a close-up shot of a golden retriever playing in a field of sunflowers\",\n    config=types.GenerateVideosConfig(\n        negative_prompt=\"barking, woofing\",\n        aspect_ratio=\"9:16\",\n        resolution=\"720p\",\n    ),\n)\n\n# Waiting for the video(s) to be generated\nwhile not operation.done:\n    time.sleep(20)\n    operation = client.operations.get(operation)\n\nprint(operation)\ngenerated_video = operation.response.generated_videos[0]\nclient.files.download(file=generated_video.video)\ngenerated_video.video.save(\"golden_retriever.mp4\")\n```\n\n**获取更多信息：**\n*   查阅官方文档。\n*   访问Google AI Studio中的Veo 3入门应用。\n*   参考Veo cookbook。",
+      "shortSummary": "Veo 3和Veo 3 Fast宣布重大更新：价格大幅下调，Veo 3降至$0.40/秒，Veo 3 Fast降至$0.15/秒。同时，新增支持9:16垂直视频格式和1080p高清输出，以满足移动和社交媒体需求。这些模型已在Gemini API中稳定用于生产，并提供了开发者资源和Python示例，鼓励开发者利用更经济、更高质量的视频生成能力进行创新。",
+      "translated_title": "Veo 3 和 Veo 3 Fast – 新定价、新配置和更高分辨率",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Today, we’re launching three big Veo updates: support for vertical format outputs (9:16 aspect ratio..."
+    },
+    {
+      "title": "Google AI Edge Gallery：现已支持音频并登陆Google Play (原标题: Google AI Edge Gallery: Now with audio and on Google Play)",
+      "link": "https://developers.googleblog.com/en/google-ai-edge-gallery-now-with-audio-and-on-google-play/",
+      "pubDate": "Thu, 04 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-04T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "Google AI Edge 团队已对其 Gemma 3n 预览版进行了扩展，现在包含了音频支持功能。\n\n主要更新和特点：\n\n*   **Gemma 3n 预览版扩展**：Google AI Edge 扩展了其 Gemma 3n 预览版的功能。\n*   **新增音频支持**：此次扩展的核心是增加了对音频的支持，使用户能够体验与音频相关的功能。\n*   **通过 Google AI Edge Gallery 体验**：用户可以通过 Google AI Edge Gallery 应用程序在自己的移动设备上直接体验这些新功能。\n*   **在 Play Store 上推出公开测试版**：Google AI Edge Gallery 现已在 Google Play 商店上作为公开测试版（Open Beta）提供，方便用户下载和使用。",
+      "shortSummary": "Google AI Edge 的 Gemma 3n 预览版已扩展，现支持音频功能。用户可通过 Google Play 商店上线的 Google AI Edge Gallery 公开测试版，在自己的手机上体验这些新特性。",
+      "translated_title": "Google AI Edge Gallery：现已支持音频并登陆Google Play",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Google AI Edge has expanded the Gemma 3n preview to include audio support. Users can play with it on their own mobile phone using the Google AI Edge Gallery, which is now available in Open Beta on Play Store."
+    },
+    {
       "title": "从微调到生产：使用 Dataflow 构建可扩展的嵌入式管道 (原标题: From Fine-Tuning to Production: A Scalable Embedding Pipeline with Dataflow)",
       "link": "https://developers.googleblog.com/en/deploying-embeddinggemma-at-scale-with-dataflow/",
       "pubDate": "Wed, 03 Sep 2025 16:00:00 GMT",
@@ -124,150 +222,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Stax, an experimental developer tool, addresses the insufficient nature of \"vibe testing\" LLMs by streamlining the LLM evaluation lifecycle, allowing users to rigorously test their AI stack and make data-driven decisions through human labeling and scalable LLM-as-a-judge auto-raters."
-    },
-    {
-      "title": "超越终端：Gemini CLI 登陆 Zed (原标题: Beyond the terminal: Gemini CLI comes to Zed)",
-      "link": "https://developers.googleblog.com/en/gemini-cli-is-now-integrated-into-zed/",
-      "pubDate": "Tue, 26 Aug 2025 16:00:00 GMT",
-      "isoDate": "2025-08-26T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Gemini CLI 与 Zed 集成：将 AI 直接带入代码编辑器\n\n2025年8月27日，Google 宣布 Gemini CLI 已成功集成到 Zed 代码编辑器中，旨在将强大的 AI 能力直接融入开发者的日常编码环境。\n\n### Gemini CLI 概述\n\nGemini CLI 从设计之初就强调其可扩展性，支持以下新兴标准和特性：\n\n*   **可扩展性核心**：通过 MCP、基于 Markdown 的指令、颜色主题、自定义扩展、自定义工具、自定义配置和 Open Telemetry 实现。\n*   **轻量级编排器**：能够与任何工具链无缝集成，这促使社区贡献、集成和扩展的数量呈爆炸式增长。\n*   **社区活跃度**：在 Gemini CLI 发布后的八周内，社区已合并了 1000 个拉取请求，显著扩展了其功能。\n*   **关键地位**：Gemini CLI 正迅速成为许多工程系统（包括 Google 内部系统）的关键组成部分。\n*   **开源性质**：Gemini CLI 是一个开源项目，鼓励社区参与和贡献。\n\n### 选择 Zed 的原因\n\nZed 被认为是 Gemini CLI 的理想集成伙伴，原因如下：\n\n*   **受欢迎度**：Zed 的高性能、开源代码编辑器在 Gemini CLI 团队内部已广受欢迎。\n*   **自然契合**：其 Rust-based 环境与 Gemini 的模型结合，提供与编辑器本身一样快速和响应的 AI 体验。\n*   **深度合作**：双方团队积极合作，实现了此次深度集成。\n\n### 集成带来的核心优势\n\n此次集成将终端和 IDE 这两种基本工具结合起来，帮助开发者以更快的速度和更高的精度完成常见任务：\n\n*   **代码生成与重构**：只需编写注释并按下快捷键，即可即时生成函数或重构现有代码。\n*   **即时解答**：高亮显示令人困惑的代码段或错误消息，即可立即获得解释。\n*   **终端自然对话**：在 Zed 的集成终端中使用 `gemini` 命令，可以像日常对话一样提出更广泛的问题。\n\n### 新型 AI 协作模式\n\n此次集成不仅仅是功能的叠加，它代表了一种全新的、更高效的 AI 协作方式，让开发者始终处于主导地位：\n\n*   **实时跟踪 AI 代理**：当 Gemini 正在工作时，开发者可以实时跟踪 AI 在多个文件中进行的更改，清晰地了解其执行过程。\n*   **像拉取请求一样审查代码**：AI 完成工作后，Zed 会在一个强大的审查界面中展示所有更改。开发者可以查看每个提议编辑的清晰差异，并像进行代码审查一样控制接受、修改或拒绝这些更改。\n*   **无缝交接**：审查完成后，开发者可以直接返回到代码中，无需繁琐的复制粘贴，保持工作流程的连贯性。\n*   **提供超越文件系统的上下文**：开发者不仅可以提供本地文件作为上下文，还可以指向文档 URL 或 API 规范，为 AI 提供解决更复杂问题所需的额外信息。\n\n### 开始使用与社区参与\n\nGoogle 鼓励开发者尝试 Gemini CLI 与 Zed 的集成，并期待看到开发者们利用这一新工具创造出什么。Gemini CLI 作为一个开源项目，欢迎开发者在 GitHub 上寻求帮助、检查源代码、提交问题以及贡献代码，共同改进项目。",
-      "shortSummary": "Gemini CLI 现已集成到 Zed 代码编辑器，将 AI 能力直接带入开发环境。Gemini CLI 是一个高度可扩展的开源 AI 编排器，通过与 Zed 高性能 Rust 环境的结合，使开发者能够快速生成和重构代码、获取即时解释，并在终端中进行自然对话。此次集成引入了新型 AI 协作模式，支持实时跟踪 AI 更改、像拉取请求一样审查代码，并提供外部上下文，显著提升了开发效率和体验。",
-      "translated_title": "超越终端：Gemini CLI 登陆 Zed",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Google and Zed have partnered to integrate Gemini CLI directly into the Zed code editor, bringing AI capabilities directly into the editor for developers and allowing for faster and more focused coding, enabling tasks like in-place code generation, instant answers, and natural chat within the terminal with a seamless review workflow for AI-generated changes."
-    },
-    {
-      "title": "隆重推出 Gemini 2.5 Flash Image，我们最先进的图像模型 (原标题: Introducing Gemini 2.5 Flash Image, our state-of-the-art image model)",
-      "link": "https://developers.googleblog.com/en/introducing-gemini-2-5-flash-image/",
-      "pubDate": "Mon, 25 Aug 2025 16:00:00 GMT",
-      "isoDate": "2025-08-25T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 隆重推出 Gemini 2.5 Flash Image：我们最先进的图像模型\n\nGoogle 于2025年8月26日发布了 Gemini 2.5 Flash Image（代号 nano-banana），这是一款最先进的图像生成和编辑模型，旨在解决用户对更高质量图像和更强大创意控制的需求。\n\n## 核心功能与改进\n\nGemini 2.5 Flash Image 在 Gemini 2.0 Flash 的低延迟、成本效益和易用性基础上，引入了多项创新功能：\n\n*   **多图像融合**：能够将多张输入图像融合为一张，例如将物体放入新场景，或用单一提示重新设计房间的配色方案或纹理。\n*   **角色一致性**：在不同提示和编辑中保持角色或物体外观的一致性，适用于在不同环境中放置同一角色、展示产品多角度视图或生成一致的品牌资产。\n    \n    ![角色一致性示例](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-image-editing-character-consistency.original.png)\n    \n*   **基于提示的图像编辑**：通过自然语言实现有针对性的转换和精确的局部编辑。例如，模糊背景、移除污渍、改变姿势或为黑白照片添加颜色。\n    \n    ![基于提示的图像编辑示例](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-flash-prompt-based-image-editing.original.png)\n    \n*   **原生世界知识**：模型受益于 Gemini 的世界知识，能够对现实世界进行深度语义理解，从而解锁新的用例，如将手绘图表转化为交互式教育导师，并遵循复杂的编辑指令。\n*   **视觉模板遵循**：擅长遵循视觉模板，可用于生成房地产列表卡片、员工徽章或动态产品模型。\n\n## 可用性与定价\n\n*   **可用平台**：Gemini 2.5 Flash Image 目前可通过 Gemini API 和 Google AI Studio 面向开发者提供，并通过 Vertex AI 面向企业用户提供。\n*   **定价**：每100万输出 token 定价为 $30.00，每张图像为1290个输出 token（即每张图像 $0.039）。其他输入和输出模式遵循 Gemini 2.5 Flash 的定价。\n\n## Google AI Studio 集成\n\nGoogle AI Studio 的“构建模式”已进行重大更新，使用户能够更轻松地构建应用。用户可以快速测试模型功能，通过自定义 AI 驱动应用进行混音，或仅用一个提示将想法变为现实。完成的应用可以直接从 Google AI Studio 部署或保存到 GitHub。\n\n## 合作伙伴与安全\n\n*   **合作伙伴**：OpenRouter.ai 和 fal.ai 已与 Google 合作，将 Gemini 2.5 Flash Image 引入更广泛的开发者社区。\n*   **安全措施**：所有使用 Gemini 2.5 Flash Image 创建或编辑的图像都将包含一个不可见的 SynthID 数字水印，以便识别为 AI 生成或编辑的内容。\n\n## 未来展望\n\nGoogle 正在积极改进长文本渲染、更可靠的角色一致性以及图像中细节的事实表示。鼓励开发者通过开发者论坛或 X 提供反馈。\n\n该模型目前处于预览阶段，预计在未来几周内将趋于稳定。",
-      "shortSummary": "Google 发布了 Gemini 2.5 Flash Image，这是一款先进的图像生成和编辑模型。它支持多图像融合、角色一致性、基于自然语言的精确编辑和利用 Gemini 的世界知识。该模型已通过 Gemini API、Google AI Studio 和 Vertex AI 提供，定价为每张图像 $0.039。所有生成图像均包含 SynthID 数字水印。Google 正持续改进其功能，并鼓励开发者积极使用和反馈。",
-      "translated_title": "隆重推出 Gemini 2.5 Flash Image，我们最先进的图像模型",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-image-editing-character-consistency.original.png",
-          "alt": "gemini-2-5-image-editing-character-consistency",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemini-2-5-flash-prompt-based-image-editing.original.png",
-          "alt": "gemini-2-5-flash-prompt-based-image-editing",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Gemini 2.5 Flash Image is a new state-of-the-art image generation and editing model that allows for blending multiple images, maintaining character consistency, and targeted transformations using natural language, leveraging Gemini's world knowledge, now available through the Gemini API, Google AI Studio, and Vertex AI."
-    },
-    {
-      "title": "Gemini Code Assist 的新功能 (原标题: What's new in Gemini Code Assist)",
-      "link": "https://developers.googleblog.com/en/new-in-gemini-code-assist/",
-      "pubDate": "Wed, 20 Aug 2025 16:00:00 GMT",
-      "isoDate": "2025-08-20T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Gemini Code Assist 的新功能：Agent 模式、IDE 改进和 CLI 更新\n\nGoogle 于 2025 年 8 月 21 日宣布了 Gemini Code Assist 的多项重要更新，旨在通过强大的智能代理功能、集成开发环境（IDE）的优化以及命令行界面（CLI）的增强，彻底改变开发者的工作方式。\n\n## 1. Agent 模式全面可用\n\nGemini Code Assist 的 Agent 模式现已在 VS Code 和 IntelliJ 中全面推出，为开发者提供了智能协作式方法来处理复杂的、多步骤的任务。\n\n*   **核心功能**：\n    *   **智能任务处理**：例如，重构购物车模型的视图和控制器以显示折扣代码，Agent 模式会提出详细的计划供开发者审查和批准，确保完全控制。它结合了 AI 的力量和开发者的专业知识，提高效率并生成更好的代码。\n*   **VS Code 中的 Agent 模式**：\n    *   此前在 Insiders 频道推出，现在已进入预览阶段并向所有人开放。\n    *   它是一个由 Gemini CLI 提供支持的全新聊天体验，通过以下方式提升生产力：\n        *   支持多文件编辑。\n        *   提供完整的项目上下文。\n        *   内置工具和与生态系统工具（使用 MCP）的集成。\n        *   集成“人在回路”（Human in the Loop, HiTL）机制。\n    *   **增强功能**：\n        *   直接使用集成的 Gemini 内联差异（Inline diff）编辑代码，直观高亮修改。\n        *   聊天中内联差异提高了代码编辑的清晰度。\n        *   聊天历史中 Agent 模式的持久性，提供一致体验。\n        *   简化直观的用户友好配额更新。\n        *   实时显示 shell 命令输出。\n        *   支持批量工具调用审批和编辑。\n        *   更快的 UI 性能和渲染。\n        *   Agent 模式的切换状态在 IDE 重启后保持不变。\n    *   ![VS Code prompts](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_9I8wDqd.original.png)\n    *   ![Gemini Code Assist Agent Mode in VS Code](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_CT8FmrZ.original.png)\n*   **IntelliJ 中的 Agent 模式**：\n    *   现已在稳定版中可用。\n    *   允许开发者在完全控制每次更改的情况下完成复杂的、多步骤的任务。\n    *   代理在进行任何修改前会提出计划供审查，开发者可以编辑、请求更改、批准或拒绝建议。\n    *   支持启用自动批准模式，让代理代为操作，完成后可审查和回滚更改。\n\n## 2. IDE 改进\n\nGemini Code Assist 在 IDE 体验方面进行了多项改进，以提升开发者的生产力。\n\n*   **聊天交互控制**：\n    *   新增功能，可停止正在进行的聊天响应，立即终止不必要冗长或错误的响应。\n    *   **IntelliJ**：引入了“思考令牌”（thinking tokens），让开发者在 Gemini 提供响应前，更深入地了解其思考过程。\n    *   ![IntelliJ tokens](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_n0A7ZgJ.original.png)\n*   **代码补全**：\n    *   **VS Code**：代码补全建议的性能得到显著提升，帮助开发者更快、更高效地编写代码。\n*   **预览功能普遍可用**：\n    *   许多之前推出的预览功能现已普遍可用，确保日常工作流的稳定性和可靠性，包括：\n        *   回滚到检查点。\n        *   将选定的代码片段添加到上下文。\n        *   使用选定的终端输出提示 Gemini Code Assist。\n        *   在工作区中指定文件名。\n        *   将文件从 Gemini Code Assist 的使用中排除。\n\n## 3. Gemini CLI 更新\n\n自 6 月底推出以来，Gemini CLI 社区活跃，贡献了 2800 多个拉取请求，提交了约 3400 个问题，并获得了超过 70,000 颗星。最近的更新主要集中在安全性、隐私和持续改进上。\n\n*   **Gemini CLI GitHub Actions**：\n    *   现已推出（测试版，广泛可用），是一个免费、强大的 AI 编码助手，可作为仓库的自主代理处理常规编码任务，也可作为按需协作工具。\n    *   由新问题或拉取请求等事件触发，在后台异步工作，利用项目完整上下文自动处理任务。\n    *   **三大核心用例**：智能问题分类、加速拉取请求审查、按需协作。\n*   **更深度的 VS Code 集成**：\n    *   Gemini CLI 现在能感知开发者打开的文件，并访问选定的文本，从而提供更有针对性和上下文相关的建议。\n    *   通过原生的编辑器内差异功能，开发者可以并排查看建议的更改，并在接受前进行编辑。\n    *   需使用 Gemini CLI 0.1.20 或更高版本，并进行一次性设置。\n*   **其他改进**：\n    *   提升了 Gemini CLI 的可靠性和一致性。\n    *   推出了自定义斜杠命令（Custom Slash Commands），允许定义可重用提示，简化与 Gemini CLI 的交互。\n*   **公共路线图**：已发布 Gemini CLI v1 的公共路线图，以保持透明度。\n\n这些更新旨在提供更好的编码体验，并提高开发者的生产力。开发者可以免费试用 Gemini Code Assist，并在发布说明中了解更多详细信息。",
-      "shortSummary": "Gemini Code Assist 发布重大更新，包括 Agent 模式的全面可用，现已支持 VS Code 和 IntelliJ，提供智能多步骤任务处理和代码协作。IDE 方面，改进了聊天控制、VS Code 代码补全性能，并使多项预览功能普遍可用。Gemini CLI 也迎来更新，推出了 GitHub Actions，并深化了与 VS Code 的集成，提供上下文感知建议和编辑器内差异功能，旨在全面提升开发者效率和工作流。",
-      "translated_title": "Gemini Code Assist 的新功能",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_9I8wDqd.original.png",
-          "alt": "VS Code prompts",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_CT8FmrZ.original.png",
-          "alt": "Gemini Code Assist Agent Mode in VS Code",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_n0A7ZgJ.original.png",
-          "alt": "IntelliJ tokens",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Gemini Code Assist's Agent Mode, now available in VS Code (Preview) and IntelliJ (Stable), streamlines complex coding tasks by proposing detailed plans for user review and approval. This intelligent, collaborative approach, enhanced with features like inline diffs and persistent chat history, aims to boost developer productivity and efficiency."
-    },
-    {
-      "title": "Gemini API 的 URL 上下文工具现已全面推出 (原标题: URL context tool for Gemini API now generally available)",
-      "link": "https://developers.googleblog.com/en/url-context-tool-for-gemini-api-now-generally-available/",
-      "pubDate": "Sun, 17 Aug 2025 16:00:00 GMT",
-      "isoDate": "2025-08-17T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Gemini API 的 URL 上下文工具现已全面推出\n\n**发布日期：** 2025年8月18日\n\nGoogle 宣布 Gemini API 的 URL 上下文工具现已全面推出，并新增多项功能，可供大规模生产使用。该工具旨在帮助开发者通过提供 URL 来为 Gemini 模型提供额外的上下文信息，从而避免手动上传内容，进而构建更强大、更具上下文感知能力的生成式 AI 应用。\n\n## 核心功能与优势\n\n*   **增强模型上下文理解：** 默认情况下，Gemini 模型拥有静态知识库且无法直接访问互联网。虽然通过 Google Search 进行接地（Grounding）可以实现广泛的实时信息发现，但 URL 上下文工具更进一步，允许模型摄取并理解特定网页的完整内容，而不仅仅是搜索摘要。\n*   **强大的组合：** 结合 Google Search 的发现能力和 URL 上下文工具的深度分析能力，为执行复杂的、多步骤的任务奠定了基础。\n\n## 扩展的内容支持\n\n此次发布显著扩展了 URL 上下文工具支持的上下文内容类型，使其适用于更广泛的应用场景：\n\n*   **PDF 支持：** 现在可以直接提供 PDF 链接。Gemini 不仅能从中提取文本，还能理解表格和整体结构，使报告、论文和手册等内容完全可用于模型接地。\n*   **图像支持：** 工具现在可以处理和分析 PNG、JPEG、BMP 和 WebP 等格式的图像。这利用了 Gemini 的多模态能力来理解视觉信息，为图表、示意图等的分析开辟了新途径。\n*   **网络和数据文件：** 继续稳健支持标准网页（HTML）、结构化数据（JSON、XML、CSV）以及文本文件（纯文本、RTF、CSS、JavaScript）。\n\n## 生产规模就绪\n\nURL 上下文工具已为大规模生产使用做好准备，并更新了限制和定价策略：\n\n*   **可扩展性：** 速率限制现在基于所选的 Gemini 模型，允许更大的规模。\n*   **成本透明：** 费用根据添加到上下文的输入令牌数量收取，按照模型的标准费率计算，确保成本清晰可预测。\n\n## 开启新的用例\n\nURL 上下文工具为开发者开启了广泛的智能体工作流，包括但不限于：\n\n*   **个性化客户互动：** 使用客户的网页信息来接地 AI 聊天代理，使其能提供准确且相关的咨询答案。\n*   **文档比较：** 分析多个报告、文章或 PDF，以识别差异并追踪趋势。\n*   **内容合成与创建：** 结合来自多个源 URL 的信息，生成准确的摘要、博客文章或报告。\n*   **代码与文档分析：** 指向 GitHub 仓库或技术文档，以解释代码、生成设置说明或回答技术问题。\n\n## URL 上下文工具的实际应用\n\n目前已有开发者利用 URL 上下文工具构建了令人惊叹的应用：\n\n*   **Gemini CLI：** 这是一个开源的 AI 代理，允许直接在终端中访问 Gemini。其 `web-fetch` 命令利用 URL 上下文工具，使开发者能够快速轻松地与网页内容交互，例如总结网页、提取关键信息或将其翻译成其他语言。\n\n    ![Gemini CLI 中的 Web fetch 工具](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/web-fetch-tool-gemini-cli.original.png)\n\n*   **Gladly.ai：** 作为一家客户服务平台，Gladly 利用 URL 上下文工具创建高度个性化的客户体验。通过提供客户网站的链接，基于 Gladly AI 平台构建的代理可以访问并理解最新的产品信息、促销活动和支持文章，从而为客户咨询提供更准确和相关的答案。\n\n## 立即开始\n\n开发者可以通过提供的 Python 代码示例开始使用 URL 上下文工具，并可查阅 URL 上下文文档、体验迷你演示应用，或在 Google AI Studio 的“工具”下找到 URL 上下文的开关进行尝试。",
-      "shortSummary": "Gemini API 的 URL 上下文工具现已全面推出，使开发者能通过URL而非手动上传来为Gemini模型提供上下文。此工具扩展了对PDF、图片及多种网络和数据文件的支持，增强了模型的上下文感知能力。它已为生产规模应用做好准备，可用于个性化客户互动、文档比较、内容合成和代码分析等多种高级AI应用，结合Google搜索实现深度分析和复杂任务。",
-      "translated_title": "Gemini API 的 URL 上下文工具现已全面推出",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/web-fetch-tool-gemini-cli.original.png",
-          "alt": "Web fetch tool in Gemini CLI",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The Gemini API's URL Context tool is now generally available, allowing developers to ground prompts using web content instead of manual uploads. This release expands support to PDFs and images."
-    },
-    {
-      "title": "宣布 Imagen 4 Fast 以及 Imagen 4 系列在 Gemini API 中的普遍可用性 (原标题: Announcing Imagen 4 Fast and the general availability of the Imagen 4 family in the Gemini API)",
-      "link": "https://developers.googleblog.com/en/announcing-imagen-4-fast-and-imagen-4-family-generally-available-in-the-gemini-api/",
-      "pubDate": "Thu, 14 Aug 2025 16:00:00 GMT",
-      "isoDate": "2025-08-14T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Imagen 4 系列在 Gemini API 中普遍可用\n\nGoogle 近日宣布，其最先进的文本到图像模型 Imagen 4 现已在 Gemini API 和 Google AI Studio 中普遍可用。此次发布标志着文本到图像生成质量的重大飞跃，尤其在文本渲染方面相比之前的模型有了显著改进。\n\n### Imagen 4 系列模型\n\n为了满足不同的创意需求，Imagen 4 系列提供了多种模型，让用户可以在质量、速度和成本之间取得平衡：\n\n*   **Imagen 4 Fast**：\n    *   **特点**：专为速度而设计，是快速图像生成和高吞吐量任务的理想选择。\n    *   **成本**：每张输出图像仅需 0.02 美元，价格亲民。\n*   **Imagen 4**：\n    *   **特点**：旗舰模型，适用于各种高质量图像生成任务，在文本渲染等领域有显著提升。\n*   **Imagen 4 Ultra**：\n    *   **特点**：当创意愿景需要最高水平的细节和严格遵循提示时，Imagen 4 Ultra 能提供高度一致的结果。\n\n### 更高分辨率带来更多细节\n\n为了进一步拓展创意边界，Imagen 4 和 Imagen 4 Ultra 现在支持生成高达 2K 分辨率的图像。这使得创建细节惊人、清晰锐利的视觉效果成为可能，非常适合营销素材或复杂的艺术作品。\n\n### Imagen 4 Fast 实际应用示例\n\n以下是一些使用 Imagen 4 Fast 创建的图像示例，展示了该模型在各种风格和内容上的多功能性：\n\n*   **风景/自然图像**：\n    *   **描述**：黎明时分的壮丽山脉景观，前景是清澈的湖泊，倒映着白雪皑皑的山峰。\n    *   **图片**：\n        ![Imagen 4 Fast demo - landscape](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Imagen-4-fast-demo-landscape.original.png)\n\n*   **四格漫画**：\n    *   **描述**：一个复古风格的四格漫画。第一格显示一只友好的猫坐在 Chromebook 旁边，屏幕上是 https://ai.dev 网站，配文：“Imagen 4 现已普遍可用！” 第二格显示一只狗说：“我们还推出了 Imagen 4 FAST，它以每张图像仅 0.02 美元的价格提供低延迟图像！” 第三格显示猫说：“2K 图像升级也可用！” 第四格显示猫和狗击掌，配文：“立即在 AI Studio 中尝试 Imagen 4！”\n    *   **图片**：\n        ![Imagen 4 Fast demo - four panel comic strip](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/imagen-4-fast-demo-four-panel-comic-strip.original.png)\n\n*   **复古科幻电影海报**：\n    *   **描述**：一张复古科幻电影海报，采用喷绘艺术风格。海报上有一艘细节丰富的宇宙飞船，向右飞过一个充满恒星的深空中的充满活力的星云。飞船的两个引擎发出明亮的蓝色发光轨迹。海报顶部的标题是“SUPER GALACTICA: THE LAST NEBULA”，采用粗体、斜面、金属铬字体，带有阴影。下方副标题“STARFALLS REVENGE”以更简洁、干净的白色字体书写。整个图像具有复古、风化的外观，带有破旧的米白色边框。最底部以小字体写着：“此海报由 AI 创建，此免责声明亦然 :)”。\n    *   **图片**：\n        ![Imagen 4 Fast demo - retro sci-fi movie poster](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/imagen-4-fast-demo-retro-sci-fi-movie-poster.original.png)\n\n### 负责任的 AI\n\n作为对负责任 AI 承诺的一部分，所有由 Imagen 4 系列生成的图像都使用 SynthID 进行了不可察觉的水印处理。Google 鼓励用户查阅官方文档和操作指南，开始使用 Imagen 4 进行创作。",
-      "shortSummary": "Google 宣布其先进的文本到图像模型 Imagen 4 及其新推出的 Imagen 4 Fast 已在 Gemini API 和 Google AI Studio 中普遍可用。Imagen 4 系列在图像质量，特别是文本渲染方面有显著提升。Imagen 4 Fast 专为速度和成本效益设计，每张图像仅需 0.02 美元。Imagen 4 和 Imagen 4 Ultra 支持高达 2K 分辨率。所有 Imagen 4 生成的图像都使用 SynthID 进行水印处理，以确保负责任的 AI 应用。",
-      "translated_title": "宣布 Imagen 4 Fast 以及 Imagen 4 系列在 Gemini API 中的普遍可用性",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Imagen-4-fast-demo-landscape.original.png",
-          "alt": "Imagen 4 Fast demo - landscape",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/imagen-4-fast-demo-four-panel-comic-strip.original.png",
-          "alt": "Imagen 4 Fast demo - four panel comic strip",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/imagen-4-fast-demo-retro-sci-fi-movie-poster.original.png",
-          "alt": "Imagen 4 Fast demo - retro sci-fi movie poster",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Google announces the general availability of Imagen 4, its advanced text-to-image model, in the Gemini API and Google AI Studio, featuring significant improvements in text rendering. The new Imagen 4 Fast model, designed for speed and rapid image generation, is now available alongside Imagen 4 and Imagen 4 Ultra, with Imagen 4 and Imagen 4 Ultra also supporting up to 2K resolution image generation."
-    },
-    {
-      "title": "介绍 Gemma 3 270M：超高效AI的紧凑型模型 (原标题: Introducing Gemma 3 270M: The compact model for hyper-efficient AI)",
-      "link": "https://developers.googleblog.com/en/introducing-gemma-3-270m/",
-      "pubDate": "Wed, 13 Aug 2025 16:00:00 GMT",
-      "isoDate": "2025-08-13T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## 介绍 Gemma 3 270M：超高效AI的紧凑型模型\n\n**发布日期：** 2025年8月14日\n\nGemma系列开放模型近期发展迅速，继Gemma 3、Gemma 3 QAT和移动优先的Gemma 3n之后，谷歌推出了Gemma 3 270M。这款模型是Gemma 3工具包中的一个高度专业化新成员，旨在为开发者提供构建AI的实用工具，并已助力Gemma系列下载量突破2亿。\n\n### Gemma 3 270M 概览\n\nGemma 3 270M是一个拥有2.7亿参数的紧凑型模型，从头开始设计，专注于任务特定的微调，并内置了强大的指令遵循和文本结构化能力。它在IFEval基准测试中表现出色，为同等规模的模型设立了新的性能标准，使复杂的AI能力在设备端和研究应用中更易于访问。\n\n![Gemma 3 270M](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemma3-270M_Chart01_RD3-V01.original.jpg)\n\n### 核心能力\n\n1.  **紧凑而强大的架构：**\n    *   总参数：2.7亿（1.7亿嵌入参数，1亿用于Transformer块）。\n    *   大词汇量：25.6万个词元，能够处理特定和罕见的词元，是特定领域和语言微调的强大基础模型。\n\n2.  **极致的能源效率：**\n    *   功耗极低。在Pixel 9 Pro SoC上的内部测试显示，INT4量化模型进行25次对话仅消耗0.75%的电池电量，是Gemma系列中最节能的模型。\n\n3.  **指令遵循能力：**\n    *   发布了经过指令微调的模型和预训练检查点。\n    *   虽然不适用于复杂的对话场景，但它能很好地遵循通用指令。\n\n4.  **生产就绪的量化：**\n    *   提供量化感知训练（QAT）检查点，支持以INT4精度运行模型，性能下降极小，这对于部署在资源受限设备上至关重要。\n\n### “物尽其用”的理念\n\nGemma 3 270M体现了“物尽其用”的工程哲学。它是一个高质量的基础模型，开箱即用就能很好地遵循指令，其真正的力量通过微调得以释放。经过专业化处理后，它能以卓越的准确性、速度和成本效益执行文本分类和数据提取等任务。通过使用紧凑而强大的模型，可以构建精简、快速且运营成本显著降低的生产系统。\n\n### 实际应用案例\n\n*   **Adaptive ML与SK Telecom的合作：** Adaptive ML通过微调Gemma 3 4B模型来应对多语言内容审核的挑战。结果显示，专业化的Gemma模型在特定任务上超越了许多大型专有模型的性能。\n*   **创意应用：** Gemma 3 270M被用于驱动一个基于Transformers.js的睡前故事生成器网络应用。其小巧的尺寸和高性能使其非常适合离线、基于网络的创意任务。\n\n### 何时选择 Gemma 3 270M\n\nGemma 3 270M继承了Gemma 3系列的先进架构和强大的预训练基础，为自定义应用提供了坚实的基础。它是以下场景的理想选择：\n\n*   **高吞吐量、明确定义的任务：** 适用于情感分析、实体提取、查询路由、非结构化到结构化文本处理、创意写作和合规性检查等功能。\n*   **对毫秒和微分成本敏感：** 大幅降低或消除生产中的推理成本，并为用户提供更快的响应。微调后的270M模型可以在轻量级、廉价的基础设施上或直接在设备上运行。\n*   **需要快速迭代和部署：** Gemma 3 270M的小尺寸允许快速进行微调实验，帮助您在数小时而非数天内找到适合您用例的完美配置。\n*   **需要确保用户隐私：** 由于模型可以完全在设备上运行，您可以构建处理敏感信息的应用程序，而无需将数据发送到云端。\n*   **需要一系列专业化任务模型：** 可以在不超出预算的情况下，构建和部署多个自定义模型，每个模型都经过专业训练以执行不同的任务。\n\n### 开始微调\n\nGemma 3 270M与Gemma 3系列其他模型采用相同架构，并提供快速入门的指南和工具。您可以在Gemma文档中找到使用Gemma 3 270M进行完整微调的指南。\n\n*   **下载模型：** 可从Hugging Face、Ollama、Kaggle、LM Studio或Docker获取预训练和指令微调模型。\n*   **试用模型：** 可在Vertex AI或使用llama.cpp、Gemma.cpp、LiteRT、Keras和MLX等流行推理工具进行试用。\n*   **开始微调：** 使用Hugging Face、UnSloth和JAX等您喜欢的工具。\n*   **部署解决方案：** 微调完成后，您可以将专业化模型部署到任何地方，从本地环境到Google Cloud Run。\n\nGemmaverse的理念是创新无大小。通过Gemma 3 270M，谷歌赋能开发者构建更智能、更快、更高效的AI解决方案。",
-      "shortSummary": "Gemma 3 270M是谷歌推出的一款紧凑型、2.7亿参数的AI模型，专为任务特定微调设计。它具备强大的指令遵循能力和极高的能源效率，可在设备端运行，大幅降低推理成本并保护用户隐私。该模型非常适合需要高效率、快速迭代和专业化AI解决方案的场景，使先进AI更易于部署和访问，推动创新。",
-      "translated_title": "介绍 Gemma 3 270M：超高效AI的紧凑型模型",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemma3-270M_Chart01_RD3-V01.original.jpg",
-          "alt": "Gemma 3 270M",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Google's new Gemma 3 270M is a compact, 270-million parameter model offering energy efficiency, production-ready quantization, and strong instruction-following, making it a powerful solution for task-specific fine-tuning in on-device and research settings."
     }
   ],
-  "lastUpdated": "2025-09-06T10:25:23.543Z"
+  "lastUpdated": "2025-09-12T10:29:39.648Z"
 }
