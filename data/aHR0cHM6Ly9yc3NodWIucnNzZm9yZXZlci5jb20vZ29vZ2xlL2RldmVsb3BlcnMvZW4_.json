@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "ADK for Java 通过 LangChain4j 集成向第三方语言模型开放 (原标题: ADK for Java opening up to third-party language models via LangChain4j integration)",
+      "link": "https://developers.googleblog.com/en/adk-for-java-opening-up-to-third-party-language-models-via-langchain4j-integration/",
+      "pubDate": "Wed, 10 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-10T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## ADK for Java 通过 LangChain4j 集成向第三方语言模型开放\n\nGoogle 的 Java 代理开发工具包（ADK）在 2025 年 9 月 11 日发布的 0.2.0 版本中，新增了与 LangChain4j LLM 框架的集成。这一重要更新旨在为开发者提供更广泛的大型语言模型（LLM）选择，以构建强大的 AI 代理。\n\n### LangChain4j 集成的核心优势\n\n*   **模型多样性**：除了 ADK 内置的 Google Gemini 和 Anthropic Claude 集成外，开发者现在可以通过 LangChain4j 访问来自 OpenAI、Anthropic、GitHub、Mistral 等第三方提供商的多种模型。\n*   **本地模型支持**：还支持通过 Ollama 或 Docker Model Runner 等工具运行的本地开源模型。\n*   **易于集成**：LangChain4j LLM 框架支持的模型列表可在其官方文档中查询。\n\n### 如何通过 LangChain4j 集成 LLM\n\n当使用 `LlmAgent` 构建器声明 ADK 代理时，可以通过 `model()` 构建器方法指定 LLM。通常，这会传入一个表示模型名称的字符串（例如 \"gemini-2.5-flash\"）。\n\nLangChain4j 集成通过使用一个扩展 `BaseLlm` 抽象类的新 `LangChain4j` 类，在两个框架之间建立了桥梁。这意味着开发者可以实例化一个 LangChain4j 聊天模型，然后将其包装在 `new LangChain4j()` 实例中，传递给 ADK 代理。\n\n#### 示例一：使用 Docker Model Runner 运行 Gemma 3\n\n1.  **安装与拉取模型**：在机器上安装并启用 Docker Model Runner 后，可通过命令 `docker model pull ai/gemma3` 轻松拉取 Gemma 3 模型。\n2.  **Maven 依赖**：在 `pom.xml` 中添加 `google-adk-contrib-langchain4j` 和 `langchain4j-open-ai` 依赖。\n3.  **配置模型**：由于 Docker Model Runner 模型暴露了 OpenAI 兼容的 API 接口，可以使用 `OpenAiChatModel` 进行配置，指定 `baseUrl`（例如 `http://localhost:12434/engines/llama.cpp/v1`）和 `modelName`（例如 `ai/gemma3n`）。\n4.  **配置代理**：将配置好的 `OpenAiChatModel` 实例通过 `new LangChain4j(dmrChatModel)` 传递给 `LlmAgent`，例如构建一个国际象棋教练代理。\n\n#### 示例二：使用 Ollama 运行 Qwen 3\n\n1.  **Maven 依赖**：在 `pom.xml` 中添加 `google-adk`、`google-adk-contrib-langchain4j` 和 `langchain4j-ollama` 依赖。\n2.  **安装与运行模型**：假设已在机器上安装 Ollama 并拉取了 Qwen 3 模型（例如 `qwen3:1.7b`），并在端口 11434 运行。\n3.  **配置模型**：使用 `OllamaChatModel` 进行配置，指定 `modelName` 和 `baseUrl`（例如 `http://127.0.0.1:11434`）。\n4.  **配置代理**：将配置好的 `OllamaChatModel` 实例通过 `new LangChain4j(ollamaChatModel)` 传递给 `LlmAgent`，例如构建一个友好的科学老师代理。\n\n### 工具调用能力\n\n如果模型支持函数调用，开发者还可以为代理提供工具访问权限，例如访问 MCP 服务器或本地代码驱动的函数。ADK 文档和相关文章提供了更多关于可用工具的信息。\n\n### 0.2.0 版本的其他重要增强功能\n\n除了 LangChain4j 集成，0.2.0 版本还带来了多项强大的代理开发工作流改进：\n\n*   **扩展的工具能力**：\n    *   **基于实例的 `FunctionTools`**：现在可以从对象实例创建 `FunctionTools`，而非仅限于静态方法，提高了代理架构的灵活性。\n    *   **改进的异步支持**：`FunctionTools` 现在支持返回 `Single` 的方法，增强了异步操作支持和代理响应能力。\n    *   **更好的循环控制**：`Event Actions` 中新增的 `endInvocation` 字段允许在工具调用后以编程方式中断或停止代理循环，提供更精细的执行控制。\n*   **高级代理逻辑和内存**：\n    *   **链式回调**：增加了对模型、代理和工具执行前后事件的链式回调支持，使得代理生命周期内的逻辑更加复杂和精细。\n    *   **新的内存和检索**：引入了 `InMemoryMemoryService` 用于简单快速的内存管理，并实现了使用 AI Platform API 的 `VertexAiRagRetrieval` 以支持更高级的 RAG 模式。\n*   **其他关键增强**：包括父 POM 和 Maven Wrapper (`./mvnw`)，确保所有贡献者都能获得一致且直接的构建过程。\n\n### 总结与展望\n\nLangChain4j 的集成是 ADK for Java 迈向更开放、更灵活框架的重要一步，旨在帮助开发者构建更强大的 AI 代理。鼓励开发者查阅 GitHub 发布说明、ADK for Java 文档、入门指南或 GitHub 模板项目以获取更多信息。文章作者期待听到社区关于 ADK for Java 和 LangChain4j 集成的使用案例。",
+      "shortSummary": "Google ADK for Java 0.2.0 版本通过集成 LangChain4j LLM 框架，显著扩展了其对第三方语言模型的支持。开发者现在除了内置的 Gemini 和 Claude，还能利用 LangChain4j 访问 OpenAI、Mistral 等多种模型，包括通过 Docker Model Runner 或 Ollama 运行的本地模型。此次更新还带来了工具能力、异步支持、代理逻辑和内存管理等多方面的增强，旨在使 ADK for Java 成为一个更开放、灵活的 AI 代理构建框架。",
+      "translated_title": "ADK for Java 通过 LangChain4j 集成向第三方语言模型开放",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "The recent 0.2.0 release of Google’s Agent Development Kit (ADK) for Java adds an integration with t..."
+    },
+    {
       "title": "Gemini 批量 API 现已支持嵌入和 OpenAI 兼容性 (原标题: Gemini Batch API now supports Embeddings and OpenAI Compatibility)",
       "link": "https://developers.googleblog.com/en/gemini-batch-api-now-supports-embeddings-and-openai-compatibility/",
       "pubDate": "Tue, 09 Sep 2025 16:00:00 GMT",
@@ -209,20 +222,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Detailed prompting techniques and best practices for various applications, including photorealistic scenes, stylized illustrations, product mockups, and more using Google's newly released Gemini 2.5 Flash Image; a natively multimodal model capable of generating, editing, and composing images using text, supporting capabilities like text-to-image, image editing, style transfer, and multi-image composition."
-    },
-    {
-      "title": "停止对LLM进行“凭感觉测试”，是时候进行真实评估了。 (原标题: Stop “vibe testing” your LLMs. It's time for real evals.)",
-      "link": "https://developers.googleblog.com/en/streamline-llm-evaluation-with-stax/",
-      "pubDate": "Tue, 26 Aug 2025 16:00:00 GMT",
-      "isoDate": "2025-08-26T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 停止“凭感觉测试”你的LLM，是时候进行真正的评估了\n\n## 挑战：LLM开发中的“感觉测试”\n\n在LLM开发过程中，开发者常陷入一种“感觉测试”的循环：调整提示词，运行几次，然后凭直觉判断输出是否“感觉更好”。这种不确定性源于LLM的非确定性——相同输入不总产生相同输出，导致传统单元测试不足。此外，构建评估流程还需处理数据集、API调用和输出解析等复杂任务。\n\n## 解决方案：Stax——LLM评估工具\n\n为了摆脱这种主观判断，Google DeepMind和Google Labs推出了Stax，一个实验性的开发者工具，旨在简化LLM评估生命周期，将评估专业知识与创新实践相结合。\n\n## 为什么需要专门的评估（Evals）？\n\n*   **针对特定用例：** 通用基准测试衡量模型在广泛任务上的表现，但无法评估AI应用在特定数据和标准下的实际效果。\n*   **核心竞争力：** 正确的评估能将独特的业务目标编码为可复用的基准，成为关键的差异化因素。\n*   **清晰的指标：** 评估提供明确的量化指标，帮助开发者理解哪些改进是真正有效的，而非耗时地进行“感觉测试”。\n\n## 评估方法论的演进\n\n为了实现真实、可重复的评估，LLM领域主要采用两种方法：\n\n1.  **人工评估：** 被认为是黄金标准，但通常速度慢且成本高昂。\n2.  **自动评估器（LLM作为评判者）：** 利用强大的LLM（如Gemini模型）结合特定指令来“评分”另一个模型的输出。这是一种可扩展、一致的方法，用于检查相关性、语气或事实准确性等。\n\n## Stax如何工作？\n\nStax赋能开发者对“AI堆栈”进行严格测试，从而做出数据驱动的决策，增强部署AI系统的信心。\n\n*   **导入或构建数据：**\n    *   可以直接上传包含测试用例的CSV文件。\n    *   通过Stax界面轻松创建反映实际用例的提示词和真实答案数据集。\n\n*   **开箱即用的自动评估器：**\n    *   提供预构建的自动评估器，用于检查常见的指标，如连贯性、事实性和简洁性。\n    *   用户可以在几分钟内获得有意义的结果。\n\n*   **构建自定义自动评估器（核心功能）：**\n    *   由于没有“一刀切”的评估方法能判断AI是否符合公司品牌语调或特定应用规则，Stax允许用户轻松定义自己的评估标准并构建自定义自动评估器。\n    *   例如，可以为“有帮助但不啰嗦”的聊天机器人、确保摘要不包含PII、或代码生成符合团队风格指南等需求构建专属评估器。\n    *   用户可以定义输出“好”的“秘诀”，Stax则能针对整个数据集进行大规模测试。\n\n## 停止猜测，开始评估\n\nStax帮助开发者告别“凭运气”部署LLM功能的时代。现在是时候像对待生产堆栈的其他部分一样，对LLM进行严格测试和使用强大的工具。Stax助力用户理解、迭代和改进其LLM驱动的功能。访问stax.withgoogle.com并加入Discord频道以开始评估。",
-      "shortSummary": "Stax是Google DeepMind和Google Labs开发的LLM评估工具，旨在取代主观的“感觉测试”。鉴于LLM的非确定性，传统测试不足。Stax允许用户上传数据、使用预设或自定义的“LLM作为评判者”评估器，根据特定用例和标准进行客观、可重复的评估。它帮助开发者获得清晰指标，更自信地迭代和部署LLM应用，将评估从艺术转变为严谨的工程实践。",
-      "translated_title": "停止对LLM进行“凭感觉测试”，是时候进行真实评估了。",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Stax, an experimental developer tool, addresses the insufficient nature of \"vibe testing\" LLMs by streamlining the LLM evaluation lifecycle, allowing users to rigorously test their AI stack and make data-driven decisions through human labeling and scalable LLM-as-a-judge auto-raters."
     }
   ],
-  "lastUpdated": "2025-09-14T10:23:45.024Z"
+  "lastUpdated": "2025-09-16T10:29:02.956Z"
 }
