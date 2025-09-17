@@ -5,6 +5,106 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "认识 GitHub MCP 注册表：发现 MCP 服务器的最快方式 (原标题: Meet the GitHub MCP Registry: The fastest way to discover MCP Servers)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/meet-the-github-mcp-registry-the-fastest-way-to-discover-mcp-servers/",
+      "pubDate": "Tue, 16 Sep 2025 16:27:54 +0000",
+      "isoDate": "2025-09-16T16:27:54.000Z",
+      "creator": "Toby Padilla",
+      "summary": "# GitHub MCP 注册表：AI 代理与开发工具连接的新中心\n\n## 引言：解决 AI 代理集成痛点\n在将 AI 代理连接到开发工具时，开发者常面临挑战：MCP 服务器分散在多个注册表、代码库和社区讨论中，导致发现过程缓慢且充满摩擦。同时，MCP 服务器的创建者也因需在多处发布并反复回答设置问题而感到疲惫。这种碎片化的环境不仅效率低下，还存在潜在的安全风险。\n\n为解决这一问题，GitHub 推出了 **GitHub MCP 注册表**，旨在成为发现 MCP 服务器的全新中心。无论开发者使用 GitHub Copilot、其他 AI 代理或任何支持 MCP 的 AI 工具，都可以在此找到所需资源。GitHub MCP 注册表将显著简化 MCP 服务器的发现、探索和使用过程，帮助开发者更快找到合适的工具，并促进一个更开放、可互操作的生态系统。\n\n## GitHub MCP 注册表简介\nGitHub MCP 注册表以开放协作的方式启动，初始版本包含来自主要合作伙伴和开源社区的精选 MCP 服务器目录。每个服务器都与其 GitHub 仓库关联，方便开发者快速了解其功能、入门指南并做出明智选择。\n\n**核心功能与优势：**\n*   **VS Code 内的发现能力：** 支持一键安装，简化集成流程。\n*   **信息筛选：** 服务器按 GitHub 星标和社区活跃度排序，突出高质量项目。\n*   **广泛兼容性：** 可与 GitHub Copilot 及任何 MCP 兼容的主机协同工作。\n\n注册表从一开始就由整个生态系统的贡献者共同塑造，包括帮助定义 MCP 服务器质量标准的启动合作伙伴。这种协作基础确保开发者能够访问值得信赖的工具，并为更健康、更具互操作性的 AI 生态系统奠定基础。\n\n![图片 1](https://github.blog/wp-content/uploads/2025/09/mcp2.jpg?resize=1024%2C538)\n\n## 合作伙伴的贡献与价值\n多个行业领导者已通过 GitHub MCP 注册表将其 MCP 服务器集成到开发工作流中，带来了显著价值：\n\n*   **Figma (业务发展副总裁 Anna Kohnen)：** 通过 Dev Mode MCP 服务器，开发者可轻松将 Figma 上下文引入 Copilot，加速设计到代码的工作流，生成符合设计系统且可用于生产的代码。\n*   **Postman (工程主管 Bajali Raghavan)：** 将 MCP 视为 AI 代理堆栈的基础层和构建 AI 就绪 API 的关键部分。GitHub MCP 注册表帮助开发者从编码助手内部访问整个 Postman 平台，以前所未有的方式弥合代码、文档和执行之间的鸿沟。\n*   **HashiCorp (产品管理高级副总裁 Chris Audie)：** 开发者现在可以轻松发现官方 MCP 服务器（如 HashiCorp 的 Terraform MCP 服务器），并一键将其添加到工作流中，从而更快地将 Terraform 的功能引入日常开发。\n*   **Dynatrace (产品副总裁 Bonifaz Kaufmann)：** Dynatrace MCP 服务器为开发者提供 AI 驱动的可观测性、安全性和性能洞察，减少上下文切换和认知负荷，帮助团队更快、更弹性、更稳健地交付软件。\n*   **远程 GitHub MCP 服务器：** 该服务器已全面上市，允许代理连接到 GitHub 仓库中丰富的上下文（如问题和拉取请求），从而实现更深入、多步骤的代理工作流。其纳入注册表强化了 GitHub 对开放互操作性的承诺。\n\n## 构建开放生态系统\nGitHub MCP 注册表的推出仅仅是个开始。GitHub 正与 Anthropic 和 MCP 指导委员会紧密合作，共同构建一个与 GitHub 注册表无缝集成的开源 MCP 注册表。通过与更广泛的社区合作，他们正在塑造 MCP 的开放标准和贡献模型。\n\n**统一发布流程：**\n开发者将能够直接向 OSS MCP 社区注册表自发布 MCP 服务器。一旦发布，这些服务器将自动出现在 GitHub MCP 注册表中，从而创建一个统一、可扩展的发现路径。这种发布流程将：\n*   减少注册表之间的重复。\n*   展示透明的元数据和验证信号。\n*   实现整个生态系统的大规模贡献。\n\n最终目标是建立一个更健康、更开放的生态系统，以质量为导向并加速创新。\n\n## 行动号召\nGitHub MCP 注册表是实现从想法到集成的最快途径，也是更健康、更具互操作性的 AI 工具链的基础。开发者可立即浏览 GitHub MCP 注册表，发现来自整个生态系统的精选 MCP 服务器，或为 OSS MCP 社区注册表做出贡献，共同塑造开放代理工作流的未来。\n\n![Toby Padilla](https://avatars.githubusercontent.com/u/83556?v=4&s=200)\n**作者：** Toby Padilla，GitHub 首席产品经理，负责领导 GitHub 的 MCP 计划。\n\n![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)",
+      "shortSummary": "GitHub推出了MCP注册表，旨在解决AI代理与开发工具连接中MCP服务器分散、发现困难的问题。该注册表作为中心化平台，方便开发者发现、探索和使用MCP服务器，促进开放互操作的AI生态系统。它提供精选目录、VS Code一键安装、按GitHub星标排序等功能。Figma、Postman、HashiCorp、Dynatrace等合作伙伴已通过其MCP服务器加入。未来，GitHub将与Anthropic和MCP指导委员会合作，建立统一的开源MCP注册表，实现无缝发布和更健康的生态系统。",
+      "translated_title": "认识 GitHub MCP 注册表：发现 MCP 服务器的最快方式",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/09/mcp2.jpg?resize=1024%2C538",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/83556?v=4&s=200",
+          "alt": "Toby Padilla",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>This is your new home base for discovering MCP servers. Learn how we’re working with the broader community on MCP publication and discovery.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/meet-the-github-mcp-registry-the-fastest-way-to-discover-mcp-servers/\">Meet the GitHub MCP Registry: The fastest way to discover MCP Servers</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "GitHub SSH 访问的后量子安全性 (原标题: Post-quantum security for SSH access on GitHub)",
+      "link": "https://github.blog/engineering/platform-security/post-quantum-security-for-ssh-access-on-github/",
+      "pubDate": "Mon, 15 Sep 2025 16:00:00 +0000",
+      "isoDate": "2025-09-15T16:00:00.000Z",
+      "creator": "brian m. carlson",
+      "summary": "# GitHub SSH 访问的后量子安全性\n\nGitHub 宣布了一项重要更新，旨在提升通过 SSH 访问 Git 数据的安全性。\n\n## 主要变更与目的\n\n*   **引入新算法**：GitHub 正在其用于访问 Git 数据的 SSH 端点中，添加一种新的后量子安全 SSH 密钥交换算法，即 `sntrup761x25519-sha512`（或 `sntrup761x25519-sha512@openssh.com`）。\n*   **影响范围**：此变更仅影响 SSH 访问，对 HTTPS 访问无任何影响。此外，它也不影响在美国地区进行数据驻留的 GitHub Enterprise Cloud。\n*   **安全目标**：此举旨在确保数据在当前及未来都能抵御量子计算机可能发起的解密攻击，从而提供长期的安全性。\n*   **应对“先存储后解密”攻击**：目前的密钥交换算法虽然安全，但未来强大的量子计算机可能能够破解它们。攻击者可能现在保存加密会话，待未来量子计算机建成后进行解密。引入后量子算法正是为了防范这种“先存储后解密”（store now, decrypt later）的攻击。\n\n## 混合后量子密钥交换算法\n\nGitHub 正在推出一种混合后量子密钥交换算法 `sntrup761x25519-sha512`。\n\n*   **技术构成**：该算法结合了新的后量子安全算法 Streamlined NTRU Prime 和经典的椭圆曲线 Diffie-Hellman (X25519) 算法。\n*   **安全性保障**：尽管后量子算法相对较新，测试较少，但与经典算法的结合使用，确保了整体安全性不会弱于经典算法所提供的水平。\n\n## 部署时间与范围\n\n*   **生效日期**：新算法将于 **2025 年 9 月 17 日**起在 GitHub.com 和非美国地区数据驻留的 GitHub Enterprise Cloud 上启用。\n*   **GitHub Enterprise Server**：此功能也将包含在 GitHub Enterprise Server 3.19 中。\n*   **美国地区例外**：由于美国地区仅允许使用 FIPS 批准的加密技术，而此后量子算法尚未获得 FIPS 批准，因此不适用于美国地区的 GitHub Enterprise Cloud。\n\n## 用户如何准备？\n\n*   **受影响用户**：此变更仅影响通过 SSH 连接的 Git 客户端。如果您的 Git 远程仓库以 `https://` 开头，则不受影响。\n*   **大多数用户**：对于大多数情况，新算法不会带来任何明显变化。如果您的 SSH 客户端支持 `sntrup761x25519-sha512` 或 `sntrup761x25519-sha512@openssh.com`（例如 OpenSSH 9.0 或更新版本），它将默认自动选择新算法，除非您修改了客户端的默认设置。\n*   **旧版客户端**：如果使用旧版 SSH 客户端，客户端将回退到旧的密钥交换算法。这意味着在升级之前，您将无法体验到后量子算法带来的安全优势，但 SSH 连接仍将正常工作，因为 SSH 协议会自动选择双方都支持的算法。\n*   **测试客户端支持**：\n    *   要测试您的 OpenSSH 版本是否支持此算法，可以运行命令：`ssh -Q kex`。如果输出中包含 `sntrup761x25519-sha512` 或 `sntrup761x25519-sha512@openssh.com`，则表示支持。\n    *   要检查 OpenSSH 在连接到 GitHub.com 时使用了哪个密钥交换算法，请在 Linux、macOS、Git Bash 或其他类 Unix 环境中运行命令：`$ ssh -v git@github.com exit 2>&1 | grep 'kex: algorithm:'`。\n    *   对于其他 SSH 实现，请查阅其文档。\n\n## 未来展望\n\nGitHub 将持续关注安全领域的最新发展。随着所使用的 SSH 库开始支持更多后量子算法（包括符合 FIPS 标准的算法），GitHub 将及时更新其服务。\n\n---\n\n### 贡献者\n\n*   ![brian m. carlson](https://avatars.githubusercontent.com/u/497054?v=4&s=200) brian m. carlson 是 Git Systems 团队的工程师，业余时间也是 Git 的贡献者。\n*   ![Taylor Blau](https://avatars.githubusercontent.com/u/443245?v=4&s=200) Taylor Blau 是 GitHub 的首席软件工程师，负责 Git 相关工作。\n\n### 相关文章\n\n探索更多来自 GitHub 的内容：\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切，尽在一处。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来，这里是任何人、任何地方、构建任何东西的平台。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用 GitHub 进行构建的公司和工程团队。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025：最后机会：节省 700 美元购买 Universe 现场通行证，于 10 月 28-29 日在旧金山与我们相聚。",
+      "shortSummary": "GitHub 宣布为 SSH 访问 Git 数据引入新的后量子安全密钥交换算法 `sntrup761x25519-sha512`。此举旨在保护数据免受未来量子计算机可能发起的“先存储后解密”攻击。该混合算法结合了后量子与经典加密技术，确保安全性。变更将于 2025 年 9 月 17 日起在 GitHub.com 和非美国地区 GitHub Enterprise Cloud 生效。大多数现代 SSH 客户端将自动支持，旧版客户端将回退。此更新不影响 HTTPS 访问。",
+      "translated_title": "GitHub SSH 访问的后量子安全性",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/497054?v=4&s=200",
+          "alt": "brian m. carlson",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/443245?v=4&s=200",
+          "alt": "Taylor Blau",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>GitHub is introducing post-quantum secure key exchange methods for SSH access to better protect Git data in transit.</p>\n<p>The post <a href=\"https://github.blog/engineering/platform-security/post-quantum-security-for-ssh-access-on-github/\">Post-quantum security for SSH access on GitHub</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "利用开源和AI构建个人应用 (原标题: Building personal apps with open source and AI)",
       "link": "https://github.blog/open-source/maintainers/building-personal-apps-with-open-source-and-ai/",
       "pubDate": "Fri, 12 Sep 2025 16:00:00 +0000",
@@ -378,64 +478,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Explore how MCP elicitation transforms AI tool interactions by gathering missing information upfront. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/building-smarter-interactions-with-mcp-elicitation-from-clunky-tool-calls-to-seamless-user-experiences/\">Building smarter interactions with MCP elicitation: From clunky tool calls to seamless user experiences</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "为 Copilot 编写更优自定义指令的 5 个技巧 (原标题: 5 tips for writing better custom instructions for Copilot)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/5-tips-for-writing-better-custom-instructions-for-copilot/",
-      "pubDate": "Wed, 03 Sep 2025 16:00:00 +0000",
-      "isoDate": "2025-09-03T16:00:00.000Z",
-      "creator": "Christopher Harrison",
-      "summary": "# 为 Copilot 编写更优自定义指令的 5 个技巧\n\n本文旨在提供五个关键技巧，帮助开发者为 GitHub Copilot 编写更有效的自定义指令，从而获得更优质的代码建议。核心理念是，Copilot 就像一位新加入的团队成员，需要充分的上下文信息才能高效工作。`copilot-instructions.md` 文件是 Copilot 聊天或代理请求的中心，用于提供项目背景和团队经验。\n\n作者强调，不必过度追求完美，因为生成式 AI 具有概率性。目标是尽可能地引导 Copilot 找到期望的答案。以下建议并非强制要求，而是基于经验的推荐，旨在显著提高 Copilot 建议的质量。\n\n## 1. 提供项目概览\n\n为 Copilot 提供一个项目的“电梯演讲”至关重要。指令文件的开头应简要说明应用是什么、目标受众以及主要功能。这有助于为 Copilot 设定高层次的项目背景。\n\n*   **示例：Contoso Companions**\n    *   一个支持宠物领养机构的网站。\n    *   机构可以管理地点、可用宠物和宣传活动。\n    *   潜在领养者可以搜索宠物、发现机构并提交领养申请。\n\n## 2. 明确项目使用的技术栈\n\n在明确项目目标后，下一步是详细列出用于构建项目的技术。这包括后端和前端技术、调用的 API 以及目标测试套件。建议使用列表形式突出显示所使用的技术，并可添加关于其使用方式的简短说明，帮助 Copilot 理解代码创建的环境。\n\n*   **示例技术栈：**\n    *   **后端：** Flask (API), Postgres (数据存储), SQLAlchemy (ORM)。开发、预发布和生产环境使用独立数据库。端到端测试会创建、填充并移除新数据库。\n    *   **前端：** Astro (核心站点和路由), Svelte (交互性), TypeScript (所有前端代码)。\n    *   **测试：** Python 使用 Unittest，TypeScript 使用 Vitest，端到端测试使用 Playwright。\n\n## 3. 阐明编码规范\n\n清晰的编码规范指导 Copilot 如何编写代码，例如 JavaScript/TypeScript 是否使用分号、Python 是否使用类型提示、使用制表符还是空格。作者倾向于将规范单独列为一个部分，因为许多规范适用于所有使用的语言，且更具可读性。也可以使用 `.instructions` 文件为特定类型的文件或单元测试提供指导。\n\n*   **专业提示：** “不完美”的指令文件也比什么都没有强得多。指令文件应随时间演进。\n*   **示例项目和代码规范：**\n    *   支持类型提示的语言始终使用类型提示。\n    *   JavaScript/TypeScript 使用分号。\n    *   单元测试和端到端测试是必需的，且在 PR 前必须通过，并应关注核心功能和可访问性。\n    *   始终遵循良好的安全实践和 RESTful API 设计原则。\n    *   可用时使用脚本执行操作。\n\n## 4. 解释项目结构\n\n项目结构多种多样，在自定义指令文件中列出项目结构，不仅可以节省 Copilot 的工作，还能提供关于文件夹内容的更多上下文。\n\n*   **示例项目结构：**\n    *   `server/`：Flask 后端代码\n    *   `models/`：SQLAlchemy ORM 模型\n    *   `routes/`：按资源组织的 API 端点\n    *   `tests/`：API 的单元测试\n    *   `utils/`：实用函数和辅助工具，包括数据库调用\n    *   `client/`：Astro/Svelte 前端代码\n    *   `src/components/`：可重用 Svelte 组件\n    *   `src/layouts/`：Astro 布局模板\n    *   `src/pages/`：Astro 页面和路由\n    *   `src/styles/`：CSS 样式表\n    *   `scripts/`：开发、部署和测试脚本\n    *   `docs/`：项目文档，需始终保持同步\n\n## 5. 指明可用的资源\n\n几乎每个项目都有辅助开发的脚本或资源。在自定义指令文件中提供这些资源的指针，可以提高 Copilot 的准确性和速度。\n\n*   **示例资源：**\n    *   `scripts` 文件夹：`start-app.sh` (安装库并启动应用), `setup-env.sh` (安装库), `test-project.sh` (安装库，运行单元和端到端测试)。\n    *   MCP 服务器：Playwright (用于生成 Playwright 测试或与站点交互), GitHub (用于与仓库和待办事项列表交互)。\n\n## 额外提示：让 GitHub Copilot 帮助你创建自定义指令文件\n\nCopilot 可以帮助你生成初始的 `copilot-instructions.md` 文件。文章提供了一个详细的提示示例，用于指导 Copilot 创建该文件，包括目标、限制、指导和遵循的步骤。使用此提示不仅可以节省时间，还可以帮助你理清项目思路和目标。\n\n## 总结\n\n拥有一个良好的指令文件是提高 Copilot 代码建议质量的重要第一步。`copilot-instructions.md` 文件应被视为任何使用 Copilot 的项目的必需品。从项目概览、技术栈、编码规范、项目结构和可用资源这几个基本部分开始，然后可以进一步探索更具体的 `.instructions` 文件。",
-      "shortSummary": "为 GitHub Copilot 编写有效的自定义指令能显著提升代码建议质量。核心在于通过 `copilot-instructions.md` 文件提供清晰的上下文。关键技巧包括：提供项目概览、明确技术栈、阐明编码规范、解释项目结构，以及指明可用资源。这些指导帮助 Copilot 更好地理解项目，生成更准确的代码。即使不完美，一个指令文件也远胜于无。Copilot 甚至可以协助生成这些指令文件。",
-      "translated_title": "为 Copilot 编写更优自定义指令的 5 个技巧",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>This guide offers five essential tips for writing effective GitHub Copilot custom instructions, covering project overview, tech stack, coding guidelines, structure, and resources, to help developers get better code suggestions.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/5-tips-for-writing-better-custom-instructions-for-copilot/\">5 tips for writing better custom instructions for Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "AI驱动的规范开发：从新的开源工具包开始 (原标题: Spec-driven development with AI: Get started with a new open source toolkit)",
-      "link": "https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/",
-      "pubDate": "Tue, 02 Sep 2025 16:48:03 +0000",
-      "isoDate": "2025-09-02T16:48:03.000Z",
-      "creator": "Den Delimarsky",
-      "summary": "## AI驱动的规范开发：从新的开源工具包开始\n\n### 引言：AI编码的挑战与规范的重要性\n当前，AI编码代理日益强大，但普遍存在一个问题：生成的代码看似正确，却往往无法正常工作。这种“凭感觉编码”的方式适用于快速原型，但在构建关键任务应用或处理现有代码库时并不可靠。问题不在于AI的编码能力，而在于我们的方法。我们常常将AI编码代理视为搜索引擎，但它们更像是需要明确指令的、字面意义上的结对程序员。它们擅长模式识别，但仍需要清晰无歧义的指示。\n\n为此，我们正在重新思考规范——不再是静态文档，而是随项目演进的、活的、可执行的工件。规范成为共享的真理来源：当出现不明确之处时，回到规范；当项目变得复杂时，完善规范；当任务过于庞大时，将其分解。\n\n### Spec Kit：AI驱动规范开发的新工具包\nSpec Kit是我们新推出的开源工具包，旨在通过结构化的流程，将规范驱动开发引入您的AI编码工作流，支持GitHub Copilot、Claude Code和Gemini CLI等工具。\n\n### Spec Kit的四阶段规范驱动流程\nSpec Kit将您的规范置于工程流程的中心。其核心洞察在于：每个阶段都有特定的任务，并且只有当前任务得到充分验证后，才能进入下一阶段。您的主要角色是引导，而编码代理则负责大部分的编写工作。该流程分为四个阶段，并设有清晰的检查点：\n\n1.  **规定（Specify）**\n    *   **目标：** 您提供关于要构建什么以及为什么构建的高层描述，编码代理将生成详细的规范。\n    *   **内容：** 关注用户旅程、用户体验以及成功的定义。例如，谁将使用它？它为用户解决了什么问题？他们将如何与它互动？哪些结果是重要的？\n    *   **特点：** 这不是关于技术栈或应用设计，而是关于映射您希望创建的用户体验。它是一个活的工件，会随着您对用户及其需求的了解而演进。\n\n2.  **规划（Plan）**\n    *   **目标：** 您提供所需的技术栈、架构和约束，编码代理将生成全面的技术计划。\n    *   **内容：** 包括公司标准技术、与遗留系统的集成、合规性要求或性能目标等。您可以要求生成多个计划变体进行比较。\n    *   **优势：** 如果将内部文档提供给编码代理，它能将您的架构模式和标准直接整合到计划中，确保AI在开始工作前理解“游戏规则”。\n\n3.  **任务（Tasks）**\n    *   **目标：** 编码代理根据规范和计划，将其分解为实际的工作。\n    *   **内容：** 生成小而可审查的任务块，每个任务解决一个特定的问题。每个任务都应能独立实现和测试，这为AI提供了一种验证工作和保持进度的机制，类似于AI代理的测试驱动开发过程。\n    *   **示例：** 任务不再是“构建身份验证”，而是具体的“创建验证电子邮件格式的用户注册端点”。\n\n4.  **实施（Implement）**\n    *   **目标：** 您的编码代理逐一（或并行）处理任务。\n    *   **开发者角色：** 您作为开发者，审查聚焦于解决特定问题的代码变更，而不是数千行的代码转储。编码代理知道要构建什么（因为规范告诉它），知道如何构建（因为计划告诉它），也知道具体要做什么（因为任务告诉它）。\n    *   **关键：** 您的角色不仅是引导，更是验证。在每个阶段，您都需要反思和完善：规范是否捕捉了您真正想构建的内容？计划是否考虑了实际约束？AI是否遗漏了什么或错过了边缘情况？该流程内置了明确的检查点，供您批判生成的内容、发现差距并在继续前进之前进行纠正。AI生成工件，您确保它们是正确的。\n\n### 为何此方法有效？\n这种方法之所以成功，是因为语言模型的工作原理：它们擅长模式补全，但不擅长“读心术”。像“为我的应用添加照片分享功能”这样模糊的提示，会迫使模型猜测数千个未说明的需求，导致AI做出不准确的假设。相比之下，预先提供清晰的规范、技术计划和聚焦的任务，能为编码代理提供更高的清晰度，从而提高其整体效率。它不再猜测您的需求，而是知道要构建什么、如何构建以及按什么顺序构建。\n\n此方法适用于不同的技术栈（Python、JavaScript、Go等），因为核心挑战都是将意图转化为可工作的代码。规范清晰地捕捉意图，计划将其转化为技术决策，任务将其分解为可实现的部分，而AI编码代理则负责实际编码。\n\n对于大型组织，此方法解决了另一个关键问题：如何管理安全策略、合规规则、设计系统约束和集成需求？这些信息往往分散在各处。通过Spec Kit，所有这些内容都整合到规范和计划中，AI可以实际使用它们。安全要求不再是事后考虑，而是从第一天起就融入规范；设计系统也不再是后期附加，而是指导实施的技术计划的一部分。\n\n这种方法的迭代性赋予了它力量。传统开发可能使您早期决策受限，而规范驱动开发则使改变方向变得简单：只需更新规范，重新生成计划，然后让编码代理处理其余部分。\n\n### 适用场景\n规范驱动开发在以下三种场景中特别有效：\n\n1.  **全新项目（Greenfield，从零到一）：** 在启动新项目时，虽然直接开始编码很诱人，但前期投入少量工作创建规范和计划，能确保AI构建出您真正想要的东西，而非基于常见模式的通用解决方案。\n2.  **现有系统功能开发（Feature work，从N到N+1）：** 这是规范驱动开发最强大的应用场景。在复杂现有代码库中添加功能非常困难。通过为新功能创建规范，可以明确其与现有系统的交互方式。计划随后编码架构约束，确保新代码与项目原生融合，而非附加物。这使得持续开发更快、更安全。\n3.  **遗留系统现代化（Legacy modernization）：** 当需要重建遗留系统时，原始意图往往已随时间流逝。通过Spec Kit提供的规范驱动开发流程，您可以将核心业务逻辑捕获到现代规范中，在计划中设计全新的架构，然后让AI从头开始重建系统，而无需继承技术债务。核心优势在于将稳定的“是什么”与灵活的“如何做”分离，从而实现迭代开发而无需昂贵的重写。\n\n### 未来展望\n我们正在从“代码是真理来源”转向“意图是真理来源”。有了AI，规范成为真理来源，并决定了构建什么。这并非因为文档变得更重要，而是因为AI使规范变得可执行。当您的规范自动转化为可工作的代码时，它就决定了构建什么。Spec Kit是我们使这一转变成为现实的实验。我们将其开源，因为这种方法超越了任何单一工具或公司，真正的创新在于流程。未来我们将探讨如何将规范驱动开发实践与上下文工程相结合，以构建更高级的AI工具。\n\n我们期待听到您的使用体验和改进建议！如果您正在使用规范驱动模式进行开发，请与我们分享您的经验。我们特别关注：\n*   使工作流更具吸引力和可用性。\n*   可能的VS Code集成。\n*   比较和差异化多个实现。\n*   在组织中大规模管理规范和任务。\n\n我们很高兴看到您利用AI找到更好的方法，将人类的创造力转化为可工作的软件。\n\n### 作者信息\n由 ![Den Delimarsky](https://avatars.githubusercontent.com/u/53200638?v=4&s=200) 首席产品经理 Den Delimarsky 撰写。\n\n### 更多来自GitHub的探索\n*   **文档：** ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) 掌握GitHub所需的一切，尽在一个地方。前往文档\n*   **GitHub：** ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) 在GitHub上构建未来，这里是任何人、任何地方构建任何东西的平台。开始构建\n*   **客户案例：** ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) 了解使用GitHub进行构建的公司和工程团队。了解更多\n*   **GitHub Universe 2025：** ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) 最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山与我们相聚。立即注册",
-      "shortSummary": "AI编码常因指令模糊而失败。Spec Kit是一个开源工具包，通过将规范作为核心，实现AI驱动的规范开发。它包含“规定、规划、任务、实施”四个阶段，确保AI在明确的意图、技术计划和细化任务指导下生成高质量代码。开发者在每个阶段验证和完善，将“意图”而非“代码”作为真理来源。此方法适用于新项目、功能开发和遗留系统现代化，解决了AI“凭感觉编码”的问题，提高了开发效率和准确性。",
-      "translated_title": "AI驱动的规范开发：从新的开源工具包开始",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/53200638?v=4&s=200",
-          "alt": "Den Delimarsky",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Developers can use their AI tool of choice for spec-driven development with this open source toolkit.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/\">Spec-driven development with AI: Get started with a new open source toolkit</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-09-15T04:33:04.892Z"
+  "lastUpdated": "2025-09-17T04:32:50.246Z"
 }
