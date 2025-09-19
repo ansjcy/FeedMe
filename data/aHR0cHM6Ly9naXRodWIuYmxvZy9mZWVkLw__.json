@@ -5,6 +5,62 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "将GitHub Copilot编程代理集成到工作流中的5种方法 (原标题: 5 ways to integrate GitHub Copilot coding agent into your workflow)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/5-ways-to-integrate-github-copilot-coding-agent-into-your-workflow/",
+      "pubDate": "Thu, 18 Sep 2025 16:00:00 +0000",
+      "isoDate": "2025-09-18T16:00:00.000Z",
+      "creator": "Andrea Griffiths",
+      "summary": "# 将GitHub Copilot编程代理集成到工作流中的5种方法\n\n本文探讨了如何将GitHub Copilot编程代理更深入地集成到开发工作流中，超越其基本功能，充分发挥其潜力。通过以下五种强大的策略，开发者可以更有效地处理技术债务、验证UI变更、安全地进行实验等。\n\n## 1. 利用Agents面板处理技术债务\n技术债务是开发中常见的难题，例如依赖升级、遗留功能标志和小型重构等。这些任务通常枯燥但必要，容易堆积。\n*   **解决方案**：新的Agents面板允许开发者批量处理这些繁琐但重要的任务，并将其交给Copilot执行，从而使开发者能够专注于核心功能开发。\n*   **操作步骤**：\n    1.  在GitHub.com上打开你的仓库，点击Agents面板按钮。\n    2.  描述你的任务，例如：“更新扩展清单以支持VS Code 1.104”或“添加TypeScript严格模式并修复所有类型错误”。\n    3.  点击“开始任务”，让Copilot完成其余工作。\n*   **专业提示**：将小型清理任务批量处理成单独的请求。每个任务只消耗一个高级请求，你将获得范围清晰的拉取请求，可以独立合并。\n\n## 2. 通过Playwright MCP验证UI变更\n前端变更通常需要手动启动应用程序、检查UI并确保没有损坏。Copilot与Playwright MCP服务器的集成彻底改变了这一过程。\n*   **解决方案**：Copilot可以自动启动应用程序、与其交互并捕获屏幕截图。\n*   **操作步骤**：\n    1.  从Agents面板描述任务，例如：“添加英语、法语和西班牙语的国际化支持”。\n    2.  Copilot生成代码，使用Playwright MCP服务器在浏览器中运行你的应用程序，并为拉取请求捕获屏幕截图。\n    3.  在本地签出分支之前，直接在拉取请求中审查屏幕截图。\n*   **图片示例**：\n    ![Playwright MCP 验证 UI 变更](https://github.blog/wp-content/uploads/2025/09/playwright.gif)\n*   **专业提示**：这对于验证响应式设计、深色模式切换或任何屏幕截图价值千言万语的UI变更非常有用。\n\n## 3. 安全地使用分支策略进行实验\n并非所有想法都适合立即投入生产。有时，你需要一个安全的空间让Copilot进行实验，而不会影响主分支。\n*   **解决方案**：Copilot的分支处理功能非常强大，你可以选择任何分支作为起点，而不仅仅是默认分支。\n*   **操作步骤**：\n    1.  从Agents面板描述任务，例如：“添加实时航班跟踪和实时延迟通知”。\n    2.  从下拉菜单中选择你的基础分支（例如，`feature/booking-system` 而不是 `main`）。\n    3.  Copilot会从你选择的基础分支创建一个 `copilot/` 分支，并打开一个草稿拉取请求供你审查。\n    4.  审查拉取请求，并通过拉取请求评论向Copilot提供反馈。\n*   **图片示例**：\n    ![通过评论向 Copilot 提供反馈](https://github.blog/wp-content/uploads/2025/09/mentioncopilot-4.gif)\n*   **专业提示**：使用专用分支在演示中展示原型——它们干净、隔离且易于在需要时丢弃。\n\n## 4. 为任务选择正确的入口点\n为Copilot分配任务时，选择正确的入口点至关重要。\n*   **最佳选择**：\n    *   **Agents面板**：在浏览GitHub时进行临时任务的理想选择，例如审查问题或规划工作。\n    *   **GitHub Issues**：如果你的团队已经在Issues中跟踪工作，可以直接分配给Copilot，使其成为现有工作流的一部分。\n    *   **VS Code**：在编码时发现的快速重构，无需上下文切换。\n    *   **移动应用程序**：当你不在办公桌前时，对于小型任务或后续工作非常有用。\n*   **专业提示**：不要想太多。最好的入口点是灵感来袭时离你最近的那个。\n\n## 5. 通过MCP服务器扩展Copilot编程代理\nCopilot在获得更多上下文时会变得更智能。\n*   **默认MCP服务器**：\n    *   **Playwright MCP**：实现浏览器自动化和Web应用程序测试的屏幕截图功能。\n    *   **GitHub MCP**：提供对GitHub仓库、问题、拉取请求和其他GitHub特定上下文的感知。\n*   **扩展能力**：通过自定义MCP服务器，Copilot可以变得更加强大，例如：\n    *   **Notion MCP**：拉取项目规范或笔记。\n    *   **Hugging Face MCP**：访问AI模型和数据集以实现机器学习功能。\n*   **资源**：最近推出的开源MCP注册表提供了一个集中发现、发布和管理MCP服务器集成的平台。\n*   **专业提示**：访问VS Code Insider页面，其中提供了按类别（如开发工具、生产力、数据与分析、商业服务、云与基础设施）策划的MCP服务器列表，所有这些都可以一键安装。\n\n## 结论与展望\n这五种工作流展示了Copilot如何从一个建议工具演变为一个重要的开发伙伴。通过将其集成到日常工作中，你不仅节省了时间，还在根本上改变了处理开发挑战的方式。Copilot自动化了技术债务、处理了UI验证、并支持在隔离分支中安全地进行原型开发。当团队将Copilot视为一个能够解锁开发工作流新可能性的协作者时，将获得巨大的成功。",
+      "shortSummary": "GitHub Copilot编程代理通过五种策略深度集成到开发工作流中，超越了基础功能。这些策略包括：利用Agents面板自动化处理技术债务；通过Playwright MCP服务器自动验证UI变更并捕获截图；安全地使用分支策略进行实验，而不会影响主分支；根据任务场景选择合适的入口点（如Agents面板、GitHub Issues、IDE或移动应用）；以及通过自定义MCP服务器（如Notion MCP、Hugging Face MCP）扩展Copilot的上下文感知能力。Copilot从一个代码建议工具转变为一个重要的开发伙伴，显著提升了开发效率和创新潜力。",
+      "translated_title": "将GitHub Copilot编程代理集成到工作流中的5种方法",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/09/playwright.gif",
+          "alt": "Square image",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/09/mentioncopilot-4.gif",
+          "alt": "Square image",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/Andrea-Griffiths_avatar_1755783168-200x200.jpeg",
+          "alt": "Andrea Griffiths",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Already know the basics of GitHub Copilot coding agent? Here are five ways to offload chores, tackle tech debt, and keep your workflow moving fast.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/5-ways-to-integrate-github-copilot-coding-agent-into-your-workflow/\">5 ways to integrate GitHub Copilot coding agent into your workflow</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "认识 GitHub MCP 注册表：发现 MCP 服务器的最快方式 (原标题: Meet the GitHub MCP Registry: The fastest way to discover MCP Servers)",
       "link": "https://github.blog/ai-and-ml/github-copilot/meet-the-github-mcp-registry-the-fastest-way-to-discover-mcp-servers/",
       "pubDate": "Tue, 16 Sep 2025 16:27:54 +0000",
@@ -422,63 +478,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>With the relaxation of sanctions and export controls on Syria, GitHub will once again be broadly available to Syrian developers.</p>\n<p>The post <a href=\"https://github.blog/company/github-is-enabling-broader-access-for-developers-in-syria-following-new-government-trade-rules/\">GitHub is enabling broader access for developers in Syria following new government trade rules</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "通过MCP启发构建更智能的交互：从笨拙的工具调用到无缝的用户体验 (原标题: Building smarter interactions with MCP elicitation: From clunky tool calls to seamless user experiences)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/building-smarter-interactions-with-mcp-elicitation-from-clunky-tool-calls-to-seamless-user-experiences/",
-      "pubDate": "Thu, 04 Sep 2025 16:00:00 +0000",
-      "isoDate": "2025-09-04T16:00:00.000Z",
-      "creator": "Chris Reddington",
-      "summary": "## 通过MCP启发构建更智能的交互：从笨拙的工具调用到无缝的用户体验\n\n本文深入探讨了如何利用模型上下文协议（MCP）中的“启发”（Elicitation）机制，显著提升软件的用户体验，特别是针对AI驱动的交互。作者以一个回合制游戏（如井字棋、石头剪刀布）的MCP服务器为例，展示了如何从最初存在诸多“痛点”的交互方式，演变为更加自然和无缝的用户体验。\n\n### 什么是启发（Elicitation）？\n\n启发机制的核心思想是“如果缺少所需信息，就主动去获取”。它超越了简单的信息收集，旨在创建直观的交互：AI（通过MCP服务器）能够在任务执行过程中暂停，主动询问并获取所需信息，然后继续任务，从而避免了依赖硬编码的默认假设。\n\n**注意**：启发功能是MCP规范中的一个相对较新的特性（于2025年6月修订中添加），目前并非所有AI应用宿主都支持（例如，Visual Studio Code中的GitHub Copilot支持此功能）。\n\n### 实施过程中的挑战与改进\n\n作者在回合制游戏MCP服务器中实施启发功能时，遇到了以下挑战并进行了改进：\n\n1.  **初始实现与工具蔓延**：\n    *   最初，作者为新游戏创建（如难度、玩家姓名、先手顺序、游戏轮数）实现了基本的启发功能。\n    *   为了比较新旧方法，启发功能被实现为新的独立工具（例如 `create-tic-tac-toe-game-interactive`），导致服务器中出现大量功能重叠的工具（如 `create-tic-tac-toe-game` 和 `create-tic-tac-toe-game-interactive`）。\n    *   **问题**：AI代理（如Copilot）在面对名称和描述相似的工具时，难以选择正确的工具，导致行为不可预测。\n\n2.  **解决方案：工具整合与DRY原则**：\n    *   通过大量重构和整合，作者将工具数量从八个减少到四个，遵循“不要重复自己”（DRY）原则。\n    *   现在，当用户提示“我们玩一局井字棋”时，工具调用会识别出需要更多信息，从而触发启发机制，确保用户做出明确选择，而非使用预设的默认值。\n\n    ![GitHub Copilot Chat在Visual Studio Code中触发启发体验，请求用户提供额外偏好以自定义体验的截图](https://github.blog/wp-content/uploads/2025/09/image1.png?resize=1024%2C576)\n\n3.  **处理部分信息与实时调试**：\n    *   在直播中发现一个bug：无论用户是否已提供所需信息，启发步骤都会被触发。\n    *   **修复**：直播后，作者添加了检查机制，在工具调用后判断哪些信息已提供，只请求缺失的信息。同时，统一了工具和启发模式之间的属性名称，提高了清晰度。\n    *   例如，如果用户说“我们玩井字棋，我先走”，系统只会询问游戏难度和玩家姓名。\n\n### 启发机制在MCP服务器中的工作原理\n\n当MCP服务器调用 `create_game` 工具时，其内部流程如下：\n\n*   **检查必要参数**：判断用户是否指定了游戏类型或ID。\n*   **传递可选参数**：将已识别的参数传递给独立方法，检查是否缺少难度、玩家姓名或回合顺序等信息。\n*   **启动启发**：如果信息缺失，暂停工具执行，并仅从用户处收集缺失信息（这是直播后添加的改进）。\n*   **呈现模式驱动的提示**：用户会看到针对每个缺失参数格式化的问题。\n*   **收集响应**：MCP客户端（本例中为VS Code）负责处理UI交互。\n*   **完成原始请求**：一旦服务器收集到所有信息，工具将使用用户的偏好执行 `createGame` 方法。\n\n    ![GitHub Copilot Chat在Visual Studio Code中出现新的UI模态框，提示用户选择偏好，本例中用户选择难度为“困难”的截图](https://github.blog/wp-content/uploads/2025/09/image2.png?resize=1024%2C576)\n\n**结果**：用户可以获得个性化的游戏设置，例如“Chris vs AI (Hard)”，并由AI先手，而不是默认的“Player vs AI (Medium)”。\n\n### 关键经验教训\n\n1.  **用户体验至关重要**：启发机制虽然增加了复杂性，但通过主动询问用户偏好，提供了比强制使用默认值更好的体验。\n2.  **工具命名比想象中更重要**：在构建和使用MCP服务器中的工具时，清晰的命名和描述至关重要，模糊的名称会导致AI行为不可预测。\n3.  **迭代开发制胜**：先构建基本功能，在使用中识别痛点，然后通过添加启发等功能来改进用户体验，并利用AI编码代理进行清理。\n\n### 总结\n\n构建更好的AI工具不仅仅关乎底层模型，更在于创造能够解释上下文、提出好问题并准确满足用户需求的体验。启发机制是朝着这个方向迈出的重要一步，预示着MCP生态系统将支持更丰富、更智能的交互。",
-      "shortSummary": "本文探讨了如何通过MCP启发（elicitation）机制提升AI交互的用户体验。该机制使AI在信息不足时能主动暂停并向用户请求必要数据，从而避免了僵硬的默认设置和笨拙的工具调用。作者通过一个回合制游戏MCP服务器的开发实践，解决了工具命名混淆和重复请求等问题，实现了工具整合与仅请求缺失信息。文章强调了用户体验、清晰的工具命名和迭代开发的重要性，旨在构建更智能、个性化的AI交互，让用户体验更自然、无缝。",
-      "translated_title": "通过MCP启发构建更智能的交互：从笨拙的工具调用到无缝的用户体验",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/image1.png?resize=1024%2C576",
-          "alt": "A screenshot of GitHub Copilot Chat in Visual Studio Code where the user has asked \"Let's play a game of tictactoe\". Copilot has triggered the elicitation experience, requesting additional preferences to customize the experience.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/image2.png?resize=1024%2C576",
-          "alt": "A screenshot of GitHub Copilot Chat in Visual Studio Code where a new UI modal appears, prompting the user for their preferences. This example shows the user selecting the Difficulty as hard.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/791642?v=4&s=200",
-          "alt": "Chris Reddington",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Explore how MCP elicitation transforms AI tool interactions by gathering missing information upfront. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/building-smarter-interactions-with-mcp-elicitation-from-clunky-tool-calls-to-seamless-user-experiences/\">Building smarter interactions with MCP elicitation: From clunky tool calls to seamless user experiences</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-09-17T04:32:50.246Z"
+  "lastUpdated": "2025-09-19T04:32:03.609Z"
 }

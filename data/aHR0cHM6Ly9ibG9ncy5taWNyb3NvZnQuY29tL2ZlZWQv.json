@@ -5,6 +5,44 @@
   "link": "https://blogs.microsoft.com/",
   "items": [
     {
+      "title": "世界最强大AI数据中心探秘 (原标题: Inside the world’s most powerful AI datacenter)",
+      "link": "https://blogs.microsoft.com/blog/2025/09/18/inside-the-worlds-most-powerful-ai-datacenter/",
+      "pubDate": "Thu, 18 Sep 2025 14:00:02 +0000",
+      "isoDate": "2025-09-18T14:00:02.000Z",
+      "creator": "Scott Guthrie",
+      "summary": "## 微软全球AI基础设施投资浪潮\n\n微软正大力投资建设全球范围内的专用AI数据中心和基础设施，以支持尖端AI工作负载和云服务的普及。这些投资旨在构建一个能够满足未来AI需求的强大网络。\n\n*   **美国威斯康星州Fairwater：** 微软最新、最大、最复杂的美国AI工厂，同时在美国其他地区也有多个相同的Fairwater数据中心正在建设中。\n*   **挪威纳尔维克：** 微软宣布与nScale和Aker JV合作，开发一个新的超大规模AI数据中心。\n*   **英国劳顿：** 微软宣布与nScale合作，建设英国最大的超级计算机，以支持英国的服务。\n\n这些AI数据中心是重大的资本项目，代表着数百亿美元的投资和数十万块尖端AI芯片，并将与微软全球70个区域的400多个数据中心组成的Microsoft Cloud无缝连接。通过创新，微软能够将这些AI数据中心连接成一个分布式网络，以指数级方式提升效率和计算能力，进一步实现AI服务在全球范围内的普及。\n\n## AI数据中心：AI时代的新工厂\n\nAI数据中心是一种独特、专用设施，专门为AI训练以及运行大规模人工智能模型和应用程序而设计。它们为OpenAI、Microsoft AI、Copilot等领先的AI工作负载提供支持。\n\n*   **Fairwater数据中心概览：** 位于威斯康星州，占地315英亩，拥有三座总面积达120万平方英尺的巨大建筑。其建设工程量巨大，包括46.6英里的深地基桩、2650万磅结构钢、120英里的中压地下电缆和72.6英里的机械管道。\n*   **核心区别：** 与传统云数据中心不同，AI数据中心并非为运行众多小型独立工作负载（如网站托管、电子邮件）而优化，而是作为一个巨大的AI超级计算机运行，通过单一扁平网络互连数十万块最新的NVIDIA GPU。\n*   **性能：** 它将提供当今世界最快超级计算机10倍的性能，实现前所未有的AI训练和推理工作负载水平。\n\n![Aerial view of Microsoft's new AI datacenter campus in Mt. Pleasant, Wisconsin. ](https://blogs.microsoft.com/wp-content/uploads/2025/09/OMB-Image-1-Datacenter.jpg)\n\n## AI数据中心的作用：赋能前沿AI\n\n高效的AI模型依赖于数千台计算机（由GPU或专用AI加速器驱动）协同工作，处理海量并发数学计算。它们通过极快的网络互连，以便即时共享结果，并由庞大的存储系统支持，这些系统存储着被分解成代币（AI学习的小信息单元）的数据（如文本、图像或视频）。目标是让这些芯片始终保持忙碌，因为如果数据或网络无法跟上，一切都会变慢。AI训练本身是一个循环：AI按顺序处理代币，预测下一个代币，与正确答案进行核对并进行调整。这个过程重复万亿次，直到系统在训练任务上表现得更好。\n\n## 前沿规模的AI基础设施\n\n专用基础设施对于高效驱动AI至关重要。为了计算领先AI模型万亿参数规模的代币数学，AI数据中心的核心由安装在服务器板上的专用AI加速器（如GPU）以及CPU、内存和存储组成。单个服务器托管多个GPU加速器，通过高带宽通信连接。这些服务器随后安装到机架中，机架顶部（ToR）交换机提供它们之间的低延迟网络。数据中心中的每个机架都相互连接，形成一个紧密耦合的集群。从外部看，这种架构像许多独立的服务器，但在规模上，它作为一个单一的超级计算机运行，数十万个加速器可以并行训练一个模型。\n\n*   **NVIDIA GB200集群：** 该数据中心运行一个由互连的NVIDIA GB200服务器组成的庞大集群，拥有数百万计算核心和EB级存储，所有这些都专为最严苛的AI工作负载而设计。Azure是首个上线NVIDIA GB200服务器、机架和完整数据中心集群的云提供商。\n*   **机架性能：** 每个机架包含72个NVIDIA Blackwell GPU，通过单个NVLink域连接，提供1.8 TB的GPU到GPU带宽，并使每个GPU都能访问14 TB的池化内存。该机架作为一个单一的巨型加速器运行，每秒能够处理惊人的865,000个代币，是目前任何云平台中最高的吞吐量。\n*   **未来展望：** 挪威和英国的AI数据中心将使用类似的集群，并利用NVIDIA的下一代AI芯片设计（GB300），该设计每个机架提供更多的池化内存。\n*   **网络拓扑：** 为了确保云环境中多层之间的低延迟通信，微软需要将性能扩展到单个机架之外。对于全球最新的NVIDIA GB200和GB300部署，在机架层面，这些GPU通过NVLink和NVSwitch以TB/秒的速度通信，消除了内存和带宽障碍。然后，为了将多个机架连接成一个Pod，Azure使用InfiniBand和以太网结构，提供800 Gbps的带宽，采用全胖树无阻塞架构，确保每个GPU都能以全线速无拥塞地与所有其他GPU通信。而在数据中心层面，多个Pod的机架相互连接，以减少跳数，使数万个GPU能够作为一个全球规模的超级计算机运行。\n*   **威斯康星AI数据中心布局：** 为了解决传统数据中心走廊中机架间物理距离引入的延迟问题，威斯康星AI数据中心的机架采用两层数据中心配置，除了与相邻机架联网外，还与上方或下方的其他机架联网。这种分层方法使Azure脱颖而出。微软与行业合作伙伴共同设计了整个堆栈，构建了世界上最强大、紧密耦合的AI超级计算机，专为前沿模型而设计。\n\n![A high-density cluster of AI infrastructure servers in a Microsoft datacenter.](https://blogs.microsoft.com/wp-content/uploads/2025/09/OMB-Image-2-Datacenter.jpg)\n\n## 应对环境影响：设施规模的闭环液冷系统\n\n传统的空气冷却无法处理现代AI硬件的密度。微软的数据中心采用先进的液冷系统——集成管道将冷液直接循环到服务器中，高效地提取热量。闭环再循环确保零水浪费，水只需一次性填充，然后持续重复使用。\n\n*   **Fairwater的冷却系统：** 拥有全球第二大水冷式冷却器工厂，其闭环冷却系统将持续循环水。热水随后通过管道输送到数据中心两侧的冷却“散热片”，172个20英尺的风扇在此冷却并循环水回数据中心。该系统即使在峰值负载下也能保持AI数据中心高效运行。\n*   **水资源利用：** 超过90%的数据中心容量使用此系统，仅在建设过程中需要一次水，并持续重复使用，没有蒸发损失。剩余10%的传统服务器使用室外空气进行冷却，仅在最热的日子才切换到水冷，这种设计与传统数据中心相比显著减少了用水量。微软还在许多现有数据中心使用液冷来支持AI工作负载；这种液冷通过热交换单元（HXU）实现，同样实现零运行用水。\n\n![An aerial view of part of the closed loop liquid cooling system.](https://blogs.microsoft.com/wp-content/uploads/2025/09/OMB-Image-3-Datacenter.jpg)\n\n## 存储与计算：为AI速度而生\n\n现代数据中心可以包含EB级存储和数百万CPU计算核心。为了支持AI基础设施集群，需要一个完全独立的数据中心基础设施来存储和处理AI集群使用和生成的数据。例如，威斯康星AI数据中心的存储系统长度达五个足球场。\n\n![An aerial view of a dedicated storage and compute datacenter used to store and process data for the AI datacenter.](https://blogs.microsoft.com/wp-content/uploads/2025/09/OMB-Image-4-Datacenter.jpg)\n\n微软为最严苛的AI工作负载重新设计了Azure存储，以实现真正的超级计算规模。每个Azure Blob存储账户每秒可支持超过200万次读写事务，并且拥有数百万个可用账户，可以弹性扩展以满足几乎任何数据需求。这种能力背后是一个经过根本性重新架构的存储基础，它聚合了数千个存储节点和数十万个驱动器的容量和带宽。这使得存储能够扩展到EB级，消除了手动分片的需求，并简化了最大规模AI和分析工作负载的操作。\n\n*   **关键创新：** BlobFuse2等创新技术提供高吞吐量、低延迟访问，用于GPU节点本地训练，确保计算资源永不空闲，并且在需要时始终提供海量AI训练数据集。多协议支持允许与各种数据管道无缝集成，而与分析引擎和AI工具的深度集成加速了数据准备和部署。自动扩展根据需求动态分配资源，结合高级安全性、弹性和成本效益的分层存储，Azure的存储平台为下一代工作负载设定了标准，提供了所需的性能、可扩展性和可靠性。\n\n## AI广域网（WAN）：连接多个数据中心，构建更大AI超级计算机\n\n这些新的AI数据中心是全球Azure AI数据中心网络的一部分，通过微软的广域网（WAN）互连。这不仅仅是一个独立的建筑，而是一个分布式、弹性且可扩展的系统，作为一个单一的强大AI机器运行。微软的AI WAN具有AI原生带宽扩展能力，可支持跨多个地理区域的Azure区域进行大规模分布式训练，从而使客户能够利用巨型AI超级计算机的力量。\n\n*   **范式转变：** 这从根本上改变了我们对AI超级计算机的思考方式。它不再受限于单个设施的围墙，而是一个分布式系统，计算、存储和网络资源在数据中心区域之间无缝池化和编排。这意味着为客户提供更大的弹性、可扩展性和灵活性。\n\n## 总结：全面优化，赋能未来AI\n\n为了满足最大AI挑战的关键需求，微软重新设计了云基础设施堆栈的每一层。这不仅仅是孤立的突破，而是将芯片、服务器、网络和数据中心等多个新方法组合起来，实现了软硬件作为一个专用系统的优化。微软的威斯康星数据中心将在AI的未来中发挥关键作用，它建立在真实技术、真实投资和真实的社区影响之上。随着该设施与其他区域数据中心的连接，以及基础设施每一层的协调统一，微软正在开启一个由云驱动的智能新时代，安全、适应性强，并为未来做好准备。",
+      "shortSummary": "微软正全球范围内大力投资建设专用AI数据中心，其中威斯康星州的Fairwater是其最新、最大、最复杂的美国AI工厂。这些数据中心作为单一的AI超级计算机运行，利用数十万块NVIDIA GPU，提供比现有最快超算高10倍的性能。它们采用先进的闭环液冷系统和为AI工作负载重新设计的存储架构。通过AI广域网互联，这些数据中心共同构成一个分布式全球AI超级计算机，为前沿AI工作负载提供前所未有的性能、可扩展性和弹性。",
+      "translated_title": "世界最强大AI数据中心探秘",
+      "images": [
+        {
+          "url": "https://blogs.microsoft.com/wp-content/uploads/2025/09/OMB-Image-1-Datacenter.jpg",
+          "alt": "Aerial view of Microsoft's new AI datacenter campus in Mt. Pleasant, Wisconsin. ",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://blogs.microsoft.com/wp-content/uploads/2025/09/OMB-Image-2-Datacenter.jpg",
+          "alt": "A high-density cluster of AI infrastructure servers in a Microsoft datacenter.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://blogs.microsoft.com/wp-content/uploads/2025/09/OMB-Image-3-Datacenter.jpg",
+          "alt": "An aerial view of part of the closed loop liquid cooling system.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://blogs.microsoft.com/wp-content/uploads/2025/09/OMB-Image-4-Datacenter.jpg",
+          "alt": "An aerial view of a dedicated storage and compute datacenter used to store and process data for the AI datacenter.",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>This week we have introduced a wave of purpose-built datacenters and infrastructure investments we are making around the world to support the global adoption of cutting-edge AI workloads and cloud services. Today in Wisconsin we introduced Fairwater, our newest US AI datacenter, the largest and most sophisticated AI factory we’ve built yet. In addition to...</p>\n<p>The post <a href=\"https://blogs.microsoft.com/blog/2025/09/18/inside-the-worlds-most-powerful-ai-datacenter/\">Inside the world’s most powerful AI datacenter</a> appeared first on <a href=\"https://blogs.microsoft.com\">The Official Microsoft Blog</a>.</p>\n"
+    },
+    {
       "title": "微软引领数据从统一走向组织化，通过新的Microsoft Fabric功能实现下一代AI就绪 (原标题: Microsoft leads shift beyond data unification to organization, delivering next-gen AI readiness with new Microsoft Fabric capabilities)",
       "link": "https://blogs.microsoft.com/blog/2025/09/16/microsoft-leads-shift-beyond-data-unification-to-organization-delivering-next-gen-ai-readiness-with-new-microsoft-fabric-capabilities/",
       "pubDate": "Tue, 16 Sep 2025 07:00:04 +0000",
@@ -124,20 +162,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>The role of agentic AI has grown rapidly over the past several months as organizational leaders seek ways to accelerate AI Transformation. We firmly believe that Agents + Copilot + Human Ambition can deliver real AI differentiation for our customers. By putting the autonomous capabilities of an agent to work for their businesses, our customers...</p>\n<p>The post <a href=\"https://blogs.microsoft.com/blog/2025/04/28/how-agentic-ai-is-driving-ai-first-business-transformation-for-customers-to-achieve-more/\">How agentic AI is driving AI-first business transformation for customers to achieve more</a> appeared first on <a href=\"https://blogs.microsoft.com\">The Official Microsoft Blog</a>.</p>\n"
-    },
-    {
-      "title": "2025年度工作趋势指数：前沿企业诞生 (原标题: The 2025 Annual Work Trend Index: The Frontier Firm is born)",
-      "link": "https://blogs.microsoft.com/blog/2025/04/23/the-2025-annual-work-trend-index-the-frontier-firm-is-born/",
-      "pubDate": "Wed, 23 Apr 2025 13:00:04 +0000",
-      "isoDate": "2025-04-23T13:00:04.000Z",
-      "creator": "Jared Spataro",
-      "summary": "# 2025年度工作趋势指数：前沿企业诞生\n\n文章指出，我们正进入一个由人工智能（AI）驱动的新现实，AI能够以非凡的方式进行推理和解决问题，这将重塑商业规则并改变知识工作。这种变革的影响堪比工业革命和互联网时代，其全面潜力将需要数十年才能显现，并带来广泛的技术、社会和经济变革。\n\n## 2025年度工作趋势指数报告\n\n*   **目的**：旨在帮助领导者和员工为这一重大转变做好准备。\n*   **数据来源**：基于全球大规模调查、Microsoft 365遥测数据、LinkedIn招聘和劳动力趋势。\n*   **新增洞察**：首次纳入了来自AI原生初创公司、经济学家、科学家和学者的见解，这些都指向一场正在发生的巨大转变。\n*   **关键发现**：82%的领导者认为，今年是重新思考战略和运营核心方面的关键一年。\n\n## “前沿企业”的崛起\n\n数据揭示了一种新型组织的出现，即“前沿企业”（Frontier Firm）。这类企业围绕着“即时智能”（intelligence on tap）、“人机协作团队”（human-agent teams）以及一个新角色——“智能体管理者”（agent boss）而构建。\n*   **成功表现**：71%的“前沿企业”员工表示其公司蓬勃发展，而全球范围内这一比例仅为37%。\n\n## “即时智能”：可购买的智能\n\n文章将AI比作互联网兴起之初，强调其将彻底重塑商业。\n*   **核心理念**：智能不再受限于员工数量或专业知识，它成为一种“耐用品”：丰富、经济且可按需扩展。\n*   **增长杠杆**：在经济和股东压力日益增长的背景下，这种按需智能为增长提供了新的动力，能够弥合业务需求与人类能力之间日益扩大的“能力差距”。\n*   **能力差距**：53%的领导者表示生产力必须提高，但80%的全球员工表示缺乏时间或精力完成工作；平均而言，员工每2分钟就会被会议、电子邮件或消息打断。\n*   **解决方案**：82%的领导者预计在未来12到18个月内利用“数字劳动力”来扩大员工队伍。\n*   **市场影响**：数字劳动力将推动最成熟公司的重塑，并催生尚未设想的新公司。LinkedIn数据显示，顶级AI初创公司的招聘速度是大型科技公司的2倍，人才正从大型科技公司流向初创企业，预示着创新和机遇的深刻转变。\n\n## “人机协作团队”：颠覆组织结构\n\n随着AI使专业知识日益普及，组织结构正从僵化的层级图转向更灵活、以结果为导向的“工作图”（Work Charts）。\n*   **灵活性**：这些结构根据业务需求进行调整，利用人类和智能体的适当组合来完成工作。\n*   **自动化应用**：46%的领导者表示其组织正在使用智能体来完全自动化工作流程或业务流程，其中客户服务、营销和产品开发是AI投资的重点领域。\n*   **新指标**：“人机比”（human-agent ratio）——领导者必须考虑：哪些角色和任务需要多少智能体？需要多少人类来指导它们？\n*   **决策考量**：组织需要考虑何时人类和数字劳动力表现优于单独的AI，何时客户更喜欢人际接触，以及何时社会期望人类对后果负责（例如高风险的产品或财务决策）。\n\n## “每个员工都成为智能体管理者”\n\n随着智能体日益融入劳动力，将出现“智能体管理者”的角色：他们构建、委派并管理智能体，以放大其影响力并在AI时代掌控自己的职业生涯。\n*   **新思维**：从董事会到一线员工，每个人都需要像一个由智能体驱动的初创公司的CEO一样思考。\n*   **未来预期**：领导者预计其团队将在五年内进行智能体培训（41%）和管理（36%）。\n*   **职业加速器**：对于那些愿意投入的人来说，AI将成为职业加速器。领导者在“智能体管理者心态”的七个指标上均领先于员工（例如，67%的领导者熟悉智能体，而员工为40%；79%的领导者认为AI将加速其职业生涯，而员工为67%）。\n*   **劳动力演变**：33%的领导者正在考虑裁员，但78%的领导者正在考虑招聘新的AI相关职位。83%的领导者表示AI将使员工能够在职业生涯早期承担更复杂和战略性的工作。\n*   **准备工作**：员工必须培养AI技能，公司必须提供适当的工具和培训。\n\n## Copilot：AI的新用户界面\n\n微软宣布了Microsoft 365 Copilot Wave 2春季发布，旨在推动人机协作的新时代。\n*   **Copilot应用**：成为通往智能体世界的窗口，具备由更高级模型、自适应记忆和推理智能体驱动的新功能。\n*   **主要更新包括**：\n    *   **研究员和分析师智能体**：由OpenAI的深度推理模型提供支持，通过“前沿计划”向客户推出。\n    *   **智能体商店（Agent Store）**：用户可以轻松查找、固定和使用来自Jira、Monday.com、Miro等合作伙伴的智能体，或自定义智能体。\n    *   **Create功能**：将OpenAI的GPT-4o AI图像生成器引入工作场景，为所有人解锁设计和内容创作技能，可根据公司品牌指南生成营销文案、社交素材、新闻通讯横幅、视频等。\n    *   **Copilot Notebooks**：将笔记、文档和数据转化为即时洞察和行动，通过将Copilot与包含特定聊天、文件、会议录音等的笔记本关联，使其专注于最相关的信息，并实时更新。笔记本甚至可以创建内容的音频概述。\n    *   **Copilot Search**：一种新的AI驱动的企业搜索，通过组织内应用程序和数据的丰富、上下文感知答案，帮助用户即时找到所需信息，连接到第一方和第三方应用程序（如ServiceNow、Google Drive、Slack、Confluence、Jira等）。\n    *   **Copilot Control System**：赋能IT专业人员为特定用户或组启用、禁用或阻止智能体，确保正确的智能体被正确的人使用。\n\n文章总结道，2025年将被铭记为“前沿企业”诞生之年，企业将超越AI实验阶段，开始围绕AI进行重构，将不可替代的人类洞察力与AI和智能体相结合，以释放巨大的价值。",
-      "shortSummary": "2025年度工作趋势指数报告指出，AI正开启一个新时代，催生了“前沿企业”。这类企业利用“即时智能”、组建“人机协作团队”，并培养“智能体管理者”角色。AI将弥合“能力差距”，重塑组织结构，并加速职业发展。微软也发布了Copilot更新，旨在推动人机协作。企业需投资AI技能和工具，以适应并塑造未来工作。",
-      "translated_title": "2025年度工作趋势指数：前沿企业诞生",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>We are entering a new reality — one in which AI can reason and solve problems in remarkable ways. This intelligence on tap will rewrite the rules of business and transform knowledge work as we know it. Like the Industrial Revolution and the internet era, this transformation will take decades to show its full promise...</p>\n<p>The post <a href=\"https://blogs.microsoft.com/blog/2025/04/23/the-2025-annual-work-trend-index-the-frontier-firm-is-born/\">The 2025 Annual Work Trend Index: The Frontier Firm is born</a> appeared first on <a href=\"https://blogs.microsoft.com\">The Official Microsoft Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-09-17T04:34:08.409Z"
+  "lastUpdated": "2025-09-19T04:34:25.989Z"
 }
