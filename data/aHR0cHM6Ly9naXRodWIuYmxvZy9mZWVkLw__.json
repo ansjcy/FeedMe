@@ -5,6 +5,132 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "我们为更安全的npm供应链制定的计划 (原标题: Our plan for a more secure npm supply chain)",
+      "link": "https://github.blog/security/supply-chain-security/our-plan-for-a-more-secure-npm-supply-chain/",
+      "pubDate": "Tue, 23 Sep 2025 00:29:50 +0000",
+      "isoDate": "2025-09-23T00:29:50.000Z",
+      "creator": "Xavier René-Corail",
+      "summary": "## npm供应链安全强化计划\n\n开源软件是现代软件产业的基石，其协作性质和庞大生态系统推动了前所未有的效率和进步。然而，这种规模也带来了独特的漏洞，持续受到恶意攻击者的威胁，使开源安全成为一个关键问题。GitHub分享了近期npm注册表事件的详细信息、采取的补救措施以及未来对npm安全的持续投入。\n\n### 近期开源生态系统攻击\n\n软件行业近期面临包注册表（包括npm）上账户劫持事件的激增。恶意行为者通过未经授权访问维护者账户，通过知名且受信任的包分发恶意软件。\n\n*   **Shai-Hulud攻击**：2025年9月14日，GitHub收到Shai-Hulud攻击的通知。这是一种自复制蠕虫，通过受损的维护者账户，将恶意安装后脚本注入流行的JavaScript包中，从而渗透npm生态系统。该蠕虫结合了自复制能力和窃取多种秘密（不仅仅是npm令牌）的能力，若非GitHub和开源维护者及时采取行动，可能会导致无休止的攻击。\n\n### GitHub的即时响应\n\n为应对此次事件，GitHub迅速采取了果断行动，包括：\n\n*   立即从npm注册表中移除500多个受损包，以防止恶意软件进一步传播。\n*   npm阻止上传包含恶意软件IoC（妥协指标）的新包，切断了自复制模式。\n\n这些安全漏洞侵蚀了对开源生态系统的信任，对整个软件供应链的完整性和安全性构成直接威胁。它们也凸显了提高认证和安全发布实践标准对于强化npm生态系统以应对未来攻击的重要性。\n\n### npm强化包发布路线图\n\nGitHub致力于调查这些威胁并减轻其对开源社区构成的风险。为解决令牌滥用和自复制恶意软件问题，我们将在不久的将来更改认证和发布选项，仅包括：\n\n*   **强制两步验证（2FA）的本地发布。**\n*   **有效期为七天的细粒度令牌。**\n*   **可信发布。**\n\n为支持这些变更并进一步提高npm生态系统的安全性，我们将：\n\n*   弃用传统经典令牌。\n*   弃用基于时间的一次性密码（TOTP）2FA，将用户迁移到基于FIDO的2FA。\n*   限制具有发布权限的细粒度令牌的较短有效期。\n*   默认设置发布访问权限为不允许令牌，鼓励使用可信发布或强制2FA的本地发布。\n*   移除本地包发布绕过2FA的选项。\n*   扩展可信发布的合格提供商。\n\n我们认识到一些安全变更可能需要更新现有工作流程。我们将逐步推出这些变更，以尽量减少干扰，同时加强npm的安全态势。GitHub将通过清晰的时间表、文档、迁移指南和支持渠道提供未来更新，以支持用户完成此次过渡。\n\n### 通过可信发布强化生态系统\n\n可信发布是OpenSSF软件仓库安全工作组推荐的安全能力，因为它消除了在构建系统中安全管理API令牌的需求。它由PyPI于2023年4月率先推出，旨在将API令牌从构建管道中移除。此后，可信发布已添加到RubyGems（2023年12月）、crates.io（2025年7月）、npm（同样是2025年7月）以及最近的NuGet（2025年9月）和其他包仓库中。\n\n尽管npm在发布对可信发布的支持时，原意是让这项新功能自然增长，但攻击者表明他们不会等待。我们强烈鼓励所有支持的包管理器项目尽快采用可信发布。\n\n### npm维护者可立即采取的行动\n\nGitHub和更广泛的软件社区的这些努力，强调了我们全球范围内加强软件供应链安全的承诺。生态系统的安全是共同的责任，我们感谢开源社区的警惕和协作。以下是npm维护者现在可以采取的行动：\n\n*   使用npm可信发布而非令牌。\n*   强化账户、组织和包的发布设置，要求所有写入和发布操作都进行2FA。\n*   配置两步验证时，使用WebAuthn而非TOTP。\n\n真正的韧性需要软件行业中每个人的积极参与和警惕。通过采用强大的安全实践、利用可用工具并为这些集体努力做出贡献，我们可以共同为所有人构建一个更安全、更值得信赖的开源生态系统。\n\n由以下人员撰写：\n![Xavier René-Corail](https://avatars.githubusercontent.com/u/7395402?v=4&s=200)\nXavier René-Corail，GitHub安全研究高级总监，开源安全负责人。他领导GitHub安全实验室，赋能开源维护者和开发者交付安全软件。\n\n### 相关文章\n\n*   **保护VS Code免受提示注入攻击**：当聊天对话被间接提示注入污染时，可能导致GitHub令牌、机密文件泄露，甚至在用户未明确同意的情况下执行任意代码。本文解释了哪些VS Code功能可以降低这些风险。\n\n### 探索更多来自GitHub的内容\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**：掌握GitHub所需的一切，尽在一处。前往文档。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**：在GitHub上构建未来，这里是任何人、任何地方构建任何东西的平台。开始构建。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**：了解使用GitHub进行构建的公司和工程团队。了解更多。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) **GitHub Universe 2025**：最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山与我们相聚。立即注册。",
+      "shortSummary": "GitHub发布了强化npm供应链安全的计划，以应对近期账户劫持和恶意软件攻击（如Shai-Hulud蠕虫）。为提升安全性，npm将强制要求2FA本地发布、引入有效期为7天的细粒度令牌，并推广可信发布。未来将弃用传统令牌和TOTP 2FA，转而采用FIDO-based 2FA。GitHub鼓励维护者立即采用可信发布和WebAuthn 2FA，共同构建更安全的开源生态系统。",
+      "translated_title": "我们为更安全的npm供应链制定的计划",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/7395402?v=4&s=200",
+          "alt": "Xavier René-Corail",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Addressing a surge in package registry attacks, GitHub is strengthening npm's security with stricter authentication, granular tokens, and enhanced trusted publishing to restore trust in the open source ecosystem.</p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/our-plan-for-a-more-secure-npm-supply-chain/\">Our plan for a more secure npm supply chain</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Gartner连续第二年将GitHub评为2025年AI代码助手魔力象限的领导者 (原标题: Gartner positions GitHub as a Leader in the 2025 Magic Quadrant for AI Code Assistants for the second year in a row)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/gartner-positions-github-as-a-leader-in-the-2025-magic-quadrant-for-ai-code-assistants-for-the-second-year-in-a-row/",
+      "pubDate": "Mon, 22 Sep 2025 18:24:17 +0000",
+      "isoDate": "2025-09-22T18:24:17.000Z",
+      "creator": "GitHub Staff",
+      "summary": "## Gartner连续第二年将GitHub评为2025年AI代码助手魔力象限的领导者\n\n### 引言\n\nAI驱动的开发时代已全面到来。Gartner预测，到2028年，90%的企业软件工程师将使用AI代码助手，远高于2024年初的不足14%。这一趋势表明AI正在重塑软件开发方式，消除摩擦，激发创造力，并使团队能够实现前所未有的成就。GitHub Copilot凭借其庞大的规模（拥有2000多万用户，覆盖77000家企业）在快速发展的AI代码助手市场中脱颖而出。\n\n### Gartner魔力象限的认可\n\nGitHub连续第二年被Gartner®评为2025年AI代码助手魔力象限™的领导者，其旗舰产品GitHub Copilot获得了这一殊荣。\n\n*   **评估标准：** Gartner根据“执行能力”和“愿景完整性”两项标准评估了14家供应商。\n*   **GitHub的排名：** GitHub在执行能力方面排名最高，在愿景完整性方面也处于最右侧。\n\n![Gartner 2025年AI代码助手魔力象限图示，显示GitHub在执行能力方面最高，在愿景完整性方面最靠右。其他领导者包括Amazon、Cognition (Windsurf)、GitLab和Google Cloud。](https://github.blog/wp-content/uploads/2025/09/MQ.png?resize=937%2C1024)\n\n### Gartner对“领导者”的定义\n\nGartner指出，AI代码助手魔力象限的“领导者”为通过先进AI能力实现端到端开发者赋能设定了基准。他们：\n\n*   持续将尖端模型整合到强大的代理工作流中，提升软件开发生命周期（SDLC）中的生产力、代码质量和安全性。\n*   对企业需求有深刻理解，将客户反馈转化为迭代改进和差异化创新，例如长上下文推理、混合部署灵活性以及与IDE和DevSecOps平台的无缝集成。\n*   通过运营成熟度脱颖而出，以可扩展的基础设施、法规遵从性和强大的服务级别可靠性支持全球企业。\n*   拥有不断增长的生态系统、深入的产品集成和清晰的战略，确保在多样化的开发者和企业环境中持续产生影响力。\n\n### GitHub的承诺与创新\n\nGitHub将此次认可视为其承诺的体现：赋能每一位开发者，并坚持其核心目标——构建一个开放、安全、AI驱动的平台，定义软件开发的未来。\n\n自Gartner报告评估以来，GitHub持续创新，推出了多项重塑开发者和组织AI构建方式的功能：\n\n*   **GitHub Copilot Coding Agent：** 一个云端异步队友，可以处理问题并发送经过全面测试的拉取请求，让开发者专注于更高价值的工作。\n*   **Copilot agent mode：** 一个实时协作工具，驻留在开发者的编辑器中，与开发者协同工作，并根据需求编辑文件。\n*   **Copilot Application Modernization：** 帮助开发者和团队自动更新和重构遗留代码库，以使用更新的语言、框架或库，处理复杂的、多文件更改以实现应用程序现代化。\n*   **GitHub Copilot in VS Code：** 将核心Copilot体验直接集成到VS Code编辑器中，提供实时代码建议、函数自动补全，帮助开发者更快地编写代码。\n*   **GitHub Copilot in Visual Studio：** 相同的核心Copilot体验，将AI驱动的代码建议和实时协助直接带入Visual Studio IDE。\n\n### 未来展望\n\nGitHub的重点仍然是加强Copilot作为最广泛采用的开发工具的地位，包括：\n\n*   提供AI原生、企业级功能，大规模嵌入信任、合规和治理。\n*   扩展代理工作流，使开发者能够专注于更高价值的工作。\n*   拓宽模型支持并深化集成。\n\n这些投资都将为AI驱动的未来奠定基础，使Copilot能够赋能每一位开发者——从个人贡献者到全球企业——以更快的速度、更高的创造力和更强的信心进行构建。\n\n### Gartner免责声明\n\nGartner不认可其研究出版物中描绘的任何供应商、产品或服务，也不建议技术用户只选择那些评级最高或其他指定的供应商。Gartner研究出版物包含Gartner研究机构的意见，不应被解释为事实陈述。Gartner不承担与本研究相关的所有明示或暗示的保证，包括任何适销性或特定用途适用性的保证。",
+      "shortSummary": "Gartner连续第二年将GitHub评为2025年AI代码助手魔力象限的领导者。GitHub在执行能力和愿景完整性方面均排名最高，这得益于GitHub Copilot在77000家企业中拥有2000多万用户的广泛采用。文章强调了AI驱动开发的重要性，并介绍了GitHub Copilot的最新创新，如Coding Agent和Application Modernization，旨在提升开发者生产力、代码质量和安全性。GitHub致力于构建开放、安全、AI驱动的平台，并持续深化其AI能力和集成。",
+      "translated_title": "Gartner连续第二年将GitHub评为2025年AI代码助手魔力象限的领导者",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/09/MQ.png?resize=937%2C1024",
+          "alt": "Gartner 2025 Magic Quadrant for AI Code Assistants showing GitHub as highest in ability to execute and the furthest right in completeness of vision. Other Leaders include Amazon, Cognition (Windsurf), GitLab, and Google Cloud.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/9919?v=4&s=200",
+          "alt": "GitHub Staff",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Our commitment is to empower every developer and stay true to our north star by building an open, secure, and AI-powered platform that defines the future of software development.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/gartner-positions-github-as-a-leader-in-the-2025-magic-quadrant-for-ai-code-assistants-for-the-second-year-in-a-row/\">Gartner positions GitHub as a Leader in the 2025 Magic Quadrant for AI Code Assistants for the second year in a row</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Git 的下一步是什么？20 年后，社区仍在不断前进 (原标题: What’s next for Git? 20 years in, the community is still pushing forward)",
+      "link": "https://github.blog/open-source/whats-next-for-git-20-years-in-the-community-is-still-pushing-forward/",
+      "pubDate": "Mon, 22 Sep 2025 16:33:00 +0000",
+      "isoDate": "2025-09-22T16:33:00.000Z",
+      "creator": "Lee Reilly",
+      "summary": "## Git 20 周年：展望未来发展\n\n今年是 Git 首次提交的 20 周年。自那时起，Git 已成为从周末个人项目到全球最大单体仓库的默认版本控制系统。\n\n![Git 首次提交的截图](https://github.blog/wp-content/uploads/2025/09/git-first-commit.png?resize=1024%2C216)\n\nGit 的演进并未止步于 `git init`。每年，贡献者们都在不断改进 Git 的性能、用户体验和互操作性，同时新的工具和用例也将其推向了未知领域。在首次提交 20 多年后，Git 项目在社区的持续推动下，在性能、新功能和用户体验方面不断进步，持续蓬勃发展。\n\n### Git Merge 2025 聚焦的未来方向\n\nGit Merge 2025 大会将庆祝这一发展势头，并展望 Git 的未来发展方向，主要包括以下几个方面：\n\n*   **核心技术改进：**\n    *   实现更快的合并、新的后端和正确性实验。\n    *   支持 SHA-256 互操作性，以构建更安全的未来。\n*   **用户体验与教育：**\n    *   将二十年 Git 用户体验的经验教训融入更好的客户端。\n    *   通过可视化、模拟和游戏化方式教授 Git。\n*   **新应用场景：**\n    *   赋能令人惊喜的新用例，如本地优先应用、基因组研究和 WASM Git 服务器。\n\n### AI 与 Git 的融合：新工作流与新摩擦\n\n随着 AI 驱动的编码代理生成更多代码，新的问题也随之浮现：这些代理应如何负责任地使用 Git？\n\n*   **Scott Chacon 的分享：** GitHub 和 GitButler 联合创始人 Scott Chacon 将探讨教授 AI 代理良好 Git 习惯的实用策略，包括编写有意义的提交信息、有上下文地修改（amending）、压缩（squashing）和变基（rebasing）。\n*   **挑战与工具：** 他还将深入探讨代码托管平台（forge）管理挑战，展示多个与 Git 相关的 MCP 服务器，并演示他开发的工具，以使 Git 内部的人机协作更加顺畅。\n*   **未来演进：** 最后，Scott 将分享关于 Git 和 MCP 如何演进以更好地支持这些 AI 工作流的构想。\n\n### Git Merge 2025 大会信息\n\n*   鼓励参会者探索完整的 Git Merge 2025 演讲者阵容，并立即注册以参加现场或在线会议。\n\n![Git Merge 2025 所有演讲者和主题的动画 GIF](https://github.blog/wp-content/uploads/2025/09/gif.gif?w=960&resize=960%2C540)\n\n*   Git Merge 2025 大会得到了合作伙伴 Google 和 GitButler 的支持。\n\n本文由 GitHub 开发者关系高级项目经理 Lee Reilly 撰写。",
+      "shortSummary": "Git 迎来 20 周年，社区持续推动其在性能、用户体验和互操作性方面的进步。Git Merge 2025 将探讨 Git 的未来，包括更快的合并、SHA-256 互操作性、改进的客户端以及本地优先应用等新用例。大会还将重点关注 AI 编码代理如何负责任地使用 Git，并探讨人机协作的新策略。Git 项目在社区的努力下蓬勃发展。",
+      "translated_title": "Git 的下一步是什么？20 年后，社区仍在不断前进",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/09/git-first-commit.png?resize=1024%2C216",
+          "alt": "Screenshot of the first Git commit on GitHub. Commit hash e83c516, authored by Linus Torvalds on April 7, 2005. The commit message reads: “Initial revision of git, the information manager from hell. It shows the commit on the master branch, with tags v2.51.0-rc1 and v0.99, and notes “0 parents.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/09/gif.gif?w=960&resize=960%2C540",
+          "alt": "Animated GIF showing all speakers and topics at Git Merge 2025.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/121322?v=4&s=200",
+          "alt": "Lee Reilly",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Git Merge 2025 isn’t just about celebrating 20 years of Git - it’s about what comes next. In this post, we’re highlighting some of the talks and speakers shaping Git’s future, from performance wins and new backends to surprising use cases and the impact of AI coding agents.</p>\n<p>The post <a href=\"https://github.blog/open-source/whats-next-for-git-20-years-in-the-community-is-still-pushing-forward/\">What’s next for Git? 20 years in, the community is still pushing forward</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "将GitHub Copilot编程代理集成到工作流中的5种方法 (原标题: 5 ways to integrate GitHub Copilot coding agent into your workflow)",
       "link": "https://github.blog/ai-and-ml/github-copilot/5-ways-to-integrate-github-copilot-coding-agent-into-your-workflow/",
       "pubDate": "Thu, 18 Sep 2025 16:00:00 +0000",
@@ -322,163 +448,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Create your own agenda of favorites, sign up for one-on-on mentoring sessions, and register if you haven’t already. We’ll see you there!</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/your-guide-to-github-universe-2025-the-schedule-just-launched/\">Your guide to GitHub Universe 2025: The schedule just launched!</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "如何使用GitHub和JFrog集成实现从代码提交到生产环境的安全可追溯构建 (原标题: How to use the GitHub and JFrog integration for secure, traceable builds from commit to production)",
-      "link": "https://github.blog/enterprise-software/devsecops/how-to-use-the-github-and-jfrog-integration-for-secure-traceable-builds-from-commit-to-production/",
-      "pubDate": "Tue, 09 Sep 2025 22:00:00 +0000",
-      "isoDate": "2025-09-09T22:00:00.000Z",
-      "creator": "April Yoho",
-      "summary": "## GitHub与JFrog集成：实现从代码提交到生产环境的安全可追溯构建\n\n### 概述\nGitHub与JFrog推出了一项新集成，旨在连接源代码和经证明的二进制文件，创建一个安全、可追溯的统一工作流。此举旨在帮助开发者摆脱在多个工具间切换以追踪构建产物或手动整合安全扫描结果的困境，从而节省时间和精力，将所需的一切集中在一个地方。\n\n### 集成的重要性\n现代软件交付被视为一个供应链，其中源代码、构建管道和生产产物都是重要环节，每个环节都必须安全、可追溯且自动化。任何薄弱环节都可能成为恶意攻击者获取敏感数据的入口。开发者在维护完整供应链安全方面面临诸多挑战，常见痛点包括：\n*   构建离开GitHub后，可追溯性丧失。\n*   安全扫描分散在多个系统，需要手动协调结果。\n*   CI/CD管道感觉是拼凑而非无缝连接。\n\n为解决这些问题，GitHub与JFrog工程师紧密合作，设计了一个工作流，其核心目标是：\n*   将触发构建的代码提交与生成的制品进行加密链接。\n*   自动进行上下文相关的安全扫描，并将漏洞扫描证明（attestations）存储在JFrog Evidence中。\n*   将符合组织策略的制品发布和推广作为GitHub Actions工作流的一部分，而非独立流程。\n\n最终目标是减少摩擦、降低风险，并让开发者有更多时间专注于功能开发，而非管理交接。\n\n### 集成带来的无缝体验\n此次集成解锁了以下无缝体验：\n*   **统一安全扫描**：根据JFrog提供的生产上下文，优先处理Dependabot警报。\n*   **策略驱动的制品推广**：通过基于策略的门控机制发布和推广制品。\n*   **自动证明摄取**：自动将GitHub上创建的所有证明（如来源证明、SBOM、自定义证明）摄取到JFrog Evidence中，并与构建制品关联。\n\n### 工作原理\n该集成通过安全认证和构建元数据，连接GitHub的开发者平台与JFrog的软件供应链平台。其流程如下：\n1.  将代码推送到GitHub。\n2.  使用GitHub Actions进行构建和测试。\n3.  链接提交、构建和制品，实现完整的生命周期可见性。\n4.  自动将制品发布到Artifactory。\n5.  使用GitHub Advanced Security扫描代码，使用JFrog Xray扫描制品。\n\n![GitHub和JFrog集成示意图](https://github.blog/wp-content/uploads/2025/09/jfrog1.png?resize=1024%2C658)\n\n### 设置步骤\n1.  **在JFrog Artifactory中启用GitHub集成**：导航至 `Administration → General Management → Manage Integrations → GitHub`。\n2.  切换“Enable GitHub Actions”并验证您的GitHub组织。\n3.  选择令牌类型，然后创建拉取请求。\n\n![JFrog Artifactory集成界面](https://github.blog/wp-content/uploads/2025/09/jfrog2.jpg?resize=1024%2C576)\n\n### 触发构建并生成证明\n确保您的GitHub Actions工作流使用 `jfrog/jfrog-setup-cli` 和 `actions/attest-build-provenance` 动作。文章提供了一个示例工作流，用于生成证明并将其推送到Artifactory。\n\n### 制品验证与推广\n构建运行并生成证明后，制品将被推送到JFrog Artifactory的暂存仓库。制品此时已准备好进行验证。一旦制品经过验证，确认有效的GitHub签名来源证明与受信任条件（例如发行者、仓库、工作流、分支）匹配，并且策略通过，JFrog可以自动将证明从开发环境推广到生产环境。\n\n![Artifactory中开发环境的证明视图](https://github.blog/wp-content/uploads/2025/09/jfrog3.png?resize=1024%2C310)\n\n### 推广后的安全监控\n制品推广到生产环境后，Dependabot会继续扫描其源仓库，查找依赖项和漏洞。当发现关键CVE时，管理员将收到安全威胁警报。\n\n![关键Dependabot警报视图](https://github.blog/wp-content/uploads/2025/09/jfrog4.jpg?resize=1024%2C692)\n\n为了查找已进入生产环境的制品的警报和漏洞，可以使用标签 `artifact-registry:jfrog-artifactory` 进行过滤。启用此集成后，制品生命周期数据会通过GitHub新的制品元数据API自动从JFrog推送到GitHub。当制品在JFrog Artifactory中推广到生产环境时，JFrog会自动通知GitHub，以便Dependabot使用新的过滤器捕获该制品。\n\n![JFrog的Dependabot过滤器](https://github.blog/wp-content/uploads/2025/09/jfrog5.jpg?resize=1024%2C387)\n\n### 漏洞修复\n一旦识别出警报，可以通过建议的依赖项更新进行修复，然后使用新的来源证明重新构建和重新部署。\n\n### 最佳实践\n为了充分利用GitHub和JFrog Artifactory的集成，建议遵循以下最佳实践：\n*   使用OIDC避免在工作流中使用长期凭据。\n*   在Artifactory中自动化推广流程，将制品从开发环境推向暂存环境再到生产环境。\n*   尽早设置安全门控，确保未经证明或存在漏洞的构建不会进入生产环境。\n*   利用JFrog Evidence中的来源证明实现即时可追溯性。\n\n### 展望\n您可以立即启用GitHub和JFrog集成，开始构建更安全、自动化和可追溯的软件供应链。",
-      "shortSummary": "GitHub与JFrog推出新集成，旨在实现从代码提交到生产环境的安全、可追溯构建。该集成将源代码与经证明的二进制文件连接起来，通过统一工作流解决多工具切换、安全扫描碎片化等痛点。它提供统一安全扫描、基于策略的制品推广，并自动将GitHub的证明（如来源、SBOM）导入JFrog Evidence。这简化了CI/CD流程，增强了整个软件供应链的安全性、可追溯性和自动化，帮助开发者专注于功能开发，减少风险。",
-      "translated_title": "如何使用GitHub和JFrog集成实现从代码提交到生产环境的安全可追溯构建",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/jfrog1.png?resize=1024%2C658",
-          "alt": "Diagram showing the GitHub and JFrog integration.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/jfrog2.jpg?resize=1024%2C576",
-          "alt": "JFrog Artifactory integration screen.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/jfrog3.png?resize=1024%2C310",
-          "alt": "Artifactory view of the attestation in the dev environment.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/jfrog4.jpg?resize=1024%2C692",
-          "alt": "View of critical Dependabot alerts.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/jfrog5.jpg?resize=1024%2C387",
-          "alt": "Dependabot filter for JFrog.",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/26086919?v=4&s=200",
-          "alt": "April Yoho",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Connect commits to artifacts without switching tools.</p>\n<p>The post <a href=\"https://github.blog/enterprise-software/devsecops/how-to-use-the-github-and-jfrog-integration-for-secure-traceable-builds-from-commit-to-production/\">How to use the GitHub and JFrog integration for secure, traceable builds from commit to production</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "如何使用 Playwright MCP 和 GitHub Copilot 调试 Web 应用 (原标题: How to debug a web app with Playwright MCP and GitHub Copilot)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/how-to-debug-a-web-app-with-playwright-mcp-and-github-copilot/",
-      "pubDate": "Fri, 05 Sep 2025 16:00:00 +0000",
-      "isoDate": "2025-09-05T16:00:00.000Z",
-      "creator": "Christopher Harrison",
-      "summary": "## 如何使用 Playwright MCP 和 GitHub Copilot 调试 Web 应用\n\n### 引言：自动化调试的挑战与解决方案\n\n传统的 bug 报告通常包含复现步骤，但手动验证这些步骤既耗时又繁琐。许多项目缺乏健壮的端到端测试来自动化此过程。本文介绍了一种解决方案：利用 GitHub Copilot 代理模式结合 Playwright 模型上下文协议（MCP）服务器，实现 Web 应用 bug 的自动化复现、追踪和解决。\n\n### Playwright 与 MCP 概述\n\n*   **Playwright**：一个用于 Web 应用的端到端测试框架。它允许开发者创建脚本来模拟用户行为，验证应用程序的功能集，并确保产品质量。例如，在购物应用中，Playwright 可以自动化搜索产品、添加到购物车和完成购买的整个流程。\n*   **MCP (Model Context Protocol)**：由 Anthropic 开发的开放且开源的协议，旨在向 AI 代理暴露工具。这些工具可以提供额外的上下文信息，或允许 AI 代理执行特定操作。\n*   **Playwright MCP 服务器**：将 Playwright 的功能作为工具提供给 AI 代理（如 GitHub Copilot）。这使得 Copilot 能够创建测试脚本并直接执行 Playwright 操作，从而自动化地执行 bug 复现步骤。\n\n### 在 VS Code 中配置 Playwright MCP 服务器\n\n要在 VS Code 中使用 Playwright MCP 服务器，需要进行以下配置：\n\n1.  **安装或配置**：可以在 VS Code 中全局安装 Playwright MCP 服务器，或者在项目的 `.vscode` 文件夹中创建一个名为 `mcp.json` 的文件，并添加以下配置：\n    ```json\n    {\n      \"servers\": {\n        \"playwright\": {\n          \"command\": \"npx",
-      "shortSummary": "本文介绍了如何利用 GitHub Copilot 代理模式和 Playwright 模型上下文协议 (MCP) 服务器自动化 Web 应用的 bug 调试。Playwright 作为端到端测试框架，通过 MCP 协议将工具暴露给 AI 代理。开发者可在 VS Code 中配置 Playwright MCP 服务器，然后指示 Copilot 自动执行 bug 复现步骤，确认问题，追踪代码（包括前端、API 调用和后端），并定位错误。Copilot 甚至能在提出修复方案后，利用 Playwright 验证其有效性，显著提升调试效率，让 AI 能够“看到”代码更改对网站的实际影响。",
-      "translated_title": "如何使用 Playwright MCP 和 GitHub Copilot 调试 Web 应用",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/image.png?resize=1024%2C816",
-          "alt": "A screenshot showing the play button below \"servers\", just above \"playwright\", in a VS Code window.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/6109729?v=4&s=200",
-          "alt": "Christopher Harrison",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Reproduce and debug web app issues with ease using the Playwright MCP server and GitHub Copilot.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-to-debug-a-web-app-with-playwright-mcp-and-github-copilot/\">How to debug a web app with Playwright MCP and GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub 在新的政府贸易规则下为叙利亚开发者提供更广泛的访问权限 (原标题: GitHub is enabling broader access for developers in Syria following new government trade rules)",
-      "link": "https://github.blog/company/github-is-enabling-broader-access-for-developers-in-syria-following-new-government-trade-rules/",
-      "pubDate": "Fri, 05 Sep 2025 06:00:00 +0000",
-      "isoDate": "2025-09-05T06:00:00.000Z",
-      "creator": "Mike Linksvayer",
-      "summary": "# GitHub 在新的政府贸易规则下为叙利亚开发者提供更广泛的访问权限\n\n## 引言\nGitHub 宣布，随着对叙利亚的制裁和出口管制放松，将为叙利亚开发者提供更广泛的访问权限。这一举措是 GitHub 长期以来坚持的“所有开发者都应自由使用 GitHub，无论他们身在何处”这一核心立场的又一重要里程碑。\n\n## 主要变化与影响\n*   **服务恢复**：GitHub.com 上的私人和付费功能将再次广泛向叙利亚的开发者开放，覆盖阿勒颇、霍姆斯、大马士革以及全国各地。\n*   **持续可用性**：在此之前，开源项目和其他公共仓库的协作功能一直保持可用，这在 GitHub Innovation Graph（一个提供叙利亚公共仓库贡献汇总数据的开放数据集）中有所体现。\n*   **感谢与欢迎**：GitHub 对那些为促成这一改变而持续发声并寻求更新的开发者表达了诚挚的感谢。GitHub 欢迎叙利亚开发者将他们的项目贡献给全球开发者社区，无论项目大小。\n\n## GitHub 的承诺与具体行动\nGitHub 承诺将继续致力于在法律允许的范围内，让尽可能多的开发者使用其平台。为此，GitHub 正在迅速采取以下措施：\n*   **解除限制**：解除对叙利亚开发者的限制。\n*   **恢复功能**：恢复账户的正常功能。\n*   **提供 Copilot**：提供 GitHub Copilot 的访问权限。\n\n这些更改目前正在进行中，预计将在未来一周内对相关账户生效。\n\n## 作者信息\n本文由开发者政策主管 Mike Linksvayer 撰写。\n\n![Mike Linksvayer](https://secure.gravatar.com/avatar/8cc1e22f2b79ef8eb4c53537d6ba5ac6ae3cf311c9eef3006657ebe8be0551ce?s=200&d=mm&r=g)\n\n## 相关内容\n*   **Docs**：掌握 GitHub 所需的一切，尽在一个地方。\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n*   **GitHub**：在 GitHub 上构建未来，这里是任何地方的任何人都可以构建任何东西的地方。\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n*   **客户案例**：了解使用 GitHub 进行构建的公司和工程团队。\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n*   **GitHub Universe 2025**：最后机会：节省 700 美元购买 Universe 现场通行证，于 10 月 28-29 日在旧金山与我们相聚。\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)",
-      "shortSummary": "由于对叙利亚的制裁和出口管制放松，GitHub 正在恢复叙利亚开发者的全面访问权限。这意味着 GitHub.com 上的私人和付费功能将再次广泛可用，包括正常的账户功能和 GitHub Copilot。此前，开源项目协作一直保持开放。GitHub 感谢为这一改变发声的开发者，并重申其致力于在法律允许范围内，让所有开发者自由使用 GitHub 的承诺。相关更改预计将在下周内生效。",
-      "translated_title": "GitHub 在新的政府贸易规则下为叙利亚开发者提供更广泛的访问权限",
-      "images": [
-        {
-          "url": "https://secure.gravatar.com/avatar/8cc1e22f2b79ef8eb4c53537d6ba5ac6ae3cf311c9eef3006657ebe8be0551ce?s=200&d=mm&r=g",
-          "alt": "Mike Linksvayer",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>With the relaxation of sanctions and export controls on Syria, GitHub will once again be broadly available to Syrian developers.</p>\n<p>The post <a href=\"https://github.blog/company/github-is-enabling-broader-access-for-developers-in-syria-following-new-government-trade-rules/\">GitHub is enabling broader access for developers in Syria following new government trade rules</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-09-21T04:31:01.107Z"
+  "lastUpdated": "2025-09-23T04:32:22.476Z"
 }
