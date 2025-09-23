@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Gemini CLI 🤝 FastMCP：简化 MCP 服务器开发 (原标题: Gemini CLI 🤝 FastMCP: Simplifying MCP server development)",
+      "link": "https://developers.googleblog.com/en/gemini-cli-fastmcp-simplifying-mcp-server-development/",
+      "pubDate": "Sun, 21 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-21T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Gemini CLI 与 FastMCP 集成：简化 MCP 服务器开发\n\n本文宣布 Gemini CLI 已与 FastMCP（Python 中用于构建模型上下文协议 (MCP) 服务器的领先库）实现无缝集成。此项集成旨在简化 MCP 服务器的开发过程，使用户能够轻松地将自定义 MCP 工具和提示直接连接到 Gemini CLI。\n\n### 核心集成功能\n\n*   **安装与配置**\n    *   从 FastMCP v2.12.3 版本开始，用户可以使用 `fastmcp install gemini-cli server.py` 命令来安装使用 FastMCP 构建的本地 STDIO 传输 MCP 服务器。\n    *   此命令大大简化了流程，使 FastMCP 服务器的功能能够立即在 Gemini CLI 中可用并配置。\n    *   它会自动处理配置、依赖管理，并调用 Gemini CLI 内置的 MCP 管理系统（`gemini mcp add`）。\n    *   对于本地服务器开发而言，此集成提供了一种便捷的入门方式。\n\n### MCP 服务器如何增强 Gemini CLI 体验\n\nMCP 服务器能够显著改善 Gemini CLI 的使用体验，通过允许代理执行操作并访问其原本无法获得的上下文。\n\n*   **Pythonic 设计**：FastMCP 采用 Pythonic 设计，利用装饰器和类型提示，使得创建这些组件变得简单直观。\n*   **关键功能**：\n    *   **工具 (Tools)**：允许 Gemini CLI 执行操作、计算，或与外部 API 和数据库交互，使其成为工作流中的积极参与者。\n    *   **提示 (Prompts)**：用户可以将 FastMCP 定义的提示作为斜杠命令（例如 `/promptname`）在 Gemini CLI 中使用。这简化了交互，并使常用提示在终端环境中感觉原生。\n\n### 快速入门指南\n\n想要体验此集成非常简单，只需几个步骤即可开始使用 Gemini CLI 和 FastMCP：\n\n1.  **安装 Gemini CLI**：运行命令 `npm install -g @google/gemini-cli@latest`。\n2.  **安装 FastMCP**：确保安装 v2.12.3 或更高版本：`pip install fastmcp>=2.12.3`。\n3.  **创建服务器文件**：编写包含自定义工具和提示的 `server.py` 文件。\n4.  **集成**：执行命令 `fastmcp install gemini-cli server.py`。\n5.  **验证**：启动 Gemini CLI 并使用 `/mcp` 命令进行验证。\n\n### 更多信息与社区支持\n\n*   有关更详细的信息和高级配置，请参阅官方的 FastMCP 集成文档。\n*   Gemini CLI 和 FastMCP 均为开源项目。用户可以通过直接在 GitHub 上为 FastMCP 或 Gemini CLI 提交新的 issue，来提出功能请求或改进建议。",
+      "shortSummary": "Gemini CLI 现已与 FastMCP（Python 的 MCP 服务器构建库）无缝集成，旨在简化模型上下文协议 (MCP) 服务器的开发。用户可通过 `fastmcp install gemini-cli` 命令轻松连接自定义 MCP 工具和提示到 Gemini CLI。此集成使 Gemini CLI 代理能执行更多操作并访问更多上下文，通过提供工具和可作为斜杠命令使用的提示来增强功能。用户可快速安装并开始利用此集成，并通过 GitHub 参与开源项目。",
+      "translated_title": "Gemini CLI 🤝 FastMCP：简化 MCP 服务器开发",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Gemini CLI now seamlessly integrates with FastMCP, Python's leading library for building MCP servers. We’re thrilled to announce this integration between two open-source projects that empowers you to effortlessly connect your custom MCP tools and prompts, directly to Gemini CLI!"
+    },
+    {
       "title": "ADK for Java 通过 LangChain4j 集成向第三方语言模型开放 (原标题: ADK for Java opening up to third-party language models via LangChain4j integration)",
       "link": "https://developers.googleblog.com/en/adk-for-java-opening-up-to-third-party-language-models-via-langchain4j-integration/",
       "pubDate": "Mon, 15 Sep 2025 16:00:00 GMT",
@@ -160,69 +173,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Introducing EmbeddingGemma: a new embedding model designed for efficient on-device AI applications from Google. This open model is the highest-ranking text-only multilingual embedding model under 500M parameters on the MTEB benchmark, enabling powerful features like RAG and semantic search directly on mobile devices without an internet connection."
-    },
-    {
-      "title": "如何提示 Gemini 2.5 Flash 图像生成以获得最佳效果 (原标题: How to prompt Gemini 2.5 Flash Image Generation for the best results)",
-      "link": "https://developers.googleblog.com/en/how-to-prompt-gemini-2-5-flash-image-generation-for-the-best-results/",
-      "pubDate": "Wed, 27 Aug 2025 16:00:00 GMT",
-      "isoDate": "2025-08-27T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "Gemini 2.5 Flash Image 是 Google 最新、最快、最高效的原生多模态模型，于2025年8月28日发布。其独特之处在于原生多模态架构，能够在一个统一的步骤中处理文本和图像，从而实现强大的功能，超越了简单的图像生成。\n\n### Gemini 2.5 Flash 的核心能力\n\n*   **文本到图像 (Text-to-image)**：根据简单或复杂的文本描述生成高质量图像。\n*   **图像+文本到图像 (Image + text-to-image)**：提供图像并使用文本提示来添加、删除、修改元素，改变风格或调整颜色。\n*   **多图像到图像 (Multi-image to image)**：使用多个输入图像来合成新场景或将一种图像的风格转移到另一种图像上。\n*   **迭代优化 (Iterative refinement)**：通过对话逐步细化图像，进行多次微调。\n*   **文本渲染 (Text rendering)**：生成包含清晰、位置得当文本的图像，适用于标志、图表和海报。\n\n### 提示词的核心原则\n\n获取最佳结果的关键在于：**描述场景，而不仅仅是罗列关键词。** 模型的核心优势在于其深厚的语言理解能力。一个叙述性、描述性的段落几乎总能比简单的、不连贯的词语列表生成更好、更连贯的图像。\n\n### 从文本创建图像的技巧与示例\n\n1.  **写实场景 (Photorealistic scenes)**\n    *   **描述**：像摄影师一样思考，提及相机角度、镜头类型、光线和细节。\n    *   **模板**：`A photorealistic [shot type] of [subject], [action or expression], set in [environment]. The scene is illuminated by [lighting description], creating a [mood] atmosphere. Captured with a [camera/lens details], emphasizing [key textures and details]. The image should be in a [aspect ratio] format.`\n    *   **示例输出**：\n        ![photorealistic close-up portrait of an elderly Japanese ceramicist](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/photorealistic_example.original.png)\n\n2.  **风格化插画与贴纸 (Stylized illustrations & stickers)**\n    *   **描述**：明确风格，并请求白色背景（如果需要）。\n    *   **模板**：`A [style] sticker of a [subject], featuring [key characteristics] and a [color palette]. The design should have [line style] and [shading style]. The background must be white.`\n    *   **示例输出**：\n        ![kawaii-style sticker of a happy red panda](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/red_panda_sticker.original.png)\n\n3.  **图像中的准确文本 (Accurate text in images)**\n    *   **描述**：清晰说明所需文本、字体风格和整体设计。\n    *   **模板**：`Create a [image type] for [brand/concept] with the text \"[text to render]\" in a [font style]. The design should be [style description], with a [color scheme].`\n    *   **示例输出**：\n        ![modern, minimalist logo for a coffee shop](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/logo_example.original.png)\n\n4.  **产品模型与商业摄影 (Product mockups & commercial photography)**\n    *   **描述**：创建干净、专业的电商或广告产品照片。\n    *   **模板**：`A high-resolution, studio-lit product photograph of a [product description] on a [background surface/description]. The lighting is a [lighting setup, e.g., three-point softbox setup] to [lighting purpose]. The camera angle is a [angle type] to showcase [specific feature]. Ultra-realistic, with sharp focus on [key detail]. [Aspect ratio].`\n    *   **示例输出**：\n        ![minimalist ceramic coffee mug](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/product_mockup.original.png)\n\n5.  **极简主义与负空间设计 (Minimalist & negative space design)**\n    *   **描述**：为网站、演示文稿或营销材料创建背景，以便叠加文本。\n    *   **模板**：`A minimalist composition featuring a single [subject] positioned in the [bottom-right/top-left/etc.] of the frame. The background is a vast, empty [color] canvas, creating significant negative space. Soft, subtle lighting. [Aspect ratio].`\n    *   **示例输出**：\n        ![red maple leaf](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/minimalist_design.original.png)\n\n6.  **连续艺术（漫画分镜/故事板）(Sequential art (comic panel / storyboard))**\n    *   **描述**：通过清晰的场景描述创建引人入胜的视觉叙事。\n    *   **模板**：`A single comic book panel in a [art style] style. In the foreground, [character description and action]. In the background, [setting details]. The panel has a [dialogue/caption box] with the text \"[Text]\". The lighting creates a [mood] mood. [Aspect ratio].`\n    *   **示例输出**：\n        ![comic book panel](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/comic_panel.original.png)\n\n### 用文本编辑图像的技巧与示例\n\nGemini 2.5 Flash Image 的多模态特性在此处表现出色，可以提供一张或多张图像以及文本提示进行编辑、合成和风格迁移。\n\n1.  **图像编辑：添加与删除元素 (Image editing: Adding & removing elements)**\n    *   **描述**：提供图像并描述所需更改，模型将分析原始图像的风格、光线和视角以使编辑看起来自然。\n    *   **模板**：`Using the provided image of [subject], please [add/remove/modify] [element] to/from the scene. Ensure the change is [description of how the change should integrate].`\n    *   **示例输入与输出**：\n        ![Cat_Gemini2.5-Prompt](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Cat_Gemini2.5-PromptUpdate.original.png)\n\n2.  **图像修复：编辑特定区域 (Inpainting: editing a specific area)**\n    *   **描述**：指示模型仅编辑图像的某个部分，同时保持其余部分不变。\n    *   **模板**：`Using the provided image, change only the [specific element] to [new element/description]. Keep everything else in the image exactly the same, preserving the original style, lighting, and composition.`\n    *   **示例输入与输出**：\n        ![Livingroom_Gemini2.5-Prompt](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Livingroom_Gemini2.5-PromptUpdate.original.png)\n\n3.  **风格迁移 (Style transfer)**\n    *   **描述**：提供照片并要求模型以特定艺术风格或艺术运动重新创建其内容。\n    *   **模板**：`Transform the provided photograph of [subject] into the artistic style of [artist/art style]. Preserve the original composition but render it with [description of stylistic elements].`\n    *   **示例输入与输出**：\n        ![City_Gemini2.5-Prompt](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Car_Gemini2.5-PromptUpdate.original.png)\n\n4.  **高级合成：组合多张图像 (Advanced composition: Combining multiple images)**\n    *   **描述**：提供多张图像作为上下文，以创建全新的复合场景，适用于产品模型或创意拼贴。\n    *   **模板**：`Create a new image by combining the elements from the provided images. Take the [element from image 1] and place it with/on the [element from image 2]. The final image should be a [description of the final scene].`\n    *   **示例输入与输出**：\n        ![Model_Gemini2.5-Prompt](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Model_Gemini2.5-PromptUpdate.original.png)\n\n### 最佳实践\n\n*   **高度具体化**：提供越详细的描述，控制力越强。\n*   **修复角色一致性漂移**：如果角色特征在多次迭代编辑后开始漂移，可以通过详细描述重新开始对话以保持一致性。\n*   **提供上下文和意图**：解释图像的用途，例如“为高端极简护肤品牌创建标志”。\n*   **迭代和细化**：不要期望一次成功，利用模型的对话性进行小幅修改。\n*   **使用“语义负面提示”**：积极描述所需场景，而非说明不想要什么，例如“一条空旷、荒芜的街道，没有交通迹象”而非“没有汽车”。\n*   **宽高比**：编辑时，Gemini 2.5 Flash Image 通常会保留输入图像的宽高比。如果需要特定比例，请在提示中明确说明，或提供具有正确尺寸的参考图像。\n*   **控制相机**：使用摄影和电影语言来控制构图，如广角镜头、微距拍摄、低角度透视等。\n\n### 局限性\n\n尽管 Gemini 2.5 Flash Image 是一个强大且多功能的工具，但对于高度细微的请求，首次尝试可能需要一些迭代才能达到完美。生成复杂排版或在多张图像中保持角色特征的绝对一致性有时需要通过后续提示进行细化。Google 正在积极改进这些领域。",
-      "shortSummary": "Gemini 2.5 Flash Image是Google最新、最快的原生多模态模型，能统一处理文本和图像。它支持文本生成图像、图像编辑、多图合成、迭代优化及文本渲染。核心原则是“描述场景而非罗列关键词”，强调详细描述以获得最佳效果。其多模态能力在图像编辑、局部修改、风格迁移和多图组合方面表现突出。为提升生成质量，建议提供具体细节、上下文，并进行迭代优化。",
-      "translated_title": "如何提示 Gemini 2.5 Flash 图像生成以获得最佳效果",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/photorealistic_example.original.png",
-          "alt": "photorealistic close-up portrait of an elderly Japanese ceramicist",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/red_panda_sticker.original.png",
-          "alt": "kawaii-style sticker of a happy red panda",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/logo_example.original.png",
-          "alt": "modern, minimalist logo for a coffee shop",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/product_mockup.original.png",
-          "alt": "minimalist ceramic coffee mug",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/minimalist_design.original.png",
-          "alt": "red maple leaf",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/comic_panel.original.png",
-          "alt": "comic book panel",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Cat_Gemini2.5-PromptUpdate.original.png",
-          "alt": "Cat_Gemini2.5-Prompt",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Livingroom_Gemini2.5-PromptUpdate.original.png",
-          "alt": "Livingroom_Gemini2.5-Prompt",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Detailed prompting techniques and best practices for various applications, including photorealistic scenes, stylized illustrations, product mockups, and more using Google's newly released Gemini 2.5 Flash Image; a natively multimodal model capable of generating, editing, and composing images using text, supporting capabilities like text-to-image, image editing, style transfer, and multi-image composition."
     }
   ],
-  "lastUpdated": "2025-09-22T10:30:32.442Z"
+  "lastUpdated": "2025-09-23T10:29:01.548Z"
 }
