@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "AI驱动的智能绷带使伤口愈合速度提高25% (原标题: AI-powered smart bandage heals wounds 25% faster)",
+      "link": "https://www.sciencedaily.com/releases/2025/09/250924012232.htm",
+      "pubDate": "Wed, 24 Sep 2025 10:37:47 EDT",
+      "isoDate": "2025-09-24T14:37:47.000Z",
+      "creator": "",
+      "summary": "### AI驱动的智能绷带“a-Heal”加速伤口愈合\n\n加州大学圣克鲁斯分校的工程师们开发了一款名为“a-Heal”的可穿戴设备，旨在优化伤口愈合的各个阶段，并已在临床前研究中显示出将愈合速度提高25%的潜力。\n\n#### 系统概述与目标\n*   **个性化治疗**：“a-Heal”系统利用微型摄像头和人工智能（AI）检测伤口愈合阶段，并根据患者独特的愈合过程提供个性化治疗，包括药物或电场干预。\n*   **可及性**：这款便携、无线设备旨在让偏远地区或行动不便的患者更容易获得伤口治疗。\n*   **初步成果**：发表在《npj生物医学创新》杂志上的临床前研究结果表明，该设备能有效加速愈合过程。\n\n#### “a-Heal”的设计与工作原理\n*   **研发团队**：由加州大学圣克鲁斯分校和加州大学戴维斯分校的研究人员组成，由DARPA-BETR项目资助，并由加州大学圣克鲁斯分校电气与计算机工程教授Marco Rolandi领导。\n*   **集成系统**：该设备将摄像头、生物电子学和AI集成在一个“闭环系统”中，据研究人员称，这是伤口愈合领域的首创。\n*   **“绷带中的显微镜”**：由电气与计算机工程副教授Mircea Teodorescu开发的板载摄像头每两小时拍摄一次伤口照片。\n*   **“AI医生”**：照片被输入由应用数学副教授Marcella Gomez开发的机器学习（ML）模型，该模型被称为“AI医生”，运行在附近的计算机上。它能够识别愈合趋势、阶段，发现问题并建议治疗。\n\n#### 治疗机制\n*   **诊断与干预**：AI医生根据图像诊断伤口阶段，并与最佳愈合时间线进行比较。如果发现愈合滞后，ML模型将应用治疗：\n    *   **药物治疗**：通过生物电子执行器局部输送氟西汀（一种选择性血清素再摄取抑制剂），以控制伤口中的血清素水平，通过减少炎症和增加伤口组织闭合来改善愈合。剂量由加州大学戴维斯分校Isseroff团队的临床前研究确定。\n    *   **电场治疗**：通过设备施加电场，可增强细胞向伤口闭合的迁移。该技术由加州大学戴维斯分校的Min Zhao和Roslyn Rivkah Isseroff的先前工作开发。\n*   **智能决策**：AI医生确定最佳药物剂量和电场强度。治疗一段时间后，摄像头再次拍照，循环往复。\n*   **人工干预**：设备在使用过程中将图像和愈合率等数据传输到安全的网络界面，以便人类医生可以根据需要手动干预和微调治疗。\n*   **便捷使用**：该设备可直接连接到市售绷带上，方便安全使用。\n\n#### 临床前研究结果\n*   加州大学戴维斯分校团队在临床前伤口模型中测试了该设备。\n*   使用“a-Heal”治疗的伤口愈合轨迹比标准护理快约25%。\n*   这些发现突显了该技术在加速急性伤口闭合以及启动慢性伤口停滞愈合方面的潜力。\n\n#### AI强化学习模型\n*   **模仿医生诊断**：由应用数学助理教授Marcella Gomez领导的AI模型采用强化学习方法，模仿医生的诊断方式。\n*   **目标导向**：模型的目标是最小化伤口闭合时间，并通过不断学习患者数据和调整治疗方法来优化这一目标。\n*   **“Deep Mapper”算法**：该强化学习模型由Gomez及其学生创建的“Deep Mapper”算法指导，该算法处理伤口图像，量化愈合阶段并将其映射到愈合轨迹上。\n*   **实时学习与预测**：设备在伤口上使用时，会学习过去的愈合线性动态模型，并用其预测愈合的持续进展。这使得算法能够实时学习药物或电场对愈合的影响，并指导强化学习模型迭代决策如何调整药物浓度或电场强度。\n\n#### 未来展望与支持\n*   研究团队正在探索该设备在改善慢性伤口和感染伤口愈合方面的潜力。\n*   该研究得到了美国国防高级研究计划局（DARPA）和健康高级研究计划局（ARPA-H）的支持。",
+      "shortSummary": "加州大学圣克鲁斯分校的工程师开发了“a-Heal”，这是一种AI驱动的智能绷带，旨在加速伤口愈合。该设备结合了微型摄像头、生物电子学和人工智能，能实时监测伤口愈合阶段，并个性化地施用药物或电场治疗。临床前研究表明，“a-Heal”能使伤口愈合速度提高约25%。作为一个便携、无线且闭环的系统，它有望为急性及慢性伤口提供更有效、更便捷的治疗方案。",
+      "translated_title": "AI驱动的智能绷带使伤口愈合速度提高25%",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "A new wearable device, a-Heal, combines AI, imaging, and bioelectronics to speed up wound recovery. It continuously monitors wounds, diagnoses healing stages, and applies personalized treatments like medicine or electric fields. Preclinical tests showed healing about 25% faster than standard care, highlighting potential for chronic wound therapy."
+    },
+    {
       "title": "科学家在硅芯片中实现原子间对话 (原标题: Scientists just made atoms talk to each other inside silicon chips)",
       "link": "https://www.sciencedaily.com/releases/2025/09/250920214318.htm",
       "pubDate": "Sun, 21 Sep 2025 02:01:58 EDT",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "A new study outlines how artificial intelligence-powered handwriting analysis may serve as an early detection tool for dyslexia and dysgraphia among young children."
-    },
-    {
-      "title": "灵巧的章鱼机器人可适应其周围环境 (原标题: Handy octopus robot can adapt to its surroundings)",
-      "link": "https://www.sciencedaily.com/releases/2025/05/250514141656.htm",
-      "pubDate": "Wed, 14 May 2025 14:16:56 EDT",
-      "isoDate": "2025-05-14T18:16:56.000Z",
-      "creator": "",
-      "summary": "# 章鱼启发式机器人：环境适应能力\n\n*   **研发背景与灵感来源**\n    *   科学家们从章鱼独特的神经系统获得了研发灵感。章鱼的神经系统使其能够灵活地适应复杂环境。\n\n*   **机器人核心功能**\n    *   该新型机器人具备感知其周围环境的能力。\n    *   基于环境感知，机器人能够自主决定其移动方式或抓取物体的方法。\n\n*   **主要特点**\n    *   展现出高度的适应性，能够根据外部条件调整自身行为。",
-      "shortSummary": "科学家们受章鱼神经系统启发，开发出一种新型机器人。该机器人能够通过感知环境，自主决定如何移动或抓取物体，展现出其灵巧和环境适应能力。",
-      "translated_title": "灵巧的章鱼机器人可适应其周围环境",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Scientists inspired by the octopus's nervous system have developed a robot that can decide how to move or grip objects by sensing its environment."
     }
   ],
-  "lastUpdated": "2025-09-24T09:27:34.599Z"
+  "lastUpdated": "2025-09-25T09:27:49.454Z"
 }
