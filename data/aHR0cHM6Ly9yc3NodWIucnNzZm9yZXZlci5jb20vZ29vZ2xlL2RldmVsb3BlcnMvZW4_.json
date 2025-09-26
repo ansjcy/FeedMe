@@ -5,6 +5,218 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "利用AG-UI将ADK智能体与精美前端结合，提升用户体验 (原标题: Delight users by combining ADK Agents with Fancy Frontends using AG-UI)",
+      "link": "https://developers.googleblog.com/en/delight-users-by-combining-adk-agents-with-fancy-frontends-using-ag-ui/",
+      "pubDate": "Thu, 25 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-25T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## 通过将ADK智能体与AG-UI的精美前端结合来取悦用户\n\n在生成式AI应用开发领域，过去一年取得了飞速进展。后端智能体系统在推理、规划和执行复杂任务方面展现出惊人的能力。然而，一个强大的智能体只是成功的一半，如何将其智能无缝连接到应用程序前端，并创建真正协作的用户体验，一直是开发者面临的挑战。\n\n### 解决方案：ADK与AG-UI的集成\n本文重点介绍了Agent Development Kit (ADK) 与 AG-UI 的新集成。AG-UI是一个用于构建丰富、交互式AI用户体验的开放协议。这种结合使开发者能够轻松构建复杂的后端AI智能体，并为其提供生产就绪、协作式的前端。\n\n### 您的智能体后端：ADK\nADK（智能体开发工具包）是一个开箱即用的开源工具包，旨在构建能够“做事”而非仅仅“聊天”的AI智能体。它抽象了智能体工程中最困难的部分，让开发者能够专注于应用程序的独特逻辑。\n\nADK为您的智能体提供以下核心能力：\n*   **多步规划：** 能够推理问题，将其分解为多个步骤并按顺序执行。\n*   **工具使用：** 与外部API、服务和数据源无缝集成，赋予智能体真实世界的能力。\n*   **状态管理：** 强大的进度和记忆跟踪，无需从头构建复杂的链式逻辑。\n\n通过ADK，您可以在数小时内将想法转化为可工作的智能体原型，同时完全控制智能体的角色及其可访问的工具。尽管ADK提供了本地开发和调试UI（`adk web`），但它并非面向用户的界面。此前，任何UI与智能体的集成都是定制化的，缺乏标准化的通信方式。\n\n### 连接前端：AG-UI\nCopilotKit团队发布了AG-UI，这是一个开放协议和UI层，旨在标准化智能体与用户通过丰富UI直接对话的方式。AG-UI专注于直接面向用户的智能体（而非后台智能体），并利用中间件和客户端集成来泛化支持任何前端和后端。它提供了一种标准化的方式，让后端智能体与前端应用程序通信，从而实现AI与人类用户之间的实时、有状态的协作。\n\nAG-UI的创建者还提供了CopilotKit，这是一个开源库，包含可直接使用的React组件和Hooks，它们与AG-UI协同工作。这意味着您可以在几分钟内让应用程序运行起一个精致的聊天界面、侧边栏及其他UI元素。\n\n![ADK + AG UI Blog Sep 25 2025](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ADK__AG_UI_Blog_Sep_25_2025.original.png)\n\n### 强强联合：ADK + AG-UI 集成解锁的功能\n通过将强大的后端（ADK）与灵活的前端协议（AG-UI）结合，您现在可以构建真正交互式的AI应用程序。ADK运行智能体的“大脑”和工具编排，而AG-UI则提供与UI组件的通信通道，以实现无缝的用户体验。\n\n此集成开箱即用，解锁了一系列新功能：\n*   **生成式UI：** 超越文本。您的智能体可以直接在聊天中生成和渲染UI组件，提供丰富的上下文信息和操作。\n*   **共享状态：** 前端和后端智能体共享对应用程序状态的共同理解，允许智能体响应UI中的用户操作，反之亦然。\n*   **人机协作（Human-in-the-Loop）：** 用户可以在智能体执行操作之前对其进行监督、批准或纠正，有助于确保安全性和控制。\n*   **前端工具：** 赋能智能体直接与前端交互，例如代表用户填写表单、导航页面或批注文档。\n\n### 开始构建：快速入门指南\n入门非常简单，只需运行一个命令即可克隆一个全栈启动仓库，其中包含预配置的ADK后端和使用CopilotKit的Next.js前端：\n\n`npx copilotkit@latest create -f adk`\n\n获得启动项目后，核心逻辑也很简单：\n\n1.  **在后端定义您的智能体（`/backend/agent.ts`）：**\n    在ADK后端中，您定义智能体的指令并为其提供工具。例如，一个获取股票价格的工具。\n    ```javascript\n    // backend/agent.ts\n    import { adk } from \"@copilotkit/adk\";\n    adk.setSystemMessage(\n      \"You are a helpful assistant that can fetch stock prices.\"\n    );\n    adk.addTool(\"getStockPrice\", {\n      description: \"Get the current stock price for a given ticker symbol.\",\n      parameters: {\n        type: \"object\",\n        properties: {\n          ticker: { type: \"string\", description: \"The stock ticker symbol (e.g., GOOGL).\" },\n        },\n        required: [\"ticker\"],\n      },\n      handler: async ({ ticker }) => {\n        console.log(`Fetching stock price for ${ticker}...`);\n        const price = (Math.random() * 1000).toFixed(2);\n        return `The current price of ${ticker} is $${price}.`;\n      },\n    });\n    export default adk;\n    ```\n\n2.  **连接前端（`/frontend/src/app/page.tsx`）：**\n    在React/Next.js前端中，您使用`CopilotKit`提供程序包装您的应用程序，并使用UI组件。\n    ```javascript\n    // frontend/src/app/page.tsx\n    \"use client\";\n    import { CopilotKit } from \"@copilotkit/react-core\";\n    import { CopilotChat } from \"@copilotkit/react-ui\";\n    import \"@copilotkit/react-ui/styles.css\";\n    export default function Home() {\n      return (\n        <CopilotKit url=\"http://localhost:5001/api/adk\"> {/* URL to your ADK backend */}\n          <main>\n            <h1>Welcome to Your ADK + AG-UI App!</h1>\n            <p>Ask me to get a stock price.</p>\n          </main>\n          <CopilotChat />\n        </CopilotKit>\n      );\n    }\n    ```\n\n这样，您就拥有了一个功能齐全的AI智能体，带有一个精致的前端，随时可以进行定制和扩展。\n\n### 立即开始构建\n停止纠结于将智能体逻辑连接到用户界面的复杂性。通过ADK和AG-UI的集成，您可以专注于最重要的事情：交付强大、智能且协作的AI应用程序。\n\n### 资源：\n*   快速入门仓库：`npx copilotkit@latest create -f adk`\n*   官方文档：`https://docs.copilotkit.ai/adk`\n*   GitHub上的启动项目：`https://github.com/copilotkit/with-adk`\n*   AG-UI Dojo教程：`https://dojo.ag-ui.com/adk-middleware/feature/shared_state`",
+      "shortSummary": "ADK（Agent Development Kit）与AG-UI（开放协议）的集成，旨在简化生成式AI应用的开发。ADK提供多步规划、工具使用和状态管理等后端智能体核心能力。AG-UI则标准化了智能体与用户UI的直接通信，支持生成式UI、共享状态、人机协作及前端工具等高级功能。此集成使开发者能快速构建具有强大智能体和精美前端的交互式、协作性AI应用，显著提升用户体验和开发效率。",
+      "translated_title": "利用AG-UI将ADK智能体与精美前端结合，提升用户体验",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ADK__AG_UI_Blog_Sep_25_2025.original.png",
+          "alt": "ADK + AG UI Blog Sep 25 2025",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Delight users by combining ADK Agents with Fancy Frontends using AG-UIFor developers building genera..."
+    },
+    {
+      "title": "Apigee Operator for Kubernetes 与 GKE Inference Gateway 集成，用于认证和 AI/LLM 策略 (原标题: Apigee Operator for Kubernetes and GKE Inference Gateway integration for Auth and AI/LLM policies)",
+      "link": "https://developers.googleblog.com/en/apigee-operator-for-kubernetes-and-gke-inference-gateway-integration-for-auth-and-aillm-policies/",
+      "pubDate": "Thu, 25 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-25T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Apigee Operator for Kubernetes 与 GKE Inference Gateway 集成，用于认证和 AI/LLM 策略\n\n## 引言：API 在 AI/Agent 中的关键作用\n文章强调了 API 在生成式 AI 和自动化代理工作流中的核心地位，指出没有 API，AI 功能将难以被广泛访问和利用。API 通过使模型对自动化代理和人类用户可用，从而释放了生成式 AI 的力量。\n\n## GKE Inference Gateway 概述\nGKE Inference Gateway 是 Google Kubernetes Engine (GKE) Gateway 的一个扩展，专为服务生成式人工智能 (AI) 工作负载提供优化的路由和负载均衡。它简化了 AI 推理工作负载的部署、管理和可观测性。其主要功能包括：\n*   **推理优化负载均衡**：根据模型服务器的指标智能分配请求，以优化 AI 模型服务。\n*   **动态 LoRA 微调模型服务**：支持在通用加速器上服务动态 LoRA (Low-Rank Adaptation) 微调模型，通过多路复用减少 GPU 和 TPU 需求。\n*   **推理优化自动扩缩**：利用模型服务器指标实现 GKE Horizontal Pod Autoscaler (HPA) 的自动扩缩。\n*   **模型感知路由**：根据 GKE 集群内 OpenAI API 规范中定义的模型名称路由推理请求。\n*   **模型特定服务关键性**：允许指定 AI 模型的服务关键性，优先处理对延迟敏感的请求，而非对延迟容忍的批量推理作业。\n*   **集成 AI 安全**：与 Google Cloud Model Armor 集成，对模型提示和响应进行 AI 安全检查。\n*   **推理可观测性**：提供请求速率、延迟、错误和饱和度等推理请求的可观测性指标。\n\n## 面临的挑战\n大多数使用 GKE Inference Gateway 的企业客户希望保护和优化其代理/AI 工作负载。他们希望发布和商业化其代理 API，同时利用 Apigee 提供的高质量 API 治理功能，作为其代理 API 商业化策略的一部分。\n\n## 解决方案：GKE Inference Gateway 与 Apigee Operator for Kubernetes 的集成\nGKE Inference Gateway 通过引入 `GCPTrafficExtension` 资源解决了这一挑战。该资源使得 GKE Gateway 能够通过服务扩展（或 ext-proc）机制，向策略决策点 (PDP) 发起“侧向”调用。Apigee Operator for Kubernetes 利用这一服务扩展机制，对流经 GKE Inference Gateway 的 API 流量强制执行 Apigee 策略，从而为 GKE Inference Gateway 用户带来了 Apigee API 治理的优势。\n\n### 集成工作流程\nGKE Inference Gateway 和 Apigee Operator for Kubernetes 的协同工作步骤如下：\n1.  **配置 Apigee 实例**：GKE Inference Gateway 管理员在 Google Cloud 上配置一个 Apigee 实例。\n2.  **安装 Apigee Operator for Kubernetes**：管理员在其 GKE 集群中安装 Apigee Operator for Kubernetes，并将其连接到新配置的 Apigee 实例。\n3.  **创建 ApigeeBackendService**：创建一个 `ApigeeBackendService` 资源，该资源充当 Apigee 数据平面的代理。\n4.  **应用流量扩展**：将 `ApigeeBackendService` 作为 `GCPTrafficExtension` 中的 `backendRef` 进行引用。\n5.  **强制执行策略**：将 `GCPTrafficExtension` 应用到 GKE Inference Gateway，使 Apigee 能够对流经网关的 API 流量强制执行策略。\n\n![Apigee + GKE IG Diagram (2)](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Apigee__GKE_IG_Diagram_2.original.png)\n\n## Apigee Operator for Kubernetes：LLM 的 API 管理\nApigee 提供了一个全面的 API 管理层，适用于 Google Cloud、其他公共云和本地基础设施上的传统事务性 API 和大型语言模型 (LLM)。该平台提供强大的策略引擎、完整的 API 生命周期管理以及先进的 AI/ML 驱动分析功能。Apigee 在 Gartner Magic Quadrant 中被公认为 API 管理领域的领导者，服务于具有复杂 API 需求的大型企业。\n\n通过与 GKE Inference Gateway 的新集成，GKE 用户可以利用 Apigee 的全套功能来管理、治理和商业化其通过 API 提供的 AI 工作负载。这包括 API 生产者能够将 API 打包成 API 产品，并通过自助服务开发者门户提供给开发者。用户还可以获得 Apigee 的增值服务，如 API 安全和详细的 API 分析。\n\n### 集成后可用的 Apigee 策略\nGKE 用户可以通过集成访问 Apigee 管理的以下策略：\n*   API 密钥\n*   配额\n*   速率限制\n*   Google 访问令牌\n*   键值存储\n*   OpenAPI 规范验证\n*   流量峰值管理\n*   自定义 JavaScript\n*   响应缓存\n*   外部服务调用\n\nApigee Operator for Kubernetes 还支持管理员模板规则，允许组织管理员在其整个组织中强制执行策略规则。\n\n### 未来计划：Apigee AI 策略\n未来计划包括支持 Apigee AI 策略，涵盖：\n*   Model Armor 安全\n*   语义缓存\n*   令牌计数和强制\n*   基于提示的模型路由\n\n## 总结\n通过 GKE Inference Gateway 利用 Apigee 一流的 API 管理和安全能力，企业现在可以统一其 AI 服务和 API 治理层。借助 Apigee 全功能的 API 管理平台，企业可以专注于其核心任务：在 GKE 上运行推理引擎，利用公共云中一流的 AI 基础设施。",
+      "shortSummary": "Apigee Operator for Kubernetes 与 GKE Inference Gateway 实现了集成，为 AI/LLM 工作负载提供了全面的 API 管理和治理。GKE Inference Gateway 优化了 AI 推理服务，而 Apigee Operator 则通过 `GCPTrafficExtension` 机制，将 Apigee 的认证、配额、速率限制等策略应用于流经网关的 API 流量。此集成使企业能够安全地发布、管理和商业化其代理/AI API，统一了 AI 服务与 API 治理层，并计划支持更多 AI 相关的策略。",
+      "translated_title": "Apigee Operator for Kubernetes 与 GKE Inference Gateway 集成，用于认证和 AI/LLM 策略",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Apigee__GKE_IG_Diagram_2.original.png",
+          "alt": "Apigee + GKE IG Diagram (2)",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "No AI/Agents without APIs!Many users interact with generative AI daily without realizing the crucial..."
+    },
+    {
+      "title": "持续推出我们的最新模型，发布改进版 Gemini 2.5 Flash 和 Flash-Lite (原标题: Continuing to bring you our latest models, with an improved Gemini 2.5 Flash and Flash-Lite release)",
+      "link": "https://developers.googleblog.com/en/continuing-to-bring-you-our-latest-models-with-an-improved-gemini-2-5-flash-and-flash-lite-release/",
+      "pubDate": "Wed, 24 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-24T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Gemini 2.5 Flash 和 Flash-Lite 更新发布\n\n*   **发布日期与目标**\n    *   **发布日期**：2025年9月25日\n    *   **发布内容**：Gemini 2.5 Flash 和 2.5 Flash-Lite 的更新版本。\n    *   **可用平台**：Google AI Studio 和 Vertex AI。\n    *   **核心目标**：持续提升模型质量和效率。\n\n*   **关键改进概览**\n    *   **质量与速度提升**：与当前稳定模型相比，Gemini 2.5 Flash 和 2.5 Flash-Lite 预览模型的质量和速度均有提升。\n        *   ![Intelligence vs End-to-End response time](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/rev_21_benchmarks_2.original.png)\n    *   **输出令牌效率**：\n        *   Gemini 2.5 Flash-Lite 的输出令牌（及成本）减少50%。\n        *   Gemini 2.5 Flash 的输出令牌（及成本）减少24%。\n        *   ![Output token efficiency](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/rev_21_benchmarks_1.original.png)\n\n*   **更新版 Gemini 2.5 Flash-Lite 详情**\n    *   基于三个关键主题进行训练和构建：\n        1.  **更好的指令遵循能力**：显著提升了遵循复杂指令和系统提示的能力。\n        2.  **减少冗余**：生成更简洁的答案，有效降低高吞吐量应用的令牌成本和延迟。\n        3.  **更强的多模态与翻译能力**：提供更准确的音频转录、更好的图像理解和改进的翻译质量。\n    *   **测试模型字符串**：`gemini-2.5-flash-lite-preview-09-2025`\n\n*   **更新版 Gemini 2.5 Flash 详情**\n    *   主要在两个收到持续反馈的领域进行了改进：\n        1.  **更好的智能体工具使用**：改进了模型使用工具的方式，在更复杂、智能体化和多步骤应用中表现更佳。在关键智能体基准测试中表现显著提升，SWE-Bench Verified 提升5%（从48.9%到54%）。\n        2.  **更高效率**：在“思考开启”模式下，模型成本效率显著提高，以更少的令牌实现更高质量的输出，降低延迟和成本。\n    *   **早期测试者反馈**：Manus 联合创始人兼首席科学家 Yichao ‘Peak’ Ji 表示，新模型在长周期智能体任务中性能提升15%，卓越的成本效率使其能够以前所未有的规模扩展。\n    *   **测试模型字符串**：`gemini-2.5-flash-preview-09-2025`\n\n*   **使用 Gemini 进行构建**\n    *   发布预览版本旨在让开发者测试最新改进、提供反馈并构建生产级体验。\n    *   本次发布并非稳定版本，而是为未来的稳定版本奠定基础。\n\n*   **引入 `-latest` 别名**\n    *   为每个模型系列引入 `-latest` 别名（如 `gemini-flash-latest` 和 `gemini-flash-lite-latest`），始终指向最新模型版本。\n    *   方便开发者试验新功能，无需为每次发布更新代码。\n    *   **重要提示**：在通过 `-latest` 更新或弃用特定版本前，将提前两周通过电子邮件通知。\n    *   **注意**：使用 `-latest` 别名时，速率限制、成本和可用功能可能在不同版本之间波动。\n    *   **稳定性应用**：对于需要更高稳定性的应用，建议继续使用 `gemini-2.5-flash` 和 `gemini-2.5-flash-lite`。\n\n*   **未来展望**\n    *   Google 将继续推动 Gemini 的前沿发展，未来将分享更多信息。",
+      "shortSummary": "Google于2025年9月25日发布了Gemini 2.5 Flash和Flash-Lite的更新版本，旨在提升模型质量和效率。新版Flash-Lite在指令遵循、简洁性及多模态/翻译能力上有所增强。Flash模型则改进了智能体工具使用和整体效率，并在SWE-Bench Verified等基准测试中取得显著进展。为简化最新模型访问，Google还引入了`-latest`别名。这些预览版将为未来的稳定版本提供基础，并允许开发者提前测试和反馈。",
+      "translated_title": "持续推出我们的最新模型，发布改进版 Gemini 2.5 Flash 和 Flash-Lite",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/rev_21_benchmarks_2.original.png",
+          "alt": "Intelligence vs End-to-End response time",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/rev_21_benchmarks_1.original.png",
+          "alt": "Output token efficiency",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Google is releasing updated Gemini 2.5 Flash and Flash-Lite preview models with improved quality, speed, and efficiency. These releases introduce a \"-latest\" alias for easy access to the newest versions, allowing developers to test and provide feedback to shape future stable releases."
+    },
+    {
+      "title": "使用Gemini Robotics-ER 1.5构建下一代物理智能体 (原标题: Building the Next Generation of Physical Agents with Gemini Robotics-ER 1.5)",
+      "link": "https://developers.googleblog.com/en/building-the-next-generation-of-physical-agents-with-gemini-robotics-er-15/",
+      "pubDate": "Wed, 24 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-24T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Gemini Robotics-ER 1.5：下一代机器人具身推理模型\n\nGoogle AI于2025年9月25日发布了其最先进的机器人具身推理模型Gemini Robotics-ER 1.5，并向所有开发者开放预览。这是首个广泛可用的Gemini Robotics模型，旨在作为机器人的高级推理“大脑”。\n\n## 核心能力与优势\n\nGemini Robotics-ER 1.5模型专门针对机器人关键能力进行了优化，包括：\n\n*   **视觉与空间理解**：快速而强大的空间推理能力，能够以Gemini Flash模型的低延迟生成语义精确的2D点，并基于物品的尺寸、重量和可操作性进行推理。\n*   **任务规划**：能够将复杂的请求（如“清理桌子”）分解为详细的计划。\n*   **进度评估**：有效估计任务执行的进展。\n*   **工具调用**：原生支持调用Google搜索等工具以获取信息，以及调用视觉-语言-动作模型（VLA）或任何第三方用户定义函数来执行任务。\n*   **具身推理优化**：它是首个为此类具身推理优化的“思考”模型，在学术和内部基准测试中均达到最先进的性能。\n\n## 解决复杂日常任务\n\n该模型旨在解决对机器人而言极具挑战性的任务。例如，要求机器人“将这些物品分类到正确的堆肥、回收和垃圾箱中”。这需要机器人：\n\n1.  在线查找当地回收指南。\n2.  理解面前的物体。\n3.  根据当地规则确定如何分类。\n4.  执行所有步骤完成分类。\n\nGemini Robotics-ER 1.5能够处理这类需要上下文信息和多步骤才能完成的日常任务。\n\n## Gemini Robotics-ER 1.5的新特性\n\n该模型针对机器人应用进行了专门调整，并引入了多项新功能：\n\n*   **快速强大的空间推理**：\n    *   生成语义精确的2D点，并基于物品尺寸、重量和可操作性进行推理。\n    *   支持“指向任何你可以拿起的东西”等命令，实现准确、响应迅速的交互。\n*   **编排高级智能体行为**：\n    *   利用高级空间和时间推理、规划和成功检测，实现可靠的长期任务执行循环（例如，“根据这张图片重新整理我的办公桌”）。\n    *   原生调用Google搜索工具和任何第三方用户定义函数（例如，“根据当地规则将垃圾分类到正确的垃圾箱中”）。\n*   **灵活的思考预算**：\n    *   开发者可以直接控制延迟与准确性之间的权衡。\n    *   对于复杂任务（如多步骤组装），模型可以“思考更长时间”以提高准确性；对于反应性任务（如检测或指向物体），则可以要求快速响应。\n*   **改进的安全过滤器**：\n    *   增强了语义安全性，更好地识别并拒绝生成违反物理约束（例如，超出机器人有效载荷能力）的计划。\n\n## 机器人的智能大脑\n\nGemini Robotics-ER 1.5可被视为机器人的高级大脑，能够理解复杂的自然语言指令，推理长期任务，并编排复杂的行为。它不仅擅长感知，还能理解场景中的内容以及如何处理。\n\n例如，它可以将“清理桌子”这样的复杂请求分解为计划，并调用合适的工具，无论是机器人的硬件API、专门的抓取模型，还是用于运动控制的视觉-语言-动作模型（VLA）。\n\n### 高级空间理解\n\n为了让机器人与物理世界互动，它们需要感知和理解环境。Gemini Robotics-ER 1.5经过微调，可生成高质量的空间结果，为物体提供精确的2D点。\n\n![Gemini Robotics-ER 1.5性能图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GeminiRoboticsER1.5_Graph-ERGen-RD3_V001.original.png)\n*Gemini Robotics-ER 1.5模型是我们最先进的具身推理模型，同时作为通用多模态基础模型也保持了强大的性能。*\n\n![Gemini Robotics-ER 1.5指向精度图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GeminiRoboticsER1.5_Graph-PointingBenchmark-RD3.original.png)\n*Gemini Robotics-ER 1.5是用于指向精度的最精确视觉-语言模型。*\n\n**2D点生成示例**：\n\n给定厨房场景图像，Gemini Robotics-ER 1.5可以提供每个物体（或物体的一部分）的位置。结合机器人的3D传感器，可以确定物体在空间中的精确位置，从而生成准确的运动计划。\n\n![厨房场景中物品的2D点生成](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/unnamed-2_2.original.png)\n*提示：指出图像中的以下物品：洗碗皂、碗碟架、水龙头、电饭煲、独角兽。点以[y, x]格式表示，归一化到0-1000。只包含图像中实际存在的物体。*\n\n模型只会包含图像中存在的物品，避免了幻觉（例如，不会为不存在的“独角兽”生成点），使其基于实际可见内容进行推理。\n\n### 时间推理\n\n除了定位物体，真正的时空推理还涉及理解物体和动作随时间展开的关系。Gemini Robotics-ER 1.5通过处理视频来理解物理世界中的因果关系。\n\n### 利用可操作性编排长期任务\n\n当启用“思考”功能时，模型可以推理复杂的指向和边界框查询。例如，在咖啡制作过程中，它能理解“如何”以及“在哪里”放置马克杯、咖啡胶囊，以及如何关闭咖啡机，甚至在清理时知道马克杯的放置位置。\n\n![咖啡制作示例：识别马克杯放置位置](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_bjgs08R.original.png)\n*提示：识别我应该把马克杯放在哪里来制作一杯咖啡。以JSON对象列表的形式返回：`[{\"box_2d\": [y_min, x_min, y_max, x_min], \"label\": <label>}]`，坐标在0-1000之间归一化。*\n\n![咖啡制作示例：识别咖啡胶囊放置位置](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image10_5vMuO9V.original.png)\n*提示：我应该把咖啡胶囊放在哪里？*\n\n![咖啡制作示例：关闭咖啡机轨迹规划](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image15_kFakYKn.original.png)\n*提示：现在，我需要关闭咖啡机。绘制8个点轨迹，指示盖子把手应如何移动以关闭它。从把手开始。点为[Y,X]归一化坐标[0 - 1000]。请输出所有点，包括轨迹点，格式为：`[{\"point\": [Y, X], \"label\": }, {\"point\": [Y, X], \"label\": }, ...]`。*\n\n![咖啡制作示例：清理后马克杯放置位置](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_PCWZQMD.original.png)\n*提示：我喝完咖啡了。现在我应该把马克杯放在哪里清理？以JSON对象列表的形式返回：`[{\"point\": [y, x], \"label\": <label>}]`，坐标在0-1000之间归一化。*\n\n![垃圾分类示例](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image12_O0rW8PY.original.png)\n*另一个结合规划和空间定位的例子，生成一个“空间定位”的计划。*\n\n### 灵活的思考预算\n\n![思考预算对性能的影响](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GeminiRoboticsER1.5_Graph-TTB-RD2_V001.original.png)\n*Gemini Robotics-ER 1.5使用推理时计算扩展来提高性能。思考令牌预算是可调的。这允许开发者在延迟敏感任务和高精度推理任务之间取得平衡。*\n\n模型性能随思考令牌预算的增加而提高。对于简单的空间理解任务（如物体检测），在非常短的思考预算下也能获得高性能；而更复杂的推理则受益于更大的预算。开发者可以通过`thinking_config`选项来设置或禁用思考预算。\n\n## 安全注意事项\n\nGemini Robotics-ER 1.5在安全性方面取得了显著改进，增强了以下方面的过滤器：\n\n*   **语义安全**：模型能够理解并拒绝生成危险或有害任务的计划，并已通过ASIMOV基准等严格评估。\n*   **物理约束感知**：模型现在能更好地识别请求是否会违反定义的物理约束（例如，机器人的有效载荷能力或工作空间限制）。\n\n然而，这些模型层面的安全保障不能替代物理系统所需的严格安全工程。Google倡导“瑞士奶酪”安全方法，即多层保护协同工作。开发者仍有责任实施标准的机器人安全最佳实践，包括紧急停止、避障和彻底的风险评估。\n\n## 立即开始构建\n\nGemini Robotics-ER 1.5现已提供预览版。它提供了构建机器人推理引擎所需的感知和规划能力。\n\n*   通过[Google AI Studio](https://aistudio.google.com/app/prompts/new_chat)开始体验模型。\n*   查阅[开发者文档](https://developers.google.com/gemini/reference/rest/v1beta/models/generateContent)以获取快速入门和API参考。\n*   探索[Colab笔记本](https://colab.research.google.com/github/google/generative-ai-docs/blob/main/site/en/tutorials/robotics_er_1_5_quickstart.ipynb)以查看实际实现。\n\n## 深入研究\n\n该模型是更广泛的Gemini Robotics系统的基础推理组件。要了解其背后的科学原理，包括端到端动作模型（VLA）和跨具身学习，请阅读[研究博客](https://ai.google.dev/research/blog/gemini-robotics-er-1-5)和[完整技术报告](https://arxiv.org/abs/2409.09117)。",
+      "shortSummary": "Google AI发布了Gemini Robotics-ER 1.5，这是一款面向开发者的先进机器人具身推理模型。它作为机器人的高级“大脑”，专注于视觉与空间理解、任务规划和进度评估。该模型能原生调用工具，处理复杂的日常任务，并具备灵活的思考预算和改进的安全过滤器。Gemini Robotics-ER 1.5在空间和时间推理方面表现出色，能理解物理世界中的因果关系，并支持长期任务的编排。开发者现可通过Google AI Studio等平台进行预览和构建。",
+      "translated_title": "使用Gemini Robotics-ER 1.5构建下一代物理智能体",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GeminiRoboticsER1.5_Graph-ERGen-RD3_V001.original.png",
+          "alt": "GeminiRoboticsER1.5_Graph-ER+Gen-RD3_V001",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GeminiRoboticsER1.5_Graph-PointingBenchmark-RD3.original.png",
+          "alt": "GeminiRoboticsER1.5_Graph-PointingBenchmark-RD3_V001 (1)",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/unnamed-2_2.original.png",
+          "alt": "image9",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_bjgs08R.original.png",
+          "alt": "image15",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image10_5vMuO9V.original.png",
+          "alt": "image10",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image15_kFakYKn.original.png",
+          "alt": "image15",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_PCWZQMD.original.png",
+          "alt": "image1",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image12_O0rW8PY.original.png",
+          "alt": "image12",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Gemini Robotics-ER 1.5, now available to developers, is a state-of-the-art embodied reasoning model for robots. It excels in visual, spatial understanding, task planning, and progress estimation, allowing robots to perform complex, multi-step tasks."
+    },
+    {
+      "title": "LiteRT-LM赋能Chrome、Chromebook Plus和Pixel Watch上的设备端生成式AI (原标题: On-device GenAI in Chrome, Chromebook Plus, and Pixel Watch with LiteRT-LM)",
+      "link": "https://developers.googleblog.com/en/on-device-genai-in-chrome-chromebook-plus-and-pixel-watch-with-litert-lm/",
+      "pubDate": "Tue, 23 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-23T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# LiteRT-LM：赋能设备端生成式AI\n\n本文介绍了LiteRT-LM，一个生产就绪的推理框架，旨在解决在用户设备上运行大型语言模型（LLM）所面临的挑战，从而提升产品体验。\n\n## 设备端LLM的优势与挑战\n\n*   **优势**：\n    *   **离线可用性**：随时可用，无需网络连接。\n    *   **成本效益**：无按API调用付费，适用于高频任务如文本摘要或校对。\n*   **挑战**：\n    *   **部署复杂性**：在各种边缘硬件上部署千兆字节规模的模型。\n    *   **性能要求**：实现亚秒级的首个Token生成时间（TTFT）延迟。\n    *   **质量保证**：同时满足所需的输出质量。\n\n## LiteRT-LM的推出与应用\n\n*   **核心功能**：LiteRT-LM是一个生产就绪的推理框架，已为Google产品中Gemini Nano最广泛的部署提供支持。\n*   **赋能产品**：它使Gemini Nano和Gemma等模型能够在Chrome、Chromebook Plus和Pixel Watch等产品上实现设备端运行，并通过MediaPipe LLM推理API支持其他开放模型。\n*   **开发者访问**：\n    *   现有高级API：MediaPipe LLM推理API、Chrome内置AI API和Android AICore。\n    *   **新开放**：首次提供LiteRT-LM引擎的底层C++接口（预览版），允许开发者构建定制化、高性能的AI管道。\n\n## LiteRT-LM在Google AI Edge堆栈中的定位\n\nLiteRT-LM是一个经过生产测试的推理框架，用于在各种边缘设备上高性能运行Gemini Nano、Gemma等LLM。它是一个完全开源的项目，提供易于集成的API和可重用模块，帮助开发者构建定制化的LLM管道。\n\nGoogle AI Edge堆栈从低到高抽象层级包括：\n\n1.  **LiteRT**：在设备上高效执行单个ML/AI模型的基础运行时。\n2.  **LiteRT-LM**：基于C++的LLM管道框架，利用LiteRT协同运行多个模型和处理步骤（如会话克隆、KV缓存管理、提示缓存/评分、有状态推理），以完成复杂的生成式AI任务。\n3.  **LLM Inference API**：由LiteRT-LM提供支持的高级原生GenAI API（Kotlin、Swift、JS）。\n\n这种分层结构提供了灵活性，LiteRT-LM则为开发者提供了核心能力和适应性，以大规模部署设备端LLM。\n\n## LiteRT-LM的关键亮点\n\n*   **跨平台**：支持Android、Linux、macOS、Windows和Raspberry Pi。\n*   **硬件加速**：利用LiteRT运行时，支持CPU、GPU和NPU加速，充分发挥设备端硬件潜力。\n*   **增强灵活性**：模块化设计和开源代码库提供最大的推理管道定制灵活性，支持多模态、开放权重模型以及跨各种移动平台和加速器的生产级大型模型推理。\n\n## 案例研究\n\n### 1. Chrome和Chromebook Plus中的多LLM功能\n\n现代LLM的千兆字节规模带来了独特的部署挑战。LiteRT-LM通过以下架构和优化克服了这一挑战：\n\n*   **共享基础模型与LoRA**：允许多个功能共享一个基础模型，并使用轻量级LoRA进行功能特定定制。\n*   **Engine/Session架构**：\n    *   **Engine（单例）**：作为应用程序功能共享的单一实例，管理所有昂贵、共享的资源（如基础模型和多模态编码器），并根据运行时环境智能地处理资源的加载和卸载。\n    *   **Session（有状态接口）**：应用程序功能与之交互的接口，每个Session代表一个独立的对话或任务，管理其自身的状态、历史和上下文。Session可以通过小型、任务特定的适配器（LoRA权重）来定制基础模型的行为。\n\n    ![LiteRT-LM引擎/会话系统架构图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/engine_session.original.png)\n    *LiteRT-LM引擎/会话系统架构图：Engine（底部）作为中央资源管理器，生成两个不同的Session（顶部）；一个用于摘要，一个用于图像理解。两个Session共享通用资源，如基础文本解码器和分词器，而图像理解Session额外请求视觉编码器。由于没有活动的Session需要音频编码器，Engine将其从内存中卸载。*\n\n*   **关键优化**：\n    *   **上下文切换**：每个Session封装其完整的“上下文”（包括Transformer的KV缓存、LoRA权重等）。切换任务时，LiteRT-LM保存传出Session的状态并恢复传入Session的状态，确保共享LLM始终具有活动任务的正确状态。\n    *   **会话克隆**：用户可以克隆Session以避免重新计算共享的提示前缀，从而有效地缓存特定点的KV缓存状态，允许从该状态分支出多个新任务，节省大量计算。\n    *   **写时复制（CoW）KV缓存**：KV缓存可能非常大。CoW机制使得克隆的Session不会立即复制KV缓存，而是创建对原始缓冲区的引用。只有当Session即将覆盖与另一个Session内容冲突的新数据时，才会执行实际复制。这使得克隆速度极快（<10ms），并通过重用KV缓存缓冲区最大限度地减少内存占用。\n\n这些架构和优化能力对于在Chrome和Chromebook Plus中成功实现多个高性能设备端LLM功能至关重要。LiteRT-LM还通过LiteRT作为底层运行时进行后端委托，并抽象平台特定组件，实现了广泛的平台兼容性。\n\n### 2. Pixel Watch上的语言模型部署\n\n在Pixel Watch等资源严重受限的设备上部署LLM，需要将重点从支持多功能共享模型转向部署具有最小二进制大小和内存占用的单一专用功能。\n\n*   **模块化设计**：LiteRT-LM的模块化设计在此发挥关键作用。它允许开发者直接从其核心组件构建定制管道。\n*   **Pixel Watch优化**：为Pixel Watch选择了最少必需的模块（如执行器、分词器和采样器），并组装了一个专门的管道，从而最大限度地减小了二进制大小和内存使用，以满足设备的资源限制。\n\n    ![为Pixel Watch优化的轻量级LLM管道](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/litert_lm_pixel_watch.original.png)\n    *为Pixel Watch优化的轻量级LLM管道*\n\n这个案例展示了LiteRT-LM的灵活性，其模块化组件使开发者能够根据任何目标设备（从强大的智能手机到受限的可穿戴设备）的特定资源和功能要求，精确定制LLM部署。\n\n## 如何开始\n\n*   **探索社区**：访问LiteRT HuggingFace社区，发现兼容的开放模型如Gemma和Qwen。\n*   **访问代码**：查看GitHub仓库，获取C++预览版和示例代码。\n*   **阅读文档**：深入了解使用LiteRT-LM运行时在设备上构建和执行LLM的必要步骤。",
+      "shortSummary": "LiteRT-LM是一个生产就绪的推理框架，旨在赋能Chrome、Chromebook Plus和Pixel Watch等设备上的生成式AI。它解决了在边缘设备上部署大型语言模型（LLM）的性能和资源挑战，提供离线可用性和成本效益。LiteRT-LM支持跨平台部署，利用硬件加速，并通过模块化设计和Engine/Session架构实现多功能共享模型及资源受限设备的定制化部署。开发者现可通过C++接口访问其底层能力，构建高性能设备端AI应用。",
+      "translated_title": "LiteRT-LM赋能Chrome、Chromebook Plus和Pixel Watch上的设备端生成式AI",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/engine_session.original.png",
+          "alt": "engine_session",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/litert_lm_pixel_watch.original.png",
+          "alt": "litert_lm_pixel_watch",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Google AI Edge provides the tools to run AI features on-device, and its new LiteRT-LM runtime is a significant leap forward for generative AI. LiteRT-LM is an open-source C++ API, cross-platform compatibility, and hardware acceleration designed to efficiently run large language models like Gemma and Gemini Nano across a vast range of hardware. Its key innovation is a flexible, modular architecture that can scale to power complex, multi-task features in Chrome and Chromebook Plus, while also being lean enough for resource-constrained devices like the Pixel Watch. This versatility is already enabling a new wave of on-device generative AI, bringing capabilities like WebAI and smart replies to users."
+    },
+    {
+      "title": "Google Colab 推出更多返校季功能改进！ (原标题: Google Colab Adds More Back to School Improvements!)",
+      "link": "https://developers.googleblog.com/en/google-colab-adds-more-back-to-school-improvements/",
+      "pubDate": "Tue, 23 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-23T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Google Colab 推出更多返校季功能改进\n\nGoogle Colab 于2025年9月24日宣布了一系列新功能，旨在简化和增强基于笔记本的教学材料。这些更新主要包括在笔记本层面冻结运行时版本、无缝演示和复制笔记本。\n\n## 引入运行时版本选择器\n\n为了解决笔记本环境中代码重现性差的问题（例如，因依赖项或兼容性错误导致旧笔记本无法运行），Colab 推出了运行时版本选择器。此功能旨在确保用户的工作稳定、可共享且可重现。\n\n*   **挑战**：Colab 运行时会持续更新最新的软件包、安全补丁和功能，这虽然提供了现代工具，但也可能导致旧代码因核心依赖项变化而中断。\n*   **解决方案**：用户现在可以将笔记本固定到特定的、版本化的 Colab 运行时。这意味着无论何时运行代码，都能保证在相同的运行时环境和相同的软件包版本下执行。\n*   **如何使用**：\n    *   在“更改运行时类型”对话框中找到新的运行时版本选择器。\n    *   新笔记本默认使用“最新”版本。\n    *   用户可以选择特定版本（例如 2025.07），以确保项目、课程或出版物的长期稳定性。\n*   **适用场景**：\n    *   需要确保结果可验证的研究人员。\n    *   需要为所有学生提供一致工作体验的教育工作者。\n    *   依赖特定依赖栈构建复杂项目的开发人员。\n*   **透明度**：每个可用的运行时版本都对应 Colab 的 `backend-info` GitHub 仓库中的一个分支，用户可以在其中查看完整的运行时版本快照，包括 Ubuntu 操作系统版本、Python/Julia/R 版本以及已安装的软件包详情等。\n*   **维护计划**：Colab 计划维护过去的运行时版本一年，并欢迎用户就所需维护时长提供反馈。\n\n![运行时选择器](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Runtime_Selector_V2.original.png)\n\n## 幻灯片模式改进\n\nColab 对其幻灯片模式功能进行了增强，使其更加灵活和易用。\n\n*   **从任意位置开始幻灯片**：\n    *   选择“开始幻灯片”将从当前聚焦的单元格开始演示。\n    *   选择“从头开始幻灯片”则会从笔记本的第一个单元格开始。\n\n![开始幻灯片菜单](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Start_Slideshow_Menu_V2.original.png)\n\n*   **带有单元格配对的幻灯片**：如果创建一个可折叠标题，并在其下方放置一个代码单元格，它们将被配对到一张幻灯片中。这非常适合在同一张幻灯片上同时展示简短的解释和可运行的示例。\n\n![访问幻灯片元素](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Accessing_A_Slideshow_Element_V2.original.png)\n\n## 新增 URL 链接功能\n\n为了方便分享笔记本内容，Colab 引入了新的 URL 链接功能。\n\n*   **复制链接**：在任何笔记本 URL 的末尾添加 `#copy=true`，当打开该链接时，Colab 将自动弹出复制对话框。例如：`https://colab.research.google.com/github/googlecolab/colabtools/blob/main/notebooks/Getting_started_with_google_colab_ai.ipynb#copy=true`\n\n![复制对话框截图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-09-12_at_3.36.42PM.original.png)\n\n*   **幻灯片模式链接**：类似地，在 URL 末尾添加 `#slideshowMode=true` 可以自动以幻灯片模式打开笔记本。例如：`https://colab.sandbox.google.com/drive/1gCqFEquqNvEoTDX3SNhR2PZkXWPHKXnc?usp=sharing#slideshowMode=true`\n\n这些功能旨在使课程材料的分享变得更加便捷。\n\n## 展望\n\n运行时版本是 Colab 提升工作健壮性和可重现性的基础性一步。结合更灵活的幻灯片模式（可从任意单元格开始演示，实现解释与实时演示同步）和新的 URL 链接功能（简化内容分享），Colab 希望这些改进能极大地提升课堂工作流程的效率。Colab 鼓励用户尝试这些新功能，并通过 X 或 GitHub 提供反馈。",
+      "shortSummary": "Google Colab 推出多项返校季改进，旨在提升教学和研究体验。核心更新包括：引入**运行时版本选择器**，允许用户将笔记本固定到特定运行时版本，解决代码重现性问题；增强**幻灯片模式**，支持从任意单元格开始演示，并能将标题与代码单元格配对显示；新增**URL 链接功能**，通过在链接末尾添加参数（如 `#copy=true` 或 `#slideshowMode=true`）即可实现快速复制或自动进入幻灯片模式，极大方便了内容分享和课堂教学。",
+      "translated_title": "Google Colab 推出更多返校季功能改进！",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Runtime_Selector_V2.original.png",
+          "alt": "Runtime Selector",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Start_Slideshow_Menu_V2.original.png",
+          "alt": "Start Slideshow Menu",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Accessing_A_Slideshow_Element_V2.original.png",
+          "alt": "Accessing A Slideshow Element",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-09-12_at_3.36.42PM.original.png",
+          "alt": "Screenshot 2025-09-12 at 3.36.42 PM",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Colab is back with a few new and exciting features meant to simplify and enhance your notebook-based..."
+    },
+    {
+      "title": "推出Data Commons模型上下文协议（MCP）服务器：为AI开发者简化公共数据访问 (原标题: Introducing the Data Commons Model Context Protocol (MCP) Server: Streamlining Public Data Access for AI Developers)",
+      "link": "https://developers.googleblog.com/en/datacommonsmcp/",
+      "pubDate": "Tue, 23 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-23T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# 推出Data Commons模型上下文协议（MCP）服务器：为AI开发者简化公共数据访问\n\n2025年9月24日，Data Commons宣布正式发布其模型上下文协议（MCP）服务器。这一里程碑式的发布旨在让Data Commons庞大且相互关联的公共数据集能够即时被全球的AI开发者、数据科学家和组织访问并利用。此举进一步支持了Data Commons的宏伟目标：利用真实世界的统计信息作为锚点，帮助减少大型语言模型（LLM）的“幻觉”现象。\n\n## MCP服务器的优势\n\nMCP服务器为AI代理提供了一种标准化方式，使其能够原生消费Data Commons数据。这使得开发者无需学习或直接与复杂的底层API交互，即可利用Data Commons全面的数据。它显著加速了数据丰富、代理驱动型应用程序的创建，从而有效降低LLM产生幻觉的几率。\n\n开发者可以比以往更快地部署AI代理和应用程序，向最终用户提供可信、有来源的Data Commons信息。MCP服务器使代理能够处理各种数据驱动的查询，从初步探索到生成性报告：\n\n*   **探索性查询：** 例如，“非洲有哪些健康数据？”\n*   **分析性查询：** 例如，“比较金砖国家的人均寿命、经济不平等和GDP增长。”\n*   **生成性查询：** 例如，“生成一份关于美国各县收入与糖尿病之间关系的简明报告。”\n\n## 真实世界用例：ONE数据代理\n\n自2023年以来，Google的Data Commons与全球倡导组织ONE Campaign建立了合作关系，该组织致力于为非洲的经济机会和健康生活争取投资。此次合作促成了ONE数据平台的创建，该平台将ONE组织的全球发展数据和政策专业知识与Data Commons提供的广泛公共数据集相结合。\n\n作为首个用例，ONE数据利用MCP服务器和代理驱动的探索能力，开发了“ONE数据代理”——一个用于健康融资数据的交互式平台。这个新工具允许用户在几秒钟内使用自然语言搜索数千万个健康融资数据点，然后可视化这些数据并下载干净的数据集，从而节省时间，并有助于改进倡导、报告和政策制定。\n\n这对于全球健康领域的工作者来说是一项关键创新。发展中国家迫切需要加强卫生系统，但寻找可靠的健康融资数据却是一项重大挑战——如同大海捞针。这些信息分散在数千个不同的信息孤岛中，埋藏在不同的报告格式里，由技术术语组织，并存储在多个独立的数据库中。现在，例如，如果您想识别哪些国家面临捐助者削减资金的风险，您可以快速搜索那些最依赖外部健康资金、因此最容易受到援助削减或债务冲击影响的国家。\n\n要从传统数据库中编制一份可靠的报告，用户需要跨数据集工作并手动提取数据。然而，代理能够理解复杂的查询，并能够快速获取和编译所需数据。ONE数据代理正在为可访问、有影响力的数据驱动型倡导开辟新时代。\n\n![ONE数据代理截图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ONE_Data_Agent_Screenshot.original.jpg)\n\n## 如何开始\n\n无论您是正在原型设计新的AI代理、为产品添加数据功能，还是简化组织的分析工作流程，Data Commons MCP服务器都将帮助您更快地行动。\n\n它旨在实现无缝集成和最小化的入门摩擦。Data Commons MCP服务器自然地融入了Google Cloud Platform最新的代理开发工作流程，例如代理开发工具包（ADK）和包括Gemini CLI在内的客户端。该服务器还可以轻松集成到任何其他代理工作流程或平台中。\n\n为了帮助您入门，我们提供了一个Colab笔记本中的ADK示例代理，以及使用Gemini CLI服务器的说明：\n\n*   通过安装PyPi包，在Gemini CLI或您喜欢的MCP客户端中试用。\n*   使用Google Colab开始开发ADK代理。\n*   探索我们的GitHub存储库，查看示例代理并开始构建您自己的代理。",
+      "shortSummary": "Data Commons发布了模型上下文协议（MCP）服务器，旨在为AI开发者简化公共数据访问，并减少大型语言模型（LLM）的幻觉。该服务器提供标准化方式，使AI代理能原生消费Data Commons数据，加速数据驱动应用开发。它支持探索性、分析性和生成性查询。ONE数据代理是一个成功案例，通过MCP服务器简化了全球健康融资数据的获取和分析，提升了倡导和政策制定效率。开发者可通过Gemini CLI、Colab和GitHub资源开始使用。",
+      "translated_title": "推出Data Commons模型上下文协议（MCP）服务器：为AI开发者简化公共数据访问",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ONE_Data_Agent_Screenshot.original.jpg",
+          "alt": "ONE Data Agent Screenshot",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Data Commons announces the availability of its MCP Server, which is a major milestone in making all of Data Commons’ vast public datasets instantly accessible and actionable for AI developers worldwide."
+    },
+    {
       "title": "Gemini CLI 🤝 FastMCP：简化 MCP 服务器开发 (原标题: Gemini CLI 🤝 FastMCP: Simplifying MCP server development)",
       "link": "https://developers.googleblog.com/en/gemini-cli-fastmcp-simplifying-mcp-server-development/",
       "pubDate": "Sun, 21 Sep 2025 16:00:00 GMT",
@@ -42,138 +254,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Batch API now supports Embeddings and OpenAI CompatibilityToday we are extending the Gemini Batch AP..."
-    },
-    {
-      "title": "宣布 Genkit Go 1.0 及增强型 AI 辅助开发 (原标题: Announcing Genkit Go 1.0 and Enhanced AI-Assisted Development)",
-      "link": "https://developers.googleblog.com/en/announcing-genkit-go-10-and-enhanced-ai-assisted-development/",
-      "pubDate": "Mon, 08 Sep 2025 16:00:00 GMT",
-      "isoDate": "2025-09-08T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "Google 激动地宣布发布 **Genkit Go 1.0**，这是其针对 Go 生态系统的开源 AI 开发框架的首个稳定、生产就绪版本。同时，还推出了 **`genkit init:ai-tools`** 命令，旨在极大提升 AI 辅助开发工作流。\n\n### Genkit 简介\nGenkit 是一个开源框架，用于构建全栈 AI 驱动的应用程序。它提供：\n*   统一的多种模型提供商接口。\n*   简化的 API，支持多模态内容、结构化输出、工具调用、检索增强生成（RAG）和代理工作流。\n*   通过 Genkit Go，开发者现在可以利用 Go 语言的速度、安全性和可靠性，构建和部署生产就绪的 AI 应用程序。\n\n### Genkit Go 1.0 的新特性\n1.  **生产就绪：**\n    *   Genkit Go 1.0 致力于为 Go 中构建 AI 应用程序提供稳定、可靠的基础。\n    *   API 稳定且经过良好测试，确保部署到生产环境的应用程序的可靠性。\n    *   遵循 Go 的兼容性承诺，Genkit 1.* 版本的程序即使在未来的“点”发布（如 1.1、1.2）出现时，也将继续正确编译和运行。\n2.  **类型安全的 AI 流程：**\n    *   “流程”（Flows）是 Genkit 最强大的功能之一，它们是用于 AI 用例的函数，提供可观察性、易测试性和简化的部署。\n    *   开发者可以使用 Go 结构体和 JSON Schema 验证来定义类型安全的 AI 流程，例如生成结构化食谱，确保数据的一致性和准确性。\n3.  **统一的模型接口：**\n    *   Genkit Go 提供了一个单一、一致的接口，用于与多个 AI 模型提供商协作，包括 Google AI、Vertex AI、OpenAI、Anthropic 和 Ollama 等。\n4.  **工具调用：**\n    *   Genkit Go 使得为 AI 模型提供访问外部函数和 API 的能力变得轻而易举，例如定义一个用于获取天气信息的工具。\n5.  **简易部署：**\n    *   开发者可以通过最少的设置，将 AI 流程部署为 HTTP 端点。\n\n### 丰富的开发者工具\nGenkit Go 配备了一套全面的开发工具，旨在使 AI 应用程序的构建快速而直观：\n1.  **独立 CLI 安装：**\n    *   通过一个独立的 CLI 二进制文件，可以快速开始，无需其他运行时安装（支持 macOS、Linux 和 Windows）。\n    *   CLI 支持任何 Genkit 应用程序（JavaScript、Go、Python），并提供运行和评估流程等便捷命令。\n2.  **交互式开发者 UI：**\n    *   提供可视化界面，用于测试和调试 AI 应用程序。\n    *   功能包括：交互式运行流程、通过详细跟踪进行调试、监控性能（延迟、令牌使用、成本）以及试验提示和模型配置。\n    *   可以通过 CLI 命令 `genkit start -- go run .` 与 Go 应用程序一同启动。\n\n### 介绍 `genkit init:ai-tools` 命令\n*   **革新 AI 辅助开发：** 此命令为 JavaScript 和 Go 开发者提供了无缝集成 Genkit 框架和工具的 AI 编码助手配置。\n*   **运行效果：**\n    *   检测并保留现有的 AI 助手配置。\n    *   安装 Genkit MCP 服务器，其中包含强大的开发工具，如 `lookup_genkit_docs`（搜索 Genkit 文档）、`list_flows`（列出当前 Genkit 应用中的所有流程）、`run_flow`（执行流程）和 `get_trace`（获取执行跟踪）。\n    *   创建一个 `GENKIT.md` 文件，其中包含针对 AI 助手的全面语言特定指令。\n*   **支持的 AI 工具：**\n    *   Gemini CLI (Google 的 CLI AI 编码助手)\n    *   Firebase Studio (Firebase 的代理式云开发环境)\n    *   Claude Code (Anthropic 的编码助手)\n    *   Cursor (AI 驱动的代码编辑器)\n    *   对于其他工具，可以选择“generic”选项以获取可手动集成的 `GENKIT.md` 文件。\n*   **增强的开发体验：** 通过 AI 助手集成，开发者可以：\n    *   询问 Genkit Go API 相关问题并获得准确、最新的答案。\n    *   生成符合最佳实践的 Go 特定 Genkit 代码。\n    *   通过 AI 助手分析跟踪来调试流程。\n    *   使用 AI 生成的输入来测试应用程序。\n    *   获取 Go 特定模式和惯用代码的帮助。\n\n### 快速入门\n文章提供了快速创建项目、安装 Genkit 和 CLI、设置 AI 助手集成、创建第一个流程以及启动开发者 UI 的步骤。\n\n### 更多资源\n开发者可以通过官方文档、入门指南、Go API 参考、GitHub 示例和 Genkit Discord 社区获取更多信息和支持。\n\nGenkit Go 1.0 将 Go 的性能和可靠性与 Genkit 生产就绪的 AI 框架和工具相结合，旨在赋能开发者构建强大的 AI 应用程序。",
-      "shortSummary": "Google 发布 Genkit Go 1.0，这是 Go 生态系统的首个稳定、生产就绪的开源 AI 开发框架。它提供类型安全的 AI 流程、统一的模型接口、工具调用和丰富的开发者工具。同时推出的 `genkit init:ai-tools` 命令，能自动配置 AI 编码助手，无缝集成 Genkit，提供文档查询、流程管理、调试和代码生成等功能，显著提升 AI 辅助开发体验。Genkit Go 1.0 结合了 Go 的性能与 Genkit 的 AI 框架，助力开发者构建强大的 AI 应用。",
-      "translated_title": "宣布 Genkit Go 1.0 及增强型 AI 辅助开发",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "We are launching 1.0 stable release of Genkit Go, empowering Go developers to build performant, production-ready AI-powered applications with Genkit. Recent enhancements include support for integrating and building MCP tools, expanding third-party model provider support, and production AI monitoring with Firebase.\n\nAdditionally, we are announcing a new feature in the Genkit CLI to provide AI development tools, like the Gemini CLI and Cursor, with the latest knowledge of Genkit - supercharging Genkit development experience when using AI assistance."
-    },
-    {
-      "title": "A2A 扩展：赋能自定义代理功能 (原标题: A2A Extensions: Empowering Custom Agent Functionality)",
-      "link": "https://developers.googleblog.com/en/a2a-extensions-empowering-custom-agent-functionality/",
-      "pubDate": "Mon, 08 Sep 2025 16:00:00 GMT",
-      "isoDate": "2025-09-08T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# A2A 扩展：赋能自定义代理功能\n\nA2A 协议提供了一个强大且标准化的代理间通信框架，但它也认识到“一刀切”的方法可能不适用于所有场景。为此，A2A 引入了“扩展”功能，允许开发者在 A2A 服务器中添加自定义的、特定领域的功能和方法，超越核心协议。此外，它还使客户端能够添加远程代理应支持的额外要求，这在代理需要提供专业化功能时非常有用。\n\n## 如何开始使用？\n\n入门非常简单。一个代理只需在其“代理卡”（一个概述其功能的 JSON 文件）中声明对某个扩展的支持。由于任何人都可以定义、发布和实现扩展（每个扩展都由一个唯一的 URI 标识），因此 A2A 生态系统非常开放和社区驱动。这种方法确保 A2A 协议保持高度灵活性和适应性，使开发者能够构建更强大、更专业的多种代理系统。\n\n![A2A 扩展](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-09-04_at_13.03.31.original.png)\n图 1: A2A 扩展\n\n## A2A 扩展的实际应用案例\n\n随着 A2A 协议的普及，我们看到了广泛的扩展用例：\n\n### 1. A2A 中的可追溯性扩展\n\n*   **目的**：确保不同的 AI 代理能够可靠、无误地协作，通过提供深度可见性来跟踪交互并有效诊断问题，从而实现对其通信的评估。\n*   **工作原理：ResponseTrace**\n    *   **核心**：ResponseTrace 消息是此扩展的核心，它是一个结构化日志，捕获代理执行的操作序列。它被设计为轻量级且独立于主 A2A 协议，仅专注于记录代理发出的请求。\n    *   **组成**：ResponseTrace 由一系列“步骤”（Steps）组成，每个步骤代表一个操作，可以是以下两种类型之一：\n        1.  **工具调用 (ToolInvocation)**：对特定工具（如函数或 API）的调用。\n        2.  **代理调用 (AgentInvocation)**：对另一个代理的调用，可以是另一个 A2A 代理或不同类型的代理。\n    *   **层级结构**：这些步骤是分层的。如果一个代理调用了另一个也支持可追溯性的代理，则第二个代理的跟踪可以嵌套在第一个代理内部，从而提供整个工作流的完整端到端视图。\n\n### 2. Twilio 的延迟扩展\n\n*   **目的**：Twilio 构建了一个延迟感知扩展，以帮助其基于 Twilio ConversationRelay 构建的语音代理进行模型选择。\n*   **特点**：这是一个领域特定功能的经典示例。广播代理的延迟信息不属于核心协议的代理卡规范，但 Twilio 为此构建了一个扩展，以帮助选择最合适的代理或优雅地进行适应。\n\n### 3. 其他有趣的应用程序\n\n*   **Identity Machines**：通过 A2A 扩展实现代理间调用的零信任握手。它们展示了代理任务委托如何基于信任和独立的策略门（如目的、预算、能力、模型、PII 状态等自定义参数）进行锚定，在代理接受任务之前强制执行这些策略。\n*   **Ethereum 的 ERC-8004 提案**：旨在为 AI 代理创建一个信任层，允许它们跨不同的组织边界进行交互。该标准引入了链上注册表，用于身份、声誉和验证，以实现来自各种生态系统的代理之间的安全和可互操作的通信。",
-      "shortSummary": "A2A 扩展通过允许开发者添加自定义的、特定领域的功能和方法，增强了 A2A 代理间通信协议。它使代理能够超越核心协议，支持专业化需求，并通过“代理卡”声明实现开放和社区驱动的生态系统。实际应用包括用于评估和诊断的通信可追溯性、Twilio 的延迟感知模型选择，以及 Identity Machines 实现的零信任握手和 Ethereum 提出的代理信任层（ERC-8004）。这极大地提升了多代理系统的灵活性和适应性。",
-      "translated_title": "A2A 扩展：赋能自定义代理功能",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-09-04_at_13.03.31.original.png",
-          "alt": "A2A Extensions",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "A2A Extensions provide a flexible way to add custom functionalities to agent-to-agent communication, going beyond the core A2A protocol. They enable specialized features and are openly defined and implemented."
-    },
-    {
-      "title": "超越反向传播：JAX 的符号能力开启科学计算新领域 (原标题: Beyond backpropagation: JAX's symbolic power unlocks new frontiers in scientific computing)",
-      "link": "https://developers.googleblog.com/en/jax-symbolic-power-unlocks-new-frontiers-in-scientific-computing/",
-      "pubDate": "Mon, 08 Sep 2025 16:00:00 GMT",
-      "isoDate": "2025-09-08T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# JAX 在科学计算中的新突破：超越反向传播\n\nJAX 不仅是大型 AI 模型开发的热门框架，其在更广泛的科学领域，特别是计算密集型领域（如物理信息机器学习）的应用也日益增长。JAX 的核心优势在于其可组合的变换（higher-order functions），例如 `grad` 函数可以接收一个函数并返回其梯度计算函数，并且这些变换可以自由嵌套和组合，这使得 JAX 在处理高阶导数和其他复杂变换时表现出色。\n\n## 解决偏微分方程 (PDEs) 的挑战\n\n新加坡国立大学和 Sea AI Lab 的研究员 Zekun Shi 和 Min Lin 的经验表明，JAX 如何解决科学研究中的根本挑战，尤其是在求解复杂偏微分方程 (PDEs) 时面临的计算瓶颈。他们的工作专注于使用神经网络求解高阶 PDEs。尽管神经网络作为通用函数逼近器具有巨大潜力，但其主要障碍在于需要评估高阶导数，有时高达四阶甚至更高，包括混合偏导数。\n\n### 传统框架的局限性\n\n标准深度学习框架主要针对通过反向传播（backward mode AD）进行模型训练而优化，因此不适合计算高阶导数。重复应用反向传播来计算高阶导数的成本与导数阶数 (k) 呈指数级增长，与域维度 (d) 呈多项式增长。这种“维度诅咒”和导数阶数的指数级扩展使得处理大型、复杂的实际问题几乎不可能。\n\n![维度诅咒](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_LSGbsBj.original.jpg)\n*计算图随导数阶数 k 呈指数级增长*\n\n### JAX 的独特解决方案：泰勒模式自动微分 (Taylor Mode AD)\n\n研究人员发现，JAX 是一个“游戏规则改变者”，因为它提供了其他深度学习库所不具备的泰勒模式自动微分 (Taylor mode AD) 能力。JAX 的关键架构特点是其强大的函数表示和变换机制，通过追踪 Python 代码并编译以实现高性能。这种通用设计支持从即时编译到标准导数计算的广泛应用，其底层灵活性使得在其他框架中难以实现的高级操作成为可能。\n\n对于研究人员而言，最关键的应用是 JAX 对泰勒模式 AD 的支持。泰勒模式 AD 通过前向推进函数的泰勒级数展开，并在单次通过中高效计算高阶导数，而不是通过重复、昂贵的反向传播。\n\n![二阶导数的泰勒模式](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_z0BG98v.original.jpg)\n*二阶导数的泰勒模式 - 无指数级扩展*\n\n### 随机泰勒导数估计器 (STDE)\n\n利用 JAX 的泰勒模式 AD，研究人员开发了一种算法——随机泰勒导数估计器 (STDE)，以高效地随机化和估计任何微分算子。该方法的核心思想是利用泰勒模式 AD 高效计算 PDEs 中出现的高阶导数张量的收缩。通过构建特殊的随机切向量（或“jets”），他们可以在一次高效的前向传播中获得任意复杂微分算子的无偏估计。\n\n该方法在 NeurIPS 2024 上获得了最佳论文奖，名为“Stochastic Taylor Derivative Estimator: Efficient amortization for arbitrary differential operators”。\n\n### 显著的成果\n\n使用 JAX 中的 STDE 方法，研究人员实现了：\n*   **速度提升：** 相比基线方法，速度提升超过 1000 倍。\n*   **内存减少：** 内存使用减少超过 30 倍。\n*   **问题解决能力：** 能够在单个 NVIDIA A100 GPU 上，在短短 8 分钟内解决一个 100 万维的 PDE，这在以前是无法完成的任务。\n\n这些成果在仅针对标准机器学习工作负载的框架中是无法实现的，因为其他框架虽然高度优化反向传播，但对端到端计算图表示的关注不如 JAX。\n\n## JAX 的通用能力与未来展望\n\n除了泰勒模式 AD，JAX 的模块化设计以及对通用数据类型和函数变换的支持对研究至关重要。在另一项工作“Automatic Functional Differentiation in JAX”中，研究人员甚至将 JAX 推广到处理无限维向量（希尔伯特空间中的函数），通过将其描述为自定义数组并注册到 JAX 中。这使得他们能够重用现有机制来计算泛函和算子的变分导数，这是其他框架完全无法实现的功能。\n\n因此，研究团队不仅在本项目中，还在量子化学等广泛研究领域采用了 JAX。其作为通用、可扩展和符号强大的系统的基本设计，使其成为推动科学计算前沿的理想选择。\n\nJAX 团队鼓励科学界探索 JAX 的科学计算生态系统，分享使用 JAX 解决科学难题的故事，并提供功能需求以指导 JAX 的发展路线图。",
-      "shortSummary": "JAX正从AI领域扩展到科学计算，尤其在解决复杂偏微分方程(PDEs)方面展现出巨大潜力。传统框架因高阶导数计算成本高昂而受限，而JAX凭借其独特的泰勒模式自动微分(AD)能力，能高效计算高阶导数。研究人员利用JAX开发了随机泰勒导数估计器(STDE)，实现了超过1000倍的速度提升和30倍内存减少，成功解决了百万维PDE等此前无法处理的问题。JAX的通用性和符号能力使其成为推动科学计算前沿的强大工具。",
-      "translated_title": "超越反向传播：JAX 的符号能力开启科学计算新领域",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_LSGbsBj.original.jpg",
-          "alt": "curse of dimensionality",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_z0BG98v.original.jpg",
-          "alt": "Taylor-mode for second-order derivative",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "JAX, a framework known for large-scale AI model development, is proving to be a powerful tool in scientific computing, particularly for solving complex Partial Differential Equations (PDEs), now being leveraged by researchers to achieve significant speed-ups and memory reductions in solving high-order PDEs and demonstrating its potential to unlock new frontiers in scientific discovery."
-    },
-    {
-      "title": "Veo 3 和 Veo 3 Fast – 新定价、新配置和更高分辨率 (原标题: Veo 3 and Veo 3 Fast – new pricing, new configurations and better resolution)",
-      "link": "https://developers.googleblog.com/en/veo-3-and-veo-3-fast-new-pricing-new-configurations-and-better-resolution/",
-      "pubDate": "Sun, 07 Sep 2025 16:00:00 GMT",
-      "isoDate": "2025-09-07T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Veo 3 和 Veo 3 Fast 更新概览\n\n2025年9月8日，Veo平台宣布了三项重大更新，旨在提升视频生成能力并降低成本，同时确保Veo 3和Veo 3 Fast模型在Gemini API中稳定用于规模化生产。\n\n### 主要更新点：\n*   **支持垂直格式输出**：新增9:16宽高比，适用于移动优先和社交媒体场景。\n*   **1080p高清输出**：提供更高分辨率的视频生成选项。\n*   **全新更低定价**：Veo 3和Veo 3 Fast的视频生成价格大幅下调。\n\n### 价格调整\n此次更新显著降低了使用Veo 3和Veo 3 Fast生成高质量视频的成本：\n*   **Veo 3**：价格从每秒$0.75降至**每秒$0.40**。\n*   **Veo 3 Fast**：价格从每秒$0.40降至**每秒$0.15**。\n\n### 新功能：垂直视频和1080p高清输出\n\n**1. 垂直视频支持 (9:16 宽高比)**\n*   现在，用户可以设置`aspectRatio`参数为`9:16`，以生成专为移动设备和社交平台优化的垂直格式视频。\n\n**2. 1080p高清分辨率**\n*   通过将`resolution`参数设置为`1080p`，用户可以生成更高质量的Veo 3和Veo 3 Fast视频。\n\n### MediaSim 演示应用\n\nGoogle AI Studio中提供了一个名为MediaSim的演示应用，展示了如何结合Gemini的多模态理解、生成和图像编辑能力，以及Veo 3的视频和音频生成能力，来创建多模态媒体模拟。该应用集成了tldraw SDK，提供了一个交互式画布。\n\n### 开发者资源与示例\n\n此次发布旨在让开发者更经济高效地构建支持高质量视频生成的应用程序。所有通过Veo生成的视频将继续包含数字SynthID水印。\n\n**Python 示例代码：**\n以下是一个使用`google-genai`库创建视频的基本Python示例，演示了如何设置模型、提示词、负面提示词、宽高比和分辨率：\n\n```python\nimport time\nfrom google import genai\nfrom google.genai import types\n\nclient = genai.Client()\noperation = client.models.generate_videos(\n    model=\"veo-3.0-fast-generate-001\",\n    prompt=\"a close-up shot of a golden retriever playing in a field of sunflowers\",\n    config=types.GenerateVideosConfig(\n        negative_prompt=\"barking, woofing\",\n        aspect_ratio=\"9:16\",\n        resolution=\"720p\",\n    ),\n)\n\n# Waiting for the video(s) to be generated\nwhile not operation.done:\n    time.sleep(20)\n    operation = client.operations.get(operation)\n\nprint(operation)\ngenerated_video = operation.response.generated_videos[0]\nclient.files.download(file=generated_video.video)\ngenerated_video.video.save(\"golden_retriever.mp4\")\n```\n\n**获取更多信息：**\n*   查阅官方文档。\n*   访问Google AI Studio中的Veo 3入门应用。\n*   参考Veo cookbook。",
-      "shortSummary": "Veo 3和Veo 3 Fast宣布重大更新：价格大幅下调，Veo 3降至$0.40/秒，Veo 3 Fast降至$0.15/秒。同时，新增支持9:16垂直视频格式和1080p高清输出，以满足移动和社交媒体需求。这些模型已在Gemini API中稳定用于生产，并提供了开发者资源和Python示例，鼓励开发者利用更经济、更高质量的视频生成能力进行创新。",
-      "translated_title": "Veo 3 和 Veo 3 Fast – 新定价、新配置和更高分辨率",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Today, we’re launching three big Veo updates: support for vertical format outputs (9:16 aspect ratio..."
-    },
-    {
-      "title": "Google AI Edge Gallery：现已支持音频并登陆Google Play (原标题: Google AI Edge Gallery: Now with audio and on Google Play)",
-      "link": "https://developers.googleblog.com/en/google-ai-edge-gallery-now-with-audio-and-on-google-play/",
-      "pubDate": "Thu, 04 Sep 2025 16:00:00 GMT",
-      "isoDate": "2025-09-04T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "Google AI Edge 团队已对其 Gemma 3n 预览版进行了扩展，现在包含了音频支持功能。\n\n主要更新和特点：\n\n*   **Gemma 3n 预览版扩展**：Google AI Edge 扩展了其 Gemma 3n 预览版的功能。\n*   **新增音频支持**：此次扩展的核心是增加了对音频的支持，使用户能够体验与音频相关的功能。\n*   **通过 Google AI Edge Gallery 体验**：用户可以通过 Google AI Edge Gallery 应用程序在自己的移动设备上直接体验这些新功能。\n*   **在 Play Store 上推出公开测试版**：Google AI Edge Gallery 现已在 Google Play 商店上作为公开测试版（Open Beta）提供，方便用户下载和使用。",
-      "shortSummary": "Google AI Edge 的 Gemma 3n 预览版已扩展，现支持音频功能。用户可通过 Google Play 商店上线的 Google AI Edge Gallery 公开测试版，在自己的手机上体验这些新特性。",
-      "translated_title": "Google AI Edge Gallery：现已支持音频并登陆Google Play",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Google AI Edge has expanded the Gemma 3n preview to include audio support. Users can play with it on their own mobile phone using the Google AI Edge Gallery, which is now available in Open Beta on Play Store."
-    },
-    {
-      "title": "从微调到生产：使用 Dataflow 构建可扩展的嵌入式管道 (原标题: From Fine-Tuning to Production: A Scalable Embedding Pipeline with Dataflow)",
-      "link": "https://developers.googleblog.com/en/deploying-embeddinggemma-at-scale-with-dataflow/",
-      "pubDate": "Wed, 03 Sep 2025 16:00:00 GMT",
-      "isoDate": "2025-09-03T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 从微调到生产：使用 Dataflow 构建可扩展的嵌入式管道\n\n本文深入探讨了如何利用 Google 的高效开源嵌入模型 EmbeddingGemma，结合 Google Cloud Dataflow 和向量数据库（如 AlloyDB），构建一个可扩展、实时的知识摄取管道。该管道旨在支持语义搜索和检索增强生成（RAG）等现代 AI 应用，实现从模型微调到生产环境的无缝过渡。\n\n## 嵌入式技术与 Dataflow 的强大结合\n\n### 嵌入式技术的核心作用\n*   **数据表示**：嵌入（Embeddings）是数据的数值向量表示，能够捕捉词语和概念之间的深层语义关系。\n*   **AI 应用基石**：它们是理解信息、进行语义搜索以及为大型语言模型（LLMs）提供相关上下文（RAG系统）的基础。\n*   **知识摄取需求**：构建这些应用需要一个强大的知识摄取管道，能够处理非结构化数据，将其转换为嵌入，并加载到专门的向量数据库中。\n\n### EmbeddingGemma 的优势\n*   **高效与开源**：EmbeddingGemma 是 Google 新推出的高效、308M 参数的开源嵌入模型。\n*   **多场景适用**：其小巧的尺寸使其非常适合设备端应用，同时在云端也通过微调解锁了强大的定制能力。\n*   **自包含与安全性**：作为开源模型，EmbeddingGemma 可以完全托管在 Dataflow 内部，消除了对外部网络调用的需求，简化了管理，并能安全处理大规模私有数据集。\n*   **可微调性**：允许用户根据特定数据嵌入需求进行定制。\n*   **卓越的质量**：在 Massive Text Embedding Benchmark (MTEB) 多语言排行榜上，它是 500M 参数以下文本专用多语言嵌入模型中排名最高的。\n\n### Dataflow 的核心优势\nDataflow 是一个全托管、自动扩缩的平台，用于统一的批处理和流式数据处理。将 EmbeddingGemma 直接集成到 Dataflow 管道中，可带来以下优势：\n*   **数据局部性带来的效率**：处理直接在 Dataflow 工作器上进行，避免了对独立推理服务的远程过程调用（RPC），解决了配额和多系统自动扩缩的问题，减少了资源占用。\n*   **统一系统**：单一系统处理自动扩缩、观察和监控，简化了运维开销。\n*   **可扩展性和简洁性**：Dataflow 根据需求自动扩缩管道，Apache Beam 的转换功能减少了样板代码。\n\n## 使用 Dataflow ML 构建摄取管道\n\n一个典型的知识摄取管道包含四个阶段：从数据源读取、数据预处理、生成嵌入和写入向量数据库。\n\n![Dataflow 的 MLTransform](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EGDataflow_Graph_RD1-V01.original.jpg)\n\n借助 Dataflow 的 `MLTransform`（一个用于数据准备的强大 `PTransform`），整个工作流只需几行代码即可实现。\n\n### 使用 MLTransform 生成 Gemma 嵌入\n\n文章提供了一个示例，展示如何配置 `MLTransform` 以使用 Hugging Face 模型（如 EmbeddingGemma），然后将结果写入 AlloyDB，以便进行语义搜索。AlloyDB 等数据库能够将语义搜索与结构化搜索结合，提供高质量和相关的结果。\n\n核心步骤包括：\n1.  **定义模型**：指定用于生成嵌入的模型名称，例如 `google/embeddinggemma-300m`。用户可以轻松将其替换为自己的微调模型。\n2.  **定义嵌入转换**：使用 `SentenceTransformerEmbeddings` 定义转换，指定要嵌入的列。\n3.  **定义写入配置**：使用 `AlloyDBVectorWriterConfig` 定义写入到向量数据库的配置。Dataflow 支持通过配置对象写入多种向量数据库，包括 AlloyDB、CloudSQL 和 BigQuery。\n4.  **构建并运行管道**：通过 Apache Beam 管道，将数据创建、嵌入生成（通过 `MLTransform`）和写入向量数据库（通过 `VectorDatabaseWriteTransform`）串联起来。\n\n这种简单而强大的模式允许用户在单个、可扩展、经济高效且托管的管道中并行处理海量数据集，使用 EmbeddingGemma 生成嵌入，并填充向量数据库。\n\n## 立即开始\n\n结合最新的 Gemma 模型、Dataflow 的可扩展性以及 AlloyDB 等向量数据库的向量搜索能力，用户可以轻松构建复杂的下一代 AI 应用。文章鼓励读者探索 Dataflow ML 文档，特别是关于数据准备和生成嵌入的部分，并尝试使用 EmbeddingGemma 的示例 notebook。对于大规模服务器端应用，建议通过 Gemini API 探索最先进的 Gemini Embedding 模型以获得最大性能和容量。",
-      "shortSummary": "Google Cloud Dataflow与EmbeddingGemma模型结合，提供了一个可扩展、实时的知识摄取管道。EmbeddingGemma是Google高效、可微调的开源嵌入模型，在MTEB排行榜表现卓越。Dataflow作为全托管、自动扩缩的数据处理平台，可将EmbeddingGemma直接集成，实现高效的数据局部性处理和统一管理。通过Dataflow的MLTransform，用户能轻松将非结构化数据转换为嵌入，并写入AlloyDB等向量数据库，支持语义搜索和RAG等AI应用，简化从微调到生产的流程。",
-      "translated_title": "从微调到生产：使用 Dataflow 构建可扩展的嵌入式管道",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EGDataflow_Graph_RD1-V01.original.jpg",
-          "alt": "Dataflow's MLTransform",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Learn how to use Google's EmbeddingGemma, an efficient open model, with Google Cloud's Dataflow and vector databases like AlloyDB to build scalable, real-time knowledge ingestion pipelines."
-    },
-    {
-      "title": "介绍 EmbeddingGemma：用于设备端嵌入的最佳开源模型 (原标题: Introducing EmbeddingGemma: The Best-in-Class Open Model for On-Device Embeddings)",
-      "link": "https://developers.googleblog.com/en/introducing-embeddinggemma/",
-      "pubDate": "Wed, 03 Sep 2025 16:00:00 GMT",
-      "isoDate": "2025-09-03T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "Google DeepMind 推出了 **EmbeddingGemma**，这是一款全新的开源嵌入模型，旨在为设备端 AI 提供同类最佳的性能。\n\n### 核心特性与优势\n\n*   **卓越性能与效率**：\n    *   拥有 3.08 亿参数，其设计高度高效，使其成为同等规模模型中的佼佼者。\n    *   在 Massive Text Embedding Benchmark (MTEB) 上，是 5 亿参数以下排名最高的开源多语言文本嵌入模型。\n    *   基于 Gemma 3 架构，经过 100 多种语言训练，量化后可在不到 200MB 的 RAM 中运行。\n    *   性能可与参数量近乎两倍的流行模型相媲美。\n    ![MTEB Score](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EmbeddingGemma_Chart01_RD3-V01.original.png)\n\n*   **灵活的离线工作能力**：\n    *   体积小巧、速度快、效率高，支持可定制的输出维度（通过 Matryoshka 表示从 768 到 128）。\n    *   具有 2K 令牌上下文窗口，可在手机、笔记本电脑、台式机等日常设备上运行。\n    *   与 Gemma 3n 协同工作，为移动 RAG 管道和语义搜索等应用解锁新用例。\n\n*   **广泛的工具集成**：\n    *   已与 sentence-transformers, llama.cpp, MLX, Ollama, LiteRT, transformers.js, LMStudio, Weaviate, Cloudflare, LlamaIndex, LangChain 等流行工具集成，方便开发者快速上手。\n\n### 如何赋能移动优先的 RAG 管道\n\n*   EmbeddingGemma 生成文本的数值表示（嵌入），将其转换为高维空间中的向量以表示含义。\n*   在 RAG 管道中，嵌入的质量对于检索相关上下文至关重要。高质量的嵌入能确保检索到准确的文档，从而生成上下文相关的答案。\n*   EmbeddingGemma 的高性能确保了高质量的表示，为准确可靠的设备端应用提供支持。\n    ![MTEB Multilingual v2](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EmbeddingGemma_Chart02_RD3-V01.original.png)\n\n### 卓越的尺寸性能\n\n*   在检索、分类和聚类等任务上，EmbeddingGemma 在同等大小的流行嵌入模型中表现出色，尤其在多语言嵌入生成方面性能强劲。\n\n### 小巧、快速、高效的设计\n\n*   3.08 亿参数模型由约 1 亿模型参数和 2 亿嵌入参数组成，专为性能和最小资源消耗而设计。\n*   利用 Matryoshka 表示学习 (MRL) 提供多种嵌入尺寸（768、512、256 或 128 维度），兼顾质量、速度和存储成本。\n*   在 EdgeTPU 上，256 个输入令牌的嵌入推理时间小于 15 毫秒，实现实时响应。\n*   通过量化感知训练 (QAT)，显著降低 RAM 使用量至 200MB 以下，同时保持模型质量。\n\n### 离线优先的设计理念\n\n*   赋能开发者构建设备端、灵活且注重隐私的应用，直接在设备硬件上生成文档嵌入，确保敏感用户数据安全。\n*   使用与 Gemma 3n 相同的分词器进行文本处理，减少 RAG 应用的内存占用。\n\n### 新的解锁能力\n\n*   无需互联网连接即可同时搜索个人文件、文本、电子邮件和通知。\n*   通过与 Gemma 3n 结合，实现个性化、行业特定和离线启用的聊天机器人。\n*   分类用户查询以进行相关函数调用，帮助移动代理理解。\n*   支持针对特定领域、任务或语言进行微调。\n\n### 如何选择合适的嵌入模型\n\n*   **设备端、离线用例**：EmbeddingGemma 是最佳选择，针对隐私、速度和效率进行了优化。\n*   **大多数大规模、服务器端应用**：通过 Gemini API 探索最先进的 Gemini Embedding 模型，以获得最高质量和最大性能。\n\n### 立即开始使用 EmbeddingGemma\n\n*   模型权重可在 Hugging Face、Kaggle 和 Vertex AI 上获取。\n*   提供详细文档、推理和微调指南，以及 Gemma Cookbook 中的快速入门 RAG 示例。\n*   支持 transformers.js, MLX, llama.cpp, LiteRT, Ollama, LMStudio, Weaviate 等流行设备端 AI 工具。",
-      "shortSummary": "Google DeepMind 发布了 EmbeddingGemma，这是一款同类最佳的开源嵌入模型，专为设备端 AI 设计。它拥有 3.08 亿参数，高效、多语言，能在离线状态下运行，并支持 RAG 和语义搜索。EmbeddingGemma 性能卓越，可与更大模型媲美，且内存占用极低（<200MB RAM），提供灵活的嵌入尺寸。它确保数据隐私，并已集成到多种流行工具中，为移动优先的 AI 应用提供了强大支持。",
-      "translated_title": "介绍 EmbeddingGemma：用于设备端嵌入的最佳开源模型",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EmbeddingGemma_Chart01_RD3-V01.original.png",
-          "alt": "MTEB Score",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/EmbeddingGemma_Chart02_RD3-V01.original.png",
-          "alt": "MTEB Multilingual v2",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Introducing EmbeddingGemma: a new embedding model designed for efficient on-device AI applications from Google. This open model is the highest-ranking text-only multilingual embedding model under 500M parameters on the MTEB benchmark, enabling powerful features like RAG and semantic search directly on mobile devices without an internet connection."
     }
   ],
-  "lastUpdated": "2025-09-23T10:29:01.548Z"
+  "lastUpdated": "2025-09-26T10:32:09.038Z"
 }
