@@ -5,6 +5,19 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "数千份印度银行转账记录在网上被发现 (原标题: Thousands of Indian bank transfer records found online)",
+      "link": "https://techcrunch.com/2025/09/25/thousands-of-indian-bank-transfer-records-found-online/",
+      "pubDate": "Fri, 26 Sep 2025 03:00:00 +0000",
+      "isoDate": "2025-09-26T03:00:00.000Z",
+      "creator": "Jagmeet Singh, Zack Whittaker",
+      "summary": "## 印度银行转账记录泄露事件概述\n\n### 事件发现与范围\n*   **发现者与时间**：网络安全公司UpGuard的研究人员在8月下旬发现了一个未受保护的云服务器数据泄露事件。\n*   **泄露源**：该服务器托管在亚马逊，公开可访问，包含273,000份与印度客户银行转账相关的PDF文件。\n*   **泄露内容**：这些文件是用于通过国家自动清算所（NACH）系统处理的已完成交易表格。NACH是印度银行用于处理工资、贷款还款和公用事业支付等大批量定期交易的集中系统。\n*   **敏感信息**：泄露的数据包含了账户号码、交易金额以及个人联系方式等敏感信息。\n*   **涉及机构**：据研究人员透露，这些数据与至少38家不同的银行和金融机构有关。\n*   **潜在原因**：数据被公开暴露的原因尚不清楚，但此类安全漏洞通常是由于配置错误和人为失误造成的。\n\n### 涉及的主要机构\n*   **Aye Finance**：在UpGuard分析的55,000份样本文件中，超过一半提到了印度贷款机构Aye Finance，该公司去年曾申请1.71亿美元的IPO。\n*   **印度国家银行**：印度国有银行印度国家银行（State Bank of India）是样本文件中提及频率第二高的机构。\n\n### 发现后的处理与责任推诿\n*   **UpGuard的通知行动**：\n    *   UpGuard研究人员在发现数据泄露后，通过公司、客户服务和投诉邮箱地址通知了Aye Finance。\n    *   研究人员还提醒了负责管理NACH的政府机构——印度国家支付公司（NPCI）。\n*   **数据持续暴露**：然而，到9月初，数据仍然处于暴露状态，并且每天有数千份文件被添加到该服务器。\n*   **数据被保护**：UpGuard随后通知了印度的计算机应急响应小组（CERT-In）。不久之后，暴露的数据被保护起来。\n*   **无人承担责任**：尽管数据已被保护，但似乎没有机构愿意为此次安全漏洞承担责任。\n    *   **NPCI的回应**：NPCI发言人Ankur Dahiya回应TechCrunch称，泄露的数据并非来自其系统。\n    *   **其他机构的回应**：Aye Finance的联合创始人兼首席执行官Sanjay Sharma以及印度国家银行均未回应TechCrunch的置评请求。\n\n### 总结\n此次事件揭示了印度金融数据安全面临的挑战，尽管数据最终被保护，但相关机构在责任认定上的推诿，使得数据泄露的根本原因和后续问责机制仍不明朗。",
+      "shortSummary": "网络安全公司UpGuard发现一个未受保护的云服务器泄露了数千份印度银行转账记录。这些记录包含账户号码、交易金额和联系方式等敏感信息，涉及至少38家银行，主要与Aye Finance和印度国家银行有关。尽管UpGuard通知了相关机构并最终促使数据被保护，但印度国家支付公司、Aye Finance和印度国家银行均否认责任，无人承认此次重大数据泄露事件。",
+      "translated_title": "数千份印度银行转账记录在网上被发现",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Security researchers found the exposed Indian bank transfer records and the data was eventually secured, but nobody wants to take responsibility for the security lapse."
+    },
+    {
       "title": "亚伦·列维在2025年TechCrunch Disrupt大会上谈企业软件的长期发展 (原标题: Aaron Levie on building for the long game in enterprise software at TechCrunch Disrupt 2025)",
       "link": "https://techcrunch.com/2025/09/25/inside-the-box-aaron-levie-on-reinvention-at-techcrunch-disrupt-2025/",
       "pubDate": "Thu, 25 Sep 2025 23:00:00 +0000",
@@ -382,27 +395,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Doorstep integrates into existing delivery apps and then, using phone sensors, tracks when a driver has entered a building, gone up an elevator, and made it to the desired doorstep.  "
-    },
-    {
-      "title": "Meta在全球范围推出Facebook和Messenger青少年账户 (原标题: Meta rolls out Teen Accounts on Facebook and Messenger globally)",
-      "link": "https://techcrunch.com/2025/09/25/meta-rolls-out-teen-accounts-on-facebook-and-messenger-globally/",
-      "pubDate": "Thu, 25 Sep 2025 14:33:24 +0000",
-      "isoDate": "2025-09-25T14:33:24.000Z",
-      "creator": "Aisha Malik",
-      "summary": "Meta公司于周四宣布，其青少年账户功能现已在全球范围内的Facebook和Messenger上推出，此前该功能已在美国、英国、澳大利亚和加拿大上线。此举旨在为年轻用户提供内置保护和家长控制，应对此前美国立法者对社交网络未能充分保护青少年的质疑。\n\n### 青少年账户的主要特点和保护措施\n\n*   **自动保护**：青少年账户会自动限制不当内容和不必要的联系。\n*   **家长许可**：16岁以下青少年更改任何设置都需要获得父母的许可。\n*   **消息限制**：青少年将只收到他们关注或之前曾互发消息的人发送的消息。\n*   **故事可见性**：只有青少年的朋友才能看到并回复他们的故事。\n*   **互动限制**：标签、提及和评论也将仅限于他们关注的人或他们的朋友。\n*   **使用提醒**：青少年在使用社交网络一小时后会收到离开提醒。\n*   **夜间模式**：青少年账户将自动在夜间启用“安静模式”。\n\n### 争议与Meta的回应\n\n尽管Meta推出了保护措施，但一项由Meta举报人领导的研究发现，儿童和青少年在Instagram上仍然面临在线伤害的风险，包括接触到自杀、自残帖子以及描述贬低性行为的帖子。Meta对此项研究结果提出异议，并表示其保护措施已有效减少了青少年接触有害内容的可能性。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/09/Screenshot-2025-09-25-at-10.03.53AM.png?w=680)\n\n### 学校合作计划\n\nMeta还宣布正式启动“学校合作计划”（School Partnership Program），该计划允许教育工作者直接向Instagram报告安全问题，如欺凌，以便更快地进行审查和移除。该计划已于今年早些时候进行试点，并获得了参与学校的积极反馈。目前，美国所有初中和高中都可以注册加入该计划，从而获得优先报告权和教育资源。参与计划的学校将在其Instagram资料页上显示一个横幅，告知家长和学生他们是Instagram的官方合作伙伴。\n\n### 更广泛的意义\n\n此次公告标志着Meta在解决社交媒体引发的青少年心理健康问题方面迈出了最新一步。这些问题已引起美国卫生局局长和多个州的关注，一些州甚至已开始限制青少年在未经父母同意的情况下使用社交媒体。",
-      "shortSummary": "Meta宣布在全球范围内的Facebook和Messenger上推出青少年账户，此前已在Instagram上线。此举旨在为16岁以下青少年提供内置保护和家长控制，限制不当内容和不必要的联系，并设置使用时间提醒和夜间“安静模式”。同时，Meta还推出了学校合作计划，允许美国教育工作者直接向Instagram报告安全问题。这些措施是Meta为应对社交媒体对青少年心理健康影响所做的最新努力，尽管有研究指出青少年仍面临在线风险。",
-      "translated_title": "Meta在全球范围推出Facebook和Messenger青少年账户",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/09/Screenshot-2025-09-25-at-10.03.53AM.png?w=680",
-          "alt": "",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Teen Accounts first rolled out to Instagram a year ago after Meta and other popular social networks were grilled by U.S. lawmakers for not doing enough to protect teens on their services."
     }
   ],
-  "lastUpdated": "2025-09-26T01:31:23.837Z"
+  "lastUpdated": "2025-09-26T06:30:17.939Z"
 }
