@@ -45,6 +45,19 @@
       "content": "No AI/Agents without APIs!Many users interact with generative AI daily without realizing the crucial..."
     },
     {
+      "title": "你的AI现在是本地专家：通过Google地图进行基础信息关联现已全面推出 (原标题: Your AI is now a local expert: Grounding with Google Maps is now GA)",
+      "link": "https://developers.googleblog.com/en/your-ai-is-now-a-local-expert-grounding-with-google-maps-is-now-ga/",
+      "pubDate": "Thu, 25 Sep 2025 16:00:00 GMT",
+      "isoDate": "2025-09-25T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "## Vertex AI中Google地图基础信息关联功能全面推出\n\nGoogle于2025年9月26日宣布，Vertex AI中的“通过Google地图进行基础信息关联”（Grounding with Google Maps）功能现已全面推出（GA）。此功能旨在帮助开发者构建与Google地图实时、最新信息连接的生成式AI应用。\n\n### 重要性与定义\n\n*   **重要性：** 开发者在构建生成式AI应用时面临的一个关键挑战是确保模型输出的事实性和可靠性，尤其是在人们依赖这些信息做出实际决策时。此功能旨在解决这一问题。\n*   **“基础信息关联”（Grounding）定义：** 这是一个使大型语言模型（LLM）能够利用来自Google或客户自身数据的可验证信息源的过程。\n\n### 功能亮点与优势\n\n通过Google地图进行基础信息关联，开发者现在可以构建基于全球超过2.5亿商家和地点地理空间上下文的AI应用，这些信息来自Google地图及其活跃贡献者社区分享的本地洞察。\n\n该功能以多种方式帮助开发者构建事实可靠的生成式AI输出，提供更优质、更个性化的结果：\n\n*   **提供及时细节：** AI应用可访问每日更新的Google地图信息，从而向用户提供餐厅当前营业时间或商店是否暂时关闭等及时细节。\n*   **处理主观问题：** 结合Google地图用户评论的上下文，使用户能够轻松询问关于地点的主观问题，例如“这家咖啡馆的氛围如何？”或“这里适合安静的晚餐吗？”（*此功能目前仅在美国和印度可用。*）\n*   **加速商业发现：** 将Google地图数据与您的业务数据结合。例如，房地产公司可以为不同客户档案创建物业摘要，为有小孩的家庭突出附近的公园和学校，而为年轻专业人士则可能侧重于当地夜生活和餐厅。\n*   **提供全面查询结果：** 结合Google搜索和Google地图的基础信息关联功能。当用户询问“今晚公园里的音乐会我们可以带孩子去吗？”时，Gemini可以动态选择使用Google搜索查找表演者和场地政策，并使用Google地图提供儿童友好度信息以及附近建议。\n\n### 跨行业应用\n\nGoogle地图基础信息关联功能可在多个行业中发挥作用，早期采用的领域包括：\n\n*   **旅游和观光：** 帮助旅行者获得酒店、餐厅和景点推荐，涵盖从决定住宿地点、行程规划到当地探索的整个旅行体验。\n    *   万豪国际执行副总裁兼首席客户官Peggy Roe表示，这有助于提供真实的优质服务，深化与客人的互动。\n*   **房地产：** 为潜在买家提供关于社区的详细信息，包括定制房源摘要和类似社区的建议。\n    *   Compass工程副总裁Yotam Lemberger指出，这将通过生成式AI改善购房和销售体验，提供更个性化的位置洞察。\n*   **设备：** 个人助理可帮助用户发现附近景点并回答关于社区的问题。\n*   **社交媒体：** 帮助朋友共同研究活动和餐饮，包括集体探索区域、提供附近餐厅建议或帮助用户了解当地夜生活。\n\n### 如何开始\n\nVertex AI中的Google地图基础信息关联功能现已与Gemini一同提供，并包含一个便于实验的层级（Gemini Pro 10K提示）。要了解更多信息并开始使用，请访问相关文档、查看交互式演示，并访问Google Cloud Console中的Vertex AI Studio。开发者只需将Google Maps工具添加到Gemini API即可实现Google地图基础信息关联。",
+      "shortSummary": "Google宣布Vertex AI中的“通过Google地图进行基础信息关联”功能现已全面推出。此功能使开发者能够构建与Google地图实时、最新信息连接的生成式AI应用，确保模型输出的事实性和可靠性。它允许AI利用全球超过2.5亿商家和地点的地理空间上下文，提供个性化、及时的信息，并支持旅游、房地产、设备和社交媒体等多个行业。开发者可通过Gemini API轻松集成此功能，并享有免费试用层级。",
+      "translated_title": "你的AI现在是本地专家：通过Google地图进行基础信息关联现已全面推出",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "We are excited to announce Grounding with Google Maps in Vertex AI is now Generally Available (GA). ..."
+    },
+    {
       "title": "持续推出我们的最新模型，发布改进版 Gemini 2.5 Flash 和 Flash-Lite (原标题: Continuing to bring you our latest models, with an improved Gemini 2.5 Flash and Flash-Lite release)",
       "link": "https://developers.googleblog.com/en/continuing-to-bring-you-our-latest-models-with-an-improved-gemini-2-5-flash-and-flash-lite-release/",
       "pubDate": "Wed, 24 Sep 2025 16:00:00 GMT",
@@ -241,20 +254,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "The recent 0.2.0 release of Google’s Agent Development Kit (ADK) for Java adds an integration with t..."
-    },
-    {
-      "title": "Gemini 批量 API 现已支持嵌入和 OpenAI 兼容性 (原标题: Gemini Batch API now supports Embeddings and OpenAI Compatibility)",
-      "link": "https://developers.googleblog.com/en/gemini-batch-api-now-supports-embeddings-and-openai-compatibility/",
-      "pubDate": "Tue, 09 Sep 2025 16:00:00 GMT",
-      "isoDate": "2025-09-09T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Gemini 批量 API 新功能：支持嵌入和 OpenAI 兼容性\n\nGoogle Cloud 于 2025 年 9 月 10 日宣布，对 Gemini 批量 API 进行重大扩展，新增了两项关键功能：\n\n1.  **支持新推出的 Gemini 嵌入模型。**\n2.  **提供 OpenAI SDK 兼容性，方便开发者提交和处理批量请求。**\n\n### Gemini 批量 API 概述\n\nGemini 批量 API 最初旨在实现异步处理，特别适用于高吞吐量和对延迟容忍的用例。其核心优势在于：\n\n*   **成本效益：** 处理费率比实时 API 降低 50%。\n*   **效率提升：** 能够处理大规模数据请求。\n\n### 批量 API 嵌入支持\n\n新推出的 Gemini 嵌入模型已广泛应用于生产部署。现在，通过批量 API 使用该模型，开发者可以获得更多优势：\n\n*   **更高的速率限制。**\n*   **更低的价格：** 每 100 万输入 token 仅需 $0.075，价格减半。\n*   **解锁新用例：** 特别适用于对成本敏感、对延迟容忍或需要异步处理的场景。\n\n**使用示例 (Python 代码):**\n\n文章提供了使用 `google.genai` 客户端进行批量嵌入的详细代码示例，包括：\n\n1.  创建包含请求的 JSONL 文件。\n2.  通过 `client.files.upload` 上传请求文件。\n3.  使用 `client.batches.create_embeddings` 创建批量嵌入作业。\n4.  等待作业完成并下载结果。\n\n### 批量 API 的 OpenAI 兼容性\n\n对于已经使用 OpenAI SDK 兼容层的开发者，切换到 Gemini 批量 API 变得异常简单，只需更新少量代码即可：\n\n*   **便捷性：** 开发者可以通过指定 Gemini API 密钥和特定的 `base_url` (`https://generativelanguage.googleapis.com/v1beta/openai/`)，继续使用 OpenAI SDK 来提交和管理批量请求。\n\n**使用示例 (Python 代码):**\n\n文章展示了如何使用 `openai` 客户端创建批量作业，包括：\n\n1.  上传符合 OpenAI 批量输入格式的 JSONL 文件。\n2.  使用 `openai_client.batches.create` 方法创建批量作业，指定 `input_file_id`、`endpoint` 和 `completion_window`。\n3.  轮询作业状态，并在完成后下载结果。\n\n### 未来展望\n\nGoogle 表示将持续扩展其批量处理服务，以进一步优化 Gemini API 的使用成本，鼓励开发者关注后续更新。",
-      "shortSummary": "Gemini 批量 API 现已扩展，支持新推出的 Gemini 嵌入模型和 OpenAI SDK 兼容性。此更新允许开发者以更低的成本（费率降低 50%，嵌入模型价格减半）和更高的速率限制，异步处理大规模、对延迟不敏感的任务。通过简单的代码修改，使用 OpenAI SDK 的开发者也能轻松切换。Google 将继续优化批量服务以降低成本。",
-      "translated_title": "Gemini 批量 API 现已支持嵌入和 OpenAI 兼容性",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Batch API now supports Embeddings and OpenAI CompatibilityToday we are extending the Gemini Batch AP..."
     }
   ],
-  "lastUpdated": "2025-09-26T10:32:09.038Z"
+  "lastUpdated": "2025-09-28T10:25:44.801Z"
 }
