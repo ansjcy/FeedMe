@@ -5,6 +5,81 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "规范驱动开发：在使用AI构建时将Markdown作为编程语言 (原标题: Spec-driven development: Using Markdown as a programming language when building with AI)",
+      "link": "https://github.blog/ai-and-ml/generative-ai/spec-driven-development-using-markdown-as-a-programming-language-when-building-with-ai/",
+      "pubDate": "Tue, 30 Sep 2025 19:07:46 +0000",
+      "isoDate": "2025-09-30T19:07:46.000Z",
+      "creator": "Tomas Vesely",
+      "summary": "# 规范驱动开发：使用Markdown作为AI编程语言\n\n## 引言：AI编码代理的挑战\n\n传统的AI编码代理（如GitHub Copilot）工作流程通常是迭代式的：“编写应用A实现X”，“添加功能Y”，“修复bug Z”。然而，这种方式容易导致代理丢失应用目的或之前的决策上下文，表现为重复提问或提出与先前指令矛盾的建议。尽管一些代理支持自定义指令文件（如`copilot-instructions.md`），但作者发现，在编码过程中常常忘记更新这些文件，且在聊天提示和指令文件中重复相同信息显得多余。\n\n## 核心理念：Markdown驱动的规范开发\n\n作者提出了一种新的方法：将整个应用“编写”在Markdown指令文件中。在他的最新项目——GitHub Brain MCP Server中，作者尝试将应用代码完全用Markdown编写，然后让GitHub Copilot将其编译成实际的Go代码。通过这种方式，他很少直接编辑或查看Go代码。这种方法理论上适用于任何AI编码代理和编程语言，本文以VS Code、GitHub Copilot和Go为例进行阐述。\n\n## 关键文件与工作流程\n\n该工作流程涉及四个核心文件：\n\n*   `.github/prompts/compile.prompt.md`：AI编码代理的编译提示文件。\n*   `main.go`：由AI代理生成的实际Go代码。\n*   `main.md`：应用的Markdown格式规范文件，是应用的“源代码”。\n*   `README.md`：面向用户的文档。\n\n**高层工作流程：** 编辑`README.md`或`main.md`进行开发，调用`compile.prompt.md`让AI代理生成`main.go`，然后像普通Go应用一样构建和运行`main.go`。\n\n### `README.md`：用户文档\n\n`README.md`提供清晰的用户安装和使用说明。对于GitHub Brain MCP Server这个命令行工具，它包含了`pull`和`mcp`等命令的用法和参数说明。例如：\n\n```markdown\n# GitHub Brain MCP Server\n**GitHub Brain** 是一个实验性的MCP服务器，用于总结GitHub讨论、问题和拉取请求。\n\n## 用法\n```sh\ngo run main.go <command> [<args>]\n```\n\n**工作流程：**\n1.  使用 `pull` 命令填充本地数据库。\n2.  使用 `mcp` 命令启动MCP服务器。\n\n### `pull`\n使用GitHub数据填充本地数据库。\n示例：\n```sh\ngo run main.go pull -o my-org\n```\n参数：\n- `-t`: 您的GitHub个人访问令牌。**必需。**\n- `-o`: 要从中拉取数据的GitHub组织。**必需。**\n- `-db`: SQLite数据库目录路径。默认值：当前目录中的 `db` 文件夹。\n\n### `mcp`\n使用本地数据库启动MCP服务器。\n```\n\n### `main.md`：AI编码代理规范\n\n`main.md`是应用的实际“源代码”，当需要添加功能或修复bug时，作者会编辑此文件。它将`README.md`中的用户文档嵌入到规范中，确保文档和实现同步。例如：\n\n```markdown\n# GitHub Brain MCP Server\nAI编码代理规范。面向用户的文档在 [README.md](README.md) 中。\n\n## CLI\n实现 [Usage](README.md#usage) 部分的CLI。遵循精确的参数/变量名称。仅支持 `pull` 和 `mcp` 命令。\n\n## pull\n- 将CLI参数和环境变量解析为 `Config` 结构体：\n  - `Organization`：组织名称（必需）\n  - `GithubToken`：GitHub API令牌（必需）\n  - `DBDir`：SQLite数据库路径（默认：`./db`）\n- 始终使用 `Config` 结构体，避免多次读取环境变量\n- 拉取项：仓库、讨论、问题、拉取请求、团队\n- 使用 `log/slog` 自定义日志记录器，用于控制台输出中带有时间戳的最后5条日志消息\n```\n\n`main.md`中还包含具体的逻辑描述，如查询GitHub Discussions的GraphQL片段、处理数据更新的逻辑，以及数据库模式定义：\n\n```markdown\n### Discussions\n- 查询每个 `has_discussions_enabled: true` 仓库的讨论\n- 在拉取第一页之前，从数据库记录最近的仓库讨论 `updated_at` 时间戳\n```graphql\n{\n  repository(owner: \"<organization>\", name: \"<repository>\") {\n    discussions(first: 100, orderBy: { field: UPDATED_AT, direction: DESC }) {\n      nodes {\n        url\n        title\n        body\n        createdAt\n        updatedAt\n        author {\n          login\n        }\n      }\n    }\n  }\n}\n```\n- 如果仓库不存在，则从数据库中删除该仓库及其所有相关项并继续\n- 按最近的 `updatedAt` 排序查询讨论\n- 当遇到 `updatedAt` 早于记录时间戳的讨论时停止拉取\n- 通过主键 `url` 保存或更新\n- 保留讨论的Markdown正文\n\n## Database\nSQLite数据库位于 `{Config.DbDir}/{Config.Organization}.db`（如果需要则创建文件夹）。避免事务。立即保存每个GraphQL项。\n\n### Tables\n#### table:repositories\n- 主键：`name`\n- 索引：`updated_at`\n- `name`：仓库名称（例如，`repo`），不带组织前缀\n- `has_discussions_enabled`：布尔值，指示仓库是否启用了讨论功能\n- `has_issues_enabled`：布尔值，指示仓库是否启用了问题功能\n- `updated_at`：上次更新时间戳\n```\n\n### `compile.prompt.md`：AI编码代理提示\n\n`compile.prompt.md`使用GitHub Copilot的提示文件格式，指示代理将`main.md`编译为`main.go`。其内容简洁，将大部分信息委托给`main.md`：\n\n```markdown\n---\nmode: agent\n---\n- 更新应用以遵循 [规范](../../main.md)\n- 使用VS Code任务构建代码。避免要求我手动运行 `go build` 或 `go test` 命令。\n- 获取每个使用的库的GitHub主页，以获取文档和示例。\n```\n\n## 整合工作流程\n\n开发循环直接而高效：\n\n1.  编辑`main.md`或`README.md`中的规范。\n2.  请求AI编码代理将其编译为Go代码（在GitHub Copilot for VS Code中，使用`/`命令调用提示）。\n    ![在VS Code中使用GitHub Copilot的/命令调用AI编码代理提示的截图。](https://github.blog/wp-content/uploads/2025/09/image-2.png?resize=1024%2C516)\n3.  运行并测试应用。\n4.  如果出现问题，更新规范并重复。\n\n对于较小的规范，GitHub Copilot通常会自动捕获更改。随着规范的增长，可以通过添加“focus on <the-change>”来引导代理。\n\n![在VS Code中演示如何使用/命令提示GitHub Copilot专注于特定更改的截图。](https://github.blog/wp-content/uploads/2025/09/image-2_87448b.png?resize=1770%2C2836)\n\n## Markdown中的编码辅助\n\n直接在`main.md`中编码有时比直接编写Go代码更具挑战性，因为它要求清晰地描述所需功能。幸运的是，GitHub Copilot可以协助编写Markdown规范本身，例如，帮助为MCP工具添加分页逻辑，并推荐适当的分页样式和参数名称。\n\n![在Markdown规范中，GitHub Copilot在VS Code中为MCP工具推荐分页样式和参数名称的截图。](https://github.blog/wp-content/uploads/2025/09/image-4.png?resize=1760%2C2672)\n\n## Markdown规范的Linting\n\n与任何代码一样，`main.md`也可能变得混乱。为了解决这个问题，可以使用另一个提示文件`lint.prompt.md`来请求Copilot清理规范：\n\n```markdown\n---\nmode: agent\n---\n- 优化 [应用规范](../../main.md) 以提高清晰度和简洁性\n- 将英语视为一种编程语言\n- 最小化同义词的数量 - 即 pull/get/fetch。坚持使用一个术语。\n- 删除重复内容\n- 保留所有重要细节\n- 不要修改Go代码。只优化Markdown文件。\n- 不要修改此提示本身。\n```\n\nAI编码代理会根据此提示对`main.md`进行Linting，如果结果满意，再使用`compile.prompt.md`将其编译为Go代码。\n\n![GitHub Copilot在VS Code中清理和Linting Markdown规范以提高清晰度和简洁性的截图。](https://github.blog/wp-content/uploads/2025/09/image-3_bc6205.png?resize=1742%2C2416)\n\n## 总结与展望\n\n经过几个月的使用，作者观察到：\n\n*   该工作流程有效，并随着Copilot的代理更新而不断改进。\n*   随着`main.go`代码量的增长，编译速度会变慢。下一步计划是修改规范，将编译后的代码拆分为多个模块。\n*   测试仍然至关重要。规范描述了预期行为，但测试验证了它。\n*   未来尝试：完全丢弃Go代码，并从头开始用另一种语言重新生成应用，以验证新代码的即时可用性。\n\n作者鼓励读者尝试这些实验性工作流程，并对该领域的快速发展表示乐观。",
+      "shortSummary": "本文介绍了一种“规范驱动开发”新范式，利用Markdown作为AI编码代理的“编程语言”。开发者在Markdown文件（如`main.md`）中详细定义应用逻辑、CLI和数据库架构，然后由AI代理（如GitHub Copilot）将其编译成实际代码（如Go）。这种方法解决了AI代理上下文丢失问题，确保文档与实现同步，并允许AI协助编写和优化规范。该工作流程提高了开发效率，尽管大型项目可能面临编译速度挑战，但其潜力巨大，尤其是在跨语言代码生成方面。",
+      "translated_title": "规范驱动开发：在使用AI构建时将Markdown作为编程语言",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/09/image-2.png?resize=1024%2C516",
+          "alt": "Screenshot showing the use of the / command in GitHub Copilot for VS Code to invoke the AI coding agent prompt.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/09/image-2_87448b.png?resize=1770%2C2836",
+          "alt": "Screenshot demonstrating how to prompt GitHub Copilot in VS Code to focus on a specific change using the / command.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/09/image-4.png?resize=1760%2C2672",
+          "alt": "Screenshot showing GitHub Copilot in VS Code recommending pagination style and parameter names for MCP tools in the Markdown specification.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/09/image-3_bc6205.png?resize=1742%2C2416",
+          "alt": "Screenshot of GitHub Copilot in VS Code cleaning up and linting the Markdown specification for improved clarity and conciseness.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/448809?v=4&s=200",
+          "alt": "Tomas Vesely",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>I coded my latest app entirely in Markdown and let GitHub Copilot compile it into Go. This resulted in cleaner specs, faster iteration, and no more context loss.  ✨</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/spec-driven-development-using-markdown-as-a-programming-language-when-building-with-ai/\">Spec-driven development: Using Markdown as a programming language when building with AI</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "CodeQL从零到英雄第五部分：调试查询 (原标题: CodeQL zero to hero part 5: Debugging queries)",
+      "link": "https://github.blog/security/vulnerability-research/codeql-zero-to-hero-part-5-debugging-queries/",
+      "pubDate": "Mon, 29 Sep 2025 15:00:00 +0000",
+      "isoDate": "2025-09-29T15:00:00.000Z",
+      "creator": "Sylwia Budzynska",
+      "summary": "## CodeQL从零到英雄第五部分：调试查询\n\n本文是“CodeQL从零到英雄”系列博客的第五部分，专注于讲解如何调试和修复CodeQL查询。由于CodeQL是一种类似Prolog的语言，其评估模型与Python等主流语言不同，传统的调试方法（如单步执行、GDB或打印语句）不适用。幸运的是，CodeQL提供了一系列内置功能来帮助诊断和解决查询问题。\n\n### 调试背景：Gradio框架中的不安全反序列化漏洞示例\n文章以一个由用户提出的Gradio框架中不安全反序列化漏洞为例进行讲解。该漏洞涉及用户通过`gr.File`上传文件，然后应用程序使用`pickle.load`加载该文件内容，导致不安全的反序列化。攻击者可以上传恶意文件，然后应用程序加载它。\n\n**最小代码示例：**\n```python\nimport pickle\nimport gradio as gr\n\ndef load_config_from_file(config_file):\n    \"\"\"Load settings from a UUID.pkl file.\"\"\"\n    try:\n        with open(config_file.name, 'rb') as f:\n            settings = pickle.load(f)\n        return settings\n    except Exception as e:\n        return f\"Error loading configuration: {str(e)}\"\n\nwith gr.Blocks(title=\"Configuration Loader\") as demo:\n    config_file_input = gr.File(label=\"Load Config File\")\n    load_config_button = gr.Button(\"Load Existing Config From File\", variant=\"primary\")\n    config_status = gr.Textbox(label=\"Status\")\n\n    load_config_button.click(\n        fn=load_config_from_file,\n        inputs=[config_file_input],\n        outputs=[config_status]\n    )\n    demo.launch()\n```\n\n一个初步的CodeQL污点追踪查询未能检测到此漏洞，这促使了对查询进行调试的需求。\n\n### CodeQL查询调试步骤\n\n以下是解决CodeQL查询问题的建议步骤：\n\n1.  **创建最小CodeQL数据库**\n    *   **目的：** 减少结果数量，便于聚焦调试。\n    *   **方法：** 在包含最小代码示例的目录中运行 `codeql database create codeql-zth5 --language=python`。\n\n2.  **简化查询并快速评估**\n    *   **目的：** 验证`isSource`和`isSink`谓词是否正确识别了源和汇点。\n    *   **问题：** 初始`isSink`谓词将整个`pickle.load(f)`调用标记为汇点，而非其第一个参数。\n    *   **修正`isSink`谓词：**\n        ```ql\n        predicate isSink(DataFlow::Node sink) {\n            exists(Decoding d | d.mayExecuteInput() | sink = d.getAnInput())\n        }\n        ```\n        此修正确保汇点是可执行反序列化（如`pickle.load`）的输入参数。快速评估后，源和汇点均被正确识别。\n\n3.  **抽象语法树 (AST) 查看器**\n    *   **目的：** 当识别源或汇点节点遇到困难时，通过查看代码的AST来确定特定代码元素的CodeQL类型。\n    *   **方法：** 右键点击感兴趣的代码元素，选择“CodeQL: View AST”。\n\n4.  **`getAQlClass` 谓词**\n    *   **目的：** 识别代码元素的类型。通常建议为此创建一个单独的查询。\n    *   **示例查询：** 查询`gradio.Button.click`函数参数的类型。\n        ```ql\n        import python\n        import semmle.python.ApiGraphs\n        import semmle.python.Concepts\n        import semmle.python.dataflow.new.RemoteFlowSources\n\n        from DataFlow::Node node\n        where node = API::moduleImport(\"gradio\").getMember(\"Button\").getReturn()\n                               .getMember(\"click\").getACall().getParameter(0, \"fn\").getParameter(_).asSource()\n        select node, node.getAQlClass()\n        ```\n    *   **结果：** 可以看到`ExprNode`和`ParameterNode`等类型，有助于编写更精确的查询。\n\n5.  **部分路径图：正向追踪 (Partial Path Graph: Forwards)**\n    *   **目的：** 确定污点流停止传播的位置。这对于大型代码库尤其有用，可以通过限制源文件来减少结果。\n    *   **方法：** 使用`PartialFlow::FlowExplorationFwd`模块和`PartialFlow::partialFlow`谓词，并设置`explorationLimit()`来控制分析深度。\n    *   **观察：** 污点流在`with open(config_file.name, 'rb') as f:`行中的`config_file`处停止，未能传播到`config_file.name`属性。\n    *   **原因：** 默认情况下，CodeQL不会将污点传播到对象的所有属性。\n\n6.  **污点传播步骤 (Taint Step)**\n    *   **目的：** 帮助污点从一个对象传播到其特定属性（例如，从`config_file`传播到`config_file.name`）。\n    *   **方法：** 在污点追踪配置中添加`isAdditionalFlowStep`谓词。\n    *   **示例：**\n        ```ql\n        predicate isAdditionalFlowStep(DataFlow::Node nodeFrom, DataFlow::Node nodeTo) {\n            exists(DataFlow::AttrRead attr | attr.accesses(nodeFrom, \"name\") and nodeTo = attr )\n        }\n        ```\n        这个步骤允许CodeQL将污点传播到任何对`name`属性的读取操作。虽然这可能在生产查询中引入误报，但在安全研究和调试中非常有用。\n\n通过以上步骤，可以系统地诊断和解决CodeQL查询中遇到的问题，从而成功检测到预期的漏洞。",
+      "shortSummary": "本文是CodeQL系列教程的第五部分，重点介绍如何调试CodeQL查询。由于CodeQL的Prolog特性，传统调试方法无效。文章通过一个Gradio不安全反序列化漏洞示例，详细阐述了调试步骤：首先创建最小数据库，然后快速评估并修正源/汇点定义。接着利用AST查看器和`getAQlClass`识别代码元素类型。最后，使用部分路径图定位污点流中断点，并通过添加`isAdditionalFlowStep`谓词来解决污点未能传播到对象属性的问题，从而成功检测漏洞。",
+      "translated_title": "CodeQL从零到英雄第五部分：调试查询",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Learn to debug and fix your CodeQL queries.</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/codeql-zero-to-hero-part-5-debugging-queries/\">CodeQL zero to hero part 5: Debugging queries</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub 如何保护开发者免受版权执法过度干预 (原标题: How GitHub protects developers from copyright enforcement overreach)",
       "link": "https://github.blog/news-insights/policy-news-and-insights/how-github-protects-developers-from-copyright-enforcement-overreach/",
       "pubDate": "Fri, 26 Sep 2025 17:06:17 +0000",
@@ -90,7 +165,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "<p>For this year’s Cybersecurity Awareness Month, GitHub’s Bug Bounty team is excited to offer some additional incentives to security researchers!</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/kicking-off-cybersecurity-awareness-month-2025-researcher-spotlights-and-enhanced-incentives/\">Kicking off Cybersecurity Awareness Month 2025: Researcher Spotlights and Enhanced Incentives</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+      "content": "<p>For this year’s Cybersecurity Awareness Month, GitHub’s Bug Bounty team is excited to offer some additional incentives to security researchers!</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/kicking-off-cybersecurity-awareness-month-2025-researcher-spotlights-and-enhanced-incentives/\">Kicking off Cybersecurity Awareness Month 2025: Researcher spotlights and enhanced incentives</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     },
     {
       "title": "超越浏览器构建：Keeley Hammond谈Electron、开源和维护的未来 (原标题: Building beyond the browser: Keeley Hammond on Electron, open source, and the future of maintainership)",
@@ -391,95 +466,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Our commitment is to empower every developer and stay true to our north star by building an open, secure, and AI-powered platform that defines the future of software development.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/gartner-positions-github-as-a-leader-in-the-2025-magic-quadrant-for-ai-code-assistants-for-the-second-year-in-a-row/\">Gartner positions GitHub as a Leader in the 2025 Magic Quadrant for AI Code Assistants for the second year in a row</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Git 的下一步是什么？20 年后，社区仍在不断前进 (原标题: What’s next for Git? 20 years in, the community is still pushing forward)",
-      "link": "https://github.blog/open-source/whats-next-for-git-20-years-in-the-community-is-still-pushing-forward/",
-      "pubDate": "Mon, 22 Sep 2025 16:33:00 +0000",
-      "isoDate": "2025-09-22T16:33:00.000Z",
-      "creator": "Lee Reilly",
-      "summary": "## Git 20 周年：展望未来发展\n\n今年是 Git 首次提交的 20 周年。自那时起，Git 已成为从周末个人项目到全球最大单体仓库的默认版本控制系统。\n\n![Git 首次提交的截图](https://github.blog/wp-content/uploads/2025/09/git-first-commit.png?resize=1024%2C216)\n\nGit 的演进并未止步于 `git init`。每年，贡献者们都在不断改进 Git 的性能、用户体验和互操作性，同时新的工具和用例也将其推向了未知领域。在首次提交 20 多年后，Git 项目在社区的持续推动下，在性能、新功能和用户体验方面不断进步，持续蓬勃发展。\n\n### Git Merge 2025 聚焦的未来方向\n\nGit Merge 2025 大会将庆祝这一发展势头，并展望 Git 的未来发展方向，主要包括以下几个方面：\n\n*   **核心技术改进：**\n    *   实现更快的合并、新的后端和正确性实验。\n    *   支持 SHA-256 互操作性，以构建更安全的未来。\n*   **用户体验与教育：**\n    *   将二十年 Git 用户体验的经验教训融入更好的客户端。\n    *   通过可视化、模拟和游戏化方式教授 Git。\n*   **新应用场景：**\n    *   赋能令人惊喜的新用例，如本地优先应用、基因组研究和 WASM Git 服务器。\n\n### AI 与 Git 的融合：新工作流与新摩擦\n\n随着 AI 驱动的编码代理生成更多代码，新的问题也随之浮现：这些代理应如何负责任地使用 Git？\n\n*   **Scott Chacon 的分享：** GitHub 和 GitButler 联合创始人 Scott Chacon 将探讨教授 AI 代理良好 Git 习惯的实用策略，包括编写有意义的提交信息、有上下文地修改（amending）、压缩（squashing）和变基（rebasing）。\n*   **挑战与工具：** 他还将深入探讨代码托管平台（forge）管理挑战，展示多个与 Git 相关的 MCP 服务器，并演示他开发的工具，以使 Git 内部的人机协作更加顺畅。\n*   **未来演进：** 最后，Scott 将分享关于 Git 和 MCP 如何演进以更好地支持这些 AI 工作流的构想。\n\n### Git Merge 2025 大会信息\n\n*   鼓励参会者探索完整的 Git Merge 2025 演讲者阵容，并立即注册以参加现场或在线会议。\n\n![Git Merge 2025 所有演讲者和主题的动画 GIF](https://github.blog/wp-content/uploads/2025/09/gif.gif?w=960&resize=960%2C540)\n\n*   Git Merge 2025 大会得到了合作伙伴 Google 和 GitButler 的支持。\n\n本文由 GitHub 开发者关系高级项目经理 Lee Reilly 撰写。",
-      "shortSummary": "Git 迎来 20 周年，社区持续推动其在性能、用户体验和互操作性方面的进步。Git Merge 2025 将探讨 Git 的未来，包括更快的合并、SHA-256 互操作性、改进的客户端以及本地优先应用等新用例。大会还将重点关注 AI 编码代理如何负责任地使用 Git，并探讨人机协作的新策略。Git 项目在社区的努力下蓬勃发展。",
-      "translated_title": "Git 的下一步是什么？20 年后，社区仍在不断前进",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/git-first-commit.png?resize=1024%2C216",
-          "alt": "Screenshot of the first Git commit on GitHub. Commit hash e83c516, authored by Linus Torvalds on April 7, 2005. The commit message reads: “Initial revision of git, the information manager from hell. It shows the commit on the master branch, with tags v2.51.0-rc1 and v0.99, and notes “0 parents.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/gif.gif?w=960&resize=960%2C540",
-          "alt": "Animated GIF showing all speakers and topics at Git Merge 2025.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/121322?v=4&s=200",
-          "alt": "Lee Reilly",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Git Merge 2025 isn’t just about celebrating 20 years of Git - it’s about what comes next. In this post, we’re highlighting some of the talks and speakers shaping Git’s future, from performance wins and new backends to surprising use cases and the impact of AI coding agents.</p>\n<p>The post <a href=\"https://github.blog/open-source/whats-next-for-git-20-years-in-the-community-is-still-pushing-forward/\">What’s next for Git? 20 years in, the community is still pushing forward</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "将GitHub Copilot编程代理集成到工作流中的5种方法 (原标题: 5 ways to integrate GitHub Copilot coding agent into your workflow)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/5-ways-to-integrate-github-copilot-coding-agent-into-your-workflow/",
-      "pubDate": "Thu, 18 Sep 2025 16:00:00 +0000",
-      "isoDate": "2025-09-18T16:00:00.000Z",
-      "creator": "Andrea Griffiths",
-      "summary": "# 将GitHub Copilot编程代理集成到工作流中的5种方法\n\n本文探讨了如何将GitHub Copilot编程代理更深入地集成到开发工作流中，超越其基本功能，充分发挥其潜力。通过以下五种强大的策略，开发者可以更有效地处理技术债务、验证UI变更、安全地进行实验等。\n\n## 1. 利用Agents面板处理技术债务\n技术债务是开发中常见的难题，例如依赖升级、遗留功能标志和小型重构等。这些任务通常枯燥但必要，容易堆积。\n*   **解决方案**：新的Agents面板允许开发者批量处理这些繁琐但重要的任务，并将其交给Copilot执行，从而使开发者能够专注于核心功能开发。\n*   **操作步骤**：\n    1.  在GitHub.com上打开你的仓库，点击Agents面板按钮。\n    2.  描述你的任务，例如：“更新扩展清单以支持VS Code 1.104”或“添加TypeScript严格模式并修复所有类型错误”。\n    3.  点击“开始任务”，让Copilot完成其余工作。\n*   **专业提示**：将小型清理任务批量处理成单独的请求。每个任务只消耗一个高级请求，你将获得范围清晰的拉取请求，可以独立合并。\n\n## 2. 通过Playwright MCP验证UI变更\n前端变更通常需要手动启动应用程序、检查UI并确保没有损坏。Copilot与Playwright MCP服务器的集成彻底改变了这一过程。\n*   **解决方案**：Copilot可以自动启动应用程序、与其交互并捕获屏幕截图。\n*   **操作步骤**：\n    1.  从Agents面板描述任务，例如：“添加英语、法语和西班牙语的国际化支持”。\n    2.  Copilot生成代码，使用Playwright MCP服务器在浏览器中运行你的应用程序，并为拉取请求捕获屏幕截图。\n    3.  在本地签出分支之前，直接在拉取请求中审查屏幕截图。\n*   **图片示例**：\n    ![Playwright MCP 验证 UI 变更](https://github.blog/wp-content/uploads/2025/09/playwright.gif)\n*   **专业提示**：这对于验证响应式设计、深色模式切换或任何屏幕截图价值千言万语的UI变更非常有用。\n\n## 3. 安全地使用分支策略进行实验\n并非所有想法都适合立即投入生产。有时，你需要一个安全的空间让Copilot进行实验，而不会影响主分支。\n*   **解决方案**：Copilot的分支处理功能非常强大，你可以选择任何分支作为起点，而不仅仅是默认分支。\n*   **操作步骤**：\n    1.  从Agents面板描述任务，例如：“添加实时航班跟踪和实时延迟通知”。\n    2.  从下拉菜单中选择你的基础分支（例如，`feature/booking-system` 而不是 `main`）。\n    3.  Copilot会从你选择的基础分支创建一个 `copilot/` 分支，并打开一个草稿拉取请求供你审查。\n    4.  审查拉取请求，并通过拉取请求评论向Copilot提供反馈。\n*   **图片示例**：\n    ![通过评论向 Copilot 提供反馈](https://github.blog/wp-content/uploads/2025/09/mentioncopilot-4.gif)\n*   **专业提示**：使用专用分支在演示中展示原型——它们干净、隔离且易于在需要时丢弃。\n\n## 4. 为任务选择正确的入口点\n为Copilot分配任务时，选择正确的入口点至关重要。\n*   **最佳选择**：\n    *   **Agents面板**：在浏览GitHub时进行临时任务的理想选择，例如审查问题或规划工作。\n    *   **GitHub Issues**：如果你的团队已经在Issues中跟踪工作，可以直接分配给Copilot，使其成为现有工作流的一部分。\n    *   **VS Code**：在编码时发现的快速重构，无需上下文切换。\n    *   **移动应用程序**：当你不在办公桌前时，对于小型任务或后续工作非常有用。\n*   **专业提示**：不要想太多。最好的入口点是灵感来袭时离你最近的那个。\n\n## 5. 通过MCP服务器扩展Copilot编程代理\nCopilot在获得更多上下文时会变得更智能。\n*   **默认MCP服务器**：\n    *   **Playwright MCP**：实现浏览器自动化和Web应用程序测试的屏幕截图功能。\n    *   **GitHub MCP**：提供对GitHub仓库、问题、拉取请求和其他GitHub特定上下文的感知。\n*   **扩展能力**：通过自定义MCP服务器，Copilot可以变得更加强大，例如：\n    *   **Notion MCP**：拉取项目规范或笔记。\n    *   **Hugging Face MCP**：访问AI模型和数据集以实现机器学习功能。\n*   **资源**：最近推出的开源MCP注册表提供了一个集中发现、发布和管理MCP服务器集成的平台。\n*   **专业提示**：访问VS Code Insider页面，其中提供了按类别（如开发工具、生产力、数据与分析、商业服务、云与基础设施）策划的MCP服务器列表，所有这些都可以一键安装。\n\n## 结论与展望\n这五种工作流展示了Copilot如何从一个建议工具演变为一个重要的开发伙伴。通过将其集成到日常工作中，你不仅节省了时间，还在根本上改变了处理开发挑战的方式。Copilot自动化了技术债务、处理了UI验证、并支持在隔离分支中安全地进行原型开发。当团队将Copilot视为一个能够解锁开发工作流新可能性的协作者时，将获得巨大的成功。",
-      "shortSummary": "GitHub Copilot编程代理通过五种策略深度集成到开发工作流中，超越了基础功能。这些策略包括：利用Agents面板自动化处理技术债务；通过Playwright MCP服务器自动验证UI变更并捕获截图；安全地使用分支策略进行实验，而不会影响主分支；根据任务场景选择合适的入口点（如Agents面板、GitHub Issues、IDE或移动应用）；以及通过自定义MCP服务器（如Notion MCP、Hugging Face MCP）扩展Copilot的上下文感知能力。Copilot从一个代码建议工具转变为一个重要的开发伙伴，显著提升了开发效率和创新潜力。",
-      "translated_title": "将GitHub Copilot编程代理集成到工作流中的5种方法",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/playwright.gif",
-          "alt": "Square image",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/mentioncopilot-4.gif",
-          "alt": "Square image",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/Andrea-Griffiths_avatar_1755783168-200x200.jpeg",
-          "alt": "Andrea Griffiths",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Already know the basics of GitHub Copilot coding agent? Here are five ways to offload chores, tackle tech debt, and keep your workflow moving fast.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/5-ways-to-integrate-github-copilot-coding-agent-into-your-workflow/\">5 ways to integrate GitHub Copilot coding agent into your workflow</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-09-29T04:32:56.650Z"
+  "lastUpdated": "2025-10-01T04:34:02.185Z"
 }
