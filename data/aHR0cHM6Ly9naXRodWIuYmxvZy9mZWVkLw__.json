@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "我们如何使用GitHub Copilot在五小时内实现无障碍合规自动化 (原标题: How we automated accessibility compliance in five hours with GitHub Copilot)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-we-automated-accessibility-compliance-in-five-hours-with-github-copilot/",
+      "pubDate": "Thu, 02 Oct 2025 19:19:14 +0000",
+      "isoDate": "2025-10-02T19:19:14.000Z",
+      "creator": "Janice Rimmer",
+      "summary": "## 引言：手动无障碍合规流程的挑战\n\nGitHub每周都会收到核心服务的无障碍等级报告。此前，当服务等级低于阈值时，他们依赖一个完全手动的修复链：有人阅读报告，在仓库中创建问题，猜测负责人，在单独的治理跟踪器中追踪状态，并尝试向领导层汇报。这种方式导致了反应迟缓、跟进不均衡，并且随着服务和检查的增加，无法实现规模化。他们意识到需要改变，并决定利用GitHub Copilot将这个脆弱的流程转变为一个自动化、可审计的循环。\n\n**传统手动流程的低效性：**\n\n*   每周三，无障碍等级报告会出现在跟踪板上，低于预定义分数的服务需要立即修复。\n*   当发现不合格等级时，管理方式效率低下：\n    *   手动在仓库中创建跟踪问题。\n    *   猜测正确的负责人。\n    *   希望有人跟进。\n    *   手动在无障碍治理仓库中跟踪进度。\n\n**具体痛点：**\n\n*   无法扩展。\n*   团队收到的沟通不一致。\n*   领导层缺乏可见性。\n*   修复时间从几天延长到几周。\n\n## 解决方案：利用GitHub Copilot实现自动化\n\n为了解决这些问题，GitHub需要一种可扩展、低维护的方式来触发、跟踪和关闭无障碍修复，而无需持续的手动协调。他们选择使用GitHub Copilot来自动化整个工作流程。\n\n**自动化后的新工作流程：**\n\n*   当无障碍等级低于某个分数时，自动在服务仓库中创建GitHub Issues。\n*   对于持续不合规的情况，使用新的等级数据更新现有问题。\n*   将修复问题与客户关系管理（CRM）跟踪板进行交叉引用。\n*   当服务恢复到可接受的等级时，自动关闭链接。\n*   同步治理板和服务团队之间的负责人。\n*   提及利益相关者以提高透明度，同时避免仓库垃圾信息。\n\n## Copilot如何改变开发方式\n\n传统的内部自动化构建方法意味着起草详细需求、将其优先级排入团队待办事项、等待工程能力，并经历多个冲刺迭代才能看到端到端的工作价值，这可能需要数周甚至更长时间。相反，GitHub团队花了五到六个小时直接与Copilot对话，快速原型设计和测试想法。\n\n**Copilot驱动的快速迭代模式：**\n\n他们的工作循环刻意保持轻量化。每次迭代大致遵循以下模式：\n\n*   用简单的语言描述一个规则（例如，检测持续不合规并确保问题存在或已更新当前上下文）。\n*   要求Copilot搭建或调整代码（例如，新的辅助函数、数据解析调整、API优化），而不是从头开始编写所有内容。\n*   使用少量合成的等级快照（例如，初始下降、持续下降、恢复）在本地验证逻辑。\n*   审查输出（例如，问题主体、标签、负责人）并优化提示，以收紧命名、阈值或分支。\n*   添加防护措施：幂等性（即，如果有效问题已打开则跳过）、简单的阻尼以避免频繁关闭和重新打开，以及对不完整数据的防御性处理。\n*   记录高级决策（例如，“更新现有问题”与“无操作 – 合规”）以快速验证意图。\n*   重新运行测试（加上一个变体）以确认没有回归，然后提交并进入下一个规则。\n\n**带来的好处：**\n\n*   每次迭代都针对单一行为，Copilot的建议保持相关性，避免了大型重构。\n*   当出现新的边缘情况（如短暂的分数下降或因服务重命名导致重复创建问题）时，他们会添加另一个短循环，而不是安排会议。\n*   这种快速的节奏使他们能够在没有正式项目计划的情况下，收敛到一个可投入生产的方案。\n\n## 从原型到生产的演进\n\n他们首先构建了一个快速原型，以可靠地检测不合规服务、提出或更新修复问题，并保持所有权可见。他们还希望证明无需任何人工分类即可实现这一点。最初的目标是在一个具有历史已知等级波动性的预生产环境中，对一小组服务进行受控推广。\n\n**逐步推广计划：**\n\n1.  在预生产环境中使用个人访问令牌进行原型开发。\n2.  在预生产环境中使用模拟服务仓库观察少量测试周度等级周期，并调整阈值或标签。\n3.  重构代码并迁移到GitHub App，以实现适当的安全性和范围权限。\n4.  部署到生产环境，并推广到所有跟踪无障碍合规的服务。\n5.  在噪音最小化后，正式化治理报告。\n\n**验证与成果：**\n\n为了验证，他们录制了一个简洁的端到端演示，展示了输入等级变化如何触发自动问题创建、交叉链接、负责人同步以及重复失败时的后续更新。这个演示让利益相关者能够异步评估完整体验。反馈是决定性的。看到实时问题以清晰的结构和可追溯性出现，加速了从原型阶段推进的批准。他们获得了工程合作伙伴关系，以将流程投入生产，建立了用于强化的沙盒环境，并开始实施具有适当安全和规模考虑的GitHub App版本。\n\n## 实际影响\n\n影响来自两个层面：引入的自动化以及Copilot改变了谁可以构建和迭代它的方式。\n\n**自动化带来的成果：**\n\n*   修复问题现在及时出现（或更新），而不是等待人工分类，这使得服务所有者能够立即理解解决这些问题的策略要求，并在请求例外时承担责任。\n*   所有权、状态和交叉链接集中在一处，为领导层提供了一个可靠的快照，无需临时电子表格或通知。这也加强了无障碍项目所有者与工程团队之间的合作。\n*   由于幂等逻辑和阻尼机制防止了嘈杂的关闭和重新打开，重复或陈旧的联系减少了。\n*   治理工作从文书跟踪转向对系统性无障碍模式进行更高价值的分析，并实现了更严格的治理控制。\n\n**Copilot赋能交付的成果：**\n\n*   领域专家构建了原型，使工程师能够专注于其关键的路线图工作。\n*   减少了工程师的上下文切换。\n*   合作时间用于安全、规模和生产强化，而不是基本的搭建工作。\n*   降低了未来合规或治理工具的门槛，因为现在有了一个其他人可以遵循的可重复模式。\n\n**核心转变：**\n\n这种转变在无障碍等级发出新风险信号时最为重要：系统现在会在跟进时间流逝之前，发现问题、分配所有权并保持状态可见，而不是等待某人注意到并启动手动链条。得益于Copilot，这个系统提前数周投入使用，并且可以由最接近治理问题的人进行迭代。\n\n底线是，他们从“让我写一张工单”转变为“这是具有可衡量影响修复速度和可见性的工作代码”。这种转变改变了人们对内部合规工具实现速度的期望。\n\n## 文章作者与相关资源\n\n本文由 **Janice Rimmer** 撰写，她是一名员工项目经理，致力于通过协作加速创新。\n\n![Janice Rimmer](https://avatars.githubusercontent.com/u/105733155?v=4&s=200)\n\n探索更多来自GitHub的资源：\n\n*   **文档**：掌握GitHub所需的一切，尽在一处。\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n*   **GitHub**：在GitHub上构建未来，这里是任何人、任何地点构建任何东西的地方。\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n*   **客户案例**：了解使用GitHub进行构建的公司和工程团队。\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n*   **GitHub Universe 2025**：抓住最后机会，节省700美元购买Universe现场通行证，并于10月28-29日在旧金山加入我们。\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)",
+      "shortSummary": "GitHub利用GitHub Copilot在五小时内自动化了其无障碍合规流程。此前，该流程完全手动，导致响应慢、跟进不一致且难以扩展。通过Copilot，他们构建了一个自动化系统，能自动创建和更新GitHub Issues、同步负责人、追踪进度并自动关闭已解决的问题。这不仅显著加快了修复速度，提高了可见性，还让领域专家而非工程师主导了原型开发，降低了未来工具开发的门槛，将治理工作从文书处理转向高价值分析。",
+      "translated_title": "我们如何使用GitHub Copilot在五小时内实现无障碍合规自动化",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/105733155?v=4&s=200",
+          "alt": "Janice Rimmer",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>See how we turned weekly accessibility grade signals into an automated, accountable remediation workflow—powered by GitHub Copilot and cross‑functional collaboration.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-we-automated-accessibility-compliance-in-five-hours-with-github-copilot/\">How we automated accessibility compliance in five hours with GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "规范驱动开发：在使用AI构建时将Markdown作为编程语言 (原标题: Spec-driven development: Using Markdown as a programming language when building with AI)",
       "link": "https://github.blog/ai-and-ml/generative-ai/spec-driven-development-using-markdown-as-a-programming-language-when-building-with-ai/",
       "pubDate": "Tue, 30 Sep 2025 19:07:46 +0000",
@@ -416,57 +460,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Addressing a surge in package registry attacks, GitHub is strengthening npm's security with stricter authentication, granular tokens, and enhanced trusted publishing to restore trust in the open source ecosystem.</p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/our-plan-for-a-more-secure-npm-supply-chain/\">Our plan for a more secure npm supply chain</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Gartner连续第二年将GitHub评为2025年AI代码助手魔力象限的领导者 (原标题: Gartner positions GitHub as a Leader in the 2025 Magic Quadrant for AI Code Assistants for the second year in a row)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/gartner-positions-github-as-a-leader-in-the-2025-magic-quadrant-for-ai-code-assistants-for-the-second-year-in-a-row/",
-      "pubDate": "Mon, 22 Sep 2025 18:24:17 +0000",
-      "isoDate": "2025-09-22T18:24:17.000Z",
-      "creator": "GitHub Staff",
-      "summary": "## Gartner连续第二年将GitHub评为2025年AI代码助手魔力象限的领导者\n\n### 引言\n\nAI驱动的开发时代已全面到来。Gartner预测，到2028年，90%的企业软件工程师将使用AI代码助手，远高于2024年初的不足14%。这一趋势表明AI正在重塑软件开发方式，消除摩擦，激发创造力，并使团队能够实现前所未有的成就。GitHub Copilot凭借其庞大的规模（拥有2000多万用户，覆盖77000家企业）在快速发展的AI代码助手市场中脱颖而出。\n\n### Gartner魔力象限的认可\n\nGitHub连续第二年被Gartner®评为2025年AI代码助手魔力象限™的领导者，其旗舰产品GitHub Copilot获得了这一殊荣。\n\n*   **评估标准：** Gartner根据“执行能力”和“愿景完整性”两项标准评估了14家供应商。\n*   **GitHub的排名：** GitHub在执行能力方面排名最高，在愿景完整性方面也处于最右侧。\n\n![Gartner 2025年AI代码助手魔力象限图示，显示GitHub在执行能力方面最高，在愿景完整性方面最靠右。其他领导者包括Amazon、Cognition (Windsurf)、GitLab和Google Cloud。](https://github.blog/wp-content/uploads/2025/09/MQ.png?resize=937%2C1024)\n\n### Gartner对“领导者”的定义\n\nGartner指出，AI代码助手魔力象限的“领导者”为通过先进AI能力实现端到端开发者赋能设定了基准。他们：\n\n*   持续将尖端模型整合到强大的代理工作流中，提升软件开发生命周期（SDLC）中的生产力、代码质量和安全性。\n*   对企业需求有深刻理解，将客户反馈转化为迭代改进和差异化创新，例如长上下文推理、混合部署灵活性以及与IDE和DevSecOps平台的无缝集成。\n*   通过运营成熟度脱颖而出，以可扩展的基础设施、法规遵从性和强大的服务级别可靠性支持全球企业。\n*   拥有不断增长的生态系统、深入的产品集成和清晰的战略，确保在多样化的开发者和企业环境中持续产生影响力。\n\n### GitHub的承诺与创新\n\nGitHub将此次认可视为其承诺的体现：赋能每一位开发者，并坚持其核心目标——构建一个开放、安全、AI驱动的平台，定义软件开发的未来。\n\n自Gartner报告评估以来，GitHub持续创新，推出了多项重塑开发者和组织AI构建方式的功能：\n\n*   **GitHub Copilot Coding Agent：** 一个云端异步队友，可以处理问题并发送经过全面测试的拉取请求，让开发者专注于更高价值的工作。\n*   **Copilot agent mode：** 一个实时协作工具，驻留在开发者的编辑器中，与开发者协同工作，并根据需求编辑文件。\n*   **Copilot Application Modernization：** 帮助开发者和团队自动更新和重构遗留代码库，以使用更新的语言、框架或库，处理复杂的、多文件更改以实现应用程序现代化。\n*   **GitHub Copilot in VS Code：** 将核心Copilot体验直接集成到VS Code编辑器中，提供实时代码建议、函数自动补全，帮助开发者更快地编写代码。\n*   **GitHub Copilot in Visual Studio：** 相同的核心Copilot体验，将AI驱动的代码建议和实时协助直接带入Visual Studio IDE。\n\n### 未来展望\n\nGitHub的重点仍然是加强Copilot作为最广泛采用的开发工具的地位，包括：\n\n*   提供AI原生、企业级功能，大规模嵌入信任、合规和治理。\n*   扩展代理工作流，使开发者能够专注于更高价值的工作。\n*   拓宽模型支持并深化集成。\n\n这些投资都将为AI驱动的未来奠定基础，使Copilot能够赋能每一位开发者——从个人贡献者到全球企业——以更快的速度、更高的创造力和更强的信心进行构建。\n\n### Gartner免责声明\n\nGartner不认可其研究出版物中描绘的任何供应商、产品或服务，也不建议技术用户只选择那些评级最高或其他指定的供应商。Gartner研究出版物包含Gartner研究机构的意见，不应被解释为事实陈述。Gartner不承担与本研究相关的所有明示或暗示的保证，包括任何适销性或特定用途适用性的保证。",
-      "shortSummary": "Gartner连续第二年将GitHub评为2025年AI代码助手魔力象限的领导者。GitHub在执行能力和愿景完整性方面均排名最高，这得益于GitHub Copilot在77000家企业中拥有2000多万用户的广泛采用。文章强调了AI驱动开发的重要性，并介绍了GitHub Copilot的最新创新，如Coding Agent和Application Modernization，旨在提升开发者生产力、代码质量和安全性。GitHub致力于构建开放、安全、AI驱动的平台，并持续深化其AI能力和集成。",
-      "translated_title": "Gartner连续第二年将GitHub评为2025年AI代码助手魔力象限的领导者",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/MQ.png?resize=937%2C1024",
-          "alt": "Gartner 2025 Magic Quadrant for AI Code Assistants showing GitHub as highest in ability to execute and the furthest right in completeness of vision. Other Leaders include Amazon, Cognition (Windsurf), GitLab, and Google Cloud.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/9919?v=4&s=200",
-          "alt": "GitHub Staff",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Our commitment is to empower every developer and stay true to our north star by building an open, secure, and AI-powered platform that defines the future of software development.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/gartner-positions-github-as-a-leader-in-the-2025-magic-quadrant-for-ai-code-assistants-for-the-second-year-in-a-row/\">Gartner positions GitHub as a Leader in the 2025 Magic Quadrant for AI Code Assistants for the second year in a row</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-01T04:34:02.185Z"
+  "lastUpdated": "2025-10-03T04:31:18.060Z"
 }
