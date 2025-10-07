@@ -5,6 +5,32 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "介绍 OpenZL：一个开源的格式感知压缩框架 (原标题: Introducing OpenZL: An Open Source Format-Aware Compression Framework)",
+      "link": "https://engineering.fb.com/2025/10/06/developer-tools/openzl-open-source-format-aware-compression-framework/",
+      "pubDate": "Mon, 06 Oct 2025 16:00:53 +0000",
+      "isoDate": "2025-10-06T16:00:53.000Z",
+      "creator": "",
+      "summary": "# 介绍 OpenZL：一个开源的格式感知压缩框架\n\nOpenZL 是 Meta 推出的一款新型开源数据压缩框架，专为结构化数据提供无损压缩。它旨在结合格式特定压缩器的卓越性能与单一可执行二进制文件的易于维护性。\n\n## OpenZL 的核心理念与背景\n\n*   **挑战与机遇：** 尽管 Zstandard 等通用压缩工具在数据中心工作负载中表现出色，但它们在处理结构化数据时，由于无法充分利用数据内部的特定模式，仍有大量压缩潜力未被挖掘。\n*   **定制化压缩器的困境：** 格式特定的压缩器能显著提升压缩比和速度，但为每种数据格式开发、部署和维护独立的压缩器和解压缩器会带来巨大的运维负担。\n*   **OpenZL 的解决方案：** OpenZL 应运而生，旨在解决这一矛盾，它通过一种创新的方法，在实现定制化性能的同时，保持了单一二进制文件的简洁性。\n\n## OpenZL 的工作原理\n\nOpenZL 的核心在于将数据结构作为显式输入参数，而非让压缩器猜测。\n\n1.  **显式结构输入：** 用户通过预设或简洁的格式描述（如 Simple Data Description Language, SDDL）向 OpenZL 提供数据形状。SDDL 仅用于解析，描述字节如何映射到字段（行、列、枚举、嵌套记录）。用户也可以编写自定义解析函数。\n2.  **离线训练器：** 一个离线优化组件（训练器）根据数据形状和样本，运行预算搜索，探索不同的转换选择和参数，以构建一个高效的压缩配置（“计划”）。它能提供一系列速度/压缩比的权衡，或直接针对特定速度约束下的最佳配置。\n3.  **编码时解析：** 在编码过程中，编码器将“计划”转换为具体的“解析图”（decode recipe），并将其嵌入到压缩帧中。如果“计划”包含控制点，编码器会根据数据特性选择最合适的路径并记录下来。\n4.  **通用解压缩器：** 所有的 OpenZL 文件都可以使用同一个通用解压缩器进行解压缩。解压缩器直接执行帧中嵌入的“解析图”，无需任何带外信息。\n\n## 性能示例：与通用压缩器的对比\n\n以压缩 Silesia 压缩语料库中的 `sao` 文件为例，该文件包含描述恒星的记录数组。通过向 OpenZL 提供其结构信息，OpenZL 展现出优于通用无损压缩器的性能：\n\n| 压缩器    | 压缩大小     | 压缩比 | 压缩速度 | 解压缩速度 |\n| :-------- | :----------- | :----- | :------- | :--------- |\n| zstd -3   | 5,531,935 B  | x1.31  | 220 MB/s | 850 MB/s   |\n| xz -9     | 4,414,351 B  | x1.64  | 3.5 MB/s | 45 MB/s    |\n| **OpenZL** | **3,516,649 B** | **x2.06** | **340 MB/s** | **1200 MB/s** |\n\nOpenZL 在实现更高压缩比的同时，保持甚至提升了压缩和解压缩速度，这对于数据中心处理管道至关重要。\n\n## 示例解析：OpenZL 如何利用结构\n\n在 `sao` 文件的压缩中，OpenZL 的处理流程包括：\n\n1.  **结构分解：** 将文件头与主体（大型结构表）分离。\n2.  **字段提取：** 将结构数组转换为数组结构，把每个字段提取到独立的流中。\n3.  **同质流处理：** 每个流包含同质数据，OpenZL 为其寻找最佳压缩策略：\n    *   **SRA0 (X轴位置)：** 索引大多有序，使用差分编码（delta）减小值范围。\n    *   **SDEC0 (Y轴位置)：** 虽不如X轴有序，但有明确的上下限，利用转置操作（transpose）使高位字节更可预测。\n    *   **其他字段 (IS, MAG, XRPM, XDPM)：** 基数远低于数量，且连续值间无关联，适合使用 `tokenize` 转换为字典和索引列表，再分别进行压缩。\n4.  **自动化与精细化：** 离线训练器在此阶段发挥作用，为每个流生成并优化特定的压缩策略。\n\n## 适应数据演变：再训练与运行时控制\n\n在实际应用中，数据结构和内容不断变化。OpenZL 通过其灵活的压缩计划来应对：\n\n*   **持续训练：** OpenZL 提供训练过程，根据提供的数据样本更新压缩计划，以维持或提升压缩性能。Meta 内部的“托管压缩”系统利用此功能，定期对注册用例进行监控、采样和再训练，并部署新的配置。\n*   **运行时自适应（控制点）：** 压缩配置可以包含控制点，在压缩时读取轻量级统计信息（如字符串重复、游程长度、直方图偏斜、差分方差），并选择“计划”中最佳的分支。这使得 OpenZL 能够动态适应数据变化、处理突发情况和异常值，而无需进行无限制的搜索，同时不增加解压缩器的复杂性。\n\n## 通用解压缩器的优势\n\nOpenZL 最大的运营优势在于其单一的通用解压缩器二进制文件，即使压缩配置改变，解压缩器也无需更新。\n\n*   **单一审计面：** 安全和正确性审查集中在一个二进制文件上，简化了审计流程。\n*   **全舰队范围的改进：** 解压缩器（如安全更新、性能优化）的任何更新都能惠及所有已压缩文件，包括旧数据。\n*   **操作清晰性：** 跨数据集使用相同的二进制文件、命令行接口、指标和仪表板，简化了修补和部署。\n*   **持续改进：** 可以在系统运行时不断训练和部署新的压缩计划，旧数据仍可解码，新数据则获得更好的压缩效果，实现了领域特定压缩而不碎片化生态系统。\n\n## OpenZL 的适用场景与局限性\n\n*   **适用场景：** OpenZL 特别适用于压缩向量、表格或树形结构数据，以及数值、字符串或二进制数据。常见示例包括时间序列数据集、机器学习张量和数据库表。前提是输入数据具有可被揭示的内部秩序。\n*   **局限性：** 当数据不包含可利用的结构时（例如纯文本文件），OpenZL 的优势不复存在，此时它会回退到 Zstandard，提供大致相同的性能水平。\n\n## 如何开始使用 OpenZL\n\n用户可以通过访问 OpenZL 网站和快速入门指南开始使用。源代码、文档和示例可在 GitHub 仓库中找到。OpenZL 欢迎社区的贡献和反馈。未来，OpenZL 将继续致力于简化结构暴露，并利用自动化压缩计划来处理不断演变的数据。",
+      "shortSummary": "OpenZL 是一个开源的格式感知数据压缩框架，为结构化数据提供无损压缩。它通过显式利用数据结构，实现格式特定压缩器的性能，同时保持单一通用解压缩器的易维护性。OpenZL 包含离线训练器自动生成优化压缩计划，并支持运行时自适应。与通用压缩器相比，OpenZL 能在更高压缩比的同时保持或提升速度，特别适用于向量、表格和树形结构数据。其通用解压缩器简化了部署和维护，并支持持续改进。",
+      "translated_title": "介绍 OpenZL：一个开源的格式感知压缩框架",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>OpenZL is a new open source data compression framework that offers lossless compression for structured data. OpenZL is designed to offer the performance of a format-specific compressor with the easy maintenance of a single executable binary. You can get started with OpenZL today by visiting our Quick Start guide and the OpenZL GitHub repository. Learn more [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/06/developer-tools/openzl-open-source-format-aware-compression-framework/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/06/developer-tools/openzl-open-source-format-aware-compression-framework/\">Introducing OpenZL: An Open Source Format-Aware Compression Framework</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
+      "title": "推出Candle海底电缆，更新我们在亚太地区的连接项目 (原标题: Introducing the Candle Subsea Cable, Updates to Our Asia-Pacific Connectivity Projects)",
+      "link": "https://engineering.fb.com/2025/10/05/connectivity/introducing-the-candle-subsea-cable-updates-to-our-asia-pacific-connectivity-projects/",
+      "pubDate": "Mon, 06 Oct 2025 02:30:07 +0000",
+      "isoDate": "2025-10-06T02:30:07.000Z",
+      "creator": "",
+      "summary": "## Meta推出Candle海底电缆并更新亚太连接项目\n\nMeta近日宣布推出新的Candle海底电缆系统，并提供了其在亚太地区其他连接项目的最新进展，其中包括Bifrost电缆系统的竣工。此举旨在加强全球和区域连接，特别是在亚太地区，以支持Meta的服务、人工智能（AI）和新兴技术。\n\n### 亚太地区连接的重要性\n亚太地区拥有全球超过58%的互联网用户，他们高度依赖强大的全球基础设施来获取在线连接和创新技术（如AI）。Meta致力于构建世界级的网络基础设施，以提供足够的容量和弹性，支持全球用户的丰富在线体验，并实现AI和个人超级智能的未来愿景。\n\n### Candle海底电缆：亚太最大容量系统\n*   **名称：** Candle\n*   **连接范围：** 将连接东亚和东南亚国家，包括日本、台湾、菲律宾、印度尼西亚、马来西亚和新加坡。\n*   **上线时间：** 预计于2028年投入使用。\n*   **容量：** 提供570 Tbps的容量，使其成为亚太地区容量最大的电缆系统。\n*   **长度：** 跨越8,000公里。\n*   **覆盖人数：** 将连接超过5.8亿人。\n*   **技术：** 采用最新开发的24对光纤电缆技术，提供与Meta现有最大容量电缆Anjana相似的带宽。\n*   **合作：** Meta正与该地区领先的电信公司合作建设此系统。\n\n### 其他亚太地区海底电缆更新\nMeta还公布了其在亚太地区其他几个海底电缆项目的进展：\n\n*   **Bifrost电缆：**\n    *   该系统已完成建设。\n    *   目前连接新加坡、印度尼西亚、菲律宾和美国，预计2026年将延伸至墨西哥。\n    *   Bifrost将提供260 Tbps的冗余容量，为热门的跨太平洋数字路由开辟新路径。\n    *   与Echo电缆一起，Bifrost是Meta及其合作伙伴在2021年承诺将跨太平洋容量增加70%的关键组成部分。\n\n*   **Echo电缆：**\n    *   目前在关岛和加利福尼亚之间提供260 Tbps的容量。\n    *   未来可选择延伸至亚洲。\n\n*   **Apricot电缆：**\n    *   已在日本、台湾和关岛之间投入使用。\n    *   未来将延伸至菲律宾、印度尼西亚和新加坡。\n    *   长度：12,000公里。\n    *   容量：290 Tbps。\n    *   该系统将补充Bifrost和Echo系统，进一步增强区域连接。\n\n### 综合影响与未来展望\nCandle、Echo、Bifrost和Apricot系统将共同增强亚太地区的区域内连接，并建立通往美洲的跨太平洋桥梁。此外，Meta还投资了其他全球项目，如2Africa（通往印度、中东和欧洲）和Project Waterworth（预计在本十年末连接五大洲，包括亚洲），以实现更广泛的全球连接。\n\n这些数字基础设施的开发是Meta致力于将世界各地的人们连接起来的承诺的一部分。通过与合作伙伴的共同努力，这些投资将提升全球电信网络的规模和可靠性，确保Meta的服务能够快速高效地送达亚太地区及其他地区的商业和个人用户。\n\n**数据来源：** 根据Statista数据，截至2025年9月5日，全球56.5亿互联网用户中，亚太地区约占33亿。",
+      "shortSummary": "Meta宣布推出Candle海底电缆，这是亚太地区容量最大的新系统，将于2028年连接日本、台湾、菲律宾、印尼、马来西亚和新加坡，提供570 Tbps容量。同时，Meta更新了其他亚太连接项目进展，包括已完成的Bifrost电缆（连接新加坡、印尼、菲律宾、美国）、Echo电缆（连接关岛和加州）以及已启用的Apricot电缆（连接日本、台湾、关岛）。这些投资旨在增强亚太地区及全球的连接性，支持Meta的服务、AI和新兴技术，以满足该地区庞大的互联网用户需求。",
+      "translated_title": "推出Candle海底电缆，更新我们在亚太地区的连接项目",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>We’re introducing Candle, a new submarine cable connecting countries across East Asia and Southeast Asia. We’re also announcing several updates to our subsea cables across the Asia-Pacific, including the completion of the Bifrost cable system. The Asia-Pacific (APAC) region is home to over 58% of the world’s internet users1 – many who rely on robust [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/05/connectivity/introducing-the-candle-subsea-cable-updates-to-our-asia-pacific-connectivity-projects/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/05/connectivity/introducing-the-candle-subsea-cable-updates-to-our-asia-pacific-connectivity-projects/\">Introducing the Candle Subsea Cable, Updates to Our Asia-Pacific Connectivity Projects</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "使用基线配置文件加速我们的安卓应用 (原标题: Accelerating our Android apps with Baseline Profiles)",
       "link": "https://engineering.fb.com/2025/10/01/android/accelerating-our-android-apps-with-baseline-profiles/",
       "pubDate": "Wed, 01 Oct 2025 16:00:17 +0000",
@@ -181,82 +207,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>We’re sharing how Meta is applying machine learning (ML) and diversity algorithms to improve notification quality and user experience.  We’ve introduced a diversity-aware notification ranking framework to reduce uniformity and deliver a more varied and engaging mix of notifications. This new framework reduces the volume of notifications and drives higher engagement rates through more diverse [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/09/02/ml-applications/a-new-ranking-framework-for-better-notification-quality-on-instagram/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/09/02/ml-applications/a-new-ranking-framework-for-better-notification-quality-on-instagram/\">A New Ranking Framework for Better Notification Quality on Instagram</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "在Buck2上启用Kotlin增量编译 (原标题: Enabling Kotlin incremental compilation on Buck2)",
-      "link": "https://engineering.fb.com/2025/08/26/open-source/enabling-kotlin-incremental-compilation-on-buck2/",
-      "pubDate": "Tue, 26 Aug 2025 16:00:52 +0000",
-      "isoDate": "2025-08-26T16:00:52.000Z",
-      "creator": "",
-      "summary": "## 在Buck2上启用Kotlin增量编译\n\nMeta工程团队成功地将Kotlin增量编译器集成到其构建系统Buck2中，以解决大型Kotlin模块导致的构建时间过长问题，显著提升了开发效率和构建速度。\n\n### 背景与动机\n\n尽管Buck2鼓励使用小型模块以实现快速构建，但随着代码库的增长和团队的变化，一些Kotlin模块变得庞大，开始对构建时间产生显著影响。为了解决这一问题，团队决定深入研究Kotlin增量编译器。\n\n### 关键成果\n\n*   **构建速度提升**：关键模块的构建速度提升高达3倍。\n*   **开发者效率**：平均开发者构建时间提升约30%。\n*   **特定模块优化**：对于不涉及注解处理的模块，速度几乎翻倍。\n\n### 实施步骤与挑战\n\n#### 1. 集成Kotlin的构建工具API (Build Tools API)\n\n*   **挑战**：命令行接口（CLI）不支持增量编译，而内部编译器API不稳定且不保证向后兼容性。\n*   **解决方案**：采用了Kotlin 1.9.20中引入的实验性Build Tools API (KEEP)，该API是官方的编译器集成点，支持增量编译。团队认为其最终会稳定，并提前介入提供反馈。\n*   **Shading冲突**：Build Tools API依赖于`kotlin-compiler-embeddable`（经过混淆处理的版本），而Meta的Android工具链历史上使用`kotlin-compiler`（未混淆版本），导致`NoClassDefFoundError`。最初通过对Build Tools API进行反混淆处理来解决，随后将整个工具链迁移到使用混淆处理的Kotlin编译器，以实现更稳定的设置。\n\n#### 2. 保留前次构建输出\n\n*   **挑战**：Buck2默认在重建模块前删除前次构建的输出，而增量编译器需要访问这些输出。\n*   **解决方案**：通过配置Buck2的增量操作（incremental actions），跳过对前次输出的自动清理。这使得构建操作可以访问上次运行的所有内容，但需要手动清理不再有用的文件。\n\n#### 3. 使增量编译器缓存可重定位\n\n*   **挑战**：在Buck2支持的分布式构建环境中，如果编译器缓存不可重定位，可能导致路径不匹配的错误和冲突。\n*   **解决方案**：在增量编译设置中明确配置了根项目目录和构建目录，确保编译器缓存的稳定性和可靠性，无论构建在哪里执行。\n\n#### 4. 配置增量编译器\n\n*   **原理**：增量编译器通过跟踪模块内部文件和依赖项的变化来决定需要重新编译的内容。\n*   **模块内部变化**：利用Buck2增量操作提供的哈希摘要，比较前后两次构建的哈希值，生成修改文件列表并传递给编译器，避免编译器自行检测变化。\n*   **依赖项变化**：通过生成类路径快照（ABI）来检测依赖项的变化。Buck2中新增了一个专门的操作来从库输出生成类路径快照，并将其作为输入传递给消费模块。由于这是一个独立的操作，可以远程执行或从缓存中获取，减轻了本地机器的负担。\n\n#### 5. 使编译器插件与增量编译器协同工作\n\n*   **挑战1：结果不完整**：自定义编译器插件未针对部分输入设计，在只处理文件子集时会产生不完整的结果。\n*   **解决方案1**：将插件也改造为增量模式，使其能够正确处理部分输入。\n*   **挑战2：多轮编译**：增量编译器可能在单次构建中进行多轮编译，每次处理不同的文件集，导致插件被多次触发并可能覆盖早期输出。\n*   **解决方案2**：更新插件，使其在多轮编译中累积结果而非替换。\n\n#### 6. 验证注解处理器功能\n\n*   **解决方案**：大多数注解处理器使用Kotlin符号处理（KSP2）。KSP2作为一个独立的工具，利用Kotlin分析API分析源代码，独立于标准编译流程运行，并自带增量处理支持，因此无需修改即可继续使用。\n\n#### 7. 启用针对ABI的编译\n\n*   **挑战**：为了最大化缓存命中率，Buck2针对类ABI而非完整的JAR文件构建Android模块。Kotlin目标使用`jvm-abi-gen`编译器插件生成ABI，但在启用增量编译后，该插件缺乏增量支持，且ABI提取会发生两次（插件和类路径快照）。\n*   **当前解决方案**：实现了一个自定义的（但非最优的）解决方案，将新生成的ABI与之前的结果合并。\n*   **未来展望**：正在积极探索更好的长期替代方案，理想情况是重用已收集的类路径快照信息，或将此功能直接内置到Kotlin编译器中（参见KT-62881）。\n\n#### 8. 测试\n\n*   **方法**：通过A/B测试在Meta的代码库上衡量Kotlin增量编译的真实影响，确保结果的可靠性。\n*   **结果**：在最大的模块上，增量编译带来了显著的性能提升，证实了其价值。\n\n### 后续计划\n\nKotlin增量编译目前已在Buck2中得到支持，并正在Meta的代码库中积极推广。目前仅供内部使用，但团队正努力将其引入最近开源的工具链中，并探索在整个Android工具链中扩展增量能力的方法。",
-      "shortSummary": "Meta已成功在Buck2构建系统中启用Kotlin增量编译，显著提升了构建速度和开发者效率。通过集成Kotlin Build Tools API、保留前次输出、使缓存可重定位、优化编译器配置、改造编译器插件以及利用KSP2，团队实现了关键模块构建速度提升高达3倍，平均开发者构建时间缩短30%。目前该功能正在内部推广，并计划开源，以进一步扩展Android工具链的增量能力。",
-      "translated_title": "在Buck2上启用Kotlin增量编译",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>The Kotlin incremental compiler has been a true gem for developers chasing faster compilation since its introduction in build tools. Now, we’re excited to bring its benefits to Buck2 –  Meta’s build system – to unlock even more speed and efficiency for Kotlin developers. Unlike a traditional compiler that recompiles an entire module every time, [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/08/26/open-source/enabling-kotlin-incremental-compilation-on-buck2/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/08/26/open-source/enabling-kotlin-incremental-compilation-on-buck2/\">Enabling Kotlin incremental compilation on Buck2</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "为数据仓库数据访问和安全创建AI代理解决方案 (原标题: Creating AI agent solutions for warehouse data access and security)",
-      "link": "https://engineering.fb.com/2025/08/13/data-infrastructure/agentic-solution-for-warehouse-data-access/",
-      "pubDate": "Wed, 13 Aug 2025 22:05:07 +0000",
-      "isoDate": "2025-08-13T22:05:07.000Z",
-      "creator": "",
-      "summary": "Meta正在改进其数据仓库，以提高生产力和安全性，同时服务于人类用户和AI代理。本文详细介绍了Meta如何开发AI代理来简化数据访问请求并帮助数据所有者管理安全。\n\n## 背景与挑战\n\n*   **传统方法：** 过去，Meta通过将数据仓库组织成层次结构（图1）来扩展数据访问和管理，并使用基于角色的访问控制。数据流被视为图（图2），数据访问决策是局部的、规则驱动的。\n*   **日益增长的复杂性：** 随着数据量和AI系统的发展，数据访问模式变得更加复杂。AI系统能够处理数据图的不同部分，使得人工驱动的决策变得困难且耗时。人类和代理跨领域协作增加了系统复杂性（图3）。\n*   **AI作为解决方案：** 尽管AI是复杂性的驱动因素，但Meta认为AI也能提供解决方案。需要一种代理化解决方案，将其原生集成到数据产品中，并建立严格的防护措施。\n\n## 多代理系统设计\n\nMeta将解决方案建模为一个多代理系统（图4），包含两种主要代理：\n\n*   **数据用户代理：** 协助数据用户获取所需数据。\n    *   由三个专业子代理组成，由一个分类代理协调（图5）：\n        1.  **建议替代方案：** 当用户遇到受限表时，提供非受限或限制较少的替代方案，帮助用户重写查询以使用非受限列，或利用精选分析。这些见解通常是隐性的，LLM和代理能够大规模地综合和引导用户。\n        2.  **促进低风险数据探索：** 为数据探索阶段提供上下文感知、任务特定的低风险数据访问，通常只涉及少量数据。\n        3.  **协助获取访问权限：** 帮助用户制定权限请求并与数据所有者代理协商（目前仍有人工干预）。\n*   **数据所有者代理：** 帮助数据所有者管理访问和维护安全。\n    *   由多个子代理组成（图6）：\n        1.  **安全操作：** 像初级工程师一样，根据数据所有者提供的SOP（标准操作程序）处理传入的权限请求。\n        2.  **主动配置访问规则：** 利用语义和内容，改进传统的角色挖掘过程。\n\n## 代理的输入与管理\n\n*   **数据仓库作为资源：** 数据仓库的层次结构被转换为文本形式，类似于嵌套文件夹，为LLM提供只读的摘要视图（图7）。SOP（规则、维基、历史交互）也以文本形式作为代理的输入。\n*   **上下文管理：** 区分三种场景（图8）：\n    *   **自动上下文：** 系统根据用户访问行为自动获取精确上下文。\n    *   **静态上下文：** 用户明确选择特定范围或扩展自动上下文。\n    *   **动态上下文：** 代理通过元数据（如数据语义）或相似性搜索进一步过滤资源。\n*   **意图管理：** 用户意图通过两种方式建模（图9）：\n    *   **显式意图：** 用户通过假定关联角色等方式明确传达其业务需求。\n    *   **隐式意图：** 系统在短时间内从用户活动中推断意图（例如，根据夜间处理管道故障推断数据访问意图）。\n\n## 深度探索：部分数据预览\n\n部分数据预览是一个端到端用例，旨在数据探索阶段实现任务特定、上下文感知的数据访问。它通过代理工作流协调四个关键能力（图10）：\n\n1.  **上下文：** 分析用户活动以理解业务需求，并与数据控制对齐，提供任务特定、上下文感知的控制。\n2.  **查询级访问控制：** 分析查询的结构，例如是否涉及聚合或随机抽样。\n3.  **数据访问预算：** 根据员工通常访问的数据量分配每日刷新的预算，作为第一道防线。\n4.  **基于规则的风险管理：** 采用基于规则的风险控制，防御AI代理的攻击或故障。\n\n### 系统架构\n\n*   **数据用户代理：** 利用用户活动工具（diffs、任务、帖子、SEVs、仪表板、文档）和用户配置文件工具，根据用户活动、配置文件和查询形状形成用户意图，然后调用数据所有者代理（图11）。\n*   **数据所有者代理：** 分析查询，获取相关资源的元数据（表摘要、列描述、数据语义、SOPs）。利用LLM模型生成决策和推理，并通过输出防护措施确保决策符合基于规则的风险计算。\n*   所有决策和日志都安全存储，用于未来参考和分析。\n\n### LLM与代理的优势\n\nLLM的语言和推理能力对于建模难以分析建模的上下文和任务特定业务需求至关重要。代理帮助构建动态、端到端的工作流。同时，通过分析性规则风险计算等防护措施，确保代理在既定边界内运行，并强调透明度和可追溯性。\n\n## 评估与反馈\n\n*   **评估：** 通过使用真实请求、用户活动和配置文件数据策划评估数据集来评估系统准确性和性能。每天运行评估以捕获潜在的回归（图12）。\n*   **反馈循环（数据飞轮）：** 用户查询、代理处理轨迹、上下文和最终输出都安全存储，用于反馈和审计。为数据所有者创建了数据工具，允许他们查看和审查决策并提供反馈，从而更新评估并评估整体流程（图13）。\n\n## 未来展望\n\n未来工作包括：\n\n*   **代理协作：** 支持代理代表用户直接访问数据的场景。\n*   **工具演进：** 持续改进数据仓库和工具，使其能被代理有效使用（最初为员工或服务构建）。",
-      "shortSummary": "Meta正在通过AI代理解决方案提升数据仓库的数据访问和安全性。该方案采用多代理系统，数据用户代理协助获取数据，数据所有者代理管理权限。系统利用LLM进行上下文和意图管理，实现细粒度、风险受控的数据访问，尤其在数据探索阶段。通过防护措施、审计和反馈循环，确保代理安全高效运行，以应对日益复杂的数据管理挑战。",
-      "translated_title": "为数据仓库数据访问和安全创建AI代理解决方案",
-      "images": [
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image3.png",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image5.png",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image4.png",
-          "alt": "",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image7.png",
-          "alt": "",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image10.png",
-          "alt": "",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image8.png",
-          "alt": "",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image9.png",
-          "alt": "",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/07/image2.png",
-          "alt": "",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>In this post, we explore the ways we’re evolving Meta’s data warehouse to facilitate productivity and security to serve both human users and AI agents.  We detail how we’re developing agents that help users making data access requests to get to the data they need, and that help data owners process requests and maintain security.  [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/08/13/data-infrastructure/agentic-solution-for-warehouse-data-access/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/08/13/data-infrastructure/agentic-solution-for-warehouse-data-access/\">Creating AI agent solutions for warehouse data access and security</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-05T05:22:24.988Z"
+  "lastUpdated": "2025-10-07T05:24:45.869Z"
 }
