@@ -5,6 +5,68 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "开发者角色正在演变。以下是如何保持领先。 (原标题: The developer role is evolving. Here’s how to stay ahead.)",
+      "link": "https://github.blog/ai-and-ml/the-developer-role-is-evolving-heres-how-to-stay-ahead/",
+      "pubDate": "Mon, 06 Oct 2025 20:12:49 +0000",
+      "isoDate": "2025-10-06T20:12:49.000Z",
+      "creator": "Gwen Davis",
+      "summary": "## 开发者角色正在演变：如何在AI时代保持领先\n\n### 引言：AI时代的开发者转型\n\n文章指出，开发者角色正经历一场深刻的变革。在未来五年内，人工智能（AI）预计将编写95%的代码，这标志着一个由AI驱动的新时代的到来。开发者将不再仅仅是手动编码者，而是转变为AI驱动开发生态系统的“协调者、战略家和协作者”。未来的价值将更多地体现在解决问题、设计和启发上，而非单纯的打字速度。GitHub的研究预测，到2030年，AI带来的生产力提升将为全球劳动力增加相当于1500万名有效开发者，并创造超过1.5万亿美元的经济价值。正如《从今天的代码到明天的交响乐：2030年开发者日常的AI转型》的合著者Ketai Qiu所言，未来的编程将更侧重于定义意图、指导AI系统并整合其输出，而非编写大量代码。\n\n### 关键技能：在AI时代保持领先的三个策略\n\n为了适应这一转变并保持竞争力，开发者需要培养以下三项核心技能：\n\n#### 1. 通过提供更好的上下文使AI编码更可靠\n\nAI虽然速度快，但并非“通灵”，它需要精确的上下文才能生成有意义且相关的代码。提供正确的信号——包括意图、数据和任务目的——能够引导AI（如GitHub Copilot）生成高质量的输出。\n\n*   **GitHub Copilot Spaces**：这是一个专用环境，允许团队通过上传源文件（如文档、代码库）、设定意图和协作来为Copilot提供关键上下文，从而确保其建议准确、相关并符合实际工作。\n*   **如何设置GitHub Space：**\n    1.  访问github.com/copilot/spaces并创建一个新空间。\n    2.  上传上下文，可以是文档、示例文件，甚至是整个代码仓库。\n    3.  开始聊天，向Copilot提问，使其利用您已添加的源信息。\n*   **提示：** 团队可以创建组织范围的空间，以便所有成员都能从相同的共享上下文受益。\n*   **GitHub Universe 2025相关会议：**\n    *   “代理的黎明：利用AI驱动工具加速软件开发”\n    *   “从意图到输出：用AI代理进行设计”\n\n![幻灯片标题为“代理的黎明：利用AI驱动工具加速软件开发”，包含GitHub的Maya Ross和Nick Liffen的头像。](https://github.blog/wp-content/uploads/2025/10/image1.png?resize=1024%2C538)\n\n#### 2. 提供洞察力、判断力和战略\n\nAI可以生成代码，但无法取代人类的洞察力、创造力或协作能力。在AI时代，将机器效率与人类判断和团队合作相结合的开发者将脱颖而出，而“协调能力”将成为主要的竞争优势。\n\n*   **GitHub Copilot代码审查**：这是一个AI工具，能够自动扫描拉取请求，突出潜在问题并提出改进建议，帮助团队更快地交付代码并减少瓶颈。\n*   **如何尝试Copilot代码审查：**\n    1.  请求Copilot审查：打开一个现有拉取请求，并将Copilot添加为审阅者。\n    2.  审查Copilot的反馈：稍后，它将添加评论、建议和可直接提交的内联更改。\n    3.  完善审查：您可以重新审查、对反馈进行点赞/踩，或添加`.github/copilot-instructions.md`文件以设置自定义规则。\n*   **提示：** 一旦Copilot提供反馈，您可以启用自动审查，使其默认检查每个拉取请求，但除非您决定，否则Copilot不会阻止合并。\n*   **GitHub Universe 2025相关会议：**\n    *   “从结对到同行：Copilot代码审查的下一次演变”\n    *   会议还将提供可编程徽章、GitHub专家中心、职业角和开源区，以促进协作和创新。\n\n![会议幻灯片标题为“从结对到同行：Copilot代码审查的下一次演变。”左侧包含GitHub Universe 2025标志，以及发言人Elle Shwer的照片及其GitHub所属机构。](https://github.blog/wp-content/uploads/2025/10/image2.png?resize=1024%2C538)\n\n#### 3. 认识到学习永无止境\n\n技术技能的半衰期在AI驱动的世界中变得更短，因此持续学习是保持领先的关键。今天的知识可能不足以应对明天的挑战。\n\n*   **在GitHub内部提升AI技能的实用路线图：**\n    1.  **学习基本语言和框架：** 从Python开始，扩展到Java和C++；探索TensorFlow、PyTorch和Scikit-learn等框架。\n    2.  **掌握机器学习基础知识：** 深入学习深度学习、自然语言处理（NLP）和计算机视觉；利用Awesome Machine Learning、NLTK或OpenCV等开源仓库进行实践。\n    3.  **在GitHub上展示技能：** 组织好您的代码仓库，发布清晰的README文件，积极贡献开源项目，并在GitHub Pages上建立出色的个人资料。\n    4.  **获得GitHub Copilot认证：** 学习完整的工具包，通过文档和项目进行准备，并获得Copilot认证徽章。\n*   **提示：** 不仅要学习AI技能，更要展示您的工作成果。每个仓库、贡献或徽章都向雇主表明您正紧跟AI时代步伐。\n*   **GitHub Universe 2025亮点：**\n    *   “用GitHub Copilot引领：重新思考体验、战略和协作”（由GitHub工程副总裁Sharanya Doddapaneni主讲）\n    *   “与AI高飞：国泰航空转型软件开发”（由国泰航空IT基础设施和安全总经理Rajeev Nair主讲）\n\n![会议幻灯片标题为“与AI高飞：国泰航空转型软件。”](https://github.blog/wp-content/uploads/2025/10/image3.png?resize=1024%2C538)\n\n### 总结：共同迎接未来\n\n文章鼓励开发者积极参与GitHub Universe等活动，这是一个汇集上下文、协作和创造力的平台。通过参与，开发者可以获取洞察、工具和人脉，从而更好地适应和塑造AI驱动的开发未来。\n\n![GitHub Universe 2024户外活动，有帐篷、拱门和与会者。](https://github.blog/wp-content/uploads/2025/10/image4.png?resize=1024%2C1024)",
+      "shortSummary": "AI正迅速改变开发者角色，未来五年内将编写95%的代码。开发者需从手动编码者转变为AI驱动开发生态系统的协调者、战略家和协作者。为保持领先，关键在于掌握三大技能：为AI提供精确上下文（如通过GitHub Copilot Spaces）、运用人类洞察力与判断力进行战略决策（如通过GitHub Copilot代码审查），以及持续学习新技能。这些能力将帮助开发者在不断变化的就业市场中保持韧性并脱颖而出。",
+      "translated_title": "开发者角色正在演变。以下是如何保持领先。",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/image1.png?resize=1024%2C538",
+          "alt": "Slide titled 'Dawn of the agents: Leveraging AI-powered tools to accelerate software development' with headshots of Maya Ross and Nick Liffen from GitHub.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/image2.png?resize=1024%2C538",
+          "alt": "Conference slide titled ‘From pair to peer: The next evolution of Copilot code review.’ Includes GitHub Universe 2025 logo on the left, speaker photo of Elle Shwer with GitHub listed as affiliation.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/image3.png?resize=1024%2C538",
+          "alt": "Conference slide titled ‘Flying high with AI: Cathay Pacific on transforming software.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/image4.png?resize=1024%2C1024",
+          "alt": "GitHub Universe 2024 outdoor event with tents, archway, and attendees.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/94031472?v=4&s=200",
+          "alt": "Gwen Davis",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>AI is changing how software gets built. Explore the skills you need to keep up and stand out.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/the-developer-role-is-evolving-heres-how-to-stay-ahead/\">The developer role is evolving. Here’s how to stay ahead.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "我们如何使用GitHub Copilot在五小时内实现无障碍合规自动化 (原标题: How we automated accessibility compliance in five hours with GitHub Copilot)",
       "link": "https://github.blog/ai-and-ml/github-copilot/how-we-automated-accessibility-compliance-in-five-hours-with-github-copilot/",
       "pubDate": "Thu, 02 Oct 2025 19:19:14 +0000",
@@ -416,51 +478,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Learn how to use GitHub Copilot agent mode to modernize legacy Java projects with guided upgrades, automated fixes, and cloud-ready migrations.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/a-step-by-step-guide-to-modernizing-java-projects-with-github-copilot-agent-mode/\">A step-by-step guide to modernizing Java projects with GitHub Copilot agent mode</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "我们为更安全的npm供应链制定的计划 (原标题: Our plan for a more secure npm supply chain)",
-      "link": "https://github.blog/security/supply-chain-security/our-plan-for-a-more-secure-npm-supply-chain/",
-      "pubDate": "Tue, 23 Sep 2025 00:29:50 +0000",
-      "isoDate": "2025-09-23T00:29:50.000Z",
-      "creator": "Xavier René-Corail",
-      "summary": "## npm供应链安全强化计划\n\n开源软件是现代软件产业的基石，其协作性质和庞大生态系统推动了前所未有的效率和进步。然而，这种规模也带来了独特的漏洞，持续受到恶意攻击者的威胁，使开源安全成为一个关键问题。GitHub分享了近期npm注册表事件的详细信息、采取的补救措施以及未来对npm安全的持续投入。\n\n### 近期开源生态系统攻击\n\n软件行业近期面临包注册表（包括npm）上账户劫持事件的激增。恶意行为者通过未经授权访问维护者账户，通过知名且受信任的包分发恶意软件。\n\n*   **Shai-Hulud攻击**：2025年9月14日，GitHub收到Shai-Hulud攻击的通知。这是一种自复制蠕虫，通过受损的维护者账户，将恶意安装后脚本注入流行的JavaScript包中，从而渗透npm生态系统。该蠕虫结合了自复制能力和窃取多种秘密（不仅仅是npm令牌）的能力，若非GitHub和开源维护者及时采取行动，可能会导致无休止的攻击。\n\n### GitHub的即时响应\n\n为应对此次事件，GitHub迅速采取了果断行动，包括：\n\n*   立即从npm注册表中移除500多个受损包，以防止恶意软件进一步传播。\n*   npm阻止上传包含恶意软件IoC（妥协指标）的新包，切断了自复制模式。\n\n这些安全漏洞侵蚀了对开源生态系统的信任，对整个软件供应链的完整性和安全性构成直接威胁。它们也凸显了提高认证和安全发布实践标准对于强化npm生态系统以应对未来攻击的重要性。\n\n### npm强化包发布路线图\n\nGitHub致力于调查这些威胁并减轻其对开源社区构成的风险。为解决令牌滥用和自复制恶意软件问题，我们将在不久的将来更改认证和发布选项，仅包括：\n\n*   **强制两步验证（2FA）的本地发布。**\n*   **有效期为七天的细粒度令牌。**\n*   **可信发布。**\n\n为支持这些变更并进一步提高npm生态系统的安全性，我们将：\n\n*   弃用传统经典令牌。\n*   弃用基于时间的一次性密码（TOTP）2FA，将用户迁移到基于FIDO的2FA。\n*   限制具有发布权限的细粒度令牌的较短有效期。\n*   默认设置发布访问权限为不允许令牌，鼓励使用可信发布或强制2FA的本地发布。\n*   移除本地包发布绕过2FA的选项。\n*   扩展可信发布的合格提供商。\n\n我们认识到一些安全变更可能需要更新现有工作流程。我们将逐步推出这些变更，以尽量减少干扰，同时加强npm的安全态势。GitHub将通过清晰的时间表、文档、迁移指南和支持渠道提供未来更新，以支持用户完成此次过渡。\n\n### 通过可信发布强化生态系统\n\n可信发布是OpenSSF软件仓库安全工作组推荐的安全能力，因为它消除了在构建系统中安全管理API令牌的需求。它由PyPI于2023年4月率先推出，旨在将API令牌从构建管道中移除。此后，可信发布已添加到RubyGems（2023年12月）、crates.io（2025年7月）、npm（同样是2025年7月）以及最近的NuGet（2025年9月）和其他包仓库中。\n\n尽管npm在发布对可信发布的支持时，原意是让这项新功能自然增长，但攻击者表明他们不会等待。我们强烈鼓励所有支持的包管理器项目尽快采用可信发布。\n\n### npm维护者可立即采取的行动\n\nGitHub和更广泛的软件社区的这些努力，强调了我们全球范围内加强软件供应链安全的承诺。生态系统的安全是共同的责任，我们感谢开源社区的警惕和协作。以下是npm维护者现在可以采取的行动：\n\n*   使用npm可信发布而非令牌。\n*   强化账户、组织和包的发布设置，要求所有写入和发布操作都进行2FA。\n*   配置两步验证时，使用WebAuthn而非TOTP。\n\n真正的韧性需要软件行业中每个人的积极参与和警惕。通过采用强大的安全实践、利用可用工具并为这些集体努力做出贡献，我们可以共同为所有人构建一个更安全、更值得信赖的开源生态系统。\n\n由以下人员撰写：\n![Xavier René-Corail](https://avatars.githubusercontent.com/u/7395402?v=4&s=200)\nXavier René-Corail，GitHub安全研究高级总监，开源安全负责人。他领导GitHub安全实验室，赋能开源维护者和开发者交付安全软件。\n\n### 相关文章\n\n*   **保护VS Code免受提示注入攻击**：当聊天对话被间接提示注入污染时，可能导致GitHub令牌、机密文件泄露，甚至在用户未明确同意的情况下执行任意代码。本文解释了哪些VS Code功能可以降低这些风险。\n\n### 探索更多来自GitHub的内容\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**：掌握GitHub所需的一切，尽在一处。前往文档。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**：在GitHub上构建未来，这里是任何人、任何地方构建任何东西的平台。开始构建。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**：了解使用GitHub进行构建的公司和工程团队。了解更多。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) **GitHub Universe 2025**：最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山与我们相聚。立即注册。",
-      "shortSummary": "GitHub发布了强化npm供应链安全的计划，以应对近期账户劫持和恶意软件攻击（如Shai-Hulud蠕虫）。为提升安全性，npm将强制要求2FA本地发布、引入有效期为7天的细粒度令牌，并推广可信发布。未来将弃用传统令牌和TOTP 2FA，转而采用FIDO-based 2FA。GitHub鼓励维护者立即采用可信发布和WebAuthn 2FA，共同构建更安全的开源生态系统。",
-      "translated_title": "我们为更安全的npm供应链制定的计划",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/7395402?v=4&s=200",
-          "alt": "Xavier René-Corail",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Addressing a surge in package registry attacks, GitHub is strengthening npm's security with stricter authentication, granular tokens, and enhanced trusted publishing to restore trust in the open source ecosystem.</p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/our-plan-for-a-more-secure-npm-supply-chain/\">Our plan for a more secure npm supply chain</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-05T04:29:26.330Z"
+  "lastUpdated": "2025-10-07T04:32:26.728Z"
 }
