@@ -5,6 +5,19 @@
   "link": "https://slack.engineering",
   "items": [
     {
+      "title": "部署安全：减少变更对客户的影响 (原标题: Deploy Safety: Reducing customer impact from change)",
+      "link": "https://slack.engineering/deploy-safety/",
+      "pubDate": "Tue, 07 Oct 2025 16:33:12 +0000",
+      "isoDate": "2025-10-07T16:33:12.000Z",
+      "creator": "Sam Bailey",
+      "summary": "### 部署安全计划：减少变更对客户的影响\n\nSlack在2023年中启动了“部署安全计划”，旨在显著提升可靠性并减少因内部变更（特别是代码部署）对客户造成的影响。目标是到2025年1月，将客户影响时长从峰值减少90%，并持续下降。\n\n#### 问题定义\n\n随着业务发展，系统需求不断变化，导致以下关键问题：\n\n*   **关键性增加**：Slack对客户变得越来越关键，客户对产品整体及特定功能的可靠性期望提高。\n*   **变更触发事件**：73%的客户事件由Slack内部变更（主要是代码部署）触发。\n*   **广泛影响**：变更触发的事件发生在各种系统和部署流程中。\n*   **客户反馈**：中断超过10分钟会变得更具破坏性。\n*   **旧方法缺陷**：过去专注于单个部署系统，导致手动变更流程拖慢创新速度，降低工程士气，并阻碍业务目标实现。\n\n#### “北极星”目标与部署安全宣言\n\n为解决这些问题，Slack设定了初始的“北极星”目标，适用于最高重要性服务的所有部署方法：\n\n*   **减少部署影响时间**：在10分钟内实现自动检测与修复，20分钟内实现手动检测与修复。\n*   **降低影响严重性**：在影响10%的集群之前检测到问题部署。\n*   **保持Slack的开发速度**。\n\n这些目标随后演变为“部署安全宣言”，适用于Slack所有部署系统和流程，鼓励实施自动化系统改进、安全防护措施和文化变革。\n\n#### 衡量指标\n\n为了衡量计划成效，Slack需要一个能合理（尽管不完美）反映客户对Slack可靠性体验的指标：\n\n*   **部署安全指标**：由高严重性及选定中等严重性变更触发事件导致的客户影响小时数。\n*   **“选定”中等严重性**：根据实际客户影响程度进行筛选，因为内部严重性级别可能不完全反映最终客户影响。\n*   **指标设计标准**：衡量结果、理解测量内容（真实与模拟）、测量一致性，并持续通过与客户的直接对话验证其与客户感受的匹配度。\n\n#### 投资策略与项目示例\n\n由于事件数据具有滞后性，且客户正面临痛点，Slack采取了以下投资策略：\n\n*   初期广泛投资，偏向行动。\n*   首先关注已知痛点领域。\n*   根据结果进一步投资成功项目或模式。\n*   削减对影响力最小领域的投资。\n*   设定灵活的短期路线图，可根据结果调整。\n\n项目投资方向旨在影响以下一个或多个方面：\n\n*   在部署流程早期检测问题。\n*   改进自动修复时间。\n*   改进手动修复时间。\n*   通过设计隔离边界（爆炸半径控制）降低问题严重性。\n\n**Webapp后端部署示例流程**：\n\n1.  投入一个季度进行自动指标监控的工程工作。\n2.  再投入一个季度，通过自动告警和手动回滚操作确认客户影响对齐。\n3.  投资自动部署和回滚，通过多次自动回滚成功将客户影响控制在10分钟以下。\n4.  进一步投资监控更多指标并优化手动回滚。\n5.  投资手动前端回滚能力。\n6.  将进一步投资对齐到Slack的集中部署编排系统，以统一指标驱动部署与自动修复到更多部署系统。\n\n**成果**：Webapp后端、前端及部分基础设施部署现在显著更安全，并持续季度性改进。这种“尝试-成功-迭代-复制”的模式被证明非常有效。值得注意的是，未达到预期影响的项目并非失败，而是指导投资和理解价值的关键输入。\n\n#### 结果\n\n尽管进展是非线性的，且使用滞后指标存在挑战，但计划取得了显著成果：\n\n*   在第一季度的工作后（主要通过与工程团队沟通），已观察到初步改善。\n*   在项目开始交付变更后，2024年2月至4月期间出现了影响峰值（但如果没有早期工作，峰值会更高）。\n*   引入自动回滚后，结果显著改善。\n*   观察每个项目的完整影响通常有3-6个月的滞后时间。\n*   目标数字持续调整，2025年目标再次降低，重点是通过部署系统一致性来缓解不频繁的客户影响峰值。\n\n#### 经验教训\n\n该计划需要持续学习和迭代，并从中吸取了许多重要经验：\n\n*   **确保优先级和对齐**：定期高管审查、在公司/工程目标中设定高优先级，以及高管层的坚定支持至关重要。\n*   **对滞后指标保持耐心和信心**：由于结果测量有数月延迟，需要耐心。同时，收集中间指标（如问题检测）以确认改进正在发挥作用，并相信基于现有信息做出的决策，同时保持根据结果调整路径的敏捷性。\n*   **人们会延迟采用新实践**：需要提供直接培训（必要时多次），持续改进手动回滚工具，并鼓励频繁使用工具以建立熟练度、信心和舒适度。\n*   **直接接触工程团队至关重要**：部署安全团队直接与各团队沟通，理解其系统和流程，提供改进指导，并鼓励创新和优先级排序。\n*   **保持核心指标尽可能一致**：选择一个指标，保持一致性，并根据结果验证进行调整，避免在选择“最佳”指标上浪费时间。\n*   **与工程人员保持一致、直接的沟通**：管理层对优先级和结果理解良好，但普通工程师可能不清楚，这揭示了改进沟通对齐的机会。\n\n#### 未来展望\n\nSlack将持续投资部署安全，因为可靠性是Salesforce和Slack信任价值的核心组成部分。未来的改进方向包括：\n\n*   持续改进基于自动指标的部署和修复，以保持积极趋势。\n*   提高Slack所有部署中部署安全流程的一致性，以缓解意外或不频繁的客户影响峰值。\n*   将计划范围扩展到将剩余手动部署流程迁移到基于代码的部署。\n\n正在进行的项目示例包括：集中部署编排工具扩展到其他基础设施部署模式、前端自动回滚、指标质量改进、AI指标异常检测，以及AI生成预生产测试的进一步推广。",
+      "shortSummary": "Slack于2023年中启动“部署安全计划”，旨在通过改进部署流程和提升安全文化，将因内部变更（特别是代码部署）导致的客户影响时长到2025年减少90%。该计划通过设定“北极星”目标、引入客户影响小时数作为核心指标、灵活的投资策略以及自动化检测与修复，取得了显著成效。关键经验包括高管对齐、对滞后指标的耐心、直接团队沟通和持续改进。未来将继续投资自动化和流程一致性。",
+      "translated_title": "部署安全：减少变更对客户的影响",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "It’s mid 2023 and we’ve identified some opportunities to improve our reliability. Fast forward to January 2025. Customer impact hours are reduced from the peak by 90% and continuing to trend downward. We’re a year and half into the Deploy Safety Program at Slack, improving the way we deploy, uplifting our safety culture and continuing&#8230;"
+    },
+    {
       "title": "构建 Slack 的异常事件响应 (原标题: Building Slack’s Anomaly Event Response)",
       "link": "https://slack.engineering/building-slacks-anomaly-event-response/",
       "pubDate": "Thu, 04 Sep 2025 10:00:02 +0000",
@@ -222,5 +235,5 @@
       "content": "<p>Incident Management takes time Incidents need responders that are trained and experienced.  At Slack, training is a foundation of our incident management program. Self-service training and live courses based mainly on prepared content are one piece of the puzzle, but there can be a missing piece in many organizations. How can staff get practical experience&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/theres-no-such-thing-as-a-free-lunch/\">There’s No Such Thing as a Free Lunch!</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-07T04:31:55.563Z"
+  "lastUpdated": "2025-10-09T04:32:31.956Z"
 }

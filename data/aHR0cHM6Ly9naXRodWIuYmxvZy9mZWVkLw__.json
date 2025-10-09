@@ -5,6 +5,200 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "GitHub可用性报告：2025年9月 (原标题: GitHub Availability Report: September 2025)",
+      "link": "https://github.blog/news-insights/company-news/github-availability-report-september-2025/",
+      "pubDate": "Thu, 09 Oct 2025 02:19:28 +0000",
+      "isoDate": "2025-10-09T02:19:28.000Z",
+      "creator": "Jakub Oleksy",
+      "summary": "GitHub在2025年9月经历了三次导致服务性能下降的事件。以下是详细报告：\n\n## 2025年9月GitHub服务可用性报告\n\n2025年9月，GitHub共发生了三起导致服务性能下降的事件。\n\n### 事件一：Copilot可用性下降\n*   **日期与时间**：2025年9月15日，UTC时间17:55至18:20（持续25分钟）。\n*   **受影响服务**：Copilot的大部分功能可用性下降，返回403错误。\n*   **根本原因**：一个特性标志被部分部署到全局限速器，意外触发了限速逻辑中的一个未检测到的边缘情况。该标志旨在为部分用户降低限速，却导致限速配置进入无效状态，限制了100%的请求。\n*   **解决方案**：回滚了该特性标志，服务立即恢复。\n*   **未来改进**：\n    *   增加流量异常监控器，以便及早发现问题。\n    *   扩大限速扩展测试的覆盖范围，加强预生产验证，以增强系统弹性。\n\n### 事件二：电子邮件投递延迟\n*   **日期与时间**：\n    *   2025年9月23日，UTC时间15:29至17:38。\n    *   2025年9月24日，UTC时间14:02至15:12。\n*   **受影响服务**：电子邮件投递，导致大多数类型的电子邮件通知显著延迟。两次事件总影响约130分钟，客户经历的峰值延迟约为50分钟。\n*   **根本原因**：异常高的流量导致部分出站电子邮件服务器资源争用。\n*   **解决方案**：更新了配置，以在高流量时更好地分配容量。\n*   **未来改进**：更新监控器以提高检测能力。\n\n### 事件三：Copilot API部分性能下降\n*   **日期与时间**：2025年9月29日，UTC时间16:26至17:33（持续67分钟）。\n*   **受影响服务**：Copilot API出现部分性能下降，导致平均0.2%的GitHub MCP服务器请求出现间歇性404错误，峰值时约2%。\n*   **根本原因**：内部依赖升级暴露了服务中的一个配置错误。\n*   **解决方案**：回滚了升级以解决配置错误。\n*   **未来改进**：修复配置问题，并将改进文档和发布流程，以防止类似问题再次发生。\n\n### 更多信息\n\n*   请关注GitHub状态页面获取实时更新和事后回顾。\n*   如需了解更多GitHub正在进行的工作，请查阅GitHub工程博客。\n\n本文作者：\n\n![Jakub Oleksy](https://avatars.githubusercontent.com/u/6147691?v=4&s=200)\n\n### 相关资源\n\n探索更多来自GitHub的内容：\n\n*   **文档**：\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n    掌握GitHub所需的一切，尽在一个地方。\n*   **GitHub**：\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n    在GitHub上构建未来，这里是任何人、任何地点构建任何东西的平台。\n*   **客户案例**：\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n    了解使用GitHub进行构建的公司和工程团队。\n*   **GitHub Universe 2025**：\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n    最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山与我们相聚。",
+      "shortSummary": "2025年9月，GitHub经历了三次服务性能下降事件。9月15日，Copilot因限速逻辑边缘情况导致25分钟可用性下降。9月24日，电子邮件投递因高流量导致约50分钟的峰值延迟。9月29日，Copilot API因内部依赖升级暴露配置错误，导致67分钟的部分性能下降。GitHub已采取措施解决问题，并计划通过增强监控、扩大测试覆盖和改进发布流程来提升系统弹性。",
+      "translated_title": "GitHub可用性报告：2025年9月",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/6147691?v=4&s=200",
+          "alt": "Jakub Oleksy",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>In September, we experienced three incidents that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-september-2025/\">GitHub Availability Report: September 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "使用 GitHub Copilot 编码代理和移动设备随时随地完成紧急修复 (原标题: Completing urgent fixes anywhere with GitHub Copilot coding agent and mobile)",
+      "link": "https://github.blog/developer-skills/github/completing-urgent-fixes-anywhere-with-github-copilot-coding-agent-and-mobile/",
+      "pubDate": "Wed, 08 Oct 2025 16:00:00 +0000",
+      "isoDate": "2025-10-08T16:00:00.000Z",
+      "creator": "Scott Lusk",
+      "summary": "## 引言：GitHub Copilot 编码代理与 GitHub Mobile 的强大结合\n\n文章指出，在软件开发中，结合多种工具可以产生巨大的力量，就像视频游戏中的组合升级一样。GitHub 相信，这种组合能够赋能开发者应对任何挑战，无论是修复关键错误、添加新功能还是发布产品。本文通过作者的亲身经历，展示了 GitHub Copilot 编码代理和 GitHub Mobile 应用如何协同工作，帮助开发者在任何地点高效完成紧急修复。\n\n## 亲身经历：移动设备上的紧急修复\n\n作者分享了一个紧急场景：在一次高可见度演示前，一个关键网站功能出现错误，而他当时远离笔记本电脑。传统修复方式耗时过长，回滚也不是选项。在这种情况下，作者利用手机上的 GitHub Copilot 编码代理和 GitHub Mobile 应用解决了问题。\n\n**操作流程：**\n\n1.  **识别问题：** 作者在 GitHub Mobile 上扫描了最近的拉取请求（PR），识别出一个可能导致问题的 PR（添加了 Markdown 渲染和富文本编辑器）。\n2.  **创建问题：** 他创建了一个新问题，详细描述了问题，并引用了可疑的 PR，同时利用了仓库中预设的 `copilot-instructions` 文件来指导 Copilot 代理。\n3.  **分配任务：** 作者将该问题分配给了 GitHub Copilot 编码代理。\n4.  **Copilot 修复：** 仅仅六分钟后，GitHub Mobile 上收到通知，Copilot 已生成一个包含修复方案的 PR。\n5.  **移动审查与批准：** 作者立即在手机上审查了 PR，确认这是一个清晰、简单的解决方案。他甚至可以在手机上通过预览分支测试修复，然后批准了 PR。\n6.  **自动化部署：** 修复通过仓库中由 GitHub Actions 管理的自动化工作流部署到生产环境。\n\n**结果：** 在作者到达汽车时，问题已解决，演示得以顺利进行。这次完全通过手机管理修复的经历，揭示了 GitHub 平台内强大的能力，并促使作者探索更多平台内组合以提升工作效率。\n\n以下是作者在手机上审查并批准拉取请求后，通过 GitHub Mobile 应用看到的视图，显示了 Copilot 对问题的修复摘要：\n\n![Copilot Coding Agent with a suggested fix for our issue.](https://github.blog/wp-content/uploads/2025/10/01-copilot-pr-fix.jpeg?resize=472%2C1024)\n\n## 解锁这种“能力提升”的关键\n\n作者强调，虽然并非所有开发任务都应通过移动设备委派给 Copilot，但拥有正确的工具应对特定情况至关重要。以下是实现这种效率提升的三个关键点：\n\n### 关键 1：利用指令文件 (Instructions Files)\n\n指令文件为 GitHub Copilot 提供了项目特定的指导和规则，显著影响其建议的质量和相关性。\n\n*   **作用：** 提供仓库的核心目的、技术栈、架构约束、编码标准、测试策略、依赖管理、可观察性、文档、错误处理等上下文信息。\n*   **位置：** 通常位于仓库根目录下的 `.github/copilot-instructions.md` 文件中。\n*   **示例：** 文章提供了一个详细的 `copilot-instructions.md` 示例，涵盖了 Next.js App Router、React、TypeScript、Tailwind CSS、pnpm、shadcn/ui 组件、服务器组件、Vitest 测试、文件夹结构、常用命令等。\n*   **路径特定指令：** 可以使用 `applyTo` 关键字定义针对特定目录、文件模式、语言或任务上下文的指令，例如针对 `src/components/ui` 和 `src/components/shared` 目录的组件创建规范。\n*   **生成指令：** 在 VS Code 中，可以通过“配置聊天”选项生成指令文件。\n\n![Location of copilot-instructions in .github folder](https://github.blog/wp-content/uploads/2025/10/02-github-copilot-instructions_v2.png?resize=2400%2C2528)\n\n![Generate instructions in VS Code using configure chat.](https://github.blog/wp-content/uploads/2025/10/03-configure-chat_v2.png?resize=1200%2C992)\n\n**要点：** 编写良好的指令文件能帮助 Copilot 更好地理解项目和编码标准，从而提供更高质量的输出，加快任务完成速度。\n\n### 关键 2：熟悉 Copilot 编码代理\n\n将 Copilot 编码代理视为团队成员，了解其擅长的技能，并充分利用这些技能。\n\n*   **熟悉方式：** 通过分配问题、创建拉取请求和跟踪 Copilot 在仓库中的会话来熟悉其工作方式。\n*   **创建问题时的指导：** 在将问题分配给 Copilot 之前，确保问题描述提供正确的上下文、明确意图并定义清晰。\n*   **审查与迭代：** Copilot 完成工作后，务必审查其生成的 PR。可以通过在评论中使用 `@copilot` 来请求修改，而不是盲目接受。\n\n![Assign an issue to Copilot coding agent.](https://github.blog/wp-content/uploads/2025/10/04-assign-to-copilot_v3.png?resize=2400%2C1770)\n\n![Copilot as an assignee on an issue.](https://github.blog/wp-content/uploads/2025/10/04-assign-to-copilot_v2.png?resize=836%2C1024)\n\n![Copilot fixed the issue with and had a pull request in six minutes.](https://github.blog/wp-content/uploads/2025/10/05-6min-fix-pr_v3.png?resize=2400%2C806)\n\n![Use @copilot in a pull request comment to have copilot make changes.](https://github.blog/wp-content/uploads/2025/10/06-mention-copilot_v2.png?resize=2400%2C588)\n\n**要点：** 将任务委派给 Copilot 编码代理可以释放开发者的精力，专注于其他关键任务，但仍需仔细审查其结果并提供具体的指导。\n\n### 关键 3：建立最佳实践和自动化\n\n结合 IssueOps 和 GitHub Actions 自动化是提升效率的另一个重要方面。\n\n*   **IssueOps：** 将 GitHub Issues 转化为自动化的控制接口。结构化的命令可以触发 GitHub Actions 工作流，执行部署、配置、迁移等操作，并将结果写回问题中，便于审计。\n*   **问题模板：** 使用预先创建的问题模板（例如针对 Bug 的模板）可以帮助开发者提供详细的上下文信息，节省创建问题的时间。\n*   **示例：** 文章提供了一个“Bug (Copilot Coding Agent-ready)”问题模板示例，包含环境、复现步骤等字段，旨在为 Copilot 提供修复所需的详细信息。\n\n**要点：** 自动化和结构化的流程（如 IssueOps 和问题模板）进一步提升了开发和问题解决的效率。",
+      "shortSummary": "本文介绍了如何结合 GitHub Copilot 编码代理和 GitHub Mobile 应用，实现随时随地处理紧急软件修复。作者通过亲身经历展示了在远离电脑时，如何利用手机创建问题、分配给 Copilot 自动生成修复拉取请求，并在手机上审查、批准并部署。文章强调了利用自定义指令文件指导 Copilot、熟悉其工作方式以及通过 IssueOps 和 GitHub Actions 建立自动化流程的重要性，以显著提高开发效率和应对突发情况的能力。",
+      "translated_title": "使用 GitHub Copilot 编码代理和移动设备随时随地完成紧急修复",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/01-copilot-pr-fix.jpeg?resize=472%2C1024",
+          "alt": "Copilot Coding Agent with a suggested fix for our issue.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/02-github-copilot-instructions_v2.png?resize=2400%2C2528",
+          "alt": "Location of copilot-instructions in .github folder",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/03-configure-chat_v2.png?resize=1200%2C992",
+          "alt": "Generate instructions in VS Code using configure chat.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/04-assign-to-copilot_v3.png?resize=2400%2C1770",
+          "alt": "Assign an issue to Copilot coding agent.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/04-assign-to-copilot_v2.png?resize=836%2C1024",
+          "alt": "Copilot as an assignee on an issue.",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/05-6min-fix-pr_v3.png?resize=2400%2C806",
+          "alt": "Copilot fixed the issue with and had a pull request in six minutes.",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/06-mention-copilot_v2.png?resize=2400%2C588",
+          "alt": "Use @copilot in a pull request comment to have copilot make changes.",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/2342987?v=4&s=200",
+          "alt": "Scott Lusk",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Unlock the full potential of the GitHub platform. See how Copilot coding agent and GitHub Mobile combine to help you tackle development tasks and urgent fixes, no matter where you are.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/github/completing-urgent-fixes-anywhere-with-github-copilot-coding-agent-and-mobile/\">Completing urgent fixes anywhere with GitHub Copilot coding agent and mobile</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "我们如何使用GitHub Copilot在五小时内实现无障碍合规自动化 (原标题: How we automated accessibility compliance in five hours with GitHub Copilot)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-we-automated-accessibility-compliance-in-five-hours-with-github-copilot/",
+      "pubDate": "Tue, 07 Oct 2025 17:00:00 +0000",
+      "isoDate": "2025-10-07T17:00:00.000Z",
+      "creator": "Janice Rimmer",
+      "summary": "## 引言：手动无障碍合规流程的挑战\n\nGitHub每周都会收到核心服务的无障碍等级报告。此前，当服务等级低于阈值时，他们依赖一个完全手动的修复链：有人阅读报告，在仓库中创建问题，猜测负责人，在单独的治理跟踪器中追踪状态，并尝试向领导层汇报。这种方式导致了反应迟缓、跟进不均衡，并且随着服务和检查的增加，无法实现规模化。他们意识到需要改变，并决定利用GitHub Copilot将这个脆弱的流程转变为一个自动化、可审计的循环。\n\n**传统手动流程的低效性：**\n\n*   每周三，无障碍等级报告会出现在跟踪板上，低于预定义分数的服务需要立即修复。\n*   当发现不合格等级时，管理方式效率低下：\n    *   手动在仓库中创建跟踪问题。\n    *   猜测正确的负责人。\n    *   希望有人跟进。\n    *   手动在无障碍治理仓库中跟踪进度。\n\n**具体痛点：**\n\n*   无法扩展。\n*   团队收到的沟通不一致。\n*   领导层缺乏可见性。\n*   修复时间从几天延长到几周。\n\n## 解决方案：利用GitHub Copilot实现自动化\n\n为了解决这些问题，GitHub需要一种可扩展、低维护的方式来触发、跟踪和关闭无障碍修复，而无需持续的手动协调。他们选择使用GitHub Copilot来自动化整个工作流程。\n\n**自动化后的新工作流程：**\n\n*   当无障碍等级低于某个分数时，自动在服务仓库中创建GitHub Issues。\n*   对于持续不合规的情况，使用新的等级数据更新现有问题。\n*   将修复问题与客户关系管理（CRM）跟踪板进行交叉引用。\n*   当服务恢复到可接受的等级时，自动关闭链接。\n*   同步治理板和服务团队之间的负责人。\n*   提及利益相关者以提高透明度，同时避免仓库垃圾信息。\n\n## Copilot如何改变开发方式\n\n传统的内部自动化构建方法意味着起草详细需求、将其优先级排入团队待办事项、等待工程能力，并经历多个冲刺迭代才能看到端到端的工作价值，这可能需要数周甚至更长时间。相反，GitHub团队花了五到六个小时直接与Copilot对话，快速原型设计和测试想法。\n\n**Copilot驱动的快速迭代模式：**\n\n他们的工作循环刻意保持轻量化。每次迭代大致遵循以下模式：\n\n*   用简单的语言描述一个规则（例如，检测持续不合规并确保问题存在或已更新当前上下文）。\n*   要求Copilot搭建或调整代码（例如，新的辅助函数、数据解析调整、API优化），而不是从头开始编写所有内容。\n*   使用少量合成的等级快照（例如，初始下降、持续下降、恢复）在本地验证逻辑。\n*   审查输出（例如，问题主体、标签、负责人）并优化提示，以收紧命名、阈值或分支。\n*   添加防护措施：幂等性（即，如果有效问题已打开则跳过）、简单的阻尼以避免频繁关闭和重新打开，以及对不完整数据的防御性处理。\n*   记录高级决策（例如，“更新现有问题”与“无操作 – 合规”）以快速验证意图。\n*   重新运行测试（加上一个变体）以确认没有回归，然后提交并进入下一个规则。\n\n**带来的好处：**\n\n*   每次迭代都针对单一行为，Copilot的建议保持相关性，避免了大型重构。\n*   当出现新的边缘情况（如短暂的分数下降或因服务重命名导致重复创建问题）时，他们会添加另一个短循环，而不是安排会议。\n*   这种快速的节奏使他们能够在没有正式项目计划的情况下，收敛到一个可投入生产的方案。\n\n## 从原型到生产的演进\n\n他们首先构建了一个快速原型，以可靠地检测不合规服务、提出或更新修复问题，并保持所有权可见。他们还希望证明无需任何人工分类即可实现这一点。最初的目标是在一个具有历史已知等级波动性的预生产环境中，对一小组服务进行受控推广。\n\n**逐步推广计划：**\n\n1.  在预生产环境中使用个人访问令牌进行原型开发。\n2.  在预生产环境中使用模拟服务仓库观察少量测试周度等级周期，并调整阈值或标签。\n3.  重构代码并迁移到GitHub App，以实现适当的安全性和范围权限。\n4.  部署到生产环境，并推广到所有跟踪无障碍合规的服务。\n5.  在噪音最小化后，正式化治理报告。\n\n**验证与成果：**\n\n为了验证，他们录制了一个简洁的端到端演示，展示了输入等级变化如何触发自动问题创建、交叉链接、负责人同步以及重复失败时的后续更新。这个演示让利益相关者能够异步评估完整体验。反馈是决定性的。看到实时问题以清晰的结构和可追溯性出现，加速了从原型阶段推进的批准。他们获得了工程合作伙伴关系，以将流程投入生产，建立了用于强化的沙盒环境，并开始实施具有适当安全和规模考虑的GitHub App版本。\n\n## 实际影响\n\n影响来自两个层面：引入的自动化以及Copilot改变了谁可以构建和迭代它的方式。\n\n**自动化带来的成果：**\n\n*   修复问题现在及时出现（或更新），而不是等待人工分类，这使得服务所有者能够立即理解解决这些问题的策略要求，并在请求例外时承担责任。\n*   所有权、状态和交叉链接集中在一处，为领导层提供了一个可靠的快照，无需临时电子表格或通知。这也加强了无障碍项目所有者与工程团队之间的合作。\n*   由于幂等逻辑和阻尼机制防止了嘈杂的关闭和重新打开，重复或陈旧的联系减少了。\n*   治理工作从文书跟踪转向对系统性无障碍模式进行更高价值的分析，并实现了更严格的治理控制。\n\n**Copilot赋能交付的成果：**\n\n*   领域专家构建了原型，使工程师能够专注于其关键的路线图工作。\n*   减少了工程师的上下文切换。\n*   合作时间用于安全、规模和生产强化，而不是基本的搭建工作。\n*   降低了未来合规或治理工具的门槛，因为现在有了一个其他人可以遵循的可重复模式。\n\n**核心转变：**\n\n这种转变在无障碍等级发出新风险信号时最为重要：系统现在会在跟进时间流逝之前，发现问题、分配所有权并保持状态可见，而不是等待某人注意到并启动手动链条。得益于Copilot，这个系统提前数周投入使用，并且可以由最接近治理问题的人进行迭代。\n\n底线是，他们从“让我写一张工单”转变为“这是具有可衡量影响修复速度和可见性的工作代码”。这种转变改变了人们对内部合规工具实现速度的期望。\n\n## 文章作者与相关资源\n\n本文由 **Janice Rimmer** 撰写，她是一名员工项目经理，致力于通过协作加速创新。\n\n![Janice Rimmer](https://avatars.githubusercontent.com/u/105733155?v=4&s=200)\n\n探索更多来自GitHub的资源：\n\n*   **文档**：掌握GitHub所需的一切，尽在一处。\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n*   **GitHub**：在GitHub上构建未来，这里是任何人、任何地点构建任何东西的地方。\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n*   **客户案例**：了解使用GitHub进行构建的公司和工程团队。\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n*   **GitHub Universe 2025**：抓住最后机会，节省700美元购买Universe现场通行证，并于10月28-29日在旧金山加入我们。\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)",
+      "shortSummary": "GitHub利用GitHub Copilot在五小时内自动化了其无障碍合规流程。此前，该流程完全手动，导致响应慢、跟进不一致且难以扩展。通过Copilot，他们构建了一个自动化系统，能自动创建和更新GitHub Issues、同步负责人、追踪进度并自动关闭已解决的问题。这不仅显著加快了修复速度，提高了可见性，还让领域专家而非工程师主导了原型开发，降低了未来工具开发的门槛，将治理工作从文书处理转向高价值分析。",
+      "translated_title": "我们如何使用GitHub Copilot在五小时内实现无障碍合规自动化",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/105733155?v=4&s=200",
+          "alt": "Janice Rimmer",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>See how we turned weekly accessibility grade signals into an automated, accountable remediation workflow—powered by GitHub Copilot and cross‑functional collaboration.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-we-automated-accessibility-compliance-in-five-hours-with-github-copilot/\">How GitHub Copilot enabled accessibility governance process improvements in record time</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "一位顶级漏洞赏金研究员如何开启他们的安全生涯 (原标题: How a top bug bounty researcher got their start in security)",
+      "link": "https://github.blog/security/how-a-top-bug-bounty-researcher-got-their-start-in-security/",
+      "pubDate": "Tue, 07 Oct 2025 16:00:00 +0000",
+      "isoDate": "2025-10-07T16:00:00.000Z",
+      "creator": "Shilpa Kumari",
+      "summary": "GitHub在网络安全意识月期间，重点介绍了其漏洞赏金计划中的一位顶级安全研究员——@xiridium。GitHub致力于维护其平台和更广泛软件生态系统的安全，尤其是在GitHub Copilot等AI驱动功能快速增长的背景下。与经验丰富的安全研究员合作至关重要，有助于识别和解决传统及新兴技术中的漏洞。\n\nGitHub还设立了VIP漏洞赏金计划，邀请那些持续展现专业知识和影响力的研究员加入。VIP研究员可获得：\n*   产品和功能公开发布前的早期预览。\n*   与GitHub漏洞赏金团队及工程师的专属互动。\n*   独家Hacktocat周边商品。\n\n@xiridium以发现业务逻辑漏洞而闻名，并在GitHub生态系统中发现了许多细致且有影响的问题。他们提交的报告清晰、可操作，大大简化了调查和分类过程。\n\n**@xiridium的访谈亮点：**\n\n*   **如何参与漏洞赏金？**\n    *   通过玩CTF（夺旗赛）了解到漏洞赏金，梦想是找到真实应用中的漏洞。\n    *   社区的专业认可和技术技能的提升是他们持续参与的动力。\n\n*   **业余爱好？**\n    *   30岁时开始学习音乐和唱歌，这有助于他们从工作和漏洞赏金中放松。\n    *   也会将部分赏金用于购买乐高玩具。\n\n*   **如何学习漏洞趋势？**\n    *   按需学习：当遇到Protobuf（Protocol Buffers）代码或新的云提供商时，会深入学习相关技术。\n    *   建议关注X（Twitter）上的Intigriti等账号，但强调要理解技巧背后的原理，避免盲目使用。\n\n*   **研究工具与流程？**\n    *   **ChatGPT及其他大型语言模型（LLMs）：** 视为初级开发人员，将大任务分解为小任务，批准其计划后再让其编写代码。这有助于编写小脚本、验证凭证和快速了解新技术。\n    *   **研究方法：** 倾向于深入研究一个应用程序，而非广撒网。目标是彻底理解应用程序的每个端点和请求参数。\n    *   **流程：** 重读程序规则，记录看起来异常的事物，例如：\n        *   同一功能存在两个不同的API端点（`/user` 和 `/data/users`），可能表明开发团队之间缺乏同步。\n        *   子域名分布在不同的云服务商（如AWS和GCP），可能意味着由不同团队管理，从而增加漏洞的可能性。\n\n*   **最喜欢的漏洞类型？**\n    *   泄露凭证和业务逻辑漏洞，擅长发现细微之处。\n    *   **技巧：** 在GitHub上搜索独特的端点；使用Google dork在Slideshare、Postman、Figma等开发或管理工具中搜索目标公司信息，以更好地理解应用程序工作原理。\n\n*   **给新研究员的建议？**\n    *   **资源：** 强烈推荐Portswigger Labs和hacker101。从每个类别的最简单任务开始，找到感兴趣的领域，然后深入学习（阅读报告、解决CTF、HackTheBox等）。\n    *   **心态：** 不要抱有“这肯定没有漏洞”或“这个资产已经被充分检查过”的假设。即使是主域名也可能存在漏洞。\n    *   **尝试罕见漏洞：** 如果了解一些罕见的漏洞类别，不要犹豫进行测试。@xiridium曾在一个Web应用的认证Cookie中发现Oracle填充漏洞。\n\nGitHub感谢@xiridium的参与，并强调每次漏洞提交都为GitHub、其产品和客户带来了更高的安全性。GitHub持续欢迎并感谢安全研究社区的合作，鼓励研究员通过HackerOne报告发现。\n\n**更多来自GitHub的探索：**\n*   ![Shilpa Kumari](https://avatars.githubusercontent.com/u/82128924?v=4&s=200)\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握GitHub所需的一切。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在GitHub上构建未来。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) 客户案例：了解使用GitHub构建的公司和工程团队。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025：注册参加旧金山会议。",
+      "shortSummary": "GitHub在网络安全意识月期间，聚焦顶级漏洞赏金研究员@xiridium。@xiridium分享了其从CTF开始的漏洞赏金生涯，强调深入研究应用、利用LLM辅助、关注业务逻辑和凭证泄露漏洞。他建议新研究员利用Portswigger Labs等资源，并避免假设资产安全。GitHub通过漏洞赏金计划和VIP项目，持续与安全社区合作，以确保平台安全，尤其是在AI功能快速发展之际。",
+      "translated_title": "一位顶级漏洞赏金研究员如何开启他们的安全生涯",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/82128924?v=4&s=200",
+          "alt": "Shilpa Kumari",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>For this year’s Cybersecurity Awareness Month, the GitHub Bug Bounty team is excited to feature another spotlight on a talented security researcher — @xiridium!</p>\n<p>The post <a href=\"https://github.blog/security/how-a-top-bug-bounty-researcher-got-their-start-in-security/\">How a top bug bounty researcher got their start in security</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "开发者角色正在演变。以下是如何保持领先。 (原标题: The developer role is evolving. Here’s how to stay ahead.)",
       "link": "https://github.blog/ai-and-ml/the-developer-role-is-evolving-heres-how-to-stay-ahead/",
       "pubDate": "Mon, 06 Oct 2025 20:12:49 +0000",
@@ -65,50 +259,6 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>AI is changing how software gets built. Explore the skills you need to keep up and stand out.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/the-developer-role-is-evolving-heres-how-to-stay-ahead/\">The developer role is evolving. Here’s how to stay ahead.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "我们如何使用GitHub Copilot在五小时内实现无障碍合规自动化 (原标题: How we automated accessibility compliance in five hours with GitHub Copilot)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/how-we-automated-accessibility-compliance-in-five-hours-with-github-copilot/",
-      "pubDate": "Thu, 02 Oct 2025 19:19:14 +0000",
-      "isoDate": "2025-10-02T19:19:14.000Z",
-      "creator": "Janice Rimmer",
-      "summary": "## 引言：手动无障碍合规流程的挑战\n\nGitHub每周都会收到核心服务的无障碍等级报告。此前，当服务等级低于阈值时，他们依赖一个完全手动的修复链：有人阅读报告，在仓库中创建问题，猜测负责人，在单独的治理跟踪器中追踪状态，并尝试向领导层汇报。这种方式导致了反应迟缓、跟进不均衡，并且随着服务和检查的增加，无法实现规模化。他们意识到需要改变，并决定利用GitHub Copilot将这个脆弱的流程转变为一个自动化、可审计的循环。\n\n**传统手动流程的低效性：**\n\n*   每周三，无障碍等级报告会出现在跟踪板上，低于预定义分数的服务需要立即修复。\n*   当发现不合格等级时，管理方式效率低下：\n    *   手动在仓库中创建跟踪问题。\n    *   猜测正确的负责人。\n    *   希望有人跟进。\n    *   手动在无障碍治理仓库中跟踪进度。\n\n**具体痛点：**\n\n*   无法扩展。\n*   团队收到的沟通不一致。\n*   领导层缺乏可见性。\n*   修复时间从几天延长到几周。\n\n## 解决方案：利用GitHub Copilot实现自动化\n\n为了解决这些问题，GitHub需要一种可扩展、低维护的方式来触发、跟踪和关闭无障碍修复，而无需持续的手动协调。他们选择使用GitHub Copilot来自动化整个工作流程。\n\n**自动化后的新工作流程：**\n\n*   当无障碍等级低于某个分数时，自动在服务仓库中创建GitHub Issues。\n*   对于持续不合规的情况，使用新的等级数据更新现有问题。\n*   将修复问题与客户关系管理（CRM）跟踪板进行交叉引用。\n*   当服务恢复到可接受的等级时，自动关闭链接。\n*   同步治理板和服务团队之间的负责人。\n*   提及利益相关者以提高透明度，同时避免仓库垃圾信息。\n\n## Copilot如何改变开发方式\n\n传统的内部自动化构建方法意味着起草详细需求、将其优先级排入团队待办事项、等待工程能力，并经历多个冲刺迭代才能看到端到端的工作价值，这可能需要数周甚至更长时间。相反，GitHub团队花了五到六个小时直接与Copilot对话，快速原型设计和测试想法。\n\n**Copilot驱动的快速迭代模式：**\n\n他们的工作循环刻意保持轻量化。每次迭代大致遵循以下模式：\n\n*   用简单的语言描述一个规则（例如，检测持续不合规并确保问题存在或已更新当前上下文）。\n*   要求Copilot搭建或调整代码（例如，新的辅助函数、数据解析调整、API优化），而不是从头开始编写所有内容。\n*   使用少量合成的等级快照（例如，初始下降、持续下降、恢复）在本地验证逻辑。\n*   审查输出（例如，问题主体、标签、负责人）并优化提示，以收紧命名、阈值或分支。\n*   添加防护措施：幂等性（即，如果有效问题已打开则跳过）、简单的阻尼以避免频繁关闭和重新打开，以及对不完整数据的防御性处理。\n*   记录高级决策（例如，“更新现有问题”与“无操作 – 合规”）以快速验证意图。\n*   重新运行测试（加上一个变体）以确认没有回归，然后提交并进入下一个规则。\n\n**带来的好处：**\n\n*   每次迭代都针对单一行为，Copilot的建议保持相关性，避免了大型重构。\n*   当出现新的边缘情况（如短暂的分数下降或因服务重命名导致重复创建问题）时，他们会添加另一个短循环，而不是安排会议。\n*   这种快速的节奏使他们能够在没有正式项目计划的情况下，收敛到一个可投入生产的方案。\n\n## 从原型到生产的演进\n\n他们首先构建了一个快速原型，以可靠地检测不合规服务、提出或更新修复问题，并保持所有权可见。他们还希望证明无需任何人工分类即可实现这一点。最初的目标是在一个具有历史已知等级波动性的预生产环境中，对一小组服务进行受控推广。\n\n**逐步推广计划：**\n\n1.  在预生产环境中使用个人访问令牌进行原型开发。\n2.  在预生产环境中使用模拟服务仓库观察少量测试周度等级周期，并调整阈值或标签。\n3.  重构代码并迁移到GitHub App，以实现适当的安全性和范围权限。\n4.  部署到生产环境，并推广到所有跟踪无障碍合规的服务。\n5.  在噪音最小化后，正式化治理报告。\n\n**验证与成果：**\n\n为了验证，他们录制了一个简洁的端到端演示，展示了输入等级变化如何触发自动问题创建、交叉链接、负责人同步以及重复失败时的后续更新。这个演示让利益相关者能够异步评估完整体验。反馈是决定性的。看到实时问题以清晰的结构和可追溯性出现，加速了从原型阶段推进的批准。他们获得了工程合作伙伴关系，以将流程投入生产，建立了用于强化的沙盒环境，并开始实施具有适当安全和规模考虑的GitHub App版本。\n\n## 实际影响\n\n影响来自两个层面：引入的自动化以及Copilot改变了谁可以构建和迭代它的方式。\n\n**自动化带来的成果：**\n\n*   修复问题现在及时出现（或更新），而不是等待人工分类，这使得服务所有者能够立即理解解决这些问题的策略要求，并在请求例外时承担责任。\n*   所有权、状态和交叉链接集中在一处，为领导层提供了一个可靠的快照，无需临时电子表格或通知。这也加强了无障碍项目所有者与工程团队之间的合作。\n*   由于幂等逻辑和阻尼机制防止了嘈杂的关闭和重新打开，重复或陈旧的联系减少了。\n*   治理工作从文书跟踪转向对系统性无障碍模式进行更高价值的分析，并实现了更严格的治理控制。\n\n**Copilot赋能交付的成果：**\n\n*   领域专家构建了原型，使工程师能够专注于其关键的路线图工作。\n*   减少了工程师的上下文切换。\n*   合作时间用于安全、规模和生产强化，而不是基本的搭建工作。\n*   降低了未来合规或治理工具的门槛，因为现在有了一个其他人可以遵循的可重复模式。\n\n**核心转变：**\n\n这种转变在无障碍等级发出新风险信号时最为重要：系统现在会在跟进时间流逝之前，发现问题、分配所有权并保持状态可见，而不是等待某人注意到并启动手动链条。得益于Copilot，这个系统提前数周投入使用，并且可以由最接近治理问题的人进行迭代。\n\n底线是，他们从“让我写一张工单”转变为“这是具有可衡量影响修复速度和可见性的工作代码”。这种转变改变了人们对内部合规工具实现速度的期望。\n\n## 文章作者与相关资源\n\n本文由 **Janice Rimmer** 撰写，她是一名员工项目经理，致力于通过协作加速创新。\n\n![Janice Rimmer](https://avatars.githubusercontent.com/u/105733155?v=4&s=200)\n\n探索更多来自GitHub的资源：\n\n*   **文档**：掌握GitHub所需的一切，尽在一处。\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n*   **GitHub**：在GitHub上构建未来，这里是任何人、任何地点构建任何东西的地方。\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n*   **客户案例**：了解使用GitHub进行构建的公司和工程团队。\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n*   **GitHub Universe 2025**：抓住最后机会，节省700美元购买Universe现场通行证，并于10月28-29日在旧金山加入我们。\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)",
-      "shortSummary": "GitHub利用GitHub Copilot在五小时内自动化了其无障碍合规流程。此前，该流程完全手动，导致响应慢、跟进不一致且难以扩展。通过Copilot，他们构建了一个自动化系统，能自动创建和更新GitHub Issues、同步负责人、追踪进度并自动关闭已解决的问题。这不仅显著加快了修复速度，提高了可见性，还让领域专家而非工程师主导了原型开发，降低了未来工具开发的门槛，将治理工作从文书处理转向高价值分析。",
-      "translated_title": "我们如何使用GitHub Copilot在五小时内实现无障碍合规自动化",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/105733155?v=4&s=200",
-          "alt": "Janice Rimmer",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>See how we turned weekly accessibility grade signals into an automated, accountable remediation workflow—powered by GitHub Copilot and cross‑functional collaboration.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-we-automated-accessibility-compliance-in-five-hours-with-github-copilot/\">How we automated accessibility compliance in five hours with GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     },
     {
       "title": "规范驱动开发：在使用AI构建时将Markdown作为编程语言 (原标题: Spec-driven development: Using Markdown as a programming language when building with AI)",
@@ -316,169 +466,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Learn what it really takes to sustain one of the web’s most widely used frameworks on this episode of the GitHub Podcast.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/building-beyond-the-browser-keeley-hammond-on-electron-open-source-and-the-future-of-maintainership/\">Building beyond the browser: Keeley Hammond on Electron, open source, and the future of maintainership</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub Copilot 代码查找更智能：揭秘我们的新嵌入模型 (原标题: GitHub Copilot gets smarter at finding your code: Inside our new embedding model )",
-      "link": "https://github.blog/news-insights/product-news/copilot-new-embedding-model-vs-code/",
-      "pubDate": "Wed, 24 Sep 2025 20:24:18 +0000",
-      "isoDate": "2025-09-24T20:24:18.000Z",
-      "creator": "Shengyu Fu",
-      "summary": "GitHub Copilot 推出新的嵌入模型，显著提升 VS Code 中代码搜索的速度、内存效率和准确性。新模型旨在检索开发者真正需要的代码片段，而非“近似匹配”，带来了检索质量提升 37.6%，吞吐量提高约 2 倍，索引大小缩小 8 倍，从而使 GitHub Copilot 聊天和智能体响应更准确，结果返回更快，VS Code 内存使用更低。\n\n### 重要性\n优秀的 AI 编码体验依赖于准确找到相关上下文（代码片段、函数、测试、文档、代码中的错误）。“查找”步骤由嵌入（将语义相关的代码和自然语言内容表示为向量）驱动，即使词语不完全匹配，嵌入也能实现相关内容的检索。更好的嵌入模型直接带来更好的检索质量和更优的 GitHub Copilot 体验。\n\n### 已发布内容\nGitHub 训练并部署了一个专为代码和文档定制的新嵌入模型。该模型现在为 GitHub Copilot 聊天、智能体模式、编辑模式和提问模式提供上下文检索支持。\n\n### 影响与提升\n*   **检索质量显著提升：**\n    *   在多基准评估中，相对提升了 37.6%（平均得分从 0.362 提高到 0.498）。\n    *   对于 VS Code 中的 C# 开发者，代码接受率提升了 110.7%。\n    *   对于 Java 开发者，代码接受率提升了 113.1%。\n    *   ![模型在多个代码检索基准上的得分比较](https://github.blog/wp-content/uploads/2025/09/All_1200x630-1.png?resize=1024%2C538)\n        *图 1：模型在多个代码检索基准上的得分比较*\n*   **效率更高：**\n    *   嵌入吞吐量提高约 2 倍，减少了检索延迟。\n    *   索引内存大小缩小约 8 倍，改善了客户端和服务器端的扩展性。\n    *   ![显示 P50 延迟降低和内存占用减少的条形图](https://github.blog/wp-content/uploads/2025/09/All_1200x630.png?resize=1024%2C538)\n        *图 2：模型效率比较*\n\n### 检索质量示例\n新模型能更好地响应提示和指令，并区分高度相关和仅部分相关的搜索结果。例如，对于提示“在项目中通过名称查找单个命名空间时调用哪个方法？”，新模型能准确检索到包含 `findOne` 函数的代码片段，而旧模型则可能检索到语义相似但不正确的 `find` 函数。\n\n### 其他受益场景\n*   在大型单体仓库中搜索测试函数。\n*   查找分散在多个文件中的辅助方法。\n*   调试代码，例如“显示此错误字符串在哪里处理”。\n\n### 训练方法\n训练目标是在预算范围内优化真实开发者工作负载的检索质量，同时控制延迟和内存。核心技术是使用 InfoNCE 损失的对比学习和 Matryoshka 表示学习，这有助于嵌入模型区分几乎相同的代码片段，并支持多种嵌入大小以提高灵活性。\n\n**关键要素：** 使用“硬负例”进行训练。这些“硬负例”是看起来正确但实际上不正确的代码示例。通过教会模型区分“几乎正确”和“真正正确”，实现了最大的质量提升。硬负例从大型、多样化的语料库（公共 GitHub 和微软/GitHub 内部仓库）中挖掘，并使用大型语言模型 (LLM) 发现棘手的近似匹配，从而减少捷径学习并提高泛化能力。\n\n**硬负例训练示例：**\n对于查询“停用词表是如何填充的？”，最相关的代码示例是加载停用词表的函数。而加载单词到表或从文件读取停用词的函数则被用作不回答查询的硬负例。\n![一个示例展示了如何使用硬负例来训练嵌入模型](https://github.blog/wp-content/uploads/2025/09/Negative_1200x630_0ee98b.png?resize=1024%2C538)\n\n**训练数据编程语言分布：**\n*   Python：36.7%\n*   Java：19.0%\n*   C++：13.8%\n*   JavaScript/TypeScript：8.9%\n*   C#：4.6%\n*   其他语言：17.0%\n\n### 评估套件\n采用多基准评估，而非单一测试，以覆盖代码检索的不同方面，包括：\n*   **自然语言 (NL) 到代码：** 用相关函数/片段响应自然语言查询。\n*   **代码到 NL：** 代码的自然语言摘要。\n*   **代码到代码：** 相似函数搜索（重构或翻译的代码）。\n*   **问题到代码：** 将问题描述转化为建议的代码修复。\n\n### 未来展望\n新 Copilot 嵌入模型是使 AI 编码助手更智能、更可靠的一步。未来计划包括：\n*   将训练和评估数据扩展到更多语言和仓库。\n*   完善硬负例挖掘流程以获得更高质量。\n*   利用效率提升部署更大、更准确的模型。",
-      "shortSummary": "GitHub Copilot 推出新的嵌入模型，显著提升了 VS Code 中代码搜索的准确性、速度和内存效率。新模型使检索质量提升 37.6%，吞吐量提高约 2 倍，索引大小缩小 8 倍。通过使用对比学习和“硬负例”训练，模型能更准确地区分高度相关和近似相关的代码，从而提供更精准的 Copilot 聊天和智能体响应。未来将扩展训练数据并部署更大型模型，进一步增强 AI 编码助手的智能性和可靠性。",
-      "translated_title": "GitHub Copilot 代码查找更智能：揭秘我们的新嵌入模型",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/All_1200x630-1.png?resize=1024%2C538",
-          "alt": "A bar graph showing improved code retrieval, agentic code retrieval, and chat retrieval scores.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/All_1200x630.png?resize=1024%2C538",
-          "alt": "A bar graph showing decreased P50 latency and decreased memory footprint (bits).",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/Negative_1200x630_0ee98b.png?resize=1024%2C538",
-          "alt": "An example showing how hard negatives are used for training the embedding model.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/23369389?v=4&s=200",
-          "alt": "Shengyu Fu",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Learn about a new Copilot embedding model that makes code search in VS Code faster, lighter on memory, and far more accurate.</p>\n<p>The post <a href=\"https://github.blog/news-insights/product-news/copilot-new-embedding-model-vs-code/\">GitHub Copilot gets smarter at finding your code: Inside our new embedding model </a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "利用人工智能为联合国难民署的难民绘制希望地图 (原标题: Using AI to map hope for refugees with UNHCR, the UN Refugee Agency)",
-      "link": "https://github.blog/open-source/social-impact/using-ai-to-map-hope-for-refugees-with-unhcr-the-un-refugee-agency/",
-      "pubDate": "Wed, 24 Sep 2025 16:12:47 +0000",
-      "isoDate": "2025-09-24T16:12:47.000Z",
-      "creator": "Sidney Espinosa",
-      "summary": "### 引言：难民营规划的挑战\n\n难民营是复杂且动态的生态系统，通常迅速建立并有机发展以满足紧急需求。随着这些定居点的增长，联合国难民署（UNHCR）等国际人道主义援助组织在提供最基本的基础设施和服务方面面临巨大挑战。在长期危机中，当难民营成为长期庇护所时（例如肯尼亚的Kalobeyei定居点，收容了来自20多个国家的30多万难民），创建类似城市的功能性区域似乎是一项难以逾越的任务。任何人口密集区域的核心都是空间数据：关于学校、医院、住宅和道路的地图、网格和可靠的位置信息。然而，在许多难民营中，此类数据根本不存在，没有正式的街道名称，没有统一的地址，也无法清晰地追踪基本资源的位置。缺乏这一基础，城市规划就变成了猜测。\n\n### 解决方案：AI与开源技术的结合\n\n面对这一难题，联合国难民署及其他支持流离失所者的人道主义组织提出了一个大胆的假设：人工智能和开源技术不仅能提供技术工具，还能提供应对看似不可能的挑战所需的协作框架和全球社区。GitHub作为开放协作的平台，成为了连接本地知识与全球问题解决者网络的枢纽。\n\n### 数据收集与AI应用\n\n*   **从无人机到数据**：\n    *   项目始于最了解Kakuma的人：难民和当地居民。在人道主义开放街道地图团队（HOT）的培训下，他们使用无人机对定居点进行了航拍，捕获了数千张图像。\n    *   随后，他们手动标注了部分图像，标记出房屋、太阳能板、诊所、卫生设施等，建立了“地面实况”数据。\n    *   微软“AI for Good Lab”利用这些“地面实况”数据训练机器学习模型，以识别营地其他区域的相似特征。\n    *   这项技术将原本需要数年手动测绘的工作，缩短到极短的时间内完成。\n\n### 代码转化为协作：GitHub的作用\n\n*   **开放共享**：项目的突破不仅在于数据收集方式，更在于其共享方式。所有数据集、模型和代码都在GitHub上公开。\n*   **可复用性**：这意味着为Kakuma构建的工具可以被改编用于其他难民营、灾后恢复区或快速发展的城市。\n*   **效率提升**：GitHub Copilot帮助简化了流程，节省了大量格式化和清理时间，确保最终的存储库清晰且易于任何人使用。\n*   **协作中心**：GitHub不仅仅是一个发布平台，它还是一个将开发者、数据科学家和公民技术专家与联合国难民署使命连接起来的枢纽。通过开放源代码，其他人可以在此项目基础上进行开发、改进或应用于新的情境。\n*   **未来展望**：正如一位项目负责人所解释：“GitHub是这个项目下一阶段的开始。将开发者与这类问题联系起来是我们的使命。”\n\n### 共同构建希望\n\n*   **协作核心**：这个项目的核心是协作。难民提供了数据，HOT提供了培训和支持，科学家和开发者确保了工具的可复用性和可共享性。他们共同创建了一个蓝图，可以指导Kakuma以及世界各地社区的可持续规划。\n*   **UNHCR的愿景**：对于联合国难民署而言，该项目旨在创建知识和工具，以尊严和远见支持数百万流离失所者。\n*   **开放知识**：得益于GitHub，这些知识不再局限于一处，而是开放共享，让任何地方的任何人都能利用它，不仅绘制地图，更构建希望。\n\n### 相关链接\n\n*   Docs: ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n*   GitHub: ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n*   Customer stories: ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n*   GitHub Universe 2025: ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)",
-      "shortSummary": "联合国难民署（UNHCR）利用人工智能和开源技术（GitHub）解决难民营缺乏空间数据导致规划困难的问题。项目通过培训难民使用无人机收集数据，并由AI模型处理，将测绘时间大幅缩短。所有数据和代码在GitHub上公开共享，促进全球协作，使工具可应用于其他危机区域。GitHub成为连接开发者与UNHCR使命的枢纽，为Kakuma及全球社区的可持续规划提供了蓝图，旨在以尊严和远见支持流离失所者，并开放知识以构建希望。",
-      "translated_title": "利用人工智能为联合国难民署的难民绘制希望地图",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>With the help of GitHub, UNHCR turned drone imagery into maps — helping refugees in Kakuma and Kalobeyei build sustainable, powered communities.</p>\n<p>The post <a href=\"https://github.blog/open-source/social-impact/using-ai-to-map-hope-for-refugees-with-unhcr-the-un-refugee-agency/\">Using AI to map hope for refugees with UNHCR, the UN Refugee Agency</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "使用 GitHub Copilot 代理模式现代化 Java 项目的分步指南 (原标题: A step-by-step guide to modernizing Java projects with GitHub Copilot agent mode)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/a-step-by-step-guide-to-modernizing-java-projects-with-github-copilot-agent-mode/",
-      "pubDate": "Tue, 23 Sep 2025 13:00:00 +0000",
-      "isoDate": "2025-09-23T13:00:00.000Z",
-      "creator": "Andrea Griffiths",
-      "summary": "# 使用 GitHub Copilot 代理模式现代化 Java 项目的分步指南\n\n现代化遗留应用程序，如将 Java 应用迁移到云端或更新 Java 运行时，通常面临依赖冲突、过时部署目标和安全漏洞等挑战。GitHub Copilot 代理模式结合 GitHub Copilot 应用现代化 VS Code 扩展，提供了一个交互式、分步式的体验，旨在更快、更准确地升级和迁移 Java 项目。该工具集也支持 .NET 应用的现代化，包括 AI 辅助升级、云就绪迁移路径和无缝部署到 Azure。\n\n## 核心功能\n\n通过 Visual Studio Code 中的这些工具，用户可以：\n*   分析 Java 项目并生成升级计划。\n*   使用 GitHub Copilot 自动应用更改。\n*   在循环中修复构建问题并验证测试。\n*   在升级后检测并修复 CVE（常见漏洞和暴露）。\n\n## 先决条件\n\n要遵循本指南，您需要：\n*   Visual Studio Code\n*   GitHub Copilot 许可证（Pro、Pro+、Business 和 Enterprise 订阅者可访问 Copilot 编码代理）\n*   GitHub Copilot 应用现代化 – Java 升级扩展\n*   一个基于 Git 的遗留 Java 项目，使用 Maven 或 Gradle 构建（JDK 8 或更高版本均可）\n\n## 现代化流程概览\n\n当使用 Java 升级扩展启动代理会话时，Copilot 会执行以下操作：\n*   分析 Java 代码库。\n*   生成可自定义的升级计划。\n*   使用 OpenRewrite 等工具执行代码转换。\n*   迭代修复构建错误。\n*   通过测试执行验证更改。\n*   扫描 CVE，提供代码验证行为并提出安全的替代方案。\n*   提供完整的摘要报告。\n\n## 分步指南\n\n### 步骤 1：在 VS Code 中打开 Java 项目\n\n使用一个示例遗留 Java 项目（或您自己的项目），确保已使用 Git 初始化源代码控制并拥有一个可工作的测试套件（最好包含单元测试）。\n\n```bash\ngit clone https://github.com/your-org/your-legacy-java-app.git\ncd your-legacy-java-app\ncode .\n```\n\n### 步骤 2：启动代理会话\n\n启动 GitHub Copilot 聊天侧边栏，并开始一个新的代理会话。从可用工具中选择“GitHub Copilot app modernization – upgrade for Java”。\n\n![Visual Studio Code 窗口显示一个名为“spring-webflow”的 Java 项目。文件浏览器在左侧打开，显示项目文件，包括 build.gradle、settings.gradle 和 README.md。主编辑器显示 README.md 文件，其中包含描述 Spring Web Flow 的文本。顶部可见一个 Copilot 代理模式工具选择下拉菜单，其中包含升级 Java 项目的选项。右侧边栏打开了 Copilot 代理模式面板，解释了 Copilot 如何编辑文件、运行命令和处理上下文。](https://github.blog/wp-content/uploads/2025/09/1.png?resize=1024%2C621)\n\n在代理会话中复制并粘贴以下内容以开始：\n`Using Java upgrade tools,upgrade this project to Java 21. Analyze deprecated APIs, update Gradle dependencies, and propose a safe, testable migration plan.`\n\n### 步骤 3：Copilot 扫描并规划\n\nCopilot 将分析您的项目并提出升级计划。该工具首先扫描您的：\n*   JDK 版本使用情况\n*   构建工具配置（Gradle 的 build.gradle 或 Maven 的 pom.xml）\n*   过时或不安全的依赖项\n*   已弃用的 API 和语言特性\n\n然后，它会创建一个结构化的升级计划，可在 Copilot 聊天中进行编辑。您可以提示 Copilot 从升级中排除模块或对计划进行任何必要的调整。\n\n![Visual Studio Code 窗口显示 Java 项目升级计划。在主编辑器中，plan.md 文件打开，包含项目信息、Java 环境、升级目标和附加任务部分。它指定使用 Gradle Wrapper 从 Java 17 升级到 Java 21。在右侧的 Copilot 代理模式面板上，显示 JSON 输入和输出，表明已使用自动生成的迁移计划创建了一个新的升级会话。左侧的文件浏览器列出了项目文件，包括 build.gradle、progress.md 和其他配置文件。](https://github.blog/wp-content/uploads/2025/09/2.png?resize=1024%2C640)\n\n### 步骤 4：应用更改并解决错误\n\n一旦您批准计划，Copilot 便会开始升级文件、调整导入并修复语法错误。如果出现构建错误，Copilot 会进入修复-测试循环，直到项目干净地编译。\n\n![Visual Studio Code 窗口显示 Java 项目升级的日志文件 3.1.upgradeProjectUsingOpenRewrite.log。日志详细说明了升级到 Java 21 的任务，包括收集和应用 OpenRewrite 配方、运行 Gradle 构建以及报告许多任务为 UP-TO-DATE。右侧的 Copilot 代理模式面板显示了升级会话的输入和输出，以及执行计划的说明和注意事项。左侧的文件浏览器列出了 Java 项目文件，包括日志、Gradle 文件和源文件夹。](https://github.blog/wp-content/uploads/2025/09/3.png?resize=1024%2C642)\n\nCopilot 会生成一份详细的升级报告，包括：\n*   更改的文件和提交历史。\n*   API 和依赖项更新。\n*   剩余待办事项和后续步骤。\n\n![Visual Studio Code 窗口显示将 Java 项目升级到版本 21 的摘要报告 summary.md。报告包括项目信息、目标、测试更改（显示升级前后所有 1177 个测试均通过），以及依赖项更改（Java 从 17 升级到 21）。在右侧边栏，Copilot 代理模式显示了迁移的好处、标记为“低”的风险评估，以及生产的后续步骤，例如更新环境、CI/CD 管道、文档和监控。左侧的文件浏览器显示了项目文件，包括 plan.md、progress.md 和 Gradle 配置文件。](https://github.blog/wp-content/uploads/2025/09/4.png?resize=1024%2C623)\n\n例如，升级前后的代码更改：\n\n```java\n// Before (deprecated constructor)\nView view = this.resolver.resolveViewName(\"intro\", new Locale(\"EN\"));\n// After Java 21 upgrade\nView view = this.resolver.resolveViewName(\"intro\", Locale.of(\"EN\"));\n```\n\n### 5. 迁移到 Azure\n\n为了使应用程序适应 Azure，您可以运行应用程序评估以识别云就绪问题。在 GitHub Copilot 应用现代化扩展 UI 中，点击“Migrate to Azure”。\n\n![Visual Studio Code 侧边栏显示 GitHub Copilot 应用现代化面板。在“快速入门”下，它询问如何现代化 Java 应用，并有两个蓝色按钮：“升级运行时和框架”和“迁移到 Azure”。下方消息建议使用 Claude Sonnet 3.7 或更高版本。下方，“评估”部分链接到“评估报告”。](https://github.blog/wp-content/uploads/2025/09/5.png?resize=756%2C966)\n\n根据部署目标，GitHub Copilot 应用现代化将识别云迁移问题并提供建议操作。要设置部署目标，请修改 `appmod-java/appcat` 文件夹下的 `assessment-config.yaml` 文件。例如，选择 Azure Kubernetes Service (AKS) 作为目标。\n\n![Visual Studio Code 编辑器显示一个名为 assessment-config.yaml 的 YAML 配置文件。该文件定义了 appcat，其目标设置为 azure-aks，模式设置为 source-only。](https://github.blog/wp-content/uploads/2025/09/6.png?resize=942%2C300)\n\n生成评估报告，详细说明云就绪问题。点击与“Auth Migration”问题类别相关的“Migrate”按钮，将本地用户身份验证迁移到 Microsoft Entra ID。\n\n![云就绪报告面板显示“Auth Migration (Spring Security)”下的一个问题。严重性标记为“潜在 (1)”，代码影响为 2，解决方案建议将本地用户身份验证迁移到 Microsoft Entra ID。在“操作”列中出现一个蓝色的“迁移”按钮。](https://github.blog/wp-content/uploads/2025/09/7.png?resize=1024%2C99)\n\n与升级过程类似，Copilot 首先制定一个计划，突出显示依赖项更新和配置更改。一旦您批准计划，Copilot 将执行迁移步骤。\n\n![Visual Studio Code 编辑器显示 code-migration 下的 plan.md 文件。该文件包含 Spring WebFlow 项目与 Spring Security 集成的分析摘要。它指出使用了 Spring Security BOM 6.0.8、框架性质、SecurityFlowExecutionListener 组件、Java 21 和 Spring Framework 6.0.23。 “要修改的文件”部分突出显示了 build.gradle 中的依赖项更新，需要 Microsoft Entra ID 依赖项。更改包括添加 spring-cloud-azure-starter-active-directory、spring-boot-starter-oauth2-client，并更新 Spring Cloud Azure 依赖项的 BOM。](https://github.blog/wp-content/uploads/2025/09/8.png?resize=1024%2C527)\n\nCopilot 总结了此迁移场景所做的更改列表，包括：\n*   在构建配置中添加了 Microsoft Entra ID 依赖项。\n*   在 `Application.properties` 中添加了 Microsoft Entra ID 配置。\n*   为 Spring Security 添加了配置适配器以启用 Microsoft Entra ID。\n*   添加了文档以解释如何使用 Spring WebFlow 应用实现 Microsoft Entra ID 身份验证。\n\n![Visual Studio Code 编辑器显示名为“迁移摘要：本地用户身份验证到 Microsoft Entra ID”的 summary.md 文件。概述列出了项目详细信息、迁移场景、会话 ID、日期（2025 年 9 月 10 日）和状态“成功完成”。摘要描述了依赖项更新、文档创建和 Spring WebFlow 的框架增强。右侧面板显示了已创建/修改的文件（build.gradle、entra-id-integration.adoc、SampleEntraIdSecurityConfig.java 和 application.properties）以及验证结果，确认没有漏洞、构建成功且所有测试均通过。](https://github.blog/wp-content/uploads/2025/09/9.png?resize=1024%2C413)\n\n### 6. 验证更改并审查报告\n\n代码更新后，需要确认一切按预期工作。Copilot 将指导您使用项目的构建系统运行测试套件。对于 Maven 项目，您可以手动运行测试：\n\n```bash\n./mvnw test\n```\n\n对于 Gradle 项目：\n\n```bash\n./gradlew test\n```\n\n如果出现故障，Copilot 将帮助调试甚至根据您最近的更改编写缺失的测试。所有这些都遵循“人机协作”原则，即所有提议的步骤都需要人工确认。\n\n#### 自动化 CVE 扫描器\n\nGitHub Copilot 应用现代化会自动对所有已更改的依赖项执行全面的 CVE 扫描，这是开发团队一直要求的关键安全功能。当检测到漏洞时，代理会智能地提出安全的版本替换或推荐替代库以保持安全合规性。\n\n![验证报告面板，标题为“迭代 1 – 阶段 1：CVE 验证”。它列出了新添加的依赖项 spring-cloud-azure-starter-active-directory:5.22.0 和 spring-boot-starter-oauth2-client:3.3.5。输出确认“未发现这些依赖项的已知 CVE”。底部注释说明阶段 1 成功完成，无需更改。](https://github.blog/wp-content/uploads/2025/09/10.png?resize=1024%2C995)\n\n## 部署到 Azure\n\n将应用程序部署到 Azure 可能是一个漫长而艰巨的过程，需要一套特定的技能来编写基础设施即代码。GitHub Copilot 简化了这一步骤，并自动化了到 Azure 的部署，让您可以更快地从代码到云。\n\n![Visual Studio Code 侧边栏显示 GitHub Copilot Java 应用现代化面板。在“任务”下，包括升级任务、迁移任务、质量与安全任务、部署任务和我的任务。部署任务部分已展开，显示了部署到现有 Azure 基础设施或预置基础设施并部署到 Azure 的选项。](https://github.blog/wp-content/uploads/2025/09/11.png?resize=325%2C459)\n\n![部署摘要面板显示 Azure 部署的关键亮点。它列出了：6 个 Azure 资源已预置，一个正在运行的带有容器应用 URL 的实时应用程序，总部署时间为 4 分 58 秒，已启用自动伸缩（1-10 个副本），通过 Application Insights 和 Log Analytics 进行全面监控，以及使用托管身份进行安全部署。底部注释解释说此记录可作为未来参考和理解资源关系的文档。](https://github.blog/wp-content/uploads/2025/09/12.png?resize=475%2C442)\n\n## 总结\n\n借助 GitHub Copilot 应用现代化，您可以将遗留 Java 项目转变为云就绪应用。它能够修复 Java 升级和迁移场景中的代码，解决构建问题，验证更改，甚至帮助加强测试覆盖率——所有这些都在一个统一的、引导式工作流中完成。Copilot 代理模式及其增强扩展可以帮助分析大型代码库、规划升级或迁移、自动修复问题，并节省大量手动调试时间。",
-      "shortSummary": "GitHub Copilot 代理模式结合 VS Code 扩展，提供了一种现代化 Java 项目的分步指南。它能自动分析代码、生成升级计划、修复构建错误、验证测试、扫描 CVE，并简化到 Azure 的迁移和部署。该工具显著减少了手动工作，加速了遗留 Java 应用的升级和云就绪过程，同时确保了代码质量和安全性。",
-      "translated_title": "使用 GitHub Copilot 代理模式现代化 Java 项目的分步指南",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/1.png?resize=1024%2C621",
-          "alt": "A Visual Studio Code window showing a Java project called ‘spring-webflow’. The file explorer is open on the left, displaying project files including build.gradle, settings.gradle, and a README.md. The main editor shows the README.md file with text describing Spring Web Flow. At the top, a Copilot agent mode tool selection dropdown is visible with options for upgrading Java projects. On the right sidebar, the Copilot Agent Mode panel is open, explaining how Copilot can edit files, run commands, and handle context.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/2.png?resize=1024%2C640",
-          "alt": "Visual Studio Code window showing a Java project upgrade plan. In the main editor, the file plan.md is open with sections for Project Information, Java Environments, Upgrade Goals, and Additional Tasks. It specifies upgrading from Java 17 to Java 21 using Gradle Wrapper. On the right-hand Copilot Agent Mode panel, JSON input and output are displayed, showing that a new upgrade session was created with an auto-generated migration plan. The file explorer on the left lists project files including build.gradle, progress.md, and other configuration files.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/3.png?resize=1024%2C642",
-          "alt": "Visual Studio Code window showing a log file 3.1.upgradeProjectUsingOpenRewrite.log from a Java project upgrade. The log details tasks for upgrading to Java 21, including collecting and applying OpenRewrite recipes, running Gradle builds, and reporting many tasks as UP-TO-DATE. On the right, the Copilot Agent Mode panel displays input and output for the upgrade session, with instructions and notes about executing the plan. The file explorer on the left lists Java project files, including logs, Gradle files, and source folders.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/4.png?resize=1024%2C623",
-          "alt": "Visual Studio Code window showing a summary report summary.md for upgrading a Java project to version 21. The report includes project information, goals, test changes showing all 1177 tests passing before and after, and dependency changes with Java upgraded from 17 to 21. On the right sidebar, Copilot Agent Mode displays migration benefits, a risk assessment marked LOW, and next steps for production such as updating environments, CI/CD pipelines, documentation, and monitoring. The file explorer on the left shows project files including plan.md, progress.md, and Gradle configuration files.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/5.png?resize=756%2C966",
-          "alt": "Visual Studio Code sidebar showing the GitHub Copilot App Modernization panel. Under ‘Quickstart’, it asks how to modernize a Java app, with two blue buttons: ‘Upgrade Runtime & Frameworks’ and ‘Migrate to Azure’. A message below recommends using Claude Sonnet 3.7 or later. Below, an ‘Assessment’ section links to an ‘Assessment Report.",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/6.png?resize=942%2C300",
-          "alt": "Visual Studio Code editor showing a YAML configuration file named assessment-config.yaml. The file defines appcat with a target set to azure-aks and mode set to source-only.",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/7.png?resize=1024%2C99",
-          "alt": "Cloud Readiness report panel showing an issue under ‘Auth Migration (Spring Security)’. Criticality is marked as ‘Potential (1)’, code impact is 2, and the solution suggests migrating from on-premises user authentication to Microsoft Entra ID. A blue ‘Migrate’ button appears in the Action column.",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/09/8.png?resize=1024%2C527",
-          "alt": "Visual Studio Code editor showing a plan.md file under code-migration. The file contains an analysis summary for a Spring WebFlow project with Spring Security integration. It notes use of Spring Security BOM 6.0.8, framework nature, SecurityFlowExecutionListener component, Java 21, and Spring Framework 6.0.23. The ‘Files to be Modified’ section highlights dependency updates in build.gradle, requiring Microsoft Entra ID dependencies. Changes include adding spring-cloud-azure-starter-active-directory, spring-boot-starter-oauth2-client, and updating the BOM for Spring Cloud Azure dependencies.",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Learn how to use GitHub Copilot agent mode to modernize legacy Java projects with guided upgrades, automated fixes, and cloud-ready migrations.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/a-step-by-step-guide-to-modernizing-java-projects-with-github-copilot-agent-mode/\">A step-by-step guide to modernizing Java projects with GitHub Copilot agent mode</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-07T04:32:26.728Z"
+  "lastUpdated": "2025-10-09T04:33:30.395Z"
 }
