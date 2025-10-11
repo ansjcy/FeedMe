@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "为什么GPS在城市中会失效？以及它是如何被巧妙修复的 (原标题: Why GPS fails in cities. And how it was brilliantly fixed)",
+      "link": "https://www.sciencedaily.com/releases/2025/10/251009033124.htm",
+      "pubDate": "Thu, 09 Oct 2025 03:31:24 EDT",
+      "isoDate": "2025-10-09T07:31:24.000Z",
+      "creator": "",
+      "summary": "# 为什么GPS在城市中会失效？以及它是如何被巧妙修复的\n\n## 引言：城市GPS失效的普遍问题及其重要性\n\n我们大多数人很少质疑GPS定位的准确性，但在新城市中使用手机导航时，即使我们沿着人行道稳定行走，定位点也可能在地图上跳跃。挪威科技大学（NTNU）的博士研究员Ardeshir Mohamadi指出，“城市对卫星导航来说是残酷的。” 他正在研究如何使智能手机和健身手表等经济型GPS接收器在不依赖昂贵外部校正服务的情况下，大幅提高精度。对于自动驾驶汽车而言，高精度定位尤为关键。\n\n## 城市峡谷效应：GPS失效的根本原因\n\nMohamadi和他的NTNU团队开发了一个新系统，使自动驾驶汽车能够在密集的城市环境中安全导航。Mohamadi解释说：“在城市中，玻璃和混凝土会导致卫星信号来回反射。高大的建筑物阻挡了视线，在开阔高速公路上完美运行的系统，进入建成区后效果就不那么好了。”\n\n当GPS信号从建筑物反射时，它们需要更长的时间才能到达接收器。这种延迟会干扰到卫星距离的计算，从而导致报告的位置不准确。这种复杂的城市环境被称为“城市峡谷”，类似于身处深邃峡谷底部，信号只有在多次反射后才能到达。Mohamadi表示：“对于自动驾驶汽车来说，这决定了是自信、安全的驾驶行为，还是犹豫、不可靠的驾驶。这就是我们开发SmartNav——一种专为‘城市峡谷’设计的定位技术——的原因。”\n\n## GPS工作原理简述\n\n全球定位系统（GPS）由许多围绕地球运行的小型卫星组成。这些卫星通过无线电波发送信号，由GPS接收器接收。当接收器从至少四颗卫星接收到这些信号时，它就能够计算出自己的位置。信号包含一个带有代码的消息，指示卫星的位置和信号传输的精确时间，就像卫星发来的短信。\n\n## NTNU团队的解决方案：SmartNav\n\n### 早期尝试：载波相位技术\n\n在城市中，当信号在建筑物之间反弹时，信号中的代码常常会变得不正确。NTNU研究人员研究的第一个解决方案是完全放弃使用代码，转而利用无线电波的信息，即波到达接收器时是向上还是向下传播的，这被称为波的载波相位。\n\nMohamadi指出：“仅使用载波相位可以提供非常高的精度，但这需要时间，当接收器移动时就不太实用。” 问题在于，你必须保持静止，直到计算结果足够好——这不仅仅是几微秒，而是几分钟。\n\n### 现有校正技术：RTK与PPP-RTK\n\n然而，还有其他方法可以改善GPS信号：\n*   **RTK（实时动态）**：用户可以使用通过基站校正信号的服务。只要用户在这些基站附近，RTK就能很好地工作。然而，这种解决方案昂贵，主要面向专业用户。\n*   **PPP-RTK（精密单点定位-实时动态）**：这是一种替代方法，它将精确校正与卫星信号结合起来。欧洲伽利略系统目前免费广播其校正信息，支持了这项技术。PPP-RTK减少了对密集本地基站网络和昂贵订阅的需求，使得在大众市场接收器上进行廉价、大规模的部署成为可能。\n\n### 谷歌的贡献：3D建筑模型与多源数据融合\n\n在特隆赫姆的研究人员努力寻找更好的解决方案时，谷歌为其Android用户推出了一项新服务。谷歌现在拥有全球近4000个城市的3D建筑模型。该公司利用这些模型来预测卫星信号如何在建筑物之间反射。这有助于解决在使用地图应用时，例如试图找回酒店时，出现“走错路边”的问题。\n\nMohamadi表示：“他们结合了来自传感器、Wi-Fi、移动网络和3D建筑模型的数据，生成平滑的位置估计，能够抵御反射引起的误差。”\n\n### SmartNav的整合与成果\n\n研究人员现在能够将所有这些不同的校正系统与他们自己开发的算法结合起来。当他们在特隆赫姆的街道上进行测试时，90%的时间内实现了优于10厘米的精度。研究人员表示，这提供了在城市中可以信赖的精度。PPP-RTK的使用也将使这项技术对公众开放，因为它是一种相对经济的服务。\n\n## 结论：高精度定位的实现与普及\n\nMohamadi总结道：“PPP-RTK减少了对密集本地基站网络和昂贵订阅的需求，使得在大众市场接收器上进行廉价、大规模的部署成为可能。” 这意味着，通过结合多种先进技术，城市中的GPS定位精度得到了显著提升，为自动驾驶等高精度应用提供了可靠支持，并有望惠及普通大众。",
+      "shortSummary": "GPS在城市中因高楼阻挡和反射信号（城市峡谷效应）导致定位不准，对自动驾驶等应用构成挑战。挪威科技大学团队开发了SmartNav系统，巧妙地解决了这一问题。他们结合了谷歌利用3D建筑模型预测信号反射的新服务、PPP-RTK等现有校正技术以及自研算法。测试结果显示，该系统在城市中90%的时间内实现了优于10厘米的定位精度，为城市环境下的高精度定位提供了可靠且经济的解决方案，有望广泛应用于大众市场接收器。",
+      "translated_title": "为什么GPS在城市中会失效？以及它是如何被巧妙修复的",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Our everyday GPS struggles in “urban canyons,” where skyscrapers bounce satellite signals, confusing even advanced navigation systems. NTNU scientists created SmartNav, combining satellite corrections, wave analysis, and Google’s 3D building data for remarkable precision. Their method achieved accuracy within 10 centimeters during testing. The breakthrough could make reliable urban navigation accessible and affordable worldwide."
+    },
+    {
       "title": "这些小机器人真的能在水上行走 (原标题: These little robots literally walk on water)",
       "link": "https://www.sciencedaily.com/releases/2025/10/251003033930.htm",
       "pubDate": "Sat, 04 Oct 2025 10:26:35 EDT",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "MIT researchers discovered that vision-language models often fail to understand negation, ignoring words like “not” or “without.” This flaw can flip diagnoses or decisions, with models sometimes guessing randomly. New training data helps, but the issue remains a serious warning sign."
-    },
-    {
-      "title": "人工智能与遗传学助力农民减少玉米施肥 (原标题: Artificial intelligence and genetics can help farmers grow corn with less fertilizer)",
-      "link": "https://www.sciencedaily.com/releases/2025/05/250514164325.htm",
-      "pubDate": "Wed, 14 May 2025 16:43:25 EDT",
-      "isoDate": "2025-05-14T20:43:25.000Z",
-      "creator": "",
-      "summary": "### 人工智能与遗传学提升玉米氮肥利用效率\n\n纽约大学的科学家们正在利用人工智能（AI）和遗传学，旨在帮助农民提高玉米产量并最大程度地减少氮肥成本，同时减轻环境负担。\n\n#### 研究背景与挑战\n\n*   **氮肥利用效率低下：** 尽管过去50年植物育种和肥料技术取得了显著进步，但作物（尤其是玉米）仅能利用施用氮肥的约55%。\n*   **环境污染：** 未被利用的氮肥渗入地下水，污染饮用水，并在湖泊、河流、水库和温暖海水中引发有害藻华。此外，土壤中残留的氮会被细菌转化为一氧化二氮，这是一种强效温室气体，其在100年内的温室效应是二氧化碳的265倍。\n*   **经济负担：** 玉米作为美国主要的经济作物，需要大量氮肥。肥料成本不断上升（大部分依赖进口），加上玉米较低的氮利用效率，给农民带来了经济挑战。\n\n#### 研究方法与发现\n\n为了解决这些问题，纽约大学的研究人员开发了一种结合植物遗传学和机器学习（一种AI）的新方法，以提高氮利用效率（NUE）。\n\n*   **“模型到作物”方法：** 研究团队追踪了玉米基因与拟南芥（一种常用作植物生物学模型的小型开花杂草）共享的进化历史。此前，他们已在《自然通讯》上发表研究，识别并验证了玉米和拟南芥之间对氮响应保守的基因。\n*   **识别“调控子”（Regulons）：** 在《植物细胞》杂志上发表的最新研究中，研究人员进一步识别了由同一转录因子（一种调控蛋白）激活或抑制的基因群——即“调控子”（Regulons），这些基因群共同控制着氮利用效率。\n*   **机器学习应用：**\n    *   研究人员首先使用RNA测序技术测量了玉米和拟南芥基因对氮处理的响应。\n    *   利用这些数据，他们训练了机器学习模型，以识别玉米和拟南芥品种中保守的氮响应基因，以及调控这些对氮利用效率至关重要基因的转录因子。\n    *   对于每个“NUE调控子”（即转录因子及其调控的NUE基因集），研究人员计算了一个集体机器学习得分，并根据其组合表达水平预测田间玉米品种氮利用效率的准确性进行排名。\n*   **实验验证：** 研究人员对排名靠前的NUE调控子进行了细胞水平的验证实验，确认了两个玉米转录因子（ZmMYB34/R3）及其调控的24个控制氮利用的基因，以及拟南芥中一个密切相关的转录因子（AtDIV1）及其调控的23个与玉米共享遗传历史并控制氮利用的靶基因。\n*   **AI预测能力提升：** 将这些经过验证的“模型到作物保守NUE调控子”反馈给机器学习模型后，AI预测田间玉米品种氮利用效率的能力显著增强。\n\n#### 潜在影响与效益\n\n*   **精准育种：** 识别控制氮利用的集体基因NUE调控子和相关转录因子，将使作物科学家能够培育或工程化出所需肥料更少的玉米品种。\n*   **早期筛选：** 农民可以在玉米幼苗阶段通过分子标记筛选出氮利用效率最高的杂交品种，而无需等到田间种植后测量其氮利用情况，从而提高效率。\n*   **经济与环境双赢：** 这项技术不仅能为农民节省成本，还将显著减少地下水氮污染和一氧化二氮温室气体排放，对环境产生积极影响。\n\n纽约大学已就该研究及其发现提交了专利申请。该研究得到了美国国家科学基金会植物基因组研究项目和美国国立卫生研究院的资助。",
-      "shortSummary": "纽约大学科学家利用人工智能和遗传学，通过识别控制植物氮利用效率（NUE）的关键基因群（调控子），开发出一种新方法。该研究结合机器学习和“模型到作物”策略，验证了玉米和拟南芥中与NUE相关的基因和转录因子。这项技术有望帮助农民培育或筛选出氮肥需求量更少的玉米品种，从而降低成本，并显著减少氮污染和温室气体排放，实现经济和环境双赢。",
-      "translated_title": "人工智能与遗传学助力农民减少玉米施肥",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Scientists are using artificial intelligence to determine which genes collectively govern nitrogen use efficiency in plants such as corn, with the goal of helping farmers improve their crop yields and minimize the cost of nitrogen fertilizers."
     }
   ],
-  "lastUpdated": "2025-10-10T09:27:58.955Z"
+  "lastUpdated": "2025-10-11T09:23:32.652Z"
 }
