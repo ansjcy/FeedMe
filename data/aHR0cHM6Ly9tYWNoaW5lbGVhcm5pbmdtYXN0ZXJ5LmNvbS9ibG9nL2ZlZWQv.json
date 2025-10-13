@@ -5,6 +5,46 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "构建推理缓存以在高流量LLM应用中节省成本 (原标题: Build an Inference Cache to Save Costs in High-Traffic LLM Apps)",
+      "link": "https://machinelearningmastery.com/build-an-inference-cache-to-save-costs-in-high-traffic-llm-apps/",
+      "pubDate": "Thu, 09 Oct 2025 11:00:27 +0000",
+      "isoDate": "2025-10-09T11:00:27.000Z",
+      "creator": "Kanwal Mehreen",
+      "summary": "# 构建推理缓存以在高流量LLM应用中节省成本\n\n本文详细介绍了如何在大型语言模型（LLM）应用中实现精确匹配和语义推理缓存，以有效降低延迟和API成本。\n\n![构建推理缓存以在高流量LLM应用中节省成本](https://machinelearningmastery.com/wp-content/uploads/2025/10/Build-an-Inference-Cache-to-Save-Cost-in-High-Traffic-LLM-Apps.png)\n\n## 引言\n\n*   **LLM应用场景与挑战**：LLM广泛应用于聊天机器人、客户支持等高流量场景，每天处理数百万查询。然而，重复或相似的查询会不必要地消耗API成本并增加响应延迟。\n*   **解决方案**：推理缓存通过存储和重用常见查询的结果来解决这一问题，从而节省资源。\n\n## 演示设置\n\n*   使用Google Colab进行演示，并安装OpenAI Python客户端，配置API密钥。\n\n## 步骤1: 简单的LLM调用\n\n*   定义`ask_llm(prompt)`函数，用于向`gpt-4o-mini`模型发送请求并测量响应时间。例如，查询“What is your refund policy?”耗时约2.81秒。这种方式对于单次调用可行，但无法应对重复查询。\n\n## 步骤2: 模拟重复查询\n\n*   通过一个包含重复问题的查询列表进行模拟。在不使用缓存的情况下，每次查询都会调用LLM，导致总时间显著增加（例如，5个查询总计28.64秒），并产生重复的API费用。\n\n## 步骤3: 添加精确匹配推理缓存\n\n*   **实现方式**：使用一个基于字典的简单缓存 (`cache = {}`)。\n*   **`ask_llm_cached(prompt)`函数**：\n    *   如果查询已存在于缓存中，则直接返回缓存结果，耗时几乎为零。\n    *   如果查询不在缓存中，则调用LLM，将结果存入缓存后再返回。\n*   **效果**：对于重复的查询，缓存能够显著降低延迟和成本。例如，使用精确缓存后，5个查询的总时间降至12.00秒。\n\n## 步骤4: 精确匹配的局限性\n\n*   精确匹配缓存仅对文本完全相同的查询有效。例如，“What is your refund policy?”和“Can you explain the refund policy?”虽然语义相同，但由于文本差异，精确缓存会失效，导致LLM被再次调用。\n*   在实际应用中，用户提问方式多样，这是精确匹配缓存的一大挑战。\n\n## 步骤5: 使用嵌入实现语义缓存\n\n*   **核心思想**：通过检查查询的语义相似性而非文本一致性来解决精确匹配的局限性。\n*   **实现方式**：\n    *   `embed(text)`函数：使用`text-embedding-3-small`模型生成查询的嵌入向量。\n    *   `ask_llm_semantic(prompt, threshold=0.85)`函数：\n        *   将当前提示词转换为嵌入向量。\n        *   遍历语义缓存，计算当前嵌入与缓存中所有查询嵌入的余弦相似度。\n        *   如果相似度超过预设阈值（如0.85），则返回缓存结果。\n        *   如果未找到足够相似的查询，则调用LLM，并将新查询的嵌入和结果存入缓存。\n*   **效果**：即使查询措辞不同，语义缓存也能识别其相似性并重用答案，进一步节省成本和时间。\n\n## 结论\n\n*   **重要性**：对于任何高流量LLM应用（如客户支持机器人、AI代理），推理缓存是至关重要的优化措施。\n*   **协同效益**：精确缓存处理相同查询，语义缓存处理语义相似查询，两者结合可大幅减少API调用。\n*   **生产环境考量**：在实际生产环境中，通常会使用FAISS、Pinecone或Weaviate等向量数据库来存储嵌入，以实现高效的相似性搜索。\n*   本文的演示表明，即使是简单的缓存实现也能带来显著的成本和时间节省。",
+      "shortSummary": "本文介绍了在高流量LLM应用中通过构建推理缓存来节省成本和降低延迟的方法。文章首先展示了重复调用LLM的低效性，然后引入了两种缓存策略：精确匹配缓存和语义缓存。精确匹配缓存通过存储和重用完全相同的查询结果来减少API调用。针对精确匹配的局限性，语义缓存利用嵌入技术识别并重用语义相似的查询结果。结合使用这两种缓存能显著减少LLM的API调用，从而节省大量成本和时间，尤其适用于客户支持机器人等高流量场景。",
+      "translated_title": "构建推理缓存以在高流量LLM应用中节省成本",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/Build-an-Inference-Cache-to-Save-Cost-in-High-Traffic-LLM-Apps.png",
+          "alt": "Build an Inference Cache to Save Costs in High-Traffic LLM Apps",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Large language models (LLMs) are widely used in applications like chatbots, customer support, code assistants, and more."
+    },
+    {
+      "title": "7 个 NumPy 代码向量化技巧 (原标题: 7 NumPy Tricks to Vectorize Your Code)",
+      "link": "https://machinelearningmastery.com/7-numpy-tricks-to-vectorize-your-code/",
+      "pubDate": "Wed, 08 Oct 2025 11:00:40 +0000",
+      "isoDate": "2025-10-08T11:00:40.000Z",
+      "creator": "Bala Priya C",
+      "summary": "### 7 个 NumPy 代码向量化技巧\n\n![7 个 NumPy 代码向量化技巧](https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-bala-numpy-vectorization-tricks.png)\n\n### 引言\n在处理大量数据时，Python 中的 `for` 循环由于解释器速度、动态类型检查和内存管理开销，执行效率低下。NumPy 通过封装高度优化的 C 和 Fortran 库来解决这一瓶颈，这些库能够以单次操作处理整个数组，完全绕过 Python 的开销。要利用 NumPy 的速度，需要将代码重构为向量化操作，即从“循环检查每个值”转变为“选择符合条件的元素”，从嵌套迭代转变为数组维度和广播。本文介绍了 7 种消除数值代码中循环的向量化技术，旨在提高代码运行速度和可读性。\n\n### 1. 布尔索引替代条件循环\n当需要根据条件过滤或修改数组元素时，通常会想到循环检查。\n*   **慢速方法（循环）**：遍历数组，根据条件 `if/else` 追加到结果列表。\n*   **快速方法（向量化）**：使用布尔数组作为索引。例如，`result[data > 0] *= 2` 会创建一个布尔数组，然后只选择满足条件的元素进行操作。\n\n### 2. 广播实现隐式循环\n当需要组合不同形状的数组（例如将行向量添加到矩阵的每一行）时，循环方法需要显式迭代。\n*   **慢速方法（显式循环）**：遍历矩阵的每一行，逐行进行减法操作。\n*   **快速方法（向量化）**：利用 NumPy 的广播机制。通过设置 `keepdims=True` 保持 `row_means` 的维度为 `(1000, 1)`，NumPy 会自动将这个列向量扩展到矩阵的所有列进行减法。\n*   **注意**：广播在维度兼容时有效（相等或其中一个为 1）。较小的数组会被虚拟重复以匹配较大数组的形状，无需内存复制。\n\n### 3. `np.where()` 实现向量化 If-Else\n当需要根据条件对不同元素执行不同计算时，循环中会包含分支逻辑。\n*   **慢速方法（循环）**：遍历元素，使用 `if/elif/else` 逻辑进行分类。\n*   **快速方法（向量化）**：\n    *   对于简单二元条件，使用 `np.where(condition, x, y)`，它在条件为真时返回 `x` 中的元素，否则返回 `y` 中的元素。\n    *   对于多条件，使用 `np.select([conditions], [choices], default=...)`。它按顺序检查每个条件，并返回对应的值。\n*   **注意**：`np.select()` 中的条件应互斥，如果多个条件为真，则第一个匹配的条件获胜。\n\n### 4. 更好的索引实现查找操作\n当需要根据索引从多个位置收集元素时，通常会使用循环中的字典查找或嵌套搜索。\n*   **慢速方法（循环）**：遍历索引数组，逐个从查找表中获取值。\n*   **快速方法（向量化）**：直接使用整数数组作为索引。例如，`results = lookup_table[indices]` 会一次性拉取所有指定位置的元素。这同样适用于多维数组。\n*   **注意**：此方法在实现分类编码、构建直方图或任何将索引映射到值的操作时特别有用。\n\n### 5. `np.vectorize()` 用于自定义函数\n当有一个适用于标量的函数，但需要将其应用于数组时，手动循环会使代码变得混乱。\n*   **慢速方法（手动循环）**：使用列表推导式 `[func(x) for x in data]`。\n*   **更清晰方法（`np.vectorize()`）**：使用 `vec_transform = np.vectorize(complex_transform)` 将标量函数封装成可处理数组的函数。它会自动逐元素应用函数并处理输出数组的创建。\n*   **重要提示**：`np.vectorize()` 主要是为了代码清晰度，它在底层仍然是 Python 循环，并不能神奇地提高函数速度。要获得真正的性能提升，应直接使用 NumPy 操作重写函数（例如，使用 `np.where()`）。\n\n### 6. `np.einsum()` 用于复杂数组操作\n矩阵乘法、转置、迹和张量收缩等操作链可能变得难以阅读。\n*   **标准方法（复杂）**：使用 `np.dot()` 进行矩阵乘法，对于批量矩阵乘法，需要显式循环。\n*   **简洁方法（`np.einsum()`）**：使用爱因斯坦求和约定。例如，`np.einsum('ij,jk->ik', A, B)` 表示从第一个数组取索引 `i,j`，从第二个数组取 `j,k`，对共享索引 `j` 求和，输出具有索引 `i,k`。它能简洁地表达迹、转置、元素乘积求和等操作。\n*   **注意**：掌握 `np.einsum()` 需要时间，但对于复杂的张量操作来说，回报丰厚。\n\n### 7. `np.apply_along_axis()` 用于行/列操作\n当需要将函数应用于矩阵的每一行或每一列时，循环切片会显得笨拙。\n*   **慢速方法（手动行迭代）**：遍历数据行，逐行计算自定义统计量。\n*   **更清晰方法（`np.apply_along_axis()`）**：使用 `np.apply_along_axis(custom_stat, axis=1, arr=data)` 将函数应用于指定轴上的切片。`axis=1` 表示对每一行应用函数，`axis=0` 表示对每一列应用函数。\n*   **注意**：与 `np.vectorize()` 类似，此方法主要用于代码清晰度。如果函数可以用纯 NumPy 操作编写，应优先选择。但对于真正复杂的逐行/逐列逻辑，`np.apply_along_axis()` 比手动循环效率更高。\n\n### 总结\n本文介绍的每种技术都遵循相同的思维转变：描述你希望对数据应用的转换，而不是如何迭代数据。向量化代码通常比基于循环的代码更短、更具可读性，并且运行速度快得多。",
+      "shortSummary": "NumPy 向量化是提升 Python 数据处理性能的关键。通过将慢速的 Python 循环替换为优化的 NumPy 数组操作，可以显著提高代码速度和可读性。主要技巧包括布尔索引、广播、`np.where()`、高级索引、`np.vectorize()`（用于清晰度）、`np.einsum()`（用于复杂张量操作）和 `np.apply_along_axis()`（用于行/列操作）。核心思想是转变思维，描述数据转换而非迭代过程，从而实现更高效、更简洁的代码。",
+      "translated_title": "7 个 NumPy 代码向量化技巧",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-bala-numpy-vectorization-tricks.png",
+          "alt": "7 NumPy Tricks to Vectorize Your Code",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "You've written Python that processes data in a loop."
+    },
+    {
       "title": "ChatGPT-5能否为高等数学提供证明？ (原标题: Is ChatGPT-5 Able to Provide Proofs for Advanced Mathematics?)",
       "link": "https://machinelearningmastery.com/is-chatgpt-5-able-to-provide-proofs-for-advanced-mathematics/",
       "pubDate": "Tue, 07 Oct 2025 11:00:29 +0000",
@@ -235,47 +275,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<a href=\"https://www."
-    },
-    {
-      "title": "Beyond Vector Search: 5 Next-Gen RAG Retrieval Strategies",
-      "link": "https://machinelearningmastery.com/beyond-vector-search-5-next-gen-rag-retrieval-strategies/",
-      "pubDate": "Wed, 24 Sep 2025 12:00:46 +0000",
-      "isoDate": "2025-09-24T12:00:46.000Z",
-      "creator": "Matthew Mayo",
-      "summary": "无法生成摘要（无有效响应）。",
-      "shortSummary": "",
-      "translated_title": "Beyond Vector Search: 5 Next-Gen RAG Retrieval Strategies",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/09/mlm-mayo-beyond-vector-search-2.png",
-          "alt": "Beyond Vector Search: 5 Next-Gen RAG Retrieval Strategies",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<a href=\"https://machinelearningmastery."
-    },
-    {
-      "title": "Bagging、Boosting 与 Stacking：2025 年哪种集成方法更胜一筹？ (原标题: Bagging vs Boosting vs Stacking: Which Ensemble Method Wins in 2025?)",
-      "link": "https://machinelearningmastery.com/bagging-vs-boosting-vs-stacking-which-ensemble-method-wins-in-2025/",
-      "pubDate": "Tue, 23 Sep 2025 16:04:18 +0000",
-      "isoDate": "2025-09-23T16:04:18.000Z",
-      "creator": "Jayita Gulati",
-      "summary": "## 集成学习方法：Bagging、Boosting 与 Stacking 深度解析\n\n![Bagging vs Boosting vs Stacking: Which Ensemble Method Wins in 2025?](https://machinelearningmastery.com/wp-content/uploads/2025/09/mlm-gulati-bagging-boosting-stacking-2025.png)\n\n### 引言\n\n在机器学习领域，单一模型往往无法达到完美，因此数据科学家采用**集成方法**来结合多个模型，以实现更准确的预测。其中，**Bagging、Boosting 和 Stacking**是最受欢迎的三种技术，它们在 2025 年的重要性日益凸显，广泛应用于推荐系统和欺诈检测等领域。本文将深入探讨这三种方法的原理、优势及实际应用。\n\n### Bagging (Bootstrap Aggregating)\n\nBagging，即“自助聚合”，是一种通过在数据不同随机子集（有放回抽样）上训练多个模型，然后结合它们的预测来减少误差的集成学习方法。\n\n*   **工作原理：**\n    1.  **自助采样：** 从原始训练数据中有放回地抽取多个数据集，每个数据集大小与原始数据大致相同。\n    2.  **模型训练：** 在每个自助样本上独立训练一个单独的模型。\n    3.  **聚合：** 通过多数投票（分类任务）或平均（回归任务）来组合所有模型的预测结果。\n*   **优点：**\n    *   **减少方差：** 通过平均多个不稳定的模型，Bagging 能够平滑波动并有效减少过拟合。\n    *   **并行训练：** 由于模型是独立训练的，Bagging 可以很好地在多 CPU 或多机器上并行扩展。\n*   **Python 示例分析：** 在 Iris 数据集上，Bagging 分类器和随机森林分类器（一种 Bagging 变体）在交叉验证准确率上表现相似（0.9667 ± 0.0211）。但在独立测试集上，Bagging 略优（0.9474 vs 0.8947）。随机森林通过特征子采样引入额外随机性，在特征较少的数据集上可能略有影响。通常，Bagging 通过平均稳定高方差基学习器，而随机森林在树足够深且存在许多弱信息特征时，通常能与或超越普通 Bagging。\n\n### Boosting\n\nBoosting 是一种集成学习技术，它将多个弱学习器（通常是决策树）组合成一个强大的预测模型。其核心思想是顺序训练一系列弱模型，每个新模型都尝试纠正前一个模型所犯的错误。\n\n*   **工作原理：**\n    1.  **顺序训练：** 模型一个接一个地构建，每个模型从前一个模型的错误中学习。\n    2.  **权重调整：** 错误分类的样本被赋予更高的重要性，使后续模型更关注这些困难案例。\n    3.  **模型组合：** 所有弱学习器通过加权投票（分类）或加权平均（回归）组合成一个强大的最终模型。\n*   **优点：**\n    *   **减少偏差：** 通过顺序纠正错误，Boosting 能够降低系统偏差并提高整体模型准确性。\n    *   **强大预测能力：** 在结构化/表格数据集上，Boosting 常常优于其他集成方法。\n*   **Python 示例分析：** 在 Iris 数据集上，AdaBoost 和梯度提升在交叉验证和测试准确率上均表现相同（CV: 0.9600 ± 0.0327, Test: 0.9737），这与 Boosting 通过顺序纠错减少偏差的特性一致。AdaBoost 在像 Iris 这样分类清晰的数据集上表现出色，而梯度提升通过较小的学习率和更多估计器达到相似性能。Boosting 在结构化/表格数据上通常表现优异，但对标签噪声更敏感，需要仔细控制学习率、深度和树的数量以避免过拟合。\n\n### Stacking (Stacked Generalization)\n\nStacking，即“堆叠泛化”，是一种通过使用另一个模型（元学习器）结合多个模型（基础学习器）的预测来做出最终预测的集成学习技术。它利用不同算法的优势以实现更好的整体性能。\n\n*   **工作原理：**\n    1.  **训练基础模型：** 在相同数据集上训练多个不同的模型（例如决策树、逻辑回归、神经网络等）。\n    2.  **生成元特征：** 收集这些基础模型的预测结果，并将它们作为新的特征集。\n    3.  **训练元模型：** 在这些由基础模型预测组成的“元特征”上训练一个新的模型（称为元学习器或一级模型），其任务是学习如何最好地组合基础模型的输出以进行最终预测。\n*   **优点：**\n    *   **模型多样性：** 可以利用完全不同算法的优势，结合它们的互补性。\n    *   **高度灵活性：** 适用于线性模型、树模型、神经网络等各种类型的模型。\n*   **Python 示例分析：** 堆叠模型在 Iris 数据集上获得了 0.9737 的测试准确率和平衡的分类指标（宏观 F1 ≈ 0.97），表明元学习器成功结合了随机森林、梯度提升和支持向量机之间部分互补的错误。使用折外预测（cv=5）作为元特征至关重要，因为它限制了数据泄露并使一级训练更真实。在小型数据集上，堆叠相对于最佳单一基础模型的提升可能有限，但在更大、更复杂的问题中，当模型捕获不同的归纳偏差时，堆叠往往能带来更一致的改进。\n\n### 关键要点与实践指导\n\n尽管本文示例基于小型数据集，但其模式与常见经验相符：\n\n*   **Bagging/随机森林：** 当方差是主要问题且存在许多中等信息量的特征时表现出色。它们是强大、稳健的基线模型，训练和调整速度快。\n*   **Boosting：** 通常通过减少偏差和建模交互作用，在表格数据上超越其他方法。在仔细正则化（较小的学习率、提前停止）下，Boosting 可以推动性能边界。\n*   **Stacking：** 当可以精心选择多样化的基础学习器并有足够数据训练可靠的元模型时，Stacking 有助于获得增量收益。\n\n**实践注意事项：**\n*   在小型数据集上，使用保守超参数和重复交叉验证的简单集成（随机森林、浅层 Boosting）比复杂堆叠更安全。\n*   随着数据增长和异质性增加，首先考虑 Boosting 以提高准确性，如果基础模型真正多样化，再考虑考虑堆叠。\n*   始终在多个随机种子/分割上进行验证，并使用校准/特征重要性或 SHAP 检查，以确保额外的准确性不是以脆弱性为代价。\n\n### 集成技术对比总结\n\n| 特征         | Bagging           | Boosting            | Stacking            |\n| :----------- | :---------------- | :------------------ | :------------------ |\n| **训练方式** | 并行（独立）      | 顺序（关注错误）    | 分层（多层）        |\n| **基础学习器** | 通常同类型        | 通常同类型          | 不同模型            |\n| **目标**     | 减少方差          | 减少偏差和方差      | 利用模型多样性      |\n| **组合方式** | 多数投票/平均     | 加权投票            | 元模型学习组合      |\n| **示例算法** | 随机森林          | AdaBoost, XGBoost, LightGBM | Stacking 分类器     |\n| **风险**     | 高偏差依然存在    | 对噪声敏感，有过拟合风险 | 复杂性增加，计算成本高 |",
-      "shortSummary": "集成学习方法 Bagging、Boosting 和 Stacking 通过组合多个模型来提高预测准确性。Bagging（如随机森林）通过并行训练和平均来减少模型方差。Boosting（如 AdaBoost、梯度提升）通过顺序训练和纠正前一模型的错误来减少偏差，通常在表格数据上表现出色。Stacking 则结合不同类型的模型，利用元学习器融合它们的预测，以利用模型多样性。选择哪种方法取决于数据特性、计算资源和模型目标，随机森林通常是稳健基线，Boosting 追求更高准确性，Stacking 提供增量收益。",
-      "translated_title": "Bagging、Boosting 与 Stacking：2025 年哪种集成方法更胜一筹？",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/09/mlm-gulati-bagging-boosting-stacking-2025.png",
-          "alt": "Bagging vs Boosting vs Stacking: Which Ensemble Method Wins in 2025?",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Introduction In machine learning, no single model is perfect."
     }
   ],
-  "lastUpdated": "2025-10-12T09:23:08.018Z"
+  "lastUpdated": "2025-10-13T09:32:11.954Z"
 }
