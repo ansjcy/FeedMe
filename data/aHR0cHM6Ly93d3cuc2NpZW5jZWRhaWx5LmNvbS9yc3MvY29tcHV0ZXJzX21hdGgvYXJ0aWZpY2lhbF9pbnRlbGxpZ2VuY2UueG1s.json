@@ -5,6 +5,32 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "科学家构建出像真实神经元一样工作的人工神经元 (原标题: Scientists build artificial neurons that work like real ones)",
+      "link": "https://www.sciencedaily.com/releases/2025/10/251013040335.htm",
+      "pubDate": "Tue, 14 Oct 2025 01:31:23 EDT",
+      "isoDate": "2025-10-14T05:31:23.000Z",
+      "creator": "",
+      "summary": "# 科学家构建出像真实神经元一样工作的人工神经元\n\n马萨诸塞大学阿默斯特分校的工程师们开发出一种新型人工神经元，其电活动与天然脑细胞高度匹配。这项创新建立在该团队早期利用产电细菌蛋白质纳米线的研究基础之上，有望为实现像生物系统一样高效运行的计算机，甚至直接与生物组织连接的设备铺平道路。\n\n## 核心创新与背景\n\n*   **能源效率挑战**：人脑在处理大量数据时能耗极低，例如，完成一项任务仅需约20瓦，而大型语言模型（如ChatGPT）可能需要超过1兆瓦才能完成相同任务。传统计算机电路的电效率比人体低100多倍。\n*   **现有技术局限**：此前的人工神经元需要10倍的电压和100倍的功率，远高于生物神经元，因此效率低下且无法直接与对强电信号敏感的活体神经元连接。\n*   **突破性进展**：新开发的人工神经元仅需0.1伏特电压，与人体神经元水平相当，显著降低了能耗。\n\n## 关键技术：蛋白质纳米线\n\n*   这项低功耗神经元的秘密在于其核心成分——由**硫还原地杆菌（Geobacter sulfurreducens）**这种产电细菌合成的蛋白质纳米线。\n*   该团队（包括Jun Yao教授）此前已利用这种细菌的蛋白质纳米线开发出多种高效设备，例如：\n    *   由汗水供电的生物薄膜，可为个人电子设备供电。\n    *   能嗅探疾病的“电子鼻”。\n    *   能从空气中收集电力的设备。\n\n## 广泛应用前景\n\n*   **高效计算**：为设计基于生物启发原理、能效更高的计算机提供可能。\n*   **生物电子接口**：开发能够直接与人体“对话”的电子设备。\n*   **改进可穿戴传感器**：目前的穿戴式电子传感系统在感应到身体信号后，需要通过电放大才能被计算机分析，这增加了功耗和电路复杂性。而基于这种低电压神经元的传感器可以省去放大步骤，直接进行信号处理，从而提高效率并简化设计。\n\n## 研究支持与发表\n\n*   这项研究得到了美国陆军研究办公室、美国国家科学基金会、美国国立卫生研究院和阿尔弗雷德·P·斯隆基金会的支持。\n*   研究成果已发表在《自然通讯》（Nature Communications）期刊上。\n*   主要作者为马萨诸塞大学阿默斯特分校电气与计算机工程研究生Shuai Fu，通讯作者为该校电气与计算机工程副教授Jun Yao。",
+      "shortSummary": "马萨诸塞大学阿默斯特分校的科学家们利用产电细菌的蛋白质纳米线，成功构建出一种新型人工神经元。该神经元仅需0.1伏特电压，能效极高，其电活动与真实脑细胞高度匹配。这项突破有望彻底改变计算机的能效，使其接近生物系统水平，并能直接与生物组织连接，为开发更高效的计算和可穿戴设备奠定基础，解决当前大型AI模型高能耗的挑战。",
+      "translated_title": "科学家构建出像真实神经元一样工作的人工神经元",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "UMass Amherst engineers have built an artificial neuron powered by bacterial protein nanowires that functions like a real one, but at extremely low voltage. This allows for seamless communication with biological cells and drastically improved energy efficiency. The discovery could lead to bio-inspired computers and wearable electronics that no longer need power-hungry amplifiers. Future applications may include sensors powered by sweat or devices that harvest electricity from thin air."
+    },
+    {
+      "title": "90%的科学成果正在流失。这项新的人工智能刚刚找到了它们 (原标题: 90% of science is lost. This new AI just found it)",
+      "link": "https://www.sciencedaily.com/releases/2025/10/251013040314.htm",
+      "pubDate": "Mon, 13 Oct 2025 08:46:51 EDT",
+      "isoDate": "2025-10-13T12:46:51.000Z",
+      "creator": "",
+      "summary": "## Frontiers FAIR² 数据管理：解锁被遗忘的科学数据\n\n### 科学数据流失的严峻挑战\n\n当前，绝大多数科学数据未能充分发挥其推动新发现的潜力。据统计，每100个生成的数据集中，约有80个停留在实验室内部，20个虽被共享但很少被重复利用，仅有不到2个符合FAIR（可查找、可访问、可互操作、可重用）标准，最终通常只有一个能带来新的发现。这种数据流失导致了癌症治疗进展缓慢、气候模型缺乏足够证据以及研究难以复制等严重后果。\n\n### Frontiers FAIR² 数据管理：AI驱动的解决方案\n\n为了解决这一问题，开放科学出版商Frontiers推出了Frontiers FAIR² 数据管理服务，被誉为全球首个全面、AI驱动的科研数据服务。该服务旨在通过一个无缝流程，将数据整理、合规性检查、AI就绪格式化、同行评审、交互式门户、认证和永久托管等所有关键步骤整合起来，确保数据既可重用又获得应有的认可。其核心目标是确保今天的科研投入能够更快地转化为健康、可持续性和技术领域的进步。\n\n### FAIR² 原则与AI核心\n\nFrontiers FAIR² 在既有的FAIR原则基础上进行了扩展，构建了一个开放框架，确保每个数据集都兼容AI，并能被人类和机器以符合道德的方式重用。FAIR² 数据管理系统是这一模型首个可运行的实现，它将高级原则转化为具有可衡量影响的、可扩展的真实基础设施。Frontiers联合创始人兼首席执行官Kamila Markram博士指出，90%的科学成果正在消失，而FAIR² 数据管理将确保任何数据集和发现都不会再丢失，每一项贡献都能推动进步并获得应有的认可。\n\n**AI在核心中的作用：**\n\n*   **AI数据管家：** 由Frontiers旗下Senscience公司开发的AI数据管家，能将过去需要数月手动完成的数据组织、验证、元数据生成和可发布输出等工作，在几分钟内完成。\n*   **集成输出：** 研究人员提交数据后，将获得四种集成输出：\n    *   经过认证的数据包（Certified Data Package）\n    *   经过同行评审且可引用的数据文章（Peer-reviewed and Citable Data Article）\n    *   包含可视化和AI聊天的交互式数据门户（Interactive Data Portal）\n    *   FAIR² 证书（FAIR² Certificate）\n\n这些输出都包含质量控制和清晰的摘要，使数据更易于普通用户理解，并提高跨学科兼容性。它们共同确保了每个数据集的保存、验证、可引用和可重用性，加速了发现过程，同时为研究人员提供了应有的认可。Frontiers FAIR² 还增强了数据的可见性和可访问性，支持科学家、政策制定者、从业者、社区乃至AI系统负责任地重用数据，从而使社会能从科学投资中获取更大价值。\n\n### 旗舰试点数据集案例\n\nFrontiers FAIR² 已成功应用于多个旗舰试点数据集，展示了其潜力：\n\n*   **SARS-CoV-2变体特性：** 涵盖3800种刺突蛋白变体，结合AlphaFold2和ESMFold的结构预测与ACE2结合和表达数据，为大流行病防范提供强大资源。\n*   **临床前脑损伤MRI：** 包含来自四个研究中心的343个弥散MRI扫描的标准化数据集，支持可重复的生物标志物发现和创伤性脑损伤研究。\n*   **环境压力指标（1990-2050）：** 结合43个国家六十年的观测数据和模型预测，追踪排放、废物、人口和GDP，为可持续性基准和气候政策规划提供支持。\n*   **印太环礁生物多样性：** 跨越五个区域的280个环礁，整合生物多样性记录、珊瑚礁栖息地、气候指标和人类利用历史，为生态建模和保护优先排序提供基础。\n\n参与试点的研究人员表示，Frontiers FAIR² 不仅保存和共享数据，还通过质量检查、非专业人士摘要和跨学科数据组合的可靠性，增强了数据重用的信心，同时确保科学家获得认可。所有试点数据集均符合FAIR² 开放规范，确保其经过负责任的整理、可重用，并可供人类和机器长期信任使用。\n\n### 认可与重用：释放科学潜力\n\n每一次数据重用都会使原始数据集的价值倍增，确保没有发现被浪费，每一次贡献都能激发下一次突破，研究人员也能因其工作获得认可。Senscience联合创始人兼首席执行官Sean Hill博士强调，科学投入了数十亿资金生成数据，但大部分都流失了，研究人员也很少获得认可。通过Frontiers FAIR²，每个数据集都将被引用，每位科学家都将获得认可，最终奖励数据创建这项至关重要的工作。这将加速治愈方法、气候解决方案和新技术更快地惠及社会，从而“释放科学”。\n\n### 研究人员的反馈\n\n多位研究人员对Frontiers FAIR² 给予了高度评价：\n\n*   **Dr. Ángel Borja (AZTI)：** 强烈推荐这种数据整理和文章发布方式，能快速生成信息，格式对任何终端用户都很有用。\n*   **Erik Schultes (LACDR)：** Frontiers FAIR² 完美捕捉了项目的科学方面。\n*   **Femke Heddema (PharmAccess)：** 使FAIR原则的执行对研究人员和数字健康实施者来说更加顺畅，证明了使数据集可重用并不复杂，为健康研究开辟了新机遇。\n*   **Dr. Neil Harris (UCLA)：** 提供了对数据缺失和质量的客观检查，对非领域专家理解数据非常有帮助，在处理大数据和跨学科分析时至关重要。\n*   **Maryann Martone (Open Data Commons)：** 是使数据符合FAIR原则最简单有效的方法之一，大大降低了实现真正FAIR数据的门槛。\n*   **Dr. Vincent Woon Kok Sin (HKUST)：** 提高了全球废物数据集的可见性和可访问性，有助于促进合作和加速可持续废物管理的洞察。\n*   **Dr. Sebastian Steibl (Naturalis Biodiversity Center)：** 真正的可访问性超越了简单上传数据，通过AI聊天机器人和交互式可视化工具，使生物多样性数据不仅对学者，也对从业者、政策制定者和社区广泛可用。",
+      "shortSummary": "Frontiers推出了全球首个AI驱动的科研数据服务——Frontiers FAIR² 数据管理，旨在解决90%科学数据流失的问题。该服务通过整合数据整理、AI格式化、同行评审等步骤，确保数据符合FAIR原则（可查找、可访问、可互操作、可重用），并兼容AI。它能将数月工作缩短至几分钟，为研究人员提供认证数据包、可引用文章、交互式门户和证书，加速发现并确保贡献者获得认可。多项试点项目已证明其有效性，旨在更快地推动健康、可持续性和技术进步。",
+      "translated_title": "90%的科学成果正在流失。这项新的人工智能刚刚找到了它们",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Vast amounts of valuable research data remain unused, trapped in labs or lost to time. Frontiers aims to change that with FAIR² Data Management, a groundbreaking AI-driven system that makes datasets reusable, verifiable, and citable. By uniting curation, compliance, peer review, and interactive visualization in one platform, FAIR² empowers scientists to share their work responsibly and gain recognition."
+    },
+    {
       "title": "为什么GPS在城市中会失效？以及它是如何被巧妙修复的 (原标题: Why GPS fails in cities. And how it was brilliantly fixed)",
       "link": "https://www.sciencedaily.com/releases/2025/10/251009033124.htm",
       "pubDate": "Thu, 09 Oct 2025 03:31:24 EDT",
@@ -627,33 +653,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "have created a new type of insect cyborg that can navigate autonomously -- without wires, surgery, or stress-inducing electrical shocks. The system uses a small ultraviolet (UV) light helmet to steer cockroaches by taking advantage of their natural tendency to avoid bright light, especially in the UV range. This method not only preserves the insect's sensory organs but also maintains consistent control over time."
-    },
-    {
-      "title": "追随折叠——量子技术中的拓扑应用 (原标题: Following the folds -- with quantum technology)",
-      "link": "https://www.sciencedaily.com/releases/2025/05/250514175424.htm",
-      "pubDate": "Wed, 14 May 2025 17:54:24 EDT",
-      "isoDate": "2025-05-14T21:54:24.000Z",
-      "creator": "",
-      "summary": "# 量子技术中的拓扑应用：新型耦合腔阵列\n\n## 核心发现与研究团队\n瑞士洛桑联邦理工学院（EPFL）和德国康斯坦茨大学的研究团队，将拓扑学原理应用于微波光子学，开发出一种新型的耦合腔阵列（CCAs），旨在改进量子技术系统。\n\n## 新型耦合腔阵列（CCAs）\n*   **材料与特性：** 这些CCAs由无机化合物氮化铌（niobium nitride）制成，具有高动能电感，使其特别适用于超导应用。\n*   **潜在应用：**\n    *   为未来量子计算机中的优化量子比特提供有前景的平台。\n    *   为量子模拟开辟新可能性，作为受控模型系统来研究更复杂量子物质的行为。\n*   **优势：** 更小、更多功能、更强大。\n\n## 拓扑学在量子物理中的作用\n*   **定义：** 对于量子物理学家而言，“拓扑学”描述了系统整体排列如何影响其各个部分，以及细节如何反过来塑造整体。它探讨了环境如何影响物理过程，以及理解系统拓扑结构能否帮助预测其组件的行为。\n*   **“揉皱的纸”类比：**\n    *   康斯坦茨大学的合著者Oded Zilberberg用一个简单的类比解释了拓扑学：想象一张纸被揉皱。中心被揉皱时，不仅中心会形成褶皱，边缘也会。\n    *   如果只能观察边缘，当边缘出现褶皱时，很可能中心也被揉皱了。通过这种方式，边缘提供了关于不可见内部的信息。\n*   **研究应用：** Oded Zilberberg的研究遵循类似逻辑，但他研究的是光子（光的基石）在结构化材料中运动的拓扑结构。\n    *   他探索量子系统的全局结构如何影响其内部动力学。\n    *   研究优化系统拓扑结构是否能增强量子行为，以及仔细观察系统边界是否能揭示其核心的隐藏物理。\n\n## “拓扑启发式无序测量仪”\n*   **原理：** 在与EPFL的合作项目中，Zilberberg采用了与揉皱纸示例非常相似的方法。物理系统内部的无序（“主体”）会延伸到其边缘（“边界”）。\n*   **应用：** 研究团队利用这一原理开发了新型CCAs。\n    *   尽管物理学家无法直接观察系统内部，但他们可以观察边界，并利用这些信息推断主体的情况。\n    *   通过这种方式，研究人员能够检测CCAs中的无序和干扰，确保其平稳运行。\n*   **贡献：** Oded Zilberberg将他的方法称为“拓扑启发式无序测量仪”，这种创新的测量方法为新型CCAs的开发做出了贡献。",
-      "shortSummary": "瑞士EPFL和德国康斯坦茨大学的团队利用拓扑学原理，开发出新型氮化铌耦合腔阵列（CCAs）。这些CCAs具有高动能电感，有望用于优化量子比特和量子模拟。研究人员通过观察系统边界来推断内部无序，这一“拓扑启发式无序测量仪”方法，类似于通过纸张边缘的褶皱推断中心状态，显著提升了CCAs的性能和可靠性，为量子技术发展开辟了新途径。",
-      "translated_title": "追随折叠——量子技术中的拓扑应用",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The connection between a crumpled sheet of paper and quantum technology: A research team at the EPFL in Lausanne (Switzerland) and the University of Konstanz (Germany) uses topology in microwave photonics to make improved systems of coupled cavity arrays."
-    },
-    {
-      "title": "研究表明视觉-语言模型无法处理带有否定词的查询 (原标题: Study shows vision-language models can't handle queries with negation words)",
-      "link": "https://www.sciencedaily.com/releases/2025/05/250514165630.htm",
-      "pubDate": "Wed, 14 May 2025 16:56:30 EDT",
-      "isoDate": "2025-05-14T20:56:30.000Z",
-      "creator": "",
-      "summary": "研究人员发现，广泛用于分析医学图像的视觉-语言模型（VLMs）无法理解“不”、“没有”等否定词。这意味着当被要求检索包含某些对象但不包含其他对象的医学图像时，这些模型可能会意外地失败。",
-      "shortSummary": "一项研究表明，用于医学图像分析的视觉-语言模型无法理解“不”、“没有”等否定词。这导致模型在根据包含或排除特定对象的查询检索医学图像时，可能出现意外的错误。",
-      "translated_title": "研究表明视觉-语言模型无法处理带有否定词的查询",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "MIT researchers discovered that vision-language models often fail to understand negation, ignoring words like “not” or “without.” This flaw can flip diagnoses or decisions, with models sometimes guessing randomly. New training data helps, but the issue remains a serious warning sign."
     }
   ],
-  "lastUpdated": "2025-10-13T09:32:12.232Z"
+  "lastUpdated": "2025-10-14T09:31:04.125Z"
 }
