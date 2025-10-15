@@ -5,6 +5,45 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "可持续性设计：降低IT硬件排放的新设计原则 (原标题: Design for Sustainability: New Design Principles for Reducing IT Hardware Emissions)",
+      "link": "https://engineering.fb.com/2025/10/14/data-center-engineering/design-for-sustainability-new-design-principles-for-reducing-it-hardware-emissions/",
+      "pubDate": "Tue, 14 Oct 2025 20:40:20 +0000",
+      "isoDate": "2025-10-14T20:40:20.000Z",
+      "creator": "",
+      "summary": "## 可持续性设计：降低IT硬件排放的新设计原则\n\nMeta公司提出了“可持续性设计”原则，这是一套针对IT硬件新设计的技术设计原则，旨在通过重用、延长使用寿命和优化设计来减少排放和成本。Meta已通过整合模块化、重用、改造、去物质化、使用更环保材料以及延长硬件生命周期等多种设计策略，显著降低了其数据中心的碳足迹，并呼吁更广泛的行业采纳这些策略以实现可持续发展目标。\n\n### Meta的可持续发展目标与关注点\n\n*   **净零排放目标**：Meta致力于在2030年实现整个价值链的净零排放。\n*   **关注Scope 3排放**：主要关注来自数据中心建设、IT硬件（计算、存储、冷却设备）和网络光纤基础设施等物理来源的Scope 3（价值链）排放。\n*   **排放来源**：包括IT硬件的制造、交付以及报废处理、回收或转售相关的排放。\n*   **控制与减少策略**：\n    *   优化材料选择。\n    *   在设计中选择和开发低碳替代品。\n    *   与硬件供应商合作，减少上游排放。\n\n### 什么是可持续性设计？\n\n“可持续性设计”是Meta开发和提出的一套指导方针，旨在帮助硬件设计师减少IT机架的环境影响。它考虑了能效、材料的选择、减少、循环性以及硬件的报废处理等多种因素。可持续硬件设计需要硬件设计师、工程师和可持续性专家之间的协作，以创建既满足性能要求又限制环境影响的硬件。本指南特别关注数据中心机架的设计，并为各种组件（如机械、冷却、计算、存储和布线）提供可持续的选择。\n\n### 减少Scope 3排放的内部团队行动\n\nMeta内部团队为减少IT硬件的Scope 3排放采取了以下措施：\n\n*   **优化硬件设计**：以最低排放为目标，尽可能延长材料的使用寿命，或使用低碳材料。\n*   **提高效率**：通过延长IT机架的使用寿命，可能跳过新一代设备的采购。\n*   **组件回收**：回收不再可用的服务器组件作为备件，例如从报废机架中回收双列直插式内存模块（DIMM）并重新部署到新构建中。\n*   **排放概况分析**：了解供应商、组件和系统设计的排放概况，以指导未来的减排路线图。\n*   **供应商协作**：与供应商合作，推动其制造过程电气化，转向可再生能源，并利用低碳材料和设计。\n\n这些减少IT硬件Scope 3排放的行动，同时也有助于减少数据中心产生的电子垃圾（e-waste）。\n\n### Meta部署的机架类型与组件\n\nMeta数据中心部署了多种机架设计，以支持不同的工作负载和基础设施需求，主要包括：\n\n*   **AI**：AI训练和推理工作负载。\n*   **计算**：运行Meta产品和服务所需的通用计算。\n*   **存储**：存储和维护产品使用的数据。\n*   **网络**：提供服务器之间的低延迟互连。\n\n尽管这些机架类型在架构上存在差异，但大多数都应用通用的硬件设计原则，并包含来自类似供应商的活跃和被动组件。因此，相同的可持续性设计原则适用于这些不同的机架类型。每个机架内，有五大类组件是排放减少的目标：\n\n*   计算（即内存、HDD/SSD）\n*   存储\n*   网络\n*   电源\n*   机架基础设施（即机械和散热）\n\n### 减少排放的具体技术\n\nMeta主要通过以下四个类别来解决与硬件组件相关的排放问题：\n\n1.  **模块化机架设计**\n    *   允许旧机架组件在新机架中重用，例如Open Rack设计（ORv2和ORv3）。\n    *   **ORv3关键特点**：电源单元（PSU）和电池备份单元（BBU）分离，实现更可靠和灵活的配置；48V电源输出，允许电源货架在机架中任意放置；可根据平台和区域需求配置PSU和BBU货架；正在努力设计“通用化”ORv3机架框架以简化组装和降低成本；ORv3N是ORv3的衍生品，专为网络应用设计，提供效率和成本改进。\n    *   随着AI工作负载的扩展，新的专业机架设计需要设计师采纳最模块化的设计原则。\n\n2.  **重用/改造现有机架设计**\n    *   这是一种经济高效且可持续的方法，可以满足不断演进的数据中心需求，减少电子垃圾、降低成本并加速部署。\n    *   **优点**：成本节约、减少电子垃圾、加快部署、环境效益。\n    *   **挑战**：兼容性问题、电源和冷却要求、可扩展性和灵活性限制、测试和验证。\n    *   Meta认为，在每个新机架设计中都应充分考虑重用或改造现有机架的益处。\n\n3.  **绿色和回收材料**\n    *   **绿色钢铁**：通过电弧炉（EAF）而非传统高炉生产，使用清洁可再生电力和更高比例的回收含量，显著减少碳排放。Meta与提供100%清洁可再生能源生产绿色钢铁的供应商合作。\n    *   **回收钢铁、铝和铜**：回收这些材料可节省大量生产硬件所需的能源。Meta要求所有机架/底盘至少包含20%的回收钢铁，所有散热器必须完全由回收铝或铜制造。\n\n4.  **提高可靠性以延长使用寿命**\n    *   延长机架、服务器、内存和SSD的使用寿命有助于Meta减少硬件采购量，从而显著降低排放和成本。\n    *   可靠性基准测试是评估硬件寿命延长可行性的重要因素。\n    *   需要考虑备件和供应商支持的可用性可能下降，以及设备故障率增加的风险。\n\n5.  **去物质化**\n    *   减少和移除不必要的硬件组件可以显著减少原材料、水和/或能源的使用。\n    *   这包括减少机架上的钢铁使用，或在保持设计约束的同时移除服务器主板上不必要的组件。\n    *   去物质化还涉及将多个机架整合为更少、更高效的机架，从而减少整体物理占地面积。\n    *   硬件板上多余组件的原因可能包括：未来验证、灵活性、调试和测试、冗余、模块化、法规遵从性。\n    *   Meta强调，每个硬件设计都应优化组件填充，避免不必要的组件，例如未填充的集成电路（IC）插座、未使用的连接器、测试点、冗余电源或可选内存/存储组件。\n\n6.  **生产化低排放新技术**\n    *   内存和SSD/HDD通常是服务器机架中最大的隐含碳排放源。\n    *   新技术可以帮助Meta显著减少排放和成本，同时提供更高的功率归一化性能。\n    *   **示例**：\n        *   从HDD转向SSD：减少驱动器、服务器、机架、BBU和PSU的需求，并有助于降低整体能耗。\n        *   液冷：根据当地环境条件和数据中心工作负载，液冷在服务器机架中可能比传统空冷碳效率高17%。\n        *   探索替代技术：如相变存储器（PCM）或磁阻随机存取存储器（MRAM），它们具有相同性能但碳排放较低。\n        *   使用低功耗双倍数据速率（LPDDR）代替DDR，以实现低功耗和高带宽。",
+      "shortSummary": "Meta推出了“可持续性设计”原则，旨在通过重用、延长使用寿命和优化设计，减少IT硬件的排放和成本。这些原则关注数据中心IT硬件的Scope 3排放，涵盖模块化设计、重用改造、使用绿色和回收材料、提高可靠性、去物质化以及采用低排放新技术。Meta呼吁全行业采纳这些策略，以实现2030年净零排放目标并减少电子垃圾。",
+      "translated_title": "可持续性设计：降低IT硬件排放的新设计原则",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>We’re presenting Design for Sustainability,  a set of technical design principles for new designs of IT hardware to reduce emissions and cost through reuse, extending useful life, and optimizing design. At Meta, we’ve been able to significantly reduce the carbon footprint of our data centers by integrating several design strategies such as modularity, reuse, retrofitting, [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/14/data-center-engineering/design-for-sustainability-new-design-principles-for-reducing-it-hardware-emissions/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/14/data-center-engineering/design-for-sustainability-new-design-principles-for-reducing-it-hardware-emissions/\">Design for Sustainability: New Design Principles for Reducing IT Hardware Emissions</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
+      "title": "Meta 如何利用人工智能提高 IT 硬件范围 3 排放估算的质量 (原标题: How Meta Is Leveraging AI To Improve the Quality of Scope 3 Emission Estimates for IT Hardware)",
+      "link": "https://engineering.fb.com/2025/10/14/data-center-engineering/how-meta-is-leveraging-ai-to-improve-the-quality-of-scope-3-emission-estimates-for-it-hardware/",
+      "pubDate": "Tue, 14 Oct 2025 20:40:01 +0000",
+      "isoDate": "2025-10-14T20:40:01.000Z",
+      "creator": "",
+      "summary": "Meta 致力于在 2030 年实现净零排放，并旨在为整个行业创建测量碳排放的通用分类法。为实现这一目标，Meta 在 2025 年 OCP 区域 EMEA 峰会上提出了一种新方法，该方法利用人工智能 (AI) 来改进对 IT 硬件范围 3 排放的理解。Meta 正与 OCP PCR 工作流合作，计划在 2025 年 OCP 全球峰会上开源此方法论。\n\n**IT 硬件范围 3 排放估算的挑战**\n\n*   理解服务器硬件的碳足迹对于可持续采购和设计至关重要。\n*   挑战在于复杂的供应链和供应商有限的数据，使得精确计算碳足迹变得困难。\n*   数据中心 IT 硬件的制造和运输所产生的隐含碳是主要的排放源，且难以量化。\n\n**Meta 的排放估算方法论**\n\nMeta 开发了一种方法来估算和追踪数据中心数亿个组件的碳排放。该方法结合了：\n\n*   **基于成本的估算**\n*   **模型估算**\n*   **组件特定的产品碳足迹 (PCF)**\n\n这些组件级别的估算根据数据质量进行排名，并聚合到服务器机架级别。这种方法允许 Meta 从单个螺丝到整个机架组件进行多级别粒度的排放分析，从而识别高影响的减排区域。最终目标是推动行业采用更可持续的制造实践，并生产低排放组件。\n\n**AI 在改进范围 3 排放估算中的应用**\n\nMeta 利用 AI 改进其数据库并理解 IT 硬件相关的范围 3 排放，主要通过以下方式：\n\n1.  **识别相似组件并应用现有 PCF**\n    *   **问题**：PCF 耗时且通常与特定标识符绑定，但库存中存在大量相似或变体组件。若不识别这些相似组件，其碳足迹估算数据质量会较低。\n    *   **方法**：Meta 采用自然语言处理 (NLP) 算法（如 TF-IDF 和余弦相似度）分析文本描述，识别相似组件。当收到新的 PCF 时，算法会识别同类别中描述相似的组件，并将其映射到代表性 PCF。对于数据质量低的组件，算法会寻找高质量的参考数据来改进估算。\n    *   **目的**：确保高质量 PCF 数据在所有相似组件中得到有效利用，提高数据准确性和一致性，并增强碳足迹估算的追溯性。\n\n2.  **从异构数据源提取数据**\n    *   **问题**：当 PCF 不可用时，Meta 避免使用基于支出的方法。参数化模型需要一致的输入数据，但信息可能存储在不同的表格、格式或单位中，导致难以应用模型。\n    *   **方法**：Meta 使用大型语言模型 (LLM)，特别是 Llama 3.1，从异构数据源中提取相关信息，并将其注入参数化模型。LLM 能够识别相同信息的不同表示形式。\n    *   **应用**：该方法已应用于内存（提取容量）和电缆（提取长度/类型）的排放计算，确保估算的一致性。\n\n3.  **创建 IT 硬件排放的组件级分类法**\n    *   **问题**：不同供应商的物料清单 (BOM) 结构不同，使得识别减排行动变得困难。\n    *   **方法**：Meta 使用 AI 将机架的描述性数据分类为两个层次：\n        *   **领域级**：机架的主要功能分组（如计算、网络、电源、机械、存储）。\n        *   **组件级**：主要排放源组件（如 CPU、GPU、DRAM、闪存）。\n    *   **过程**：在探索阶段，生成式 AI (GenAI) 模型自由识别潜在类别。与内部硬件专家审查后，确定了主要组件的固定列表，然后使用严格的 GenAI 分类器进行分组，生成互斥的层次结构。\n    *   **目的**：为碳足迹分析提供帮助，并推动行业采用通用的 IT 硬件碳足迹分类法，以便比较不同类型和世代硬件的排放。\n\n**未来计划：开源分类法和方法论**\n\nMeta 计划开源其学习成果和方法论，包括：\n\n*   服务器机架排放核算的分类法和方法论。\n*   使用 GenAI 分类器的分类法构建器。\n*   改进全行业设施报告流程的聚合方法论。\n\nMeta 致力于与 OCP PCR 组织合作，共同发展和分享这些方法论。",
+      "shortSummary": "Meta 致力于在 2030 年实现净零排放，并正利用 AI 提高 IT 硬件范围 3 排放估算的质量。面对供应链复杂和数据有限的挑战，Meta 开发了一种结合成本、模型和产品碳足迹 (PCF) 的方法。AI 在此过程中发挥关键作用：通过 NLP 识别相似组件以应用 PCF；利用 LLM 从异构数据源提取信息；并使用生成式 AI 创建 IT 硬件的通用分类法，以识别减排热点。Meta 计划开源这些分类法和方法论，以推动行业标准化和可持续实践。",
+      "translated_title": "Meta 如何利用人工智能提高 IT 硬件范围 3 排放估算的质量",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>As we focus on our goal of achieving net zero emissions in 2030, we also aim to create a common taxonomy for the entire industry to measure carbon emissions. We’re sharing details on a new methodology we presented at the 2025 OCP regional EMEA summit that leverages AI to improve our understanding of our IT [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/14/data-center-engineering/how-meta-is-leveraging-ai-to-improve-the-quality-of-scope-3-emission-estimates-for-it-hardware/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/14/data-center-engineering/how-meta-is-leveraging-ai-to-improve-the-quality-of-scope-3-emission-estimates-for-it-hardware/\">How Meta Is Leveraging AI To Improve the Quality of Scope 3 Emission Estimates for IT Hardware</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
+      "title": "OCP 峰会 2025：AI 网络硬件的开放未来 (原标题: OCP Summit 2025: The Open Future of Networking Hardware for AI)",
+      "link": "https://engineering.fb.com/2025/10/13/data-infrastructure/ocp-summit-2025-the-open-future-of-networking-hardware-for-ai/",
+      "pubDate": "Tue, 14 Oct 2025 00:00:20 +0000",
+      "isoDate": "2025-10-14T00:00:20.000Z",
+      "creator": "",
+      "summary": "# OCP 峰会 2025：AI 网络硬件的开放未来\n\n在2025年开放计算项目（OCP）峰会上，Meta详细介绍了其AI训练集群下一代网络架构的发展方向。Meta扩展了其网络硬件产品组合，并向OCP贡献了新的解耦网络平台，旨在通过开放机架、服务器、存储盒和主板设计，促进整个行业的创新和协作。\n\n## 开放硬件与AI创新\nMeta坚信开放硬件是创新的催化剂，尤其是在数据中心基础设施日益支持新兴AI技术的情况下。开放硬件通过实现解耦，将传统数据中心技术分解为核心组件，从而构建更灵活、可扩展和高效的系统。自2011年共同创立OCP以来，Meta一直分享数据中心和组件设计，并开源其网络操作系统FBOSS，以推动行业内外的创新。\n\n## 数据中心网络新里程碑\nMeta宣布了其数据中心网络的几项重要进展：\n\n### 1. 解耦调度结构（DSF）的演进\n*   **规模扩展**：DSF已演进为支持跨越整个数据中心建筑的大型AI集群的横向扩展互连。\n*   **双阶段架构**：去年的DSF是基于VOQ的系统，支持开放标准的以太网RoCE接口。现在已发展为双阶段架构，可扩展支持多达18,432个XPU的无阻塞网络，是构建跨区域AI集群的基础。\n*   **大规模部署**：Meta已利用双阶段DSF构建了规模达整个数据中心建筑的18,000个GPU集群。\n\n### 2. 非调度结构（NSF）架构\n*   **新架构**：与DSF演进并行，Meta开发了新的非调度结构（NSF）架构。\n*   **关键特性**：\n    *   基于浅缓存OCP以太网交换机。\n    *   提供低往返延迟。\n    *   支持自适应路由，实现有效负载均衡，优化利用率并最小化拥塞。\n    *   作为Prometheus等千兆瓦级AI集群的基础构建模块。\n*   **三层NSF**：用于构建规模化AI集群。\n\n### 3. 新一代AI网络OCP交换机平台\n*   **现有平台**：去年Meta推出了Minipack3（基于Broadcom Tomahawk5）和Cisco 8501（基于Cisco Silicon One G200）两款51T以太网交换机，它们提供51.2 Tbps带宽，无需重定时器，并运行FBOSS。\n*   **Minipack3N**：今年推出基于NVIDIA Spectrum-4交换ASIC的新型51T以太网交换机Minipack3N，采用与Minipack3相同的系统设计，由Meta设计并由Accton制造。\n\n### 4. FBOSS和SAI的演进\n*   **开放基础**：Meta持续将OCP-SAI作为新网络结构、交换机硬件平台和光收发器集成到FBOSS的基础。\n*   **协作创新**：通过与供应商和OCP社区的紧密合作，SAI已演进以支持DSF、NSF以及为现代数据中心和AI工作负载量身定制的其他增强路由方案等高级功能。这种开放方法加速了整个行业的进步。\n\n### 5. 400G/800G光互连技术\n*   **现有部署**：去年推出的2x400G FR4 BASE（3公里）光模块已在Meta数据中心广泛部署。\n*   **新产品**：\n    *   **2x400G FR4 LITE（500米）**：为数据中心内部大多数用例优化，旨在加速光模块成本降低。\n    *   **400G DR4 OSFP-RHS**：Meta首代用于AI主机侧NIC连接的DR4解决方案。\n    *   **2x400G DR4 OSFP**：部署在交换机侧，提供从主机到交换机的连接。\n\n## OCP中的“以太网用于横向扩展网络”（ESUN）倡议\nMeta是OCP 2025全球峰会期间启动的“以太网用于横向扩展网络”（ESUN）倡议的创始参与者。\n\n*   **ESUN是什么？** ESUN是OCP网络项目中的一个新工作流，作为一个开放技术论坛，供行业运营商和领先供应商协作推进以太网技术的使用。其目标是利用和调整成熟的以太网生态系统，以满足现代AI系统中横向扩展领域独特的高性能需求。\n*   **关注点**：ESUN专注于横向扩展系统的网络功能方面，解决数据流量在网络交换机中管理和传输的技术挑战，包括定义协议头、错误处理机制和实现网络无损数据传输的最佳实践和标准。\n*   **合作与标准**：该倡议汇集了运营商、供应商和标准机构，共同开发适用于横向扩展网络的以太网解决方案，专注于以太网帧和交换层，确保强大、无损和容错的多跳拓扑，并与UEC和IEEE等组织紧密合作，与开放标准保持一致。\n*   **Meta的贡献**：Meta作为ESUN的初始成员之一，与AMD、Arista、ARM、Broadcom、Cisco、HPE、Marvell、Microsoft、NVIDIA、OpenAI和Oracle等行业领导者共同推动该倡议。Meta的贡献包括在定义AI集群ESUN需求方面的技术领导、与供应商和标准机构的开放协作，以及分享在Meta数据中心部署先进以太网网络方面的最佳实践。\n\n## 行业邀请：加入开放未来\nMeta邀请工程师、开发人员和行业合作伙伴加入OCP社区，共同塑造AI的下一代网络硬件。通过协作和分享想法，可以加速开放、面向未来的AI基础设施的开发，从而造福整个行业并支持未来技术的需求。",
+      "shortSummary": "Meta在OCP峰会2025上发布了AI训练集群网络硬件的重大更新，包括DSF/NSF架构、Minipack3N交换机及新光模块。同时，Meta启动了“以太网用于横向扩展网络（ESUN）”倡议，旨在推动AI数据中心基础设施的创新、效率和可扩展性。",
+      "translated_title": "OCP 峰会 2025：AI 网络硬件的开放未来",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>At Open Compute Project Summit (OCP) 2025, we’re sharing details about the direction of next-generation network fabrics for our AI training clusters. We’ve expanded our network hardware portfolio and are contributing new disaggregated network platforms to OCP. We look forward to continued collaboration with OCP to open designs for racks, servers, storage boxes, and motherboards [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/13/data-infrastructure/ocp-summit-2025-the-open-future-of-networking-hardware-for-ai/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/13/data-infrastructure/ocp-summit-2025-the-open-future-of-networking-hardware-for-ai/\">OCP Summit 2025: The Open Future of Networking Hardware for AI</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "介绍 React 基金会：React 和 React Native 的新家 (原标题: Introducing the React Foundation: The New Home for React & React Native)",
       "link": "https://engineering.fb.com/2025/10/07/open-source/introducing-the-react-foundation-the-new-home-for-react-react-native/",
       "pubDate": "Tue, 07 Oct 2025 18:00:01 +0000",
@@ -94,95 +133,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>&#160; Over the past 21 years, Meta has grown exponentially from a small social network connecting a few thousand people in a handful of universities in the U.S. into several apps and novel hardware products that serve over 3.4 billion people throughout the world. Our infrastructure has evolved significantly over the years, growing from a [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/09/29/data-infrastructure/metas-infrastructure-evolution-and-the-advent-of-ai/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/09/29/data-infrastructure/metas-infrastructure-evolution-and-the-advent-of-ai/\">Meta’s Infrastructure Evolution and the Advent of AI</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "网络：人工智能的核心 — @Scale: 网络 2025 回顾 (原标题: Networking at the Heart of AI — @Scale: Networking 2025 Recap)",
-      "link": "https://engineering.fb.com/2025/09/26/networking-traffic/networking-at-the-heart-of-ai-scale-networking-2025-recap/",
-      "pubDate": "Fri, 26 Sep 2025 16:00:52 +0000",
-      "isoDate": "2025-09-26T16:00:52.000Z",
-      "creator": "",
-      "summary": "# 网络：人工智能的核心 — @Scale: 网络 2025 回顾\n\n## 引言\n人工智能（AI）已无处不在，网络工程师在构建AI网络基础设施中扮演着核心角色。在有史以来规模最大的 @Scale: Networking 2025 大会上，来自Meta、字节跳动、谷歌、微软、甲骨文、AMD、博通、思科和英伟达的工程师们齐聚一堂，分享了他们在架构、设计、运营和调试AI网络方面的最新经验。网络在推动大规模AI发展方面发挥了至关重要的作用，并将继续定义AI的未来。\n\n## 背景：快速变化与演进\n鉴于AI持续推动网络和通用基础设施的创新，@Scale: Networking 大会再次聚焦AI网络，分享了该领域的最新见解和进展。过去一年中，出现了两个重要趋势：\n\n### AI基础设施成为焦点\n*   整个行业，AI公司计划在未来几年内投入数千亿美元用于基础设施建设。\n*   Meta 在此方面进行了大量投资，包括：\n    *   建设千兆瓦级集群，如 Prometheus 和 Hyperion，提供清洁可再生能源。\n    *   铺设全球最大的跨洋光缆系统，确保全球数十亿人能够访问AI创新。\n    *   短期内，甚至通过“临时结构”（sprung structures）扩展建设组合，以尽快上线容量。\n\n### 模型和主要AI工作负载的快速演进\n*   过去几年主要关注大规模基础训练的需求。\n*   Meta 在不到两年内，将基于以太网/RoCE的GPU集群从4K扩展到24K，再到129K，每次飞跃都应对了高性能和高可靠性的新挑战。\n*   在过去9-12个月中，工作负载迅速扩展，包括：\n    *   专家混合模型（mixture-of-experts）\n    *   推理模型（reasoning models）\n    *   强化学习（reinforcement learning）\n    *   后训练（post-training）\n    *   合成数据生成（synthetic data generation）\n    *   分布式推理（distributed inference）\n    *   这些多样化的工作负载都对网络提出了不同的要求。\n\n## 网络在AI中的作用\n在上述背景下，网络的重要性愈发凸显。\n\n### 网络即计算机\n*   在快速变化的AI工作负载和大规模物理基础设施建设之间，网络扮演着接口角色，尽可能地将底层基础设施抽象化，以适应工作负载。\n*   从模型的角度来看，基础设施应表现为一个巨大的GPU，而网络是实现这一抽象的关键。\n\n### 与AI堆栈协同设计网络\n*   实现这一抽象目标需要解决诸多挑战，例如：\n    *   不同距离和带宽（尤其是在横向扩展和纵向扩展领域）。\n    *   不同加速器、网卡（NIC）和网络结构（fabrics）的硬件多样性。\n*   这是一个全栈/端到端的问题，需要利用在网卡、路由和拥塞控制方面的所有经验，并与基于GPU的堆栈紧密协调。\n\n### 可靠性是关键\n*   不仅要提供模型所需的高性能和易用性，还必须以高可靠性运行基础设施，无缝地发现并快速响应故障。\n\n### 创新与选择性\n*   未来需要持续创新以保持领先地位并提供选择性，因为预计模型/工作负载和基础设施的其余部分将不断变化。\n*   目标是构建一个网络堆栈，融合高性能计算的最佳能力与开放、可扩展的分布式系统原则，以应对未来的任何挑战。\n\n## @Scale: Networking 2025 大会回顾\n*   所有会议演讲均可在 @Scale YouTube 频道上查看。\n*   Meta 持续组织 @Scale 系列活动（系统与可靠性、AI与数据、以及即将到来的十月产品大会），旨在促进社区分享创新和挑战，并相互学习。\n*   本次大会的演讲和现场问答围绕两大主题：\n    *   **底层物理网络基础设施：** 交换机拓扑和控制平面、网卡和主机网络、可扩展操作/高可靠性。\n    *   **高层、面向模型的议题：** 并行设计、作业级可调试性、大规模预训练的扩展、以及强化学习、专家混合模型和推理等新用例的处理。\n*   关于AI和网络未来的展望，大会邀请了Meta和微软进行主题演讲，并举办了由主要GPU和网络ASIC供应商参与的厂商小组讨论。\n*   文章感谢所有参与分享最新经验的公司和个人，并期待2026年的 @Scale: Networking 大会能再次覆盖网络和AI领域的快速创新。",
-      "shortSummary": "@Scale: Networking 2025 大会强调网络是AI基础设施的核心。随着AI基础设施的巨大投资和工作负载的快速演进，网络工程师面临构建高性能、高可靠性AI网络的挑战。网络被视为“计算机”，负责抽象底层硬件，需要与AI堆栈协同设计，并持续创新。来自Meta、字节跳动、谷歌等公司的专家分享了在物理网络和模型层面应对这些挑战的最新经验，展望了AI与网络融合的未来。",
-      "translated_title": "网络：人工智能的核心 — @Scale: 网络 2025 回顾",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>AI is everywhere and, as network engineers, we are right in the thick of it: building the network infrastructure for AI. This year, at  our largest @Scale:Networking ever, engineers from Meta, ByteDance, Google, Microsoft, Oracle, AMD, Broadcom, Cisco, and NVIDIA came together to share our latest experiences in architecting, designing, operating, and debugging our AI [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/09/26/networking-traffic/networking-at-the-heart-of-ai-scale-networking-2025-recap/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/09/26/networking-traffic/networking-at-the-heart-of-ai-scale-networking-2025-recap/\">Networking at the Heart of AI — @Scale: Networking 2025 Recap</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "移动设备上的AV1视频编解码器流媒体 (原标题: Video Streaming With the AV1 Video Codec in Mobile Devices)",
-      "link": "https://engineering.fb.com/2025/09/24/video-engineering/video-streaming-with-av1-video-codec-mobile-devices-meta-white-paper/",
-      "pubDate": "Wed, 24 Sep 2025 08:00:44 +0000",
-      "isoDate": "2025-09-24T08:00:44.000Z",
-      "creator": "",
-      "summary": "# 移动设备上的AV1视频编解码器流媒体白皮书要点\n\nMeta、沃达丰和谷歌联合发布了一份题为《移动设备上的AV1视频编解码器流媒体》的白皮书，详细阐述了AV1编解码器在提升移动设备视频流媒体体验方面的诸多优势。该白皮书旨在推广AV1这一先进视频压缩技术。\n\n## AV1编解码器的核心优势\n\n*   **卓越的压缩效率：** AV1是一种先进的视频压缩技术，与H.264和VP9等早期标准相比，其视频压缩效率可提高高达30%。这意味着在相同画质下，AV1能显著减少所需的数据量，适用于大多数视频格式。\n*   **提升用户体验：** 在中低端智能手机上，AV1能够提供与高端手机相媲美的视频质量，并减少缓冲，从而显著改善用户的观看体验。\n*   **优化网络资源：** 视频内容占据了移动数据流量的70-80%。通过更高效的压缩，AV1有助于释放网络容量，降低移动运营商的网络拥堵，并满足日益增长的用户需求。\n*   **节省计算与能源：** AV1的广泛采用有助于优化计算能力、存储空间，并节省计算资源、边缘缓存资源以及能源成本。\n*   **灵活的实现方式：** AV1可以在智能手机中通过软件升级实现，也可以嵌入到移动设备的中央处理器（SoC）中，后者能带来更好的电池效率和性能。\n\n## 白皮书的关键建议\n\n白皮书向行业参与者提出了以下建议：\n\n*   **核心处理器（SoC）供应商：** 应评估并采纳AV1硬件解码方案，以实现卓越的能效压缩增益。\n*   **中低端设备支持：** 对于无法采用硬件方案的设备，供应商应考虑使用基于软件的AV1解码器，以帮助中低端设备过渡到AV1，并确保其也能获得优质的视频体验。\n\n## 当前挑战与合作机遇\n\n*   **市场现状：** 全球约75%的手机销量来自中低端设备。然而，目前许多中低端手机缺乏必要的AV1编解码器支持，特别是内置硬件解码能力，这限制了它们提供无缓冲视频体验的能力。\n*   **芯片组支持：** 智能手机芯片组对AV1编解码器的支持目前主要限于高端产品。\n*   **合作呼吁：** 为了让更多人享受到先进视频压缩技术带来的观看体验提升，白皮书强调了内容提供商、网络运营商、芯片组制造商和设备操作系统开发商之间加强合作的重要性。这种合作旨在确保为终端用户提供最佳的体验质量，同时优化网络资源利用并减少拥堵。\n\n## 结论\n\nAV1技术已经足够成熟，可以帮助运营商应对不断增长的移动设备视频流量，同时在计算、边缘缓存资源和能源成本方面实现节约。推广AV1的采用将有助于移动运营商减少网络容量需求，并更好地满足用户日益增长的需求。",
-      "shortSummary": "Meta、沃达丰和谷歌发布白皮书，强调AV1视频编解码器在移动设备上的优势。AV1可将视频压缩效率提高30%，在中低端手机上提供与高端设备相当的视频质量，并释放网络容量。白皮书建议SoC供应商采纳AV1硬件，或在中低端设备上使用软件解码器。AV1有助于优化网络资源、节省成本并提升用户体验，呼吁行业各方合作推广。",
-      "translated_title": "移动设备上的AV1视频编解码器流媒体",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Today, Meta, Vodafone, and Google released a white paper, “Video Streaming with the AV1 Video Codec in Mobile Devices,&#8221; detailing the benefits of the AV1 codec, an advanced video compression technique, to enhance the streaming video experience on mobile devices.  The white paper recommends that: Vendors of core processors (SoCs) should evaluate the adoption of [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/09/24/video-engineering/video-streaming-with-av1-video-codec-mobile-devices-meta-white-paper/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/09/24/video-engineering/video-streaming-with-av1-video-codec-mobile-devices-meta-white-paper/\">Video Streaming With the AV1 Video Codec in Mobile Devices</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "阅读Meta的2025年可持续发展报告 (原标题: Read Meta’s 2025 Sustainability Report)",
-      "link": "https://sustainability.atmeta.com/2025-sustainability-report/",
-      "pubDate": "Fri, 12 Sep 2025 16:36:33 +0000",
-      "isoDate": "2025-09-12T16:36:33.000Z",
-      "creator": "",
-      "summary": "# Meta 2025年可持续发展报告\n\n## 报告愿景：连接到更美好的现实\nMeta的2025年可持续发展报告旨在通过其在气候、负责任的供应链、水资源和生物多样性方面的努力，构建一个更美好的现实。\n\n![户外空旷道路通向山脉](https://sustainability.atmeta.com/wp-content/uploads/2025/08/1_Meta-2025-Sustainability-Landing-Page_Headline_Connecting-to-a-Better-Reality.jpg?resize=5953%2C4802)\n\n![俯瞰树梢和山脉的自然风光](https://sustainability.atmeta.com/wp-content/uploads/2025/08/2_Meta-2025-Sustainability-Landing-Page_Pillar_Climate.jpg?resize=5184%2C2916)\n\n## 可持续发展支柱\n\n### 气候\n随着气候变化影响日益普遍，Meta致力于通过业务脱碳，为建设更健康的地球、更具韧性的社区和净零现实贡献力量。\n\n### 负责任的供应链\nMeta作为复杂价值链的一部分，通过开放沟通、支持安全工作条件的倡议以及对核心可持续发展问题的深入理解，努力赋能工人并保护环境。\n\n![戴安全眼镜和实验服的人用小钳子操作手机](https://sustainability.atmeta.com/wp-content/uploads/2025/08/4_Meta-2025-Sustainability-Landing-Page_Pillar_RSC.jpg?w=1620&resize=1620%2C911)\n\n### 水资源\n水是地球生命的重要资源。Meta致力于通过专业技术和责任管理水资源，以确保健康的水生生态系统。\n\n![海浪拍打海岸的海洋景色](https://sustainability.atmeta.com/wp-content/uploads/2025/08/3_Meta-2025-Sustainability-Landing-Page_Pillar_Water.jpg?w=1620&resize=1620%2C1078)\n\n### 生物多样性\n生物多样性支持生态系统稳定，确保地球上生物繁荣。Meta通过积极行动支持数据中心所在地原生生态系统的生物多样性，并投资当地社区的长期活力。\n\n![野花盛开的草地自然风光](https://sustainability.atmeta.com/wp-content/uploads/2025/08/5_Meta-2025-Sustainability-Landing-Page_Pillar_Biodiversity.jpg?resize=3200%2C2136)\n\n## 目标与承诺\n\nMeta的核心可持续发展战略旨在到2030年实现全价值链净零排放和水资源正效益。为实现向零碳经济和更健康地球的愿景，Meta设定了以下支持目标：\n\n![一个人在刚准备好的土地上植树](https://sustainability.atmeta.com/wp-content/uploads/2025/08/6_Meta-2025-Sustainability-Landing-Page_Goals-and-Commitments.jpg)\n\n*   到2031年，将范围1和范围2排放量在2021年基准上减少42%。\n*   到2026年，使至少三分之二的供应商设定符合科学的减排目标。\n*   到2031年底，范围3排放量不超过2021年基准。\n*   在高水资源压力地区恢复200%的用水量，在中水资源压力地区恢复100%的用水量。\n*   继续以清洁和可再生能源匹配100%的电力使用，以支持运营。\n*   与供应链合作伙伴设定人权和环境期望，并与他们合作建立能力以达到Meta的标准。\n\n## 亮点成就\n\n### 清洁和可再生能源\nMeta支持的风能和太阳能项目在全球电网中增加了超过15吉瓦的清洁和可再生能源。\n\n![日落时分有风力涡轮机的田野](https://sustainability.atmeta.com/wp-content/uploads/2025/08/7_Meta-2025-Sustainability-Landing-Page_Highlight_Clean-and-Renewable-Energy.jpg?w=1620&resize=8272%2C6200)\n\n### 水资源恢复\n自2017年以来，Meta已资助40多个水资源恢复项目。2024年，这些项目在高和中水资源压力地区恢复了超过16亿加仑的水。\n\n![河岸有树木，水流中有植物的河流](https://sustainability.atmeta.com/wp-content/uploads/2025/08/8_Meta-2025-Sustainability-Landing-Page_Highlight_Water-Restoration_PLACEHOLDER-FOR-WATER-PROJECT-1.jpeg?w=1620&resize=3840%2C2160)\n\n### 数据中心园区生物多样性\n超过50%的运营数据中心园区面积（超过4000英亩）已规划、安装或保留，以有意支持本地物种的栖息地。\n\n![位于亚利桑那州梅萨的Meta数据中心](https://sustainability.atmeta.com/wp-content/uploads/2025/08/9_Meta-2025-Sustainability-Landing-Page_Highlight_Data-Center-Campus-Biodiversity.jpeg?w=1620&resize=2048%2C1536)\n\n### 负责任的供应链\nMeta持续在供应商现场推广安全的工艺化学品管理，开展意识提升和风险缓解培训，并支持在可行的情况下用更安全的替代品替换有害化学品。\n\n![穿着安全装备的制造工人](https://sustainability.atmeta.com/wp-content/uploads/2025/08/10_Meta-2025-Sustainability-Landing-Page_Highlight_RSC.jpeg?w=1620&resize=5616%2C3744)\n\n### 为AI设计数据中心\nMeta投资创建可扩展的基础设施，以支持当前和未来的AI需求。其设计融合了高性能和定制解决方案，以更少的占地面积提供相似的计算能力，从而提高了交付时间和成本效率。\n\n![AI数据中心设计图](https://sustainability.atmeta.com/wp-content/uploads/2025/08/Opt3-min-4.jpg)\n\n### 创新投资\n*   2024年，Meta自有数据中心建设废弃物中有91%被转移出垃圾填埋场。\n*   Meta所有自有数据中心均获得LEED金级或更高认证。",
-      "shortSummary": "Meta的2025年可持续发展报告阐述了其通过气候行动、负责任的供应链、水资源管理和生物多样性等支柱，实现“连接到更美好现实”的承诺。核心目标是到2030年实现全价值链净零排放和水资源正效益。具体目标包括到2031年减少42%的范围1和2排放，并恢复高水压地区200%的用水。报告亮点包括新增15吉瓦清洁能源、2024年恢复超16亿加仑水、提升数据中心生物多样性，以及推广负责任的供应链实践和可持续的AI数据中心设计。",
-      "translated_title": "阅读Meta的2025年可持续发展报告",
-      "images": [
-        {
-          "url": "https://sustainability.atmeta.com/wp-content/uploads/2025/08/1_Meta-2025-Sustainability-Landing-Page_Headline_Connecting-to-a-Better-Reality.jpg?resize=5953%2C4802",
-          "alt": "An outdoor scene with an empty road leading toward mountains.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://sustainability.atmeta.com/wp-content/uploads/2025/08/2_Meta-2025-Sustainability-Landing-Page_Pillar_Climate.jpg?resize=5184%2C2916",
-          "alt": "A nature scene overlooking treetops and mountains.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://sustainability.atmeta.com/wp-content/uploads/2025/08/4_Meta-2025-Sustainability-Landing-Page_Pillar_RSC.jpg?w=1620&resize=1620%2C911",
-          "alt": "A person in safety glasses and a lab coat working on a mobile phone with small pliers.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://sustainability.atmeta.com/wp-content/uploads/2025/08/3_Meta-2025-Sustainability-Landing-Page_Pillar_Water.jpg?w=1620&resize=1620%2C1078",
-          "alt": "A view of the ocean, showing waves crashing.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://sustainability.atmeta.com/wp-content/uploads/2025/08/5_Meta-2025-Sustainability-Landing-Page_Pillar_Biodiversity.jpg?resize=3200%2C2136",
-          "alt": "A nature scene of a meadow with wildflowers.",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://sustainability.atmeta.com/wp-content/uploads/2025/08/6_Meta-2025-Sustainability-Landing-Page_Goals-and-Commitments.jpg",
-          "alt": "A person planting trees in freshly prepared ground.",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://sustainability.atmeta.com/wp-content/uploads/2024/08/download-icon.png",
-          "alt": "",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://sustainability.atmeta.com/wp-content/uploads/2024/08/Icon_Expanded__7b2e82.png",
-          "alt": "vehicle icon",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p> [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://sustainability.atmeta.com/2025-sustainability-report/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://sustainability.atmeta.com/2025-sustainability-report/\">Read Meta&#8217;s 2025 Sustainability Report</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-13T05:26:30.249Z"
+  "lastUpdated": "2025-10-15T05:27:02.299Z"
 }
