@@ -5,6 +5,38 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "推出Coral NPU：面向边缘AI的全栈平台 (原标题: Introducing Coral NPU: A full-stack platform for Edge AI)",
+      "link": "https://developers.googleblog.com/en/introducing-coral-npu-a-full-stack-platform-for-edge-ai/",
+      "pubDate": "Mon, 13 Oct 2025 16:00:00 GMT",
+      "isoDate": "2025-10-13T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# 推出Coral NPU：面向边缘AI的全栈平台\n\nGoogle于2025年10月14日推出了Coral NPU，这是一个全栈、开源平台，旨在解决限制低功耗边缘设备和可穿戴设备上强大、始终在线AI的核心性能、碎片化和隐私挑战。\n\n## 边缘AI面临的挑战\n\n生成式AI极大地改变了我们对技术的期望，但下一个技术飞跃是将智能直接嵌入到我们的个人环境中。为了实现真正有帮助的、主动的AI（如实时翻译、理解物理环境），它必须在可穿戴和随身设备上运行。这带来了三个核心挑战：\n\n*   **性能差距：** 复杂的机器学习模型需要大量计算，远超边缘设备的有限功耗、散热和内存预算。\n*   **碎片化成本：** 为各种专有处理器编译和优化ML模型既困难又昂贵，阻碍了设备间的一致性能。\n*   **用户信任赤字：** 个人AI必须优先考虑个人数据的隐私和安全。\n\n## Coral NPU解决方案\n\nCoral NPU平台基于Google原有的Coral项目，与Google Research和Google DeepMind合作设计，为硬件设计师和ML开发者提供了构建下一代私密、高效边缘AI设备所需的工具。它是一个AI优先的硬件架构，旨在实现超低功耗、始终在线的边缘AI。\n\n*   **统一的开发体验：** 简化了环境感知等应用的部署。\n*   **低功耗设计：** 专为可穿戴设备的全天候AI而设计，最大限度地减少电池使用，并可配置以支持更高性能用例。\n*   **开放可用：** 相关的文档和工具已发布，供开发者和设计师立即开始构建。\n\n## AI优先的架构\n\n传统的芯片设计在通用CPU（灵活但ML效率低）和专用加速器（ML效率高但缺乏灵活性）之间存在权衡。Coral NPU通过颠覆传统芯片设计来解决这一问题，它优先考虑ML矩阵引擎而非标量计算，从芯片层面优化AI架构，从而创建了一个专为更高效的设备端推理而设计的平台。\n\n![Coral NPU全平台](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/The_full_platform_v4_Fin_Alpha.original.png)\n\n作为一个完整的参考神经网络处理单元（NPU）架构，Coral NPU为下一代节能、ML优化片上系统（SoC）提供了构建模块。\n\n*   **RISC-V基础：** 架构基于一套符合RISC-V ISA的架构IP块，设计用于最小功耗，非常适合始终在线的环境感知。\n*   **性能表现：** 基础设计提供512 GOPS的性能，同时仅消耗几毫瓦，为边缘设备、听戴设备、AR眼镜和智能手表提供强大的设备端AI。\n*   **开放可扩展：** 基于RISC-V的开放可扩展架构为SoC设计师提供了修改基础设计或将其用作预配置NPU的灵活性。\n\nCoral NPU架构包含以下组件：\n\n*   **标量核心：** 轻量级、C可编程的RISC-V前端，管理数据流到后端核心，采用简单的“运行到完成”模型，实现超低功耗和传统CPU功能。\n*   **向量执行单元：** 强大的单指令多数据（SIMD）协处理器，符合RISC-V向量指令集（RVV）v1.0，支持对大型数据集的并行操作。\n*   **矩阵执行单元：** 高效的量化外积乘累加（MAC）引擎，专为加速基本神经网络操作而构建（该矩阵核心仍在开发中，将于今年晚些时候在GitHub上发布）。\n\n![Coral NPU设计灵感](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Inspiration_of_Coral_v4_Fin_Alpha.original.png)\n\n## 统一的开发者体验\n\nCoral NPU架构是一个简单、C可编程的目标，可以与IREE和TFLM等现代编译器无缝集成，从而轻松支持TensorFlow、JAX和PyTorch等ML框架。\n\n*   **全面的软件工具链：** 包括TFLM编译器、通用MLIR编译器、C编译器、自定义内核和模拟器，为开发者提供灵活的路径。\n*   **优化编译流程：** 例如，JAX框架的模型首先使用StableHLO方言导入MLIR格式，然后输入IREE编译器，该编译器应用硬件特定插件识别Coral NPU架构，并进行渐进式降低优化，最终生成紧凑的二进制文件，可在边缘设备上高效执行。\n*   **行业标准工具：** 简化ML模型的编程，并在各种硬件目标上提供一致的体验。\n\n![Coral NPU编译器工具链](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/The_compiler_toolchain_v4_Fin_Alpha.original.png)\n\nCoral NPU的协同设计过程侧重于两个关键领域：\n\n1.  高效加速当前设备端视觉和音频应用中领先的基于编码器的架构。\n2.  与Gemma团队密切合作，优化Coral NPU以支持小型Transformer模型，确保加速器架构支持边缘生成式AI的下一代发展。\n\n这种双重关注意味着Coral NPU有望成为第一个开放、基于标准、低功耗的NPU，能够将大型语言模型（LLMs）引入可穿戴设备。\n\n## 目标应用\n\nCoral NPU旨在实现超低功耗、始终在线的边缘AI应用，特别关注环境感知系统。其主要目标是在可穿戴设备、手机和物联网（IoT）设备上实现全天候AI体验，同时最大限度地减少电池使用。\n\n潜在用例包括：\n\n*   **情境感知：** 检测用户活动（如步行、跑步）、接近度或环境（如室内/室外、移动中），以启用“请勿打扰”模式或其他情境感知功能。\n*   **音频处理：** 语音和语音检测、关键词识别、实时翻译、转录和基于音频的辅助功能。\n*   **图像处理：** 人物和物体检测、面部识别、手势识别和低功耗视觉搜索。\n*   **用户交互：** 通过手势、音频提示或其他传感器驱动输入实现控制。\n\n## 硬件强制隐私\n\nCoral NPU的核心原则是通过硬件强制安全来建立用户信任。其架构旨在支持CHERI等新兴技术，提供细粒度的内存级安全和可扩展的软件分区。通过这种方法，敏感的AI模型和个人数据可以被隔离在硬件强制的沙盒中，从而减轻基于内存的攻击。\n\n## 构建生态系统\n\n开放硬件项目的成功离不开强大的合作伙伴关系。Google正与Synaptics合作，Synaptics是其首个战略硅合作伙伴，也是物联网嵌入式计算、无线连接和多模态传感领域的领导者。Synaptics已宣布推出其新的Astra™ SL2610系列AI原生物联网处理器，该产品线采用了其Torq™ NPU子系统，这是Coral NPU架构的业界首个生产实现。Torq™ NPU设计支持Transformer模型和动态操作符，使开发者能够为消费和工业物联网构建面向未来的边缘AI系统。\n\n此次合作支持了Google对统一开发者体验的承诺。Synaptics Torq™边缘AI平台基于IREE和MLIR的开源编译器和运行时构建。这一合作是为智能、情境感知设备构建共享开放标准的重要一步。\n\n## 总结\n\n通过Coral NPU，Google正在为个人AI的未来构建一个基础层。目标是提供一个通用、开源且安全的平台，供行业在此基础上进行构建，从而促进一个充满活力的生态系统。这将使开发者和芯片供应商能够超越当前碎片化的局面，在边缘计算的共享标准上进行协作，从而加速创新。",
+      "shortSummary": "Google推出Coral NPU，一个全栈开源平台，解决低功耗边缘AI的性能、碎片化和隐私挑战。它采用AI优先的RISC-V架构，提供512 GOPS性能，功耗仅数毫瓦。平台提供统一开发体验，支持主流ML框架，赋能可穿戴设备、手机及IoT的全天候私密AI应用，如情境感知和实时翻译。Coral NPU强调硬件强制隐私，并与Synaptics等伙伴共建开放生态，加速边缘AI创新。",
+      "translated_title": "推出Coral NPU：面向边缘AI的全栈平台",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/The_full_platform_v4_Fin_Alpha.original.png",
+          "alt": "The full platform_v4_Fin_Alpha",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Inspiration_of_Coral_v4_Fin_Alpha.original.png",
+          "alt": "Inspiration of Coral_v4_Fin_Alpha",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/The_compiler_toolchain_v4_Fin_Alpha.original.png",
+          "alt": "The compiler toolchain_v4_Fin_Alpha",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Coral NPU is a full-stack platform for Edge AI, addressing performance, fragmentation, and user trust deficits. It's an AI-first architecture, prioritizing ML matrix engines, and offers a unified developer experience. Designed for ultra-low-power, always-on AI in wearables and IoT, it enables contextual awareness, audio/image processing, and user interaction with hardware-enforced privacy. Synaptics is the first partner to implement Coral NPU."
+    },
+    {
       "title": "掌控你的AI：学习如何微调Gemma 3 270M并在设备上运行 (原标题: Own your AI: Learn how to fine-tune Gemma 3 270M and run it on-device)",
       "link": "https://developers.googleblog.com/en/own-your-ai-fine-tune-gemma-3-270m-for-on-device/",
       "pubDate": "Tue, 07 Oct 2025 16:00:00 GMT",
@@ -222,45 +254,7 @@
       ],
       "contentSource": "完整文章",
       "content": "For developers and researchers in the JAX ecosystem, the path from a pre-trained model to a fully al..."
-    },
-    {
-      "title": "Gemma 详解：EmbeddingGemma 架构与开发方法 (原标题: Gemma explained: EmbeddingGemma Architecture and Recipe)",
-      "link": "https://developers.googleblog.com/en/gemma-explained-embeddinggemma-architecture-and-recipe/",
-      "pubDate": "Sun, 28 Sep 2025 16:00:00 GMT",
-      "isoDate": "2025-09-28T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Gemma 详解：EmbeddingGemma 架构与开发方法\n\n本文深入探讨了 EmbeddingGemma 模型的架构及其开发方法。EmbeddingGemma 是 Gemma 系列模型中的一员，旨在将文本转化为数值表示（即“嵌入”），从而实现搜索、检索增强生成（RAG）和文本理解等任务。\n\n## EmbeddingGemma 的起源与演变\n\nEmbeddingGemma 并非从零开始构建，而是基于预训练的 300M 参数 Gemma 3 模型。它通过 T5Gemma 的适配方法进行转换，将原始的仅解码器 Gemma 模型转变为编码器-解码器架构。EmbeddingGemma 随后从这个新模型的编码器部分进行初始化，从而继承了大量“世界知识”而无需额外的预训练。\n\n![从 Gemma 3 解码器到强大的文本嵌入器](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/training.original.png)\n*图示：从 Gemma 3 解码器到强大的文本嵌入器的演变过程*\n\n## 嵌入的形成过程\n\nEmbeddingGemma 利用 Sentence Transformers 等框架生成嵌入。给定一段输入文本序列，EmbeddingGemma 通过一系列精心设计的步骤将其处理成一个简洁的向量表示。这些步骤包括：\n\n1.  **Transformer (编码器)**：输入序列首先通过一个仅编码器的 Transformer 模型。该 Transformer 利用双向注意力机制理解输入上下文中每个 token 的含义，为每个 token 生成一个 768 维的向量序列。\n2.  **池化 (Pooling)**：Transformer 的输出是一系列 token 嵌入。池化层的作用是将这个可变长度的序列转换为整个输入的单个固定大小的嵌入。EmbeddingGemma 采用“均值池化”（Mean Pooling）策略，即计算所有 token 嵌入的平均值。\n3.  **全连接层 (Dense)**：接下来，应用一个线性投影层，将嵌入维度从 768 扩展到 3072。\n4.  **全连接层 (Dense)**：然后，再应用另一个线性投影层，将学习到的 3072 维嵌入缩放到最终目标维度 768。\n5.  **归一化 (Normalize)**：最后，应用欧几里得归一化，以实现高效的相似性比较。这是一种比 Gemma 其他模型中使用的 RMSNorm 更简单、成本更低的操作。\n\n![EmbeddingGemma 嵌入形成过程](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/embeddinggemma.original.png)\n*图示：EmbeddingGemma 如何从输入文本形成最终嵌入的视觉化表示*\n\n## EmbeddingGemma 的学习机制\n\nEmbeddingGemma 通过在训练过程中优化三种不同的加权损失函数组合来学习创建强大的嵌入：\n\n1.  **噪声对比估计 (NCE) 损失**：\n    *   教授模型相似性和对比的基本概念。\n    *   拉近“正样本对”（查询与正确答案）在嵌入空间中的距离。\n    *   推远“负样本对”（查询与不正确答案）的距离。\n    *   关键在于包含“难负样本”（语义上与查询相似但不正确或不完整的答案），这迫使模型学习区分正确与近似正确的细微差别。\n2.  **全局正交正则化器 (GOR)**：\n    *   鼓励 EmbeddingGemma 生成在嵌入空间中分布更广的嵌入。\n    *   这使得嵌入对量化具有鲁棒性，并能通过近似最近邻 (ANN) 算法在向量数据库中实现高效搜索。\n3.  **几何嵌入蒸馏 (Geometric Embedding Distillation)**：\n    *   这是一种知识蒸馏形式，EmbeddingGemma 从一个更大、更强大的 Gemini Embedding 模型（作为教师模型）中学习。\n    *   通过最小化两个嵌入模型在查询和段落嵌入之间的 L2 距离，EmbeddingGemma 有效地继承了教师模型的知识和能力。\n\n![EmbeddingGemma 训练中使用的三种损失函数](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/loss.original.png)\n*图示：EmbeddingGemma 训练中使用的三种不同损失函数（NCE 损失、GOR 和蒸馏损失）的视觉化表示*\n\n通过结合这些损失函数，EmbeddingGemma 学习生成结构良好、富有表现力且鲁棒的表示，从而在实际搜索和检索任务中实现强大的性能。\n\n## 俄罗斯套娃表示学习 (Matryoshka Representation Learning, MRL)\n\nMRL 是一种允许在较大表示中嵌套较小、高质量表示的技术。例如，尽管 EmbeddingGemma 的嵌入具有 768 维，但您可以截断嵌入以获得 512、256 甚至 128 维的较小嵌入，同时保持高质量。\n\n在训练期间，损失函数不仅应用于最终的 768 维嵌入，还应用于该嵌入的重叠子集（前 512、256 和 128 维）。这确保了即使是完整嵌入的截断版本也是强大而完整的表示。\n\n![俄罗斯套娃嵌入](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/mrl.original.png)\n*图示：俄罗斯套娃嵌入，展示了不同维度如何影响质量与效率之间的权衡*\n\n这意味着用户可以根据其应用程序的需求，在性能和效率之间选择合适的权衡，而无需训练或管理多个模型。\n\n## 开发方法\n\nEmbeddingGemma 的开发过程包括几个阶段：\n\n*   **编码器-解码器训练**：如前所述，适配 Gemma 3，并使用 UL2 在 Gemma 3 数据上进行进一步预训练。\n*   **预微调 (Pre Fine-tuning)**：在大量、多样化的任务（问答、句子相似性、代码检索、网络搜索）和语言上进行训练，使用更大的批次大小和（查询，目标）对，不包含难负样本。\n*   **微调 (Fine-tuning)**：在更小、更高质量的特定任务数据集混合上精炼模型，使用难负样本和更小的批次大小。任务混合率通过贝叶斯优化进行优化。\n*   **模型融合 (Model Souping)**：通过平均微调运行中模型的参数来组合模型，以提高质量和鲁棒性。最终模型是来自多个不同微调混合的检查点的未加权平均。\n*   **量化感知训练 (Quantization-Aware Training, QAT)**：在微调期间应用，以提供量化版本（例如，int4 每块和混合精度每通道），这些版本具有更小的内存占用，同时质量下降最小。\n\n通过精心适配强大的基础模型并采用多方面的训练方法，EmbeddingGemma 的架构旨在提供高效且多功能的文本表示，适用于广泛的应用。\n\n## 总结与展望\n\n本文详细介绍了 EmbeddingGemma 的架构、其起源、嵌入生成过程以及开发方法。EmbeddingGemma 等模型正在推动语义技术向更高效、更强大的方向发展，预计将在检索增强生成 (RAG)、设备端 AI 和超个性化等关键领域带来显著进步。模型的权重已在 Hugging Face、Kaggle 和 Vertex AI 上发布。",
-      "shortSummary": "EmbeddingGemma 是一个基于 Gemma 3 模型的文本嵌入模型，旨在将文本转化为数值嵌入，应用于搜索、检索增强生成（RAG）等任务。其核心架构包含 Transformer 编码器、均值池化和多层全连接网络，并采用欧几里得归一化。模型通过噪声对比估计、全局正交正则化和几何嵌入蒸馏三种损失函数进行训练。它还支持俄罗斯套娃表示学习，允许在不同维度下保持高质量。多阶段开发方法确保了其高效和多功能性，推动了语义技术的发展。",
-      "translated_title": "Gemma 详解：EmbeddingGemma 架构与开发方法",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/training.original.png",
-          "alt": "training",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/embeddinggemma.original.png",
-          "alt": "embeddinggemma",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/loss.original.png",
-          "alt": "loss",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/mrl.original.png",
-          "alt": "mrl",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The previous posts in the “Gemma explained” series provided a detailed overview of the Gemma model f..."
     }
   ],
-  "lastUpdated": "2025-10-14T10:30:38.474Z"
+  "lastUpdated": "2025-10-15T10:32:07.157Z"
 }
