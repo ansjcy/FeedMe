@@ -5,6 +5,119 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "GitHub Copilot 和 AI 代理如何拯救遗留系统 (原标题: How GitHub Copilot and AI agents are saving legacy systems)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-github-copilot-and-ai-agents-are-saving-legacy-systems/",
+      "pubDate": "Tue, 14 Oct 2025 16:00:00 +0000",
+      "isoDate": "2025-10-14T16:00:00.000Z",
+      "creator": "Andrea Griffiths",
+      "summary": "# GitHub Copilot 和 AI 代理如何拯救遗留系统\n\n## 遗留系统现代化挑战\n文章指出，COBOL 等遗留系统（如处理数百万 ATM 交易的主机系统）虽然已运行 65 年，但仍在支撑全球最关键的业务。然而，COBOL 开发者日益稀缺，而现有 2000 亿行 COBOL 代码急需现代化。GitHub Copilot 和自主 AI 代理为这一挑战提供了新的解决方案。\n\n## AI 驱动的现代化方法\n微软的 Julia Kordick 团队展示了无需学习 COBOL 即可实现系统现代化的方法。关键在于将 AI 专业知识与拥有数十年领域知识的专家相结合，AI 负责设计智能解决方案，专家提供遗留系统知识。这种合作是成功的关键。\n\n## AI 驱动的遗留系统现代化三步框架\nJulia 团队开发了一个系统化的框架，适用于任何遗留系统现代化项目：\n\n### 1. 代码准备（逆向工程）\n*   **问题**：组织往往不清楚其遗留代码的具体功能。\n*   **解决方案**：利用 GitHub Copilot 作为“考古工具”进行代码分析。\n*   **Copilot 功能**：\n    *   从遗留文件中提取业务逻辑。\n    *   将所有内容以 Markdown 格式文档化，便于人工审查。\n    *   自动识别调用链和依赖关系。\n    *   清理不相关的注释和历史日志。\n    *   根据需要添加额外注释。\n*   **专家提示**：始终由人类专家审查 AI 生成的分析结果，领域知识对业务上下文至关重要。\n*   **Copilot 生成示例**：包括文件清单、业务目的（如客户账户验证、余额计算、交易日志生成）和发现的依赖项（如 DB2 数据库连接、外部验证服务调用、遗留打印队列系统）。\n\n### 2. 丰富（使代码易于 AI 理解）\n*   **添加上下文**：帮助 AI 更好地理解代码。\n*   **关键步骤**：\n    *   **翻译**：将非英语注释翻译成英语，因为模型在英语上下文中表现更好。\n    *   **结构分析**：COBOL 具有确定性模式（如 IDENTIFICATION DIVISION、ENVIRONMENT DIVISION、DATA DIVISION、PROCEDURE DIVISION 四个固定分区）。可以要求 GitHub Copilot 映射这些分区并总结其功能，或列出数据结构、提取业务逻辑。AI 可以解析这些结构化部分并用通俗易懂的语言解释，无需理解 COBOL 语法。\n    *   **文档作为事实来源**：将所有 AI 生成的内容保存为 Markdown 文件，作为主要参考资料。\n*   **专家提示**：COBOL 的冗长性反而是优势，如 `ADD TOTAL-SALES TO ANNUAL-REVENUE` 语句几乎是自文档化的，可要求 Copilot 将这些业务规则提取为自然语言描述。\n\n### 3. 自动化辅助（规模化流程）\n*   从交互式使用 Copilot 转向使用 AI 代理构建自动化工作流。\n*   **Microsoft Semantic Kernel 框架**：用于编排多个专业代理，每个代理负责特定任务，协同处理复杂性。\n*   **实践中的编排示例**：\n    *   **调用链映射**：生成 Mermaid 图表展示文件间的交互。一个代理读取 COBOL 文件，另一个追踪程序间的 `CALL` 语句，第三个生成可视化图表，从而无需手动追踪即可获得整个系统映射。\n    *   **测试驱动现代化**：代理 1 提取业务逻辑，代理 2 生成验证该逻辑的测试用例，代理 3 生成通过这些测试的现代代码。测试成为迁移过程中的安全网。\n    *   **依赖优化**：识别可替换为现代等效项的实用类和库。代理分析第三方 COBOL 库，检查是否存在现代替代方案，并指出简化迁移的机会。\n*   **专家提示**：在进行任何更改之前，使用 Mermaid 图表可视化复杂的依赖关系，有助于及早发现边缘情况。\n*   **Mermaid 图表示例**：\n    ![COBOL 到 Java 现代化代理工作流流程图](https://github.blog/wp-content/uploads/2025/10/mermaid.png?resize=475%2C908)\n\n## 现实检验：并非万能药\nJulia 坦言，AI 并非解决所有主机问题的“一键式”方案。人类必须参与验证，每个 COBOL 代码库都是独特且复杂的，完全自动化可能还需要至少五年。但即便如此，AI 仍能带来巨大进展。\n\n## Azure 示例框架\nJulia 团队已开源其整个框架（基于 Microsoft Semantic Kernel），包括：\n*   多个专业代理（如 DependencyMapperAgent, COBOLAnalyzerAgent, JavaConverterAgent）。\n*   成本跟踪（每 1000 行分析通常 2-5 美元）。\n*   内置的人工验证点。\n*   `doctor.sh` 配置和测试脚本，可快速启动。\n*   **快速设置**：通过 `git clone`、`cd`、`./doctor.sh setup` 和 `./doctor.sh run` 即可开始现代化过程。\n\n## 改变一切的商业案例\n这不仅仅是技术债务问题，更是关乎企业生存。传统方法（昂贵顾问、手动转换、生成难以维护的代码）效率低下。AI 驱动的方法则能帮助团队理解业务逻辑、生成可读的现代代码，并保持对知识产权的控制，使团队在过程中学习并维护代码。\n\n## 成为现代化英雄的路径\n*   **从小处着手**：识别小型遗留系统（少于 5000 行），用 GitHub Copilot 分析单个文件，文档化并分享。\n*   **构建 AI 工具包**：尝试 Azure 示例框架，学习代码分析的提示工程，实践迭代现代化技术。\n*   **超越代码**：考虑云原生设计的非功能性需求，规划分布式系统架构。\n\n## 现在是最佳时机\nAI 不会取代开发者专业知识，而是放大它。COBOL 专家提供领域知识，现代开发者带来架构视角，AI 提供规模化的模式识别和翻译能力。三者结合，遗留系统现代化将从不可能变为可实现。",
+      "shortSummary": "GitHub Copilot 和 AI 代理正革新遗留系统现代化。面对 COBOL 等老旧系统和开发者短缺，AI 提供了一个三步框架：代码准备（逆向工程）、代码丰富（使 AI 易于理解）和自动化辅助（通过 AI 代理规模化）。该方法结合了 AI 的分析能力与人类领域知识，帮助企业理解业务逻辑，生成可维护的现代代码，从而有效解决技术债务和业务生存挑战。虽然人类验证仍不可或缺，但 AI 大幅加速了现代化进程。",
+      "translated_title": "GitHub Copilot 和 AI 代理如何拯救遗留系统",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/mermaid.png?resize=475%2C908",
+          "alt": "Flowchart showing the COBOL to Java modernization agent workflow. Seven boxes connected by arrows flow top to bottom: COBOLAnalyzerAgent, DependencyMapperAgent, Business Logic Extractor, Test Generator, JavaConverterAgent, Human Validation, and Production-Ready Java Quarkus Output.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/Andrea-Griffiths_avatar_1755783168-200x200.jpeg",
+          "alt": "Andrea Griffiths",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>GitHub Copilot and AI agents are making legacy COBOL systems accessible to modern developers.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-github-copilot-and-ai-agents-are-saving-legacy-systems/\">How GitHub Copilot and AI agents are saving legacy systems</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "GitHub Copilot CLI：如何开始使用 (原标题: GitHub Copilot CLI: How to get started)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-how-to-get-started/",
+      "pubDate": "Mon, 13 Oct 2025 22:40:04 +0000",
+      "isoDate": "2025-10-13T22:40:04.000Z",
+      "creator": "Andrea Griffiths",
+      "summary": "## GitHub Copilot CLI：将AI带入命令行\n\nGitHub Copilot CLI 是一款创新工具，旨在将人工智能辅助直接集成到命令行界面（CLI）中，从而消除开发者在终端、编辑器和浏览器之间频繁切换上下文的需要。它允许用户在不中断工作流的情况下，在熟悉的终端环境中获得AI的帮助。\n\n### 安装与认证\n要开始使用 Copilot CLI，用户需要：\n1.  通过 npm 全局安装：`npm install -g @github/copilot`。\n2.  启动 Copilot CLI：`copilot`。\n3.  使用现有的 GitHub 账户登录并认证，这需要有效的 GitHub Copilot Pro、Pro+、Business 或 Enterprise 计划。\n\n**系统要求**：Node v22+ 和 npm version 10 或更高版本。\n\n### 核心使用场景：从克隆到拉取请求\nCopilot CLI 旨在简化从项目克隆到提交拉取请求的整个开发流程，提供以下关键辅助功能：\n\n1.  **克隆并启动 Copilot**\n    *   用户首先克隆一个仓库，然后在该仓库目录中运行 `copilot`。\n    *   在 Copilot 界面中，可以随时输入 `/` 查看可用命令，或使用 `Ctrl+R` 查看 Copilot 执行的命令日志。\n\n2.  **了解新代码库结构**\n    *   无需手动浏览文件或拼凑 README，用户可以直接提问：“Explain the layout of this project.”。\n    *   Copilot 会利用 `find`、`tree` 命令和 `README` 文件来分析仓库，并返回一个清晰的 Markdown 格式项目结构摘要。\n\n3.  **检查环境准备情况**\n    *   用户可以询问：“Make sure my environment is ready to build this project.”。\n    *   Copilot 会验证项目依赖项，安装缺失的工具（如 GitHub CLI 所需的 Go），并确认本地构建环境已准备就绪。\n\n4.  **查找合适的“首次贡献”问题**\n    *   为了帮助用户快速开始贡献，可以提问：“Find good first issues in this repository and rank them by difficulty.”。\n    *   Copilot 会通过其内置的 GitHub MCP 服务器查询 GitHub Issues，并提供一份根据难度排序的精选问题列表。\n\n5.  **开始实现**\n    *   在找到要处理的问题后，用户可以指示 Copilot 起草解决方案，例如：“Start implementing issue #1234. Show me the diff before applying.”。\n    *   Copilot 会制定计划，进行必要的修改，并展示差异（diff）供用户审查和批准，确保用户始终掌控代码变更。\n    *   **专业提示**：在提示中 `@-mention` 文件可以引导 Copilot 关注代码的特定部分。\n\n6.  **提交并创建草稿拉取请求**\n    *   当更改满意后，用户可以要求 Copilot 自动化 Git 流程：“Stage changes, write a commit referencing #1234, and open a draft PR.”。\n    *   Copilot 将暂存文件，编写提交信息，并为用户创建草稿拉取请求。\n\n7.  **额外功能：终止占用端口的进程**\n    *   Copilot 还能处理常见的开发难题，例如端口占用。用户可以提问：“What process is using port 8080? Kill it and verify the port is free.”。\n    *   Copilot 会运行 `lsof` 命令查找进程 ID，终止该进程，并验证端口是否已释放。\n\n### 控制与权限管理\nCopilot CLI 始终将控制权交给用户。在执行任何命令或访问目录之前，它会提示用户选择：\n*   允许一次 (Allow once)\n*   始终允许此命令 (Allow always for this command)\n*   拒绝 (Deny)\n\n用户还可以使用以下命令管理权限：\n*   `/session`：查看当前允许的权限。\n*   `/reset`：随时重置所有权限。\n*   `/add-directory`：将目录添加到允许列表中。\n\n### 通过MCP服务器扩展\nCopilot CLI 内置了 GitHub MCP（Model Context Protocol）服务器，用于支持问题搜索和仓库交互。用户还可以使用 `/mcp` 命令从注册表添加任何自定义 MCP 服务器，从而根据特定工作流（如 Playwright 浏览器测试或公司内部工具集成）扩展其功能。\n\n![GitHub Copilot CLI MCP服务器添加界面](https://github.blog/wp-content/uploads/2025/10/image1_8dda93.png?resize=1024%2C785)\n\n### 重要意义\nCopilot CLI 的主要价值在于它能与开发者现有的终端工作流无缝融合，减少了在不同工具之间切换的认知负担。这对于新贡献者入门项目或开发者探索新代码库时，保持工作流的连贯性和效率至关重要。它被定位为 IDE 的补充工具，而非替代品。\n\n### 未来展望\nGitHub Copilot CLI 目前处于公开预览阶段，鼓励用户通过 `/feedback` 命令分享使用体验，以帮助塑造未来的开发路线图。\n\n![作者：Andrea Griffiths](https://github.blog/wp-content/uploads/2025/08/Andrea-Griffiths_avatar_1755783168-200x200.jpeg)\n\n**作者**：Andrea Griffiths，GitHub 高级开发者倡导者。",
+      "shortSummary": "GitHub Copilot CLI 将AI助手直接集成到命令行，让开发者无需离开终端即可获得帮助。它通过 `npm` 安装，支持 Copilot Pro/Business/Enterprise 账户登录。Copilot CLI 能协助完成从代码库克隆、理解项目结构、检查环境、查找任务、实现代码到提交和创建拉取请求等一系列开发工作。它在执行操作前会征求用户许可，确保控制权，并支持通过 MCP 服务器扩展功能。该工具旨在减少上下文切换，提高开发效率，是 IDE 的有力补充，目前处于公开预览阶段。",
+      "translated_title": "GitHub Copilot CLI：如何开始使用",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/image1_8dda93.png?resize=1024%2C785",
+          "alt": "A terminal window showing the GitHub Copilot CLI interface where a user is adding a new MCP (Model Context Protocol) server. The screen includes input fields for server name, type (Local, HTTP, or SSE), command, arguments, environment variables, and tools to include. The interface indicates the user is logged in as “Andrea@Griffiths11” and offers navigation shortcuts for saving or canceling.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/Andrea-Griffiths_avatar_1755783168-200x200.jpeg",
+          "alt": "Andrea Griffiths",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Discover how to use GitHub Copilot directly in the terminal. From cloning a repository to opening a pull request, here’s how to streamline your workflow with Copilot CLI.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-how-to-get-started/\">GitHub Copilot CLI: How to get started</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "如何使用代理原语和上下文工程构建可靠的AI工作流 (原标题: How to build reliable AI workflows with agentic primitives and context engineering)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-to-build-reliable-ai-workflows-with-agentic-primitives-and-context-engineering/",
+      "pubDate": "Mon, 13 Oct 2025 16:00:00 +0000",
+      "isoDate": "2025-10-13T16:00:00.000Z",
+      "creator": "Daniel Meppiel",
+      "summary": "本文介绍了一个三部分框架，旨在将临时性的AI探索转化为可重复、可靠的工程实践，从而构建可靠的AI工作流。该框架的核心是**代理原语**（可重用、可配置的构建块）和**上下文工程**（确保AI代理专注于正确的信息）。\n\n### AI原生开发框架\n\n该框架的公式是：Markdown提示工程 + 代理原语 + 上下文工程 = 可靠性。它旨在帮助开发者构建、扩展和共享能够学习并不断改进的智能系统。\n\n**💡 尝试使用GitHub Copilot CLI**：通过GitHub Copilot CLI，用户可以直接在终端中运行、调试和自动化AI工作流，无需设置脚本，也无上下文丢失，并能直接连接到GitHub仓库、拉取请求和问题。\n\n### 三层框架详解\n\n该框架通过结合Markdown的结构、代理原语的能力和智能上下文管理，将临时性的AI实验转变为可靠、可重复的过程。\n\n#### 第一层：使用Markdown进行更具策略性的提示工程\n\n清晰、精确、上下文丰富的提示能带来更好、更准确的结果。Markdown的结构（标题、列表、链接）可以自然地引导AI的推理，使输出更可预测和一致。关键技术包括：\n\n*   **上下文加载**：使用链接作为上下文注入点，从文件或网站中提取相关信息。\n*   **结构化思维**：使用标题和项目符号为AI创建清晰的推理路径。\n*   **角色激活**：使用“你是一名[此角色]的专家”等短语来触发专业知识领域。\n*   **工具集成**：使用`MCP tool tool-name`让AI代理在MCP服务器上以受控、可重复的方式运行代码。\n*   **精确语言**：通过具体指令消除歧义。\n*   **验证门**：“停止并获得用户批准”，确保在关键决策点有人工监督。\n\n例如，一个复杂的调试提示会明确指定AI的角色、参考文档、步骤、使用的工具以及在提交修复前寻求用户验证。\n\n#### 第二层：代理原语——系统化部署提示工程技术\n\n手动为每个任务编写完美的提示是不可持续的。代理原语是简单、可重用的文件或模块，为AI代理提供特定的能力或规则，从而系统化地实施提示工程技术。核心代理原语包括：\n\n*   **指令文件（.instructions.md）**：通过模块化文件部署结构化指导。\n*   **聊天模式（.chatmode.md）**：通过具有MCP工具边界的文件部署基于角色的专业知识，防止安全漏洞和跨域干扰。\n*   **代理工作流（.prompt.md）**：通过内置验证部署可重用提示。\n*   **规范文件（.spec.md）**：创建可重复结果的实施就绪蓝图。\n*   **代理记忆文件（.memory.md）**：在会话之间保留知识。\n*   **上下文辅助文件（.context.md）**：优化信息检索。\n\n**示例**：一个简单的“实现安全用户认证系统”提示，通过选择后端开发聊天模式，自动触发安全指令，加载上下文，生成规范文件，并执行带有验证门的实现工作流，最终实现开发者驱动的知识积累和持续改进。\n\n#### 第三层：上下文工程——帮助AI代理专注于重要信息\n\n大型语言模型（LLM）的记忆（上下文窗口）有限，且容易遗忘。战略性地提供上下文可以帮助AI专注于相关信息，提高其可靠性和效率。关键技术包括：\n\n*   **会话拆分**：为不同的开发阶段和任务使用不同的代理会话（例如，规划、实施、测试）。\n*   **模块化和自定义规则/指令**：仅通过有针对性的`.instructions.md`文件应用相关指令，节省上下文空间。\n*   **记忆驱动开发**：利用`.memory.md`文件在会话和时间轴上维护项目知识和决策。\n*   **上下文优化**：战略性地使用`.context.md`上下文辅助文件加速信息检索并减少认知负荷。\n*   **认知焦点优化**：在`.chatmode.md`文件中使用聊天模式，使AI的注意力集中在相关领域，防止跨域干扰。\n\n### 代理工作流：完整的系统实践\n\n当所有三层结合时，就形成了代理工作流——一个完整的、系统化的过程，其中所有代理原语协同工作，理解提示，并仅使用所需的上下文。这些工作流可以作为`.prompt.md`文件实现，协调多个代理原语，无论是在IDE、终端还是CI管道中执行。\n\n### 工具：如何扩展代理原语\n\n代理原语本质上是用自然语言编写的可执行软件，其扩展方式类似于任何编程生态系统的演变。它们具有模块化、可重用性、依赖性、演进性和可分发性等特性，因此需要适当的工具基础设施。\n\n*   **代理CLI运行时**：\n    *   **内循环（VS Code和GitHub Copilot）**：用于交互式开发、测试和工作流优化。\n    *   **外循环（代理CLI运行时，如Copilot CLI）**：用于可重现的执行、CI/CD集成和生产部署，将自然语言程序从个人工具转变为强大、可共享的解决方案。\n*   **运行时管理（APM - 代理包管理器）**：\n    *   APM通过提供统一的运行时管理和包分发来解决管理多个代理CLI运行时的复杂性。\n    *   它允许用户安装和配置不同的运行时（如Copilot CLI、OpenAI Codex CLI），安装依赖项，编译代理原语文件，并运行工作流，同时保持一致的VS Code开发体验。\n\n本文强调，通过迭代改进，该框架能够创建复合智能，不断提升AI系统的性能和可靠性。",
+      "shortSummary": "本文介绍了一个三部分框架，旨在通过将AI探索转化为可靠的工程实践，构建可靠的AI工作流。该框架结合了**Markdown提示工程**（结构化提示）、**代理原语**（可重用构建块）和**上下文工程**（优化AI注意力）。它通过GitHub Copilot CLI和APM等工具，将自然语言编写的代理原语视为软件，支持其开发、自动化和部署，从而实现AI系统的持续学习和改进，确保可预测和一致的输出。",
+      "translated_title": "如何使用代理原语和上下文工程构建可靠的AI工作流",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>See how this three-part framework will turn AI into a repeatable and reliable engineering practice.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-to-build-reliable-ai-workflows-with-agentic-primitives-and-context-engineering/\">How to build reliable AI workflows with agentic primitives and context engineering</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Git 二十年，GitHub 总部两天：Git Merge 2025 亮点回顾 🎉 (原标题: 20 Years of Git, 2 days at GitHub HQ: Git Merge 2025 highlights 🎉)",
       "link": "https://github.blog/open-source/git/20-years-of-git-2-days-at-github-hq-git-merge-2025-highlights/",
       "pubDate": "Thu, 09 Oct 2025 08:00:00 +0000",
@@ -377,108 +490,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>I coded my latest app entirely in Markdown and let GitHub Copilot compile it into Go. This resulted in cleaner specs, faster iteration, and no more context loss.  ✨</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/spec-driven-development-using-markdown-as-a-programming-language-when-building-with-ai/\">Spec-driven development: Using Markdown as a programming language when building with AI</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "CodeQL从零到英雄第五部分：调试查询 (原标题: CodeQL zero to hero part 5: Debugging queries)",
-      "link": "https://github.blog/security/vulnerability-research/codeql-zero-to-hero-part-5-debugging-queries/",
-      "pubDate": "Mon, 29 Sep 2025 15:00:00 +0000",
-      "isoDate": "2025-09-29T15:00:00.000Z",
-      "creator": "Sylwia Budzynska",
-      "summary": "## CodeQL从零到英雄第五部分：调试查询\n\n本文是“CodeQL从零到英雄”系列博客的第五部分，专注于讲解如何调试和修复CodeQL查询。由于CodeQL是一种类似Prolog的语言，其评估模型与Python等主流语言不同，传统的调试方法（如单步执行、GDB或打印语句）不适用。幸运的是，CodeQL提供了一系列内置功能来帮助诊断和解决查询问题。\n\n### 调试背景：Gradio框架中的不安全反序列化漏洞示例\n文章以一个由用户提出的Gradio框架中不安全反序列化漏洞为例进行讲解。该漏洞涉及用户通过`gr.File`上传文件，然后应用程序使用`pickle.load`加载该文件内容，导致不安全的反序列化。攻击者可以上传恶意文件，然后应用程序加载它。\n\n**最小代码示例：**\n```python\nimport pickle\nimport gradio as gr\n\ndef load_config_from_file(config_file):\n    \"\"\"Load settings from a UUID.pkl file.\"\"\"\n    try:\n        with open(config_file.name, 'rb') as f:\n            settings = pickle.load(f)\n        return settings\n    except Exception as e:\n        return f\"Error loading configuration: {str(e)}\"\n\nwith gr.Blocks(title=\"Configuration Loader\") as demo:\n    config_file_input = gr.File(label=\"Load Config File\")\n    load_config_button = gr.Button(\"Load Existing Config From File\", variant=\"primary\")\n    config_status = gr.Textbox(label=\"Status\")\n\n    load_config_button.click(\n        fn=load_config_from_file,\n        inputs=[config_file_input],\n        outputs=[config_status]\n    )\n    demo.launch()\n```\n\n一个初步的CodeQL污点追踪查询未能检测到此漏洞，这促使了对查询进行调试的需求。\n\n### CodeQL查询调试步骤\n\n以下是解决CodeQL查询问题的建议步骤：\n\n1.  **创建最小CodeQL数据库**\n    *   **目的：** 减少结果数量，便于聚焦调试。\n    *   **方法：** 在包含最小代码示例的目录中运行 `codeql database create codeql-zth5 --language=python`。\n\n2.  **简化查询并快速评估**\n    *   **目的：** 验证`isSource`和`isSink`谓词是否正确识别了源和汇点。\n    *   **问题：** 初始`isSink`谓词将整个`pickle.load(f)`调用标记为汇点，而非其第一个参数。\n    *   **修正`isSink`谓词：**\n        ```ql\n        predicate isSink(DataFlow::Node sink) {\n            exists(Decoding d | d.mayExecuteInput() | sink = d.getAnInput())\n        }\n        ```\n        此修正确保汇点是可执行反序列化（如`pickle.load`）的输入参数。快速评估后，源和汇点均被正确识别。\n\n3.  **抽象语法树 (AST) 查看器**\n    *   **目的：** 当识别源或汇点节点遇到困难时，通过查看代码的AST来确定特定代码元素的CodeQL类型。\n    *   **方法：** 右键点击感兴趣的代码元素，选择“CodeQL: View AST”。\n\n4.  **`getAQlClass` 谓词**\n    *   **目的：** 识别代码元素的类型。通常建议为此创建一个单独的查询。\n    *   **示例查询：** 查询`gradio.Button.click`函数参数的类型。\n        ```ql\n        import python\n        import semmle.python.ApiGraphs\n        import semmle.python.Concepts\n        import semmle.python.dataflow.new.RemoteFlowSources\n\n        from DataFlow::Node node\n        where node = API::moduleImport(\"gradio\").getMember(\"Button\").getReturn()\n                               .getMember(\"click\").getACall().getParameter(0, \"fn\").getParameter(_).asSource()\n        select node, node.getAQlClass()\n        ```\n    *   **结果：** 可以看到`ExprNode`和`ParameterNode`等类型，有助于编写更精确的查询。\n\n5.  **部分路径图：正向追踪 (Partial Path Graph: Forwards)**\n    *   **目的：** 确定污点流停止传播的位置。这对于大型代码库尤其有用，可以通过限制源文件来减少结果。\n    *   **方法：** 使用`PartialFlow::FlowExplorationFwd`模块和`PartialFlow::partialFlow`谓词，并设置`explorationLimit()`来控制分析深度。\n    *   **观察：** 污点流在`with open(config_file.name, 'rb') as f:`行中的`config_file`处停止，未能传播到`config_file.name`属性。\n    *   **原因：** 默认情况下，CodeQL不会将污点传播到对象的所有属性。\n\n6.  **污点传播步骤 (Taint Step)**\n    *   **目的：** 帮助污点从一个对象传播到其特定属性（例如，从`config_file`传播到`config_file.name`）。\n    *   **方法：** 在污点追踪配置中添加`isAdditionalFlowStep`谓词。\n    *   **示例：**\n        ```ql\n        predicate isAdditionalFlowStep(DataFlow::Node nodeFrom, DataFlow::Node nodeTo) {\n            exists(DataFlow::AttrRead attr | attr.accesses(nodeFrom, \"name\") and nodeTo = attr )\n        }\n        ```\n        这个步骤允许CodeQL将污点传播到任何对`name`属性的读取操作。虽然这可能在生产查询中引入误报，但在安全研究和调试中非常有用。\n\n通过以上步骤，可以系统地诊断和解决CodeQL查询中遇到的问题，从而成功检测到预期的漏洞。",
-      "shortSummary": "本文是CodeQL系列教程的第五部分，重点介绍如何调试CodeQL查询。由于CodeQL的Prolog特性，传统调试方法无效。文章通过一个Gradio不安全反序列化漏洞示例，详细阐述了调试步骤：首先创建最小数据库，然后快速评估并修正源/汇点定义。接着利用AST查看器和`getAQlClass`识别代码元素类型。最后，使用部分路径图定位污点流中断点，并通过添加`isAdditionalFlowStep`谓词来解决污点未能传播到对象属性的问题，从而成功检测漏洞。",
-      "translated_title": "CodeQL从零到英雄第五部分：调试查询",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Learn to debug and fix your CodeQL queries.</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/codeql-zero-to-hero-part-5-debugging-queries/\">CodeQL zero to hero part 5: Debugging queries</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub 如何保护开发者免受版权执法过度干预 (原标题: How GitHub protects developers from copyright enforcement overreach)",
-      "link": "https://github.blog/news-insights/policy-news-and-insights/how-github-protects-developers-from-copyright-enforcement-overreach/",
-      "pubDate": "Fri, 26 Sep 2025 17:06:17 +0000",
-      "isoDate": "2025-09-26T17:06:17.000Z",
-      "creator": "Margaret Tucker",
-      "summary": "# GitHub 如何保护开发者免受版权执法过度干预\n\nGitHub 采取以开发者为中心的方法，旨在保护开源开发者免受版权执法过度干预，避免因不公正的版权下架通知而导致账户被暂停。\n\n## 传统版权政策的挑战\n\n*   **“三振出局”政策的弊端**：许多平台采用的“三振出局”政策可能导致不公正的结果，尤其对开源开发者而言。他们经常分叉流行项目，这些项目可能成为版权下架的对象。\n*   **账户暂停的负面影响**：账户暂停不仅对开发者个人有即时负面影响，也会影响他们维护的所有开源项目。\n*   **代码的复杂性**：代码的协作性、复杂性和高复用性使得版权执法充满挑战，并放大了下架的下游影响。\n\n## GitHub 的开发者优先方法\n\nGitHub 采取以下措施来应对这些挑战：\n\n*   **个案审查**：在暂停账户之前，GitHub 会对每个案件进行单独审查。\n*   **确保合法工作不受影响**：确保版权执法不会阻碍合法的开发工作。\n\n## 最高法院案件及其对平台责任的影响\n\n美国最高法院即将审理的 **Cox Communications v. Sony Music Entertainment** 案件，将决定互联网服务提供商或平台何时应对用户侵犯版权的行为负责。这可能改变平台处理版权主张的方式，进而影响开发者构建和分享代码。\n\n*   **行业立场**：Google、微软（包括 GitHub）、亚马逊、Mozilla 和 Pinterest 等公司敦促法院采纳明确规则：只有当存在“实质性协助侵权的自觉、有罪行为”时，才应承担责任，而非仅仅是知晓或不作为。\n*   **安全港的重要性**：开发者所依赖的平台依赖于《数字千年版权法案》（DMCA）第 512 条等法律保护，即“安全港”条款，以避免对用户生成内容承担持续责任。只要平台遵循正式的通知-下架流程，DMCA 第 512 条就能保护其免受版权侵权责任。\n*   **GitHub 的特殊性**：鉴于开源的协作性质、代码的功能作用以及移除广泛使用代码的连锁反应，DMCA 保护对 GitHub 尤为关键。\n*   **下架通知的挑战**：GitHub 拥有超过 1.5 亿开发者和 5.18 亿项目，每月处理数百起 DMCA 下架通知，但同时也收到数千份自动化、不完整或不准确的通知。如果仅凭“知晓”就足以构成责任，平台可能被迫基于有缺陷的通知过度移除内容，从而扼杀软件生态系统中的创新和协作。\n\n## GitHub 的 DMCA 下架政策\n\nGitHub 的 DMCA 下架政策旨在支持版权保护，同时限制对合法项目的干扰，其特点包括：\n\n*   **明确的申诉和恢复路径**。\n*   **透明度**：将有效的 DMCA 下架通知发布到公共 DMCA 存储库。\n\n## 广泛的支持\n\n该案件对 GitHub 作为一个平台以及所有使用互联网服务提供商进行创作和协作的开发者都至关重要。包括 Engine Advocacy、电子前沿基金会（EFF）和 Public Knowledge 在内的广泛公民社会利益相关者提交了法庭之友简报，倡导言论自由、开放互联网，并强调常识性责任限制对现代互联网运作的重要性。\n\n## 透明度中心更新\n\nGitHub 致力于以开发者为中心的内容审核，通过以下方式实现透明度：\n\n*   **限制内容的方式**：以最窄的方式限制内容以解决违规问题，给予用户申诉机会，并提供行动透明度。\n*   **数据更新**：GitHub 透明度中心已更新 2025 年上半年数据，包括结构化数据文件存储库。\n*   **政府下架报告的改进**：\n    *   **合并接收类别**：将基于当地法律和基于服务条款收到的政府下架请求合并为一个“收到的政府下架”报告类别，以提高报告的准确性。\n    *   **保留处理类别**：保留“基于当地法律处理的政府下架”和“基于服务条款处理的政府下架”的单独类别。这区分了违反服务条款的内容（按常规报告处理）和仅违反当地法律的内容（仅在法律要求管辖区内限制访问，并将请求发布到 `gov-takedowns` 存储库以确保透明度）。\n    *   **README 澄清**：`gov-takedowns` 存储库的 README 已澄清，该存储库仅包含因当地法律导致内容移除的官方政府请求。\n*   **目的**：这些澄清旨在确保共享数据的清晰性和准确性，以便研究人员可以利用这些数据研究平台审核和政府信息压制。\n\n## 可接受使用政策（AUP）更新\n\nGitHub 已发布拉取请求并启动了为期 30 天的通知和评论期，以更新其可接受使用政策（AUP）。拟议的更新将重组现有 AUP 条款，将其分为独立的政策并提供额外指导。\n\n*   **新政策包括**：\n    *   儿童性虐待材料（CSAM）\n    *   恐怖主义和暴力极端主义内容（TVEC）\n    *   非自愿亲密图像\n    *   合成媒体和人工智能工具（将明确禁止 CSAM 和 TVEC，符合国际法律）。\n*   **评论期**：邀请所有利益相关者在 10 月 16 日之前对拟议的 AUP 补充进行审查和评论。\n\n--- \n\n**作者：**\n\n![Margaret Tucker](https://avatars.githubusercontent.com/u/92055439?v=4&s=200)\n\n**相关文章：**\n\n探索更多来自 GitHub 的内容：\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**：掌握 GitHub 所需的一切，尽在一处。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**：在 GitHub 上构建未来，这里是任何人、任何地方构建任何东西的平台。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**：了解使用 GitHub 进行构建的公司和工程团队。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) **GitHub Universe 2025**：最后机会：节省 700 美元购买 Universe 现场通行证，并于 10 月 28-29 日在旧金山加入我们。",
-      "shortSummary": "GitHub 致力于以开发者为中心，保护开源开发者免受版权执法过度干预。他们反对“三振出局”政策，主张个案审查，并支持最高法院将平台责任限制在“自觉、有罪行为”的裁决，而非仅仅知晓。GitHub 通过 DMCA 安全港、透明的下架政策、更新的透明度中心和可接受使用政策，确保在保护版权的同时，不阻碍合法协作和创新。他们还改进了政府下架报告，并更新了 AUP 以应对 CSAM、TVEC 和 AI 工具等新挑战。",
-      "translated_title": "GitHub 如何保护开发者免受版权执法过度干预",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/92055439?v=4&s=200",
-          "alt": "Margaret Tucker",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Why the U.S. Supreme Court case Cox v. Sony matters for developers and sharing updates to our Transparency Center and Acceptable Use Policies.</p>\n<p>The post <a href=\"https://github.blog/news-insights/policy-news-and-insights/how-github-protects-developers-from-copyright-enforcement-overreach/\">How GitHub protects developers from copyright enforcement overreach</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "开启2025年网络安全意识月：研究员聚焦与奖励提升 (原标题: Kicking off Cybersecurity Awareness Month 2025: Researcher Spotlights and Enhanced Incentives)",
-      "link": "https://github.blog/security/vulnerability-research/kicking-off-cybersecurity-awareness-month-2025-researcher-spotlights-and-enhanced-incentives/",
-      "pubDate": "Fri, 26 Sep 2025 15:00:00 +0000",
-      "isoDate": "2025-09-26T15:00:00.000Z",
-      "creator": "Shilpa Kumari",
-      "summary": "## 开启2025年网络安全意识月：研究员聚焦与奖励提升\n\nGitHub在2025年网络安全意识月（十月）期间，通过表彰安全研究人员并推出新的激励措施，强调了安全在不断发展的数字环境中的重要性。保护全球软件生态系统依赖于安全研究社区的承诺、技能和独创性。\n\n### 主要举措与激励\n\nGitHub为庆祝网络安全意识月，推出了以下主要举措：\n\n1.  **漏洞提交额外奖励**\n    *   **奖励内容**：针对Copilot Coding Agent、GitHub Spark和Copilot Spaces功能的**所有符合条件的有效漏洞提交**，提供额外的10%奖金。\n    *   **资格要求**：报告需明确提及漏洞与Copilot Coding Agent、GitHub Spark或Copilot Spaces的关联。\n    *   **活动期限**：2025年10月1日至31日。\n\n2.  **2025年“玻璃防火墙”大会 (Glass Firewall Conference)**\n    *   **合作方**：GitHub与Capital One、Salesforce和HackerOne合作举办。\n    *   **目标群体**：专为对安全研究和网络安全感兴趣的女性举办的独家活动。\n    *   **大会宗旨**：赋能和支持女性从事道德黑客和安全测试（无论是作为职业还是爱好），努力创造一个欢迎的环境，并提供入门基础知识。\n    *   **行动呼吁**：了解更多信息并进行注册。\n\n3.  **研究员聚焦 (Researcher's Spotlight)**\n    *   **年度传统**：每年都会借此机会突出那些为GitHub漏洞赏金计划做出贡献的研究员，并分享他们独特的经验。\n    *   **洞察分享**：通过访谈，深入了解他们的安全研究方法、兴趣和旅程。\n    *   **往期聚焦研究员**：\n        *   @chen-robert 和 @ginkoid\n        *   @yvvdwf\n        *   @ahacker1\n        *   @inspector-ambitious\n        *   @Ammar Askar\n        *   @adrianoapj\n        *   @imrerad\n    *   **展望**：本月将有更多研究员被聚焦。\n\n### 参与呼吁\n\nGitHub鼓励所有感兴趣的安全研究人员参与其漏洞赏金计划。每一次提交都有助于提升GitHub、其产品、开发者社区和客户的安全性。访问GitHub网站可获取计划的范围、规则和奖励详情。\n\n### 作者信息\n\n本文由 Shilpa Kumari 撰写。\n\n![Shilpa Kumari](https://avatars.githubusercontent.com/u/82128924?v=4&s=200)\n\n### 相关文章\n\n*   **更安全的npm供应链计划**：GitHub正通过更严格的认证、细粒度令牌和增强的信任发布来加强npm的安全性，以恢复开源生态系统的信任。\n*   **保护VS Code免受提示注入攻击**：解释VS Code功能如何降低因间接提示注入导致GitHub令牌、机密文件泄露或任意代码执行的风险。\n\n### 探索更多GitHub资源\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **Docs**：掌握GitHub所需的一切，尽在一处。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**：在GitHub上构建未来，这里是任何人从任何地方构建任何东西的平台。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**：了解使用GitHub进行构建的公司和工程团队。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) **GitHub Universe 2025**：最后机会，节省700美元购买线下门票，于10月28-29日在旧金山与我们相聚。",
-      "shortSummary": "GitHub在2025年网络安全意识月期间，推出多项举措以表彰并激励安全研究人员。这包括为Copilot Coding Agent、GitHub Spark和Copilot Spaces功能的有效漏洞提交提供10%的额外奖金（2025年10月1日至31日）。此外，GitHub将与合作伙伴共同举办“玻璃防火墙”大会，支持女性从事安全研究。文章还继续聚焦贡献突出的研究员，并鼓励更多人参与其漏洞赏金计划，共同提升GitHub生态系统的安全性。",
-      "translated_title": "开启2025年网络安全意识月：研究员聚焦与奖励提升",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/82128924?v=4&s=200",
-          "alt": "Shilpa Kumari",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>For this year’s Cybersecurity Awareness Month, GitHub’s Bug Bounty team is excited to offer some additional incentives to security researchers!</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/kicking-off-cybersecurity-awareness-month-2025-researcher-spotlights-and-enhanced-incentives/\">Kicking off Cybersecurity Awareness Month 2025: Researcher spotlights and enhanced incentives</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-13T04:33:20.184Z"
+  "lastUpdated": "2025-10-15T04:33:33.897Z"
 }
