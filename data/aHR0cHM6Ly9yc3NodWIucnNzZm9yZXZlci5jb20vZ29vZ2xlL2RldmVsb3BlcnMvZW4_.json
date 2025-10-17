@@ -7,8 +7,8 @@
     {
       "title": "推出Coral NPU：面向边缘AI的全栈平台 (原标题: Introducing Coral NPU: A full-stack platform for Edge AI)",
       "link": "https://developers.googleblog.com/en/introducing-coral-npu-a-full-stack-platform-for-edge-ai/",
-      "pubDate": "Mon, 13 Oct 2025 16:00:00 GMT",
-      "isoDate": "2025-10-13T16:00:00.000Z",
+      "pubDate": "Tue, 14 Oct 2025 16:00:00 GMT",
+      "isoDate": "2025-10-14T16:00:00.000Z",
       "creator": "Google",
       "summary": "# 推出Coral NPU：面向边缘AI的全栈平台\n\nGoogle于2025年10月14日推出了Coral NPU，这是一个全栈、开源平台，旨在解决限制低功耗边缘设备和可穿戴设备上强大、始终在线AI的核心性能、碎片化和隐私挑战。\n\n## 边缘AI面临的挑战\n\n生成式AI极大地改变了我们对技术的期望，但下一个技术飞跃是将智能直接嵌入到我们的个人环境中。为了实现真正有帮助的、主动的AI（如实时翻译、理解物理环境），它必须在可穿戴和随身设备上运行。这带来了三个核心挑战：\n\n*   **性能差距：** 复杂的机器学习模型需要大量计算，远超边缘设备的有限功耗、散热和内存预算。\n*   **碎片化成本：** 为各种专有处理器编译和优化ML模型既困难又昂贵，阻碍了设备间的一致性能。\n*   **用户信任赤字：** 个人AI必须优先考虑个人数据的隐私和安全。\n\n## Coral NPU解决方案\n\nCoral NPU平台基于Google原有的Coral项目，与Google Research和Google DeepMind合作设计，为硬件设计师和ML开发者提供了构建下一代私密、高效边缘AI设备所需的工具。它是一个AI优先的硬件架构，旨在实现超低功耗、始终在线的边缘AI。\n\n*   **统一的开发体验：** 简化了环境感知等应用的部署。\n*   **低功耗设计：** 专为可穿戴设备的全天候AI而设计，最大限度地减少电池使用，并可配置以支持更高性能用例。\n*   **开放可用：** 相关的文档和工具已发布，供开发者和设计师立即开始构建。\n\n## AI优先的架构\n\n传统的芯片设计在通用CPU（灵活但ML效率低）和专用加速器（ML效率高但缺乏灵活性）之间存在权衡。Coral NPU通过颠覆传统芯片设计来解决这一问题，它优先考虑ML矩阵引擎而非标量计算，从芯片层面优化AI架构，从而创建了一个专为更高效的设备端推理而设计的平台。\n\n![Coral NPU全平台](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/The_full_platform_v4_Fin_Alpha.original.png)\n\n作为一个完整的参考神经网络处理单元（NPU）架构，Coral NPU为下一代节能、ML优化片上系统（SoC）提供了构建模块。\n\n*   **RISC-V基础：** 架构基于一套符合RISC-V ISA的架构IP块，设计用于最小功耗，非常适合始终在线的环境感知。\n*   **性能表现：** 基础设计提供512 GOPS的性能，同时仅消耗几毫瓦，为边缘设备、听戴设备、AR眼镜和智能手表提供强大的设备端AI。\n*   **开放可扩展：** 基于RISC-V的开放可扩展架构为SoC设计师提供了修改基础设计或将其用作预配置NPU的灵活性。\n\nCoral NPU架构包含以下组件：\n\n*   **标量核心：** 轻量级、C可编程的RISC-V前端，管理数据流到后端核心，采用简单的“运行到完成”模型，实现超低功耗和传统CPU功能。\n*   **向量执行单元：** 强大的单指令多数据（SIMD）协处理器，符合RISC-V向量指令集（RVV）v1.0，支持对大型数据集的并行操作。\n*   **矩阵执行单元：** 高效的量化外积乘累加（MAC）引擎，专为加速基本神经网络操作而构建（该矩阵核心仍在开发中，将于今年晚些时候在GitHub上发布）。\n\n![Coral NPU设计灵感](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Inspiration_of_Coral_v4_Fin_Alpha.original.png)\n\n## 统一的开发者体验\n\nCoral NPU架构是一个简单、C可编程的目标，可以与IREE和TFLM等现代编译器无缝集成，从而轻松支持TensorFlow、JAX和PyTorch等ML框架。\n\n*   **全面的软件工具链：** 包括TFLM编译器、通用MLIR编译器、C编译器、自定义内核和模拟器，为开发者提供灵活的路径。\n*   **优化编译流程：** 例如，JAX框架的模型首先使用StableHLO方言导入MLIR格式，然后输入IREE编译器，该编译器应用硬件特定插件识别Coral NPU架构，并进行渐进式降低优化，最终生成紧凑的二进制文件，可在边缘设备上高效执行。\n*   **行业标准工具：** 简化ML模型的编程，并在各种硬件目标上提供一致的体验。\n\n![Coral NPU编译器工具链](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/The_compiler_toolchain_v4_Fin_Alpha.original.png)\n\nCoral NPU的协同设计过程侧重于两个关键领域：\n\n1.  高效加速当前设备端视觉和音频应用中领先的基于编码器的架构。\n2.  与Gemma团队密切合作，优化Coral NPU以支持小型Transformer模型，确保加速器架构支持边缘生成式AI的下一代发展。\n\n这种双重关注意味着Coral NPU有望成为第一个开放、基于标准、低功耗的NPU，能够将大型语言模型（LLMs）引入可穿戴设备。\n\n## 目标应用\n\nCoral NPU旨在实现超低功耗、始终在线的边缘AI应用，特别关注环境感知系统。其主要目标是在可穿戴设备、手机和物联网（IoT）设备上实现全天候AI体验，同时最大限度地减少电池使用。\n\n潜在用例包括：\n\n*   **情境感知：** 检测用户活动（如步行、跑步）、接近度或环境（如室内/室外、移动中），以启用“请勿打扰”模式或其他情境感知功能。\n*   **音频处理：** 语音和语音检测、关键词识别、实时翻译、转录和基于音频的辅助功能。\n*   **图像处理：** 人物和物体检测、面部识别、手势识别和低功耗视觉搜索。\n*   **用户交互：** 通过手势、音频提示或其他传感器驱动输入实现控制。\n\n## 硬件强制隐私\n\nCoral NPU的核心原则是通过硬件强制安全来建立用户信任。其架构旨在支持CHERI等新兴技术，提供细粒度的内存级安全和可扩展的软件分区。通过这种方法，敏感的AI模型和个人数据可以被隔离在硬件强制的沙盒中，从而减轻基于内存的攻击。\n\n## 构建生态系统\n\n开放硬件项目的成功离不开强大的合作伙伴关系。Google正与Synaptics合作，Synaptics是其首个战略硅合作伙伴，也是物联网嵌入式计算、无线连接和多模态传感领域的领导者。Synaptics已宣布推出其新的Astra™ SL2610系列AI原生物联网处理器，该产品线采用了其Torq™ NPU子系统，这是Coral NPU架构的业界首个生产实现。Torq™ NPU设计支持Transformer模型和动态操作符，使开发者能够为消费和工业物联网构建面向未来的边缘AI系统。\n\n此次合作支持了Google对统一开发者体验的承诺。Synaptics Torq™边缘AI平台基于IREE和MLIR的开源编译器和运行时构建。这一合作是为智能、情境感知设备构建共享开放标准的重要一步。\n\n## 总结\n\n通过Coral NPU，Google正在为个人AI的未来构建一个基础层。目标是提供一个通用、开源且安全的平台，供行业在此基础上进行构建，从而促进一个充满活力的生态系统。这将使开发者和芯片供应商能够超越当前碎片化的局面，在边缘计算的共享标准上进行协作，从而加速创新。",
       "shortSummary": "Google推出Coral NPU，一个全栈开源平台，解决低功耗边缘AI的性能、碎片化和隐私挑战。它采用AI优先的RISC-V架构，提供512 GOPS性能，功耗仅数毫瓦。平台提供统一开发体验，支持主流ML框架，赋能可穿戴设备、手机及IoT的全天候私密AI应用，如情境感知和实时翻译。Coral NPU强调硬件强制隐私，并与Synaptics等伙伴共建开放生态，加速边缘AI创新。",
@@ -35,6 +35,52 @@
       ],
       "contentSource": "完整文章",
       "content": "Coral NPU is a full-stack platform for Edge AI, addressing performance, fragmentation, and user trust deficits. It's an AI-first architecture, prioritizing ML matrix engines, and offers a unified developer experience. Designed for ultra-low-power, always-on AI in wearables and IoT, it enables contextual awareness, audio/image processing, and user interaction with hardware-enforced privacy. Synaptics is the first partner to implement Coral NPU."
+    },
+    {
+      "title": "Gemini CLI 迎来全新交互体验 (原标题: Say hello to a new level of interactivity in Gemini CLI)",
+      "link": "https://developers.googleblog.com/en/say-hello-to-a-new-level-of-interactivity-in-gemini-cli/",
+      "pubDate": "Tue, 14 Oct 2025 16:00:00 GMT",
+      "isoDate": "2025-10-14T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Gemini CLI 交互性迈上新台阶\n\nGoogle 于 2025 年 10 月 15 日宣布，Gemini CLI 迎来重大增强，旨在提升用户工作流程的强大性和熟悉度。此次升级允许用户直接在 Gemini CLI 内部运行复杂的交互式命令，例如用于编辑的 `vim`、用于监控的 `top`，甚至是交互式 `git rebase -i`。\n\n## 告别终端切换，保持上下文一致\n\n过去，用户需要退出 Gemini CLI 才能运行交互式 shell 命令，且这些命令在 Gemini CLI 的上下文之外执行，导致工作流程中断。现在，通过引入伪终端（PTY）支持，所有需要丰富功能（如文本编辑器、系统监视器或依赖终端控制代码）的命令都可以在 Gemini CLI 内部及其上下文中运行，从而实现：\n\n*   **保持上下文：** 所有操作都在 Gemini CLI 内部完成，无需切换到单独的终端。\n*   **避免“挂起”：** 解决了代理式 CLI 在处理交互式命令时可能出现的“挂起”问题。\n\n## 工作原理：终端状态序列化与实时交互\n\n当用户在 Gemini CLI 中运行 shell 命令时，Gemini CLI 会在后台的伪终端中生成一个新进程，并利用 `node-pty` 库。PTY 充当中间层，为操作系统提供必要的接口，使其将该会话识别为标准终端。\n\n为了在屏幕上显示这个在后台运行的虚拟终端，Gemini CLI 采用了创新的序列化技术：\n\n1.  **快照捕获：** 新的序列化器会实时捕获伪终端的每一个瞬间快照，包括所有文本、颜色甚至光标位置。\n2.  **实时流传输：** 这些快照随后被流式传输给用户，实现用户与终端应用程序的实时查看和交互，就像观看视频流一样，提供实时的动态反馈。\n\n![Gemini CLI - 交互式 Shell 界面](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_CLI_-_interactive_shell_UoV7sHm.original.png)\n\n## 全面双向交互体验\n\n新的架构支持完整的双向通信，极大地提升了用户体验：\n\n*   **输入写入：** 用户键入的按键会发送到正在运行的进程。\n*   **动态调整大小：** 当用户调整窗口大小时，Gemini shell 内部的应用程序会像在原生终端中一样自适应布局。\n*   **焦点控制：** 用户可以通过按下 `Ctrl+F` 键将焦点切换到终端。\n*   **彩色输出：** 改进了输出处理，能够正确渲染丰富多彩的终端输出，让用户可以充分体验喜爱的命令行工具。\n\n## 如何开始使用交互式 Shell\n\n交互式 shell 功能已在 Gemini CLI v0.9.0 及更高版本中默认启用。用户可以通过以下命令升级到最新版本：\n\n```bash\nnpm install -g @google/gemini-cli@latest\n```\n\n更多详细信息请参考官方 Gemini CLI 文档。\n\n## 可运行的交互式命令示例\n\n现在，用户可以在 Gemini CLI 中运行多种类型的交互式命令，包括：\n\n*   使用 `vim`、`nvim` 或 `nano` 编辑代码。\n*   使用交互式 `git` 命令管理提交。\n*   运行常用语言的交互式 REPL（读取-求值-打印循环）。\n*   运行 `htop` 或 `mc` 等全屏终端应用程序。\n*   轻松导航 `npm init` 或 `ng new` 等交互式设置脚本。\n*   响应某些 `gcloud` 命令的交互式提示。\n\n此次更新是 shell 集成方面的重要一步。团队正在积极完善所有平台上的输入处理，并鼓励用户在 GitHub 仓库分享遇到的任何问题和反馈。",
+      "shortSummary": "Gemini CLI 现已支持直接运行复杂的交互式命令，如 `vim`、`git rebase -i` 和 `top`。通过引入伪终端（PTY）支持和终端状态序列化技术，用户无需切换终端，所有操作都在 Gemini CLI 上下文内完成。该功能提供实时、双向交互，支持输入、窗口调整和彩色输出。用户只需升级到 v0.9.0+ 版本即可体验，显著提升了命令行工作效率和用户体验。",
+      "translated_title": "Gemini CLI 迎来全新交互体验",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_CLI_-_interactive_shell_UoV7sHm.original.png",
+          "alt": "Gemini CLI - interactive shell",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "We're excited to announce an enhancement to Gemini CLI that makes your workflow more powerful a..."
+    },
+    {
+      "title": "介绍 Veo 3.1 和 Gemini API 中的新创意功能 (原标题: Introducing Veo 3.1 and new creative capabilities in the Gemini API)",
+      "link": "https://developers.googleblog.com/en/introducing-veo-3-1-and-new-creative-capabilities-in-the-gemini-api/",
+      "pubDate": "Tue, 14 Oct 2025 16:00:00 GMT",
+      "isoDate": "2025-10-14T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# 介绍 Veo 3.1 和 Gemini API 中的新创意功能\n\nGoogle 于2025年10月15日发布了 Veo 3.1 和 Veo 3.1 Fast，目前在 Gemini API 中提供付费预览。这些更新的模型旨在通过显著升级，赋能开发者创建更具吸引力的内容，特别是在从图像生成视频方面提供了改进的输出。\n\n## 主要改进和新功能\n\nVeo 3.1 和 Veo 3.1 Fast 带来了多项关键改进和全新的模型功能：\n\n*   **改进的视频生成模型**\n    *   **更丰富的原生音频**：模型现在能生成更丰富的原生音频，从自然的对话到同步的音效。\n    *   **更强的叙事控制**：通过对电影风格的更好理解，提供更大的叙事控制能力。\n    *   **增强的图像到视频功能**：确保更好的提示遵循性，提供卓越的音视频质量，并能在多个场景中保持角色一致性。\n\n*   **新的模型能力**\n    *   **“视频配料”（Ingredients to video）**：\n        *   用户现在可以通过提供最多3张角色、物体或场景的参考图像来指导生成过程。\n        *   这有助于在多个镜头中保持角色一致性，或将特定风格应用于视频。\n        *   ![Screenshot 2025-10-14 9.45.50 AM](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-10-14_9.45.50_AM.original.png)\n    *   **“场景扩展”（Scene extension）**：\n        *   通过生成与前一个视频连接的新片段，用户可以创建更长的视频，甚至持续一分钟或更长时间。\n        *   每个新视频都基于前一个片段的最后一秒生成，从而保持视觉连续性，非常适合扩展带有背景音频的镜头。\n    *   **“首尾帧”（First and last frame）**：\n        *   通过提供起始图像和结束图像，用户可以指示 Veo 3.1 在两者之间生成平滑自然的过渡场景，并配有相应的音频。\n        *   ![Screenshot 2025-10-13 4.09.05 PM](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-10-13_4.09.05_PM.original.png)\n\n## 可用性\n\nVeo 3.1 和 Veo 3.1 Fast 可通过以下途径获取：\n*   Gemini API (在 Google AI Studio 和 Vertex AI 中)\n*   Gemini 应用\n*   Flow\n\n## Veo 3.1 的应用案例\n\n*   **Promise Studios**：一家 GenAI 电影工作室，在其 MUSE 平台中使用 Veo 3.1 来增强生成式故事板和预可视化，以实现导演驱动的制作级叙事。\n*   **Latitude**：正在其生成式叙事引擎中试验 Veo 3.1，以即时将用户创建的故事变为现实。\n\n## 开始使用\n\nVeo 3.1 及这些新功能现已通过 Gemini API 提供付费预览。\n*   查阅文档以获取详细参数信息和视频长度控制。\n*   在 Veo Studio（新的 AI Studio 演示应用，需要付费的 Gemini API 密钥）中开始使用 Veo 3.1 和新功能。\n*   通过更新的 cookbook 指南直接进入代码。\n\nVeo 3.1 的价格与 Veo 3 相同。",
+      "shortSummary": "Google 发布了 Veo 3.1 和 Veo 3.1 Fast，在 Gemini API 中提供付费预览。这些模型显著提升了视频生成能力，包括更丰富的原生音频、更强的叙事控制和增强的图像到视频功能，确保角色一致性。新增功能包括使用参考图像指导生成、延长现有视频（场景扩展）以及在首尾帧之间生成过渡。Veo 3.1 已在 Gemini API、Gemini 应用和 Flow 中可用，价格与 Veo 3 相同。",
+      "translated_title": "介绍 Veo 3.1 和 Gemini API 中的新创意功能",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-10-14_9.45.50_AM.original.png",
+          "alt": "Screenshot 2025-10-14 9.45.50 AM",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-10-13_4.09.05_PM.original.png",
+          "alt": "Screenshot 2025-10-13 4.09.05 PM",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Google is releasing Veo 3.1 and Veo 3.1 Fast, an updated video generation model, in paid preview via the Gemini API. This version offers richer native audio, greater narrative control, and enhanced image-to-video capabilities. New features include guiding generation with reference images, extending existing Veo videos, and generating transitions between frames. Companies like Promise Studios, Latitude, and Whering are already using Veo 3.1 for various applications."
     },
     {
       "title": "掌控你的AI：学习如何微调Gemma 3 270M并在设备上运行 (原标题: Own your AI: Learn how to fine-tune Gemma 3 270M and run it on-device)",
@@ -166,95 +212,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Google Home is enabling new Gemini-powered features for our partners’ devices and launching a new program to help them build the next generation of AI cameras."
-    },
-    {
-      "title": "使用 Gemini 解锁多光谱数据 (原标题: Unlocking Multi-Spectral Data with Gemini)",
-      "link": "https://developers.googleblog.com/en/unlocking-multi-spectral-data-with-gemini/",
-      "pubDate": "Tue, 30 Sep 2025 16:00:00 GMT",
-      "isoDate": "2025-09-30T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "### 使用 Gemini 解锁多光谱数据\n\n本文介绍了如何利用 Google 的 Gemini 模型处理多光谱数据，为应用程序赋予“超人视觉”，从而以全新的方式理解世界。\n\n#### 什么是多光谱图像？\n*   **定义：** 与标准数字照片仅包含红、绿、蓝（RGB）三个波段不同，多光谱传感器能捕捉电磁波谱中多个不同波段的数据，包括人眼不可见的近红外（NIR）和短波红外（SWIR）等。\n*   **重要性：** 传统上，开发者主要处理 RGB 图像，但多光谱图像能提供更丰富、更深入的世界信息。\n\n#### 多光谱图像为何具有颠覆性？\n多光谱数据在多个领域具有显著优势：\n*   **植被健康：** 健康植物反射大量近红外光。通过分析近红外波段，可以比仅凭绿色照片更准确地评估作物健康状况或监测森林砍伐。\n*   **水体检测：** 水吸收红外光，这使得水体与陆地易于区分，可用于绘制洪泛区地图或分析水质。\n*   **烧伤痕迹：** 短波红外（SWIR）波段擅长穿透烟雾，识别野火后最近烧毁的区域。\n*   **材料识别：** 不同的矿物质和人造材料具有独特的光谱“指纹”，可用于从太空识别它们。\n\n#### Gemini 如何改变游戏规则？\n*   **历史挑战：** 过去，使用多光谱数据需要专门的工具、复杂的处理流程和定制的机器学习模型。\n*   **Gemini 的解决方案：** 借助 Gemini 模型原生的多模态能力，开发者可以利用其强大的推理引擎，通过一种简单技术来分析这些丰富的数据，无需定制训练的专业模型。\n\n#### 将不可见光映射到可见颜色：核心技术\nGemini 等大型多模态模型经过大量图像和文本数据的预训练，理解“红色汽车”或“绿色森林”等概念。关键在于将我们关心的不可见波段映射到 Gemini 已理解的 RGB 通道中。\n*   **方法：** 创建“伪彩色合成”图像。目的不是使其看起来自然，而是将科学数据编码成模型可以处理的格式。\n*   **三步流程：**\n    1.  **选择波段：** 根据具体问题，选择三个重要的光谱波段。\n    2.  **标准化和映射：** 将每个波段的数据缩放到标准的 0-255 整数范围，并将其分配给新图像的红、绿、蓝通道。\n    3.  **提供上下文提示：** 将新创建的图像传递给 Gemini，并**关键地**在提示中告知模型这些颜色代表什么。\n        *   这一步至关重要，它能实时教导模型如何解释自定义的新图像。\n\n#### 实际应用示例\nGemini 2.5 在遥感领域表现出色，能够成功理解并分类多光谱图像。\n\n*   **土地覆盖分类（EuroSat 数据集）：**\n    *   Gemini 2.5 成功将以下图像准确分类为“永久作物”、“河流”和“工业区”。\n        *   ![永久作物](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_pTsJOzo.original.png)\n        *   ![河流](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image8_wUdRThz.original.png)\n        *   ![工业区](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image15_oDEJX2h.original.png)\n\n*   **挑战性场景：河流识别**\n    *   **初始问题：** 一张河流图像，模型最初错误地将其分类为“森林”。\n        *   ![初始河流图像（误分类）](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_EpSEWlF.original.png)\n    *   **解决方案：** 引入并构建多光谱伪图像，并提供详细提示后，Gemini 2.5 成功识别为“河流”。模型的推理轨迹显示，它利用了多光谱输入，特别是 NDWI 图像，来推断这是水体。\n        *   ![多光谱输入后的河流图像（正确分类）](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_tbaVc1d.original.png)\n\n*   **挑战性场景：森林识别**\n    *   **初始问题：** 一张森林图像，模型最初根据蓝/绿区域将其分类为“海湖”。\n        *   ![初始森林图像（误分类）](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image6_vNtbRRw.original.png)\n    *   **解决方案：** 包含多光谱输入后，模型轻松将其分类为“森林”，推理轨迹显示它显著利用了额外的输入。\n        *   ![多光谱输入后的森林图像（正确分类）](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_WIk4nAJ.original.png)\n\n这些示例表明，额外的多光谱输入对于做出更好的决策至关重要。由于模型无需更改，因此可以以相同方式添加其他类型的输入。\n\n#### Gemini 的强大之处\n*   **降低门槛：** 这种方法极大地降低了开发者分析复杂卫星数据的门槛。\n*   **快速原型开发：** 可以在数小时而非数周内快速开发新应用，无需深入的遥感专业知识。\n*   **上下文学习：** 借助 Gemini 强大的上下文学习能力，开发者只需提供清晰的提示和自定义图像，即可动态指导模型解释不同的光谱数据，以完成从农业监测到城市规划的各种任务。\n*   **新时代：** AI 驱动的环境监测、精准农业和灾害响应时代已经到来。开发者可以利用 NASA Earthdata、Copernicus Open Access Hub 或 Google Earth Engine 等公共卫星数据源，开始训练应用程序以全新的视角看待世界。",
-      "shortSummary": "Google 的 Gemini 模型使开发者能够轻松利用多光谱数据，超越传统 RGB 视觉，实现“超人视觉”。通过将不可见光谱波段映射到 RGB 通道并结合上下文提示，Gemini 2.5 能够分析复杂的卫星数据，用于植被健康、水体检测和材料识别等任务。这显著降低了遥感数据分析的门槛，加速了AI驱动的环境监测和精准农业等应用的开发。",
-      "translated_title": "使用 Gemini 解锁多光谱数据",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_pTsJOzo.original.png",
-          "alt": "image2",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image8_wUdRThz.original.png",
-          "alt": "image8",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image15_oDEJX2h.original.png",
-          "alt": "image15",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_EpSEWlF.original.png",
-          "alt": "image5",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image5_tbaVc1d.original.png",
-          "alt": "image5",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image6_vNtbRRw.original.png",
-          "alt": "image6",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_WIk4nAJ.original.png",
-          "alt": "image2",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Multi-spectral imagery, which captures wavelengths beyond human vision, offers a \"superhuman\" way to understand the world, and Google's Gemini models make this accessible without specialized training. By mapping invisible bands to RGB channels and providing context in the prompt, developers can leverage Gemini's power for tasks like environmental monitoring and agriculture."
-    },
-    {
-      "title": "推出 Tunix：一个用于大型语言模型后训练的 JAX 原生库 (原标题: Introducing Tunix: A JAX-Native Library for LLM Post-Training)",
-      "link": "https://developers.googleblog.com/en/introducing-tunix-a-jax-native-library-for-llm-post-training/",
-      "pubDate": "Mon, 29 Sep 2025 16:00:00 GMT",
-      "isoDate": "2025-09-29T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 推出 Tunix：一个用于大型语言模型后训练的 JAX 原生库\n\nGoogle ML Frameworks 于 2025 年 9 月 30 日宣布推出 Tunix，这是一个全新的开源 JAX 原生库，专门用于大型语言模型（LLM）的后训练。Tunix 旨在弥补模型对齐方面的关键空白，为开发者和研究人员提供一个全面且易于使用的工具包，以实现大规模模型对齐。该库针对 TPU 性能进行了优化，尤其是在与 MaxText 结合使用时。\n\n![Tunix logo](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Tunix_logo.original.png)\n\n## Tunix 的核心优势\n\nTunix 提供了以下关键特性，以优化 LLM 的后训练体验：\n\n*   **完整的算法套件：** 在一个统一的库中，提供生产就绪的训练器，支持监督微调（SFT）、偏好调优、知识蒸馏以及 PPO、GRPO 和 GSPO 等高级强化学习方法。\n*   **“白盒”设计：** 赋予开发者对训练循环和其他后训练代码的完全控制权，无需通过多层抽象即可轻松定制。\n*   **无缝 JAX 集成：** 作为 JAX 原生库，Tunix 提供强大且易于使用的解决方案，用于对齐您已在使用的开源模型。\n\n## 初始版本提供的功能\n\nTunix 的初始版本提供了模块化且易于使用的 API，可无缝集成到 JAX 生态系统中，支持最常见的后训练工作流：\n\n1.  **监督微调 (SFT)：**\n    *   `PeftTrainer` 是模型无关的，支持全权重微调以及 LoRA 和 QLoRA 等流行的参数高效调优方法（通过与 `qwix` 库集成）。\n2.  **偏好调优：**\n    *   `DPOTrainer` 通过实现直接偏好优化（DPO）来简化对齐。这种强大的技术使用简单的偏好和拒绝响应数据集，无需训练和管理单独的奖励模型。\n3.  **强化学习 (RL)：** Tunix 提供了一套 RL 训练器，用于将模型行为与人类偏好和指令对齐：\n    *   `PPOLearner`：通过实现近端策略优化（PPO），提供 RLHF 的黄金标准 Actor-Critic 方法，对于复杂、序列任务（尤其是涉及工具使用的智能体工作流）至关重要。\n    *   `GRPOLearner`：提供高效的无批评者 RL 算法，实现组相对策略优化（GRPO），通过规范化一组生成响应的奖励来指导模型，而无需单独的批评者模型的复杂性和成本。\n    *   `GSPO-token`：GRPO 算法的变体，为调整令牌级别优势计算提供更好的灵活性，并能提高多轮 RL 训练的稳定性。\n4.  **知识蒸馏：**\n    *   `DistillationTrainer` 通过训练一个更小、更高效的“学生”模型来复制更大“教师”模型的输出，从而实现模型压缩。这对于在具有严格延迟或成本限制的生产环境中部署高性能模型至关重要。\n    *   Tunix 开箱即用支持以下蒸馏算法：\n        *   **基于 Logit 的蒸馏：** 利用教师模型的最终输出概率作为“软目标”来指导学生模型。\n        *   **注意力迁移：** 利用教师模型的注意力特征来指导学生模型。\n\n此外，Tunix 还提供 PyPI 包 (`pip install google-tunix`)、示例代码，并支持训练使用 LLM 进行推理并与外部环境交互的智能体。\n\n## 量化结果\n\nTunix 提供了多个 Python Notebooks 帮助用户上手。以下结果展示了 Tunix 的 GRPO 实现的有效性：\n\n*   在 GSM8K 数学推理基准测试中，使用 Tunix 对 Gemma 2 2B-IT 模型进行微调，pass@1 答案准确率相对提升约 12%。\n*   评估性能时使用了 pass@1（贪婪搜索）和 pass@5（多样性采样）两种方法，以衡量一次或五次尝试的正确性。\n*   评估重点关注三个关键指标：\n    *   **答案准确率：** 最终数值答案正确的预测百分比。\n    *   **答案（部分）准确率：** 模型答案在正确答案的 10% 范围内的更灵活指标。\n    *   **格式准确率：** 模型正确使用所需推理和答案令牌的样本百分比。\n\n![Tunix-table](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Tunix-table.original.png)\n\n基线 pass@1 准确率约为 52%，与 Eleuther 的 LM Eval Harness 报告的基础模型约 51% 的结果一致，证实了设置的有效性。尽管绝对准确率对提示格式敏感，但后训练带来的显著性能提升在不同设置下保持一致。\n\n## 研究人员和创新者的认可\n\nTunix 已获得领先学术实验室和 AI 初创公司的信任和使用：\n\n*   **Brandeis 大学计算机科学助理教授 Hongfu Liu：** 赞赏 Tunix 的“白盒”设计，使其团队能够完全控制训练循环，轻松修改和适应代码以满足特定的研究需求，加速迭代数据分析。\n*   **加州大学圣地亚哥分校助理教授 Hao Zhang（vLLM、Chatbot Arena 联合创始人）：** 强调 Tunix 允许直接在 JAX 上构建，利用 TPU 和轻松并行化。他认为 Tunix 是一个轻量级库，代码库清晰易管理，提供高水平的模型和超参数定制，且学习曲线平缓。\n*   **Precur AI 联合创始人兼 CTO Hanjun Dai：** 肯定 Tunix 设计的广度（涵盖 SFT、RL 和蒸馏），使其能够统一整个智能体开发堆栈。其与 JAX 和 TPU 生态系统的原生集成，以及与 Flax 和 Qwix 的轻松定制，使其成为一个强大且易于融入工作流的框架。\n\n## 社区与协作\n\nTunix 采取开放式开发，邀请社区参与、试用和贡献。您可以通过提供的表单表达参与意愿，例如开发新的智能体功能或环境、增强算法或建立研究伙伴关系。源代码、问题跟踪器、深入文档和讨论可在 GitHub 仓库和 tunix.readthedocs.io 上找到。此外，还准备了一系列 Python Notebooks 作为上手示例。文章还提及 MaxText 是一个高性能、高可扩展性的开源 LLM 库，用纯 Python/JAX 编写，面向 Google Cloud TPUs 和 GPUs 进行训练。",
-      "shortSummary": "Google 推出 Tunix，这是一个 JAX 原生开源库，专为大型语言模型（LLM）的后训练和对齐而设计。它提供全面的算法套件，包括监督微调、偏好调优、强化学习（PPO, GRPO, GSPO）和知识蒸馏。Tunix 采用“白盒”设计，允许开发者完全控制和定制训练流程，并针对 TPU 性能优化，与 JAX 生态系统无缝集成。量化结果显示，它能显著提升模型性能，例如在 GSM8K 基准测试中将 Gemma 2 2B-IT 模型的准确率提升约 12%。该库已获得研究人员和行业合作伙伴的认可，并鼓励社区参与贡献。",
-      "translated_title": "推出 Tunix：一个用于大型语言模型后训练的 JAX 原生库",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Tunix_logo.original.png",
-          "alt": "Tunix logo",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/download.original.png",
-          "alt": "download",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Tunix-table.original.png",
-          "alt": "Tunix-table",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "For developers and researchers in the JAX ecosystem, the path from a pre-trained model to a fully al..."
     }
   ],
-  "lastUpdated": "2025-10-15T10:32:07.157Z"
+  "lastUpdated": "2025-10-17T10:30:09.321Z"
 }
