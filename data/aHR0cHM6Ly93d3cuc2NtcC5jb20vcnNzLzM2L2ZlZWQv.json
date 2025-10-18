@@ -5,6 +5,23 @@
   "link": "https://www.scmp.com/rss/36/feed",
   "items": [
     {
+      "title": "阿里云声称通过新型池化系统将英伟达GPU使用量削减82% (原标题: Alibaba Cloud claims to slash Nvidia GPU use by 82% with new pooling system)",
+      "link": "https://www.scmp.com/business/article/3329450/alibaba-cloud-claims-slash-nvidia-gpu-use-82-new-pooling-system?utm_source=rss_feed",
+      "pubDate": "Sat, 18 Oct 2025 03:00:12 +0000",
+      "isoDate": "2025-10-18T03:00:12.000Z",
+      "creator": "Vincent Chow",
+      "summary": "### 阿里云推出Aegaeon系统，大幅削减GPU使用量\n\n阿里巴巴集团控股旗下的阿里云，近日推出了一项名为Aegaeon的计算池化解决方案。该系统旨在优化人工智能模型的服务效率，并声称已成功将所需英伟达图形处理器（GPU）的数量削减了82%。\n\n#### Aegaeon系统的核心成果\n\n*   **效率提升**：Aegaeon系统在为数十个参数高达720亿的模型提供服务时，将所需的英伟达H20 GPU数量从1,192个减少到213个，实现了显著的资源节约。\n*   **测试与验证**：该系统已在阿里云的模型市场进行了超过三个月的Beta测试，其成果在一篇研究论文中详细阐述，并于本周在韩国首尔举行的第31届操作系统原理研讨会（SOSP）上发表。\n\n#### 解决行业痛点\n\n*   **资源浪费**：研究人员指出，Aegaeon是首个揭示市场上并发大型语言模型（LLM）工作负载相关过高成本的研究。当前，云服务提供商（如阿里云和字节跳动的火山引擎）需要同时为数千个AI模型提供服务，但模型之间的调用频率差异巨大。少数模型（如阿里的通义千问和DeepSeek）非常受欢迎，而大多数模型仅被零星调用，导致资源利用率低下。\n*   **具体数据**：研究发现，在阿里云的模型市场中，有17.7%的GPU被分配用于处理仅占1.35%的请求，这凸显了严重的资源分配不均问题。\n\n#### 研究背景与作者\n\n*   **合作研究**：该研究论文由北京大学和阿里云的研究人员共同撰写，阿里云的首席技术官周靖人也是论文作者之一。\n*   **行业趋势**：全球范围内的研究人员都在积极探索通过GPU池化等方式提高效率，例如允许一个GPU服务多个模型，以优化AI计算资源的利用。",
+      "shortSummary": "阿里云推出名为Aegaeon的计算池化系统，声称通过优化AI模型服务，将英伟达GPU使用量削减了82%。该系统在Beta测试中将所需GPU数量从1,192个降至213个，解决了因模型调用不均导致的资源浪费问题。这项成果已在SOSP研讨会上发表，旨在提升大型语言模型工作负载的效率和成本效益。",
+      "translated_title": "阿里云声称通过新型池化系统将英伟达GPU使用量削减82%",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Alibaba Group Holding has introduced a computing pooling solution that it said led to an 82 per cent cut in the number of Nvidia graphics processing units (GPUs) needed to serve its artificial intelligence models.\nThe system, called Aegaeon, was beta tested in Alibaba Cloud’s model marketplace for more than three months, where it reduced the number of Nvidia H20 GPUs required to serve dozens of models of up to 72 billion parameters from 1,192 to 213, according to a research paper presented this...",
+      "enclosure": {
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/10/17/6846f06e-9449-41c8-903d-30f855635b92_84e2a06b.jpg",
+        "type": "image/jpeg"
+      }
+    },
+    {
       "title": "美国查获富豪130亿美元比特币引发匿名性质疑 (原标题: US seizure of tycoon’s US$13 billion in bitcoin raises anonymity questions)",
       "link": "https://www.scmp.com/tech/big-tech/article/3329449/how-anonymous-bitcoin-us-seizure-tycoons-us13-billion-tokens-raises-questions?utm_source=rss_feed",
       "pubDate": "Fri, 17 Oct 2025 15:00:11 +0000",
@@ -361,24 +378,7 @@
         "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/10/16/c6dcc39e-7d0c-4c90-b4f9-e68472716c8d_4486d1d7.jpg",
         "type": "image/jpeg"
       }
-    },
-    {
-      "title": "美国初创公司Anthropic推出更便宜的模型以扩大AI吸引力 (原标题: US start-up Anthropic unveils cheaper model to widen AI’s appeal)",
-      "link": "https://www.scmp.com/tech/tech-trends/article/3329180/us-start-anthropic-unveils-cheaper-model-widen-ais-appeal?utm_source=rss_feed",
-      "pubDate": "Thu, 16 Oct 2025 02:00:53 +0000",
-      "isoDate": "2025-10-16T02:00:53.000Z",
-      "creator": "Reuters",
-      "summary": "### Anthropic推出更经济高效的AI模型Haiku 4.5\n\n美国人工智能初创公司Anthropic对其最小的AI模型Haiku进行了重大升级，推出了Haiku 4.5。此举旨在满足企业对功能强大但成本更低的AI系统的日益增长的需求。\n\n#### 成本效益显著\n\n*   **价格优势**：Haiku 4.5的成本约为Anthropic中型模型Sonnet 4的三分之一，以及其最先进模型Opus的十五分之一。\n*   **性能表现**：尽管成本大幅降低，Haiku 4.5在包括编码在内的多项任务上表现与Sonnet 4相当或更优。\n\n#### 扩大AI普及与企业应用\n\n*   **降低门槛**：Anthropic首席产品官Mike Krieger指出，对于硅谷以外的传统公司而言，拥有更便宜但仍具能力的AI模型，将大大提高他们尝试和采用AI的意愿。\n*   **大规模部署**：新模型使企业能够更经济地在其内部系统（可能由数百或数千名员工使用）中大规模部署AI，从而实现更广泛的内部应用。\n\n#### Anthropic的业务表现\n\n*   **企业收入主导**：Anthropic约80%的收入来自企业客户。\n*   **庞大的客户群**：公司拥有超过30万企业客户，这些客户将Anthropic的工具用于内部用途、产品开发或两者兼有。\n*   **强劲的营收增长**：Anthropic的年化收入运行率（根据当前销售速度推算的年度收入）已接近70亿美元。",
-      "shortSummary": "美国AI初创公司Anthropic发布了其最小的AI模型Haiku 4.5，该模型成本远低于现有产品，但在编码等任务上表现与中型模型相当或更优。此举旨在通过提供更经济高效的解决方案，扩大AI在企业中的吸引力，尤其对传统公司和大规模内部部署具有重要意义。Anthropic的业务主要面向企业，年化收入运行率已接近70亿美元。",
-      "translated_title": "美国初创公司Anthropic推出更便宜的模型以扩大AI吸引力",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Artificial intelligence start-up Anthropic has overhauled its smallest AI model, Haiku, as companies increasingly opt for AI systems that are nearly as capable as the most advanced tools but come at a fraction of the cost.\nAnthropic said on Wednesday that the updated model, called Haiku 4.5, was about one-third the cost of Sonnet 4, one of its medium-sized models, and one-fifteenth the cost of its most advanced offering, Opus. The new Haiku model performed as well or better than Sonnet 4 on a...",
-      "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/10/16/efac9af7-3540-432e-8160-08f5a45aad10_64dcdba6.jpg",
-        "type": "image/jpeg"
-      }
     }
   ],
-  "lastUpdated": "2025-10-18T02:18:47.015Z"
+  "lastUpdated": "2025-10-18T07:17:10.527Z"
 }
