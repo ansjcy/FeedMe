@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "通过这9个开源AI和MCP项目加速开发者生产力 (原标题: Accelerate developer productivity with these 9 open source AI and MCP projects)",
+      "link": "https://github.blog/open-source/accelerate-developer-productivity-with-these-9-open-source-ai-and-mcp-projects/",
+      "pubDate": "Fri, 17 Oct 2025 16:00:00 +0000",
+      "isoDate": "2025-10-17T16:00:00.000Z",
+      "creator": "Kevin Crosby",
+      "summary": "### 通过9个开源AI和MCP项目加速开发者生产力\n\n随着模型上下文协议（MCP）的兴起，开发者们正在发现AI和智能体与工具、代码库乃至浏览器交互的革命性方式。基于这项核心技术，许多项目（如浏览器扩展和代码编辑器工具）正在实现AI原生工作流，并解锁一类全新的智能体工具：专注于MCP驱动能力的创新生态系统和新项目正在改变我们的工作方式。\n\n微软开源项目办公室（OSPO）与GitHub Copilot和VS Code团队合作，共同赞助了九个项目，旨在加速开源领域的创新、安全性和可持续性。这些项目围绕以下三个主要主题展开：\n\n#### 1. 框架和平台集成：面向实际用例的生态系统集成\n\n这些项目旨在将MCP能力集成到流行的框架和生态系统中，用于AI原生工具，帮助MCP与广泛使用的平台结合，并使智能体能够与真实世界的应用程序和工作流进行交互。\n\n*   **fastapi_mcp**：以最少的设置、认证和有限的配置，通过统一的基础设施，将安全的FastAPI端点作为MCP工具暴露。\n*   **nuxt-mcp**：为Nuxt开发者提供路由检查和SSR调试工具，使团队更容易让模型更好地理解Vite/Nuxt应用程序。\n*   **unity-mcp**：允许与Unity游戏引擎API进行接口交互，实现AI辅助游戏开发，为AI工具提供管理资产、控制场景、编辑脚本和自动化Unity内任务的能力。\n\n#### 2. 开发者体验和AI增强编码：AI优先的开发者生产力\n\n这些项目通过改进开发者工作流、语义代码理解和安全代码执行，赋能AI、大型语言模型（LLM）和智能体，使其成为智能IDE助手和代码编辑器。\n\n*   **context7**：直接从代码中提取最新、版本特定的文档和代码示例，并将其直接插入到AI和LLM的提示上下文中。\n*   **serena**：为智能体驱动的编码工具包提供语义代码编辑和检索能力。\n*   **Peekaboo**：Swift代码分析工具，将屏幕上的内容转化为可操作的AI上下文，以创建完整的GUI自动化，并可用于AI助手。\n*   **coderunner**：将LLM转化为即时、本地执行伙伴，在机器上预配置的沙盒中编写和运行代码，自动安装工具，直接读取文件，并返回输出和生成的工件。\n\n#### 3. 自动化、测试和编排：MCP基础设施的可靠性和质量保证\n\n这些项目旨在将MCP基础设施扩展到生产级工具，用于自动化管道，并提供强大的测试和调试工具。它们有助于确保MCP能够大规模运行。\n\n*   **n8n-mcp**：一个超优化的平台，通过简化工作流创建和编排来增强n8n的工作流自动化。它集成了AI模型，帮助用户更好地理解和使用n8n节点。\n*   **inspector**：一个用于测试和调试MCP服务器的工具，通过检查协议握手、工具、资源、提示和OAuth流程。它提供内置的LLM游乐场，并允许运行评估模拟以捕获安全或性能回归。\n\n#### 总结与展望\n\n开发者们正以AI和MCP的力量以惊人的速度进行构建。这些项目代表了MCP生态系统和社区中增长最快的开发者工具。它们是开发者使用并关心的工具。GitHub Copilot和VS Code团队很高兴能赞助更多推动MCP等创新以实现智能体原生开发的开源项目。\n\n鼓励开发者通过GitHub Sponsors支持这些项目，并探索使用VS Code和GitHub Copilot体验MCP。\n\n---\n**作者：**\n![Kevin Crosby](https://avatars.githubusercontent.com/u/6313838?v=4&s=200)\nKevin Crosby，开源资助高级总监\n\n**相关文章：**\n探索更多来自GitHub的内容：\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**：掌握GitHub所需的一切，一站式获取。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**：在GitHub上构建未来，这里是任何人、任何地方构建任何东西的平台。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**：了解使用GitHub进行构建的公司和工程团队。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) **GitHub Universe 2025**：最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山与我们相聚。",
+      "shortSummary": "模型上下文协议（MCP）正在革新AI与工具的交互方式。微软OSPO、GitHub Copilot和VS Code团队赞助了九个开源项目，旨在加速开发者生产力。这些项目分为三大类：框架和平台集成、AI增强的开发者体验、以及MCP基础设施的自动化、测试和编排。它们共同推动AI原生工作流和智能体工具的发展，赋能开发者高效构建。",
+      "translated_title": "通过这9个开源AI和MCP项目加速开发者生产力",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/6313838?v=4&s=200",
+          "alt": "Kevin Crosby",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>GitHub Copilot and VS Code teams, along with the Microsoft Open Source Program Office (OSPO), sponsored these nine open source MCP projects that provide new frameworks, tools, and assistants to unlock AI-native workflows, agentic tooling, and innovation.</p>\n<p>The post <a href=\"https://github.blog/open-source/accelerate-developer-productivity-with-these-9-open-source-ai-and-mcp-projects/\">Accelerate developer productivity with these 9 open source AI and MCP projects</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "如果你是内向者，如何参加GitHub Universe（或任何技术大会） (原标题: How to navigate GitHub Universe (or any tech conference) if you’re an introvert)",
       "link": "https://github.blog/news-insights/company-news/how-to-navigate-github-universe-or-any-tech-conference-if-youre-an-introvert/",
       "pubDate": "Thu, 16 Oct 2025 16:14:02 +0000",
@@ -440,51 +484,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>See how we turned weekly accessibility signals into an automated, accountable remediation workflow—powered by GitHub Copilot and cross‑functional collaboration.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-we-automated-accessibility-compliance-in-five-hours-with-github-copilot/\">How GitHub Copilot enabled accessibility governance process improvements in record time</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "一位顶级漏洞赏金研究员如何开启他们的安全生涯 (原标题: How a top bug bounty researcher got their start in security)",
-      "link": "https://github.blog/security/how-a-top-bug-bounty-researcher-got-their-start-in-security/",
-      "pubDate": "Tue, 07 Oct 2025 16:00:00 +0000",
-      "isoDate": "2025-10-07T16:00:00.000Z",
-      "creator": "Shilpa Kumari",
-      "summary": "GitHub在网络安全意识月期间，重点介绍了其漏洞赏金计划中的一位顶级安全研究员——@xiridium。GitHub致力于维护其平台和更广泛软件生态系统的安全，尤其是在GitHub Copilot等AI驱动功能快速增长的背景下。与经验丰富的安全研究员合作至关重要，有助于识别和解决传统及新兴技术中的漏洞。\n\nGitHub还设立了VIP漏洞赏金计划，邀请那些持续展现专业知识和影响力的研究员加入。VIP研究员可获得：\n*   产品和功能公开发布前的早期预览。\n*   与GitHub漏洞赏金团队及工程师的专属互动。\n*   独家Hacktocat周边商品。\n\n@xiridium以发现业务逻辑漏洞而闻名，并在GitHub生态系统中发现了许多细致且有影响的问题。他们提交的报告清晰、可操作，大大简化了调查和分类过程。\n\n**@xiridium的访谈亮点：**\n\n*   **如何参与漏洞赏金？**\n    *   通过玩CTF（夺旗赛）了解到漏洞赏金，梦想是找到真实应用中的漏洞。\n    *   社区的专业认可和技术技能的提升是他们持续参与的动力。\n\n*   **业余爱好？**\n    *   30岁时开始学习音乐和唱歌，这有助于他们从工作和漏洞赏金中放松。\n    *   也会将部分赏金用于购买乐高玩具。\n\n*   **如何学习漏洞趋势？**\n    *   按需学习：当遇到Protobuf（Protocol Buffers）代码或新的云提供商时，会深入学习相关技术。\n    *   建议关注X（Twitter）上的Intigriti等账号，但强调要理解技巧背后的原理，避免盲目使用。\n\n*   **研究工具与流程？**\n    *   **ChatGPT及其他大型语言模型（LLMs）：** 视为初级开发人员，将大任务分解为小任务，批准其计划后再让其编写代码。这有助于编写小脚本、验证凭证和快速了解新技术。\n    *   **研究方法：** 倾向于深入研究一个应用程序，而非广撒网。目标是彻底理解应用程序的每个端点和请求参数。\n    *   **流程：** 重读程序规则，记录看起来异常的事物，例如：\n        *   同一功能存在两个不同的API端点（`/user` 和 `/data/users`），可能表明开发团队之间缺乏同步。\n        *   子域名分布在不同的云服务商（如AWS和GCP），可能意味着由不同团队管理，从而增加漏洞的可能性。\n\n*   **最喜欢的漏洞类型？**\n    *   泄露凭证和业务逻辑漏洞，擅长发现细微之处。\n    *   **技巧：** 在GitHub上搜索独特的端点；使用Google dork在Slideshare、Postman、Figma等开发或管理工具中搜索目标公司信息，以更好地理解应用程序工作原理。\n\n*   **给新研究员的建议？**\n    *   **资源：** 强烈推荐Portswigger Labs和hacker101。从每个类别的最简单任务开始，找到感兴趣的领域，然后深入学习（阅读报告、解决CTF、HackTheBox等）。\n    *   **心态：** 不要抱有“这肯定没有漏洞”或“这个资产已经被充分检查过”的假设。即使是主域名也可能存在漏洞。\n    *   **尝试罕见漏洞：** 如果了解一些罕见的漏洞类别，不要犹豫进行测试。@xiridium曾在一个Web应用的认证Cookie中发现Oracle填充漏洞。\n\nGitHub感谢@xiridium的参与，并强调每次漏洞提交都为GitHub、其产品和客户带来了更高的安全性。GitHub持续欢迎并感谢安全研究社区的合作，鼓励研究员通过HackerOne报告发现。\n\n**更多来自GitHub的探索：**\n*   ![Shilpa Kumari](https://avatars.githubusercontent.com/u/82128924?v=4&s=200)\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握GitHub所需的一切。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在GitHub上构建未来。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) 客户案例：了解使用GitHub构建的公司和工程团队。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025：注册参加旧金山会议。",
-      "shortSummary": "GitHub在网络安全意识月期间，聚焦顶级漏洞赏金研究员@xiridium。@xiridium分享了其从CTF开始的漏洞赏金生涯，强调深入研究应用、利用LLM辅助、关注业务逻辑和凭证泄露漏洞。他建议新研究员利用Portswigger Labs等资源，并避免假设资产安全。GitHub通过漏洞赏金计划和VIP项目，持续与安全社区合作，以确保平台安全，尤其是在AI功能快速发展之际。",
-      "translated_title": "一位顶级漏洞赏金研究员如何开启他们的安全生涯",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/82128924?v=4&s=200",
-          "alt": "Shilpa Kumari",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>For this year’s Cybersecurity Awareness Month, the GitHub Bug Bounty team is excited to feature another spotlight on a talented security researcher — @xiridium!</p>\n<p>The post <a href=\"https://github.blog/security/how-a-top-bug-bounty-researcher-got-their-start-in-security/\">How a top bug bounty researcher got their start in security</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-17T04:33:25.450Z"
+  "lastUpdated": "2025-10-19T04:33:19.578Z"
 }
