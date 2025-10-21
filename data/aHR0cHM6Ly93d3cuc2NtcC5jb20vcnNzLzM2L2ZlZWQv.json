@@ -5,6 +5,30 @@
   "link": "https://www.scmp.com/rss/36/feed",
   "items": [
     {
+      "title": "DeepSeek发布利用视觉感知压缩文本输入的AI模型 (原标题: DeepSeek unveils AI model that uses visual perception to compress text input)",
+      "link": "https://www.scmp.com/tech/tech-trends/article/3329707/deepseek-unveils-multimodal-ai-model-uses-visual-perception-compress-text-input?utm_source=rss_feed",
+      "pubDate": "Tue, 21 Oct 2025 00:00:28 +0000",
+      "isoDate": "2025-10-21T00:00:28.000Z",
+      "creator": "Wency Chen",
+      "summary": "# DeepSeek发布利用视觉感知压缩文本输入的AI模型\n\nDeepSeek于周一发布了一款名为DeepSeek-OCR的全新多模态人工智能模型。该模型通过利用视觉感知作为信息压缩介质，能够以显著更少的tokens（模型处理文本的最小单位）处理大型复杂文档。\n\n## 核心创新与优势\n\n*   **技术原理**：这款开源的DeepSeek-OCR模型是“对视觉编码器在压缩大型语言模型（LLM）文本中的作用”进行深入研究的成果。它旨在通过视觉感知来优化文本输入。\n*   **计算效率**：通过这种创新方法，LLM能够处理海量文本，而不会导致计算成本的同比例增加，从而有效降低了资源消耗。\n*   **显著压缩效果**：DeepSeek-OCR在不同历史上下文阶段实现了7到20倍的token显著减少。这一突破为解决LLM中长期存在的上下文处理挑战提供了有前景的方向。\n\n## 公司理念与模型组成\n\n*   **公司宗旨**：DeepSeek-OCR的发布，体现了DeepSeek在提高AI模型效率、同时降低构建和使用成本方面的坚定努力。这一原则也贯穿于其之前发布的突破性开源模型V3（去年12月）和R1（今年2月）的开发中。\n*   **模型组成**：根据DeepSeek的博客文章，DeepSeek-OCR主要由两个核心组件构成：DeepEncoder和作为解码器的DeepSeek3B-MoE-A570M。\n*   **可用性**：DeepSeek-OCR作为一款开源模型，目前已通过在线开发者平台Hugging Face和GitHub发布，供全球开发者使用。\n\n![图片 1](https://i.ytimg.com/vi/wFpu08AVX-4/maxresdefault.jpg)\n\n相关内容：[LIVE] China Future Tech webinar | How is DeepSeek shaping the race for AI supremacy?",
+      "shortSummary": "DeepSeek发布了开源多模态AI模型DeepSeek-OCR，它通过利用视觉感知作为压缩介质，显著减少了文本输入所需的tokens。该模型能将tokens减少7到20倍，从而使大型语言模型（LLM）能以更低的计算成本处理大量复杂文档，有效解决了LLM的长上下文挑战，体现了DeepSeek提高AI效率和降低成本的宗旨。",
+      "translated_title": "DeepSeek发布利用视觉感知压缩文本输入的AI模型",
+      "images": [
+        {
+          "url": "https://i.ytimg.com/vi/wFpu08AVX-4/maxresdefault.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "DeepSeek on Monday released a new multimodal artificial intelligence model that can handle large and complex documents with significantly fewer tokens – the smallest unit of text that a model processes – by using visual perception as a compression medium for information.\nThe open-source DeepSeek-OCR (optical character recognition) model, available via online developer platforms Hugging Face and GitHub, was the result of an “investigation into the role of vision encoders” to compress text for...",
+      "enclosure": {
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/10/20/a3c838ce-bac9-421d-8f8b-7cc0dcdbb0be_dd6b806e.jpg",
+        "type": "image/jpeg"
+      }
+    },
+    {
       "title": "苹果CEO蒂姆·库克在iPhone Air发布后推动AI系统在中国上线 (原标题: Apple CEO Tim Cook pushes AI system launch in China after iPhone Air release)",
       "link": "https://www.scmp.com/tech/big-tech/article/3329686/apple-ceo-tim-cook-pushes-ai-system-launch-china-after-iphone-air-release?utm_source=rss_feed",
       "pubDate": "Mon, 20 Oct 2025 13:00:08 +0000",
@@ -80,9 +104,9 @@
       "translated_title": "从《堡垒之夜》到Alexa，亚马逊AWS中断导致全球范围宕机",
       "images": [],
       "contentSource": "完整文章",
-      "content": "Amazon’s cloud services unit AWS was recovering on Monday from a widespread outage that knocked out thousands of websites along with some of the world’s most popular apps – Snapchat and Reddit – and disrupted businesses globally.\nThe turmoil marked the largest internet disruption since last year’s CrowdStrike malfunction hobbled technology systems in hospitals, banks and airports, and highlights the vulnerability of the world’s interconnected technologies.\nAWS said it was seeing “significant...",
+      "content": "Amazon.com cloud service returned to normal operations on Monday afternoon, the company said, after an internet outage that caused global turmoil among thousands of sites, including some of the web’s most popular apps like Snapchat and Reddit.\nStill, Amazon said some AWS services had a backlog of messages that would take a few hours to process.\nAWS hosts applications and computer processes for companies around the world, and the disruption knocked workers from London to Tokyo offline and halted...",
       "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/10/20/353b3945-25a8-4aeb-96d9-5357f549e305_a656f002.jpg",
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/10/21/6ca2c0a9-80fd-4f2e-9865-96224e87cffe_a275fb6d.jpg",
         "type": "image/jpeg"
       }
     },
@@ -382,24 +406,7 @@
         "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/10/17/38cc9e04-3ee0-4f77-8856-5441f4ad5ad2_f03c7e92.jpg",
         "type": "image/jpeg"
       }
-    },
-    {
-      "title": "中国新增5000亿元‘金融工具’。将如何运用？ (原标题: China has a new 500 billion yuan ‘financial instrument’. How will it be used?)",
-      "link": "https://www.scmp.com/economy/china-economy/article/3329244/china-has-new-500-billion-yuan-financial-instrument-how-will-it-be-used?utm_source=rss_feed",
-      "pubDate": "Fri, 17 Oct 2025 03:00:10 +0000",
-      "isoDate": "2025-10-17T03:00:10.000Z",
-      "creator": "Sylvia Ma",
-      "summary": "## 中国设立5000亿元新“政策性金融工具”\n\n中国最高经济规划机构国家发展和改革委员会（NDRC）已确认，北京正在设立一项新的“政策性金融工具”，价值5000亿元人民币（约合700亿美元）。\n\n### 背景与目的\n\n*   **提出时间**：这项特殊的融资工具最初于今年4月提出，当时中美之间的贸易紧张局势正在迅速升级。\n*   **主要目的**：旨在提供额外的资金注入，以加速国内创新并支持经济发展。\n\n### 潜在影响\n\n*   分析人士指出，这项工具在未来几年内有潜力带动数万亿元人民币的贷款。\n\n### 什么是政策性金融工具？\n\n*   政策性金融工具是一种特殊的融资机制，由政府用于支持国家重大项目。",
-      "shortSummary": "中国国家发展和改革委员会已确认设立一项价值5000亿元人民币（700亿美元）的新“政策性金融工具”。该工具于4月提出，旨在加速国内创新和支持经济发展，并有望在未来几年带动数万亿元人民币的贷款。它是一种政府用于支持国家重大项目的特殊融资机制。",
-      "translated_title": "中国新增5000亿元‘金融工具’。将如何运用？",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "China’s top economic planner, the National Development and Reform Commission (NDRC), confirmed last month that Beijing was setting up a new “policy-based financial instrument” worth 500 billion yuan (US$70 billion).\nThe special financing tool was first proposed in April – when trade tensions between China and the United States were rapidly escalating – to provide an extra injection of funding to accelerate domestic innovation and support the economy.\nIt has the potential to drive trillions of...",
-      "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/10/16/a51c32fa-5f7c-45dc-b9eb-1b0d12814176_18ad06f4.jpg",
-        "type": "image/jpeg"
-      }
     }
   ],
-  "lastUpdated": "2025-10-20T19:16:34.054Z"
+  "lastUpdated": "2025-10-21T02:27:38.947Z"
 }
