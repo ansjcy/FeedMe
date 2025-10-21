@@ -5,6 +5,19 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "打破互联网的漏洞内幕：Log4Shell不为人知的故事 (原标题: Inside the breach that broke the internet: The untold story of Log4Shell)",
+      "link": "https://github.blog/open-source/inside-the-breach-that-broke-the-internet-the-untold-story-of-log4shell/",
+      "pubDate": "Mon, 20 Oct 2025 16:00:16 +0000",
+      "isoDate": "2025-10-20T16:00:16.000Z",
+      "creator": "Gregg Cochran",
+      "summary": "Log4Shell事件揭示了开源安全并非理所当然，它不仅是代码问题，更是关于支持、赋能和激励那些构建我们数字基础设施项目背后的人们。\n\n## Log4Shell危机的爆发\n\n*   **发现经过**：Log4j维护者Christian Grobmeier在帮助儿子解决Minecraft问题时，偶然发现了游戏中的安全警告：“我们正遭受Log4j安全漏洞的困扰，请立即小心并更新。”他意识到这正是他维护的Log4j项目的问题。\n*   **漏洞范围**：在短短数小时内，Christian发现自己身处Log4Shell危机的中心。这个漏洞被认为是互联网历史上最严重的安全漏洞，影响了从财富500强公司到全球Minecraft服务器的数十亿设备。\n*   **Log4j的普遍性**：Log4j是一个拥有20多年历史的Java日志库，默默地为全球应用程序（如用户登录和计算结果）提供系统事件记录。它已成为Java生态系统中数千个项目的核心依赖，许多组织在不知情的情况下使用它。\n\n## 漏洞的严重性与技术细节\n\n*   **完美10分**：Log4Shell在通用漏洞评分系统（CVSS）中获得了满分10分，是最高可能分数。\n*   **攻击原理**：Log4j利用Java的命名和目录接口（JNDI）提供灵活性，允许从远程服务器加载软件组件。然而，该库未能验证JNDI查找字符串是否来自可信来源。攻击者只需在任何会被记录的应用程序字段（如用户名、搜索框、Minecraft聊天消息）中输入恶意JNDI字符串，即可在目标系统上执行远程代码。\n*   **易于利用**：Christian指出，利用此漏洞“甚至不需要特殊知识”，攻击者可以随意注入恶意字符串。\n\n## 维护者的巨大代价\n\n*   **个人压力**：Log4Shell危机给Christian及其团队（大多是志愿者）带来了巨大的个人压力。他们突然肩负起修补影响“半个互联网”的漏洞的责任，导致“有人停止了睡眠”。\n*   **持续挑战**：修复初始漏洞后，又发现了更多问题，Christian将其比喻为“一个有洞的水袋，补好一个洞又出现另一个”。\n*   **社区反应**：社区的反应褒贬不一，既有指责，也有支持。Christian指出，没有人关心维护者本身，只关心项目，也缺乏对他们辛勤工作的感谢。\n\n## GitHub安全开源基金的应对\n\n*   **解决痛点**：Log4Shell事件凸显了开源安全的关键缺陷：维护者通常缺乏从一开始就将安全性融入项目的培训和资源。\n*   **基金作用**：GitHub安全开源基金应运而生，为关键开源项目提供资金和安全培训，旨在成为开源供应链的“保险”。\n*   **培训效果**：Christian参与了该基金的安全培训项目，发现其具有变革性。培训不仅提供了技术知识，还改变了他的视角，使开发者成为“第一道防线”。他认为，如果这项培训早五年存在，Log4Shell可能就不会发生。\n\n## 技术与行业层面的经验教训\n\n### 技术经验教训：默认构建安全性\n\n1.  **验证所有外部输入**：永不信任跨越信任边界的数据，尤其是在处理用户输入的基础库中。\n2.  **默认禁用危险功能**：Log4j现在默认禁用JNDI查找。\n3.  **实施纵深防御**：现代应用程序需要多层保护。\n4.  **自动化安全扫描**：利用GitHub的代码扫描和Dependabot等工具在生产前发现漏洞。\n5.  **维护软件物料清单（SBOMs）**：帮助组织了解其依赖项，以便在漏洞发生时迅速确定影响范围。\n\n### 行业经验教训：可持续开源\n\n*   **社区至关重要**：单一维护者维护开源软件存在风险。\n*   **安全培训应普及**：传统安全教育往往未能触及最需要的维护者。\n*   **资金并非唯一**：培训和社区支持与资金同等重要。\n*   **善意至上**：提醒人们，每个开源库背后都有一个编写代码的人，应以帮助而非指责的态度对待问题。\n*   **项目安全可改进**：Christian在基金项目中实施了多项安全改进。\n\n## 共同的责任\n\n*   **维护者**：申请基金项目，启用内置安全工具，导出SBOMs，发布安全公告。\n*   **企业**：成为基金的资助或生态系统合作伙伴，投入工程时间，贡献代码、文档、安全审查和资金。\n*   **个人开发者**：谨慎选择新依赖项，严格验证不受信任的输入，贡献测试用例和文档。\n\nLog4j目前拥有8.3的OpenSSF评分，表明其良好的安全实践。Log4Shell事件提醒我们，学习是消除无知的唯一方法，并强调了社区响应、适应和改进的力量。",
+      "shortSummary": "Log4Shell是互联网历史上最严重的漏洞之一，源于Log4j这一普遍存在的Java日志库中JNDI查找未经验证。Log4j维护者Christian Grobmeier在帮助儿子玩Minecraft时偶然发现此漏洞，其影响波及全球数十亿设备。此次危机揭示了开源维护者面临的巨大压力和资源匮乏。为应对此问题，GitHub安全开源基金应运而生，提供资金和安全培训，旨在将开发者转变为安全防线。事件促使行业吸取了验证输入、默认禁用危险功能、自动化扫描和维护SBOMs等技术教训，并强调了社区、培训和善意对开源可持续性的重要性。",
+      "translated_title": "打破互联网的漏洞内幕：Log4Shell不为人知的故事",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Log4Shell proved that open source security isn't guaranteed and isn’t just a code problem. It's about supporting, enabling, and empowering the people behind the projects that build our digital infrastructure.</p>\n<p>The post <a href=\"https://github.blog/open-source/inside-the-breach-that-broke-the-internet-the-untold-story-of-log4shell/\">Inside the breach that broke the internet: The untold story of Log4Shell</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "通过这9个开源AI和MCP项目加速开发者生产力 (原标题: Accelerate developer productivity with these 9 open source AI and MCP projects)",
       "link": "https://github.blog/open-source/accelerate-developer-productivity-with-these-9-open-source-ai-and-mcp-projects/",
       "pubDate": "Fri, 17 Oct 2025 16:00:00 +0000",
@@ -440,51 +453,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Unlock the full potential of the GitHub platform. See how Copilot coding agent and GitHub Mobile combine to help you tackle development tasks and urgent fixes, no matter where you are.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/github/completing-urgent-fixes-anywhere-with-github-copilot-coding-agent-and-mobile/\">Completing urgent fixes anywhere with GitHub Copilot coding agent and mobile</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "我们如何使用GitHub Copilot在五小时内实现无障碍合规自动化 (原标题: How we automated accessibility compliance in five hours with GitHub Copilot)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/how-we-automated-accessibility-compliance-in-five-hours-with-github-copilot/",
-      "pubDate": "Tue, 07 Oct 2025 17:00:00 +0000",
-      "isoDate": "2025-10-07T17:00:00.000Z",
-      "creator": "Janice Rimmer",
-      "summary": "## 引言：手动无障碍合规流程的挑战\n\nGitHub每周都会收到核心服务的无障碍等级报告。此前，当服务等级低于阈值时，他们依赖一个完全手动的修复链：有人阅读报告，在仓库中创建问题，猜测负责人，在单独的治理跟踪器中追踪状态，并尝试向领导层汇报。这种方式导致了反应迟缓、跟进不均衡，并且随着服务和检查的增加，无法实现规模化。他们意识到需要改变，并决定利用GitHub Copilot将这个脆弱的流程转变为一个自动化、可审计的循环。\n\n**传统手动流程的低效性：**\n\n*   每周三，无障碍等级报告会出现在跟踪板上，低于预定义分数的服务需要立即修复。\n*   当发现不合格等级时，管理方式效率低下：\n    *   手动在仓库中创建跟踪问题。\n    *   猜测正确的负责人。\n    *   希望有人跟进。\n    *   手动在无障碍治理仓库中跟踪进度。\n\n**具体痛点：**\n\n*   无法扩展。\n*   团队收到的沟通不一致。\n*   领导层缺乏可见性。\n*   修复时间从几天延长到几周。\n\n## 解决方案：利用GitHub Copilot实现自动化\n\n为了解决这些问题，GitHub需要一种可扩展、低维护的方式来触发、跟踪和关闭无障碍修复，而无需持续的手动协调。他们选择使用GitHub Copilot来自动化整个工作流程。\n\n**自动化后的新工作流程：**\n\n*   当无障碍等级低于某个分数时，自动在服务仓库中创建GitHub Issues。\n*   对于持续不合规的情况，使用新的等级数据更新现有问题。\n*   将修复问题与客户关系管理（CRM）跟踪板进行交叉引用。\n*   当服务恢复到可接受的等级时，自动关闭链接。\n*   同步治理板和服务团队之间的负责人。\n*   提及利益相关者以提高透明度，同时避免仓库垃圾信息。\n\n## Copilot如何改变开发方式\n\n传统的内部自动化构建方法意味着起草详细需求、将其优先级排入团队待办事项、等待工程能力，并经历多个冲刺迭代才能看到端到端的工作价值，这可能需要数周甚至更长时间。相反，GitHub团队花了五到六个小时直接与Copilot对话，快速原型设计和测试想法。\n\n**Copilot驱动的快速迭代模式：**\n\n他们的工作循环刻意保持轻量化。每次迭代大致遵循以下模式：\n\n*   用简单的语言描述一个规则（例如，检测持续不合规并确保问题存在或已更新当前上下文）。\n*   要求Copilot搭建或调整代码（例如，新的辅助函数、数据解析调整、API优化），而不是从头开始编写所有内容。\n*   使用少量合成的等级快照（例如，初始下降、持续下降、恢复）在本地验证逻辑。\n*   审查输出（例如，问题主体、标签、负责人）并优化提示，以收紧命名、阈值或分支。\n*   添加防护措施：幂等性（即，如果有效问题已打开则跳过）、简单的阻尼以避免频繁关闭和重新打开，以及对不完整数据的防御性处理。\n*   记录高级决策（例如，“更新现有问题”与“无操作 – 合规”）以快速验证意图。\n*   重新运行测试（加上一个变体）以确认没有回归，然后提交并进入下一个规则。\n\n**带来的好处：**\n\n*   每次迭代都针对单一行为，Copilot的建议保持相关性，避免了大型重构。\n*   当出现新的边缘情况（如短暂的分数下降或因服务重命名导致重复创建问题）时，他们会添加另一个短循环，而不是安排会议。\n*   这种快速的节奏使他们能够在没有正式项目计划的情况下，收敛到一个可投入生产的方案。\n\n## 从原型到生产的演进\n\n他们首先构建了一个快速原型，以可靠地检测不合规服务、提出或更新修复问题，并保持所有权可见。他们还希望证明无需任何人工分类即可实现这一点。最初的目标是在一个具有历史已知等级波动性的预生产环境中，对一小组服务进行受控推广。\n\n**逐步推广计划：**\n\n1.  在预生产环境中使用个人访问令牌进行原型开发。\n2.  在预生产环境中使用模拟服务仓库观察少量测试周度等级周期，并调整阈值或标签。\n3.  重构代码并迁移到GitHub App，以实现适当的安全性和范围权限。\n4.  部署到生产环境，并推广到所有跟踪无障碍合规的服务。\n5.  在噪音最小化后，正式化治理报告。\n\n**验证与成果：**\n\n为了验证，他们录制了一个简洁的端到端演示，展示了输入等级变化如何触发自动问题创建、交叉链接、负责人同步以及重复失败时的后续更新。这个演示让利益相关者能够异步评估完整体验。反馈是决定性的。看到实时问题以清晰的结构和可追溯性出现，加速了从原型阶段推进的批准。他们获得了工程合作伙伴关系，以将流程投入生产，建立了用于强化的沙盒环境，并开始实施具有适当安全和规模考虑的GitHub App版本。\n\n## 实际影响\n\n影响来自两个层面：引入的自动化以及Copilot改变了谁可以构建和迭代它的方式。\n\n**自动化带来的成果：**\n\n*   修复问题现在及时出现（或更新），而不是等待人工分类，这使得服务所有者能够立即理解解决这些问题的策略要求，并在请求例外时承担责任。\n*   所有权、状态和交叉链接集中在一处，为领导层提供了一个可靠的快照，无需临时电子表格或通知。这也加强了无障碍项目所有者与工程团队之间的合作。\n*   由于幂等逻辑和阻尼机制防止了嘈杂的关闭和重新打开，重复或陈旧的联系减少了。\n*   治理工作从文书跟踪转向对系统性无障碍模式进行更高价值的分析，并实现了更严格的治理控制。\n\n**Copilot赋能交付的成果：**\n\n*   领域专家构建了原型，使工程师能够专注于其关键的路线图工作。\n*   减少了工程师的上下文切换。\n*   合作时间用于安全、规模和生产强化，而不是基本的搭建工作。\n*   降低了未来合规或治理工具的门槛，因为现在有了一个其他人可以遵循的可重复模式。\n\n**核心转变：**\n\n这种转变在无障碍等级发出新风险信号时最为重要：系统现在会在跟进时间流逝之前，发现问题、分配所有权并保持状态可见，而不是等待某人注意到并启动手动链条。得益于Copilot，这个系统提前数周投入使用，并且可以由最接近治理问题的人进行迭代。\n\n底线是，他们从“让我写一张工单”转变为“这是具有可衡量影响修复速度和可见性的工作代码”。这种转变改变了人们对内部合规工具实现速度的期望。\n\n## 文章作者与相关资源\n\n本文由 **Janice Rimmer** 撰写，她是一名员工项目经理，致力于通过协作加速创新。\n\n![Janice Rimmer](https://avatars.githubusercontent.com/u/105733155?v=4&s=200)\n\n探索更多来自GitHub的资源：\n\n*   **文档**：掌握GitHub所需的一切，尽在一处。\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n*   **GitHub**：在GitHub上构建未来，这里是任何人、任何地点构建任何东西的地方。\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n*   **客户案例**：了解使用GitHub进行构建的公司和工程团队。\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n*   **GitHub Universe 2025**：抓住最后机会，节省700美元购买Universe现场通行证，并于10月28-29日在旧金山加入我们。\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)",
-      "shortSummary": "GitHub利用GitHub Copilot在五小时内自动化了其无障碍合规流程。此前，该流程完全手动，导致响应慢、跟进不一致且难以扩展。通过Copilot，他们构建了一个自动化系统，能自动创建和更新GitHub Issues、同步负责人、追踪进度并自动关闭已解决的问题。这不仅显著加快了修复速度，提高了可见性，还让领域专家而非工程师主导了原型开发，降低了未来工具开发的门槛，将治理工作从文书处理转向高价值分析。",
-      "translated_title": "我们如何使用GitHub Copilot在五小时内实现无障碍合规自动化",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/105733155?v=4&s=200",
-          "alt": "Janice Rimmer",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>See how we turned weekly accessibility signals into an automated, accountable remediation workflow—powered by GitHub Copilot and cross‑functional collaboration.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-we-automated-accessibility-compliance-in-five-hours-with-github-copilot/\">How GitHub Copilot enabled accessibility governance process improvements in record time</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-19T04:33:19.578Z"
+  "lastUpdated": "2025-10-21T04:33:05.078Z"
 }
