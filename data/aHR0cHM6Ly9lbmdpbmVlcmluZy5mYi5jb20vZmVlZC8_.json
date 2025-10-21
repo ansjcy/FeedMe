@@ -5,6 +5,68 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "解耦调度网络：助力Meta AI规模化发展 (原标题: Disaggregated Scheduled Fabric: Scaling Meta’s AI Journey)",
+      "link": "https://engineering.fb.com/2025/10/20/data-center-engineering/disaggregated-scheduled-fabric-scaling-metas-ai-journey/",
+      "pubDate": "Mon, 20 Oct 2025 16:00:37 +0000",
+      "isoDate": "2025-10-20T16:00:37.000Z",
+      "creator": "",
+      "summary": "## 解耦调度网络 (DSF)：Meta的下一代AI网络架构\n\n### 引言\n\n解耦调度网络（DSF）是Meta为AI训练网络设计的下一代网络架构，旨在解决现有基于Clos网络的挑战。随着生成式AI（GenAI）的兴起，对高性能、低延迟、无损AI网络的需求激增。DSF通过将线卡和结构卡解耦为独立的硬件设备，突破了传统单片机箱交换机的物理限制，构建了可扩展的AI网络。DSF是一个基于虚拟输出队列（VOQ）的系统，由开放的OCP-SAI标准和FBOSS驱动，其模块化架构优化了负载均衡和拥塞控制，确保了集群内部和集群间流量的高性能。通过DSF，Meta已成功构建了互连数千个GPU的大型数据中心集群。\n\n### 传统IP网络的挑战\n\n在传统IP网络上运行AI训练作业（使用远程直接内存访问RDMA技术）时，Meta面临以下挑战：\n\n*   **大象流（Elephant flows）**：AI工作负载通常产生长时间、大流量的数据流，容易导致链路拥塞和队头阻塞。\n*   **低熵（Low entropy）**：集体操作中涉及的GPU数量可能导致IP流数量较少，从而造成哈希效率低下，即使网络容量充足也可能出现拥塞。\n*   **网络利用率低下（Suboptimal fabric utilization）**：上述问题共同导致网络链路带宽利用率严重不均。\n\nMeta尝试了多种解决方案，但都存在局限性，例如BGP策略无法处理故障，负载感知ECMP方案难以调优并产生乱序包，而集中式流量工程方案则随着网络规模增大而变得过于复杂且对故障反应缓慢。\n\n### DSF原理概述\n\nDSF的核心思想源于AI训练工作负载的“大象流”和“低熵”特性。其根本创新在于其**两域架构**：\n\n1.  **以太网域**：服务器和传统网络协议在此运行。\n2.  **结构域**：数据包被分解成单元，在结构中喷洒，然后在硬件中重组，最后返回以太网域。\n\nDSF由两个主要组件构成：\n\n*   **接口节点 (INs) / 机架解耦交换机 (RDSWs)**：处理外部连接和路由功能，与数据中心基础设施接口。\n*   **结构节点 (FNs) / 结构解耦交换机 (FDSWs)**：作为内部交换元件，专用于结构内的高速流量分发，无需L3路由能力。\n\n对外部网络而言，INs和FNs的分布式集合表现为一个统一的虚拟机箱交换机，其总外部端口数等同于所有INs的外部端口总和，从而突破了传统设计的物理限制。\n\nDSF的控制平面基于Meta的开源网络操作系统FBOSS，支持解耦网络的多ASIC控制需求，并通过FBOSS状态数据库（FSBD）实现节点间的实时状态同步。\n\nDSF通过以下机制实现流量管理：\n\n*   **数据包喷洒（Packet spraying）**：将流量分散到所有可用路径，硬件在接口节点重组数据包单元，确保有序交付。\n*   **基于信用的拥塞控制（Credit-based congestion control）**：入口INs动态向出口INs请求信用令牌，系统根据路径可用性、拥塞水平和带宽利用率进行实时决策。\n*   **虚拟输出队列（VOQ）**：确保无损交付，将传入数据包导向针对特定目的地端口和服务类别的虚拟输出队列，每个VOQ独立调度传输，提供精细的流量管理。\n\n这种方法使DSF能够实现近乎最优的负载均衡，充分利用网络带宽，灵活处理混合流量模式，并适应动态网络条件，无需手动重新配置或流量工程。\n\n### DSF在GenAI应用中的实践\n\nMeta利用DSF技术构建了大规模的GenAI集群：\n\n#### 1. DSF L1区域\n\n这是更大集群的构建块，互连数据中心区域内的数千个GPU。\n\n![图片 1](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-1.png)\n\n*   **拓扑结构**：一个AI区域包含多个扩展单元（SUx），每个单元内的GPU机架连接到RDSWs。所有RDSWs通过一层FDSWs互连。\n*   **硬件**：RDSWs由Jerico3-AI芯片驱动，FDSWs使用Ramon3芯片。FBOSS是所有角色的网络操作系统。\n*   **互连**：RDSW-FDSW连接使用2x400G FR4光纤。GPU到RDSW连接经过优化，有利于延迟敏感的分层集合操作。\n*   **规模**：为支持单个AI区域内高GPU规模，创建了两个相同的网络平面。\n\n#### 2. DSF双级网络 (L2区域)\n\n![图片 2](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-2.png)\n\n*   **互连**：通过第二级脊柱DSF交换机（SDSWs）互连4个DSF L1区域。SDSWs与FDSWs硬件相同，聚合L1区域，使其作为单个DSF网络。\n*   **规模**：这是一个无阻塞拓扑，提供18K x 800G GPU的互连规模。\n*   **特性**：所有RDSWs维护全网状FDSB会话以交换信息。引入了“输入平衡模式”（Input Balanced Mode），智能平衡跨层可达性信息，以避免故障时结构层和脊柱层的拥塞。\n\n#### 3. DSF区域 (L3)\n\n![图片 3](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-3.png)\n\n*   **互连**：通过L3超脊柱层连接5个DSF L2区域，以实现更大规模的GPU互连。\n*   **边缘PoD**：每个建筑使用特殊的边缘交付点（PoD），包含40个FDSWs和128个边缘DSF交换机（EDSWs）。EDSW与RDSW硬件相同，但功能是提供L3超脊柱连接。\n*   **端口**：每个EDSW连接到四个超脊柱设备，使用4x800G链路，每个边缘PoD提供总计2k x 800G端口。\n*   **流量与路由**：由于模型分片，L3超脊柱层预计流量较少，4.5:1的超额订阅率足够。通过iBGP（EDSW与RDSWs）和eBGP（EDSW与L3超脊柱）交换路由信息。\n*   **挑战**：在L3层，低熵和大象流问题可能再次出现，但由于流量较少，影响不那么显著。\n\n### 输入平衡模式 (Input Balanced Mode)\n\n输入平衡模式是DSF网络中的一项关键特性，旨在确保在远程链路故障时网络流量的平衡，避免DSF网络结构层和脊柱层出现严重拥塞。\n\n#### 机制\n\n该模式确保任何DSF设备的输入带宽等于或小于输出带宽，即使在远程链路故障时也不会发生过载。设备会传播减少的可达性信息，通知其他设备按比例减少发送到受影响设备的流量。\n\n![图片 4](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-4.png)\n\n*   **RDSW<->FDSW 链路故障**：\n    *   当RDSW与FDSW之间的链路发生故障时，RDSW会失去与FDSW的连接，FDSW也会停止通告该连接的可达性。\n    *   ![图片 5](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-5.png)\n    *   上游SDSW会发现到目标RDSW的输入容量大于输出容量。为避免过载，SDSW将随机选择部分输入链路，停止通告到该目标RDSW的可达性。\n    *   ![图片 6](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-6.png)\n    *   进一步，FDSW也会随机选择链路停止通告可达性，导致源RDSW向目标RDSW转发流量的能力减半。\n    *   ![图片 7](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-7.png)\n\n*   **FDSW<->SDSW 链路故障**：\n    *   当FDSW与SDSW之间的链路发生故障时，容量减少的信息会向两个方向传播。\n    *   ![图片 8](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-8.png)\n    *   **FDSW传播**：FDSW的输出容量减少，它会随机选择一个FDSW<->RDSW链路，停止向集群外的所有目的地通告可达性。但该链路仍可用于集群内流量。\n    *   ![图片 9](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-9.png)\n    *   **SDSW传播**：SDSW的输出容量减少，它会随机选择一个指向其他集群的链路，停止向目标集群的所有RDSW通告可达性。\n    *   ![图片 10](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-10.png)",
+      "shortSummary": "Meta的解耦调度网络（DSF）是下一代AI训练网络架构，旨在解决传统Clos网络在大规模AI训练中遇到的“大象流”、低熵和利用率低下等问题。DSF通过解耦线卡和结构卡，采用两域架构、数据包喷洒和基于信用的虚拟输出队列（VOQ）机制，实现高效负载均衡和无损交付。该技术已用于构建从L1到L3的多层级GenAI集群，互连数万个GPU。DSF还引入了“输入平衡模式”，确保在链路故障时网络流量的平衡，显著提升了AI网络的弹性、性能和可扩展性。",
+      "translated_title": "解耦调度网络：助力Meta AI规模化发展",
+      "images": [
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-1.png",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-2.png",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-3.png",
+          "alt": "",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-4.png",
+          "alt": "",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-5.png",
+          "alt": "",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-6.png",
+          "alt": "",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-7.png",
+          "alt": "",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-DSF-Figure-8.png",
+          "alt": "",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Disaggregated Schedule Fabric (DSF) is Meta’s next-generation network fabric technology for AI training networks that addresses the challenges of existing Clos-based networks. We’re sharing the challenges and innovations surrounding DSF and discussing future directions, including the creation of mega clusters through DSF and non-DSF region interconnectivity, as well as the exploration of alternative switching technologies. [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/20/data-center-engineering/disaggregated-scheduled-fabric-scaling-metas-ai-journey/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/20/data-center-engineering/disaggregated-scheduled-fabric-scaling-metas-ai-journey/\">Disaggregated Scheduled Fabric: Scaling Meta’s AI Journey</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "扩展LLM推理：张量并行、上下文并行和专家并行方面的创新 (原标题: Scaling LLM Inference: Innovations in Tensor Parallelism, Context Parallelism, and Expert Parallelism)",
       "link": "https://engineering.fb.com/2025/10/17/ai-research/scaling-llm-inference-innovations-tensor-parallelism-context-parallelism-expert-parallelism/",
       "pubDate": "Fri, 17 Oct 2025 16:00:50 +0000",
@@ -120,20 +182,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>We’re introducing Candle, a new submarine cable connecting countries across East Asia and Southeast Asia. We’re also announcing several updates to our subsea cables across the Asia-Pacific, including the completion of the Bifrost cable system. The Asia-Pacific (APAC) region is home to over 58% of the world’s internet users1 – many who rely on robust [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/05/connectivity/introducing-the-candle-subsea-cable-updates-to-our-asia-pacific-connectivity-projects/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/05/connectivity/introducing-the-candle-subsea-cable-updates-to-our-asia-pacific-connectivity-projects/\">Introducing the Candle Subsea Cable, Updates to Our Asia-Pacific Connectivity Projects</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "使用基线配置文件加速我们的安卓应用 (原标题: Accelerating our Android apps with Baseline Profiles)",
-      "link": "https://engineering.fb.com/2025/10/01/android/accelerating-our-android-apps-with-baseline-profiles/",
-      "pubDate": "Wed, 01 Oct 2025 16:00:17 +0000",
-      "isoDate": "2025-10-01T16:00:17.000Z",
-      "creator": "",
-      "summary": "# 使用基线配置文件加速Meta的安卓应用\n\nMeta公司致力于提升其数十亿安卓用户的应用体验。本文探讨了Meta如何利用Android的基线配置文件（Baseline Profiles）显著改善其安卓应用的性能，某些关键指标提升高达40%。\n\n## 应用性能的重要性与挑战\n\n良好的应用性能对用户体验至关重要。启动缓慢、掉帧和响应迟钝都会导致用户沮丧并最终流失。除了在开发过程中注重性能（如使用合适的数据结构、算法和缓存策略），理解编译代码的底层表示及其加载和执行方式也同样重要，以便优化构建工具和运行时。\n\nMeta在过去几年中开发了针对安卓应用的配置文件引导编译器和运行时优化基础设施，其中Android Runtime (ART) 的基线配置文件是核心组件。\n\n### ART性能考量\n\n*   **代码编译与执行：** Android应用主要使用Kotlin和Java，它们被编译成Dalvik字节码（Dex代码）。ART必须将Dex代码翻译成机器码才能执行。\n*   **默认执行流程：** 运行时，Dex方法会同时通过解释器执行并进行分析，以确定是否为“热点”方法。一旦确定为热点，ART的即时编译器（JIT）会将其编译成机器码，后续执行将使用编译后的版本（机器码通常比解释执行快得多）。\n*   **性能开销：** 类加载和Dex方法解释/分析阶段都会产生运行时开销，可能导致用户可感知的性能下降。\n*   **冷启动问题：** 应用首次启动（冷启动）时，类需要重新加载。每次应用版本更新后，即使编译过的方法也需要重新分析和编译。\n\n### Meta移动应用面临的挑战\n\n*   **用户访问主要途径：** Meta的大多数用户通过移动应用访问，其中大部分是安卓用户。\n*   **平衡开发速度与性能：** 在快速迭代新功能（如Instagram Reels、Messenger端到端加密）的同时，保持高性能是一个挑战。\n*   **启动性能：** 启动性能尤为关键，对用户体验影响巨大。Facebook和Instagram在启动时会加载超过20,000个类，滚动信息流时还会加载数千个。\n*   **用户旅程优化：** 除了启动，Meta还关注启动后的用户旅程性能，例如信息流滚动、照片加载和渲染时间。这些旅程根据用户行为和发生场景进行细分（例如，滚动信息流与滚动收件箱是不同的）。\n*   **代码库的动态性：** Meta的单体仓库每天有数千次提交。用户数据收集到的类加载配置文件差异巨大，即使是同一用户在不同时间、不同实验组下也可能不同。\n*   **解决方案需求：** 需要一个能够智能适应频繁代码变更、快速生成编译代码和配置文件，并能同时优化启动和其他用户旅程的解决方案。\n\n## ART安装时优化\n\n自Android 9以来，ART提供了以下安装时优化：\n\n1.  **AOT（Ahead of Time）编译：** 在应用首次运行前，将指定方法编译成机器码，消除初始执行时的解释和分析开销。\n2.  **应用镜像（App Image）创建：** 包含指定类的内存中ART数据结构的局部表示。应用启动时，应用镜像被映射到进程堆中，从而实现极快的类加载，并消除后续运行时加载这些类的成本。\n\n这些优化通过在应用安装时向ART提供特殊配置文件来触发，主要机制有两种：云配置文件（Cloud Profiles）和基线配置文件（Baseline Profiles）。\n\n### 云配置文件（Cloud Profiles）\n\n*   **生成方式：** 由Google Play在应用版本首次发布期间收集和聚合大量用户的分析数据。\n*   **应用方式：** 一旦云配置文件生成，所有后续通过Google Play安装该应用版本的用户都会收到该配置文件，ART会用它进行AOT编译和应用镜像创建。\n*   **缺点：**\n    *   早期用户无法受益，因为他们是数据提供者。\n    *   应用开发者无法观察或控制配置文件中的类和方法。\n    *   配置文件强烈倾向于早期启动性能改进。\n    *   仅通过Google Play提供，其他安装方式（如其他应用商店或侧载）无法使用。\n\n### 基线配置文件（Baseline Profiles）\n\n*   **核心特点：** 与云配置文件类似，也触发ART安装时优化，但由应用开发者生成和提供，并可打包在APK或AAB中。\n*   **与云配置文件的协同：** 当两者都可用时，可以协同使用。\n*   **优势：**\n    *   **开发者完全控制：** 开发者可以完全控制安装时优化，使其更符合应用的特定需求，包括优化启动之外的场景。\n    *   **即时可用：** 用户可以立即受益。\n    *   **生成方式灵活：** 可以通过基准测试（如Google的Macrobenchmark）生成，也可以通过`profgen`工具直接指定类和方法。\n\n## Meta如何创建基线配置文件\n\nMeta利用基线配置文件解决了其安卓应用性能面临的诸多挑战，尤其是在冷启动和每周更新导致编译代码被清除的问题上。\n\n### 数据收集与处理\n\nMeta最初使用AndroidX库附带的静态配置文件。如今，Meta采用了一套复杂的收集技术来生成应用配置文件：\n\n*   **基准测试：** 对部分应用使用本地基准测试，通过内部工具收集类和方法使用信息。\n*   **用户数据（针对复杂应用）：** 对于Facebook和Instagram等复杂应用，Meta还会从用户那里收集类和方法使用数据，以获得更全面的视图。\n    *   **类使用数据：** 使用自定义ClassLoader，插入代码记录加载的类，并以极低的采样率有条件地启用上传。收集到的类加载日志经过聚合，根据出现频率，超过特定阈值的类会被包含在下一版本的基线配置文件中。\n    *   **方法使用数据：** 通过应用内专门的遥测技术，识别用户通常调用的方法集群，并以类似方式进行采样和聚合。\n*   **配置文件生成：** 所有收集到的数据被组合成一个“人类可读配置文件”（Human Readable Profile），然后输入给`profgen`工具，生成最终的基线配置文件。\n\n### 人类可读配置文件示例（格式描述）\n\n人类可读配置文件采用特定格式，例如：\n*   `#` 用于注释行。\n*   类可以直接通过其描述符指定。\n*   方法可以直接指定，并可带可选标志。\n*   可以使用通配符匹配所有符合给定前缀的类或方法。\n\n### 调优与实验\n\n*   **初始策略：** Meta最初将冷启动作为主要优化目标，保守地设置了较高的类和方法包含频率阈值（要求在80%到90%的用户跟踪中出现）。\n*   **担忧：** 过大的基线配置文件可能导致性能下降，因为编译后的机器码通常比原始解释代码大10倍，会增加I/O成本。\n*   **持续优化：** 随着时间的推移，Meta尝试了不同的包含阈值，并将优化范围从冷启动扩展到其他用户交互。目前，对于大多数应用，只要在20%或更多的冷启动用户跟踪中出现的类和方法，都会被包含在内。\n*   **优化场景：** 已通过基线配置文件优化的交互包括Facebook和Instagram的信息流滚动，以及Messenger和Instagram私信中从聊天列表到聊天视图的导航。",
-      "shortSummary": "Meta利用Android的基线配置文件（Baseline Profiles）显著提升了其安卓应用的性能，某些关键指标提升高达40%。面对启动慢、帧率下降等挑战，Meta发现传统的云配置文件存在局限。基线配置文件赋予开发者完全控制权，可根据用户数据（包括基准测试和真实用户行为）定制优化，预编译热点代码和类，从而加速应用启动和关键用户旅程。通过持续的实验和调整，Meta已将优化范围从冷启动扩展到新闻推送滚动等多种用户交互。",
-      "translated_title": "使用基线配置文件加速我们的安卓应用",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Key Takeways: With billions of Android app users, we’re always looking to improve the Meta app experience, and in this post, we explore the ways we’ve leveraged Android’s Baseline Profiles to significantly improve their performance. We discuss the performance challenges we’ve faced as Meta’s apps, how the needs of users have become more complex over [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/01/android/accelerating-our-android-apps-with-baseline-profiles/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/01/android/accelerating-our-android-apps-with-baseline-profiles/\">Accelerating our Android apps with Baseline Profiles</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-19T05:25:01.540Z"
+  "lastUpdated": "2025-10-21T05:25:55.416Z"
 }
