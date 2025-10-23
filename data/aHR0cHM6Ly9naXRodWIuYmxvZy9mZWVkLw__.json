@@ -5,6 +5,125 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "从卡拉OK终端到AI简历：GitHub“热爱代码”挑战赛的获奖者 (原标题: From karaoke terminals to AI résumés: The winners of GitHub’s For the Love of Code challenge)",
+      "link": "https://github.blog/open-source/from-karaoke-terminals-to-ai-resumes-the-winners-of-githubs-for-the-love-of-code-challenge/",
+      "pubDate": "Wed, 22 Oct 2025 20:30:35 +0000",
+      "isoDate": "2025-10-22T20:30:35.000Z",
+      "creator": "Lee Reilly",
+      "summary": "GitHub举办了首届“热爱代码”挑战赛，旨在庆祝开发者为纯粹的乐趣而构建项目的精神。超过300名开发者参与，利用GitHub Copilot等工具，创造了涵盖硬件、终端、Web、AI、游戏等多个领域的奇妙作品。以下是六个类别中的获奖项目：\n\n### 🔘 按钮、蜂鸣与闪光灯 (Buttons, beeps & blinkenlights)\n\n*   **Plane Tracker** (@cpstroum)：一个DIY雷达，使用Adafruit Circuit Playground、蓝牙和ADS-B Exchange API，在桌面上实时显示附近航班数据。GitHub Copilot协助了Git操作和项目初期结构。\n    ![一个人手持连接到笔记本电脑的Adafruit TFT Gizmo显示屏。屏幕显示一个绿色的雷达界面，红色光点代表附近的飞机。背景中，VS Code中的Python代码和终端窗口显示通过蓝牙发送的模拟飞机数据。](https://github.blog/wp-content/uploads/2025/10/plane-tracker.jpg?resize=771%2C1024)\n*   **Cadrephoto** (@ozh)：一个基于树莓派和电子墨水的相框，通过电子邮件接收图片并自动更新显示，无需应用或复杂设置。GitHub Copilot帮助作者完成了他的第一个Python项目。\n    ![一个木制电子墨水相框显示《戴珍珠耳环的少女》的灰度版本。旁边的一部智能手机显示正在发送同一图片的电子邮件，一个红色箭头从手机指向相框，说明照片是如何远程更新的。](https://github.blog/wp-content/uploads/2025/10/cadrephoto.png?resize=1024%2C512)\n*   **BuildIn** (@SUNSET-Sejong-University, @lepetitprince99)：一个桌面交通灯，使用Arduino和GitHub API，通过红、黄、绿、蓝灯光直观显示仓库的构建状态。GitHub Copilot在代码调试和优化方面提供了帮助。\n    ![四张照片的拼贴画，展示了一个带有多个跳线和不同颜色（蓝色、绿色、黄色和红色）LED的Arduino面包板项目，在各种测试阶段亮起。](https://github.blog/wp-content/uploads/2025/10/buildin.png?resize=1024%2C1024)\n\n### 🖥️ 终端才华 (Terminal talent)\n\n*   **RestoHack** (@Critlist)：一个复活自1984年、启发了NetHack的Roguelike游戏，使用现代工具重建，忠实还原了原版体验。\n    ![一个黑色的终端窗口显示一个ASCII艺术的墓碑，上面写着“REST IN PEACE mjh 0 AU killed by a giant rat 2025”，来自一个复古的文本游戏。](https://github.blog/wp-content/uploads/2025/10/restohack.png?w=582&resize=582%2C422)\n*   **Jukebox CLI** (@FedeCarollo)：一个在终端中运行的彩色动画点唱机，用Rust和Ratatui构建，支持MP3播放、音符动画和可滚动的彩色播放列表。GitHub Copilot帮助作者探索了不熟悉的Rust库。\n    ![一个终端音乐播放器中的像素艺术点唱机界面。屏幕中央显示彩色像素图形，右侧是歌曲播放列表，底部是带有进度和音量条的播放控制。](https://github.blog/wp-content/uploads/2025/10/jukebox.png?resize=1024%2C466)\n*   **Tuneminal** (@heza-ru)：将终端变为卡拉OK舞台，提供滚动歌词、实时音频可视化和评分功能，让开发者在`git clone`时也能唱歌。\n    ![一个名为“Tuneminal”的终端卡拉OK界面。屏幕显示歌曲库“IRIS – Kenshi Yonezu”，当前分数和准确度，以及歌词和音频可视化器的占位符。](https://github.blog/wp-content/uploads/2025/10/tuneminal.png?resize=1024%2C521)\n\n### 🌐 万维网奇迹 (World wide wonders)\n\n*   **Netstalgia** (@heza-ru)：一个功能齐全的90年代Web模拟器，视觉上还原了拨号上网的体验，包含复古元素和一个“GitHub Star勒索软件”。\n    ![一个复古的1990年代风格网页，名为“Netsalgia.com”，设计成Windows 95桌面。页面上有彩色按钮、访客计数器、虚假广告和一个弹出窗口，要求用户为这个怀旧项目的GitHub仓库加星。](https://github.blog/wp-content/uploads/2025/10/netstalgia.png?resize=1024%2C640)\n*   **Bionic Reader** (@Awesome-XV)：通过加粗单词前几个字母来提高阅读速度的工具。GitHub Copilot协助了项目文档编写和初始代码库搭建。\n*   **The Git Roast Show** (@rawrnuck, @Anmol0201)：一个全栈Web应用，幽默地“吐槽”GitHub个人资料，生成个性化、带音效和动画的喜剧吐槽。GitHub Copilot帮助作者理解算法和处理重复性任务。\n    ![一张风格化的图片，描绘了一个穿着燕尾服戴墨镜的卡通GitHub Octocat角色手持麦克风。上方文字写着“The GitRoast Show”，一个对话气泡说“我们不在这里分叉”。背景是旋转的青色大理石纹理。](https://github.blog/wp-content/uploads/2025/10/the-git-roast-show.png?resize=1024%2C640)\n*   **Nightlio** (@shirsakm)：一个隐私优先的情绪追踪和日记应用，支持自托管，记录情绪、笔记，并分析模式。GitHub Copilot在重构、调色板更新和代码库范围的更改中提供了帮助。\n    ![一个深色主题的生产力应用Nightliio正在运行。动画突出显示情绪追踪图标、个人目标（如“睡前阅读”和“晨间冥想”），以及添加目标、查看历史和通过彩色动画条追踪进度的部分。](https://github.blog/wp-content/uploads/2025/10/nightlio.gif?resize=1024%2C484)\n\n### 🤖 变革的代理 (Agents of change)\n\n*   **Neosgenesis** (@answeryt)：一个元认知AI框架，教机器思考如何思考，通过五阶段循环和多个LLM进行决策。\n*   **MediVision Assistant** (@omkardongre)：一个AI医疗助手，通过语音、图像、视频帮助老年和残疾用户管理健康。GitHub Copilot协助生成了React组件、API模板和AI集成代码。\n*   **Quiviva** (@katawiecz)：一个交互式AI简历，将求职过程变为有趣的聊天冒险，可询问技能、项目，甚至解锁“极客模式”。\n    ![一个名为“An Interactive CV that Talks Back”的彩色网页界面。动画显示右侧有一个聊天机器人窗口，用户可以在其中向Kasia的AI简历提问。左侧解释该项目是AI、设计和讲故事的有趣结合，并列出了一些示例问题和一个下载PDF简历的按钮。](https://github.blog/wp-content/uploads/2025/10/quiviva.png?resize=1024%2C640)\n\n### 🕹️ 游戏时间 (Game on)\n\n*   **AI-Dventure** (@FedeCarollo)：一个用Rust和OpenAI模型构建的交互式文本冒险游戏，动态生成奇幻、恐怖、科幻或历史背景下的世界和故事。\n    ![一个文本冒险游戏的截图。](https://github.blog/wp-content/uploads/2025/10/ai-dventure.png?w=1009&resize=1009%2C672)\n*   **BeatBugging** (@sandra-aliaga, @Joshep-c, @RyanValdivia, @tniia)：将调试过程转化为节奏游戏，将系统日志转换为音乐节拍，让开发者在5x5网格上跟随节奏修复bug。GitHub Copilot帮助团队在遇到困难时找到下一步解决方案。\n    ![一个复古风格的终端界面，标题为“BEATBUGGING SYSTEM”，显示25%的进度条，模拟“音乐调试界面”的初始化，屏幕上显示音频频率、内存读数和ASCII符号。](https://github.blog/wp-content/uploads/2025/10/beatbugging.png?w=759&resize=759%2C437)\n*   **MuMind** (@FontesHabana)：一个基于Web的多人派对游戏，玩家尝试匹配多数人的答案来得分。\n\n### 🃏 包罗万象 (Everything but the kitchen sink)\n\n*   **GitFrag** (@chornonoh-vova)：使用经典排序算法（冒泡、合并、快速、计数排序）重组GitHub贡献图，并以动画形式可视化。GitHub Copilot帮助作者理解算法并添加细节。\n*   **Code Sensei** (@redhatsam09)：将VS Code会话变成禅意像素冒险，专注度决定游戏乐趣，长时间不活动会导致“Sensei”的8位死亡。\n*   **Reviewer Karma** (@master-wayne7)：一个奖励代码审查者良好反馈的系统，通过表情符号、评论和代码批评在排行榜上赚取积分。GitHub Copilot帮助编写高效的Go代码和处理重复性任务。\n    ![一个名为“评分系统”和“当前排名”的排行榜显示了审阅者如何通过进行代码审阅、使用积极表情符号和撰写建设性评论来获得积分。排名表列出了@alice以18分位居第一，其次是@bob、@carol、@dave和@eve。](https://github.blog/wp-content/uploads/2025/10/reviewer-karma.png?resize=1024%2C702)\n\n这些项目充分展示了当开发者为乐趣而构建时所能实现的创造力。所有类别获奖者都将获得12个月的GitHub Copilot Pro+订阅，进一步证明了创造力与代码（尤其是在Copilot辅助下）结合的强大潜力。",
+      "shortSummary": "GitHub举办了首届“热爱代码”挑战赛，鼓励开发者为乐趣而构建项目。超过300名开发者参与，利用GitHub Copilot等工具，在六个类别中创造了众多创新作品。获奖项目包括DIY雷达、电子墨水相框、复古游戏、终端卡拉OK、90年代Web模拟器、AI简历和调试节奏游戏等。这些作品展示了开发者如何将好奇心和创造力转化为独特而有趣的项目。所有类别冠军均获得12个月的GitHub Copilot Pro+。",
+      "translated_title": "从卡拉OK终端到AI简历：GitHub“热爱代码”挑战赛的获奖者",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/plane-tracker.jpg?resize=771%2C1024",
+          "alt": "A person holding an Adafruit TFT Gizmo display connected to a laptop. The screen shows a green radar interface with red blips representing nearby planes. In the background, Python code and a terminal window in VS Code display mock plane data being sent via Bluetooth.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/cadrephoto.png?resize=1024%2C512",
+          "alt": "A wooden e-ink photo frame displays a grayscale version of “Girl with a Pearl Earring.” A smartphone next to it shows an email being sent with the same image, and a red arrow points from the phone to the frame, illustrating how the photo is updated remotely.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/buildin.png?resize=1024%2C1024",
+          "alt": "A collage of four photos showing an Arduino breadboard project with multiple jumper wires and LEDs in different colors—blue, green, yellow, and red—lit up during various testing stages.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/restohack.png?w=582&resize=582%2C422",
+          "alt": "A black terminal window displaying ASCII art of a tombstone reading “REST IN PEACE mjh 0 AU killed by a giant rat 2025,” from a retro text-based game.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/jukebox.png?resize=1024%2C466",
+          "alt": "A pixel art jukebox interface in a terminal-based music player. The screen shows colorful pixel graphics in the center, a playlist of songs on the right, and playback controls with progress and volume bars at the bottom.",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/tuneminal.png?resize=1024%2C521",
+          "alt": "A terminal-based karaoke interface titled “Tuneminal.” The screen displays a song library with “IRIS – Kenshi Yonezu,” current score and accuracy, and placeholders for lyrics and an audio visualizer.",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/netstalgia.png?resize=1024%2C640",
+          "alt": "A retro 1990s-style web page called “Netsalgia.com” designed to look like a Windows 95 desktop. The page features colorful buttons, visitor counters, fake ads, and a pop-up asking users to star the GitHub repository for this nostalgic project.",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/the-git-roast-show.png?resize=1024%2C640",
+          "alt": "A stylized image featuring a cartoon GitHub Octocat character in a tuxedo and sunglasses holding a microphone. The text above reads “The GitRoast Show,” and a speech bubble says “we don’t fork around here.” The background has a swirling teal marble texture.",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>This summer, we invited devs to participate in our hackathon for joyful, ridiculous, and wildly creative projects. Here are the winners of For the Love of Code!</p>\n<p>The post <a href=\"https://github.blog/open-source/from-karaoke-terminals-to-ai-resumes-the-winners-of-githubs-for-the-love-of-code-challenge/\">From karaoke terminals to AI résumés: The winners of GitHub’s For the Love of Code challenge</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "顶尖安全研究员分享其漏洞赏金流程 (原标题: Top security researcher shares their bug bounty process)",
+      "link": "https://github.blog/security/top-security-researcher-shares-their-bug-bounty-process/",
+      "pubDate": "Wed, 22 Oct 2025 16:00:00 +0000",
+      "isoDate": "2025-10-22T16:00:00.000Z",
+      "creator": "Shilpa Kumari",
+      "summary": "GitHub在网络安全意识月期间，重点介绍了其漏洞赏金计划中的顶尖安全研究员André Storfjord Kristiansen (@dev-bio)。GitHub致力于维护其平台和软件生态系统的安全，尤其是在GitHub Copilot等AI驱动功能快速增长的背景下。与熟练的安全研究员合作对于识别和解决传统及新兴技术中的漏洞至关重要。\n\n**GitHub VIP 赏金计划**\nGitHub邀请持续展现专业知识和影响力的研究员加入其独家VIP赏金计划，提供：\n*   新产品和功能的早期测试权限。\n*   与GitHub漏洞赏金团队及工程师直接互动。\n*   独家Hacktocat周边商品。\n\n**研究员André Storfjord Kristiansen (@dev-bio) 的洞察**\n\n1.  **参与漏洞赏金的契机与动力：**\n    *   偶然在业余时间进行个人项目时接触，源于对系统行为（尤其是在处理复杂边缘情况时）的好奇心。\n    *   持续参与的动力在于，能够展示看似微小的问题如何产生实际影响，并将小问题升级为严重漏洞的过程令人满足。\n2.  **工作之外的生活：**\n    *   作为两个孩子的父亲，大部分时间陪伴家人，并感谢伴侣的支持。\n    *   在挪威享受大自然，通过徒步、露营和越野滑雪来放松和充电。\n3.  **学习与保持更新：**\n    *   通过阅读其他研究员的报告来了解漏洞趋势和解决问题的方法。\n    *   努力识别并深入研究需要进一步探索的领域，以保持领先。\n    *   专业领域是软件供应链安全，致力于研究漏洞并开发缓解新兴威胁的解决方案。\n4.  **工具与工作流程：**\n    *   在业余研究中，倾向于编写自己的工具，以获得更深入的理解并发现新的探索领域。\n    *   计划发布一个工具包，用于构建GitHub组织的离线综合图谱，并提供可扩展的查询套件，以快速发现常见的错误配置和隐藏的攻击路径。\n5.  **偏爱的漏洞类型：**\n    *   注入相关漏洞、微妙的逻辑缺陷和被忽视的假设。\n    *   对绕过严格内容安全策略（CSP）的新技术很感兴趣。\n    *   最喜欢将看似无害的发现串联起来，形成具有重大影响的漏洞，揭示底层设计缺陷。\n6.  **漏洞发现过程：**\n    *   最重要的发现多是偶然的，是好奇心驱使下的“跑题”结果，而非严格方法论的产物。\n    *   当发现异常时，会深入挖掘，层层剥离，直到完全理解，并详细记录每一步，绘制潜在攻击路径，构建清晰全面的漏洞图景。\n7.  **给新研究员的建议：**\n    *   不要满足于简单的发现，要深入挖掘并探索其潜在影响，理解全局后，看似无害的问题也可能产生重大影响。\n8.  **社交媒体：**\n    *   拥有一个页面，未来将发布有趣内容；活跃于LinkedIn。\n\n**致谢与号召**\nGitHub感谢@dev-bio的参与，并强调每次漏洞提交都有助于提升GitHub、其产品和客户的安全性。鼓励安全研究社区通过HackerOne报告发现的漏洞。\n\n**相关内容与作者信息**\n*   作者：Shilpa Kumari\n    ![Shilpa Kumari](https://avatars.githubusercontent.com/u/82128924?v=4&s=200)\n*   探索更多来自GitHub：\n    *   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs\n    *   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub\n    *   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories\n    *   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025",
+      "shortSummary": "GitHub在网络安全意识月期间，重点介绍了顶尖漏洞赏金研究员André Storfjord Kristiansen (@dev-bio)。他因擅长发现注入相关漏洞和提供详细报告而闻名。André分享，其研究动力源于对系统行为的好奇心，并享受将小问题升级为重大漏洞的成就感。他通过阅读同行报告和编写自定义工具来保持领先，并建议其他研究员深入挖掘漏洞影响。GitHub鼓励社区继续通过HackerOne报告漏洞，共同提升平台安全性。",
+      "translated_title": "顶尖安全研究员分享其漏洞赏金流程",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/82128924?v=4&s=200",
+          "alt": "Shilpa Kumari",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>For this year’s Cybersecurity Awareness Month, the GitHub Bug Bounty team is excited to put the spotlight on a talented security researcher—André Storfjord Kristiansen!</p>\n<p>The post <a href=\"https://github.blog/security/top-security-researcher-shares-their-bug-bounty-process/\">Top security researcher shares their bug bounty process</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "如何使用AI更新社区健康文件 (原标题: How to update community health files with AI)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-to-update-community-health-files-with-ai/",
+      "pubDate": "Tue, 21 Oct 2025 16:00:00 +0000",
+      "isoDate": "2025-10-21T16:00:00.000Z",
+      "creator": "Alexandra Lietzke",
+      "summary": "# 使用AI更新社区健康文件\n\n本文探讨了如何利用人工智能（特别是GitHub Copilot）来更新和维护项目中的社区健康文件，从而让开发者能够更专注于核心代码开发。\n\n## 什么是GitHub Copilot？\nGitHub Copilot已从一个智能自动补全工具发展成为一个多模型、代理式助手。它能够理解整个代码库，执行跨文件重构，运行终端命令，甚至起草拉取请求。\n\n## 什么是社区健康文件及其重要性？\n社区健康文件是标准化文档，旨在为开源项目维护一个欢迎、有组织和协作的环境。它们传达期望、指导贡献者并支持代码库的整体健康。这些文件通常位于代码库的根目录或特殊的`.github`文件夹中。\n\n### 重要性：\n*   **项目投资：** 它们是新贡献者的第一接触点，标志着项目的成熟度和可维护性。\n*   **提升协作：** 提高透明度、一致性和协作，并为贡献者和维护者之间的互动设定基调。\n*   **避免问题：** 缺少或过时的文件可能导致贡献者提交格式不正确的拉取请求、提出模糊的问题，甚至引入安全漏洞，从而使维护者不堪重负。\n*   **AI的帮助：** GitHub Copilot等AI工具可以自动检测缺失或过时的文件，提出更新建议，甚至生成草稿，从而节省时间并减少人为错误。\n\n## 三种常见的社区健康文件\n以下是三种对构建欢迎社区至关重要的常见社区健康文件：\n\n### 1. README.md\n*   **作用：** 通常是访问者查看代码库时首先看到的文件，它介绍项目并解释其目的，以及如何开始使用。\n*   **内容：** 提供项目是什么、功能信息以及如何安装或使用等关键信息，帮助用户快速上手。\n\n### 2. 贡献者指南 (CONTRIBUTING.md)\n*   **作用：** 提供关于贡献者如何以及应该如何参与的指导方针，例如编码标准和拉取请求说明。\n*   **内容：** 告知用户如何高效贡献以及期望什么（例如，项目是否接受贡献），有助于设定标准和期望。\n\n### 3. 许可证 (LICENSE)\n*   **作用：** 规定了项目可以被使用、修改和分发的法律条款。简而言之，它告诉人们如何使用你的软件。\n*   **重要性：** 如果不添加许可证，其他人将无权使用、修改或分发你的代码。若要项目被认定为开源项目，应选择一个广泛使用的OSI（开放源代码促进会）批准的开源许可证。\n*   **资源：** 文章提供了选择和添加许可证的外部资源链接。\n\n## 其他流行的社区健康文件\n*   **ISSUE/PULL REQUEST TEMPLATES：** 标准化提交问题或拉取请求所需的格式和信息。\n*   **SECURITY：** 提供报告漏洞的说明，并概述项目的安全策略。\n*   **GOVERNANCE：** 解释项目如何管理，包括角色、职责和决策过程。\n*   **CODE OF CONDUCT：** 定义社区参与行为标准。\n*   **SUPPORT：** 分享他人如何获得项目帮助的具体指导。\n*   **FUNDING：** 在代码库中显示赞助按钮，以增加开源项目资金选项的可见性。\n\n## Copilot指令文件\n虽然不完全是社区健康文件，但Copilot指令文件是一个AI配置，它补充了健康文档。它使用其他社区健康文件作为上下文，精确地告诉GitHub Copilot如何与代码库交互，包括优先处理或避免什么。这个文件有助于为大型语言模型（LLM）提供基础，使其理解项目的结构和内容，从而在整个代码库中保持一致性。\n\n## 使用GitHub Copilot更新社区健康文件的入门套件\nGitHub提供了一个入门套件，其中包含提示词最佳实践、核对清单以及使用Copilot向代码库添加三个常见文件的分步教程。\n\n### 第一部分：提示词工程\nGitHub Copilot可以帮助你通过简单的提示词编写更清晰、更一致的社区健康文件。\n*   **注意事项：** 驱动GitHub Copilot的LLM是非确定性的，每次提示模型都可能收到不同的输出。因此，需要验证输出的准确性，特别是对于具有法律效力的许可证等敏感文件。\n*   **提示词最佳实践：**\n    *   编写清晰、结构化的提示词，例如：“为Node.js项目生成一个包含设置说明、编码标准和拉取请求指南的CONTRIBUTING.md文件。”\n    *   包含重要的上下文，如受众类型、项目目标和语气。\n    *   使用现有提示词文件来帮助标准化请求。\n\n### 第二部分：核对清单\n此核对清单有助于确保Copilot生成的内容准确、包容、安全并与项目目标保持一致。\n\n*   **开始前：** 审查现有文件，明确文件目标，熟悉组织政策。\n*   **有效提示Copilot：** 提示词具体且有上下文，包含示例或语气偏好。\n*   **安全与隐私：** 避免敏感信息，审查代码库可见性设置，了解Copilot隐私设置。SECURITY.md应包含漏洞报告联系方式、安全问题分类说明和负责任披露政策链接。\n*   **审查Copilot输出：** 内容是否反映项目价值观，检查是否存在虚构链接/名称/政策，外部资源是否准确最新。\n*   **测试与反馈：** 请队友或贡献者审查，测试说明是否有效，并乐于根据社区反馈进行迭代。\n\n### 第三部分：教程\n本教程演示了如何使用Copilot快速轻松地更新README.md、LICENSE文件和CONTRIBUTING.md。\n\n#### 1. 创建README.md\n*   **目的：** 提供项目清晰概览，帮助用户和贡献者快速理解其目的、设置和用法。\n*   **操作步骤：**\n    1.  在IDE中打开GitHub Copilot Chat（例如VS Code）。\n    2.  切换到代理模式以启用项目感知协助。\n    3.  选择首选模型（例如Claude）。\n    4.  确保项目在IDE中打开，以便Copilot读取其上下文。\n    5.  在聊天窗口中输入：“帮助我为我的项目编写一个README.md。确保它包含安装说明、项目概述并遵循标准的README实践。”\n    6.  审查生成的README.md，手动验证安装说明的准确性。\n    7.  如果满意，点击“Keep”保存文件并提交到代码库。\n\n#### 2. 添加许可证\n*   **目的：** 定义他人如何合法使用、修改和分发你的代码，保护双方权利，消除歧义，防止滥用。\n*   **操作步骤：**\n    1.  在IDE中打开GitHub Copilot Chat。\n    2.  决定要添加的许可证类型。\n    3.  输入提示词：“你能为我的项目添加[你想要的许可证]吗？”\n    4.  审查生成的LICENSE文件，确保准确性（特别是版权所有者名称和声明）。\n    5.  如果正确，点击“Keep”保存文件并提交到代码库。\n\n#### 3. 创建贡献者指南 (CONTRIBUTING.md)\n*   **目的：** 通过概述贡献标准、工作流程和期望来简化协作，降低摩擦和错误，鼓励一致、可扩展的贡献。\n*   **操作步骤：**\n    1.  在IDE中打开GitHub Copilot Chat。\n    2.  点击“+”图标开始新聊天。\n    3.  输入提示词：“创建一个遵循最佳实践的贡献者指南文件，并将其链接到README中。”\n    4.  Copilot将生成包含贡献指南、代码标准、拉取请求说明和问题报告流程的CONTRIBUTING.md文件。\n    5.  审查并编辑指南以符合团队工作流程。\n    6.  保存并提交CONTRIBUTING.md文件。\n    7.  更新README以包含贡献者指南的链接，例如：`## Contributing See CONTRIBUTING.md for guidelines.`\n\n## 总结\nGitHub Copilot不仅可以编写代码，还可以作为你的文档助手，帮助你更智能、更快、更顺畅地编写文档。它能优化社区健康文件，推广最佳实践，并将良好意图转化为出色的文档。最终结果是：更好的文档、更强大的社区和更快乐的维护者。",
+      "shortSummary": "GitHub Copilot等AI工具能帮助开发者高效更新社区健康文件，如README、贡献者指南和许可证。这些标准化文档对开源项目的健康、协作和吸引新贡献者至关重要。AI可自动检测、建议并生成文件草稿，节省时间并减少错误。通过清晰的提示词、核对清单和分步教程，开发者可利用Copilot快速创建和维护这些文件，从而提升项目文档质量，促进社区发展。",
+      "translated_title": "如何使用AI更新社区健康文件",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Have you ever thought about using AI to update community health files for your repositories? This blog shares actionable next steps for doing just that, including a starter kit with a checklist and tutorials on how to create three useful files.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-to-update-community-health-files-with-ai/\">How to update community health files with AI</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "打破互联网的漏洞内幕：Log4Shell不为人知的故事 (原标题: Inside the breach that broke the internet: The untold story of Log4Shell)",
       "link": "https://github.blog/open-source/inside-the-breach-that-broke-the-internet-the-untold-story-of-log4shell/",
       "pubDate": "Mon, 20 Oct 2025 16:00:16 +0000",
@@ -291,169 +410,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>See how this three-part framework will turn AI into a repeatable and reliable engineering practice.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-to-build-reliable-ai-workflows-with-agentic-primitives-and-context-engineering/\">How to build reliable AI workflows with agentic primitives and context engineering</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Git 二十年，GitHub 总部两天：Git Merge 2025 亮点回顾 🎉 (原标题: 20 Years of Git, 2 days at GitHub HQ: Git Merge 2025 highlights 🎉)",
-      "link": "https://github.blog/open-source/git/20-years-of-git-2-days-at-github-hq-git-merge-2025-highlights/",
-      "pubDate": "Thu, 09 Oct 2025 08:00:00 +0000",
-      "isoDate": "2025-10-09T08:00:00.000Z",
-      "creator": "Lee Reilly",
-      "summary": "# Git Merge 2025 亮点回顾\n\nGit Merge 2025 在 GitHub 旧金山总部举行，庆祝 Git 诞生二十周年。此次活动汇聚了来自世界各地的贡献者，共同回顾 Git 的历史并展望其未来。超过 100 人亲临现场，另有 600 多人在线参与。\n\n## 第一天：面向所有人的精彩演讲\n\n第一天的议程内容丰富，涵盖了从 Git 内部机制的深入探讨到面向初学者的创意工作流介绍，满足了不同背景参与者的需求。演讲者包括维护者、教育工作者、业余爱好者，甚至还有一名高中生，他们分享了 Git 如何塑造他们的工作和学习。演讲者通过线上和线下方式参与，使得本次 Git Merge 成为迄今为止最具包容性和可访问性的活动之一。\n\n![Git 贡献者峰会期间，人们围坐在 GitHub 总部行政简报中心的一张长会议桌旁。笔记本电脑打开着，几位参与者通过房间前方的大屏幕远程加入。](https://github.blog/wp-content/uploads/2025/10/gitmerge2.png?resize=1600%2C1200)\n\n在 GitHub 总部的圆形剧场，与会者齐聚一堂。多位专家带来了精彩分享：\n*   **Scott Chacon**：通过现场演示 GitButler CLI，将幽默与代码相结合。\n*   **Google 的 Martin von Zweigbergk**：深入剖析 Jujutsu 如何与 Git 集成。\n*   **Jacob Stopak**：通过可视化和游戏化重新构想 Git 学习。\n*   **Steffen Hiller 和 Zoran Petrovic**：展示了可视化仓库随时间增长的新方法。\n*   **brian m. carlson**：探讨了 SHA-256 互操作性的未来发展。\n\n所有这些演讲及更多内容都可在活动播放列表中观看。\n\n## 第二天：社区协作的核心\n\n第二天的活动聚焦于社区协作，包括年度 Git 贡献者峰会和一场非正式会议（Unconference）。核心维护者和贡献者通过线上和线下方式会面，共同规划 Git 未来一年的发展路线图，这也是迄今为止最支持远程参与的聚会之一。\n\n![Git 贡献者峰会期间，人们围坐在 GitHub 总部行政简报中心的一张长会议桌旁。笔记本电脑打开着，几位参与者通过房间前方的大屏幕远程加入。](https://github.blog/wp-content/uploads/2025/10/498627888-b18da4a6-d427-48b5-915b-b99cf10bbb57_4c4af4.png?resize=2600%2C1950)\n\n在峰会期间，非正式会议为所有人提供了开放的交流平台，白板上迅速填满了关于分支策略、Git 教育和创意工作流的各种想法。\n\n## 感谢\n\nGit Merge 2025 的成功离不开整个社区的贡献。衷心感谢所有分享工作的演讲者、付出时间和精力的贡献者和志愿者，以及每一位前来学习和交流的与会者。同时，也特别感谢 GitHub 幕后团队为全球与会者提供无缝的活动体验，以及赞助商 GitButler 和 Google 对本次活动的大力支持。",
-      "shortSummary": "Git Merge 2025 在 GitHub 总部举行，庆祝 Git 诞生二十周年。活动汇聚了全球贡献者，共同回顾 Git 历史并展望未来。第一天有丰富的技术演讲，涵盖 Git 内部机制到创意工作流。第二天则专注于社区协作，通过贡献者峰会和非正式会议规划 Git 路线图。本次活动吸引了超过 100 人现场参与，600 多人在线观看，并感谢了社区、GitHub 团队及赞助商 GitButler 和 Google 的支持。",
-      "translated_title": "Git 二十年，GitHub 总部两天：Git Merge 2025 亮点回顾 🎉",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/gitmerge2.png?resize=1600%2C1200",
-          "alt": "People seated around a long conference table at GitHub HQ’s Executive Briefing Center during the Git Contributors Summit. Laptops are open, and several participants join remotely on large screens at the front of the room.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/498627888-b18da4a6-d427-48b5-915b-b99cf10bbb57_4c4af4.png?resize=2600%2C1950",
-          "alt": "People seated around a long conference table at GitHub HQ’s Executive Briefing Center during the Git Contributors Summit. Laptops are open, and several participants join remotely on large screens at the front of the room.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/121322?v=4&s=200",
-          "alt": "Lee Reilly",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Git Merge 2025 celebrated 20 years of Git with talks, collaboration, and community. Catch the highlights and recordings.</p>\n<p>The post <a href=\"https://github.blog/open-source/git/20-years-of-git-2-days-at-github-hq-git-merge-2025-highlights/\">20 Years of Git, 2 days at GitHub HQ: Git Merge 2025 highlights 🎉</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub可用性报告：2025年9月 (原标题: GitHub Availability Report: September 2025)",
-      "link": "https://github.blog/news-insights/company-news/github-availability-report-september-2025/",
-      "pubDate": "Thu, 09 Oct 2025 02:19:28 +0000",
-      "isoDate": "2025-10-09T02:19:28.000Z",
-      "creator": "Jakub Oleksy",
-      "summary": "GitHub在2025年9月经历了三次导致服务性能下降的事件。以下是详细报告：\n\n## 2025年9月GitHub服务可用性报告\n\n2025年9月，GitHub共发生了三起导致服务性能下降的事件。\n\n### 事件一：Copilot可用性下降\n*   **日期与时间**：2025年9月15日，UTC时间17:55至18:20（持续25分钟）。\n*   **受影响服务**：Copilot的大部分功能可用性下降，返回403错误。\n*   **根本原因**：一个特性标志被部分部署到全局限速器，意外触发了限速逻辑中的一个未检测到的边缘情况。该标志旨在为部分用户降低限速，却导致限速配置进入无效状态，限制了100%的请求。\n*   **解决方案**：回滚了该特性标志，服务立即恢复。\n*   **未来改进**：\n    *   增加流量异常监控器，以便及早发现问题。\n    *   扩大限速扩展测试的覆盖范围，加强预生产验证，以增强系统弹性。\n\n### 事件二：电子邮件投递延迟\n*   **日期与时间**：\n    *   2025年9月23日，UTC时间15:29至17:38。\n    *   2025年9月24日，UTC时间14:02至15:12。\n*   **受影响服务**：电子邮件投递，导致大多数类型的电子邮件通知显著延迟。两次事件总影响约130分钟，客户经历的峰值延迟约为50分钟。\n*   **根本原因**：异常高的流量导致部分出站电子邮件服务器资源争用。\n*   **解决方案**：更新了配置，以在高流量时更好地分配容量。\n*   **未来改进**：更新监控器以提高检测能力。\n\n### 事件三：Copilot API部分性能下降\n*   **日期与时间**：2025年9月29日，UTC时间16:26至17:33（持续67分钟）。\n*   **受影响服务**：Copilot API出现部分性能下降，导致平均0.2%的GitHub MCP服务器请求出现间歇性404错误，峰值时约2%。\n*   **根本原因**：内部依赖升级暴露了服务中的一个配置错误。\n*   **解决方案**：回滚了升级以解决配置错误。\n*   **未来改进**：修复配置问题，并将改进文档和发布流程，以防止类似问题再次发生。\n\n### 更多信息\n\n*   请关注GitHub状态页面获取实时更新和事后回顾。\n*   如需了解更多GitHub正在进行的工作，请查阅GitHub工程博客。\n\n本文作者：\n\n![Jakub Oleksy](https://avatars.githubusercontent.com/u/6147691?v=4&s=200)\n\n### 相关资源\n\n探索更多来自GitHub的内容：\n\n*   **文档**：\n    ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg)\n    掌握GitHub所需的一切，尽在一个地方。\n*   **GitHub**：\n    ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg)\n    在GitHub上构建未来，这里是任何人、任何地点构建任何东西的平台。\n*   **客户案例**：\n    ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg)\n    了解使用GitHub进行构建的公司和工程团队。\n*   **GitHub Universe 2025**：\n    ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg)\n    最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山与我们相聚。",
-      "shortSummary": "2025年9月，GitHub经历了三次服务性能下降事件。9月15日，Copilot因限速逻辑边缘情况导致25分钟可用性下降。9月24日，电子邮件投递因高流量导致约50分钟的峰值延迟。9月29日，Copilot API因内部依赖升级暴露配置错误，导致67分钟的部分性能下降。GitHub已采取措施解决问题，并计划通过增强监控、扩大测试覆盖和改进发布流程来提升系统弹性。",
-      "translated_title": "GitHub可用性报告：2025年9月",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/6147691?v=4&s=200",
-          "alt": "Jakub Oleksy",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>In September, we experienced three incidents that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-september-2025/\">GitHub Availability Report: September 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "使用 GitHub Copilot 编码代理和移动设备随时随地完成紧急修复 (原标题: Completing urgent fixes anywhere with GitHub Copilot coding agent and mobile)",
-      "link": "https://github.blog/developer-skills/github/completing-urgent-fixes-anywhere-with-github-copilot-coding-agent-and-mobile/",
-      "pubDate": "Wed, 08 Oct 2025 16:00:00 +0000",
-      "isoDate": "2025-10-08T16:00:00.000Z",
-      "creator": "Scott Lusk",
-      "summary": "## 引言：GitHub Copilot 编码代理与 GitHub Mobile 的强大结合\n\n文章指出，在软件开发中，结合多种工具可以产生巨大的力量，就像视频游戏中的组合升级一样。GitHub 相信，这种组合能够赋能开发者应对任何挑战，无论是修复关键错误、添加新功能还是发布产品。本文通过作者的亲身经历，展示了 GitHub Copilot 编码代理和 GitHub Mobile 应用如何协同工作，帮助开发者在任何地点高效完成紧急修复。\n\n## 亲身经历：移动设备上的紧急修复\n\n作者分享了一个紧急场景：在一次高可见度演示前，一个关键网站功能出现错误，而他当时远离笔记本电脑。传统修复方式耗时过长，回滚也不是选项。在这种情况下，作者利用手机上的 GitHub Copilot 编码代理和 GitHub Mobile 应用解决了问题。\n\n**操作流程：**\n\n1.  **识别问题：** 作者在 GitHub Mobile 上扫描了最近的拉取请求（PR），识别出一个可能导致问题的 PR（添加了 Markdown 渲染和富文本编辑器）。\n2.  **创建问题：** 他创建了一个新问题，详细描述了问题，并引用了可疑的 PR，同时利用了仓库中预设的 `copilot-instructions` 文件来指导 Copilot 代理。\n3.  **分配任务：** 作者将该问题分配给了 GitHub Copilot 编码代理。\n4.  **Copilot 修复：** 仅仅六分钟后，GitHub Mobile 上收到通知，Copilot 已生成一个包含修复方案的 PR。\n5.  **移动审查与批准：** 作者立即在手机上审查了 PR，确认这是一个清晰、简单的解决方案。他甚至可以在手机上通过预览分支测试修复，然后批准了 PR。\n6.  **自动化部署：** 修复通过仓库中由 GitHub Actions 管理的自动化工作流部署到生产环境。\n\n**结果：** 在作者到达汽车时，问题已解决，演示得以顺利进行。这次完全通过手机管理修复的经历，揭示了 GitHub 平台内强大的能力，并促使作者探索更多平台内组合以提升工作效率。\n\n以下是作者在手机上审查并批准拉取请求后，通过 GitHub Mobile 应用看到的视图，显示了 Copilot 对问题的修复摘要：\n\n![Copilot Coding Agent with a suggested fix for our issue.](https://github.blog/wp-content/uploads/2025/10/01-copilot-pr-fix.jpeg?resize=472%2C1024)\n\n## 解锁这种“能力提升”的关键\n\n作者强调，虽然并非所有开发任务都应通过移动设备委派给 Copilot，但拥有正确的工具应对特定情况至关重要。以下是实现这种效率提升的三个关键点：\n\n### 关键 1：利用指令文件 (Instructions Files)\n\n指令文件为 GitHub Copilot 提供了项目特定的指导和规则，显著影响其建议的质量和相关性。\n\n*   **作用：** 提供仓库的核心目的、技术栈、架构约束、编码标准、测试策略、依赖管理、可观察性、文档、错误处理等上下文信息。\n*   **位置：** 通常位于仓库根目录下的 `.github/copilot-instructions.md` 文件中。\n*   **示例：** 文章提供了一个详细的 `copilot-instructions.md` 示例，涵盖了 Next.js App Router、React、TypeScript、Tailwind CSS、pnpm、shadcn/ui 组件、服务器组件、Vitest 测试、文件夹结构、常用命令等。\n*   **路径特定指令：** 可以使用 `applyTo` 关键字定义针对特定目录、文件模式、语言或任务上下文的指令，例如针对 `src/components/ui` 和 `src/components/shared` 目录的组件创建规范。\n*   **生成指令：** 在 VS Code 中，可以通过“配置聊天”选项生成指令文件。\n\n![Location of copilot-instructions in .github folder](https://github.blog/wp-content/uploads/2025/10/02-github-copilot-instructions_v2.png?resize=2400%2C2528)\n\n![Generate instructions in VS Code using configure chat.](https://github.blog/wp-content/uploads/2025/10/03-configure-chat_v2.png?resize=1200%2C992)\n\n**要点：** 编写良好的指令文件能帮助 Copilot 更好地理解项目和编码标准，从而提供更高质量的输出，加快任务完成速度。\n\n### 关键 2：熟悉 Copilot 编码代理\n\n将 Copilot 编码代理视为团队成员，了解其擅长的技能，并充分利用这些技能。\n\n*   **熟悉方式：** 通过分配问题、创建拉取请求和跟踪 Copilot 在仓库中的会话来熟悉其工作方式。\n*   **创建问题时的指导：** 在将问题分配给 Copilot 之前，确保问题描述提供正确的上下文、明确意图并定义清晰。\n*   **审查与迭代：** Copilot 完成工作后，务必审查其生成的 PR。可以通过在评论中使用 `@copilot` 来请求修改，而不是盲目接受。\n\n![Assign an issue to Copilot coding agent.](https://github.blog/wp-content/uploads/2025/10/04-assign-to-copilot_v3.png?resize=2400%2C1770)\n\n![Copilot as an assignee on an issue.](https://github.blog/wp-content/uploads/2025/10/04-assign-to-copilot_v2.png?resize=836%2C1024)\n\n![Copilot fixed the issue with and had a pull request in six minutes.](https://github.blog/wp-content/uploads/2025/10/05-6min-fix-pr_v3.png?resize=2400%2C806)\n\n![Use @copilot in a pull request comment to have copilot make changes.](https://github.blog/wp-content/uploads/2025/10/06-mention-copilot_v2.png?resize=2400%2C588)\n\n**要点：** 将任务委派给 Copilot 编码代理可以释放开发者的精力，专注于其他关键任务，但仍需仔细审查其结果并提供具体的指导。\n\n### 关键 3：建立最佳实践和自动化\n\n结合 IssueOps 和 GitHub Actions 自动化是提升效率的另一个重要方面。\n\n*   **IssueOps：** 将 GitHub Issues 转化为自动化的控制接口。结构化的命令可以触发 GitHub Actions 工作流，执行部署、配置、迁移等操作，并将结果写回问题中，便于审计。\n*   **问题模板：** 使用预先创建的问题模板（例如针对 Bug 的模板）可以帮助开发者提供详细的上下文信息，节省创建问题的时间。\n*   **示例：** 文章提供了一个“Bug (Copilot Coding Agent-ready)”问题模板示例，包含环境、复现步骤等字段，旨在为 Copilot 提供修复所需的详细信息。\n\n**要点：** 自动化和结构化的流程（如 IssueOps 和问题模板）进一步提升了开发和问题解决的效率。",
-      "shortSummary": "本文介绍了如何结合 GitHub Copilot 编码代理和 GitHub Mobile 应用，实现随时随地处理紧急软件修复。作者通过亲身经历展示了在远离电脑时，如何利用手机创建问题、分配给 Copilot 自动生成修复拉取请求，并在手机上审查、批准并部署。文章强调了利用自定义指令文件指导 Copilot、熟悉其工作方式以及通过 IssueOps 和 GitHub Actions 建立自动化流程的重要性，以显著提高开发效率和应对突发情况的能力。",
-      "translated_title": "使用 GitHub Copilot 编码代理和移动设备随时随地完成紧急修复",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/01-copilot-pr-fix.jpeg?resize=472%2C1024",
-          "alt": "Copilot Coding Agent with a suggested fix for our issue.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/02-github-copilot-instructions_v2.png?resize=2400%2C2528",
-          "alt": "Location of copilot-instructions in .github folder",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/03-configure-chat_v2.png?resize=1200%2C992",
-          "alt": "Generate instructions in VS Code using configure chat.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/04-assign-to-copilot_v3.png?resize=2400%2C1770",
-          "alt": "Assign an issue to Copilot coding agent.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/04-assign-to-copilot_v2.png?resize=836%2C1024",
-          "alt": "Copilot as an assignee on an issue.",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/05-6min-fix-pr_v3.png?resize=2400%2C806",
-          "alt": "Copilot fixed the issue with and had a pull request in six minutes.",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/06-mention-copilot_v2.png?resize=2400%2C588",
-          "alt": "Use @copilot in a pull request comment to have copilot make changes.",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/2342987?v=4&s=200",
-          "alt": "Scott Lusk",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Unlock the full potential of the GitHub platform. See how Copilot coding agent and GitHub Mobile combine to help you tackle development tasks and urgent fixes, no matter where you are.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/github/completing-urgent-fixes-anywhere-with-github-copilot-coding-agent-and-mobile/\">Completing urgent fixes anywhere with GitHub Copilot coding agent and mobile</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-21T04:33:05.078Z"
+  "lastUpdated": "2025-10-23T04:33:55.543Z"
 }
