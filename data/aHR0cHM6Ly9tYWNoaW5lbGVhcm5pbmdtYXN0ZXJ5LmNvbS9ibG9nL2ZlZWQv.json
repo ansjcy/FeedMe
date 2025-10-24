@@ -5,6 +5,26 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "使用大型语言模型（LLM）进行表格数据高级特征工程的5种技术 (原标题: 5 Advanced Feature Engineering Techniques with LLMs for Tabular Data)",
+      "link": "https://machinelearningmastery.com/5-advanced-feature-engineering-techniques-with-llms-for-tabular-data/",
+      "pubDate": "Wed, 22 Oct 2025 14:41:10 +0000",
+      "isoDate": "2025-10-22T14:41:10.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "# 使用大型语言模型（LLM）进行表格数据高级特征工程的5种技术\n\n![使用大型语言模型（LLM）进行表格数据高级特征工程的5种技术](https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-5-advanced-feature-engineering-techniques-with-llms-for-tabular-data.png)\n\n## 引言\n\n在大型语言模型（LLM）时代，特征工程这一经典的机器学习概念依然至关重要。它不仅能帮助预处理或结构化非结构化数据（如文本），还能增强LLM在结合表格（结构化）数据时提取、生成和转换信息的能力。将表格数据整合到LLM工作流中具有多重优势，包括丰富主文本输入下的特征空间、推动语义增强以及通过弥合结构化和非结构化数据之间的鸿沟来自动化模型管道。\n\n本文介绍了五种高级特征工程技术，通过这些技术，LLM可以将表格数据中的宝贵信息整合到其工作流中。\n\n## 5种高级特征工程技术\n\n### 1. 通过文本上下文生成语义特征\n\nLLM可以用于描述或总结表格数据集中的行、列或分类属性值，从而生成基于文本的嵌入。例如，LLM可以接收客户数据集中“邮政编码”属性的值，并输出上下文丰富的描述，如“该客户居住在农村邮政区域”。这些上下文感知的文本表示可以显著丰富原始数据集的信息。\n\n*   **实现方式**：结合Sentence Transformers模型（如Hugging Face上的模型），将LLM生成的文本转换为有意义的嵌入，然后与表格数据的其余部分无缝结合，为下游预测模型（如集成分类器和回归器）构建更具信息量的输入。\n*   **示例代码片段**：\n    ```python\n    from sentence_transformers import SentenceTransformer\n    import numpy as np\n\n    llm_description = \"A32 refers to a rural postal region in the northwest.\"\n    model = SentenceTransformer(\"sentence-transformers/all-MiniLM-L6-v2\")\n    embedding = model.encode(llm_description) # shape e.g. (384,)\n    numeric_features = np.array([0.42, 1.07])\n    hybrid_features = np.concatenate([numeric_features, embedding])\n    print(\"Hybrid feature vector shape:",
+      "shortSummary": "本文介绍了5种利用大型语言模型（LLM）进行表格数据高级特征工程的技术。这些技术包括：通过文本上下文生成语义特征、智能缺失值填充、通过提示模板构建领域特定特征、融合结构化和非结构化数据的混合嵌入空间，以及通过LLM引导的推理进行特征选择和转换。LLM能显著增强表格数据的特征工程，提高模型性能和可解释性，尽管在集成到自动化管道时仍需优化。",
+      "translated_title": "使用大型语言模型（LLM）进行表格数据高级特征工程的5种技术",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-5-advanced-feature-engineering-techniques-with-llms-for-tabular-data.png",
+          "alt": "5 Advanced Feature Engineering Techniques with LLMs for Tabular Data",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "In the epoch of LLMs, it may seem like the most classical machine learning concepts, methods, and techniques like feature engineering are no longer in the spotlight."
+    },
+    {
       "title": "7个必知的智能体AI设计模式 (原标题: 7 Must-Know Agentic AI Design Patterns)",
       "link": "https://machinelearningmastery.com/7-must-know-agentic-ai-design-patterns/",
       "pubDate": "Tue, 21 Oct 2025 13:20:55 +0000",
@@ -291,27 +311,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Before we begin, let's make sure you're in the right place."
-    },
-    {
-      "title": "机器学习从业者的智能体AI系统指南 (原标题: The Machine Learning Practitioner’s Guide to Agentic AI Systems)",
-      "link": "https://machinelearningmastery.com/the-machine-learning-practitioners-guide-to-agentic-ai-systems/",
-      "pubDate": "Fri, 10 Oct 2025 11:00:13 +0000",
-      "isoDate": "2025-10-10T11:00:13.000Z",
-      "creator": "Vinod Chugani",
-      "summary": "本文为机器学习从业者提供了从传统机器学习工作流过渡到设计、构建和部署生产级智能体AI系统的全面指南。\n\n**1. 智能体AI系统简介**\n*   **范式转变**：智能体AI代表了自深度学习以来机器学习领域最重要的转变。它不再是构建响应提示的被动工具，而是设计能够独立规划、推理和行动以实现复杂目标的自主系统。\n*   **基础技能**：这一演进自然地建立在从业者现有的基础之上，包括提示工程、大型语言模型（LLMs）应用和检索增强生成（RAG）系统。\n*   **指南目标**：本文旨在提供一个循序渐进的方法，帮助从业者学习核心概念、探索有效框架、利用最佳学习资源，并构建解决实际问题的生产级智能体。\n\n**2. 智能体AI的基础概念**\n*   **定义**：智能体AI是指通过规划、推理、工具使用和记忆，独立追求目标的自主系统，而不仅仅是响应提示。\n*   **核心区别**：与传统LLM的被动响应（你问，它答）不同，智能体系统能够主动分解复杂任务、做出决策、使用工具、从反馈中学习并适应其方法，无需持续的人工指导。\n*   **学习资源**：建议从吴恩达教授的免费课程“Agentic AI”开始。\n\n**3. 核心架构模式**\n理解这些模式是构建有效智能体的关键：\n*   **ReAct (Reasoning and Acting)**：\n    *   **工作原理**：智能体在推理（做什么）、采取行动（使用工具）和观察结果之间交替进行，直到任务完成。\n    *   **适用场景**：实现简单，适用于直接的任务。\n    *   **局限性**：每一步都需要调用LLM，可能成本较高。\n*   **Plan-and-Execute (规划与执行)**：\n    *   **工作原理**：智能体首先制定一个完整的、多步骤的计划，然后执行每个步骤（通常使用更小、更便宜的模型），并根据需要调整计划。\n    *   **优势**：对于复杂工作流，通常比ReAct更快、更经济，是2025年生产系统的首选。\n*   **Reflexion (反思)**：\n    *   **工作原理**：通过语言反馈实现自我改进。智能体明确地批判自己的响应，维护过去尝试的记忆，并根据失败经验改进方法。\n    *   **适用场景**：特别适用于研究密集型和高风险应用，其中正确性比速度更重要。\n*   **选择指南**：简单客服查询选择ReAct；复杂多步工作流如数据分析管道选择Plan-and-Execute；需要高准确性的研究智能体选择Reflexion。\n*   **学习资源**：DeepLearning.AI上关于AutoGen的“AI Agentic Design Patterns”课程。\n\n**4. 框架选择与深入学习**\n2025年有三个主要的框架：\n*   **LangGraph**：\n    *   **定位**：生产系统的标准框架。\n    *   **特点**：通过基于图的工作流提供细粒度控制，内置状态管理，通过LangGraph Studio和LangSmith提供出色的可观察性。\n    *   **适用场景**：需要复杂、有状态工作流和详细监控的专业部署。\n    *   **学习曲线**：较陡峭，但对于专业部署而言物有所值。\n*   **CrewAI**：\n    *   **定位**：最快入门多智能体系统。\n    *   **特点**：基于角色的设计使其直观易用。定义具有特定角色和职责的智能体，分配任务，并让它们协作。\n    *   **适用场景**：内容创作、研究管道以及任何可以按“团队角色”思考的场景。\n*   **AutoGen (微软)**：\n    *   **定位**：擅长对话式多智能体模式。\n    *   **特点**：适用于复杂的智能体协作和企业微软环境。2025年3月更新引入了统一SDK、Agent-to-Agent协议和无缝Azure AI Foundry集成。\n*   **建议**：大多数从业者可以从CrewAI开始进行快速原型开发，然后在需要生产级控制时学习LangGraph。\n\n**5. 构建实用项目以展示技能**\n理论知识需要通过实践项目来巩固和展示：\n*   **入门级项目**：构建一个研究智能体，接收问题，搜索多个来源，综合信息，并提供带引用的答案。这有助于学习工具集成（网络搜索）、内存管理和响应生成。\n*   **进阶项目**：创建一个多智能体内容创作系统，定义研究员、撰稿人、编辑、事实核查员等角色，并协调它们生成高质量文章。这展示了智能体协调和任务委派的能力。\n*   **高级项目**：构建一个自主数据分析智能体，连接到数据库，根据自然语言查询探索数据，生成洞察，创建可视化，并标记异常，无需逐步人工指导。这展示了RAG技术、工具使用和规划能力。\n*   **实践资源**：微软的“AI Agents for Beginners”（GitHub上的12节结构化课程）和“500 AI Agent Projects”代码库。\n\n**6. 学习记忆系统和高级模式**\n专家级智能体开发者需要掌握：\n*   **记忆系统**：\n    *   **短期记忆**：处理当前交互（会话状态），可使用Redis或LangGraph内置的检查点。\n    *   **长期记忆**：更复杂，包括用于语义检索的向量存储、用于结构化事实和时间跟踪的知识图谱，以及防止记忆膨胀的摘要策略。\n    *   **2025年最佳实践**：混合方法，结合向量搜索、知识图谱和衰减策略。\n    *   **生产级方案**：LangGraph的LangMem模块和Redis Agent Memory Server。\n*   **高级模式**：\n    *   **智能体RAG**：智能体决定何时检索信息并生成有针对性的查询。\n    *   **多智能体编排**：“傀儡师”模式，由训练有素的编排器动态指导专业智能体。\n    *   **人机协作工作流**：在保持常规任务自主性的同时，将重要决策升级给人类。\n    *   **模型上下文协议 (MCP)**：2025年广泛采用，正在改变智能体连接性，掌握MCP可确保技能的未来适用性。\n*   **深度学习资源**：DeepLearning.AI上关于LlamaIndex的“Building Agentic RAG”和关于DSPy的“Building Memory-Enabled Agents”。\n\n**7. 将所学付诸实践**\n掌握这些技能将带来广泛的职业机会，包括AI工程师、机器学习工程师（侧重智能体）、AI架构师、MLOps工程师和新兴的智能体编排师等。\n\n**市场前景**：智能体AI领域正在迅速发展，市场规模预计将从2025年的50-70亿美元增长到2030-2034年的500-2000亿美元。金融服务、医疗保健、零售和专业服务等行业的组织正在积极部署智能体系统。现在掌握这些技能的从业者将站在这一快速发展领域的最前沿。\n\n![The Machine Learning Practitioner’s Guide to Agentic AI Systems](https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-chugani-machine-learning-practitioners-guide-agentic-ai-systems-feature-png-1024x683.png)",
-      "shortSummary": "本文是机器学习从业者向智能体AI系统转型的指南。智能体AI代表了从被动工具到自主系统的重大转变，它能独立规划、推理和行动。文章涵盖了智能体AI的基础概念、ReAct、Plan-and-Execute、Reflexion等核心架构模式，以及LangGraph、CrewAI、AutoGen等主流框架。同时强调了通过实践项目、学习记忆系统和高级模式的重要性。掌握这些技能将为从业者在快速增长的智能体AI市场中带来丰富的职业机会。",
-      "translated_title": "机器学习从业者的智能体AI系统指南",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-chugani-machine-learning-practitioners-guide-agentic-ai-systems-feature-png-1024x683.png",
-          "alt": "The Machine Learning Practitioner’s Guide to Agentic AI Systems",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Agentic artificial intelligence (AI) represents the most significant shift in machine learning since deep learning transformed the field."
     }
   ],
-  "lastUpdated": "2025-10-23T09:29:10.455Z"
+  "lastUpdated": "2025-10-24T09:28:53.269Z"
 }
