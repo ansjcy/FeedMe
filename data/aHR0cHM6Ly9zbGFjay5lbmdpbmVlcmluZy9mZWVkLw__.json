@@ -5,6 +5,38 @@
   "link": "https://slack.engineering",
   "items": [
     {
+      "title": "改进我们的Chef基础设施：安全而不中断 (原标题: Advancing Our Chef Infrastructure: Safety Without Disruption)",
+      "link": "https://slack.engineering/advancing-our-chef-infrastructure-safety-without-disruption/",
+      "pubDate": "Thu, 23 Oct 2025 18:17:56 +0000",
+      "isoDate": "2025-10-23T18:17:56.000Z",
+      "creator": "Archie Gunasekara",
+      "summary": "## 改进Chef基础设施：安全而不中断\n\n这篇文章是Slack关于其Chef基础设施演进的续篇，重点介绍了如何在不中断现有食谱或角色（cookbooks or roles）的情况下，提升Chef部署的安全性和可靠性。面对将Chef Policyfiles引入可能带来的短期风险，Slack选择了一条改进现有EC2框架的路径。\n\n### 挑战：单一生产环境的风险\n\n此前，每个实例都通过定时任务（cron job）定期触发Chef运行，主要用于合规性，确保配置一致。虽然这些任务在可用区（Availability Zones）之间错开，以避免同时影响所有节点，但单一共享的生产环境存在一个关键限制：新配置的节点会立即获取最新的（可能存在问题的）变更。在大规模扩容事件中，这可能导致数十或数百个节点以损坏的配置启动，构成严重的可靠性风险。\n\n### 解决方案一：拆分Chef环境\n\n为了解决上述问题，Slack将单一的生产Chef环境拆分为多个独立的桶，例如 `prod-1` 到 `prod-6`。服务团队仍然将实例启动为“prod”，但系统会在后台根据实例的可用区ID将其映射到这些更具体的环境中。\n\n*   **实现方式**：\n    *   Slack的基础AMI（Amazon Machine Image）中包含一个名为 **Poptart Bootstrap** 的工具。该工具在实例启动时通过 `cloud-init` 运行。\n    *   Poptart Bootstrap 被扩展，以检查节点的可用区ID，并将其分配到相应的编号生产Chef环境（`prod-1` 到 `prod-6`）。\n*   **优势**：\n    *   新节点不再从一个全局的真理源拉取配置，而是均匀分布在隔离的环境中，增加了额外的安全性和弹性。\n    *   对单个环境的变更现在只影响特定可用区中的节点，显著降低了部署期间的风险和影响范围。\n\n![环境流程图](https://slack.engineering/wp-content/uploads/sites/7/2025/10/env_flow.png?w=438)\n\n### 发布列车模型\n\n为了管理跨多个Chef环境的变更推广，Slack采用了发布列车模型：\n\n*   **推广流程**：最新的食谱变更会在整点推广到沙盒（sandbox）环境，然后是开发（dev）环境，最后从半点开始推广到生产环境。\n*   **金丝雀环境（Canary Environment）**：`prod-1` 被视为金丝雀生产环境，每小时接收更新（假设有新的食谱变更合并），以确保变更在真实的生产环境中得到定期验证，从而在早期以更小、更安全的方式捕获生产影响问题。\n*   **分阶段发布（Staggered Rollout）**：对于 `prod-2` 到 `prod-6`，采用分阶段发布模型。在将新版本部署到 `prod-2` 之前，系统会确保前一个版本已成功推广到所有生产环境，直至 `prod-6`。这种错开的发布方式最大限度地减少了影响范围，并提供了在发布列车早期捕获回归的机会。\n*   **示例**：文章详细展示了不同版本（A、B、C、D、E、F）如何在沙盒、开发和生产环境（prod-1到prod-6）中逐步推广，说明了变更需要更长时间才能完全部署到所有生产节点，但这种延迟为跨不同可用区部署之间提供了宝贵的时间，以便在问题变更完全传播之前捕获并解决任何问题。\n\n### 解决方案二：基于信号的Chef触发机制\n\n由于现在多个生产Chef环境在不同时间接收更新，固定计划的定时任务不再实用。因此，Slack从计划运行转向构建了一个新的服务，根据信号触发节点上的Chef运行。\n\n*   **Chef Librarian增强**：\n    *   Chef Librarian 服务负责监控新的Chef食谱制品并将其上传到所有Chef堆栈。\n    *   它现在被增强，每当将某个版本的制品推广到特定环境时，就会向一个S3桶发送消息。\n*   **S3结构**：S3桶中的 `chef-run-triggers` 键下维护一个嵌套结构，其中每个键代表一个Chef堆栈，再往下是每个环境名称的键。每个环境键都包含一个JSON对象，其中包含清单（manifest）详细信息，如版本、时间戳、食谱版本等。\n*   **Chef Summoner 服务**：\n    *   这是一个运行在Slack每个节点上的服务。\n    *   它负责检查与节点Chef堆栈和环境对应的S3键。\n    *   如果Chef Librarian发出的信号中存在新版本，Summoner会读取配置的 `Splay` 值并相应地安排Chef运行。\n    *   **Splay**：用于错开Chef运行，避免给定环境和堆栈中的所有节点同时尝试运行Chef，从而避免负载峰值和资源争用。\n    *   **合规性回退**：即使没有新的信号，Chef Summoner 也会确保Chef至少每12小时运行一次，以保持合规性并确保节点保持其预期的配置状态。\n\n![Summoner Logo](https://slack.engineering/wp-content/uploads/sites/7/2025/10/summoner_logo.png?w=640)\n\n### 结论\n\n通过引入拆分的生产环境和基于信号的Chef触发机制，Slack成功避免了新节点立即拉取错误配置的问题。现在，每个节点都与其可用区环境绑定，变更逐步推出。这种设置大大增强了弹性，消除了单点故障，并构建了保障措施，使整个系统更安全、更可预测。",
+      "shortSummary": "Slack改进了其Chef基础设施，旨在实现更安全、更可靠的部署，同时避免中断。核心改进包括：将单一生产环境拆分为多个基于可用区的独立环境（如prod-1到prod-6），通过金丝雀发布和发布列车模型逐步推广变更，从而显著缩小了风险范围。同时，将Chef运行触发机制从固定计划改为基于信号的“Chef Summoner”服务，该服务根据Chef Librarian在S3中发出的更新信号来调度Chef运行，并包含12小时的合规性回退机制。这些措施共同提升了系统的弹性和可预测性。",
+      "translated_title": "改进我们的Chef基础设施：安全而不中断",
+      "images": [
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/10/env_flow.png?w=438",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/10/summoner_logo.png?w=640",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/10/summoner_flow.png?w=630",
+          "alt": "",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Last year, I wrote a blog post titled Advancing Our Chef Infrastructure, where we explored the evolution of our Chef infrastructure over the years. We talked about the shift from a single Chef stack to a multi-stack model, and the challenges that came with it &#8211; from updating how we handle cookbook uploads to navigating&#8230;"
+    },
+    {
       "title": "部署安全：减少变更对客户的影响 (原标题: Deploy Safety: Reducing customer impact from change)",
       "link": "https://slack.engineering/deploy-safety/",
       "pubDate": "Tue, 07 Oct 2025 16:33:12 +0000",
@@ -220,20 +252,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Introduction Slack handles a lot of log data. In fact, we consume over 6 million log messages per second. That equates to over 10 GB of data per second! And it’s all stored using Astra, our in-house, open-source log search engine. To make this data searchable, Astra groups it by time and splits the data&#8230;"
-    },
-    {
-      "title": "天下没有免费的午餐！ (原标题: There’s No Such Thing as a Free Lunch!)",
-      "link": "https://slack.engineering/theres-no-such-thing-as-a-free-lunch/",
-      "pubDate": "Thu, 14 Nov 2024 09:00:08 +0000",
-      "isoDate": "2024-11-14T09:00:08.000Z",
-      "creator": "Scott Nelson Windels",
-      "summary": "## Slack 的“事件午餐”：实战化事件响应培训\n\n### 概述\n\n文章介绍了 Slack 如何通过一项名为“事件午餐”（Incident Lunch）的创新实践，为员工提供实用的事件响应经验。这项活动旨在弥补传统培训在实际操作经验方面的不足，让员工在模拟的压力环境下学习和应用事件管理流程。\n\n### 起源与灵感\n\n“事件午餐”的灵感来源于 2018 年 3 月 Blackrock 3 Partners 团队在 Slack 举办的一次培训中的“午休练习”。该练习的核心要素包括：\n\n*   **时间压力**：在有限时间内完成任务。\n*   **角色扮演**：分配事件响应中的不同角色。\n*   **约束条件**：设置简单的规则，如不能订购某些食物。\n*   **趣味性**：让参与者在轻松愉快的氛围中学习。\n\nSlack 将此练习发展为公司内部的常态化培训项目。\n\n### “事件午餐”的运作方式\n\n这项活动对公司内所有员工开放，无需任何前期准备或专业知识，因为每个人都对点餐和用餐有所了解。具体流程如下：\n\n1.  **邀请与承诺**：员工被邀请参加一个两小时的事件培训练习，并被告知将提供午餐。\n2.  **流程回顾**：参与者到达后，首先进行 15 分钟的事件处理流程回顾。\n3.  **“突发事件”**：随后宣布午餐订单出了问题，他们的任务是利用事件响应实践为在场所有人获取午餐。\n4.  **角色与沟通**：团队需指定一名事件指挥官（IC），在专门的 Slack 频道中沟通，并定期发布状态报告。\n5.  **教练与裁判**：培训师担任活动的裁判和教练。\n6.  **结果**：迄今为止，所有团队都成功获得了午餐，尽管有时过程充满挑战。\n\n### 资源需求\n\n运行“事件午餐”所需的资源极少，使其成为一个可持续的培训方案：\n\n*   **活动大纲**：使用 GitHub 仓库中的 Markdown 文件作为幻灯片，包含 15 分钟的介绍和事件响应流程概述。\n*   **场地**：一到两个会议室。\n*   **宣传与邀请流程**：用于通知和邀请参与者。\n*   **协调员**：一到两名员工负责协调（他们每次运行活动都能获得免费午餐）。\n*   **预算**：每场约 300-500 美元，远低于第三方现场培训的费用。\n\n### “混沌卡片”（Chaos Cards）\n\n为了增加活动的变数和不可预测性，一位前工程师引入了“混沌卡片”。这些卡片包含不同的行动或事件，能在练习过程中改变局势，例如：\n\n*   **“笔记本电脑故障”**：随机选择一名专家，使其在剩余练习中无法使用笔记本电脑。\n*   **“异常安静”**：要求在两分钟内抽取一张新卡片。\n\n这些卡片通常每五分钟抽取一次，增加了练习的真实感和不适感，模拟了真实事件中可能出现的突发情况。\n\n### 成功的原因\n\n“事件午餐”在 Slack 取得成功有几个关键原因：\n\n*   **对组织者而言**：\n    *   **低投入**：相比于开发复杂的模拟游戏，设置和维护成本极低。\n    *   **易于扩展**：可以在有协调员的远程办公室运行。\n    *   **时间效率**：小型团队也能轻松运行，节省了处理真实事件的时间。\n*   **对员工而言**：\n    *   **广泛参与**：包括客户体验、客户成功、销售及其他非技术团队在内的所有员工都可以参加。\n    *   **无需准备**：参与者只需携带笔记本电脑并预留两小时。\n    *   **激励机制**：以“提供午餐”为诱饵，吸引员工参与。\n\n### 实践中的经验\n\n*   **混沌卡片的效果**：有效增加了时间压力和不可预测性，更贴近真实事件。\n*   **预选事件指挥官（IC）**：提前确定 IC 有助于活动顺利进行，也能发现具有事件协调天赋的员工，成为内部招聘工具。\n*   **教练与引导**：当 IC 遇到困难时，协调员可以提供指导、提问或减慢混沌卡片的抽取速度。\n*   **目标聚焦**：强调事件响应的核心目标是快速恢复服务，而非民主决策。在时间压力下，快速达成共识（如通过“有无强烈反对意见？”）至关重要。\n*   **交付与自取**：选择外卖交付可能增加复杂性和依赖性，从而延长响应时间。\n\n### 待改进之处\n\n*   **虚拟替代方案**：目前该活动最适合面对面进行。在疫情期间未能找到同样简单有效的线上替代方案，未来希望能开发适用于混合或远程工作环境的版本。\n*   **使用日常工具**：目前未在练习中使用真实的事件管理工具，因为设置开销过大。若能实现工具的“演练”或“演示”模式，将为参与者提供更真实的工具操作经验。\n*   **记录回顾洞察**：建议记录每次“午餐”的回顾和笔记，以便回顾和改进项目。\n\n文章鼓励其他团队尝试实施“事件午餐”，并分享他们的经验和学习成果。",
-      "shortSummary": "Slack 通过“事件午餐”活动为员工提供实用的事件响应培训。该活动灵感来源于外部培训，通过模拟午餐订单失败的场景，让员工在时间压力下，运用事件管理流程（如指定事件指挥官、Slack 沟通、报告）获取午餐。活动引入“混沌卡片”增加不可预测性，资源投入低，且对技术和非技术员工都开放。它不仅提升了员工的实战经验，还成为发现潜在事件指挥官的有效工具。尽管目前主要适用于线下，Slack 仍在探索线上版本和整合实际工具的可能性。",
-      "translated_title": "天下没有免费的午餐！",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Incident Management takes time Incidents need responders that are trained and experienced.  At Slack, training is a foundation of our incident management program. Self-service training and live courses based mainly on prepared content are one piece of the puzzle, but there can be a missing piece in many organizations. How can staff get practical experience&#8230;</p>\n<p>The post <a rel=\"nofollow\" href=\"https://slack.engineering/theres-no-such-thing-as-a-free-lunch/\">There’s No Such Thing as a Free Lunch!</a> appeared first on <a rel=\"nofollow\" href=\"https://slack.engineering\">Engineering at Slack</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-23T04:32:21.783Z"
+  "lastUpdated": "2025-10-25T04:30:56.553Z"
 }

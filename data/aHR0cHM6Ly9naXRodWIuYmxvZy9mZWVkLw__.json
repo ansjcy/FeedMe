@@ -5,6 +5,112 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "如何使用GitHub MCP注册表查找、安装和管理MCP服务器 (原标题: How to find, install, and manage MCP servers with the GitHub MCP Registry)",
+      "link": "https://github.blog/ai-and-ml/generative-ai/how-to-find-install-and-manage-mcp-servers-with-the-github-mcp-registry/",
+      "pubDate": "Fri, 24 Oct 2025 16:00:00 +0000",
+      "isoDate": "2025-10-24T16:00:00.000Z",
+      "creator": "Andrea Griffiths",
+      "summary": "# GitHub MCP注册表：AI工具发现、安装与管理的新范式\n\nGitHub MCP注册表是一个革命性的平台，旨在解决Model Context Protocol (MCP) 服务器发现和管理的混乱问题。MCP是开发者将工具、API和工作流连接到其AI系统的核心协议。每个MCP服务器都是AI堆栈中的一个“组件”，例如用于浏览器自动化的Playwright、知识访问的Notion，或包含百余种工具的GitHub自有MCP服务器。该注册表提供了一个单一、权威的来源，用于在GitHub上发现、安装和管理MCP服务器。\n\n## 注册表现状\n\n目前，GitHub MCP注册表已收录44个MCP服务器，包括：\n\n*   **Playwright**：自动化和测试Web应用程序。\n*   **GitHub MCP服务器**：访问100多种GitHub API工具。\n*   **Context7, MarkItDown (Microsoft), Terraform (HashiCorp)**。\n*   来自**Notion、Unity、Firecrawl、Stripe**等合作伙伴的服务器。\n\n用户可以通过标签、流行度或GitHub星标来浏览和查找所需工具。\n\n## 如何安装MCP服务器\n\n注册表使在VS Code或VS Code Insiders中安装服务器成为一键式体验：\n\n1.  在GitHub MCP注册表中导航到目标MCP服务器（例如Playwright）。\n2.  点击“在VS Code中安装”。\n3.  VS Code将启动并预填充配置。\n4.  接受或调整可选参数（如存储路径）。\n\n**专业提示**：远程MCP服务器（如GitHub的）在安装过程中使用OAuth，无需手动处理令牌或密钥，只需一次身份验证即可开始构建。\n\n## 如何发布自己的MCP服务器\n\n发布自己的MCP服务器涉及以下步骤：\n\n1.  **安装MCP Publisher CLI**：\n    *   macOS/Linux/WSL (推荐Homebrew)：`brew install mcp-publisher`\n    *   macOS/Linux/WSL (预构建二进制文件)：通过curl下载并解压安装。\n2.  **初始化 `server.json` 文件**：\n    *   进入服务器源目录，运行 `mcp-publisher init`，这将创建一个包含服务器元数据（名称、标题、描述、版本、包信息等）的 `server.json` 文件。\n3.  **证明包所有权**：\n    *   NPM：在 `package.json` 中添加 `\"mcpName\"` 字段。\n    *   PyPI/NuGet：在 `README` 中添加 `mcp-name:`。\n    *   Docker：在 `Dockerfile` 中添加 `LABEL io.modelcontextprotocol.server.name=`。\n4.  **身份验证**：\n    *   GitHub命名空间 (`io.github.*`)：运行 `mcp-publisher login github` 进行OAuth登录。\n    *   自定义域名 (`com.yourcompany/*`)：遵循官方文档中的DNS验证步骤。\n5.  **发布服务器**：\n    *   身份验证成功后，运行 `mcp-publisher publish`。\n    *   发布后，服务器将在MCP注册表中可被发现。\n    *   完成上述步骤后，发送电子邮件至 `partnerships@github.com` 请求收录您的服务器。\n\n**专业提示**：\n*   命名空间：使用 `io.github.username/*` 进行GitHub身份验证，或 `com.yourcompany/*` 进行DNS验证。\n*   远程端点：在 `server.json` 中添加 `\"remotes\"` 数组，用于云/HTTP端点。\n*   多部署选项：可以同时列出“packages”和“remotes”以实现混合部署。\n\n### 使用GitHub Actions自动化发布\n\n可以通过GitHub Actions自动化发布流程，确保每次带标签的发布都能同步到包注册表和MCP注册表。这通过创建一个 `.github/workflows/publish-mcp.yml` 文件实现，该工作流会在标签推送时触发，并执行构建、测试、发布到NPM（如果适用）以及发布到MCP注册表等步骤。\n\n**专业提示**：\n*   将代码托管在公共GitHub仓库中以显示经过验证的所有权。\n*   在 `server.json` 中添加标签，以便开发者按类别轻松发现您的服务器。\n*   更新会自动向下游传播，无需手动通知。\n\n## 企业级MCP服务器管理（治理）\n\n对于管理大型组织中MCP使用的管理员来说，治理至关重要。GitHub现在支持注册表允许列表，管理员可以控制开发者可以安装哪些MCP服务器，尤其是在这些服务器与敏感数据交互时。\n\n**管理员步骤**：\n\n1.  建立或连接一个遵循MCP API规范的内部注册表。\n2.  将经过审查的MCP服务器（内部和外部）添加到您的注册表。\n3.  将GitHub Enterprise设置指向该注册表端点。\n4.  支持MCP的界面（从VS Code开始）将自动执行允许列表。\n\n这种治理模型允许企业在确保合规性的同时，为开发者提供所需的工具。\n\n**专业提示**：使用GitHub的API或现有安全管道在将MCP服务器添加到允许列表之前对其进行审查。\n\n## 高级用户技巧\n\n*   **更智能地排序**：利用GitHub星标和组织验证快速评估服务器的质量和合法性。\n*   **本地测试**：在发布前使用MCP Inspector测试您的MCP服务器，及早发现问题。\n*   **代理协同**：Copilot编码代理预加载了GitHub和Playwright MCP服务器，可实现自动生成带有Web应用截图的拉取请求。\n*   **工具过载解决**：VS Code正在推出语义工具查找功能，根据提示只显示相关工具，使大型MCP服务器更易管理。\n\n## 未来展望\n\nGitHub MCP注册表仍在发展中，未来计划包括：\n\n*   **自助发布**：预计在未来几个月内推出，将促进社区驱动的增长。\n*   **更多IDE支持**：目标是无论在何处编写代码，都能实现MCP服务器的无缝安装。\n*   **企业功能**：为受监管行业（如金融服务、医疗保健）提供治理流程。\n*   **代理工作流**：GitHub MCP服务器将开始将工具捆绑到以用例为导向的流程中（例如，“分析仓库+打开拉取请求”），而非仅仅暴露原始API端点。\n\nGitHub MCP注册表旨在成为MCP服务器的单一事实来源，提供一个发现、安装和治理工具的集中平台，从而提升AI辅助开发中的工具编排能力。\n\n## 作者与相关链接\n\n本文由GitHub高级开发者倡导者Andrea Griffiths撰写。\n\n![Andrea Griffiths](https://github.blog/wp-content/uploads/2025/08/Andrea-Griffiths_avatar_1755783168-200x200.jpeg)\n\n探索更多来自GitHub：\n\n![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs\n\n![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub\n\n![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories\n\n![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025",
+      "shortSummary": "GitHub MCP注册表是一个新的集中平台，旨在简化Model Context Protocol (MCP) 服务器的发现、安装和管理。它提供一键式VS Code安装、用于发布自定义服务器的CLI工具，以及企业级治理功能（如允许列表）。该注册表目前包含44个服务器，并计划推出自助发布和更多IDE支持。其目标是成为AI工具编排的单一事实来源，提升AI辅助开发的效率和影响力。",
+      "translated_title": "如何使用GitHub MCP注册表查找、安装和管理MCP服务器",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/Andrea-Griffiths_avatar_1755783168-200x200.jpeg",
+          "alt": "Andrea Griffiths",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Learn how to bring structure and security to your AI ecosystem with the GitHub MCP Registry, the single source of truth for managing and governing MCP servers.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/how-to-find-install-and-manage-mcp-servers-with-the-github-mcp-registry/\">How to find, install, and manage MCP servers with the GitHub MCP Registry</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "通往更优补全之路：通过新的自定义模型构建更快、更智能的 GitHub Copilot (原标题: The road to better completions: Building a faster, smarter GitHub Copilot with a new custom model)",
+      "link": "https://github.blog/ai-and-ml/github-copilot/the-road-to-better-completions-building-a-faster-smarter-github-copilot-with-a-new-custom-model/",
+      "pubDate": "Thu, 23 Oct 2025 18:31:12 +0000",
+      "isoDate": "2025-10-23T18:31:12.000Z",
+      "creator": "Shengyu Fu",
+      "summary": "# 通往更优补全之路：通过新的自定义模型构建更快、更智能的 GitHub Copilot\n\nGitHub Copilot 的代码补全功能是其最广泛使用的特性，每天帮助数百万开发者保持流畅的开发体验。GitHub 团队通过持续迭代自定义模型，显著提升了补全体验。\n\n## 关键改进与影响\n\n最新的更新带来了显著的性能提升：\n*   **接受和保留字符**：增加20%，意味着更多建议内容被最终采纳，减少了后续编辑。\n*   **接受率**：提高12%，反映了建议的即时实用性更高。\n*   **吞吐量**：提升3倍，系统能同时处理更多请求。\n*   **延迟**：降低35%，使Copilot感觉更快，保持编码流程不中断。\n\n这些改进现在已应用于所有编辑器和环境中的 GitHub Copilot。\n\n## 为什么这些改进很重要\n\n最初的 Copilot 专注于最大化接受率，但这可能导致大量简单、简短的建议，不完全符合开发者需求。团队根据反馈调整了优化目标，现在也关注接受和保留字符、代码流畅性等指标，以提供更高质量的体验。\n\n## 自定义模型的评估方法\n\nCopilot 模型通过结合离线、预生产和生产评估的信号进行评估，以确保在真实开发者工作流中提供更好的质量。\n\n### 1. 离线评估\n\n*   **基于执行的基准测试**：针对内部和公共代码库进行测试，涵盖所有主要语言，模拟真实任务，测量构建和测试通过率，强调功能正确性。\n\n    ![Python代码编辑器截图，显示一个名为resolve_file的函数，其中包含一个部分令牌补全错误：模型生成了“dataet”而不是“dataset”。](https://github.blog/wp-content/uploads/2025/10/partial-token-completion-error.png?resize=1024%2C447)\n\n*   **LLM-judge 评分**：使用独立的LLM对补全结果进行评分，评估以下三个维度：\n    *   **质量**：语法有效性、避免重复/重叠、格式和风格一致性。\n    *   **相关性**：专注于相关代码，避免幻觉和过度。\n    *   **实用性**：减少手动工作，避免过时或废弃的API。\n\n### 2. 预生产评估：定性内部测试\n\n与内部开发者和合作伙伴合作，在真实工作流中并排测试模型，收集关于可读性、信任度和“品味”的结构化反馈。与语言专家合作，通过语言特定评估提升补全质量。\n\n### 3. 生产评估：A/B 测试\n\n通过衡量接受和保留字符、接受率、补全显示率、首次令牌时间、延迟等指标来评估改进。只有当在真实开发者工作负载下显示出统计学上显著的改进时，才会发布更新。\n\n## 新 Copilot 补全模型的训练过程\n\n### 中训练 (Mid-training)\n\n在微调之前，团队通过“中训练”构建了一个代码特定的基础模型。这涉及使用一个精选、去重、包含近1000万个代码库和600多种编程语言的现代、地道、公开和内部代码语料库。此步骤确保模型能够利用现代API、新语言语法和最新API版本。随后，通过监督微调和强化学习，结合超越下一令牌预测的目标（如跨度填充和文档字符串/函数对），使模型学习结构、命名和意图，从而变得代码流畅、风格一致且上下文感知。\n\n### 监督微调 (Supervised fine-tuning)\n\n通用聊天模型在自然语言生成代码方面表现良好，但在“中间填充”（FIM）代码补全方面表现不佳。聊天模型常出现光标错位插入、光标前代码重复和光标后代码覆盖等问题。团队通过合成微调，训练模型专门用于补全，使其表现得像一个优秀的FIM引擎，从而改进了：\n*   **前缀/后缀感知**：在不破坏后缀的情况下，实现令牌间准确插入、行中续写、整行补全和多行代码块补全。\n*   **格式保真度**：尊重本地风格（缩进、导入、文档字符串），避免前缀重复。\n\n    ![图表显示了两个AI模型在HumanEval填充基准测试中的表现。其中包括GitHub的自定义模型Copilot Completions和OpenAI的GPT-4o-mini。评估结果显示，Copilot Completions模型在单行、多行、随机跨度和随机跨度轻量测试中均表现优异。](https://github.blog/wp-content/uploads/2025/10/HumanEvalInfilling_1200x630.png?resize=1024%2C538)\n\n### 强化学习 (Reinforcement learning)\n\n最后，团队使用自定义强化学习算法，通过奖励和惩罚机制，使模型内化在真实开发者场景中代码建议的有用性，主要关注三个方面：\n*   **质量**：语法有效、可编译且遵循项目风格的代码。\n*   **相关性**：符合任务、尊重周围上下文和文件意图的建议。\n*   **实用性**：减少手动工作并偏好现代API的建议。\n\n这些方法共同创造了在光标处正确、相关且真正有用的补全，而非冗长或表面上的帮助。\n\n## 经验总结\n\n*   **奖励需谨慎**：早期强化学习版本过度优化了长补全，导致“奖励作弊”式地添加过多注释。通过引入注释护栏，确保补全简洁并专注于推进任务。\n*   **指标至关重要**：过度关注单一指标（如接受率）可能导致表面上良好但开发者体验不佳的结果。因此，监控多个具有实际影响的指标至关重要。\n*   **为真实世界使用而训练**：将合成微调数据与真实世界使用情况对齐，并相应调整训练，以识别并消除问题模式，改善实际结果。\n\n## 未来展望\n\nGitHub 将继续推动 Copilot 补全功能的边界，包括：\n*   扩展到特定领域（如游戏引擎、金融、ERP）。\n*   完善奖励函数，以实现构建/测试成功、语义有用性（在不冗余的情况下推进用户意图的编辑）和对最新、地道库和模式的API现代化偏好。\n*   在所有开发者环境中提供更快、更经济、更高质量的补全。\n\n欢迎在 VS Code 中体验更快、更智能的代码补全。\n\n## 致谢\n\n感谢开发者社区的持续反馈，以及 GitHub 和 Microsoft 的研究人员、工程师、产品经理、设计师和 Copilot 产品与工程团队的贡献。",
+      "shortSummary": "GitHub Copilot 通过新的自定义模型显著提升了代码补全体验，实现了接受和保留字符增加20%、接受率提高12%、吞吐量提升3倍以及延迟降低35%。模型训练过程包括代码特定基础模型的“中训练”、针对中间填充（FIM）补全的监督微调和强化学习，以确保功能正确性、开发者偏好和实际使用场景。评估通过离线、预生产和生产测试进行。未来将扩展到特定领域并进一步优化奖励函数，以提供更快、更智能、更高质量的补全。",
+      "translated_title": "通往更优补全之路：通过新的自定义模型构建更快、更智能的 GitHub Copilot",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/partial-token-completion-error.png?resize=1024%2C447",
+          "alt": "Screenshot of a Python code editor showing a function named resolve_file inside a file called dataset_utilities.py. The function takes two string arguments, dataset and filename, and returns a string. The purpose, according to the docstring, is to resolve a file from a dataset and assert that only one file is found. The code uses os.path and glob to find files. There’s a highlighted line path = os.path.join(dat... with an error under dat, suggesting a variable name typo (dat instead of dataset). Several red underlines indicate syntax or reference errors in the code.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/HumanEvalInfilling_1200x630.png?resize=1024%2C538",
+          "alt": "A chart showing HumanEval Infilling Benchmarks for two different AI models. These include a custom model from GitHub named Copilot Completions and OpenAI's GPT-4o-mini. The evaluations show superior performance across single line, multi line, random span, and random span light tests for the Copilot Completions model. ",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/23369389?v=4&s=200",
+          "alt": "Shengyu Fu",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/12915670?v=4&s=200",
+          "alt": "John Mogensen",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Find out about the latest custom models powering the completions experience in GitHub Copilot. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/the-road-to-better-completions-building-a-faster-smarter-github-copilot-with-a-new-custom-model/\">The road to better completions: Building a faster, smarter GitHub Copilot with a new custom model</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "从卡拉OK终端到AI简历：GitHub“热爱代码”挑战赛的获奖者 (原标题: From karaoke terminals to AI résumés: The winners of GitHub’s For the Love of Code challenge)",
       "link": "https://github.blog/open-source/from-karaoke-terminals-to-ai-resumes-the-winners-of-githubs-for-the-love-of-code-challenge/",
       "pubDate": "Wed, 22 Oct 2025 20:30:35 +0000",
@@ -347,70 +453,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>GitHub Copilot and AI agents are making legacy COBOL systems accessible to modern developers.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-github-copilot-and-ai-agents-are-saving-legacy-systems/\">How GitHub Copilot and AI agents are saving legacy systems</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub Copilot CLI：如何开始使用 (原标题: GitHub Copilot CLI: How to get started)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-how-to-get-started/",
-      "pubDate": "Mon, 13 Oct 2025 22:40:04 +0000",
-      "isoDate": "2025-10-13T22:40:04.000Z",
-      "creator": "Andrea Griffiths",
-      "summary": "## GitHub Copilot CLI：将AI带入命令行\n\nGitHub Copilot CLI 是一款创新工具，旨在将人工智能辅助直接集成到命令行界面（CLI）中，从而消除开发者在终端、编辑器和浏览器之间频繁切换上下文的需要。它允许用户在不中断工作流的情况下，在熟悉的终端环境中获得AI的帮助。\n\n### 安装与认证\n要开始使用 Copilot CLI，用户需要：\n1.  通过 npm 全局安装：`npm install -g @github/copilot`。\n2.  启动 Copilot CLI：`copilot`。\n3.  使用现有的 GitHub 账户登录并认证，这需要有效的 GitHub Copilot Pro、Pro+、Business 或 Enterprise 计划。\n\n**系统要求**：Node v22+ 和 npm version 10 或更高版本。\n\n### 核心使用场景：从克隆到拉取请求\nCopilot CLI 旨在简化从项目克隆到提交拉取请求的整个开发流程，提供以下关键辅助功能：\n\n1.  **克隆并启动 Copilot**\n    *   用户首先克隆一个仓库，然后在该仓库目录中运行 `copilot`。\n    *   在 Copilot 界面中，可以随时输入 `/` 查看可用命令，或使用 `Ctrl+R` 查看 Copilot 执行的命令日志。\n\n2.  **了解新代码库结构**\n    *   无需手动浏览文件或拼凑 README，用户可以直接提问：“Explain the layout of this project.”。\n    *   Copilot 会利用 `find`、`tree` 命令和 `README` 文件来分析仓库，并返回一个清晰的 Markdown 格式项目结构摘要。\n\n3.  **检查环境准备情况**\n    *   用户可以询问：“Make sure my environment is ready to build this project.”。\n    *   Copilot 会验证项目依赖项，安装缺失的工具（如 GitHub CLI 所需的 Go），并确认本地构建环境已准备就绪。\n\n4.  **查找合适的“首次贡献”问题**\n    *   为了帮助用户快速开始贡献，可以提问：“Find good first issues in this repository and rank them by difficulty.”。\n    *   Copilot 会通过其内置的 GitHub MCP 服务器查询 GitHub Issues，并提供一份根据难度排序的精选问题列表。\n\n5.  **开始实现**\n    *   在找到要处理的问题后，用户可以指示 Copilot 起草解决方案，例如：“Start implementing issue #1234. Show me the diff before applying.”。\n    *   Copilot 会制定计划，进行必要的修改，并展示差异（diff）供用户审查和批准，确保用户始终掌控代码变更。\n    *   **专业提示**：在提示中 `@-mention` 文件可以引导 Copilot 关注代码的特定部分。\n\n6.  **提交并创建草稿拉取请求**\n    *   当更改满意后，用户可以要求 Copilot 自动化 Git 流程：“Stage changes, write a commit referencing #1234, and open a draft PR.”。\n    *   Copilot 将暂存文件，编写提交信息，并为用户创建草稿拉取请求。\n\n7.  **额外功能：终止占用端口的进程**\n    *   Copilot 还能处理常见的开发难题，例如端口占用。用户可以提问：“What process is using port 8080? Kill it and verify the port is free.”。\n    *   Copilot 会运行 `lsof` 命令查找进程 ID，终止该进程，并验证端口是否已释放。\n\n### 控制与权限管理\nCopilot CLI 始终将控制权交给用户。在执行任何命令或访问目录之前，它会提示用户选择：\n*   允许一次 (Allow once)\n*   始终允许此命令 (Allow always for this command)\n*   拒绝 (Deny)\n\n用户还可以使用以下命令管理权限：\n*   `/session`：查看当前允许的权限。\n*   `/reset`：随时重置所有权限。\n*   `/add-directory`：将目录添加到允许列表中。\n\n### 通过MCP服务器扩展\nCopilot CLI 内置了 GitHub MCP（Model Context Protocol）服务器，用于支持问题搜索和仓库交互。用户还可以使用 `/mcp` 命令从注册表添加任何自定义 MCP 服务器，从而根据特定工作流（如 Playwright 浏览器测试或公司内部工具集成）扩展其功能。\n\n![GitHub Copilot CLI MCP服务器添加界面](https://github.blog/wp-content/uploads/2025/10/image1_8dda93.png?resize=1024%2C785)\n\n### 重要意义\nCopilot CLI 的主要价值在于它能与开发者现有的终端工作流无缝融合，减少了在不同工具之间切换的认知负担。这对于新贡献者入门项目或开发者探索新代码库时，保持工作流的连贯性和效率至关重要。它被定位为 IDE 的补充工具，而非替代品。\n\n### 未来展望\nGitHub Copilot CLI 目前处于公开预览阶段，鼓励用户通过 `/feedback` 命令分享使用体验，以帮助塑造未来的开发路线图。\n\n![作者：Andrea Griffiths](https://github.blog/wp-content/uploads/2025/08/Andrea-Griffiths_avatar_1755783168-200x200.jpeg)\n\n**作者**：Andrea Griffiths，GitHub 高级开发者倡导者。",
-      "shortSummary": "GitHub Copilot CLI 将AI助手直接集成到命令行，让开发者无需离开终端即可获得帮助。它通过 `npm` 安装，支持 Copilot Pro/Business/Enterprise 账户登录。Copilot CLI 能协助完成从代码库克隆、理解项目结构、检查环境、查找任务、实现代码到提交和创建拉取请求等一系列开发工作。它在执行操作前会征求用户许可，确保控制权，并支持通过 MCP 服务器扩展功能。该工具旨在减少上下文切换，提高开发效率，是 IDE 的有力补充，目前处于公开预览阶段。",
-      "translated_title": "GitHub Copilot CLI：如何开始使用",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/image1_8dda93.png?resize=1024%2C785",
-          "alt": "A terminal window showing the GitHub Copilot CLI interface where a user is adding a new MCP (Model Context Protocol) server. The screen includes input fields for server name, type (Local, HTTP, or SSE), command, arguments, environment variables, and tools to include. The interface indicates the user is logged in as “Andrea@Griffiths11” and offers navigation shortcuts for saving or canceling.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/Andrea-Griffiths_avatar_1755783168-200x200.jpeg",
-          "alt": "Andrea Griffiths",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Discover how to use GitHub Copilot directly in the terminal. From cloning a repository to opening a pull request, here’s how to streamline your workflow with Copilot CLI.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-how-to-get-started/\">GitHub Copilot CLI: How to get started</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "如何使用代理原语和上下文工程构建可靠的AI工作流 (原标题: How to build reliable AI workflows with agentic primitives and context engineering)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/how-to-build-reliable-ai-workflows-with-agentic-primitives-and-context-engineering/",
-      "pubDate": "Mon, 13 Oct 2025 16:00:00 +0000",
-      "isoDate": "2025-10-13T16:00:00.000Z",
-      "creator": "Daniel Meppiel",
-      "summary": "本文介绍了一个三部分框架，旨在将临时性的AI探索转化为可重复、可靠的工程实践，从而构建可靠的AI工作流。该框架的核心是**代理原语**（可重用、可配置的构建块）和**上下文工程**（确保AI代理专注于正确的信息）。\n\n### AI原生开发框架\n\n该框架的公式是：Markdown提示工程 + 代理原语 + 上下文工程 = 可靠性。它旨在帮助开发者构建、扩展和共享能够学习并不断改进的智能系统。\n\n**💡 尝试使用GitHub Copilot CLI**：通过GitHub Copilot CLI，用户可以直接在终端中运行、调试和自动化AI工作流，无需设置脚本，也无上下文丢失，并能直接连接到GitHub仓库、拉取请求和问题。\n\n### 三层框架详解\n\n该框架通过结合Markdown的结构、代理原语的能力和智能上下文管理，将临时性的AI实验转变为可靠、可重复的过程。\n\n#### 第一层：使用Markdown进行更具策略性的提示工程\n\n清晰、精确、上下文丰富的提示能带来更好、更准确的结果。Markdown的结构（标题、列表、链接）可以自然地引导AI的推理，使输出更可预测和一致。关键技术包括：\n\n*   **上下文加载**：使用链接作为上下文注入点，从文件或网站中提取相关信息。\n*   **结构化思维**：使用标题和项目符号为AI创建清晰的推理路径。\n*   **角色激活**：使用“你是一名[此角色]的专家”等短语来触发专业知识领域。\n*   **工具集成**：使用`MCP tool tool-name`让AI代理在MCP服务器上以受控、可重复的方式运行代码。\n*   **精确语言**：通过具体指令消除歧义。\n*   **验证门**：“停止并获得用户批准”，确保在关键决策点有人工监督。\n\n例如，一个复杂的调试提示会明确指定AI的角色、参考文档、步骤、使用的工具以及在提交修复前寻求用户验证。\n\n#### 第二层：代理原语——系统化部署提示工程技术\n\n手动为每个任务编写完美的提示是不可持续的。代理原语是简单、可重用的文件或模块，为AI代理提供特定的能力或规则，从而系统化地实施提示工程技术。核心代理原语包括：\n\n*   **指令文件（.instructions.md）**：通过模块化文件部署结构化指导。\n*   **聊天模式（.chatmode.md）**：通过具有MCP工具边界的文件部署基于角色的专业知识，防止安全漏洞和跨域干扰。\n*   **代理工作流（.prompt.md）**：通过内置验证部署可重用提示。\n*   **规范文件（.spec.md）**：创建可重复结果的实施就绪蓝图。\n*   **代理记忆文件（.memory.md）**：在会话之间保留知识。\n*   **上下文辅助文件（.context.md）**：优化信息检索。\n\n**示例**：一个简单的“实现安全用户认证系统”提示，通过选择后端开发聊天模式，自动触发安全指令，加载上下文，生成规范文件，并执行带有验证门的实现工作流，最终实现开发者驱动的知识积累和持续改进。\n\n#### 第三层：上下文工程——帮助AI代理专注于重要信息\n\n大型语言模型（LLM）的记忆（上下文窗口）有限，且容易遗忘。战略性地提供上下文可以帮助AI专注于相关信息，提高其可靠性和效率。关键技术包括：\n\n*   **会话拆分**：为不同的开发阶段和任务使用不同的代理会话（例如，规划、实施、测试）。\n*   **模块化和自定义规则/指令**：仅通过有针对性的`.instructions.md`文件应用相关指令，节省上下文空间。\n*   **记忆驱动开发**：利用`.memory.md`文件在会话和时间轴上维护项目知识和决策。\n*   **上下文优化**：战略性地使用`.context.md`上下文辅助文件加速信息检索并减少认知负荷。\n*   **认知焦点优化**：在`.chatmode.md`文件中使用聊天模式，使AI的注意力集中在相关领域，防止跨域干扰。\n\n### 代理工作流：完整的系统实践\n\n当所有三层结合时，就形成了代理工作流——一个完整的、系统化的过程，其中所有代理原语协同工作，理解提示，并仅使用所需的上下文。这些工作流可以作为`.prompt.md`文件实现，协调多个代理原语，无论是在IDE、终端还是CI管道中执行。\n\n### 工具：如何扩展代理原语\n\n代理原语本质上是用自然语言编写的可执行软件，其扩展方式类似于任何编程生态系统的演变。它们具有模块化、可重用性、依赖性、演进性和可分发性等特性，因此需要适当的工具基础设施。\n\n*   **代理CLI运行时**：\n    *   **内循环（VS Code和GitHub Copilot）**：用于交互式开发、测试和工作流优化。\n    *   **外循环（代理CLI运行时，如Copilot CLI）**：用于可重现的执行、CI/CD集成和生产部署，将自然语言程序从个人工具转变为强大、可共享的解决方案。\n*   **运行时管理（APM - 代理包管理器）**：\n    *   APM通过提供统一的运行时管理和包分发来解决管理多个代理CLI运行时的复杂性。\n    *   它允许用户安装和配置不同的运行时（如Copilot CLI、OpenAI Codex CLI），安装依赖项，编译代理原语文件，并运行工作流，同时保持一致的VS Code开发体验。\n\n本文强调，通过迭代改进，该框架能够创建复合智能，不断提升AI系统的性能和可靠性。",
-      "shortSummary": "本文介绍了一个三部分框架，旨在通过将AI探索转化为可靠的工程实践，构建可靠的AI工作流。该框架结合了**Markdown提示工程**（结构化提示）、**代理原语**（可重用构建块）和**上下文工程**（优化AI注意力）。它通过GitHub Copilot CLI和APM等工具，将自然语言编写的代理原语视为软件，支持其开发、自动化和部署，从而实现AI系统的持续学习和改进，确保可预测和一致的输出。",
-      "translated_title": "如何使用代理原语和上下文工程构建可靠的AI工作流",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>See how this three-part framework will turn AI into a repeatable and reliable engineering practice.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-to-build-reliable-ai-workflows-with-agentic-primitives-and-context-engineering/\">How to build reliable AI workflows with agentic primitives and context engineering</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-23T04:33:55.543Z"
+  "lastUpdated": "2025-10-25T04:31:44.359Z"
 }
