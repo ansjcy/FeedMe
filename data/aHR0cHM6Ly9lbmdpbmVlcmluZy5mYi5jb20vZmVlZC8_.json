@@ -5,6 +5,56 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "为生成式AI产品创新扩展隐私基础设施 (原标题: Scaling Privacy Infrastructure for GenAI Product Innovation)",
+      "link": "https://engineering.fb.com/2025/10/23/security/scaling-privacy-infrastructure-for-genai-product-innovation/",
+      "pubDate": "Thu, 23 Oct 2025 08:00:00 +0000",
+      "isoDate": "2025-10-23T08:00:00.000Z",
+      "creator": "",
+      "summary": "# Meta为生成式AI产品创新扩展隐私基础设施\n\nMeta致力于赋能其产品团队负责任地利用生成式AI（GenAI）的力量。本文深入探讨了Meta如何通过扩展其**隐私感知基础设施（Privacy Aware Infrastructure, PAI）**来应对GenAI时代的数据保护挑战，并以Meta的AI眼镜作为GenAI用例的典范。Meta的目标是通过赋能产品团队获得血缘洞察和自动化隐私控制，加速GenAI产品创新，同时将用户信任和隐私作为基本原则。\n\n## GenAI面临的关键隐私挑战\n\nMeta在确保GenAI隐私方面遇到了三大主要挑战：\n\n*   **技术演进与数据爆炸式增长：** GenAI带来了新型数据类型和数据量的急剧增加，使得数据可观测性和管理变得更加复杂。\n*   **不断变化的合规要求：** 技术进步不断产生新的隐私和合规要求，Meta的竞争力取决于其适应这些需求的速度。\n*   **加速的创新周期：** GenAI驱动的功能加速了产品开发， necessitating infrastructure that can scale rapidly and enforce privacy controls automatically.\n\n## Meta AI眼镜：GenAI用例示例\n\nMeta的AI眼镜将可穿戴技术与GenAI结合，提供实时信息、个性化辅助和创意功能，所有这些都与佩戴者的环境相关联：\n\n*   **实时场景理解：** 利用先进的摄像头和传感器解释周围环境，实现即时、相关的问答。\n*   **情境叠加：** GenAI模型提供动态叠加和摘要，根据当前位置或活动提供量身定制的指导和信息。\n*   **自然直观的交互：** 通过Meta神经腕带等创新输入方法和Meta Ray-Ban显示眼镜中的先进输出技术，实现无缝、低延迟的全双工对话。\n\n这些前瞻性用例凸显了GenAI所实现的复杂数据流：连续的传感器输入、设备端和云端的实时处理，以及动态的用户反馈循环。\n\n## Meta隐私感知基础设施（PAI）概述\n\nMeta的PAI是其隐私策略的核心，它是一套基础设施服务、API和监控系统，旨在将隐私集成到产品开发的各个方面。PAI包括：\n\n*   **增强的可观测性：**\n    *   通过高级扫描和标记实现数据自动检测，识别摄取点处的相关数据。\n    *   通过数据血缘追踪进一步加强，维护数据来源、传播路径和使用情况的实时地图，提供数据在系统间流动的全面可见性。\n*   **高效的隐私控制：**\n    *   策略执行API，用于在数据存储、处理和访问层以编程方式强制执行隐私约束。\n    *   策略自动化，将区域和全球要求嵌入到自动化检查和工作流约束中。\n*   **可扩展性：** 支持Meta庞大生态系统中的数千个微服务和产品团队。\n\nPAI赋能工程师在创新的同时，自动确保策略合规性和安全性。\n\n### 图示：AI眼镜与Meta AI应用的系统上下文\n\n![图片 1](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-PAI-for-GenAI-Figure-1.png)\n图1：AI眼镜与Meta AI应用交互的系统上下文。\n\n### 图示：关键隐私工作流\n\n![图片 2](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-PAI-for-GenAI-Figure-2.png)\n图2：关键隐私工作流。\n\n## 深入探究PAI的“发现”阶段：大规模数据血缘\n\nPAI最具变革性的技术之一是其大规模数据血缘方法。该系统持续追踪和映射整个基础设施中的数据流。Meta的血缘解决方案必须跨越数百万数据和代码资产，涵盖数百个平台和多种编程语言。\n\n### 收集跨栈血缘以获取交互数据\n\n为了维护数据（例如AI眼镜的用户交互数据）的隐私要求，需要一个完整的数据移动图谱。跨栈血缘提供了这种可追溯性：\n\n*   **[A] 在Web内部：** 通过隐私探测器捕获交互数据进入Meta Web服务器以及Web组件之间的数据流，精确了解数据的收集和处理方式。\n*   **[B] Web -> 记录器 -> 数据仓库：** 当Web处理持久化数据时，血缘追踪写入数据仓库表的记录器。然后，在下游批量处理数据时，解析记录器配置、SQL查询和处理日志以提取数据血缘。\n*   **[C] Web <> 推理：** 对于大型语言模型（LLM）调用，在服务/RPC边界收集血缘信号，例如调用了哪些模型检查点、输入是什么以及返回给应用的响应是什么。\n*   **[D] 数据仓库 -> 训练：** 最后，血缘将数据仓库表链接到训练作业及其生成的检查点。这个边界可以强制执行和证明关于允许用途的隐私要求。\n\n### 图示：跨栈血缘\n\n![图片 3](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-PAI-for-GenAI-Figure-3.png)\n图3：跨栈血缘。PAI收集所有堆栈的血缘信号，包括Web探测、记录器、批量处理血缘、RPC血缘和训练清单。它们共同构成了交互数据的端到端图。\n\n### 图示：AI眼镜交互的端到端血缘\n\n![图片 4](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-PAI-for-GenAI-Figure-4.png)\n图4：AI眼镜交互的端到端血缘。通过这种可见性，Meta可以具体地推断隐私：精确知道哪些系统参与了，哪些没有，从而在边界强制执行数据流并证明策略合规性。\n\n### 构建全面的血缘可观测性\n\n一个健全的血缘可观测性系统必须全面捕获数据处理时所有实际的数据流或I/O操作：\n\n*   **捕获并链接所有读取操作到写入操作：** 写入数据资产时，确保使用与读取操作相同的关联键记录所有相关的写入操作。这适用于SQL和非SQL查询，以及分布式I/O操作。\n*   **创建通用隐私库以记录数据流信息：** Meta的隐私库（PrivacyLib）旨在初始化和传播隐私策略，为各种操作（如读取、写入、远程调用）提供通用抽象，并标准化日志记录等扩展。\n*   **在Meta所有相关数据系统中放置库集成点：** 该库已集成到所有相关数据系统，以各种编程语言实现，并确保全面覆盖I/O操作。\n\n### 图示：通过PrivacyLib构建血缘可观测性\n\n![图片 5](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-PAI-for-GenAI-Figure-5.png)\n图5：通过PrivacyLib构建血缘可观测性。\n\n## 从血缘到AI眼镜的证明\n\n数据血缘揭示了哪些系统处理AI眼镜的交互数据。基于此，Meta可以保护数据：\n\n*   **使用血缘指导策略区域（Policy Zones）的放置**，以保护交互数据。\n*   **仅当所有训练数据资产都允许用于特定目的时**，才启动使用该区域数据资产的模型训练作业；否则，进行补救。\n*   **验证器持续监控这些边界**，以便在功能开发早期识别任何新增或更改的数据处理作业。\n\n### 图示：通过策略区域从血缘到证明\n\n![图片 6](https://engineering.fb.com/wp-content/uploads/2025/10/Meta-PAI-for-GenAI-Figure-6.png)\n图6：通过策略区域从血缘到证明。\n\n## 关键要点：PAI如何扩展GenAI隐私\n\nMeta的隐私方法是：扩展基础设施，而不仅仅是规则。通过将包括数据血缘在内的PAI技术嵌入到技术栈中，Meta赋能工程师安全、快速、全球化地交付下一波GenAI产品。\n\n*   GenAI及其驱动产品的飞速发展带来了新的隐私和策略挑战，需要快速开发隐私感知基础设施。\n*   隐私感知基础设施（PAI）提供可重用的工作流（理解 -> 发现 -> 执行 -> 证明），同样可以扩展GenAI产品的隐私执行。\n*   可扩展的数据血缘技术通过提供可审计的实时数据流洞察，促进隐私控制。\n*   自动防护措施和即时开发反馈帮助产品团队更快、更安全、更顺畅地推进。\n\n## 随着GenAI发展，隐私也在发展\n\n为GenAI扩展隐私是一个持续的旅程。随着AI能力的进步，隐私保护的复杂性和期望也在增加。Meta的PAI正在同步发展，整合更智能的血缘分析和更友好的开发者工具，以满足这些新需求。通过将隐私基础设施作为产品赋能者而非障碍，Meta正在为负责任的AI产品创新奠定基础。",
+      "shortSummary": "Meta通过扩展其隐私感知基础设施（PAI）来负责任地推动生成式AI（GenAI）产品创新。PAI通过大规模数据血缘追踪、自动化隐私控制和增强的可观测性，应对GenAI带来的数据隐私挑战。以Meta AI眼镜为例，PAI确保数据从收集到训练的整个生命周期都符合隐私要求。其核心理念是扩展基础设施而非仅规则，从而赋能产品团队更快、更安全地开发新功能，同时维护用户信任和数据隐私。",
+      "translated_title": "为生成式AI产品创新扩展隐私基础设施",
+      "images": [
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-PAI-for-GenAI-Figure-1.png",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-PAI-for-GenAI-Figure-2.png",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-PAI-for-GenAI-Figure-3.png",
+          "alt": "",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-PAI-for-GenAI-Figure-4.png",
+          "alt": "",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-PAI-for-GenAI-Figure-5.png",
+          "alt": "",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://engineering.fb.com/wp-content/uploads/2025/10/Meta-PAI-for-GenAI-Figure-6.png",
+          "alt": "",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>How does Meta empower its product teams to harness GenAI’s power responsibly? In this post, we delve into how Meta addresses the challenges of safeguarding data in the GenAI era by scaling its Privacy Aware Infrastructure (PAI), with a particular focus on Meta’s AI glasses as an example GenAI use case.  We’ll describe in detail [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/23/security/scaling-privacy-infrastructure-for-genai-product-innovation/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/23/security/scaling-privacy-infrastructure-for-genai-product-innovation/\">Scaling Privacy Infrastructure for GenAI Product Innovation</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "解耦调度网络：助力Meta AI规模化发展 (原标题: Disaggregated Scheduled Fabric: Scaling Meta’s AI Journey)",
       "link": "https://engineering.fb.com/2025/10/20/data-center-engineering/disaggregated-scheduled-fabric-scaling-metas-ai-journey/",
       "pubDate": "Mon, 20 Oct 2025 16:00:37 +0000",
@@ -169,20 +219,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>OpenZL is a new open source data compression framework that offers lossless compression for structured data. OpenZL is designed to offer the performance of a format-specific compressor with the easy maintenance of a single executable binary. You can get started with OpenZL today by visiting our Quick Start guide and the OpenZL GitHub repository. Learn more [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/06/developer-tools/openzl-open-source-format-aware-compression-framework/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/06/developer-tools/openzl-open-source-format-aware-compression-framework/\">Introducing OpenZL: An Open Source Format-Aware Compression Framework</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "推出Candle海底电缆，更新我们在亚太地区的连接项目 (原标题: Introducing the Candle Subsea Cable, Updates to Our Asia-Pacific Connectivity Projects)",
-      "link": "https://engineering.fb.com/2025/10/05/connectivity/introducing-the-candle-subsea-cable-updates-to-our-asia-pacific-connectivity-projects/",
-      "pubDate": "Mon, 06 Oct 2025 02:30:07 +0000",
-      "isoDate": "2025-10-06T02:30:07.000Z",
-      "creator": "",
-      "summary": "## Meta推出Candle海底电缆并更新亚太连接项目\n\nMeta近日宣布推出新的Candle海底电缆系统，并提供了其在亚太地区其他连接项目的最新进展，其中包括Bifrost电缆系统的竣工。此举旨在加强全球和区域连接，特别是在亚太地区，以支持Meta的服务、人工智能（AI）和新兴技术。\n\n### 亚太地区连接的重要性\n亚太地区拥有全球超过58%的互联网用户，他们高度依赖强大的全球基础设施来获取在线连接和创新技术（如AI）。Meta致力于构建世界级的网络基础设施，以提供足够的容量和弹性，支持全球用户的丰富在线体验，并实现AI和个人超级智能的未来愿景。\n\n### Candle海底电缆：亚太最大容量系统\n*   **名称：** Candle\n*   **连接范围：** 将连接东亚和东南亚国家，包括日本、台湾、菲律宾、印度尼西亚、马来西亚和新加坡。\n*   **上线时间：** 预计于2028年投入使用。\n*   **容量：** 提供570 Tbps的容量，使其成为亚太地区容量最大的电缆系统。\n*   **长度：** 跨越8,000公里。\n*   **覆盖人数：** 将连接超过5.8亿人。\n*   **技术：** 采用最新开发的24对光纤电缆技术，提供与Meta现有最大容量电缆Anjana相似的带宽。\n*   **合作：** Meta正与该地区领先的电信公司合作建设此系统。\n\n### 其他亚太地区海底电缆更新\nMeta还公布了其在亚太地区其他几个海底电缆项目的进展：\n\n*   **Bifrost电缆：**\n    *   该系统已完成建设。\n    *   目前连接新加坡、印度尼西亚、菲律宾和美国，预计2026年将延伸至墨西哥。\n    *   Bifrost将提供260 Tbps的冗余容量，为热门的跨太平洋数字路由开辟新路径。\n    *   与Echo电缆一起，Bifrost是Meta及其合作伙伴在2021年承诺将跨太平洋容量增加70%的关键组成部分。\n\n*   **Echo电缆：**\n    *   目前在关岛和加利福尼亚之间提供260 Tbps的容量。\n    *   未来可选择延伸至亚洲。\n\n*   **Apricot电缆：**\n    *   已在日本、台湾和关岛之间投入使用。\n    *   未来将延伸至菲律宾、印度尼西亚和新加坡。\n    *   长度：12,000公里。\n    *   容量：290 Tbps。\n    *   该系统将补充Bifrost和Echo系统，进一步增强区域连接。\n\n### 综合影响与未来展望\nCandle、Echo、Bifrost和Apricot系统将共同增强亚太地区的区域内连接，并建立通往美洲的跨太平洋桥梁。此外，Meta还投资了其他全球项目，如2Africa（通往印度、中东和欧洲）和Project Waterworth（预计在本十年末连接五大洲，包括亚洲），以实现更广泛的全球连接。\n\n这些数字基础设施的开发是Meta致力于将世界各地的人们连接起来的承诺的一部分。通过与合作伙伴的共同努力，这些投资将提升全球电信网络的规模和可靠性，确保Meta的服务能够快速高效地送达亚太地区及其他地区的商业和个人用户。\n\n**数据来源：** 根据Statista数据，截至2025年9月5日，全球56.5亿互联网用户中，亚太地区约占33亿。",
-      "shortSummary": "Meta宣布推出Candle海底电缆，这是亚太地区容量最大的新系统，将于2028年连接日本、台湾、菲律宾、印尼、马来西亚和新加坡，提供570 Tbps容量。同时，Meta更新了其他亚太连接项目进展，包括已完成的Bifrost电缆（连接新加坡、印尼、菲律宾、美国）、Echo电缆（连接关岛和加州）以及已启用的Apricot电缆（连接日本、台湾、关岛）。这些投资旨在增强亚太地区及全球的连接性，支持Meta的服务、AI和新兴技术，以满足该地区庞大的互联网用户需求。",
-      "translated_title": "推出Candle海底电缆，更新我们在亚太地区的连接项目",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>We’re introducing Candle, a new submarine cable connecting countries across East Asia and Southeast Asia. We’re also announcing several updates to our subsea cables across the Asia-Pacific, including the completion of the Bifrost cable system. The Asia-Pacific (APAC) region is home to over 58% of the world’s internet users1 – many who rely on robust [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/05/connectivity/introducing-the-candle-subsea-cable-updates-to-our-asia-pacific-connectivity-projects/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/05/connectivity/introducing-the-candle-subsea-cable-updates-to-our-asia-pacific-connectivity-projects/\">Introducing the Candle Subsea Cable, Updates to Our Asia-Pacific Connectivity Projects</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-23T05:25:46.310Z"
+  "lastUpdated": "2025-10-25T05:24:34.030Z"
 }
