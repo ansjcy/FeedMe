@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "突破性光学处理器使AI能以光速计算 (原标题: Breakthrough optical processor lets AI compute at the speed of light)",
+      "link": "https://www.sciencedaily.com/releases/2025/10/251027224833.htm",
+      "pubDate": "Tue, 28 Oct 2025 09:14:28 EDT",
+      "isoDate": "2025-10-28T13:14:28.000Z",
+      "creator": "",
+      "summary": "# 突破性光学处理器使AI能以光速计算\n\n## 现代AI面临的计算瓶颈\n现代人工智能（AI）系统，如机器人手术和高频交易，严重依赖实时处理原始数据流。快速提取重要特征至关重要，但传统的数字处理器已达到物理极限，无法进一步降低延迟或提高吞吐量以满足当前数据密集型应用的需求。\n\n## 光计算：解决方案的曙光\n研究人员正转向光作为解决方案。光计算——利用光而非电来处理复杂计算——有望显著提升速度和效率。其中一个有前景的方法是光学衍射算子，这些薄板状结构在光线穿过时执行数学运算，能以低能耗同时处理多个信号。然而，在超过10 GHz的速度下维持此类计算所需的稳定、相干光一直是一个巨大挑战。\n\n## 清华大学OFE2：突破性光学特征提取引擎\n为克服这一挑战，中国清华大学陈宏伟教授领导的团队开发了一款名为“光学特征提取引擎”（Optical Feature Extraction Engine, OFE2）的突破性设备。他们的研究成果发表在《Advanced Photonics Nexus》上，展示了一种执行高速光学特征提取的新方法，适用于多种实际应用。\n\n## OFE2的数据准备与处理机制\nOFE2的关键进展在于其创新的数据准备模块：\n*   **数据准备模块：** 解决向核心光学组件提供快速、并行光学信号而不损失相位稳定性的难题。传统的基于光纤的系统在分光和延迟时常引入不必要的相位波动。\n*   **集成芯片设计：** 清华团队通过设计一个完全集成的片上系统解决了这个问题，该系统包含可调功率分配器和精确延迟线。\n*   **信号转换：** 该设置将串行数据转换为多个同步的光学通道。\n*   **可重构性：** 集成的相位阵列使得OFE2可以轻松地针对不同的计算任务进行重新配置。\n*   **特征提取：** 准备好的光学信号随后通过一个衍射算子执行特征提取。这个过程类似于矩阵-向量乘法，光波相互作用在特定的输出点产生聚焦的“亮点”。通过微调输入光的相位，这些亮点可以被导向选定的输出端口，使OFE2能够捕捉输入数据随时间变化的细微差异。\n\n## 创纪录的光学性能\nOFE2以12.5 GHz的惊人速度运行，在短短250.5皮秒内完成一次矩阵-向量乘法——这是此类光学计算已知最快的结果。陈教授表示：“我们坚信这项工作为推动集成光学衍射计算在实际应用中突破10 GHz速率提供了重要的基准。”\n\n## OFE2的实际应用测试\n研究团队在多个领域测试了OFE2：\n*   **图像处理：** 成功从视觉数据中提取边缘特征，创建了成对的“浮雕和雕刻”图，提高了图像分类的准确性，例如在CT扫描中识别器官。\n*   **AI效率提升：** 使用OFE2的系统比标准AI模型需要更少的电子参数，证明光学预处理可以使混合AI网络更快、更高效。\n*   **数字交易：** 处理实时市场数据以生成有利可图的买卖操作。经过优化策略训练后，OFE2将传入的价格信号直接转换为交易决策，实现了持续回报。由于这些计算以光速发生，交易者几乎可以零延迟地抓住机会。\n\n## 照亮AI的未来之路\n这些成就共同预示着计算领域的一次重大转变。通过将AI处理中最苛刻的部分从耗电的电子芯片转移到闪电般快速的光子系统，OFE2等技术有望开创实时、低能耗AI的新时代。陈教授总结道：“我们研究中提出的进展将集成衍射算子推向了更高的速率，为图像识别、辅助医疗和数字金融等领域的计算密集型服务提供了支持。我们期待与有数据密集型计算需求的合作伙伴进行合作。”",
+      "shortSummary": "清华大学团队开发了突破性光学处理器OFE2，旨在解决现代AI计算瓶颈。OFE2利用光而非电进行高速特征提取，在12.5 GHz下以250.5皮秒完成一次矩阵-向量乘法，创下光学计算速度纪录。其创新数据准备模块和衍射算子使其能高效处理数据。OFE2已成功应用于图像处理，提升AI效率，并在数字交易中实现实时决策。这项技术预示着AI将进入实时、低能耗的光子计算新时代。",
+      "translated_title": "突破性光学处理器使AI能以光速计算",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Researchers at Tsinghua University developed the Optical Feature Extraction Engine (OFE2), an optical engine that processes data at 12.5 GHz using light rather than electricity. Its integrated diffraction and data preparation modules enable unprecedented speed and efficiency for AI tasks. Demonstrations in imaging and trading showed improved accuracy, lower latency, and reduced power demand. This innovation pushes optical computing toward real-world, high-performance AI."
+    },
+    {
       "title": "斯坦福大学的微型眼部芯片帮助盲人重见光明 (原标题: Stanford’s tiny eye chip helps the blind see again)",
       "link": "https://www.sciencedaily.com/releases/2025/10/251022023118.htm",
       "pubDate": "Wed, 22 Oct 2025 10:26:46 EDT",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Using centuries of land-use data, scientists have trained an AI system that evolves policy ideas the way nature evolves species—testing, mutating, and keeping only the best. The result? Smarter strategies for cutting carbon that avoid wrecking farms or habitats, proving that climate solutions don’t have to mean sacrificing everyday life."
-    },
-    {
-      "title": "学习即冒险：飞船中的讲堂 (原标题: Learning as an adventure: The lecture theater in the spaceship)",
-      "link": "https://www.sciencedaily.com/releases/2025/05/250515132510.htm",
-      "pubDate": "Thu, 15 May 2025 13:25:10 EDT",
-      "isoDate": "2025-05-15T17:25:10.000Z",
-      "creator": "",
-      "summary": "## 学习即冒险：飞船中的讲堂——Project Chimera\n\n### 项目概述\n*   **挑战**：以低门槛、趣味性方式传达复杂的科学内容。\n*   **解决方案**：格拉茨工业大学（TU Graz）人机交互研究所游戏实验室（Game Lab Graz）的团队开发了“Project Chimera”项目。\n*   **资金来源**：获得软件和游戏开发商Epic Games（《堡垒之夜》、《虚幻引擎》）的Epic Mega Grant资助。\n*   **核心理念**：将学习作为一场冒险，通过游戏化的、故事驱动的方式，让用户主动产生了解科学的愿望，而非传统的直接教学。\n\n### 游戏化学习环境\n*   **形式**：一个虚拟3D世界，以电脑游戏的形式实现。\n*   **内容**：目前涵盖物理学、机械工程，未来还将包括逻辑门和重力实验等领域的复杂内容。\n*   **独特之处**：\n    *   **游戏化与故事驱动**：与传统学习程序不同，Project Chimera强调游戏化元素和玩家所体验的故事。\n    *   **沉浸式环境**：玩家在一个受损的飞船中活动，而非传统的学习环境。\n    *   **任务设计**：玩家需要掌握来自不同科学学科的任务，以修复飞船并到达舰桥。这些任务被设计成电脑游戏中的经典谜题。\n\n### 学习机制与激励\n*   **任务结构**：采用类似“任务”（quest-like）的结构，提供持续的学习激励。\n*   **示例**：\n    *   飞船中的第一个问题是电梯故障，阻碍了通往其他楼层和舰桥的道路。\n    *   玩家需要启动电梯的电动机，这要求他们首先了解如何利用磁铁为电池充电。\n    *   电池充满后，还需要修理电动机本身，从而学习电动机背后的技术原理。\n*   **逐层深入**：飞船的每一层都处理不同的科学主题，并传授最相关的科学原理。\n*   **难度适应性**：正在考虑使游戏难度适应不同年龄段，使其有望应用于学校教育。\n\n### 应用与效果\n*   **实际应用**：已在格拉茨工业大学的机械工程专业学生中试用。\n*   **优势**：\n    *   为学生提供了以简单方式进行实验的机会，解决了课堂上操作真实发动机的困难。\n    *   一项伴随研究表明，使用该游戏显著提高了学生的学习动机。\n*   **教育补充**：项目负责人Saeed Safikhani表示，虽然理论课程仍然必要，但Project Chimera等应用能让学习者获得实践经验，并同时对理论产生更大的兴趣。\n\n### 可用性与技术要求\n*   **获取方式**：Project Chimera的预测试版（pre-alpha version）可在游戏平台Steam上免费获取。\n*   **技术要求**：游戏旨在达到AAA级游戏的视觉和交互质量，但由于仍处于预测试阶段，尚未优化，因此对硬件要求较高。",
-      "shortSummary": "Project Chimera是格拉茨工业大学游戏实验室开发的一款创新型游戏化学习环境，由Epic Games资助。它通过一个故事驱动的电脑游戏，让玩家在修复受损飞船的过程中，以解决谜题的方式学习复杂的科学和技术概念。该项目旨在激发学习者的内在兴趣，而非传统教学。已在机械工程学生中应用，并显示能提高学习动机。目前，其预测试版可在Steam上免费获取，但对硬件要求较高。",
-      "translated_title": "学习即冒险：飞船中的讲堂",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "In Project Chimera, a game lab combines a VR computer game with educational problems in order to convey scientific content in a motivating way."
     }
   ],
-  "lastUpdated": "2025-10-28T09:30:58.891Z"
+  "lastUpdated": "2025-10-29T09:28:49.646Z"
 }
