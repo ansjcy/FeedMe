@@ -5,6 +5,295 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "塔塔汽车确认已修复暴露公司和客户数据的安全漏洞 (原标题: Tata Motors confirms it fixed security flaws, which exposed company and customer data)",
+      "link": "https://techcrunch.com/2025/10/28/tata-motors-confirms-it-fixed-security-flaws-that-exposed-company-and-customer-data/",
+      "pubDate": "Wed, 29 Oct 2025 01:30:00 +0000",
+      "isoDate": "2025-10-29T01:30:00.000Z",
+      "creator": "Jagmeet Singh",
+      "summary": "# 塔塔汽车修复暴露公司和客户数据的安全漏洞\n\n印度汽车巨头塔塔汽车（Tata Motors）已成功修复一系列严重的安全漏洞。这些漏洞曾导致敏感的内部数据泄露，其中包括客户的个人信息、公司内部报告以及与经销商相关的重要数据。\n\n## 漏洞发现与报告\n\n*   **发现者：** 安全研究员伊顿·兹维尔（Eaton Zveare）向TechCrunch透露，他发现了这些安全缺陷。\n*   **发现地点：** 漏洞存在于塔塔汽车的E-Dukaan部门，这是一个专门用于购买塔塔商用车辆备件的电子商务门户。\n*   **报告时间：** 兹维尔于2023年8月通过印度计算机应急响应小组（CERT-In）向塔塔汽车报告了这些问题。\n\n## 暴露的数据类型与范围\n\n兹维尔在博客文章中指出，门户网站的网页源代码中包含了访问和修改塔塔汽车在亚马逊网络服务（AWS）账户数据的私钥。这些暴露的数据范围广泛，包括：\n\n*   **客户个人信息：** 数十万份发票，其中包含客户的姓名、邮寄地址以及印度政府颁发的十位唯一标识符——永久账户号码（PAN）。\n*   **数据库备份与通信：** MySQL数据库备份和Apache Parquet文件，其中含有各种私人客户信息和通信记录。\n*   **车队管理数据：** AWS密钥还允许访问超过70TB与塔塔汽车FleetEdge车队追踪软件相关的数据。\n*   **内部报告与用户数据：** 兹维尔还发现了对Tableau账户的后门管理员访问权限，该账户包含8000多名用户的数据。作为服务器管理员，可以访问内部财务报告、绩效报告、经销商记分卡和各种仪表板。\n*   **API访问：** 暴露的数据还包括对塔塔汽车车队管理平台Azuga的API访问权限，该平台是公司试驾网站的驱动力。\n\n## 漏洞修复与公司回应\n\n*   **修复确认：** 塔塔汽车于2023年10月告知兹维尔，他们正在修复AWS问题，此前已解决了最初的漏洞。塔塔汽车向TechCrunch确认，所有报告的缺陷和漏洞均已在2023年得到彻底审查并迅速、全面地解决。\n*   **客户通知：** 尽管漏洞已修复，但塔塔汽车未说明是否已通知受影响的客户其信息已被暴露。\n*   **公司安全措施：** 塔塔汽车通讯主管苏迪普·巴拉（Sudeep Bhalla）表示，公司基础设施定期由领先的网络安全公司进行审计，并维护全面的访问日志以监控未经授权的活动。公司还积极与行业专家和安全研究人员合作，以加强安全态势并确保及时缓解潜在风险。",
+      "shortSummary": "塔塔汽车已修复由安全研究员伊顿·兹维尔于2023年8月发现的一系列安全漏洞。这些漏洞存在于其E-Dukaan门户中，暴露了包括客户姓名、地址、PAN号在内的敏感个人信息、公司内部报告、AWS访问密钥以及超过70TB的车队管理数据。塔塔汽车确认所有漏洞已于2023年修复，但未说明是否通知了受影响客户。公司强调定期审计并与专家合作加强安全。",
+      "translated_title": "塔塔汽车确认已修复暴露公司和客户数据的安全漏洞",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "A security researcher found the Indian automotive giant exposing personal information of its customers, internal company reports, and dealers’ data. Tata confirmed it fixed the issues."
+    },
+    {
+      "title": "TechCrunch Disrupt 2025 的 5 家创业竞技场决赛选手揭晓 (原标题: Here are the 5 Startup Battlefield finalists at TechCrunch Disrupt 2025)",
+      "link": "https://techcrunch.com/2025/10/28/here-are-the-5-startup-battlefield-finalists-at-techcrunch-disrupt-2025/",
+      "pubDate": "Wed, 29 Oct 2025 00:28:10 +0000",
+      "isoDate": "2025-10-29T00:28:10.000Z",
+      "creator": "Anthony Ha",
+      "summary": "## TechCrunch Disrupt 2025 创业竞技场决赛选手揭晓\n\n经过两天紧张的现场演示和路演，TechCrunch Disrupt 2025 创业竞技场（Startup Battlefield）公布了五家最终入围的决赛选手。这些公司从数千名申请者中脱颖而出，经过 TechCrunch 编辑团队的层层筛选，最终从 200 家参会公司和 20 家在 Disrupt 舞台上竞争的公司中选出。这些决赛选手将于太平洋时间周三上午 11:30 再次登台，争夺 10 万美元无股权资金大奖以及创业竞技场奖杯的临时保管权。决赛可通过 TechCrunch 网站直播观看，或在会议现场的 Disrupt 舞台观看。\n\n以下是 TechCrunch Disrupt 2025 创业竞技场的五家决赛选手：\n\n### 1. Charter Space\n*   **核心业务：** Charter Space 为航空航天工程师开发了一款开发工具，但其真正的使命是成为一家专注于太空领域的金融科技公司。\n*   **技术原理：** 该软件直接从源头捕获制造和测试数据，并将这些数据集输入承保界面，该界面直接与市场上最大的保险公司连接。\n*   **目标：** 旨在为航天器保险提供更快、更便宜、更可靠的风险评估。最终，它希望为寻求风险投资和公开市场之外资金的太空公司提供新型信贷和非稀释性融资。\n\n### 2. Glīd\n*   **解决的问题：** Glīd（发音为“Glide”）旨在简化集装箱从船只运输到货运列车所涉及的复杂多步骤过程。\n*   **产品与技术：** 该公司开发了多款硬件和软件产品，以加快并降低将集装箱运至铁路货运站并最终送达目的地的成本。\n*   **首款产品：** GliderM 是一款混合动力电动汽车，其后端配有挂钩，可以直接拾取并移动 20 英尺的集装箱到铁路，无需叉车或牵引车。\n\n### 3. MacroCycle\n*   **解决的问题：** MacroCycle 开发了一种“捷径”，有望使再生塑料与原生材料一样便宜。\n*   **核心技术：** 这家初创公司设计了一种方法，可以从废弃纺织品中提取所需的合成纤维，而将其他物质留下。\n*   **创新点：** 与大多数化学回收不同，MacroCycle 的工艺不会分解聚合物。相反，它将聚合物链自身环化，迫使它们形成环状结构，即“大环”（macrocycles），这些大环在污染物被洗去后仍然保留。\n\n### 4. Nephrogen\n*   **公司性质：** Nephrogen 是一家生物技术初创公司。\n*   **核心技术：** 它利用人工智能和先进筛选技术，开发了一种专门的递送系统，能够安全地将基因编辑药物送入肾脏中的特定细胞。\n*   **关键成就：** 创始人 Demetri Maxim 表示，经过三年的开发，Nephrogen 成功创建了一种递送机制，其将药物输送到肾脏的效率比目前 FDA 批准的“载体”高出 100 倍。\n*   **创始人背景：** 鉴于他本人患有多囊肾病，他计划亲自参与临床研究。\n\n### 5. Unlisted Homes\n*   **产品定位：** Unlisted Homes 类似于 Zillow，但专注于尚未上市的房屋。\n*   **运作方式：** 该公司利用 2100 万套房屋的公共记录，为每处房产创建“档案”，提供与任何其他房地产挂牌网站相同类型的信息。\n*   **商业模式：** Unlisted 不打算通过平台促成房地产交易，因为这些交易的资源已经存在。相反，Unlisted 将向房地产经纪人出售特定邮政编码的赞助权，这些经纪人将被列为该邮政编码内所有房屋的本地专家。",
+      "shortSummary": "TechCrunch Disrupt 2025 创业竞技场公布了五家决赛选手，他们将争夺 10 万美元无股权资金。Charter Space 致力于成为太空金融科技公司，通过数据优化航天器保险。Glīd 简化集装箱运输，其 GliderM 车辆能高效将集装箱运至铁路。MacroCycle 创新地回收废弃纺织品，使再生塑料成本与原生材料持平。Nephrogen 利用 AI 开发高效的基因编辑药物肾脏递送系统。Unlisted Homes 则提供未上市房屋信息，通过向房地产经纪人出售邮政编码赞助实现盈利。",
+      "translated_title": "TechCrunch Disrupt 2025 的 5 家创业竞技场决赛选手揭晓",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "After two days full of live demos and pitches, it's time to announce the five finalists at this year's Startup Battlefield."
+    },
+    {
+      "title": "‘硅谷’明星托马斯·米德蒂奇在TechCrunch Disrupt 2025上惊喜亮相 (原标题: ‘Silicon Valley’ star Thomas Middleditch makes a surprise appearance at TechCrunch Disrupt 2025)",
+      "link": "https://techcrunch.com/2025/10/28/silicon-valley-star-thomas-middleditch-makes-a-surprise-appearance-at-techcrunch-disrupt-2025/",
+      "pubDate": "Wed, 29 Oct 2025 00:00:18 +0000",
+      "isoDate": "2025-10-29T00:00:18.000Z",
+      "creator": "Morgan Little",
+      "summary": "### 托马斯·米德蒂奇在TechCrunch Disrupt 2025上的惊喜亮相\n\n2025年10月28日，太平洋夏令时下午5:00，HBO热门剧集《硅谷》的主演托马斯·米德蒂奇（Thomas Middleditch）在TechCrunch Disrupt 2025大会上意外现身，给与会者带来了惊喜。\n\n**主要事件和活动：**\n\n*   **意外现身**：米德蒂奇，因在《硅谷》中饰演Pied Piper的成员而广为人知，在大会的Expo Hall和推介舞台上被发现。\n*   **接管推介**：他计划性地接管了澳大利亚初创公司Othelia（也是Battlefield 200的竞争者）在推介展示舞台上的演示。\n*   **Othelia的使命**：Othelia的目标是为讲故事的人建立一个类似Cursor的平台。\n*   **互动与交流**：\n    *   在Expo Hall，米德蒂奇被推介、拍照并受到人群的轻微围观。\n    *   他还抽出时间与TechCrunch团队交流，分享了他对本次大会、人工智能（AI）的看法。\n    *   他特别提到了如何将AI平台用于他自己的YouTube频道“Improv With Robots”。\n\n**背景信息：**\n\n*   《硅谷》这部HBO剧集曾于2014年突出展示过TechCrunch Disrupt大会，因此米德蒂奇的出现对观众来说具有特殊的意义。\n\n**相关图片：**\n\n*   **《硅谷》剧照**：\n    ![HBO剧集《硅谷》中的场景](https://techcrunch.com/wp-content/uploads/2017/04/kumail-nanjiani-thomas-middleditch-martin-starr-zach-woods-photo-cred-john-p-johnson-for-hbo.jpg?w=1024)\n    图片来源：Courtesy of Silicon Valley/HBO\n    *此图片展示了HBO剧集《硅谷》中的一个场景，包括Kumail Nanjiani、Thomas Middleditch、Martin Starr和Zach Woods。*",
+      "shortSummary": "《硅谷》主演托马斯·米德蒂奇在TechCrunch Disrupt 2025上惊喜亮相。他接管了澳大利亚初创公司Othelia的推介，该公司旨在为讲故事的人构建一个类似Cursor的平台。米德蒂奇还分享了他对大会和AI的看法，并讨论了如何将AI用于其YouTube频道“Improv With Robots”。",
+      "translated_title": "‘硅谷’明星托马斯·米德蒂奇在TechCrunch Disrupt 2025上惊喜亮相",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2017/04/kumail-nanjiani-thomas-middleditch-martin-starr-zach-woods-photo-cred-john-p-johnson-for-hbo.jpg?w=1024",
+          "alt": "Scene from HBO's Silicon Valley",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Actor Thomas Middleditch had a planned takeover of Australian startup Othelia’s presentation at the pitch showcase stage. "
+    },
+    {
+      "title": "Waabi与沃尔沃合作推出自动驾驶卡车 (原标题: Waabi unveils autonomous truck made in partnership with Volvo)",
+      "link": "https://techcrunch.com/2025/10/28/waabi-unveils-autonomous-truck-made-in-partnership-with-volvo/",
+      "pubDate": "Tue, 28 Oct 2025 22:17:45 +0000",
+      "isoDate": "2025-10-28T22:17:45.000Z",
+      "creator": "Aisha Malik, Rebecca Bellan",
+      "summary": "Waabi在TechCrunch Disrupt 2025大会上发布了与沃尔沃合作开发的全新自动驾驶卡车——沃尔沃VNL自动驾驶卡车。此次发布距离Waabi宣布与沃尔沃自动驾驶解决方案合作，基于沃尔沃的自动驾驶平台并使用Waabi的软件栈定制卡车已有八个月。\n\n### 关键发布与目标\n\n*   **新产品发布**：Waabi与沃尔沃合作推出了沃尔沃VNL自动驾驶卡车。\n*   **商业化愿景**：Waabi首席执行官Raquel Urtasun表示，Waabi有潜力成为首家在没有人类安全驾驶员或观察员的情况下实现自动驾驶卡车商业化的公司。这与竞争对手Aurora形成了对比，后者在推出商业无人驾驶服务后几周内又增加了人类观察员。\n*   **地理扩张**：Urtasun指出，Waabi的卡车目前已能在德克萨斯州的普通街道上行驶，并计划在未来几年内扩展到整个美国。\n\n### 技术与合作细节\n\n*   **Waabi技术栈**：Waabi的自动驾驶系统名为“Waabi Driver”，是一个端到端的人工智能模型，能够使卡车在不同地理区域（包括高速公路和普通街道）实现自动驾驶。\n*   **核心组件**：Waabi的卡车采用了其自有的传感器套件、计算平台和Waabi Driver软件。\n*   **沃尔沃平台优势**：沃尔沃VNL卡车从设计之初就考虑了冗余性，旨在移除人类驾驶员，并构建一个全球性、安全、强大的产品。Waabi的传感器吊舱轻巧，易于在工厂生产线上集成。\n*   **沃尔沃投资**：沃尔沃集团风险投资公司在2023年对Waabi进行了投资，并在2024年参与了Waabi的2亿美元B轮融资，进一步巩固了双方的合作关系。\n\n### 市场竞争\n\n*   **与Aurora的竞争**：Waabi的竞争对手Aurora也与沃尔沃有类似的合作协议，并于2024年5月发布了自动驾驶卡车。Aurora今年早些时候在达拉斯和休斯顿之间的一条路线上推出了商业服务，但车内配备了人类观察员，并于周二宣布将业务扩展到埃尔帕索。\n*   **技术差异**：尽管Waabi和Aurora使用相同的沃尔沃卡车平台，但Waabi强调其技术（包括传感器、计算和Waabi Driver软件）是其独特之处，旨在实现可扩展的商业运营，满足客户需求并融入现有物流操作。\n\n### Waabi的商业化策略\n\nWaabi的目标是实现可扩展的商业运营，满足客户需求，并与现有物流运营无缝衔接，最终在没有人类安全驾驶员的情况下实现自动驾驶卡车的商业化。",
+      "shortSummary": "Waabi与沃尔沃合作推出了沃尔沃VNL自动驾驶卡车，并在TechCrunch Disrupt 2025大会上亮相。Waabi首席执行官Raquel Urtasun表示，公司目标是成为首家在没有人类安全驾驶员的情况下实现自动驾驶卡车商业化的企业，目前已在德克萨斯州运营，并计划扩展至全美。该卡车采用Waabi的Waabi Driver AI系统，旨在实现可扩展的商业运营。此次发布是基于沃尔沃对Waabi的投资，并使其在与竞争对手Aurora的市场竞争中占据一席之地。",
+      "translated_title": "Waabi与沃尔沃合作推出自动驾驶卡车",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "The move comes as Waabi announced earlier this year that it was partnering with Volvo Autonomous Solutions to build a custom purpose truck based on Volvo’s auto autonomy platform using Waabi's software stack."
+    },
+    {
+      "title": "Unlisted 在房主挂牌出售房屋之前将其与潜在买家连接，并入选 TechCrunch Disrupt 2025 (原标题: Unlisted connects homeowners with prospective buyers before they even put their homes up for sale and is part of TechCrunch Disrupt 2025)",
+      "link": "https://techcrunch.com/2025/10/28/unlisted-homes-connects-homeowners-with-prospective-buyers-before-they-even-put-their-homes-up-for-sale-and-is-part-of-techcrunch-disrupt-2025/",
+      "pubDate": "Tue, 28 Oct 2025 22:15:00 +0000",
+      "isoDate": "2025-10-28T22:15:00.000Z",
+      "creator": "Amanda Silberling",
+      "summary": "## Unlisted：在房屋挂牌前连接买卖双方的创新平台\n\nUnlisted Homes 是一家创新型初创公司，入选 TechCrunch Disrupt 2025 的顶级 20 创业战场决赛。该平台旨在解决房屋在正式挂牌出售前，潜在买家和房主之间信息不对称的问题。\n\n### 起源与灵感\n\n创始人 Katie Hill 的创业灵感来源于她的个人经历。她渴望购买邻居的房屋，但该房屋尚未上市。通过一次偶然的对话，她与邻居达成了一项优先购买权协议，这让她意识到许多人可能也希望在房屋正式挂牌前表达购买意向或了解潜在的出售信息。这种“在杂货店回家前看到院子里挂牌出售的牌子”的焦虑，促使她思考如何提前连接买卖双方。\n\n### Unlisted 是什么？\n\n*   **定位：** Unlisted 被描述为“未上市房屋的 Zillow”，专注于那些尚未进入公开市场的房产。\n*   **平台发展：** 最初是一个网页平台，公司在 Disrupt 大会上宣布正式推出 iOS 应用。\n*   **数据基础：** 该平台利用 2100 万套房屋的公共记录，为每套房产创建详细的“档案”，提供与传统房地产上市网站类似的信息。\n\n### 核心功能：等待列表\n\nUnlisted 的核心功能是其“等待列表”机制：\n\n1.  **买家表达兴趣：** 潜在买家可以为他们心仪的房屋添加自己到等待列表，明确表达购买兴趣。\n2.  **通知房主：** 系统会通知房主其房屋有等待列表，并引导他们回到网站。\n3.  **房主互动：** 房主可以更新房屋信息，添加更多详情，并与等待列表中的潜在买家进行沟通。\n\n![Unlisted 平台界面](https://techcrunch.com/wp-content/uploads/2025/10/IMG_6765-1.jpg?w=680)\n\n### 商业模式与未来展望\n\n*   **不直接促成交易：** Unlisted 不计划直接促成房地产交易，因为现有资源已能满足这方面的需求。\n*   **盈利模式：** 主要通过向房地产经纪人出售特定邮政编码的赞助来盈利。这些经纪人的信息将作为“当地专家”与该邮政编码下的所有房屋关联。\n*   **未来计划：** 公司希望将房主与屋顶工、电工等当地服务资源连接起来，进一步拓展其本地化服务生态。其目标是成为一个全国性平台，同时强调房地产的本地性。\n*   **合作伙伴：** 目前已有一家抵押贷款公司加入其平台。\n\n### 市场表现与发展\n\n*   **等待列表成效：** 自六月推出等待列表功能以来，已为 5,700 套房屋生成了等待列表，代表着约 40 亿美元的潜在房地产交易。\n\n### 团队与融资\n\n*   **导师支持：** Katie Hill 获得了 Kayak 联合创始人 Paul English 的指导。English 将她引荐给 Kayak 前首席架构师 Bill O’Donnell，后者不仅成为 Unlisted 的天使投资人，也加入了公司董事会。\n*   **融资情况：** 公司成立于 2022 年，最初是 Katie Hill 利用业余时间与一名工程师共同开发。她后来将公司发展为全职事业，并从天使投资人处筹集了近 100 万美元。去年 11 月，在 HearstLab（一家资助女性创始人早期公司的机构）领投下，又成功筹集了 225 万美元。\n\n![TechCrunch Disrupt 2025](https://techcrunch.com/wp-content/uploads/2025/08/TC25_Disrupt_General_Article_No-Anniversary-at-all_Headers_1920x1080.png?w=680)",
+      "shortSummary": "Unlisted 是一家入选 TechCrunch Disrupt 2025 的初创公司，旨在连接尚未挂牌出售的房屋与潜在买家。创始人 Katie Hill 的个人经历启发了该平台。Unlisted 允许买家为心仪房屋加入等待列表，房主可与潜在买家沟通。它利用 2100 万套房屋的公共记录创建档案，并推出 iOS 应用。Unlisted 不直接促成交易，而是通过向房地产经纪人出售赞助盈利，并计划连接本地服务。目前已为 5,700 套房屋生成等待列表，潜在交易额达 40 亿美元，并已获得近 325 万美元融资。",
+      "translated_title": "Unlisted 在房主挂牌出售房屋之前将其与潜在买家连接，并入选 TechCrunch Disrupt 2025",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/10/IMG_6765-1.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/08/TC25_Disrupt_General_Article_No-Anniversary-at-all_Headers_1920x1080.png?w=680",
+          "alt": "TechCrunch Disrupt 2025 no anniversary",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Unlisted is like Zillow but for homes that are not yet on the market. The company is now launching an iOS app. "
+    },
+    {
+      "title": "Super Teacher 正在为小学构建AI家教——亮相 Disrupt 2025 (原标题: Super Teacher is building an AI tutor for elementary schools — catch it at Disrupt 2025)",
+      "link": "https://techcrunch.com/2025/10/28/super-teacher-is-building-an-ai-tutor-for-elementary-schools-catch-it-at-disrupt-2025/",
+      "pubDate": "Tue, 28 Oct 2025 22:15:00 +0000",
+      "isoDate": "2025-10-28T22:15:00.000Z",
+      "creator": "Maxwell Zeff",
+      "summary": "## Super Teacher：为小学构建AI家教，亮相 Disrupt 2025\n\n辅导教育被公认为提高儿童教育水平最有效的工具之一，然而在美国，很少有孩子能获得辅导。2023年的一项调查显示，全国最大的学区中只有不到10%的学生接受了辅导，主要原因是费用高昂，每月可能花费数百甚至数千美元。\n\n### Super Teacher 概述\n\n*   **创始人与使命：** 前谷歌产品经理兼教育家 Tim Novikoff 旨在改变这一现状。他创立的初创公司 Super Teacher 提供一款面向小学生的AI驱动辅导应用，旨在让全国范围内的家庭都能负担得起私人辅导。Novikoff 曾是纽约市的数学老师，他亲身体会到辅导机会的不均等对学生教育体验造成的巨大差异，因此致力于“普及私人辅导”。\n*   **产品与定价：** Super Teacher 应用每月费用为15美元，年度计划则为10美元/月。\n*   **市场表现：** 这家成立四年的初创公司正获得关注。Novikoff 表示，已有约20,000个家庭注册使用 Super Teacher，纽约、新泽西和夏威夷的公立学校也已开始使用该应用。\n\n### 技术特点与教育理念\n\n*   **交互方式：** Super Teacher 应用采用带有AI生成语音的动画导师，通过互动课程引导学生。学生可以通过语音与应用对话，就像与老师交流一样。\n*   **AI内容生成机制：** 与许多教育科技工具不同，Super Teacher 不使用大型语言模型（LLM）来生成回复。相反，其内容来自一个确定性系统，旨在始终提供正确答案，从而避免了LLM可能出现的错误。\n*   **AI与教师的关系：** Novikoff 坚信AI导师能对儿童生活产生积极影响，但他强调AI永远不会取代学校里的老师。他将AI导师视为教师可以使用的工具，例如智能白板或计算器，而非完全替代品。\n\n### 发展方向与展望\n\n*   **当前目标群体：** Super Teacher 目前仅面向小学生提供服务。Novikoff 做出这一决定，一方面是为了帮助自己的孩子，另一方面也是因为很少有教育科技公司专注于这一年龄段。\n*   **未来计划：** 展望未来，他希望将服务扩展到更小的年龄段和更高年级，并与美国更多学区建立合作关系。\n\n### 创始人其他成就\n\n*   Novikoff 此前曾创立移动视频编辑应用 Fly Labs，该应用于2015年被谷歌收购。\n\n### 亮相 Disrupt 2025 大会\n\n*   Super Teacher 是 TechCrunch Disrupt 2025 旧金山大会的“Startup Battlefield Top 20”决赛入围者。\n*   大会将于2025年10月27日至29日在旧金山举行。\n\n![TechCrunch Disrupt 2025](https://techcrunch.com/wp-content/uploads/2025/09/TC25_Disrupt_General_Article_No-Anniversary_Headers_1920x1080.png?w=680)",
+      "shortSummary": "Super Teacher 是一家初创公司，旨在通过AI家教应用解决美国辅导教育昂贵且不普及的问题。由前谷歌产品经理 Tim Novikoff 创立，该应用每月收费15美元，为小学生提供AI驱动的互动课程。它采用确定性系统确保答案准确性，而非大型语言模型。目前已有约2万家庭用户，并进入多地公立学校。Super Teacher 将作为决赛入围者亮相 TechCrunch Disrupt 2025 大会，致力于普及优质辅导。",
+      "translated_title": "Super Teacher 正在为小学构建AI家教——亮相 Disrupt 2025",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/09/TC25_Disrupt_General_Article_No-Anniversary_Headers_1920x1080.png?w=680",
+          "alt": "TechCrunch Disrupt 2025",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Super Teacher’s app features animated tutors with AI-generated voices that guide students through interactive lessons. Students talk to the app using voice, like a conversation with a teacher. "
+    },
+    {
+      "title": "Mappa的AI语音分析助您找到最佳求职者，并将在TechCrunch Disrupt 2025展示其技术 (原标题: Mappa’s AI voice analysis helps you find the best job candidates and will show off its tech at TechCrunch Disrupt 2025)",
+      "link": "https://techcrunch.com/2025/10/28/mappas-ai-voice-analysis-helps-you-find-the-best-job-candidates-and-will-show-off-its-tech-at-techcrunch-disrupt-2025/",
+      "pubDate": "Tue, 28 Oct 2025 22:15:00 +0000",
+      "isoDate": "2025-10-28T22:15:00.000Z",
+      "creator": "Maxwell Zeff",
+      "summary": "### Mappa：利用AI语音分析革新招聘流程\n\nMappa是一个由Sarah Lucena创立的AI驱动行为智能平台，旨在解决传统招聘过程中存在的偏见和主观性问题。通过分析求职者的语音模式，Mappa能够识别与特定职位兼容的性格特质，从而帮助招聘经理做出更客观、更有效的决策。\n\n**核心技术与运作方式**\n*   **AI语音分析**：Mappa训练了一个AI模型，用于检测与沟通风格、同理心和自信等特质相关的语音模式。\n*   **求职者流程**：申请人只需回答Mappa AI代理提出的一些问题。\n*   **招聘经理接收**：平台随后会向招聘经理发送一份候选人入围名单，这些候选人的特质与职位要求高度匹配。\n\n**市场表现与成就**\n*   **TechCrunch Disrupt 2025**：Mappa是旧金山TechCrunch Disrupt 2025“创业战场”的前20名决赛选手。\n*   **融资情况**：Mappa于2023年由Sarah Lucena及其联合创始人Pablo Bérgolo和Daniel Moretti创立，已在种子轮融资中获得Tim Draper的投资公司Draper Associates领投的340万美元。\n*   **业务增长**：在不到三年内，该初创公司已在美国拥有超过130家客户，年化经常性收入超过400万美元。\n*   **数据优势**：Mappa声称其最大的优势之一是数据，它建立了高度精选的数据集，专门用于理解人类行为。\n*   **方法演变**：Mappa最初尝试通过视频提交和在线形象评估候选人，但最终发现语音分析是最有效的方法。\n\n**对招聘流程的影响**\n*   **降低员工流失率**：Mappa平台已帮助公司找到更稳定的员工。通过Mappa招聘的员工流失率仅为2%，远低于行业标准30%的年流失率。\n*   **促进公平招聘**：Mappa已促成超过3,000次招聘，其中超过60%的员工是女性、LGBTQ+群体或移民，这有助于创造更公平的招聘流程和更多机会。\n\n**未来展望与应用拓展**\n*   **基础设施提供商**：Lucena表示，Mappa正从一家服务公司发展成为基础设施提供商，其API已在招聘之外的场景中获得关注。\n*   **多元化应用**：\n    *   **风险投资**：Tim Draper本人使用Mappa评估其公司考虑投资的创始人。\n    *   **教育领域**：教育平台Re-Skilling.ai利用Mappa了解学生可以改进的技能。\n    *   **金融服务**：未来，Mappa可能被用于帮助没有广泛信用记录的贷款申请人进行评估。\n*   **更公平的评估工具**：Lucena认为Mappa是一个在各种环境中更公平地评估人们的工具。\n\n**TechCrunch Disrupt 2025活动信息**\n*   **时间**：2025年10月27日至29日\n*   **地点**：旧金山\n*   **活动内容**：了解Mappa的更多信息，观看其他创业公司的演示，参加有价值的研讨会，并建立商业联系。\n\n![TechCrunch Disrupt 2025](https://techcrunch.com/wp-content/uploads/2025/09/TC25_Disrupt_General_Article_No-Anniversary_Headers_1920x1080.png?w=680)",
+      "shortSummary": "Mappa是一个AI驱动的行为智能平台，通过分析求职者的语音模式来检测沟通风格、同理心和自信等特质，从而实现更客观、公平的招聘。该平台已帮助公司将员工流失率降至2%，并促进了多元化招聘。Mappa已融资340万美元，拥有130多家客户和400万美元年化经常性收入。未来，Mappa计划扩展其AI分析技术，应用于投资评估、教育和贷款审批等更广泛领域，旨在成为一个通用的人员评估基础设施。",
+      "translated_title": "Mappa的AI语音分析助您找到最佳求职者，并将在TechCrunch Disrupt 2025展示其技术",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/09/TC25_Disrupt_General_Article_No-Anniversary_Headers_1920x1080.png?w=680",
+          "alt": "TechCrunch Disrupt 2025",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Mappa's AI hiring platform can assess a candidate's behavior based on voice patterns, and aims to take some of the guesswork out of hiring."
+    },
+    {
+      "title": "深入了解 CampusAI 弥合普通员工人工智能培训鸿沟的使命——在 TechCrunch Disrupt 2025 上一探究竟 (原标题: Inside CampusAI’s mission to close the AI training gap for everyday workers — check it out at TechCrunch Disrupt 2025)",
+      "link": "https://techcrunch.com/2025/10/28/inside-campusais-mission-to-close-the-ai-training-gap-for-everyday-workers-check-it-out-at-techcrunch-disrupt-2025/",
+      "pubDate": "Tue, 28 Oct 2025 22:15:00 +0000",
+      "isoDate": "2025-10-28T22:15:00.000Z",
+      "creator": "Rebecca Bellan",
+      "summary": "## CampusAI：弥合普通员工的人工智能培训鸿沟\n\n随着企业日益追求效率和竞争力，员工掌握人工智能（AI）工具的使用变得至关重要。然而，这一趋势暴露出一个显著的培训缺口，即市场上缺乏专门为非技术人员设计的人工智能解决方案。波兰华沙的 CampusAI 公司创始人兼首席执行官 Aureliusz Gorski 指出，CampusAI 的使命正是通过其教育平台来解决这一问题，旨在让普通人能够轻松学习并将其AI技能融入日常工作流程，无论是用于提升销售、人力资源、法律工作，还是增强个人品牌。\n\n### 平台概述与核心功能\n\nCampusAI 的核心产品是一个全面的在线学习生态系统，包含两大关键组成部分：\n\n*   **基于虚拟形象的学习课程**：提供引人入胜的教学体验。\n*   **元宇宙中的虚拟校园**：用户可以在此学习更多技能、与其他学员建立联系、参与社区项目等。该平台被形象地比喻为“成人版 Roblox”，旨在帮助人们理解和驾驭AI，而非对其感到畏惧。\n\nCampusAI 提供两种主要产品：\n\n*   **面向消费者：Me+AI**\n    *   价格：每年250美元。\n    *   特点：允许学生个性化其学习体验。\n    ![图片 1](https://techcrunch.com/wp-content/uploads/2025/10/CampusAI-_Gameplay.mp4.00_00_21_03.Still002.jpg?w=680)\n    *   *Me+AI 用户在虚拟校园中拥有专属办公桌。图片来源：CampusAI*\n\n*   **面向企业：Team+AI**\n    *   价格：每年25,000美元。\n    *   目标：帮助企业内部实施“人机协作”的AI准备文化，确保平稳过渡。\n    *   服务内容：包括为期三周的组织AI准备度测试、经理研讨会和全组织网络研讨会，以及为期四周的、根据公司目标定制的员工个性化发展路径。\n\n### 学习方法与技术优势\n\nCampusAI 的学习平台整合了数十种AI模型，包括 ChatGPT、Gemini、Midjourney 和 Flux，让用户无需注册多个账户和订阅即可在一个地方进行实验和学习。为跟上技术快速发展的步伐，团队每日更新课程内容。\n\n该公司的学习方法基于AI研究员兼 CampusAI 科学顾问 Aleksandra Przegalińska 关于人机协作以提高业务成果和解决复杂问题的研究。其核心在于利用提示词策略来培养AI专家，从而增强个人能力。学生可以访问公司的提示词手册，其中不仅包含提示词库，还指导学生如何构建更有效的提示词。在虚拟校园环境中，学生还可以访问“AI健身房”，这是一个由AI代理创建的平台，学生在此完成针对性练习和挑战，并获得持续评估。\n\nCampusAI 强调的理念是，AI是提升工作的工具，而非取代工作的存在。Przegalińska 表示：“我们希望建立一个环境，让您不是将任务委托给AI，而是以多种不同模式与AI协作。它可以成为您的队友、陪练伙伴、评论家或教练。”\n\n### 市场表现与未来展望\n\nCampusAI 声称其课程能带来可衡量的投资回报率，员工效率提高40%，工作满意度提高60%。这家成立两年的公司已取得显著的市场牵引力：\n\n*   **用户增长**：2023年在波兰推出后，两周内获得600多名终身会员，目前用户已增长至35,000名。\n*   **企业客户**：拥有60家企业客户，包括ING、T-Mobile、联想和宜家。\n*   **营收预测**：预计2025年年度经常性收入（ARR）将超过200万美元。\n\nCampusAI 正在进行2000万美元的A轮融资，目标是到2030年扩展到40个市场。目前，该项目提供波兰语、英语和西班牙语版本，并已扩展到英国和美国，初期重点发展B2B销售，随后再转向D2C。完成课程的用户可受邀加入 Community+AI，这是一个数字中心，供会员交流、分享知识和协作项目，例如在线杂志 hAI Magazine。\n\n### 数字孪生技术与生态系统建设\n\n除了学习环境，CampusAI 的数字孪生技术已成为其重要的价值主张。该公司不仅运营自己的虚拟校园，还希望为组织构建并授权真实大学校园、企业展厅、政府机构或公司总部的数字孪生，该产品起价为每年100,000美元。\n\nCampusAI 最近从欧盟委员会获得了1800万欧元，用于与10个国家的11所大学合作，创建数字孪生和定制学习环境。Gorski 认为这些大学合作伙伴关系是本地创新中心的启动平台，旨在建立强大的本地社区和虚拟区域，最终创建一个为企业家量身定制的社交平台。他强调，培养强大的本地生态系统对于对抗大型科技公司的垄断至关重要。\n\n### TechCrunch Disrupt 2025\n\nCampusAI 是 TechCrunch Disrupt 大会的 Startup Battlefield Top 20 决赛选手。该大会将于2025年10月27日至29日在旧金山举行，届时将有更多关于 CampusAI 的信息以及其他创新公司的展示。\n![TechCrunch Disrupt 2025](https://techcrunch.com/wp-content/uploads/2025/09/TC25_Disrupt_General_Article_No-Anniversary_Headers_1920x1080.png?w=680)",
+      "shortSummary": "CampusAI 旨在通过其教育平台弥合普通员工的人工智能培训鸿沟。该平台提供基于虚拟形象的课程和元宇宙中的虚拟校园，帮助非技术人员将AI融入日常工作。它提供消费者（Me+AI）和企业（Team+AI）产品，整合了多种AI模型，并声称能显著提高员工效率。CampusAI已获得显著市场牵引力，并正寻求融资以扩展全球市场，同时还开发了数字孪生技术。该公司是TechCrunch Disrupt 2025的决赛选手。",
+      "translated_title": "深入了解 CampusAI 弥合普通员工人工智能培训鸿沟的使命——在 TechCrunch Disrupt 2025 上一探究竟",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/10/CampusAI-_Gameplay.mp4.00_00_21_03.Still002.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/10/Zrzut-ekranu-2025-10-24-o-18.58.54.png?w=680",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/09/TC25_Disrupt_General_Article_No-Anniversary_Headers_1920x1080.png?w=680",
+          "alt": "TechCrunch Disrupt 2025",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "CampusAI is an educational platform focused on making learning accessible to everyday people who want to bring AI into their everyday workflows, and a virtual ecosystem to connect like-minded people. "
+    },
+    {
+      "title": "Unthread 计划清理 Slack 混乱，并将在 TechCrunch Disrupt 2025 展示其技术 (原标题: Unthread has a plan for cleaning up Slack and will show off its tech at TechCrunch Disrupt 2025)",
+      "link": "https://techcrunch.com/2025/10/28/unthread-has-a-plan-for-cleaning-up-slack-and-will-show-off-its-tech-at-techcrunch-disrupt-2025/",
+      "pubDate": "Tue, 28 Oct 2025 22:15:00 +0000",
+      "isoDate": "2025-10-28T22:15:00.000Z",
+      "creator": "Russell Brandom",
+      "summary": "## Unthread：解决 Slack 混乱的 AI 驱动方案\n\nUnthread 是一家旨在解决企业通信平台 Slack 中支持混乱问题的初创公司。其首席执行官兼联合创始人 Tom Bachant 观察到 Slack 中存在随意开票、DM 混杂以及难以洞察根本问题的现象，这促使他创立了 Unthread。\n\n### 核心问题与解决方案\n\n*   **问题识别**：Slack 被视为一个“混乱的野兽”，需要更好的跟踪和管理。同时，团队请求的实际工作可以轻松实现自动化。\n*   **Unthread 的目标**：构建 Slack 原生的、AI 驱动的支持机器人，为 Intuit、Lemonade 和 Automattic 等知名客户提供服务。目标是自动解决大部分问题，并将其他问题转为特定的支持工单。\n\n### 技术与功能亮点\n\n*   **超越传统 Slackbot**：Unthread 不仅仅是一个定制的 Slackbot 构建器，它还提供了一种新的方式来跟踪和解决拖慢公司效率的问题，甚至在问题发生前就加以修复。\n*   **系统集成与替代**：该技术可以与 Jira 和 Zendesk 等现有工单系统互操作，甚至在许多情况下可以替代它们。\n*   **AI 驱动的灵活性**：基于 AI 的模型赋予 Unthread 极大的灵活性，使其能够为 HR、法律或财务等不同部门构建定制系统。\n*   **自动化与知识库**：一旦 Unthread 部署到位，开始监控问题的报告来源，团队就可以自动化更多任务，最终为整个公司创建一个自更新的知识库。\n*   **当代 AI 工具**：现代 AI 工具是 Unthread 技术栈的核心，提供了大规模处理各种问题的灵活性。尽管大型语言模型（LLMs）改变了人们使用产品的方式，但 Unthread 解决的核心问题保持不变。\n*   **基本组织能力**：Unthread 的重要价值在于将工单系统的基本组织能力应用于现代企业通信平台。\n\n### 创始人背景与公司理念\n\n*   **Tom Bachant 的创业历程**：Bachant 的第一家创业公司是拼车系统 Dashride，后于 2018 年被 Cruise 收购。之后，他创立了一家 HR 初创公司，最终专注于解决基于 Slack 的支持问题。他目前在纽约领导一个由 10 人组成的精益团队。\n*   **以客户为中心**：Bachant 强调，公司长寿的秘诀在于始终关注产品用户。通过与客户进行大量对话，清晰了解客户是谁、他们为何关心产品、以及他们可能离开的原因，这有助于公司做出许多关键决策。\n\n### TechCrunch Disrupt 2025\n\n*   **决赛入围者**：Unthread 是 TechCrunch Disrupt 2025 Startup Battlefield Top 20 的决赛入围者。\n*   **活动信息**：TechCrunch Disrupt 2025 将于 2025 年 10 月 27 日至 29 日在旧金山举行，届时 Unthread 将展示其技术。\n\n![TechCrunch Disrupt 2025](https://techcrunch.com/wp-content/uploads/2025/09/TC25_Disrupt_General_Article_No-Anniversary_Headers_1920x1080.png?w=680)",
+      "shortSummary": "Unthread 是一家初创公司，致力于通过其 Slack 原生、AI 驱动的支持机器人解决 Slack 中的混乱支持问题。它能自动处理大部分问题，并将复杂问题转化为工单，服务于 Intuit 等客户。Unthread 的技术可与现有系统集成或替代它们，并为 HR、法律等部门提供解决方案，最终建立自更新的知识库。该公司是 TechCrunch Disrupt 2025 的决赛入围者，其创始人 Tom Bachant 强调以客户为中心，通过与客户对话来驱动产品决策。",
+      "translated_title": "Unthread 计划清理 Slack 混乱，并将在 TechCrunch Disrupt 2025 展示其技术",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/09/TC25_Disrupt_General_Article_No-Anniversary_Headers_1920x1080.png?w=680",
+          "alt": "TechCrunch Disrupt 2025",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Unthread builds Slack-native, AI-powered support bots for high-profile customers like Intuit, Lemonade, and Automattic. "
+    },
+    {
+      "title": "科斯拉支持的Mazama公司利用超热岩石，竞逐24/7全天候电力供应 (原标题: Khosla-backed Mazama taps super-hot rocks in race to deliver 24/7 power)",
+      "link": "https://techcrunch.com/2025/10/28/khosla-backed-mazama-taps-super-hot-rocks-in-race-to-deliver-24-7-power/",
+      "pubDate": "Tue, 28 Oct 2025 21:50:33 +0000",
+      "isoDate": "2025-10-28T21:50:33.000Z",
+      "creator": "Tim De Chant",
+      "summary": "## 科斯拉支持的Mazama公司在24/7全天候电力竞赛中取得突破\n\n### 引言\n随着数据中心和电动汽车(EVs)对电网的需求日益增长，地热初创公司正竞相开发地球深层蕴藏的巨大能源。在这一背景下，一家名为Mazama Energy的初创公司取得了里程碑式的进展。\n\n### Mazama能源的里程碑式突破\n*   **全球最热地热井：** Mazama Energy宣布在俄勒冈州成功钻探了一口地热井，其井底温度达到了惊人的629˚ F (331˚ C)，使其成为世界上最热的地热井。\n*   **巨大能源潜力：**\n    *   Vinod Khosla（其公司Khosla Ventures孵化了Mazama）在TechCrunch Disrupt活动中指出，仅此一处地点就可能产生5吉瓦(GW)的能量。\n    *   Khosla进一步预测，超热地热的潜力可能达到100吉瓦甚至更多，这甚至超过了人工智能近期预计的用电量。\n*   **未来目标：** Mazama公司希望最终能钻探到温度高达750˚ F (400˚ C)的岩石，目标是每口井至少产生25兆瓦(MW)的电力，这将是目前竞争对手每口井发电量的两到三倍。\n\n### 增强型地热发电的优势\n*   **24/7全天候供电：** 增强型地热发电(EGS)依赖地球内部的热量，能够提供持续稳定的电力，实现24/7全天候供电。\n*   **广泛应用前景：** 谷歌等公司已与地热发电公司签订协议，利用地热电力为数据中心供电。\n*   **满足巨大能源需求：** 根据美国地质调查局的数据，仅内华达州大盆地地区钻探的井就可能满足美国当前10%的电力需求。深入挖掘更深层的岩石，可以用更少的资源释放更多电力。\n*   **高效与环保：**\n    *   通过向更热的井中注入水，每口井的能量输出可以显著提高。\n    *   Mazama公司表示，其系统预计将比现有地热系统少用75%的水。\n    *   Khosla强调，在450˚ C的温度下，每口井的发电量是200˚ C时的10倍，同时成本大幅降低，与天然气相比具有竞争力，且无需担心碳排放。\n\n### 地热发电背景\n*   **传统地热：** 几十年来，大多数地热发电厂利用的是浅层资源，例如温泉将地幔热量带到地表附近。\n*   **增强型地热 (EGS)：** EGS开发商钻探更深的井，以获取更大、更稳定的热量，这项技术有望使地热发电在更多地方更具生产力。",
+      "shortSummary": "科斯拉支持的Mazama Energy公司在俄勒冈州成功钻探出全球最热地热井，井底温度高达331˚ C。该井展示了巨大的能源潜力，Vinod Khosla表示其可产生5吉瓦电力，并预测超热地热总潜力可达100吉瓦以上。Mazama旨在钻探至400˚ C岩石，实现每口井25兆瓦的发电量，远超现有技术。增强型地热能提供24/7全天候电力，用水量减少75%，成本效益高且无碳排放，有望成为满足日益增长能源需求的关键解决方案。",
+      "translated_title": "科斯拉支持的Mazama公司利用超热岩石，竞逐24/7全天候电力供应",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Geothermal startup Mazama Energy said it drilled a borehole that set a temperature record. Such superhot rocks could make geothermal a key player in data center power."
+    },
+    {
+      "title": "Aurora将自动驾驶卡车路线扩展至埃尔帕索 (原标题: Aurora expands self-driving trucks route to El Paso)",
+      "link": "https://techcrunch.com/2025/10/28/aurora-expands-self-driving-trucks-route-to-el-paso/",
+      "pubDate": "Tue, 28 Oct 2025 21:02:55 +0000",
+      "isoDate": "2025-10-28T21:02:55.000Z",
+      "creator": "Kirsten Korosec",
+      "summary": "# Aurora扩展自动驾驶卡车路线至埃尔帕索\n\n## 路线扩展与商业服务里程碑\n*   **新增路线**：自动驾驶技术公司Aurora宣布新增一条600英里的无人驾驶路线，连接沃思堡（Fort Worth）和埃尔帕索（El Paso），这是该公司继达拉斯-休斯顿路线之后，推出的第二条自动驾驶卡车路线。\n*   **发布时机**：此项扩展是与公司第三季度财报一同公布的。\n*   **里程碑**：自5月启动商业服务以来，Aurora已使用五辆自动驾驶卡车在公共道路上完成了超过10万英里的无人驾驶里程。\n*   **未来目标**：公司设定的下一个目标是在今年年底前将服务扩展至凤凰城。\n*   **初始服务**：Aurora的首次商业服务始于达拉斯到休斯顿的路线，初期客户包括Hirschbach Motor Lines和Uber Freight。\n*   **路线吸引力**：Aurora表示，沃思堡到埃尔帕索的路线足够长，对承运商具有吸引力，有助于解决人员挑战以及单日完成10小时运输的困难。\n*   **新路线客户**：埃尔帕索路线的客户包括Hirschbach Motor Lines和Russell Transport。\n\n## 下一代硬件技术\n*   **制造与集成**：Aurora还披露了其下一代硬件的细节，该硬件由Fabrinet制造，并正与沃尔沃VNL自动驾驶卡车进行集成。\n*   **生产计划**：Aurora计划在2026年生产数百辆配备其下一代硬件的卡车。\n*   **性能提升**：新硬件更耐用，性能更优越，而整体成本却降低了一半。\n*   **激光雷达能力**：公司新一代激光雷达的探测距离达到1000米，是当前一代的两倍。\n*   **恶劣天气适应性**：Aurora还改进了传感器清洁系统，使其在恶劣天气条件下运行更可靠。\n*   **行业合作**：沃尔沃自动驾驶解决方案总裁Nils Jaeger表示，Aurora下一代硬件与沃尔沃VNL自动驾驶卡车在New River Valley工厂试点生产线的集成，标志着行业首次合作，并强调了双方在制造专为自动驾驶设计的卡车方面取得的重大进展，旨在提供可扩展的解决方案以满足现代供应链的需求。\n\n## 未来大规模生产计划\n*   **联合开发**：在下一代硬件之后，Aurora还将推出一套更高产量的硬件，该硬件正与Aumovio（前身为Continental）联合开发。\n*   **大规模生产**：与Aumovio的制造合作计划于2027年开始，届时Aurora计划建造“数万辆自动驾驶卡车”。\n\n![Aurora cab-mounted warning beacons](https://techcrunch.com/wp-content/uploads/2025/01/Illustrative-purposes-warning-beacon-1.jpg?w=1024)\n*图片来源：Aurora Innovation*",
+      "shortSummary": "Aurora将其自动驾驶卡车路线扩展至沃思堡到埃尔帕索，新增600英里，这是其第二条商业路线。公司已完成超过10万英里无人驾驶里程，并计划年底前扩展至凤凰城。Aurora还推出了由Fabrinet制造的下一代硬件，该硬件更耐用、性能更好且成本减半，激光雷达探测距离翻倍。未来，Aurora将与Aumovio合作，计划从2027年起大规模生产数万辆自动驾驶卡车。",
+      "translated_title": "Aurora将自动驾驶卡车路线扩展至埃尔帕索",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/01/Illustrative-purposes-warning-beacon-1.jpg?w=1024",
+          "alt": "Aurora cab-mounted warning beacons",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Aurora's first driverless route was from Dallas to Houston. This next one is Fort Worth to El Paso. "
+    },
+    {
+      "title": "Mirror创始人携新型‘互联屏幕’初创公司回归：一款名为‘Board’的游戏设备 (原标题: Mirror’s founder is back with a new ‘connected screen’ startup: a gaming device called ‘Board’)",
+      "link": "https://techcrunch.com/2025/10/28/mirrors-founder-is-back-with-a-new-connected-screen-startup-a-gaming-device-called-board/",
+      "pubDate": "Tue, 28 Oct 2025 20:45:00 +0000",
+      "isoDate": "2025-10-28T20:45:00.000Z",
+      "creator": "Sarah Perez",
+      "summary": "# Board：Brynn Putnam的全新互联游戏设备\n\nMirror的创始人Brynn Putnam携其最新初创公司“Board”回归，推出一款结合了桌面游戏和视频游戏精髓的科技驱动型游戏主机。在2020年以5亿美元将Mirror出售给Lululemon后，Putnam再次投身创业，并于2025年旧金山TechCrunch Disrupt大会上首次公开展示了这款新产品。\n\n## 产品概述\nBoard设备旨在为亲朋好友提供一个聚集在一起的游戏平台，其核心是一个24英寸的屏幕，被包裹在木质边框中。该屏幕能够识别触摸、手势以及物理对象，将现实世界与数字世界元素融合。Putnam表示，这款设备的大小适合四到六人围坐共同游戏。\n\n## 发布与定价\nBoard的售价为500美元，发布时将预装12款游戏并附带50个游戏棋子。\n\n## AI与未来愿景\nPutnam透露，未来将利用人工智能（AI）实现设备的个性化定制。AI将支持视觉和语音输入、自适应故事情节、动态环境以及翻译、语音转文本等辅助功能。长远来看，AI将赋能用户在Board上进行创作，使其超越单一的游戏主机，成为一个创意自我表达的平台。\n\n## 游戏开发与生态系统\nBoard的内部游戏工作室已与外部开发者合作创作首批游戏。公司计划未来吸引更多开发者为该平台构建内容，并推出一个应用商店，供第三方将自己的体验带到Board上。\n\n## 融资情况\nBoard已获得Lerer Hippeau（曾领投Mirror的300万美元种子轮）、First Round和Box Group等风投公司的支持。迄今已筹集1500万美元，目前正在进行A轮融资。\n\n## 创始人理念\nPutnam选择游戏作为其新创业方向，是因为她认为“玩耍是普遍的”。她指出，与健身不同（并非所有人都喜欢锻炼，尤其是在家锻炼），玩耍能够真正地将人们团结起来，它是一种连接彼此的通用语言。\n\n## 图片\n![TechCrunch Disrupt 2025大会上的Brynn Putnam](https://techcrunch.com/wp-content/uploads/2025/10/2243857122.jpg?w=680)\n2025年10月28日，旧金山Moscone中心，TechCrunch Disrupt 2025大会第二天，TechCrunch主编兼总经理Connie Loizos（左）与Board创始人兼首席执行官Brynn Putnam（右）在台上发言。（图片来源：Kimberly White/Getty Images for TechCrunch）",
+      "shortSummary": "Mirror创始人Brynn Putnam推出新公司“Board”，发布一款售价500美元的互联游戏设备。该设备结合了桌面游戏和视频游戏，核心是一个24英寸的触控屏幕，可供四到六人玩耍。发布时包含12款游戏和50个棋子。未来将利用AI实现个性化定制，并计划建立开发者生态系统和应用商店。Board已筹集1500万美元，Putnam认为玩耍是连接人心的普遍方式。",
+      "translated_title": "Mirror创始人携新型‘互联屏幕’初创公司回归：一款名为‘Board’的游戏设备",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/10/2243857122.jpg?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Mirror's founder is back with a connected gaming startup called Board that combines board games and video games."
+    },
+    {
+      "title": "Netflix 首席技术官表示将推出更多竖屏视频实验，但流媒体平台不与 TikTok 竞争 (原标题: Netflix CTO says more vertical video experiments are coming, but streamer is not competing with TikTok)",
+      "link": "https://techcrunch.com/2025/10/28/netflix-cto-says-more-vertical-video-experiments-are-coming-but-streamer-is-not-competing-with-tiktok/",
+      "pubDate": "Tue, 28 Oct 2025 19:47:00 +0000",
+      "isoDate": "2025-10-28T19:47:00.000Z",
+      "creator": "Sarah Perez",
+      "summary": "## Netflix 探索竖屏视频与新内容形式，强调差异化竞争\n\nNetflix 首席技术官 Elizabeth Stone 在 TechCrunch Disrupt 2025 大会上表示，Netflix 正在将竖屏视频作为实验新内容类型的一种方式。公司旨在利用移动平台，而非直接与 TikTok 等短视频应用竞争。\n\n### 核心策略与目标\n\n*   **满足多样化用户需求**：Stone 指出，消费者有时需要 Netflix 提供的传统电视节目、电影或游戏，但有时也渴望“更具小吃性”的内容。Netflix 需要提供“更广泛的内容种类”来满足这些时刻的需求。\n*   **不与 TikTok 直接竞争**：Netflix 的目标不是复制或追逐 TikTok 的模式。公司认为，存在一种“对会员特别有价值的特定娱乐类型——或真实时刻”，Netflix 希望专注于此，而不是试图在每个时刻都满足所有需求。\n\n### 当前与未来的实验\n\n1.  **移动端竖屏视频信息流**：\n    *   Netflix 正在移动设备上测试一种竖屏视频信息流，旨在重新构想移动体验，并适应用户当前使用移动设备的方式。\n    *   该信息流允许会员滚动浏览其原创内容的片段，目的是激发用户观看完整的节目或电影。\n2.  **“Moments”功能与竖屏整合**：\n    *   Netflix 应用中已有一个名为“Moments”的视频剪辑功能，允许用户剪辑并分享他们喜爱的节目或电影片段。\n    *   Stone 暗示，未来有可能将这些短片段植入到竖屏视频信息流中，并表示公司将实验“不同类型的内容”以及“不同的剪辑和分享内容方式”。\n3.  **播客内容实验**：\n    *   Netflix 将利用竖屏视频等新“画布”来实验新的内容类型，其中包括最近宣布的播客内容（得益于与 Spotify 的合作）。\n    *   部分播客内容将在 Netflix 和 Spotify 上共同独家发布，并可在移动设备和电视上观看。\n\n### 推出时间表\n\nNetflix 预计这些实验将在未来几个季度和整个 2026 年逐步向用户推出。",
+      "shortSummary": "Netflix 首席技术官 Elizabeth Stone 宣布，公司将推出更多竖屏视频实验，以提供“小吃式”内容，满足移动用户需求。Netflix 不打算直接与 TikTok 竞争，而是专注于利用竖屏格式推广现有内容（如通过片段）并探索新内容类型（如播客，与 Spotify 合作）。这些实验旨在为会员提供独特价值，并将在未来几个季度和2026年逐步推出。",
+      "translated_title": "Netflix 首席技术官表示将推出更多竖屏视频实验，但流媒体平台不与 TikTok 竞争",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Netflix CTO Elizabeth Stone says company is experimenting with vertical video, but isn't trying to be TikTok."
+    },
+    {
+      "title": "Netflix推出儿童个人资料页面新设计 (原标题: Netflix launches redesigned profiles for kids)",
+      "link": "https://techcrunch.com/2025/10/28/netflix-launches-redesigned-profiles-for-kids/",
+      "pubDate": "Tue, 28 Oct 2025 19:12:21 +0000",
+      "isoDate": "2025-10-28T19:12:21.000Z",
+      "creator": "Sarah Perez",
+      "summary": "## Netflix为儿童推出重新设计的个人资料页面\n\nNetflix已在全球范围内为其服务上的儿童个人资料页面推出了全新的电视体验。此次更新旨在简化设计和导航，帮助用户更快地找到他们喜欢的内容。\n\n### 更新背景\n\n*   **标准个人资料页面先行：** Netflix在5月份曾为标准个人资料页面推出了类似的设计更新，其中包括AI驱动的搜索工具、更佳的推荐以及更显眼的快捷方式等。\n*   **儿童专属优化：** 此次更新将相同的设计理念带到了儿童个人资料页面，并针对最年轻的用户进行了额外的调整。\n\n### 儿童个人资料页面的主要变化\n\n*   **主页设计简化：** 新设计简化了主页的外观和感受，使其更加直观易用。\n*   **新增“我的Netflix”导航栏：**\n    *   在顶部新增了一个导航栏，链接到“我的Netflix”部分。\n    *   “我的Netflix”功能将儿童已观看、保存和喜欢的所有内容汇集在一个地方，方便他们重温最喜爱的电影和剧集。\n*   **实时推荐刷新：** 儿童的推荐内容将像标准个人资料页面一样实时刷新，旨在减少他们寻找观看内容的时间。\n\n### 保持不变的功能\n\n尽管进行了重大更新，但儿童个人资料页面的一些核心功能保持不变，包括：\n\n*   角色主题行\n*   神秘盒子推荐\n*   家长控制功能\n\n### 其他相关更新与新界面的灵活性\n\nNetflix还宣布了其他更新，例如实时投票、直播派对游戏和播客等。例如，明年Netflix将在其即将推出的新节目“Star Search”中推出实时投票功能，此前已在“Dinner Time Live with David Chang”中进行了测试。公司表示，新的用户界面与这些变化紧密相关，因为它为不同类型的创意内容（包括互动内容）提供了更灵活的画布。",
+      "shortSummary": "Netflix在全球范围内为儿童个人资料页面推出了新的电视体验。此次更新旨在简化设计和导航，帮助儿童更快找到喜爱内容。主要变化包括简化的主页、新增的“我的Netflix”导航栏（汇集观看历史和收藏），以及实时刷新的推荐。角色主题行和家长控制等功能保持不变。新界面也为未来的互动内容提供了更灵活的支持。",
+      "translated_title": "Netflix推出儿童个人资料页面新设计",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Netflix announces new Kids' profiles with real-time recommendations, a \"My Netflix\" hub, and more. "
+    },
+    {
+      "title": "Netflix 首席技术官宣布为直播内容推出实时互动投票功能 (原标题: Netflix CTO announces interactive real-time voting for live content)",
+      "link": "https://techcrunch.com/2025/10/28/netflix-cto-announces-interactive-real-time-voting-for-live-content/",
+      "pubDate": "Tue, 28 Oct 2025 19:06:46 +0000",
+      "isoDate": "2025-10-28T19:06:46.000Z",
+      "creator": "Aisha Malik",
+      "summary": "## Netflix 推出实时互动投票功能，提升用户参与度\n\nNetflix 首席技术官 Elizabeth Stone 在 TechCrunch Disrupt 2025 大会上宣布，流媒体服务 Netflix 将拓展其沉浸式和互动体验，首先推出实时投票功能。此举旨在通过允许直播节目的观众实时互动并直接影响节目结果，从而显著提升用户参与度。\n\n### 功能运作方式与应用\n\n*   **观众互动方式**：观众可以通过电视或移动设备在观看直播内容时进行投票，直接影响节目的走向。\n*   **测试与推广计划**：\n    *   该功能已于八月在直播烹饪节目《David Chang 的晚餐时间直播》（Dinner Time Live with David Chang）中进行测试。\n    *   计划在明年Netflix重启的才艺竞赛系列节目《明星搜寻》（Star Search）中全面推出，该节目已停播20年。\n*   **具体互动示例**：\n    *   在《明星搜寻》中，观众将能够投票决定选手的晋级或淘汰。\n    *   在《David Chang 的晚餐时间直播》中，观众曾被要求投票选择金枪鱼或烤奶酪，或对汤和沙拉进行偏好选择。投票结果会实时显示在屏幕上。\n*   **投票机制**：屏幕上会显示投票提示，观众需在有限时间内完成投票。如果回放或未跟上直播，可能会错过投票窗口。\n\n### 预期效果与战略意义\n\nNetflix 在早期测试中观察到实时投票功能带来了持续的参与度，这表明未来互动娱乐具有巨大潜力。公司致力于让观众更深入地参与到观看内容中，以此应对日益激烈的流媒体竞争，旨在为会员创造共享的、社区驱动的观看体验。值得注意的是，这并非Netflix首次探索实时投票，此前在真人秀节目《欲罢不能》（Too Hot to Handle）和《爱情盲选》（Love Is Blind）中也测试过互动观众投票。\n\n### 更广泛的互动与沉浸式体验\n\n除了直播内容，Netflix还在为电视版派对游戏（如 Boggle）和未来的播客开发实时响应功能，以实现即时互动。公司计划在今年第四季度推出更多客厅派对游戏，并计划在明年推出更多，用户可以通过手机与家人朋友在电视上一起玩。\n\n### 沉浸式主页体验\n\nStone 还宣布，Netflix 将在其主页推出沉浸式体验，通过动画和动态特效使内容“活”起来。已推出万圣节系列沉浸式体验，未来将推出假日系列（12月）和更多基于IP的体验（如《布里奇顿》系列）。\n\n### 图片\n\n![实时投票用户界面截图](https://techcrunch.com/wp-content/uploads/2025/10/Real-TimeVoting_UI_Screenshot.png?w=680)\n图片来源：Netflix",
+      "shortSummary": "Netflix 首席技术官宣布推出实时互动投票功能，允许直播节目观众通过电视或手机直接影响节目结果，以提升参与度。该功能已在烹饪节目中测试，并将推广至重启的《明星搜寻》。这是 Netflix 应对竞争、深化用户沉浸感战略的一部分，未来还将扩展到派对游戏和沉浸式主页体验等领域，旨在创造更具互动性和社区感的观看体验。",
+      "translated_title": "Netflix 首席技术官宣布为直播内容推出实时互动投票功能",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/10/Real-TimeVoting_UI_Screenshot.png?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "While watching live content, viewers will be able to vote to directly influence the outcome of what they're watching on their TV or mobile device. "
+    },
+    {
+      "title": "Sam Altman 表示 OpenAI 将在 2028 年拥有“真正的 AI 研究员” (原标题: Sam Altman says OpenAI will have a ‘legitimate AI researcher’ by 2028 )",
+      "link": "https://techcrunch.com/2025/10/28/sam-altman-says-openai-will-have-a-legitimate-ai-researcher-by-2028/",
+      "pubDate": "Tue, 28 Oct 2025 18:46:46 +0000",
+      "isoDate": "2025-10-28T18:46:46.000Z",
+      "creator": "Rebecca Bellan",
+      "summary": "## OpenAI 目标：2028 年实现“真正的 AI 研究员”\n\nOpenAI 首席执行官 Sam Altman 在一次直播中宣布，公司内部正朝着一个雄心勃勃的目标迈进：到 2026 年 9 月实现实习生级别的研究助理，并于 2028 年拥有一个完全自动化的“真正的 AI 研究员”。\n\n### 公司重组与战略意义\n\n这一时间表与 OpenAI 完成向公益公司（public benefit corporation）结构的转型同步，标志着其从非营利组织根基的转变。此次重组旨在：\n*   解除非营利章程所带来的限制。\n*   为公司开辟新的融资机会。\n\n### AI 研究员的定义与超级智能愿景\n\nOpenAI 首席科学家 Jakub Pachocki 在直播中解释说，这里的 AI 研究员并非指研究 AI 的人类，而是一个“能够自主完成大型研究项目的系统”。Pachocki 进一步预测，深度学习系统有望在不到十年内达到“超级智能”，即在大量关键行动上超越人类的系统。\n\n### 实现目标的策略\n\n为实现这些宏伟目标，OpenAI 将押注于两大关键策略：\n1.  **持续的算法创新**：不断提升 AI 模型的学习和解决问题的能力。\n2.  **大幅扩展“测试时间计算”**：本质上是指模型思考问题所花费的时间。Pachocki 指出，当前模型可以处理约五小时时间范围内的任务，并在国际数学奥林匹克等竞赛中与顶尖人类表现相当。他相信通过让模型投入更多的计算资源来思考复杂问题，这一时间范围将迅速扩展。对于重大的科学突破，他认为值得为单个问题投入整个数据中心级别的计算能力。\n\n### 整体目标与社会影响\n\nOpenAI 表示，这些目标符合公司推动科学研究的整体愿景，旨在：\n*   让 AI 能够比人类研究员更快地做出发现。\n*   解决超越当前人类能力的复杂问题。\n*   大幅加速医学、物理和技术开发等多个领域的创新。\n\n### 负责任的 AI 发展与新公司结构\n\nAltman 强调，此次重组创建了一个框架，既能支持 OpenAI 积极的 AI 研究助理时间表，又能维持对负责任 AI 开发的承诺。在新结构下：\n*   专注于科学进步的非营利 OpenAI 基金会将拥有营利部门 26% 的股权，并主导研究方向。\n*   该非营利基金会还承诺投入 250 亿美元，利用 AI 治愈疾病，并协助管理 AI 研究和安全倡议。\n*   营利部门通过筹集更多资金，能够扩展实现科学进步所需的基础设施建设。Altman 透露，OpenAI 已承诺在未来几年内投入 30 吉瓦的基础设施，这相当于 1.4 万亿美元的财务义务。",
+      "shortSummary": "OpenAI 首席执行官 Sam Altman 宣布，公司目标是到 2026 年 9 月实现实习生级 AI 研究助理，并于 2028 年拥有完全自动化的“真正的 AI 研究员”。这一雄心勃勃的计划伴随公司向公益公司转型，旨在摆脱非营利限制并为大规模融资铺路。首席科学家 Jakub Pachocki 认为，深度学习系统有望在十年内达到超级智能。为实现此目标，OpenAI 将专注于算法创新和大幅提升计算能力，并承诺未来几年投入 1.4 万亿美元建设基础设施。",
+      "translated_title": "Sam Altman 表示 OpenAI 将在 2028 年拥有“真正的 AI 研究员”",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "To achieve those goals, OpenAI is betting on two key strategies: continued algorithmic innovation and dramatically scaling up \"test time compute\" — essentially how long models spend thinking about problems. "
+    },
+    {
       "title": "Charter Space将金融科技引入航天器保险，并在TechCrunch Disrupt 2025上展示其成果 (原标题: Charter Space brings fintech to spacecraft insurance and is showing off its stuff at TechCrunch Disrupt 2025)",
       "link": "https://techcrunch.com/2025/10/28/charter-space-brings-fintech-to-spacecraft-insurance-and-is-showing-off-its-stuff-at-techcrunch-disrupt-2025/",
       "pubDate": "Tue, 28 Oct 2025 18:20:00 +0000",
@@ -22,7 +311,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "Charter Space wants to change how spacecraft are insured. "
+      "content": "The goal is faster, cheaper, and more reliable risk evaluation for spacecraft insurance, and eventually to power new forms of credit and nondilutive funding for space companies looking outside venture capital and the public markets."
     },
     {
       "title": "CyDeploy希望创建公司系统副本，以帮助其在推出更新前进行测试——在Disrupt 2025大会上了解它 (原标题: CyDeploy wants to create a replica of a company’s system to help it test updates before pushing them out — catch it at Disrupt 2025)",
@@ -55,7 +344,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "Cyphr is a Kansas-city based company focused on making the lending process easier for lenders and small businesses. "
+      "content": "Cyphr's product analyzes alternative data sources and financial patterns of small businesses to help lenders make decisions about small business creditworthiness. "
     },
     {
       "title": "由富国银行校友创建的Identifee，将银行家的生产力技术整合到一个单一平台——在TechCrunch Disrupt 2025上了解它 (原标题: Identifee, built by Wells Fargo alumni, unifies productivity tech for bankers into a single platform — catch it at TechCrunch Disrupt 2025)",
@@ -76,293 +365,7 @@
       ],
       "contentSource": "完整文章",
       "content": "The startup’s platform is built on several modular systems that clients can purchase individually or as a complete suite."
-    },
-    {
-      "title": "Elloe AI 旨在成为人工智能的‘免疫系统’——在 Disrupt 2025 上了解更多 (原标题: Elloe AI wants to be the ‘immune system’ for AI — check it out at Disrupt 2025)",
-      "link": "https://techcrunch.com/2025/10/28/elloe-ai-wants-to-be-the-immune-system-for-ai-check-it-out-at-disrupt-2025/",
-      "pubDate": "Tue, 28 Oct 2025 18:20:00 +0000",
-      "isoDate": "2025-10-28T18:20:00.000Z",
-      "creator": "Lorenzo Franceschi-Bicchierai",
-      "summary": "## Elloe AI：人工智能的“免疫系统”\n\nElloe AI 的创始人 Owen Sakawa 致力于将其平台打造为“人工智能的免疫系统”和“任何 AI 代理的杀毒软件”。该平台旨在为公司的大型语言模型（LLM）添加一个关键的安全层，以应对当前人工智能快速发展中缺乏防护措施的挑战。\n\n### Elloe AI 解决的问题\n\nSakawa 指出，AI 正在以极快的速度发展，但缺乏必要的防护栏、安全网和防止其失控的机制。这导致了多种潜在问题，包括：\n\n*   偏见\n*   幻觉（生成不准确或虚假信息）\n*   错误\n*   合规性问题\n*   错误信息\n*   不安全的输出\n\n### Elloe AI 的工作原理\n\nElloe AI 是一个 API 或 SDK，一个模块，它位于 AI 模型输出层的顶部。Sakawa 将其描述为“您的 LLM 管道之上的基础设施”，其核心功能是“对每一个响应进行事实核查”。\n\n### Elloe AI 的“锚点”（多层系统）\n\n该系统的设计包含多个层次，Sakawa 称之为“锚点”，每个锚点负责不同的安全检查：\n\n1.  **事实核查层：** 将 LLM 的响应与可验证的来源进行核对，确保信息的准确性。\n2.  **合规性与法规检查层：** 检查输出是否违反了相关法规，例如：\n    *   美国的健康隐私法 HIPAA\n    *   欧洲的数据保护和隐私法 GDPR\n    *   是否泄露了个人私人信息（PII）\n3.  **审计追踪层：** 提供一个审计路径，展示所有先前决策的制定过程。这使得监管机构或任何审计系统的人员能够“分析该模型的思维链，包括其做出决策的来源、决策的置信度分数”。\n\n### 技术与方法\n\nSakawa 明确表示，Elloe AI 并非基于另一个 LLM 构建。他认为让 LLM 检查 LLM 只是“在另一个伤口上贴创可贴”，无法从根本上解决问题。尽管如此，Elloe AI 的系统确实利用了机器学习等 AI 技术。此外，该系统还保留了人工参与：Elloe AI 的员工负责持续关注数据保护和用户保护方面的新法规。\n\n### 参展信息\n\nElloe AI 是 TechCrunch Disrupt 2025 大会 Startup Battlefield 竞赛的 Top 20 决赛选手之一。该大会将于 2025 年 10 月 27 日至 29 日在旧金山举行，届时将有数十家公司展示其创新成果，并邀请嘉宾在四个不同舞台上发表演讲。\n\n![TechCrunch Disrupt 2025](https://techcrunch.com/wp-content/uploads/2025/08/TC25_Disrupt_General_Article_No-Anniversary-at-all_Headers_1920x1080.png?w=680)",
-      "shortSummary": "Elloe AI 创始人 Owen Sakawa 旨在将其平台打造成人工智能的“免疫系统”，为 LLM 提供安全防护。该平台作为 API/SDK，通过多层“锚点”系统，对 AI 输出进行事实核查、合规性检查（如 HIPAA、GDPR）并提供审计追踪。Elloe AI 旨在解决 AI 快速发展中出现的偏见、幻觉、错误和不安全输出等问题，确保 AI 代理的安全与可靠。它不依赖 LLM 自身进行检查，而是结合机器学习和人工监督。Elloe AI 是 TechCrunch Disrupt 2025 大会 Startup Battlefield 的决赛选手。",
-      "translated_title": "Elloe AI 旨在成为人工智能的‘免疫系统’——在 Disrupt 2025 上了解更多",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/TC25_Disrupt_General_Article_No-Anniversary-at-all_Headers_1920x1080.png?w=680",
-          "alt": "TechCrunch Disrupt 2025 no anniversary",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Elloe AI promises a system capable of fact-checking AI outputs, make sure they don’t violate laws and regulations, and that are safe for the users.  "
-    },
-    {
-      "title": "风险投资家维诺德·科斯拉称美国政府可持有所有上市公司10%的股份以缓解AGI带来的冲击 (原标题: VC Vinod Khosla says the US government could take 10% stake in all public companies to soften the blow of AGI)",
-      "link": "https://techcrunch.com/2025/10/28/vc-vinod-khosla-says-the-us-government-could-take/",
-      "pubDate": "Tue, 28 Oct 2025 17:45:42 +0000",
-      "isoDate": "2025-10-28T17:45:42.000Z",
-      "creator": "Sarah Perez",
-      "summary": "### 维诺德·科斯拉提议政府持有上市公司股份以应对AGI\n\n在TechCrunch Disrupt 2025大会上，Khosla Ventures创始人维诺德·科斯拉（Vinod Khosla）提出了一个大胆的社会重构愿景，旨在分享人工智能技术创造的财富，并缓解通用人工智能（AGI）可能带来的冲击。\n\n*   **核心提议**\n    *   科斯拉建议美国政府可以持有所有上市公司10%的股份。\n    *   通过这种方式获得的 корпоративная 财富将被重新分配给广大民众。\n\n*   **提议的灵感来源**\n    *   这一想法源于前总统唐纳德·特朗普政府决定购买英特尔公司10%股份的事件。\n    *   科斯拉表示：“当特朗普购买英特尔10%的股份时，我曾想这是否是个好主意。持有每家公司10%的股份，并将其放入国家公共基金中供民众使用。这真的很有趣。就持有每家上市公司10%的股份。”\n\n*   **目的与背景**\n    *   科斯拉认为，分享AI带来的财富是“非常、非常大的需求”，以确保每个人都能享受到利益。\n    *   他承认这一提议可能引发争议，但强调在通用人工智能（AGI）造成的颠覆时期，需要采取极端的措施来维持社会凝聚力。\n    *   他预测，到2035年，经济将出现“巨大的、巨大的通货紧缩”。\n\n*   **AI对社会的影响**\n    *   AI的崛起将导致大量工作岗位流失，这需要社会进行重大变革。\n    *   科斯拉指出，像在装配线上安装轮胎或从事农业等工作是“人类不应该从事的工作”，他称之为“生存的奴役”。\n\n*   **对创业者的机遇**\n    *   尽管AI会带来挑战，但科斯拉认为这也为创业者提供了巨大的机会。\n    *   他指出，在会计、医学、芯片设计、审计、营销、娱乐等各个专业领域，都有为这些行业构建AI的创业机会。",
-      "shortSummary": "风险投资家维诺德·科斯拉提出大胆设想：美国政府应持有所有上市公司10%的股份，并将由此获得的财富分配给公众。此举旨在分享AI带来的巨大财富，并缓解通用人工智能（AGI）可能造成的社会冲击和就业岗位流失。他认为，极端提案对于维持社会凝聚力至关重要，并预言到2035年经济将出现严重通货紧缩，同时为AI领域的创业者提供了巨大机遇。",
-      "translated_title": "风险投资家维诺德·科斯拉称美国政府可持有所有上市公司10%的股份以缓解AGI带来的冲击",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Khosla Ventures founder, Vinod Khosla, shares his ideas about sharing the abundance of AI."
-    },
-    {
-      "title": "TechCrunch Disrupt 2025：如何观看维诺德·科斯拉、Netflix、Slate Auto和创业战场 (原标题: TechCrunch Disrupt 2025: How to watch Vinod Khosla, Netflix, Slate Auto, and Startup Battlefield)",
-      "link": "https://techcrunch.com/2025/10/28/techcrunch-disrupt-2025-how-to-watch-vinod-khosla-netflix-slate-auto-and-startup-battlefield/",
-      "pubDate": "Tue, 28 Oct 2025 15:56:06 +0000",
-      "isoDate": "2025-10-28T15:56:06.000Z",
-      "creator": "TechCrunch Staff",
-      "summary": "# TechCrunch Disrupt 2025：活动概览与亮点\n\nTechCrunch Disrupt 2025 盛会正在进行中，为期三天（2025年10月27日至29日）在旧金山举行。对于未能亲临现场的观众，可以通过 YouTube 上的 Disrupt Stage 直播观看，直播时间为太平洋时间周二上午9点至下午3点45分左右，涵盖了众多知名演讲者和备受期待的“创业战场200”路演竞赛。\n\n## 主要演讲者与专题讨论\n\n### 维诺德·科斯拉：科技的未来\nKhosla Ventures 创始人维诺德·科斯拉（Vinod Khosla）将进行一场名为“无过滤：维诺德·科斯拉谈科技的未来”的炉边谈话。他将分享对人工智能、气候、医疗保健和下一代颠覆性初创企业的坦率看法，并为创业者提供在动荡时期建立持久公司所需的真知灼见。\n\n### Netflix 和流媒体的未来\nNetflix 首席技术官伊丽莎白·斯通（Elizabeth Stone）将探讨“Netflix 和流媒体本身的未来”。她将深入分析 Netflix 如何演进其产品和技术战略，包括从个性化发现到全球增长，从广告层级到游戏。此次讨论还将涵盖 Netflix 如何适应不断变化的内容格局，大规模创新的意义，以及 Netflix 可能带来的设计惊喜。\n\n### 布林·普特南：从 Mirror 到新产品\n曾于2018年在 Disrupt 舞台上推出连接健身产品 MIRROR（后以5亿美元售予 Lululemon）的布林·普特南（Brynn Putnam）将重返 Disrupt 2025。她将首次揭示其全新的、从未公开过的产品，并分享她的创业历程和经验教训，现场还将进行新产品的演示。\n\n### Slate Auto 的电动卡车\nSlate Auto 首席执行官克里斯·巴曼（Chris Barman）将把她突破性的电动卡车带到 Disrupt 舞台，让观众在车辆上路前先睹为快。她将分享构建下一代商用电动汽车、克服制造障碍以及在资本密集型行业中扩展初创公司的故事。\n\n### 消费者 AI 的规模化：Phia 的崛起\n2025年最受关注的人工智能初创公司之一 Phia 的联合创始人索菲亚·基亚尼（Sophia Kianni）和菲比·盖茨（Phoebe Gates）将出席 Disrupt。她们将分享如何打造新型消费者 AI 品牌，在科技竞争激烈的市场中实现规模化，以及如何将热度转化为持久影响力。\n\n## 创业战场（Startup Battlefield）\nTechCrunch Disrupt 2025 将继续举办激动人心的“创业战场”路演竞赛。\n\n### 第三场评委包括：\n*   乔恩·朱（Jon Chu），Khosla Ventures 合伙人\n*   麦迪逊·福克纳（Madison Faulkner），NEA 合伙人\n*   伊利亚·基尔诺斯（Ilya Kirnos），SignalFire 创始合伙人兼首席技术官\n*   米洛尼·马丹·普雷斯勒（Miloni Madan Presler），Institutional Venture Partners 合伙人\n*   林奇·塞西（Rinki Sethi），Lockstep 创始合伙人\n\n### 第四场评委包括：\n*   莱斯利·费恩扎伊格（Leslie Feinzaig），Graham & Walker VC 创始人兼普通合伙人\n*   罗斯·富比尼（Ross Fubini），XYZ Venture Capital 创始人兼管理合伙人\n*   本·夸佐（Ben Quazzo），Accel 合伙人\n*   道格·佩珀（Doug Pepper），ICONIQ 普通合伙人\n*   桑蒂·苏博托夫斯基（Santi Subotovsky），Emergence Capital 普通合伙人",
-      "shortSummary": "TechCrunch Disrupt 2025 提供现场参与和在线直播。活动亮点包括：Khosla Ventures 创始人维诺德·科斯拉探讨科技未来；Netflix 首席技术官伊丽莎白·斯通分享流媒体战略；MIRROR 创始人布林·普特南揭示新产品；Slate Auto 首席执行官克里斯·巴曼展示电动卡车；以及 Phia 联合创始人索菲亚·基亚尼和菲比·盖茨讨论消费者 AI 规模化。此外，还有备受瞩目的“创业战场200”路演竞赛。",
-      "translated_title": "TechCrunch Disrupt 2025：如何观看维诺德·科斯拉、Netflix、Slate Auto和创业战场",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "If you’re not able to attend in person, the next best thing is to check out our livestream of the Disrupt Stage. Tune in right here starting at 9 a.m. PT."
-    },
-    {
-      "title": "AccessGrid 融资 440 万美元，助力将手机变为数字钥匙 (原标题: AccessGrid raises $4.4M to help turn phones into key fobs)",
-      "link": "https://techcrunch.com/2025/10/28/accessgrid-raises-4-4m-to-help-turn-phones-into-key-fobs/",
-      "pubDate": "Tue, 28 Oct 2025 15:23:05 +0000",
-      "isoDate": "2025-10-28T15:23:05.000Z",
-      "creator": "Dominic-Madori Davis",
-      "summary": "## AccessGrid 简介与愿景\n\n*   **创始人背景：** AccessGrid 由 Auston Bunsen 创立。此前，他曾是区块链开发平台 QuickNode 的联合创始人，该公司曾成功融资超过 1 亿美元。在 QuickNode 达到一定规模后，Bunsen 萌生了将 iPhone 变为门禁钥匙的想法，并获得了 Apple 的支持，以推动 Apple Wallet 在门禁领域的应用。\n*   **公司成立：** Bunsen 于去年十月离开 QuickNode，并于今年四月正式推出了他的新公司 AccessGrid。\n*   **核心业务：** AccessGrid 致力于构建 API，使公司能够直接在 Apple 和 Google 的钱包平台中管理数字钥匙（key fobs）。\n*   **宏大愿景：** Bunsen 的目标是将物理安全系统提升到 2025 年的标准，并创造一个“无需钥匙，靠近即可开启”的世界，让人们和机器的访问体验更快捷、安全、无缝。\n\n## 产品功能与技术优势\n\n*   **便捷的用户体验：**\n    *   即使 iPhone 处于锁定状态也能正常工作。\n    *   数字钥匙会自动同步到用户的 Apple Watch。\n    *   在 iPhone 电量耗尽的情况下，数字钥匙依然可用。\n*   **革新传统门禁系统：**\n    *   Bunsen 指出，当前的门禁行业仍停留在 1990 年代末期，许多系统依赖本地部署、与云端断开连接，或使用易受攻击的非加密通信和易被破解的 ID 卡技术。\n    *   AccessGrid 通过其 API 解决了这些问题，它能够发行使用加密载荷的“不可克隆”凭证，并通过云端实现即时撤销。\n*   **强大的网络安全保障：**\n    *   公司采用“军事级”加密和双重加密技术，确保数据安全。\n    *   所有服务器访问均使用多因素认证，并遵循其他标准网络安全实践。\n\n## 融资详情\n\n*   AccessGrid 近日宣布完成 440 万美元的种子轮融资。\n*   本轮融资由 Harlem Capital 领投。\n*   其他投资者包括 Exceptional Capital 的 Marell Evans 和 Spice Capital 的 Maya Bakhai，他们都是 Bunsen 在 QuickNode 期间建立的人脉。\n*   AccessGrid 还曾参与 HF0 加速器项目，并获得了该项目的第一笔投资。\n\n## 竞争格局与独特卖点\n\n*   **市场竞争：** AccessGrid 在数字钥匙和门禁管理领域面临 SwiftConnect 和 Sharry 等竞争对手。\n*   **差异化策略：** Bunsen 强调 AccessGrid 的独特之处在于其“纯粹的”API 模式。它是一个专注于开发者的平台，而非一个带有 API 功能的终端用户应用，并且不销售服务合同或用于连接现有硬件的中间件。\n\n## 未来发展规划\n\n*   **资金用途：** 新获得的资金将用于持续提升应用安全性，以及开发新的产品和功能。\n*   **业务拓展：** 公司计划在不久的将来扩展到汽车产品领域，将数字钥匙功能引入车辆。\n*   **长期目标：** 最终目标是升级美国所有的门禁读卡器，实现更广泛的无钥匙访问。",
-      "shortSummary": "AccessGrid 由 QuickNode 联合创始人 Auston Bunsen 创立，已完成 440 万美元种子轮融资。该公司提供 API，帮助企业在 Apple 和 Google 钱包平台管理数字钥匙，旨在将手机变为安全的数字钥匙。其系统支持手机锁屏或没电时使用，并采用军事级加密技术，取代过时的门禁系统。AccessGrid 专注于纯 API 开发者平台，计划将资金用于产品安全和新功能开发，并拓展至汽车领域，最终目标是实现无钥匙的便捷安全访问。",
-      "translated_title": "AccessGrid 融资 440 万美元，助力将手机变为数字钥匙",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "AccessGrid builds APIs that companies can use to manage digital key fobs directly within Apple and Google's wallet platforms."
-    },
-    {
-      "title": "Mem0 从 YC、Peak XV 和 Basis Set 融资 2400 万美元，旨在为 AI 应用构建记忆层 (原标题: Mem0 raises $24M from YC, Peak XV and Basis Set to build the memory layer for AI apps)",
-      "link": "https://techcrunch.com/2025/10/28/mem0-raises-24m-from-yc-peak-xv-and-basis-set-to-build-the-memory-layer-for-ai-apps/",
-      "pubDate": "Tue, 28 Oct 2025 15:14:13 +0000",
-      "isoDate": "2025-10-28T15:14:13.000Z",
-      "creator": "Tage Kene-Okafor",
-      "summary": "# Mem0：为AI应用构建记忆层\n\n## 引言\nMem0 是连续创业者 Taranjeet Singh 的第七家公司，旨在解决大型语言模型（LLM）无法像人类一样记住过往交互的问题。Mem0 提供一个创新的“记忆护照”概念，允许 AI 记忆在不同应用和代理之间随行，就像电子邮件或登录信息一样。\n\n## 融资情况\n*   Mem0 于 2024 年 1 月成立，并获得了 Y Combinator 的支持。\n*   公司已成功融资 2400 万美元，其中包括 390 万美元的种子轮资金（此前未公布）和 2000 万美元的 A 轮融资。\n*   A 轮融资由专注于 AI 领域的早期基金 Basis Set Ventures 领投。\n*   现有投资者 Kindred Ventures 和 Y Combinator 继续参投，新投资者包括 Peak XV Partners 和 GitHub Fund。\n*   众多知名天使投资人也参与了投资，包括 HubSpot 的 Dharmesh Shah、Adobe 前首席产品官 Scott Belsky、Datadog 的 Olivier Pomel、GitHub 前首席执行官 Thomas Dohmke 等。\n\n## 产品与市场表现\n*   Mem0 团队目前仅有四人，但已展现出强大的市场牵引力。\n*   其开源 API 被认为是 AI 开发者最广泛采用的记忆框架，已获得超过 41,000 个 GitHub 星标，并记录了超过 1300 万次 Python 包下载。\n*   API 调用量增长迅速：2025 年第一季度处理了 3500 万次 API 调用，到第三季度这一数字跃升至 1.86 亿次，月增长率约为 30%。\n*   除了开源社区的广泛采用，Mem0 的云服务已吸引了超过 80,000 名开发者注册。\n*   Mem0 的云 API 目前处理的记忆操作量超过任何其他提供商，并已成为 AWS 新 Agent SDK 的独家记忆提供商。\n\n## 创始人背景与创业历程\n*   Taranjeet Singh 的职业生涯始于印度最有价值的初创公司之一 Paytm 的软件工程师，随后成为 Khatabook 的首位增长工程师。\n*   2022 年底，他辞职并抓住了 ChatGPT 浪潮的机遇，构建了首批 GPT 应用商店之一，用户规模超过百万。\n*   这段经历促使他创建了 Embedchain，一个开源项目，旨在帮助开发者索引、检索和同步非结构化数据。该项目获得了超过 8,000 个 GitHub 星标。\n*   Singh 通过发送 200 多封冷邮件联系硅谷的创始人、投资者和工程师，最终在 36 小时内从班加罗尔飞往旧金山。\n*   在美国，他与长期好友兼现任联合创始人兼 CTO Deshraj Yadav 重聚。Yadav 曾领导特斯拉 Autopilot 的 AI 平台，两人此前曾共同创建了开源的 Kaggle 替代品 EvalAI（获得 1.6K GitHub 星标）。\n*   在试验 Embedchain 期间，两人开发了一款受印度瑜伽士 Sadhguru 启发的冥想应用。该应用在印度走红，但用户普遍反馈“应用不记得”他们的冥想旅程。这一反馈促使他们从 Embedchain 转向 Mem0，以解决 AI 记忆问题。\n\n## Mem0的独特优势与愿景\n*   AI 记忆已迅速成为一个关键的竞争领域，OpenAI 等大型 AI 实验室也在测试长期记忆功能。\n*   Singh 认为，虽然大型 AI 实验室正在构建记忆系统，但它们缺乏使其可移植或可互操作的动力，因为记忆正成为它们新的“护城河”。\n*   Mem0 旨在为开发者提供一个开放、中立的解决方案，以构建需要持久、个性化体验的应用（例如，记住用户交易历史的金融助手）。\n*   Mem0 的目标是通过一个共享记忆网络实现“第一天个性化”，将其比作“记忆领域的 Plaid”。\n*   目前，Mem0 专注于构建最好的记忆产品。\n\n## Mem0框架功能\n*   Mem0 框架允许开发者跨模型、应用和平台存储、检索和演进用户记忆。\n*   它具有模型无关性，兼容 OpenAI、Anthropic 或任何开源 LLM。\n*   可直接与 LangChain 和 LlamaIndex 等框架集成。\n*   开发者使用 Mem0 创建的应用能够通过每次交互变得更智能，例如：\n    *   回忆过往对话的治疗机器人。\n    *   记住个人习惯的生产力代理。\n    *   随时间适应的 AI 伴侣。\n*   客户范围广泛，从独立开发者到构建副驾驶和自动化工具的企业团队。\n\n## 投资人观点\n*   Basis Set Ventures 创始人兼合伙人 Lan Xuezhao 表示，他们从 Mem0 早期就开始支持，因为记忆是“AI 未来的基础”。她强调，Mem0 团队正在解决“最困难和最重要的基础设施挑战：使 AI 系统能够建立持久的上下文记忆”。\n\n## 竞争对手\n*   记忆领域的其他早期初创公司包括 Supermemory（其创始人曾在 Mem0 短暂工作）、Felicis 支持的 Letta 和 Memories.ai。",
-      "shortSummary": "Mem0 获得 YC、Peak XV 和 Basis Set 等机构 2400 万美元融资，旨在为 AI 应用构建核心记忆层。该公司解决了大型语言模型无法记住过往交互的问题，提供一个开放、中立的“记忆护照”，使 AI 记忆能在不同应用和代理间无缝共享。Mem0 的开源 API 已获得超过 4.1 万 GitHub 星标，其云服务拥有 8 万多开发者，并成为 AWS 新 Agent SDK 的独家记忆提供商。创始人 Taranjeet Singh 致力于通过 Mem0 实现 AI 应用的即时个性化体验。",
-      "translated_title": "Mem0 从 YC、Peak XV 和 Basis Set 融资 2400 万美元，旨在为 AI 应用构建记忆层",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The idea of memory for AI isn’t new, but it’s quickly becoming a critical battleground. "
-    },
-    {
-      "title": "苹果和微软市值均突破4万亿美元 (原标题: Apple and Microsoft are now both worth more than $4T)",
-      "link": "https://techcrunch.com/2025/10/28/apple-and-microsoft-are-now-both-worth-more-than-4t/",
-      "pubDate": "Tue, 28 Oct 2025 14:59:52 +0000",
-      "isoDate": "2025-10-28T14:59:52.000Z",
-      "creator": "Lauren Forristal",
-      "summary": "# 苹果和微软市值均突破4万亿美元\n\n截至2025年10月28日，科技巨头苹果和微软的市值均已超过4万亿美元。这是苹果首次达到这一里程碑，使其成为继英伟达和微软之后第三家市值突破4万亿美元的公司。\n\n## 微软的市值突破与驱动因素\n*   微软在2025年7月首次突破4万亿美元大关，随后市值略有下降至3.9万亿美元。\n*   在与OpenAI签署新协议的消息推动下，微软市值于周二（文章发布前）重新回到4万亿美元。\n*   微软的持续增长主要得益于其Azure云服务的强劲需求，该服务不仅提供OpenAI的大型语言模型，还提供训练AI模型所需的强大计算能力。\n*   微软周二表示，其在OpenAI约27%的股权目前价值约为1350亿美元。\n*   公司计划于周三公布其季度业绩。\n\n## 苹果的显著增长轨迹\n*   苹果的市值增长历程令人瞩目：\n    *   2018年达到1万亿美元。\n    *   2020年达到2万亿美元。\n    *   2022年达到3万亿美元。\n*   近期苹果股价的飙升主要归因于iPhone 17系列的成功发布，该系列似乎销量超过了之前的版本。\n*   苹果公司定于10月30日（周四）公布其2025年第四季度财报。\n\n## 其他科技巨头\n*   谷歌的母公司Alphabet也正接近4万亿美元的里程碑，目前市值为3.25万亿美元。\n\n## 相关图片\n![未来数据监控器上显示上涨的科技股市场图表。](https://techcrunch.com/wp-content/uploads/2022/12/GettyImages-1329996497-1.jpg?w=1024)\n![Lauren Forristal](https://techcrunch.com/wp-content/uploads/2025/06/IMG_0998.jpg)",
-      "shortSummary": "苹果和微软的市值均已突破4万亿美元。苹果首次达到此里程碑，成为继英伟达和微软之后第三家，主要得益于iPhone 17系列热销。微软在与OpenAI达成新协议后重回4万亿美元，其Azure云服务和OpenAI股权是关键驱动力。谷歌母公司Alphabet市值也接近3.25万亿美元。",
-      "translated_title": "苹果和微软市值均突破4万亿美元",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2022/12/GettyImages-1329996497-1.jpg?w=1024",
-          "alt": "Rising technology stock market graph on futuristic data monitor.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/06/IMG_0998.jpg",
-          "alt": "Lauren Forristal",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "This is the first time Apple's market capitalization has crossed the $4 trillion mark, making it the third company to ever cross the milestone after Nvidia and Microsoft."
-    },
-    {
-      "title": "OpenAI 完成其营利性资本重组 (原标题: OpenAI completes its for-profit recapitalization)",
-      "link": "https://techcrunch.com/2025/10/28/openai-completes-its-for-profit-recapitalization/",
-      "pubDate": "Tue, 28 Oct 2025 14:30:24 +0000",
-      "isoDate": "2025-10-28T14:30:24.000Z",
-      "creator": "Russell Brandom",
-      "summary": "## OpenAI 完成营利性资本重组\n\nOpenAI 于周二宣布已完成其资本重组，正式转型为一家营利性公司，该营利性公司嵌套在一个非营利性基金会内部。这一复杂的法律程序曾遭到其前联合创始人埃隆·马斯克的强烈反对，现已告一段落。\n\n### 新的公司结构\n\n*   **非营利性 OpenAI 基金会：** 将对名为 OpenAI Group 的公共利益营利性公司拥有法律控制权。基金会持有 OpenAI Group 的重要股权，并负责任命其董事会成员。\n*   **营利性 OpenAI Group：** 拥有自由融资或收购公司的权利，不受法律限制。\n\nOpenAI 董事长布雷特·泰勒（Bret Taylor）表示，此举旨在确保“世界上最强大的技术以反映世界集体利益的方式发展”，并使公司能够“继续推动 AI 前沿，并更新公司结构以确保进步服务于所有人”。\n\n### 股权分配\n\n在新结构下，各方股权分配如下：\n\n*   **OpenAI 基金会：** 持有营利性实体 26% 的股权，并附有公司持续增长时可授予额外股份的认股权证。\n*   **微软：** 作为 OpenAI 的早期投资者，将持有约 27% 的股权，估值约为 1350 亿美元。\n*   **其他投资者和员工：** 共同持有剩余的 47% 股权。\n\n### 重组背景与原因\n\n此前，OpenAI 作为非营利组织运营，受到严格的股权限制。随着公司融资抱负的增长，这种结构变得越来越难以维持。例如，软银曾宣布一项史无前例的 300 亿美元投资，但前提是 OpenAI 成功转型为营利性公司。据报道，最后一笔资金已于周六到位，预示着重组的突破。\n\n### 与微软的协议细节\n\n根据微软发布的另一篇博文，此次交易还包括：\n\n*   将微软对 OpenAI 模型的知识产权（IP rights）延长至 2032 年。\n*   如果 OpenAI 宣布实现其长期目标——通用人工智能（AGI），公司将被要求提交给一个独立的专家小组进行验证。\n\n### 监管审查与条件\n\n加利福尼亚州和特拉华州的总检察长此前对此次转型表示担忧。然而，在附加了进一步条件后，两州办公室已允许该程序继续进行。值得注意的是，加利福尼亚州的协议要求 OpenAI “继续采取措施，减轻在 AI 和 AGI 的开发和部署过程中对青少年及其他人群的风险”。泰勒表示，与州办公室的讨论对重组过程产生了积极影响，并促使公司做出了改进。\n\n### 后续活动\n\n消息公布后，OpenAI 首席执行官萨姆·奥特曼（Sam Altman）宣布将与首席科学家雅库布·帕乔基（Jakub Pachocki）举行一场公开直播，回答公众提问。该活动将于太平洋时间上午 10:30 开始。",
-      "shortSummary": "OpenAI 已完成资本重组，转型为营利性公司，嵌套在非营利性基金会内。新结构下，非营利基金会控制营利性实体，持有26%股权。微软持有约27%，其余由投资者和员工持有。此举旨在推动AI发展，同时确保其服务于公众利益。该重组结束了埃隆·马斯克的反对，并获得了加州和特拉华州总检察长的有条件批准，要求减轻AI风险。CEO萨姆·奥特曼将举行直播回答公众提问。",
-      "translated_title": "OpenAI 完成其营利性资本重组",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "OpenAI has completed its recapitalization, splitting the AI lab into a for-profit corporation nested inside a non-profit foundation."
-    },
-    {
-      "title": "TechCrunch Disrupt 2025：第二天 (原标题: TechCrunch Disrupt 2025: Day 2)",
-      "link": "https://techcrunch.com/2025/10/28/techcrunch-disrupt-2025-day-2/",
-      "pubDate": "Tue, 28 Oct 2025 14:00:00 +0000",
-      "isoDate": "2025-10-28T14:00:00.000Z",
-      "creator": "TechCrunch Events",
-      "summary": "# TechCrunch Disrupt 2025：第二天活动概览\n\nTechCrunch Disrupt 2025 的第二天在旧金山 Moscone West 举行，为与会者带来了一系列密集的演讲、研讨会、社交机会和派对。目前仍可注册购票，并享受标准现场票价五折优惠。与会者可查阅演讲嘉宾阵容，深入了解各个舞台、活动和社交机会。鼓励大家在社交媒体上使用 #TechCrunchDisrupt2025 分享体验、照片和建议。TechCrunch 官方也会在 LinkedIn、Instagram、X、YouTube、Facebook 和 TikTok 上发布现场报道。\n\n## 主要活动区域\n\n*   **展厅 (Expo Hall)**\n    *   开放时间：上午 8 点至下午 5 点。\n    *   作为初创公司展示和寻求曝光的中心，有超过 300 家初创公司参与，寻找下一个重大突破或投资机会。\n*   **女性颠覆者早餐会 (Women of Disrupt Breakfast Reception)**\n    *   时间：上午 8 点至上午 10 点。\n    *   地点：Deal Flow Cafe。\n    *   为所有自认为是女性的与会者提供交流、学习和建立联系的机会，先到先得。\n*   **社交与交流 (Networking)**\n    *   **Braindate**：上午 9 点至下午 5 点，提供精心策划的一对一或小组会议，深入探讨广泛主题。\n    *   **社交休息室 (Networking Lounge)**：所有 Braindate 会议的集合点。\n    *   **交易流咖啡馆 (Deal Flow Cafe)**：专为投资者和创始人设计，可在咖啡交流中洽谈交易。\n    *   此外，与会者可在会场任何地方，包括展厅，随机遇到潜在的合作对象。\n\n## 专题演讲与分会场\n\n活动设有多个舞台和圆桌会议，旨在激发灵感和见解。\n\n### 颠覆者主舞台 (Disrupt Stage)\n\n*   **科技的未来**：Khosla Ventures 创始人 Vinod Khosla。\n*   **创业战场 (Startup Battlefield)**：第三和第四场，由知名投资人担任评委。\n*   **Netflix 和流媒体的未来**：Netflix 首席技术官 Elizabeth Stone。\n*   **从 Mirror 到未来**：MIRROR 创始人 Brynn Putnam 回归。\n*   **Slate Auto 的电动卡车**：Slate Auto 首席执行官 Chris Barman 首次展示。\n*   **消费者 AI 的规模化**：Phia 联合创始人 Phoebe Gates 和 Sophia Kianni。\n\n### AI 舞台 (AI Stage)\n\n*   **VC 在 AI 初创公司中的投资偏好**：Kindred Ventures 创始人 Steve Jang 等。\n*   **创意机器与 AI 想象力**：Pocket Entertainment、TwelveLabs 和 Wonder Dynamics 的联合创始人。\n*   **AI 遇上未来工作**：Mercor 首席执行官 Brendan Foody。\n*   **后训练革命**：Scale Venture Partners 和 CoreWeave 专家探讨强化学习。\n*   **下一个前沿是搜索**：Pinecone 创始人 Edo Liberty。\n*   **从网页到自主代理**：Bright Data 首席执行官 Or Lenchner。\n*   **运动中的智能与物理 AI 的未来**：Apptronik 和 Waabi 的联合创始人。\n*   **企业软件的 Vibe Code**：JetBrains 和 Spring OSS 贡献者。\n*   **合成语音与真实影响**：ElevenLabs 联合创始人 Mati Staniszewski。\n*   **可扩展的 AI**：SymphonyAI 和 The Save Mart Companies 专家分享经验。\n*   **为现代防御构建智能**：Mach Industries 创始人 Ethan Thornton。\n*   **驱动智能**：Wayve 首席执行官 Alex Kendall。\n\n### 建设者舞台 (Builders Stage)\n\n*   **如何实现产品市场契合**：Chef Robotics、NEA 和 ICONIQ 专家。\n*   **为 AI 时代设计产品**：Sequoia Capital、Figma 和 Warp 专家。\n*   **初创阶段如何路演**：FPV Ventures 和 Precursor Ventures 专家。\n*   **初创公司仍需要硅谷吗**：Lago、Revolution/Rise of the Rest 和 SignalFire 专家。\n*   **与 Twitter 和 Meta 幕后团队共同建设未来**：01 Advisors 联合创始人。\n*   **VC 在 2026 年的投资方向**：Index Ventures、Greylock 和 Felicis 专家。\n\n### 分组讨论舞台 (Breakout Stage)\n\n*   **初创公司的代理 AI**：微软和亚马逊专家。\n*   **以 AI 速度进行工程设计**：Runlayer、Fireworks AI、MongoDB 和 Factory 专家。\n*   **用 AI 重塑医疗工作流程**：Max AI、Assured Health 和 Kindred Ventures 专家。\n*   **家族办公室投资初创公司和风险基金的策略**：Founders Bay、Paris-Roubaix Group 和 I.D.I.T. Family Office 专家。\n*   **企业风险投资 (CVC) 的不同之处与超能力**：TDK Ventures 总裁 Nicolas Sauvage。\n*   **初创公司、故事与注意力之争**：SISU、Kleiner Perkins 和 Darby PR 专家。\n*   **拥抱 AI 创造更好的数字未来**：技术顾问 Meghana Dhar 和 Pinterest 首席技术官 Matt Madrigal。\n\n### 圆桌会议 (Roundtables)\n\n每场 30 分钟，小团体讨论实际问题，主题包括：银行和金融科技的未来（AI 浪潮）、为数百万用户扩展搜索和 AI（Reddit 搜索的经验）、创始人需要出镜的原因、AI 的新经济学、使用开放模型原型/调整/扩展生成式 AI 应用、隐形 AI 革命、智能品牌如何通过创作者主导的视频获胜、如何训练你的模型、将业务转变为可信赖/可扩展社区的成功秘诀、从概念到企业：销售可扩展的 AI 代理、为未来家庭供电：能源独立从这里开始。\n\n### StrictlyVC\n\n*   仅限投资者通行证持有者参加的 LP 会议。\n*   主题：全球高科技的十字路口、LP 视角（流动性、选择和风险投资的未来）、GP 对 LP 关系的看法。\n\n### 路演展示舞台 (Pitch Showcase Stage)\n\n*   来自展厅的参展初创公司进行现场路演。\n*   日程包括：Startup Battlefield 200 消费者路演、展馆路演（加泰罗尼亚、波兰、丝绸之路）、Startup Battlefield 200 企业路演。\n\n## 周边活动 (Disrupt 2025 Side Events)\n\n本周在旧金山各地举办公司主办的周边活动，包括小组讨论、派对和聚会，旨在连接科技领域的创始人、投资者和创新者。需提前 RSVP 预留席位。\n\n## 参与机会\n\nTechCrunch Disrupt 2025 仅剩两天，仍有机会以五折优惠票价加入数千名创始人、投资者、运营者和远见者，共同参与这场年度科技盛会。",
-      "shortSummary": "TechCrunch Disrupt 2025第二天在旧金山Moscone West举行，汇集了演讲、研讨会、社交和派对。活动亮点包括拥有300多家初创公司的展厅、女性颠覆者早餐会，以及多个主题舞台（如Disrupt、AI、Builders、Breakout）的深度讨论。Startup Battlefield和路演展示提供投资和合作机会。此外，还有圆桌会议和遍布旧金山的周边活动。目前仍可享受五折优惠购票，鼓励使用#TechCrunchDisrupt2025参与社交互动。",
-      "translated_title": "TechCrunch Disrupt 2025：第二天",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Second day of TechCrunch Disrupt 2025 at San Francisco's Moscone West. Here's the rundown on what to expect, including the 50% discount on passes for remainder of the event."
-    },
-    {
-      "title": "亚马逊将裁员1.4万名企业员工 (原标题: Amazon to cut 14,000 corporate jobs)",
-      "link": "https://techcrunch.com/2025/10/28/amazon-to-cut-14000-corporate-jobs/",
-      "pubDate": "Tue, 28 Oct 2025 13:41:16 +0000",
-      "isoDate": "2025-10-28T13:41:16.000Z",
-      "creator": "Ram Iyer",
-      "summary": "亚马逊宣布将裁减1.4万个企业岗位，这是继2022年裁员2.2万人之后，该公司进行的第二次大规模裁员。\n\n**裁员规模与背景**\n*   亚马逊计划裁减1.4万名企业员工，以减少官僚主义、精简层级，并加大对AI战略的投资。\n*   截至2024年10月31日，亚马逊拥有近120万名员工，其中企业部门（行政、销售和高管职位）员工超过36万。\n\n**裁员原因：聚焦AI战略与效率提升**\n*   **高管声明：** 亚马逊人事体验与技术高级副总裁Beth Galetti在致员工的备忘录中表示，此举旨在通过将资源投入到公司的“最大赌注”中，使公司“更强大”。\n*   **AI的变革性影响：** Galetti承认公司业绩良好，但强调裁员是必要的，因为“世界正在迅速变化”。她将当前一代AI视为“自互联网以来最具变革性的技术”，认为它能让公司以前所未有的速度进行创新。\n*   **精简组织架构：** 她指出，公司需要“更精简的组织结构，更少的层级和更多的自主权”，以便为客户和业务更快地行动。\n*   **CEO观点：** 亚马逊CEO Andy Jassy在6月份的备忘录中也曾表示，随着生成式AI和AI代理的推广，公司完成工作的方式将改变，一些岗位所需员工将减少，而另一些岗位将增加。他预计未来几年，AI带来的效率提升将减少公司企业员工总数。\n\n**对AI基础设施的巨额投入**\n*   亚马逊正大力投资技术基础设施，以构建更多计算能力来提供AI服务。\n*   根据其季度报告，在当前财年上半年，亚马逊主要用于支持其云服务业务（Amazon Web Services, AWS）的技术基础设施支出达556亿美元。\n\n**公司业绩表现**\n*   第二季度营收同比增长13%，达到1677亿美元。\n*   AWS业务占总净销售额的18%。\n\n**此前裁员与市场传闻**\n*   路透社此前报道称，亚马逊计划在人力资源、设备与服务、运营等部门裁员多达3万人。\n*   今年1月，亚马逊已在传播和可持续发展部门进行了小规模裁员。\n\n**对受影响员工的支持**\n*   亚马逊为大多数受影响员工提供90天时间在公司内部寻找新职位，其招聘人员将优先考虑内部候选人。\n*   对于无法在内部找到新职位的员工，公司将提供遣散费、职业安置服务、健康保险福利等。\n\n**未来展望**\n*   Galetti表示，到2026年，公司将继续精简层级，“实现效率提升”，同时在关键领域进行招聘。",
-      "shortSummary": "亚马逊宣布裁员1.4万名企业员工，旨在精简组织、减少官僚作风，并大力投资AI战略。公司高管指出，AI是自互联网以来最具变革性的技术，此次裁员是为了让亚马逊更精简高效，以适应快速变化的市场。亚马逊正巨额投入AI基础设施建设，预计AI带来的效率提升将减少企业员工需求。受影响员工将获得内部转岗机会、遣散费等支持。",
-      "translated_title": "亚马逊将裁员1.4万名企业员工",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Amazon said on Tuesday that it plans to reduce its corporate workforce by 14,000 jobs as it seeks to reduce bureaucracy, remove layers, and invest more in its AI strategy."
-    },
-    {
-      "title": "Adobe Firefly Image 5 支持图层，将允许创作者制作自定义模型 (原标题: Adobe Firefly Image 5 brings support for layers, will let creators make custom models)",
-      "link": "https://techcrunch.com/2025/10/28/adobe-firefly-image-5-brings-support-for-layers-will-let-creators-make-custom-models/",
-      "pubDate": "Tue, 28 Oct 2025 12:00:00 +0000",
-      "isoDate": "2025-10-28T12:00:00.000Z",
-      "creator": "Ivan Mehta",
-      "summary": "# Adobe Firefly Image 5 更新亮点\n\nAdobe 近日宣布推出其图像生成模型的最新迭代——Firefly Image 5，并为 Firefly 网站增添了多项新功能，包括支持更多第三方模型、生成语音和音轨的能力。此次更新旨在赋能创作者，提供更强大的工具和更灵活的工作流程。\n\n## 核心图像生成模型升级\n\n*   **Firefly Image 5 发布**：作为 Adobe 图像生成模型的最新版本，Firefly Image 5 带来了显著的性能提升。\n*   **原生分辨率提升**：新模型现在能够以高达 4 兆像素的原生分辨率生成图像，相较于前一代模型原生 1 兆像素（后放大至 4 兆像素）的能力，这是一个巨大的飞跃。\n*   **人物渲染优化**：Adobe 表示，Firefly Image 5 在渲染人物方面表现更佳。\n\n![Firefly Image Model 5](https://techcrunch.com/wp-content/uploads/2025/10/FireflyImageModel5.jpeg?w=680)\n\n## 图层与编辑功能\n\n*   **图层支持**：Image 5 引入了图层和基于提示的编辑功能。模型能够将不同的对象视为独立的图层，允许用户通过提示词或使用调整大小、旋转等工具对它们进行编辑。\n*   **编辑完整性**：Adobe 强调，在编辑这些图层时，图像的细节和完整性不会受到损害。\n\n## 自定义模型创建\n\n*   **支持第三方模型**：Firefly 网站此前已支持来自 OpenAI、Google、Runway、Topaz 和 Flu 等 AI 实验室的第三方模型，以吸引更广泛的创意用户。\n*   **用户自定义模型（内测）**：现在，Adobe 更进一步，允许用户基于自己的艺术风格创建自定义图像模型。这项功能目前处于封闭测试阶段，用户可以通过拖放图像、插画和草图等素材来训练自己的专属模型。\n\n## Firefly 网站功能增强\n\n*   **界面更新**：今年早些时候重新设计的 Firefly 网站新增了多项功能，包括：\n    *   通过提示框在图像和视频生成之间切换。\n    *   选择要使用的 AI 模型。\n    *   更改宽高比等。\n*   **工作流优化**：网站主页现在会显示用户的作品文件和最近的生成历史，并提供指向其他 Adobe 应用程序的快捷方式（这些快捷方式此前位于菜单中）。\n\n## 视频生成与编辑\n\n*   **图层和时间轴编辑（内测）**：Adobe 重新设计了视频生成和编辑工具，以支持图层和基于时间轴的编辑。这项设计更改目前仅在私人测试版中可用，未来将逐步向所有用户推出。\n\n![Video Editor](https://techcrunch.com/wp-content/uploads/2025/10/VideoEditor.jpg?w=544)\n\n## 新增音频功能\n\n*   **AI 生成音轨和语音**：Firefly 新增了两项音频功能。用户现在可以使用 AI 提示词为视频生成完整的音轨和语音（利用 ElevenLabs 的模型）。\n*   **提示词生成方式改进**：还提供了一种更简便的提示词生成方式：通过从词云中选择关键词和部分来构建提示词。\n\n![Generate Soundtrack](https://techcrunch.com/wp-content/uploads/2025/10/GenerateSoundtrack.jpg?w=680)\n\n## 战略定位\n\n*   **面向新一代创作者**：Adobe 致力于服务那些在工作流程中越来越多地使用 AI 的“新时代创作者”或“下一代创意专业人士”。\n*   **提供更大创新自由**：Adobe 生成式 AI 副总裁 Alexandru Costin 表示，Firefly 赋予公司更大的自由度来添加新功能和调整界面，而无需受限于 Adobe 现有 Creative Cloud 工具中创意专业人士的“肌肉记忆”。",
-      "shortSummary": "Adobe发布Firefly Image 5，带来多项重大更新。新模型支持图层和基于提示的编辑，并允许创作者利用自身艺术风格制作自定义图像模型。原生图像生成分辨率提升至4兆像素，人物渲染更佳。Firefly网站功能增强，包括视频生成、AI模型选择及工作流优化。此外，还新增了AI生成音轨和语音功能。Adobe旨在通过Firefly满足新一代AI驱动创意专业人士的需求，提供更灵活的创作体验。",
-      "translated_title": "Adobe Firefly Image 5 支持图层，将允许创作者制作自定义模型",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/10/FireflyImageModel5.jpeg?w=680",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/10/VideoEditor.jpg?w=544",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/10/GenerateSoundtrack.jpg?w=680",
-          "alt": "",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Adobe said on Tuesday that it is launching the latest iteration of its image generation model, Firefly Image 5. The company is also adding features to the Firefly website, support for more third-party models, and the ability to generate speech and soundtracks."
-    },
-    {
-      "title": "Adobe 为 Express 和 Photoshop 推出 AI 助手 (原标题: Adobe launches AI assistants for Express and Photoshop)",
-      "link": "https://techcrunch.com/2025/10/28/adobe-launches-ai-assistants-for-express-and-photoshop/",
-      "pubDate": "Tue, 28 Oct 2025 12:00:00 +0000",
-      "isoDate": "2025-10-28T12:00:00.000Z",
-      "creator": "Ivan Mehta",
-      "summary": "### Adobe 为 Express 和 Photoshop 推出 AI 助手\n\nAdobe 近日为其 Creative Cloud 产品 Express 和 Photoshop 发布了新的 AI 助手，旨在帮助用户进行图像创作和编辑。\n\n**Express 中的 AI 助手**\n*   **独特模式：** 与多数公司将 AI 助手置于侧边栏不同，Adobe 为 Express 创建了一个新的模式。\n*   **文本提示：** 用户可以通过文本提示来创建新的图像和设计。\n*   **模式切换：** 用户可以开启助手模式使用 AI 提示，然后切换回 Express 现有版本中的编辑工具和控件。\n*   **目标用户：** Adobe 生成式 AI 副总裁 Alexandru Costin 表示，这种不同模式的设计旨在服务 Express 的学生和专业用户，希望用户无需切换到传统界面即可完成任务。\n*   **设计理念：** Costin 认为，这种在两种模式之间切换的方法，能够兼顾技术的易用性和可控性。\n\n**Photoshop 中的 AI 助手**\n*   **侧边栏集成：** Photoshop 助手目前处于封闭测试阶段，集成在侧边栏中。\n*   **功能：**\n    *   理解不同图层。\n    *   自动选择对象并创建蒙版。\n    *   完成重复性任务，如移除背景或更改颜色。\n*   ![Photoshop AI Assistant](https://techcrunch.com/wp-content/uploads/2025/10/PhotoshopAIAssistant.jpeg?w=680)\n\n**实验性项目：“Project Moonlight”**\n*   **跨应用协调：** Adobe 正在试验一种名为“Project Moonlight”的新型助手，它能够与其他 Adobe 工具中的助手进行协调。\n*   **风格理解：** 该项目旨在连接创作者的社交渠道，以更好地理解他们的风格。\n*   **开发阶段：** 该产品目前处于早期开发阶段，并进行私人测试。\n*   ![Project Moonlight](https://techcrunch.com/wp-content/uploads/2025/10/ProjectMoonlight.jpeg?w=680)\n\n**与 ChatGPT 的集成探索**\n*   Adobe 还在探索通过 OpenAI 的应用集成 API 将 Adobe Express 与 ChatGPT 连接起来，允许用户直接在 ChatGPT 中创建设计。\n\n**Creative Cloud 应用的新 AI 功能**\n*   **Photoshop：**\n    *   生成式填充功能现在支持第三方模型，例如 Google 的 Gemini 2.5 flash 和 Black Forest Labs 的 FLUX.1 Kontext。\n    *   该功能可用于移除对象或扩展图像。\n*   **Premiere Pro：**\n    *   新增 AI 驱动的对象蒙版功能。\n    *   用户可以轻松识别和选择视频中的对象或人物，以便添加效果或调整颜色。",
-      "shortSummary": "Adobe 为 Express 和 Photoshop 推出了新的 AI 助手。Express 获得了一个新的 AI 模式，用于通过文本提示进行图像创作和设计。Photoshop 的助手则集成在侧边栏，能理解图层并执行编辑任务。Adobe 还在探索“Project Moonlight”跨应用助手以及 Express 与 ChatGPT 的集成。此外，Photoshop 的生成式填充功能现支持第三方 AI 模型，Premiere Pro 也新增了 AI 驱动的对象蒙版功能。",
-      "translated_title": "Adobe 为 Express 和 Photoshop 推出 AI 助手",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/10/PhotoshopAIAssistant.jpeg?w=680",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/10/ProjectMoonlight.jpeg?w=680",
-          "alt": "An illustrative image showing prototypes of Adobe's new project of cross-app assistant is a system that gets data from all of its apps. ",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Adobe today released new AI assistants for Express and Photoshop that can help users with image creation and editing."
-    },
-    {
-      "title": "PayPal与OpenAI合作，允许用户在ChatGPT内购物支付 (原标题: PayPal partners with OpenAI to let users pay for their shopping within ChatGPT)",
-      "link": "https://techcrunch.com/2025/10/28/paypal-partners-with-openai-to-let-users-pay-for-their-shopping-within-chatgpt/",
-      "pubDate": "Tue, 28 Oct 2025 10:47:43 +0000",
-      "isoDate": "2025-10-28T10:47:43.000Z",
-      "creator": "Ivan Mehta",
-      "summary": "## PayPal与OpenAI合作，在ChatGPT内实现购物支付\n\nPayPal于周二宣布，将与OpenAI合作，从2026年开始，允许用户直接在ChatGPT内完成购物支付。这项合作旨在简化AI应用中的购物流程，并利用PayPal的支付基础设施。\n\n### 核心机制与技术\n\n*   **Agentic Commerce Protocol (ACP)**：PayPal将采用OpenAI开发的开源规范ACP。该协议旨在让商家在AI应用中展示其产品，从而使用户能够通过AI代理进行购物。\n*   **OpenAI的“即时结账”功能**：此功能于去年9月推出，允许用户在不离开ChatGPT界面的情况下，确认订单、配送和支付详情，并完成购买。\n\n### PayPal提供的服务与优势\n\n*   **支付方式**：客户可以使用其PayPal钱包进行结账。PayPal表示，这将使其能够提供买家和卖家保护，以及争议解决服务。\n*   **卡片支付**：PayPal还将通过一个独立的支付API，处理ChatGPT内的银行卡支付。\n*   **商品可发现性**：从明年开始，使用PayPal产品的商家（最初将涵盖服装、时尚、美容、家居装修和电子产品等类别）的商品将在ChatGPT上可被发现。\n*   **商家便利性**：商家无需进行任何集成，因为PayPal将在后台处理商家路由和支付。\n*   **Agentic Commerce Suite**：PayPal还将推出一个代理商务套件，帮助商家在AI应用中展示其商品目录，在不同的AI应用中接受支付，并获取消费者行为洞察。\n\n### 战略背景\n\n随着人们越来越多地使用AI应用处理日常任务，PayPal正积极将自己定位为各种公司AI驱动购物体验中的支付伙伴。\n\n*   **此前合作案例**：\n    *   2023年5月，PayPal与Perplexity合作，允许用户在AI搜索工具内结账。\n    *   2023年9月，PayPal宣布采用Google的Agent Payments Protocol，将其产品整合到各种Google产品中。\n\n### PayPal与OpenAI的更广泛合作\n\n除了商业合作，PayPal还在公司内部推动与OpenAI技术的整合：\n\n*   PayPal向所有员工提供ChatGPT的企业访问权限。\n*   允许其工程师更好地利用OpenAI的编码工具Codex。\n\n### 高管引言\n\nPayPal总裁兼首席执行官Alex Chriss在一份声明中表示：“每周有数亿人求助于ChatGPT寻求日常任务帮助，其中包括寻找他们喜欢的产品，而超过4亿人使用PayPal购物。”他补充说：“通过与OpenAI合作并采用Agentic Commerce Protocol，PayPal将为支付和商业体验提供支持，帮助我们的共同客户群只需轻点几下即可从聊天转到结账。”",
-      "shortSummary": "PayPal宣布与OpenAI合作，从2026年起，用户将能直接在ChatGPT内使用PayPal钱包或银行卡完成购物支付。此举基于OpenAI的Agentic Commerce Protocol和“即时结账”功能，旨在简化AI应用内的购物流程。PayPal将提供买卖双方保护，并处理支付路由。从明年起，使用PayPal的商家商品将在ChatGPT上可被发现。此次合作是PayPal将自身定位为AI驱动购物体验支付伙伴战略的一部分，同时PayPal也向员工开放ChatGPT企业版并利用OpenAI的编码工具。",
-      "translated_title": "PayPal与OpenAI合作，允许用户在ChatGPT内购物支付",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "PayPal is adopting the Agentic Commerce Protocol (ACP), an open source specification developed by OpenAI that lets merchants make their products available within AI apps, consequently enabling users to shop using AI agents."
-    },
-    {
-      "title": "OpenAI向所有印度用户提供一年免费ChatGPT Go服务 (原标题: OpenAI offers free ChatGPT Go for one year to all users in India)",
-      "link": "https://techcrunch.com/2025/10/27/openai-offers-free-chatgpt-go-for-one-year-to-all-users-in-india/",
-      "pubDate": "Tue, 28 Oct 2025 06:17:09 +0000",
-      "isoDate": "2025-10-28T06:17:09.000Z",
-      "creator": "Jagmeet Singh",
-      "summary": "# OpenAI向印度用户提供一年免费ChatGPT Go服务\n\nOpenAI宣布，将从11月4日开始，在限定促销期内向所有在印度注册的用户免费提供为期一年的ChatGPT Go计划。此举旨在扩大其在印度这一重要市场的份额。现有ChatGPT Go订阅用户也将享受12个月的免费服务。\n\n## 优惠详情\n*   **免费期限**：一年。\n*   **适用对象**：在促销期内注册的所有印度用户。\n*   **现有用户**：印度现有ChatGPT Go订阅用户也将享受12个月的免费服务。\n*   **起始日期**：2025年11月4日（根据文章中提及的DevDay Exchange日期和推文时间推断）。\n\n## ChatGPT Go 服务\n*   **定价**：在印度推出时每月不到5美元，是OpenAI最经济实惠的付费订阅计划。\n*   **推出时间与范围**：于8月在印度首次推出，随后扩展到印度尼西亚，本月初又扩展到亚洲其他16个国家。\n*   **功能优势**：\n    *   提供比免费版本多10倍的使用量，用于生成回复、创建图像和上传文件。\n    *   改进了记忆功能，可提供更个性化的回复。\n\n## 印度市场的重要性\n*   **关键市场**：印度是全球人口最多的国家，拥有超过7亿智能手机用户和超过10亿互联网用户，是OpenAI的关键市场。\n*   **本地化发展**：OpenAI于8月在印度新德里开设了办事处，并正在组建本地团队以扩大业务。\n*   **市场地位**：OpenAI首席执行官Sam Altman曾表示，印度是该公司在美国之外的第二大市场。\n*   **盈利挑战**：尽管ChatGPT应用在截至8月的90天内下载量超过2900万次，但同期应用内购买收入仅为360万美元，表明在印度通过付费计划盈利面临挑战。\n\n## 竞争格局\n*   **主要竞争对手**：包括Perplexity和Google等公司也正积极拓展印度庞大且年轻的用户群。\n*   **竞争对手行动**：\n    *   Perplexity：最近与Airtel合作，向其3.6亿订阅用户提供免费的Perplexity Pro订阅。\n    *   Google：为印度学生推出了为期一年的免费AI Pro计划。\n\n## 未来展望\n*   **DevDay Exchange活动**：OpenAI将于11月4日在班加罗尔举办DevDay Exchange开发者大会，预计将发布针对印度本地开发者和企业的具体公告。\n*   **高管表态**：ChatGPT副总裁兼负责人Nick Turley表示，印度用户的采用和创造力令人鼓舞，并期待用户利用这些工具创造、学习和实现更多成就。他还在社交媒体上预告了针对印度用户的“激动人心的更新”。",
-      "shortSummary": "OpenAI宣布将从11月4日起，向所有印度用户提供为期一年的免费ChatGPT Go服务，以扩大其在这一关键市场的份额。印度是OpenAI在美国以外的第二大市场，尽管此前在印度的付费计划盈利面临挑战。ChatGPT Go提供比免费版多10倍的使用量和更个性化的回复。OpenAI的竞争对手如Perplexity和Google也在积极拓展印度市场。OpenAI还将于11月4日在班加罗尔举办开发者大会，预计将发布印度本地化公告。",
-      "translated_title": "OpenAI向所有印度用户提供一年免费ChatGPT Go服务",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "ChatGPT Go is now free for Indian users under a limited-time promotional offer."
-    },
-    {
-      "title": "红杉资本的罗洛夫·博塔称风险投资并非一种资产类别 (原标题: Venture capital is not an asset class, says Sequoia’s Roelof Botha)",
-      "link": "https://techcrunch.com/2025/10/27/venture-capital-is-not-an-asset-class-says-sequoias-roelof-botha/",
-      "pubDate": "Tue, 28 Oct 2025 01:24:04 +0000",
-      "isoDate": "2025-10-28T01:24:04.000Z",
-      "creator": "Aisha Malik",
-      "summary": "## 红杉资本合伙人罗洛夫·博塔：风险投资并非资产类别\n\n在TechCrunch Disrupt 2025大会上，红杉资本（Sequoia）管理合伙人罗洛夫·博塔（Roelof Botha）提出了一个引人注目的观点：风险投资行业并非一种资产类别，并且向硅谷投入更多资金并不能带来更多优秀的公司。\n\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/10/botha.jpg?w=1024)\n\n### 核心论点：风险投资是“无回报的风险”\n\n博塔在接受TechCrunch Disrupt主舞台采访时表示，“投资风险投资是一种无回报的风险。”他指出，任何研究过资本资产定价模型（CAPM）的人都能理解这句话的深意。他提出这一观点的原因在于，从风险投资的历史来看，它是一种与其他资产类别不相关的资产。\n\n### 对资金涌入的担忧\n\n许多资产配置者认为，应该将投资组合的一定比例分配给风险投资，并认为更多资金应该流入这一领域。然而，博塔认为事实并非如此，因为真正重要的公司数量是有限的。他强调：\n\n*   “在我看来，向硅谷投入更多资金并不能产生更多伟大的公司。”\n*   “这实际上会稀释价值，使我们更难让少数几家特殊公司蓬勃发展。”\n\n### 行业现状与历史对比\n\n博塔指出，目前美国有3,000家风险投资公司，而他20年前加入红杉时只有1,000家。他还回顾了2003年加入红杉时的行业环境：\n\n*   当时没有移动设备。\n*   云计算尚未出现。\n*   全球约有3亿人能够访问互联网。\n\n他认为，今天的市场机遇规模已完全不同。尽管过去20年行业内产生了约3800亿美元以上的成果，这是一个显著的数字，但博塔不认为仅仅通过向行业投入更多资金就能持续实现这种规模的增长。\n\n![Aisha Malik](https://techcrunch.com/wp-content/uploads/2021/10/headshot.jpg)",
-      "shortSummary": "红杉资本管理合伙人罗洛夫·博塔在TechCrunch Disrupt 2025上指出，风险投资并非一种资产类别。他认为，风险投资是“无回报的风险”，因为它与其他资产类别不相关。向硅谷投入更多资金并不会产生更多优秀公司，反而会稀释价值，阻碍少数特殊公司的发展。博塔强调，尽管风险投资公司数量激增，但过去20年约3800亿美元的行业成果不会仅仅通过增加资金投入而持续增长。",
-      "translated_title": "红杉资本的罗洛夫·博塔称风险投资并非一种资产类别",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/10/botha.jpg?w=1024",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2021/10/headshot.jpg",
-          "alt": "Aisha Malik",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Sequoia's managing partner Roelof Botha noted that there are currently 3,000 venture firms in the United States, while there were just 1,000 when he joined Sequoia 20 years ago."
-    },
-    {
-      "title": "Alphabet旗下X部门首席执行官Astro Teller谈“登月项目”的要素 (原标题: CEO of Alphabet’s X, Astro Teller, on what makes a moonshot)",
-      "link": "https://techcrunch.com/2025/10/27/ceo-of-alphabets-x-astro-teller-on-what-makes-a-moonshot/",
-      "pubDate": "Tue, 28 Oct 2025 00:20:32 +0000",
-      "isoDate": "2025-10-28T00:20:32.000Z",
-      "creator": "Aisha Malik",
-      "summary": "## Alphabet旗下X部门首席执行官Astro Teller谈“登月项目”的要素\n\n在TechCrunch Disrupt 2025大会上，Alphabet旗下“登月工厂”X部门的首席执行官Astro Teller深入探讨了“登月项目”的定义及其“快速失败”的理念。\n\n### X部门简介与成功案例\n*   X部门是Alphabet孵化“几乎不可能”项目的机构。\n*   著名的成功案例包括Waymo和Wing。\n*   X的“成功率”仅为2%，这意味着大多数尝试都以失败告终，但X认为这是可接受的。\n\n### “登月项目”的三大核心要素\nTeller指出，一个真正的“登月项目”必须具备以下三个特定组成部分：\n1.  **解决巨大问题：** 致力于解决世界上一个巨大的现实问题。\n2.  **潜在解决方案：** 存在某种产品或服务，无论其可能性多么微小，能够彻底解决这个大问题。\n3.  **突破性技术：** 拥有一种突破性的技术，为解决这个巨大的现实问题提供一线希望。\n\n### X的测试方法与“快速失败”理念\n*   **初期验证：** 对于符合“登月项目”假设的疯狂想法，X会提供少量资金，目标是尽快证明其不可行。Teller强调，目的不是让项目成功，而是获取信息，判断其是否是“百年一遇的机会”，即使结果是否定的也无妨。\n*   **拒绝“合理”想法：** 如果一个提案听起来“合理”，X反而不感兴趣，因为这不符合“登月项目”的定义。\n*   **迭代与淘汰机制：**\n    *   如果一个疯狂但可测试的假设，在少量资金投入后被证明“比我们想象的更疯狂”，则会立即终止该项目。\n    *   如果被证明“比我们想象的没那么疯狂”，则会投入更多资金，寻找下一个“杀死”它的机会，并重复此验证过程。\n\n### “登月项目”所需的特质\nTeller强调，开展“登月项目”需要同等的胆识和谦逊：\n*   **胆识：** 驱动人们开始这些看似不可能的旅程。\n*   **谦逊：** 避免在错误的道路上走得太远，及时承认失败并转向。\n\n### X的创新成果与效率\n*   X每年启动超过100个项目。\n*   虽然只有2%的项目在五到六年内成功退出，但X部门44%的资金都投入到了那些最终毕业并被证明“极其出色”的项目中。\n*   这得益于X“在过程早期就淘汰了所有糟糕的想法”。\n\n### 创新能力的可习得性\nTeller认为创新是可以学习的。他指出，每个人在童年时期都富有创造力，但随着成长，我们往往会“忘却”一些对激进创新有用的、甚至是必要的能力。然而，通过创造一个让人不觉得“愚蠢”的环境，这些能力可以被重新找回。",
-      "shortSummary": "Alphabet旗下X部门首席执行官Astro Teller阐述了“登月项目”的要素：解决巨大问题、提供潜在解决方案和突破性技术。X以“快速失败”为核心，每年启动百余项目，仅2%成功，但44%的资金投入到“极其出色”的毕业项目中。他们鼓励用少量资金验证疯狂想法，若不可行则迅速终止。Teller强调，开展“登月项目”需胆识与谦逊并存，并认为创新能力可通过创造无惧失败的环境重新习得。",
-      "translated_title": "Alphabet旗下X部门首席执行官Astro Teller谈“登月项目”的要素",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Teller says X has a 2% hit rate, which means that most of the things the company tries don't work out, and that's okay. "
-    },
-    {
-      "title": "Zoom首席执行官袁征称AI将缩短我们的工作周 (原标题: Zoom CEO Eric Yuan says AI will shorten our workweek)",
-      "link": "https://techcrunch.com/2025/10/27/zoom-ceo-eric-yuan-says-ai-will-shorten-our-workweek/",
-      "pubDate": "Tue, 28 Oct 2025 00:14:39 +0000",
-      "isoDate": "2025-10-28T00:14:39.000Z",
-      "creator": "Sarah Perez",
-      "summary": "# Zoom CEO袁征：AI将缩短我们的工作周\n\n*   **核心观点：AI将重塑工作模式并缩短工作周**\n    *   Zoom创始人兼首席执行官袁征在2025年TechCrunch Disrupt大会上表示，AI助手最终将使我们的工作周缩短。\n    *   他设想的目标是，在五年内，工作周可以从五天缩短到三天或四天。\n\n*   **Zoom对AI的投入与愿景**\n    *   袁征强调Zoom正大力投资AI，称其为“AI、AI、AI”。\n    *   公司投入大量时间进行AI战略会议，坚信AI有潜力彻底改变工作方式。\n    *   AI不仅限于视频会议，还有更多应用场景。\n\n*   **AI在Zoom产品中的具体应用与未来设想**\n    *   **“数字分身”功能：**\n        *   AI虚拟形象可以代表用户发言。\n        *   袁征本人已在今年的投资者财报电话会议中使用了他的AI分身，展示了该技术在“沟通边界”方面的潜力。\n    *   **商业谈判：**\n        *   未来，两位高管在Zoom上谈判合同时，可以先派遣他们的数字分身共同制定计划，而不是长时间亲自通话。\n    *   **邮件处理：**\n        *   AI可以帮助用户检查邮件，识别重要信息并协助回复。\n    *   **增强Zoom的整体解决方案：**\n        *   AI将提升Zoom的在线白板和协作文档等产品套件的功能，减少人工操作需求。\n\n*   **文章中包含的图片**\n    *   ![Eric Yuan, founder and chief executive officer of Zoom Video Communications Inc.](https://techcrunch.com/wp-content/uploads/2021/04/GettyImages-1137874452.jpg?w=1024)\n        *   图片描述：Zoom视频通讯公司创始人兼首席执行官袁征于2019年4月18日在美国纽约纳斯达克市场中心敲响公司首次公开募股（IPO）开市钟。\n    *   ![Sarah Perez](https://techcrunch.com/wp-content/uploads/2021/01/lwzxxnshgj71bonwbik3.jpg.jpg)\n        *   图片描述：Sarah Perez",
-      "shortSummary": "Zoom首席执行官袁征在2025年TechCrunch Disrupt大会上表示，AI将通过数字分身、邮件辅助和增强协作工具等方式，显著提高工作效率，最终使人们的工作周缩短至三到四天。他强调Zoom正大力投资AI，相信其能彻底改变工作模式，让员工有更多时间专注于重要事务。",
-      "translated_title": "Zoom首席执行官袁征称AI将缩短我们的工作周",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2021/04/GettyImages-1137874452.jpg?w=1024",
-          "alt": "Eric Yuan, founder and chief executive officer of Zoom Video Communications Inc., stands before the opening bell during the company's initial public offering (IPO) at the Nasdaq MarketSite in New York, U.S., on Thursday, April 18, 2019. Zoom reported net income of $7.6 million on revenue of $331 million for the year ended January, and is now worth nine times the $1 billion valuation it secured after a funding round two years ago. Photographer: Victor J. Blue/Bloomberg via Getty Images",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2021/01/lwzxxnshgj71bonwbik3.jpg.jpg",
-          "alt": "Sarah Perez",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Zoom CEO Eric Yuan says that, in a few years, we should be working a three- to four-day workweek because of AI."
     }
   ],
-  "lastUpdated": "2025-10-28T18:38:29.155Z"
+  "lastUpdated": "2025-10-29T01:50:51.923Z"
 }
