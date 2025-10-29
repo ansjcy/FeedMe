@@ -5,6 +5,107 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "推出 Agent HQ：任何智能体，任何工作方式 (原标题: Introducing Agent HQ: Any agent, any way you work)",
+      "link": "https://github.blog/news-insights/company-news/welcome-home-agents/",
+      "pubDate": "Tue, 28 Oct 2025 16:08:15 +0000",
+      "isoDate": "2025-10-28T16:08:15.000Z",
+      "creator": "Kyle Daigle",
+      "summary": "# GitHub 推出 Agent HQ：任何智能体，任何工作方式\n\nGitHub 宣布推出 Agent HQ，这是其平台进化的下一步愿景，旨在将 AI 智能体原生集成到开发工作流程中，解决当前 AI 工具分散的问题。GitHub 致力于将平台转变为一个开放生态系统，统一所有智能体，让它们以开发者熟悉的方式工作。\n\n## 核心愿景与开放生态系统\n\n*   **解决痛点：** 当前 AI 工具功能强大但分散，GitHub 旨在提供一个统一、无缝的 AI 协作体验。\n*   **原生集成：** 智能体将不再是附加组件，而是作为 GitHub 工作流的本地组成部分。\n*   **多智能体支持：** 在未来几个月内，来自 Anthropic、OpenAI、Google、Cognition 和 xAI 等公司的编码智能体将通过付费 GitHub Copilot 订阅直接在 GitHub 中提供。\n*   **早期访问：** 从本周开始，Copilot Pro+ 用户可以在 VS Code Insiders 中使用 OpenAI Codex，这是首批合作伙伴智能体之一。\n\n![引述：OpenAI、Anthropic 和 Google Labs 的产品负责人对与 GitHub 合作的看法](https://github.blog/wp-content/uploads/2025/10/Quotes_v5.jpg?resize=2796%2C2022)\n\n## 任务控制中心：统一指挥平台\n\nAgent HQ 的核心是“任务控制中心”，这是一个统一的命令中心，可在 GitHub、VS Code、移动端和 CLI 上提供一致的界面，用于指导、监控和管理所有 AI 驱动的任务。\n\n*   **主要功能：**\n    *   选择并并行分配任务给多个智能体。\n    *   从任何设备跟踪智能体进度。\n    *   **新分支控制：** 对智能体创建代码的 CI 和其他检查运行时间进行精细监督。\n    *   **身份功能：** 控制执行任务的智能体，像管理团队成员一样管理其访问权限和策略。\n    *   **效率提升：** 一键解决合并冲突、改进文件导航和代码注释功能。\n    *   **集成：** 新增与 Slack 和 Linear 的集成，以及现有的 Atlassian Jira、Microsoft Teams、Azure Boards 和 Raycast 连接。\n\n![集成伙伴的标志：Slack、Linear、Microsoft Teams、VS Code、Azure Boards、Jira 和 Raycast](https://github.blog/wp-content/uploads/2025/10/BlogImage_LogoWall_02.jpg?resize=1024%2C427)\n\n## VS Code 中的新功能：规划、定制与连接\n\n任务控制中心也集成到 VS Code 中，提供所有智能体（无论是在 VS Code、Copilot CLI 还是 GitHub 上运行）的单一视图。\n\n*   **计划模式 (Plan Mode)：** 帮助开发者在项目开始前通过提问来构建分步方法，确保上下文正确，并在编写代码前发现潜在问题。\n*   **自定义智能体：** 通过 `AGENTS.md` 文件在 VS Code 中创建自定义智能体，设置明确的规则和指导方针，以塑造 Copilot 的行为。\n*   **GitHub MCP 注册表：** 直接在 VS Code 中发现、安装和启用 MCP 服务器（如 Stripe、Figma、Sentry）。\n\n## 提升团队信心与控制力\n\nAgent HQ 不仅增强了能力，还提升了团队的信心和控制力，解决了代码质量、AI 影响和 AI 交互管理等关键挑战。\n\n*   **GitHub 代码质量 (公开预览)：**\n    *   提供组织范围内的可见性、治理和报告，系统性地提高所有仓库的代码可维护性、可靠性和测试覆盖率。\n    *   扩展 Copilot 的安全检查，评估代码更改对可维护性和可靠性的影响。\n    *   在 Copilot 编码智能体的工作流程中添加了代码审查步骤，确保在开发者看到代码之前解决问题。\n\n![GitHub 代码质量截图，显示 Copilot 审查结果](https://github.blog/wp-content/uploads/2025/10/BlogImage_CodeQuality_01.jpg?resize=1024%2C614)\n\n*   **Copilot 指标仪表板 (公开预览)：** 显示 Copilot 在整个组织中的影响和关键使用指标。\n*   **控制平面 (Agent Governance Layer)：** 为企业管理员提供统一的 AI 控制，管理 AI 访问、设置安全策略、审计日志，并控制允许的智能体和模型访问。\n\n## 开发者为本\n\nAgent HQ 由开发者为开发者构建，旨在消除工具带来的摩擦，提供有序且可控的 AI 体验，让开发者能够更快、更自信地构建，并拥有更多自主权。",
+      "shortSummary": "GitHub 推出 Agent HQ，旨在将 AI 智能体原生集成到其开发平台中。它是一个开放生态系统，将 Anthropic、OpenAI 等公司的智能体统一在一个“任务控制中心”下，通过现有 Copilot 订阅提供。Agent HQ 提供统一界面、VS Code 增强功能（如计划模式、自定义智能体）以及企业级控制（代码质量、指标仪表板、治理层），确保 AI 在开发工作流中更强大、安全、无缝。目标是让开发者能更自信、高效地利用 AI。",
+      "translated_title": "推出 Agent HQ：任何智能体，任何工作方式",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/Quotes_v5.jpg?resize=2796%2C2022",
+          "alt": "'Our collaboration with GitHub has always pushed the frontier of how developers build software. The first Codex model helped power Copilot and inspired a new generation of AI-assisted coding. We share GitHub’s vision of meeting developers wherever they work, and we’re excited to bring Codex to millions more developers who use GitHub and VS Code, extending the power of Codex everywhere code gets written.' \n- Alexander Embiricos, Codex Product Lead, OpenAI\n\n'We’re partnering with GitHub to bring Claude even closer to how teams build software. With Agent HQ, Claude can pick up issues, create branches, commit code, and respond to pull requests, working alongside your team like any other collaborator. This is how we think the future of development works: agents and developers building together, on the infrastructure you already trust.' \n- Mike Krieger, Chief Product Officer, Anthropic\n\n'The best developer tools fit seamlessly into your workflow, helping you stay focused and move faster. With Agent HQ, Jules becomes a native assignee, streamlining manual steps and reducing friction in everyday development. This deeper integration with GitHub brings agents closer to where developers already work, making collaboration more natural and efficient.'\n- Kathy Korevec, Director of Product at Google Labs",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/BlogImage_LogoWall_02.jpg?resize=1024%2C427",
+          "alt": "Logos for Slack, Linear, Microsoft Teams, VS Code, Azure Boards, Jira, and Raycast.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/10/BlogImage_CodeQuality_01.jpg?resize=1024%2C614",
+          "alt": "Screenshot of GitHub Code Quality, showing the results of Copilot's review.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/2501?v=4&s=200",
+          "alt": "Kyle Daigle",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>At Universe 2025, GitHub's next evolution introduces a single, unified workflow for developers to be able to orchestrate any agent, any time, anywhere.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/welcome-home-agents/\">Introducing Agent HQ: Any agent, any way you work</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Octoverse：每秒一名新开发者加入 GitHub，AI 助力 TypeScript 跃居榜首 (原标题: Octoverse: A new developer joins GitHub every second as AI leads TypeScript to #1)",
+      "link": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+      "pubDate": "Tue, 28 Oct 2025 16:07:06 +0000",
+      "isoDate": "2025-10-28T16:07:06.000Z",
+      "creator": "GitHub Staff",
+      "summary": "# Octoverse 2025：软件开发的关键转变\n\nGitHub 的年度 Octoverse 报告揭示了 AI、代理和类型化语言如何驱动过去十年软件开发领域最大的变革。\n\n## GitHub 增长概览\n\n*   **创纪录的开发者增长**：在过去一年中，平均每秒有超过一名新开发者加入 GitHub，新增逾 3600 万，总数已超过 1.8 亿。这是 GitHub 有史以来最快的绝对增长率。\n*   **GitHub Copilot 的影响**：2024 年底发布的 GitHub Copilot Free 版本，使得开发者注册量出现阶梯式增长，超出了此前的预测。\n*   **活跃度飙升**：GitHub 上的活动达到创纪录水平，开发者每分钟创建超过 230 个新代码库，每月平均合并 4320 万个拉取请求（同比增长 23%），2025 年提交了近 10 亿次代码（同比增长 25.1%），其中 8 月份创下近 1 亿次的单月记录。\n*   **全球扩张**：增长是全球性的，印度今年新增了超过 500 万开发者（占所有新账户的 14% 以上），预计到 2030 年，GitHub 上每三名新开发者中就有一名来自印度。\n\n## 三大关键转变\n\n1.  **生成式 AI 成为开发标准**：\n    *   超过 110 万个公共代码库使用 LLM SDK，其中 693,867 个项目是在过去 12 个月内创建的（同比增长 178%）。\n    *   合并的拉取请求数量达到创纪录的 5.187 亿次（同比增长 29%）。\n    *   AI 采用速度快：80% 的新开发者在加入 GitHub 的第一周内就使用 Copilot。\n2.  **TypeScript 跃居最常用语言榜首**：\n    *   2025 年 8 月，TypeScript 首次超越 Python 和 JavaScript，成为 GitHub 上使用最多的语言，标志着十多年来最重要的语言转变。\n    *   这反映了开发者转向类型化语言的趋势，以提高代理辅助编码在生产环境中的可靠性。\n    *   几乎所有主流前端框架现在都默认使用 TypeScript 进行脚手架。\n    *   尽管如此，Python 在 AI 和数据科学工作负载中仍占主导地位，而 JavaScript/TypeScript 生态系统的总体活跃度仍高于 Python 单独的活跃度。\n3.  **AI 重塑开发者选择**：\n    *   过去，开发者选择意味着选择 IDE、语言或框架。2025 年，这种情况正在改变。\n    *   AI 工具的快速采用与语言偏好演变之间存在关联，表明 AI 不仅影响代码编写速度，还影响开发者使用的语言和工具。\n    *   代理（Agents）已然出现，预计未来几个月和几年将产生更大的影响。\n\n## GitHub 2025 年现状：创纪录的增长之年\n\n*   **开发者数量持续攀升**：GitHub 开发者数量已从 2023 年的 1 亿增长到目前的 1.8 亿以上，过去一年的增长速度是前所未有的。\n*   **AI 采用即时性**：近 80% 的新开发者在加入 GitHub 的第一周内就使用 GitHub Copilot，这表明 AI 已成为新编码者的期望。\n*   **人才多样化**：全球人才蓬勃发展，每分钟约有 25 名开发者来自亚太地区，约 12 名来自欧洲，约 6.5 名来自非洲和中东，约 6 名来自拉丁美洲。印度今年新增了超过 500 万开发者。\n\n## 私有与公共代码库\n\n*   **角色与增长**：2025 年，81.5% 的贡献发生在私有代码库中，而 63% 的代码库是公共的。这突显了 GitHub 的双重作用：日常工作主要在私有项目中进行，但依赖于公共开源项目中的库、模型和框架。\n*   **关键数据**：私有代码库增长速度（同比增长 33%）快于公共代码库（同比增长 19%），反映了 GitHub 上组织级开发的增长。目前有超过 1.8 亿开发者在 GitHub 上，总代码库数量达 6.3 亿，其中 2025 年新增 1.21 亿个，创历史新高。\n\n## 开发者生产力\n\n*   **活动达到历史新高**：2025 年是 GitHub 历史上最活跃的 12 个月，公共和开源项目贡献超过 11.2 亿次。\n*   **活动指标对比**：\n    *   关闭问题：从 2024 年月均 340 万增至 2025 年月均 425 万。\n    *   合并拉取请求：从 2024 年月均 3500 万增至 2025 年月均 4320 万。\n    *   代码推送：从 2024 年月均 6500 万增至 2025 年月均 8219 万。\n*   **AI 工具的影响**：2025 年初，随着 Copilot 编码代理的预览和 Copilot 代码审查的推出，各项活动加速。代码推送是主要驱动力，2025 年提交了超过 9.86 亿次（同比增长 25%）。\n\n## Jupyter Notebooks 和 Dockerfiles\n\n*   **现代开发的两大支柱**：2025 年，240 万个代码库使用 Jupyter Notebooks（同比增长 75%），190 万个使用 Dockerfiles（同比增长 120%）。Notebooks 是成熟的实验工具，而 Dockerfiles 是实现可复现性和生产部署的桥梁。\n*   **增长原因**：这种增长可能源于对沙盒化代理和 LLM 的需求，而容器化是安全运行和扩展它们的实用方法。\n\n## AI 代理进入主流\n\n*   **AI 代码审查的效用**：72.6% 使用 Copilot 代码审查的开发者表示其有效性有所提高。\n*   **“Vibe Coding”现象**：2025 年的一个显著趋势是“vibe coding”，即开发者从一个想法直接跳到可运行的概念验证（通常在 AI 自动补全和可复制的云工具支持下完成）。这预示着编程素养可能大幅扩展。\n\n## 2025 年全球编码格局\n\n*   **新的全球前十**：印度在 2025 年新增了超过 520 万开发者，占 GitHub 新增开发者总数的 14% 以上，成为今年 GitHub 新增开发者的最大来源国。\n*   **区域增长驱动因素**：印度、巴西和印度尼西亚的显著增长得益于庞大且年轻的开发者人口、不断扩大的互联网接入和蓬勃发展的创业生态系统。这些地区在 AI 相关项目方面也增长最快。\n*   **2030 年全球开发者格局预测**：模型预测印度到 2030 年将达到 5750 万开发者，占全球所有新增注册的三分之一以上。美国将是第二大社区，预计超过 4000 万开发者，巴西（1960 万）、日本（1170 万）和英国（1100 万）位列前五。非洲和中东的新兴地区（如埃及、尼日利亚、肯尼亚和摩洛哥）也显示出强劲势头。\n\n## 核心要点\n\n*   今年加入 GitHub 的新开发者中，有三分之一来自 2020 年未进入全球前十的国家。\n*   印度今年新增开发者数量超过任何其他国家，增长速度超过美国。\n*   AI 繁荣是全球性的：GitHub 上生成式 AI 项目的贡献者数量持续快速增长，且这些贡献者遍布全球。\n\n## 2025 年开源：AI 时代的活动与影响力\n\n*   **开源开发创历史新高**：今年公共代码库的贡献达到 11.2 亿次（同比增长 13%）。2025 年 3 月是 GitHub 历史上新增开源贡献者最多的月份，达到 25.5 万名首次贡献者。\n*   **增长最快的项目**：前十大增长最快的代码库中，有六个是 AI 基础设施项目，突显了对运行时、编排和效率工具的需求。\n*   **按贡献者数量排名的顶级开源项目**：2025 年的顶级项目分为 AI 基础设施（如 `vllm-project/vllm`、`ollama/ollama`、`huggingface/transformers`）和持久生态系统（如 `microsoft/vscode`、`godotengine/godot`、`home-assistant/core`）。这表明 AI 基础设施正在成为一个主要吸引力，但现有开发者生态系统依然强劲。\n\n| 排名 | 代码库               | 简要描述                   |\n| :--- | :------------------- | :------------------------- |\n| 1    | `vllm-project/vllm`  | 高吞吐量 LLM 推理引擎      |\n| 2    | `microsoft/vscode`   | 广泛使用的开源代码编辑器   |\n| 3    | `openai/codex`       | 在终端运行的轻量级编码代理 |\n| 4    | `huggingface/transformers` | 模型加载和微调的核心库     |\n| 5    | `godotengine/godot`  | 2D/3D 游戏引擎             |\n| 6    | `home-assistant/core` | 开源智能家居中心           |\n| 7    | `ollama/ollama`      | 本地模型运行器和管理工具   |\n| 8    | `ggml-org/llama.cpp` | 轻量级本地 Llama 推理      |\n| 9    | `volcengine/verl`    | LLM 部署和服务框架         |\n| 10   | `expo/expo`          | React Native 移动应用工具包 |",
+      "shortSummary": "GitHub Octoverse 2025报告指出，AI、代理和类型化语言正驱动软件开发领域十年来的最大变革。GitHub开发者数量创纪录增长，过去一年新增超3600万，总数达1.8亿。TypeScript首次超越Python和JavaScript，成为GitHub上最常用语言，反映了开发者对类型化语言和AI辅助编码的偏好。生成式AI已成为开发标准，80%的新开发者在首周使用Copilot。开源活动也达到历史新高，AI基础设施项目是主要增长点。全球开发者格局正在重塑，印度成为新增开发者最大来源国，预计到2030年将占全球三分之一。",
+      "translated_title": "Octoverse：每秒一名新开发者加入 GitHub，AI 助力 TypeScript 跃居榜首",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>In this year’s Octoverse, we uncover how AI, agents, and typed languages are driving the biggest shifts in software development in more than a decade.</p>\n<p>The post <a href=\"https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/\">Octoverse: A new developer joins GitHub every second as AI leads TypeScript to #1</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "2025 GitHub 合作伙伴奖项获奖者揭晓 🎉 (原标题: Announcing the 2025 GitHub Partner Award winners 🎉)",
+      "link": "https://github.blog/news-insights/company-news/announcing-the-2025-github-partner-award-winners/",
+      "pubDate": "Tue, 28 Oct 2025 16:00:00 +0000",
+      "isoDate": "2025-10-28T16:00:00.000Z",
+      "creator": "Jamie Cooper",
+      "summary": "### 2025 GitHub 合作伙伴奖项揭晓\n\n在当今快速发展的科技行业中，合作伙伴是实现规模化、开拓新市场、推动创新和增强客户影响力的强大引擎。GitHub 认为，与合作伙伴的协作是其成长和提供价值的核心，合作伙伴是 GitHub 的“倍增器”，能够放大其能力，扩大其影响力，并加速为共同客户带来的创新。\n\nGitHub 首席营收官 Elizabeth Pemmerl 强调了合作伙伴生态系统的蓬勃发展，并表示公司很高兴能宣布 2025 GitHub 合作伙伴奖项的获奖者。这些奖项旨在表彰全球合作伙伴的杰出贡献、创新和协作。每年，GitHub 都会认可那些在提供卓越价值、推动变革性影响和加强共同使命方面表现出色的合作伙伴。这些获奖者通过整合 GitHub 的核心技术，帮助共同客户解锁创新、强化安全并构建独特的解决方案和服务。\n\n#### 2025 合作伙伴奖项获奖名单 🏆\n\n**全球奖项**\n\n*   **年度 GSI 服务和渠道合作伙伴：** Accenture 和 Avanade\n*   **年度战略服务和渠道合作伙伴：** Xebia\n*   **年度增长服务和渠道合作伙伴：** Canarys\n\n**区域奖项**\n\n*   **年度美洲区服务和渠道合作伙伴：** Slalom\n*   **年度亚太区服务和渠道合作伙伴：** PALO IT\n*   **年度欧洲、中东和非洲区服务和渠道合作伙伴：** Capgemini\n*   **年度新兴市场服务和渠道合作伙伴：** ilegra\n\n**支柱奖项**\n\n*   **年度平台服务和渠道合作伙伴：** Infosys\n*   **年度安全服务和渠道合作伙伴：** Eficode\n*   **年度 AI 服务和渠道合作伙伴：** Cognizant\n\n**技术奖项**\n\n*   **年度技术合作伙伴：** JFrog\n\nGitHub 全球微软、合作伙伴与服务解决方案销售副总裁 Matt Finkelstein 对合作伙伴的日常奉献表示感谢，并指出他们共同推动了软件构建方式的根本性变革，提升了整个行业的标准，并重塑了人们的生活和工作方式。他强调，合作伙伴对协作和客户成功的承诺持续推动着这一势头并激发了无限可能。\n\nGitHub 向所有获奖者表示衷心祝贺，并承诺在未来与合作伙伴共同成长，无畏创新，并创造共同成功。\n\n**文章作者：**\n\n*   ![Jamie Cooper](https://avatars.githubusercontent.com/u/216614519?v=4&s=200) Jamie Cooper，全球合作伙伴营销高级经理\n*   ![Leah Enquist](https://avatars.githubusercontent.com/u/79600774?v=4&s=200) Leah Enquist，高级合作伙伴 GTM、战略与运营经理",
+      "shortSummary": "GitHub 宣布了 2025 年度合作伙伴奖项获奖者，以表彰全球合作伙伴在推动创新、强化安全和提升客户价值方面的杰出贡献。奖项涵盖全球、区域、支柱和技术等多个类别，包括 Accenture、Avanade、Xebia、Slalom、PALO IT、Capgemini、Infosys、Eficode、Cognizant 和 JFrog 等公司。这些合作伙伴是 GitHub 生态系统不可或缺的一部分，共同致力于改变软件构建方式，并为共同客户带来卓越成果。",
+      "translated_title": "2025 GitHub 合作伙伴奖项获奖者揭晓 🎉",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/216614519?v=4&s=200",
+          "alt": "Jamie Cooper",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/79600774?v=4&s=200",
+          "alt": "Leah Enquist",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
+          "alt": "GitHub Universe 2025",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>GitHub celebrates its 2025 Partner Award winners, honoring global, regional, and technology partners for driving innovation, collaboration, and impact across the developer ecosystem.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/announcing-the-2025-github-partner-award-winners/\">Announcing the 2025 GitHub Partner Award winners 🎉</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "如何使用GitHub MCP注册表查找、安装和管理MCP服务器 (原标题: How to find, install, and manage MCP servers with the GitHub MCP Registry)",
       "link": "https://github.blog/ai-and-ml/generative-ai/how-to-find-install-and-manage-mcp-servers-with-the-github-mcp-registry/",
       "pubDate": "Fri, 24 Oct 2025 16:00:00 +0000",
@@ -285,175 +386,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>GitHub Copilot and VS Code teams, along with the Microsoft Open Source Program Office (OSPO), sponsored these nine open source MCP projects that provide new frameworks, tools, and assistants to unlock AI-native workflows, agentic tooling, and innovation.</p>\n<p>The post <a href=\"https://github.blog/open-source/accelerate-developer-productivity-with-these-9-open-source-ai-and-mcp-projects/\">Accelerate developer productivity with these 9 open source AI and MCP projects</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "如果你是内向者，如何参加GitHub Universe（或任何技术大会） (原标题: How to navigate GitHub Universe (or any tech conference) if you’re an introvert)",
-      "link": "https://github.blog/news-insights/company-news/how-to-navigate-github-universe-or-any-tech-conference-if-youre-an-introvert/",
-      "pubDate": "Thu, 16 Oct 2025 16:14:02 +0000",
-      "isoDate": "2025-10-16T16:14:02.000Z",
-      "creator": "GitHub Staff",
-      "summary": "# 如何作为内向者参加GitHub Universe（或任何技术大会）\n\n对于内向、焦虑或习惯长时间在电脑前工作的人来说，大型技术大会可能令人望而生畏。然而，GitHub Universe旨在为这类人群提供舒适的体验，它提供了多种参与方式，让参会者可以按照自己的节奏学习和交流。大会通过精心设计的活动，确保所有人的体验都更加舒适、安全和激动人心。\n\n以下是内向者有效参加GitHub Universe（或任何技术大会）的实用建议：\n\n## 1. 参加小型会议或研讨会\n与其选择最大、最繁忙的会议，不如选择小型研讨会、小众专题讨论和分组会议。这些小型活动通常能促进更深入的联系和对话，避免在人群中感到迷失。\n*   **GitHub Universe特色：** 互动式研讨会（参与人数少，对话深入）、演示型沙盒会议（包含实践练习，保持思维活跃）、讨论休息室（2-3名主持人引导小组讨论特定主题，注重积极参与和协作）。\n![与会者在演示室的会议期间使用笔记本电脑工作。](https://github.blog/wp-content/uploads/2025/10/image8.jpg?resize=1024%2C683)\n\n## 2. 寻找安静区和充电空间\n内向者需要独处来恢复精力。大会提供了专门的休息室和充电空间，让参会者无需在错过内容和保护个人平静之间做选择。\n*   **GitHub Universe特色：** 设有安静室，用于无手机的放松、冥想和祈祷。提供充足的饮料、小吃和餐食，以保持精力。建议到户外欣赏Fort Mason的海滨景色，呼吸新鲜空气，在会议间隙放松身心。\n![日落时分海湾景色，水面上有鸟儿飞翔，背景是群山。](https://github.blog/wp-content/uploads/2025/10/image7-1.jpg?resize=1024%2C683)\n\n## 3. 参与策划的社交活动\n如果大型、无主题的社交活动令人望而却步，可以寻找有引导或主题的活动，这些活动通常有明确的对话起点，更容易建立联系。\n*   **GitHub Universe特色结构化社交点：**\n    *   **Recess!：** 与志同道合的参会者交流，分享代码之外的兴趣爱好（如乐高爱好者、Swiftie粉丝）。\n    *   **Makerspace：** 创作互动项目，涵盖艺术、AI、音乐和机器人等领域，提供一个动手实践的平台。\n    *   **Open Source Zone：** 与开源项目的贡献者和维护者建立联系，探索项目，并庆祝社区主导软件的力量。\n![一个人在桌子旁组装色彩鲜艳的乐高建筑，包括一座塔楼和一栋房子，旁边有整理好的砖块容器。](https://github.blog/wp-content/uploads/2025/10/image3-1.jpg?resize=1024%2C683)\n\n## 4. 设定个人目标和界限\n提前确定参会目标，查看议程，明确必看会议和想见的人。务必安排充足的休息时间，无需感到内疚。\n*   **GitHub Universe工具：** 提供议程构建器、精选日程和内容轨道，帮助参会者根据兴趣和目标制定计划，并按照自己的节奏进行。\n![一位身穿格子西装的会议与会者在拥挤的展厅中阅读活动地图。](https://github.blog/wp-content/uploads/2025/10/image4-1.jpg?resize=1024%2C683)\n\n## 5. 携带破冰工具\n穿着与个人兴趣相关的T恤、佩戴徽章或贴纸，可以更容易地被他人搭讪，也可能增加自己主动与人交流的信心。\n*   **GitHub Universe周边：** 大会周边商品和社区贴纸旨在帮助引发自然、低压力的对话。如果会前没有，也可以在活动当天前往GitHub商店购买最新系列商品。\n![两位与会者在技术会议上交谈，其中一人佩戴GitHub Star标签并戴蓝色帽子。](https://github.blog/wp-content/uploads/2025/10/image6-1.jpg?resize=1024%2C683)\n\n## 6. 通过线上直播或点播会议参与\n如果亲自到场仍然不适，可以选择虚拟参加GitHub Universe，或稍后按需观看主题演讲和精选会议录像。\n*   **目标：** 确保参会者能以最适合自己的方式参与并保持联系。\n*   **注意：** 并非所有技术大会都提供此选项，但值得查询是否有从家中学习和连接的方式。\n![演讲者向大量观众展示GitHub模型，屏幕上显示“GitHub上新一代AI工程师”。](https://github.blog/wp-content/uploads/2025/10/image5-1.jpg?resize=1024%2C683)\n\n## 总结\n无论选择何种方式参加GitHub Universe——亲临现场、虚拟参与、只参加几个研讨会，或介于两者之间——一切都由个人掌控。大会希望无论是内向者还是外向者，或介于两者之间，都能拥有愉快的体验。\n![通过一个色彩鲜艳的艺术装置框架看到的恶魔岛景色，海滨有游客剪影。](https://github.blog/wp-content/uploads/2025/10/image2-1.jpg?resize=1024%2C683)",
-      "shortSummary": "对于内向者而言，参加技术大会可能令人不知所措。GitHub Universe特别设计了多种方式，以确保所有参会者都能舒适地学习和交流。文章提供了六项实用建议：选择小型会议、寻找安静的充电空间、参与有组织的社交活动、提前设定个人目标和界限、携带破冰工具，以及利用线上直播或点播选项。这些策略旨在帮助内向者按照自己的节奏，最大化会议体验，确保无论亲临现场还是线上参与，都能获得愉快的经历。",
-      "translated_title": "如果你是内向者，如何参加GitHub Universe（或任何技术大会）",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/image8.jpg?resize=1024%2C683",
-          "alt": "Attendees working on laptops during conference session in presentation room.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/image7-1.jpg?resize=1024%2C683",
-          "alt": "Sunset view across the bay with birds flying over water and hills in background.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/image3-1.jpg?resize=1024%2C683",
-          "alt": "Person at table assembling colorful LEGO buildings including a tower and house with organized brick containers.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/image4-1.jpg?resize=1024%2C683",
-          "alt": "Conference attendee in checkered blazer reading event map in crowded exhibition hall.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/image6-1.jpg?resize=1024%2C683",
-          "alt": "Two attendees having conversation at tech conference, one wearing GitHub Star tag and blue cap.",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/image5-1.jpg?resize=1024%2C683",
-          "alt": "Speaker presenting GitHub Models to large audience with \"A new generation of AI engineers on GitHub\" displayed on screen.",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/image2-1.jpg?resize=1024%2C683",
-          "alt": "View of Alcatraz Island through a colorful art installation frame with visitors silhouetted at waterfront.",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/9919?v=4&s=200",
-          "alt": "GitHub Staff",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>If alone time is your love language—don’t worry, it’s ours too—you can still attend, learn from, and enjoy big events like GitHub Universe. Here are some practical tips on how.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/how-to-navigate-github-universe-or-any-tech-conference-if-youre-an-introvert/\">How to navigate GitHub Universe (or any tech conference) if you’re an introvert</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Copilot：更快、更智能，并为您的当前工作方式而生 (原标题: Copilot: Faster, smarter, and built for how you work now)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/copilot-faster-smarter-and-built-for-how-you-work-now/",
-      "pubDate": "Wed, 15 Oct 2025 15:00:00 +0000",
-      "isoDate": "2025-10-15T15:00:00.000Z",
-      "creator": "Ashley Willis",
-      "summary": "GitHub Copilot最初以代码自动补全工具的形式出现，现已发展成为开发者最广泛使用的AI工具，根据Pragmatic Engineer的调查，它已帮助开发者接受了超过30亿次代码建议，每月协助数百万次代码审查并贡献120万次拉取请求。Copilot的目标是帮助开发者将待办事项（TODOs）转化为已提交的代码，并专注于提供稳定而非前沿的生产级解决方案。\n\n### 从自动补全到实际协作\n\n如果说2024年是展示AI可能性的年份，那么2025年则致力于使其变得实用。Copilot已从一个简单的自动补全功能演变为一个多模态、多模型的助手，能够理解项目并推动其进展。它支持来自不同提供商的多个模型，并快速集成OpenAI和Google Gemini等最新AI模型。这一演变是基于开发者对更强大代理工作流和多文件编辑的需求而实现的，旨在让Copilot更智能，而无需用户进行安装或配置。\n\n### 从构思到合并，创纪录的速度\n\n过去一年，原始速度和代理工作流定义了新一代AI工具。Copilot对此做出了回应，引入了多项功能以加速开发流程：\n\n*   **代理模式（Agent mode）**：Copilot现在可以处理跨文件任务、运行命令、重构整个模块，并建议终端操作，所有这些都无需离开编辑器。\n*   **编码代理（Coding agent）**：将问题分配给Copilot，它将起草包含代码、测试和项目上下文的拉取请求，每月贡献约120万次拉取请求。\n*   **下一编辑建议（Next-edit suggestions）**：Copilot预测用户将进行的下一个更改，并以内联方式提供建议，一键即可完成。\n*   **低延迟补全（Low-latency completions）**：大多数Copilot响应在400毫秒内渲染，速度快到用户几乎察觉不到。\n*   **Copilot CLI**：将Copilot的智能引入终端，无需切换窗口即可进行设置、调试和脚本编写。\n*   **多模型路由（Multi-model routing）**：Copilot允许用户访问来自领先AI公司的多个大型语言模型（LLMs），以适应不同任务的需求。\n\n![GitHub Copilot功能列表](https://github.blog/wp-content/uploads/2025/10/FeatureList_v6.png?resize=1232%2C2146)\n\n### 随工作流扩展的AI\n\nCopilot无缝集成到开发者已使用的GitHub生态系统中，并随之扩展：\n\n*   **JetBrains + VS Code + CLI 兼容性**：无论在何处构建，都能获得相同的Copilot体验。\n*   **自定义指令（Custom instructions）**：通过`.copilot-instructions.md`文件，可以教导Copilot项目特定的命名约定、测试框架和注释格式。\n*   **GitHub MCP Server**：允许任何AI工具安全地访问GitHub上下文（拉取请求、问题、Actions），而无需离开GitHub。\n*   **工作区提示文件（Workspace prompt files）**：为团队提供可重用的蓝图，以确保提示的一致性。\n*   **2000万+开发者网络**：每一次Copilot更新都通过全球最大的真实开发者数据和反馈网络进行改进。\n\nCopilot不是一个需要“添加”到GitHub的独立工具，它是GitHub全栈开发平台的一部分，不仅帮助编写代码，还协助构建、测试、保护和发布软件。\n\n### 更智能、更清晰、更安全的代码\n\nCopilot在提升代码质量和安全防护方面投入了大量精力：\n\n*   **Copilot Autofix**：自动检测并修补漏洞，仅今年就修复了超过一百万个漏洞。\n*   **代码审查（Code review）**：在拉取请求中总结差异、标记逻辑错误并建议修复，每月在GitHub上支持数百万次代码审查。\n*   **改进的模型推理（Improved model reasoning）**：生成更具可读性、通过测试、更少lint错误和回归的代码。\n*   **CodeQL集成**：与GitHub Advanced Security、Dependabot和GitHub Actions集成，确保供应链的稳固性。\n*   **内置隐私**：通过企业隔离、审计日志和租户级控制，确保用户工作内容的私密性。\n\n研究表明，使用Copilot编写的新代码通常具有更高的可读性、可靠性和可维护性。Copilot由保护全球最大开源生态系统和90%以上财富100强公司的相同安全堆栈提供支持。\n\n### Copilot与其他工具的对比\n\nCopilot的独特之处在于其深度集成于GitHub，使其贴近开发者所做的所有事情，包括拉取请求、GitHub Actions工作流或CI/CD管道。这意味着：\n\n*   **无需迁移、新IDE或新习惯**：Copilot存在于开发者已使用的工具中。\n*   **全栈感知**：将拉取请求、审查、测试和工作流整合到同一对话中。\n*   **端到端覆盖**：Copilot为实际的软件交付提供AI辅助。\n\n![GitHub Copilot从2024到2025的飞跃](https://github.blog/wp-content/uploads/2025/10/LeapForward_v5.png?resize=1232%2C2104)\n\n### 未来展望\n\nGitHub Universe 2025将发布更多关于更智能代理工作流、更深度的多模型集成和下一代安全功能的新闻。Copilot将继续致力于帮助每位开发者更快地提交代码，而不是追逐待办事项。",
-      "shortSummary": "GitHub Copilot已从代码补全发展为开发者最常用的AI工具，每月协助数百万次代码审查和拉取请求。它通过代理模式、编码代理、低延迟补全和CLI等功能，显著加速开发流程。Copilot深度集成于GitHub生态系统，支持多模型、自定义指令，并大幅提升代码质量与安全性。它帮助开发者从构思到发布全流程，无需切换工具，实现更快、更智能、更安全的软件交付，是GitHub全栈开发平台的核心组成部分。",
-      "translated_title": "Copilot：更快、更智能，并为您的当前工作方式而生",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/FeatureList_v6.png?resize=1232%2C2146",
-          "alt": "A table showing how GitHub Copilot can help you code faster (Agent mode, Coding agent, Next edit suggestions, Latency improvements, Model choice, Copilot CLI), Build at scale (JetBrains + VS Code + CLI parity, Custom instructions, GitHub MCP Server, 20M+ developers), and Ship quality (Copilot Autofix, Code review, Improved model reasoning, Security that works, Built-in privacy).",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/LeapForward_v5.png?resize=1232%2C2104",
-          "alt": "A table demonstrating GitHub Copilot's leap forward from 2024 to 2025: Single model to Multi-model support, Single-file edits to Agent mode with multi-file reasoning, Basic completions to Next-edit suggestions and inline task automation, Chat in VS Code to IDE + JetBrains + CLI, Limited customization to Project-level instructions & workspace prompts, Text only to Image, diagram, and UI inputs, Early security hints to Copilot Autofix & deeper security integrations, and Competitive lag to 400ms responses & GitHub MCP Server.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/3139143?v=4&s=200",
-          "alt": "Ashley Willis",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Discover how GitHub Copilot has evolved from a high-powered autocomplete tool to a powerful, multi-model agentic assistant.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/copilot-faster-smarter-and-built-for-how-you-work-now/\">Copilot: Faster, smarter, and built for how you work now</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub Copilot 和 AI 代理如何拯救遗留系统 (原标题: How GitHub Copilot and AI agents are saving legacy systems)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/how-github-copilot-and-ai-agents-are-saving-legacy-systems/",
-      "pubDate": "Tue, 14 Oct 2025 16:00:00 +0000",
-      "isoDate": "2025-10-14T16:00:00.000Z",
-      "creator": "Andrea Griffiths",
-      "summary": "# GitHub Copilot 和 AI 代理如何拯救遗留系统\n\n## 遗留系统现代化挑战\n文章指出，COBOL 等遗留系统（如处理数百万 ATM 交易的主机系统）虽然已运行 65 年，但仍在支撑全球最关键的业务。然而，COBOL 开发者日益稀缺，而现有 2000 亿行 COBOL 代码急需现代化。GitHub Copilot 和自主 AI 代理为这一挑战提供了新的解决方案。\n\n## AI 驱动的现代化方法\n微软的 Julia Kordick 团队展示了无需学习 COBOL 即可实现系统现代化的方法。关键在于将 AI 专业知识与拥有数十年领域知识的专家相结合，AI 负责设计智能解决方案，专家提供遗留系统知识。这种合作是成功的关键。\n\n## AI 驱动的遗留系统现代化三步框架\nJulia 团队开发了一个系统化的框架，适用于任何遗留系统现代化项目：\n\n### 1. 代码准备（逆向工程）\n*   **问题**：组织往往不清楚其遗留代码的具体功能。\n*   **解决方案**：利用 GitHub Copilot 作为“考古工具”进行代码分析。\n*   **Copilot 功能**：\n    *   从遗留文件中提取业务逻辑。\n    *   将所有内容以 Markdown 格式文档化，便于人工审查。\n    *   自动识别调用链和依赖关系。\n    *   清理不相关的注释和历史日志。\n    *   根据需要添加额外注释。\n*   **专家提示**：始终由人类专家审查 AI 生成的分析结果，领域知识对业务上下文至关重要。\n*   **Copilot 生成示例**：包括文件清单、业务目的（如客户账户验证、余额计算、交易日志生成）和发现的依赖项（如 DB2 数据库连接、外部验证服务调用、遗留打印队列系统）。\n\n### 2. 丰富（使代码易于 AI 理解）\n*   **添加上下文**：帮助 AI 更好地理解代码。\n*   **关键步骤**：\n    *   **翻译**：将非英语注释翻译成英语，因为模型在英语上下文中表现更好。\n    *   **结构分析**：COBOL 具有确定性模式（如 IDENTIFICATION DIVISION、ENVIRONMENT DIVISION、DATA DIVISION、PROCEDURE DIVISION 四个固定分区）。可以要求 GitHub Copilot 映射这些分区并总结其功能，或列出数据结构、提取业务逻辑。AI 可以解析这些结构化部分并用通俗易懂的语言解释，无需理解 COBOL 语法。\n    *   **文档作为事实来源**：将所有 AI 生成的内容保存为 Markdown 文件，作为主要参考资料。\n*   **专家提示**：COBOL 的冗长性反而是优势，如 `ADD TOTAL-SALES TO ANNUAL-REVENUE` 语句几乎是自文档化的，可要求 Copilot 将这些业务规则提取为自然语言描述。\n\n### 3. 自动化辅助（规模化流程）\n*   从交互式使用 Copilot 转向使用 AI 代理构建自动化工作流。\n*   **Microsoft Semantic Kernel 框架**：用于编排多个专业代理，每个代理负责特定任务，协同处理复杂性。\n*   **实践中的编排示例**：\n    *   **调用链映射**：生成 Mermaid 图表展示文件间的交互。一个代理读取 COBOL 文件，另一个追踪程序间的 `CALL` 语句，第三个生成可视化图表，从而无需手动追踪即可获得整个系统映射。\n    *   **测试驱动现代化**：代理 1 提取业务逻辑，代理 2 生成验证该逻辑的测试用例，代理 3 生成通过这些测试的现代代码。测试成为迁移过程中的安全网。\n    *   **依赖优化**：识别可替换为现代等效项的实用类和库。代理分析第三方 COBOL 库，检查是否存在现代替代方案，并指出简化迁移的机会。\n*   **专家提示**：在进行任何更改之前，使用 Mermaid 图表可视化复杂的依赖关系，有助于及早发现边缘情况。\n*   **Mermaid 图表示例**：\n    ![COBOL 到 Java 现代化代理工作流流程图](https://github.blog/wp-content/uploads/2025/10/mermaid.png?resize=475%2C908)\n\n## 现实检验：并非万能药\nJulia 坦言，AI 并非解决所有主机问题的“一键式”方案。人类必须参与验证，每个 COBOL 代码库都是独特且复杂的，完全自动化可能还需要至少五年。但即便如此，AI 仍能带来巨大进展。\n\n## Azure 示例框架\nJulia 团队已开源其整个框架（基于 Microsoft Semantic Kernel），包括：\n*   多个专业代理（如 DependencyMapperAgent, COBOLAnalyzerAgent, JavaConverterAgent）。\n*   成本跟踪（每 1000 行分析通常 2-5 美元）。\n*   内置的人工验证点。\n*   `doctor.sh` 配置和测试脚本，可快速启动。\n*   **快速设置**：通过 `git clone`、`cd`、`./doctor.sh setup` 和 `./doctor.sh run` 即可开始现代化过程。\n\n## 改变一切的商业案例\n这不仅仅是技术债务问题，更是关乎企业生存。传统方法（昂贵顾问、手动转换、生成难以维护的代码）效率低下。AI 驱动的方法则能帮助团队理解业务逻辑、生成可读的现代代码，并保持对知识产权的控制，使团队在过程中学习并维护代码。\n\n## 成为现代化英雄的路径\n*   **从小处着手**：识别小型遗留系统（少于 5000 行），用 GitHub Copilot 分析单个文件，文档化并分享。\n*   **构建 AI 工具包**：尝试 Azure 示例框架，学习代码分析的提示工程，实践迭代现代化技术。\n*   **超越代码**：考虑云原生设计的非功能性需求，规划分布式系统架构。\n\n## 现在是最佳时机\nAI 不会取代开发者专业知识，而是放大它。COBOL 专家提供领域知识，现代开发者带来架构视角，AI 提供规模化的模式识别和翻译能力。三者结合，遗留系统现代化将从不可能变为可实现。",
-      "shortSummary": "GitHub Copilot 和 AI 代理正革新遗留系统现代化。面对 COBOL 等老旧系统和开发者短缺，AI 提供了一个三步框架：代码准备（逆向工程）、代码丰富（使 AI 易于理解）和自动化辅助（通过 AI 代理规模化）。该方法结合了 AI 的分析能力与人类领域知识，帮助企业理解业务逻辑，生成可维护的现代代码，从而有效解决技术债务和业务生存挑战。虽然人类验证仍不可或缺，但 AI 大幅加速了现代化进程。",
-      "translated_title": "GitHub Copilot 和 AI 代理如何拯救遗留系统",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/mermaid.png?resize=475%2C908",
-          "alt": "Flowchart showing the COBOL to Java modernization agent workflow. Seven boxes connected by arrows flow top to bottom: COBOLAnalyzerAgent, DependencyMapperAgent, Business Logic Extractor, Test Generator, JavaConverterAgent, Human Validation, and Production-Ready Java Quarkus Output.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/Andrea-Griffiths_avatar_1755783168-200x200.jpeg",
-          "alt": "Andrea Griffiths",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>GitHub Copilot and AI agents are making legacy COBOL systems accessible to modern developers.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-github-copilot-and-ai-agents-are-saving-legacy-systems/\">How GitHub Copilot and AI agents are saving legacy systems</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-27T04:38:09.818Z"
+  "lastUpdated": "2025-10-29T04:37:51.711Z"
 }
