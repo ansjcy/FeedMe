@@ -5,6 +5,39 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "间谍软件制造商Memento Labs首席执行官证实，其一政府客户被发现使用其恶意软件 (原标题: CEO of spyware maker Memento Labs confirms one of its government customers was caught using its malware)",
+      "link": "https://techcrunch.com/2025/10/28/ceo-of-spyware-maker-memento-labs-confirms-one-of-its-government-customers-was-caught-using-its-malware/",
+      "pubDate": "Wed, 29 Oct 2025 05:00:00 +0000",
+      "isoDate": "2025-10-29T05:00:00.000Z",
+      "creator": "Lorenzo Franceschi-Bicchierai",
+      "summary": "## 卡巴斯基发现Dante间谍软件\n\n网络安全公司卡巴斯基发布报告，识别出一种名为“Dante”的新型间谍软件，该软件主要针对俄罗斯和邻国白俄罗斯的Windows用户。卡巴斯基研究人员指出，Dante间谍软件由位于米兰的监控技术制造商Memento Labs开发。Memento Labs于2019年通过收购早期间谍软件制造商Hacking Team后成立。\n\n## Memento Labs首席执行官的回应\n\nMemento Labs首席执行官Paolo Lezzi向TechCrunch证实，卡巴斯基发现的间谍软件确实属于Memento。Lezzi将Dante的暴露归咎于公司的一位政府客户，称该客户使用了过时的Windows间谍软件版本，Memento将在今年年底停止支持该版本。Lezzi表示，他曾认为该客户已不再使用此“代理”（间谍软件的技术术语）。\n\nLezzi补充说，Memento已要求所有客户停止使用其Windows恶意软件，并警告客户卡巴斯基自2024年12月以来已检测到Dante间谍软件感染。他计划在周三再次向所有客户发送消息，要求他们停止使用其Windows间谍软件。Lezzi还透露，Memento目前仅为移动平台开发间谍软件，并开发一些零日漏洞（软件中未知的安全缺陷），尽管公司大部分漏洞利用来自外部开发者。\n\n## 卡巴斯基对攻击者的分析\n\n卡巴斯基发言人Mai Al Akka拒绝透露卡巴斯基认为哪个政府是此次间谍活动的幕后黑手，但表示是“能够使用Dante软件的人”。Al Akka指出，该组织“以其对俄语的熟练掌握和对当地细微差别的了解而著称，卡巴斯基在其他与此（政府支持的）威胁相关的活动中也观察到这些特征。然而，偶尔的错误表明攻击者并非母语使用者。”\n\n卡巴斯基在其报告中发现一个名为“ForumTroll”的黑客组织正在使用Dante间谍软件，该组织针对受邀参加俄罗斯政治经济论坛Primakov Readings的人员。卡巴斯基表示，黑客攻击了俄罗斯广泛的行业，包括媒体机构、大学和政府组织。卡巴斯基发现Dante是在其检测到一波利用Chrome浏览器零日漏洞的网络钓鱼链接攻击之后。Lezzi否认该Chrome零日漏洞是由Memento开发的。\n\n## Dante与Hacking Team的联系\n\n卡巴斯基研究人员得出结论，Memento“持续改进”了Hacking Team最初开发的间谍软件，直到2022年，该间谍软件被“Dante”取代。Lezzi承认，Memento的Windows间谍软件可能保留了Hacking Team开发的间谍软件的某些“方面”或“行为”。卡巴斯基指出，一个明显的迹象表明卡巴斯基发现的间谍软件属于Memento，是开发者在间谍软件代码中留下了“DANTEMARKER”一词，这明确引用了Memento此前公开披露的Dante名称。与Memento的Dante间谍软件类似，Hacking Team的某些版本间谍软件（代号为Remote Control System）也以意大利历史人物命名，如列奥纳多·达·芬奇和伽利略·伽利雷。\n\n## Hacking Team的历史与重生\n\nLezzi于2019年收购了Hacking Team并将其更名为Memento Labs。据Lezzi称，他仅以一欧元收购了该公司，计划是重新开始。“我们想彻底改变一切，”Memento所有者在2019年收购后告诉Motherboard。一年后，Hacking Team的首席执行官兼创始人David Vincenzetti宣布Hacking Team“已死”。\n\nLezzi告诉TechCrunch，他收购Hacking Team时，该公司仅剩下三家政府客户，远低于2015年的40多家。同年，黑客Phineas Fisher入侵了该公司的服务器，窃取了约400GB的内部电子邮件、合同、文件和间谍软件源代码。在泄露事件发生前，Hacking Team在埃塞俄比亚、摩洛哥和阿拉伯联合酋长国的客户被发现利用该公司间谍软件针对记者、批评者和异议人士。Phineas Fisher在线发布公司内部数据后，记者披露墨西哥地方政府曾使用Hacking Team的间谍软件针对当地政客，并且Hacking Team曾向孟加拉国、沙特阿拉伯和苏丹等存在人权侵犯的国家出售其产品。\n\n## Memento Labs的现状与行业影响\n\nLezzi拒绝透露Memento目前有多少客户，但暗示少于100个。他还表示，Memento目前只有两名前Hacking Team员工。多伦多大学公民实验室（Citizen Lab）研究间谍软件滥用十年的高级研究员John Scott-Railton指出，Memento间谍软件的发现表明此类监控技术仍在持续扩散。这也表明，一家因惊人黑客攻击和多起丑闻而倒闭的争议公司，其灰烬中仍能诞生一家拥有全新间谍软件的新公司。Scott-Railton表示：“这告诉我们，我们需要保持对后果的恐惧。”“这说明了许多事情，最具有放射性、最令人尴尬和被黑客攻击的品牌的余音仍在。”",
+      "shortSummary": "网络安全公司卡巴斯基发现名为Dante的新型间谍软件，由Memento Labs制造。Memento Labs首席执行官证实了这一点，并归咎于其一政府客户使用了过时的Windows版本。公司已要求客户停止使用该软件，并表示目前专注于移动平台。Memento Labs是备受争议的Hacking Team的重塑，其前身曾因滥用间谍软件而臭名昭著。此次事件再次表明，尽管存在丑闻，监控技术仍在持续扩散，引发对后果的担忧。",
+      "translated_title": "间谍软件制造商Memento Labs首席执行官证实，其一政府客户被发现使用其恶意软件",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Security researchers found a government hacking campaign that relies on Windows spyware developed by surveillance tech maker Memento Labs. When reached by TechCrunch, the spyware maker's chief executive blamed a government customer for getting caught."
+    },
+    {
+      "title": "LG Uplus是最新确认网络安全事件的韩国电信公司 (原标题: LG Uplus is latest South Korean telco to confirm cybersecurity incident)",
+      "link": "https://techcrunch.com/2025/10/28/lg-uplus-is-latest-south-korean-telco-to-confirm-cybersecurity-incident/",
+      "pubDate": "Wed, 29 Oct 2025 03:55:08 +0000",
+      "isoDate": "2025-10-29T03:55:08.000Z",
+      "creator": "Kate Park",
+      "summary": "### LG Uplus确认网络安全事件\n\n韩国主要电信运营商LG Uplus已向TechCrunch证实，它已向韩国国家网络安全监管机构KISA报告了一起疑似数据泄露事件。然而，LG Uplus并未透露其调查结果何时公布。\n\n**事件背景与调查**\n\n*   **第三家受影响的电信公司：** 在过去的六个月里，韩国三大主要电信服务提供商——SK Telecom、KT Telecom以及现在的LG Uplus——都报告了网络安全事件，目前正等待韩国政府的确认。\n*   **政府介入调查：** 韩国科学和信息通信技术部向TechCrunch表示，其上个月启动的对KT和LG Uplus的调查仍在进行中。有报道称，这些公司可能面临与SK Telecom最近的泄露事件类似的网络攻击。\n*   **KISA的早期发现：** 早在七月，KISA据报道就发现了可能的黑客攻击迹象，并要求LG Uplus提交正式报告。\n*   **LG Uplus最初否认：** 八月，LG的电信部门最初否认有任何泄露迹象。与此同时，KT报告称，由于未经授权的微型基站连接到其网络，导致用户数据暴露。KISA对此拒绝置评。\n\n**泄露的指控与更广泛的影响**\n\n*   **黑客杂志的说法：** 大约两个月前，黑客杂志Phrack声称来自中国或朝鲜的黑客窃取了近9000台LG Uplus服务器的数据。\n*   **韩国网络安全危机：** LG Uplus的报告正值韩国发生一系列备受瞩目的黑客攻击事件之际，这些事件影响了电信公司、信用卡公司、科技初创企业和政府机构，凸显了TechCrunch此前报道过的漏洞。\n*   **系统性弱点：** 韩国分散的网络安全系统和专家短缺阻碍了该国应对网络威胁的能力。\n\n![韩国公司LG U+（LG Uplus）的标志在世界移动通信大会上展示。](https://techcrunch.com/wp-content/uploads/2025/10/lg-uplus-breach-2204244148.jpg?w=1024)\n图片来源：Ramon Costa / SOPA Images / LightRocket / Getty Images",
+      "shortSummary": "韩国主要电信运营商LG Uplus已向国家网络安全监管机构KISA证实，报告了一起疑似数据泄露事件。这是六个月内第三家报告网络安全事件的韩国主要电信公司。韩国政府正在调查LG Uplus和KT Telecom，怀疑其遭遇了与SK Telecom类似的攻击。此前，黑客杂志Phrack声称有黑客窃取了LG Uplus近9000台服务器的数据。此次事件凸显了韩国网络安全系统分散和专家短缺等问题。",
+      "translated_title": "LG Uplus是最新确认网络安全事件的韩国电信公司",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/10/lg-uplus-breach-2204244148.jpg?w=1024",
+          "alt": "Logo of the South Korean company LG U+ (LG Uplus) is displayed during the Mobile World Congress. Logos of companies exhibited at MWC 2025.",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Korean telecom giant LG Uplus is the third major phone provider in the past six months to report a cybersecurity incident."
+    },
+    {
       "title": "塔塔汽车确认已修复暴露公司和客户数据的安全漏洞 (原标题: Tata Motors confirms it fixed security flaws, which exposed company and customer data)",
       "link": "https://techcrunch.com/2025/10/28/tata-motors-confirms-it-fixed-security-flaws-that-exposed-company-and-customer-data/",
       "pubDate": "Wed, 29 Oct 2025 01:30:00 +0000",
@@ -22,7 +55,7 @@
       "link": "https://techcrunch.com/2025/10/28/here-are-the-5-startup-battlefield-finalists-at-techcrunch-disrupt-2025/",
       "pubDate": "Wed, 29 Oct 2025 00:28:10 +0000",
       "isoDate": "2025-10-29T00:28:10.000Z",
-      "creator": "Anthony Ha",
+      "creator": "Anthony Ha, Isabelle Johannessen",
       "summary": "## TechCrunch Disrupt 2025 创业竞技场决赛选手揭晓\n\n经过两天紧张的现场演示和路演，TechCrunch Disrupt 2025 创业竞技场（Startup Battlefield）公布了五家最终入围的决赛选手。这些公司从数千名申请者中脱颖而出，经过 TechCrunch 编辑团队的层层筛选，最终从 200 家参会公司和 20 家在 Disrupt 舞台上竞争的公司中选出。这些决赛选手将于太平洋时间周三上午 11:30 再次登台，争夺 10 万美元无股权资金大奖以及创业竞技场奖杯的临时保管权。决赛可通过 TechCrunch 网站直播观看，或在会议现场的 Disrupt 舞台观看。\n\n以下是 TechCrunch Disrupt 2025 创业竞技场的五家决赛选手：\n\n### 1. Charter Space\n*   **核心业务：** Charter Space 为航空航天工程师开发了一款开发工具，但其真正的使命是成为一家专注于太空领域的金融科技公司。\n*   **技术原理：** 该软件直接从源头捕获制造和测试数据，并将这些数据集输入承保界面，该界面直接与市场上最大的保险公司连接。\n*   **目标：** 旨在为航天器保险提供更快、更便宜、更可靠的风险评估。最终，它希望为寻求风险投资和公开市场之外资金的太空公司提供新型信贷和非稀释性融资。\n\n### 2. Glīd\n*   **解决的问题：** Glīd（发音为“Glide”）旨在简化集装箱从船只运输到货运列车所涉及的复杂多步骤过程。\n*   **产品与技术：** 该公司开发了多款硬件和软件产品，以加快并降低将集装箱运至铁路货运站并最终送达目的地的成本。\n*   **首款产品：** GliderM 是一款混合动力电动汽车，其后端配有挂钩，可以直接拾取并移动 20 英尺的集装箱到铁路，无需叉车或牵引车。\n\n### 3. MacroCycle\n*   **解决的问题：** MacroCycle 开发了一种“捷径”，有望使再生塑料与原生材料一样便宜。\n*   **核心技术：** 这家初创公司设计了一种方法，可以从废弃纺织品中提取所需的合成纤维，而将其他物质留下。\n*   **创新点：** 与大多数化学回收不同，MacroCycle 的工艺不会分解聚合物。相反，它将聚合物链自身环化，迫使它们形成环状结构，即“大环”（macrocycles），这些大环在污染物被洗去后仍然保留。\n\n### 4. Nephrogen\n*   **公司性质：** Nephrogen 是一家生物技术初创公司。\n*   **核心技术：** 它利用人工智能和先进筛选技术，开发了一种专门的递送系统，能够安全地将基因编辑药物送入肾脏中的特定细胞。\n*   **关键成就：** 创始人 Demetri Maxim 表示，经过三年的开发，Nephrogen 成功创建了一种递送机制，其将药物输送到肾脏的效率比目前 FDA 批准的“载体”高出 100 倍。\n*   **创始人背景：** 鉴于他本人患有多囊肾病，他计划亲自参与临床研究。\n\n### 5. Unlisted Homes\n*   **产品定位：** Unlisted Homes 类似于 Zillow，但专注于尚未上市的房屋。\n*   **运作方式：** 该公司利用 2100 万套房屋的公共记录，为每处房产创建“档案”，提供与任何其他房地产挂牌网站相同类型的信息。\n*   **商业模式：** Unlisted 不打算通过平台促成房地产交易，因为这些交易的资源已经存在。相反，Unlisted 将向房地产经纪人出售特定邮政编码的赞助权，这些经纪人将被列为该邮政编码内所有房屋的本地专家。",
       "shortSummary": "TechCrunch Disrupt 2025 创业竞技场公布了五家决赛选手，他们将争夺 10 万美元无股权资金。Charter Space 致力于成为太空金融科技公司，通过数据优化航天器保险。Glīd 简化集装箱运输，其 GliderM 车辆能高效将集装箱运至铁路。MacroCycle 创新地回收废弃纺织品，使再生塑料成本与原生材料持平。Nephrogen 利用 AI 开发高效的基因编辑药物肾脏递送系统。Unlisted Homes 则提供未上市房屋信息，通过向房地产经纪人出售邮政编码赞助实现盈利。",
       "translated_title": "TechCrunch Disrupt 2025 的 5 家创业竞技场决赛选手揭晓",
@@ -325,47 +358,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Tina Williams-Koroma said  CyDeploy uses machine learning to understand what happens on a company’s machine and then creates a “digital twin” where system administrators can test updates. "
-    },
-    {
-      "title": "Cyphr 将在 TechCrunch Disrupt 2025 上揭示如何简化小企业贷款流程 (原标题: Cyphr will reveal how it makes lending easier for small businesses at TechCrunch Disrupt 2025)",
-      "link": "https://techcrunch.com/2025/10/28/cyphr-will-reveal-how-it-makes-lending-easier-for-small-businesses-at-techcrunch-disrupt-2025/",
-      "pubDate": "Tue, 28 Oct 2025 18:20:00 +0000",
-      "isoDate": "2025-10-28T18:20:00.000Z",
-      "creator": "Dominic-Madori Davis",
-      "summary": "# Cyphr：利用AI革新小企业贷款\n\n## 引言\nCyphr的诞生源于创始人Jannae Gammage在担任小企业管理局技术顾问期间的观察。她发现，传统银行和信用社为小企业提供资金的方式严重过时，尤其是在技术层面，导致许多有潜力的企业因难以获得资本而倒闭。市场上缺乏有效的技术解决方案来解决这一困境。\n\n## Cyphr的诞生与使命\n为了解决这一痛点，Jannae Gammage与老友Alaia Martin于2022年共同创立了Cyphr。这家总部位于堪萨斯城的公司致力于简化贷款机构和小企业之间的贷款流程，使其更加高效和便捷。Cyphr已入围TechCrunch Disrupt 2025 Startup Battlefield的前20名决赛选手。\n\n## 产品与技术\nCyphr的核心产品通过分析小企业的替代数据源和财务模式，帮助贷款机构更准确地评估小企业的信用worthiness，从而做出更明智的贷款决策。\n*   **技术演进：** Cyphr自推出以来经历了多次迭代。最初，团队在缺乏先进AI工具的情况下，手动构建了一个大型语言模型（LLM），并使用被忽视的企业主及其公司财务数据进行训练，以帮助贷款机构选择合作伙伴。\n*   **AI的赋能：** 随着人工智能技术的最新进展，Cyphr的产品得到了显著提升。目前，其模型是在OpenAI模型的基础上进行微调的。这些AI进步不仅增强了产品能力，也使得贷款机构更愿意与Cyphr合作。\n\n## AI对市场接受度的影响\nJannae Gammage指出，金融行业在COVID-19疫情后已经开始向数字化和现代化转型。AI技术的融入，使得贷款机构在日常运营中感到更加舒适和熟悉。她认为，如果Cyphr在2022年进入市场，由于当时对技术和AI的普遍担忧以及对现状的固守，获得市场认可将困难得多。\n\n## 融资历程与挑战\nCyphr迄今已成功筹集到100万美元资金。Gammage形容融资过程既轻松又艰难：一些她认为会很困难的事情反而顺利，而一些看似简单的事情却充满挑战。\n*   **资金获取方式：** 与一些同行一次性筹集数百万美元不同，Cyphr的资金是通过参与加速器项目和各种路演比赛分批获得的。这种方式使得公司难以获得“催化性”的资金注入时刻。\n*   **创始人背景与硅谷的接纳：** 作为两位来自美国中西部、非技术背景的黑人女性，Alaia Martin曾担心在旧金山融资会面临困难，因为她们不符合传统科技创始人的刻板印象。然而，她们在硅谷受到了良好的欢迎。Gammage对此表示感激，并指出只有不到1%的类似背景创始人能够成功融资。\n\n## 未来展望\nCyphr对未来抱有宏伟计划：\n*   **近期项目：** 公司目前正在构建一个平台，旨在帮助企业在明年世界杯期间寻找商机。\n*   **长期愿景：** Gammage和Martin也考虑为公司设立新的办公地点，尽管目前尚未最终确定。\n*   **Disrupt Battlefield的期望：** 她们希望赢得TechCrunch Disrupt的Startup Battlefield比赛能为公司带来更多动力，因为“即使是势头也需要资金支持”。\n\n## TechCrunch Disrupt 2025\nCyphr作为TechCrunch Disrupt 2025 Startup Battlefield的前20名决赛选手，将于2025年10月27日至29日在旧金山举行的活动中展示其创新成果。\n\n![TechCrunch Disrupt 2025](https://techcrunch.com/wp-content/uploads/2025/09/TC25_Disrupt_General_Article_No-Anniversary_Headers_1920x1080.png?w=680)",
-      "shortSummary": "Cyphr由Jannae Gammage和Alaia Martin创立，旨在利用AI技术简化小企业贷款流程。该公司通过分析替代数据源和财务模式，帮助贷款机构评估小企业信用。Cyphr于2022年成立，2024年4月正式推出产品，并已筹集100万美元。AI的进步不仅提升了产品能力，也增加了贷款机构的接受度。Cyphr是TechCrunch Disrupt 2025 Startup Battlefield的决赛选手，将在此活动中展示其创新。",
-      "translated_title": "Cyphr 将在 TechCrunch Disrupt 2025 上揭示如何简化小企业贷款流程",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/09/TC25_Disrupt_General_Article_No-Anniversary_Headers_1920x1080.png?w=680",
-          "alt": "TechCrunch Disrupt 2025",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Cyphr's product analyzes alternative data sources and financial patterns of small businesses to help lenders make decisions about small business creditworthiness. "
-    },
-    {
-      "title": "由富国银行校友创建的Identifee，将银行家的生产力技术整合到一个单一平台——在TechCrunch Disrupt 2025上了解它 (原标题: Identifee, built by Wells Fargo alumni, unifies productivity tech for bankers into a single platform — catch it at TechCrunch Disrupt 2025)",
-      "link": "https://techcrunch.com/2025/10/28/identifee-built-by-wells-fargo-alumni-unifies-productivity-tech-for-bankers-into-a-single-platform-catch-it-at-techcrunch-disrupt-2025/",
-      "pubDate": "Tue, 28 Oct 2025 18:20:00 +0000",
-      "isoDate": "2025-10-28T18:20:00.000Z",
-      "creator": "Marina Temkin",
-      "summary": "# Identifee：富国银行校友打造的银行家生产力统一平台\n\nIdentifee是一家由富国银行（Wells Fargo）前员工创立的软件平台，旨在解决商业银行家在日常工作中面临的效率低下问题，通过将分散的生产力工具整合到一个单一平台来提升工作效率。\n\n## 创始背景与痛点\n\n*   **创始人经历**：Vram Ismaliyan在富国银行支付部门工作近14年，Kevin Miyamoto也曾管理巨额客户支付。\n*   **共同痛点**：\n    *   **技术陈旧**：Ismaliyan表示，他需要花费5到10小时，登录10到15个不同系统才能为客户会议准备资料。\n    *   **系统分散**：Miyamoto指出，尽管管理着9000亿美元的年度客户支付，他仍使用Excel表格而非专业的CRM系统来管理客户组合。\n*   **问题普遍性**：创始人认识到，这种技术效率低下的问题不仅存在于大型银行，在小型金融机构中甚至更为严重。银行家需要登录多个系统、下载不同格式的数据到Excel中进行分析，耗时巨大。\n\n## Identifee的解决方案\n\n*   **平台目标**：Identifee于2021年由Ismaliyan和Miyamoto共同创立，旨在为商业银行家提供一个集成了他们所需所有功能的软件平台。\n*   **核心功能**：该平台将多个分散的内部系统功能整合到一个单一平台中，以提高银行家的生产力。\n*   **模块化设计**：Identifee的平台基于多个模块化系统构建，客户可以单独购买，也可以作为完整的套件使用。这些系统包括：\n    *   **CRM（客户关系管理）**：用于管理客户信息。\n    *   **商业智能工具**：用于追踪客户数据和进行分析。\n    *   **销售支持模块**：用于生成报告和演示文稿。\n*   **AI赋能**：Identifee的部分模块由人工智能驱动。例如，其AI代理可以根据各银行的合规和风险政策，协助填写RFP（建议书）表格。\n*   **竞争优势**：创始人声称Identifee是唯一专门为商业银行和信用合作社构建的平台。它将Salesforce、Seismic、Power BI和Tableau等多种工具的功能整合到一个易于使用的平台中。\n\n## 市场表现与认可\n\n*   **目标市场**：Identifee专注于美国商业银行和信用合作社市场，该市场估计有超过8800家机构。\n*   **客户基础**：Identifee已获得银行业的信任，签约了超过170家客户，其中包括硅谷银行（Silicon Valley Bank）、第一信托银行（First Fidelity Bank）和Comerica等知名机构。\n*   **融资情况**：公司已从Ocean Azul Partners、10X Capital和Gaingels等投资者那里筹集了约500万美元的种子资金。\n*   **行业认可**：Identifee是TechCrunch Disrupt 2025 Startup Battlefield竞赛的前20名决赛选手。\n\n## TechCrunch Disrupt 2025\n\n*   Identifee将在2025年10月27日至29日于旧金山举行的TechCrunch Disrupt大会上展示其产品。\n\n![TechCrunch Disrupt 2025](https://techcrunch.com/wp-content/uploads/2025/08/TC25_Disrupt_General_Article_No-Anniversary-at-all_Headers_1920x1080.png?w=680)",
-      "shortSummary": "Identifee由富国银行前员工创立，旨在解决银行家因技术老旧、系统分散导致的低效率问题。该平台将CRM、商业智能和销售支持等功能整合为一体，并利用AI辅助RFP填写。Identifee专为商业银行和信用合作社设计，已吸引170多家客户并获得500万美元种子轮融资。它入围了TechCrunch Disrupt 2025的Startup Battlefield前20名，致力于提升银行家的生产力。",
-      "translated_title": "由富国银行校友创建的Identifee，将银行家的生产力技术整合到一个单一平台——在TechCrunch Disrupt 2025上了解它",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/08/TC25_Disrupt_General_Article_No-Anniversary-at-all_Headers_1920x1080.png?w=680",
-          "alt": "TechCrunch Disrupt 2025 no anniversary",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The startup’s platform is built on several modular systems that clients can purchase individually or as a complete suite."
     }
   ],
-  "lastUpdated": "2025-10-29T01:50:51.923Z"
+  "lastUpdated": "2025-10-29T06:34:14.186Z"
 }
