@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "介绍 Gemini CLI 的 Jules 扩展 (原标题: Introducing the Jules extension for Gemini CLI)",
+      "link": "https://developers.googleblog.com/en/introducing-the-jules-extension-for-gemini-cli/",
+      "pubDate": "Tue, 28 Oct 2025 16:00:00 GMT",
+      "isoDate": "2025-10-28T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# 介绍 Gemini CLI 的 Jules 扩展\n\n本文宣布推出 Jules 扩展，为 Gemini CLI 带来了一个自主的助手，旨在异步处理编码任务，从而为开发者提供强大的新工作流程。\n\n## 核心工作流程\n\nJules 扩展与 Gemini CLI 协同工作，加速创意编码流程，允许开发者将任务委派给 Jules，同时保持在 Gemini CLI 中的工作流。\n\n*   **Gemini CLI**：作为终端中的协作器和协调器，用于用户主动关注的任务。\n*   **Jules 扩展**：作为自主助手，在后台的虚拟机 (VM) 中工作，负责克隆代码、安装依赖项和修改文件。\n\n## Jules 扩展可处理的任务类型\n\nJules 扩展能够处理多种异步任务，从而提高开发效率：\n\n*   **异步任务**：可以直接从 Gemini CLI 指派 Jules 扩展独立完成任务。\n*   **后台错误修复**：在用户处理 Gemini CLI 中的其他同步任务时，可以指派 Jules 在后台修复多个错误。\n*   **新分支中的更改**：在解决 GitHub 上的问题后，Jules 扩展可以将更改提交到一个新分支。\n\n## 开始使用\n\n### 先决条件\n\n在使用 Jules 扩展之前，需要满足以下条件：\n\n1.  **安装 Gemini CLI**：确保已安装 Gemini CLI，且版本为 v0.4.0 或更新。\n2.  **拥有 Jules 账户**：在 jules.google.com 注册一个 Jules 账户。\n3.  **连接仓库**：在 Jules 控制台中将您的 GitHub 仓库连接到您的 Jules 账户。\n\n### 安装\n\n通过在终端中运行以下命令来安装 Jules 扩展：\n\n```shell\ngemini extensions install https://github.com/gemini-cli-extensions/jules --auto-update\n```\n\n*   `--auto-update` 参数是可选的，如果指定，扩展将在新版本发布时自动更新。\n\n### 使用\n\n*   **启动 Jules 任务**：使用 `/jules` 命令，后跟您的提示。例如：\n\n    ```shell\n    /jules Convert commonJS modules to ES modules\n    ```\n    一旦任务启动，扩展将在后台完成它。\n\n*   **检查任务状态**：使用 `/jules` 命令并查询任务状态。例如：\n\n    ```shell\n    /jules what is the status of my last task?\n    ```\n\n## 加速您的编码工作流\n\n鼓励开发者尝试 Gemini CLI 中的 Jules 扩展，并在 Jules 扩展仓库中分享其如何帮助加速编码工作流的反馈。如果支持该项目，请考虑给仓库点赞。\n\n## 更多信息\n\n*   Jules extension for Gemini CLI\n*   所有 Gemini CLI 扩展\n*   Jules 文档\n*   Gemini CLI 文档",
+      "shortSummary": "本文宣布推出 Gemini CLI 的 Jules 扩展，这是一个自主助手，旨在异步处理编码任务。Jules 在后台虚拟机中工作，负责克隆代码、安装依赖项和修改文件，从而让开发者能够将任务（如错误修复和分支更改）委派给它，同时专注于 Gemini CLI 中的主要工作。用户需安装 Gemini CLI，注册 Jules 账户并连接 GitHub 仓库，然后通过 `/jules` 命令启动和管理任务。",
+      "translated_title": "介绍 Gemini CLI 的 Jules 扩展",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Introducing the Jules extension for Gemini CLI, an autonomous sidekick for developers. It accelerates coding workflows by offloading tasks like asynchronous work, bug fixes, and changes in new branches to Jules, while you stay in flow with Gemini CLI. Get started by installing the extension and using the /jules command to initiate and check task statuses."
+    },
+    {
       "title": "推出Coral NPU：面向边缘AI的全栈平台 (原标题: Introducing Coral NPU: A full-stack platform for Edge AI)",
       "link": "https://developers.googleblog.com/en/introducing-coral-npu-a-full-stack-platform-for-edge-ai/",
       "pubDate": "Tue, 14 Oct 2025 16:00:00 GMT",
@@ -199,20 +212,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Our state-of-the-art image generation and editing model which has captured the imagination of the wo..."
-    },
-    {
-      "title": "Gemini for Home：拓展平台，开启智能家居AI新纪元 (原标题: Gemini for Home: Expanding the Platform for a New Era of Smart Home AI)",
-      "link": "https://developers.googleblog.com/en/gemini-for-home-expanding-the-platform-for-a-new-era-of-smart-home-ai/",
-      "pubDate": "Tue, 30 Sep 2025 16:00:00 GMT",
-      "isoDate": "2025-09-30T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Gemini for Home：拓展平台，开启智能家居AI新纪元\n\nGoogle Home平台产品管理总监Ravi Akella于2025年10月1日宣布推出“Gemini for Home”，标志着智能家居领域的一个关键时刻。这项变革性举措将Gemini引入智能家居设备，取代了扬声器和显示器上的Google Assistant，为摄像头带来了更高水平的智能，并全面改进了Google Home应用。对于生态系统中的数万名开发者而言，这预示着一个充满新机遇的时代。\n\n## 平台扩展的两大核心方向\n\nGoogle在2025年Google I/O大会上曾分享了将Gemini引入Home API的计划。现在，Google Home平台通过以下两种关键方式进一步扩展了这一愿景：\n\n### 1. 为现有集成设备赋能Gemini新功能\n\n*   **广泛兼容性**：通过“Works with Google Home”计划，已有超过8亿台设备通过Google Home云到云API和Matter连接到Google生态系统。Gemini的强大功能将惠及所有这些设备。\n*   **核心对话优势**：此次平台升级的核心对话功能无需开发者进行额外工作。用户将能够使用更自然、更具对话性的语言来控制设备并创建复杂的自动化。\n*   **开发者行动呼吁**：随着Gemini for Home本月开始向用户推出，开发者必须立即对现有的“Works with Google Home”集成进行全面测试，以确保设备在新对话功能下的可靠性。Google将在今年晚些时候提供改进的数据和工具，帮助开发者监控设备性能和可靠性。\n\n### 2. 推出下一代AI摄像头构建计划\n\n*   **扩大选择范围**：为将Gemini的力量带给所有人，Google将“Works with Google Home”的承诺提升到新水平，通过新增一类合作伙伴设备来扩展平台，为客户提供更多选择。\n*   **摄像头制造商专属计划**：Google为摄像头制造商推出了一个专用计划，作为Google Home平台的一部分。这不仅是一套指导方针，更是一个完整的工具包，旨在帮助开发者构建下一代AI摄像头。\n*   **全面的开发工具**：\n    *   **硬件参考设计**：提供新的硬件参考设计，包括推荐的系统级芯片（SoCs）、图像传感器以及来自批准供应商列表（AVL）的其他组件。\n    *   **嵌入式SDK**：推出新的设备端Google Home摄像头嵌入式SDK。该SDK在Nest和合作伙伴摄像头设备中通用，提供一流的设备端机器学习（ML）框架，以统一的方式处理实时视图和事件历史，并与Google Home的摄像头和智能云协同工作。这使得这些产品比之前仅支持实时视图的“Works With Google Home”（WWGH）摄像头更加先进。\n*   **智能架构**：Google的家庭智能架构采用分体式计算模型，其中设备端ML向摄像头云提供关键帧和元数据，摄像头云随后将这些信息与事件视频一起保存和优先处理，以支持Gemini AI描述等功能。\n*   **无缝集成**：参与此计划的开发者可以将其硬件与Gemini for Home摄像头功能以及整个Google Home生态系统无缝集成。\n*   **首批合作伙伴**：Google宣布Walmart成为首批合作伙伴，将推出新的onn有线室内摄像头和onn有线视频门铃。这些设备以实惠的价格提供强大的性能，包括高达1080p的实时视图分辨率和智能警报。由于它们由Google Home提供支持，用户可以在扬声器、智能显示器、手机、平板电脑、手表、电视、网页以及使用Google Home API构建的自有应用中，访问Gemini for Home中新的摄像头理解功能，并深度集成到整个Google Home生态系统中。\n\nGoogle Home致力于成为开发者构建家庭AI体验的最佳平台。Google邀请开发者共同构建未来真正有用、由AI驱动的智能家居。",
-      "shortSummary": "Google于2025年10月1日推出“Gemini for Home”，旨在开启智能家居AI新纪元。Gemini将取代扬声器和显示器上的Google Assistant，为摄像头带来更高智能，并全面改进Google Home应用。该平台通过两大方式扩展：一是为现有8亿多设备赋能Gemini对话功能，要求开发者立即测试集成；二是推出针对AI摄像头制造商的全新计划，提供硬件参考设计和嵌入式SDK。Walmart作为首批合作伙伴，将推出Gemini驱动的智能摄像头。Google邀请开发者共同构建AI驱动的未来智能家居。",
-      "translated_title": "Gemini for Home：拓展平台，开启智能家居AI新纪元",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Google Home is enabling new Gemini-powered features for our partners’ devices and launching a new program to help them build the next generation of AI cameras."
     }
   ],
-  "lastUpdated": "2025-10-28T10:31:42.112Z"
+  "lastUpdated": "2025-10-30T10:31:07.934Z"
 }
