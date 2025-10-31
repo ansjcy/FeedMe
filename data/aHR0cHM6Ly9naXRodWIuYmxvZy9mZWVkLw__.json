@@ -5,6 +5,19 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "衡量重要之事：GitHub MCP 服务器的离线评估如何运作 (原标题: Measuring what matters: How offline evaluation of GitHub MCP Server works)",
+      "link": "https://github.blog/ai-and-ml/generative-ai/measuring-what-matters-how-offline-evaluation-of-github-mcp-server-works/",
+      "pubDate": "Thu, 30 Oct 2025 21:46:07 +0000",
+      "isoDate": "2025-10-30T21:46:07.000Z",
+      "creator": "Ksenia Bobrova",
+      "summary": "# GitHub MCP 服务器离线评估：衡量重要之事\n\n本文深入探讨了 GitHub MCP 服务器的自动化离线评估流程，旨在实现快速、严格的质量评估。\n\n## MCP (Model Context Protocol) 简介\n\n*   **定义**：MCP 是一种通用协议，使 AI 模型（LLM）能够与 API 和数据通信，如同“通用插头”。\n*   **MCP 服务器**：提供模型可用工具的服务或应用程序，发布工具列表、功能描述及所需参数。\n*   **GitHub MCP 服务器**：作为许多 GitHub Copilot 工作流的基础。\n\n## 面临的挑战与离线评估的必要性\n\nGitHub MCP 团队在交付新功能时，需避免回归并提升质量。工具的命名、描述和参数定义直接影响模型选择正确工具及参数。即使是微小编辑也可能显著改变结果，不准确的描述会导致模型选择错误工具或提供错误参数，影响性能。\n\n为安全修改 MCP 并确保改进，离线评估至关重要。它能在用户发现回归前捕获问题，缩短反馈周期，确保发布的更改真正提升性能。\n\n## 自动化离线评估工作原理\n\n离线评估流程检查工具提示在不同模型上的表现。工具指令设计得简单精确，以便模型选择正确工具并填入正确参数。我们系统地测试每个模型与 MCP 的配对，以衡量兼容性、质量和差距。\n\n### MCP 托管机制（分步说明）\n\n1.  **工具暴露**：MCP 服务器暴露工具（名称、描述、所需输入）。\n2.  **工具列表获取**：代理拉取工具列表并提供给 LLM。\n3.  **用户请求**：LLM 决定是否需要工具。\n4.  **工具选择与参数填充**：LLM 选择工具并填入输入参数。\n5.  **工具调用**：代理在 MCP 服务器上调用工具，并将结果返回给 LLM。\n6.  **最终答案形成**：LLM 根据工具结果形成最终答案。\n\n### 基准数据集\n\n我们使用精心策划的基准数据集进行评估，每个基准包含：\n\n*   **输入**：自然语言用户请求。\n*   **预期工具**：期望被调用的工具。\n*   **预期参数**：期望传递给每个工具的参数。\n\n**示例：**\n\n*   查询特定仓库在特定时间段内创建的问题数量。\n*   使用指定合并方式和标题合并拉取请求。\n*   为特定拉取请求请求指定审查者。\n*   总结特定仓库中讨论的评论。\n\n## 评估流程\n\n评估流程分为三个阶段：\n\n1.  **履行 (Fulfillment)**：针对多个模型运行基准测试，记录模型调用的工具及其参数。\n2.  **评估 (Evaluation)**：处理原始输出并计算指标和分数。\n3.  **汇总 (Summarization)**：聚合数据集统计数据并生成最终评估报告。\n\n## 评估指标与算法\n\n评估目标是工具选择和参数正确性。\n\n### 工具选择\n\n当涉及单个工具调用时，工具选择是多分类问题。评估指标包括：\n\n*   **准确率 (Accuracy)**：正确分类的百分比。\n*   **精确率 (Precision)**：在所有调用该工具的案例中，工具被正确调用的比例。\n*   **召回率 (Recall)**：在所有预期调用给定工具的案例中，工具被正确调用的比例。\n*   **F1 分数 (F1-score)**：精确率和召回率的调和平均值。\n\n**混淆示例与混淆矩阵：**\n\n模型可能混淆相似工具，如 `list_issues` 和 `search_issues`，导致精确率或召回率降低。例如，如果 `list_issues` 在 10 个预期案例中都正确调用，但在 30% 应该调用 `search_issues` 的案例中也被调用，则 `list_issues` 精确率为 0.77，`search_issues` 召回率为 0.7。\n\n**混淆矩阵**用于可视化工具间的混淆情况，帮助识别问题并调整工具描述。\n\n| 预期工具 / 调用工具 | `search_issues` | `list_issues` |\n| :------------------ | :-------------- | :------------ |\n| `search_issues`     | 7               | 3             |\n| `list_issues`       | 0               | 10            |\n\n### 参数正确性\n\n模型必须提供正确的参数。我们跟踪四个参数质量指标：\n\n*   **参数幻觉**：模型提供工具未定义的参数名称的频率。\n*   **所有预期参数提供**：是否提供了所有预期参数。\n*   **所有必需参数提供**：是否包含了所有必需参数。\n*   **精确值匹配**：提供的参数值是否与预期值完全匹配。\n\n这些指标针对正确选择的工具进行计算，最终报告总结每个工具的表现。\n\n## 展望与改进\n\n*   **增加基准测试量**：当前基准测试量不足，需增加更多示例以提高评估可靠性。\n*   **多工具流程评估**：当前管道仅处理单个工具调用。未来需扩展以评估多工具顺序调用流程，可能涉及实际执行或模拟工具响应，并将汇总方式更新为多标签分类。\n\n## 总结\n\n离线评估为 MCP 迭代提供了快速、安全的方式，确保模型选择正确的 GitHub 工具和参数。通过结合基准测试与清晰指标，我们将模糊的“似乎更好”转化为可衡量的进展。未来将扩大基准覆盖、完善工具描述并扩展管道以处理多工具流程，从而实现更少的回归、更清晰的洞察和更可靠的代理，最终提升产品质量而不减慢交付速度。",
+      "shortSummary": "GitHub MCP 服务器采用离线评估机制，以确保 AI 模型（如 GitHub Copilot）能准确选择工具并提供正确参数。该系统通过自动化流程，结合精心策划的基准数据集，评估工具选择（使用准确率、精确率、召回率等分类指标）和参数正确性（检查参数幻觉、完整性及值匹配）。离线评估能快速发现并修复回归，从而在不影响交付速度的前提下，持续提升产品质量和模型可靠性。未来计划扩展基准测试和支持多工具流程评估。",
+      "translated_title": "衡量重要之事：GitHub MCP 服务器的离线评估如何运作",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Take a look inside our automated pipeline for rapid, rigorous evaluation for the GitHub MCP Server.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/measuring-what-matters-how-offline-evaluation-of-github-mcp-server-works/\">Measuring what matters: How offline evaluation of GitHub MCP Server works</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "推出 Agent HQ：任何智能体，任何工作方式 (原标题: Introducing Agent HQ: Any agent, any way you work)",
       "link": "https://github.blog/news-insights/company-news/welcome-home-agents/",
       "pubDate": "Tue, 28 Oct 2025 16:08:15 +0000",
@@ -342,51 +355,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Log4Shell proved that open source security isn't guaranteed and isn’t just a code problem. It's about supporting, enabling, and empowering the people behind the projects that build our digital infrastructure.</p>\n<p>The post <a href=\"https://github.blog/open-source/inside-the-breach-that-broke-the-internet-the-untold-story-of-log4shell/\">Inside the breach that broke the internet: The untold story of Log4Shell</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "通过这9个开源AI和MCP项目加速开发者生产力 (原标题: Accelerate developer productivity with these 9 open source AI and MCP projects)",
-      "link": "https://github.blog/open-source/accelerate-developer-productivity-with-these-9-open-source-ai-and-mcp-projects/",
-      "pubDate": "Fri, 17 Oct 2025 16:00:00 +0000",
-      "isoDate": "2025-10-17T16:00:00.000Z",
-      "creator": "Kevin Crosby",
-      "summary": "### 通过9个开源AI和MCP项目加速开发者生产力\n\n随着模型上下文协议（MCP）的兴起，开发者们正在发现AI和智能体与工具、代码库乃至浏览器交互的革命性方式。基于这项核心技术，许多项目（如浏览器扩展和代码编辑器工具）正在实现AI原生工作流，并解锁一类全新的智能体工具：专注于MCP驱动能力的创新生态系统和新项目正在改变我们的工作方式。\n\n微软开源项目办公室（OSPO）与GitHub Copilot和VS Code团队合作，共同赞助了九个项目，旨在加速开源领域的创新、安全性和可持续性。这些项目围绕以下三个主要主题展开：\n\n#### 1. 框架和平台集成：面向实际用例的生态系统集成\n\n这些项目旨在将MCP能力集成到流行的框架和生态系统中，用于AI原生工具，帮助MCP与广泛使用的平台结合，并使智能体能够与真实世界的应用程序和工作流进行交互。\n\n*   **fastapi_mcp**：以最少的设置、认证和有限的配置，通过统一的基础设施，将安全的FastAPI端点作为MCP工具暴露。\n*   **nuxt-mcp**：为Nuxt开发者提供路由检查和SSR调试工具，使团队更容易让模型更好地理解Vite/Nuxt应用程序。\n*   **unity-mcp**：允许与Unity游戏引擎API进行接口交互，实现AI辅助游戏开发，为AI工具提供管理资产、控制场景、编辑脚本和自动化Unity内任务的能力。\n\n#### 2. 开发者体验和AI增强编码：AI优先的开发者生产力\n\n这些项目通过改进开发者工作流、语义代码理解和安全代码执行，赋能AI、大型语言模型（LLM）和智能体，使其成为智能IDE助手和代码编辑器。\n\n*   **context7**：直接从代码中提取最新、版本特定的文档和代码示例，并将其直接插入到AI和LLM的提示上下文中。\n*   **serena**：为智能体驱动的编码工具包提供语义代码编辑和检索能力。\n*   **Peekaboo**：Swift代码分析工具，将屏幕上的内容转化为可操作的AI上下文，以创建完整的GUI自动化，并可用于AI助手。\n*   **coderunner**：将LLM转化为即时、本地执行伙伴，在机器上预配置的沙盒中编写和运行代码，自动安装工具，直接读取文件，并返回输出和生成的工件。\n\n#### 3. 自动化、测试和编排：MCP基础设施的可靠性和质量保证\n\n这些项目旨在将MCP基础设施扩展到生产级工具，用于自动化管道，并提供强大的测试和调试工具。它们有助于确保MCP能够大规模运行。\n\n*   **n8n-mcp**：一个超优化的平台，通过简化工作流创建和编排来增强n8n的工作流自动化。它集成了AI模型，帮助用户更好地理解和使用n8n节点。\n*   **inspector**：一个用于测试和调试MCP服务器的工具，通过检查协议握手、工具、资源、提示和OAuth流程。它提供内置的LLM游乐场，并允许运行评估模拟以捕获安全或性能回归。\n\n#### 总结与展望\n\n开发者们正以AI和MCP的力量以惊人的速度进行构建。这些项目代表了MCP生态系统和社区中增长最快的开发者工具。它们是开发者使用并关心的工具。GitHub Copilot和VS Code团队很高兴能赞助更多推动MCP等创新以实现智能体原生开发的开源项目。\n\n鼓励开发者通过GitHub Sponsors支持这些项目，并探索使用VS Code和GitHub Copilot体验MCP。\n\n---\n**作者：**\n![Kevin Crosby](https://avatars.githubusercontent.com/u/6313838?v=4&s=200)\nKevin Crosby，开源资助高级总监\n\n**相关文章：**\n探索更多来自GitHub的内容：\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**：掌握GitHub所需的一切，一站式获取。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**：在GitHub上构建未来，这里是任何人、任何地方构建任何东西的平台。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**：了解使用GitHub进行构建的公司和工程团队。\n*   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) **GitHub Universe 2025**：最后机会：节省700美元购买Universe现场通行证，于10月28-29日在旧金山与我们相聚。",
-      "shortSummary": "模型上下文协议（MCP）正在革新AI与工具的交互方式。微软OSPO、GitHub Copilot和VS Code团队赞助了九个开源项目，旨在加速开发者生产力。这些项目分为三大类：框架和平台集成、AI增强的开发者体验、以及MCP基础设施的自动化、测试和编排。它们共同推动AI原生工作流和智能体工具的发展，赋能开发者高效构建。",
-      "translated_title": "通过这9个开源AI和MCP项目加速开发者生产力",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/6313838?v=4&s=200",
-          "alt": "Kevin Crosby",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>GitHub Copilot and VS Code teams, along with the Microsoft Open Source Program Office (OSPO), sponsored these nine open source MCP projects that provide new frameworks, tools, and assistants to unlock AI-native workflows, agentic tooling, and innovation.</p>\n<p>The post <a href=\"https://github.blog/open-source/accelerate-developer-productivity-with-these-9-open-source-ai-and-mcp-projects/\">Accelerate developer productivity with these 9 open source AI and MCP projects</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-10-29T04:37:51.711Z"
+  "lastUpdated": "2025-10-31T04:35:20.208Z"
 }
