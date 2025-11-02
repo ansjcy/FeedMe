@@ -5,6 +5,26 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "超越请求-响应：构建实时双向流式多智能体系统 (原标题: Beyond Request-Response: Architecting Real-time Bidirectional Streaming Multi-agent System)",
+      "link": "https://developers.googleblog.com/en/beyond-request-response-architecting-real-time-bidirectional-streaming-multi-agent-system/",
+      "pubDate": "Wed, 29 Oct 2025 16:00:00 GMT",
+      "isoDate": "2025-10-29T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "本文探讨了传统请求-响应模型在构建复杂AI智能体时的局限性，并提出了实时双向流式架构作为多智能体系统的下一步发展方向。文章详细分析了这种“无回合”模型引入的主要工程挑战，并介绍了Agent开发工具包（ADK）如何通过流原生优先的方法来解决这些问题。\n\n### 请求-响应模型智能体的架构局限性\n\n传统的请求-响应通信模式在AI智能体开发中存在以下关键局限性，阻碍了真正交互式和智能体验的实现：\n\n*   **感知延迟**：智能体必须等待用户完整输入后才能开始处理，导致不自然的、基于回合的延迟，破坏了对话的流畅性。\n*   **脱节的工具集成**：在请求-响应模型中，调用工具通常会中断交互流程，导致用户体验碎片化。\n*   **笨拙的多模态处理**：处理音频和视频等同步数据流需要复杂且脆弱的逻辑来拼接独立输入，难以实现统一体验。\n\n### 实时双向流式智能体范式的愿景\n\n通过从基于回合的事务转向持久的、双向的流，可以解锁新一类智能体能力，使其更像协作伙伴而非简单工具：\n\n*   **真正的并发性和可中断性**：智能体可以在用户仍在输入时处理信息并采取行动，实现非阻塞交互和自然中断（“插话”）功能。\n*   **通过流式工具提供主动协助**：工具不再局限于单一请求-响应周期，可以作为持久的后台进程，随时间向用户或智能体流式传输信息。\n*   **统一的多模态处理**：流式架构通过原生处理连续、并行的流作为单一、统一的上下文来解决多模态问题，实现实时的环境和情境感知。\n\n### 实时双向流式多智能体系统的工程挑战\n\n构建一个健壮的实时双向多智能体应用并非易事，开发者必须解决一系列新的复杂工程问题：\n\n*   **无回合世界中的上下文管理**：在连续流中，需要设计新的机制来将流分割成逻辑事件，用于调试、分析和恢复对话。在没有明确“回合结束”信号的情况下，如何存储和传输连续的上下文流是一个挑战。\n*   **并发性和性能问题**：流式智能体是高度并发的系统，必须以低延迟处理多个异步I/O流。在多智能体系统中，这种固有的并发性变得指数级复杂。\n*   **开发者体验和可扩展性**：流式系统的底层复杂性必须通过简单、强大的抽象来隐藏。框架需要提供直观的开发者体验，例如定义可随时间产生多个结果的工具，并提供钩子和回调以注入自定义逻辑。\n\n### 双向流式范式：ADK的架构深度解析\n\nADK（Agent Development Kit）通过其开源架构，旨在实现“实时”智能体范式，该架构基于以下核心设计：\n\n![ADK架构图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/unnamed.original_CLUn4eI.png)\n\n1.  **异步实时I/O管理**：\n    *   ADK引入了`LiveRequestQueue`，一个基于`asyncio`的队列，允许客户端应用程序无缝地将各种数据类型（文本、音频/视频blob）排队。智能体的异步运行器（`run_live`）从该队列中消费，实现近实时的数据处理，并以事件形式流式响应。\n\n2.  **多智能体的有状态、可转移会话**：\n    *   ADK会话在实时交互中持续存在，不仅包含历史记录，还包括工具调用、工具响应和各种系统信号。\n    *   通过信号（如中断、明确的“完成”信号或智能体转移）来划分连续流为离散事件。\n    *   将大型媒体blob存储在对象存储中，并在事务性数据库中引用它们。\n    *   从音频/视频流生成文本转录，作为单独的、带时间戳的事件捕获。\n    *   这种有状态的会话在智能体交接时（例如，从分流智能体到专家智能体）被完整传输，确保无缝衔接。\n\n3.  **事件驱动回调实现实时定制**：\n    *   ADK实现了回调机制，如`before_tool_callback`和`after_tool_callback`，允许开发者在工具执行前后注入自定义逻辑，实现动态控制（如日志记录、内容审核或信息注入）。\n\n4.  **流原生工具**：\n    *   ADK支持“流式工具”，这些工具被定义为异步生成器（`AsyncGenerator`）。它们可以接受标准输入并随时间产生多个结果，可选地接受`LiveRequestQueue`直接处理用户输入流，并在长时间运行任务在后台执行时向用户/模型提供中间更新。\n\n### 前进之路：挑战与未来研究\n\n该架构是深入探索和研究的起点。未来的工作将专注于提高性能（启动和智能体转移时间），并提供更丰富的回调类型（如`before-model-callback`和`after-model-callback`），以实现对智能体生命周期更深层次的控制。",
+      "shortSummary": "传统请求-响应模型因延迟、工具集成脱节和多模态处理笨拙而限制了AI智能体。本文提出实时双向流式架构，以实现真正的并发性、可中断性、主动协助和统一多模态处理。该模型面临上下文管理、并发性能和开发者体验等工程挑战。Agent开发工具包（ADK）通过异步I/O管理、有状态可转移会话、事件驱动回调和流原生工具来解决这些问题，为构建更具交互性的多智能体系统铺平道路。",
+      "translated_title": "超越请求-响应：构建实时双向流式多智能体系统",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/unnamed.original_CLUn4eI.png",
+          "alt": "unnamed",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "The blog post argues the request-response model fails for advanced multi-agent AI. It advocates for a real-time bidirectional streaming architecture, implemented by the Agent Development Kit (ADK). This streaming model enables true concurrency, natural interruptibility, and unified multimodal processing. ADK's core features are real-time I/O management, stateful sessions for agent handoffs, and streaming-native tools."
+    },
+    {
       "title": "介绍 Gemini CLI 的 Jules 扩展 (原标题: Introducing the Jules extension for Gemini CLI)",
       "link": "https://developers.googleblog.com/en/introducing-the-jules-extension-for-gemini-cli/",
       "pubDate": "Tue, 28 Oct 2025 16:00:00 GMT",
@@ -186,33 +206,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "You can now work with Jules directly in your command line. Jules is our asynchronous coding agent th..."
-    },
-    {
-      "title": "Gemini 2.5 Flash Image 现已支持新长宽比，可投入生产 (原标题: Gemini 2.5 Flash Image now ready for production with new aspect ratios)",
-      "link": "https://developers.googleblog.com/en/gemini-2-5-flash-image-now-ready-for-production-with-new-aspect-ratios/",
-      "pubDate": "Wed, 01 Oct 2025 16:00:00 GMT",
-      "isoDate": "2025-10-01T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Gemini 2.5 Flash Image 现已支持新长宽比，可投入生产\n\nGoogle 的尖端图像生成和编辑模型 Gemini 2.5 Flash Image 现已全面上市，可用于生产环境。此次发布带来了多项新功能，包括更广泛的长宽比支持以及指定纯图像输出的能力。\n\n![Gemini 2.5 Flash Image 界面截图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-09-30_at_8.45.44PM.original.png)\n\n### 核心能力与新特性\n\nGemini 2.5 Flash Image 赋予用户强大的创作能力，包括：\n*   **图像融合**：无缝融合多张图像。\n*   **角色一致性**：保持角色一致性，以实现更丰富的叙事。\n*   **自然语言编辑**：通过自然语言执行目标编辑。\n*   **世界知识利用**：利用 Gemini 广泛的世界知识进行图像生成和修改。\n*   **纯图像输出**：能够指定仅输出图像。\n\n该模型可通过 Google AI Studio 上的 Gemini API 和企业级 Vertex AI 访问。\n\n### 扩展的长宽比支持\n\n为进一步拓展创意可能性，模型现在支持 10 种不同的长宽比，便于在各种格式下轻松创建内容，从电影级风景到垂直社交媒体帖子。支持的长宽比包括：\n*   **横向**：21:9, 16:9, 4:3, 3:2\n*   **正方形**：1:1\n*   **纵向**：9:16, 3:4, 2:3\n*   **灵活**：5:4, 4:5\n\n![不同长宽比创建的图像拼贴](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Collage.original.png)\n*使用不同长宽比创建的图像*\n\n### 实际应用案例\n\n*   **Cartwheel**：利用 Gemini 2.5 Flash Image 克服了其他模型在“姿势模式”下的局限性，实现了无与伦比的角色控制和一致性。该模型能够在任意摄像机角度下忠实渲染角色并保持姿势，同时不牺牲“世界知识”。\n*   **Volley**：其 AI 驱动的地牢探险游戏 Wit's End 使用 Gemini 2.5 Flash Image 在会话中生成和编辑视觉内容，包括角色肖像、动态场景静止图像、多角色构图以及通过聊天或语音进行的快速迭代编辑。模型展示了在保持低于 10 秒延迟的同时，遵循美学指导的先进能力，从而解锁了许多实时应用。\n\n### 社区反响与开发者资源\n\n在 Kaggle 和 Cerebral Valley 最近的黑客马拉松中，社区展示了该模型在 STEM 教育、营销材料和实时增强现实等多样化领域的强大功能。\n\n开发者现在即可开始使用 Gemini 2.5 Flash Image。可以通过开发者文档和指南了解新功能，包括扩展的长宽比和指定纯图像输出的能力。该模型可通过 Gemini API 访问，并可在 Google AI Studio 中进行测试。\n\nGoogle AI Studio 的“构建模式”使得使用 Gemini 2.5 Flash Image 变得简单。用户可以通过单个提示（例如“为我构建一个带滤镜的图像编辑应用”）即时创建和混搭自定义 AI 驱动应用，并可直接从 AI Studio 部署或将代码保存到 GitHub，所有这些都是免费的。文章还提供了一些示例应用：\n*   **Bananimate**：使用 Nano Banana 从图像和提示创建动画 GIF。\n*   **Enhance**：通过创意升频器无限放大任何照片。\n*   **Fit check**：上传自己的照片和一套服装，查看穿搭效果。\n\n### 定价\n\nGemini 2.5 Flash Image 的定价为每张图像 0.039 美元，每 100 万输出 token 30.00 美元。其他输入和输出模式的定价与标准 Gemini 2.5 Flash 定价保持一致。\n\n文章还提供了一个 Python 示例代码片段，展示了如何使用 Gemini API 生成具有特定长宽比的图像。",
-      "shortSummary": "Gemini 2.5 Flash Image 现已全面上市，可投入生产，并引入了多项新功能。它支持 10 种不同的长宽比和纯图像输出，使用户能够无缝融合图像、保持角色一致性并进行自然语言编辑。该模型可通过 Gemini API 和 Vertex AI 访问，已在 Cartwheel 和 Volley 等应用中展现出卓越性能，支持实时图像生成和编辑。开发者可立即开始使用，定价为每张图像 0.039 美元。",
-      "translated_title": "Gemini 2.5 Flash Image 现已支持新长宽比，可投入生产",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-09-30_at_8.45.44PM.original.png",
-          "alt": "image7",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Collage.original.png",
-          "alt": "image3",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Our state-of-the-art image generation and editing model which has captured the imagination of the wo..."
     }
   ],
-  "lastUpdated": "2025-10-30T10:31:07.934Z"
+  "lastUpdated": "2025-11-02T10:26:37.090Z"
 }
