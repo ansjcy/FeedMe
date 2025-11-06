@@ -5,6 +5,155 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "Meta将其AI短视频内容流带到欧洲 (原标题: Meta brings its short-form video feed of AI slop to Europe)",
+      "link": "https://techcrunch.com/2025/11/06/meta-brings-its-short-form-video-feed-of-ai-slop-to-europe/",
+      "pubDate": "Thu, 06 Nov 2025 18:22:38 +0000",
+      "isoDate": "2025-11-06T18:22:38.000Z",
+      "creator": "Aisha Malik",
+      "summary": "### Meta在欧洲推出AI短视频内容流“Vibes”\n\nMeta于周四宣布，其AI生成短视频内容流“Vibes”将在欧洲的Meta AI应用中上线。该功能类似于TikTok或Instagram Reels，但所有视频均由AI生成。此举是在Meta于美国推出该功能六周后进行的。\n\n**主要发布信息：**\n*   **核心功能**：Vibes允许用户创建和分享AI生成的短视频，并访问一个专门展示他人AI视频的内容流。\n*   **个性化体验**：Meta表示，随着时间的推移，内容流将根据用户的兴趣变得更加个性化。\n*   **内容创作**：\n    *   用户可以通过提示词生成视频。\n    *   可以混剪他人的视频，添加新的视觉效果、音乐或调整风格以符合个人品味。\n    *   Meta强调这是一种“固有的社交和协作创作体验”，鼓励用户与朋友一起混剪、共同创作和构建故事。\n*   **分享选项**：视频和内容可以直接分享到Vibes内容流，发送给朋友，或交叉发布到Instagram和Facebook Stories和Reels。\n\n**用户和行业反应：**\n*   **用户评论**：当Meta首席执行官马克·扎克伯格首次公布Vibes时，用户评论普遍负面，表达了对AI生成版TikTok的不满。热门评论包括“没人想要这个”和“兄弟在他的应用上发布AI垃圾”。\n*   **行业对比**：\n    *   Meta正在积极拥抱AI生成内容，而YouTube等其他公司则致力于打击“AI垃圾”（指低质量的AI内容）。\n    *   Meta推出Vibes的举动令人费解，因为该公司今年早些时候曾表示要解决“非原创”内容问题，并建议创作者专注于“真实的故事讲述”，而非价值不大的短视频。\n*   **Meta的理由**：尽管存在矛盾，Meta仍大力宣传Vibes的推出，并指出自Vibes上线以来，Meta AI应用中的媒体生成量已增长了十倍以上。\n\n**图片：**\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/11/Screenshot-2025-11-06-at-1.13.31PM.png?w=680)",
+      "shortSummary": "Meta已在欧洲推出其AI短视频内容流“Vibes”，允许用户创建、分享和混剪AI生成视频。此举与Meta此前倡导“真实故事讲述”的立场相悖，且用户反应普遍负面，称其为“AI垃圾”。尽管如此，Meta表示其AI应用媒体生成量已增长十倍，并强调其社交协作特性。",
+      "translated_title": "Meta将其AI短视频内容流带到欧洲",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/11/Screenshot-2025-11-06-at-1.13.31PM.png?w=680",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Meta says that since the launch of Vibes, media generation in the Meta AI app has jumped more than tenfold."
+    },
+    {
+      "title": "Subtle Computing 的语音隔离模型帮助计算机在嘈杂环境中理解你 (原标题: Subtle Computing’s voice isolation models help computers understand you in noisy environments)",
+      "link": "https://techcrunch.com/2025/11/06/subtle-computings-voice-isolation-models-help-computers-understand-you-in-noisy-environments/",
+      "pubDate": "Thu, 06 Nov 2025 17:57:51 +0000",
+      "isoDate": "2025-11-06T17:57:51.000Z",
+      "creator": "Ivan Mehta",
+      "summary": "## Subtle Computing：在嘈杂环境中实现卓越语音理解\n\n### 引言\n\n加州初创公司 Subtle Computing 致力于解决在嘈杂环境中捕捉人声的难题，其核心技术是专有的语音隔离模型。这项技术有望显著提升基于语音的AI产品和服务的性能。当前，语音AI消费应用市场正经历巨大增长，例如Granola、Fireflies等AI会议记录工具备受关注，OpenAI、ClickUp等公司已集成语音转录方案，而Wispr Flow、Willow等则专注于语音听写。此外，Plaud和Sandbar等硬件公司也利用设备进行语音转录并生成洞察。这些公司面临的共同挑战是如何在咖啡馆或办公室等嘈杂环境中准确捕捉用户声音。\n\n### Subtle Computing 的核心技术与方法\n\n为应对这一挑战，Subtle Computing 开发了一种端到端的语音隔离模型，即使在嘈杂环境下也能准确理解用户所说内容。该公司的独特之处在于：\n\n*   **定制化模型：** 与通用解决方案不同，Subtle Computing 为特定设备的声学特性训练专用模型，并能适应用户的声音。创始人Tyler Chen指出，这种方法比通用解决方案能带来“数量级”的性能提升，并提供个性化的用户体验。\n*   **效率与性能：** 许多设备制造商会将语音发送到云端进行处理以获得清晰输出，但这种方式效率不高。Subtle Computing 的语音隔离模型可以在某些设备上本地运行，大小仅几兆字节，延迟仅100毫秒。\n*   **转录准确性：** 凭借其高效的隔离模型，Subtle Computing 的转录模型能更好地理解用户，从而生成更准确的文本转录。\n\n### 公司背景与团队\n\nSubtle Computing 由 Tyler Chen、David Harrison、Savannah Cofer 和 Jackie Yang 共同创立，他们相识于斯坦福大学，并在Steve Blank的精益创业课程中开始构建公司。\n\n### 市场认可与合作\n\n*   **高通合作：** Subtle Computing 已被高通选入其语音和音乐扩展计划，这意味着其技术将与高通芯片兼容，并可应用于OEM厂商生产的设备中。\n*   **品牌合作：** 公司还与一家消费硬件品牌和一家汽车品牌建立了合作关系，部署其解决方案，但具体名称尚未公布。\n\n### 融资情况\n\nSubtle Computing 已成功筹集600万美元的种子资金，由 Entrada Ventures 领投，Amplify Partners、Abstract Ventures 以及包括Twitter创始人Biz Stone、Pinterest创始人Evan Sharp和Perplexity的Johnny Ho在内的天使投资人参与。\n\n### 投资者观点\n\nEntrada Ventures 的管理合伙人 Karen Roter Davis 认为，尽管语音AI领域竞争激烈且整体用户体验仍有待提升，但Subtle Computing专注于语音隔离的方法为市场带来了新的视角。她强调，Subtle Computing 提供的语音接口在极端嘈杂或极端安静的环境中都能保持可靠、便捷和愉悦的体验，是“颠覆性的”。\n\n### 未来展望\n\nSubtle Computing 不仅希望成为其他公司的模型供应商，还计划在明年推出一款结合硬件和软件的消费者产品，但目前尚未透露具体细节。",
+      "shortSummary": "Subtle Computing 是一家初创公司，开发了专有的语音隔离模型，旨在解决在嘈杂环境中准确捕捉人声的挑战。其技术通过为特定设备定制模型并适应用户声音，实现了比通用解决方案更好的性能。该公司已获得高通的认可，并筹集了600万美元的种子资金。Subtle Computing 计划推出结合软硬件的消费者产品，以改善语音AI在日常环境中的用户体验。",
+      "translated_title": "Subtle Computing 的语音隔离模型帮助计算机在嘈杂环境中理解你",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Subtle Computing has raised $6M in seed funding to build voice isolation models. The startup plans to announce a hardware device next year."
+    },
+    {
+      "title": "意大利政治顾问称自己成为Paragon间谍软件的目标 (原标题: Italian political consultant says he was targeted with Paragon spyware)",
+      "link": "https://techcrunch.com/2025/11/06/italian-political-consultant-says-he-was-targeted-with-paragon-spyware/",
+      "pubDate": "Thu, 06 Nov 2025 17:35:30 +0000",
+      "isoDate": "2025-11-06T17:35:30.000Z",
+      "creator": "Lorenzo Franceschi-Bicchierai",
+      "summary": "# 意大利政治顾问Francesco Nicodemo自曝成为Paragon间谍软件受害者\n\n意大利左翼政治顾问Francesco Nicodemo近日公开表示，他成为了Paragon间谍软件的最新受害者。这一事件进一步扩大了意大利正在发酵的间谍软件丑闻的范围。\n\n## Nicodemo的公开声明及其背景\n*   **公开时间：** Nicodemo于周四在Facebook上发帖称，他此前十个月一直选择不公开此事，因为“不想被用于政治宣传”，但现在“时机已到”。\n*   **核心疑问：** 他质疑为何一个如此复杂和精密的工具会被用来监视他这样一名普通公民，而非毒贩或对国家构成颠覆性威胁的人。他呼吁相关方对此进行解释。\n*   **首次报道：** 在线新闻网站Fanpage率先报道了Nicodemo于一月份收到WhatsApp通知的消息。\n\n## 间谍软件丑闻的扩大：受害者群体多样化\nNicodemo被Paragon间谍软件锁定，再次拓宽了意大利间谍软件丑闻的受害者范围。此前，该丑闻已牵涉到社会各界的数名受害者，包括：\n*   多名记者\n*   移民活动家\n*   知名企业高管\n*   现在，又增加了一位曾为中左翼民主党及其政治家工作的政治顾问。\n\n## 行业声明与现实的冲突\n间谍软件制造商和各国政府长期以来声称，他们的监控产品仅用于打击严重犯罪分子和恐怖分子。然而，意大利的这些最新案例表明，事实并非总是如此。\n\n## 专家呼吁透明度\n*   **公民实验室高级研究员John Scott-Railton的观点：** Scott-Railton多年来一直调查间谍软件公司及其滥用行为，包括涉及Paragon间谍软件的案例。他指出，意大利政府已向部分间谍软件受害者提供了明确解释，但其他案件仍“令人不安地模糊不清”。\n*   **对Paragon和意大利的影响：** Scott-Railton认为，目前的状况对Paragon和意大利都不利，因此意大利政府的明确解释至关重要。他相信，如果Paragon愿意，他们可以提供更多关于事件的清晰信息，否则这些案件将成为他们的负担。Scott-Railton也证实Nicodemo确实收到了WhatsApp的通知。\n\n## 调查进展与官方回应\n*   **Nicodemo的回应：** Nicodemo在与Natale De Gregorio共同经营的公关公司Lievito Consulting的同事表示，Nicodemo除了在Fanpage和Facebook上的公开声明外，不愿再发表评论。\n*   **目标方不明：** 目前尚不清楚是Paragon的哪位客户锁定了Nicodemo。\n*   **意大利议会委员会的发现：** 意大利议会委员会于六月证实，意大利的一些受害者是受到了意大利情报机构的攻击，这些机构受右翼总理乔治亚·梅洛尼的管辖。\n*   **官方沉默：** 意大利总理办公室发言人及与Paragon合并的网络安全公司REDLattice的市场副总裁均未回应TechCrunch的置评请求。\n*   **Paragon与意大利政府的关系：**\n    *   二月份，在意大利首批受害者被披露后，Paragon切断了与意大利政府客户（特别是情报机构AISE和AISI）的联系。\n    *   六月，意大利共和国安全议会委员会（COPASIR）得出结论，一些已公开身份的Paragon间谍软件受害者（特别是移民活动家）是遭到意大利情报部门的“合法”入侵。\n    *   然而，COPASIR表示没有证据表明Fanpage.it（一家调查梅洛尼领导的极右翼执政党青年翼的意大利新闻网站）的负责人Francesco Cancellato或其同事Ciro Pellegrino曾被意大利情报机构AISI和AISE锁定。\n*   **Paragon的其他客户：** Paragon曾向TechCrunch透露，美国政府是其客户之一，并与美国移民和海关执法局签订了有效合同。",
+      "shortSummary": "意大利政治顾问Francesco Nicodemo公开表示自己成为Paragon间谍软件的目标，进一步扩大了意大利的监控丑闻。他质疑为何普通公民会遭到如此精密工具的监视。尽管意大利议会委员会证实部分受害者被情报机构“合法”入侵，但许多案件仍缺乏透明度。专家呼吁意大利政府和Paragon提供明确解释。Paragon此前已切断与意大利情报机构的联系，但仍与包括美国政府在内的其他国家保持合作。",
+      "translated_title": "意大利政治顾问称自己成为Paragon间谍软件的目标",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "WhatsApp notified the consultant, who works for left-wing politicians, that his phone was targeted with spyware made by Paragon. "
+    },
+    {
+      "title": "Mastodon 最新软件更新为所有服务器运营商带来引用帖子功能 (原标题: Mastodon’s latest software update brings quote posts to all server operators)",
+      "link": "https://techcrunch.com/2025/11/06/mastodons-latest-software-update-brings-quote-posts-to-all-server-operators/",
+      "pubDate": "Thu, 06 Nov 2025 15:43:52 +0000",
+      "isoDate": "2025-11-06T15:43:52.000Z",
+      "creator": "Sarah Perez",
+      "summary": "# Mastodon 4.5 版本更新：引入引用帖子及更多功能\n\n去中心化开源社交网络 Mastodon 发布了其最新版本 4.5，为所有服务器运营商带来了引用帖子（Quote Posts）功能，同时还包括针对管理员的其他功能、对话改进等。\n\n## 核心功能：引用帖子\n\n引用帖子是 Mastodon 社交网络运作方式上的一项重大改变，旨在帮助其与 X（前 Twitter）和 Threads 等大型竞争对手竞争。Mastodon 团队特别注重用户保护，以避免类似 X 上常见的“嘲讽文化”，确保该功能在推出时不会改变其网络的文化。\n\n### 安全与用户保护措施\n\nMastodon 的引用帖子功能附带了多项安全控制措施：\n\n*   **引用权限控制：** 用户可以决定谁可以引用他们的帖子，选项包括“所有人”、“仅关注者”或“仅自己”。\n*   **引用帖子可见性：** 用户可以控制引用帖子的可见性，设置为公开、仅关注者，或“安静公开”（使引用公开，但将其从 Mastodon 的搜索、趋势和公共时间线中移除）。\n*   **按帖子覆盖设置：** 用户可以根据需要，对单个帖子覆盖其默认设置。\n*   **被引用者提醒：** Mastodon 会在应用内提醒被引用的用户，如果他们认为有必要，可以从他人的引用帖子中移除自己的原始帖子。\n*   **屏蔽功能：** 用户可以选择屏蔽他人，以防止他们将来查看和引用自己的帖子。\n\n该功能已于 9 月份在 mastodon.online 和 mastodon.social 等大型 Mastodon 服务器上提前推出，以便用户有时间适应。\n\n![Mastodon 引用帖子截图](https://techcrunch.com/wp-content/uploads/2025/11/quote-posts.png)\n\n## 其他 4.5 版本更新亮点\n\n除了引用帖子功能外，4.5 版本更新还带来了其他重要改进：\n\n*   **对话改进：** 修复了运行 4.4 及更早版本的旧服务器用户有时会错过回复的问题。\n\n    ![显示“找到更多回复”的截图](https://techcrunch.com/wp-content/uploads/2025/11/fetch-all-replies.png)\n\n*   **服务器运营商工具：** 服务器运营商获得了新的工具，可以：\n    *   选择性地禁用内容源。\n    *   将本地源设置为其主页。\n    *   屏蔽特定用户。\n    *   审核界面也得到了更新，可以显示链接预览和引用帖子等必要的上下文信息，以辅助决策。\n\n    ![Mastodon 服务器运营商调整本地源设置的截图](https://techcrunch.com/wp-content/uploads/2025/11/admin-features.png)\n\n*   **用户体验：** 4.5 版本还为 Mastodon 的网页界面带来了原生表情符号支持。\n\n## Mastodon 与 Fediverse 概况\n\nMastodon 仍然是 Fediverse（由 ActivityPub 社交网络协议驱动的开放社交网络）中较大的网络之一。根据增长追踪器 FediDB 的数据，整个 Fediverse 拥有近 1200 万用户，其中 Mastodon 占据了超过 800 万。然而，其月活跃用户数约为 67 万。Threads 虽然集成了 ActivityPub，但并非完全集成，拥有超过 4 亿月用户和 1.5 亿日活跃用户。",
+      "shortSummary": "Mastodon 发布 4.5 版本更新，核心是为所有服务器运营商带来引用帖子功能。为避免类似 X 上的“嘲讽文化”，新功能特别强调用户保护，提供多种隐私和可见性控制选项。此外，更新还修复了回复显示问题，增强了管理员工具，改进了审核界面，并为 Web 界面带来了原生表情符号支持。作为 Fediverse 的主要组成部分，Mastodon 拥有超过 800 万用户，持续提升用户体验和平台安全性。",
+      "translated_title": "Mastodon 最新软件更新为所有服务器运营商带来引用帖子功能",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/11/quote-posts.png",
+          "alt": "a screenshot of a Mastodon quote post",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/11/fetch-all-replies.png",
+          "alt": "a screenshot showing \"more replies found\" in response to a quote post.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/11/admin-features.png",
+          "alt": "a screenshot showing how Mastodon server operators can adjust their settings for local feeds.",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Mastodon's latest software version brings quote posts with added controls to all servers."
+    },
+    {
+      "title": "Peloton因受伤报告召回83.3万辆自行车 (原标题: Peloton recalls 833,000 bikes after reports of injuries)",
+      "link": "https://techcrunch.com/2025/11/06/peloton-recalls-833000-bikes-after-reports-of-injuries/",
+      "pubDate": "Thu, 06 Nov 2025 15:35:23 +0000",
+      "isoDate": "2025-11-06T15:35:23.000Z",
+      "creator": "Aisha Malik",
+      "summary": "## Peloton召回83.3万辆Bike+自行车\n\n根据美国消费品安全委员会（CPSC）的报告，Peloton正在召回约83.3万辆其原始的Bike+健身自行车。此次召回的原因是接到了关于部分座椅杆在使用过程中断裂的报告。\n\n*   **召回原因**：座椅杆在使用过程中断裂。\n*   **涉及数量**：约83.3万辆原始Bike+机器。\n*   **事故报告**：CPSC已收到3起与此问题相关的投诉，其中2起事故导致用户受伤。\n*   **受影响产品**：在2020年1月至2025年4月期间销售的Bike+设备。\n*   **CPSC警告**：CPSC敦促Peloton用户“立即停止使用被召回的健身自行车”。\n\n### Peloton的回应与解决方案\n\nPeloton全球硬件运营和产品安全高级副总裁Márcio Oliveira表示，公司产品的完整性和会员的福祉是他们的首要任务。Peloton正在采取以下措施：\n\n*   **提供替换件**：向所有受影响的Bike+用户提供重新设计的替换座椅杆。\n*   **呼吁用户**：鼓励用户尽快联系公司以获取替换座椅杆。\n\n### 公司背景与挑战\n\n此次召回是Peloton面临的最新挫折，该公司此前也曾有召回记录，并正努力扭转业务颓势：\n\n*   **历史召回**：这不是Peloton首次发布召回。2023年，该公司曾因安全问题召回约220万辆健身自行车。\n*   **近期困境**：去年，Peloton更换了首席执行官并裁员数百人。自2021年1月达到顶峰以来，Peloton的股价已下跌超过90%。\n*   **财务报告**：此次召回恰逢公司计划发布最新财报之际。\n\n### 重振增长的努力\n\n为了重振业务增长，Peloton正在积极采取措施，包括推出新产品和技术：\n\n*   **新领导层**：前苹果和福特高管Peter Stern于今年1月接任首席执行官，此次对AI的关注是其上任后的首次重大产品变革。\n*   **重大发布**：Peloton最近宣布了多年来最大的产品发布，全面更新了其硬件产品线。\n*   **Peloton IQ**：推出了一套基于AI和计算机视觉的系统，旨在为用户提供个性化指导。\n    *   **功能**：提供目标导向的指导、表现追踪、进度洞察和实时反馈，并根据用户的健身水平进行调整。\n*   **Cross Training Series**：推出了五款互联健身设备，包括Bike、Bike+、Tread、Tread+和Row+。\n    *   **共同特点**：每款设备都配备了先进的旋转屏幕，便于用户在有氧运动、力量训练、瑜伽、普拉提、芭蕾等多种训练模式之间轻松切换。",
+      "shortSummary": "Peloton因座椅杆断裂报告，召回约83.3万辆Bike+健身自行车，CPSC已收到3起投诉，其中2起导致用户受伤。公司将提供重新设计的替换座椅杆。此次召回是Peloton面临的最新挑战，此前公司曾有召回记录，股价大幅下跌。为重振业务，Peloton正推出包括AI驱动的Peloton IQ系统和全新硬件产品线在内的多项创新，以期扭转颓势。",
+      "translated_title": "Peloton因受伤报告召回83.3万辆自行车",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "The Consumer Product Safety Commission is warning Peloton users to stop using the affected bikes immediately."
+    },
+    {
+      "title": "为何Benchmark对交易应用Fomo进行了一次罕见的加密货币投资，并领投1700万美元A轮融资 (原标题: Why Benchmark made a rare crypto bet on trading app Fomo, with $17M Series A )",
+      "link": "https://techcrunch.com/2025/11/06/why-benchmark-made-a-rare-crypto-bet-on-trading-app-fomo-with-17m-series-a/",
+      "pubDate": "Thu, 06 Nov 2025 14:00:00 +0000",
+      "isoDate": "2025-11-06T14:00:00.000Z",
+      "creator": "Julie Bort",
+      "summary": "# Fomo完成1700万美元A轮融资，Benchmark罕见押注加密领域\n\n消费级加密货币交易应用Fomo的联合创始人Paul Erlanger和Se Yong Park通过一种非传统方式成功筹集资金。他们的应用于五月上线，并刚刚宣布完成由顶级风险投资公司Benchmark领投的1700万美元A轮融资，这对于Benchmark而言是一次罕见的加密货币投资，使Fomo的总融资额达到1900万美元。\n\n## 独特的融资策略\n\nFomo的创始团队没有选择传统的种子轮融资，而是采取了以下策略：\n\n*   **“梦想天使”名单**：他们列出了200位他们梦想中的天使投资者名单，认为每个人都将对业务有价值。\n*   **利用人脉与冷启动**：创始团队（此前均在知名加密交易平台dYdX工作）利用自身人脉进行引荐，对于无法引荐的则直接进行冷启动联系。\n*   **高成功率**：在听取他们的推介后，140位“梦想天使”进行了投资。\n*   **知名投资者**：吸引了加密世界的多位知名人士，包括Polygon Labs首席执行官Marc Boiron、Solana联合创始人Raj Gokal以及前Coinbase首席技术官兼超级天使Balaji Srinivasan。\n\n## Fomo应用的核心愿景与功能\n\nFomo致力于打造一个“超级应用”，其主要特点包括：\n\n*   **全面资产覆盖**：旨在让消费者能够访问所有（数百万种）加密资产，且可在任何区块链上交易，承诺无技术障碍。\n*   **社交功能**：内置社交组件，用户可以关注朋友和受尊敬的领导者，查看他们的交易。\n*   **资产多样性**：创始团队表示，六个月内将接近实现覆盖所有区块链上所有资产的目标。目前已提供从比特币、以太坊、Solana等主流币到迷因币和山寨币的数百万种资产交易。\n*   **未来展望**：最终愿景是允许用户在应用上交易各种其他资产，包括预测市场和债券等标准证券。\n*   **费用结构**：对每笔交易收取0.50%的交易费（Solana交易最低0.95美元，Base和BNB Chain等成本较低的区块链无最低费用），但不向用户收取“Gas费”，这成为吸引用户的一大卖点。\n\n## 关键增长驱动力：Apple Pay集成\n\n*   **上线后重大更新**：Fomo在五月上线一个月后，增加了对Apple Pay的支持，这一功能极大地改变了公司的发展轨迹。\n*   **用户与收入激增**：Apple Pay的集成让用户能够快速下载应用并开始交易，带来了“海量用户和收入”。\n*   **显著增长数据**：Fomo的周收入迅速飙升至约15万美元，日交易量达到300万美元。\n\n## Benchmark的罕见投资\n\n*   **引荐机制**：Fomo的“多天使”策略奏效，有三位天使投资者主动向Benchmark早期投资者Chetan Puttagunta引荐。\n*   **Benchmark的谨慎**：Benchmark在投资选择上非常挑剔，且很少投资加密初创公司（此前仅在2018年投资过Chainalysis，以及Toncoin等少数几家）。\n*   **增长说服力**：Puttagunta被Fomo的快速增长所说服，决定冒险投资并加入董事会。他认为Fomo团队拥有清晰的愿景，使加密资产易于发现和交易，并且其增长“确实非凡”。\n*   **唯一的机构投资者**：Benchmark是Fomo本轮融资中唯一的机构投资者，其余资金来自现有和新增的天使投资者。\n\n## 融资后的持续增长\n\n*   **数据亮眼**：自九月融资结束以来，Fomo已在其应用中增加了更多区块链上的更多资产，并实现了更疯狂的增长。\n*   **用户与交易量**：目前已有超过12万用户注册，日交易量达到2000万至4000万美元，日收入约15万美元。",
+      "shortSummary": "消费级加密交易应用Fomo通过独特的“梦想天使”策略成功筹集1700万美元A轮融资，由顶级风投Benchmark罕见领投。Fomo旨在打造一个无技术障碍的加密超级应用，覆盖数百万资产并集成社交功能。上线后，Apple Pay支持使其用户和收入大幅增长，目前日交易量达2000-4000万美元，日收入15万美元。Benchmark被其惊人增长所吸引，认为这是一次有潜力的押注。",
+      "translated_title": "为何Benchmark对交易应用Fomo进行了一次罕见的加密货币投资，并领投1700万美元A轮融资",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "The founders of Fomo, a consumer crypto trading app that launched in May, took an unusual route to raising capital."
+    },
+    {
+      "title": "Spotify 现已支持查看每周收听统计数据 (原标题: Spotify now lets you see weekly listening stats)",
+      "link": "https://techcrunch.com/2025/11/06/spotify-now-lets-you-see-weekly-listening-stats/",
+      "pubDate": "Thu, 06 Nov 2025 14:00:00 +0000",
+      "isoDate": "2025-11-06T14:00:00.000Z",
+      "creator": "Ivan Mehta",
+      "summary": "Spotify 推出了一项名为“收听统计数据”（Listening stats）的新功能，旨在为用户提供对其每周收听习惯的更深入了解。此前，用户只能通过 Last.fm 等第三方服务或等待年底的年度总结“Wrapped”来查看自己的收听数据。\n\n### 主要功能与特点\n\n*   **每周数据概览**：\n    *   显示用户每周的“热门艺人”（top artists）和“热门歌曲”（top songs）。\n    *   还会突出显示“特殊时刻”，例如里程碑、新发现或粉丝时刻。\n*   **分享功能**：\n    *   用户可以将每周的收听数据分享到 Instagram 或 WhatsApp。\n    *   也可以通过 Spotify 应用内新增的消息功能直接与朋友分享。\n*   **个性化播放列表**：\n    *   统计页面提供一个选项，可以根据用户已喜欢的歌曲和收听习惯，创建推荐播放列表。\n\n### 如何访问\n\n用户只需点击个人资料图片，然后选择“收听统计数据”选项卡，即可查看并分享自己的每周收听数据。\n\n### 覆盖范围与影响\n\n*   **全球推广**：该功能目前正在向超过 60 个国家/地区的免费和高级用户推出。\n*   **与 Wrapped 的关系**：Spotify 仍将继续发布备受期待的年度总结“Wrapped”。虽然每周统计数据能让用户更频繁地了解自己的收听模式，但它可能会削弱年底发现个人收听习惯的惊喜感。\n\n### 相关图片\n\n![Spotify logo](https://techcrunch.com/wp-content/uploads/2025/11/blog-header.jpg?w=1024)\n\n![A series of screenshots showing Spotify's new listening stats feature.](https://techcrunch.com/wp-content/uploads/2025/11/Listening-stats.jpg?w=680)",
+      "shortSummary": "Spotify 推出“收听统计数据”新功能，让用户每周都能查看自己的收听习惯。该功能显示每周热门艺人、歌曲及特殊时刻，并支持分享至社交媒体或 Spotify 应用内。用户还可根据收听习惯创建播放列表。此功能正向全球 60 多个国家/地区的免费和高级用户推出，旨在提供更频繁的收听洞察，补充年度总结 Wrapped。",
+      "translated_title": "Spotify 现已支持查看每周收听统计数据",
+      "images": [
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/11/blog-header.jpg?w=1024",
+          "alt": "Spotify logo",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://secure.gravatar.com/avatar/723b22a81ff6a760c4520b963b43451e?s=265&d=blank&r=g",
+          "alt": "Ivan Mehta",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://techcrunch.com/wp-content/uploads/2025/11/Listening-stats.jpg?w=680",
+          "alt": "A series of screenshots showing Spotify's new listening stats feature.",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Spotify is adding a new feature called \"Listening stats\" that will show users weekly numbers about their listening habits."
+    },
+    {
+      "title": "Inception 融资 5000 万美元，用于构建代码和文本的扩散模型 (原标题: Inception raises $50 million to build diffusion models for code and text)",
+      "link": "https://techcrunch.com/2025/11/06/inception-raises-50-million-to-build-diffusion-models-for-code-and-text/",
+      "pubDate": "Thu, 06 Nov 2025 13:00:00 +0000",
+      "isoDate": "2025-11-06T13:00:00.000Z",
+      "creator": "Russell Brandom",
+      "summary": "## Inception 融资 5000 万美元，推动代码和文本扩散模型发展\n\n### 公司与融资概况\n*   **公司名称**：Inception，一家专注于开发基于扩散模型的人工智能初创公司。\n*   **融资情况**：成功完成 5000 万美元的种子轮融资。\n*   **领投方**：Menlo Ventures。\n*   **其他投资方**：Mayfield、Innovation Endeavors、微软的 M12 基金、Snowflake Ventures、Databricks Investment 和英伟达的 NVentures。\n*   **天使投资人**：Andrew Ng 和 Andrej Karpathy。\n\n### 核心技术与团队\n*   **项目负责人**：斯坦福大学教授 Stefano Ermon，其研究重点是扩散模型。\n*   **扩散模型原理**：通过迭代优化而非逐字生成输出，这与传统的自回归模型（如 GPT-5 和 Gemini）不同。\n*   **技术背景**：扩散模型已成功应用于图像生成系统，例如 Stable Diffusion、Midjourney 和 Sora。Inception 的目标是将这项技术扩展到代码和文本生成领域。\n\n### 产品与应用\n*   **核心产品**：Inception 发布了新版 Mercury 模型，专为软件开发设计。\n*   **集成应用**：Mercury 模型已集成到多个开发工具中，包括 ProxyAI、Buildglare 和 Kilo Code。\n\n### 扩散模型的显著优势\nErmon 教授强调，基于扩散的模型在以下关键指标上表现出卓越优势：\n*   **效率与速度**：\n    *   比现有的大型语言模型（LLMs）更快、更高效，尤其在降低延迟（响应时间）和计算成本方面。\n    *   能够实现并行处理，与自回归模型的顺序执行形成对比。\n*   **处理大型代码库**：\n    *   在处理大量文本或管理数据限制时，扩散模型可能表现更优。\n    *   在对大型代码库执行操作时，这些特性成为真正的优势。\n*   **硬件利用灵活性**：\n    *   扩散模型在硬件利用方面具有更大的灵活性，能够同时处理多个操作，从而在复杂任务中显著降低延迟。\n*   **性能基准**：\n    *   Inception 的模型基准测试显示每秒处理超过 1000 个 token，远高于现有自回归技术所能达到的水平，这得益于其并行化设计。\n\n### 与自回归模型的对比\n*   **自回归模型**：如 GPT-5 和 Gemini，采用顺序工作方式，基于先前处理的材料预测下一个词或词片段。\n*   **扩散模型**：采用更整体的方法，逐步修改响应的整体结构，直到符合预期结果。\n*   尽管传统观点认为自回归模型适用于文本应用并取得了巨大成功，但越来越多的研究表明，扩散模型在处理大量文本或数据受限时可能表现更优。",
+      "shortSummary": "Inception 是一家由斯坦福教授 Stefano Ermon 创立的 AI 初创公司，成功融资 5000 万美元。该公司专注于将扩散模型应用于代码和文本生成，而非传统的自回归模型。其新发布的 Mercury 模型已用于软件开发工具。Inception 宣称，与现有技术相比，基于扩散的模型在速度、效率和计算成本方面具有显著优势，能够实现更低的延迟和更高的并行处理能力，每秒可处理超过 1000 个 token。",
+      "translated_title": "Inception 融资 5000 万美元，用于构建代码和文本的扩散模型",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Diffusion models already power AI image generators, but Inception thinks they can be even more powerful applied in software development."
+    },
+    {
       "title": "谷歌地图在印度升级导航功能，引入Gemini和安全警报 (原标题: Google Maps upgrades navigation in India with Gemini, safety alerts)",
       "link": "https://techcrunch.com/2025/11/06/google-maps-upgrades-navigation-in-india-with-gemini-safety-alerts/",
       "pubDate": "Thu, 06 Nov 2025 11:56:51 +0000",
@@ -93,7 +242,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "Discord has rolled out updates to its Family Center, giving guardians more insights into their teens&#8217; usage patterns, including purchases, top interactions, and time spent. The goal is to help parents monitor whether their teen is spending excessive time or money on Discord. The communication platform first launched Family Center in 2023 with an activity [&#8230;]"
+      "content": "The update gives guardians more insights into their teens' usage patterns, including purchases, top interactions, and time spent. The goal is to help parents monitor whether their teen is spending excessive time or money on Discord."
     },
     {
       "title": "蓝色起源计划于11月9日进行新格伦巨型火箭的第二次发射 (原标题: Blue Origin plans second launch of New Glenn mega-rocket on November 9)",
@@ -205,170 +354,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Australia now has so much solar power that the government will require utilities to sell customers free electricity for three hours per day."
-    },
-    {
-      "title": "Tinder将利用AI了解用户，并访问其相册照片 (原标题: Tinder to use AI to get to know users, tap into their Camera Roll photos)",
-      "link": "https://techcrunch.com/2025/11/05/tinder-to-use-ai-to-get-to-know-users-tap-into-their-camera-roll-photos/",
-      "pubDate": "Wed, 05 Nov 2025 18:22:17 +0000",
-      "isoDate": "2025-11-05T18:22:17.000Z",
-      "creator": "Sarah Perez",
-      "summary": "## Tinder利用AI重振应用，面临市场挑战\n\nTinder正面临付费用户连续九个季度下滑的困境，为此，其母公司Match Group正积极探索利用人工智能（AI）技术来重振这款约会应用。\n\n### 核心AI功能：Chemistry\n\nTinder正在测试一项名为“Chemistry”的新功能，旨在更深入地了解用户，从而推荐更兼容的匹配对象。该功能的主要特点包括：\n\n*   **用户洞察**：通过互动式问题来了解用户的兴趣和个性。\n*   **相册访问**：在获得用户许可的前提下，访问用户手机的相册照片，以进一步分析其兴趣和生活方式（例如，如果用户有徒步或登山的照片，可能会被匹配给有相同户外爱好的对象）。\n*   **试点与未来规划**：该功能已在新西兰和澳大利亚进行试点，并被Match Group首席执行官Spencer Rascoff称为“Tinder即将到来的2026年产品体验的主要支柱”。\n*   **隐私考量**：文章指出，尽管Meta等公司也有类似请求访问用户相册进行AI编辑的功能，但对于最终用户而言，这种扩展访问带来的好处“微不足道”。\n\n### 其他AI应用\n\n除了“Chemistry”功能，Tinder还在其他方面应用AI技术：\n\n*   **消息审核**：利用基于大型语言模型（LLM）的系统，在用户发送可能具有冒犯性的消息前进行提示，询问“你确定吗？”。\n*   **照片选择**：帮助用户挑选出他们最佳的个人资料照片。\n\n### 非AI功能更新\n\n为了提升订阅用户和参与度，Tinder还推出了多项非AI功能，包括：\n\n*   约会“模式”（dating “modes”）\n*   双重约会（double dates）\n*   面部验证（facial verification）\n*   重新设计的个人资料，将个人简介信息置于第一张照片卡片上，并将提示集成到照片轮播中。\n\n### 财务表现与市场挑战\n\n尽管Tinder积极进行产品改革，但其财务表现仍受到市场环境的严峻挑战：\n\n*   **用户流失**：截至今年第三季度，Tinder的付费用户已连续九个季度下降，Q3收入同比下降3%，付费用户下降7%。\n*   **财务影响**：产品测试预计将对Tinder第四季度的直接收入造成1400万美元的负面影响，导致Match Group的Q4整体营收指引低于分析师预期。\n*   **市场趋势**：年轻一代倾向于寻求更多现实世界的体验，而非在线约会；同时，美国在线约会用户由于可支配收入减少和经济衰退担忧，消费意愿降低。\n*   **Match Group整体表现**：尽管Tinder表现不佳，Match Group在Q3的整体收入和盈利大致符合预期，收入增长2%至9.142亿美元，每股收益为62美分（利润1.608亿美元）。\n\n总体而言，Tinder正通过AI和多方面产品创新，努力应对持续的用户流失和严峻的市场竞争。",
-      "shortSummary": "为应对付费用户持续下滑，Tinder正引入AI功能“Chemistry”，通过提问和访问用户相册（经许可）来了解用户兴趣，以推荐更匹配的约会对象。该功能已在新西兰和澳大利亚试点，并将成为2026年产品体验的核心。Tinder还在消息审核和照片选择中应用AI，并推出其他新功能。尽管面临市场挑战和产品测试带来的短期财务影响，Tinder正积极寻求通过AI和产品创新重振用户增长。",
-      "translated_title": "Tinder将利用AI了解用户，并访问其相册照片",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Tinder is testing a feature called Chemistry that will get to know users through questions and, with permission, will access Camera Roll photos on their phones to learn more about their interests and personality."
-    },
-    {
-      "title": "Replika 创始人为 Wabi 筹集 2000 万美元种子前融资，Wabi 被称为“应用的 YouTube” (原标题: Replika founder raises $20M pre-seed for Wabi, the ‘YouTube of apps’ )",
-      "link": "https://techcrunch.com/2025/11/05/replika-founder-raises-20m-pre-seed-for-wabi-the-youtube-of-apps/",
-      "pubDate": "Wed, 05 Nov 2025 17:01:17 +0000",
-      "isoDate": "2025-11-05T17:01:17.000Z",
-      "creator": "Ivan Mehta, Rebecca Bellan",
-      "summary": "## Wabi：Replika 创始人打造的“应用的 YouTube”\n\n### 引言\n\nReplika 的创始人 Eugenia Kuyda 在大多数人之前预见了消费者 AI 的未来。她于 2017 年创立了 Replika，这是第一个主要的 AI 伴侣初创公司，如今拥有 3500 万用户。现在，Kuyda 带着她的新公司 Wabi 回归，她将其描述为“应用的 YouTube”——一个社交平台，任何人都可以通过提示词即时创建迷你应用并与朋友分享。\n\n### Wabi 的核心理念与融资\n\nWabi 于上月推出测试版，预示着消费者 AI 的又一次转变：个性化软件将成为常态。Wabi 已获得 2000 万美元的种子前融资，投资方包括 AngelList 联合创始人 Naval Ravikant、Y Combinator 首席执行官 Garry Tan、Twitch 联合创始人 Justin Kan、Replit 首席执行官 Amjad Masad、Notion 联合创始人 Akshay Kothari、Neuralink 联合创始人 DJ Seo 和 Conviction 创始人 Sarah Guo等知名天使投资人。Andreessen Horowitz 的普通合伙人 Anish Acharya 表示，Kuyda 在 AI 伴侣领域“早期且正确”，并认为她再次准确预测了消费者需求。\n\n### 市场定位与差异化\n\nWabi 进入了一个热门市场，例如 Cursor 和 Lovable 等“氛围编程”工具以及 Emergent、Replit 和 Bloom 等无代码 AI 平台都吸引了大量风险投资。Wabi 的独特之处在于其集创建、发现和托管于一体的集成平台，无需依赖传统的应用商店。\n\n### 易用性与社交功能\n\nKuyda 表示，Wabi 旨在帮助那些与编程或科技世界无关的人，快速从日常生活中创建应用。用户只需输入简单的提示词，例如“为我构建一个 AI 治疗应用”，Wabi 就会建议功能、进行构思并构建应用，用户无需精通提示词，也无需接触代码。\n\nWabi 最近向测试用户发布了社交功能，包括点赞、评论和混音现有应用，以及查看用户资料以了解他人的喜好、使用和创建。Kuyda 强调，社交层对于激发创造力和发现至关重要，这些迷你应用可以成为社区或对话的起点。\n\n### 图片：Eugenia Kuyda，Wabi 和 Replika 创始人\n\n![Eugenia Kuyda，Wabi 和 Replika 创始人](https://techcrunch.com/wp-content/uploads/2025/11/Eugenia-kuyda.jpg?w=680)\n\n### 应用创建与发现\n\nWabi 的核心承诺与 ChatGPT 的 GPT 商店或 Quora 的 Poe 机器人类似：通过提示词构建迷你应用来解决小问题，而用户无需设置任何技术基础设施。即使只输入几句话，Wabi 也能处理图标创建、数据库设置和应用 UI 设计等任务。Kuyda 透露，对于需要 AI 生成内容的应用程序，用户可以在设置中选择其基础模型（如 ChatGPT 或 Gemini），甚至可以重写 Wabi 提供的提示词。\n\nWabi 的“探索”页面目前展示最新和热门应用，Kuyda 表示随着时间推移，它将变得更具算法性。该初创公司计划在未来几周内推出个性化新手引导，为新用户自动生成入门应用。\n\n### 早期挑战与未来规划\n\n创建基本应用很简单，但在开发生命周期中，应用可能需要调试以避免错误。例如，文章中提到一个每日狗图应用会生成相同的狗，一个新闻应用显示过时日期和奇怪来源。这意味着用户需要有兴趣维护这些应用，否则发现部分可能会充斥着未管理的迷你应用。Kuyda 承认 Wabi 仍处于早期阶段，他们正在努力确保应用“开箱即用”，并指出模型限制正在日益改善。\n\n2000 万美元融资的很大一部分将用于组建 Wabi 的产品团队。部分资金还将用于有效补贴 Wabi 的使用，直到公司找到盈利模式。Kuyda 表示她不打算在平台上投放广告，因为她认为广告会创造不良的用户体验和“黑暗模式”，她更喜欢创造愉悦的用户体验，就像她在 Replika 上从未投放广告一样。\n\n### 商业模式与愿景\n\nAcharya 相信一旦网络效应形成，变现将变得容易。他预见未来平台将出现“专业化”元素，许多如今想成为 TikTok 明星的孩子可能会转而在 Wabi 上制作软件。他将 Wabi 的发展与 YouTube 的历史相比较，YouTube 从最初的低成本内容发展到如今的高制作价值。Acharya 补充说，软件拥有更大的机会，因为“视频内容会随时间衰减价值”，而“软件具有复合价值”。\n\n这个想法与 Acharya 关于“一次性软件”未来的论点不谋而合——小型、灵活的应用，人们可以像打开新标签页或与 ChatGPT 快速聊天一样轻松创建和丢弃。Acharya 认为软件是“参与的最终前沿”，互联网一直是推动参与的力量，但很少有人能真正制作软件。他希望 Wabi 能恢复互联网早期“朋克、奇特”的自由精神，以对抗如今“临床化”的、千篇一律的互联网体验。\n\n### 图片：Wabi 应用界面示例\n\n![Wabi 应用界面示例](https://techcrunch.com/wp-content/uploads/2025/11/IMG_3070.png?w=313)\n\n![Wabi 应用界面示例](https://techcrunch.com/wp-content/uploads/2025/11/IMG_3074.png?w=313)",
-      "shortSummary": "Replika 创始人 Eugenia Kuyda 推出新 AI 创业公司 Wabi，获得 2000 万美元种子前融资。Wabi 被称为“应用的 YouTube”，是一个社交平台，允许用户通过简单的提示词即时创建和分享迷你应用，无需编码。它旨在使个性化软件成为常态，并提供集创建、发现和托管于一体的平台，无需应用商店。Wabi 已推出测试版并引入社交功能，其愿景是让软件创作民主化，恢复互联网早期的自由精神，并最终实现专业化和变现。",
-      "translated_title": "Replika 创始人为 Wabi 筹集 2000 万美元种子前融资，Wabi 被称为“应用的 YouTube”",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/11/Eugenia-kuyda.jpg?w=680",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/11/IMG_3070.png?w=313",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/11/IMG_3074.png?w=313",
-          "alt": "",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Wabi, a startup from the founder of Replika, has just raised a $20 million pre-seed round. Wabi is like \"YouTube for apps\" — a social platform where anyone can use prompts to instantly create mini apps and share them with friends. "
-    },
-    {
-      "title": "谷歌让在 iOS 和 Android 版 Chrome 中访问 AI 模式变得更容易 (原标题: Google makes it easier to access AI Mode in Chrome on iOS and Android)",
-      "link": "https://techcrunch.com/2025/11/05/google-makes-it-easier-to-access-ai-mode-in-chrome-on-ios-and-android/",
-      "pubDate": "Wed, 05 Nov 2025 17:00:00 +0000",
-      "isoDate": "2025-11-05T17:00:00.000Z",
-      "creator": "Aisha Malik",
-      "summary": "### 谷歌简化 iOS 和 Android 版 Chrome 中 AI 模式的访问\n\n谷歌于周三宣布，将简化在移动设备上访问其 AI 模式的方式。此举旨在让用户更便捷地利用其 AI 功能，从而在与竞争对手（如 Perplexity AI 和 OpenAI 的 ChatGPT Search）的竞争中占据优势。\n\n#### 访问方式更新\n\n*   **新快捷方式**：用户现在可以通过 Chrome 浏览器“新标签页”搜索栏下方新增的专用快捷按钮，直接访问 AI 模式。\n*   **功能**：AI 模式允许用户直接在搜索中提出复杂问题并进行后续追问，以深入探讨某个主题。\n\n#### 推出范围\n\n*   **美国首发**：新快捷方式已于周三在美国推出。\n*   **全球扩展**：该功能将很快推广到全球 160 个新国家，并支持更多语言，包括印地语、印度尼西亚语、日语、韩语和葡萄牙语等。\n*   **背景**：此次更新是在谷歌最近将 AI 模式全球扩展到 180 个新国家并支持更多语言（包括印地语、印度尼西亚语、日语、韩语和巴西葡萄牙语）之后进行的。\n\n#### AI 模式的功能演进\n\n谷歌于今年 3 月首次推出 AI 模式，此后不断更新并增加功能：\n\n*   **智能代理能力**：\n    *   **最新推出**：谷歌于昨日推出了新的智能代理能力，帮助用户预订活动门票以及美容和健康预约。\n    *   **早期版本**：早在 8 月，谷歌就首次引入了智能代理能力，允许用户利用该功能查找餐厅预订。\n*   **Canvas 功能**：7 月份推出了 Canvas 功能，帮助用户在侧边栏中构建学习计划并跨多个会话组织信息。\n*   **Google Lens 集成**：现在还支持使用 Google Lens 询问桌面屏幕上的内容。\n\n#### 相关图片\n\n*   **谷歌慕尼黑总部外观**\n    ![The Google logo and lettering can be seen on the facade of the company's Munich headquarters.](https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-2196352264.jpg?w=1024)\n    图片来源：Matthias Balk/picture alliance / Getty Images\n*   **Chrome 移动版 AI 模式 GIF 演示**\n    ![图片 2](https://techcrunch.com/wp-content/uploads/2025/11/GIF-AI-Mode-in-Chrome-mobile.gif?w=680)\n    图片来源：Google",
-      "shortSummary": "谷歌宣布简化在 iOS 和 Android 版 Chrome 中访问 AI 模式的方式。用户现在可通过“新标签页”搜索栏下方的专用快捷按钮直接进入 AI 模式。此功能已在美国推出，并将扩展至全球 160 个国家及多种语言。谷歌希望通过此举提升其 AI 服务的竞争力，并已持续为 AI 模式增加智能代理、Canvas 和 Google Lens 集成等新功能。",
-      "translated_title": "谷歌让在 iOS 和 Android 版 Chrome 中访问 AI 模式变得更容易",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-2196352264.jpg?w=1024",
-          "alt": "The Google logo and lettering can be seen on the facade of the company's Munich headquarters.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/11/GIF-AI-Mode-in-Chrome-mobile.gif?w=680",
-          "alt": "",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Users will now be able to access AI Mode via a new dedicated shortcut button under the search bar when opening a \"New Tab\" page in Chrome. "
-    },
-    {
-      "title": "微软构建了一个虚拟市场来测试AI代理——它们以令人惊讶的方式失败了 (原标题: Microsoft built a fake marketplace to test AI agents — they failed in surprising ways)",
-      "link": "https://techcrunch.com/2025/11/05/microsoft-built-a-synthetic-marketplace-for-testing-ai-agents/",
-      "pubDate": "Wed, 05 Nov 2025 17:00:00 +0000",
-      "isoDate": "2025-11-05T17:00:00.000Z",
-      "creator": "Russell Brandom",
-      "summary": "### 微软“Magentic Marketplace”揭示AI代理的意外弱点\n\n微软与亚利桑那州立大学合作，发布了一个名为“Magentic Marketplace”的全新模拟环境，旨在测试AI代理的行为，并随之发布了一项研究，揭示了当前代理模型可能容易受到操纵。这项研究对AI代理在无人监督下工作的表现以及AI公司实现“代理未来”承诺的速度提出了新的疑问。\n\n#### Magentic Marketplace：AI代理的实验平台\n\n*   **平台设计**：Magentic Marketplace是一个合成平台，用于实验AI代理的行为。它模拟了一个市场环境，例如客户代理根据用户指令订购晚餐，而代表不同餐厅的代理则竞争赢得订单。\n*   **初始实验规模**：团队的初步实验包括100个客户侧代理与300个商家侧代理的互动。\n*   **开源性**：该市场的源代码是开源的，方便其他研究团队采用代码进行新实验或重现研究结果。\n*   **研究意义**：微软研究院AI前沿实验室的执行董事Ece Kamar表示，这类研究对于理解AI代理的能力至关重要。她强调：“这些代理相互协作、交流和谈判将如何改变世界，这确实是一个问题。我们希望深入理解这些。”\n\n#### 关键发现：AI代理的意外弱点\n\n初步研究测试了包括GPT-4o、GPT-5和Gemini-2.5-Flash在内的领先模型，并发现了一些令人惊讶的弱点：\n\n1.  **易受操纵**：研究人员发现，商家可以利用多种技术操纵客户代理购买其产品。\n2.  **选项过载**：当客户代理面临更多选择时，效率显著下降，其“注意力空间”被压倒。Kamar指出：“我们希望这些代理能帮助我们处理大量选项，但我们看到目前的模型实际上在选项过多时会不堪重负。”\n3.  **协作困难**：当被要求为共同目标协作时，代理们遇到了麻烦，似乎不确定哪个代理应该在协作中扮演什么角色。\n4.  **指令依赖性**：当模型获得更明确的协作指令时，性能有所改善，但研究人员仍认为模型的内在协作能力需要提升。Kamar表示：“我们可以指示模型——比如我们可以一步一步地告诉它们。但如果我们要测试它们的内在协作能力，我期望这些模型默认就具备这些能力。”\n\n#### 结论与展望\n\n这项研究揭示了当前AI代理在复杂、动态环境中面临的挑战，尤其是在处理大量信息、抵御操纵以及自主协作方面。这些发现对于未来AI代理的设计和部署具有重要指导意义，提醒业界在追求“代理未来”的同时，需深入解决这些核心能力问题。",
-      "shortSummary": "微软与亚利桑那州立大学合作，通过其“Magentic Marketplace”模拟环境测试AI代理，揭示了令人担忧的弱点。研究发现，AI代理易受商家操纵，在面临过多选择时会不堪重负，并且在没有明确指令的情况下难以有效协作。这些发现对AI代理在无人监督环境下的性能及其“代理未来”的实现提出了严峻挑战，强调了提升AI代理内在鲁棒性和协作能力的重要性。",
-      "translated_title": "微软构建了一个虚拟市场来测试AI代理——它们以令人惊讶的方式失败了",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The research raises new questions about how well AI agents will perform when working unsupervised — and how quickly AI companies can make good on promises of an agentic future.\n\n"
-    },
-    {
-      "title": "美国电影协会因Meta使用‘PG-13’标签发出停止函 (原标题: Motion Picture Association hits Meta with cease-and-desist over use of ‘PG-13’ label)",
-      "link": "https://techcrunch.com/2025/11/05/motion-picture-association-hits-meta-with-cease-and-desist-over-use-of-pg-13-label/",
-      "pubDate": "Wed, 05 Nov 2025 15:46:58 +0000",
-      "isoDate": "2025-11-05T15:46:58.000Z",
-      "creator": "Aisha Malik",
-      "summary": "### 美国电影协会就Meta使用“PG-13”标签发出停止函\n\n美国电影协会（MPA）已向Meta发出停止函，要求其停止使用“PG-13”一词。此举源于Meta上个月宣布，Instagram上的青少年用户将默认只看到符合PG-13电影分级标准的内容。\n\n**事件背景：**\n*   Meta此前宣布，Instagram上的青少年用户将默认只看到符合PG-13电影分级标准的内容。\n*   两周后，MPA向Meta发出了停止函。\n\n**MPA的立场与主张：**\n*   MPA认为Meta声称青少年Instagram账户内容遵循PG-13准则的说法“在字面上是虚假的且极具误导性”。\n*   MPA指出，其电影分级系统经过数十年努力才赢得公众信任，不能与Meta的内容限制相提并论，后者“似乎严重依赖人工智能”。\n*   MPA担心，公众对Meta自动化分类的任何不满都将不可避免地导致他们质疑MPA分级系统的完整性。\n\n**Meta的回应：**\n*   Meta表示，它从未声称其青少年账户获得了MPA的认证或被官方评为PG-13。\n*   Meta称其内容限制是“受PG-13指导”，而非直接与MPA挂钩。\n*   Meta还认为其对该术语的使用符合合理使用（fair use）原则。\n\n**相关图片：**\n![图片 1](https://techcrunch.com/wp-content/uploads/2025/10/instagram-app-icon-GettyImages-1046023150.jpg?w=1024)\n![Aisha Malik](https://techcrunch.com/wp-content/uploads/2021/10/headshot.jpg)",
-      "shortSummary": "美国电影协会（MPA）已向Meta发出停止函，要求其停止在Instagram青少年内容限制中使用“PG-13”标签。MPA认为Meta的说法“虚假且误导”，担心其AI驱动的系统会损害MPA分级系统的公信力。Meta回应称其内容限制仅“受PG-13指导”，并未声称获得MPA认证，并主张其使用符合合理使用原则。",
-      "translated_title": "美国电影协会因Meta使用‘PG-13’标签发出停止函",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/10/instagram-app-icon-GettyImages-1046023150.jpg?w=1024",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2021/10/headshot.jpg",
-          "alt": "Aisha Malik",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The MPA states that its movie-rating system can't be compared to Meta's content restrictions, which it says \"appear to rely heavily on artificial intelligence.\""
-    },
-    {
-      "title": "宾夕法尼亚大学证实黑客在网络攻击中窃取了数据 (原标题: University of Pennsylvania confirms hacker stole data during cyberattack)",
-      "link": "https://techcrunch.com/2025/11/05/university-of-pennsylvania-confirms-hacker-stole-data-during-cyberattack/",
-      "pubDate": "Wed, 05 Nov 2025 15:25:49 +0000",
-      "isoDate": "2025-11-05T15:25:49.000Z",
-      "creator": "Amanda Silberling",
-      "summary": "## 宾夕法尼亚大学数据泄露事件详细摘要\n\n### 事件确认与时间线\n*   **数据泄露确认**：宾夕法尼亚大学于周二证实，在近期的一次网络攻击中，黑客窃取了大学数据。此次攻击导致校友及其他关联人员收到来自官方大学邮箱的可疑邮件。\n*   **发现时间**：大学于10月31日发现，与宾大发展和校友活动相关的部分信息系统遭到入侵。\n*   **大学回应**：宾大最初告诉TechCrunch，黑客邮件是“欺诈性的”，但随后证实黑客关于数据被窃的说法属实。大学声明指出，工作人员迅速锁定了系统并阻止了进一步的未经授权访问，但在锁定之前，攻击者已发送了冒犯性且欺诈性的邮件，并窃取了信息。\n\n### 攻击细节与黑客信息\n*   **黑客信息**：黑客发送的邮件内容包括“我们被黑了”、“我们喜欢违反FERPA等联邦法律（你们的所有数据都将被泄露）”以及“请不要再给我们钱了”。\n*   **攻击方式**：大学表示，此次泄露是由于一次社会工程学攻击造成的。这是一种黑客技术，通过欺骗个人交出敏感信息，例如登录凭据，可能通过网络钓鱼或电话进行。\n*   **被窃数据（黑客声称）**：据《每日宾夕法尼亚人报》报道，黑客声称窃取了与大学捐赠者相关的文件、银行交易收据以及个人身份信息。\n*   **黑客动机**：\n    *   **财务动机**：黑客表示他们是出于经济动机。\n    *   **平权行动政策不满**：黑客在发送给大学社区的邮件中写道：“我们雇佣和录取白痴，因为我们喜欢世袭生、捐赠者和不合格的平权行动录取者。”这表明黑客对大学的平权行动政策存在不满。\n\n### 大学安全措施与后续行动\n*   **多因素认证（MFA）问题**：一名不愿透露姓名的宾大员工向TechCrunch透露，大学要求学生、教职员工和校友在其账户上使用多因素认证（MFA）作为安全措施，但一些高级官员被豁免了MFA要求。宾大发言人Ron Ozio拒绝就MFA豁免问题置评。\n*   **通知受影响人员**：宾大表示，将依法联系个人信息被黑客访问的人员。但大学尚未说明何时进行通知、有多少人受影响以及具体哪些信息被访问。\n\n### 相关背景与图片\n*   **类似事件**：今年早些时候，哥伦比亚大学也遭到黑客攻击，约87万名学生和申请人的敏感信息（包括社会安全号码和公民身份）被访问。哥伦比亚大学的黑客也表示，他们试图访问数据以调查其平权行动实践。\n\n![A partially redacted email sent by hackers with access to the university of Pennsylvania email system. ](https://techcrunch.com/wp-content/uploads/2025/11/redacted-upenn-screenshot-hack.webp)\n*   **图片描述**：一张部分 redacted 的邮件截图，由拥有宾夕法尼亚大学邮件系统访问权限的黑客发出。\n\n### 联系方式\n*   如果您有关于宾大黑客事件的更多信息，可以通过Signal（@amanda.100）或非工作邮箱安全地联系TechCrunch高级作者Amanda Silberling。",
-      "shortSummary": "宾夕法尼亚大学证实，在近期的一次网络攻击中，黑客窃取了与大学发展和校友活动相关的数据。此次攻击通过社会工程学进行，黑客利用官方邮箱发送威胁邮件，声称已获取捐赠者信息和个人身份数据。黑客的动机包括财务利益以及对平权行动政策的不满。大学已锁定受损系统，并将通知受影响人员。有报道指出，大学的多因素认证存在豁免情况。",
-      "translated_title": "宾夕法尼亚大学证实黑客在网络攻击中窃取了数据",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/11/redacted-upenn-screenshot-hack.webp",
-          "alt": "A partially redacted email sent by hackers with access to the university of Pennsylvania email system.\n",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Penn experienced a data breach on Friday as hackers sent messages boasting of the hack to the university community."
-    },
-    {
-      "title": "这家初创公司的金属堆叠技术有望解决AI巨大的散热问题 (原标题: This startup’s metal stacks could help solve AI’s massive heat problem)",
-      "link": "https://techcrunch.com/2025/11/05/this-startups-metal-stacks-could-help-solve-ais-massive-heat-problem/",
-      "pubDate": "Wed, 05 Nov 2025 15:15:00 +0000",
-      "isoDate": "2025-11-05T15:15:00.000Z",
-      "creator": "Tim De Chant",
-      "summary": "## AI散热挑战与Alloy Enterprises的解决方案\n\n随着人工智能（AI）芯片功耗的急剧飙升，数据中心的散热问题已成为一个巨大的瓶颈。英伟达（Nvidia）预计于2027年发布的Rubin系列GPU，其Ultra版本芯片机架功耗可能高达600千瓦，几乎是目前最快电动汽车充电器功率的两倍。在这种高功耗背景下，如何有效散热，特别是冷却GPU及外围芯片，成为工程师们面临的紧迫挑战。\n\n### Alloy Enterprises的创新技术：堆叠锻造\n\nAlloy Enterprises是一家初创公司，提出了一种创新的解决方案：利用金属堆叠技术制造实心冷却板。这项技术的核心是“堆叠锻造”（stack forging），它通过结合热和压力，将多层铜片键合在一起，形成一个无缝、实心的冷却板。\n\n**应用范围与必要性：**\n*   最初，数据中心主要关注GPU的散热。但随着机架功耗从120千瓦飙升至480千瓦并迈向600千瓦，内存、网络硬件等外围芯片（约占服务器冷却负荷的20%）的散热也变得至关重要。目前，这些外围芯片的液冷解决方案尚不成熟。\n*   Alloy的冷却板能够同时冷却GPU和这些关键的外围芯片，填补了市场空白。\n\n**技术优势与特点：**\n*   **无缝与实心：** 与传统机加工方法不同，Alloy的堆叠锻造技术生产的冷却板没有接缝。传统机加工通常需要将两半板烧结在一起，可能在高压下出现泄漏。此外，Alloy的产品是实心金属，避免了3D打印产品可能存在的孔隙问题。\n*   **材料性能：** 该技术能够达到原材料的固有强度，铜的强度与机加工产品相当。\n*   **精细特征：** 堆叠锻造可以制造更小的内部特征，小至50微米（约人类头发宽度的一半），从而允许更多的冷却液流过，提高散热效率。\n*   **散热性能：** Alloy Enterprises声称其冷却板的散热性能比竞争对手高出35%。\n*   **成本效益：** 虽然比传统机加工更昂贵，但比3D打印更经济。\n\n### 制造流程与市场反响\n\nAlloy的制造过程包括：\n1.  **准备与切割：** 铜卷首先被准备并切割成所需尺寸。\n2.  **激光切割特征：** 使用激光切割出冷却板的内部特征。\n3.  **涂覆抑制剂：** 在不希望键合的区域涂覆抑制剂。\n4.  **堆叠与键合：** 将每一层冷却板精确对齐并堆叠，然后送入扩散键合机，通过热和压力将其压制成一个单一的金属部件。\n\nAlloy Enterprises的首席执行官兼联合创始人Ali Forsyth表示，公司正在与数据中心领域的“所有大公司”合作。最初，该技术是为一种广泛使用的铝合金设计的，但由于数据中心对铜的兴趣更大（铜具有优异的导热性和耐腐蚀性），公司将工艺移植到了铜上。自产品于6月发布以来，市场反响“非常热烈”。\n\n![一个铜制冷却板在白色背景下展示。](https://techcrunch.com/wp-content/uploads/2025/11/NVIDIA-Blackwell-Copper-Alloy-Enterprises.jpg?w=680)\n\n图片来源：Alloy Enterprises",
-      "shortSummary": "随着AI芯片功耗飙升，数据中心散热成为巨大挑战。Alloy Enterprises开发了一种名为“堆叠锻造”的创新技术，通过热压将铜片制成无缝、实心的冷却板。这些冷却板不仅能高效冷却GPU，还能解决内存和网络硬件等外围芯片的散热难题。该技术提供35%的散热性能提升，且具备高强度和精细特征，已获得数据中心巨头的青睐，有望成为解决AI散热问题的关键方案。",
-      "translated_title": "这家初创公司的金属堆叠技术有望解决AI巨大的散热问题",
-      "images": [
-        {
-          "url": "https://techcrunch.com/wp-content/uploads/2025/11/NVIDIA-Blackwell-Copper-Alloy-Enterprises.jpg?w=680",
-          "alt": "A copper cooling plate is shown against a white background.",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Alloy Enterprises has developed a new additive manufacturing technique that can improve liquid cooling performance while bringing it to new parts of the server rack."
-    },
-    {
-      "title": "谷歌获得美国政府批准以320亿美元收购Wiz (原标题: Google gets the US government’s green light to acquire Wiz for $32B)",
-      "link": "https://techcrunch.com/2025/11/05/google-gets-the-us-governments-green-light-to-acquire-wiz-for-32b/",
-      "pubDate": "Wed, 05 Nov 2025 14:58:07 +0000",
-      "isoDate": "2025-11-05T14:58:07.000Z",
-      "creator": "Rebecca Szkutak",
-      "summary": "### 谷歌以320亿美元收购Wiz获美国政府批准\n\n谷歌收购云安全公司Wiz的交易已向完成迈进了一步。\n\n**主要进展：**\n*   Wiz首席执行官Assaf Rappaport周二在《华尔街日报》的一次活动中表示（据路透社报道），该收购案已通过美国司法部的反垄断审查。\n*   Rappaport补充说，尽管这是一个里程碑，但交易在正式完成前仍有一段路要走。\n\n**交易背景与时间线：**\n*   **2024年：** 谷歌最初以230亿美元的价格向Wiz提出收购要约。\n*   **Wiz的回应：** Wiz拒绝了该要约，Rappaport当时认为公司业务可以发展得更大。\n*   **2025年初：** 谷歌和Wiz重启了收购谈判。\n*   **2025年3月：** 谷歌宣布以320亿美元收购Wiz。\n*   **2025年6月：** 彭博社首次报道该交易正在接受反垄断审查。\n*   **预计完成时间：** 据路透社报道，该交易预计将于2026年初完成。",
-      "shortSummary": "谷歌以320亿美元收购云安全公司Wiz的交易已获得美国司法部的反垄断审查批准。Wiz首席执行官Assaf Rappaport证实了这一进展。尽管交易仍需正式完成，但这一批准是关键一步。谷歌最初在2024年提出230亿美元的收购要约被Wiz拒绝，随后双方于2025年初重启谈判，并于3月达成320亿美元的协议。该交易预计将于2026年初正式完成。",
-      "translated_title": "谷歌获得美国政府批准以320亿美元收购Wiz",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Google announced its intent to acquire cloud security company Wiz in March and the deal is now on track to close in early 2026. "
     }
   ],
-  "lastUpdated": "2025-11-06T12:45:51.422Z"
+  "lastUpdated": "2025-11-06T18:34:29.552Z"
 }
