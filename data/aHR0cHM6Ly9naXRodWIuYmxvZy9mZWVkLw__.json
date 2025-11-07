@@ -5,6 +5,76 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "GitHub Copilot CLI 101：如何在命令行中使用 GitHub Copilot (原标题: GitHub Copilot CLI 101: How to use GitHub Copilot from the command line)",
+      "link": "https://github.blog/ai-and-ml/github-copilot-cli-101-how-to-use-github-copilot-from-the-command-line/",
+      "pubDate": "Thu, 06 Nov 2025 20:30:00 +0000",
+      "isoDate": "2025-11-06T20:30:00.000Z",
+      "creator": "Alexandra Lietzke",
+      "summary": "# GitHub Copilot CLI 101：如何在命令行中使用 GitHub Copilot\n\n本文详细介绍了 GitHub Copilot CLI，它将 GitHub Copilot 的 AI 能力直接带入命令行终端，使用户无需离开终端即可提问、生成脚本、重构代码和运行命令。\n\n## 什么是 GitHub Copilot CLI？\n\n*   **定义**：命令行界面 (CLI) 是一种通过终端或控制台输入命令与软件和系统交互的方式。GitHub Copilot CLI 将 Copilot 的 AI 功能集成到这一环境中。\n*   **核心优势**：\n    *   无需在 IDE 和浏览器之间切换，直接在终端中请求 Copilot 生成、解释或执行命令。\n    *   提供更高的精确度和控制力。\n    *   **示例**：输入 `copilot \"create a bash script to check for uncommitted changes and push if clean\"`，Copilot CLI 将编写脚本、解释其功能，并在运行前请求确认。\n    *   **应用场景**：调试代码、管理环境、导航遗留代码库、处理复杂实现等，提高工作效率并节省时间。\n\n## 通过 MCP 扩展 Copilot CLI 的功能\n\nGitHub Copilot CLI 预配置了 GitHub MCP 服务器，允许用户连接自定义 MCP 服务器，为开发环境添加定制功能：\n\n*   将特定领域的工具和工作流直接集成到 CLI 体验中，以获得更快、更相关的结果。\n*   添加来自环境的上下文数据，以改进代码建议和命令执行。\n*   自定义自动化和命令，以适应团队独特的开发实践。\n\n## GitHub Copilot CLI 的工作原理\n\nCopilot CLI 在传统 CLI 工作流的基础上，加入了 AI 驱动的特性：\n\n*   **自然语言交互**：用户可以使用自然语言告诉 Copilot CLI 任务，它将解析并执行相应的命令。\n*   **支持**：同时支持斜杠命令和 MCP 集成以扩展功能。\n*   **两种使用模式**：\n    *   **交互模式 (默认)**：通过 `copilot` 命令启动会话，进行双向对话，逐步完善任务。\n    *   **编程模式**：通过 `-p` 或 `--prompt` 参数直接传递一次性请求，Copilot 会内联响应。\n*   **安全性**：在读取、修改或执行文件之前，Copilot CLI 始终会请求用户确认，确保用户对环境的控制权。\n    *   **例外情况**：如果用户选择“是，并记住此文件夹以供将来会话使用”或“是，并批准此工具在会话剩余时间内使用”，Copilot 将遵循这些指示。\n\n## 谁适合使用 GitHub Copilot CLI？\n\n*   喜欢直接在终端工作并希望获得 AI 辅助的用户。\n*   **带来的便利**：\n    *   自动化重复性任务，如搜索文档或编写样板命令。\n    *   通过询问 Copilot 解释命令或获取系统信息来学习新工具。\n    *   避免在 IDE、浏览器和命令行之间切换上下文，保持专注。\n\n## 入门套件：如何安装和使用 GitHub Copilot CLI\n\n### 第一步：安装 GitHub Copilot CLI\n\n1.  **先决条件**：\n    *   GitHub Copilot 订阅 (Copilot Pro, Pro+, Business, Enterprise)。\n    *   Node.js 22 或更高版本。\n    *   npm 10 或更高版本。\n    *   （如果通过组织获取 Copilot 访问权限，组织设置中必须启用 Copilot CLI 策略。）\n2.  **安装命令**：\n    ```bash\nnpm install -g @github/copilot\n    ```\n\n### 第二步：如何使用 GitHub Copilot CLI\n\n1.  在终端中，选择正在处理代码的文件夹。\n2.  输入 `copilot` 启动 Copilot CLI。\n3.  系统会提示确认是否信任该文件夹的内容。\n    *   **重要提示**：Copilot 可能会读取、修改和执行此文件夹及其子文件夹中的文件。\n    *   **选项**：\n        *   “是，继续”：仅当前会话信任。\n        *   “是，并记住此文件夹以供将来会话使用”：当前及未来会话都信任。\n        *   “否，退出 (Esc)”：结束会话。\n4.  如果未登录 GitHub，系统会提示使用 `/login` 命令进行身份验证。\n5.  在 CLI 中输入您的提示。\n6.  有时需要批准 Copilot 使用修改或执行文件的工具。\n    *   **选项**：\n        *   “是”：允许 Copilot 使用此工具一次。\n        *   “是，并批准此工具在会话剩余时间内使用”：允许 Copilot 在当前会话中完全使用此工具（注意安全隐患，例如 `rm` 命令）。\n        *   “否，并告诉 Copilot 如何改进”：结束当前操作，等待用户提供不同方法。\n\n### 第三步：GitHub Copilot CLI 用例、示例提示和工作流\n\n*   **GitHub Learn 视频教程亮点**：\n    *   **创建 GitHub Issue**：`Create an issue for adding GitHub Copilot instructions`\n    *   **创建 Copilot 自定义指令**：`Create a branch for GitHub Copilot custom instructions`\n    *   **创建拉取请求**：`Create a pull request with the changes we have made`\n    *   **使用 MCP 服务器列出开放的 Issue 和 PR**：`Use the MCP server to list all open issues and pull requests`\n    *   **通过 MCP 服务器查询 Microsoft Learn**：`Using the Microsoft Learn MCP server, tell me all the GitHub Copilot Microsoft Learn modules that exist`\n    *   **创建 CLI 别名**：`cpcli='copilot --allow-all-tools -p \"$@\"'`\n    *   **解释和修复脚本**：`cpcli \"Explain each of these scripts and offer improvements\"`\n*   **其他常见用例**：\n    *   **代码库维护**：请求脚本扫描和修复安全漏洞，升级依赖项。\n    *   **生成文档**：生成更适合初学者的文档。\n    *   **理解系统**：获取笔记本存储容量摘要，了解占用空间最多的文件夹。\n    *   **改进测试覆盖率**：创建 Jest 测试文件，生成覆盖率分析脚本。\n    *   **原型新项目**：从头开始构建概念验证应用程序，如使用 Next.js 和 Tailwind CSS 构建仪表板。\n    *   **设置环境**：提供 Python 虚拟环境设置命令，生成克隆和准备项目的脚本。\n    *   **查找正确命令**：获取 Git 命令建议（如撤销提交、压缩提交）。\n    *   **解释不熟悉的命令**：解释 Docker 或 Git 命令。\n\n## 展望\n\nCopilot CLI 目前处于公开预览阶段，欢迎用户通过 `/feedback` 分享使用体验，以帮助塑造未来的发展路线图。\n\n## 总结\n\nGitHub Copilot CLI 将代理式 AI 的强大功能直接带到终端，帮助开发者以更少的摩擦和更流畅的工作流来启动新项目或处理现有任务。",
+      "shortSummary": "GitHub Copilot CLI 将 AI 能力集成到命令行终端，使用户无需离开终端即可通过自然语言与 Copilot 交互。它能帮助用户生成、解释和执行命令，自动化重复任务，学习新工具，并避免上下文切换。通过安装 Node.js 和 npm，并订阅 Copilot，开发者可以直接在终端中提问、创建脚本、维护代码库、生成文档和设置环境，从而提高工作效率和流程顺畅度。",
+      "translated_title": "GitHub Copilot CLI 101：如何在命令行中使用 GitHub Copilot",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Curious about using GitHub Copilot in your terminal? Here's our guide to GitHub Copilot CLI, including a starter kit with the best prompts for a wide range of use cases.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot-cli-101-how-to-use-github-copilot-from-the-command-line/\">GitHub Copilot CLI 101: How to use GitHub Copilot from the command line</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "TypeScript在AI时代的崛起：首席架构师Anders Hejlsberg的见解 (原标题: TypeScript’s rise in the AI era: Insights from Lead Architect, Anders Hejlsberg)",
+      "link": "https://github.blog/developer-skills/programming-languages-and-frameworks/typescripts-rise-in-the-ai-era-insights-from-lead-architect-anders-hejlsberg/",
+      "pubDate": "Thu, 06 Nov 2025 17:00:00 +0000",
+      "isoDate": "2025-11-06T17:00:00.000Z",
+      "creator": "Aaron Winston",
+      "summary": "## TypeScript在AI时代的崛起：首席架构师Anders Hejlsberg的见解\n\n### 1. TypeScript的诞生与初衷\n*   **背景**：2012年，JavaScript已成为网络支柱，但在大型、多开发者代码库中扩展性差，导致数百万行松散类型代码难以维护。\n*   **目标**：Anders Hejlsberg创建TypeScript并非为了取代JavaScript，而是通过增加类型、工具和重构能力，解决JavaScript在大规模开发中的痛点，使其“理智”化。\n*   **初期预期**：Hejlsberg最初认为，如果能吸引25%的JavaScript社区关注，就算成功。然而，实际的成功远超预期。\n\n### 2. 2025年：GitHub上最常用的语言\n*   **里程碑**：根据2025年Octoverse报告，TypeScript首次超越JavaScript和Python，成为GitHub上使用最广泛的语言。\n*   **增长数据**：仅在2025年，就有超过一百万开发者使用TypeScript进行贡献，同比增长66%。\n*   **行业采纳**：目前，几乎所有现代前端框架（如React, Next.js, Angular, SvelteKit）都默认使用TypeScript进行项目初始化。\n*   **带来的好处**：更安全的代码库、更好的自动补全、更少的深夜调试。\n\n### 3. TypeScript是什么？\n*   **定义**：TypeScript是一个开源的、带类型的JavaScript超集，最终编译为纯JavaScript。\n*   **核心特性**：\n    *   添加静态类型检查、接口、泛型和现代语言特性。\n    *   在编译时擦除类型信息，确保输出的JavaScript代码能在任何地方运行。\n*   **开发者使用原因**：\n    *   在运行时前捕获类型错误。\n    *   改进IDE的自动补全和重构功能。\n    *   使大型代码库在团队间易于维护。\n    *   与各种框架和AI辅助工具无缝集成。\n*   **应用场景**：前端框架（React, Angular, Vue）、后端系统（Node.js, Deno）、SDK、设计系统，以及日益增长的需要强类型以确保生成代码安全的AI驱动代理框架。\n\n### 4. 编译器重写：性能与兼容性的平衡\n*   **初期问题**：TypeScript编译器最初是自托管的（用TypeScript编写），虽然可移植，但性能逐渐成为瓶颈。\n*   **解决方案**：团队决定放弃自托管，将编译器用Go语言重写。这一举措带来了10倍的性能提升（一半来自原生执行，一半来自共享内存并发）。\n*   **设计哲学**：新的Go编译器在功能上与旧编译器完全相同，甚至保留了其“怪癖”。这种在提升性能的同时保持行为兼容性的理念，是开发者信任TypeScript的关键。\n\n### 5. 开源的演进与AI效应\n*   **开源哲学**：Anders将开源视为“代码中捕获的演进”，一个通过自然选择不断发展的生态系统。\n*   **GitHub数据**：2025年，开发者提交了近10亿次提交（同比增长25%），其中11.2亿次提交到公共和开源仓库。TypeScript的12年历史仓库本身就是一个活生生的语言演进档案。\n*   **AI时代的影响**：\n    *   AI正在改变语言偏好，开发者倾向于选择能使AI辅助编码更可靠、更易维护的类型化语言。\n    *   AI生成代码的能力与它所“见过”的语言数据量成正比。TypeScript因其丰富的现有数据和静态类型系统，非常适合AI优先的工作流。\n    *   类型在人机协作编写代码的世界中，不再是繁文缛节，而是“真相检查器”，能防止AI“幻觉”，确保确定性结果。\n\n### 6. 从IDE到智能代理\n*   **工具演变**：大型语言模型的兴起正在重新定义“开发者工具”。IDE不再仅仅是开发者的环境，也成为智能代理的环境。\n*   **AI角色转变**：AI从最初的助手，正转变为执行实际工作，而人类则负责监督。AI不再需要传统的IDE，而是需要服务。这使得“模型上下文协议”（Model Context Protocol）的工作变得令人兴奋。\n*   **TypeScript的作用**：类型化语言为智能代理提供了必要的结构，使其能够安全地重构代码、回答语义查询，并以确定性方式理解代码库。\n\n### 7. 不断演进的语言\n*   **Anders Hejlsberg的贡献**：从Turbo Pascal到C#，再到TypeScript，Anders的工作始终致力于让复杂的软件更容易理解。\n*   **TypeScript的持续演进**：TypeScript不断变化，但其核心始终是帮助开发者清晰地表达意图。这种清晰性解释了为何2025年每秒都有新开发者加入GitHub，并且其中越来越多的人选择从TypeScript开始。\n*   **总结**：TypeScript的故事不仅关乎语言设计，更关乎演进。它从一个解决JavaScript扩展性问题的务实方案，发展成为开发者乃至AI共同编写代码的基础。",
+      "shortSummary": "TypeScript由Anders Hejlsberg创建，旨在解决JavaScript在大规模项目中的扩展性问题，现已成为GitHub上最常用的语言。2025年，其用户增长66%，超越JavaScript和Python。TypeScript的静态类型系统和工具链显著提升了代码质量和开发效率。在AI时代，其结构化特性使其成为AI辅助编程的理想选择，确保代码生成和重构的可靠性。Hejlsberg强调TypeScript的演进设计及其在简化复杂软件中的作用，使其成为人机协作开发的关键。",
+      "translated_title": "TypeScript在AI时代的崛起：首席架构师Anders Hejlsberg的见解",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>TypeScript just became the most-used language on GitHub. Here’s why, according to its creator.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/programming-languages-and-frameworks/typescripts-rise-in-the-ai-era-insights-from-lead-architect-anders-hejlsberg/\">TypeScript’s rise in the AI era: Insights from Lead Architect, Anders Hejlsberg</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "GitHub Copilot 教程：如何更快地构建、测试、审查和发布代码（附真实提示） (原标题: GitHub Copilot tutorial: How to build, test, review, and ship code faster (with real prompts))",
+      "link": "https://github.blog/ai-and-ml/github-copilot/a-developers-guide-to-writing-debugging-reviewing-and-shipping-code-faster-with-github-copilot/",
+      "pubDate": "Wed, 05 Nov 2025 17:00:00 +0000",
+      "isoDate": "2025-11-05T17:00:00.000Z",
+      "creator": "Aaron Winston",
+      "summary": "# GitHub Copilot 教程：如何更快地构建、测试、审查和发布代码\n\nGitHub Copilot 已从一个简单的自动补全工具发展成为一个功能全面的 AI 编码助手。借助 Agent HQ 和 Mission Control，它现在能够执行多步工作流、修复失败的测试、审查拉取请求并直接在 VS Code 或 GitHub 中发布代码。它正在改变软件的构建、审查、安全和发布方式。\n\n## Copilot 的新功能和改进\n\nCopilot 的底层运行机制基于针对推理、速度和代码理解进行优化的多个模型。它能理解项目更广阔的上下文，生成更准确的结果，并在编辑器、终端和 GitHub 之间自然切换。\n\n### 1. 更大的上下文和跨文件推理 (通过 Mission Control)\n早期版本的 Copilot 只能看到您正在输入的内容。现在，它能够阅读多个文件，从而更好地理解模块之间的意图和关系。\n*   **示例提示：** 在 Mission Control 中：“查找所有使用过时加密库的函数，并将其重构为新的 API。打开一个草稿 PR。”\n*   Copilot 可以追踪整个代码库中的模式，进行更新并解释更改。\n\n### 2. 可选择的模型\n现在可以根据需求选择模型：一种针对原型开发时的速度进行优化，另一种则针对复杂重构时的深度推理。\n\n### 3. 超越代码补全的工具套件\nCopilot 现在是一套为工作流的每个步骤而构建的工具：\n*   **Mission Control：** 运行多步任务、生成测试、打开拉取请求。\n*   **Agent 模式：** 定义结果，Copilot 确定最佳方法，根据需要寻求反馈，测试自己的解决方案，并实时优化工作。\n*   **Copilot CLI：** 直接从终端自动化和探索您的仓库。\n*   **编码代理：** 将常规修复或脚手架工作交给 Copilot。\n*   **代码审查：** 在合并前让 Copilot 突出显示有风险的差异或缺失的测试。\n*   **Scoped Agents：** 负责常规修复、重构、文档或测试生成。\n\n## 如何使用 GitHub Copilot（附示例）\n\n以下是 Copilot 各模式的实用操作项，附带代码片段和提示示例。\n\n### 1. 在 VS Code 中使用 Mission Control 和 Agent 模式更快地构建\n安装 Copilot 扩展后，在设置中启用 Agent 模式，并从侧边栏打开 Mission Control。通过选择工作流（测试、重构、文档）或运行自定义提示来开始。\n*   **提示模式：** `# 为 userSessionService 添加缓存以减少数据库命中`\n*   **在 Mission Control 中：** “为 userSessionService 添加 Redis 缓存层，生成命中/未命中测试，并打开一个草稿 PR。”\n*   Copilot 将创建新文件、更新服务、添加测试，并打开一个包含更改摘要的草稿拉取请求。\n*   **提示：** 编写解释“为什么”而不是仅仅“是什么”的注释。例如：`// 缓存 userId 的响应 30 秒，以减少每分钟超过 1000 次的数据库命中`。简短、具体的注释能让 Copilot 更好地工作。\n\n### 2. 通过 Copilot CLI 进入终端\nCopilot CLI 将相同的智能带到您的终端。\n*   **安装命令：** `npm install -g @github/copilot-cli copilot /login`\n*   **常用命令：**\n    *   `copilot explain .`：获取仓库的结构化摘要、依赖项、测试覆盖率和潜在问题。\n    *   `copilot fix tests`\n    *   `copilot setup project`\n    *   `copilot edit src/**/*.py`\n*   **示例：** 在 CI 运行失败后，使用 `copilot fix tests` 命令让 Copilot 定位问题、解释失败原因并提出修复方案供审查。\n\n### 3. 使用 Copilot 代码审查\nCopilot 现在可以直接在 GitHub 中审查拉取请求，无需插件。它能识别有风险的差异、缺失的测试覆盖率和潜在的错误。通过仓库设置启用 Copilot 代码审查。\n*   当创建拉取请求时，Copilot 可以评论：\n    *   缺失的测试覆盖率\n    *   潜在的错误/边缘情况\n    *   安全漏洞\n*   **示例提示：** 在拉取请求聊天中，尝试编写：“总结此差异中的潜在风险并建议缺失的测试覆盖率。”\n*   Copilot 将内联回复注释，您可以接受或忽略。它旨在帮助您更快地思考问题和概念。\n\n### 4. 使用 Copilot 编码代理设置异步任务\nCopilot 编码代理可以接收一个结构化问题，编写代码并打开一个草稿拉取请求——所有这些都是异步的。\n*   **示例问题：**\n    ```\n    ### 功能请求：用户会话的 CSV 导入\n    - 文件：import_user_sessions.py\n    - 解析包含 userId, timestamp, action 标题的 CSV\n    - 验证：action 必须在 {login, logout, timeout} 中\n    - 批处理大小：最多 10k 行\n    - 成功时：追加到会话表\n    - 包括：测试、文档、API 端点\n    ```\n*   将此问题分配给 Copilot。它将克隆仓库，实现功能，并打开一个草稿拉取请求供您审查。\n*   **编码代理最适合：**\n    *   重复性重构\n    *   样板或脚手架\n    *   文档和测试生成\n*   您始终在合并前进行审查，但 Copilot 加速了所有前期工作。\n\n## 最佳实践和防护措施\n\n*   **审查一切：** AI 编写代码；您批准它。在发布前始终检查逻辑、风格和文档。\n*   **提供上下文的提示：** 您的提示越好（说明原因、方式、约束），输出就越好。\n*   **使用小增量：** 对于 Agent 模式或 CLI 编辑，一次只处理一个模块。避免“一次性重写整个应用程序”。\n*   **让开发人员参与：** 特别是对于安全、架构和设计决策。\n*   **记录提示和决策：** 维护日志：“使用了提示 X，结果好/坏，进行了调整”。这有助于优化您的使用。\n*   **缓慢建立信任：** 首先将 Copilot 用于非关键路径（测试、重构），然后扩展到核心工作流。\n*   **记住上下文限制：** 尽管 Copilot 现在处理更多上下文，但极其庞大的单体仓库可能仍然会暴露出限制。\n\n## 为什么这很重要\n\n今年有超过 3600 万开发者加入了 GitHub，其中 80% 在第一周就使用了 Copilot。AI 驱动的编码不再是实验性的，它已成为工作的一部分。TypeScript 和 Python 等强类型语言在 GitHub 上占据主导地位，它们的结构使其成为 Copilot 的理想伙伴。强类型加上智能建议意味着更快的反馈循环和更少的回归。现在有了 Mission Control，所有功能都集中在一个地方。您不再需要五个 AI 工具、十个浏览器标签或一个单独的审查机器人。一切都在您已经构建软件的地方进行。\n\n## 总结与展望\n\n如果您一直在等待了解 Copilot 真正能做什么，那么 Mission Control 就是关键时刻。借助 GitHub Copilot——在编辑器中、在终端中、在您的审查中以及在团队的后台——您将获得一个工具包，旨在帮助您更快、更智能、更自主地完成实际工作。您决定架构。您编写测试（或者至少是您想编写的那些）。您合并拉取请求。Copilot 帮助处理样板、脚手架和常规任务，让您能够专注于真正重要的问题。本周选择您技术栈的一部分——测试、文档、重构——并通过 Mission Control 运行它。看看它在哪里节省了时间，然后逐步扩展。\n\n---\n**作者信息及相关资源**\n\n本文由 ![Aaron Winston](https://avatars.githubusercontent.com/u/87450290?v=4&s=200) Aaron Winston 撰写。Aaron 帮助领导 GitHub 的内容策略，专注于开发者需要了解的一切，以保持领先。\n\n探索更多来自 GitHub 的内容：\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**\n    掌握 GitHub 所需的一切，尽在一个地方。\n    [前往文档](https://docs.github.com/)\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**\n    在 GitHub 上构建未来，这里是任何人、任何地方构建任何东西的平台。\n    [开始构建](https://github.com/)\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**\n    了解使用 GitHub 构建的公司和工程团队。\n    [了解更多](https://github.blog/category/customer-stories/)\n*   ![The GitHub Podcast](https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg) **GitHub 播客**\n    收听 GitHub 播客，这是一个致力于 GitHub 开源开发者社区内外话题、趋势、故事和文化的节目。\n    [立即收听](https://github.com/github/the-github-podcast)",
+      "shortSummary": "GitHub Copilot已从自动补全工具升级为全能AI编码助手，通过Mission Control和Agent HQ提供多步工作流、测试修复、PR审查和代码发布功能。它能理解更大上下文、跨文件推理，并提供CLI、代码审查和异步编码代理等多种模式。Copilot旨在加速开发流程，处理重复性任务，让开发者专注于核心问题。它已成为现代开发不可或缺的一部分，尤其适用于强类型语言。",
+      "translated_title": "GitHub Copilot 教程：如何更快地构建、测试、审查和发布代码（附真实提示）",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/87450290?v=4&s=200",
+          "alt": "Aaron Winston",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>How GitHub Copilot works today—including mission control—and how to get the most out of it. Here’s what you need to know.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/a-developers-guide-to-writing-debugging-reviewing-and-shipping-code-faster-with-github-copilot/\">GitHub Copilot tutorial: How to build, test, review, and ship code faster (with real prompts)</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub Game Off 2025 主题公布 (原标题: GitHub Game Off 2025 theme announcement)",
       "link": "https://github.blog/company/github-game-off-2025-theme-announcement/",
       "pubDate": "Sat, 01 Nov 2025 20:37:00 +0000",
@@ -273,126 +343,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Find out about the latest custom models powering the completions experience in GitHub Copilot. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/the-road-to-better-completions-building-a-faster-smarter-github-copilot-with-a-new-custom-model/\">The road to better completions: Building a faster, smarter GitHub Copilot with a new custom model</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "从卡拉OK终端到AI简历：GitHub“热爱代码”挑战赛的获奖者 (原标题: From karaoke terminals to AI résumés: The winners of GitHub’s For the Love of Code challenge)",
-      "link": "https://github.blog/open-source/from-karaoke-terminals-to-ai-resumes-the-winners-of-githubs-for-the-love-of-code-challenge/",
-      "pubDate": "Wed, 22 Oct 2025 20:30:35 +0000",
-      "isoDate": "2025-10-22T20:30:35.000Z",
-      "creator": "Lee Reilly",
-      "summary": "GitHub举办了首届“热爱代码”挑战赛，旨在庆祝开发者为纯粹的乐趣而构建项目的精神。超过300名开发者参与，利用GitHub Copilot等工具，创造了涵盖硬件、终端、Web、AI、游戏等多个领域的奇妙作品。以下是六个类别中的获奖项目：\n\n### 🔘 按钮、蜂鸣与闪光灯 (Buttons, beeps & blinkenlights)\n\n*   **Plane Tracker** (@cpstroum)：一个DIY雷达，使用Adafruit Circuit Playground、蓝牙和ADS-B Exchange API，在桌面上实时显示附近航班数据。GitHub Copilot协助了Git操作和项目初期结构。\n    ![一个人手持连接到笔记本电脑的Adafruit TFT Gizmo显示屏。屏幕显示一个绿色的雷达界面，红色光点代表附近的飞机。背景中，VS Code中的Python代码和终端窗口显示通过蓝牙发送的模拟飞机数据。](https://github.blog/wp-content/uploads/2025/10/plane-tracker.jpg?resize=771%2C1024)\n*   **Cadrephoto** (@ozh)：一个基于树莓派和电子墨水的相框，通过电子邮件接收图片并自动更新显示，无需应用或复杂设置。GitHub Copilot帮助作者完成了他的第一个Python项目。\n    ![一个木制电子墨水相框显示《戴珍珠耳环的少女》的灰度版本。旁边的一部智能手机显示正在发送同一图片的电子邮件，一个红色箭头从手机指向相框，说明照片是如何远程更新的。](https://github.blog/wp-content/uploads/2025/10/cadrephoto.png?resize=1024%2C512)\n*   **BuildIn** (@SUNSET-Sejong-University, @lepetitprince99)：一个桌面交通灯，使用Arduino和GitHub API，通过红、黄、绿、蓝灯光直观显示仓库的构建状态。GitHub Copilot在代码调试和优化方面提供了帮助。\n    ![四张照片的拼贴画，展示了一个带有多个跳线和不同颜色（蓝色、绿色、黄色和红色）LED的Arduino面包板项目，在各种测试阶段亮起。](https://github.blog/wp-content/uploads/2025/10/buildin.png?resize=1024%2C1024)\n\n### 🖥️ 终端才华 (Terminal talent)\n\n*   **RestoHack** (@Critlist)：一个复活自1984年、启发了NetHack的Roguelike游戏，使用现代工具重建，忠实还原了原版体验。\n    ![一个黑色的终端窗口显示一个ASCII艺术的墓碑，上面写着“REST IN PEACE mjh 0 AU killed by a giant rat 2025”，来自一个复古的文本游戏。](https://github.blog/wp-content/uploads/2025/10/restohack.png?w=582&resize=582%2C422)\n*   **Jukebox CLI** (@FedeCarollo)：一个在终端中运行的彩色动画点唱机，用Rust和Ratatui构建，支持MP3播放、音符动画和可滚动的彩色播放列表。GitHub Copilot帮助作者探索了不熟悉的Rust库。\n    ![一个终端音乐播放器中的像素艺术点唱机界面。屏幕中央显示彩色像素图形，右侧是歌曲播放列表，底部是带有进度和音量条的播放控制。](https://github.blog/wp-content/uploads/2025/10/jukebox.png?resize=1024%2C466)\n*   **Tuneminal** (@heza-ru)：将终端变为卡拉OK舞台，提供滚动歌词、实时音频可视化和评分功能，让开发者在`git clone`时也能唱歌。\n    ![一个名为“Tuneminal”的终端卡拉OK界面。屏幕显示歌曲库“IRIS – Kenshi Yonezu”，当前分数和准确度，以及歌词和音频可视化器的占位符。](https://github.blog/wp-content/uploads/2025/10/tuneminal.png?resize=1024%2C521)\n\n### 🌐 万维网奇迹 (World wide wonders)\n\n*   **Netstalgia** (@heza-ru)：一个功能齐全的90年代Web模拟器，视觉上还原了拨号上网的体验，包含复古元素和一个“GitHub Star勒索软件”。\n    ![一个复古的1990年代风格网页，名为“Netsalgia.com”，设计成Windows 95桌面。页面上有彩色按钮、访客计数器、虚假广告和一个弹出窗口，要求用户为这个怀旧项目的GitHub仓库加星。](https://github.blog/wp-content/uploads/2025/10/netstalgia.png?resize=1024%2C640)\n*   **Bionic Reader** (@Awesome-XV)：通过加粗单词前几个字母来提高阅读速度的工具。GitHub Copilot协助了项目文档编写和初始代码库搭建。\n*   **The Git Roast Show** (@rawrnuck, @Anmol0201)：一个全栈Web应用，幽默地“吐槽”GitHub个人资料，生成个性化、带音效和动画的喜剧吐槽。GitHub Copilot帮助作者理解算法和处理重复性任务。\n    ![一张风格化的图片，描绘了一个穿着燕尾服戴墨镜的卡通GitHub Octocat角色手持麦克风。上方文字写着“The GitRoast Show”，一个对话气泡说“我们不在这里分叉”。背景是旋转的青色大理石纹理。](https://github.blog/wp-content/uploads/2025/10/the-git-roast-show.png?resize=1024%2C640)\n*   **Nightlio** (@shirsakm)：一个隐私优先的情绪追踪和日记应用，支持自托管，记录情绪、笔记，并分析模式。GitHub Copilot在重构、调色板更新和代码库范围的更改中提供了帮助。\n    ![一个深色主题的生产力应用Nightliio正在运行。动画突出显示情绪追踪图标、个人目标（如“睡前阅读”和“晨间冥想”），以及添加目标、查看历史和通过彩色动画条追踪进度的部分。](https://github.blog/wp-content/uploads/2025/10/nightlio.gif?resize=1024%2C484)\n\n### 🤖 变革的代理 (Agents of change)\n\n*   **Neosgenesis** (@answeryt)：一个元认知AI框架，教机器思考如何思考，通过五阶段循环和多个LLM进行决策。\n*   **MediVision Assistant** (@omkardongre)：一个AI医疗助手，通过语音、图像、视频帮助老年和残疾用户管理健康。GitHub Copilot协助生成了React组件、API模板和AI集成代码。\n*   **Quiviva** (@katawiecz)：一个交互式AI简历，将求职过程变为有趣的聊天冒险，可询问技能、项目，甚至解锁“极客模式”。\n    ![一个名为“An Interactive CV that Talks Back”的彩色网页界面。动画显示右侧有一个聊天机器人窗口，用户可以在其中向Kasia的AI简历提问。左侧解释该项目是AI、设计和讲故事的有趣结合，并列出了一些示例问题和一个下载PDF简历的按钮。](https://github.blog/wp-content/uploads/2025/10/quiviva.png?resize=1024%2C640)\n\n### 🕹️ 游戏时间 (Game on)\n\n*   **AI-Dventure** (@FedeCarollo)：一个用Rust和OpenAI模型构建的交互式文本冒险游戏，动态生成奇幻、恐怖、科幻或历史背景下的世界和故事。\n    ![一个文本冒险游戏的截图。](https://github.blog/wp-content/uploads/2025/10/ai-dventure.png?w=1009&resize=1009%2C672)\n*   **BeatBugging** (@sandra-aliaga, @Joshep-c, @RyanValdivia, @tniia)：将调试过程转化为节奏游戏，将系统日志转换为音乐节拍，让开发者在5x5网格上跟随节奏修复bug。GitHub Copilot帮助团队在遇到困难时找到下一步解决方案。\n    ![一个复古风格的终端界面，标题为“BEATBUGGING SYSTEM”，显示25%的进度条，模拟“音乐调试界面”的初始化，屏幕上显示音频频率、内存读数和ASCII符号。](https://github.blog/wp-content/uploads/2025/10/beatbugging.png?w=759&resize=759%2C437)\n*   **MuMind** (@FontesHabana)：一个基于Web的多人派对游戏，玩家尝试匹配多数人的答案来得分。\n\n### 🃏 包罗万象 (Everything but the kitchen sink)\n\n*   **GitFrag** (@chornonoh-vova)：使用经典排序算法（冒泡、合并、快速、计数排序）重组GitHub贡献图，并以动画形式可视化。GitHub Copilot帮助作者理解算法并添加细节。\n*   **Code Sensei** (@redhatsam09)：将VS Code会话变成禅意像素冒险，专注度决定游戏乐趣，长时间不活动会导致“Sensei”的8位死亡。\n*   **Reviewer Karma** (@master-wayne7)：一个奖励代码审查者良好反馈的系统，通过表情符号、评论和代码批评在排行榜上赚取积分。GitHub Copilot帮助编写高效的Go代码和处理重复性任务。\n    ![一个名为“评分系统”和“当前排名”的排行榜显示了审阅者如何通过进行代码审阅、使用积极表情符号和撰写建设性评论来获得积分。排名表列出了@alice以18分位居第一，其次是@bob、@carol、@dave和@eve。](https://github.blog/wp-content/uploads/2025/10/reviewer-karma.png?resize=1024%2C702)\n\n这些项目充分展示了当开发者为乐趣而构建时所能实现的创造力。所有类别获奖者都将获得12个月的GitHub Copilot Pro+订阅，进一步证明了创造力与代码（尤其是在Copilot辅助下）结合的强大潜力。",
-      "shortSummary": "GitHub举办了首届“热爱代码”挑战赛，鼓励开发者为乐趣而构建项目。超过300名开发者参与，利用GitHub Copilot等工具，在六个类别中创造了众多创新作品。获奖项目包括DIY雷达、电子墨水相框、复古游戏、终端卡拉OK、90年代Web模拟器、AI简历和调试节奏游戏等。这些作品展示了开发者如何将好奇心和创造力转化为独特而有趣的项目。所有类别冠军均获得12个月的GitHub Copilot Pro+。",
-      "translated_title": "从卡拉OK终端到AI简历：GitHub“热爱代码”挑战赛的获奖者",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/plane-tracker.jpg?resize=771%2C1024",
-          "alt": "A person holding an Adafruit TFT Gizmo display connected to a laptop. The screen shows a green radar interface with red blips representing nearby planes. In the background, Python code and a terminal window in VS Code display mock plane data being sent via Bluetooth.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/cadrephoto.png?resize=1024%2C512",
-          "alt": "A wooden e-ink photo frame displays a grayscale version of “Girl with a Pearl Earring.” A smartphone next to it shows an email being sent with the same image, and a red arrow points from the phone to the frame, illustrating how the photo is updated remotely.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/buildin.png?resize=1024%2C1024",
-          "alt": "A collage of four photos showing an Arduino breadboard project with multiple jumper wires and LEDs in different colors—blue, green, yellow, and red—lit up during various testing stages.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/restohack.png?w=582&resize=582%2C422",
-          "alt": "A black terminal window displaying ASCII art of a tombstone reading “REST IN PEACE mjh 0 AU killed by a giant rat 2025,” from a retro text-based game.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/jukebox.png?resize=1024%2C466",
-          "alt": "A pixel art jukebox interface in a terminal-based music player. The screen shows colorful pixel graphics in the center, a playlist of songs on the right, and playback controls with progress and volume bars at the bottom.",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/tuneminal.png?resize=1024%2C521",
-          "alt": "A terminal-based karaoke interface titled “Tuneminal.” The screen displays a song library with “IRIS – Kenshi Yonezu,” current score and accuracy, and placeholders for lyrics and an audio visualizer.",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/netstalgia.png?resize=1024%2C640",
-          "alt": "A retro 1990s-style web page called “Netsalgia.com” designed to look like a Windows 95 desktop. The page features colorful buttons, visitor counters, fake ads, and a pop-up asking users to star the GitHub repository for this nostalgic project.",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/the-git-roast-show.png?resize=1024%2C640",
-          "alt": "A stylized image featuring a cartoon GitHub Octocat character in a tuxedo and sunglasses holding a microphone. The text above reads “The GitRoast Show,” and a speech bubble says “we don’t fork around here.” The background has a swirling teal marble texture.",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>This summer, we invited devs to participate in our hackathon for joyful, ridiculous, and wildly creative projects. Here are the winners of For the Love of Code!</p>\n<p>The post <a href=\"https://github.blog/open-source/from-karaoke-terminals-to-ai-resumes-the-winners-of-githubs-for-the-love-of-code-challenge/\">From karaoke terminals to AI résumés: The winners of GitHub’s For the Love of Code challenge</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "顶尖安全研究员分享其漏洞赏金流程 (原标题: Top security researcher shares their bug bounty process)",
-      "link": "https://github.blog/security/top-security-researcher-shares-their-bug-bounty-process/",
-      "pubDate": "Wed, 22 Oct 2025 16:00:00 +0000",
-      "isoDate": "2025-10-22T16:00:00.000Z",
-      "creator": "Shilpa Kumari",
-      "summary": "GitHub在网络安全意识月期间，重点介绍了其漏洞赏金计划中的顶尖安全研究员André Storfjord Kristiansen (@dev-bio)。GitHub致力于维护其平台和软件生态系统的安全，尤其是在GitHub Copilot等AI驱动功能快速增长的背景下。与熟练的安全研究员合作对于识别和解决传统及新兴技术中的漏洞至关重要。\n\n**GitHub VIP 赏金计划**\nGitHub邀请持续展现专业知识和影响力的研究员加入其独家VIP赏金计划，提供：\n*   新产品和功能的早期测试权限。\n*   与GitHub漏洞赏金团队及工程师直接互动。\n*   独家Hacktocat周边商品。\n\n**研究员André Storfjord Kristiansen (@dev-bio) 的洞察**\n\n1.  **参与漏洞赏金的契机与动力：**\n    *   偶然在业余时间进行个人项目时接触，源于对系统行为（尤其是在处理复杂边缘情况时）的好奇心。\n    *   持续参与的动力在于，能够展示看似微小的问题如何产生实际影响，并将小问题升级为严重漏洞的过程令人满足。\n2.  **工作之外的生活：**\n    *   作为两个孩子的父亲，大部分时间陪伴家人，并感谢伴侣的支持。\n    *   在挪威享受大自然，通过徒步、露营和越野滑雪来放松和充电。\n3.  **学习与保持更新：**\n    *   通过阅读其他研究员的报告来了解漏洞趋势和解决问题的方法。\n    *   努力识别并深入研究需要进一步探索的领域，以保持领先。\n    *   专业领域是软件供应链安全，致力于研究漏洞并开发缓解新兴威胁的解决方案。\n4.  **工具与工作流程：**\n    *   在业余研究中，倾向于编写自己的工具，以获得更深入的理解并发现新的探索领域。\n    *   计划发布一个工具包，用于构建GitHub组织的离线综合图谱，并提供可扩展的查询套件，以快速发现常见的错误配置和隐藏的攻击路径。\n5.  **偏爱的漏洞类型：**\n    *   注入相关漏洞、微妙的逻辑缺陷和被忽视的假设。\n    *   对绕过严格内容安全策略（CSP）的新技术很感兴趣。\n    *   最喜欢将看似无害的发现串联起来，形成具有重大影响的漏洞，揭示底层设计缺陷。\n6.  **漏洞发现过程：**\n    *   最重要的发现多是偶然的，是好奇心驱使下的“跑题”结果，而非严格方法论的产物。\n    *   当发现异常时，会深入挖掘，层层剥离，直到完全理解，并详细记录每一步，绘制潜在攻击路径，构建清晰全面的漏洞图景。\n7.  **给新研究员的建议：**\n    *   不要满足于简单的发现，要深入挖掘并探索其潜在影响，理解全局后，看似无害的问题也可能产生重大影响。\n8.  **社交媒体：**\n    *   拥有一个页面，未来将发布有趣内容；活跃于LinkedIn。\n\n**致谢与号召**\nGitHub感谢@dev-bio的参与，并强调每次漏洞提交都有助于提升GitHub、其产品和客户的安全性。鼓励安全研究社区通过HackerOne报告发现的漏洞。\n\n**相关内容与作者信息**\n*   作者：Shilpa Kumari\n    ![Shilpa Kumari](https://avatars.githubusercontent.com/u/82128924?v=4&s=200)\n*   探索更多来自GitHub：\n    *   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs\n    *   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub\n    *   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories\n    *   ![GitHub Universe 2025](https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg) GitHub Universe 2025",
-      "shortSummary": "GitHub在网络安全意识月期间，重点介绍了顶尖漏洞赏金研究员André Storfjord Kristiansen (@dev-bio)。他因擅长发现注入相关漏洞和提供详细报告而闻名。André分享，其研究动力源于对系统行为的好奇心，并享受将小问题升级为重大漏洞的成就感。他通过阅读同行报告和编写自定义工具来保持领先，并建议其他研究员深入挖掘漏洞影响。GitHub鼓励社区继续通过HackerOne报告漏洞，共同提升平台安全性。",
-      "translated_title": "顶尖安全研究员分享其漏洞赏金流程",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/82128924?v=4&s=200",
-          "alt": "Shilpa Kumari",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>For this year’s Cybersecurity Awareness Month, the GitHub Bug Bounty team is excited to put the spotlight on a talented security researcher—André Storfjord Kristiansen!</p>\n<p>The post <a href=\"https://github.blog/security/top-security-researcher-shares-their-bug-bounty-process/\">Top security researcher shares their bug bounty process</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "如何使用AI更新社区健康文件 (原标题: How to update community health files with AI)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/how-to-update-community-health-files-with-ai/",
-      "pubDate": "Tue, 21 Oct 2025 16:00:00 +0000",
-      "isoDate": "2025-10-21T16:00:00.000Z",
-      "creator": "Alexandra Lietzke",
-      "summary": "# 使用AI更新社区健康文件\n\n本文探讨了如何利用人工智能（特别是GitHub Copilot）来更新和维护项目中的社区健康文件，从而让开发者能够更专注于核心代码开发。\n\n## 什么是GitHub Copilot？\nGitHub Copilot已从一个智能自动补全工具发展成为一个多模型、代理式助手。它能够理解整个代码库，执行跨文件重构，运行终端命令，甚至起草拉取请求。\n\n## 什么是社区健康文件及其重要性？\n社区健康文件是标准化文档，旨在为开源项目维护一个欢迎、有组织和协作的环境。它们传达期望、指导贡献者并支持代码库的整体健康。这些文件通常位于代码库的根目录或特殊的`.github`文件夹中。\n\n### 重要性：\n*   **项目投资：** 它们是新贡献者的第一接触点，标志着项目的成熟度和可维护性。\n*   **提升协作：** 提高透明度、一致性和协作，并为贡献者和维护者之间的互动设定基调。\n*   **避免问题：** 缺少或过时的文件可能导致贡献者提交格式不正确的拉取请求、提出模糊的问题，甚至引入安全漏洞，从而使维护者不堪重负。\n*   **AI的帮助：** GitHub Copilot等AI工具可以自动检测缺失或过时的文件，提出更新建议，甚至生成草稿，从而节省时间并减少人为错误。\n\n## 三种常见的社区健康文件\n以下是三种对构建欢迎社区至关重要的常见社区健康文件：\n\n### 1. README.md\n*   **作用：** 通常是访问者查看代码库时首先看到的文件，它介绍项目并解释其目的，以及如何开始使用。\n*   **内容：** 提供项目是什么、功能信息以及如何安装或使用等关键信息，帮助用户快速上手。\n\n### 2. 贡献者指南 (CONTRIBUTING.md)\n*   **作用：** 提供关于贡献者如何以及应该如何参与的指导方针，例如编码标准和拉取请求说明。\n*   **内容：** 告知用户如何高效贡献以及期望什么（例如，项目是否接受贡献），有助于设定标准和期望。\n\n### 3. 许可证 (LICENSE)\n*   **作用：** 规定了项目可以被使用、修改和分发的法律条款。简而言之，它告诉人们如何使用你的软件。\n*   **重要性：** 如果不添加许可证，其他人将无权使用、修改或分发你的代码。若要项目被认定为开源项目，应选择一个广泛使用的OSI（开放源代码促进会）批准的开源许可证。\n*   **资源：** 文章提供了选择和添加许可证的外部资源链接。\n\n## 其他流行的社区健康文件\n*   **ISSUE/PULL REQUEST TEMPLATES：** 标准化提交问题或拉取请求所需的格式和信息。\n*   **SECURITY：** 提供报告漏洞的说明，并概述项目的安全策略。\n*   **GOVERNANCE：** 解释项目如何管理，包括角色、职责和决策过程。\n*   **CODE OF CONDUCT：** 定义社区参与行为标准。\n*   **SUPPORT：** 分享他人如何获得项目帮助的具体指导。\n*   **FUNDING：** 在代码库中显示赞助按钮，以增加开源项目资金选项的可见性。\n\n## Copilot指令文件\n虽然不完全是社区健康文件，但Copilot指令文件是一个AI配置，它补充了健康文档。它使用其他社区健康文件作为上下文，精确地告诉GitHub Copilot如何与代码库交互，包括优先处理或避免什么。这个文件有助于为大型语言模型（LLM）提供基础，使其理解项目的结构和内容，从而在整个代码库中保持一致性。\n\n## 使用GitHub Copilot更新社区健康文件的入门套件\nGitHub提供了一个入门套件，其中包含提示词最佳实践、核对清单以及使用Copilot向代码库添加三个常见文件的分步教程。\n\n### 第一部分：提示词工程\nGitHub Copilot可以帮助你通过简单的提示词编写更清晰、更一致的社区健康文件。\n*   **注意事项：** 驱动GitHub Copilot的LLM是非确定性的，每次提示模型都可能收到不同的输出。因此，需要验证输出的准确性，特别是对于具有法律效力的许可证等敏感文件。\n*   **提示词最佳实践：**\n    *   编写清晰、结构化的提示词，例如：“为Node.js项目生成一个包含设置说明、编码标准和拉取请求指南的CONTRIBUTING.md文件。”\n    *   包含重要的上下文，如受众类型、项目目标和语气。\n    *   使用现有提示词文件来帮助标准化请求。\n\n### 第二部分：核对清单\n此核对清单有助于确保Copilot生成的内容准确、包容、安全并与项目目标保持一致。\n\n*   **开始前：** 审查现有文件，明确文件目标，熟悉组织政策。\n*   **有效提示Copilot：** 提示词具体且有上下文，包含示例或语气偏好。\n*   **安全与隐私：** 避免敏感信息，审查代码库可见性设置，了解Copilot隐私设置。SECURITY.md应包含漏洞报告联系方式、安全问题分类说明和负责任披露政策链接。\n*   **审查Copilot输出：** 内容是否反映项目价值观，检查是否存在虚构链接/名称/政策，外部资源是否准确最新。\n*   **测试与反馈：** 请队友或贡献者审查，测试说明是否有效，并乐于根据社区反馈进行迭代。\n\n### 第三部分：教程\n本教程演示了如何使用Copilot快速轻松地更新README.md、LICENSE文件和CONTRIBUTING.md。\n\n#### 1. 创建README.md\n*   **目的：** 提供项目清晰概览，帮助用户和贡献者快速理解其目的、设置和用法。\n*   **操作步骤：**\n    1.  在IDE中打开GitHub Copilot Chat（例如VS Code）。\n    2.  切换到代理模式以启用项目感知协助。\n    3.  选择首选模型（例如Claude）。\n    4.  确保项目在IDE中打开，以便Copilot读取其上下文。\n    5.  在聊天窗口中输入：“帮助我为我的项目编写一个README.md。确保它包含安装说明、项目概述并遵循标准的README实践。”\n    6.  审查生成的README.md，手动验证安装说明的准确性。\n    7.  如果满意，点击“Keep”保存文件并提交到代码库。\n\n#### 2. 添加许可证\n*   **目的：** 定义他人如何合法使用、修改和分发你的代码，保护双方权利，消除歧义，防止滥用。\n*   **操作步骤：**\n    1.  在IDE中打开GitHub Copilot Chat。\n    2.  决定要添加的许可证类型。\n    3.  输入提示词：“你能为我的项目添加[你想要的许可证]吗？”\n    4.  审查生成的LICENSE文件，确保准确性（特别是版权所有者名称和声明）。\n    5.  如果正确，点击“Keep”保存文件并提交到代码库。\n\n#### 3. 创建贡献者指南 (CONTRIBUTING.md)\n*   **目的：** 通过概述贡献标准、工作流程和期望来简化协作，降低摩擦和错误，鼓励一致、可扩展的贡献。\n*   **操作步骤：**\n    1.  在IDE中打开GitHub Copilot Chat。\n    2.  点击“+”图标开始新聊天。\n    3.  输入提示词：“创建一个遵循最佳实践的贡献者指南文件，并将其链接到README中。”\n    4.  Copilot将生成包含贡献指南、代码标准、拉取请求说明和问题报告流程的CONTRIBUTING.md文件。\n    5.  审查并编辑指南以符合团队工作流程。\n    6.  保存并提交CONTRIBUTING.md文件。\n    7.  更新README以包含贡献者指南的链接，例如：`## Contributing See CONTRIBUTING.md for guidelines.`\n\n## 总结\nGitHub Copilot不仅可以编写代码，还可以作为你的文档助手，帮助你更智能、更快、更顺畅地编写文档。它能优化社区健康文件，推广最佳实践，并将良好意图转化为出色的文档。最终结果是：更好的文档、更强大的社区和更快乐的维护者。",
-      "shortSummary": "GitHub Copilot等AI工具能帮助开发者高效更新社区健康文件，如README、贡献者指南和许可证。这些标准化文档对开源项目的健康、协作和吸引新贡献者至关重要。AI可自动检测、建议并生成文件草稿，节省时间并减少错误。通过清晰的提示词、核对清单和分步教程，开发者可利用Copilot快速创建和维护这些文件，从而提升项目文档质量，促进社区发展。",
-      "translated_title": "如何使用AI更新社区健康文件",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Have you ever thought about using AI to update community health files for your repositories? This blog shares actionable next steps for doing just that, including a starter kit with a checklist and tutorials on how to create three useful files.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-to-update-community-health-files-with-ai/\">How to update community health files with AI</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-11-05T04:33:33.844Z"
+  "lastUpdated": "2025-11-07T04:34:26.286Z"
 }

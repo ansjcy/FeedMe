@@ -5,6 +5,19 @@
   "link": "https://slack.engineering",
   "items": [
     {
+      "title": "构建更好的软件以更好地构建软件 (原标题: Build better software to build software better)",
+      "link": "https://slack.engineering/build-better-software-to-build-software-better/",
+      "pubDate": "Thu, 06 Nov 2025 16:00:47 +0000",
+      "isoDate": "2025-11-06T16:00:47.000Z",
+      "creator": "David Reed (he/his)",
+      "summary": "# 通过构建更好的软件来更好地构建软件：优化Quip和Slack Canvas的构建流程\n\n本文介绍了Quip和Slack Canvas团队如何通过结合现代高性能构建工具（Bazel）和经典软件工程原则，解决其后端构建耗时60分钟的重大问题，旨在帮助工程师更快地交付更好的代码。\n\n## 构建性能的核心原则\n\n文章首先从软件代码性能的角度出发，阐述了两个核心优化策略，并将其类比到构建系统：\n\n*   **减少工作量（缓存）**\n    *   **原理**：存储昂贵工作的成果，避免重复计算，以内存换时间。\n    *   **要求**：被缓存的函数或工作单元必须是**封闭的（hermetic）**（只使用明确给定的输入产生输出）和**幂等的（idempotent）**（相同输入总是产生相同输出）。\n    *   **粒度**：缓存键的粒度至关重要。将缓存应用于更小的、更精细的工作单元（例如，处理单张图片而非图片列表），可以显著提高缓存命中率和整体性能。\n*   **分担负载（并行化）**\n    *   **原理**：将工作分散到多个计算资源上并行执行，以计算资源换时间。\n    *   **要求**：\n        *   严格完整地定义并行工作的输入和输出。\n        *   能够跨边界（线程、进程、网络）移动输入和输出。\n        *   代码必须管理工作单元可能以任何顺序完成或失败的情况。\n    *   **粒度**：工作单元的粒度影响并行化的效率，需要根据具体问题权衡任务大小和数量。\n\n## 将原则应用于构建系统（Bazel）\n\nBazel构建系统将这些软件工程原则内化：\n\n*   **构建目标**：在Bazel中，构建目标形成一个有向无环图（DAG），每个目标包含：\n    *   作为依赖项或输入的源文件（`srcs`）。\n    *   作为构建步骤输出的文件（`outs`）。\n    *   将输入转换为输出的命令（`cmd`）。\n*   **封闭性和幂等性**：Bazel在沙盒中执行构建，确保命令只能访问声明的输入文件，从而实现封闭性。同时，要求构建步骤的命令是幂等和封闭的。\n*   **Bazel的优势**：\n    *   **自动缓存**：当目标的输入未改变时，自动使用缓存的输出。\n    *   **分布式构建**：将构建操作分发到多个CPU核心甚至构建集群中的多台机器。\n    *   **最小化工作**：只执行生成所需输出工件所需的最小工作量。\n*   **实现Bazel魔力的关键**：一个定义良好、由幂等、封闭且粒度适中的构建单元组成的依赖图。\n\n## Quip和Canvas面临的挑战\n\n尽管Bazel强大，但Quip和Canvas的实际构建系统远比简单示例复杂，存在以下关键缺陷，导致无法直接从Bazel获益：\n\n*   **依赖图混乱**：图未定义好，甚至包含循环依赖。\n*   **工作单元问题**：构建执行单元庞大，并非所有都幂等，且许多构建步骤会修改工作目录，导致封闭性难以实现。\n*   **缓存命中率低**：构建系统高度互联，导致缓存命中率为零。例如，一个“函数”有100个参数，其中2-3个总是变化，使得缓存失效。\n\n## 根本原因：缺乏关注点分离\n\n团队发现构建性能问题并非孤立的构建系统问题，而是应用程序中普遍缺乏关注点分离的症状：\n\n*   **代码与构建深度耦合**：后端代码和构建代码深度交织，应用内部框架协调构建步骤。\n*   **跨语言基础设施耦合**：Python业务逻辑处理Protobuf编译、Python和Cython工件，同时Python脚本还协调TypeScript和Less的转换。\n*   **关键依赖**：前端构建依赖于**整个已构建的Python后端**。这意味着不仅TypeScript的改变，**每一个Python的改变**都会导致前端的缓存键失效，从而触发昂贵的完整重建（平均每次构建增加35分钟，占总耗时一半以上）。\n*   **负面影响**：\n    *   工程师难以推断代码修改的影响范围，因为后端修改可能同时影响前端或构建系统。\n    *   由于构建耗时过长，无法在拉取请求（PR）级别提供早期预警。\n    *   缺乏健康信号和难以推理后果导致构建和主分支频繁中断。\n\n## 解决方案：彻底分离与重构\n\n为了解决这些问题，团队进行了以下工程工作：\n\n*   **彻底解耦**：明确切断前端与后端、Python与TypeScript、应用程序与构建系统之间的依赖。\n*   **Starlark重写**：将Python构建编排代码重写为Starlark（Bazel用于构建定义的语言），Starlark的约束特性有助于强制实现与应用代码的完全分离。\n*   **精简Python脚本**：重写现有Python脚本，移除所有非Python标准库的依赖，并移除并行化代码（由Bazel处理）。\n*   **验证工具**：开发了一个Rust工具，用于比较旧流程和新代码生成的工件，以确保行为一致性并指导逻辑修正，从而建立工程师对新系统的信心。\n\n通过这些努力，团队旨在实现一个定义良好、高效且可维护的构建系统，从而显著提升软件交付速度和质量。",
+      "shortSummary": "Quip和Slack Canvas团队通过引入Bazel并应用缓存与并行化等软件工程原则，解决了后端构建耗时60分钟的问题。核心挑战在于后端代码与构建系统深度耦合，前端构建依赖于整个Python后端，导致缓存命中率为零。团队通过彻底分离前端与后端、Python与TypeScript的依赖，将构建逻辑重写为Starlark，并开发验证工具，最终实现了构建流程的显著加速和稳定性提升。",
+      "translated_title": "构建更好的软件以更好地构建软件",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "We manage the build pipeline that delivers Quip and Slack Canvas’s backend. A year ago, we were chasing exciting ideas to help engineers ship better code, faster. But we had one huge problem: builds took 60 minutes. With a build that slow, the whole pipeline gets less agile, and feedback doesn’t come to engineers until&#8230;"
+    },
+    {
       "title": "改进我们的Chef基础设施：安全而不中断 (原标题: Advancing Our Chef Infrastructure: Safety Without Disruption)",
       "link": "https://slack.engineering/advancing-our-chef-infrastructure-safety-without-disruption/",
       "pubDate": "Thu, 23 Oct 2025 18:17:56 +0000",
@@ -239,20 +252,7 @@
       ],
       "contentSource": "完整文章",
       "content": "What are Slack Audit Logs? Like many Software as a Service (SaaS) offerings, Slack provides audit logs to Enterprise Grid customers that record when entities take an action on the platform. For example, when a user logs in, when a user updates their profile, when an app downloads a file, etc. The actual list of&#8230;"
-    },
-    {
-      "title": "Astra 动态分块：我们如何通过重新设计 Astra 的关键部分来节省成本 (原标题: Astra Dynamic Chunks: How We Saved by Redesigning a Key Part of Astra)",
-      "link": "https://slack.engineering/astra-dynamic-chunks-how-we-saved-by-redesigning-a-key-part-of-astra/",
-      "pubDate": "Mon, 18 Nov 2024 22:06:23 +0000",
-      "isoDate": "2024-11-18T22:06:23.000Z",
-      "creator": "George Luong",
-      "summary": "# Astra 动态分块：通过重新设计节省成本\n\n## 引言\n\nSlack 每天处理海量的日志数据，每秒超过 600 万条日志消息，相当于每秒超过 10 GB 的数据。这些数据都存储在 Astra 中，Astra 是 Slack 内部开发的开源日志搜索引擎。为了使数据可搜索，Astra 会按时间对数据进行分组，并将其分割成称为“分块”（chunks）的数据块。\n\n最初，Astra 的设计假设所有分块都是固定大小的。然而，这一假设导致了效率低下，表现为磁盘空间未被充分利用，并增加了基础设施的开销。为了降低 Astra 的运营成本，Slack 决定解决这个问题。\n\n## 固定大小分块的问题\n\n固定大小分块的最大问题在于并非所有分块都得到了充分利用，导致实际分块大小不一。尽管固定大小分块简化了代码，但它导致在缓存节点上分配了比实际需求更多的空间，造成了不必要的开销。\n\n*   **空间浪费：** 以前，每个缓存节点被分配固定数量的“槽位”，每个槽位预期容纳一个固定大小的分块（例如，一个 3TB 的缓存节点有 200 个槽位，每个槽位预期容纳 15GB 的分块）。如果实际分块小于预期大小（例如 10GB），就会有额外的空间（5GB）被分配但未被使用。在拥有数千个分块的集群中，这迅速导致了相当大比例的空间被分配但未被利用。\n*   **分配不足：** 另一个问题是，有些分块实际上比预设大小更大。这可能发生在 Astra 创建恢复任务以追赶旧数据时。恢复任务是基于落后的消息数量而不是数据大小来创建的。如果每条消息的平均大小超出预期，可能会导致创建超大分块，这比分块过小更糟，因为它意味着分配的空间不足。\n\n## 动态分块的设计\n\n为了构建动态分块，Slack 必须修改 Astra 的两个关键部分：集群管理器（Cluster Manager）和缓存（Cache）。\n\n### 重新设计缓存节点\n\n*   **原有流程：**\n    *   缓存节点上线后，会在 Zookeeper（集中协调存储）中公布其槽位数量。\n    *   Astra 管理器会为每个槽位分配一个分块。\n    *   缓存节点下载并提供该分块。\n    *   这种设计的好处是槽位是短暂的，当缓存节点下线时，其槽位会从 Zookeeper 中消失，管理器会重新分配这些槽位曾经持有的分块。\n*   **动态分块的挑战：** 引入动态分块后，缓存节点只能公布其容量，而无法预先知道将被分配多少个分块。这意味着无法再依赖槽位来提供上述好处。\n*   **解决方案：** 在 Zookeeper 中持久化两种新的数据类型：\n    *   **缓存节点分配（Cache Node Assignment）：** 分块 ID 到缓存节点的映射。\n    *   **缓存节点元数据（Cache Node Metadata）：** 包含容量、主机名等每个缓存节点的信息。\n*   **新流程：**\n    *   缓存节点上线后，公布其磁盘空间。\n    *   管理器获取每个缓存节点的磁盘空间信息，并利用“装箱算法”（bin packing）为每个缓存节点创建分配，以最小化使用的缓存节点数量。\n    *   缓存节点获取为其创建的分配，并下载其分块。\n\n### 重新设计管理器\n\n管理器被升级以利用新引入的两种数据类型：缓存节点分配和缓存节点元数据。\n\n*   **分块分配逻辑：** 决定哪个缓存节点应该分配哪个分块时，Slack 实现了“首次适应装箱算法”（first-fit bin packing）。然后，利用缓存节点元数据来判断特定分块是否能放入给定的缓存节点。\n*   **原有分配逻辑：** 获取槽位列表 -> 获取要分配的分块列表 -> 将两者打包并分配。\n*   **新分配逻辑：** 获取要分配的分块列表 -> 获取缓存节点列表 -> 对每个分块，执行首次适应装箱算法以确定应分配给哪个缓存节点 -> 持久化缓存节点到分块的映射。\n\n### 装箱算法（Bin Packing）\n\n重新设计管理器最核心的部分是实现首次适应装箱算法。这是一个众所周知的问题，旨在最小化用于容纳一定数量物品（分块）的箱子（缓存节点）数量。Slack 选择了首次适应装箱算法，因为它速度快且易于实现。\n\n*   **算法伪代码：**\n    ```\n    对于每个分块：\n        对于每个缓存节点：\n            如果当前分块能放入该缓存节点：\n                分配该分块\n            否则：\n                移至下一个缓存节点\n        如果所有缓存节点都已尝试且分块仍未分配：\n            创建一个新的缓存节点\n    ```\n    这有助于确保缓存节点尽可能紧密地打包，从而提高已分配空间的利用率。\n\n## 推广与部署\n\n这是一项对 Astra 代码库的重大修改，它触及了 Astra 的许多关键部分，几乎重写了所有处理分块分配和下载的逻辑。为了确保安全推广，Slack 采取了以下措施：\n\n*   **托管相同数据的两个副本：**\n    *   允许逐步部署到一个副本并监控其行为。\n    *   确保如果更改导致任何问题，仍有第二个副本能够提供数据。\n*   **将所有动态分块代码置于功能标志（feature flag）之后：**\n    *   允许代码尽早合并到主分支，因为它在未明确启用时不会运行。\n    *   允许逐步推广和测试更改，从较小的集群开始，在验证一切正常后逐步推广到更大的集群。\n\n## 结果\n\n这项改进带来了显著的成果：\n\n*   对于拥有许多过小分块的集群，所需的缓存节点数量减少了高达 50%。\n*   整体缓存节点成本降低了 20%，为 Astra 的运营带来了可观的成本节约。",
-      "shortSummary": "Slack 的 Astra 日志引擎最初使用固定大小的数据分块，导致磁盘空间浪费和成本增加。为解决此问题，他们重新设计了 Astra 的缓存节点和管理器，引入了动态分块。核心改进包括在 Zookeeper 中持久化新元数据，并采用“首次适应装箱算法”高效分配分块。通过双副本和功能标志谨慎推广后，Astra 成功将部分集群的缓存节点数量减少了高达 50%，整体缓存节点成本降低了 20%，实现了显著的成本节约。",
-      "translated_title": "Astra 动态分块：我们如何通过重新设计 Astra 的关键部分来节省成本",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Introduction Slack handles a lot of log data. In fact, we consume over 6 million log messages per second. That equates to over 10 GB of data per second! And it’s all stored using Astra, our in-house, open-source log search engine. To make this data searchable, Astra groups it by time and splits the data&#8230;"
     }
   ],
-  "lastUpdated": "2025-11-05T04:33:33.493Z"
+  "lastUpdated": "2025-11-07T04:33:16.886Z"
 }
