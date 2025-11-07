@@ -5,6 +5,19 @@
   "link": "https://techcrunch.com/",
   "items": [
     {
+      "title": "“Landfall”间谍软件利用零日漏洞攻击三星Galaxy手机 (原标题: ‘Landfall’ spyware abused zero-day to hack Samsung Galaxy phones)",
+      "link": "https://techcrunch.com/2025/11/07/landfall-spyware-abused-zero-day-to-hack-samsung-galaxy-phones/",
+      "pubDate": "Fri, 07 Nov 2025 11:03:00 +0000",
+      "isoDate": "2025-11-07T11:03:00.000Z",
+      "creator": "Zack Whittaker",
+      "summary": "## “Landfall”间谍软件利用零日漏洞攻击三星Galaxy手机\n\n安全研究人员发现了一种名为“Landfall”的Android间谍软件，该软件在一次持续近一年的黑客活动中，专门针对三星Galaxy手机。\n\n### 发现与漏洞利用\n\n*   **发现者**：Palo Alto Networks的Unit 42安全研究人员。\n*   **首次检测**：“Landfall”间谍软件于2024年7月首次被检测到。\n*   **攻击方式**：该间谍软件利用了三星Galaxy手机软件中一个当时未知的安全漏洞，即零日漏洞。\n*   **漏洞详情**：\n    *   该漏洞被追踪为CVE-2025-21042。\n    *   攻击者可以通过向受害者的手机发送恶意制作的图片来利用此漏洞，可能通过消息应用程序发送。\n    *   攻击可能不需要受害者的任何交互。\n*   **修补情况**：三星已于2025年4月修补了此安全漏洞。\n\n### 攻击目标与范围\n\n*   **攻击性质**：Unit 42表示，此次黑客活动是对特定个人的“精准攻击”，而非大规模传播的恶意软件，表明其可能由间谍活动驱动。\n*   **地理目标**：攻击可能主要针对中东地区的个人。\n    *   Unit 42发现，“Landfall”间谍软件样本于2024年至2025年初期间，从摩洛哥、伊朗、伊拉克和土耳其的用户上传到VirusTotal。\n    *   土耳其国家网络应急响应小组（USOM）曾将“Landfall”间谍软件连接的一个IP地址标记为恶意，支持了土耳其个人可能成为目标的理论。\n*   **受影响设备**：\n    *   间谍软件的源代码提到了五款特定的Galaxy手机型号作为目标，包括Galaxy S22、S23、S24以及部分Z系列型号。\n    *   研究人员指出，该漏洞可能也存在于其他Galaxy设备上，影响Android 13至15版本。\n\n### 间谍软件功能\n\n*   与许多政府间谍软件类似，“Landfall”具备广泛的设备监控能力。\n*   它可以访问受害者的各种数据，包括照片、消息、联系人和通话记录。\n*   还能窃听设备的麦克风，并追踪精确位置。\n\n### 归因与关联\n\n*   目前尚不清楚是哪个监控供应商开发了“Landfall”间谍软件，也无法确定有多少人成为攻击目标。\n*   Unit 42发现，“Landfall”间谍软件与一个名为“Stealth Falcon”的已知监控供应商共享部分数字基础设施。\n*   “Stealth Falcon”此前曾被发现参与针对阿联酋记者、活动家和异议人士的间谍软件攻击，最早可追溯到2012年。\n*   然而，研究人员指出，尽管与“Stealth Falcon”的关联引人关注，但不足以明确将此次攻击归因于某个特定的政府客户。",
+      "shortSummary": "Palo Alto Networks的Unit 42发现“Landfall”间谍软件利用三星Galaxy手机中的零日漏洞（CVE-2025-21042）进行攻击。该间谍软件通过恶意图片入侵，无需用户交互，主要针对中东地区的特定个人，包括Galaxy S22、S23、S24及Z系列型号。它能广泛监控设备数据、麦克风和位置。尽管与已知供应商Stealth Falcon共享基础设施，但具体归属仍不明确。三星已于2025年4月修补此漏洞。",
+      "translated_title": "“Landfall”间谍软件利用零日漏洞攻击三星Galaxy手机",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "A newly identified Android spyware targeted Galaxy devices for close to a year, including users in the Middle East, researchers exclusively tell TechCrunch. "
+    },
+    {
       "title": "特斯拉将量产版Roadster 2的发布推迟至愚人节 (原标题: Tesla delays reveal of production Roadster 2 to April Fools’ Day)",
       "link": "https://techcrunch.com/2025/11/06/tesla-delays-reveal-of-production-roadster-2-to-april-fools-day/",
       "pubDate": "Thu, 06 Nov 2025 23:57:12 +0000",
@@ -347,20 +360,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Mastodon's latest software version brings quote posts with added controls to all servers."
-    },
-    {
-      "title": "Peloton因受伤报告召回83.3万辆自行车 (原标题: Peloton recalls 833,000 bikes after reports of injuries)",
-      "link": "https://techcrunch.com/2025/11/06/peloton-recalls-833000-bikes-after-reports-of-injuries/",
-      "pubDate": "Thu, 06 Nov 2025 15:35:23 +0000",
-      "isoDate": "2025-11-06T15:35:23.000Z",
-      "creator": "Aisha Malik",
-      "summary": "## Peloton召回83.3万辆Bike+自行车\n\n根据美国消费品安全委员会（CPSC）的报告，Peloton正在召回约83.3万辆其原始的Bike+健身自行车。此次召回的原因是接到了关于部分座椅杆在使用过程中断裂的报告。\n\n*   **召回原因**：座椅杆在使用过程中断裂。\n*   **涉及数量**：约83.3万辆原始Bike+机器。\n*   **事故报告**：CPSC已收到3起与此问题相关的投诉，其中2起事故导致用户受伤。\n*   **受影响产品**：在2020年1月至2025年4月期间销售的Bike+设备。\n*   **CPSC警告**：CPSC敦促Peloton用户“立即停止使用被召回的健身自行车”。\n\n### Peloton的回应与解决方案\n\nPeloton全球硬件运营和产品安全高级副总裁Márcio Oliveira表示，公司产品的完整性和会员的福祉是他们的首要任务。Peloton正在采取以下措施：\n\n*   **提供替换件**：向所有受影响的Bike+用户提供重新设计的替换座椅杆。\n*   **呼吁用户**：鼓励用户尽快联系公司以获取替换座椅杆。\n\n### 公司背景与挑战\n\n此次召回是Peloton面临的最新挫折，该公司此前也曾有召回记录，并正努力扭转业务颓势：\n\n*   **历史召回**：这不是Peloton首次发布召回。2023年，该公司曾因安全问题召回约220万辆健身自行车。\n*   **近期困境**：去年，Peloton更换了首席执行官并裁员数百人。自2021年1月达到顶峰以来，Peloton的股价已下跌超过90%。\n*   **财务报告**：此次召回恰逢公司计划发布最新财报之际。\n\n### 重振增长的努力\n\n为了重振业务增长，Peloton正在积极采取措施，包括推出新产品和技术：\n\n*   **新领导层**：前苹果和福特高管Peter Stern于今年1月接任首席执行官，此次对AI的关注是其上任后的首次重大产品变革。\n*   **重大发布**：Peloton最近宣布了多年来最大的产品发布，全面更新了其硬件产品线。\n*   **Peloton IQ**：推出了一套基于AI和计算机视觉的系统，旨在为用户提供个性化指导。\n    *   **功能**：提供目标导向的指导、表现追踪、进度洞察和实时反馈，并根据用户的健身水平进行调整。\n*   **Cross Training Series**：推出了五款互联健身设备，包括Bike、Bike+、Tread、Tread+和Row+。\n    *   **共同特点**：每款设备都配备了先进的旋转屏幕，便于用户在有氧运动、力量训练、瑜伽、普拉提、芭蕾等多种训练模式之间轻松切换。",
-      "shortSummary": "Peloton因座椅杆断裂报告，召回约83.3万辆Bike+健身自行车，CPSC已收到3起投诉，其中2起导致用户受伤。公司将提供重新设计的替换座椅杆。此次召回是Peloton面临的最新挑战，此前公司曾有召回记录，股价大幅下跌。为重振业务，Peloton正推出包括AI驱动的Peloton IQ系统和全新硬件产品线在内的多项创新，以期扭转颓势。",
-      "translated_title": "Peloton因受伤报告召回83.3万辆自行车",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The Consumer Product Safety Commission is warning Peloton users to stop using the affected bikes immediately."
     }
   ],
-  "lastUpdated": "2025-11-07T06:32:38.089Z"
+  "lastUpdated": "2025-11-07T12:42:51.320Z"
 }
