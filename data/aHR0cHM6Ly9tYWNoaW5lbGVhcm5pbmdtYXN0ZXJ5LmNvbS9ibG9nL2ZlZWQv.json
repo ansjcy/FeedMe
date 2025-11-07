@@ -5,6 +5,52 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "用于计算模型特征重要性的10个Python单行代码 (原标题: 10 Python One-Liners for Calculating Model Feature Importance)",
+      "link": "https://machinelearningmastery.com/10-python-one-liners-for-calculating-model-feature-importance/",
+      "pubDate": "Tue, 04 Nov 2025 12:00:11 +0000",
+      "isoDate": "2025-11-04T12:00:11.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "# 用于计算模型特征重要性的10个Python单行代码\n\n![文章主图](https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-chugani-10-python-one-liners-calculating-model-feature-importance-feature-1024x683.png)\n\n理解机器学习模型是构建可信赖AI系统的关键。模型的理解性基于两个基本属性：可解释性（explainability）和可理解性（interpretability）。前者指我们能多好地描述模型的“内部结构”，后者指人类能多容易地理解输入特征与预测输出之间捕获的关系。特征重要性是连接这两者的强大桥梁。本文介绍了10个简单而有效的Python单行代码，从不同角度计算模型特征重要性，帮助用户理解模型行为及其做出特定预测的原因。\n\n## 1. 基于决策树模型的内置特征重要性\n决策树模型（如随机森林和XGBoost集成）允许通过`model.feature_importances_`属性轻松获取特征重要性权重列表。为了更具解释性，可以将特征名称与重要性值结合打印：\n```python\nprint(\"Feature importances:\", list(zip(iris.feature_names, model.feature_importances_)))\n```\n\n## 2. 线性模型中的系数\n线性模型（如线性回归和逻辑回归）通过学习到的系数揭示特征权重。可以通过`abs(model.coef_[0])`获取这些权重。\n\n## 3. 按重要性排序特征\n此单行代码可用于按重要性值降序排列特征，从而快速了解哪些特征对模型预测贡献最大：\n```python\nsorted_features = sorted(zip(features, importances), key=lambda x: x[1], reverse=True)\n```\n\n## 4. 模型无关的置换重要性\n置换重要性通过打乱某个特征的值并分析模型性能指标（如准确性或误差）的下降来衡量特征的重要性。Scikit-learn提供了模型无关的单行代码来计算这种性能下降：\n```python\nfrom sklearn.inspection import permutation_importance\nresult = permutation_importance(model, X, y).importances_mean\n```\n\n## 5. 交叉验证中平均准确性损失的置换\n这个高效的单行代码用于在交叉验证过程中测试置换，分析打乱每个特征如何影响K折交叉验证中的模型性能：\n```python\nimport numpy as np\nfrom sklearn.model_selection import cross_val_score\nimportances = [(cross_val_score(model, X.assign(**{f: np.random.permutation(X[f])}), y).mean()) for f in X.columns]\n```\n\n## 6. 使用Eli5进行置换重要性可视化\nEli5库（“Explain like I’m 5”）为特征重要性提供了清晰的、轻度交互式的HTML视图，特别适用于Jupyter Notebooks，并支持训练好的线性模型或树模型。\n```python\nimport eli5\neli5.show_weights(model, feature_names=features)\n```\n\n## 7. 全局SHAP特征重要性\nSHAP是一个流行且强大的库，用于深入解释模型特征重要性。它可以计算每个特征的平均绝对SHAP值（SHAP中的特征重要性指标），采用模型无关且理论基础扎实的方法。\n```python\nimport numpy as np\nimport shap\nshap_values = shap.TreeExplainer(model).shap_values(X)\nimportances = np.abs(shap_values).mean(0)\n```\n\n## 8. SHAP值汇总图\nSHAP汇总图不仅提供了特征的全局重要性，还显示了它们的方向，直观地帮助理解特征值如何推动预测向上或向下。\n\n![SHAP汇总图示例](https://machinelearningmastery.com/wp-content/uploads/2025/10/shap1.png)\n\n## 9. 使用SHAP进行单次预测解释\nSHAP的一个吸引人之处在于，它不仅能解释整体模型行为和特征重要性，还能解释特征如何具体影响单次预测。这意味着可以分解单个预测，解释模型为何产生特定输出。\n```python\nsnap.force_plot(shap.TreeExplainer(model).expected_value, shap_values[0], X.iloc[0])\n```\n\n## 10. 使用LIME进行模型无关特征重要性\nLIME是SHAP的替代库，用于生成局部代理解释。这两个库可以互补使用，更好地近似个体预测周围的特征重要性。文章提供了一个针对已训练逻辑回归模型的示例。\n```python\nfrom lime.lime_tabular import LimeTabularExplainer\nexp = LimeTabularExplainer(X.values, feature_names=features).explain_instance(X.iloc[0], model.predict_proba)\n```\n\n## 总结\n本文揭示了10个有效的Python单行代码，旨在帮助更好地理解、解释和解释机器学习模型，重点关注特征重要性。借助这些工具，理解模型内部工作原理不再是神秘的黑箱。",
+      "shortSummary": "本文介绍了10个Python单行代码，用于计算机器学习模型的特征重要性，旨在提升模型的可解释性和可理解性。这些方法涵盖了从决策树内置重要性、线性模型系数、置换重要性到SHAP和LIME等多种技术。通过这些工具，开发者可以更深入地理解模型行为，揭示特征对预测的贡献，从而将机器学习模型从“黑箱”转变为透明、可解释的系统。",
+      "translated_title": "用于计算模型特征重要性的10个Python单行代码",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-chugani-10-python-one-liners-calculating-model-feature-importance-feature-1024x683.png",
+          "alt": "10 Python One-Liners Calculating Model Feature Importance",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/shap1.png",
+          "alt": "shap-summary-plot",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Understanding machine learning models is a vital aspect of building trustworthy AI systems."
+    },
+    {
+      "title": "7种提示工程技巧，可减轻大型语言模型中的幻觉 (原标题: 7 Prompt Engineering Tricks to Mitigate Hallucinations in LLMs)",
+      "link": "https://machinelearningmastery.com/7-prompt-engineering-tricks-to-mitigate-hallucinations-in-llms/",
+      "pubDate": "Mon, 03 Nov 2025 11:00:03 +0000",
+      "isoDate": "2025-11-03T11:00:03.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "大型语言模型（LLMs）在文本推理、总结和创意生成方面表现出色，但仍易受“幻觉”问题的影响，即生成看似自信但实则虚假、无法验证甚至荒谬的信息。由于LLMs主要基于统计和概率模式生成文本，而非验证事实，这在关键领域可能导致严重负面影响。强大的提示工程，通过精心构建包含指令、约束和上下文的提示，是减轻幻觉的有效策略。本文介绍了七种提示工程技巧，通过示例说明如何提升独立LLM和检索增强生成（RAG）系统的性能，使其更不易产生幻觉。\n\n![7 Prompt Engineering Tricks to Mitigate Hallucinations in LLMs](https://machinelearningmastery.com/wp-content/uploads/2025/11/7-prompt-engineering-techniques-mitigate-hallucinations.png)\n\n### 减轻LLM幻觉的7种提示工程技巧\n\n1.  **鼓励回避和“我不知道”的回答（非RAG）**\n    *   **描述**：LLMs即使不确定也倾向于给出自信的答案，可能因此编造事实。明确允许模型回避或表示“我不知道”可以减轻这种虚假自信。\n    *   **示例提示**：“你是一个事实核查助手。如果你对答案不确定，请回复：‘我没有足够的信息来回答。’如果确定，请给出答案并简短说明理由。”\n\n2.  **结构化、思维链推理（非RAG）**\n    *   **描述**：要求模型进行分步推理，可以促进内部一致性，并弥补可能导致幻觉的逻辑漏洞。思维链（CoT）策略模仿算法，让模型按顺序解决任务。\n    *   **示例提示**：“请分步思考这个问题：1) 提供了哪些信息？2) 需要哪些假设？3) 逻辑上得出什么结论？”\n\n3.  **使用“根据…”进行事实依据（非RAG）**\n    *   **描述**：将所需答案与指定来源关联，以阻止基于臆造的幻觉，并鼓励基于事实的推理。此策略可与第一点结合使用。\n    *   **示例提示**：“根据世界卫生组织（WHO）2023年的报告，解释抗菌素耐药性的主要驱动因素。如果报告没有提供足够细节，请说‘我不知道’。”\n\n4.  **带有明确指令和上下文的RAG（RAG）**\n    *   **描述**：RAG系统允许模型访问经过验证的知识库。即使如此，幻觉风险依然存在，除非明确指示系统仅依赖检索到的文本。\n    *   **示例提示**：“仅使用X和Y中的信息，总结亚马逊盆地森林砍伐的主要原因及相关基础设施项目。如果文档未涵盖某一点，请说‘数据不足’。”\n\n5.  **输出约束和范围限制（非RAG）**\n    *   **描述**：严格控制生成输出的格式和长度，有助于减少推测性或离题的陈述（如无根据的断言、过度详细的推理链或编造的统计数据），从而防止结果偏离源材料。限制答案空间的“自由度”增加了返回可验证信息的可能性。\n    *   **示例提示**：“用不超过100字总结线粒体在人体细胞中的作用。如果不确定，请回复‘我不知道’。”\n\n6.  **基于RAG的纠正循环：验证链（RAG）**\n    *   **描述**：结合检索和自我检查，使模型能够对照外部证据来源（主要在RAG系统中）质疑和复核自己的主张。主要针对因“过度自信”引起的幻觉。\n    *   **示例提示**：“步骤1：生成问题‘柏林墙何时倒塌？’的初步答案。步骤2：从可信的历史数据库中检索并阅读相关段落。步骤3：将检索到的证据与你的答案进行比较。步骤4：如果存在差异，请纠正答案并引用检索到的来源。”\n\n7.  **领域特定提示、免责声明和安全防护（非RAG）**\n    *   **描述**：在高风险应用领域（如医学），必须指定受限的领域边界并要求引用来源，以降低可能导致负面后果的推测性主张的风险。\n    *   **示例提示**：“你是一名认证医疗信息助手。使用2024年前发表的同行评审研究或官方指南，解释成人中度持续性哮喘的一线治疗方案。如果你无法引用此类指南，请回复：‘我无法提供建议；请咨询医疗专业人员。’”\n\n这些技巧提供了多功能模板，可用于各种场景，有助于减少LLM和RAG系统中常见的幻觉问题。",
+      "shortSummary": "大型语言模型（LLMs）易产生幻觉，即生成虚假或无法验证的信息。本文介绍了7种提示工程技巧来减轻此问题。这些技巧包括：鼓励模型回避不确定答案、采用分步思维链推理、通过“根据…”引用来源、在RAG系统中明确指令仅依赖检索信息、限制输出格式和长度、利用RAG进行自我验证循环，以及在高风险领域使用特定提示和免责声明。这些方法旨在提高LLM响应的准确性和可靠性。",
+      "translated_title": "7种提示工程技巧，可减轻大型语言模型中的幻觉",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/7-prompt-engineering-techniques-mitigate-hallucinations.png",
+          "alt": "7 Prompt Engineering Tricks to Mitigate Hallucinations in LLMs",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Large language models (LLMs) exhibit outstanding abilities to reason over, summarize, and creatively generate text."
+    },
+    {
       "title": "2026年助你获得理想工作的7个机器学习项目 (原标题: 7 Machine Learning Projects to Land Your Dream Job in 2026)",
       "link": "https://machinelearningmastery.com/7-machine-learning-projects-to-land-your-dream-job-in-2026/",
       "pubDate": "Thu, 30 Oct 2025 16:47:53 +0000",
@@ -229,89 +275,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Building AI agents that work in production requires more than powerful models."
-    },
-    {
-      "title": "2026年：如何让你的AI工程职业生涯经久不衰 (原标题: Future-Proofing Your AI Engineering Career in 2026)",
-      "link": "https://machinelearningmastery.com/future-proofing-your-ai-engineering-career-in-2026/",
-      "pubDate": "Mon, 20 Oct 2025 11:00:38 +0000",
-      "isoDate": "2025-10-20T11:00:38.000Z",
-      "creator": "Nahla Davies",
-      "summary": "# 2026年：如何让你的AI工程职业生涯经久不衰\n\n## 引言\n人工智能工程已从一个未来主义的利基领域转变为全球最受欢迎的技术职业之一。然而，行业创新步伐极快，自动化甚至开始影响其创造者。本文旨在探讨如何通过深化核心基础、拥抱系统级自动化以及与开源和不断演变的政策保持一致，来确保AI工程师的职业生涯面向未来。\n\n![2026年：如何让你的AI工程职业生涯经久不衰](https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-future-proof-ai-engineering-career-2026.png)\n\n## 核心策略\n\n1.  **掌握他人忽视的基础知识**\n    *   所有新兴AI趋势（如生成式智能体、多模态Transformer、合成数据管道）都建立在相同的基本原理之上。\n    *   优先学习数学基础（线性代数、优化、概率论、信息论），而非急于掌握框架（如PyTorch、TensorFlow）。\n    *   具备推导损失函数、理解收敛行为和推理数据分布的能力，是长期技术韧性的支柱。\n    *   对理论的深入理解能带来更强的适应性和通用性，例如诊断模型训练崩溃或梯度不稳定性。\n\n2.  **驾驭自动化而非对抗**\n    *   自动化工具（AutoML平台、代码生成模型、自动化数据标注）对AI工程师构成直接威胁。\n    *   关键在于管理和扩展自动化，而非与之对抗。\n    *   掌握微调自动化工具或将其集成到更大系统的能力。\n    *   理解人类直觉在哪些方面仍优于机器（例如，提示策略而非简单的提示工程）。\n    *   核心技能是“元工程”：构建基础设施，确保自动化安全、高效、合乎道德地运行。\n\n3.  **培养跨学科的流畅性**\n    *   未来的AI工程更注重系统集成而非孤立的模型性能。\n    *   雇主重视能将技术系统转化为商业、设计和伦理语境的工程师。\n    *   能够与数据隐私律师、用户体验研究员和DevOps工程师有效沟通。\n    *   弥合技术鸿沟，例如优化推理延迟并向非技术团队解释公平性指标。\n    *   从系统层面思考，关注系统如何交互、扩展和演变。\n\n4.  **学会利用开源生态系统**\n    *   开源是AI进步的核心驱动力，战略意义日益增强。\n    *   积极参与、贡献或领导开源项目能迅速建立信誉和知名度。\n    *   通过贡献代码、构建轻量级工具或以新颖方式实验预训练模型来保持创新前沿。\n    *   理解如何评估和组合开源组件（例如，将向量数据库与LLM API结合）。\n\n5.  **理解AI基础设施，而非仅仅模型**\n    *   数据摄取、GPU优化、分布式训练和模型服务等基础设施已成为生产级AI中最具挑战性的部分。\n    *   掌握端到端系统知识，能够管理整个工作流程。\n    *   熟悉云原生MLOps（Python）、容器化（Docker、Kubernetes）和框架（MLflow、Kubeflow）至关重要。\n    *   具备将模型从原型扩展到创收系统的能力。\n    *   未来的AI团队需要融合研究洞察和部署专业知识的混合型人才。\n\n6.  **适应伦理、法律和社会变革**\n    *   AI的未来将受政策影响（如欧盟AI法案、美国数据透明度框架）。\n    *   将合规性知识纳入AI工程师的工具包。\n    *   在模型中嵌入公平性、问责制和可解释性将成为强制要求。\n    *   伦理不仅是避免法律问题，更是改进系统的设计约束，建立信任。\n    *   能够将抽象原则转化为可衡量、可执行的保障措施。\n    *   预测自动化对社会产生的连锁反应，使工作更具防御性和吸引力。\n\n## 结论\n2026年的AI工程师不能仅凭技术技能生存。那些能够将扎实的基础知识与跨学科直觉、系统级理解和伦理远见相结合的人将脱颖而出。工具会变，API会消亡，新架构会主导，但适应能力永不过时。最大的优势不是掌握现有技术，而是为尚未出现的事物做好准备。",
-      "shortSummary": "为确保2026年AI工程职业生涯经久不衰，工程师需深化数学与系统基础，通过元工程驾驭自动化，培养跨学科沟通能力，积极利用开源生态系统，并深入理解AI基础设施。同时，适应伦理、法律及社会政策变化至关重要。成功的关键在于持续适应、具备系统级思维，并将技术深度与广阔的背景知识相结合，为未来创新做好准备。",
-      "translated_title": "2026年：如何让你的AI工程职业生涯经久不衰",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-future-proof-ai-engineering-career-2026.png",
-          "alt": "Future-Proofing Your AI Engineering Career in 2026",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "AI engineering has shifted from a futuristic niche to one of the most in-demand tech careers on the planet."
-    },
-    {
-      "title": "革新MLOps：增强型BigQuery ML UI实现无缝模型创建与管理 (原标题: Revolutionizing MLOps: Enhanced BigQuery ML UI for Seamless Model Creation and Management)",
-      "link": "https://machinelearningmastery.com/revolutionizing-mlops-enhanced-bigquery-ml-ui-for-seamless-model-creation-and-management/",
-      "pubDate": "Fri, 17 Oct 2025 18:00:44 +0000",
-      "isoDate": "2025-10-17T18:00:44.000Z",
-      "creator": "Nivedita Kumari",
-      "summary": "# 革新MLOps：增强型BigQuery ML UI实现无缝模型创建与管理\n\n本文介绍了增强型BigQuery ML (BQML) 用户界面如何直接在BigQuery控制台中简化端到端的模型创建、管理和预测流程。\n\n## 主要改进与功能\n\n*   **简化模型创建流程**：通过引导式、可保存的SQL流程，极大地简化了模型创建。用户可以直接在模型创建流程中保存SQL查询（需指定区域）。\n*   **可重现的数据准备**：在SQL中准备可重现的训练、评估和预测数据集划分。\n*   **ML.PREDICT预测功能**：利用ML.PREDICT函数运行预测并理解其输出。\n\n## 实际操作示例：使用美国人口普查数据创建逻辑回归模型\n\n本文通过一个具体示例，演示了如何使用增强型BQML UI快速创建一个逻辑回归模型，以预测美国人口普查数据中的收入等级（$<=50K 或 $>50K）。\n\n### 1. 数据探索\n\n*   通过查询`bigquery-public-data.ml_datasets.census_adult_income`数据集，可以查看`age`、`workclass`、`marital_status`、`education_num`、`occupation`、`hours_per_week`、`income_bracket`和`functional_weight`等列。\n*   `income_bracket`列包含“<=50K”或“>50K”两个值。\n*   `functional_weight`列的值与`income_bracket`的值无关。\n\n![Revolutionizing MLOps: Enhanced BigQuery ML UI for Seamless Model Creation and Management](https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-nivedita-bigquery-ml-ui.png)\n*图：增强型BigQuery ML UI概览*\n\n### 2. 数据准备\n\n*   为了模型训练，需要准备一个样本数据集，并将其划分为训练、评估和预测集。\n*   通过从`functional_weight`列派生一个新列，将80%的数据用于训练，剩余的20%用于评估和预测。\n*   创建了一个名为`census.input_data`的视图，其中包含一个`dataframe`列，用于标识数据属于“training”、“evaluation”还是“prediction”集。\n\n![Streamlined Model Creation Flow](https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-1.png)\n*图：数据探索结果示例*\n\n### 3. 在BigQuery UI中创建ML模型\n\n1.  **启动模型创建**：从BigQuery主屏幕点击“ML Model”开始。\n    ![Creating the ML Model in BigQuery UI](https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-2.png)\n    *图：BigQuery UI中创建ML模型的入口*\n2.  **选择数据集和模型名称**：在“Create new ML model”页面，选择`census`数据集，并将模型命名为`logistic_reg`。\n    ![Creating the ML Model in BigQuery UI](https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-3.png)\n    *图：选择数据集和命名模型*\n3.  **选择创建方法和建模目标**：在“Creation method and Modeling Objective”页面，选择“Train a model in BigQuery”，建模目标为“Classification”，模型类型选择“Logistic Regression”。\n    ![Creating the ML Model in BigQuery UI](https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-4.png)\n    *图：选择建模目标和模型类型*\n4.  **设置训练数据**：选择`census`作为数据集，`input_data`作为表/视图。\n    ![Creating the ML Model in BigQuery UI](https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-5.png)\n    *图：确认训练数据设置*\n5.  **指定输入标签并创建模型**：选择`income_bracket`作为`input_label_cols`，然后点击“Create model”。\n6.  **查看模型创建结果**：模型创建完成后，“Query results”部分将显示“Job information”、“Results”、“Execution details”和“Execution graph”四个标签页。其中，“Execution details”和“Execution graph”提供了关于模型创建作业的详细信息，包括损失和学习率等。\n    ![Creating the ML Model in BigQuery UI](https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-6.png)\n    *图：模型创建后的查询结果界面*\n    ![Creating the ML Model in BigQuery UI](https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-7.png)\n    *图：模型执行详情示例*\n\n### 4. 使用模型进行预测\n\n*   在BigQuery Studio查询编辑器中使用`ML.PREDICT`函数进行预测。\n*   该函数接受训练好的模型（例如`census.logistic_reg`）和`input_data`视图中`dataframe`列值为“prediction”的行作为输入。\n*   查询将生成`income_bracket`的预测结果，包括预测的收入等级、预测概率以及原始输入数据。\n\n![Creating the ML Model in BigQuery UI](https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-8.png)\n*图：使用ML.PREDICT进行预测*\n\n## 总结\n\n这些UI增强功能为BigQuery ML用户提供了更直观、高效的体验，从模型创建到部署和监控，全面简化了MLOps工作流程。鼓励用户探索新的BigQuery ML UI，体验其带来的流畅MLOps工作流，并查阅BQML UI用户指南以了解更多功能。",
-      "shortSummary": "增强型BigQuery ML UI革新了MLOps，通过直接在BigQuery控制台中简化端到端的模型创建、管理和预测流程。它提供引导式、可保存的SQL流来创建模型，简化了训练、评估和预测的数据准备，并通过ML.PREDICT实现轻松模型部署。这些改进显著提升了BigQuery ML工作流的效率和用户体验，使MLOps更加无缝和直观。",
-      "translated_title": "革新MLOps：增强型BigQuery ML UI实现无缝模型创建与管理",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-nivedita-bigquery-ml-ui.png",
-          "alt": "Revolutionizing MLOps: Enhanced BigQuery ML UI for Seamless Model Creation and Management",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-1.png",
-          "alt": "Streamlined Model Creation Flow",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-2.png",
-          "alt": "Creating the ML Model in BigQuery UI",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-3.png",
-          "alt": "Creating the ML Model in BigQuery UI",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-4.png",
-          "alt": "Creating the ML Model in BigQuery UI",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-5.png",
-          "alt": "Creating the ML Model in BigQuery UI",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-6.png",
-          "alt": "Creating the ML Model in BigQuery UI",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/nivedita-bigquery-ml-image-7.png",
-          "alt": "Creating the ML Model in BigQuery UI",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Exciting news for BigQuery ML (BQML) users."
     }
   ],
-  "lastUpdated": "2025-11-06T09:29:43.877Z"
+  "lastUpdated": "2025-11-07T09:28:31.494Z"
 }
