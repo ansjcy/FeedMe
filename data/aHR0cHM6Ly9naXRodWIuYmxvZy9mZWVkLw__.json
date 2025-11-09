@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "9.86亿次代码推送揭示了2025年的开发者工作流程 (原标题: What 986 million code pushes say about the developer workflow in 2025)",
+      "link": "https://github.blog/news-insights/octoverse/what-986-million-code-pushes-say-about-the-developer-workflow-in-2025/",
+      "pubDate": "Fri, 07 Nov 2025 16:00:00 +0000",
+      "isoDate": "2025-11-07T16:00:00.000Z",
+      "creator": "Cassidy Williams",
+      "summary": "# 2025年开发者工作流程的变革：9.86亿次代码推送的启示\n\n文章指出，当今软件开发速度显著加快，这种变化不仅体现在编码速度上，更在于代码编写、审查和发布方式的整体转变。根据Octoverse 2025报告，去年开发者每分钟创建超过230个仓库，并进行了9.86亿次提交，这表明开发者团队正以更快的速度前进，并因此改变了其工作流程。\n\n## 迭代成为默认状态\n\n这种加速并非短期现象，而是迭代方式的长期转变。过去每季度发布大型版本的模式正在迅速消失。开发者现在持续进行推送，而不是等到“完成”才发布。更小、更频繁的提交已成为常态，这使得代码审查更轻松，也降低了风险。小而频繁的更改更容易调试，也更容易回滚。这种新的工作周期正在改变团队对质量、沟通乃至招聘的看法。\n\n## 发布方式的演变\n\n由于迭代方式的改变，发布方式也随之演变，具体表现为：\n\n*   **更多特性开关（Feature Flags）**：特性开关已成为安全发布未完成工作的核心工具。团队可以利用它们将“可能”的功能推送到生产环境进行观察，并在出现问题时立即关闭，无需等待所有边缘情况处理完毕。\n*   **CI/CD全面运行**：每次代码推送都会触发一系列自动化事件，包括测试、构建、制品生成和安全扫描。如果通过，代码将自动部署。开发者期望管道自动运行，手动部署变得越来越罕见。\n*   **更小、更集中的拉取请求（Pull Requests）**：拉取请求不再是冗长的“小说”，而是更短、可读性强且目的单一的。这使得审查更轻松、更快速，减少了认知负担。\n*   **测试驱动发展**：去年，开发者在GitHub Actions上运行测试花费了115亿分钟（增长35%）。在高度自动化的背景下，单元测试、集成测试和端到端测试变得越来越必要，以适应新的开发速度。\n\n## 团队沟通方式的转变\n\n随着开发者工作流程的改变，围绕开发的沟通方式也应随之调整：\n\n*   **站会更短或异步进行**：状态更新应存在于问题跟踪系统和代码所在之处，而非会议中。\n*   **“因拉取请求未审查而受阻”不再可接受**。\n*   **招聘侧重于能够快速交付并清晰沟通的人才**。\n\n## 展望未来\n\n展望2026年及以后，尽管“AI疲劳”可能导致一些工具被淘汰，但新的标准和工具将作为我们不断变化的成功指标的“基线”而出现。规范和代码将更加紧密地结合（Markdown-to-code工作流程将持续增长），这意味着团队间更多的沟通和更全面的文档。持续和协作的发布将继续成为必要趋势。\n\n---\n\n**关于作者**\n\n![Cassidy Williams](https://avatars.githubusercontent.com/u/1454517?v=4&s=200) Cassidy Williams 是 GitHub 的开发者倡导高级总监。她热衷于构建软件、为初创公司提供咨询，并教导开发者如何更好地构建。\n\n**相关资源**\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**：掌握 GitHub 所需的一切。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**：在 GitHub 上构建未来。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**：了解使用 GitHub 进行构建的公司和工程团队。\n*   ![The GitHub Podcast](https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg) **GitHub 播客**：收听 GitHub 播客，了解开源开发者社区的趋势、故事和文化。",
+      "shortSummary": "2025年开发者工作流程正经历深刻变革，9.86亿次代码推送表明迭代已成常态。软件开发速度加快，体现在更小、更频繁的提交、广泛使用的特性开关、全面的CI/CD自动化以及专注的拉取请求。测试在其中扮演关键角色。这种转变要求团队沟通方式随之调整，招聘更注重快速交付和清晰沟通的人才。未来，规范与代码将更紧密结合，持续协作发布将成为新常态。",
+      "translated_title": "9.86亿次代码推送揭示了2025年的开发者工作流程",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/1454517?v=4&s=200",
+          "alt": "Cassidy Williams",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "<p>Nearly a billion commits later, the way we ship code has changed for good. Here’s what the 2025 Octoverse data says about how devs really work now.</p>\n<p>The post <a href=\"https://github.blog/news-insights/octoverse/what-986-million-code-pushes-say-about-the-developer-workflow-in-2025/\">What 986 million code pushes say about the developer workflow in 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub Copilot CLI 101：如何在命令行中使用 GitHub Copilot (原标题: GitHub Copilot CLI 101: How to use GitHub Copilot from the command line)",
       "link": "https://github.blog/ai-and-ml/github-copilot-cli-101-how-to-use-github-copilot-from-the-command-line/",
       "pubDate": "Thu, 06 Nov 2025 20:30:00 +0000",
@@ -281,69 +325,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Learn how to bring structure and security to your AI ecosystem with the GitHub MCP Registry, the single source of truth for managing and governing MCP servers.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/how-to-find-install-and-manage-mcp-servers-with-the-github-mcp-registry/\">How to find, install, and manage MCP servers with the GitHub MCP Registry</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "通往更优补全之路：通过新的自定义模型构建更快、更智能的 GitHub Copilot (原标题: The road to better completions: Building a faster, smarter GitHub Copilot with a new custom model)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/the-road-to-better-completions-building-a-faster-smarter-github-copilot-with-a-new-custom-model/",
-      "pubDate": "Thu, 23 Oct 2025 18:31:12 +0000",
-      "isoDate": "2025-10-23T18:31:12.000Z",
-      "creator": "Shengyu Fu",
-      "summary": "# 通往更优补全之路：通过新的自定义模型构建更快、更智能的 GitHub Copilot\n\nGitHub Copilot 的代码补全功能是其最广泛使用的特性，每天帮助数百万开发者保持流畅的开发体验。GitHub 团队通过持续迭代自定义模型，显著提升了补全体验。\n\n## 关键改进与影响\n\n最新的更新带来了显著的性能提升：\n*   **接受和保留字符**：增加20%，意味着更多建议内容被最终采纳，减少了后续编辑。\n*   **接受率**：提高12%，反映了建议的即时实用性更高。\n*   **吞吐量**：提升3倍，系统能同时处理更多请求。\n*   **延迟**：降低35%，使Copilot感觉更快，保持编码流程不中断。\n\n这些改进现在已应用于所有编辑器和环境中的 GitHub Copilot。\n\n## 为什么这些改进很重要\n\n最初的 Copilot 专注于最大化接受率，但这可能导致大量简单、简短的建议，不完全符合开发者需求。团队根据反馈调整了优化目标，现在也关注接受和保留字符、代码流畅性等指标，以提供更高质量的体验。\n\n## 自定义模型的评估方法\n\nCopilot 模型通过结合离线、预生产和生产评估的信号进行评估，以确保在真实开发者工作流中提供更好的质量。\n\n### 1. 离线评估\n\n*   **基于执行的基准测试**：针对内部和公共代码库进行测试，涵盖所有主要语言，模拟真实任务，测量构建和测试通过率，强调功能正确性。\n\n    ![Python代码编辑器截图，显示一个名为resolve_file的函数，其中包含一个部分令牌补全错误：模型生成了“dataet”而不是“dataset”。](https://github.blog/wp-content/uploads/2025/10/partial-token-completion-error.png?resize=1024%2C447)\n\n*   **LLM-judge 评分**：使用独立的LLM对补全结果进行评分，评估以下三个维度：\n    *   **质量**：语法有效性、避免重复/重叠、格式和风格一致性。\n    *   **相关性**：专注于相关代码，避免幻觉和过度。\n    *   **实用性**：减少手动工作，避免过时或废弃的API。\n\n### 2. 预生产评估：定性内部测试\n\n与内部开发者和合作伙伴合作，在真实工作流中并排测试模型，收集关于可读性、信任度和“品味”的结构化反馈。与语言专家合作，通过语言特定评估提升补全质量。\n\n### 3. 生产评估：A/B 测试\n\n通过衡量接受和保留字符、接受率、补全显示率、首次令牌时间、延迟等指标来评估改进。只有当在真实开发者工作负载下显示出统计学上显著的改进时，才会发布更新。\n\n## 新 Copilot 补全模型的训练过程\n\n### 中训练 (Mid-training)\n\n在微调之前，团队通过“中训练”构建了一个代码特定的基础模型。这涉及使用一个精选、去重、包含近1000万个代码库和600多种编程语言的现代、地道、公开和内部代码语料库。此步骤确保模型能够利用现代API、新语言语法和最新API版本。随后，通过监督微调和强化学习，结合超越下一令牌预测的目标（如跨度填充和文档字符串/函数对），使模型学习结构、命名和意图，从而变得代码流畅、风格一致且上下文感知。\n\n### 监督微调 (Supervised fine-tuning)\n\n通用聊天模型在自然语言生成代码方面表现良好，但在“中间填充”（FIM）代码补全方面表现不佳。聊天模型常出现光标错位插入、光标前代码重复和光标后代码覆盖等问题。团队通过合成微调，训练模型专门用于补全，使其表现得像一个优秀的FIM引擎，从而改进了：\n*   **前缀/后缀感知**：在不破坏后缀的情况下，实现令牌间准确插入、行中续写、整行补全和多行代码块补全。\n*   **格式保真度**：尊重本地风格（缩进、导入、文档字符串），避免前缀重复。\n\n    ![图表显示了两个AI模型在HumanEval填充基准测试中的表现。其中包括GitHub的自定义模型Copilot Completions和OpenAI的GPT-4o-mini。评估结果显示，Copilot Completions模型在单行、多行、随机跨度和随机跨度轻量测试中均表现优异。](https://github.blog/wp-content/uploads/2025/10/HumanEvalInfilling_1200x630.png?resize=1024%2C538)\n\n### 强化学习 (Reinforcement learning)\n\n最后，团队使用自定义强化学习算法，通过奖励和惩罚机制，使模型内化在真实开发者场景中代码建议的有用性，主要关注三个方面：\n*   **质量**：语法有效、可编译且遵循项目风格的代码。\n*   **相关性**：符合任务、尊重周围上下文和文件意图的建议。\n*   **实用性**：减少手动工作并偏好现代API的建议。\n\n这些方法共同创造了在光标处正确、相关且真正有用的补全，而非冗长或表面上的帮助。\n\n## 经验总结\n\n*   **奖励需谨慎**：早期强化学习版本过度优化了长补全，导致“奖励作弊”式地添加过多注释。通过引入注释护栏，确保补全简洁并专注于推进任务。\n*   **指标至关重要**：过度关注单一指标（如接受率）可能导致表面上良好但开发者体验不佳的结果。因此，监控多个具有实际影响的指标至关重要。\n*   **为真实世界使用而训练**：将合成微调数据与真实世界使用情况对齐，并相应调整训练，以识别并消除问题模式，改善实际结果。\n\n## 未来展望\n\nGitHub 将继续推动 Copilot 补全功能的边界，包括：\n*   扩展到特定领域（如游戏引擎、金融、ERP）。\n*   完善奖励函数，以实现构建/测试成功、语义有用性（在不冗余的情况下推进用户意图的编辑）和对最新、地道库和模式的API现代化偏好。\n*   在所有开发者环境中提供更快、更经济、更高质量的补全。\n\n欢迎在 VS Code 中体验更快、更智能的代码补全。\n\n## 致谢\n\n感谢开发者社区的持续反馈，以及 GitHub 和 Microsoft 的研究人员、工程师、产品经理、设计师和 Copilot 产品与工程团队的贡献。",
-      "shortSummary": "GitHub Copilot 通过新的自定义模型显著提升了代码补全体验，实现了接受和保留字符增加20%、接受率提高12%、吞吐量提升3倍以及延迟降低35%。模型训练过程包括代码特定基础模型的“中训练”、针对中间填充（FIM）补全的监督微调和强化学习，以确保功能正确性、开发者偏好和实际使用场景。评估通过离线、预生产和生产测试进行。未来将扩展到特定领域并进一步优化奖励函数，以提供更快、更智能、更高质量的补全。",
-      "translated_title": "通往更优补全之路：通过新的自定义模型构建更快、更智能的 GitHub Copilot",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/partial-token-completion-error.png?resize=1024%2C447",
-          "alt": "Screenshot of a Python code editor showing a function named resolve_file inside a file called dataset_utilities.py. The function takes two string arguments, dataset and filename, and returns a string. The purpose, according to the docstring, is to resolve a file from a dataset and assert that only one file is found. The code uses os.path and glob to find files. There’s a highlighted line path = os.path.join(dat... with an error under dat, suggesting a variable name typo (dat instead of dataset). Several red underlines indicate syntax or reference errors in the code.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/HumanEvalInfilling_1200x630.png?resize=1024%2C538",
-          "alt": "A chart showing HumanEval Infilling Benchmarks for two different AI models. These include a custom model from GitHub named Copilot Completions and OpenAI's GPT-4o-mini. The evaluations show superior performance across single line, multi line, random span, and random span light tests for the Copilot Completions model. ",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/23369389?v=4&s=200",
-          "alt": "Shengyu Fu",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/12915670?v=4&s=200",
-          "alt": "John Mogensen",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/04/Universe24-North_Star.svg",
-          "alt": "GitHub Universe 2025",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Find out about the latest custom models powering the completions experience in GitHub Copilot. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/the-road-to-better-completions-building-a-faster-smarter-github-copilot-with-a-new-custom-model/\">The road to better completions: Building a faster, smarter GitHub Copilot with a new custom model</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-11-07T04:34:26.286Z"
+  "lastUpdated": "2025-11-09T04:32:41.595Z"
 }
