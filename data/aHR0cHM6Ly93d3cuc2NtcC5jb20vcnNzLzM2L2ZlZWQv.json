@@ -5,6 +5,23 @@
   "link": "https://www.scmp.com/rss/36/feed",
   "items": [
     {
+      "title": "注意力机制重构：中国AI初创公司如何重塑模型记忆方式 (原标题: Attention deficit reorder: how China’s AI start-ups are rewiring the way models remember)",
+      "link": "https://www.scmp.com/tech/tech-trends/article/3332507/attention-deficit-reorder-how-chinas-ai-start-ups-are-rewiring-way-models-remember?utm_source=rss_feed",
+      "pubDate": "Wed, 12 Nov 2025 14:00:15 +0000",
+      "isoDate": "2025-11-12T14:00:15.000Z",
+      "creator": "Vincent Chow",
+      "summary": "### 中国AI初创公司重塑模型记忆方式\n\n面对先进芯片获取受限的挑战，中国人工智能开发者正将重点放在解决大型语言模型（LLM）核心的算法瓶颈——“注意力”机制上。他们的目标是通过更高效的架构而非更强大的硬件，在与西方竞争对手的较量中取得优势。\n\n#### 核心问题：注意力机制的计算成本\n\n*   **全注意力机制的局限性：** 大多数LLM采用的“全注意力”机制需要将每个新数据token与所有先前的token进行比较。随着token数量的增加，这一过程的计算需求呈指数级增长。\n*   **“注意力预算”瓶颈：** AI专家已将LLM有限的“注意力预算”识别为开发强大AI代理的关键瓶颈之一。\n\n#### 解决方案：混合线性注意力系统\n\n*   **创新方向：** Moonshot AI和DeepSeek等初创公司正在探索混合形式的“注意力”机制，以期在有限的计算资源下，保持与全球领导者的同步。\n*   **线性注意力：** 中国开发者正在研究混合“线性注意力”系统。这种系统仅与部分token进行比较，从而显著降低了计算成本。\n*   **具体案例——Moonshot AI的Kimi Linear：**\n    *   于10月底发布。\n    *   引入了混合的“Kimi Delta Attention”（KDA）技术。\n    *   KDA结合了全注意力层和线性注意力层，旨在优化效率。\n\n#### 战略目标\n\n*   **资源优化：** 通过改进算法架构，有效利用有限的计算资源。\n*   **技术竞争：** 在硬件受限的情况下，通过软件和算法创新，与全球AI领导者保持竞争力。",
+      "shortSummary": "面对先进芯片获取受限，中国AI初创公司正专注于优化大型语言模型（LLM）的“注意力”机制。他们通过开发混合“线性注意力”系统（如Moonshot AI的Kimi Linear），旨在降低计算成本，提高算法效率。这一策略旨在通过架构创新而非依赖强大硬件，克服技术瓶颈，在全球AI竞争中保持领先地位。",
+      "translated_title": "注意力机制重构：中国AI初创公司如何重塑模型记忆方式",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "As access to advanced chips narrows, Chinese AI developers are focusing on fixing an algorithmic bottleneck at the heart of large language models (LLMs) – hoping that more efficient architecture, not more powerful hardware, will help them steal a march on their Western rivals.\nBy experimenting with hybrid forms of “attention” – the mechanism that allows LLMs to process and recall information – start-ups such as Moonshot AI and DeepSeek aim to stretch limited computing resources, while keeping...",
+      "enclosure": {
+        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/11/12/a8f2a356-a3ce-4c5d-b8f6-3ec70643b739_95139460.jpg",
+        "type": "image/jpeg"
+      }
+    },
+    {
       "title": "科技巨头重金押注AI眼镜，蚂蚁集团推出虹膜认证 (原标题: Big Tech firms bet big on AI glasses, as Ant offers iris authentication)",
       "link": "https://www.scmp.com/tech/tech-trends/article/3332516/big-tech-firms-double-down-ai-glasses-ant-offers-iris-authentication-payments?utm_source=rss_feed",
       "pubDate": "Wed, 12 Nov 2025 12:00:16 +0000",
@@ -396,31 +413,7 @@
         "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/11/11/3d4a45c3-e1cf-49c9-b440-307d51436a6b_85ab73ef.jpg",
         "type": "image/jpeg"
       }
-    },
-    {
-      "title": "中国月之暗面AI新模型为何引发‘DeepSeek时刻’的讨论 (原标题: Why new model of China’s Moonshot AI stirs ‘DeepSeek moment’ debate)",
-      "link": "https://www.scmp.com/tech/article/3332238/why-new-model-chinas-moonshot-ai-stirs-deepseek-moment-debate?utm_source=rss_feed",
-      "pubDate": "Tue, 11 Nov 2025 01:00:16 +0000",
-      "isoDate": "2025-11-11T01:00:16.000Z",
-      "creator": "Ben Jiang",
-      "summary": "# 中国月之暗面AI新模型引发“DeepSeek时刻”讨论\n\n## 核心突破与性能超越\n*   中国人工智能初创公司月之暗面（Moonshot AI）开发了一款名为Kimi K2 Thinking的新推理模型。\n*   该模型在多项评估推理、编码和智能体能力的基准测试中，表现超越了OpenAI的GPT-5和Anthropic的Claude Sonnet 4.5，创造了新纪录。\n*   这一成就再次引发了关于“DeepSeek时刻”以及美国AI霸主地位轨迹的激烈讨论。\n\n## 公司背景与模型影响力\n*   月之暗面是一家总部位于北京的初创公司，估值达33亿美元，并获得了阿里巴巴集团和腾讯控股等中国科技巨头的支持。\n*   Kimi K2 Thinking是Kimi K2模型的一个变体，作为一款开源模型发布，展现了“大卫战胜歌利亚”的故事。\n*   该模型在开发者社区中广受欢迎：\n    *   截至周一，它是Hugging Face上最受开发者欢迎的模型。\n    *   其在X（原Twitter）上的发布帖子吸引了450万次浏览。\n\n## 惊人的训练成本\n*   CNBC报道称，Kimi K2 Thinking的训练成本仅为460万美元，这一消息进一步提升了模型的关注度。\n*   月之暗面公司未对此成本数据发表评论。\n*   即使不考虑成本因素，该模型也给AI社区留下了深刻印象。\n\n## “DeepSeek时刻”的再现\n*   Hugging Face联合创始人Thomas Wolf在X上评论称，Kimi K2 Thinking是又一个开源模型超越闭源模型的案例。\n*   Wolf提出了“这是另一个DeepSeek时刻吗？”的疑问。\n*   “DeepSeek时刻”指的是今年早些时候杭州DeepSeek AI公司推出的R1推理模型，该模型以低成本高效能的特点，动摇了人们对美国AI绝对霸主地位的认知。\n*   Wolf进一步猜测，我们是否应该期待这种突破“每隔几个月”就会出现一次。\n\n## 中国AI模型训练成本趋势\n*   根据一位分析师的说法，中国AI模型的训练成本正在经历“断崖式下降”。\n*   ![中国AI模型训练成本正在经历“断崖式下降”。图片来源：Shutterstock](https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/11/10/6e33ba4b-418c-4d06-b6d0-026af12cf51c_3466fe1e.jpg)",
-      "shortSummary": "中国月之暗面AI公司推出的开源推理模型Kimi K2 Thinking，在多项基准测试中超越了OpenAI的GPT-5和Anthropic的Claude Sonnet 4.5。该模型据报道训练成本仅460万美元，引发了关于“DeepSeek时刻”的讨论，即低成本、高性能AI的崛起是否会挑战美国在AI领域的绝对优势，并预示着此类突破将更加频繁地出现。月之暗面估值33亿美元，由阿里巴巴和腾讯等巨头支持。",
-      "translated_title": "中国月之暗面AI新模型为何引发‘DeepSeek时刻’的讨论",
-      "images": [
-        {
-          "url": "https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1024,format=auto/sites/default/files/d8/images/canvas/2025/11/10/6e33ba4b-418c-4d06-b6d0-026af12cf51c_3466fe1e.jpg",
-          "alt": "Training costs of Chinese AI models are seeing a “cliff-like drop”, according to an analyst. Photo: Shutterstock",
-          "title": "Training costs of Chinese AI models are seeing a “cliff-like drop”, according to an analyst. Photo: Shutterstock",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "A new reasoning model developed by a Chinese artificial intelligence start-up – with its performance exceeding OpenAI’s GPT-5 and Anthropic’s Claude Sonnet 4.5 in a number of metrics – has fanned fresh debate about another DeepSeek moment and the trajectory of America’s AI supremacy.\nBeijing-based Moonshot AI, a start-up valued at US$3.3 billion and backed by Chinese tech giants like Alibaba Group Holding and Tencent Holdings, has presented another David-vs-Goliath story after creating an...",
-      "enclosure": {
-        "url": "https://cdn.i-scmp.com/sites/default/files/styles/1280x720/public/d8/images/canvas/2025/11/10/4c6ea7e7-d4d0-4859-86bc-a3b8f6ec487f_252e0b75.jpg",
-        "type": "image/jpeg"
-      }
     }
   ],
-  "lastUpdated": "2025-11-12T13:33:49.221Z"
+  "lastUpdated": "2025-11-12T19:17:10.329Z"
 }
