@@ -5,6 +5,214 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "用于训练语言模型的数据集 (原标题: Datasets for Training a Language Model)",
+      "link": "https://machinelearningmastery.com/datasets-for-training-a-language-model/",
+      "pubDate": "Wed, 12 Nov 2025 17:39:42 +0000",
+      "isoDate": "2025-11-12T17:39:42.000Z",
+      "creator": "Adrian Tam",
+      "summary": "## 用于训练语言模型的数据集\n\n本文探讨了用于训练语言模型的数据集，以及如何从公共存储库获取这些数据集。\n\n### 什么是语言模型？\n语言模型是一种数学模型，它将人类语言描述为其词汇上的概率分布。为了训练深度学习网络来建模语言，需要识别词汇并学习其概率分布。这需要一个数据集作为模型学习的基础。\n\n![图片 1](https://machinelearningmastery.com/wp-content/uploads/2025/11/dan-v-S5x5rrsDixk-unsplash-scaled.jpg)\n\n### 良好数据集的特征\n一个好的语言模型应该学习正确的语言用法，避免偏见和错误。与编程语言不同，人类语言缺乏正式的语法和句法，并且不断演变。因此，模型必须从数据集而非规则中学习。构建语言建模数据集具有挑战性，需要满足以下条件：\n\n*   **规模大且多样化**：足以代表语言的细微差别。\n*   **高质量**：呈现正确的语言用法。\n*   **经过清理**：理想情况下，应手动编辑和清理，以去除噪声，如错别字、语法错误以及符号或HTML标签等非语言内容。\n\n从头开始创建此类数据集成本高昂，但有几个高质量的免费数据集可用。\n\n### 常用数据集\n\n以下是一些用于训练语言模型的常见数据集：\n\n*   **Common Crawl**：\n    *   一个庞大、持续更新的9.5 PB以上的数据集，内容多样。\n    *   被GPT-3、Llama和T5等领先模型使用。\n    *   由于来源于网络，包含低质量、重复内容以及偏见和冒犯性材料，需要严格的清理和过滤。\n*   **C4 (Colossal Clean Crawled Corpus)**：\n    *   一个750GB的从网络抓取的数据集。\n    *   与Common Crawl不同，该数据集经过预清理和过滤，更易于使用。\n    *   T5模型就是在此数据集上训练的，但仍可能存在潜在偏见和错误。\n*   **Wikipedia**：\n    *   仅英文内容就约19GB，规模庞大但易于管理。\n    *   经过精心策划、结构化并按照维基百科标准编辑。\n    *   涵盖广泛的通用知识，事实准确性高，但其百科全书式的风格和语调非常特定，可能导致模型过拟合。\n*   **WikiText**：\n    *   来源于经过验证的优秀和特色维基百科文章。\n    *   存在两个版本：WikiText-2（200万词，数百篇文章）和WikiText-103（1亿词，28,000篇文章）。\n*   **BookCorpus**：\n    *   一个几GB的数据集，包含长篇、内容丰富、高质量的书籍文本。\n    *   有助于学习连贯的叙事和长距离依赖性。\n    *   存在已知的版权问题和社会偏见。\n*   **The Pile**：\n    *   一个825GB的精选数据集，来源于多个来源，包括BookCorpus。\n    *   混合了不同文本类型（书籍、文章、源代码和学术论文），提供广泛的主题覆盖，旨在进行多学科推理。\n    *   这种多样性导致质量参差不齐、内容重复和写作风格不一致。\n\n### 获取数据集\n\n可以直接在线搜索并下载这些数据集的压缩文件，但这需要理解每种数据集的格式并编写自定义代码来读取。另一种更便捷的方式是使用Hugging Face存储库（`https://huggingface.co/datasets`）。该存储库提供了一个Python库，允许使用标准化格式实时下载和读取数据集。\n\n![图片 2](https://machinelearningmastery.com/wp-content/uploads/2025/11/hf_dataset.png)\n\n**使用Hugging Face下载WikiText-2示例**：\n\n```python\nimport random\nfrom datasets import load_dataset\n\ndataset = load_dataset(\"wikitext\", \"wikitext-2-raw-v1\")\nprint(f\"Size of the dataset: {len(dataset)}\")\n\n# 打印几个样本\nn = 5\nwhile n > 0:\n    idx = random.randint(0, len(dataset)-1)\n    text = dataset[idx][\"text\"].strip()\n    if text and not text.startswith(\"=\"):\n        print(f\"{idx}: {text}\")\n        n -= 1\n```\n\n首次运行`load_dataset()`时，数据集会下载到本地机器（默认路径为`~/.cache/huggingface/datasets`），请确保有足够的磁盘空间。所有Hugging Face数据集都遵循标准格式，数据集对象是可迭代的，每个项目都是一个字典，其中文本通常存储在“text”键下。\n\n### 数据集后处理\n\n在训练语言模型之前，通常需要对数据集进行后处理以清理数据。这包括：\n\n*   **文本格式化**：剪辑长字符串、将多个空格替换为单个空格。\n*   **移除非语言内容**：HTML标签、符号。\n*   **移除不需要的字符**：标点符号周围的额外空格。\n\n具体的处理方法取决于数据集和模型对文本的期望格式。例如，训练一个只处理小写字母的BERT风格小模型时，可以将文本转换为小写以减小词汇量并简化分词器。\n\n**后处理函数示例**：\n\n```python\ndef wikitext2_dataset():\n    dataset = load_dataset(\"wikitext\", \"wikitext-2-raw-v1\")\n    for item in dataset:\n        text = item[\"text\"].strip()\n        if not text or text.startswith(\"=\"):\n            continue  # 跳过空行或标题行\n        yield text.lower()  # 生成文本的小写版本\n```\n\n一个好的后处理函数应提高数据集的信噪比，帮助模型更好地学习，同时保留处理训练模型可能遇到的意外输入格式的能力。\n\n### 总结\n\n本文介绍了用于训练语言模型的数据集类型、良好数据集的关键特征，并详细列举了Common Crawl、C4、Wikipedia、WikiText、BookCorpus和The Pile等常用数据集。此外，还说明了如何通过Hugging Face存储库获取和初步处理这些数据集，并强调了数据后处理的重要性。",
+      "shortSummary": "本文介绍了用于训练语言模型的数据集。一个好的数据集应规模大、多样化、高质量且经过清理。文章详细列举了Common Crawl、C4、Wikipedia、WikiText、BookCorpus和The Pile等常用数据集的特点。获取数据集可通过直接下载或使用Hugging Face存储库。在训练前，通常需要对数据集进行后处理，以清理和格式化数据，提高模型的学习效果。",
+      "translated_title": "用于训练语言模型的数据集",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/dan-v-S5x5rrsDixk-unsplash-scaled.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/hf_dataset.png",
+          "alt": "",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "A good language model should learn correct language usage, free of biases and errors."
+    },
+    {
+      "title": "Building ReAct Agents with LangGraph: A Beginner’s Guide",
+      "link": "https://machinelearningmastery.com/building-react-agents-with-langgraph-a-beginners-guide/",
+      "pubDate": "Wed, 12 Nov 2025 11:00:24 +0000",
+      "isoDate": "2025-11-12T11:00:24.000Z",
+      "creator": "Vinod Chugani",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Building ReAct Agents with LangGraph: A Beginner’s Guide",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-chugani-building-react-agents-langgraph-beginners-guide-feature-1024x683.png",
+          "alt": "Building ReAct Agents LangGraph Beginners Guide",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<a href=\"https://arxiv."
+    },
+    {
+      "title": "Expert-Level Feature Engineering: Advanced Techniques for High-Stakes Models",
+      "link": "https://machinelearningmastery.com/expert-level-feature-engineering-advanced-techniques-for-high-stakes-models/",
+      "pubDate": "Tue, 11 Nov 2025 11:00:09 +0000",
+      "isoDate": "2025-11-11T11:00:09.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Expert-Level Feature Engineering: Advanced Techniques for High-Stakes Models",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-chugani-expert-level-feature-engineering-advanced-techniques-high-stakes-models-feature-1024x683.png",
+          "alt": "Expert-Level Feature Engineering Advanced Techniques High-Stakes Models",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Building machine learning models in high-stakes contexts like finance, healthcare, and critical infrastructure often demands robustness, explainability, and other domain-specific constraints."
+    },
+    {
+      "title": "Everything You Need to Know About LLM Evaluation Metrics",
+      "link": "https://machinelearningmastery.com/everything-you-need-to-know-about-llm-evaluation-metrics/",
+      "pubDate": "Mon, 10 Nov 2025 11:00:55 +0000",
+      "isoDate": "2025-11-10T11:00:55.000Z",
+      "creator": "Kanwal Mehreen",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Everything You Need to Know About LLM Evaluation Metrics",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-llm-evaluation-metrics.png",
+          "alt": "Everything You Need to Know About LLM Evaluation Metrics",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "When large language models first came out, most of us were just thinking about what they could do, what problems they could solve, and how far they might go."
+    },
+    {
+      "title": "The 7 Statistical Concepts You Need to Succeed as a Machine Learning Engineer",
+      "link": "https://machinelearningmastery.com/the-7-statistical-concepts-you-need-to-succeed-as-a-machine-learning-engineer/",
+      "pubDate": "Fri, 07 Nov 2025 11:00:31 +0000",
+      "isoDate": "2025-11-07T11:00:31.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "The 7 Statistical Concepts You Need to Succeed as a Machine Learning Engineer",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-chugani-7-statistical-concepts-succeed-machine-learning-engineer-feature-1024x683.png",
+          "alt": "7 Statistical Concepts Succeed Machine Learning Engineer",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "&nbsp; When we ask ourselves the question, \" what is inside machine learning systems? \", many of us picture frameworks and models that make predictions or perform tasks."
+    },
+    {
+      "title": "365数据科学提供免费AI和数据课程——100%无限访问至11月21日 (原标题: Free AI and Data Courses with 365 Data Science—100% Unlimited Access until Nov 21)",
+      "link": "https://machinelearningmastery.com/free-ai-and-data-courses-with-365-data-science-100-unlimited-access-until-nov-21/",
+      "pubDate": "Thu, 06 Nov 2025 15:16:48 +0000",
+      "isoDate": "2025-11-06T15:16:48.000Z",
+      "creator": "MLM Team",
+      "summary": "### 365数据科学提供免费AI和数据课程——100%无限访问至11月21日\n\n![365数据科学免费AI和数据课程](https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-365ds-20251106-01.jpg)\n\n365数据科学宣布，从2025年11月6日（UTC时间上午8:00）至11月21日，将限时免费开放其整个学习平台。这一机会旨在帮助有志于AI专业人士和数据爱好者提升技能，获取实践经验，且完全免费。\n\n#### 传统与使命\n\n*   **年度免费访问计划：** 这是365数据科学连续第五年推出年度免费访问计划，该计划于2020年全球疫情期间首次启动，旨在提供可访问的高质量教育。\n*   **CEO观点：** 首席执行官Ned Krastev强调，AI和数据领域正以前所未有的速度发展，为那些准备拥抱新技术的人创造了非凡机会。他指出，理解AI系统的构建、部署和集成对于追求数据驱动职业的人至关重要。\n*   **目标：** 365数据科学的目标是通过帮助学习者发展数据素养以及AI工程和智能代理的实践专业知识，来弥合技能差距，培养未来的技术专业人才。\n*   **显著成果：** 2024年的免费访问计划取得了巨大成功，吸引了来自215个国家的超过20万独立用户，累计学习时间达690万分钟，并颁发了超过35,000份证书。\n\n![365数据科学免费AI和数据课程](https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-365ds-20251106-02.png)\n\n#### 平台内容\n\n在免费访问期间，学习者将获得365数据科学平台所有内容的无限制访问权限，该平台是掌握数据和AI的综合目的地。\n\n*   **课程数量与范围：** 平台提供超过117门由专家主导的课程，涵盖从基础数据技能到AI、机器学习和AI工程等高级主题。\n*   **实践经验：** 参与者可以通过模拟实际工作场景的真实AI和数据项目获得实践经验。\n*   **互动学习：** 新引入的互动练习和引导式挑战有助于加强理解和巩固关键概念。\n*   **职业发展路径：** 365数据科学提供结构化的、以职业为导向的学习路径，引导用户从初学者逐步成长为具备就业能力的专业人士。\n\n#### 认证价值\n\n*   **行业认可：** 通过此次免费访问计划，学习者可以免费获得行业认可的证书。\n*   **提升就业力：** 这些证书证明了在数据分析、AI和机器学习方面的实践专业知识，有助于提升参与者在全球雇主面前的就业能力和信誉。\n*   **弥合教育与职业差距：** 该计划通过提供可验证的、增强职业发展的认证，弥合了教育与职业发展之间的差距，突出了实际能力。\n\n#### 把握机会\n\n在数据和人工智能日益驱动的世界中，保持领先地位比以往任何时候都更加重要。365数据科学的为期三周的开放访问期提供了一个独特的机会，让您投资于自己的未来，无论您是刚开始职业生涯、正在转行，还是希望提升在AI和数据领域的技能。不要错过获得热门专业知识、赢得行业认可证书并迈向数据科学和AI工程领域有益职业的下一步。",
+      "shortSummary": "365数据科学宣布，从2025年11月6日至11月21日，将限时免费开放其全部AI和数据科学课程平台。此项年度计划提供超过117门专家指导课程、实践项目和行业认可证书，旨在帮助学习者免费获得AI工程和数据素养等关键技能，以应对快速发展的AI领域，提升职业竞争力。",
+      "translated_title": "365数据科学提供免费AI和数据课程——100%无限访问至11月21日",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-365ds-20251106-01.jpg",
+          "alt": "Free AI and Data Courses with 365 Data Science—100% Unlimited Access until Nov 21",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-365ds-20251106-02.png",
+          "alt": "Free AI and Data Courses with 365 Data Science—100% Unlimited Access until Nov 21",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "From November 6 to November 21, 2025 (starting at 8:00 a."
+    },
+    {
+      "title": "Essential Chunking Techniques for Building Better LLM Applications",
+      "link": "https://machinelearningmastery.com/essential-chunking-techniques-for-building-better-llm-applications/",
+      "pubDate": "Thu, 06 Nov 2025 11:00:54 +0000",
+      "isoDate": "2025-11-06T11:00:54.000Z",
+      "creator": "Bala Priya C",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Essential Chunking Techniques for Building Better LLM Applications",
+      "images": [
+        {
+          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-chunking-for-llm-apps.png",
+          "alt": "Essential Chunking Techniques Building Better LLM Applications",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-rec-chunking.png",
+          "alt": "Recursive Chunking",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-semantic-chunking.png",
+          "alt": "Semantic Chunking",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-doc-chunking.png",
+          "alt": "Document-Based Chunking",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-adaptive-chunking.png",
+          "alt": "Adaptive Chunking",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-llm-based-chunking.png",
+          "alt": "LLM-Based Chunking",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-agentic-chunking.png",
+          "alt": "Agentic Chunking",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "&nbsp; Every large language model (LLM) application that retrieves information faces a simple problem: how do you break down a 50-page document into pieces that a model can actually use? So when you’re building a retrieval-augmented generation (RAG) app, before your vector database retrieves anything and your LLM generates responses, your documents need to be split into chunks."
+    },
+    {
+      "title": "How to Diagnose Why Your Language Model Fails",
+      "link": "https://machinelearningmastery.com/how-to-diagnose-why-your-language-model-fails/",
+      "pubDate": "Wed, 05 Nov 2025 14:00:47 +0000",
+      "isoDate": "2025-11-05T14:00:47.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How to Diagnose Why Your Language Model Fails",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-chugani-diagnose-language-model-fails-feature-1024x683.png",
+          "alt": "Diagnose Language Model Fails",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Language models , as incredibly useful as they are, are not perfect, and they may fail or exhibit undesired performance due to a variety of factors, such as data quality, tokenization constraints, or difficulties in correctly interpreting user prompts."
+    },
+    {
       "title": "用于计算模型特征重要性的10个Python单行代码 (原标题: 10 Python One-Liners for Calculating Model Feature Importance)",
       "link": "https://machinelearningmastery.com/10-python-one-liners-for-calculating-model-feature-importance/",
       "pubDate": "Tue, 04 Nov 2025 12:00:11 +0000",
@@ -49,233 +257,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Large language models (LLMs) exhibit outstanding abilities to reason over, summarize, and creatively generate text."
-    },
-    {
-      "title": "2026年助你获得理想工作的7个机器学习项目 (原标题: 7 Machine Learning Projects to Land Your Dream Job in 2026)",
-      "link": "https://machinelearningmastery.com/7-machine-learning-projects-to-land-your-dream-job-in-2026/",
-      "pubDate": "Thu, 30 Oct 2025 16:47:53 +0000",
-      "isoDate": "2025-10-30T16:47:53.000Z",
-      "creator": "Nahla Davies",
-      "summary": "# 2026年助你获得理想工作的7个机器学习项目\n\n![2026年助你获得理想工作的7个机器学习项目](https://machinelearningmastery.com/wp-content/uploads/2025/10/kdn-7-machine-learning-projects-to-land-your-dream-job-in-2026.png)\n\n## 引言\n机器学习领域发展迅速，新框架、数据集和应用层出不穷，但不变的是：项目比证书更能证明能力。招聘经理在评估作品集时，更看重解决实际问题的应用，而非简单的练习。正确的项目不仅展示编码能力，更证明了数据科学家般的思维和工程师般的构建能力。本文介绍了七个关键项目，帮助你在2026年脱颖而出。\n\n## 推荐项目列表\n\n### 1. 物联网设备预测性维护\n*   **目标：** 在设备故障发生前进行预测，适用于制造商、能源供应商和物流公司。\n*   **核心技能：** 处理时间序列数据、特征工程、异常检测、真实世界数据清洗。\n*   **推荐模型：** 长短期记忆（LSTM）网络或XGBoost等树形模型。\n*   **项目亮点：** 结合数据可视化展示随时间变化的洞察，或创建交互式仪表板展示预测故障和维护计划，体现软硬件结合及有效沟通结果的能力。\n*   **入门数据集：** NASA C-MAPSS 涡扇发动机退化数据。\n\n### 2. AI驱动的简历筛选器\n*   **目标：** 自动化招聘流程，节省筛选简历的时间。\n*   **核心技能：** 自然语言处理（NLP）技术，如分词、命名实体识别、语义搜索、文本分类和信息提取。\n*   **项目流程：** 收集匿名简历或公开招聘信息，训练模型根据技能关键词、项目相关性和描述中的情感线索匹配候选人与职位。\n*   **项目亮点：** 展示AI如何简化工作流程，可增加偏见检测功能以进一步提升项目价值和独特性。\n*   **入门数据集：** 更新的简历数据集。\n\n### 3. 个性化学习推荐系统\n*   **目标：** 根据个人偏好推荐课程或学习材料，推动教育科技（EdTech）创新。\n*   **核心技能：** 用户画像、基于内容的过滤、协同过滤、处理稀疏矩阵和相似性度量。\n*   **项目流程：** 使用公开教育数据集（如Coursera或Khan Academy），构建推荐系统。\n*   **项目亮点：** 包含用户交互跟踪和可解释性功能（例如解释推荐原因），展示对以人为中心的AI应用的理解。\n*   **入门数据集：** KDD Cup 2015。\n\n### 4. 实时交通流量预测\n*   **目标：** 处理实时或历史数据，预测交通拥堵水平，是城市AI领域的核心。\n*   **核心技能：** 数据流处理、时间序列建模、部署管道。\n*   **推荐模型：** 图神经网络（GNNs）建模城市道路，或CNN-LSTM混合模型捕捉空间和时间模式。\n*   **项目亮点：** 强调在云环境中的部署管道，或从API（如Google Maps）流式传输数据，展示端到端解决方案的交付能力。\n*   **入门数据集：** METR-LA（交通传感器时间序列）。\n\n### 5. 深度伪造检测系统\n*   **目标：** 区分真实和被操纵的图像或视频，应对AI生成媒体带来的伦理挑战。\n*   **核心技能：** 计算机视觉、AI伦理意识、模型泛化能力。\n*   **推荐模型：** 卷积神经网络（CNNs）或基于Transformer的模型。\n*   **项目挑战：** 训练模型在未见数据和不同操纵技术上保持泛化能力。\n*   **项目亮点：** 结合技术与道德责任，通过详细文档讨论误报和潜在滥用，展示对AI影响的深刻理解。\n*   **入门数据集：** 深度伪造检测挑战赛（DFDC）。\n\n### 6. 多模态情感分析\n*   **目标：** 同时分析语音语调、面部表情和文本，实现更全面的情感理解。\n*   **核心技能：** 多模态学习、整合不同数据类型。\n*   **推荐模型：** 结合CNNs（视觉数据）、循环神经网络（RNNs）或Transformer（文本数据），以及频谱图分析（音频）。\n*   **项目挑战：** 整合不同模态数据使其协同工作。\n*   **项目亮点：** 创建一个简单的网络界面，用户可以上传短视频并实时查看检测到的情感，展示部署技能、用户体验意识和创造力。\n*   **入门数据集：** CMU-MOSEI。\n\n### 7. 金融预测AI代理\n*   **目标：** 预测股票走势或加密货币趋势，结合强化学习与传统预测技术。\n*   **核心技能：** 强化学习、传统预测技术、自适应学习系统。\n*   **项目流程：** 使用历史数据和基于回报率的奖励系统训练代理，可扩展至整合实时市场数据。\n*   **推荐模型：** 与ARIMA或LSTM网络等经典算法进行性能比较。\n*   **项目亮点：** 创建一个模拟仪表板，可视化代理的决策和随时间变化的奖励，将复杂概念通过视觉故事呈现。\n*   **入门数据集：** S&P 500 股票（每日更新）。\n\n## 总结\n2026年的机器学习就业市场将奖励实干家。证书和课程能打开大门，但作品集才能让它们保持开放。最好的项目能证明你将理论转化为成果、数据转化为洞察、模型转化为影响力。与其无休止地学习最新框架，不如开始构建这些项目。你不仅能获得实践经验，还能向招聘人员讲述一个令人难忘的故事：你不仅理解机器学习，更将其融入实践。",
-      "shortSummary": "2026年，机器学习领域求职成功的关键在于实际项目。本文推荐了7个核心项目，旨在帮助求职者脱颖而出。这些项目涵盖了物联网预测性维护、AI简历筛选、个性化学习推荐、实时交通预测、深度伪造检测、多模态情感分析和金融预测AI代理。通过完成这些项目，求职者能展示处理真实世界数据、应用前沿模型、解决实际问题以及部署端到端解决方案的能力，从而证明其数据科学思维和工程实践能力，而非仅仅理论知识。",
-      "translated_title": "2026年助你获得理想工作的7个机器学习项目",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/kdn-7-machine-learning-projects-to-land-your-dream-job-in-2026.png",
-          "alt": "7 Machine Learning Projects to Land Your Dream Job in 2026",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "machine learning continues to evolve faster than most can keep up with."
-    },
-    {
-      "title": "使用LLM嵌入的文本数据高级特征工程的7个技巧 (原标题: 7 Advanced Feature Engineering Tricks for Text Data Using LLM Embeddings)",
-      "link": "https://machinelearningmastery.com/7-advanced-feature-engineering-tricks-for-text-data-using-llm-embeddings/",
-      "pubDate": "Wed, 29 Oct 2025 15:44:41 +0000",
-      "isoDate": "2025-10-29T15:44:41.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "# 使用LLM嵌入的文本数据高级特征工程的7个技巧\n\n## 引言\n大型语言模型（LLM）不仅擅长理解和生成文本，还能将原始文本转化为数值表示，即嵌入（embeddings）。这些嵌入对于将额外信息整合到传统预测性机器学习模型中非常有用，可以显著提升下游任务的性能。本文将介绍七种高级特征工程技巧的Python示例，这些技巧通过利用LLM生成的嵌入，为文本数据增加额外价值，从而提高依赖文本的机器学习模型在情感分析、主题分类、文档聚类和语义相似性检测等应用中的准确性和鲁棒性。\n\n![使用LLM嵌入的文本数据高级特征工程的7个技巧](https://machinelearningmastery.com/wp-content/uploads/2025/10/kdn-7-advanced-feature-engineering-tricks-for-text-data-using-llm-embeddings.png)\n\n## 通用设置\n除非另有说明，以下七个示例均使用相同的通用设置：\n*   **嵌入模型**：依赖Sentence Transformers库，加载轻量级的\"all-MiniLM-L6-v2\"模型，生成384维的嵌入。\n*   **建模工具**：使用scikit-learn库进行建模和实用操作。\n\n## 高级特征工程技巧\n\n### 1. 结合TF-IDF与嵌入特征\n*   **核心思想**：同时提取文本的TF-IDF特征（捕捉词汇重要性）和LLM生成的句子嵌入特征（捕捉语义信息）。\n*   **优势**：通过结合词汇和语义信息，可以显著提高分类模型的准确性。例如，在新闻文本分类任务中，这种组合特征能更全面地表示文本内容。\n\n### 2. 主题感知嵌入聚类\n*   **核心思想**：对LLM生成的文本嵌入应用K-Means聚类，为每个文本分配一个“主题类别”，然后将原始嵌入与这些主题类别的独热编码（One-Hot Encoding）结合，形成新的特征表示。\n*   **优势**：创建紧凑的主题元特征，有效地将文本的主题信息编码到特征中。\n\n### 3. 语义锚点相似度特征\n*   **核心思想**：计算文本与一组预定义的“锚点”（或参考）句子之间的语义相似度。每个锚点代表一个关键概念，相似度矩阵的每一列表示文本与一个锚点的相似度。\n*   **优势**：使模型能够学习文本与关键概念的相似性与目标变量之间的关系，特别适用于文本分类任务。\n\n### 4. 通过辅助情感分类器进行元特征堆叠\n*   **核心思想**：训练一个辅助分类器（例如，情感分类器）来预测文本嵌入的标签（如情感）。该辅助分类器返回的预测概率作为新的“元特征”，与原始嵌入堆叠在一起。\n*   **优势**：通过引入辅助模型学习到的判别性信息，增强原始特征集，从而提高下游任务的性能。\n\n### 5. 嵌入压缩与非线性扩展\n*   **核心思想**：首先使用主成分分析（PCA）对LLM生成的原始嵌入进行降维压缩，然后对这些压缩后的嵌入应用多项式特征扩展（PolynomialFeatures）。\n*   **优势**：在保持效率的同时，有效地捕捉文本数据中的非线性结构。\n\n### 6. 关系学习与成对对比特征\n*   **核心思想**：从文本嵌入中构建成对的关系特征。通过计算文本对之间嵌入的绝对差和元素级乘积，以对比的方式突出文本的相似性和差异性。\n*   **优势**：特别适用于涉及文本之间比较的预测任务，能够有效地捕捉文本间的相互关系。\n\n### 7. 跨模态融合\n*   **核心思想**：将LLM嵌入与简单的语言学或数值特征（如标点符号比例、词长）结合起来。\n*   **优势**：通过融合语义信号和手工设计的语言学特征，创建更全面的文本衍生特征，提供更丰富的文本表示。\n\n## 总结\n本文探讨了七种高级特征工程技巧，这些技巧超越了单纯使用LLM生成的嵌入，能够从原始文本中提取更多信息。这些实用策略通过捕捉互补的词汇、语义、关系和手工设计信号，显著提升了以文本作为输入的下游机器学习模型的性能。",
-      "shortSummary": "本文介绍了7种利用LLM嵌入进行文本数据高级特征工程的技巧。这些方法通过结合LLM嵌入与传统特征（如TF-IDF）、聚类、语义锚点、辅助分类器、降维与非线性扩展、成对对比特征及手工语言学特征，旨在为文本数据增加额外价值。目标是提升情感分析、主题分类等下游机器学习模型的准确性和鲁棒性，通过捕捉更丰富的词汇、语义和关系信号。",
-      "translated_title": "使用LLM嵌入的文本数据高级特征工程的7个技巧",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/kdn-7-advanced-feature-engineering-tricks-for-text-data-using-llm-embeddings.png",
-          "alt": "7 Advanced Feature Engineering Tricks for Text Data Using LLM Embeddings",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Large language models (LLMs) are not only good at understanding and generating text; they can also turn raw text into numerical representations called embeddings."
-    },
-    {
-      "title": "模型上下文协议完整指南 (原标题: The Complete Guide to Model Context Protocol)",
-      "link": "https://machinelearningmastery.com/the-complete-guide-to-model-context-protocol/",
-      "pubDate": "Tue, 28 Oct 2025 16:20:03 +0000",
-      "isoDate": "2025-10-28T16:20:03.000Z",
-      "creator": "Bala Priya C",
-      "summary": "## 模型上下文协议 (MCP) 完整指南\n\n### 介绍模型上下文协议\n语言模型（LLM）在生成文本和推理方面表现出色，但默认情况下它们是孤立的，无法直接访问外部文件、数据库或API。传统的集成方式需要为每个数据源编写定制代码，导致维护负担和碎片化问题。模型上下文协议（MCP）旨在解决这一问题，它提供了一个开源标准，用于连接语言模型与外部系统。通过MCP，模型可以与工具、API和数据进行标准化通信，从而避免了为每个数据源构建一次性集成。\n\n本文将深入探讨MCP的核心内容，包括它旨在解决的问题、其架构、三大核心原语（工具、提示和资源）、协议的实际工作流程，以及何时应该（或不应该）使用MCP。\n\n![模型上下文协议完整指南](https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-bpc-complete-guide-model-context-protocol.png)\n\n### MCP 解决的问题\n在MCP出现之前，将AI集成到企业系统中既混乱又低效。将语言模型与真实系统连接会迅速遇到可扩展性问题：每个新模型和每个新数据源都需要定制的集成代码（连接器、适配器、API桥接），这些代码不具备通用性。如果存在M个模型和N个数据源，最终需要维护M × N个独特的集成，每次新增都会增加复杂性和维护开销。\n\nMCP通过引入模型与外部资源之间通信的共享标准来解决此问题。模型和资源都遵循共同的协议，将M × N的问题转化为M + N的问题。每个模型和每个资源只需实现一次MCP，即可实现平滑互操作。简而言之，MCP将语言模型与外部集成的具体细节解耦，从而实现可扩展、可维护和可重用的连接，将AI系统与真实世界的数据和功能连接起来。\n\n![从M×N集成到M+N与MCP](https://www.kdnuggets.com/wp-content/uploads/bala-before-with-mcp-scaled.png)\n\n### 理解 MCP 的架构\nMCP实现了一种客户端-服务器架构，其中包含特定的术语：\n\n#### 三大核心组件\n*   **MCP 主机 (Hosts)**：希望使用MCP功能的应用程序，通常是LLM应用程序（如Claude Desktop、带AI功能的IDE或自定义应用程序）。主机包含或接口语言模型，并启动与MCP服务器的连接。\n*   **MCP 客户端 (Clients)**：由主机应用程序创建和管理，用于处理与MCP服务器的特定连接。客户端负责协议级别的通信，根据MCP规范管理请求和响应。\n*   **MCP 服务器 (Servers)**：向客户端公开特定功能，如数据库访问、文件系统操作、API集成或计算工具。服务器实现协议的服务端，响应客户端请求并提供资源、工具和提示。\n\n这种架构实现了关注点的清晰分离：主机专注于编排AI工作流，无需关心数据源的具体细节；服务器公开功能，无需了解模型将如何使用它们；协议透明地处理通信细节。一个主机可以通过独立的客户端同时连接到多个服务器。\n\n![MCP 架构](https://www.kdnuggets.com/wp-content/uploads/bala-mcp-architecture-updated-scaled.png)\n\n#### 通信协议\nMCP使用JSON-RPC 2.0进行消息交换，这是一种轻量级的远程过程调用协议，提供结构化的请求/响应格式。MCP支持两种传输机制：\n*   **stdio (标准输入/输出)**：用于在同一机器上运行的本地服务器进程，主机通过其标准流进行通信。\n*   **HTTP**：用于网络通信，使用HTTP POST进行请求，并可选地使用Server-Sent Events进行流式传输。\n\n### 三大核心原语\nMCP依赖于服务器公开的三大核心原语，它们提供了足够的结构来支持复杂的交互，同时不限制灵活性。\n\n#### 资源 (Resources)\n资源代表模型可以读取的任何数据，包括文件内容、数据库记录、API响应、实时传感器数据或缓存计算结果。每个资源都使用URI方案进行标识和访问，例如：\n*   文件系统：`file:///home/user/projects/api/README.md`\n*   数据库：`postgres://localhost/customers/table/users`\n*   天气API：`weather://current/san-francisco`\n\n资源可以是静态的，也可以是动态的。服务器通过`resources/list`端点列出可用资源，主机通过`resources/read`检索它们。每个资源都包含元数据（如MIME类型）和描述，以帮助主机和模型理解内容。\n\n#### 提示 (Prompts)\n提示为常见任务提供可重用的模板，它们编码了专家知识并简化了复杂指令。例如，数据库MCP服务器可以提供`analyze-schema`、`debug-slow-query`或`generate-migration`等提示。每个提示都包含任务所需的上下文，并接受参数。领域特定系统最能从专业提示中受益，提示让MCP服务器能够承载专业知识，而不仅仅是数据。\n\n#### 工具 (Tools)\n工具是模型可以调用以执行操作或计算的函数。与只读的资源或提供指导的提示不同，工具可以修改状态，允许模型采取行动。每个工具使用JSON Schema定义参数、类型和约束。模型发送匹配Schema的JSON对象，服务器验证、执行并返回结果。例如，GitHub MCP服务器可能包含`create_issue`、`merge_pull_request`等工具。工具执行需要仔细控制，因为它们可以修改数据或触发外部操作，主机负责协调所有调用，并可强制执行确认、日志记录和访问控制。\n\n### 协议通信流程\nMCP主机和服务器之间的所有交互都遵循基于JSON-RPC的可预测模式。\n\n#### 初始化握手\n通信始于握手，建立连接并协商支持的功能。客户端发送`initialize`请求，声明其协议版本和能力。服务器响应其自身能力以及识别信息（名称、版本、支持的MCP原语）。此交换确保双方兼容，并在不兼容时终止连接。初始化完成后，服务器可以公布资源、提示和工具。\n\n#### 能力发现\n初始化完成后，主机可以查询服务器以获取可用能力。对于资源，调用`resources/list`获取URI目录；对于提示，`prompts/list`返回可用模板和参数；对于工具，`tools/list`提供所有函数及其JSON Schema。这些发现机制使MCP服务器具有自文档化能力，主机无需手动设置即可连接并了解其功能。发现也可以是动态的。\n\n#### 操作执行\n*   **访问资源**：客户端发送带有资源URI的`resources/read`请求，服务器返回内容、MIME类型和相关元数据。\n*   **调用工具**：模型构建包含工具名称和参数的JSON对象，客户端发送`tools/call`请求，服务器验证、执行并返回结果。如果失败，返回结构化错误。\n*   **获取提示**：客户端调用`prompts/get`，服务器返回包含参数和动态上下文的扩展提示文本，主机将其作为模型输入。\n\n![协议通信流程](https://www.kdnuggets.com/wp-content/uploads/bala-protocol-comm-flow-scaled.png)\n\n#### 错误处理与边缘情况\nMCP定义了基于JSON-RPC约定的标准错误代码，如解析错误、无效请求、方法未找到和无效参数。服务器一致地返回这些错误，使主机能够预测性地处理错误。协议还处理超时和取消，长时间运行的操作可以在条件改变或用户失去兴趣时被取消，服务器应执行清理以防止资源泄漏。\n\n### 何时使用 (不使用) MCP\nMCP为AI应用程序连接外部数据和工具提供了标准方式，但并非总是最佳选择。\n\n#### 适用场景\n*   AI应用程序需要结构化访问外部能力（读取数据、调用工具、与多个系统交互）。\n*   系统存在大量集成（M+N优势）。\n*   应用程序需要审计追踪，因为所有操作都通过定义的消息流进行，简化了日志记录、分析和合规性。\n\n#### 不适用场景\n*   简单的提示-响应应用程序，MCP会增加不必要的开销。\n*   具有单一集成的单一用途工具，直接调用API可能更简单。\n*   需要超低延迟的应用程序，MCP的JSON-RPC层可能比直接API稍重。\n\n### 结论\nMCP促进了AI能力与信息和工具的连接，使它们真正有用。它帮助AI系统从孤立走向集成，赋予模型新的能力，使其不再局限于训练数据。同一个基础模型可以根据其可访问的MCP服务器充当编码助手、数据分析师或客户服务代理。对于开发者而言，MCP提供了构建更强大AI应用程序的清晰路径；对于组织而言，它实现了AI集成的标准化，避免了供应商锁定；对于更广泛的AI社区而言，它为可互操作系统建立了共同基础。",
-      "shortSummary": "模型上下文协议 (MCP) 是一个开源标准，旨在简化语言模型与外部数据和工具的集成。它将复杂的M×N集成问题转化为更高效的M+N模式。MCP采用客户端-服务器架构，通过JSON-RPC 2.0通信。其核心包括可读的“资源”、可复用的“提示”和可执行操作的“工具”。MCP定义了初始化、能力发现和操作执行的通信流程。它适用于需要结构化访问和多系统集成的AI应用，使模型能从孤立走向集成，扩展其能力。",
-      "translated_title": "模型上下文协议完整指南",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-bpc-complete-guide-model-context-protocol.png",
-          "alt": "The Complete Guide to Model Context Protocol",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-before-with-mcp-scaled.png",
-          "alt": "From M×N integrations to M+N with MCP",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-mcp-architecture-updated-scaled.png",
-          "alt": "MCP Architecture",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-protocol-comm-flow-scaled.png",
-          "alt": "Protocol Communication Flow",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Language models can generate text and reason impressively, yet they remain isolated by default."
-    },
-    {
-      "title": "用于生成时间序列特征的10个Python单行代码 (原标题: 10 Python One-Liners for Generating Time Series Features)",
-      "link": "https://machinelearningmastery.com/10-python-one-liners-for-generating-time-series-features/",
-      "pubDate": "Mon, 27 Oct 2025 14:25:18 +0000",
-      "isoDate": "2025-10-27T14:25:18.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "# 用于生成时间序列特征的10个Python单行代码\n\n## 引言\n时间序列数据需要深入理解才能构建有效且富有洞察力的预测模型。其中，**表示（Representation）**和**粒度（Granularity）**是时间序列预测的两个关键属性：\n*   **表示**：指采用有意义的方法将原始时间数据（如每日或每小时测量值）转换为信息丰富的模式。\n*   **粒度**：指分析这些模式捕捉时间变化信息的精确程度。\n这两者都通过特征工程实现。本文介绍了10个基于原始时间序列数据不同特性和属性的简单Python单行代码，用于生成时间序列特征。这些代码可以单独使用或组合使用，以创建更具信息量的数据集，揭示数据的时间行为（如何演变、波动以及随时间展现的趋势）。示例中使用了Pandas和NumPy库。\n\n![10 Python One-Liners for Generating Time Series Features](https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-10-python-one-liners-time-series-2.png)\n\n## 1. 滞后特征（自回归表示）\n*   **概念**：将前一个观测值作为当前观测值的新预测特征。\n*   **作用**：表示时间依赖性，例如当前时间点与之前时间点之间的关系。\n*   **示例代码**：`df['lag_1'] = df['value'].shift(1)`\n*   **说明**：`shift()`函数中的参数可以调整，以获取当前观测值之前n个时间点或观测值的值。例如，对于每日时间序列数据，`shift(7)`可捕获一周前的数值。\n\n## 2. 滚动均值（短期平滑）\n*   **概念**：计算当前观测值之前n个观测值的滚动平均值。\n*   **作用**：捕捉数据中的局部趋势或平滑短期波动，对原始时间序列值进行平滑处理。\n*   **示例代码**：`df['rolling_mean_3'] = df['value'].rolling(3).mean()`\n*   **说明**：此示例为每个观测值创建一个新特征，其中包含该特征最近3个值的滚动均值。\n\n![Smoothed time series feature with rolling mean](https://machinelearningmastery.com/wp-content/uploads/2025/10/smoothened.png)\n\n## 3. 滚动标准差（局部波动性）\n*   **概念**：基于滚动窗口计算标准差。\n*   **作用**：有效建模连续观测值的波动性。\n*   **示例代码**：`df['rolling_std_7'] = df['value'].rolling(7).std()`\n*   **说明**：此示例引入了一个特征，用于建模假设为每日观测数据中一周内最新值的变异性。\n\n## 4. 扩展均值（累积记忆）\n*   **概念**：计算时间序列中截至（并包括）当前观测值的所有数据点的平均值。\n*   **作用**：类似于窗口大小不断增加的滚动均值，用于分析时间序列属性值的平均值如何随时间演变，从而更可靠地捕捉长期上升或下降趋势。\n*   **示例代码**：`df['expanding_mean'] = df['value'].expanding().mean()`\n\n## 5. 差分（趋势移除）\n*   **概念**：计算目标属性的连续观测值（当前值与前一个值）之间的差值。\n*   **作用**：用于移除长期趋势，突出变化率，对于稳定非平稳时间序列非常重要。\n*   **示例代码**：`df['diff_1'] = df['value'].diff()`\n\n## 6. 基于时间的特征（时间分量提取）\n*   **概念**：从完整日期时间特征或时间序列的索引中分解并提取相关信息。\n*   **作用**：简单但非常实用，可提取月份、星期几、小时等信息。\n*   **示例代码**：\n    *   如果日期时间信息在常规属性中：`df['month'], df['dayofweek'] = df['Date'].dt.month, df['Date'].dt.dayofweek`\n    *   如果日期时间信息是数据结构的索引：`df['hour'], df['dayofweek'] = df.index.hour, df.index.dayofweek`\n\n## 7. 滚动相关性（时间关系）\n*   **概念**：在时间窗口内测量近期值与其滞后对应值之间的相关性。\n*   **作用**：帮助发现不断演变的自相关性，例如检测当滚动相关性开始减弱或反转时发生的“制度转变”（数据随时间发生的突然且持续的行为变化）。\n*   **示例代码**：`df['rolling_corr'] = df['value'].rolling(30).corr(df['value'].shift(1))`\n\n## 8. 傅里叶特征（季节性）\n*   **概念**：在原始时间序列属性中使用正弦（或余弦）傅里叶变换来捕捉周期性或季节性模式。\n*   **作用**：将日期时间特征中潜在的周期性信息（如一年中的第几天）转换为连续特征，有助于学习和建模年度模式。\n*   **示例代码**（使用两行代码以更好地捕捉周期性季节性模式）：\n    `df['fourier_sin'] = np.sin(2 * np.pi * df['Date'].dt.dayofyear / 365)`\n    `df['fourier_cos'] = np.cos(2 * np.pi * df['Date'].dt.dayofyear / 365)`\n\n## 9. 指数加权均值（自适应平滑）\n*   **概念**：应用指数衰减权重，赋予近期数据观测值更高的重要性，同时保留长期记忆。\n*   **作用**：一种更具适应性且“更智能”的方法，优先考虑近期观测值而非遥远的过去。\n*   **示例代码**：`df['ewm_mean'] = df['value'].ewm(span=5).mean()`\n\n## 10. 滚动熵（信息复杂度）\n*   **概念**：计算给定特征在时间窗口内值的随机性或分散程度。\n*   **作用**：揭示信息量和复杂性。较低的滚动熵值表示有序性和可预测性，而较高的值则表示“混乱和不确定性”。\n*   **示例代码**：`df['rolling_entropy'] = df['value'].rolling(10).apply(lambda x: -np.sum((p:=np.histogram(x, bins=5)[0]/len(x))*np.log(p+1e-9)))`\n\n## 总结\n本文探讨并演示了10种策略（每种策略仅用一行代码），用于从原始时间序列数据中提取各种模式和信息，从简单的趋势到更复杂的季节性和信息复杂度。",
-      "shortSummary": "本文介绍了10个Python单行代码，用于时间序列特征工程。这些方法利用Pandas和NumPy，旨在从原始时间序列数据中提取有用的模式和信息，以构建更具洞察力的预测模型。涵盖的特征包括：滞后特征、滚动均值、滚动标准差、扩展均值、差分、基于时间的特征、滚动相关性、傅里叶特征、指数加权均值和滚动熵。这些简洁的代码片段能有效揭示数据的时间行为，显著提升时间序列分析和预测模型的性能。",
-      "translated_title": "用于生成时间序列特征的10个Python单行代码",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-10-python-one-liners-time-series-2.png",
-          "alt": "10 Python One-Liners for Generating Time Series Features",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/smoothened.png",
-          "alt": "Smoothed time series feature with rolling mean",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Time series data normally requires an in-depth understanding in order to build effective and insightful forecasting models."
-    },
-    {
-      "title": "Python 开发者 Pydantic 完整指南 (原标题: The Complete Guide to Pydantic for Python Developers)",
-      "link": "https://machinelearningmastery.com/the-complete-guide-to-pydantic-for-python-developers/",
-      "pubDate": "Fri, 24 Oct 2025 13:59:01 +0000",
-      "isoDate": "2025-10-24T13:59:01.000Z",
-      "creator": "Bala Priya C",
-      "summary": "# Pydantic Python 开发者完整指南\n\n本文旨在为 Python 开发者提供 Pydantic 的全面指南，教授如何使用类型提示来验证、解析和序列化结构化数据。Pydantic 解决了 Python 数据类型灵活性可能导致的运行时错误，尤其在处理 API、配置文件或用户输入时，通过自动数据验证和序列化确保应用程序的可靠性。\n\n![Pydantic Python 开发者完整指南](https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-bpc-pydantic-for-python-devs.jpg)\n\n## 核心概念与安装\n\n*   **Pydantic 的作用**：利用 Python 的类型提示系统，自动定义和强制执行数据结构规则，从而实现数据验证和序列化。\n*   **本文涵盖内容**：\n    *   使用类型强制转换和清晰验证错误定义核心模型。\n    *   有效使用可选字段、默认值和 `Field` 约束。\n    *   编写自定义验证器，处理嵌套结构，并导出 JSON。\n*   **安装**：在开始之前，需通过 `pip install pydantic` 进行安装。\n\n## Pydantic 基础模型\n\n*   **集成与优势**：Pydantic 与现有 Python 代码无缝集成，将类型提示转化为强大的验证逻辑，提供清晰、可操作的错误信息，而非隐晦的运行时异常，从而减少调试时间并提高代码可维护性。\n*   **模型定义**：Pydantic 模型继承自 `BaseModel`，并使用 Python 类型提示来定义预期的数据结构。\n    *   **示例**：定义一个 `User` 模型，包含 `name` (str)、`age` (int) 和 `email` (str) 字段。\n    *   **自动类型强制转换**：Pydantic 会自动将字符串（如“25”）转换为整数（25）。如果转换不可能，则会引发带有明确消息的验证错误。\n\n## 可选字段与默认值\n\n*   **处理缺失数据**：Pydantic 使用 `Optional` 类型和默认值来处理实际数据中可能缺失或可选的字段。\n    *   **示例**：`Product` 模型中的 `description: Optional[str] = None` 表示 `description` 可以是字符串或 `None`。\n    *   **默认值**：带有默认值的字段在创建实例时无需提供（如 `in_stock: bool = True`）。\n    *   **`Field()` 函数**：用于添加额外的验证约束，例如 `category: str = Field(default=\"general\", min_length=1)` 确保 `category` 至少有一个字符。\n\n## 自定义验证器\n\n*   **超越基本类型检查**：当需要更复杂的验证逻辑时，可以使用自定义验证器。\n*   **实现方式**：通过 `@field_validator` 装饰器定义验证函数。\n    *   **示例**：`Account` 模型为 `username`（长度、字母数字、转换为小写）、`email`（正则表达式格式）和 `password`（最小长度）定义了自定义验证器。\n*   **功能**：验证器可以在模型创建期间自动运行，用于转换数据或拒绝无效值，并提供描述性错误消息。\n\n## 嵌套模型与复杂结构\n\n*   **处理层次数据**：Pydantic 使嵌套验证变得简单，能够递归验证整个结构。\n    *   **示例**：`Company` 模型包含 `Address` 模型和 `Contact` 模型列表。`Address` 模型可以有自己的 `zip_code` 验证器。\n*   **自动解析**：`datetime` 字符串会自动解析为 `datetime` 对象。\n*   **详细错误**：如果嵌套结构中的任何部分无效，Pydantic 会提供详细的错误信息，精确指出问题所在。\n\n## 与 API 和 JSON 交互\n\n*   **理想场景**：Pydantic 非常适合处理 API 响应和 JSON 数据，这些数据通常格式不可预测。\n*   **高级验证**：\n    *   **`mode='before'`**：在验证器中使用此参数，使其在类型转换之前运行，从而能够处理原始字符串输入。\n    *   **`Union` 类型**：处理多种可能的输入类型（如 `created_at: Union[datetime, str]`）。\n    *   **`Field` 约束**：添加范围约束（如 `age: Optional[int] = Field(None, ge=0, le=150)`）。\n\n## 错误处理与验证\n\n*   **结构化错误信息**：当验证失败时，Pydantic 会提供 `ValidationError`，其中包含详细的结构化错误信息。\n*   **错误详情**：每个错误都包含字段位置 (`loc`)、错误类型 (`type`) 和人类可读的消息 (`msg`)。\n*   **获取错误**：可以通过 `e.errors()` 获取错误列表，或通过 `e.json()` 获取 JSON 格式的错误表示，便于调试或向用户提供反馈。\n\n## 序列化与导出\n\n*   **模型转换**：将 Pydantic 模型转换回字典或 JSON 字符串非常直接。\n*   **方法**：\n    *   `model_dump()`：将模型导出为字典。\n    *   `model_dump_json()`：将模型导出为 JSON 字符串。\n*   **灵活选项**：支持排除敏感字段 (`exclude`)、仅包含特定字段或自定义值的序列化方式，这在创建不同上下文的 API 响应时特别有用。\n\n## 总结\n\nPydantic 将数据验证从繁琐、易错的任务转变为自动化、声明式的过程。它利用 Python 的类型系统，为数据结构提供运行时保证，同时保持代码的整洁和可读性。Pydantic 帮助开发者及早发现错误，用更少的样板代码构建更可靠的应用程序。本文提供了 Pydantic 的良好基础，从基本模型到自定义验证器和嵌套结构，鼓励开发者在项目中继续探索其高级功能，使其成为 Python 开发工作流程中不可或缺的工具。",
-      "shortSummary": "Pydantic 是一款 Python 库，通过类型提示实现自动数据验证、解析和序列化。它解决了 Python 数据类型灵活性导致的运行时错误，特别适用于处理 API、配置和用户输入。Pydantic 支持定义核心模型、处理可选字段、实现自定义验证器、管理嵌套结构以及方便地进行 JSON 导出。当数据不符合预期时，Pydantic 会提供清晰的错误信息，从而简化调试并提高代码可靠性与可维护性。",
-      "translated_title": "Python 开发者 Pydantic 完整指南",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-bpc-pydantic-for-python-devs.jpg",
-          "alt": "The Complete Guide to Pydantic for Python Developers",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Python's flexibility with data types is convenient when coding, but it can lead to runtime errors when your code receives unexpected data formats."
-    },
-    {
-      "title": "机器学习实践者的大语言模型微调指南 (原标题: The Machine Learning Practitioner’s Guide to Fine-Tuning Language Models)",
-      "link": "https://machinelearningmastery.com/the-machine-learning-practitioners-guide-to-fine-tuning-language-models/",
-      "pubDate": "Thu, 23 Oct 2025 14:17:27 +0000",
-      "isoDate": "2025-10-23T14:17:27.000Z",
-      "creator": "Vinod Chugani",
-      "summary": "# 机器学习实践者的大语言模型微调指南\n\n本文为机器学习实践者提供了关于何时、如何以及使用哪些工具对大型语言模型（LLM）进行微调的实用指南，并强调了如何避免常见错误。\n\n![机器学习实践者的大语言模型微调指南](https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-chugani-machine-learning-practitioners-guide-fine-tuning-language-models-feature-1024x683.png)\n\n### 引言\n2024-2025年，大语言模型（LLM）的微调变得更加普及，参数高效方法使得70B+参数的模型也能在消费级GPU上运行。本指南旨在为实践者提供实用的指导，涵盖微调的适用场景、核心方法、工具选择以及常见陷阱的规避。微调不同于从头训练，它通过少量数据和计算资源，将预训练模型适应到特定任务，从而降低了先进自然语言处理（NLP）能力的门槛。\n\n### 何时进行微调而非选择替代方案\n微调应作为最后的手段。推荐的流程是：\n1.  **提示工程（Prompt Engineering）**：适用于基本的任务适应。\n2.  **检索增强生成（RAG）**：当需要引用来源、将响应基于特定文档或信息频繁变化时使用。\n3.  **微调**：仅当需要深度专业化时才考虑。\n\nMeta AI提出了微调真正有价值的五种场景：\n*   为特定受众定制语气和风格。\n*   维护敏感信息的数据隐私。\n*   支持低资源语言。\n*   通过蒸馏大型模型来降低推理成本。\n*   添加基础模型中不存在的全新功能。\n\n**数据可用性测试：**\n*   少于100个示例：坚持使用提示工程。\n*   100-1,000个示例且知识静态：考虑参数高效方法。\n*   1,000-100,000个示例且任务定义明确：尝试微调。\n\n最佳解决方案通常是结合微调（用于专业推理模式）和RAG（用于最新信息）。\n\n### 核心参数高效微调（PEFT）方法\n全量微调需要大量的计算和内存。PEFT通过仅更新约0.1%至3%的参数，在显著降低资源需求的同时，实现了与全量微调相当的性能。\n\n*   **LoRA (Low-Rank Adaptation)**：\n    *   主流技术，冻结预训练权重，并行注入可训练的低秩分解矩阵。\n    *   更新表示为低秩分解，通常秩为8就足够。\n    *   内存减少2-3倍，检查点大小减少1,000-10,000倍。\n    *   部署时，学习到的矩阵与冻结权重合并，不引入推理延迟。\n    *   训练速度可提升约25%。\n*   **QLoRA**：\n    *   LoRA的扩展，通过激进的量化（4位存储基础权重，16位bfloat16进行计算）保持准确性。\n    *   显著降低内存：65B模型可在48GB GPU上运行，13B模型可在16GB消费级硬件上运行，且性能与16位全量微调相当。\n*   **Spectrum (2024年创新)**：\n    *   通过信噪比分析识别信息最丰富的层，仅选择性微调约30%的顶层。\n    *   在数学推理任务上，以相当的资源实现了比QLoRA更高的准确性。\n\n**PEFT方法选择框架：**\n*   **LoRA**：需要零推理延迟和适度GPU资源（16-24 GB）。\n*   **QLoRA**：内存极端受限（消费级GPU，Google Colab）或超大型模型（30B+）。\n*   **Spectrum**：在分布式环境中处理大型模型。\n\n### 现代对齐与指令微调\n*   **指令微调**：将以补全为中心的基础模型转化为遵循指令的助手，建立基本能力。通过多样化的指令-响应对进行训练，质量远比数量重要（约1,000个高质量示例通常足够）。\n*   **DPO (Direct Preference Optimization)**：\n    *   通过简化强化学习（RLHF）迅速成为首选对齐方法。\n    *   核心思想：将奖励隐式地重新参数化到策略本身中，通过监督学习而非复杂的强化学习解决RLHF目标。\n    *   研究表明，DPO在单阶段训练、约50%更少的计算量和更高稳定性下，可实现与基于PPO的RLHF相当或更优的性能。\n    *   仅需要偏好数据（提示、选择的响应、拒绝的响应）、参考策略和标准监督学习基础设施。\n    *   已成为2024-2025年训练开源LLM的常用方法（如Zephyr-7B和Mistral系列模型）。\n*   **RLHF (Reinforcement Learning from Human Feedback)**：\n    *   基础对齐技术，但复杂性高（训练期间管理四个模型副本、实现困难、训练不稳定）。\n    *   大多数实践者应使用DPO，除非特定场景需要RLHF的灵活性。\n    *   建议路径：先进行指令微调（使用Alpaca或Dolly-15k等数据集），然后实施DPO进行对齐。\n\n### 数据准备最佳实践\n数据质量是微调成功的决定性因素。训练数据中的错误率线性增加，下游模型错误可能超线性增长，因此数据整理是最高杠杆的活动。\n\n*   **数据集大小要求**：\n    *   简单分类：约200-1,000个示例。\n    *   中等复杂任务（如问答）：约1,000-5,000个。\n    *   复杂生成或推理：可能需要5,000-10,000+个。\n*   **质量胜于数量**：1,000个高质量示例可能胜过100,000个平庸示例。\n*   **高质量数据特征**：领域相关性、场景多样性、代表性、标注准确性、时效性。\n*   **格式化**：使用结构化的问答对，保持数据集间格式一致。\n*   **数据划分**：约80%训练集，20%验证集（适用时采用分层抽样）。\n*   **预处理**：清理噪声、处理缺失值、使用模型特定分词器、删除重复项、标准化文本。\n*   **优先使用专有定制数据**，而非模型可能已在预训练中遇到的公共数据集。\n\n### 避免关键陷阱\n*   **过拟合（Overfitting）**：\n    *   模型记忆训练数据而非学习泛化模式。\n    *   迹象：训练损失下降而验证损失上升，训练准确率高但验证性能差。\n    *   预防：\n        *   **提前停止**：当验证性能趋于平稳时停止训练。\n        *   **正则化**：L2权重衰减、10%-30%的Dropout、权重惩罚。\n        *   **数据增强**：反向翻译、合成数据生成。\n        *   **K折交叉验证**：确保泛化。\n        *   **PEFT方法**：降低LoRA秩（r参数）和alpha值以减少可训练参数。\n        *   **学习率**：1e-4到2e-4。\n        *   持续监控训练和验证损失。\n        *   PEFT方法通过限制可训练参数（约0.1%-1%）自然减少过拟合。\n*   **灾难性遗忘（Catastrophic Forgetting）**：\n    *   在训练新任务时丢失先前学习的信息。\n    *   模型可能失去通用推理能力，对以前能回答的问题表现下降。\n    *   预防：\n        *   **弹性权重整合（EWC）**：识别并保护重要权重。\n        *   **“半微调”**：每轮冻结约一半参数。\n        *   **锐度感知最小化（SAM）**：平坦化损失景观。\n        *   最易实现的方法：将多样化的指令数据集与领域特定数据混合。\n\n### 实用工具与入门\n*   **Hugging Face生态系统**：Transformers（模型访问）、PEFT（参数高效方法）、TRL（强化学习和监督微调）、bitsandbytes（量化）。\n*   **Unsloth**：通过自定义Triton内核，训练速度提升约2倍，内存减少约80%，可在单个T4或消费级GPU上运行，免费在Colab和Kaggle上使用。\n*   **LlamaFactory**：统一解决方案，支持100+模型，基于配置的训练。\n*   **FSDP + QLoRA**：在双消费级GPU上训练70B模型。\n*   **推荐的2025年堆栈（约8B模型）**：QLoRA或Spectrum + FlashAttention-2 + Liger Kernels + 梯度检查点。\n    *   Llama-3.1-8B模型训练：单个强大GPU约2小时，8个GPU分布式训练不到半小时。\n*   **推荐初始配置**：\n    *   基础模型：Llama-3.1-8B或Phi-3-mini。\n    *   量化：QLoRA（4位）用于消费级GPU训练。\n    *   平台：Unsloth（免费）。\n    *   序列长度：512-1,024 token。\n    *   学习率：2e-4。\n    *   批处理大小：4-8，梯度累积2-4步。\n    *   效率：启用梯度检查点和序列打包。\n*   **实践数据集**：Alpaca（指令微调）、Dolly-15k（高质量人工示例）、OpenAssistant（对话数据）、Anthropic HH-RLHF（偏好学习）。\n\n### 你的学习路径\n对于微调新手，建议采用渐进式学习方法：\n1.  **从指令微调开始**：\n    *   在Alpaca数据集上微调基础T5或Llama-2。\n    *   理解指令-响应数据格式，使用Hugging Face TRL SFTTrainer结合LoRA进行高效训练。\n    *   建立数据准备、训练和评估的基础。\n2.  **进阶到DPO**：\n    *   在小型偏好数据集（如Anthropic HH-RLHF或UltraFeedback）上训练。\n    *   与监督微调基线进行性能比较。\n    *   理解隐式奖励和偏好学习。DPO的简洁性使其成为学习对齐概念的理想选择。\n3.  **实验生产系统**：\n    *   从小模型（1B到3B参数）开始快速迭代。\n    *   使用现有实现而非从头构建。\n    *   进行仔细的消融实验，隔离不同选择的影响。\n    *   在扩展到更大模型之前，使用多个指标进行严格评估。\n\n**入门清单**：\n*   定义清晰的任务和成功标准，包括目标指标。\n*   选择1-2个自定义评估指标和2-3个系统级指标（总计最多5个）。\n*   准备数据。",
-      "shortSummary": "大语言模型微调在2024-2025年变得更易实现，即使是大型模型也能在消费级GPU上运行。微调应是提示工程和RAG之后的最后手段，适用于定制语气、隐私保护、低资源语言、成本优化或新增功能。核心方法包括参数高效微调（PEFT，如LoRA、QLoRA、Spectrum）和对齐技术（如DPO）。数据质量至关重要，需警惕过拟合和灾难性遗忘。Hugging Face生态系统、Unsloth等工具是关键。建议从指令微调开始，逐步学习DPO，并在小模型上进行迭代实践。",
-      "translated_title": "机器学习实践者的大语言模型微调指南",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-chugani-machine-learning-practitioners-guide-fine-tuning-language-models-feature-1024x683.png",
-          "alt": "Machine Learning Practitioners Guide Fine-Tuning Language Models",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Fine-tuning has become much more accessible in 2024–2025, with parameter-efficient methods letting even 70B+ parameter models run on consumer GPUs."
-    },
-    {
-      "title": "使用大型语言模型（LLM）进行表格数据高级特征工程的5种技术 (原标题: 5 Advanced Feature Engineering Techniques with LLMs for Tabular Data)",
-      "link": "https://machinelearningmastery.com/5-advanced-feature-engineering-techniques-with-llms-for-tabular-data/",
-      "pubDate": "Wed, 22 Oct 2025 14:41:10 +0000",
-      "isoDate": "2025-10-22T14:41:10.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "# 使用大型语言模型（LLM）进行表格数据高级特征工程的5种技术\n\n![使用大型语言模型（LLM）进行表格数据高级特征工程的5种技术](https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-5-advanced-feature-engineering-techniques-with-llms-for-tabular-data.png)\n\n## 引言\n\n在大型语言模型（LLM）时代，特征工程这一经典的机器学习概念依然至关重要。它不仅能帮助预处理或结构化非结构化数据（如文本），还能增强LLM在结合表格（结构化）数据时提取、生成和转换信息的能力。将表格数据整合到LLM工作流中具有多重优势，包括丰富主文本输入下的特征空间、推动语义增强以及通过弥合结构化和非结构化数据之间的鸿沟来自动化模型管道。\n\n本文介绍了五种高级特征工程技术，通过这些技术，LLM可以将表格数据中的宝贵信息整合到其工作流中。\n\n## 5种高级特征工程技术\n\n### 1. 通过文本上下文生成语义特征\n\nLLM可以用于描述或总结表格数据集中的行、列或分类属性值，从而生成基于文本的嵌入。例如，LLM可以接收客户数据集中“邮政编码”属性的值，并输出上下文丰富的描述，如“该客户居住在农村邮政区域”。这些上下文感知的文本表示可以显著丰富原始数据集的信息。\n\n*   **实现方式**：结合Sentence Transformers模型（如Hugging Face上的模型），将LLM生成的文本转换为有意义的嵌入，然后与表格数据的其余部分无缝结合，为下游预测模型（如集成分类器和回归器）构建更具信息量的输入。\n*   **示例代码片段**：\n    ```python\n    from sentence_transformers import SentenceTransformer\n    import numpy as np\n\n    llm_description = \"A32 refers to a rural postal region in the northwest.\"\n    model = SentenceTransformer(\"sentence-transformers/all-MiniLM-L6-v2\")\n    embedding = model.encode(llm_description) # shape e.g. (384,)\n    numeric_features = np.array([0.42, 1.07])\n    hybrid_features = np.concatenate([numeric_features, embedding])\n    print(\"Hybrid feature vector shape:",
-      "shortSummary": "本文介绍了5种利用大型语言模型（LLM）进行表格数据高级特征工程的技术。这些技术包括：通过文本上下文生成语义特征、智能缺失值填充、通过提示模板构建领域特定特征、融合结构化和非结构化数据的混合嵌入空间，以及通过LLM引导的推理进行特征选择和转换。LLM能显著增强表格数据的特征工程，提高模型性能和可解释性，尽管在集成到自动化管道时仍需优化。",
-      "translated_title": "使用大型语言模型（LLM）进行表格数据高级特征工程的5种技术",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-5-advanced-feature-engineering-techniques-with-llms-for-tabular-data.png",
-          "alt": "5 Advanced Feature Engineering Techniques with LLMs for Tabular Data",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "In the epoch of LLMs, it may seem like the most classical machine learning concepts, methods, and techniques like feature engineering are no longer in the spotlight."
-    },
-    {
-      "title": "7个必知的智能体AI设计模式 (原标题: 7 Must-Know Agentic AI Design Patterns)",
-      "link": "https://machinelearningmastery.com/7-must-know-agentic-ai-design-patterns/",
-      "pubDate": "Tue, 21 Oct 2025 13:20:55 +0000",
-      "isoDate": "2025-10-21T13:20:55.000Z",
-      "creator": "Bala Priya C",
-      "summary": "# 7个必知的智能体AI设计模式\n\n![7 Must-Know Agentic AI Design Patterns](https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-bala-7-must-know-agentic-ai-design-patterns.png)\n\n本文深入探讨了七种经过验证的智能体AI设计模式，旨在指导读者如何为生产工作负载选择和应用这些模式。构建在生产环境中运行的AI智能体，不仅需要强大的模型，更需要清晰的结构来指导它们如何推理、协调、自我纠正和使用工具来完成目标。设计模式提供了这种结构，它们是定义智能体行为的蓝图，有助于将强大的模型转化为可靠的系统。本文介绍的模式借鉴了Google、AWS等团队的最新研究和实践经验。\n\n## 核心设计模式\n\n### 1. ReAct模式：推理与行动\n\n![ReAct Pattern](https://www.kdnuggets.com/wp-content/uploads/react-pattern.png)\n\n*   **描述**：ReAct（Reason and Act）模式将智能体行为组织成明确的推理循环。智能体在推理（分析当前信息、识别差距）、行动（执行工具或查询）和观察（评估结果以确定下一步）之间交替进行，直到任务完成。这种模式通过外部化推理，使每个决策都可见，创建清晰的审计跟踪，防止过早下结论，并通过强制智能体将每一步都基于可观察的结果来减少幻觉。\n*   **适用场景**：需要自适应问题解决的复杂、不可预测任务，例如跨多个来源追踪证据的研究智能体、通过迭代假设测试诊断问题的调试助手、处理非标准请求的客户支持智能体。\n*   **局限性**：以速度换取思考，每个推理循环都需要额外的模型调用，增加延迟和成本。一个工具返回的错误数据可能传播。有效性取决于底层模型的推理能力。\n*   **建议**：可作为复杂、不可预测任务的默认起点，其透明性有助于快速调试和建立信任。\n\n### 2. 反思模式：自我批判的智能体\n\n![Reflection Pattern](https://www.kdnuggets.com/wp-content/uploads/bala-reflection-pattern.png)\n\n*   **描述**：反思模式在智能体输出中添加了一个自我评估层。智能体生成初始响应后，明确切换到批评模式，评估其自身工作，检查准确性、遵守约束，并识别逻辑漏洞或不一致。如果发现问题，智能体将修改输出并重复此过程，直到达到质量阈值。通过强制智能体退后一步进行评估，而不是辩护其第一个答案，减少了确认偏差。\n*   **适用场景**：输出质量远超速度考虑，且错误会带来严重后果的任务，例如需要安全审计或合规性检查的代码生成、发布前需要事实核查的内容创作、错误结论可能导致资本风险的金融分析。\n*   **局限性**：每个反思周期都会增加令牌消耗和延迟。如果没有明确的退出条件，智能体可能会不必要地循环。批评标准必须具体且可衡量，否则会产生不一致的结果。\n*   **建议**：当错误成本超过额外处理时间成本时适用，尤其适用于有明确质量标准的领域，但需要预先投入定义“足够好”的标准。\n\n### 3. 规划模式：先分解再构建\n\n![Planning Pattern](https://www.kdnuggets.com/wp-content/uploads/bala-planning-pattern.png)\n\n*   **描述**：规划智能体在执行前将复杂任务分解为结构化的路线图。它们首先分析需求、识别子任务之间的依赖关系，并按逻辑顺序安排操作。只有在创建详细计划后，智能体才开始实际工作，遵循其构建的路线图。这有助于处理隐藏复杂性的任务，防止在执行过程中发现错误方法。\n*   **适用场景**：涉及显著复杂性或协调性，并受益于明确结构的任务，例如需要特定序列以避免冲突的多系统集成、综合来自不同来源信息的研究项目、具有转换步骤之间依赖关系的数据迁移项目、协调设计、实施和测试的产品开发工作流。\n*   **局限性**：规划开销只适用于真正复杂的工作，简单任务不需要复杂的分解。挑战在于准确评估任务的初始复杂性。\n*   **建议**：用于防止复杂任务中昂贵的错误启动和返工，但对于简单任务而言是纯粹的开销。\n\n### 4. 工具使用模式：超越训练数据\n\n![Tool Use Pattern](https://www.kdnuggets.com/wp-content/uploads/bala-tool-use.png)\n\n*   **描述**：工具使用使智能体能够通过集成外部功能（如调用API、查询数据库、执行代码、抓取网站、与软件系统交互）来执行超出其训练数据的操作。模型根据任务需求协调这些功能，决定调用哪些工具，解释其输出，并链接工具调用以实现仅凭静态知识无法达成的目标。这使得智能体从知识库转变为能够与世界实时交互的活跃系统。\n*   **适用场景**：需要当前信息、外部计算或与系统交互的任务，例如查询订单数据库和库存系统的客户服务智能体、对实时数据集运行统计计算的数据分析智能体、访问超出训练截止日期当前信息的研究助手、在真实环境中执行和测试代码的开发助手。\n*   **局限性**：工具的可靠性成为智能体系统的可靠性。当API返回错误、达到速率限制或超时时，智能体也会继承这些故障。还需要承担每个集成工具的维护负担。\n*   **建议**：对于处理实际任务的生产智能体几乎是不可或缺的。挑战在于如何管理工具的可靠性、选择准确性以及随着工具库增大而增加的复杂性。\n\n### 5. 多智能体协作模式：专家协同工作\n\n![ Multi-Agent Collaboration Pattern](https://www.kdnuggets.com/wp-content/uploads/bala-multiagent-pattern.png)\n\n*   **描述**：多智能体系统将工作分配给专业智能体，而不是构建一个通才。每个智能体都具有专注的专业知识、特定工具和明确定义的系统角色。协调器智能体管理工作分配，将任务路由到适当的专家，并将其输出合成为统一的响应。每个智能体都可以针对其领域进行优化。\n*   **适用场景**：任务真正跨越多个领域，需要不同的专业知识和方法时，例如需要不同技能集（研究→分析→演示）的复杂工作流、受益于专业处理的任务路由应用、由专注智能体更好地解决的多元用例应用。\n*   **局限性**：比单智能体系统更难构建、调试和维护。协调增加了延迟和复杂性。智能体间通信引入新的故障模式。成本随智能体数量增加而倍增。\n*   **建议**：仅当单智能体方法确实无法有效处理多样化、复杂的需求，并且专业化能够带来可衡量的改进时才考虑，否则不建议增加系统复杂性。\n\n### 6. 顺序工作流：可预测的管道\n\n![Sequential Workflow](https://www.kdnuggets.com/wp-content/uploads/bala-seq-pattern.png)\n\n*   **描述**：顺序模式将智能体系统组织成固定顺序的管道。智能体A完成任务并将输出传递给智能体B，智能体B处理后传递给智能体C。每个专家处理预定序列中的一个步骤。编排不需要AI，只需预定义的逻辑来确定流程。这是一种流水线式的智能体系统方法。\n*   **优点**：可预测性、比动态路由系统更低的延迟、比基于协调器的方法更低的成本、可预测的行为简化了调试。\n*   **适用场景**：工作流遵循结构化、可重复模式且处理序列很少改变时，例如具有提取、转换和加载阶段的数据管道、文档处理流程（解析→分析→总结→存储）、内容审核（检测→分类→路由→行动）、订单处理、报告生成。\n*   **局限性**：无法适应工作流中途的变化条件。如果某些输入不需要第三步，它仍然会执行。当工作流需要条件逻辑或动态路由时，顺序模式会导致效率低下或完全失败。\n*   **建议**：适用于一致性和效率比灵活性更重要的生产管道，但对于需要根据中间结果进行调整的任务而言是错误的选择。\n\n### 7. 人在回路模式：高风险任务的安全保障\n\n![Human-in-the-Loop Pattern](https://www.kdnuggets.com/wp-content/uploads/bala-hil-pattern.png)\n\n*   **描述**：人在回路（Human-in-the-Loop）模式认识到某些决策不应完全自动化。在关键检查点，智能体暂停执行，并将信息呈现给人类审查员。人类专家评估工作、提供指导或批准，然后智能体继续。这不是缺乏自动化，而是智能系统设计，承认某些决策需要人类判断、问责或监督。\n*   **适用场景**：决策涉及重大后果、安全问题或需要人类问责的主观判断时，例如超出授权阈值的金融交易、需要细致判断的边缘内容审核、归档或签署前的法律文件批准、AI筛选但人类决定的招聘决策。\n*   **局限性**：增加了架构复杂性，需要暂停工作流、通知人类、管理交接和恢复执行的基础设施。需要明确的升级标准，否则会过度负担人类或自动化需要监督的决策。\n*   **建议**：对于错误可能造成重大损害或问责制需要人类决策的高风险应用是强制性的。它承认完全自动化并非总是目标，机器效率和人类判断的正确平衡往往能带来更好的结果。\n\n## 总结\n\n大多数模式决策归结为三个关键问题：\n\n1.  **工作流是否可预测？** 如果是，顺序模式在成本和速度上占优。如果否，则需要动态编排。\n2.  **质量是否比速度更重要？** 如果是，添加反思或人在回路模式。如果否，优化直接执行。\n3.  **任务是否真正复杂？** 如果是，考虑多智能体或规划模式。如果否，从单个智能体和工具使用开始。\n\n过早地采用复杂模式是代价高昂的错误，应从最简单的有效方案开始。",
-      "shortSummary": "本文介绍了7种智能体AI设计模式，旨在构建可靠的生产级AI智能体。这些模式包括ReAct（推理与行动）、反思（自我批判）、规划（任务分解）、工具使用（扩展能力）、多智能体协作（专家协同）、顺序工作流（可预测管道）和人在回路（高风险安全保障）。每种模式都有其适用场景、优缺点和权衡（成本、延迟、可靠性）。选择合适的模式需考虑工作流的可预测性、质量与速度的优先级以及任务的实际复杂性，避免不必要的复杂化，建议从最简单的有效方案开始。",
-      "translated_title": "7个必知的智能体AI设计模式",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/mlm-bala-7-must-know-agentic-ai-design-patterns.png",
-          "alt": "7 Must-Know Agentic AI Design Patterns",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/react-pattern.png",
-          "alt": "ReAct Pattern",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-reflection-pattern.png",
-          "alt": "Reflection Pattern",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-planning-pattern.png",
-          "alt": "Planning Pattern",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-tool-use.png",
-          "alt": "Tool Use Pattern",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-multiagent-pattern.png",
-          "alt": " Multi-Agent Collaboration Pattern",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-seq-pattern.png",
-          "alt": "Sequential Workflow",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-hil-pattern.png",
-          "alt": "Human-in-the-Loop Pattern",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Building AI agents that work in production requires more than powerful models."
     }
   ],
-  "lastUpdated": "2025-11-12T09:30:19.939Z"
+  "lastUpdated": "2025-11-13T09:39:13.019Z"
 }
