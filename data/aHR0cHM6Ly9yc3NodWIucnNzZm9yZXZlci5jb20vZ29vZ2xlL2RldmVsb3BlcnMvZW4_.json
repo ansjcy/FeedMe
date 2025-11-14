@@ -5,6 +5,78 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "推出 Code Wiki：加速你的代码理解 (原标题: Introducing Code Wiki: Accelerating your code understanding)",
+      "link": "https://developers.googleblog.com/en/introducing-code-wiki-accelerating-your-code-understanding/",
+      "pubDate": "Wed, 12 Nov 2025 16:00:00 GMT",
+      "isoDate": "2025-11-12T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Code Wiki：加速你的代码理解\n\nGoogle Cloud 的产品管理总监 Fergus Hurley、高级工程经理 Pedro Rodriguez 和产品经理 Rafael Marques 共同宣布推出 Code Wiki。该平台旨在解决软件开发中阅读现有代码这一最大且最昂贵的瓶颈，通过为代码仓库维护一个持续更新、结构化的维基来显著提高开发人员的生产力。\n\n## 理解代码的新方式\n\nCode Wiki 的核心使命是组织并解锁复杂源代码中蕴藏的关键知识，使文档保持“鲜活”和实用。它通过以下关键特性实现这一目标：\n\n*   **自动化且始终最新**：Code Wiki 扫描整个代码库，并在每次代码更改后自动重新生成文档，确保文档与代码的演进保持同步。\n*   **智能且上下文感知**：整个、始终最新的维基作为集成聊天（由 Gemini 提供支持）的知识库。用户可以与一个深入了解整个仓库的特定模型进行对话，而非通用模型，从而获得高度相关的答案。\n*   **集成且可操作**：维基的每个部分和聊天回答都直接超链接到相关的代码文件和定义，将代码的阅读和探索无缝整合到一个工作流程中。\n\n## Code Wiki 网站（公开预览版）\n\nCode Wiki 网站现已推出公开预览版，这是基于新系统构建的首个产品。它能够摄取公共仓库，并为每个仓库生成、托管并维护全面且交互式的文档。通过 Code Wiki 网站，用户可以：\n\n*   **交互式导航**：从高层概念解释直接跳转到引用的具体代码文件、类和函数，实现高效的代码探索。\n*   **Gemini 驱动的聊天代理**：当遇到复杂模块时，用户可以向使用最新维基作为上下文的 Gemini 聊天代理提问，即时获得关于仓库的特定问题的答案，弥合学习代码与实际探索代码之间的鸿沟。\n*   **自动生成图表**：当文本不足以解释复杂关系时，Code Wiki 会自动生成始终最新的架构图、类图和序列图，帮助用户可视化与代码当前状态完全匹配的复杂关系。\n\n![Gemini CLI Code Wiki v2](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_CLI_Code_Wiki_v2.original.png)\n\n这种由 AI 驱动、自动化、智能且集成的方法是解决代码理解瓶颈的关键。它能让新贡献者在第一天就提交他们的第一个代码，并让资深开发人员在几分钟而非几天内理解新的库，从而显著提升团队效率。\n\n## 即将推出：Code Wiki Gemini CLI 扩展\n\n尽管开源生态系统拥有大量仓库，但私有仓库往往是最难有效文档化的。尤其是在原始代码作者可能已不在公司的情况下，理解遗留代码是一个巨大的障碍。Code Wiki 团队认为这项技术将彻底改变这些内部环境，确保每个人都能深入理解他们正在处理的代码。\n\n团队正在为 Code Wiki 构建一个 Gemini CLI 扩展，以便团队可以在本地安全地运行相同的系统，处理内部仓库。用户可以加入 Gemini CLI 扩展的等候名单，以获取最新信息。\n\n## 开发的未来\n\nCode Wiki 旨在让开发人员将时间花在构建上，而不是解密代码。手动、过时的文档和无休止的代码阅读时代已经结束。开发的未来在于即时理解，Code Wiki 正是这一愿景的体现。",
+      "shortSummary": "Google Cloud 推出 Code Wiki，旨在解决代码理解难题。该平台通过为代码仓库自动生成并维护持续更新、智能且集成的维基文档，结合 Gemini 驱动的上下文感知聊天和自动图表，加速代码理解。Code Wiki 网站已上线公开预览，未来还将推出 Gemini CLI 扩展以支持内部仓库。这使得新开发者能快速上手，资深开发者能迅速理解新库，将开发重心从代码解密转向构建，开启即时理解的开发新时代。",
+      "translated_title": "推出 Code Wiki：加速你的代码理解",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_CLI_Code_Wiki_v2.original.png",
+          "alt": "Gemini CLI Code Wiki v2",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Code Wiki is a new platform that tackles the bottleneck of reading existing code by providing an automated, continuously updated, structured wiki for code repositories. It features hyper-linked documentation, a Gemini-powered chat agent that understands your repo, and automated diagrams. A public preview is available for open-source projects, and a Gemini CLI extension is coming soon for secure use on private repos."
+    },
+    {
+      "title": "让终端美观，一次一个像素 (原标题: Making the terminal beautiful one pixel at a time)",
+      "link": "https://developers.googleblog.com/en/making-the-terminal-beautiful-one-pixel-at-a-time/",
+      "pubDate": "Wed, 12 Nov 2025 16:00:00 GMT",
+      "isoDate": "2025-11-12T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Gemini CLI用户体验重大升级：打造更美观、稳定的终端\n\nGoogle于2025年11月13日宣布对Gemini CLI的用户体验进行重大升级，旨在使其终端交互更加强大、直观和视觉稳定。此次升级彻底改造了Gemini CLI的渲染基础，消除了终端应用常见的视觉干扰，将图形界面级别的精致度直接带入终端。用户将不再遇到屏幕闪烁、输入提示跳动或在长输出流中迷失位置的问题，Gemini CLI变得更加流畅。\n\n## 关键增强功能\n\n新的渲染基础带来了多项即时改进，旨在提升用户体验：\n\n*   **鼠标导航**：\n    *   用户现在可以直接在输入提示符内使用鼠标点击进行导航，无需再频繁使用方向键。\n*   **持久化标题行**：\n    *   引入了工具确认和操作的持久化标题行，确保用户在复杂交互中也能始终了解当前操作的上下文。\n    *   ![持久化标题](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Sticky_header.original.png)\n*   **无闪烁体验**：\n    *   新设计几乎消除了屏幕闪烁。使用VSCode、iTerm、Ghostty等现代终端的用户将告别闪烁屏幕，享受流畅的终端体验。\n*   **健壮的渲染**：\n    *   以前，调整终端窗口大小有时会导致视觉故障或伪影。现在，这些渲染伪影已成为历史，无论如何调整窗口大小，都能提供清晰、精致的显示。\n*   **稳定的输入提示符**：\n    *   输入字段现在牢固地固定在终端底部，提供一致、可预测的体验，告别跳动的提示框。\n    *   ![锚定提示符](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/anchored-prompt.original.png)\n*   **历史记录保留**：\n    *   尽管为了无缝体验使用了备用屏幕缓冲区，但在退出Gemini CLI后，完整的聊天历史记录仍可在标准终端中访问。\n\n## 如何开始使用新UI\n\n这些新的UI改进已在Gemini CLI v0.15.0及更高版本中默认启用。\n要升级到最新版本的Gemini CLI，请使用以下命令：\n`npm install -g @google/gemini-cli@latest`\n\n## 后续计划\n\n这仅仅是健壮的新TUI渲染基础所能实现功能的开始。团队正在积极开发进一步的改进，包括：\n\n*   滚动条的点击拖动功能（目前可通过鼠标滚轮或Shift+上/下键滚动）。\n*   提供更无缝的复制粘贴解决方案（目前，用户可通过按Ctrl-S暂时退出鼠标模式来使用标准复制/粘贴方法选择文本）。\n\n鼓励用户立即尝试新的无缝UI，并在GitHub上提供反馈。",
+      "shortSummary": "Gemini CLI发布v0.15.0版本，带来用户体验重大升级，旨在使终端交互更稳定、直观。核心改进包括：消除屏幕闪烁、鼠标导航、持久化标题行、稳定的输入提示符以及健壮的窗口大小调整渲染。这些功能默认启用，用户可通过升级CLI体验更流畅的终端操作。未来还将支持拖动滚动条和更无缝的复制粘贴，并鼓励用户提供反馈。",
+      "translated_title": "让终端美观，一次一个像素",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Sticky_header.original.png",
+          "alt": "Sticky header",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/anchored-prompt.original.png",
+          "alt": "anchored-prompt",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "完整文章",
+      "content": "Google has launched the redesigned **Android AI Sample Catalog**, a dedicated, open-source application to inspire and educate Android developers on building AI-powered apps. It showcases examples using both on-device (Gemini Nano via ML Kit GenAI API) and Cloud models (via Firebase AI Logic SDK), including image generation with Imagen, on-device summarization, and a \"Chat with Nano Banana\" chatbot. The code is easy to copy and paste to help developers quickly start their own projects."
+    },
+    {
+      "title": "介绍 Metrax：JAX 中高性能、高效且稳健的模型评估指标 (原标题: Introducing Metrax: performant, efficient, and robust model evaluation metrics in JAX)",
+      "link": "https://developers.googleblog.com/en/introducing-metrax-performant-efficient-and-robust-model-evaluation-metrics-in-jax/",
+      "pubDate": "Wed, 12 Nov 2025 16:00:00 GMT",
+      "isoDate": "2025-11-12T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# 介绍 Metrax：JAX 中高性能、高效且稳健的模型评估指标\n\nMetrax 是一个专为 JAX 设计的高性能库，旨在提供高效且稳健的模型评估指标。它的诞生是为了解决 Google 团队在从 TensorFlow 迁移到 JAX 时，由于 JAX 缺乏内置指标库而不得不手动重新实现各种评估指标的问题，尤其是在大规模分布式计算环境中，这变得尤为复杂。\n\n## Metrax 的核心优势与特性\n\n*   **全面的指标覆盖**：Metrax 提供了用于评估各种机器学习模型（分类、回归、推荐、视觉、音频和语言）的预定义指标。\n*   **分布式环境兼容性**：它确保了在分布式和规模化训练环境中的兼容性和一致性，让开发者能专注于模型评估结果，而非重复实现指标定义。\n*   **“At K”指标的并行计算**：\n    *   Metrax 能够并行计算多个 K 值的“at K”指标，例如 PrecisionAtK、RecallAtK 和 NDCGAtK。\n    *   这意味着用户可以在模型的一次前向传播中，同时获取 K=1、K=8 和 K=20 等多个 K 值下的精度，从而更快、更全面地评估模型性能。\n*   **稳健性和可靠性**：作为一个经过充分测试的指标库，Metrax 有助于社区编写更少出错的代码和进行更可靠的模型评估。\n*   **性能优化**：Metrax 利用 JAX 的核心优势，如 `vmap` 和 `jit`，以高性能方式执行多项操作，包括“at K”操作。\n*   **丰富的指标类型**：除了准确率、精确率和召回率等经典指标外，Metrax 还包含一套强大的自然语言处理（NLP）相关指标（如 Perplexity、BLEU、ROUGE），以及视觉模型指标（如 IoU、SNR、SSIM）。\n\n## Metrax 的使用示例\n\nMetrax 的使用方式简洁明了，支持直接计算和批处理合并。\n\n1.  **直接计算指标**：\n    通过 `metrax.Precision.from_model_output` 方法传入预测值、标签和阈值，然后调用 `compute()` 即可获得结果。\n    ```python\n    import metrax\n    # 直接计算指标状态。\n    metric_state = metrax.Precision.from_model_output(\n        predictions=predictions,\n        labels=labels,\n        threshold=0.5\n    )\n    # 调用 compute() 即可获得结果。\n    result = metric_state.compute()\n    ```\n\n2.  **迭代合并批次指标**：\n    在批处理评估中，可以使用 `merge()` 函数迭代地将每个批次的指标信息合并到总的指标状态中，最后调用 `compute()` 获取最终值。\n    ```python\n    # 迭代合并精确率指标\n    for labels_b, predictions_b, weights_b in zip(labels_batched, predictions_batched, sample_weights_batched):\n        batch_metric_state = metrax.Precision.from_model_output(\n            predictions=predictions_b,\n            labels=labels_b\n        )\n        metric_state = metric_state.merge(batch_metric_state)\n    result = metric_state.compute()\n    ```\n\n## 生态系统整合与贡献\n\n*   **JAX AI Stack 的一部分**：Metrax 很好地融入了 JAX AI Stack，这是一个旨在协同工作以满足 AI 工具需求的工具套件。\n*   **广泛应用**：目前，Metrax 已被 Google 内部一些最大的软件栈使用，包括 Google 搜索、YouTube 和 Google 自己的训练后库 Tunix。\n*   **社区贡献**：Metrax 在 GitHub 上开源（github.com/google/metrax），并欢迎社区贡献。许多现有指标都是由社区贡献者添加的。\n*   **更多资源**：用户可以在 `jaxstack.ai` 找到更多与 Metrax 良好集成的 JAX 生态系统库和关于构建机器学习模型的内容。",
+      "shortSummary": "Metrax 是一个为 JAX 设计的高性能模型评估指标库，旨在解决 JAX 缺乏内置指标库的问题。它提供了一系列预定义、高效且稳健的机器学习模型评估指标，支持并行计算多个“at K”指标，并利用 JAX 的性能优势。Metrax 整合了 JAX AI Stack，已被 Google 内部团队广泛使用，并在 GitHub 上开源，欢迎社区贡献。",
+      "translated_title": "介绍 Metrax：JAX 中高性能、高效且稳健的模型评估指标",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Metrax is a high-performance JAX-based metrics library developed by Google. It standardizes model evaluation by offering robust, efficient metrics for classification, NLP, and vision, eliminating manual re-implementation after migrating from TensorFlow. Key strengths include parallel computation of \"at K\" metrics (e.g., PrecisionAtK) for multiple K values and strong integration with the JAX AI Stack, leveraging JAX's performance features. It is open-source on GitHub."
+    },
+    {
+      "title": "Google Colab 即将登陆 VS Code (原标题: Google Colab is Coming to VS Code)",
+      "link": "https://developers.googleblog.com/en/google-colab-is-coming-to-vs-code/",
+      "pubDate": "Wed, 12 Nov 2025 16:00:00 GMT",
+      "isoDate": "2025-11-12T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "# Google Colab VS Code 扩展发布\n\nGoogle Colab 团队于2025年11月13日宣布推出全新的 Google Colab Visual Studio Code 扩展。此举旨在将全球最受欢迎的代码编辑器 VS Code 的强大功能与数百万 AI/ML 开发者、学生和研究人员首选的 Colab 平台结合起来。\n\n## 发布背景与动机\n\n*   **VS Code 的普及**：VS Code 以其速度、轻量级和高度适应性，成为全球广受欢迎的代码编辑器。\n*   **Colab 的成功**：Colab 已成为 AI/ML 领域编写和执行代码、协作以及无缝访问 GPU 和 TPU 等强大计算资源的平台。\n*   **弥合差距的需求**：此前，VS Code 和 Colab 的使用场景相对独立。社区强烈希望将强大的 VS Code 开发环境与基于网络的 Colab 笔记本结合，以支持更复杂的项目开发和工作流。Colab 的目标是满足用户需求，而许多用户都在 VS Code 中工作。\n\n## 融合两者的优势\n\n新的 Colab VS Code 扩展旨在结合两个平台的优点：\n\n*   **对于 VS Code 用户**：\n    *   可以在熟悉的 VS Code 编辑器中继续工作。\n    *   将本地笔记本连接到高性能的 Colab 运行时，包括提供高级 GPU 和 TPU 的 Colab Pro 运行时。\n*   **对于 Colab 用户**：\n    *   支持 Colab 用户现有的工作流，例如处理作为大型项目或 Git 仓库一部分的笔记本。\n    *   为需要更强大 IDE 功能和更高可扩展性的 Colab 用户提供了解决方案。\n    *   弥合了简单易用的 Colab 运行时与功能丰富的 VS Code 编辑器之间的鸿沟。\n\n## 如何开始使用 Colab 扩展\n\n只需几个简单的步骤即可开始使用：\n\n1.  **安装 Colab 扩展**：\n    *   在 VS Code 中，打开左侧活动栏的“扩展”视图（或按 `Ctrl|Cmd + Shift + X`）。\n    *   在市场中搜索“Google Colab”。\n    *   点击官方 Colab 扩展的“安装”按钮。\n    *   如果提示，安装所需的依赖项——Jupyter 扩展。\n2.  **连接到 Colab 运行时**：\n    *   在本地工作区中创建或打开任何 `.ipynb` 笔记本文件。\n    *   运行一个单元格（这将引导您选择内核）或点击右上角的“选择内核”按钮。\n    *   点击“Colab”，然后选择所需的运行时，使用您的 Google 账户登录即可。\n    *   您的本地笔记本现在将由 Colab 运行时提供支持。\n\n该扩展也已发布到 Open VSX，支持 VS Code 的衍生版本。\n\n## 未来展望\n\n此次发布是 Google Colab 将其最佳功能带给用户的起点。团队计划未来将更多 Colab 功能引入 VS Code。\n\n鼓励用户立即从 VS Code Marketplace 下载扩展，试用并提供反馈。",
+      "shortSummary": "Google Colab 已推出适用于 Visual Studio Code 的官方扩展。此举将 VS Code 的强大编辑功能与 Colab 的高性能 AI/ML 计算资源（包括 GPU 和 TPU）相结合。用户现在可以在熟悉的 VS Code 环境中，将本地 Jupyter 笔记本连接到 Colab 运行时，从而简化开发流程，并支持更复杂的项目和协作。该扩展旨在满足开发者在 VS Code 中使用 Colab 的需求，并计划未来带来更多功能。",
+      "translated_title": "Google Colab 即将登陆 VS Code",
+      "images": [],
+      "contentSource": "完整文章",
+      "content": "Google Colab has launched an official VS Code extension, bridging the gap between the popular code editor and the AI/ML platform. The extension combines VS Code's powerful development environment with Colab's seamless access to high-powered runtimes (GPUs/TPUs), allowing users to connect local notebooks to Colab. This aims to meet developers where they are and brings the best of both worlds."
+    },
+    {
       "title": "宣布ADK评估中的用户模拟功能 (原标题: Announcing User Simulation in ADK Evaluation)",
       "link": "https://developers.googleblog.com/en/announcing-user-simulation-in-adk-evaluation/",
       "pubDate": "Thu, 06 Nov 2025 16:00:00 GMT",
@@ -107,92 +179,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Coral NPU is a full-stack platform for Edge AI, addressing performance, fragmentation, and user trust deficits. It's an AI-first architecture, prioritizing ML matrix engines, and offers a unified developer experience. Designed for ultra-low-power, always-on AI in wearables and IoT, it enables contextual awareness, audio/image processing, and user interaction with hardware-enforced privacy. Synaptics is the first partner to implement Coral NPU."
-    },
-    {
-      "title": "Gemini CLI 迎来全新交互体验 (原标题: Say hello to a new level of interactivity in Gemini CLI)",
-      "link": "https://developers.googleblog.com/en/say-hello-to-a-new-level-of-interactivity-in-gemini-cli/",
-      "pubDate": "Tue, 14 Oct 2025 16:00:00 GMT",
-      "isoDate": "2025-10-14T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Gemini CLI 交互性迈上新台阶\n\nGoogle 于 2025 年 10 月 15 日宣布，Gemini CLI 迎来重大增强，旨在提升用户工作流程的强大性和熟悉度。此次升级允许用户直接在 Gemini CLI 内部运行复杂的交互式命令，例如用于编辑的 `vim`、用于监控的 `top`，甚至是交互式 `git rebase -i`。\n\n## 告别终端切换，保持上下文一致\n\n过去，用户需要退出 Gemini CLI 才能运行交互式 shell 命令，且这些命令在 Gemini CLI 的上下文之外执行，导致工作流程中断。现在，通过引入伪终端（PTY）支持，所有需要丰富功能（如文本编辑器、系统监视器或依赖终端控制代码）的命令都可以在 Gemini CLI 内部及其上下文中运行，从而实现：\n\n*   **保持上下文：** 所有操作都在 Gemini CLI 内部完成，无需切换到单独的终端。\n*   **避免“挂起”：** 解决了代理式 CLI 在处理交互式命令时可能出现的“挂起”问题。\n\n## 工作原理：终端状态序列化与实时交互\n\n当用户在 Gemini CLI 中运行 shell 命令时，Gemini CLI 会在后台的伪终端中生成一个新进程，并利用 `node-pty` 库。PTY 充当中间层，为操作系统提供必要的接口，使其将该会话识别为标准终端。\n\n为了在屏幕上显示这个在后台运行的虚拟终端，Gemini CLI 采用了创新的序列化技术：\n\n1.  **快照捕获：** 新的序列化器会实时捕获伪终端的每一个瞬间快照，包括所有文本、颜色甚至光标位置。\n2.  **实时流传输：** 这些快照随后被流式传输给用户，实现用户与终端应用程序的实时查看和交互，就像观看视频流一样，提供实时的动态反馈。\n\n![Gemini CLI - 交互式 Shell 界面](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_CLI_-_interactive_shell_UoV7sHm.original.png)\n\n## 全面双向交互体验\n\n新的架构支持完整的双向通信，极大地提升了用户体验：\n\n*   **输入写入：** 用户键入的按键会发送到正在运行的进程。\n*   **动态调整大小：** 当用户调整窗口大小时，Gemini shell 内部的应用程序会像在原生终端中一样自适应布局。\n*   **焦点控制：** 用户可以通过按下 `Ctrl+F` 键将焦点切换到终端。\n*   **彩色输出：** 改进了输出处理，能够正确渲染丰富多彩的终端输出，让用户可以充分体验喜爱的命令行工具。\n\n## 如何开始使用交互式 Shell\n\n交互式 shell 功能已在 Gemini CLI v0.9.0 及更高版本中默认启用。用户可以通过以下命令升级到最新版本：\n\n```bash\nnpm install -g @google/gemini-cli@latest\n```\n\n更多详细信息请参考官方 Gemini CLI 文档。\n\n## 可运行的交互式命令示例\n\n现在，用户可以在 Gemini CLI 中运行多种类型的交互式命令，包括：\n\n*   使用 `vim`、`nvim` 或 `nano` 编辑代码。\n*   使用交互式 `git` 命令管理提交。\n*   运行常用语言的交互式 REPL（读取-求值-打印循环）。\n*   运行 `htop` 或 `mc` 等全屏终端应用程序。\n*   轻松导航 `npm init` 或 `ng new` 等交互式设置脚本。\n*   响应某些 `gcloud` 命令的交互式提示。\n\n此次更新是 shell 集成方面的重要一步。团队正在积极完善所有平台上的输入处理，并鼓励用户在 GitHub 仓库分享遇到的任何问题和反馈。",
-      "shortSummary": "Gemini CLI 现已支持直接运行复杂的交互式命令，如 `vim`、`git rebase -i` 和 `top`。通过引入伪终端（PTY）支持和终端状态序列化技术，用户无需切换终端，所有操作都在 Gemini CLI 上下文内完成。该功能提供实时、双向交互，支持输入、窗口调整和彩色输出。用户只需升级到 v0.9.0+ 版本即可体验，显著提升了命令行工作效率和用户体验。",
-      "translated_title": "Gemini CLI 迎来全新交互体验",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_CLI_-_interactive_shell_UoV7sHm.original.png",
-          "alt": "Gemini CLI - interactive shell",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "We're excited to announce an enhancement to Gemini CLI that makes your workflow more powerful a..."
-    },
-    {
-      "title": "介绍 Veo 3.1 和 Gemini API 中的新创意功能 (原标题: Introducing Veo 3.1 and new creative capabilities in the Gemini API)",
-      "link": "https://developers.googleblog.com/en/introducing-veo-3-1-and-new-creative-capabilities-in-the-gemini-api/",
-      "pubDate": "Tue, 14 Oct 2025 16:00:00 GMT",
-      "isoDate": "2025-10-14T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 介绍 Veo 3.1 和 Gemini API 中的新创意功能\n\nGoogle 于2025年10月15日发布了 Veo 3.1 和 Veo 3.1 Fast，目前在 Gemini API 中提供付费预览。这些更新的模型旨在通过显著升级，赋能开发者创建更具吸引力的内容，特别是在从图像生成视频方面提供了改进的输出。\n\n## 主要改进和新功能\n\nVeo 3.1 和 Veo 3.1 Fast 带来了多项关键改进和全新的模型功能：\n\n*   **改进的视频生成模型**\n    *   **更丰富的原生音频**：模型现在能生成更丰富的原生音频，从自然的对话到同步的音效。\n    *   **更强的叙事控制**：通过对电影风格的更好理解，提供更大的叙事控制能力。\n    *   **增强的图像到视频功能**：确保更好的提示遵循性，提供卓越的音视频质量，并能在多个场景中保持角色一致性。\n\n*   **新的模型能力**\n    *   **“视频配料”（Ingredients to video）**：\n        *   用户现在可以通过提供最多3张角色、物体或场景的参考图像来指导生成过程。\n        *   这有助于在多个镜头中保持角色一致性，或将特定风格应用于视频。\n        *   ![Screenshot 2025-10-14 9.45.50 AM](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-10-14_9.45.50_AM.original.png)\n    *   **“场景扩展”（Scene extension）**：\n        *   通过生成与前一个视频连接的新片段，用户可以创建更长的视频，甚至持续一分钟或更长时间。\n        *   每个新视频都基于前一个片段的最后一秒生成，从而保持视觉连续性，非常适合扩展带有背景音频的镜头。\n    *   **“首尾帧”（First and last frame）**：\n        *   通过提供起始图像和结束图像，用户可以指示 Veo 3.1 在两者之间生成平滑自然的过渡场景，并配有相应的音频。\n        *   ![Screenshot 2025-10-13 4.09.05 PM](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-10-13_4.09.05_PM.original.png)\n\n## 可用性\n\nVeo 3.1 和 Veo 3.1 Fast 可通过以下途径获取：\n*   Gemini API (在 Google AI Studio 和 Vertex AI 中)\n*   Gemini 应用\n*   Flow\n\n## Veo 3.1 的应用案例\n\n*   **Promise Studios**：一家 GenAI 电影工作室，在其 MUSE 平台中使用 Veo 3.1 来增强生成式故事板和预可视化，以实现导演驱动的制作级叙事。\n*   **Latitude**：正在其生成式叙事引擎中试验 Veo 3.1，以即时将用户创建的故事变为现实。\n\n## 开始使用\n\nVeo 3.1 及这些新功能现已通过 Gemini API 提供付费预览。\n*   查阅文档以获取详细参数信息和视频长度控制。\n*   在 Veo Studio（新的 AI Studio 演示应用，需要付费的 Gemini API 密钥）中开始使用 Veo 3.1 和新功能。\n*   通过更新的 cookbook 指南直接进入代码。\n\nVeo 3.1 的价格与 Veo 3 相同。",
-      "shortSummary": "Google 发布了 Veo 3.1 和 Veo 3.1 Fast，在 Gemini API 中提供付费预览。这些模型显著提升了视频生成能力，包括更丰富的原生音频、更强的叙事控制和增强的图像到视频功能，确保角色一致性。新增功能包括使用参考图像指导生成、延长现有视频（场景扩展）以及在首尾帧之间生成过渡。Veo 3.1 已在 Gemini API、Gemini 应用和 Flow 中可用，价格与 Veo 3 相同。",
-      "translated_title": "介绍 Veo 3.1 和 Gemini API 中的新创意功能",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-10-14_9.45.50_AM.original.png",
-          "alt": "Screenshot 2025-10-14 9.45.50 AM",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2025-10-13_4.09.05_PM.original.png",
-          "alt": "Screenshot 2025-10-13 4.09.05 PM",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Google is releasing Veo 3.1 and Veo 3.1 Fast, an updated video generation model, in paid preview via the Gemini API. This version offers richer native audio, greater narrative control, and enhanced image-to-video capabilities. New features include guiding generation with reference images, extending existing Veo videos, and generating transitions between frames. Companies like Promise Studios, Latitude, and Whering are already using Veo 3.1 for various applications."
-    },
-    {
-      "title": "掌控你的AI：学习如何微调Gemma 3 270M并在设备上运行 (原标题: Own your AI: Learn how to fine-tune Gemma 3 270M and run it on-device)",
-      "link": "https://developers.googleblog.com/en/own-your-ai-fine-tune-gemma-3-270m-for-on-device/",
-      "pubDate": "Tue, 07 Oct 2025 16:00:00 GMT",
-      "isoDate": "2025-10-07T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 掌控你的AI：学习如何微调Gemma 3 270M并在设备上运行\n\n本文介绍了如何利用Gemma 3 270M这一轻量级、最先进的开放模型，进行快速微调并将其部署到设备上，从而创建高度专业化的自定义AI应用。Gemma模型系列源自与Gemini模型相同的技术，因其性能和可访问性，已获得超过2.5亿次下载和85,000个社区变体。\n\n## Gemma 3 270M的优势\nGemma 3 270M的紧凑尺寸使其无需昂贵硬件即可快速针对新用例进行微调，并部署到设备上。这为模型开发提供了灵活性，并让用户完全掌控这一强大工具。\n\n## 实践示例：文本转表情符号应用\n文章通过一个具体的例子展示了如何训练一个模型将文本翻译成表情符号，并在Web应用中进行测试。用户甚至可以教授模型使用自己常用的特定表情符号，从而生成一个个性化的表情符号生成器。\n\n## 端到端流程（一小时内完成）\n整个过程分为三个主要步骤，可在不到一小时内完成：\n\n### 1. 使用微调定制模型行为\n*   **问题：** 预训练的大型语言模型（LLM）是通用型模型。如果直接要求Gemma将文本翻译成表情符号，它可能会输出多余的对话填充内容。\n*   **解决方案：** 微调是强制模型输出特定格式并教授新知识最可靠的方法。通过在包含文本和表情符号示例的数据集上训练模型，可以教会它使用特定的表情符号。\n*   **数据集创建：** 提供更多示例能让模型学习得更好。可以使用AI生成不同文本短语对应相同表情符号的示例，以增强数据集的鲁棒性。\n    *   ![创建微调数据集](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/creating-dataset-for-finetuning_2.original.png)\n*   **QLoRA技术：** 过去微调模型需要大量VRAM，但通过量化低秩适应（QLoRA）这一参数高效微调（PEFT）技术，只需更新少量权重，大大降低了内存需求。这使得在Google Colab中使用免费T4 GPU加速，可以在几分钟内完成Gemma 3 270M的微调。\n*   用户可以使用示例数据集或自定义数据集，运行微调笔记本进行模型训练和性能测试。\n\n### 2. 量化并转换模型以用于Web\n*   **部署需求：** 考虑到表情符号通常在移动设备或计算机上使用，将模型部署到设备上的应用中是合理的。\n*   **模型优化：** 原始模型虽然小巧，但仍超过1GB。为了确保快速加载的用户体验，需要通过**量化**来缩小模型。量化过程通过降低模型权重的精度（例如从16位到4位整数），显著减小文件大小，同时对许多任务的性能影响最小。\n    *   ![Gemma设备上量化](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemma-quantization-for-ondevice.original.png)\n*   **Web应用准备：** 使用LiteRT转换笔记本（与MediaPipe配合使用）或ONNX转换笔记本（与Transformers.js配合使用），可以一步完成模型的量化和转换。\n*   **WebGPU：** 这些框架利用WebGPU（一种现代Web API，允许应用访问本地设备的硬件进行计算），使得LLM能够在浏览器客户端运行，从而无需复杂的服务器设置和每次调用的推理成本。\n\n### 3. 在浏览器中运行模型\n*   **部署：** 用户可以直接在浏览器中运行定制模型。下载示例Web应用，只需修改一行代码即可接入新模型。\n*   **简化集成：** MediaPipe和Transformers.js都使这一过程变得简单。文章提供了一个MediaPipe worker中推理任务的JavaScript示例代码。\n*   **优势：** 一旦模型在用户设备上缓存，后续请求将在本地以低延迟运行，用户数据保持完全私密，并且应用即使在离线状态下也能正常运行。\n*   **分享：** 可以将应用上传到Hugging Face Spaces进行分享。\n\n## 展望\n创建专业化的AI模型不再需要成为AI专家或数据科学家。通过相对较小的数据集，可以在几分钟内提升Gemma模型的性能。这些技术使用户能够构建强大且高度定制化的AI应用，提供快速、私密且无处不在的卓越用户体验。\n\n## 资源\n文章提供了完整的项目源代码和资源链接，包括：\n*   在Colab中使用QLoRA高效微调Gemma\n*   将Gemma 3 270M转换为MediaPipe LLM Inference API使用\n*   将Gemma 3 270M转换为Transformers.js使用\n*   GitHub上的演示代码下载\n*   Gemma Cookbook和chrome.dev上的更多Web AI演示\n*   Gemma 3系列模型及其设备上功能的更多信息",
-      "shortSummary": "本文介绍了如何利用Gemma 3 270M这一轻量级开放模型，通过微调创建自定义AI应用并在设备上运行。借助QLoRA技术，用户可在Google Colab中快速微调模型（例如用于文本转表情符号），然后通过量化将其优化至300MB以下，实现在Web应用中客户端运行。这使得无需昂贵硬件或专业知识，即可构建快速、私密且可离线使用的个性化AI体验。",
-      "translated_title": "掌控你的AI：学习如何微调Gemma 3 270M并在设备上运行",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/creating-dataset-for-finetuning_2.original.png",
-          "alt": "creating-dataset-for-finetuning (2)",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/gemma-quantization-for-ondevice.original.png",
-          "alt": "gemma-quantization-for-ondevice",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "This guide shows you how to fine-tune the Gemma 3 270M model for custom tasks, like an emoji translator. Learn to quantize and convert the model for on-device use, deploying it in a web app with MediaPipe or Transformers.js for a fast, private, and offline-capable user experience."
-    },
-    {
-      "title": "宣布推出适用于 Gemini CLI 的 Genkit 扩展 (原标题: Announcing the Genkit Extension for Gemini CLI)",
-      "link": "https://developers.googleblog.com/en/announcing-the-genkit-extension-for-gemini-cli/",
-      "pubDate": "Tue, 07 Oct 2025 16:00:00 GMT",
-      "isoDate": "2025-10-07T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 宣布推出适用于 Gemini CLI 的 Genkit 扩展\n\nGoogle 于2025年10月8日宣布推出 **Genkit 扩展**，旨在简化使用 Genkit 和 Gemini CLI 构建 AI 应用程序的流程。此扩展为 Gemini CLI 提供了对 Genkit 架构、模式和工具的深入理解，使用户能够直接从终端构建、调试和迭代 AI 应用程序。这是同期推出的一系列 Gemini CLI 扩展之一，旨在增强 AI 辅助开发工作流程。\n\n## 安装\n\n您可以通过以下命令安装 Genkit 扩展：\n`gemini extensions install https://github.com/gemini-cli-extensions/genkit`\n\n## Genkit 扩展是什么？\n\nGenkit 扩展是一个官方的 Gemini CLI 扩展，它在 Gemini CLI 和您的 Genkit 项目之间提供了深度集成。通过将 Genkit 的 MCP（模型上下文协议）服务器与专门的上下文文件捆绑在一起，此扩展使 Gemini CLI 能够全面理解如何使用 Genkit SDK。\n\n安装此扩展后，Gemini CLI 将获得以下能力：\n*   **Genkit MCP 工具**：与 Genkit 开发工具直接集成。\n*   **上下文感知辅助**：理解 Genkit 概念、最佳实践和工作流程。\n*   **智能代码生成**：专门为 Genkit 应用程序开发量身定制的 AI 辅助。\n\n## 主要功能\n\n### Genkit 专用 MCP 工具\n\n该扩展提供了几个强大的工具，将 Gemini CLI 直接连接到您的 Genkit 应用程序：\n*   `get_usage_guide`：在实现 AI 功能之前获取特定语言的 Genkit 使用说明和最佳实践。\n*   `lookup_genkit_docs`：直接从聊天界面访问最新的、特定语言的 Genkit 文档。\n*   `list_flows`：发现并探索当前 Genkit 应用程序中定义的流程。\n*   `run_flow`：直接执行流程以进行调试和分析。\n*   `get_trace`：逐步分析 OpenTelemetry 跟踪，以了解流程执行情况。\n\n### 智能开发辅助\n\n安装 Genkit 扩展后，Gemini CLI 能够理解 Genkit 的架构，并可以帮助您：\n*   **添加新的 AI 功能**：使用适当的 Genkit 模式生成针对特定用例量身定制的 AI 功能。\n*   **调试应用程序**：通过上下文感知的建议分析跟踪并解决问题。\n*   **遵循最佳实践**：确保您的代码遵循 Genkit 推荐的模式和约定。\n\n### 无缝工作流程集成\n\n该扩展旨在与您现有的 Genkit 开发工作流程协同工作。它理解您的项目结构，尊重您选择的提供商（在新项目开始时优先选择 Google Gen AI），并与 Genkit Developer UI 无缝集成。\n\n## 入门\n\n### 先决条件\n\n在安装扩展之前，请确保您已安装 Gemini CLI。\n\n### 安装\n\n1.  安装扩展：`gemini extensions install https://github.com/gemini-cli-extensions/genkit`\n2.  扩展将自动配置 Gemini CLI，使其具备 Genkit 特定的知识和工具。\n\n### 使用示例\n\n安装后，您可以立即开始利用该扩展：\n*   **创建新流程**：例如，输入 `> Write a flow that generates a structured workout program based on goals, experience, and time`，Gemini CLI 将参考最新的 Genkit 开发指南和文档来编写准确的代码并遵循最佳实践。\n*   **调试和分析**：例如，输入 `> Help me understand why my flow is returning inconsistent results`，扩展将确保 Gemini CLI 提供专门针对 Genkit 模式、使用适当 API 并遵循既定最佳实践的响应。\n\n## 对开发工作流程的影响\n\nGenkit 扩展弥合了通用 AI 辅助与 Genkit 生态系统专业知识之间的鸿沟。这种集成代表着朝着更智能、上下文感知的开发工具迈出了一步。它提供了理解 Genkit 架构、了解其功能并能指导您应对构建生产级 AI 应用程序特定挑战的辅助。\n\n## 立即开始\n\n鼓励用户试用该扩展，并在 Genkit 扩展仓库中提供反馈。如果觉得有用，请考虑为仓库加星以示支持。\n\n## 了解更多\n\n*   Genkit 文档\n*   Genkit AI 辅助开发指南\n*   Gemini CLI 扩展文档\n*   Genkit 扩展仓库",
-      "shortSummary": "Google 宣布推出适用于 Gemini CLI 的 Genkit 扩展，旨在简化 AI 应用程序开发。该扩展将 Genkit 的架构和工具深度集成到 Gemini CLI 中，使用户能够直接从终端构建、调试和迭代 AI 应用。它提供上下文感知辅助、智能代码生成和 Genkit 专用工具，帮助开发者遵循最佳实践并无缝集成到现有工作流程。此举显著提升了 Genkit 应用程序的开发效率和智能化水平。",
-      "translated_title": "宣布推出适用于 Gemini CLI 的 Genkit 扩展",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The new Genkit Extension for Gemini CLI gives the command line deep knowledge of Genkit's architecture. It helps you build, debug, and iterate on AI apps with intelligent code generation, context-aware assistance, and tools to run flows and analyze traces directly from your terminal."
     }
   ],
-  "lastUpdated": "2025-11-12T10:32:42.556Z"
+  "lastUpdated": "2025-11-14T10:33:17.962Z"
 }
