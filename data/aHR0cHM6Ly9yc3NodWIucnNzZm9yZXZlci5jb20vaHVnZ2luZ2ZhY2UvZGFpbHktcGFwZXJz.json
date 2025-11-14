@@ -5,6 +5,19 @@
   "link": "https://huggingface.co/papers",
   "items": [
     {
+      "title": "Depth Anything 3: Recovering the Visual Space from Any Views",
+      "link": "https://arxiv.org/abs/2511.10647",
+      "pubDate": "Thu, 13 Nov 2025 13:59:53 GMT",
+      "isoDate": "2025-11-13T13:59:53.000Z",
+      "creator": "Haotong Lin, Sili Chen, Junhao Liew, Donny Y. Chen, Zhenyu Li, Guang Shi, Jiashi Feng, Bingyi Kang",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Depth Anything 3: Recovering the Visual Space from Any Views",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "We present Depth Anything 3 (DA3), a model that predicts spatially consistent geometry from an arbitrary number of visual inputs, with or without known camera poses. In pursuit of minimal modeling, DA3 yields two key insights: a single plain transformer (e.g., vanilla DINO encoder) is sufficient as a backbone without architectural specialization, and a singular depth-ray prediction target obviates the need for complex multi-task learning. Through our teacher-student training paradigm, the model achieves a level of detail and generalization on par with Depth Anything 2 (DA2). We establish a new visual geometry benchmark covering camera pose estimation, any-view geometry and visual rendering. On this benchmark, DA3 sets a new state-of-the-art across all tasks, surpassing prior SOTA VGGT by an average of 44.3% in camera pose accuracy and 25.1% in geometric accuracy. Moreover, it outperforms DA2 in monocular depth estimation. All models are trained exclusively on public academic datasets."
+    },
+    {
       "title": "WMPO: World Model-based Policy Optimization for Vision-Language-Action Models",
       "link": "https://arxiv.org/abs/2511.09515",
       "pubDate": "Wed, 12 Nov 2025 12:54:09 GMT",
@@ -250,20 +263,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "The performance of large language models (LLMs) and large multimodal models (LMMs) depends heavily on the quality and scale of their pre-training datasets. Recent research shows that large multimodal models trained on natural documents where images and text are interleaved outperform those trained only on image-text pairs across a wide range of benchmarks, leveraging advanced pre- trained models to enforce semantic alignment, image-sequence consistency, and textual coherence. For Arabic, however, the lack of high-quality multimodal datasets that preserve document structure has limited progress. In this paper, we present our pipeline Wasm for processing the Common Crawl dataset to create a new Arabic multimodal dataset that uniquely provides markdown output. Unlike existing Arabic corpora that focus solely on text extraction, our approach preserves the structural integrity of web content while maintaining flexibility for both text-only and multimodal pre-training scenarios. We provide a comprehensive comparative analysis of our data processing pipeline against those used for major existing datasets, highlighting the convergences in filtering strategies and justifying our specific design choices. To support future research, we publicly release a representative dataset dump along with the multimodal processing pipeline for Arabic."
-    },
-    {
-      "title": "RedOne 2.0：重新思考社交网络服务中领域特定LLM的后训练 (原标题: RedOne 2.0: Rethinking Domain-specific LLM Post-Training in Social Networking Services)",
-      "link": "https://arxiv.org/abs/2511.07070",
-      "pubDate": "Mon, 10 Nov 2025 08:04:34 GMT",
-      "isoDate": "2025-11-10T08:04:34.000Z",
-      "creator": "Fei Zhao, Chonggang Lu, Haofu Qian, Fangcheng Shi, Zijie Meng, Jianzhao Huang, Xu Tang, Zheyong Xie, Zheyu Ye, Zhe Xu, Yao Hu, Shaosheng Cao",
-      "summary": "### RedOne 2.0：社交网络服务（SNS）中领域特定大型语言模型（LLM）的后训练新范式\n\n**1. 背景与挑战**\n\n*   **SNS的独特挑战**：社交网络服务作为人类互动和信息交换的关键媒介，对LLM提出了独特的挑战，包括：\n    *   异构工作负载。\n    *   快速变化的规范和俚语。\n    *   多语言、文化多元的语料库，导致严重的分布偏移。\n*   **SFT的局限性**：传统的监督微调（SFT）虽然能使模型专业化，但常在领域内（in-distribution）收益与领域外（out-of-distribution）鲁棒性之间引发“跷跷板效应”，尤其对于小型模型而言。\n\n**2. RedOne 2.0 解决方案**\n\n*   **引入RedOne 2.0**：为应对上述挑战，研究人员提出了RedOne 2.0，这是一种面向SNS的LLM，采用渐进式、RL（强化学习）优先的后训练范式，旨在实现快速且稳定的适应。\n\n**3. RedOne 2.0 的三阶段训练流程**\n\nRedOne 2.0 的训练流程包含以下三个阶段：\n\n*   **阶段1：探索性学习（Exploratory Learning）**\n    *   在精心策划的SNS语料库上进行学习，以建立初始对齐。\n    *   识别系统性弱点。\n*   **阶段2：目标性微调（Targeted Fine-Tuning）**\n    *   有选择地对诊断出的差距应用SFT。\n    *   混合少量通用数据，以减轻遗忘效应。\n*   **阶段3：精炼学习（Refinement Learning）**\n    *   重新应用RL，并结合以SNS为中心的信号。\n    *   巩固改进，并在不同任务之间协调权衡。\n\n**4. 实验结果与性能**\n\n*   **显著性能提升**：在涵盖三类任务的各项测试中，RedOne 2.0 的4B规模模型相对于7B的次优基线，平均性能提升约2.41。\n*   **卓越的数据效率与稳定性**：RedOne 2.0 从基础模型获得了约8.74的平均性能提升，而所需数据量不到以SFT为中心的RedOne方法的一半，这证明了其在紧凑规模下卓越的数据效率和稳定性。\n\n**5. 结论**\n\n*   RedOne 2.0 为SNS场景中的领域特定LLM建立了一个具有竞争力且成本效益的基线，在提升能力的同时不牺牲鲁棒性。",
-      "shortSummary": "RedOne 2.0 提出了一种渐进式、RL优先的后训练范式，旨在解决社交网络服务（SNS）中大型语言模型（LLM）面临的异构工作负载、快速变化的语料和分布偏移等挑战。该方法通过探索性学习、目标性微调和精炼学习三个阶段，实现了快速稳定的适应。实验表明，RedOne 2.0 的4B模型在性能上显著优于7B基线，且数据效率和稳定性更高，为SNS领域特定LLM提供了一个成本效益高且鲁棒性强的解决方案。",
-      "translated_title": "RedOne 2.0：重新思考社交网络服务中领域特定LLM的后训练",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "As a key medium for human interaction and information exchange, social networking services (SNS) pose unique challenges for large language models (LLMs): heterogeneous workloads, fast-shifting norms and slang, and multilingual, culturally diverse corpora that induce sharp distribution shift. Supervised fine-tuning (SFT) can specialize models but often triggers a ``seesaw'' between in-distribution gains and out-of-distribution robustness, especially for smaller models. To address these challenges, we introduce RedOne 2.0, an SNS-oriented LLM trained with a progressive, RL-prioritized post-training paradigm designed for rapid and stable adaptation. The pipeline consist in three stages: (1) Exploratory Learning on curated SNS corpora to establish initial alignment and identify systematic weaknesses; (2) Targeted Fine-Tuning that selectively applies SFT to the diagnosed gaps while mixing a small fraction of general data to mitigate forgetting; and (3) Refinement Learning that re-applies RL with SNS-centric signals to consolidate improvements and harmonize trade-offs across tasks. Across various tasks spanning three categories, our 4B scale model delivers an average improvements about 2.41 over the 7B sub-optimal baseline. Additionally, RedOne 2.0 achieves average performance lift about 8.74 from the base model with less than half the data required by SFT-centric method RedOne, evidencing superior data efficiency and stability at compact scales. Overall, RedOne 2.0 establishes a competitive, cost-effective baseline for domain-specific LLMs in SNS scenario, advancing capability without sacrificing robustness."
     }
   ],
-  "lastUpdated": "2025-11-13T09:40:25.146Z"
+  "lastUpdated": "2025-11-14T09:32:21.555Z"
 }
