@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "5 things to try with Gemini 3 Pro in Gemini CLI",
+      "link": "https://developers.googleblog.com/en/5-things-to-try-with-gemini-3-pro-in-gemini-cli/",
+      "pubDate": "Mon, 17 Nov 2025 16:00:00 GMT",
+      "isoDate": "2025-11-17T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "5 things to try with Gemini 3 Pro in Gemini CLI",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Gemini 3 Pro is now integrated into Gemini CLI, unlocking state-of-the-art reasoning, agentic coding, and advanced tool use for enhanced developer productivity. It's available now for Google AI Ultra and paid Gemini API key subscribers (upgrade CLI to 0.16.x). Features include generating 3D apps and code from visual sketches, running complex shell commands, creating documentation, and debugging live Cloud Run services."
+    },
+    {
       "title": "推出 Code Wiki：加速你的代码理解 (原标题: Introducing Code Wiki: Accelerating your code understanding)",
       "link": "https://developers.googleblog.com/en/introducing-code-wiki-accelerating-your-code-understanding/",
       "pubDate": "Wed, 12 Nov 2025 16:00:00 GMT",
@@ -147,39 +160,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Introducing the Jules extension for Gemini CLI, an autonomous sidekick for developers. It accelerates coding workflows by offloading tasks like asynchronous work, bug fixes, and changes in new branches to Jules, while you stay in flow with Gemini CLI. Get started by installing the extension and using the /jules command to initiate and check task statuses."
-    },
-    {
-      "title": "推出Coral NPU：面向边缘AI的全栈平台 (原标题: Introducing Coral NPU: A full-stack platform for Edge AI)",
-      "link": "https://developers.googleblog.com/en/introducing-coral-npu-a-full-stack-platform-for-edge-ai/",
-      "pubDate": "Tue, 14 Oct 2025 16:00:00 GMT",
-      "isoDate": "2025-10-14T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 推出Coral NPU：面向边缘AI的全栈平台\n\nGoogle于2025年10月14日推出了Coral NPU，这是一个全栈、开源平台，旨在解决限制低功耗边缘设备和可穿戴设备上强大、始终在线AI的核心性能、碎片化和隐私挑战。\n\n## 边缘AI面临的挑战\n\n生成式AI极大地改变了我们对技术的期望，但下一个技术飞跃是将智能直接嵌入到我们的个人环境中。为了实现真正有帮助的、主动的AI（如实时翻译、理解物理环境），它必须在可穿戴和随身设备上运行。这带来了三个核心挑战：\n\n*   **性能差距：** 复杂的机器学习模型需要大量计算，远超边缘设备的有限功耗、散热和内存预算。\n*   **碎片化成本：** 为各种专有处理器编译和优化ML模型既困难又昂贵，阻碍了设备间的一致性能。\n*   **用户信任赤字：** 个人AI必须优先考虑个人数据的隐私和安全。\n\n## Coral NPU解决方案\n\nCoral NPU平台基于Google原有的Coral项目，与Google Research和Google DeepMind合作设计，为硬件设计师和ML开发者提供了构建下一代私密、高效边缘AI设备所需的工具。它是一个AI优先的硬件架构，旨在实现超低功耗、始终在线的边缘AI。\n\n*   **统一的开发体验：** 简化了环境感知等应用的部署。\n*   **低功耗设计：** 专为可穿戴设备的全天候AI而设计，最大限度地减少电池使用，并可配置以支持更高性能用例。\n*   **开放可用：** 相关的文档和工具已发布，供开发者和设计师立即开始构建。\n\n## AI优先的架构\n\n传统的芯片设计在通用CPU（灵活但ML效率低）和专用加速器（ML效率高但缺乏灵活性）之间存在权衡。Coral NPU通过颠覆传统芯片设计来解决这一问题，它优先考虑ML矩阵引擎而非标量计算，从芯片层面优化AI架构，从而创建了一个专为更高效的设备端推理而设计的平台。\n\n![Coral NPU全平台](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/The_full_platform_v4_Fin_Alpha.original.png)\n\n作为一个完整的参考神经网络处理单元（NPU）架构，Coral NPU为下一代节能、ML优化片上系统（SoC）提供了构建模块。\n\n*   **RISC-V基础：** 架构基于一套符合RISC-V ISA的架构IP块，设计用于最小功耗，非常适合始终在线的环境感知。\n*   **性能表现：** 基础设计提供512 GOPS的性能，同时仅消耗几毫瓦，为边缘设备、听戴设备、AR眼镜和智能手表提供强大的设备端AI。\n*   **开放可扩展：** 基于RISC-V的开放可扩展架构为SoC设计师提供了修改基础设计或将其用作预配置NPU的灵活性。\n\nCoral NPU架构包含以下组件：\n\n*   **标量核心：** 轻量级、C可编程的RISC-V前端，管理数据流到后端核心，采用简单的“运行到完成”模型，实现超低功耗和传统CPU功能。\n*   **向量执行单元：** 强大的单指令多数据（SIMD）协处理器，符合RISC-V向量指令集（RVV）v1.0，支持对大型数据集的并行操作。\n*   **矩阵执行单元：** 高效的量化外积乘累加（MAC）引擎，专为加速基本神经网络操作而构建（该矩阵核心仍在开发中，将于今年晚些时候在GitHub上发布）。\n\n![Coral NPU设计灵感](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Inspiration_of_Coral_v4_Fin_Alpha.original.png)\n\n## 统一的开发者体验\n\nCoral NPU架构是一个简单、C可编程的目标，可以与IREE和TFLM等现代编译器无缝集成，从而轻松支持TensorFlow、JAX和PyTorch等ML框架。\n\n*   **全面的软件工具链：** 包括TFLM编译器、通用MLIR编译器、C编译器、自定义内核和模拟器，为开发者提供灵活的路径。\n*   **优化编译流程：** 例如，JAX框架的模型首先使用StableHLO方言导入MLIR格式，然后输入IREE编译器，该编译器应用硬件特定插件识别Coral NPU架构，并进行渐进式降低优化，最终生成紧凑的二进制文件，可在边缘设备上高效执行。\n*   **行业标准工具：** 简化ML模型的编程，并在各种硬件目标上提供一致的体验。\n\n![Coral NPU编译器工具链](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/The_compiler_toolchain_v4_Fin_Alpha.original.png)\n\nCoral NPU的协同设计过程侧重于两个关键领域：\n\n1.  高效加速当前设备端视觉和音频应用中领先的基于编码器的架构。\n2.  与Gemma团队密切合作，优化Coral NPU以支持小型Transformer模型，确保加速器架构支持边缘生成式AI的下一代发展。\n\n这种双重关注意味着Coral NPU有望成为第一个开放、基于标准、低功耗的NPU，能够将大型语言模型（LLMs）引入可穿戴设备。\n\n## 目标应用\n\nCoral NPU旨在实现超低功耗、始终在线的边缘AI应用，特别关注环境感知系统。其主要目标是在可穿戴设备、手机和物联网（IoT）设备上实现全天候AI体验，同时最大限度地减少电池使用。\n\n潜在用例包括：\n\n*   **情境感知：** 检测用户活动（如步行、跑步）、接近度或环境（如室内/室外、移动中），以启用“请勿打扰”模式或其他情境感知功能。\n*   **音频处理：** 语音和语音检测、关键词识别、实时翻译、转录和基于音频的辅助功能。\n*   **图像处理：** 人物和物体检测、面部识别、手势识别和低功耗视觉搜索。\n*   **用户交互：** 通过手势、音频提示或其他传感器驱动输入实现控制。\n\n## 硬件强制隐私\n\nCoral NPU的核心原则是通过硬件强制安全来建立用户信任。其架构旨在支持CHERI等新兴技术，提供细粒度的内存级安全和可扩展的软件分区。通过这种方法，敏感的AI模型和个人数据可以被隔离在硬件强制的沙盒中，从而减轻基于内存的攻击。\n\n## 构建生态系统\n\n开放硬件项目的成功离不开强大的合作伙伴关系。Google正与Synaptics合作，Synaptics是其首个战略硅合作伙伴，也是物联网嵌入式计算、无线连接和多模态传感领域的领导者。Synaptics已宣布推出其新的Astra™ SL2610系列AI原生物联网处理器，该产品线采用了其Torq™ NPU子系统，这是Coral NPU架构的业界首个生产实现。Torq™ NPU设计支持Transformer模型和动态操作符，使开发者能够为消费和工业物联网构建面向未来的边缘AI系统。\n\n此次合作支持了Google对统一开发者体验的承诺。Synaptics Torq™边缘AI平台基于IREE和MLIR的开源编译器和运行时构建。这一合作是为智能、情境感知设备构建共享开放标准的重要一步。\n\n## 总结\n\n通过Coral NPU，Google正在为个人AI的未来构建一个基础层。目标是提供一个通用、开源且安全的平台，供行业在此基础上进行构建，从而促进一个充满活力的生态系统。这将使开发者和芯片供应商能够超越当前碎片化的局面，在边缘计算的共享标准上进行协作，从而加速创新。",
-      "shortSummary": "Google推出Coral NPU，一个全栈开源平台，解决低功耗边缘AI的性能、碎片化和隐私挑战。它采用AI优先的RISC-V架构，提供512 GOPS性能，功耗仅数毫瓦。平台提供统一开发体验，支持主流ML框架，赋能可穿戴设备、手机及IoT的全天候私密AI应用，如情境感知和实时翻译。Coral NPU强调硬件强制隐私，并与Synaptics等伙伴共建开放生态，加速边缘AI创新。",
-      "translated_title": "推出Coral NPU：面向边缘AI的全栈平台",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/The_full_platform_v4_Fin_Alpha.original.png",
-          "alt": "The full platform_v4_Fin_Alpha",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Inspiration_of_Coral_v4_Fin_Alpha.original.png",
-          "alt": "Inspiration of Coral_v4_Fin_Alpha",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/The_compiler_toolchain_v4_Fin_Alpha.original.png",
-          "alt": "The compiler toolchain_v4_Fin_Alpha",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Coral NPU is a full-stack platform for Edge AI, addressing performance, fragmentation, and user trust deficits. It's an AI-first architecture, prioritizing ML matrix engines, and offers a unified developer experience. Designed for ultra-low-power, always-on AI in wearables and IoT, it enables contextual awareness, audio/image processing, and user interaction with hardware-enforced privacy. Synaptics is the first partner to implement Coral NPU."
     }
   ],
-  "lastUpdated": "2025-11-17T10:33:39.254Z"
+  "lastUpdated": "2025-11-19T10:33:17.601Z"
 }
