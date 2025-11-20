@@ -5,6 +5,89 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Building AI Agents with Google Gemini 3 and Open Source Frameworks",
+      "link": "https://developers.googleblog.com/en/building-ai-agents-with-google-gemini-3-and-open-source-frameworks/",
+      "pubDate": "Tue, 18 Nov 2025 16:00:00 GMT",
+      "isoDate": "2025-11-18T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Building AI Agents with Google Gemini 3 and Open Source Frameworks",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/langchain.original.png",
+          "alt": "langchain",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ai-sdk.original.png",
+          "alt": "ai-sdk",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_vCYoxzo.original.png",
+          "alt": "LlamaIndex",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/pydantic-ai.original.png",
+          "alt": "pydantic-ai",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/n8n.original.png",
+          "alt": "n8n",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Gemini 3 Pro Preview is introduced as a powerful, agentic model for complex, (semi)-autonomous workflows. New agentic features include `thinking_level` for reasoning control, Stateful Tool Use via Thought Signatures, and `media_resolution` for multimodal fidelity. It has Day 0 support for open-source frameworks like LangChain, AI SDK, LlamaIndex, Pydantic AI, and n8n. Best practices include simplifying prompts and keeping temperature at 1.0."
+    },
+    {
+      "title": "Building production AI on Google Cloud TPUs with JAX",
+      "link": "https://developers.googleblog.com/en/building-production-ai-on-google-cloud-tpus-with-jax/",
+      "pubDate": "Tue, 18 Nov 2025 16:00:00 GMT",
+      "isoDate": "2025-11-18T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Building production AI on Google Cloud TPUs with JAX",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/JAX_logo.original.jpg",
+          "alt": "JAX logo",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/JAX_ecosystem.original.jpg",
+          "alt": "JAX_ecosystem",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "The JAX AI Stack is a modular, industrial-grade, end-to-end machine learning platform built on the core JAX library, co-designed with Cloud TPUs. It features key components like JAX, Flax, Optax, and Orbax for foundational model development, plus an extended ecosystem for the full ML lifecycle and production. This integration provides a powerful, scalable foundation for AI development, delivering significant performance advantages."
+    },
+    {
+      "title": "Building with Gemini 3 in Jules",
+      "link": "https://developers.googleblog.com/en/jules-gemini-3/",
+      "pubDate": "Tue, 18 Nov 2025 16:00:00 GMT",
+      "isoDate": "2025-11-18T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Building with Gemini 3 in Jules",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Jules, an always-on, multi-step software development agent, now features Gemini 3, offering clearer reasoning and better reliability. Recent improvements include parallel CLI runs, a stable API, and safer Git handling. Upcoming features include directory attachment without GitHub and automatic PR creation. Jules aims to reduce software writing overhead so developers can focus on building."
+    },
+    {
       "title": "5 things to try with Gemini 3 Pro in Gemini CLI",
       "link": "https://developers.googleblog.com/en/5-things-to-try-with-gemini-3-pro-in-gemini-cli/",
       "pubDate": "Mon, 17 Nov 2025 16:00:00 GMT",
@@ -114,53 +197,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "The Agent Development Kit (ADK), an open-source, code-first toolkit for building powerful and sophisticated AI agents, now supports Go. ADK moves LLM orchestration and agent behavior directly into your code, giving you robust debugging, versioning, and deployment freedom. ADK for Go is idiomatic and performant, leveraging Go's strengths, and includes support for over 30+ databases and the Agent-to-Agent (A2A) protocol for collaborative multi-agent systems. Start building today!"
-    },
-    {
-      "title": "Agent Garden - 学习、发现和构建的示例 (原标题: Agent Garden - Samples for learning, discovering and building)",
-      "link": "https://developers.googleblog.com/en/agent-garden-samples-for-learning-discovering-and-building/",
-      "pubDate": "Mon, 03 Nov 2025 16:00:00 GMT",
-      "isoDate": "2025-11-03T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "## Agent Garden 简介\n\nAgent Garden 现已向所有用户开放，不再仅限于 Google Cloud 用户。它旨在解决创建复杂 AI 代理（特别是多代理系统）所面临的主要挑战，这些挑战通常涉及大量研究、精确协调和巨大的开发投入以整合各种工具和框架。\n\n**Agent Garden 帮助开发者解决以下挑战：**\n*   开发能够应对复杂业务挑战的 AI 代理。\n*   创建将生成式 AI 与确定性逻辑相结合的复杂多代理工作流。\n*   将代理无缝部署并集成到现有系统和数据源中。\n\n## 核心功能与优势\n\nAgent Garden 提供了一个不断增长的精选代理示例、解决方案和工具库，旨在利用 Agent Development Kit (ADK) 加速强大 AI 代理的开发和部署。它提供独特的学习体验和资源，以启动代理开发之旅。\n\n**Agent Garden 的能力包括：**\n*   **丰富的示例集合**：提供针对各种用例量身定制的强大功能集合。这些代码示例使用 ADK 开发，并与 BigQuery 和 Vertex AI Search 等云服务进行了广泛集成。\n*   **详细的示例信息**：每个代理示例都包含详细的概述、适用的用例、架构洞察及其功能描述。开发者还可以直接在 GitHub 上访问示例代码进行深入审查。\n\n## 简化部署与定制\n\nAgent Garden 简化了代理的部署和定制过程，使开发者能够更高效地工作。\n\n*   **一键部署**：通过 Agent Starter Pack（一个帮助无缝部署到生产环境的开源启动包），开发者现在只需点击一下即可将示例代理部署到其项目中的 Agent Engine，并通过 Agent Engine Playground UI 进行测试和实验。\n*   **代理定制**：Agent Garden 通过 Firebase Studio 提供选项，允许开发者打开和定制代理，以满足其特定的需求和用例。\n\n这种探索、学习、部署和定制的开发者旅程旨在使 ADK 代理开发对您的用例而言无缝衔接。\n\n## 成功案例\n\n早期测试者已经成功利用 Agent Garden 提供的创新示例，展示了成功的采用和切实的商业价值。雷诺集团（Renault Group）在 Google Cloud Next’2025 上分享了他们的成功经验，详细介绍了如何将一个复杂的数据科学家代理集成到其电动汽车 (EV) 充电器平台中。这一集成显著增强了他们的运营和用户体验，赋予业务团队直接利用其数据的自主权。\n\n## 常见问题与资源\n\n**常见问题解答：**\n*   **代理是否可以直接部署到生产环境？** adk-samples 和 Agent Starter Pack 都是开源软件，受适用源代码中规定的条款约束。\n*   **部署的代理是否可以访问和共享？** 代理部署在 Agent Engine 中，并受 Agent Engine 访问管理选项的约束。\n*   **如何删除部署的代理？** 代理部署在 Agent Engine 中，可以在 Agent Engine 内部删除。\n*   **在哪里可以找到更多示例？** Agent Garden 将提供高影响力用例的精选示例，更多示例可在 ADK samples、ADK community repo 和 ADK docs 中找到。\n*   **如何与社区保持互动？** 请积极参与 ADK 社区。\n\n**相关资源：**\n*   Agent Garden\n*   Agent Starter Pack\n*   Agent Development Kit (ADK Docs, ADK samples, ADK Python community)",
-      "shortSummary": "Agent Garden 现已向所有用户开放，旨在简化 AI 代理（特别是多代理系统）的开发和部署。它提供精选的代理示例、解决方案和工具，结合 Agent Development Kit (ADK)，帮助开发者应对复杂业务挑战，实现生成式 AI 与确定性逻辑的融合。通过一键部署和 Firebase Studio 定制，开发者可以轻松学习、部署和个性化代理，加速 AI 解决方案的落地，如雷诺集团的成功案例所示。",
-      "translated_title": "Agent Garden - 学习、发现和构建的示例",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Agent Garden is now available to all users to simplify AI agent creation and deployment using the Agent Development Kit (ADK). It provides curated agent samples, one-click deployment via Agent Starter Pack, and customization through Firebase Studio. It helps developers with complex business challenges and multi-agent workflows, with Renault Group cited as an early success story."
-    },
-    {
-      "title": "超越请求-响应：构建实时双向流式多智能体系统 (原标题: Beyond Request-Response: Architecting Real-time Bidirectional Streaming Multi-agent System)",
-      "link": "https://developers.googleblog.com/en/beyond-request-response-architecting-real-time-bidirectional-streaming-multi-agent-system/",
-      "pubDate": "Wed, 29 Oct 2025 16:00:00 GMT",
-      "isoDate": "2025-10-29T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "本文探讨了传统请求-响应模型在构建复杂AI智能体时的局限性，并提出了实时双向流式架构作为多智能体系统的下一步发展方向。文章详细分析了这种“无回合”模型引入的主要工程挑战，并介绍了Agent开发工具包（ADK）如何通过流原生优先的方法来解决这些问题。\n\n### 请求-响应模型智能体的架构局限性\n\n传统的请求-响应通信模式在AI智能体开发中存在以下关键局限性，阻碍了真正交互式和智能体验的实现：\n\n*   **感知延迟**：智能体必须等待用户完整输入后才能开始处理，导致不自然的、基于回合的延迟，破坏了对话的流畅性。\n*   **脱节的工具集成**：在请求-响应模型中，调用工具通常会中断交互流程，导致用户体验碎片化。\n*   **笨拙的多模态处理**：处理音频和视频等同步数据流需要复杂且脆弱的逻辑来拼接独立输入，难以实现统一体验。\n\n### 实时双向流式智能体范式的愿景\n\n通过从基于回合的事务转向持久的、双向的流，可以解锁新一类智能体能力，使其更像协作伙伴而非简单工具：\n\n*   **真正的并发性和可中断性**：智能体可以在用户仍在输入时处理信息并采取行动，实现非阻塞交互和自然中断（“插话”）功能。\n*   **通过流式工具提供主动协助**：工具不再局限于单一请求-响应周期，可以作为持久的后台进程，随时间向用户或智能体流式传输信息。\n*   **统一的多模态处理**：流式架构通过原生处理连续、并行的流作为单一、统一的上下文来解决多模态问题，实现实时的环境和情境感知。\n\n### 实时双向流式多智能体系统的工程挑战\n\n构建一个健壮的实时双向多智能体应用并非易事，开发者必须解决一系列新的复杂工程问题：\n\n*   **无回合世界中的上下文管理**：在连续流中，需要设计新的机制来将流分割成逻辑事件，用于调试、分析和恢复对话。在没有明确“回合结束”信号的情况下，如何存储和传输连续的上下文流是一个挑战。\n*   **并发性和性能问题**：流式智能体是高度并发的系统，必须以低延迟处理多个异步I/O流。在多智能体系统中，这种固有的并发性变得指数级复杂。\n*   **开发者体验和可扩展性**：流式系统的底层复杂性必须通过简单、强大的抽象来隐藏。框架需要提供直观的开发者体验，例如定义可随时间产生多个结果的工具，并提供钩子和回调以注入自定义逻辑。\n\n### 双向流式范式：ADK的架构深度解析\n\nADK（Agent Development Kit）通过其开源架构，旨在实现“实时”智能体范式，该架构基于以下核心设计：\n\n![ADK架构图](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/unnamed.original_CLUn4eI.png)\n\n1.  **异步实时I/O管理**：\n    *   ADK引入了`LiveRequestQueue`，一个基于`asyncio`的队列，允许客户端应用程序无缝地将各种数据类型（文本、音频/视频blob）排队。智能体的异步运行器（`run_live`）从该队列中消费，实现近实时的数据处理，并以事件形式流式响应。\n\n2.  **多智能体的有状态、可转移会话**：\n    *   ADK会话在实时交互中持续存在，不仅包含历史记录，还包括工具调用、工具响应和各种系统信号。\n    *   通过信号（如中断、明确的“完成”信号或智能体转移）来划分连续流为离散事件。\n    *   将大型媒体blob存储在对象存储中，并在事务性数据库中引用它们。\n    *   从音频/视频流生成文本转录，作为单独的、带时间戳的事件捕获。\n    *   这种有状态的会话在智能体交接时（例如，从分流智能体到专家智能体）被完整传输，确保无缝衔接。\n\n3.  **事件驱动回调实现实时定制**：\n    *   ADK实现了回调机制，如`before_tool_callback`和`after_tool_callback`，允许开发者在工具执行前后注入自定义逻辑，实现动态控制（如日志记录、内容审核或信息注入）。\n\n4.  **流原生工具**：\n    *   ADK支持“流式工具”，这些工具被定义为异步生成器（`AsyncGenerator`）。它们可以接受标准输入并随时间产生多个结果，可选地接受`LiveRequestQueue`直接处理用户输入流，并在长时间运行任务在后台执行时向用户/模型提供中间更新。\n\n### 前进之路：挑战与未来研究\n\n该架构是深入探索和研究的起点。未来的工作将专注于提高性能（启动和智能体转移时间），并提供更丰富的回调类型（如`before-model-callback`和`after-model-callback`），以实现对智能体生命周期更深层次的控制。",
-      "shortSummary": "传统请求-响应模型因延迟、工具集成脱节和多模态处理笨拙而限制了AI智能体。本文提出实时双向流式架构，以实现真正的并发性、可中断性、主动协助和统一多模态处理。该模型面临上下文管理、并发性能和开发者体验等工程挑战。Agent开发工具包（ADK）通过异步I/O管理、有状态可转移会话、事件驱动回调和流原生工具来解决这些问题，为构建更具交互性的多智能体系统铺平道路。",
-      "translated_title": "超越请求-响应：构建实时双向流式多智能体系统",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/unnamed.original_CLUn4eI.png",
-          "alt": "unnamed",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "The blog post argues the request-response model fails for advanced multi-agent AI. It advocates for a real-time bidirectional streaming architecture, implemented by the Agent Development Kit (ADK). This streaming model enables true concurrency, natural interruptibility, and unified multimodal processing. ADK's core features are real-time I/O management, stateful sessions for agent handoffs, and streaming-native tools."
-    },
-    {
-      "title": "介绍 Gemini CLI 的 Jules 扩展 (原标题: Introducing the Jules extension for Gemini CLI)",
-      "link": "https://developers.googleblog.com/en/introducing-the-jules-extension-for-gemini-cli/",
-      "pubDate": "Tue, 28 Oct 2025 16:00:00 GMT",
-      "isoDate": "2025-10-28T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 介绍 Gemini CLI 的 Jules 扩展\n\n本文宣布推出 Jules 扩展，为 Gemini CLI 带来了一个自主的助手，旨在异步处理编码任务，从而为开发者提供强大的新工作流程。\n\n## 核心工作流程\n\nJules 扩展与 Gemini CLI 协同工作，加速创意编码流程，允许开发者将任务委派给 Jules，同时保持在 Gemini CLI 中的工作流。\n\n*   **Gemini CLI**：作为终端中的协作器和协调器，用于用户主动关注的任务。\n*   **Jules 扩展**：作为自主助手，在后台的虚拟机 (VM) 中工作，负责克隆代码、安装依赖项和修改文件。\n\n## Jules 扩展可处理的任务类型\n\nJules 扩展能够处理多种异步任务，从而提高开发效率：\n\n*   **异步任务**：可以直接从 Gemini CLI 指派 Jules 扩展独立完成任务。\n*   **后台错误修复**：在用户处理 Gemini CLI 中的其他同步任务时，可以指派 Jules 在后台修复多个错误。\n*   **新分支中的更改**：在解决 GitHub 上的问题后，Jules 扩展可以将更改提交到一个新分支。\n\n## 开始使用\n\n### 先决条件\n\n在使用 Jules 扩展之前，需要满足以下条件：\n\n1.  **安装 Gemini CLI**：确保已安装 Gemini CLI，且版本为 v0.4.0 或更新。\n2.  **拥有 Jules 账户**：在 jules.google.com 注册一个 Jules 账户。\n3.  **连接仓库**：在 Jules 控制台中将您的 GitHub 仓库连接到您的 Jules 账户。\n\n### 安装\n\n通过在终端中运行以下命令来安装 Jules 扩展：\n\n```shell\ngemini extensions install https://github.com/gemini-cli-extensions/jules --auto-update\n```\n\n*   `--auto-update` 参数是可选的，如果指定，扩展将在新版本发布时自动更新。\n\n### 使用\n\n*   **启动 Jules 任务**：使用 `/jules` 命令，后跟您的提示。例如：\n\n    ```shell\n    /jules Convert commonJS modules to ES modules\n    ```\n    一旦任务启动，扩展将在后台完成它。\n\n*   **检查任务状态**：使用 `/jules` 命令并查询任务状态。例如：\n\n    ```shell\n    /jules what is the status of my last task?\n    ```\n\n## 加速您的编码工作流\n\n鼓励开发者尝试 Gemini CLI 中的 Jules 扩展，并在 Jules 扩展仓库中分享其如何帮助加速编码工作流的反馈。如果支持该项目，请考虑给仓库点赞。\n\n## 更多信息\n\n*   Jules extension for Gemini CLI\n*   所有 Gemini CLI 扩展\n*   Jules 文档\n*   Gemini CLI 文档",
-      "shortSummary": "本文宣布推出 Gemini CLI 的 Jules 扩展，这是一个自主助手，旨在异步处理编码任务。Jules 在后台虚拟机中工作，负责克隆代码、安装依赖项和修改文件，从而让开发者能够将任务（如错误修复和分支更改）委派给它，同时专注于 Gemini CLI 中的主要工作。用户需安装 Gemini CLI，注册 Jules 账户并连接 GitHub 仓库，然后通过 `/jules` 命令启动和管理任务。",
-      "translated_title": "介绍 Gemini CLI 的 Jules 扩展",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Introducing the Jules extension for Gemini CLI, an autonomous sidekick for developers. It accelerates coding workflows by offloading tasks like asynchronous work, bug fixes, and changes in new branches to Jules, while you stay in flow with Gemini CLI. Get started by installing the extension and using the /jules command to initiate and check task statuses."
     }
   ],
-  "lastUpdated": "2025-11-19T10:33:17.601Z"
+  "lastUpdated": "2025-11-20T10:31:43.983Z"
 }
