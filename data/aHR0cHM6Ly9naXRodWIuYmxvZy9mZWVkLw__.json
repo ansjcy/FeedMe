@@ -5,6 +5,174 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "Evolving GitHub Copilot’s next edit suggestions through custom model training",
+      "link": "https://github.blog/ai-and-ml/github-copilot/evolving-github-copilots-next-edit-suggestions-through-custom-model-training/",
+      "pubDate": "Thu, 20 Nov 2025 18:02:21 +0000",
+      "isoDate": "2025-11-20T18:02:21.000Z",
+      "creator": "Kevin Merchant",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Evolving GitHub Copilot’s next edit suggestions through custom model training",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/11/Copilot-NES-demo-1.gif?resize=960%2C720",
+          "alt": "An animated GIF showing a demo of Copilot next edit suggestions. It shows how it fixes typos and syntax errors, predicts your next edit, jumps across lines, and edits multiple lines.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/11/unnamed-4.png?resize=786%2C459",
+          "alt": "A screenshot of Visual Studio Code showing a TypeScript class definition (class Point3D). A Copilot inline suggestion menu is open beside the constructor parameters, displaying options such as “Go To / Accept (Tab),” “Reject (Escape),” “Show Collapsed,” “Settings,” and “Feedback.” A small badge labeled “4 ✓” is highlighted, indicating Copilot’s fourth suggested edit.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/176698881?v=4&s=200",
+          "alt": "Kevin Merchant",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/32049232?v=4&s=200",
+          "alt": "Yu Hu",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>GitHub Copilot’s next edit suggestions just got faster, smarter, and more precise thanks to new data pipelines, reinforcement learning, and continuous model updates built for in-editor workflows.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/evolving-github-copilots-next-edit-suggestions-through-custom-model-training/\">Evolving GitHub Copilot’s next edit suggestions through custom model training</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "How we’re making GitHub Copilot smarter with fewer tools",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-were-making-github-copilot-smarter-with-fewer-tools/",
+      "pubDate": "Wed, 19 Nov 2025 20:00:00 +0000",
+      "isoDate": "2025-11-19T20:00:00.000Z",
+      "creator": "Anisha Agarwal",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How we’re making GitHub Copilot smarter with fewer tools",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/11/tool-selection.png?resize=385%2C60",
+          "alt": "Screenshot of a spinner next to the words \"Optimizing tool selection...\"",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/11/tool-use.png?resize=1024%2C512",
+          "alt": "A clustering chart showing groupings of embeddings for the GitHub MCP server's tools: create_pending_pull_request_review, get_issue_comments, create_branch, get_me, and list_tags.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/11/HumanEvalInfilling_1200x630.png?resize=1024%2C538",
+          "alt": "A bar graph showing coverage rates. Embedding based is highest with 94.5%, followed by GPT-4.1 based at 87.5% and Default tools at 69%.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/20461397?v=4&s=200",
+          "alt": "Anisha Agarwal",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/2230985?v=4&s=200",
+          "alt": "Connor Peet",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>We're using embedding-guided tool routing, adaptive clustering, and a streamlined 13-tool core to deliver faster experience in VS Code.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-were-making-github-copilot-smarter-with-fewer-tools/\">How we’re making GitHub Copilot smarter with fewer tools</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "How to write a great agents.md: Lessons from over 2,500 repositories",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/",
+      "pubDate": "Wed, 19 Nov 2025 17:00:00 +0000",
+      "isoDate": "2025-11-19T17:00:00.000Z",
+      "creator": "Matt Nigh",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How to write a great agents.md: Lessons from over 2,500 repositories",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/5862416?v=4&s=200",
+          "alt": "Matt Nigh",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Learn how to write effective agents.md files for GitHub Copilot with practical tips, real examples, and templates from analyzing 2,500+ repositories.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/\">How to write a great agents.md: Lessons from over 2,500 repositories</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Level up design-to-code collaboration with GitHub’s open source Annotation Toolkit",
       "link": "https://github.blog/enterprise-software/collaboration/level-up-design-to-code-collaboration-with-githubs-open-source-annotation-toolkit/",
       "pubDate": "Tue, 18 Nov 2025 18:05:17 +0000",
@@ -256,77 +424,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Nearly a billion commits later, the way we ship code has changed for good. Here’s what the 2025 Octoverse data says about how devs really work now.</p>\n<p>The post <a href=\"https://github.blog/news-insights/octoverse/what-986-million-code-pushes-say-about-the-developer-workflow-in-2025/\">What 986 million code pushes say about the developer workflow in 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub Copilot CLI 101：如何在命令行中使用 GitHub Copilot (原标题: GitHub Copilot CLI 101: How to use GitHub Copilot from the command line)",
-      "link": "https://github.blog/ai-and-ml/github-copilot-cli-101-how-to-use-github-copilot-from-the-command-line/",
-      "pubDate": "Thu, 06 Nov 2025 20:30:00 +0000",
-      "isoDate": "2025-11-06T20:30:00.000Z",
-      "creator": "Alexandra Lietzke",
-      "summary": "# GitHub Copilot CLI 101：如何在命令行中使用 GitHub Copilot\n\n本文详细介绍了 GitHub Copilot CLI，它将 GitHub Copilot 的 AI 能力直接带入命令行终端，使用户无需离开终端即可提问、生成脚本、重构代码和运行命令。\n\n## 什么是 GitHub Copilot CLI？\n\n*   **定义**：命令行界面 (CLI) 是一种通过终端或控制台输入命令与软件和系统交互的方式。GitHub Copilot CLI 将 Copilot 的 AI 功能集成到这一环境中。\n*   **核心优势**：\n    *   无需在 IDE 和浏览器之间切换，直接在终端中请求 Copilot 生成、解释或执行命令。\n    *   提供更高的精确度和控制力。\n    *   **示例**：输入 `copilot \"create a bash script to check for uncommitted changes and push if clean\"`，Copilot CLI 将编写脚本、解释其功能，并在运行前请求确认。\n    *   **应用场景**：调试代码、管理环境、导航遗留代码库、处理复杂实现等，提高工作效率并节省时间。\n\n## 通过 MCP 扩展 Copilot CLI 的功能\n\nGitHub Copilot CLI 预配置了 GitHub MCP 服务器，允许用户连接自定义 MCP 服务器，为开发环境添加定制功能：\n\n*   将特定领域的工具和工作流直接集成到 CLI 体验中，以获得更快、更相关的结果。\n*   添加来自环境的上下文数据，以改进代码建议和命令执行。\n*   自定义自动化和命令，以适应团队独特的开发实践。\n\n## GitHub Copilot CLI 的工作原理\n\nCopilot CLI 在传统 CLI 工作流的基础上，加入了 AI 驱动的特性：\n\n*   **自然语言交互**：用户可以使用自然语言告诉 Copilot CLI 任务，它将解析并执行相应的命令。\n*   **支持**：同时支持斜杠命令和 MCP 集成以扩展功能。\n*   **两种使用模式**：\n    *   **交互模式 (默认)**：通过 `copilot` 命令启动会话，进行双向对话，逐步完善任务。\n    *   **编程模式**：通过 `-p` 或 `--prompt` 参数直接传递一次性请求，Copilot 会内联响应。\n*   **安全性**：在读取、修改或执行文件之前，Copilot CLI 始终会请求用户确认，确保用户对环境的控制权。\n    *   **例外情况**：如果用户选择“是，并记住此文件夹以供将来会话使用”或“是，并批准此工具在会话剩余时间内使用”，Copilot 将遵循这些指示。\n\n## 谁适合使用 GitHub Copilot CLI？\n\n*   喜欢直接在终端工作并希望获得 AI 辅助的用户。\n*   **带来的便利**：\n    *   自动化重复性任务，如搜索文档或编写样板命令。\n    *   通过询问 Copilot 解释命令或获取系统信息来学习新工具。\n    *   避免在 IDE、浏览器和命令行之间切换上下文，保持专注。\n\n## 入门套件：如何安装和使用 GitHub Copilot CLI\n\n### 第一步：安装 GitHub Copilot CLI\n\n1.  **先决条件**：\n    *   GitHub Copilot 订阅 (Copilot Pro, Pro+, Business, Enterprise)。\n    *   Node.js 22 或更高版本。\n    *   npm 10 或更高版本。\n    *   （如果通过组织获取 Copilot 访问权限，组织设置中必须启用 Copilot CLI 策略。）\n2.  **安装命令**：\n    ```bash\nnpm install -g @github/copilot\n    ```\n\n### 第二步：如何使用 GitHub Copilot CLI\n\n1.  在终端中，选择正在处理代码的文件夹。\n2.  输入 `copilot` 启动 Copilot CLI。\n3.  系统会提示确认是否信任该文件夹的内容。\n    *   **重要提示**：Copilot 可能会读取、修改和执行此文件夹及其子文件夹中的文件。\n    *   **选项**：\n        *   “是，继续”：仅当前会话信任。\n        *   “是，并记住此文件夹以供将来会话使用”：当前及未来会话都信任。\n        *   “否，退出 (Esc)”：结束会话。\n4.  如果未登录 GitHub，系统会提示使用 `/login` 命令进行身份验证。\n5.  在 CLI 中输入您的提示。\n6.  有时需要批准 Copilot 使用修改或执行文件的工具。\n    *   **选项**：\n        *   “是”：允许 Copilot 使用此工具一次。\n        *   “是，并批准此工具在会话剩余时间内使用”：允许 Copilot 在当前会话中完全使用此工具（注意安全隐患，例如 `rm` 命令）。\n        *   “否，并告诉 Copilot 如何改进”：结束当前操作，等待用户提供不同方法。\n\n### 第三步：GitHub Copilot CLI 用例、示例提示和工作流\n\n*   **GitHub Learn 视频教程亮点**：\n    *   **创建 GitHub Issue**：`Create an issue for adding GitHub Copilot instructions`\n    *   **创建 Copilot 自定义指令**：`Create a branch for GitHub Copilot custom instructions`\n    *   **创建拉取请求**：`Create a pull request with the changes we have made`\n    *   **使用 MCP 服务器列出开放的 Issue 和 PR**：`Use the MCP server to list all open issues and pull requests`\n    *   **通过 MCP 服务器查询 Microsoft Learn**：`Using the Microsoft Learn MCP server, tell me all the GitHub Copilot Microsoft Learn modules that exist`\n    *   **创建 CLI 别名**：`cpcli='copilot --allow-all-tools -p \"$@\"'`\n    *   **解释和修复脚本**：`cpcli \"Explain each of these scripts and offer improvements\"`\n*   **其他常见用例**：\n    *   **代码库维护**：请求脚本扫描和修复安全漏洞，升级依赖项。\n    *   **生成文档**：生成更适合初学者的文档。\n    *   **理解系统**：获取笔记本存储容量摘要，了解占用空间最多的文件夹。\n    *   **改进测试覆盖率**：创建 Jest 测试文件，生成覆盖率分析脚本。\n    *   **原型新项目**：从头开始构建概念验证应用程序，如使用 Next.js 和 Tailwind CSS 构建仪表板。\n    *   **设置环境**：提供 Python 虚拟环境设置命令，生成克隆和准备项目的脚本。\n    *   **查找正确命令**：获取 Git 命令建议（如撤销提交、压缩提交）。\n    *   **解释不熟悉的命令**：解释 Docker 或 Git 命令。\n\n## 展望\n\nCopilot CLI 目前处于公开预览阶段，欢迎用户通过 `/feedback` 分享使用体验，以帮助塑造未来的发展路线图。\n\n## 总结\n\nGitHub Copilot CLI 将代理式 AI 的强大功能直接带到终端，帮助开发者以更少的摩擦和更流畅的工作流来启动新项目或处理现有任务。",
-      "shortSummary": "GitHub Copilot CLI 将 AI 能力集成到命令行终端，使用户无需离开终端即可通过自然语言与 Copilot 交互。它能帮助用户生成、解释和执行命令，自动化重复任务，学习新工具，并避免上下文切换。通过安装 Node.js 和 npm，并订阅 Copilot，开发者可以直接在终端中提问、创建脚本、维护代码库、生成文档和设置环境，从而提高工作效率和流程顺畅度。",
-      "translated_title": "GitHub Copilot CLI 101：如何在命令行中使用 GitHub Copilot",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Curious about using GitHub Copilot in your terminal? Here's our guide to GitHub Copilot CLI, including a starter kit with the best prompts for a wide range of use cases.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot-cli-101-how-to-use-github-copilot-from-the-command-line/\">GitHub Copilot CLI 101: How to use GitHub Copilot from the command line</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "TypeScript在AI时代的崛起：首席架构师Anders Hejlsberg的见解 (原标题: TypeScript’s rise in the AI era: Insights from Lead Architect, Anders Hejlsberg)",
-      "link": "https://github.blog/developer-skills/programming-languages-and-frameworks/typescripts-rise-in-the-ai-era-insights-from-lead-architect-anders-hejlsberg/",
-      "pubDate": "Thu, 06 Nov 2025 17:00:00 +0000",
-      "isoDate": "2025-11-06T17:00:00.000Z",
-      "creator": "Aaron Winston",
-      "summary": "## TypeScript在AI时代的崛起：首席架构师Anders Hejlsberg的见解\n\n### 1. TypeScript的诞生与初衷\n*   **背景**：2012年，JavaScript已成为网络支柱，但在大型、多开发者代码库中扩展性差，导致数百万行松散类型代码难以维护。\n*   **目标**：Anders Hejlsberg创建TypeScript并非为了取代JavaScript，而是通过增加类型、工具和重构能力，解决JavaScript在大规模开发中的痛点，使其“理智”化。\n*   **初期预期**：Hejlsberg最初认为，如果能吸引25%的JavaScript社区关注，就算成功。然而，实际的成功远超预期。\n\n### 2. 2025年：GitHub上最常用的语言\n*   **里程碑**：根据2025年Octoverse报告，TypeScript首次超越JavaScript和Python，成为GitHub上使用最广泛的语言。\n*   **增长数据**：仅在2025年，就有超过一百万开发者使用TypeScript进行贡献，同比增长66%。\n*   **行业采纳**：目前，几乎所有现代前端框架（如React, Next.js, Angular, SvelteKit）都默认使用TypeScript进行项目初始化。\n*   **带来的好处**：更安全的代码库、更好的自动补全、更少的深夜调试。\n\n### 3. TypeScript是什么？\n*   **定义**：TypeScript是一个开源的、带类型的JavaScript超集，最终编译为纯JavaScript。\n*   **核心特性**：\n    *   添加静态类型检查、接口、泛型和现代语言特性。\n    *   在编译时擦除类型信息，确保输出的JavaScript代码能在任何地方运行。\n*   **开发者使用原因**：\n    *   在运行时前捕获类型错误。\n    *   改进IDE的自动补全和重构功能。\n    *   使大型代码库在团队间易于维护。\n    *   与各种框架和AI辅助工具无缝集成。\n*   **应用场景**：前端框架（React, Angular, Vue）、后端系统（Node.js, Deno）、SDK、设计系统，以及日益增长的需要强类型以确保生成代码安全的AI驱动代理框架。\n\n### 4. 编译器重写：性能与兼容性的平衡\n*   **初期问题**：TypeScript编译器最初是自托管的（用TypeScript编写），虽然可移植，但性能逐渐成为瓶颈。\n*   **解决方案**：团队决定放弃自托管，将编译器用Go语言重写。这一举措带来了10倍的性能提升（一半来自原生执行，一半来自共享内存并发）。\n*   **设计哲学**：新的Go编译器在功能上与旧编译器完全相同，甚至保留了其“怪癖”。这种在提升性能的同时保持行为兼容性的理念，是开发者信任TypeScript的关键。\n\n### 5. 开源的演进与AI效应\n*   **开源哲学**：Anders将开源视为“代码中捕获的演进”，一个通过自然选择不断发展的生态系统。\n*   **GitHub数据**：2025年，开发者提交了近10亿次提交（同比增长25%），其中11.2亿次提交到公共和开源仓库。TypeScript的12年历史仓库本身就是一个活生生的语言演进档案。\n*   **AI时代的影响**：\n    *   AI正在改变语言偏好，开发者倾向于选择能使AI辅助编码更可靠、更易维护的类型化语言。\n    *   AI生成代码的能力与它所“见过”的语言数据量成正比。TypeScript因其丰富的现有数据和静态类型系统，非常适合AI优先的工作流。\n    *   类型在人机协作编写代码的世界中，不再是繁文缛节，而是“真相检查器”，能防止AI“幻觉”，确保确定性结果。\n\n### 6. 从IDE到智能代理\n*   **工具演变**：大型语言模型的兴起正在重新定义“开发者工具”。IDE不再仅仅是开发者的环境，也成为智能代理的环境。\n*   **AI角色转变**：AI从最初的助手，正转变为执行实际工作，而人类则负责监督。AI不再需要传统的IDE，而是需要服务。这使得“模型上下文协议”（Model Context Protocol）的工作变得令人兴奋。\n*   **TypeScript的作用**：类型化语言为智能代理提供了必要的结构，使其能够安全地重构代码、回答语义查询，并以确定性方式理解代码库。\n\n### 7. 不断演进的语言\n*   **Anders Hejlsberg的贡献**：从Turbo Pascal到C#，再到TypeScript，Anders的工作始终致力于让复杂的软件更容易理解。\n*   **TypeScript的持续演进**：TypeScript不断变化，但其核心始终是帮助开发者清晰地表达意图。这种清晰性解释了为何2025年每秒都有新开发者加入GitHub，并且其中越来越多的人选择从TypeScript开始。\n*   **总结**：TypeScript的故事不仅关乎语言设计，更关乎演进。它从一个解决JavaScript扩展性问题的务实方案，发展成为开发者乃至AI共同编写代码的基础。",
-      "shortSummary": "TypeScript由Anders Hejlsberg创建，旨在解决JavaScript在大规模项目中的扩展性问题，现已成为GitHub上最常用的语言。2025年，其用户增长66%，超越JavaScript和Python。TypeScript的静态类型系统和工具链显著提升了代码质量和开发效率。在AI时代，其结构化特性使其成为AI辅助编程的理想选择，确保代码生成和重构的可靠性。Hejlsberg强调TypeScript的演进设计及其在简化复杂软件中的作用，使其成为人机协作开发的关键。",
-      "translated_title": "TypeScript在AI时代的崛起：首席架构师Anders Hejlsberg的见解",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>TypeScript just became the most-used language on GitHub. Here’s why, according to its creator.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/programming-languages-and-frameworks/typescripts-rise-in-the-ai-era-insights-from-lead-architect-anders-hejlsberg/\">TypeScript’s rise in the AI era: Insights from Lead Architect, Anders Hejlsberg</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub Copilot 教程：如何更快地构建、测试、审查和发布代码（附真实提示） (原标题: GitHub Copilot tutorial: How to build, test, review, and ship code faster (with real prompts))",
-      "link": "https://github.blog/ai-and-ml/github-copilot/a-developers-guide-to-writing-debugging-reviewing-and-shipping-code-faster-with-github-copilot/",
-      "pubDate": "Wed, 05 Nov 2025 17:00:00 +0000",
-      "isoDate": "2025-11-05T17:00:00.000Z",
-      "creator": "Aaron Winston",
-      "summary": "# GitHub Copilot 教程：如何更快地构建、测试、审查和发布代码\n\nGitHub Copilot 已从一个简单的自动补全工具发展成为一个功能全面的 AI 编码助手。借助 Agent HQ 和 Mission Control，它现在能够执行多步工作流、修复失败的测试、审查拉取请求并直接在 VS Code 或 GitHub 中发布代码。它正在改变软件的构建、审查、安全和发布方式。\n\n## Copilot 的新功能和改进\n\nCopilot 的底层运行机制基于针对推理、速度和代码理解进行优化的多个模型。它能理解项目更广阔的上下文，生成更准确的结果，并在编辑器、终端和 GitHub 之间自然切换。\n\n### 1. 更大的上下文和跨文件推理 (通过 Mission Control)\n早期版本的 Copilot 只能看到您正在输入的内容。现在，它能够阅读多个文件，从而更好地理解模块之间的意图和关系。\n*   **示例提示：** 在 Mission Control 中：“查找所有使用过时加密库的函数，并将其重构为新的 API。打开一个草稿 PR。”\n*   Copilot 可以追踪整个代码库中的模式，进行更新并解释更改。\n\n### 2. 可选择的模型\n现在可以根据需求选择模型：一种针对原型开发时的速度进行优化，另一种则针对复杂重构时的深度推理。\n\n### 3. 超越代码补全的工具套件\nCopilot 现在是一套为工作流的每个步骤而构建的工具：\n*   **Mission Control：** 运行多步任务、生成测试、打开拉取请求。\n*   **Agent 模式：** 定义结果，Copilot 确定最佳方法，根据需要寻求反馈，测试自己的解决方案，并实时优化工作。\n*   **Copilot CLI：** 直接从终端自动化和探索您的仓库。\n*   **编码代理：** 将常规修复或脚手架工作交给 Copilot。\n*   **代码审查：** 在合并前让 Copilot 突出显示有风险的差异或缺失的测试。\n*   **Scoped Agents：** 负责常规修复、重构、文档或测试生成。\n\n## 如何使用 GitHub Copilot（附示例）\n\n以下是 Copilot 各模式的实用操作项，附带代码片段和提示示例。\n\n### 1. 在 VS Code 中使用 Mission Control 和 Agent 模式更快地构建\n安装 Copilot 扩展后，在设置中启用 Agent 模式，并从侧边栏打开 Mission Control。通过选择工作流（测试、重构、文档）或运行自定义提示来开始。\n*   **提示模式：** `# 为 userSessionService 添加缓存以减少数据库命中`\n*   **在 Mission Control 中：** “为 userSessionService 添加 Redis 缓存层，生成命中/未命中测试，并打开一个草稿 PR。”\n*   Copilot 将创建新文件、更新服务、添加测试，并打开一个包含更改摘要的草稿拉取请求。\n*   **提示：** 编写解释“为什么”而不是仅仅“是什么”的注释。例如：`// 缓存 userId 的响应 30 秒，以减少每分钟超过 1000 次的数据库命中`。简短、具体的注释能让 Copilot 更好地工作。\n\n### 2. 通过 Copilot CLI 进入终端\nCopilot CLI 将相同的智能带到您的终端。\n*   **安装命令：** `npm install -g @github/copilot-cli copilot /login`\n*   **常用命令：**\n    *   `copilot explain .`：获取仓库的结构化摘要、依赖项、测试覆盖率和潜在问题。\n    *   `copilot fix tests`\n    *   `copilot setup project`\n    *   `copilot edit src/**/*.py`\n*   **示例：** 在 CI 运行失败后，使用 `copilot fix tests` 命令让 Copilot 定位问题、解释失败原因并提出修复方案供审查。\n\n### 3. 使用 Copilot 代码审查\nCopilot 现在可以直接在 GitHub 中审查拉取请求，无需插件。它能识别有风险的差异、缺失的测试覆盖率和潜在的错误。通过仓库设置启用 Copilot 代码审查。\n*   当创建拉取请求时，Copilot 可以评论：\n    *   缺失的测试覆盖率\n    *   潜在的错误/边缘情况\n    *   安全漏洞\n*   **示例提示：** 在拉取请求聊天中，尝试编写：“总结此差异中的潜在风险并建议缺失的测试覆盖率。”\n*   Copilot 将内联回复注释，您可以接受或忽略。它旨在帮助您更快地思考问题和概念。\n\n### 4. 使用 Copilot 编码代理设置异步任务\nCopilot 编码代理可以接收一个结构化问题，编写代码并打开一个草稿拉取请求——所有这些都是异步的。\n*   **示例问题：**\n    ```\n    ### 功能请求：用户会话的 CSV 导入\n    - 文件：import_user_sessions.py\n    - 解析包含 userId, timestamp, action 标题的 CSV\n    - 验证：action 必须在 {login, logout, timeout} 中\n    - 批处理大小：最多 10k 行\n    - 成功时：追加到会话表\n    - 包括：测试、文档、API 端点\n    ```\n*   将此问题分配给 Copilot。它将克隆仓库，实现功能，并打开一个草稿拉取请求供您审查。\n*   **编码代理最适合：**\n    *   重复性重构\n    *   样板或脚手架\n    *   文档和测试生成\n*   您始终在合并前进行审查，但 Copilot 加速了所有前期工作。\n\n## 最佳实践和防护措施\n\n*   **审查一切：** AI 编写代码；您批准它。在发布前始终检查逻辑、风格和文档。\n*   **提供上下文的提示：** 您的提示越好（说明原因、方式、约束），输出就越好。\n*   **使用小增量：** 对于 Agent 模式或 CLI 编辑，一次只处理一个模块。避免“一次性重写整个应用程序”。\n*   **让开发人员参与：** 特别是对于安全、架构和设计决策。\n*   **记录提示和决策：** 维护日志：“使用了提示 X，结果好/坏，进行了调整”。这有助于优化您的使用。\n*   **缓慢建立信任：** 首先将 Copilot 用于非关键路径（测试、重构），然后扩展到核心工作流。\n*   **记住上下文限制：** 尽管 Copilot 现在处理更多上下文，但极其庞大的单体仓库可能仍然会暴露出限制。\n\n## 为什么这很重要\n\n今年有超过 3600 万开发者加入了 GitHub，其中 80% 在第一周就使用了 Copilot。AI 驱动的编码不再是实验性的，它已成为工作的一部分。TypeScript 和 Python 等强类型语言在 GitHub 上占据主导地位，它们的结构使其成为 Copilot 的理想伙伴。强类型加上智能建议意味着更快的反馈循环和更少的回归。现在有了 Mission Control，所有功能都集中在一个地方。您不再需要五个 AI 工具、十个浏览器标签或一个单独的审查机器人。一切都在您已经构建软件的地方进行。\n\n## 总结与展望\n\n如果您一直在等待了解 Copilot 真正能做什么，那么 Mission Control 就是关键时刻。借助 GitHub Copilot——在编辑器中、在终端中、在您的审查中以及在团队的后台——您将获得一个工具包，旨在帮助您更快、更智能、更自主地完成实际工作。您决定架构。您编写测试（或者至少是您想编写的那些）。您合并拉取请求。Copilot 帮助处理样板、脚手架和常规任务，让您能够专注于真正重要的问题。本周选择您技术栈的一部分——测试、文档、重构——并通过 Mission Control 运行它。看看它在哪里节省了时间，然后逐步扩展。\n\n---\n**作者信息及相关资源**\n\n本文由 ![Aaron Winston](https://avatars.githubusercontent.com/u/87450290?v=4&s=200) Aaron Winston 撰写。Aaron 帮助领导 GitHub 的内容策略，专注于开发者需要了解的一切，以保持领先。\n\n探索更多来自 GitHub 的内容：\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**\n    掌握 GitHub 所需的一切，尽在一个地方。\n    [前往文档](https://docs.github.com/)\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**\n    在 GitHub 上构建未来，这里是任何人、任何地方构建任何东西的平台。\n    [开始构建](https://github.com/)\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**\n    了解使用 GitHub 构建的公司和工程团队。\n    [了解更多](https://github.blog/category/customer-stories/)\n*   ![The GitHub Podcast](https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg) **GitHub 播客**\n    收听 GitHub 播客，这是一个致力于 GitHub 开源开发者社区内外话题、趋势、故事和文化的节目。\n    [立即收听](https://github.com/github/the-github-podcast)",
-      "shortSummary": "GitHub Copilot已从自动补全工具升级为全能AI编码助手，通过Mission Control和Agent HQ提供多步工作流、测试修复、PR审查和代码发布功能。它能理解更大上下文、跨文件推理，并提供CLI、代码审查和异步编码代理等多种模式。Copilot旨在加速开发流程，处理重复性任务，让开发者专注于核心问题。它已成为现代开发不可或缺的一部分，尤其适用于强类型语言。",
-      "translated_title": "GitHub Copilot 教程：如何更快地构建、测试、审查和发布代码（附真实提示）",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/87450290?v=4&s=200",
-          "alt": "Aaron Winston",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>How GitHub Copilot works today—including mission control—and how to get the most out of it. Here’s what you need to know.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/a-developers-guide-to-writing-debugging-reviewing-and-shipping-code-faster-with-github-copilot/\">GitHub Copilot tutorial: How to build, test, review, and ship code faster (with real prompts)</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-11-19T04:35:11.259Z"
+  "lastUpdated": "2025-11-21T04:34:50.100Z"
 }
