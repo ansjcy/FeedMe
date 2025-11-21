@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "Key Transparency Comes to Messenger",
+      "link": "https://engineering.fb.com/2025/11/20/security/key-transparency-comes-to-messenger/",
+      "pubDate": "Thu, 20 Nov 2025 17:00:21 +0000",
+      "isoDate": "2025-11-20T17:00:21.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Key Transparency Comes to Messenger",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>We&#8217;re excited to share another advancement in the security of your conversations on Messenger: the launch of key transparency verification for end-to-end encrypted chats.  This new feature enables an additional level of assurance that only you — and the people you&#8217;re communicating with — can see or listen to what is sent, and that no [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/11/20/security/key-transparency-comes-to-messenger/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/11/20/security/key-transparency-comes-to-messenger/\">Key Transparency Comes to Messenger</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "Efficient Optimization With Ax, an Open Platform for Adaptive Experimentation",
       "link": "https://engineering.fb.com/2025/11/18/open-source/efficient-optimization-ax-open-platform-adaptive-experimentation/",
       "pubDate": "Tue, 18 Nov 2025 17:00:24 +0000",
@@ -298,20 +311,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Disaggregated Schedule Fabric (DSF) is Meta’s next-generation network fabric technology for AI training networks that addresses the challenges of existing Clos-based networks. We’re sharing the challenges and innovations surrounding DSF and discussing future directions, including the creation of mega clusters through DSF and non-DSF region interconnectivity, as well as the exploration of alternative switching technologies. [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/20/data-center-engineering/disaggregated-scheduled-fabric-scaling-metas-ai-journey/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/20/data-center-engineering/disaggregated-scheduled-fabric-scaling-metas-ai-journey/\">Disaggregated Scheduled Fabric: Scaling Meta’s AI Journey</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "扩展LLM推理：张量并行、上下文并行和专家并行方面的创新 (原标题: Scaling LLM Inference: Innovations in Tensor Parallelism, Context Parallelism, and Expert Parallelism)",
-      "link": "https://engineering.fb.com/2025/10/17/ai-research/scaling-llm-inference-innovations-tensor-parallelism-context-parallelism-expert-parallelism/",
-      "pubDate": "Fri, 17 Oct 2025 16:00:50 +0000",
-      "isoDate": "2025-10-17T16:00:50.000Z",
-      "creator": "",
-      "summary": "Meta公司正在不断推动大型语言模型（LLM）推理系统的边界，以支持Meta AI应用等。为了优化资源效率、吞吐量和延迟等关键性能指标，Meta开发并实施了先进的并行化技术。\n\n## LLM推理的关键性能指标\nMeta的主要目标是优化以下指标：\n*   **资源效率**：最大化GPU利用率，提高运营效率。\n*   **吞吐量（查询/秒）**：处理更高容量的请求，服务更多用户。\n*   **延迟**：最小化响应时间，提供无缝用户体验，包括：\n    *   **预填充（Prefill）阶段的首个令牌时间（TTFT）**：理想情况下低于350毫秒。\n    *   **解码（Decoding）阶段的增量令牌时间（TTIT）**：目标低于25毫秒。\n\n这些指标突出了LLM推理的不同计算需求：预填充是计算密集型的，而解码是内存带宽密集型的。\n\n## LLM推理的两个阶段\n典型的LLM生成推理任务分为两个阶段：\n1.  **预填充阶段**：处理输入提示（可能长达数千个令牌），为LLM的每个Transformer层生成键值（KV）缓存。由于注意力机制随序列长度呈二次方增长，此阶段受计算限制。\n2.  **解码阶段**：利用并逐步更新KV缓存，逐个生成令牌。此阶段受内存限制，因为读取内存的I/O时间占据主导地位，模型权重和KV缓存占据大部分内存。\n\n## 通过并行化解决瓶颈\n为了有效扩展LLM推理，特别是处理长上下文和大型模型，Meta采用了三种主要的推理并行化技术：\n\n### 1. 张量并行（Tensor Parallelism, TP）\n*   **目的**：将大型模型分布到多个GPU上，实现单个设备无法提供的高吞吐量。它将模型的单个层（如注意力块和多层感知器层）分片成更小的独立块，在不同设备上执行。\n*   **挑战**：`allreduce`通信操作可能占端到端延迟的30%。\n*   **解决方案：直接数据访问（DDA）算法**：\n    *   **DDA flat算法**：通过允许每个rank直接从其他rank加载内存并执行本地reduce操作，改善小消息大小的`allreduce`延迟，将延迟从O(N)降低到O(1)。\n    *   **DDA tree算法**：将`allreduce`分解为reduce-scatter和all-gather两个阶段，并在每一步中使用直接数据访问，将延迟降低到常数因子，适用于稍大的消息大小。\n*   **成果**：DDA解决方案在AMD MI300X上与Nvidia H100实现了整体性能持平，DDA在解码（小消息）方面比RCCL基线快10-50%，在预填充方面快10-30%，从而使TTIT减少约10%。\n\n### 2. 上下文并行（Context Parallelism, CP）\n*   **目的**：管理和处理极长的上下文，例如Llama 4引入的1M/10M令牌能力。\n*   **挑战**：\n    *   **计算**：密集注意力FLOPs随上下文长度呈二次方增长。\n    *   **内存**：KV缓存随上下文线性增长。\n    *   **通信**：跨多个主机并行化时通信延迟增加。\n*   **解决方案：“环形注意力”（ring attention）变体**：\n    *   **Pass-KV**：输入令牌在多个CP rank之间分割。每个rank计算其查询、键和值张量的一部分，然后交换键和值张量以实现完整上下文的注意力交互。\n    *   **Pass-Q**：类似Pass-KV，但交换查询张量。\n*   **成果**：结合快速注意力内核，在单个H100主机上实现了100万令牌的预填充时间少于一分钟，在32个H100主机上实现了1000万令牌的分布式推理时间少于一分钟。使用Llama 3 405B，在16个节点上通过CP实现了128K令牌预填充3.8秒，1M令牌预填充77秒的近线性扩展。\n\n### 3. 专家并行（Expert Parallelism, EP）\n*   **目的**：扩展混合专家（MoE）模型，其中大量“专家”模块无法完全适应单个主机。\n*   **机制**：利用两阶段的`all-to-all`通信模式，根据路由在数据并行和专家并行rank之间交换令牌。\n*   **挑战**：`all-to-all`通信可能占端到端延迟的10-30%，尤其对于解码消息（100KB到2MB）。\n*   **正在探索的解决方案**：\n    *   **动态`all-to-all`**：向远程邻居发送数据子块。\n    *   **持久`all-to-all`**：解决主要由内存句柄交换、网络负载平衡和CPU开销引起的减速。\n\n## 展望：解耦推理和未来挑战\n为了进一步优化LLM推理，Meta正朝着N维并行（CP、PP、EP、TP跨节点，以及独立的DP）和解耦预填充与解码层级发展。这将实现更好的资源平衡，并可能使用异构硬件（计算密集型硬件用于预填充，内存带宽密集型硬件用于解码）。\n\n未来的挑战包括：\n*   **云架构设计**：优化底层云基础设施以适应LLM工作负载。\n*   **通信集成到内核（fused kernel）**：将通信操作直接集成到计算内核中以提高效率。\n*   **设备发起内核（device-initiated kernel）**：使设备能够直接发起操作，减少CPU开销。\n\n这些并行化和系统级改进有助于实现下一代AI应用，并推动LLM能力的边界。",
-      "shortSummary": "Meta公司通过创新并行化技术，优化LLM推理系统的资源效率、吞吐量和延迟。文章详细介绍了三种关键并行策略：张量并行（TP）通过DDA算法加速大型模型通信；上下文并行（CP）利用“环形注意力”处理超长上下文；专家并行（EP）通过优化`all-to-all`通信扩展MoE模型。这些技术显著提升了LLM推理性能，并为未来N维并行和解耦推理奠定了基础，以应对云架构和内核集成等挑战。",
-      "translated_title": "扩展LLM推理：张量并行、上下文并行和专家并行方面的创新",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>At Meta, we are constantly pushing the boundaries of LLM inference systems to power applications such as the Meta AI App. We&#8217;re sharing how we developed and implemented advanced parallelism techniques to optimize key performance metrics related to resource efficiency, throughput, and latency. The rapid evolution of large language models (LLMs) has ushered in a [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/10/17/ai-research/scaling-llm-inference-innovations-tensor-parallelism-context-parallelism-expert-parallelism/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/10/17/ai-research/scaling-llm-inference-innovations-tensor-parallelism-context-parallelism-expert-parallelism/\">Scaling LLM Inference: Innovations in Tensor Parallelism, Context Parallelism, and Expert Parallelism</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-11-19T05:27:56.091Z"
+  "lastUpdated": "2025-11-21T05:27:35.994Z"
 }
