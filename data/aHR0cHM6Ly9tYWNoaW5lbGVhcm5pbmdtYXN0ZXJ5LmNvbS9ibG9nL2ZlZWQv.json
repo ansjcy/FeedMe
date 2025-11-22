@@ -5,6 +5,97 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "From Shannon to Modern AI: A Complete Information Theory Guide for Machine Learning",
+      "link": "https://machinelearningmastery.com/from-shannon-to-modern-ai-a-complete-information-theory-guide-for-machine-learning/",
+      "pubDate": "Thu, 20 Nov 2025 11:00:25 +0000",
+      "isoDate": "2025-11-20T11:00:25.000Z",
+      "creator": "Vinod Chugani",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "From Shannon to Modern AI: A Complete Information Theory Guide for Machine Learning",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "&nbsp; In 1948, Claude Shannon published a paper that changed how we think about information forever."
+    },
+    {
+      "title": "Why Decision Trees Fail (and How to Fix Them)",
+      "link": "https://machinelearningmastery.com/why-decision-trees-fail-and-how-to-fix-them/",
+      "pubDate": "Wed, 19 Nov 2025 11:00:12 +0000",
+      "isoDate": "2025-11-19T11:00:12.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Why Decision Trees Fail (and How to Fix Them)",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "&nbsp; Decision tree-based models for predictive machine learning tasks like classification and regression are undoubtedly rich in advantages — such as their ability to capture nonlinear relationships among features and their intuitive interpretability that makes it easy to trace decisions."
+    },
+    {
+      "title": "Training a Tokenizer for BERT Models",
+      "link": "https://machinelearningmastery.com/training-a-tokenizer-for-bert-models/",
+      "pubDate": "Tue, 18 Nov 2025 20:07:11 +0000",
+      "isoDate": "2025-11-18T20:07:11.000Z",
+      "creator": "Adrian Tam",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Training a Tokenizer for BERT Models",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "This article is divided into two parts; they are: • Picking a Dataset • Training a Tokenizer To keep things simple, we'll use English text only."
+    },
+    {
+      "title": "Forecasting the Future with Tree-Based Models for Time Series",
+      "link": "https://machinelearningmastery.com/forecasting-the-future-with-tree-based-models-for-time-series/",
+      "pubDate": "Tue, 18 Nov 2025 11:00:09 +0000",
+      "isoDate": "2025-11-18T11:00:09.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Forecasting the Future with Tree-Based Models for Time Series",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Decision tree-based models in machine learning are frequently used for a wide range of predictive tasks such as classification and regression, typically on structured, tabular data."
+    },
+    {
+      "title": "The Complete AI Agent Decision Framework",
+      "link": "https://machinelearningmastery.com/the-complete-ai-agent-decision-framework/",
+      "pubDate": "Mon, 17 Nov 2025 11:00:52 +0000",
+      "isoDate": "2025-11-17T11:00:52.000Z",
+      "creator": "Vinod Chugani",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "The Complete AI Agent Decision Framework",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "You've learned about <a href=\"https://langchain-ai."
+    },
+    {
+      "title": "Mastering JSON Prompting for LLMs",
+      "link": "https://machinelearningmastery.com/mastering-json-prompting-for-llms/",
+      "pubDate": "Fri, 14 Nov 2025 11:00:12 +0000",
+      "isoDate": "2025-11-14T11:00:12.000Z",
+      "creator": "Nahla Davies",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Mastering JSON Prompting for LLMs",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "LLMs <a href=\"https://machinelearningmastery."
+    },
+    {
+      "title": "5 Essential Python Scripts for Intermediate Machine Learning Practitioners",
+      "link": "https://machinelearningmastery.com/5-essential-python-scripts-for-intermediate-machine-learning-practitioners/",
+      "pubDate": "Thu, 13 Nov 2025 11:00:54 +0000",
+      "isoDate": "2025-11-13T11:00:54.000Z",
+      "creator": "Bala Priya C",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "5 Essential Python Scripts for Intermediate Machine Learning Practitioners",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "As a machine learning engineer, you probably enjoy working on interesting tasks like experimenting with model architectures, fine-tuning hyperparameters, and analyzing results."
+    },
+    {
       "title": "用于训练语言模型的数据集 (原标题: Datasets for Training a Language Model)",
       "link": "https://machinelearningmastery.com/datasets-for-training-a-language-model/",
       "pubDate": "Wed, 12 Nov 2025 17:39:42 +0000",
@@ -28,7 +119,7 @@
         }
       ],
       "contentSource": "完整文章",
-      "content": "A good language model should learn correct language usage, free of biases and errors."
+      "content": "This article is divided into three parts; they are: • A Good Dataset for Training a Language Model • Getting the Datasets • Post-Processing the Datasets A good language model should learn correct language usage, free of biases and errors."
     },
     {
       "title": "Building ReAct Agents with LangGraph: A Beginner’s Guide",
@@ -69,195 +160,7 @@
       ],
       "contentSource": "RSS",
       "content": "Building machine learning models in high-stakes contexts like finance, healthcare, and critical infrastructure often demands robustness, explainability, and other domain-specific constraints."
-    },
-    {
-      "title": "Everything You Need to Know About LLM Evaluation Metrics",
-      "link": "https://machinelearningmastery.com/everything-you-need-to-know-about-llm-evaluation-metrics/",
-      "pubDate": "Mon, 10 Nov 2025 11:00:55 +0000",
-      "isoDate": "2025-11-10T11:00:55.000Z",
-      "creator": "Kanwal Mehreen",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Everything You Need to Know About LLM Evaluation Metrics",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-llm-evaluation-metrics.png",
-          "alt": "Everything You Need to Know About LLM Evaluation Metrics",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "When large language models first came out, most of us were just thinking about what they could do, what problems they could solve, and how far they might go."
-    },
-    {
-      "title": "The 7 Statistical Concepts You Need to Succeed as a Machine Learning Engineer",
-      "link": "https://machinelearningmastery.com/the-7-statistical-concepts-you-need-to-succeed-as-a-machine-learning-engineer/",
-      "pubDate": "Fri, 07 Nov 2025 11:00:31 +0000",
-      "isoDate": "2025-11-07T11:00:31.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "The 7 Statistical Concepts You Need to Succeed as a Machine Learning Engineer",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-chugani-7-statistical-concepts-succeed-machine-learning-engineer-feature-1024x683.png",
-          "alt": "7 Statistical Concepts Succeed Machine Learning Engineer",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "&nbsp; When we ask ourselves the question, \" what is inside machine learning systems? \", many of us picture frameworks and models that make predictions or perform tasks."
-    },
-    {
-      "title": "365数据科学提供免费AI和数据课程——100%无限访问至11月21日 (原标题: Free AI and Data Courses with 365 Data Science—100% Unlimited Access until Nov 21)",
-      "link": "https://machinelearningmastery.com/free-ai-and-data-courses-with-365-data-science-100-unlimited-access-until-nov-21/",
-      "pubDate": "Thu, 06 Nov 2025 15:16:48 +0000",
-      "isoDate": "2025-11-06T15:16:48.000Z",
-      "creator": "MLM Team",
-      "summary": "### 365数据科学提供免费AI和数据课程——100%无限访问至11月21日\n\n![365数据科学免费AI和数据课程](https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-365ds-20251106-01.jpg)\n\n365数据科学宣布，从2025年11月6日（UTC时间上午8:00）至11月21日，将限时免费开放其整个学习平台。这一机会旨在帮助有志于AI专业人士和数据爱好者提升技能，获取实践经验，且完全免费。\n\n#### 传统与使命\n\n*   **年度免费访问计划：** 这是365数据科学连续第五年推出年度免费访问计划，该计划于2020年全球疫情期间首次启动，旨在提供可访问的高质量教育。\n*   **CEO观点：** 首席执行官Ned Krastev强调，AI和数据领域正以前所未有的速度发展，为那些准备拥抱新技术的人创造了非凡机会。他指出，理解AI系统的构建、部署和集成对于追求数据驱动职业的人至关重要。\n*   **目标：** 365数据科学的目标是通过帮助学习者发展数据素养以及AI工程和智能代理的实践专业知识，来弥合技能差距，培养未来的技术专业人才。\n*   **显著成果：** 2024年的免费访问计划取得了巨大成功，吸引了来自215个国家的超过20万独立用户，累计学习时间达690万分钟，并颁发了超过35,000份证书。\n\n![365数据科学免费AI和数据课程](https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-365ds-20251106-02.png)\n\n#### 平台内容\n\n在免费访问期间，学习者将获得365数据科学平台所有内容的无限制访问权限，该平台是掌握数据和AI的综合目的地。\n\n*   **课程数量与范围：** 平台提供超过117门由专家主导的课程，涵盖从基础数据技能到AI、机器学习和AI工程等高级主题。\n*   **实践经验：** 参与者可以通过模拟实际工作场景的真实AI和数据项目获得实践经验。\n*   **互动学习：** 新引入的互动练习和引导式挑战有助于加强理解和巩固关键概念。\n*   **职业发展路径：** 365数据科学提供结构化的、以职业为导向的学习路径，引导用户从初学者逐步成长为具备就业能力的专业人士。\n\n#### 认证价值\n\n*   **行业认可：** 通过此次免费访问计划，学习者可以免费获得行业认可的证书。\n*   **提升就业力：** 这些证书证明了在数据分析、AI和机器学习方面的实践专业知识，有助于提升参与者在全球雇主面前的就业能力和信誉。\n*   **弥合教育与职业差距：** 该计划通过提供可验证的、增强职业发展的认证，弥合了教育与职业发展之间的差距，突出了实际能力。\n\n#### 把握机会\n\n在数据和人工智能日益驱动的世界中，保持领先地位比以往任何时候都更加重要。365数据科学的为期三周的开放访问期提供了一个独特的机会，让您投资于自己的未来，无论您是刚开始职业生涯、正在转行，还是希望提升在AI和数据领域的技能。不要错过获得热门专业知识、赢得行业认可证书并迈向数据科学和AI工程领域有益职业的下一步。",
-      "shortSummary": "365数据科学宣布，从2025年11月6日至11月21日，将限时免费开放其全部AI和数据科学课程平台。此项年度计划提供超过117门专家指导课程、实践项目和行业认可证书，旨在帮助学习者免费获得AI工程和数据素养等关键技能，以应对快速发展的AI领域，提升职业竞争力。",
-      "translated_title": "365数据科学提供免费AI和数据课程——100%无限访问至11月21日",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-365ds-20251106-01.jpg",
-          "alt": "Free AI and Data Courses with 365 Data Science—100% Unlimited Access until Nov 21",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-365ds-20251106-02.png",
-          "alt": "Free AI and Data Courses with 365 Data Science—100% Unlimited Access until Nov 21",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "From November 6 to November 21, 2025 (starting at 8:00 a."
-    },
-    {
-      "title": "Essential Chunking Techniques for Building Better LLM Applications",
-      "link": "https://machinelearningmastery.com/essential-chunking-techniques-for-building-better-llm-applications/",
-      "pubDate": "Thu, 06 Nov 2025 11:00:54 +0000",
-      "isoDate": "2025-11-06T11:00:54.000Z",
-      "creator": "Bala Priya C",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Essential Chunking Techniques for Building Better LLM Applications",
-      "images": [
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-chunking-for-llm-apps.png",
-          "alt": "Essential Chunking Techniques Building Better LLM Applications",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-rec-chunking.png",
-          "alt": "Recursive Chunking",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-semantic-chunking.png",
-          "alt": "Semantic Chunking",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-doc-chunking.png",
-          "alt": "Document-Based Chunking",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-adaptive-chunking.png",
-          "alt": "Adaptive Chunking",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-llm-based-chunking.png",
-          "alt": "LLM-Based Chunking",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://www.kdnuggets.com/wp-content/uploads/bala-agentic-chunking.png",
-          "alt": "Agentic Chunking",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "&nbsp; Every large language model (LLM) application that retrieves information faces a simple problem: how do you break down a 50-page document into pieces that a model can actually use? So when you’re building a retrieval-augmented generation (RAG) app, before your vector database retrieves anything and your LLM generates responses, your documents need to be split into chunks."
-    },
-    {
-      "title": "How to Diagnose Why Your Language Model Fails",
-      "link": "https://machinelearningmastery.com/how-to-diagnose-why-your-language-model-fails/",
-      "pubDate": "Wed, 05 Nov 2025 14:00:47 +0000",
-      "isoDate": "2025-11-05T14:00:47.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "How to Diagnose Why Your Language Model Fails",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-chugani-diagnose-language-model-fails-feature-1024x683.png",
-          "alt": "Diagnose Language Model Fails",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Language models , as incredibly useful as they are, are not perfect, and they may fail or exhibit undesired performance due to a variety of factors, such as data quality, tokenization constraints, or difficulties in correctly interpreting user prompts."
-    },
-    {
-      "title": "用于计算模型特征重要性的10个Python单行代码 (原标题: 10 Python One-Liners for Calculating Model Feature Importance)",
-      "link": "https://machinelearningmastery.com/10-python-one-liners-for-calculating-model-feature-importance/",
-      "pubDate": "Tue, 04 Nov 2025 12:00:11 +0000",
-      "isoDate": "2025-11-04T12:00:11.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "# 用于计算模型特征重要性的10个Python单行代码\n\n![文章主图](https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-chugani-10-python-one-liners-calculating-model-feature-importance-feature-1024x683.png)\n\n理解机器学习模型是构建可信赖AI系统的关键。模型的理解性基于两个基本属性：可解释性（explainability）和可理解性（interpretability）。前者指我们能多好地描述模型的“内部结构”，后者指人类能多容易地理解输入特征与预测输出之间捕获的关系。特征重要性是连接这两者的强大桥梁。本文介绍了10个简单而有效的Python单行代码，从不同角度计算模型特征重要性，帮助用户理解模型行为及其做出特定预测的原因。\n\n## 1. 基于决策树模型的内置特征重要性\n决策树模型（如随机森林和XGBoost集成）允许通过`model.feature_importances_`属性轻松获取特征重要性权重列表。为了更具解释性，可以将特征名称与重要性值结合打印：\n```python\nprint(\"Feature importances:\", list(zip(iris.feature_names, model.feature_importances_)))\n```\n\n## 2. 线性模型中的系数\n线性模型（如线性回归和逻辑回归）通过学习到的系数揭示特征权重。可以通过`abs(model.coef_[0])`获取这些权重。\n\n## 3. 按重要性排序特征\n此单行代码可用于按重要性值降序排列特征，从而快速了解哪些特征对模型预测贡献最大：\n```python\nsorted_features = sorted(zip(features, importances), key=lambda x: x[1], reverse=True)\n```\n\n## 4. 模型无关的置换重要性\n置换重要性通过打乱某个特征的值并分析模型性能指标（如准确性或误差）的下降来衡量特征的重要性。Scikit-learn提供了模型无关的单行代码来计算这种性能下降：\n```python\nfrom sklearn.inspection import permutation_importance\nresult = permutation_importance(model, X, y).importances_mean\n```\n\n## 5. 交叉验证中平均准确性损失的置换\n这个高效的单行代码用于在交叉验证过程中测试置换，分析打乱每个特征如何影响K折交叉验证中的模型性能：\n```python\nimport numpy as np\nfrom sklearn.model_selection import cross_val_score\nimportances = [(cross_val_score(model, X.assign(**{f: np.random.permutation(X[f])}), y).mean()) for f in X.columns]\n```\n\n## 6. 使用Eli5进行置换重要性可视化\nEli5库（“Explain like I’m 5”）为特征重要性提供了清晰的、轻度交互式的HTML视图，特别适用于Jupyter Notebooks，并支持训练好的线性模型或树模型。\n```python\nimport eli5\neli5.show_weights(model, feature_names=features)\n```\n\n## 7. 全局SHAP特征重要性\nSHAP是一个流行且强大的库，用于深入解释模型特征重要性。它可以计算每个特征的平均绝对SHAP值（SHAP中的特征重要性指标），采用模型无关且理论基础扎实的方法。\n```python\nimport numpy as np\nimport shap\nshap_values = shap.TreeExplainer(model).shap_values(X)\nimportances = np.abs(shap_values).mean(0)\n```\n\n## 8. SHAP值汇总图\nSHAP汇总图不仅提供了特征的全局重要性，还显示了它们的方向，直观地帮助理解特征值如何推动预测向上或向下。\n\n![SHAP汇总图示例](https://machinelearningmastery.com/wp-content/uploads/2025/10/shap1.png)\n\n## 9. 使用SHAP进行单次预测解释\nSHAP的一个吸引人之处在于，它不仅能解释整体模型行为和特征重要性，还能解释特征如何具体影响单次预测。这意味着可以分解单个预测，解释模型为何产生特定输出。\n```python\nsnap.force_plot(shap.TreeExplainer(model).expected_value, shap_values[0], X.iloc[0])\n```\n\n## 10. 使用LIME进行模型无关特征重要性\nLIME是SHAP的替代库，用于生成局部代理解释。这两个库可以互补使用，更好地近似个体预测周围的特征重要性。文章提供了一个针对已训练逻辑回归模型的示例。\n```python\nfrom lime.lime_tabular import LimeTabularExplainer\nexp = LimeTabularExplainer(X.values, feature_names=features).explain_instance(X.iloc[0], model.predict_proba)\n```\n\n## 总结\n本文揭示了10个有效的Python单行代码，旨在帮助更好地理解、解释和解释机器学习模型，重点关注特征重要性。借助这些工具，理解模型内部工作原理不再是神秘的黑箱。",
-      "shortSummary": "本文介绍了10个Python单行代码，用于计算机器学习模型的特征重要性，旨在提升模型的可解释性和可理解性。这些方法涵盖了从决策树内置重要性、线性模型系数、置换重要性到SHAP和LIME等多种技术。通过这些工具，开发者可以更深入地理解模型行为，揭示特征对预测的贡献，从而将机器学习模型从“黑箱”转变为透明、可解释的系统。",
-      "translated_title": "用于计算模型特征重要性的10个Python单行代码",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-chugani-10-python-one-liners-calculating-model-feature-importance-feature-1024x683.png",
-          "alt": "10 Python One-Liners Calculating Model Feature Importance",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/10/shap1.png",
-          "alt": "shap-summary-plot",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Understanding machine learning models is a vital aspect of building trustworthy AI systems."
-    },
-    {
-      "title": "7种提示工程技巧，可减轻大型语言模型中的幻觉 (原标题: 7 Prompt Engineering Tricks to Mitigate Hallucinations in LLMs)",
-      "link": "https://machinelearningmastery.com/7-prompt-engineering-tricks-to-mitigate-hallucinations-in-llms/",
-      "pubDate": "Mon, 03 Nov 2025 11:00:03 +0000",
-      "isoDate": "2025-11-03T11:00:03.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "大型语言模型（LLMs）在文本推理、总结和创意生成方面表现出色，但仍易受“幻觉”问题的影响，即生成看似自信但实则虚假、无法验证甚至荒谬的信息。由于LLMs主要基于统计和概率模式生成文本，而非验证事实，这在关键领域可能导致严重负面影响。强大的提示工程，通过精心构建包含指令、约束和上下文的提示，是减轻幻觉的有效策略。本文介绍了七种提示工程技巧，通过示例说明如何提升独立LLM和检索增强生成（RAG）系统的性能，使其更不易产生幻觉。\n\n![7 Prompt Engineering Tricks to Mitigate Hallucinations in LLMs](https://machinelearningmastery.com/wp-content/uploads/2025/11/7-prompt-engineering-techniques-mitigate-hallucinations.png)\n\n### 减轻LLM幻觉的7种提示工程技巧\n\n1.  **鼓励回避和“我不知道”的回答（非RAG）**\n    *   **描述**：LLMs即使不确定也倾向于给出自信的答案，可能因此编造事实。明确允许模型回避或表示“我不知道”可以减轻这种虚假自信。\n    *   **示例提示**：“你是一个事实核查助手。如果你对答案不确定，请回复：‘我没有足够的信息来回答。’如果确定，请给出答案并简短说明理由。”\n\n2.  **结构化、思维链推理（非RAG）**\n    *   **描述**：要求模型进行分步推理，可以促进内部一致性，并弥补可能导致幻觉的逻辑漏洞。思维链（CoT）策略模仿算法，让模型按顺序解决任务。\n    *   **示例提示**：“请分步思考这个问题：1) 提供了哪些信息？2) 需要哪些假设？3) 逻辑上得出什么结论？”\n\n3.  **使用“根据…”进行事实依据（非RAG）**\n    *   **描述**：将所需答案与指定来源关联，以阻止基于臆造的幻觉，并鼓励基于事实的推理。此策略可与第一点结合使用。\n    *   **示例提示**：“根据世界卫生组织（WHO）2023年的报告，解释抗菌素耐药性的主要驱动因素。如果报告没有提供足够细节，请说‘我不知道’。”\n\n4.  **带有明确指令和上下文的RAG（RAG）**\n    *   **描述**：RAG系统允许模型访问经过验证的知识库。即使如此，幻觉风险依然存在，除非明确指示系统仅依赖检索到的文本。\n    *   **示例提示**：“仅使用X和Y中的信息，总结亚马逊盆地森林砍伐的主要原因及相关基础设施项目。如果文档未涵盖某一点，请说‘数据不足’。”\n\n5.  **输出约束和范围限制（非RAG）**\n    *   **描述**：严格控制生成输出的格式和长度，有助于减少推测性或离题的陈述（如无根据的断言、过度详细的推理链或编造的统计数据），从而防止结果偏离源材料。限制答案空间的“自由度”增加了返回可验证信息的可能性。\n    *   **示例提示**：“用不超过100字总结线粒体在人体细胞中的作用。如果不确定，请回复‘我不知道’。”\n\n6.  **基于RAG的纠正循环：验证链（RAG）**\n    *   **描述**：结合检索和自我检查，使模型能够对照外部证据来源（主要在RAG系统中）质疑和复核自己的主张。主要针对因“过度自信”引起的幻觉。\n    *   **示例提示**：“步骤1：生成问题‘柏林墙何时倒塌？’的初步答案。步骤2：从可信的历史数据库中检索并阅读相关段落。步骤3：将检索到的证据与你的答案进行比较。步骤4：如果存在差异，请纠正答案并引用检索到的来源。”\n\n7.  **领域特定提示、免责声明和安全防护（非RAG）**\n    *   **描述**：在高风险应用领域（如医学），必须指定受限的领域边界并要求引用来源，以降低可能导致负面后果的推测性主张的风险。\n    *   **示例提示**：“你是一名认证医疗信息助手。使用2024年前发表的同行评审研究或官方指南，解释成人中度持续性哮喘的一线治疗方案。如果你无法引用此类指南，请回复：‘我无法提供建议；请咨询医疗专业人员。’”\n\n这些技巧提供了多功能模板，可用于各种场景，有助于减少LLM和RAG系统中常见的幻觉问题。",
-      "shortSummary": "大型语言模型（LLMs）易产生幻觉，即生成虚假或无法验证的信息。本文介绍了7种提示工程技巧来减轻此问题。这些技巧包括：鼓励模型回避不确定答案、采用分步思维链推理、通过“根据…”引用来源、在RAG系统中明确指令仅依赖检索信息、限制输出格式和长度、利用RAG进行自我验证循环，以及在高风险领域使用特定提示和免责声明。这些方法旨在提高LLM响应的准确性和可靠性。",
-      "translated_title": "7种提示工程技巧，可减轻大型语言模型中的幻觉",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/7-prompt-engineering-techniques-mitigate-hallucinations.png",
-          "alt": "7 Prompt Engineering Tricks to Mitigate Hallucinations in LLMs",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Large language models (LLMs) exhibit outstanding abilities to reason over, summarize, and creatively generate text."
     }
   ],
-  "lastUpdated": "2025-11-21T09:28:58.737Z"
+  "lastUpdated": "2025-11-22T09:26:13.695Z"
 }
