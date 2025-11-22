@@ -5,6 +5,38 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Build with Google Antigravity, our new agentic development platform",
+      "link": "https://developers.googleblog.com/en/build-with-google-antigravity-our-new-agentic-development-platform/",
+      "pubDate": "Wed, 19 Nov 2025 16:00:00 GMT",
+      "isoDate": "2025-11-19T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Build with Google Antigravity, our new agentic development platform",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/AGYBlogHero.original.png",
+          "alt": "AGYBlogHero",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/editor-open-agent-manager.original.png",
+          "alt": "editor-open-agent-manager",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/settings-review-policy-manual.original.png",
+          "alt": "settings-review-policy-manual",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Introducing Google Antigravity, a new agentic development platform for orchestrating code. It combines an AI-powered Editor View with a Manager Surface to deploy agents that autonomously plan, execute, and verify complex tasks across your editor, terminal, and browser. Agents communicate progress via Artifacts (screenshots, recordings) for easy verification. Available now in public preview."
+    },
+    {
       "title": "Building AI Agents with Google Gemini 3 and Open Source Frameworks",
       "link": "https://developers.googleblog.com/en/building-ai-agents-with-google-gemini-3-and-open-source-frameworks/",
       "pubDate": "Tue, 18 Nov 2025 16:00:00 GMT",
@@ -184,20 +216,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "The new **User Simulation** feature in the Agent Development Kit (ADK) replaces rigid, brittle manual test scripts with dynamic, LLM-powered conversation generation. Developers define a high-level `conversation_plan`, and the simulator handles the multi-turn interaction to achieve the goal. This dramatically reduces test creation time, builds more resilient tests, and creates a reliable regression suite for AI agents."
-    },
-    {
-      "title": "宣布推出Go语言版Agent开发工具包：用你喜爱的语言构建强大的AI智能体 (原标题: Announcing the Agent Development Kit for Go: Build Powerful AI Agents with Your Favorite Languages)",
-      "link": "https://developers.googleblog.com/en/announcing-the-agent-development-kit-for-go-build-powerful-ai-agents-with-your-favorite-languages/",
-      "pubDate": "Thu, 06 Nov 2025 16:00:00 GMT",
-      "isoDate": "2025-11-06T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 宣布推出Go语言版Agent开发工具包（ADK）\n\nGoogle于2025年11月7日宣布，将Go语言加入Agent开发工具包（ADK）支持语言家族，旨在让开发者能够使用Go语言构建强大且复杂的AI智能体。ADK是一个开源、代码优先的工具包，专为需要对AI智能体进行精细控制的开发者设计，它将大型语言模型（LLM）编排、智能体行为和工具使用的复杂性直接融入代码中。\n\n## ADK的核心优势\nADK通过将复杂逻辑直接编码，为开发者带来以下关键优势：\n*   **强大的调试能力：** 能够像对待所有服务一样严谨地定义和调试智能体逻辑。\n*   **可靠的版本控制：** 轻松跟踪更改并自信地部署应用。\n*   **部署自由：** 应用程序可以部署到任何地方，无论是本地笔记本电脑还是云端。\n\n## Go语言版ADK的特点\n对于Go语言开发者而言，ADK for Go提供了一种地道且高性能的方式来构建智能体，充分利用Go语言的并发性和强类型特性，创建健壮且可扩展的智能体应用。此外，ADK Go通过MCP Toolbox for Databases开箱即用地支持30多种数据库，使数据集成变得无缝且简单。\n\n## ADK的通用关键特性\nGo语言版ADK与Python和Java版ADK共享相同的核心设计原则和特性，确保一致的开发体验：\n*   **丰富的工具生态系统：** 通过预构建工具、自定义函数、OpenAPI规范以及与Google生态系统的紧密集成来增强智能体功能。\n*   **代码优先开发：** 直接在首选语言中定义智能体逻辑、工具和编排，实现极致的灵活性、可测试性和版本控制。\n*   **模块化多智能体系统：** 通过将多个专业智能体组合成灵活的层次结构，设计可扩展的应用程序。\n*   **开发UI：** 内置的开发用户界面可加速工作流程，允许开发者测试、评估、调试和展示其智能体。\n\n## Go语言版ADK对Agent2Agent (A2A) 协议的支持\nADK Go现在包含对Agent2Agent (A2A) 协议的支持，这使得开发者能够构建强大的多智能体系统，其中智能体可以协作解决复杂问题。通过A2A协议，主智能体可以无缝地编排和委托任务给专业的子智能体（无论是本地服务还是远程部署），确保安全且不透明的交互，而无需暴露内部内存或专有逻辑。Google已将A2A Go SDK贡献给A2A项目仓库。\n\n## 立即开始\n准备好利用Go语言的速度和ADK的控制力了吗？您的下一个颠覆性智能体只需一个命令即可实现。\n\n*   **ADK for Go 获取命令：** `go get google.golang.org/adk`\n*   **源代码：** [https://github.com/google/adk-go](https://github.com/google/adk-go)\n*   **示例：** [https://github.com/google/adk-samples](https://github.com/google/adk-samples)\n*   **文档：** [https://google.github.io/adk-docs/](https://google.github.io/adk-docs/)\n\n加入社区，提问、分享项目并与其他开发者联系：\n*   **Reddit：** `r/agentdevelopmentkit`\n*   **报告Bug：** [https://github.com/google/adk-go/issues](https://github.com/google/adk-go/issues)",
-      "shortSummary": "Google宣布推出Go语言版Agent开发工具包（ADK），这是一个开源、代码优先的工具包，旨在帮助Go开发者构建强大且可扩展的AI智能体。ADK将LLM编排、智能体行为和工具使用直接融入代码，提供强大的调试、版本控制和部署自由。它支持丰富的工具生态系统、模块化多智能体系统，并集成了Agent2Agent (A2A) 协议，允许智能体协作。开发者可利用Go的并发性和强类型特性，高效构建AI应用。",
-      "translated_title": "宣布推出Go语言版Agent开发工具包：用你喜爱的语言构建强大的AI智能体",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The Agent Development Kit (ADK), an open-source, code-first toolkit for building powerful and sophisticated AI agents, now supports Go. ADK moves LLM orchestration and agent behavior directly into your code, giving you robust debugging, versioning, and deployment freedom. ADK for Go is idiomatic and performant, leveraging Go's strengths, and includes support for over 30+ databases and the Agent-to-Agent (A2A) protocol for collaborative multi-agent systems. Start building today!"
     }
   ],
-  "lastUpdated": "2025-11-20T10:31:43.983Z"
+  "lastUpdated": "2025-11-22T10:27:55.492Z"
 }
