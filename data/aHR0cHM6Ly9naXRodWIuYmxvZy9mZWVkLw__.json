@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "Developers still need the right to challenge junk patents",
+      "link": "https://github.blog/news-insights/policy-news-and-insights/developers-still-need-the-right-to-challenge-junk-patents/",
+      "pubDate": "Mon, 24 Nov 2025 16:00:00 +0000",
+      "isoDate": "2025-11-24T16:00:00.000Z",
+      "creator": "Mike Linksvayer",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Developers still need the right to challenge junk patents",
+      "images": [
+        {
+          "url": "https://secure.gravatar.com/avatar/8cc1e22f2b79ef8eb4c53537d6ba5ac6ae3cf311c9eef3006657ebe8be0551ce?s=200&d=mm&r=g",
+          "alt": "Mike Linksvayer",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Calling on developers, startups, and open source organizations to advocate against patent rules that would make it harder to challenge bad patents by the December 2 deadline.</p>\n<p>The post <a href=\"https://github.blog/news-insights/policy-news-and-insights/developers-still-need-the-right-to-challenge-junk-patents/\">Developers still need the right to challenge junk patents</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Evolving GitHub Copilot’s next edit suggestions through custom model training",
       "link": "https://github.blog/ai-and-ml/github-copilot/evolving-github-copilots-next-edit-suggestions-through-custom-model-training/",
       "pubDate": "Thu, 20 Nov 2025 18:02:21 +0000",
@@ -380,51 +424,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>A breakdown of how Copilot coding agent has contributed to a better, more powerful GitHub.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-copilot-helps-build-the-github-platform/\">How Copilot helps build the GitHub platform</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "9.86亿次代码推送揭示了2025年的开发者工作流程 (原标题: What 986 million code pushes say about the developer workflow in 2025)",
-      "link": "https://github.blog/news-insights/octoverse/what-986-million-code-pushes-say-about-the-developer-workflow-in-2025/",
-      "pubDate": "Fri, 07 Nov 2025 16:00:00 +0000",
-      "isoDate": "2025-11-07T16:00:00.000Z",
-      "creator": "Cassidy Williams",
-      "summary": "# 2025年开发者工作流程的变革：9.86亿次代码推送的启示\n\n文章指出，当今软件开发速度显著加快，这种变化不仅体现在编码速度上，更在于代码编写、审查和发布方式的整体转变。根据Octoverse 2025报告，去年开发者每分钟创建超过230个仓库，并进行了9.86亿次提交，这表明开发者团队正以更快的速度前进，并因此改变了其工作流程。\n\n## 迭代成为默认状态\n\n这种加速并非短期现象，而是迭代方式的长期转变。过去每季度发布大型版本的模式正在迅速消失。开发者现在持续进行推送，而不是等到“完成”才发布。更小、更频繁的提交已成为常态，这使得代码审查更轻松，也降低了风险。小而频繁的更改更容易调试，也更容易回滚。这种新的工作周期正在改变团队对质量、沟通乃至招聘的看法。\n\n## 发布方式的演变\n\n由于迭代方式的改变，发布方式也随之演变，具体表现为：\n\n*   **更多特性开关（Feature Flags）**：特性开关已成为安全发布未完成工作的核心工具。团队可以利用它们将“可能”的功能推送到生产环境进行观察，并在出现问题时立即关闭，无需等待所有边缘情况处理完毕。\n*   **CI/CD全面运行**：每次代码推送都会触发一系列自动化事件，包括测试、构建、制品生成和安全扫描。如果通过，代码将自动部署。开发者期望管道自动运行，手动部署变得越来越罕见。\n*   **更小、更集中的拉取请求（Pull Requests）**：拉取请求不再是冗长的“小说”，而是更短、可读性强且目的单一的。这使得审查更轻松、更快速，减少了认知负担。\n*   **测试驱动发展**：去年，开发者在GitHub Actions上运行测试花费了115亿分钟（增长35%）。在高度自动化的背景下，单元测试、集成测试和端到端测试变得越来越必要，以适应新的开发速度。\n\n## 团队沟通方式的转变\n\n随着开发者工作流程的改变，围绕开发的沟通方式也应随之调整：\n\n*   **站会更短或异步进行**：状态更新应存在于问题跟踪系统和代码所在之处，而非会议中。\n*   **“因拉取请求未审查而受阻”不再可接受**。\n*   **招聘侧重于能够快速交付并清晰沟通的人才**。\n\n## 展望未来\n\n展望2026年及以后，尽管“AI疲劳”可能导致一些工具被淘汰，但新的标准和工具将作为我们不断变化的成功指标的“基线”而出现。规范和代码将更加紧密地结合（Markdown-to-code工作流程将持续增长），这意味着团队间更多的沟通和更全面的文档。持续和协作的发布将继续成为必要趋势。\n\n---\n\n**关于作者**\n\n![Cassidy Williams](https://avatars.githubusercontent.com/u/1454517?v=4&s=200) Cassidy Williams 是 GitHub 的开发者倡导高级总监。她热衷于构建软件、为初创公司提供咨询，并教导开发者如何更好地构建。\n\n**相关资源**\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) **文档**：掌握 GitHub 所需的一切。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) **GitHub**：在 GitHub 上构建未来。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) **客户案例**：了解使用 GitHub 进行构建的公司和工程团队。\n*   ![The GitHub Podcast](https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg) **GitHub 播客**：收听 GitHub 播客，了解开源开发者社区的趋势、故事和文化。",
-      "shortSummary": "2025年开发者工作流程正经历深刻变革，9.86亿次代码推送表明迭代已成常态。软件开发速度加快，体现在更小、更频繁的提交、广泛使用的特性开关、全面的CI/CD自动化以及专注的拉取请求。测试在其中扮演关键角色。这种转变要求团队沟通方式随之调整，招聘更注重快速交付和清晰沟通的人才。未来，规范与代码将更紧密结合，持续协作发布将成为新常态。",
-      "translated_title": "9.86亿次代码推送揭示了2025年的开发者工作流程",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/1454517?v=4&s=200",
-          "alt": "Cassidy Williams",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Nearly a billion commits later, the way we ship code has changed for good. Here’s what the 2025 Octoverse data says about how devs really work now.</p>\n<p>The post <a href=\"https://github.blog/news-insights/octoverse/what-986-million-code-pushes-say-about-the-developer-workflow-in-2025/\">What 986 million code pushes say about the developer workflow in 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-11-23T04:41:17.443Z"
+  "lastUpdated": "2025-11-25T04:36:56.014Z"
 }
