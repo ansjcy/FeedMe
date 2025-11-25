@@ -5,6 +5,38 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Unlocking Peak Performance on Qualcomm NPU with LiteRT",
+      "link": "https://developers.googleblog.com/en/unlocking-peak-performance-on-qualcomm-npu-with-litert/",
+      "pubDate": "Sun, 23 Nov 2025 16:00:00 GMT",
+      "isoDate": "2025-11-23T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Unlocking Peak Performance on Qualcomm NPU with LiteRT",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GPU_NPU_pipeline.original.png",
+          "alt": "GPU_NPU_pipeline",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/LiteRT_NPU_and_GPU_latency_relative_to_CPU_1.original.png",
+          "alt": "LiteRT NPU and GPU latency relative to CPU (1)",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/FastVLM_table_new.original.png",
+          "alt": "FastVLM_table_new",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "LiteRT's new Qualcomm AI Engine Direct (QNN) Accelerator unlocks dedicated NPU power for on-device GenAI on Android. It offers a unified mobile deployment workflow, SOTA performance (up to 100x speedup over CPU), and full model delegation. This enables smooth, real-time AI experiences, with FastVLM-0.5B achieving over 11,000 tokens/sec prefill on Snapdragon 8 Elite Gen 5 NPU."
+    },
+    {
       "title": "Build with Google Antigravity, our new agentic development platform",
       "link": "https://developers.googleblog.com/en/build-with-google-antigravity-our-new-agentic-development-platform/",
       "pubDate": "Wed, 19 Nov 2025 16:00:00 GMT",
@@ -203,20 +235,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Google Colab has launched an official VS Code extension, bridging the gap between the popular code editor and the AI/ML platform. The extension combines VS Code's powerful development environment with Colab's seamless access to high-powered runtimes (GPUs/TPUs), allowing users to connect local notebooks to Colab. This aims to meet developers where they are and brings the best of both worlds."
-    },
-    {
-      "title": "宣布ADK评估中的用户模拟功能 (原标题: Announcing User Simulation in ADK Evaluation)",
-      "link": "https://developers.googleblog.com/en/announcing-user-simulation-in-adk-evaluation/",
-      "pubDate": "Thu, 06 Nov 2025 16:00:00 GMT",
-      "isoDate": "2025-11-06T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "### ADK评估中用户模拟功能的发布\n\n2025年11月7日，Agent的本质是对话式的。用户可能需要提出后续问题、完善之前的请求并根据需要提供额外信息。然而，为Agent手动编写多轮对话测试脚本是一个脆弱且耗时的过程，容易因Agent行为的微小变化而失效，使测试维护变得令人沮丧。\n\n为了解决这个问题，Agent开发工具包（ADK）中推出了一项新功能：**用户模拟（User Simulation）**。这项功能旨在帮助开发者摆脱测试僵化的实现路径，转而评估Agent实际达成用户意图的能力。\n\n#### 什么是用户模拟器？\n\n用户模拟器本质上是一个由大型语言模型（LLM）驱动的用户提示生成器。它直接集成到ADK评估框架中，允许在本地运行。开发者只需提供一个高层次的目标，模拟器就会动态生成对话的用户端，以追求该目标。它不是一个独立的服务，而是ADK内部的一个本地工具，支持快速、迭代的“内循环”工作流程。\n\n#### 工作原理\n\n1.  **定义对话场景（Conversation Scenario）**\n    *   不再需要僵化的逐轮脚本，而是提供一个`ConversationScenario`。\n    *   这是一个简单的JSON对象，包含两个关键部分：\n        *   `starting_prompt`：一个固定的初始提示，用于开始对话。\n        *   `conversation_plan`：一个自然语言指南，告诉模拟器其目标。\n    *   **示例：**\n        ```json\n        {\n          \"scenarios\": [\n            {\n              \"starting_prompt\": \"What can you do for me?",
-      "shortSummary": "ADK（Agent开发工具包）推出“用户模拟”新功能，旨在解决手动编写多轮对话测试脚本的耗时和脆弱性问题。该功能是一个由LLM驱动的用户提示生成器，允许开发者通过定义高层次的“对话场景”和“评估配置”来动态模拟用户交互，从而评估Agent达成用户意图的能力。它能显著减少测试创建时间，构建更具弹性的测试，并创建可靠的回归测试套件，是构建可靠AI Agent的关键一步。",
-      "translated_title": "宣布ADK评估中的用户模拟功能",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "The new **User Simulation** feature in the Agent Development Kit (ADK) replaces rigid, brittle manual test scripts with dynamic, LLM-powered conversation generation. Developers define a high-level `conversation_plan`, and the simulator handles the multi-turn interaction to achieve the goal. This dramatically reduces test creation time, builds more resilient tests, and creates a reliable regression suite for AI agents."
     }
   ],
-  "lastUpdated": "2025-11-23T10:28:11.480Z"
+  "lastUpdated": "2025-11-25T10:34:42.544Z"
 }
