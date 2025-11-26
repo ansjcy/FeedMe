@@ -5,6 +5,58 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "K-Means Cluster Evaluation with Silhouette Analysis",
+      "link": "https://machinelearningmastery.com/k-means-cluster-evaluation-with-silhouette-analysis/",
+      "pubDate": "Tue, 25 Nov 2025 11:00:05 +0000",
+      "isoDate": "2025-11-25T11:00:05.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "K-Means Cluster Evaluation with Silhouette Analysis",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Clustering models in machine learning must be assessed by how well they separate data into meaningful groups with distinctive characteristics."
+    },
+    {
+      "title": "The Complete Guide to Docker for Machine Learning Engineers",
+      "link": "https://machinelearningmastery.com/the-complete-guide-to-docker-for-machine-learning-engineers/",
+      "pubDate": "Mon, 24 Nov 2025 11:00:13 +0000",
+      "isoDate": "2025-11-24T11:00:13.000Z",
+      "creator": "Bala Priya C",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "The Complete Guide to Docker for Machine Learning Engineers",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Machine learning models often behave differently across environments."
+    },
+    {
+      "title": "Preparing Data for BERT Training",
+      "link": "https://machinelearningmastery.com/preparing-data-for-bert-training/",
+      "pubDate": "Mon, 24 Nov 2025 05:22:00 +0000",
+      "isoDate": "2025-11-24T05:22:00.000Z",
+      "creator": "Adrian Tam",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Preparing Data for BERT Training",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "This article is divided into four parts; they are: • Preparing Documents • Creating Sentence Pairs from Document • Masking Tokens • Saving the Training Data for Reuse Unlike decoder-only models, BERT's pretraining is more complex."
+    },
+    {
+      "title": "BERT Models and Its Variants",
+      "link": "https://machinelearningmastery.com/bert-models-and-its-variants/",
+      "pubDate": "Sat, 22 Nov 2025 18:20:15 +0000",
+      "isoDate": "2025-11-22T18:20:15.000Z",
+      "creator": "Adrian Tam",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "BERT Models and Its Variants",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "This article is divided into two parts; they are: • Architecture and Training of BERT • Variations of BERT BERT is an encoder-only model."
+    },
+    {
       "title": "From Shannon to Modern AI: A Complete Information Theory Guide for Machine Learning",
       "link": "https://machinelearningmastery.com/from-shannon-to-modern-ai-a-complete-information-theory-guide-for-machine-learning/",
       "pubDate": "Thu, 20 Nov 2025 11:00:25 +0000",
@@ -81,86 +133,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "LLMs <a href=\"https://machinelearningmastery."
-    },
-    {
-      "title": "5 Essential Python Scripts for Intermediate Machine Learning Practitioners",
-      "link": "https://machinelearningmastery.com/5-essential-python-scripts-for-intermediate-machine-learning-practitioners/",
-      "pubDate": "Thu, 13 Nov 2025 11:00:54 +0000",
-      "isoDate": "2025-11-13T11:00:54.000Z",
-      "creator": "Bala Priya C",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "5 Essential Python Scripts for Intermediate Machine Learning Practitioners",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "As a machine learning engineer, you probably enjoy working on interesting tasks like experimenting with model architectures, fine-tuning hyperparameters, and analyzing results."
-    },
-    {
-      "title": "用于训练语言模型的数据集 (原标题: Datasets for Training a Language Model)",
-      "link": "https://machinelearningmastery.com/datasets-for-training-a-language-model/",
-      "pubDate": "Wed, 12 Nov 2025 17:39:42 +0000",
-      "isoDate": "2025-11-12T17:39:42.000Z",
-      "creator": "Adrian Tam",
-      "summary": "## 用于训练语言模型的数据集\n\n本文探讨了用于训练语言模型的数据集，以及如何从公共存储库获取这些数据集。\n\n### 什么是语言模型？\n语言模型是一种数学模型，它将人类语言描述为其词汇上的概率分布。为了训练深度学习网络来建模语言，需要识别词汇并学习其概率分布。这需要一个数据集作为模型学习的基础。\n\n![图片 1](https://machinelearningmastery.com/wp-content/uploads/2025/11/dan-v-S5x5rrsDixk-unsplash-scaled.jpg)\n\n### 良好数据集的特征\n一个好的语言模型应该学习正确的语言用法，避免偏见和错误。与编程语言不同，人类语言缺乏正式的语法和句法，并且不断演变。因此，模型必须从数据集而非规则中学习。构建语言建模数据集具有挑战性，需要满足以下条件：\n\n*   **规模大且多样化**：足以代表语言的细微差别。\n*   **高质量**：呈现正确的语言用法。\n*   **经过清理**：理想情况下，应手动编辑和清理，以去除噪声，如错别字、语法错误以及符号或HTML标签等非语言内容。\n\n从头开始创建此类数据集成本高昂，但有几个高质量的免费数据集可用。\n\n### 常用数据集\n\n以下是一些用于训练语言模型的常见数据集：\n\n*   **Common Crawl**：\n    *   一个庞大、持续更新的9.5 PB以上的数据集，内容多样。\n    *   被GPT-3、Llama和T5等领先模型使用。\n    *   由于来源于网络，包含低质量、重复内容以及偏见和冒犯性材料，需要严格的清理和过滤。\n*   **C4 (Colossal Clean Crawled Corpus)**：\n    *   一个750GB的从网络抓取的数据集。\n    *   与Common Crawl不同，该数据集经过预清理和过滤，更易于使用。\n    *   T5模型就是在此数据集上训练的，但仍可能存在潜在偏见和错误。\n*   **Wikipedia**：\n    *   仅英文内容就约19GB，规模庞大但易于管理。\n    *   经过精心策划、结构化并按照维基百科标准编辑。\n    *   涵盖广泛的通用知识，事实准确性高，但其百科全书式的风格和语调非常特定，可能导致模型过拟合。\n*   **WikiText**：\n    *   来源于经过验证的优秀和特色维基百科文章。\n    *   存在两个版本：WikiText-2（200万词，数百篇文章）和WikiText-103（1亿词，28,000篇文章）。\n*   **BookCorpus**：\n    *   一个几GB的数据集，包含长篇、内容丰富、高质量的书籍文本。\n    *   有助于学习连贯的叙事和长距离依赖性。\n    *   存在已知的版权问题和社会偏见。\n*   **The Pile**：\n    *   一个825GB的精选数据集，来源于多个来源，包括BookCorpus。\n    *   混合了不同文本类型（书籍、文章、源代码和学术论文），提供广泛的主题覆盖，旨在进行多学科推理。\n    *   这种多样性导致质量参差不齐、内容重复和写作风格不一致。\n\n### 获取数据集\n\n可以直接在线搜索并下载这些数据集的压缩文件，但这需要理解每种数据集的格式并编写自定义代码来读取。另一种更便捷的方式是使用Hugging Face存储库（`https://huggingface.co/datasets`）。该存储库提供了一个Python库，允许使用标准化格式实时下载和读取数据集。\n\n![图片 2](https://machinelearningmastery.com/wp-content/uploads/2025/11/hf_dataset.png)\n\n**使用Hugging Face下载WikiText-2示例**：\n\n```python\nimport random\nfrom datasets import load_dataset\n\ndataset = load_dataset(\"wikitext\", \"wikitext-2-raw-v1\")\nprint(f\"Size of the dataset: {len(dataset)}\")\n\n# 打印几个样本\nn = 5\nwhile n > 0:\n    idx = random.randint(0, len(dataset)-1)\n    text = dataset[idx][\"text\"].strip()\n    if text and not text.startswith(\"=\"):\n        print(f\"{idx}: {text}\")\n        n -= 1\n```\n\n首次运行`load_dataset()`时，数据集会下载到本地机器（默认路径为`~/.cache/huggingface/datasets`），请确保有足够的磁盘空间。所有Hugging Face数据集都遵循标准格式，数据集对象是可迭代的，每个项目都是一个字典，其中文本通常存储在“text”键下。\n\n### 数据集后处理\n\n在训练语言模型之前，通常需要对数据集进行后处理以清理数据。这包括：\n\n*   **文本格式化**：剪辑长字符串、将多个空格替换为单个空格。\n*   **移除非语言内容**：HTML标签、符号。\n*   **移除不需要的字符**：标点符号周围的额外空格。\n\n具体的处理方法取决于数据集和模型对文本的期望格式。例如，训练一个只处理小写字母的BERT风格小模型时，可以将文本转换为小写以减小词汇量并简化分词器。\n\n**后处理函数示例**：\n\n```python\ndef wikitext2_dataset():\n    dataset = load_dataset(\"wikitext\", \"wikitext-2-raw-v1\")\n    for item in dataset:\n        text = item[\"text\"].strip()\n        if not text or text.startswith(\"=\"):\n            continue  # 跳过空行或标题行\n        yield text.lower()  # 生成文本的小写版本\n```\n\n一个好的后处理函数应提高数据集的信噪比，帮助模型更好地学习，同时保留处理训练模型可能遇到的意外输入格式的能力。\n\n### 总结\n\n本文介绍了用于训练语言模型的数据集类型、良好数据集的关键特征，并详细列举了Common Crawl、C4、Wikipedia、WikiText、BookCorpus和The Pile等常用数据集。此外，还说明了如何通过Hugging Face存储库获取和初步处理这些数据集，并强调了数据后处理的重要性。",
-      "shortSummary": "本文介绍了用于训练语言模型的数据集。一个好的数据集应规模大、多样化、高质量且经过清理。文章详细列举了Common Crawl、C4、Wikipedia、WikiText、BookCorpus和The Pile等常用数据集的特点。获取数据集可通过直接下载或使用Hugging Face存储库。在训练前，通常需要对数据集进行后处理，以清理和格式化数据，提高模型的学习效果。",
-      "translated_title": "用于训练语言模型的数据集",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/dan-v-S5x5rrsDixk-unsplash-scaled.jpg",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/hf_dataset.png",
-          "alt": "",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "A good language model should learn correct language usage, free of biases and errors."
-    },
-    {
-      "title": "Building ReAct Agents with LangGraph: A Beginner’s Guide",
-      "link": "https://machinelearningmastery.com/building-react-agents-with-langgraph-a-beginners-guide/",
-      "pubDate": "Wed, 12 Nov 2025 11:00:24 +0000",
-      "isoDate": "2025-11-12T11:00:24.000Z",
-      "creator": "Vinod Chugani",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Building ReAct Agents with LangGraph: A Beginner’s Guide",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-chugani-building-react-agents-langgraph-beginners-guide-feature-1024x683.png",
-          "alt": "Building ReAct Agents LangGraph Beginners Guide",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<a href=\"https://arxiv."
-    },
-    {
-      "title": "Expert-Level Feature Engineering: Advanced Techniques for High-Stakes Models",
-      "link": "https://machinelearningmastery.com/expert-level-feature-engineering-advanced-techniques-for-high-stakes-models/",
-      "pubDate": "Tue, 11 Nov 2025 11:00:09 +0000",
-      "isoDate": "2025-11-11T11:00:09.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Expert-Level Feature Engineering: Advanced Techniques for High-Stakes Models",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/11/mlm-chugani-expert-level-feature-engineering-advanced-techniques-high-stakes-models-feature-1024x683.png",
-          "alt": "Expert-Level Feature Engineering Advanced Techniques High-Stakes Models",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Building machine learning models in high-stakes contexts like finance, healthcare, and critical infrastructure often demands robustness, explainability, and other domain-specific constraints."
     }
   ],
-  "lastUpdated": "2025-11-25T09:31:48.030Z"
+  "lastUpdated": "2025-11-26T09:31:43.052Z"
 }
