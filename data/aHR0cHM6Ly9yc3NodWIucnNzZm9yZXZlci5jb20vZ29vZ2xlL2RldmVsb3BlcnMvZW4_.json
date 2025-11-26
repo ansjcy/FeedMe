@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "New Gemini API updates for Gemini 3",
+      "link": "https://developers.googleblog.com/en/new-gemini-api-updates-for-gemini-3/",
+      "pubDate": "Mon, 24 Nov 2025 16:00:00 GMT",
+      "isoDate": "2025-11-24T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "New Gemini API updates for Gemini 3",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Gemini 3 is available via API with updates for developers: new `thinking_level` for depth control, `media_resolution` for multimodal processing, and enforced `Thought Signatures` for agentic workflows, especially with function calling and image generation. It also introduces combining Google Search/URL Grounding with Structured Outputs and new usage-based pricing for Grounding. Best practices, like using default temperature, are advised for optimal results."
+    },
+    {
       "title": "Unlocking Peak Performance on Qualcomm NPU with LiteRT",
       "link": "https://developers.googleblog.com/en/unlocking-peak-performance-on-qualcomm-npu-with-litert/",
       "pubDate": "Sun, 23 Nov 2025 16:00:00 GMT",
@@ -222,20 +235,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Metrax is a high-performance JAX-based metrics library developed by Google. It standardizes model evaluation by offering robust, efficient metrics for classification, NLP, and vision, eliminating manual re-implementation after migrating from TensorFlow. Key strengths include parallel computation of \"at K\" metrics (e.g., PrecisionAtK) for multiple K values and strong integration with the JAX AI Stack, leveraging JAX's performance features. It is open-source on GitHub."
-    },
-    {
-      "title": "Google Colab 即将登陆 VS Code (原标题: Google Colab is Coming to VS Code)",
-      "link": "https://developers.googleblog.com/en/google-colab-is-coming-to-vs-code/",
-      "pubDate": "Wed, 12 Nov 2025 16:00:00 GMT",
-      "isoDate": "2025-11-12T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Google Colab VS Code 扩展发布\n\nGoogle Colab 团队于2025年11月13日宣布推出全新的 Google Colab Visual Studio Code 扩展。此举旨在将全球最受欢迎的代码编辑器 VS Code 的强大功能与数百万 AI/ML 开发者、学生和研究人员首选的 Colab 平台结合起来。\n\n## 发布背景与动机\n\n*   **VS Code 的普及**：VS Code 以其速度、轻量级和高度适应性，成为全球广受欢迎的代码编辑器。\n*   **Colab 的成功**：Colab 已成为 AI/ML 领域编写和执行代码、协作以及无缝访问 GPU 和 TPU 等强大计算资源的平台。\n*   **弥合差距的需求**：此前，VS Code 和 Colab 的使用场景相对独立。社区强烈希望将强大的 VS Code 开发环境与基于网络的 Colab 笔记本结合，以支持更复杂的项目开发和工作流。Colab 的目标是满足用户需求，而许多用户都在 VS Code 中工作。\n\n## 融合两者的优势\n\n新的 Colab VS Code 扩展旨在结合两个平台的优点：\n\n*   **对于 VS Code 用户**：\n    *   可以在熟悉的 VS Code 编辑器中继续工作。\n    *   将本地笔记本连接到高性能的 Colab 运行时，包括提供高级 GPU 和 TPU 的 Colab Pro 运行时。\n*   **对于 Colab 用户**：\n    *   支持 Colab 用户现有的工作流，例如处理作为大型项目或 Git 仓库一部分的笔记本。\n    *   为需要更强大 IDE 功能和更高可扩展性的 Colab 用户提供了解决方案。\n    *   弥合了简单易用的 Colab 运行时与功能丰富的 VS Code 编辑器之间的鸿沟。\n\n## 如何开始使用 Colab 扩展\n\n只需几个简单的步骤即可开始使用：\n\n1.  **安装 Colab 扩展**：\n    *   在 VS Code 中，打开左侧活动栏的“扩展”视图（或按 `Ctrl|Cmd + Shift + X`）。\n    *   在市场中搜索“Google Colab”。\n    *   点击官方 Colab 扩展的“安装”按钮。\n    *   如果提示，安装所需的依赖项——Jupyter 扩展。\n2.  **连接到 Colab 运行时**：\n    *   在本地工作区中创建或打开任何 `.ipynb` 笔记本文件。\n    *   运行一个单元格（这将引导您选择内核）或点击右上角的“选择内核”按钮。\n    *   点击“Colab”，然后选择所需的运行时，使用您的 Google 账户登录即可。\n    *   您的本地笔记本现在将由 Colab 运行时提供支持。\n\n该扩展也已发布到 Open VSX，支持 VS Code 的衍生版本。\n\n## 未来展望\n\n此次发布是 Google Colab 将其最佳功能带给用户的起点。团队计划未来将更多 Colab 功能引入 VS Code。\n\n鼓励用户立即从 VS Code Marketplace 下载扩展，试用并提供反馈。",
-      "shortSummary": "Google Colab 已推出适用于 Visual Studio Code 的官方扩展。此举将 VS Code 的强大编辑功能与 Colab 的高性能 AI/ML 计算资源（包括 GPU 和 TPU）相结合。用户现在可以在熟悉的 VS Code 环境中，将本地 Jupyter 笔记本连接到 Colab 运行时，从而简化开发流程，并支持更复杂的项目和协作。该扩展旨在满足开发者在 VS Code 中使用 Colab 的需求，并计划未来带来更多功能。",
-      "translated_title": "Google Colab 即将登陆 VS Code",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Google Colab has launched an official VS Code extension, bridging the gap between the popular code editor and the AI/ML platform. The extension combines VS Code's powerful development environment with Colab's seamless access to high-powered runtimes (GPUs/TPUs), allowing users to connect local notebooks to Colab. This aims to meet developers where they are and brings the best of both worlds."
     }
   ],
-  "lastUpdated": "2025-11-25T10:34:42.544Z"
+  "lastUpdated": "2025-11-26T10:33:18.089Z"
 }
