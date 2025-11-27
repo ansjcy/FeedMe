@@ -5,6 +5,71 @@
   "link": "https://huggingface.co/papers",
   "items": [
     {
+      "title": "Revisiting Generalization Across Difficulty Levels: It's Not So Easy",
+      "link": "https://arxiv.org/abs/2511.21692",
+      "pubDate": "Wed, 26 Nov 2025 13:59:57 GMT",
+      "isoDate": "2025-11-26T13:59:57.000Z",
+      "creator": "Yeganeh Kordi, Nihal V. Nayak, Max Zuo, Ilana Nguyen, Stephen H. Bach",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Revisiting Generalization Across Difficulty Levels: It's Not So Easy",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "We investigate how well large language models (LLMs) generalize across different task difficulties, a key question for effective data curation and evaluation. Existing research is mixed regarding whether training on easier or harder data leads to better results, and whether those gains come on easier or harder test data. We address this question by conducting a systematic evaluation of LLMs' generalization across models, datasets, and fine-grained groups of example difficulty. We rank examples in six datasets using the outputs of thousands of different LLMs and Item Response Theory (IRT), a well-established difficulty metric in educational testing. Unlike prior work, our difficulty ratings are therefore determined solely by the abilities of many different LLMs, excluding human opinions of difficulty. With a more objective, larger-scale, and finer-grained analysis, we show that cross-difficulty generalization is often limited; training on either easy or hard data cannot achieve consistent improvements across the full range of difficulties. These results show the importance of having a range of difficulties in both training and evaluation data for LLMs, and that taking shortcuts with respect to difficulty is risky."
+    },
+    {
+      "title": "Monet: Reasoning in Latent Visual Space Beyond Images and Language",
+      "link": "https://arxiv.org/abs/2511.21395",
+      "pubDate": "Wed, 26 Nov 2025 08:46:39 GMT",
+      "isoDate": "2025-11-26T08:46:39.000Z",
+      "creator": "Qixun Wang, Yang Shi, Yifei Wang, Yuanxing Zhang, Pengfei Wan, Kun Gai, Xianghua Ying, Yisen Wang",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Monet: Reasoning in Latent Visual Space Beyond Images and Language",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "\"Thinking with images\" has emerged as an effective paradigm for advancing visual reasoning, extending beyond text-only chains of thought by injecting visual evidence into intermediate reasoning steps. However, existing methods fall short of human-like abstract visual thinking, as their flexibility is fundamentally limited by external tools. In this work, we introduce Monet, a training framework that enables multimodal large language models (MLLMs) to reason directly within the latent visual space by generating continuous embeddings that function as intermediate visual thoughts. We identify two core challenges in training MLLMs for latent visual reasoning: high computational cost in latent-vision alignment and insufficient supervision over latent embeddings, and address them with a three-stage distillation-based supervised fine-tuning (SFT) pipeline. We further reveal a limitation of applying GRPO to latent reasoning: it primarily enhances text-based reasoning rather than latent reasoning. To overcome this, we propose VLPO (Visual-latent Policy Optimization), a reinforcement learning method that explicitly incorporates latent embeddings into policy gradient updates. To support SFT, we construct Monet-SFT-125K, a high-quality text-image interleaved CoT dataset containing 125K real-world, chart, OCR, and geometry CoTs. Our model, Monet-7B, shows consistent gains across real-world perception and reasoning benchmarks and exhibits strong out-of-distribution generalization on challenging abstract visual reasoning tasks. We also empirically analyze the role of each training component and discuss our early unsuccessful attempts, providing insights for future developments in visual latent reasoning. Our model, data, and code are available at https://github.com/NOVAglow646/Monet."
+    },
+    {
+      "title": "I-GLIDE: Input Groups for Latent Health Indicators in Degradation Estimation",
+      "link": "https://arxiv.org/abs/2511.21208",
+      "pubDate": "Wed, 26 Nov 2025 04:39:35 GMT",
+      "isoDate": "2025-11-26T04:39:35.000Z",
+      "creator": "Lucas Thil, Jesse Read, Rim Kaddah, Guillaume Doquet",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "I-GLIDE: Input Groups for Latent Health Indicators in Degradation Estimation",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Accurate remaining useful life (RUL) prediction hinges on the quality of health indicators (HIs), yet existing methods often fail to disentangle complex degradation mechanisms in multi-sensor systems or quantify uncertainty in HI reliability. This paper introduces a novel framework for HI construction, advancing three key contributions. First, we adapt Reconstruction along Projected Pathways (RaPP) as a health indicator (HI) for RUL prediction for the first time, showing that it outperforms traditional reconstruction error metrics. Second, we show that augmenting RaPP-derived HIs with aleatoric and epistemic uncertainty quantification (UQ) via Monte Carlo dropout and probabilistic latent spaces- significantly improves RUL-prediction robustness. Third, and most critically, we propose indicator groups, a paradigm that isolates sensor subsets to model system-specific degradations, giving rise to our novel method, I-GLIDE which enables interpretable, mechanism-specific diagnostics. Evaluated on data sourced from aerospace and manufacturing systems, our approach achieves marked improvements in accuracy and generalizability compared to state-of-the-art HI methods while providing actionable insights into system failure pathways. This work bridges the gap between anomaly detection and prognostics, offering a principled framework for uncertainty-aware degradation modeling in complex systems."
+    },
+    {
+      "title": "SPHINX: A Synthetic Environment for Visual Perception and Reasoning",
+      "link": "https://arxiv.org/abs/2511.20814",
+      "pubDate": "Tue, 25 Nov 2025 15:00:47 GMT",
+      "isoDate": "2025-11-25T15:00:47.000Z",
+      "creator": "Md Tanvirul Alam, Saksham Aggarwal, Justin Yang Chae, Nidhi Rastogi",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "SPHINX: A Synthetic Environment for Visual Perception and Reasoning",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "We present Sphinx, a synthetic environment for visual perception and reasoning that targets core cognitive primitives. Sphinx procedurally generates puzzles using motifs, tiles, charts, icons, and geometric primitives, each paired with verifiable ground-truth solutions, enabling both precise evaluation and large-scale dataset construction. The benchmark covers 25 task types spanning symmetry detection, geometric transformations, spatial reasoning, chart interpretation, and sequence prediction. Evaluating recent large vision-language models (LVLMs) shows that even state-of-the-art GPT-5 attains only 51.1% accuracy, well below human performance. Finally, we demonstrate that reinforcement learning with verifiable rewards (RLVR) substantially improves model accuracy on these tasks and yields gains on external visual reasoning benchmarks, highlighting its promise for advancing multimodal reasoning."
+    },
+    {
+      "title": "Latent Collaboration in Multi-Agent Systems",
+      "link": "https://arxiv.org/abs/2511.20639",
+      "pubDate": "Tue, 25 Nov 2025 13:56:57 GMT",
+      "isoDate": "2025-11-25T13:56:57.000Z",
+      "creator": "Jiaru Zou, Xiyuan Yang, Ruizhong Qiu, Gaotang Li, Katherine Tieu, Pan Lu, Ke Shen, Hanghang Tong, Yejin Choi, Jingrui He, James Zou, Mengdi Wang, Ling Yang",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Latent Collaboration in Multi-Agent Systems",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Multi-agent systems (MAS) extend large language models (LLMs) from independent single-model reasoning to coordinative system-level intelligence. While existing LLM agents depend on text-based mediation for reasoning and communication, we take a step forward by enabling models to collaborate directly within the continuous latent space. We introduce LatentMAS, an end-to-end training-free framework that enables pure latent collaboration among LLM agents. In LatentMAS, each agent first performs auto-regressive latent thoughts generation through last-layer hidden embeddings. A shared latent working memory then preserves and transfers each agent's internal representations, ensuring lossless information exchange. We provide theoretical analyses establishing that LatentMAS attains higher expressiveness and lossless information preservation with substantially lower complexity than vanilla text-based MAS. In addition, empirical evaluations across 9 comprehensive benchmarks spanning math and science reasoning, commonsense understanding, and code generation show that LatentMAS consistently outperforms strong single-model and text-based MAS baselines, achieving up to 14.6% higher accuracy, reducing output token usage by 70.8%-83.7%, and providing 4x-4.3x faster end-to-end inference. These results demonstrate that our new latent collaboration framework enhances system-level reasoning quality while offering substantial efficiency gains without any additional training. Code and data are fully open-sourced at https://github.com/Gen-Verse/LatentMAS."
+    },
+    {
       "title": "iMontage: Unified, Versatile, Highly Dynamic Many-to-many Image Generation",
       "link": "https://arxiv.org/abs/2511.20635",
       "pubDate": "Tue, 25 Nov 2025 13:54:16 GMT",
@@ -55,6 +120,19 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Recent years have witnessed significant progress in Unified Multimodal Models, yet a fundamental question remains: Does understanding truly inform generation? To investigate this, we introduce UniSandbox, a decoupled evaluation framework paired with controlled, synthetic datasets to avoid data leakage and enable detailed analysis. Our findings reveal a significant understanding-generation gap, which is mainly reflected in two key dimensions: reasoning generation and knowledge transfer. Specifically, for reasoning generation tasks, we observe that explicit Chain-of-Thought (CoT) in the understanding module effectively bridges the gap, and further demonstrate that a self-training approach can successfully internalize this ability, enabling implicit reasoning during generation. Additionally, for knowledge transfer tasks, we find that CoT assists the generative process by helping retrieve newly learned knowledge, and also discover that query-based architectures inherently exhibit latent CoT-like properties that affect this transfer. UniSandbox provides preliminary insights for designing future unified architectures and training strategies that truly bridge the gap between understanding and generation. Code and data are available at https://github.com/PKU-YuanGroup/UniSandBox"
+    },
+    {
+      "title": "NVIDIA Nemotron Parse 1.1",
+      "link": "https://arxiv.org/abs/2511.20478",
+      "pubDate": "Tue, 25 Nov 2025 11:41:25 GMT",
+      "isoDate": "2025-11-25T11:41:25.000Z",
+      "creator": "Kateryna Chumachenko, Amala Sanjay Deshmukh, Jarno Seppanen, Ilia Karmanov, Chia-Chih Chen, Lukas Voegtle, Philipp Fischer, Marek Wawrzos, Saeid Motiian, Roman Ageev, Kedi Wu, Alexandre Milesi, Maryam Moosaei, Krzysztof Pawelec, Padmavathy Subramanian, Mehrzad Samadi, Xin Yu, Celina Dear, Sarah Stoddard, Jenna Diamond, Jesse Oliver, Leanna Chraghchian, Patrick Skelly, Tom Balough, Yao Xu, Jane Polak Scowcroft, Daniel Korzekwa, Darragh Hanley, Sandip Bhaskar, Timo Roman, Karan Sapra, Andrew Tao, Bryan Catanzaro",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "NVIDIA Nemotron Parse 1.1",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "We introduce Nemotron-Parse-1.1, a lightweight document parsing and OCR model that advances the capabilities of its predecessor, Nemoretriever-Parse-1.0. Nemotron-Parse-1.1 delivers improved capabilities across general OCR, markdown formatting, structured table parsing, and text extraction from pictures, charts, and diagrams. It also supports a longer output sequence length for visually dense documents. As with its predecessor, it extracts bounding boxes of text segments, as well as corresponding semantic classes. Nemotron-Parse-1.1 follows an encoder-decoder architecture with 885M parameters, including a compact 256M-parameter language decoder. It achieves competitive accuracy on public benchmarks making it a strong lightweight OCR solution. We release the model weights publicly on Huggingface, as well as an optimized NIM container, along with a subset of the training data as part of the broader Nemotron-VLM-v2 dataset. Additionally, we release Nemotron-Parse-1.1-TC which operates on a reduced vision token length, offering a 20% speed improvement with minimal quality degradation."
     },
     {
       "title": "MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts",
@@ -122,6 +200,19 @@
       "content": "World models are emerging as a foundational paradigm for scalable, data-efficient embodied AI. In this work, we present GigaWorld-0, a unified world model framework designed explicitly as a data engine for Vision-Language-Action (VLA) learning. GigaWorld-0 integrates two synergistic components: GigaWorld-0-Video, which leverages large-scale video generation to produce diverse, texture-rich, and temporally coherent embodied sequences under fine-grained control of appearance, camera viewpoint, and action semantics; and GigaWorld-0-3D, which combines 3D generative modeling, 3D Gaussian Splatting reconstruction, physically differentiable system identification, and executable motion planning to ensure geometric consistency and physical realism. Their joint optimization enables the scalable synthesis of embodied interaction data that is visually compelling, spatially coherent, physically plausible, and instruction-aligned. Training at scale is made feasible through our efficient GigaTrain framework, which exploits FP8-precision and sparse attention to drastically reduce memory and compute requirements. We conduct comprehensive evaluations showing that GigaWorld-0 generates high-quality, diverse, and controllable data across multiple dimensions. Critically, VLA model (e.g., GigaBrain-0) trained on GigaWorld-0-generated data achieve strong real-world performance, significantly improving generalization and task success on physical robots without any real-world interaction during training."
     },
     {
+      "title": "Inferix: A Block-Diffusion based Next-Generation Inference Engine for World Simulation",
+      "link": "https://arxiv.org/abs/2511.20714",
+      "pubDate": "Mon, 24 Nov 2025 20:45:04 GMT",
+      "isoDate": "2025-11-24T20:45:04.000Z",
+      "creator": "Inferix Team, Tianyu Feng, Yizeng Han, Jiahao He, Yuanyu He, Xi Lin, Teng Liu, Hanfeng Lu, Jiasheng Tang, Wei Wang, Zhiyuan Wang, Jichao Wu, Mingyang Yang, Yinghao Yu, Zeyu Zhang, Bohan Zhuang",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Inferix: A Block-Diffusion based Next-Generation Inference Engine for World Simulation",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "World models serve as core simulators for fields such as agentic AI, embodied AI, and gaming, capable of generating long, physically realistic, and interactive high-quality videos. Moreover, scaling these models could unlock emergent capabilities in visual perception, understanding, and reasoning, paving the way for a new paradigm that moves beyond current LLM-centric vision foundation models. A key breakthrough empowering them is the semi-autoregressive (block-diffusion) decoding paradigm, which merges the strengths of diffusion and autoregressive methods by generating video tokens in block-applying diffusion within each block while conditioning on previous ones, resulting in more coherent and stable video sequences. Crucially, it overcomes limitations of standard video diffusion by reintroducing LLM-style KV Cache management, enabling efficient, variable-length, and high-quality generation.   Therefore, Inferix is specifically designed as a next-generation inference engine to enable immersive world synthesis through optimized semi-autoregressive decoding processes. This dedicated focus on world simulation distinctly sets it apart from systems engineered for high-concurrency scenarios (like vLLM or SGLang) and from classic video diffusion models (such as xDiTs). Inferix further enhances its offering with interactive video streaming and profiling, enabling real-time interaction and realistic simulation to accurately model world dynamics. Additionally, it supports efficient benchmarking through seamless integration of LV-Bench, a new fine-grained evaluation benchmark tailored for minute-long video generation scenarios. We hope the community will work together to advance Inferix and foster world model exploration."
+    },
+    {
       "title": "ReDirector: Creating Any-Length Video Retakes with Rotary Camera Encoding",
       "link": "https://arxiv.org/abs/2511.19827",
       "pubDate": "Mon, 24 Nov 2025 20:38:56 GMT",
@@ -133,6 +224,19 @@
       "images": [],
       "contentSource": "RSS",
       "content": "We present ReDirector, a novel camera-controlled video retake generation method for dynamically captured variable-length videos. In particular, we rectify a common misuse of RoPE in previous works by aligning the spatiotemporal positions of the input video and the target retake. Moreover, we introduce Rotary Camera Encoding (RoCE), a camera-conditioned RoPE phase shift that captures and integrates multi-view relationships within and across the input and target videos. By integrating camera conditions into RoPE, our method generalizes to out-of-distribution camera trajectories and video lengths, yielding improved dynamic object localization and static background preservation. Extensive experiments further demonstrate significant improvements in camera controllability, geometric consistency, and video quality across various trajectories and lengths."
+    },
+    {
+      "title": "Terminal Velocity Matching",
+      "link": "https://arxiv.org/abs/2511.19797",
+      "pubDate": "Mon, 24 Nov 2025 18:55:45 GMT",
+      "isoDate": "2025-11-24T18:55:45.000Z",
+      "creator": "Linqi Zhou, Mathias Parger, Ayaan Haque, Jiaming Song",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Terminal Velocity Matching",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "We propose Terminal Velocity Matching (TVM), a generalization of flow matching that enables high-fidelity one- and few-step generative modeling. TVM models the transition between any two diffusion timesteps and regularizes its behavior at its terminal time rather than at the initial time. We prove that TVM provides an upper bound on the 2-Wasserstein distance between data and model distributions when the model is Lipschitz continuous. However, since Diffusion Transformers lack this property, we introduce minimal architectural changes that achieve stable, single-stage training. To make TVM efficient in practice, we develop a fused attention kernel that supports backward passes on Jacobian-Vector Products, which scale well with transformer architectures. On ImageNet-256x256, TVM achieves 3.29 FID with a single function evaluation (NFE) and 1.99 FID with 4 NFEs. It similarly achieves 4.32 1-NFE FID and 2.94 4-NFE FID on ImageNet-512x512, representing state-of-the-art performance for one/few-step models from scratch."
     },
     {
       "title": "Scaling Agentic Reinforcement Learning for Tool-Integrated Reasoning in VLMs",
@@ -159,111 +263,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Progress in computer use agents (CUAs) has been constrained by the absence of large and high-quality datasets that capture how humans interact with a computer. While LLMs have thrived on abundant textual data, no comparable corpus exists for CUA trajectories. To address these gaps, we introduce FaraGen, a novel synthetic data generation system for multi-step web tasks. FaraGen can propose diverse tasks from frequently used websites, generate multiple solution attempts, and filter successful trajectories using multiple verifiers. It achieves high throughput, yield, and diversity for multi-step web tasks, producing verified trajectories at approximately $1 each. We use this data to train Fara-7B, a native CUA model that perceives the computer using only screenshots, executes actions via predicted coordinates, and is small enough to run on-device. We find that Fara-7B outperforms other CUA models of comparable size on benchmarks like WebVoyager, Online-Mind2Web, and WebTailBench -- our novel benchmark that better captures under-represented web tasks in pre-existing benchmarks. Furthermore, Fara-7B is competitive with much larger frontier models, illustrating key benefits of scalable data generation systems in advancing small efficient agentic models. We are making Fara-7B open-weight on Microsoft Foundry and HuggingFace, and we are releasing WebTailBench."
-    },
-    {
-      "title": "HunyuanOCR Technical Report",
-      "link": "https://arxiv.org/abs/2511.19575",
-      "pubDate": "Mon, 24 Nov 2025 12:59:59 GMT",
-      "isoDate": "2025-11-24T12:59:59.000Z",
-      "creator": "Hunyuan Vision Team, Pengyuan Lyu, Xingyu Wan, Gengluo Li, Shangpin Peng, Weinong Wang, Liang Wu, Huawen Shen, Yu Zhou, Canhui Tang, Qi Yang, Qiming Peng, Bin Luo, Hower Yang, Houwen Peng, Hongming Yang, Senhao Xie, Binghong Wu, Mana Yang, Sergey Wang, Raccoon Liu, Dick Zhu, Jie Jiang, Linus, Han Hu, Chengquan Zhang",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "HunyuanOCR Technical Report",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "This paper presents HunyuanOCR, a commercial-grade, open-source, and lightweight (1B parameters) Vision-Language Model (VLM) dedicated to OCR tasks. The architecture comprises a Native Vision Transformer (ViT) and a lightweight LLM connected via an MLP adapter. HunyuanOCR demonstrates superior performance, outperforming commercial APIs, traditional pipelines, and larger models (e.g., Qwen3-VL-4B). Specifically, it surpasses current public solutions in perception tasks (Text Spotting, Parsing) and excels in semantic tasks (IE, Text Image Translation), securing first place in the ICDAR 2025 DIMT Challenge (Small Model Track). Furthermore, it achieves state-of-the-art (SOTA) results on OCRBench among VLMs with fewer than 3B parameters.   HunyuanOCR achieves breakthroughs in three key aspects: 1) Unifying Versatility and Efficiency: We implement comprehensive support for core capabilities including spotting, parsing, IE, VQA, and translation within a lightweight framework. This addresses the limitations of narrow \"OCR expert models\" and inefficient \"General VLMs\". 2) Streamlined End-to-End Architecture: Adopting a pure end-to-end paradigm eliminates dependencies on pre-processing modules (e.g., layout analysis). This fundamentally resolves error propagation common in traditional pipelines and simplifies system deployment. 3) Data-Driven and RL Strategies: We confirm the critical role of high-quality data and, for the first time in the industry, demonstrate that Reinforcement Learning (RL) strategies yield significant performance gains in OCR tasks.   HunyuanOCR is officially open-sourced on HuggingFace. We also provide a high-performance deployment solution based on vLLM, placing its production efficiency in the top tier. We hope this model will advance frontier research and provide a solid foundation for industrial applications."
-    },
-    {
-      "title": "SteadyDancer: Harmonized and Coherent Human Image Animation with First-Frame Preservation",
-      "link": "https://arxiv.org/abs/2511.19320",
-      "pubDate": "Mon, 24 Nov 2025 12:15:55 GMT",
-      "isoDate": "2025-11-24T12:15:55.000Z",
-      "creator": "Jiaming Zhang, Shengming Cao, Rui Li, Xiaotong Zhao, Yutao Cui, Xinglin Hou, Gangshan Wu, Haolan Chen, Yu Xu, Limin Wang, Kai Ma",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "SteadyDancer: Harmonized and Coherent Human Image Animation with First-Frame Preservation",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Preserving first-frame identity while ensuring precise motion control is a fundamental challenge in human image animation. The Image-to-Motion Binding process of the dominant Reference-to-Video (R2V) paradigm overlooks critical spatio-temporal misalignments common in real-world applications, leading to failures such as identity drift and visual artifacts. We introduce SteadyDancer, an Image-to-Video (I2V) paradigm-based framework that achieves harmonized and coherent animation and is the first to ensure first-frame preservation robustly. Firstly, we propose a Condition-Reconciliation Mechanism to harmonize the two conflicting conditions, enabling precise control without sacrificing fidelity. Secondly, we design Synergistic Pose Modulation Modules to generate an adaptive and coherent pose representation that is highly compatible with the reference image. Finally, we employ a Staged Decoupled-Objective Training Pipeline that hierarchically optimizes the model for motion fidelity, visual quality, and temporal coherence. Experiments demonstrate that SteadyDancer achieves state-of-the-art performance in both appearance fidelity and motion control, while requiring significantly fewer training resources than comparable methods."
-    },
-    {
-      "title": "DiffSeg30k: A Multi-Turn Diffusion Editing Benchmark for Localized AIGC Detection",
-      "link": "https://arxiv.org/abs/2511.19111",
-      "pubDate": "Mon, 24 Nov 2025 08:43:54 GMT",
-      "isoDate": "2025-11-24T08:43:54.000Z",
-      "creator": "Hai Ci, Ziheng Peng, Pei Yang, Yingxin Xuan, Mike Zheng Shou",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "DiffSeg30k: A Multi-Turn Diffusion Editing Benchmark for Localized AIGC Detection",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Diffusion-based editing enables realistic modification of local image regions, making AI-generated content harder to detect. Existing AIGC detection benchmarks focus on classifying entire images, overlooking the localization of diffusion-based edits. We introduce DiffSeg30k, a publicly available dataset of 30k diffusion-edited images with pixel-level annotations, designed to support fine-grained detection. DiffSeg30k features: 1) In-the-wild images--we collect images or image prompts from COCO to reflect real-world content diversity; 2) Diverse diffusion models--local edits using eight SOTA diffusion models; 3) Multi-turn editing--each image undergoes up to three sequential edits to mimic real-world sequential editing; and 4) Realistic editing scenarios--a vision-language model (VLM)-based pipeline automatically identifies meaningful regions and generates context-aware prompts covering additions, removals, and attribute changes. DiffSeg30k shifts AIGC detection from binary classification to semantic segmentation, enabling simultaneous localization of edits and identification of the editing models. We benchmark three baseline segmentation approaches, revealing significant challenges in semantic segmentation tasks, particularly concerning robustness to image distortions. Experiments also reveal that segmentation models, despite being trained for pixel-level localization, emerge as highly reliable whole-image classifiers of diffusion edits, outperforming established forgery classifiers while showing great potential in cross-generator generalization. We believe DiffSeg30k will advance research in fine-grained localization of AI-generated content by demonstrating the promise and limitations of segmentation-based methods. DiffSeg30k is released at: https://huggingface.co/datasets/Chaos2629/Diffseg30k"
-    },
-    {
-      "title": "MedSAM3: Delving into Segment Anything with Medical Concepts",
-      "link": "https://arxiv.org/abs/2511.19046",
-      "pubDate": "Mon, 24 Nov 2025 07:34:38 GMT",
-      "isoDate": "2025-11-24T07:34:38.000Z",
-      "creator": "Anglin Liu, Rundong Xue, Xu R. Cao, Yifan Shen, Yi Lu, Xiang Li, Qianqian Chen, Jintai Chen",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "MedSAM3: Delving into Segment Anything with Medical Concepts",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Medical image segmentation is fundamental for biomedical discovery. Existing methods lack generalizability and demand extensive, time-consuming manual annotation for new clinical application. Here, we propose MedSAM-3, a text promptable medical segmentation model for medical image and video segmentation. By fine-tuning the Segment Anything Model (SAM) 3 architecture on medical images paired with semantic conceptual labels, our MedSAM-3 enables medical Promptable Concept Segmentation (PCS), allowing precise targeting of anatomical structures via open-vocabulary text descriptions rather than solely geometric prompts. We further introduce the MedSAM-3 Agent, a framework that integrates Multimodal Large Language Models (MLLMs) to perform complex reasoning and iterative refinement in an agent-in-the-loop workflow. Comprehensive experiments across diverse medical imaging modalities, including X-ray, MRI, Ultrasound, CT, and video, demonstrate that our approach significantly outperforms existing specialist and foundation models. We will release our code and model at https://github.com/Joey-S-Liu/MedSAM3."
-    },
-    {
-      "title": "Yo'City: Personalized and Boundless 3D Realistic City Scene Generation via Self-Critic Expansion",
-      "link": "https://arxiv.org/abs/2511.18734",
-      "pubDate": "Sun, 23 Nov 2025 23:02:48 GMT",
-      "isoDate": "2025-11-23T23:02:48.000Z",
-      "creator": "Keyang Lu, Sifan Zhou, Hongbin Xu, Gang Xu, Zhifei Yang, Yikai Wang, Zhen Xiao, Jieyi Long, Ming Li",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Yo'City: Personalized and Boundless 3D Realistic City Scene Generation via Self-Critic Expansion",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Realistic 3D city generation is fundamental to a wide range of applications, including virtual reality and digital twins. However, most existing methods rely on training a single diffusion model, which limits their ability to generate personalized and boundless city-scale scenes. In this paper, we present Yo'City, a novel agentic framework that enables user-customized and infinitely expandable 3D city generation by leveraging the reasoning and compositional capabilities of off-the-shelf large models. Specifically, Yo'City first conceptualize the city through a top-down planning strategy that defines a hierarchical \"City-District-Grid\" structure. The Global Planner determines the overall layout and potential functional districts, while the Local Designer further refines each district with detailed grid-level descriptions. Subsequently, the grid-level 3D generation is achieved through a \"produce-refine-evaluate\" isometric image synthesis loop, followed by image-to-3D generation. To simulate continuous city evolution, Yo'City further introduces a user-interactive, relationship-guided expansion mechanism, which performs scene graph-based distance- and semantics-aware layout optimization, ensuring spatially coherent city growth. To comprehensively evaluate our method, we construct a diverse benchmark dataset and design six multi-dimensional metrics that assess generation quality from the perspectives of semantics, geometry, texture, and layout. Extensive experiments demonstrate that Yo'City consistently outperforms existing state-of-the-art methods across all evaluation aspects."
-    },
-    {
-      "title": "SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System",
-      "link": "https://arxiv.org/abs/2511.17943",
-      "pubDate": "Sat, 22 Nov 2025 01:54:16 GMT",
-      "isoDate": "2025-11-22T01:54:16.000Z",
-      "creator": "Zhiyu Xu, Weilong Yan, Yufei Shi, Xin Meng, Tao He, Huiping Zhuang, Ming Li, Hehe Fan",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Recent advancements in multimodal large language models (MLLMs) and video agent systems have significantly improved general video understanding. However, when applied to scientific video understanding and educating, a domain that demands external professional knowledge integration and rigorous step-wise reasoning, existing approaches often struggle. To bridge this gap, we propose SciEducator, the first iterative self-evolving multi-agent system for scientific video comprehension and education. Rooted in the classical Deming Cycle from management science, our design reformulates its Plan-Do-Study-Act philosophy into a self-evolving reasoning and feedback mechanism, which facilitates the interpretation of intricate scientific activities in videos. Moreover, SciEducator can produce multimodal educational content tailored to specific scientific processes, including textual instructions, visual guides, audio narrations, and interactive references. To support evaluation, we construct SciVBench, a benchmark consisting of 500 expert-verified and literature-grounded science QA pairs across five categories, covering physical, chemical, and everyday phenomena. Extensive experiments demonstrate that SciEducator substantially outperforms leading closed-source MLLMs (e.g., Gemini, GPT-4o) and state-of-the-art video agents on the benchmark, establishing a new paradigm for the community."
-    },
-    {
-      "title": "RynnVLA-002: A Unified Vision-Language-Action and World Model",
-      "link": "https://arxiv.org/abs/2511.17502",
-      "pubDate": "Fri, 21 Nov 2025 13:59:32 GMT",
-      "isoDate": "2025-11-21T13:59:32.000Z",
-      "creator": "Jun Cen, Siteng Huang, Yuqian Yuan, Hangjie Yuan, Chaohui Yu, Yuming Jiang, Jiayan Guo, Kehan Li, Hao Luo, Fan Wang, Xin Li, Deli Zhao, Hao Chen",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "RynnVLA-002: A Unified Vision-Language-Action and World Model",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "We introduce RynnVLA-002, a unified Vision-Language-Action (VLA) and world model. The world model leverages action and visual inputs to predict future image states, learning the underlying physics of the environment to refine action generation. Conversely, the VLA model produces subsequent actions from image observations, enhancing visual understanding and supporting the world model's image generation. The unified framework of RynnVLA-002 enables joint learning of environmental dynamics and action planning. Our experiments show that RynnVLA-002 surpasses individual VLA and world models, demonstrating their mutual enhancement. We evaluate RynnVLA-002 in both simulation and real-world robot tasks. RynnVLA-002 achieves 97.4% success rate on the LIBERO simulation benchmark without pretraining, while in real-world LeRobot experiments, its integrated world model boosts the overall success rate by 50%."
-    },
-    {
-      "title": "Video-R4: Reinforcing Text-Rich Video Reasoning with Visual Rumination",
-      "link": "https://arxiv.org/abs/2511.17490",
-      "pubDate": "Fri, 21 Nov 2025 13:47:09 GMT",
-      "isoDate": "2025-11-21T13:47:09.000Z",
-      "creator": "Yolo Yunlong Tang, Daiki Shimada, Hang Hua, Chao Huang, Jing Bi, Rogerio Feris, Chenliang Xu",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Video-R4: Reinforcing Text-Rich Video Reasoning with Visual Rumination",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Understanding text-rich videos requires reading small, transient textual cues that often demand repeated inspection. Yet most video QA models rely on single-pass perception over fixed frames, leading to hallucinations and failures on fine-grained evidence. Inspired by how humans pause, zoom, and re-read critical regions, we introduce Video-R4 (Reinforcing Text-Rich Video Reasoning with Visual Rumination), a video reasoning LMM that performs visual rumination: iteratively selecting frames, zooming into informative regions, re-encoding retrieved pixels, and updating its reasoning state. We construct two datasets with executable rumination trajectories: Video-R4-CoT-17k for supervised practice and Video-R4-RL-30k for reinforcement learning. We propose a multi-stage rumination learning framework that progressively finetunes a 7B LMM to learn atomic and mixing visual operations via SFT and GRPO-based RL. Video-R4-7B achieves state-of-the-art results on M4-ViteVQA and further generalizes to multi-page document QA, slides QA, and generic video QA, demonstrating that iterative rumination is an effective paradigm for pixel-grounded multimodal reasoning."
     }
   ],
-  "lastUpdated": "2025-11-26T09:33:41.429Z"
+  "lastUpdated": "2025-11-27T09:31:57.568Z"
 }
