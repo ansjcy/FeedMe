@@ -5,6 +5,63 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "Why developers still flock to Python: Guido van Rossum on readability, AI, and the future of programming",
+      "link": "https://github.blog/developer-skills/programming-languages-and-frameworks/why-developers-still-flock-to-python-guido-van-rossum-on-readability-ai-and-the-future-of-programming/",
+      "pubDate": "Tue, 25 Nov 2025 17:00:00 +0000",
+      "isoDate": "2025-11-25T17:00:00.000Z",
+      "creator": "Natalie Guevara",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Why developers still flock to Python: Guido van Rossum on readability, AI, and the future of programming",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Discover how Python changed developer culture—and see why it keeps evolving.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/programming-languages-and-frameworks/why-developers-still-flock-to-python-guido-van-rossum-on-readability-ai-and-the-future-of-programming/\">Why developers still flock to Python: Guido van Rossum on readability, AI, and the future of programming</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "How GitHub’s agentic security principles make our AI agents as secure as possible",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-githubs-agentic-security-principles-make-our-ai-agents-as-secure-as-possible/",
+      "pubDate": "Tue, 25 Nov 2025 16:00:00 +0000",
+      "isoDate": "2025-11-25T16:00:00.000Z",
+      "creator": "Rahul Zhade",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How GitHub’s agentic security principles make our AI agents as secure as possible",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/21364815?v=4&s=200",
+          "alt": "Rahul Zhade",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Learn more about the agentic security principles that we use to build secure AI products—and how you can apply them to your own agents.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-githubs-agentic-security-principles-make-our-ai-agents-as-secure-as-possible/\">How GitHub&#8217;s agentic security principles make our AI agents as secure as possible</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Developers still need the right to challenge junk patents",
       "link": "https://github.blog/news-insights/policy-news-and-insights/developers-still-need-the-right-to-challenge-junk-patents/",
       "pubDate": "Mon, 24 Nov 2025 16:00:00 +0000",
@@ -336,95 +393,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>In October, we experienced four incidents that resulted in degraded performance across GitHub services. </p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-october-2025/\">GitHub Availability Report: October 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "TypeScript、Python与AI反馈循环如何改变软件开发 (原标题: TypeScript, Python, and the AI feedback loop changing software development)",
-      "link": "https://github.blog/news-insights/octoverse/typescript-python-and-the-ai-feedback-loop-changing-software-development/",
-      "pubDate": "Thu, 13 Nov 2025 16:00:00 +0000",
-      "isoDate": "2025-11-13T16:00:00.000Z",
-      "creator": "Alexandra Lietzke",
-      "summary": "# AI对软件开发的影响：超越生产力\n\nAI正在从根本上改变软件开发，其影响远不止于提高生产力。GitHub Next（Copilot和GitHub长期研发团队的幕后推手）负责人Idan Gazit指出，这种深层转变在编写代码之前就已经发生，AI正在重塑我们选择构建软件的初始语言。\n\n## 语言趋势的转变：TypeScript的崛起与AI的推动\n\n2025年的Octoverse报告显示，TypeScript使用量同比增长66%，超越JavaScript和Python，成为GitHub上最常用的语言，这是十多年来最大的语言变动。这并非简单的语言竞争，而是AI开始从内部塑造语言趋势。\n\n### 为什么是强类型语言？\n*   **提供“安全网”：** 强类型语言（如TypeScript）提供“护栏”，帮助AI工具验证代码正确性，减少“幻觉”。\n*   **增强模型推理：** 显式类型为AI模型提供了更多结构进行推理，使其生成代码时表现更好。\n*   **开发者偏好：** 使用AI工具的开发者更倾向于在新项目中使用强类型语言。\n*   **AI兼容性考量：** 语言选择日益成为“AI兼容性”的考量，而非仅仅个人偏好。\n\n## AI反馈循环：语言选择与模型能力\n\nAI辅助成为开发者选择语言和框架的新考量。AI模型在流行语言（如TypeScript、Python、Java、Go）上的表现更强，因为它们有更多的训练数据。这反过来激励开发者使用这些语言，形成一个反馈循环。Gazit强调，如果AI工具要生成代码，开发者需要快速验证其正确性，而显式类型提供了这种安全网。\n\n## Python的持续主导与“胶带”语言的意外崛起\n\nPython在机器学习、数据科学和模型训练领域仍占据主导地位，因其拥有最强大的框架和库。AI时代并非TypeScript“战胜”Python，而是每种语言在适合其应用场景且AI能提升其价值时取得成功。\n\n### “胶带”语言的惊喜：Bash\nShell脚本在AI生成项目中同比增长206%。AI让编写“痛苦”的语言（如Bash）变得可容忍，自动化了繁琐部分。开发者可以更自由地选择“正确的工具”，而无需顾虑其编写难度。\n\n## 企业采纳AI的深远影响\n\n企业不再问“是否采纳AI”，而是问“采纳后会发生什么？”AI加速了初级开发者的成长，让高级开发者能将更多时间投入架构而非琐事。\n\n### 角色与技能的转变：\n*   **技能衡量：** 过去衡量技能看代码行数，现在看验证、架构、调试。\n*   **团队动态：** 初级开发者交付速度加快，高级开发者更多地评审代码。\n*   **工具选择：** 工具选择不再只是个人偏好，而是定义了AI可操作的范围，错误的堆栈可能限制AI辅助。\n\n## 下一个前沿：语言不再是约束\n\nWebAssembly (Wasm) 正在改变规则，允许任何语言编译为Wasm并在任何地方运行，消除了选择技术栈的一个关键考量。未来的愿景是：开发者用Rust/Go/Python编写代码 -> AI生成代码 -> 编译器目标Wasm -> 代码在Web、边缘、云、本地沙盒中运行。这将是一个“可移植性胜利”的未来，语言之间的竞争将更多地体现在生态系统杠杆（包深度、工具成熟度、模型熟悉度、调试人体工程学）上。\n\n## 对开发者的启示\n\n这不是一篇“现在学习TypeScript”的文章，而是关于理解关键信号：\n*   **强类型语言的兴起：** AI受益于结构。\n*   **Python在AI领域保持主导：** 生态系统比语言/框架时尚更持久。\n*   **Shell脚本使用量大增：** AI消除了痛苦障碍。\n*   **企业快速采纳AI：** 高级工程师的定义正在改变。\n*   **WebAssembly成熟：** 语言忠诚度被互操作性取代。\n\n核心在于优化“杠杆作用”而非“忠诚度”。未来十年存活下来的工具和语言将是那些能为开发者和机器提供最大共同优势的。\n\n### 更多资源\n*   观看Idan的采访\n*   了解GitHub Next和开发者工具的未来\n\n![Alexandra Lietzke](https://avatars.githubusercontent.com/u/188614820?v=4&s=200)\n\n### 探索更多来自GitHub\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握GitHub所需的一切，尽在一处。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在GitHub上构建未来，这里是任何人从任何地方构建任何东西的地方。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories：了解使用GitHub进行构建的公司和工程团队。\n*   ![The GitHub Podcast](https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg) The GitHub Podcast：收听GitHub播客，这是一个专注于GitHub开源开发者社区内外话题、趋势、故事和文化的节目。",
-      "shortSummary": "AI正在深刻改变软件开发，不仅影响代码编写方式，更重塑了语言选择。2025年Octoverse报告显示，TypeScript因其类型系统对AI工具的兼容性而大幅增长，提供“安全网”并减少AI幻觉。Python则在机器学习领域保持主导。AI甚至让Bash等“痛苦”语言变得可容忍。企业正快速采纳AI，改变了对高级工程师的定义。未来，WebAssembly将推动语言互操作性，使语言选择更侧重生态系统而非语法。开发者应优化利用而非忠诚度。",
-      "translated_title": "TypeScript、Python与AI反馈循环如何改变软件开发",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/188614820?v=4&s=200",
-          "alt": "Alexandra Lietzke",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>An interview with the leader of GitHub Next, Idan Gazit, on TypeScript, Python, and what comes next. </p>\n<p>The post <a href=\"https://github.blog/news-insights/octoverse/typescript-python-and-the-ai-feedback-loop-changing-software-development/\">TypeScript, Python, and the AI feedback loop changing software development</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Copilot 如何助力构建 GitHub 平台 (原标题: How Copilot helps build the GitHub platform)",
-      "link": "https://github.blog/ai-and-ml/github-copilot/how-copilot-helps-build-the-github-platform/",
-      "pubDate": "Wed, 12 Nov 2025 17:00:00 +0000",
-      "isoDate": "2025-11-12T17:00:00.000Z",
-      "creator": "Matt Nigh",
-      "summary": "GitHub 工程师在构建 GitHub 平台时，秉持“内部试用”文化，使用与提供给开发者的相同工具。GitHub Copilot 已从一个代码补全工具发展成为一个复杂的 AI 助手，并深度融入 GitHub 的开发生命周期，成为核心代码库中的活跃贡献者。它被人类工程师分配任务，创建拉取请求，并完成指派的工作。本文分析了 Copilot 在一个月内创建的拉取请求，揭示了其在多个方面的贡献。\n\n### Copilot 承担的简单工作以节省时间\n\nCopilot 的日常工作加速了许多看似微小但累积起来耗时的任务，从而避免了工程师频繁的上下文切换：\n\n*   **UI 和文案调整**：修复细微的 UI 错误（如图标对齐），或更新筛选栏中的占位符文本以提高准确性。\n*   **文档和清理**：处理直接的清理工作，例如在一个拉取请求中修复 100 个不同文件中 161 处注释和文档字符串中的拼写错误。\n\n### 关键清理和维护\n\n维护一个健康的 codebase 需要持续的关注，Copilot 在这方面表现出色，处理了大量耗时的代码维护、现代化和大规模重构工作：\n\n*   **移除功能标志**：持续清理已弃用的功能标志，移除整个 codebase 中的条件逻辑、过时代码和旧测试。\n*   **大规模重构**：承担跨应用程序的类重命名任务，甚至完成了大规模、仓库范围的核心内部类重命名，这对于任何开发者来说都是一项繁琐且耗时的任务。\n*   **性能优化**：发现并修复常见的性能反模式，在高流量区域用更优化的替代方案替换低效代码。\n\n### 修复 Bug 和不稳定的测试\n\nCopilot 还帮助解决了许多 Bug，修补了生产问题并提高了 CI/CD 流水线的稳定性：\n\n*   **生产错误**：解决核心逻辑中棘手的 `NoMethodError` 问题，甚至修复缓存基础设施中复杂的错误掩盖问题。\n*   **性能瓶颈**：其中一项重要贡献是修复了一个严重的性能问题，该问题导致 Codespaces 中工程师的 `git push` 操作耗时约 15 分钟。\n*   **修复不稳定的测试**：定期被指派调查并修复导致构建失败的不稳定测试。\n\n### 构建新功能\n\nCopilot 不仅维护旧代码，还积极构建新功能。人类工程师在 Issue 中规划工作，将其分配给 Copilot，然后它便开始工作：\n\n*   **新的 API 端点**：例如，添加了一个新的 REST API 端点，用于列出仓库安全咨询评论。\n*   **新的内部工具**：广泛用于改进内部工具，如内部内网、培训网站和入职流程等。\n\n### 迁移和安全\n\n除了日常任务，Copilot 还被分配给对平台未来至关重要的复杂高风险项目：\n\n*   **安全门控**：添加安全门控，以防止内部集成执行敏感操作，例如修改发布或发布资产。\n*   **数据库迁移**：处理数据库 schema 迁移，包括将列类型迁移以支持新标准等关键、高精度的任务。\n*   **文档创建**：确保文档与快速变化的代码保持同步，例如为限速代码添加注释，以确保开发者记住与另一服务同步。\n\n### 代码库范围的审计和分析：发现问题，然后解决问题\n\n在一些最先进的任务中，Copilot 充当研究员的角色。它可以被分配一个模糊的任务，然后分析代码库并在拉取请求中报告其发现：\n\n*   **审计 Codespaces 功能标志**：返回了一份全面的报告，对所有标志及其在代码中的引用进行了分类。\n*   **授权查询的全面分析**：识别性能和安全改进的机会。这使得 Copilot 的角色从代码生成转向系统级架构分析，帮助开发者直接解决复杂问题，而不是花费数天时间仅仅识别问题。\n\n### 一种新的协作方式\n\nCopilot 的合并拉取请求率低于人类贡献者，这是预期且有用的。其协作模式如下：\n\n1.  将一个 Issue 分配给 Copilot。\n2.  它会打开一个包含初步解决方案的拉取请求。\n3.  像审查其他拉取请求一样进行审查。\n4.  选择合并、在分支上迭代，或关闭并采取不同的方法。\n\n其价值不在于盲目合并，而在于不必从零开始。工程师可以立即获得一个具体的实现进行评审，所有样板代码和基本脚手架都已处理。这使得工程师的重心从编写所有代码转移到工程中最关键的部分：解决核心问题、完善 Copilot 的建议、处理不适合 AI 的代码库区域，以及负责架构、安全和用户体验。这并非自动化工程师的工作，而是让 Copilot 处理 80% 的繁琐工作，从而让工程师能够将专业知识投入到真正重要的 20% 的关键工作中。\n\n**作者**：\n\n![Matt Nigh](https://avatars.githubusercontent.com/u/5862416?v=4&s=200)\n\n**相关文章**：\n\n*   ![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs：掌握 GitHub 所需的一切。\n*   ![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub：在 GitHub 上构建未来。\n*   ![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) 客户案例：了解使用 GitHub 进行构建的公司和工程团队。\n*   ![The GitHub Podcast](https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg) The GitHub Podcast：收听 GitHub 播客，了解开源开发者社区的话题、趋势、故事和文化。",
-      "shortSummary": "GitHub Copilot已成为GitHub内部开发的核心贡献者，深度融入开发生命周期。它被分配问题、创建拉取请求，处理从琐碎的UI调整、文档清理到复杂的代码重构、性能优化、bug修复、新功能开发及安全迁移等广泛任务。Copilot还能进行代码库审计和系统级架构分析。它通过自动化80%的繁琐工作，让工程师能专注于20%的关键创新和架构决策，显著提升了GitHub平台的构建效率和协作模式。",
-      "translated_title": "Copilot 如何助力构建 GitHub 平台",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/5862416?v=4&s=200",
-          "alt": "Matt Nigh",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>A breakdown of how Copilot coding agent has contributed to a better, more powerful GitHub.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-copilot-helps-build-the-github-platform/\">How Copilot helps build the GitHub platform</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-11-25T04:36:56.014Z"
+  "lastUpdated": "2025-11-27T04:35:31.331Z"
 }
