@@ -5,6 +5,68 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "The ultimate gift guide for the developer in your life",
+      "link": "https://github.blog/news-insights/company-news/the-ultimate-gift-guide-for-the-developer-in-your-life/",
+      "pubDate": "Fri, 28 Nov 2025 13:08:56 +0000",
+      "isoDate": "2025-11-28T13:08:56.000Z",
+      "creator": "Lavinia Sfetcu",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "The ultimate gift guide for the developer in your life",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/11/hat.png?resize=1024%2C683",
+          "alt": "A model wears a GitHub-themed holiday beanie.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/11/IMG_0306.jpg?resize=1024%2C566",
+          "alt": "",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/11/asobu.png?resize=1024%2C683",
+          "alt": "An Asobu bottle with a GitHub logo.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/11/backpack.png?resize=1024%2C683",
+          "alt": "A GitHub MiiR backpack.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/11/youth-hoodie.jpg?resize=1024%2C682",
+          "alt": "A youth model wears a green GitHub sweatshirt.",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/11/sweater.jpg?resize=1024%2C682",
+          "alt": "An 'ugly holiday sweater' featuring GitHub, Mona the Octocat, and Copilot.",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/54560767?v=4&s=200",
+          "alt": "Lavinia Sfetcu",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Finding the perfect gift for your favorite developer is easy with our top tips.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/the-ultimate-gift-guide-for-the-developer-in-your-life/\">The ultimate gift guide for the developer in your life</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Why developers still flock to Python: Guido van Rossum on readability, AI, and the future of programming",
       "link": "https://github.blog/developer-skills/programming-languages-and-frameworks/why-developers-still-flock-to-python-guido-van-rossum-on-readability-ai-and-the-future-of-programming/",
       "pubDate": "Tue, 25 Nov 2025 17:00:00 +0000",
@@ -373,27 +435,7 @@
       ],
       "contentSource": "完整文章",
       "content": "<p>Discover practical tips, examples, and best practices for writing effective instructions files. Whether you’re new or experienced, you’ll find something to level up your code reviews.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/unlocking-the-full-power-of-copilot-code-review-master-your-instructions-files/\">Unlocking the full power of Copilot code review: Master your instructions files</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub可用性报告：2025年10月 (原标题: GitHub Availability Report: October 2025)",
-      "link": "https://github.blog/news-insights/company-news/github-availability-report-october-2025/",
-      "pubDate": "Thu, 13 Nov 2025 17:28:48 +0000",
-      "isoDate": "2025-11-13T17:28:48.000Z",
-      "creator": "Jakub Oleksy",
-      "summary": "## GitHub 2025年10月可用性报告\n\n在2025年10月，GitHub共经历了四起导致服务性能下降的事件。以下是每起事件的详细回顾：\n\n### 1. 10月9日事件 (14:35 UTC - 15:21 UTC，持续1小时55分钟)\n*   **原因**：一个处于维护模式并正在维修的网络设备在维修完全完成之前被提前投入生产，导致通过该设备的网络流量出现严重丢包。\n*   **影响**：\n    *   **github.com UI (已认证用户)**：事件最初5分钟内，延迟增加。\n    *   **API用户**：错误率最高达7.3%，随后稳定在约0.05%，直至问题缓解。\n    *   **Actions服务**：24%的运行被延迟，平均延迟13分钟。\n    *   **大文件存储 (LFS) 请求**：错误率略有增加，0.038%的请求出错。\n*   **后续措施**：GitHub正在加强此类设备维修的验证流程，以防止类似问题再次发生。\n\n### 2. 10月17日事件 (12:51 UTC - 14:01 UTC，持续1小时1分钟)\n*   **原因**：用于移动推送通知交付的云资源配置发生错误更改。\n*   **影响**：移动推送通知在70分钟内未能成功发送，影响了所有区域的github.com和GitHub Enterprise Cloud。\n*   **后续措施**：GitHub正在审查相关程序和云资源管理，以避免未来发生此类事件。\n\n### 3. 10月20日事件 (08:05 UTC - 10:50 UTC，持续2小时5分钟)\n*   **原因**：构建devcontainer镜像所需的一个第三方依赖项发生故障，引发了连锁反应。\n*   **影响**：Codespaces服务性能下降。\n    *   **Codespace创建**：平均错误率为39.5%，峰值达到71%。\n    *   **Codespace恢复操作**：平均错误率为23.4%，峰值达到46%。\n*   **后续措施**：问题在第三方依赖项恢复后得到缓解。GitHub正在评估方案，以确保该依赖项不再是容器构建过程中的关键路径，并改进监控和警报系统，以减少未来类似问题的检测时间。\n\n### 4. 10月29日事件 (14:07 UTC - 23:15 UTC，持续6小时58分钟)\n*   **原因**：一个第三方提供商发生大范围故障。\n*   **影响**：GitHub服务普遍受到影响。\n    *   **Codespaces**：所有区域的用户面临严重的连接问题，错误率平均90%，峰值达到100%。\n    *   **GitHub Actions (大型托管运行器)**：0.5%的工作流和近10%的大型运行器作业失败或延迟超过五分钟。Actions服务在20:40 UTC恢复。\n    *   **GitHub Enterprise Importer服务**：在git push操作期间导致迁移失败，并显著延迟了迁移处理。\n    *   **GitHub Enterprise Cloud (数据驻留新试用)**：被延迟。\n    *   **Copilot Metrics API下载**：不可用，导致约100个请求失败，直到20:25 UTC左右开始恢复。\n*   **后续措施**：事件期间采取了缓解措施，但只有在服务提供商解决其故障后才完全恢复。GitHub目前正致力于减少对外部提供商的关键路径依赖，并实施在类似事件中优雅降级服务的策略，以提高未来面对中断时的弹性。\n\n### 总结与展望\n\nGitHub鼓励用户关注其[状态页面](https://status.github.com/)获取实时更新和事件后回顾，并查阅[GitHub博客的工程部分](https://github.blog/engineering/)了解更多正在进行的工作。\n\n本文由 ![Jakub Oleksy](https://avatars.githubusercontent.com/u/6147691?v=4&s=200) Jakub Oleksy 撰写。",
-      "shortSummary": "GitHub在2025年10月经历了四起服务中断事件。问题包括网络设备提前投入生产、移动推送通知配置错误、Codespaces因第三方依赖故障而降级，以及一次由第三方提供商大范围故障引发的广泛服务中断。受影响的服务包括GitHub UI、API、Actions、LFS、Codespaces、GitHub Enterprise Importer和Copilot Metrics API。GitHub正致力于加强验证流程、审查云资源管理、减少第三方依赖，并提升系统弹性以应对未来挑战。",
-      "translated_title": "GitHub可用性报告：2025年10月",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/6147691?v=4&s=200",
-          "alt": "Jakub Oleksy",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>In October, we experienced four incidents that resulted in degraded performance across GitHub services. </p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-october-2025/\">GitHub Availability Report: October 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-11-27T04:35:31.331Z"
+  "lastUpdated": "2025-11-29T04:34:25.018Z"
 }
