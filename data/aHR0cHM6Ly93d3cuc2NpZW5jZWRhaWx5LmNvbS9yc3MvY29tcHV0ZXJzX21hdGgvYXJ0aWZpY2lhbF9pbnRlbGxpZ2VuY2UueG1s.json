@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "Scientists uncover the brain’s hidden learning blocks",
+      "link": "https://www.sciencedaily.com/releases/2025/11/251128050509.htm",
+      "pubDate": "Fri, 28 Nov 2025 09:09:38 EST",
+      "isoDate": "2025-11-28T14:09:38.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Scientists uncover the brain’s hidden learning blocks",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Princeton researchers found that the brain excels at learning because it reuses modular “cognitive blocks” across many tasks. Monkeys switching between visual categorization challenges revealed that the prefrontal cortex assembles these blocks like Legos to create new behaviors. This flexibility explains why humans learn quickly while AI models often forget old skills. The insights may help build better AI and new clinical treatments for impaired cognitive adaptability."
+    },
+    {
       "title": "物理学家揭示电子“狂野”运行的新量子态 (原标题: Physicists reveal a new quantum state where electrons run wild)",
       "link": "https://www.sciencedaily.com/releases/2025/11/251116105625.htm",
       "pubDate": "Sun, 16 Nov 2025 10:56:25 EST",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "By twisting atom-thin sheets of graphene in just the right way, Rutgers researchers created intercrystals, a new form of matter where geometry alone controls electron behavior. These strange materials could power quantum computers, ultra-efficient circuits, and greener technologies."
-    },
-    {
-      "title": "成像技术消除水下场景中的水体影响 (原标题: Imaging technique removes the effect of water in underwater scenes)",
-      "link": "https://www.sciencedaily.com/releases/2025/05/250521125256.htm",
-      "pubDate": "Wed, 21 May 2025 12:52:56 EDT",
-      "isoDate": "2025-05-21T16:52:56.000Z",
-      "creator": "",
-      "summary": "# 成像技术消除水下场景中的水体影响\n\n## 引言\n海洋中生命繁盛，但由于水体的光学效应，大部分海洋世界难以被清晰观测。光线在水中传播时会发生弯曲、散射并迅速衰减，同时受到水中颗粒物产生的持续性雾霾影响，导致难以在近距离外捕捉到物体的真实颜色。\n\n## SeaSplat：一种新型图像分析工具\n麻省理工学院（MIT）和伍兹霍尔海洋研究所（WHOI）的团队开发了一种名为“SeaSplat”的图像分析工具。该工具旨在消除水体的光学影响，生成仿佛水已被排干般的水下环境图像，从而揭示场景的真实色彩。\n\n### SeaSplat 的工作原理\n*   **结合技术：** SeaSplat 将色彩校正工具与计算模型相结合。\n*   **3D 高斯泼溅（3DGS）：** 该工具借鉴了“3D 高斯泼溅”（3DGS）方法。3DGS 能够将场景图像拼接在一起，生成一个完整的、可从任何角度详细查看的三维表示。\n*   **水体建模与去除：** SeaSplat 能够明确建模水体的影响，从而在某种程度上“去除”水体，生成更佳的水下场景三维模型。\n*   **色彩校正算法：** 该算法计算图像中每个像素受反向散射和衰减效应扭曲的程度，然后消除这些水体效应，计算出像素的真实颜色。\n*   **集成与生成：** 将色彩校正算法整合到 3D 高斯泼溅模型中，SeaSplat 可以快速分析水下图像，生成真实色彩的三维虚拟场景，并可从任何角度和距离进行详细探索。\n\n## 水下光学效应的挑战\n在水下，物体的颜色和清晰度会受到光线在水中传播的影响而扭曲。\n*   **反向散射（Backscatter）：** 光线从水中微小颗粒反射，形成一层薄雾般的模糊效果。\n*   **衰减（Attenuation）：** 特定波长的光线随距离衰减或褪色。例如，在水下，红色物体从远处看比蓝色物体褪色更严重。\n*   **视角依赖性：** 在水下，颜色会随着观察角度和距离的改变而迅速变化和褪色，这与水外环境不同。\n*   **现有方法的局限：**\n    *   **色彩校正工具：** 虽有“Sea-Thru”等算法能准确再现真实颜色，但其计算量巨大，难以用于生成三维场景模型。\n    *   **3DGS：** 3DGS 在水外环境表现出色，但由于水下反向散射和衰减效应扭曲了不同角度的物体颜色，使其难以将水下图像拼接成连贯的三维整体。\n\n## 应用与效益\nSeaSplat 的应用潜力巨大，尤其是在海洋生物学领域：\n*   **海洋健康监测：** 帮助海洋生物学家监测特定海洋群落的健康状况。\n*   **珊瑚礁检测：** 例如，当水下机器人探索并拍摄珊瑚礁时，SeaSplat 可以同步处理图像并渲染出真实色彩的三维表示。科学家可以虚拟地“飞越”这些模型，检查珊瑚白化等迹象。\n*   **提高检测精度：** 珊瑚白化从近处看是白色，但从远处看可能呈现蓝色和模糊，难以检测。SeaSplat 图像能更容易地检测珊瑚白化和不同珊瑚物种，获取海洋中的真实颜色。\n*   **量化生物多样性：** 有助于量化生物多样性，评估珊瑚礁和其他海洋群落的健康状况。\n\n## 测试与结果\n研究团队已将 SeaSplat 应用于多个水下场景的图像，包括红海、加勒比海（库拉索海岸附近）和太平洋（巴拿马附近）。这些图像来自现有数据集，代表了不同海洋位置和水体条件。他们还在美属维尔京群岛测试了由遥控水下机器人拍摄的图像。\n*   **生成效果：** SeaSplat 从每个海洋场景的图像中生成了真实色彩的三维世界。\n*   **虚拟探索：** 研究人员能够虚拟地探索这些模型，例如放大缩小场景，并从不同视角查看特定特征。\n*   **色彩保持：** 即使从不同角度和距离查看，场景中的物体也保持了真实颜色，而不会像在实际海洋中那样褪色。\n\n## 局限性与展望\n目前，该方法需要大量的计算资源，例如一台台式电脑，这对于水下机器人来说过于笨重。然而，SeaSplat 适用于系留操作，即车辆通过缆绳连接到船只，探索并拍摄图像，然后将数据发送到船上的计算机进行处理。\n\n## 研究团队与支持\n该研究由麻省理工学院研究生 Daniel Yang、伍兹霍尔海洋研究所副科学家 Yogesh Girdhar 和麻省理工学院机械工程教授 John Leonard 共同完成。他们将在 IEEE 机器人与自动化国际会议（ICRA）上发表详细介绍 SeaSplat 的论文。该工作部分得到了 WHOI 科学投资基金和美国国家科学基金会的支持。",
-      "shortSummary": "麻省理工学院和伍兹霍尔海洋研究所开发了一种名为“SeaSplat”的成像技术，旨在消除水下场景中水体对光线的扭曲影响。该工具结合了色彩校正和3D高斯泼溅技术，能够生成仿佛水被排干后的水下环境真实色彩三维模型。SeaSplat有助于海洋生物学家更准确地监测海洋健康，例如识别珊瑚白化，从而克服了传统水下成像因光线散射和衰减导致的色彩失真问题。",
-      "translated_title": "成像技术消除水下场景中的水体影响",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "MIT and WHOI scientists have unveiled SeaSplat, a system that makes underwater scenes look as if the ocean had been drained away. The tool cancels out water’s distortions and builds true-color 3D worlds that can be explored from any angle. This breakthrough could let marine biologists virtually “swim” through coral reefs to track bleaching and biodiversity with unprecedented clarity."
     }
   ],
-  "lastUpdated": "2025-11-28T09:28:46.209Z"
+  "lastUpdated": "2025-11-29T09:27:00.419Z"
 }
