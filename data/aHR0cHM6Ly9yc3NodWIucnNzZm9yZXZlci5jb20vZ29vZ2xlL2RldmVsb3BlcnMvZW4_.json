@@ -5,6 +5,26 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Announcing the Data Commons Gemini CLI extension",
+      "link": "https://developers.googleblog.com/en/announcing-the-data-commons-gemini-cli-extension/",
+      "pubDate": "Mon, 01 Dec 2025 16:00:00 GMT",
+      "isoDate": "2025-12-01T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Announcing the Data Commons Gemini CLI extension",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GDP-answer.original.png",
+          "alt": "GDP-answer",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "The new Data Commons extension for the Gemini CLI makes accessing public data easier. It allows users to ask complex, natural-language questions to query Data Commons' public datasets, grounding LLM responses in authoritative sources to reduce AI hallucinations. Data Commons is an organized library of public data from sources like the UN and World Bank. The extension enables instant data analysis, exploration, and integration with other data-related extensions."
+    },
+    {
       "title": "New Gemini API updates for Gemini 3",
       "link": "https://developers.googleblog.com/en/new-gemini-api-updates-for-gemini-3/",
       "pubDate": "Mon, 24 Nov 2025 16:00:00 GMT",
@@ -222,20 +242,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Google has launched the redesigned **Android AI Sample Catalog**, a dedicated, open-source application to inspire and educate Android developers on building AI-powered apps. It showcases examples using both on-device (Gemini Nano via ML Kit GenAI API) and Cloud models (via Firebase AI Logic SDK), including image generation with Imagen, on-device summarization, and a \"Chat with Nano Banana\" chatbot. The code is easy to copy and paste to help developers quickly start their own projects."
-    },
-    {
-      "title": "介绍 Metrax：JAX 中高性能、高效且稳健的模型评估指标 (原标题: Introducing Metrax: performant, efficient, and robust model evaluation metrics in JAX)",
-      "link": "https://developers.googleblog.com/en/introducing-metrax-performant-efficient-and-robust-model-evaluation-metrics-in-jax/",
-      "pubDate": "Wed, 12 Nov 2025 16:00:00 GMT",
-      "isoDate": "2025-11-12T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# 介绍 Metrax：JAX 中高性能、高效且稳健的模型评估指标\n\nMetrax 是一个专为 JAX 设计的高性能库，旨在提供高效且稳健的模型评估指标。它的诞生是为了解决 Google 团队在从 TensorFlow 迁移到 JAX 时，由于 JAX 缺乏内置指标库而不得不手动重新实现各种评估指标的问题，尤其是在大规模分布式计算环境中，这变得尤为复杂。\n\n## Metrax 的核心优势与特性\n\n*   **全面的指标覆盖**：Metrax 提供了用于评估各种机器学习模型（分类、回归、推荐、视觉、音频和语言）的预定义指标。\n*   **分布式环境兼容性**：它确保了在分布式和规模化训练环境中的兼容性和一致性，让开发者能专注于模型评估结果，而非重复实现指标定义。\n*   **“At K”指标的并行计算**：\n    *   Metrax 能够并行计算多个 K 值的“at K”指标，例如 PrecisionAtK、RecallAtK 和 NDCGAtK。\n    *   这意味着用户可以在模型的一次前向传播中，同时获取 K=1、K=8 和 K=20 等多个 K 值下的精度，从而更快、更全面地评估模型性能。\n*   **稳健性和可靠性**：作为一个经过充分测试的指标库，Metrax 有助于社区编写更少出错的代码和进行更可靠的模型评估。\n*   **性能优化**：Metrax 利用 JAX 的核心优势，如 `vmap` 和 `jit`，以高性能方式执行多项操作，包括“at K”操作。\n*   **丰富的指标类型**：除了准确率、精确率和召回率等经典指标外，Metrax 还包含一套强大的自然语言处理（NLP）相关指标（如 Perplexity、BLEU、ROUGE），以及视觉模型指标（如 IoU、SNR、SSIM）。\n\n## Metrax 的使用示例\n\nMetrax 的使用方式简洁明了，支持直接计算和批处理合并。\n\n1.  **直接计算指标**：\n    通过 `metrax.Precision.from_model_output` 方法传入预测值、标签和阈值，然后调用 `compute()` 即可获得结果。\n    ```python\n    import metrax\n    # 直接计算指标状态。\n    metric_state = metrax.Precision.from_model_output(\n        predictions=predictions,\n        labels=labels,\n        threshold=0.5\n    )\n    # 调用 compute() 即可获得结果。\n    result = metric_state.compute()\n    ```\n\n2.  **迭代合并批次指标**：\n    在批处理评估中，可以使用 `merge()` 函数迭代地将每个批次的指标信息合并到总的指标状态中，最后调用 `compute()` 获取最终值。\n    ```python\n    # 迭代合并精确率指标\n    for labels_b, predictions_b, weights_b in zip(labels_batched, predictions_batched, sample_weights_batched):\n        batch_metric_state = metrax.Precision.from_model_output(\n            predictions=predictions_b,\n            labels=labels_b\n        )\n        metric_state = metric_state.merge(batch_metric_state)\n    result = metric_state.compute()\n    ```\n\n## 生态系统整合与贡献\n\n*   **JAX AI Stack 的一部分**：Metrax 很好地融入了 JAX AI Stack，这是一个旨在协同工作以满足 AI 工具需求的工具套件。\n*   **广泛应用**：目前，Metrax 已被 Google 内部一些最大的软件栈使用，包括 Google 搜索、YouTube 和 Google 自己的训练后库 Tunix。\n*   **社区贡献**：Metrax 在 GitHub 上开源（github.com/google/metrax），并欢迎社区贡献。许多现有指标都是由社区贡献者添加的。\n*   **更多资源**：用户可以在 `jaxstack.ai` 找到更多与 Metrax 良好集成的 JAX 生态系统库和关于构建机器学习模型的内容。",
-      "shortSummary": "Metrax 是一个为 JAX 设计的高性能模型评估指标库，旨在解决 JAX 缺乏内置指标库的问题。它提供了一系列预定义、高效且稳健的机器学习模型评估指标，支持并行计算多个“at K”指标，并利用 JAX 的性能优势。Metrax 整合了 JAX AI Stack，已被 Google 内部团队广泛使用，并在 GitHub 上开源，欢迎社区贡献。",
-      "translated_title": "介绍 Metrax：JAX 中高性能、高效且稳健的模型评估指标",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Metrax is a high-performance JAX-based metrics library developed by Google. It standardizes model evaluation by offering robust, efficient metrics for classification, NLP, and vision, eliminating manual re-implementation after migrating from TensorFlow. Key strengths include parallel computation of \"at K\" metrics (e.g., PrecisionAtK) for multiple K values and strong integration with the JAX AI Stack, leveraging JAX's performance features. It is open-source on GitHub."
     }
   ],
-  "lastUpdated": "2025-12-02T10:34:02.694Z"
+  "lastUpdated": "2025-12-03T10:35:46.839Z"
 }
