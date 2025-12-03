@@ -5,6 +5,63 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "“The local-first rebellion”: How Home Assistant became the most important project in your house",
+      "link": "https://github.blog/open-source/maintainers/the-local-first-rebellion-how-home-assistant-became-the-most-important-project-in-your-house/",
+      "pubDate": "Tue, 02 Dec 2025 17:19:32 +0000",
+      "isoDate": "2025-12-02T17:19:32.000Z",
+      "creator": "Andrea Griffiths",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "“The local-first rebellion”: How Home Assistant became the most important project in your house",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Learn how one of GitHub’s fastest-growing open source projects is redefining smart homes without the cloud.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/the-local-first-rebellion-how-home-assistant-became-the-most-important-project-in-your-house/\">“The local-first rebellion”: How Home Assistant became the most important project in your house</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "How to orchestrate agents using mission control",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-to-orchestrate-agents-using-mission-control/",
+      "pubDate": "Mon, 01 Dec 2025 17:00:00 +0000",
+      "isoDate": "2025-12-01T17:00:00.000Z",
+      "creator": "Matt Nigh",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How to orchestrate agents using mission control",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/5862416?v=4&s=200",
+          "alt": "Matt Nigh",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Run multiple Copilot agents from one place. Learn prompt techniques, how to spot drift early, and how to review agent work efficiently.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-to-orchestrate-agents-using-mission-control/\">How to orchestrate agents using mission control</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "The ultimate gift guide for the developer in your life",
       "link": "https://github.blog/news-insights/company-news/the-ultimate-gift-guide-for-the-developer-in-your-life/",
       "pubDate": "Fri, 28 Nov 2025 13:08:56 +0000",
@@ -378,64 +435,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>Prevent accessibility issues before they reach production. The Annotation Toolkit brings clarity, compliance, and collaboration directly into your Figma workflow.</p>\n<p>The post <a href=\"https://github.blog/enterprise-software/collaboration/level-up-design-to-code-collaboration-with-githubs-open-source-annotation-toolkit/\">Level up design-to-code collaboration with GitHub’s open source Annotation Toolkit</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Highlights from Git 2.52",
-      "link": "https://github.blog/open-source/git/highlights-from-git-2-52/",
-      "pubDate": "Mon, 17 Nov 2025 17:54:31 +0000",
-      "isoDate": "2025-11-17T17:54:31.000Z",
-      "creator": "Taylor Blau",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Highlights from Git 2.52",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>The open source Git project just released Git 2.52. Here is GitHub’s look at some of the most interesting features and changes introduced since last time.</p>\n<p>The post <a href=\"https://github.blog/open-source/git/highlights-from-git-2-52/\">Highlights from Git 2.52</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "释放Copilot代码审查的全部潜力：掌握你的指令文件 (原标题: Unlocking the full power of Copilot code review: Master your instructions files)",
-      "link": "https://github.blog/ai-and-ml/unlocking-the-full-power-of-copilot-code-review-master-your-instructions-files/",
-      "pubDate": "Fri, 14 Nov 2025 17:00:00 +0000",
-      "isoDate": "2025-11-14T17:00:00.000Z",
-      "creator": "Ria Gopu",
-      "summary": "# 释放Copilot代码审查的全部潜力：掌握你的指令文件\n\nCopilot代码审查（CCR）通过自动化代码审查并确保项目符合团队标准，极大地提升了开发效率。最近，Copilot新增了对`copilot-instructions.md`（仓库级）和路径特定的`*.instructions.md`文件的支持，这使得用户能够根据工作流程定制Copilot的行为，通过清晰、可操作的规则指导Copilot进行有效且一致的审查。\n\n## 核心挑战与目标\n\n尽管灵活性增强，但仍存在一些不确定性：Copilot何时读取指令？为何不总是严格遵循指令？如何确保Copilot听从指导？本文旨在提供一份指南，帮助用户编写真正有效的指令，并避免常见陷阱。\n\n## 通用指令编写技巧\n\n编写指令文件时，请牢记以下几点：\n\n*   **保持简洁：** Copilot对专注、简短的指令效果最佳。从小处着手，逐步迭代。过长的指令文件（超过约1000行）可能导致行为不一致。\n*   **结构化：** 使用标题和项目符号来组织信息，使其易于Copilot处理。\n*   **直接明了：** 简短、祈使句式的规则比冗长的段落更有效。\n*   **提供示例：** 像与队友沟通一样，通过示例代码或解释来演示概念。\n\n## 仓库级与路径特定指令文件\n\n除了集中式的仓库级`copilot-instructions.md`文件，现在还可以在`.github/instructions`目录中创建带有`applyTo`前置元数据的`NAME.instructions.md`文件。这两种选项各有价值：\n\n*   **`copilot-instructions.md`：** 保留用于整个仓库的通用指令、团队标准和指南（例如：“标记整个代码库中已弃用库的使用”）。\n*   **`*.instructions.md`：**\n    *   放置语言特定规则，并使用`applyTo`前置元数据属性定位特定语言（例如：`applyTo: **/*.py`或`applyTo: documentation/*.md`）。\n    *   放置仅适用于Copilot代码审查或仅适用于Copilot编码代理的规则，并使用`excludeAgent`前置元数据属性防止其他代理读取文件。\n    *   将不同主题（例如：安全、语言特定指南等）组织到单独的`*.instructions.md`文件中。\n\n## 有效指令文件的构成要素\n\n有效的指令文件通常包括：\n\n*   清晰的标题\n*   目的或范围声明以明确意图\n*   指南/规则列表而非密集段落\n*   最佳实践建议\n*   风格约定（缩进、命名、组织）\n*   用于澄清的示例代码块\n*   用于组织的章节标题\n*   任务特定指令（例如，针对测试或端点）\n*   语言/工具上下文\n*   强调可读性和一致性\n*   明确的Copilot指令（“优先使用X而非Y”）\n\n## 应避免的常见误区\n\n某些类型的指令不受Copilot代码审查支持。请避免以下常见陷阱：\n\n*   试图改变Copilot评论的用户体验或格式（例如：“更改Copilot代码审查评论的字体”）。\n*   试图修改“拉取请求概览”评论（例如，要求删除它或改变其目的）。\n*   要求Copilot代码审查执行代码审查之外的任务（例如，试图修改产品行为，如要求它阻止拉取请求合并）。\n*   包含外部链接。Copilot不会遵循它们。您应该将相关信息复制到指令文件中。\n*   添加旨在普遍且非特异性地改进行为的请求（例如：“更准确”或“识别所有问题”）。Copilot代码审查已经为此进行了调整，添加此类语言只会增加噪音，混淆大型语言模型（LLM）。\n\n## 指令文件推荐结构\n\n以下是一个可供复制粘贴的Markdown结构，作为指令文件的起点：\n\n```markdown\n# [您的标题]\n*示例：ReactJS开发指南*\n\n## 目的与范围\n简要描述此文件涵盖的内容以及何时使用它。\n\n---\n\n## 命名约定\n- [在此添加规则，例如：“变量名使用camelCase。”]\n\n## 代码风格\n- [在此添加规则，例如：“使用2个空格进行缩进。”]\n\n## 错误处理\n- [在此添加规则。]\n\n## 测试\n- [在此添加规则。]\n\n## 安全\n- [在此添加规则。]\n\n---\n\n## 代码示例\n```js\n// 正确模式\nfunction myFunction() { ... }\n// 错误模式\nfunction My_function() { ... }\n```\n\n---\n\n## [可选] 任务特定或高级部分\n\n### 框架特定规则\n- [添加任何与框架、库或工具相关的规则。]\n\n### 高级提示与边缘情况\n- [记录异常、高级模式或重要注意事项。]\n```\n\n## 示例：`typescript.instructions.md`文件\n\n文章提供了一个具体的`typescript.instructions.md`示例，展示了如何应用上述指南，包括命名约定、代码风格、错误处理、测试和代码示例。\n\n## 开始使用与编辑自定义指令\n\n*   **首次创建：** 在仓库的`.github`目录中创建`copilot-instructions.md`文件，或在`.github/instructions`目录中创建路径特定的`*.instructions.md`文件。可以参考本文或`awesome-copilot`仓库中的示例，也可以让Copilot编码代理为您生成。\n*   **编辑现有指令：** 如果您想修改现有指令文件，可以使用Copilot编码代理。导航到`github.com/copilot/agents`页面，选择仓库和分支，然后使用以下提示（根据您的用例进行修改）：\n\n    **Copilot编码代理提示：修订我的指令文件**\n\n    ```\n    Review and revise my existing `NAME-OF-INSTRUCTION-FILES` files. Preserve my file's meaning and intention—do NOT make unnecessary changes or edits. Only make improvements where needed, specifically:\n    - Remove unsupported or redundant content.\n    - Reformat sections for clarity if they do not have any structure.\n    - If my file does not have any structure, reformat into the structure below or similar, depending on the topics covered in the file.\n    - Do not change the intent or substance of the original content unless the content is not supported.\n    - Organize content with section headings and bullet points or numbered lists.\n    - Add sample code blocks if clarification is needed and they are missing.\n    - When applicable, separate language-specific rules into path-specific instructions files with the format `NAME.instructions.md`, with the `applyTo` property, if not already done.\n    - If the file is over 4000 characters long, prioritize shortening the file by identifying redundant instructions, instructions that could be summarized, and instructions that can be removed due to being unspported.\n    ```\n    Copilot将创建一个草稿拉取请求，修改您的自定义指令，并将其推送到分支，然后将您添加为审阅者。\n\n## 资源\n\n*   [GitHub文档中的Copilot代码审查自定义指令示例](https://docs.github.com/en/copilot/github-copilot-for-code-review/customizing-github-copilot-for-code-review-with-instructions-files)\n*   [awesome-copilot指令示例仓库](https://github.com/github/awesome-copilot/tree/main/instructions-examples)\n\n自定义Copilot指令文件能让代码审查更好地为您服务，快来尝试一下，看看它如何改变您的工作流程！\n\n--- \n\n本文作者：\n\n![Ria Gopu](https://avatars.githubusercontent.com/u/189655821?v=4&s=200)\n\n探索更多来自GitHub：\n\n![Docs](https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg) Docs\n\n![GitHub](https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg) GitHub\n\n![Customer stories](https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg) Customer stories\n\n![The GitHub Podcast](https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg) The GitHub Podcast",
-      "shortSummary": "本文介绍了如何通过定制指令文件（`copilot-instructions.md`和`*.instructions.md`）来充分利用Copilot代码审查（CCR）。为确保Copilot有效遵循指令，需遵循简洁、结构化、直接、提供示例的原则。文章区分了仓库级和路径特定指令文件的用途，并列举了有效指令的构成要素及应避免的常见误区。此外，文章提供了指令文件的推荐结构和TypeScript示例，并指导用户如何利用Copilot编码代理创建或修订指令文件，以优化代码审查流程。",
-      "translated_title": "释放Copilot代码审查的全部潜力：掌握你的指令文件",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/189655821?v=4&s=200",
-          "alt": "Ria Gopu",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "<p>Discover practical tips, examples, and best practices for writing effective instructions files. Whether you’re new or experienced, you’ll find something to level up your code reviews.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/unlocking-the-full-power-of-copilot-code-review-master-your-instructions-files/\">Unlocking the full power of Copilot code review: Master your instructions files</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-12-01T04:55:46.504Z"
+  "lastUpdated": "2025-12-03T04:37:59.297Z"
 }

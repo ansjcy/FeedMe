@@ -5,6 +5,44 @@
   "link": "https://slack.engineering",
   "items": [
     {
+      "title": "Streamlining Security Investigations with Agents",
+      "link": "https://slack.engineering/streamlining-security-investigations-with-agents/",
+      "pubDate": "Mon, 01 Dec 2025 16:00:42 +0000",
+      "isoDate": "2025-12-01T16:00:42.000Z",
+      "creator": "Dominic Marks",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Streamlining Security Investigations with Agents",
+      "images": [
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/11/investigation_round_simple_vertical_ad2b54.png?w=1020",
+          "alt": "Flow diagram illustrating how agents cooperate during security investigations",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/11/knowledge_pyramid_retina.png?w=1020",
+          "alt": "Pyramid diagram illustrating how investigation knowledge flows up from low to high cost models.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/11/investigation_phases_vertical_final_300dpi.png?w=1020",
+          "alt": "Flow diagram illustrating how the Director progresses the investigation through distinct phases.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/11/process_ancestry_retina.png?w=1020",
+          "alt": "Tree diagram illustrating how agents navigated the process tree.",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Slack’s Security Engineering team is responsible for protecting Slack’s core infrastructure and services. Our security event ingestion pipeline handles billions of events per day from a diverse array of data sources. Reviewing alerts produced by our security detection system is our primary responsibility during on-call shifts. We’re going to show you how we’re using AI&#8230;"
+    },
+    {
       "title": "构建更好的软件以更好地构建软件 (原标题: Build better software to build software better)",
       "link": "https://slack.engineering/build-better-software-to-build-software-better/",
       "pubDate": "Thu, 06 Nov 2025 16:00:47 +0000",
@@ -190,69 +228,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": " “A complex system can fail in an infinite number of ways.” -“Systemantics” by John Gall &#160; Incidents are stressful but inevitable. Even services designed for availability will eventually encounter a failure. Engineers naturally find it daunting to defend their systems against the “infinite number of ways” things can go wrong.  Our team found ourselves in&#8230;"
-    },
-    {
-      "title": "Slack 审计日志与异常 (原标题: Slack Audit Logs and Anomalies)",
-      "link": "https://slack.engineering/slack-audit-logs-and-anomalies/",
-      "pubDate": "Mon, 09 Dec 2024 17:02:13 +0000",
-      "isoDate": "2024-12-09T17:02:13.000Z",
-      "creator": "Ryan Katkov",
-      "summary": "# Slack 审计日志与异常\n\n本文详细介绍了 Slack 的审计日志功能及其异常检测机制，旨在帮助企业用户理解和利用这些工具来增强安全监控和响应能力。\n\n## 什么是 Slack 审计日志？\nSlack 审计日志是为 Enterprise Grid 客户提供的服务，用于记录平台上实体执行的各种操作，例如用户登录、资料更新、应用下载文件等。这些日志记录了广泛的活动，建议定期查阅文档以了解最新添加的动作列表。\n\n![审计日志的 JSON 表示](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image1.png?w=640)\n\n## Slack 审计日志的可用性\n*   **访问权限**：组织管理员 (Org Admins)、所有者 (Owners) 以及拥有“审计日志管理员”角色 (Audit Logs Admin) 的用户可以通过审计日志仪表板访问。\n*   **访问路径**：工具和设置 → 管理审计日志。\n*   **API 访问**：审计日志也通过 API 提供，支持按生成时间、操作（最多可指定 30 种）、执行者和实体进行过滤。\n*   **集成**：许多供应商（如 Splunk、AWS AppFabric、DataDog）提供连接器，可将审计日志导入其平台。\n\n## 异常事件 (Anomaly Events)\n\n### 什么是异常？\n审计日志流中包含“异常”事件（动作类型为 `anomaly`）。这些事件不同于普通审计日志，它们不记录实体执行的动作，而是表明 Slack 的分析管道检测到实体执行了异常动作，或实体执行动作的环境异常。异常是 Slack 工作区内不寻常或潜在可疑活动的指示器。\n\n### 如何使用异常？\n*   **调查与分析**：异常事件需要组织进行调查、实验和分析，才能被检测和响应团队投入实际使用。\n*   **非直接事件**：通常，异常不应直接作为事件上报，它们表示发生了意料之外的情况，可能需要进一步调查。\n*   **重要性**：异常的重要性取决于组织的政策和允许的活动。例如，`user_agent` 异常（如检测到 `Go-http-client/2.0`）可能表明有人使用自动化工具访问 Slack，这在某些组织中可能不被允许。\n\n### 允许列表 CIDR 范围和 ASN\nSlack 允许客户通过 API 将已知合法活动的 IP 地址或网络范围（CIDR 和 ASN）添加到允许列表，以优化异常检测并减少误报。\n\n### 关联异常\n关联多个异常可以提供有价值的安全洞察：\n*   **示例**：`user_agent` 异常与 `excessive_downloads` 异常同时出现，可能表明正在使用抓取工具。如果同时伴随 `ip_address` 或 `session_fingerprint` 异常，则情况更严重，可能意味着外部方获取了用户 Cookie 进行数据抓取。\n*   **高保真异常**：Slack 还发布了高保度的 `unexpected_scraping` 异常用于特定抓取场景。\n\n### 聚合异常\n聚合某些异常可以揭示感兴趣的场景。例如，通过检查用户在特定时间内产生的 `excessive_downloads` 异常数量并与历史常态进行比较，可以发现用户是否正在执行不必要的活动（如大量数据抓取）。\n\n### 审计日志事件的上下文\n*   **日志量**：异常日志的量远低于审计日志（通常低两个数量级）。\n*   **推荐**：尽管可以只过滤异常日志，但强烈建议尽可能消费完整的审计日志，以便在调查异常日志时获得最全面的上下文信息（例如，`excessive_downloads` 异常发生时，`file_downloaded` 审计日志可提供下载了哪些文件的具体信息）。\n*   **应急响应**：在应急响应场景中，本地可查询的审计日志可以节省时间和压力。\n\n## 审计日志 UI 示例\nSlack 提供了一个用户界面，可从“工具和设置”→“管理审计日志”访问，用于审查审计日志而无需外部服务。\n\n以下以虚构公司 Acme Corp 的销售员 Matt 离职为例：\n\n1.  **加载主审计日志选项卡**：\n    ![Acme Corp 的审计日志管理界面](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image4.png?w=640)\n2.  **切换到安全检测选项卡查看 Matt 产生的异常**：\n    ![Acme Corp 的审计日志管理界面](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image5.png?w=640)\n    发现 Matt 产生了多个异常。\n3.  **查看异常详情**：\n    *   第一个异常是 `unexpected_scraping` 和 `user_agent`（用户代理为 Scrapers Inc.），表明 Matt 正在进行抓取，且使用了非授权的 Slack 客户端。\n    ![审计日志的 JSON 表示](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image3.png?w=640)\n    *   另一个异常是 `excessive_downloads`，进一步证实 Matt 正在从 Slack 工作区抓取数据，同样来自 Scrapers Inc. 客户端。\n    ![审计日志的 JSON 表示](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image7.png?w=640)\n4.  **过滤 `file_downloaded` 事件以查看下载文件**：\n    ![Acme Corp 的审计日志管理界面](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image6.png?w=640)\n5.  **检查文件详情**：\n    文件名为 `Glengarry-Leads.xlsx`，这可能不是 Acme Corp 希望销售员离职时获取的文件。\n    ![审计日志的 JSON 表示](https://slack.engineering/wp-content/uploads/sites/7/2024/12/image2.png?w=640)\n\n## 终止用户的活跃会话\n如果发现与用户账户相关的可疑活动，可以直接从审计日志仪表板终止用户的活跃会话。导航到相关异常日志条目，点击“•••”菜单，选择“退出 Slack”，这将立即使该用户所有活跃会话失效，强制其重新认证。也可以按设备类型选择性终止会话。\n\n![图片 8](https://slack.engineering/wp-content/uploads/sites/7/2024/12/row-actions-sign-out-of-slack.png?w=1020)\n\n## 其他检测思路\n*   **IP 地址**：无论是否生成 `ip_address` 异常，都建议检查异常中包含的 IP 地址，以判断其是否为预期来源。\n*   **会话指纹**：`session_fingerprint` 异常可能表明会话 Cookie 被窃取。应调查相关 IP 地址并结合端点日志进行确认。\n*   **用户代理**：`excessive_downloads`、`user_agent` 和 `ip_address` 等异常中的用户代理是判断抓取或其他不必要活动的重要信号。可以通过维护一个预期用户代理的允许列表来识别异常。",
-      "shortSummary": "Slack 审计日志记录平台操作，为 Enterprise Grid 客户提供安全监控。其中包含“异常”事件，指示 Slack 检测到的不寻常或可疑活动。异常通常需要进一步调查而非直接上报事件。组织可利用允许列表、关联和聚合异常来优化检测。完整的审计日志提供关键上下文。Slack UI 支持直接查看和管理日志，并能立即终止可疑用户的会话。IP 地址、用户代理和会话指纹是识别潜在威胁的重要信号。",
-      "translated_title": "Slack 审计日志与异常",
-      "images": [
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image1.png?w=640",
-          "alt": "JSON representation of an Audit Log",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image4.png?w=640",
-          "alt": "Audit log management interface for Acme Corp",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image5.png?w=640",
-          "alt": "Audit log management interface for Acme Corp",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image3.png?w=640",
-          "alt": "JSON representation of an Audit Log",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image7.png?w=640",
-          "alt": "JSON representation of an Audit Log",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image6.png?w=640",
-          "alt": "Audit log management interface for Acme Corp",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/image2.png?w=640",
-          "alt": "JSON representation of an Audit Log",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/row-actions-sign-out-of-slack.png?w=1020",
-          "alt": "",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "What are Slack Audit Logs? Like many Software as a Service (SaaS) offerings, Slack provides audit logs to Enterprise Grid customers that record when entities take an action on the platform. For example, when a user logs in, when a user updates their profile, when an app downloads a file, etc. The actual list of&#8230;"
     }
   ],
-  "lastUpdated": "2025-12-01T04:55:46.279Z"
+  "lastUpdated": "2025-12-03T04:37:53.642Z"
 }
