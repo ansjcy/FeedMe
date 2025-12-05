@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Architecting efficient context-aware multi-agent framework for production",
+      "link": "https://developers.googleblog.com/en/architecting-efficient-context-aware-multi-agent-framework-for-production/",
+      "pubDate": "Wed, 03 Dec 2025 16:00:00 GMT",
+      "isoDate": "2025-12-03T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Architecting efficient context-aware multi-agent framework for production",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "ADK introduces **Context Engineering** to scale AI agents beyond large context windows. It treats context as a compiled view over a tiered, stateful system (**Session, Memory, Artifacts**). This architecture uses explicit processors for transformation, enables efficient compaction and caching, and allows for strict, scoped context handoffs in multi-agent workflows to ensure reliability and cost-effectiveness in production."
+    },
+    {
       "title": "Announcing the Data Commons Gemini CLI extension",
       "link": "https://developers.googleblog.com/en/announcing-the-data-commons-gemini-cli-extension/",
       "pubDate": "Mon, 01 Dec 2025 16:00:00 GMT",
@@ -216,33 +229,7 @@
       ],
       "contentSource": "完整文章",
       "content": "Code Wiki is a new platform that tackles the bottleneck of reading existing code by providing an automated, continuously updated, structured wiki for code repositories. It features hyper-linked documentation, a Gemini-powered chat agent that understands your repo, and automated diagrams. A public preview is available for open-source projects, and a Gemini CLI extension is coming soon for secure use on private repos."
-    },
-    {
-      "title": "让终端美观，一次一个像素 (原标题: Making the terminal beautiful one pixel at a time)",
-      "link": "https://developers.googleblog.com/en/making-the-terminal-beautiful-one-pixel-at-a-time/",
-      "pubDate": "Wed, 12 Nov 2025 16:00:00 GMT",
-      "isoDate": "2025-11-12T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "# Gemini CLI用户体验重大升级：打造更美观、稳定的终端\n\nGoogle于2025年11月13日宣布对Gemini CLI的用户体验进行重大升级，旨在使其终端交互更加强大、直观和视觉稳定。此次升级彻底改造了Gemini CLI的渲染基础，消除了终端应用常见的视觉干扰，将图形界面级别的精致度直接带入终端。用户将不再遇到屏幕闪烁、输入提示跳动或在长输出流中迷失位置的问题，Gemini CLI变得更加流畅。\n\n## 关键增强功能\n\n新的渲染基础带来了多项即时改进，旨在提升用户体验：\n\n*   **鼠标导航**：\n    *   用户现在可以直接在输入提示符内使用鼠标点击进行导航，无需再频繁使用方向键。\n*   **持久化标题行**：\n    *   引入了工具确认和操作的持久化标题行，确保用户在复杂交互中也能始终了解当前操作的上下文。\n    *   ![持久化标题](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Sticky_header.original.png)\n*   **无闪烁体验**：\n    *   新设计几乎消除了屏幕闪烁。使用VSCode、iTerm、Ghostty等现代终端的用户将告别闪烁屏幕，享受流畅的终端体验。\n*   **健壮的渲染**：\n    *   以前，调整终端窗口大小有时会导致视觉故障或伪影。现在，这些渲染伪影已成为历史，无论如何调整窗口大小，都能提供清晰、精致的显示。\n*   **稳定的输入提示符**：\n    *   输入字段现在牢固地固定在终端底部，提供一致、可预测的体验，告别跳动的提示框。\n    *   ![锚定提示符](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/anchored-prompt.original.png)\n*   **历史记录保留**：\n    *   尽管为了无缝体验使用了备用屏幕缓冲区，但在退出Gemini CLI后，完整的聊天历史记录仍可在标准终端中访问。\n\n## 如何开始使用新UI\n\n这些新的UI改进已在Gemini CLI v0.15.0及更高版本中默认启用。\n要升级到最新版本的Gemini CLI，请使用以下命令：\n`npm install -g @google/gemini-cli@latest`\n\n## 后续计划\n\n这仅仅是健壮的新TUI渲染基础所能实现功能的开始。团队正在积极开发进一步的改进，包括：\n\n*   滚动条的点击拖动功能（目前可通过鼠标滚轮或Shift+上/下键滚动）。\n*   提供更无缝的复制粘贴解决方案（目前，用户可通过按Ctrl-S暂时退出鼠标模式来使用标准复制/粘贴方法选择文本）。\n\n鼓励用户立即尝试新的无缝UI，并在GitHub上提供反馈。",
-      "shortSummary": "Gemini CLI发布v0.15.0版本，带来用户体验重大升级，旨在使终端交互更稳定、直观。核心改进包括：消除屏幕闪烁、鼠标导航、持久化标题行、稳定的输入提示符以及健壮的窗口大小调整渲染。这些功能默认启用，用户可通过升级CLI体验更流畅的终端操作。未来还将支持拖动滚动条和更无缝的复制粘贴，并鼓励用户提供反馈。",
-      "translated_title": "让终端美观，一次一个像素",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Sticky_header.original.png",
-          "alt": "Sticky header",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/anchored-prompt.original.png",
-          "alt": "anchored-prompt",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Google has launched the redesigned **Android AI Sample Catalog**, a dedicated, open-source application to inspire and educate Android developers on building AI-powered apps. It showcases examples using both on-device (Gemini Nano via ML Kit GenAI API) and Cloud models (via Firebase AI Logic SDK), including image generation with Imagen, on-device summarization, and a \"Chat with Nano Banana\" chatbot. The code is easy to copy and paste to help developers quickly start their own projects."
     }
   ],
-  "lastUpdated": "2025-12-04T10:34:43.813Z"
+  "lastUpdated": "2025-12-05T10:32:27.622Z"
 }
