@@ -44,6 +44,19 @@
       "content": "Reward models are critical for aligning vision-language systems with human preferences, yet current approaches suffer from hallucination, weak visual grounding, and an inability to use tools for verification, limiting their reliability on complex multimodal reasoning tasks. We present ARM-Thinker, an A}gentic multimodal Reward Model that autonomously invokes external tools (e.g., image cropping, doc page retrieval) to ground judgments in verifiable evidence, replacing static, non-interactive reward scoring. This enables the model to verify fine-grained visual details, cross-reference multi-page evidence, and validate reasoning claims, which are capabilities absent in existing reward models. We train ARM-Thinker with multi-stage reinforcement learning, jointly optimizing tool-calling decisions and judgment accuracy. To evaluate agentic reward modeling, we introduce ARMBench-VL, comprising three benchmarks that assess fine-grained visual grounding (image-level tools), multi-page document understanding (retrieval tools), and instruction following (text-level verification). ARM-Thinker achieves +16.2% average improvement on reward modeling benchmarks, +9.6% on tool-use tasks, and outperforms baselines on multimodal math and logical reasoning benchmarks. Our results demonstrate that agentic capabilities significantly enhance both accuracy and interpretability of reward models."
     },
     {
+      "title": "ShadowDraw: From Any Object to Shadow-Drawing Compositional Art",
+      "link": "https://arxiv.org/abs/2512.05110",
+      "pubDate": "Thu, 04 Dec 2025 13:59:51 GMT",
+      "isoDate": "2025-12-04T13:59:51.000Z",
+      "creator": "Rundong Luo, Noah Snavely, Wei-Chiu Ma",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "ShadowDraw: From Any Object to Shadow-Drawing Compositional Art",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "We introduce ShadowDraw, a framework that transforms ordinary 3D objects into shadow-drawing compositional art. Given a 3D object, our system predicts scene parameters, including object pose and lighting, together with a partial line drawing, such that the cast shadow completes the drawing into a recognizable image. To this end, we optimize scene configurations to reveal meaningful shadows, employ shadow strokes to guide line drawing generation, and adopt automatic evaluation to enforce shadow-drawing coherence and visual quality. Experiments show that ShadowDraw produces compelling results across diverse inputs, from real-world scans and curated datasets to generative assets, and naturally extends to multi-object scenes, animations, and physical deployments. Our work provides a practical pipeline for creating shadow-drawing art and broadens the design space of computational visual art, bridging the gap between algorithmic design and artistic storytelling. Check out our project page https://red-fairy.github.io/ShadowDraw/ for more results and an end-to-end real-world demonstration of our pipeline!"
+    },
+    {
       "title": "NeuralRemaster: Phase-Preserving Diffusion for Structure-Aligned Generation",
       "link": "https://arxiv.org/abs/2512.05106",
       "pubDate": "Thu, 04 Dec 2025 13:59:18 GMT",
@@ -68,6 +81,19 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Video generation models are rapidly advancing, but can still struggle with complex video outputs that require significant semantic branching or repeated high-level reasoning about what should happen next. In this paper, we introduce a new class of omni video-text models that integrate ideas from recent LM reasoning advances to address this challenge. More specifically, we present TV2TV, a unified generative modeling framework which decomposes video generation into an interleaved text and video generation process. TV2TV jointly learns language modeling (next-token prediction) and video flow matching (next-frame prediction) using a Mixture-of-Transformers (MoT) architecture. At inference time, TV2TV decides when to alternate between generating text and video frames, allowing the model to \"think in words\" about subsequent content before ``acting in pixels'' to produce frames. This design offloads much of the responsibility for deciding what should happen next to the language modeling tower, enabling improved visual quality and prompt alignment of generated videos. It also enables fine-grained controllability, allowing users to modify the video generation trajectory through text interventions at any point in the process. In controlled experiments on video game data, TV2TV demonstrates substantial improvements in both visual quality and controllability. TV2TV also scales to natural videos, as we show by augmenting sports videos with interleaved natural language action descriptions using vision-language models (VLMs). Training TV2TV on this corpus yields strong visual quality and prompt alignment, showcasing the model's ability to reason about and generate complex real-world action sequences. Together, these results highlight TV2TV as a promising step toward video generation with open-ended textual reasoning and control."
+    },
+    {
+      "title": "Deep Forcing: Training-Free Long Video Generation with Deep Sink and Participative Compression",
+      "link": "https://arxiv.org/abs/2512.05081",
+      "pubDate": "Thu, 04 Dec 2025 13:46:44 GMT",
+      "isoDate": "2025-12-04T13:46:44.000Z",
+      "creator": "Jung Yi, Wooseok Jang, Paul Hyunbin Cho, Jisu Nam, Heeji Yoon, Seungryong Kim",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Deep Forcing: Training-Free Long Video Generation with Deep Sink and Participative Compression",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Recent advances in autoregressive video diffusion have enabled real-time frame streaming, yet existing solutions still suffer from temporal repetition, drift, and motion deceleration. We find that naively applying StreamingLLM-style attention sinks to video diffusion leads to fidelity degradation and motion stagnation. To overcome this, we introduce Deep Forcing, which consists of two training-free mechanisms that address this without any fine-tuning. Specifically, 1) Deep Sink dedicates half of the sliding window to persistent sink tokens and re-aligns their temporal RoPE phase to the current timeline, stabilizing global context during long rollouts. 2) Participative Compression performs importance-aware KV cache pruning that preserves only tokens actively participating in recent attention while safely discarding redundant and degraded history, minimizing error accumulation under out-of-distribution length generation. Together, these components enable over 12x extrapolation (e.g. 5s-trained to 60s+ generation) with better imaging quality than LongLive, better aesthetic quality than RollingForcing, almost maintaining overall consistency, and substantial gains in dynamic degree, all while maintaining real-time generation. Our results demonstrate that training-free KV-cache management can match or exceed training-based approaches for autoregressively streaming long-video generation."
     },
     {
       "title": "BulletTime: Decoupled Control of Time and Camera Pose for Video Generation",
@@ -120,6 +146,19 @@
       "images": [],
       "contentSource": "RSS",
       "content": "We present GNVC-VD, the first DiT-based generative neural video compression framework built upon an advanced video generation foundation model, where spatio-temporal latent compression and sequence-level generative refinement are unified within a single codec. Existing perceptual codecs primarily rely on pre-trained image generative priors to restore high-frequency details, but their frame-wise nature lacks temporal modeling and inevitably leads to perceptual flickering. To address this, GNVC-VD introduces a unified flow-matching latent refinement module that leverages a video diffusion transformer to jointly enhance intra- and inter-frame latents through sequence-level denoising, ensuring consistent spatio-temporal details. Instead of denoising from pure Gaussian noise as in video generation, GNVC-VD initializes refinement from decoded spatio-temporal latents and learns a correction term that adapts the diffusion prior to compression-induced degradation. A conditioning adaptor further injects compression-aware cues into intermediate DiT layers, enabling effective artifact removal while maintaining temporal coherence under extreme bitrate constraints. Extensive experiments show that GNVC-VD surpasses both traditional and learned codecs in perceptual quality and significantly reduces the flickering artifacts that persist in prior generative approaches, even below 0.01 bpp, highlighting the promise of integrating video-native generative priors into neural codecs for next-generation perceptual video compression."
+    },
+    {
+      "title": "Reflection Removal through Efficient Adaptation of Diffusion Transformers",
+      "link": "https://arxiv.org/abs/2512.05000",
+      "pubDate": "Thu, 04 Dec 2025 12:12:39 GMT",
+      "isoDate": "2025-12-04T12:12:39.000Z",
+      "creator": "Daniyar Zakarin, Thiemo Wandel, Anton Obukhov, Dengxin Dai",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Reflection Removal through Efficient Adaptation of Diffusion Transformers",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "We introduce a diffusion-transformer (DiT) framework for single-image reflection removal that leverages the generalization strengths of foundation diffusion models in the restoration setting. Rather than relying on task-specific architectures, we repurpose a pre-trained DiT-based foundation model by conditioning it on reflection-contaminated inputs and guiding it toward clean transmission layers. We systematically analyze existing reflection removal data sources for diversity, scalability, and photorealism. To address the shortage of suitable data, we construct a physically based rendering (PBR) pipeline in Blender, built around the Principled BSDF, to synthesize realistic glass materials and reflection effects. Efficient LoRA-based adaptation of the foundation model, combined with the proposed synthetic data, achieves state-of-the-art performance on in-domain and zero-shot benchmarks. These results demonstrate that pretrained diffusion transformers, when paired with physically grounded data synthesis and efficient adaptation, offer a scalable and high-fidelity solution for reflection removal. Project page: https://hf.co/spaces/huawei-bayerlab/windowseat-reflection-removal-web"
     },
     {
       "title": "Nex-N1: Agentic Models Trained via a Unified Ecosystem for Large-Scale Environment Construction",
@@ -224,46 +263,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Efficient streaming video generation is critical for simulating interactive and dynamic worlds. Existing methods distill few-step video diffusion models with sliding window attention, using initial frames as sink tokens to maintain attention performance and reduce error accumulation. However, video frames become overly dependent on these static tokens, resulting in copied initial frames and diminished motion dynamics. To address this, we introduce Reward Forcing, a novel framework with two key designs. First, we propose EMA-Sink, which maintains fixed-size tokens initialized from initial frames and continuously updated by fusing evicted tokens via exponential moving average as they exit the sliding window. Without additional computation cost, EMA-Sink tokens capture both long-term context and recent dynamics, preventing initial frame copying while maintaining long-horizon consistency. Second, to better distill motion dynamics from teacher models, we propose a novel Rewarded Distribution Matching Distillation (Re-DMD). Vanilla distribution matching treats every training sample equally, limiting the model's ability to prioritize dynamic content. Instead, Re-DMD biases the model's output distribution toward high-reward regions by prioritizing samples with greater dynamics rated by a vision-language model. Re-DMD significantly enhances motion quality while preserving data fidelity. We include both quantitative and qualitative experiments to show that Reward Forcing achieves state-of-the-art performance on standard benchmarks while enabling high-quality streaming video generation at 23.1 FPS on a single H100 GPU."
-    },
-    {
-      "title": "Live Avatar: Streaming Real-time Audio-Driven Avatar Generation with Infinite Length",
-      "link": "https://arxiv.org/abs/2512.04677",
-      "pubDate": "Thu, 04 Dec 2025 06:11:24 GMT",
-      "isoDate": "2025-12-04T06:11:24.000Z",
-      "creator": "Yubo Huang, Hailong Guo, Fangtai Wu, Shifeng Zhang, Shijie Huang, Qijun Gan, Lin Liu, Sirui Zhao, Enhong Chen, Jiaming Liu, Steven Hoi",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Live Avatar: Streaming Real-time Audio-Driven Avatar Generation with Infinite Length",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Existing diffusion-based video generation methods are fundamentally constrained by sequential computation and long-horizon inconsistency, limiting their practical adoption in real-time, streaming audio-driven avatar synthesis. We present Live Avatar, an algorithm-system co-designed framework that enables efficient, high-fidelity, and infinite-length avatar generation using a 14-billion-parameter diffusion model. Our approach introduces Timestep-forcing Pipeline Parallelism (TPP), a distributed inference paradigm that pipelines denoising steps across multiple GPUs, effectively breaking the autoregressive bottleneck and ensuring stable, low-latency real-time streaming. To further enhance temporal consistency and mitigate identity drift and color artifacts, we propose the Rolling Sink Frame Mechanism (RSFM), which maintains sequence fidelity by dynamically recalibrating appearance using a cached reference image. Additionally, we leverage Self-Forcing Distribution Matching Distillation to facilitate causal, streamable adaptation of large-scale models without sacrificing visual quality. Live Avatar demonstrates state-of-the-art performance, reaching 20 FPS end-to-end generation on 5 H800 GPUs, and, to the best of our knowledge, is the first to achieve practical, real-time, high-fidelity avatar generation at this scale. Our work establishes a new paradigm for deploying advanced diffusion models in industrial long-form video synthesis applications."
-    },
-    {
-      "title": "EgoLCD: Egocentric Video Generation with Long Context Diffusion",
-      "link": "https://arxiv.org/abs/2512.04515",
-      "pubDate": "Thu, 04 Dec 2025 01:53:01 GMT",
-      "isoDate": "2025-12-04T01:53:01.000Z",
-      "creator": "Liuzhou Zhang, Jiarui Ye, Yuanlei Wang, Ming Zhong, Mingju Cao, Wanke Xia, Bowen Zeng, Zeyu Zhang, Hao Tang",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "EgoLCD: Egocentric Video Generation with Long Context Diffusion",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Generating long, coherent egocentric videos is difficult, as hand-object interactions and procedural tasks require reliable long-term memory. Existing autoregressive models suffer from content drift, where object identity and scene semantics degrade over time. To address this challenge, we introduce EgoLCD, an end-to-end framework for egocentric long-context video generation that treats long video synthesis as a problem of efficient and stable memory management. EgoLCD combines a Long-Term Sparse KV Cache for stable global context with an attention-based short-term memory, extended by LoRA for local adaptation. A Memory Regulation Loss enforces consistent memory usage, and Structured Narrative Prompting provides explicit temporal guidance. Extensive experiments on the EgoVid-5M benchmark demonstrate that EgoLCD achieves state-of-the-art performance in both perceptual quality and temporal consistency, effectively mitigating generative forgetting and representing a significant step toward building scalable world models for embodied AI. Code: https://github.com/AIGeeksGroup/EgoLCD. Website: https://aigeeksgroup.github.io/EgoLCD."
-    },
-    {
-      "title": "UltraImage: Rethinking Resolution Extrapolation in Image Diffusion Transformers",
-      "link": "https://arxiv.org/abs/2512.04504",
-      "pubDate": "Thu, 04 Dec 2025 01:24:04 GMT",
-      "isoDate": "2025-12-04T01:24:04.000Z",
-      "creator": "Min Zhao, Bokai Yan, Xue Yang, Hongzhou Zhu, Jintao Zhang, Shilong Liu, Chongxuan Li, Jun Zhu",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "UltraImage: Rethinking Resolution Extrapolation in Image Diffusion Transformers",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Recent image diffusion transformers achieve high-fidelity generation, but struggle to generate images beyond these scales, suffering from content repetition and quality degradation. In this work, we present UltraImage, a principled framework that addresses both issues. Through frequency-wise analysis of positional embeddings, we identify that repetition arises from the periodicity of the dominant frequency, whose period aligns with the training resolution. We introduce a recursive dominant frequency correction to constrain it within a single period after extrapolation. Furthermore, we find that quality degradation stems from diluted attention and thus propose entropy-guided adaptive attention concentration, which assigns higher focus factors to sharpen local attention for fine detail and lower ones to global attention patterns to preserve structural consistency. Experiments show that UltraImage consistently outperforms prior methods on Qwen-Image and Flux (around 4K) across three generation scenarios, reducing repetition and improving visual fidelity. Moreover, UltraImage can generate images up to 6K*6K without low-resolution guidance from a training resolution of 1328p, demonstrating its extreme extrapolation capability. Project page is available at https://thu-ml.github.io/ultraimage.github.io/{https://thu-ml.github.io/ultraimage.github.io/}."
     }
   ],
-  "lastUpdated": "2025-12-05T09:32:29.079Z"
+  "lastUpdated": "2025-12-06T09:28:17.505Z"
 }
