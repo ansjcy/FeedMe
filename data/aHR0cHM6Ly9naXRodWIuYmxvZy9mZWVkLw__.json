@@ -5,6 +5,38 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "The new identity of a developer: What changes and what doesn’t in the AI era",
+      "link": "https://github.blog/news-insights/octoverse/the-new-identity-of-a-developer-what-changes-and-what-doesnt-in-the-ai-era/",
+      "pubDate": "Mon, 08 Dec 2025 18:15:17 +0000",
+      "isoDate": "2025-12-08T18:15:17.000Z",
+      "creator": "Eirini Kalliamvakou",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "The new identity of a developer: What changes and what doesn’t in the AI era",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/12/ai-fluency-stages-1-2.png?resize=1024%2C576",
+          "alt": "Side-by-side cards illustrating Stage 1 ‘AI Skeptic’ and Stage 2 ‘AI Explorer.’ The left card shows a skeptical face emoji and describes low tolerance for iteration and errors. The right card shows a compass emoji and describes developers who use AI for quick wins and gradually build trust. Decorative GitHub-style cube artwork appears on the right with colorful radiating lines.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/12/ai-fluency-stages-3-4.png?resize=1024%2C576",
+          "alt": "Side-by-side cards illustrating Stage 3 ‘AI Collaborator’ and Stage 4 ‘AI Strategist.’ The left card shows a handshake emoji and describes developers who co-create with AI and iterate frequently. The right card shows a target emoji and outlines developers who plan, orchestrate, and verify work with high iteration tolerance and multi-agent workflows. Decorative GitHub-style green cube artwork appears on the right side.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/2157841?v=4&s=200",
+          "alt": "Eirini Kalliamvakou",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Discover how advanced AI users are redefining software development—shifting from code producers to strategic orchestrators—through delegation, verification, and a new era of AI-fluent engineering.</p>\n<p>The post <a href=\"https://github.blog/news-insights/octoverse/the-new-identity-of-a-developer-what-changes-and-what-doesnt-in-the-ai-era/\">The new identity of a developer: What changes and what doesn’t in the AI era</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "How to use GitHub Copilot Spaces to debug issues faster",
       "link": "https://github.blog/ai-and-ml/github-copilot/how-to-use-github-copilot-spaces-to-debug-issues-faster/",
       "pubDate": "Thu, 04 Dec 2025 20:35:36 +0000",
@@ -342,69 +374,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>GitHub Copilot’s next edit suggestions just got faster, smarter, and more precise thanks to new data pipelines, reinforcement learning, and continuous model updates built for in-editor workflows.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/evolving-github-copilots-next-edit-suggestions-through-custom-model-training/\">Evolving GitHub Copilot’s next edit suggestions through custom model training</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "How we’re making GitHub Copilot smarter with fewer tools",
-      "link": "https://github.blog/ai-and-ml/github-copilot/how-were-making-github-copilot-smarter-with-fewer-tools/",
-      "pubDate": "Wed, 19 Nov 2025 20:00:00 +0000",
-      "isoDate": "2025-11-19T20:00:00.000Z",
-      "creator": "Anisha Agarwal",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "How we’re making GitHub Copilot smarter with fewer tools",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/11/tool-selection.png?resize=385%2C60",
-          "alt": "Screenshot of a spinner next to the words \"Optimizing tool selection...\"",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/11/tool-use.png?resize=1024%2C512",
-          "alt": "A clustering chart showing groupings of embeddings for the GitHub MCP server's tools: create_pending_pull_request_review, get_issue_comments, create_branch, get_me, and list_tags.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/11/HumanEvalInfilling_1200x630.png?resize=1024%2C538",
-          "alt": "A bar graph showing coverage rates. Embedding based is highest with 94.5%, followed by GPT-4.1 based at 87.5% and Default tools at 69%.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/20461397?v=4&s=200",
-          "alt": "Anisha Agarwal",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/2230985?v=4&s=200",
-          "alt": "Connor Peet",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>We're using embedding-guided tool routing, adaptive clustering, and a streamlined 13-tool core to deliver faster experience in VS Code.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-were-making-github-copilot-smarter-with-fewer-tools/\">How we’re making GitHub Copilot smarter with fewer tools</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-12-07T04:40:10.197Z"
+  "lastUpdated": "2025-12-09T04:38:28.332Z"
 }
