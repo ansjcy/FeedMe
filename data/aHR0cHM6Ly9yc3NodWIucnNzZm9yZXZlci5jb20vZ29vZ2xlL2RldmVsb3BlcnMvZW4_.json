@@ -5,6 +5,44 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Introducing A2UI: An open project for agent-driven interfaces",
+      "link": "https://developers.googleblog.com/en/introducing-a2ui-an-open-project-for-agent-driven-interfaces/",
+      "pubDate": "Sun, 14 Dec 2025 16:00:00 GMT",
+      "isoDate": "2025-12-14T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Introducing A2UI: An open project for agent-driven interfaces",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/a2ui-blog-1-component-gallery_2.original.png",
+          "alt": "a2ui-blog-1-component-gallery (2)",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/a2ui-blog-2-reserve-table.original.png",
+          "alt": "a2ui-blog-2-reserve-table",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/a2ui-blog-3-end-to-end-data-flow.original.png",
+          "alt": "a2ui-blog-3-end-to-end-data-flow",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/a2ui-blog-4-checklist.original.png",
+          "alt": "a2ui-blog-4-checklist",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "A2UI is an open-source project for agent-driven, cross-platform, and generative UI. It provides a secure, declarative data format for agents to compose bespoke interfaces from a trusted component catalog, allowing for native styling and incremental updates. Designed for the multi-agent mesh (A2A), it offers a framework-agnostic solution to safely render remote agent UIs, with integrations in AG UI, Flutter's GenUI SDK, Opal, and Gemini Enterprise."
+    },
+    {
       "title": "Building agents with the ADK and the new Interactions API",
       "link": "https://developers.googleblog.com/en/building-agents-with-the-adk-and-the-new-interactions-api/",
       "pubDate": "Wed, 10 Dec 2025 16:00:00 GMT",
@@ -199,51 +237,7 @@
       ],
       "contentSource": "RSS",
       "content": "Introducing Google Antigravity, a new agentic development platform for orchestrating code. It combines an AI-powered Editor View with a Manager Surface to deploy agents that autonomously plan, execute, and verify complex tasks across your editor, terminal, and browser. Agents communicate progress via Artifacts (screenshots, recordings) for easy verification. Available now in public preview."
-    },
-    {
-      "title": "Building AI Agents with Google Gemini 3 and Open Source Frameworks",
-      "link": "https://developers.googleblog.com/en/building-ai-agents-with-google-gemini-3-and-open-source-frameworks/",
-      "pubDate": "Tue, 18 Nov 2025 16:00:00 GMT",
-      "isoDate": "2025-11-18T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Building AI Agents with Google Gemini 3 and Open Source Frameworks",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/langchain.original.png",
-          "alt": "langchain",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ai-sdk.original.png",
-          "alt": "ai-sdk",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_vCYoxzo.original.png",
-          "alt": "LlamaIndex",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/pydantic-ai.original.png",
-          "alt": "pydantic-ai",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/n8n.original.png",
-          "alt": "n8n",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Gemini 3 Pro Preview is introduced as a powerful, agentic model for complex, (semi)-autonomous workflows. New agentic features include `thinking_level` for reasoning control, Stateful Tool Use via Thought Signatures, and `media_resolution` for multimodal fidelity. It has Day 0 support for open-source frameworks like LangChain, AI SDK, LlamaIndex, Pydantic AI, and n8n. Best practices include simplifying prompts and keeping temperature at 1.0."
     }
   ],
-  "lastUpdated": "2025-12-15T10:37:41.674Z"
+  "lastUpdated": "2025-12-16T10:35:37.155Z"
 }
