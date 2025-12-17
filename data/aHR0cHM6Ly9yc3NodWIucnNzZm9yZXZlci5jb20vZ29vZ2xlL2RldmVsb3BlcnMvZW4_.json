@@ -5,6 +5,68 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Developer’s guide to multi-agent patterns in ADK",
+      "link": "https://developers.googleblog.com/en/developers-guide-to-multi-agent-patterns-in-adk/",
+      "pubDate": "Mon, 15 Dec 2025 16:00:00 GMT",
+      "isoDate": "2025-12-15T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Developer’s guide to multi-agent patterns in ADK",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/seqential_pattern.original.png",
+          "alt": "seqential pattern",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/coordinator_dispatcher_agent_pattern.original.png",
+          "alt": "coordinator dispatcher agent pattern",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/parallel_fan-out.original.png",
+          "alt": "parallel fan-out",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/hierarchical_task_decomposition_agent.original.png",
+          "alt": "hierarchical task decomposition agent",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/generator_critic_agent_pattern.original.png",
+          "alt": "generator critic agent pattern",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/iterative_refinement_agent_pattern_1.original.png",
+          "alt": "iterative refinement agent pattern (1)",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/human-in-the-loop_pattern.original.png",
+          "alt": "human-in-the-loop pattern",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/composite_agent_pattern.original.png",
+          "alt": "composite agent pattern",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Learn how to build modular and reliable agentic applications using 8 effective multi-agent design patterns with the Agent Development Kit (ADK)."
+    },
+    {
       "title": "Introducing A2UI: An open project for agent-driven interfaces",
       "link": "https://developers.googleblog.com/en/introducing-a2ui-an-open-project-for-agent-driven-interfaces/",
       "pubDate": "Sun, 14 Dec 2025 16:00:00 GMT",
@@ -205,39 +267,7 @@
       ],
       "contentSource": "RSS",
       "content": "LiteRT's new Qualcomm AI Engine Direct (QNN) Accelerator unlocks dedicated NPU power for on-device GenAI on Android. It offers a unified mobile deployment workflow, SOTA performance (up to 100x speedup over CPU), and full model delegation. This enables smooth, real-time AI experiences, with FastVLM-0.5B achieving over 11,000 tokens/sec prefill on Snapdragon 8 Elite Gen 5 NPU."
-    },
-    {
-      "title": "Build with Google Antigravity, our new agentic development platform",
-      "link": "https://developers.googleblog.com/en/build-with-google-antigravity-our-new-agentic-development-platform/",
-      "pubDate": "Wed, 19 Nov 2025 16:00:00 GMT",
-      "isoDate": "2025-11-19T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Build with Google Antigravity, our new agentic development platform",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/AGYBlogHero.original.png",
-          "alt": "AGYBlogHero",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/editor-open-agent-manager.original.png",
-          "alt": "editor-open-agent-manager",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/settings-review-policy-manual.original.png",
-          "alt": "settings-review-policy-manual",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Introducing Google Antigravity, a new agentic development platform for orchestrating code. It combines an AI-powered Editor View with a Manager Surface to deploy agents that autonomously plan, execute, and verify complex tasks across your editor, terminal, and browser. Agents communicate progress via Artifacts (screenshots, recordings) for easy verification. Available now in public preview."
     }
   ],
-  "lastUpdated": "2025-12-16T10:35:37.155Z"
+  "lastUpdated": "2025-12-17T10:36:20.261Z"
 }
