@@ -5,6 +5,39 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Introducing Agent Development Kit for TypeScript: Build AI Agents with the Power of a Code-First Approach",
+      "link": "https://developers.googleblog.com/en/introducing-agent-development-kit-for-typescript-build-ai-agents-with-the-power-of-a-code-first-approach/",
+      "pubDate": "Tue, 16 Dec 2025 16:00:00 GMT",
+      "isoDate": "2025-12-16T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Introducing Agent Development Kit for TypeScript: Build AI Agents with the Power of a Code-First Approach",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Introducing the Agent Development Kit (ADK) for TypeScript, an open-source framework for building complex, multi-agent AI systems with a code-first approach. Developers can define agent logic in TypeScript, applying traditional software development best practices (version control, testing). ADK offers end-to-end type safety, modularity, and deployment-agnostic functionality, leveraging the familiar TypeScript/JavaScript ecosystem."
+    },
+    {
+      "title": "Gemini 3 Flash is now available in Gemini CLI",
+      "link": "https://developers.googleblog.com/en/gemini-3-flash-is-now-available-in-gemini-cli/",
+      "pubDate": "Tue, 16 Dec 2025 16:00:00 GMT",
+      "isoDate": "2025-12-16T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Gemini 3 Flash is now available in Gemini CLI",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GeminiCLI_model_selector.original.png",
+          "alt": "GeminiCLI_model_selector",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Gemini 3 Flash is now available in Gemini CLI. It delivers Pro-grade coding performance with low latency and a lower cost, matching Gemini 3 Pro's SWE-bench Verified score of 76%. It significantly outperforms 2.5 Pro, improving auto-routing and agentic coding. It's ideal for high-frequency development tasks, handling complex code generation, large context windows (like processing 1,000 comment pull requests), and generating load-testing scripts quickly and reliably."
+    },
+    {
       "title": "Developer’s guide to multi-agent patterns in ADK",
       "link": "https://developers.googleblog.com/en/developers-guide-to-multi-agent-patterns-in-adk/",
       "pubDate": "Mon, 15 Dec 2025 16:00:00 GMT",
@@ -222,52 +255,7 @@
       ],
       "contentSource": "RSS",
       "content": "The new Data Commons extension for the Gemini CLI makes accessing public data easier. It allows users to ask complex, natural-language questions to query Data Commons' public datasets, grounding LLM responses in authoritative sources to reduce AI hallucinations. Data Commons is an organized library of public data from sources like the UN and World Bank. The extension enables instant data analysis, exploration, and integration with other data-related extensions."
-    },
-    {
-      "title": "New Gemini API updates for Gemini 3",
-      "link": "https://developers.googleblog.com/en/new-gemini-api-updates-for-gemini-3/",
-      "pubDate": "Mon, 24 Nov 2025 16:00:00 GMT",
-      "isoDate": "2025-11-24T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "New Gemini API updates for Gemini 3",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Gemini 3 is available via API with updates for developers: new `thinking_level` for depth control, `media_resolution` for multimodal processing, and enforced `Thought Signatures` for agentic workflows, especially with function calling and image generation. It also introduces combining Google Search/URL Grounding with Structured Outputs and new usage-based pricing for Grounding. Best practices, like using default temperature, are advised for optimal results."
-    },
-    {
-      "title": "Unlocking Peak Performance on Qualcomm NPU with LiteRT",
-      "link": "https://developers.googleblog.com/en/unlocking-peak-performance-on-qualcomm-npu-with-litert/",
-      "pubDate": "Sun, 23 Nov 2025 16:00:00 GMT",
-      "isoDate": "2025-11-23T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Unlocking Peak Performance on Qualcomm NPU with LiteRT",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GPU_NPU_pipeline.original.png",
-          "alt": "GPU_NPU_pipeline",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/LiteRT_NPU_and_GPU_latency_relative_to_CPU_1.original.png",
-          "alt": "LiteRT NPU and GPU latency relative to CPU (1)",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/FastVLM_table_new.original.png",
-          "alt": "FastVLM_table_new",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "LiteRT's new Qualcomm AI Engine Direct (QNN) Accelerator unlocks dedicated NPU power for on-device GenAI on Android. It offers a unified mobile deployment workflow, SOTA performance (up to 100x speedup over CPU), and full model delegation. This enables smooth, real-time AI experiences, with FastVLM-0.5B achieving over 11,000 tokens/sec prefill on Snapdragon 8 Elite Gen 5 NPU."
     }
   ],
-  "lastUpdated": "2025-12-17T10:36:20.261Z"
+  "lastUpdated": "2025-12-18T10:34:37.563Z"
 }
