@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "How We Built Meta Ray-Ban Display: From Zero to Polish",
+      "link": "https://engineering.fb.com/2025/12/17/virtual-reality/meta-ray-ban-display-from-zero-to-polish/",
+      "pubDate": "Wed, 17 Dec 2025 14:00:17 +0000",
+      "isoDate": "2025-12-17T14:00:17.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How We Built Meta Ray-Ban Display: From Zero to Polish",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>We’re going behind the scenes of the Meta Ray-Ban Display, Meta’s most advanced AI glasses yet. In a previous episode we met the team behind the Meta Neural Band, the EMG wristband packaged with the Ray-Ban Display. Now we’re delving into the glasses themselves. Kenan and Emanuel, from Meta’s Wearables org, join Pascal Hartig on [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/12/17/virtual-reality/meta-ray-ban-display-from-zero-to-polish/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/12/17/virtual-reality/meta-ray-ban-display-from-zero-to-polish/\">How We Built Meta Ray-Ban Display: From Zero to Polish</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "How AI Is Transforming the Adoption of Secure-by-Default Mobile Frameworks",
       "link": "https://engineering.fb.com/2025/12/15/android/how-ai-transforming-secure-by-default-mobile-frameworks-adoption/",
       "pubDate": "Mon, 15 Dec 2025 17:00:25 +0000",
@@ -212,20 +225,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>We’re sharing details about Meta’s Generative Ads Recommendation Model (GEM), a new foundation model that delivers increased ad performance and advertiser ROI by enhancing other ads recommendation models’ ability to serve relevant ads. GEM’s novel architecture allows it to scale with an increasing number of parameters while consistently generating more precise predictions efficiently. GEM propagates [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/11/10/ml-applications/metas-generative-ads-model-gem-the-central-brain-accelerating-ads-recommendation-ai-innovation/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/11/10/ml-applications/metas-generative-ads-model-gem-the-central-brain-accelerating-ads-recommendation-ai-innovation/\">Meta’s Generative Ads Model (GEM): The Central Brain Accelerating Ads Recommendation AI Innovation</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "视频隐形水印的规模化应用 (原标题: Video Invisible Watermarking at Scale)",
-      "link": "https://engineering.fb.com/2025/11/04/video-engineering/video-invisible-watermarking-at-scale/",
-      "pubDate": "Tue, 04 Nov 2025 18:00:52 +0000",
-      "isoDate": "2025-11-04T18:00:52.000Z",
-      "creator": "",
-      "summary": "Meta公司在其平台上广泛应用隐形水印技术，以解决多种内容溯源问题。这项技术能够检测AI生成视频、验证视频首发者，并识别视频的来源和创作工具。\n\n### 什么是隐形水印？\n隐形水印是一种强大的媒体处理技术，它以人眼无法察觉的方式将信号嵌入到媒体中，但软件可以检测到。它通过巧妙地修改图像的像素值、音频的波形或大型语言模型（LLM）生成的文本标记来嵌入少量数据。与可能丢失的元数据标签不同，水印系统通过添加必要的冗余来确保嵌入的标识在转码和编辑后依然持久存在。\n\n### 隐形水印的应用场景\n1.  **谁首先发布了视频？** 隐形水印可以帮助识别视频的首次上传者，解决内容归属问题。\n2.  **内容是否由AI生成？** 随着生成式AI（GenAI）视频的日益逼真，区分真实和AI生成内容变得越来越困难。隐形水印可用于推断内容是否为AI生成。\n3.  **使用了什么工具创作？** 隐形水印可以直接推断出图像或视频的来源和创作工具。\n\n传统方法如可见水印（分散注意力）或元数据标签（编辑或重新编码时可能丢失）无法充分且稳健地解决这些挑战。隐形水印因其持久性和不可察觉性，提供了一种更优越的替代方案。\n\n### 隐形水印与相关概念的对比\n| 特征         | 数字水印           | 隐写术             | 隐形水印           |\n| :----------- | :----------------- | :----------------- | :----------------- |\n| **目的**     | 内容归属、保护、溯源 | 秘密通信           | 内容归属、保护、溯源 |\n| **可见性**   | 可见或不可见       | 不可见             | 不可见             |\n| **鲁棒性**   | 中到高             | 通常低             | 高（可抵抗编辑）   |\n| **载荷容量** | 中（可变）         | 可变               | 中（例如，>64位）  |\n| **计算成本** | 低（可见）到高（不可见） | 可变               | 高（高级机器学习模型） |\n\n### 规模化挑战与GPU到CPU的转变\n早期的数字水印研究（始于20世纪90年代）主要采用数字信号处理技术。然而，这些方法对社交媒体中常见的几何变换和过滤不够鲁棒。当前最先进的解决方案（如VideoSeal）使用机器学习（ML）技术，显著提高了鲁棒性。但将这些解决方案应用于视频领域（即逐帧水印）可能因计算成本过高而难以实现，除非进行必要的推理优化。\n\n尽管GPU似乎是部署基于ML的视频水印解决方案的显而易见的方案，但大多数GPU硬件专门用于大规模模型的训练和推理，对视频转码（压缩和解压缩）的支持有限或没有。这给Meta现有的视频处理软件（FFmpeg）和硬件堆栈带来了独特的挑战。\n\n**GPU优化尝试及转向CPU：**\nMeta的嵌入架构使用FFmpeg与自定义过滤器来计算和应用隐形水印掩码。在GPU上进行性能分析发现GPU利用率较低。即使实施了帧批处理和线程化，延迟或利用率也没有显著改善。主要瓶颈包括：\n*   **数据传输开销：** CPU与多个GPU之间高分辨率视频帧的来回传输导致线程和内存优化困难，GPU利用率不佳。\n*   **推理延迟：** 在同一主机上并行处理多个GPU上的隐形水印请求导致推理延迟显著增加。\n*   **模型加载时间：** 尽管模型尺寸小，但加载模型占用了总处理时间的很大一部分。依赖FFmpeg使得无法使用GPU上预加载的、已预热的模型。\n\n认识到这些限制后，Meta开始研究纯CPU推理方案。虽然初始基准测试显示CPU上的端到端（E2E）性能慢两倍以上，但通过调整编码器、解码器和PyTorch的线程参数，并优化隐形水印过滤器使用的采样参数，他们取得了显著改进。最终，经过适当调整的线程和嵌入参数，在单个进程中CPU上运行隐形水印的E2E延迟与GPU性能相差不到5%。更重要的是，他们可以在CPU上并行运行多个FFmpeg进程而不会增加延迟。这一突破使得他们能够以更高的运营效率部署解决方案。\n\n### 优化考量与权衡\n规模化部署隐形水印涉及在以下四个指标之间进行权衡：\n*   **延迟：** 水印处理的速度。\n*   **水印检测位准确性：** 检测嵌入水印的准确性。\n*   **视觉质量：** 确保嵌入的水印对人眼不可察觉。\n*   **压缩效率（通过BD-Rate衡量）：** 确保嵌入的水印不会显著增加比特率。\n\n优化一个指标可能会对其他指标产生负面影响。例如，更强的水印可能会提高位准确性，但可能导致可见伪影和比特率增加。\n\n**管理BD-Rate影响：** 隐形水印会引入熵，可能导致视频编码器产生更高的比特率。Meta的初始实现显示BD-Rate回归约20%。为缓解此问题，他们设计了一种新颖的帧选择水印方法，大大降低了BD-Rate影响，同时提高了视觉质量并最大限度地减少了水印位检测准确性的影响。\n\n**解决视觉质量回归：** 确保“隐形”水印真正隐形至关重要。尽管高质量指标得分（VMAF和SSIM）很高，但他们最初观察到明显的视觉伪影。通过实施自定义后处理技术和众包人工检查不同嵌入设置，他们解决了视觉质量问题。事实证明，传统视觉质量指标不足以检测隐形水印可能引入的伪影类型，因此主观评估至关重要。在调整算法以实现人眼不可见性的同时，他们密切监测了位准确性影响，以实现视觉质量和检测准确性之间的最佳平衡。\n\n### 经验教训与未来展望\n1.  **CPU效率：** 经过适当优化，纯CPU流水线在特定用例中可以达到与GPU流水线相当的性能，且成本更低。CPU为隐形水印系统提供了更具运营效率和可扩展性的解决方案。\n2.  **传统视频质量分数不足：** VMAF和SSIM等指标无法完全捕捉隐形水印引入的感知质量问题，需要人工检查。需要更多研究来开发一种能够以编程方式检测隐形水印造成的视觉质量损失的指标。\n3.  **生产质量标准高：** 水印技术可能因对BD-Rate和下游视频压缩的影响而无法直接应用于实际用例。需要扩展现有文献，以在保持卓越位准确性的同时，将BD-Rate影响降至最低。\n\nMeta已成功推出一个可扩展的水印解决方案，具有出色的延迟、视觉质量、检测位准确性和最小的BD-Rate影响。未来，他们将继续提高隐形水印检测的精度和复制检测召回率，并设想将隐形水印作为一个轻量级的“过滤器模块”，无缝集成到各种视频用例中，对用户体验影响最小，同时提供强大的内容溯源能力。",
-      "shortSummary": "Meta公司已成功规模化部署隐形水印技术，用于内容溯源，包括检测AI生成视频、验证首发者和识别创作工具。该技术通过微妙修改媒体数据实现人眼不可察觉的嵌入。面对GPU在视频转码上的局限性，Meta通过优化FFmpeg和PyTorch参数，开发出CPU-based解决方案，其端到端性能与GPU相当，但运营效率更高。该方案在延迟、检测准确性、视觉质量和压缩效率（BD-Rate）之间取得了平衡，并通过人工检查解决了传统质量指标的不足，实现了鲁棒且高效的视频内容溯源。",
-      "translated_title": "视频隐形水印的规模化应用",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>At Meta, we use invisible watermarking for a variety of content provenance use cases on our platforms. Invisible watermarking serves a number of use cases, including detecting AI-generated videos, verifying who posted a video first, and identifying the source and tools used to create a video. We&#8217;re sharing how we overcame the challenges of scaling [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/11/04/video-engineering/video-invisible-watermarking-at-scale/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/11/04/video-engineering/video-invisible-watermarking-at-scale/\">Video Invisible Watermarking at Scale</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2025-12-17T05:30:54.693Z"
+  "lastUpdated": "2025-12-19T05:30:03.724Z"
 }
