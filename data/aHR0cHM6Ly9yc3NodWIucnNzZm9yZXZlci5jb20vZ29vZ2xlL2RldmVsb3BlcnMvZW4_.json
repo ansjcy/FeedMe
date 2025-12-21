@@ -5,6 +5,68 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Real-World Agent Examples with Gemini 3",
+      "link": "https://developers.googleblog.com/en/real-world-agent-examples-with-gemini-3/",
+      "pubDate": "Thu, 18 Dec 2025 16:00:00 GMT",
+      "isoDate": "2025-12-18T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Real-World Agent Examples with Gemini 3",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/adk-logo_1.original.png",
+          "alt": "adk-logo (1)",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/agno.original.png",
+          "alt": "agno",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/agno-example.original.png",
+          "alt": "agno-example",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/browser-use-logo_1.original.png",
+          "alt": "browser-use-logo (1)",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/browser-use-example_1.original.png",
+          "alt": "browser-use-example (1)",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/eigent-logo.original.png",
+          "alt": "eigent-logo",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/eigent-example-1.original.png",
+          "alt": "eigent-example-1",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/letta-logo_1.original.png",
+          "alt": "letta-logo (1)",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Gemini 3 is powering the next generation of reliable, production-ready AI agents. This post highlights 6 open-source framework collaborations (ADK, Agno, Browser Use, Eigent, Letta, mem0), demonstrating practical agentic workflows for tasks like deep search, multi-agent systems, browser and enterprise automation, and stateful agents with advanced memory. Clone the examples and start building today."
+    },
+    {
       "title": "Introducing Agent Development Kit for TypeScript: Build AI Agents with the Power of a Code-First Approach",
       "link": "https://developers.googleblog.com/en/introducing-agent-development-kit-for-typescript-build-ai-agents-with-the-power-of-a-code-first-approach/",
       "pubDate": "Tue, 16 Dec 2025 16:00:00 GMT",
@@ -36,6 +98,32 @@
       ],
       "contentSource": "RSS",
       "content": "Gemini 3 Flash is now available in Gemini CLI. It delivers Pro-grade coding performance with low latency and a lower cost, matching Gemini 3 Pro's SWE-bench Verified score of 76%. It significantly outperforms 2.5 Pro, improving auto-routing and agentic coding. It's ideal for high-frequency development tasks, handling complex code generation, large context windows (like processing 1,000 comment pull requests), and generating load-testing scripts quickly and reliably."
+    },
+    {
+      "title": "Conductor: Introducing context-driven development for Gemini CLI",
+      "link": "https://developers.googleblog.com/en/conductor-introducing-context-driven-development-for-gemini-cli/",
+      "pubDate": "Tue, 16 Dec 2025 16:00:00 GMT",
+      "isoDate": "2025-12-16T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Conductor: Introducing context-driven development for Gemini CLI",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ConductorScreenshot.original.png",
+          "alt": "ConductorScreenshot",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ConductorScreenshot2.original.png",
+          "alt": "ConductorScreenshot2",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Conductor is a new Gemini CLI extension that promotes context-driven development. It shifts project context from chat logs to persistent Markdown files for formal specs and plans, ensuring AI agents adhere to project goals, style, and tech stack. This structured workflow is great for \"brownfield\" projects and teams, allowing for safe iteration and consistent code contributions while keeping the human developer in control."
     },
     {
       "title": "Developer’s guide to multi-agent patterns in ADK",
@@ -222,40 +310,7 @@
       ],
       "contentSource": "RSS",
       "content": "LiteRT and MediaTek are announcing the new LiteRT NeuroPilot Accelerator. This is a ground-up successor for the TFLite NeuroPilot delegate, bringing seamless deployment experience, state-of-the-art LLM support, and advanced performance to millions of devices worldwide."
-    },
-    {
-      "title": "Architecting efficient context-aware multi-agent framework for production",
-      "link": "https://developers.googleblog.com/en/architecting-efficient-context-aware-multi-agent-framework-for-production/",
-      "pubDate": "Wed, 03 Dec 2025 16:00:00 GMT",
-      "isoDate": "2025-12-03T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Architecting efficient context-aware multi-agent framework for production",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "ADK introduces **Context Engineering** to scale AI agents beyond large context windows. It treats context as a compiled view over a tiered, stateful system (**Session, Memory, Artifacts**). This architecture uses explicit processors for transformation, enables efficient compaction and caching, and allows for strict, scoped context handoffs in multi-agent workflows to ensure reliability and cost-effectiveness in production."
-    },
-    {
-      "title": "Announcing the Data Commons Gemini CLI extension",
-      "link": "https://developers.googleblog.com/en/announcing-the-data-commons-gemini-cli-extension/",
-      "pubDate": "Mon, 01 Dec 2025 16:00:00 GMT",
-      "isoDate": "2025-12-01T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Announcing the Data Commons Gemini CLI extension",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GDP-answer.original.png",
-          "alt": "GDP-answer",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "The new Data Commons extension for the Gemini CLI makes accessing public data easier. It allows users to ask complex, natural-language questions to query Data Commons' public datasets, grounding LLM responses in authoritative sources to reduce AI hallucinations. Data Commons is an organized library of public data from sources like the UN and World Bank. The extension enables instant data analysis, exploration, and integration with other data-related extensions."
     }
   ],
-  "lastUpdated": "2025-12-18T10:34:37.563Z"
+  "lastUpdated": "2025-12-21T10:30:13.032Z"
 }
