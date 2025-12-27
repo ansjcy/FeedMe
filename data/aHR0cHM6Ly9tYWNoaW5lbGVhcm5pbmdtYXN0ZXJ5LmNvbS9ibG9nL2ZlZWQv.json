@@ -5,6 +5,160 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "Training a Model on Multiple GPUs with Data Parallelism",
+      "link": "https://machinelearningmastery.com/training-a-model-on-multiple-gpus-with-data-parallelism/",
+      "pubDate": "Fri, 26 Dec 2025 06:44:15 +0000",
+      "isoDate": "2025-12-26T06:44:15.000Z",
+      "creator": "Adrian Tam",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Training a Model on Multiple GPUs with Data Parallelism",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/ilse-orsel-hjmV0xG-KPk-unsplash-scaled.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/data_parallelism.png",
+          "alt": "",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "This article is divided into two parts; they are: • Data Parallelism • Distributed Data Parallelism If you have multiple GPUs, you can combine them to operate as a single GPU with greater memory capacity."
+    },
+    {
+      "title": "Train a Model Faster with torch.compile and Gradient Accumulation",
+      "link": "https://machinelearningmastery.com/train-a-model-faster-with-torch-compile-and-gradient-accumulation/",
+      "pubDate": "Thu, 25 Dec 2025 16:44:48 +0000",
+      "isoDate": "2025-12-25T16:44:48.000Z",
+      "creator": "Adrian Tam",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Train a Model Faster with torch.compile and Gradient Accumulation",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/francois-genon-IvlV_Dlt9hg-unsplash-scaled.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "This article is divided into two parts; they are: • Using `torch."
+    },
+    {
+      "title": "Training a Model with Limited Memory using Mixed Precision and Gradient Checkpointing",
+      "link": "https://machinelearningmastery.com/training-a-model-with-limited-memory-using-mixed-precision-and-gradient-checkpointing/",
+      "pubDate": "Wed, 24 Dec 2025 17:43:03 +0000",
+      "isoDate": "2025-12-24T17:43:03.000Z",
+      "creator": "Adrian Tam",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Training a Model with Limited Memory using Mixed Precision and Gradient Checkpointing",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/meduana-PdnseHuDFZU-unsplash-scaled.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/Float_example.svg.png",
+          "alt": "",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "This article is divided into three parts; they are: • Floating-point Numbers • Automatic Mixed Precision Training • Gradient Checkpointing Let's get started! The default data type in PyTorch is the IEEE 754 32-bit floating-point format, also known as single precision."
+    },
+    {
+      "title": "Practical Agentic Coding with Google Jules",
+      "link": "https://machinelearningmastery.com/practical-agentic-coding-with-google-jules/",
+      "pubDate": "Wed, 24 Dec 2025 15:13:48 +0000",
+      "isoDate": "2025-12-24T15:13:48.000Z",
+      "creator": "Matthew Mayo",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Practical Agentic Coding with Google Jules",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-mayo-practical-agentic-coding-with-google-jules.jpeg",
+          "alt": "Practical Agentic Coding with Google Jules",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-mayo-google-jules-1-scaled.png",
+          "alt": "Authenticate to Try Jules",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-mayo-google-jules-2a.png",
+          "alt": "Connect to GitHub to reap the rewards",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-mayo-google-jules-3.png",
+          "alt": "Select the target repository and branch",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-mayo-google-jules-4.png",
+          "alt": "Select the target repository and branch",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-mayo-google-jules-5.png",
+          "alt": "Google Jules toils away while I do something else",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-mayo-google-jules-6.png",
+          "alt": "Reviewing the changes that Google Jules implemented",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-mayo-google-jules-7.png",
+          "alt": "Inspecting the pull request that Jules creates",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "If you have an interest in agentic coding, there's a pretty good chance you've heard of <a href=\"https://jules."
+    },
+    {
+      "title": "Evaluating Perplexity on Language Models",
+      "link": "https://machinelearningmastery.com/evaluating-perplexity-on-language-models/",
+      "pubDate": "Tue, 23 Dec 2025 16:44:35 +0000",
+      "isoDate": "2025-12-23T16:44:35.000Z",
+      "creator": "Adrian Tam",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Evaluating Perplexity on Language Models",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/lucas-davies-3aubsNmGuLE-unsplash-scaled.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "This article is divided into two parts; they are: • What Is Perplexity and How to Compute It • Evaluate the Perplexity of a Language Model with HellaSwag Dataset Perplexity is a measure of how well a language model predicts a sample of text."
+    },
+    {
       "title": "3 Smart Ways to Encode Categorical Features for Machine Learning",
       "link": "https://machinelearningmastery.com/3-smart-ways-to-encode-categorical-features-for-machine-learning/",
       "pubDate": "Mon, 22 Dec 2025 15:59:29 +0000",
@@ -151,124 +305,7 @@
       ],
       "contentSource": "RSS",
       "content": "Agentic coding only feels \"smart\" when it ships correct diffs, passes tests, and leaves a paper trail you can trust."
-    },
-    {
-      "title": "The Real Cost of Inaction: How Silos Hurt Productivity for Data Scientists (Sponsored)",
-      "link": "https://bit.ly/3Y07mHi",
-      "pubDate": "Wed, 17 Dec 2025 16:40:29 +0000",
-      "isoDate": "2025-12-17T16:40:29.000Z",
-      "creator": "MLM Team",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "The Real Cost of Inaction: How Silos Hurt Productivity for Data Scientists (Sponsored)",
-      "images": [],
-      "contentSource": "RSS",
-      "content": ""
-    },
-    {
-      "title": "Top 5 Vector Databases for High-Performance LLM Applications",
-      "link": "https://machinelearningmastery.com/top-5-vector-databases-for-high-performance-llm-applications/",
-      "pubDate": "Wed, 17 Dec 2025 15:10:03 +0000",
-      "isoDate": "2025-12-17T15:10:03.000Z",
-      "creator": "Bala Priya C",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Top 5 Vector Databases for High-Performance LLM Applications",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-bpc-top-5-vector-databases-high-performing-llm-applications.png",
-          "alt": "Top 5 Vector Databases for High-Performance LLM Applications",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Building AI applications often requires searching through millions of documents, finding similar items in massive catalogs, or retrieving relevant context for your LLM."
-    },
-    {
-      "title": "The Machine Learning Engineer’s Checklist: Best Practices for Reliable Models",
-      "link": "https://machinelearningmastery.com/the-machine-learning-engineers-checklist-best-practices-for-reliable-models/",
-      "pubDate": "Tue, 16 Dec 2025 17:55:28 +0000",
-      "isoDate": "2025-12-16T17:55:28.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "The Machine Learning Engineer’s Checklist: Best Practices for Reliable Models",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-machine-learning-engineer-checklist.png",
-          "alt": "The Machine Learning Engineer’s Checklist: Best Practices for Reliable Models",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Building newly trained machine learning models that work is a relatively straightforward endeavor, thanks to mature frameworks and accessible computing power."
-    },
-    {
-      "title": "Transformer vs LSTM for Time Series: Which Works Better?",
-      "link": "https://machinelearningmastery.com/transformer-vs-lstm-for-time-series-which-works-better/",
-      "pubDate": "Mon, 15 Dec 2025 11:00:36 +0000",
-      "isoDate": "2025-12-15T11:00:36.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Transformer vs LSTM for Time Series: Which Works Better?",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/mlm-ipc-lstm-transformer-comparison.jpeg",
-          "alt": "Transformer vs LSTM for Time Series: Which Works Better?",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/timeserieschicago.png",
-          "alt": "Chicago rides time series",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "From daily weather measurements or traffic sensor readings to stock prices, time series data are present nearly everywhere."
-    },
-    {
-      "title": "How LLMs Choose Their Words: A Practical Walk-Through of Logits, Softmax and Sampling",
-      "link": "https://machinelearningmastery.com/how-llms-choose-their-words-a-practical-walk-through-of-logits-softmax-and-sampling/",
-      "pubDate": "Sat, 13 Dec 2025 19:25:32 +0000",
-      "isoDate": "2025-12-13T19:25:32.000Z",
-      "creator": "Yoyo Chan",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "How LLMs Choose Their Words: A Practical Walk-Through of Logits, Softmax and Sampling",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/colton-duke-UExx0KnnkjY-unsplash-scaled.jpg",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/effect_temperature.png",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/effect_topk.png",
-          "alt": "",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2025/12/effect_topp.png",
-          "alt": "",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "This article is divided into four parts; they are: • How Logits Become Probabilities • Temperature • Top- k Sampling • Top- p Sampling When you ask an LLM a question, it outputs a vector of logits."
     }
   ],
-  "lastUpdated": "2025-12-26T09:31:14.589Z"
+  "lastUpdated": "2025-12-27T09:28:56.050Z"
 }
