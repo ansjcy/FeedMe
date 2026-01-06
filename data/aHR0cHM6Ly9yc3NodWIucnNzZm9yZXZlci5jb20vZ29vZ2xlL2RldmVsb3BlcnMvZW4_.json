@@ -5,6 +5,50 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "A Developer's Guide to Debugging JAX on Cloud TPUs: Essential Tools and Techniques",
+      "link": "https://developers.googleblog.com/en/a-developers-guide-to-debugging-jax-on-cloud-tpus-essential-tools-and-techniques/",
+      "pubDate": "Sun, 04 Jan 2026 16:00:00 GMT",
+      "isoDate": "2026-01-04T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "A Developer's Guide to Debugging JAX on Cloud TPUs: Essential Tools and Techniques",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/relationship_diagram.original.png",
+          "alt": "relationship_diagram",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/tool_table_updated.original.png",
+          "alt": "tool_table_updated",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/log_updated.original.png",
+          "alt": "log_updated",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/libtpu1.original.png",
+          "alt": "libtpu1",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/libtpu2_updated_1.original.png",
+          "alt": "libtpu2_updated (1)",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "A practical guide to debugging and profiling JAX on Cloud TPUs. It outlines core components (libtpu, JAX/jaxlib) and essential techniques. Tools covered include: Verbose Logging (via libtpu env vars), TPU Monitoring Library for performance metrics, tpu-info for real-time utilization, XLA HLO Dumps for compiler debugging, and the XProf suite for in-depth performance analysis."
+    },
+    {
       "title": "Real-World Agent Examples with Gemini 3",
       "link": "https://developers.googleblog.com/en/real-world-agent-examples-with-gemini-3/",
       "pubDate": "Thu, 18 Dec 2025 16:00:00 GMT",
@@ -284,33 +328,7 @@
       ],
       "contentSource": "RSS",
       "content": "Google Cloud enables end-to-end confidential applications, protecting sensitive data 'in-use' with hardware isolation. The solution combines Confidential Space (TEE/attestation), Oak Functions (private sandbox), and Oak Session (attested end-to-end encryption for scale). This framework anchors user trust in open-source components, proving confidentiality for sensitive workloads like proprietary GenAI models, even when running behind untrusted load balancers."
-    },
-    {
-      "title": "MediaTek NPU and LiteRT: Powering the next generation of on-device AI",
-      "link": "https://developers.googleblog.com/en/mediatek-npu-and-litert-powering-the-next-generation-of-on-device-ai/",
-      "pubDate": "Sun, 07 Dec 2025 16:00:00 GMT",
-      "isoDate": "2025-12-07T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "MediaTek NPU and LiteRT: Powering the next generation of on-device AI",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemma_3_270_AOT_JIT.original.png",
-          "alt": "Gemma 3 270 AOT_JIT",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Perf_data_12-04.original.png",
-          "alt": "Perf_data_12-04",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "LiteRT and MediaTek are announcing the new LiteRT NeuroPilot Accelerator. This is a ground-up successor for the TFLite NeuroPilot delegate, bringing seamless deployment experience, state-of-the-art LLM support, and advanced performance to millions of devices worldwide."
     }
   ],
-  "lastUpdated": "2026-01-05T10:36:50.597Z"
+  "lastUpdated": "2026-01-06T10:35:04.531Z"
 }
