@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "Less than a trillionth of a second: Ultrafast UV light could transform communications and imaging",
+      "link": "https://www.sciencedaily.com/releases/2026/01/260101160849.htm",
+      "pubDate": "Wed, 07 Jan 2026 21:08:42 EST",
+      "isoDate": "2026-01-08T02:08:42.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Less than a trillionth of a second: Ultrafast UV light could transform communications and imaging",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Researchers have built a new platform that produces ultrashort UV-C laser pulses and detects them at room temperature using atom-thin materials. The light flashes last just femtoseconds and can be used to send encoded messages through open space. The system relies on efficient laser generation and highly responsive sensors that scale well for manufacturing. Together, these advances could accelerate the development of next-generation photonic technologies."
+    },
+    {
       "title": "Scientists create robots smaller than a grain of salt that can think",
       "link": "https://www.sciencedaily.com/releases/2026/01/260105165815.htm",
       "pubDate": "Tue, 06 Jan 2026 07:33:12 EST",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Despite advances in machine vision, processing visual data requires substantial computing resources and energy, limiting deployment in edge devices. Now, researchers from Japan have developed a self-powered artificial synapse that distinguishes colors with high resolution across the visible spectrum, approaching human eye capabilities. The device, which integrates dye-sensitized solar cells, generates its electricity and can perform complex logic operations without additional circuitry, paving the way for capable computer vision systems integrated in everyday devices."
-    },
-    {
-      "title": "工程师开发出机器人自愈肌肉 (原标题: Engineers develop self-healing muscle for robots)",
-      "link": "https://www.sciencedaily.com/releases/2025/05/250530151849.htm",
-      "pubDate": "Fri, 30 May 2025 15:18:49 EDT",
-      "isoDate": "2025-05-30T19:18:49.000Z",
-      "creator": "",
-      "summary": "## 工程师开发出机器人自愈肌肉\n\n内布拉斯加大学林肯分校的一个工程团队在开发模仿人类和植物皮肤检测和自愈损伤能力的软体机器人和可穿戴系统方面又迈进了一步。该团队由工程师埃里克·马克维卡（Eric Markvicka）以及研究生伊森·克林斯（Ethan Krings）和帕特里克·麦克马尼加尔（Patrick McManigal）组成。\n\n### 研究背景与突破\n\n*   **研究目标**：开发能够检测和自愈损伤的软体机器人和可穿戴系统，以模仿生物体的自愈能力。\n*   **最新成果**：团队在亚特兰大举行的IEEE国际机器人与自动化会议（ICRA）上发表了一篇论文。该论文提出了一种系统级方法，用于开发能够识别穿刺或极端压力造成的损伤、精确定位并自主启动自我修复的软体机器人技术。\n*   **荣誉认可**：该论文从1606份提交中脱颖而出，成为ICRA 2025最佳论文奖的39个决赛入围者之一，同时也是最佳学生论文奖和机制与设计类别的决赛入围者。\n\n### 解决软体机器人领域的长期问题\n\n马克维卡指出，尽管软体机器人领域在复制传统刚性系统和生物模仿方面取得了巨大进展，但现有的可拉伸电子产品和执行器通常无法像生物体那样响应损伤并启动自我修复。该团队的工作旨在填补这一空白，使合成系统也能实现类似生物的自愈能力。\n\n### 智能自愈人工肌肉的结构与工作原理\n\n团队开发了一种智能自愈人工肌肉（即执行器，将能量转化为物理运动的机器人部件），其特点是多层结构，使其能够在无需外部干预的情况下识别和定位损伤，然后启动自我修复机制。\n\n该“肌肉”由三层组成：\n\n1.  **底部（损伤检测层）**：由嵌入硅弹性体中的液态金属微滴组成的柔软电子皮肤。\n2.  **中间（自愈组件层）**：由坚硬的热塑性弹性体构成。\n3.  **顶部（驱动层）**：当用水加压时，启动肌肉的运动。\n\n**自愈过程详解**：\n\n1.  **损伤检测**：团队在肌肉底部“皮肤”上施加五股监测电流，该皮肤连接到微控制器和传感电路。当该层发生穿刺或压力损伤时，会在痕迹之间形成一个电网络。\n2.  **损伤识别与加热**：系统识别出这种电足迹为损伤证据，并随后增加流经新形成电网络的电流。这使得该网络能够作为局部焦耳加热器，将电流能量转化为损伤区域周围的热量。\n3.  **自我修复**：几分钟后，产生的热量会熔化并重新加工中间的热塑性层，从而密封损伤，有效地实现伤口自愈。\n4.  **系统重置**：最后一步是通过消除底层损伤的电足迹，将系统重置回原始状态。团队利用“电迁移”效应来实现这一点。电迁移通常被视为金属电路中的障碍，因为它会导致金属原子迁移，使电路材料变形并产生间隙，从而导致设备故障。然而，研究人员创新性地利用电迁移来解决一个长期困扰他们的问题：损伤引起的电网络似乎是永久性的。通过进一步提高电流，团队可以诱导电迁移和热失效机制，从而重置损伤检测网络，使系统能够完成多次损伤和修复循环。\n\n### 潜在应用与社会影响\n\n这种自主自愈技术有望彻底改变多个行业：\n\n*   **农业领域**：对于经常接触树枝、荆棘、塑料和玻璃等尖锐物体的农业机器人系统来说，这将是一大福音。\n*   **可穿戴健康监测设备**：能够承受日常磨损，延长设备寿命。\n*   **更广泛的社会效益**：大多数消费电子产品寿命仅为一两年，每年产生数十亿磅的电子垃圾，其中含有铅和汞等有毒物质，威胁人类和环境健康。自愈技术有助于遏制这一趋势，减少电子垃圾。\n\n马克维卡表示，如果能创造出能够自主检测损伤并启动自我修复机制的材料，将真正改变我们对电子产品和机器的看法。",
-      "shortSummary": "内布拉斯加大学林肯分校的工程师开发出一种用于机器人的智能自愈人工肌肉。该技术模仿生物自愈能力，能自主检测损伤、精确定位并通过局部加热修复。其创新之处在于利用“电迁移”效应重置损伤检测网络，实现多次修复循环。这项突破有望解决软体机器人长期存在的损伤响应问题，并在农业、可穿戴设备及减少电子垃圾等领域带来革命性影响。",
-      "translated_title": "工程师开发出机器人自愈肌肉",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Students recently unveiled their invention of a robotic actuator -- the 'muscle' that converts energy into a robot's physical movement -- that has the ability to detect punctures or pressure, heal the injury and repair its damage-detecting 'skin.'"
     }
   ],
-  "lastUpdated": "2026-01-07T09:36:41.421Z"
+  "lastUpdated": "2026-01-08T09:36:43.281Z"
 }
