@@ -43,6 +43,68 @@
       "content": "Slack’s Security Engineering team is responsible for protecting Slack’s core infrastructure and services. Our security event ingestion pipeline handles billions of events per day from a diverse array of data sources. Reviewing alerts produced by our security detection system is our primary responsibility during on-call shifts. We’re going to show you how we’re using AI&#8230;"
     },
     {
+      "title": "Android VPAT journey",
+      "link": "https://slack.engineering/android-vpat-journey/",
+      "pubDate": "Wed, 19 Nov 2025 18:00:39 +0000",
+      "isoDate": "2025-11-19T18:00:39.000Z",
+      "creator": "Hye Jung Choi",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Android VPAT journey",
+      "images": [
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/05/image5.png?w=552",
+          "alt": "Error is displayed right below an image edit field.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/05/image4.png?w=640",
+          "alt": "Error is shown via SKBanner error type.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/05/image3.png?w=341",
+          "alt": "Previously, there is no visual indictor in a search input field other than a placeholder text. When a user enters a text, it's not obvious what this field is.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/05/image2.png?w=374",
+          "alt": "We added a magnifying glass icon to the input field. When a user enters a text, it's clear that the edit field is for search.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/05/image7.png?w=640",
+          "alt": "Before: there is no indication from UI that each workspace is draggable to move around.",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/05/image1.png?w=640",
+          "alt": "After: Upon entering Edit mode, each row in the workspace is equipped with a six-dot drag handle. Once the user has completed rearranging the workspaces, they can click the \"Done\" button located in the top right corner, causing the six-dot drag handles to disappear.",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/05/image8.png?w=395",
+          "alt": "Error text with red color is shown below an edit field.",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/05/image6.png?w=395",
+          "alt": "Error text with red color and an error icon are shown below an edit field.",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Background A Voluntary Product Accessibility Template (VPAT) is a document that outlines how well a product aligns with accessibility (a11y) standards. Its primary purpose is to inform customers about a product&#8217;s a11y features, enabling them to make informed decisions before purchasing software. At Slack, we conducted a VPAT by a third party a11y vendor in&#8230;"
+    },
+    {
       "title": "构建更好的软件以更好地构建软件 (原标题: Build better software to build software better)",
       "link": "https://slack.engineering/build-better-software-to-build-software-better/",
       "pubDate": "Thu, 06 Nov 2025 16:00:47 +0000",
@@ -215,20 +277,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Overview The past few months have been exciting times for Slack’s CI infrastructure. After years of developer frustration with Jenkins (everything from security issues to downtime to generally poor UX) internal pressure led us to move a majority of Slack’s CI jobs from Jenkins to GitHub Actions.  My intern project at Slack this summer involved&#8230;"
-    },
-    {
-      "title": "故意破坏 (原标题: Break Stuff on Purpose)",
-      "link": "https://slack.engineering/break-stuff-on-purpose/",
-      "pubDate": "Tue, 10 Dec 2024 09:00:41 +0000",
-      "isoDate": "2024-12-10T09:00:41.000Z",
-      "creator": "Sean Madden",
-      "summary": "## 引言：故意破坏以应对复杂系统故障\n\n文章引用John Gall在《Systemantics》中的观点：“一个复杂系统可以以无限种方式失败。”事故是不可避免的，即使是为高可用性设计的服务最终也会遇到故障。工程师们发现，要防御系统可能出现的“无限种”问题是令人生畏的。Slack的工程团队通过一次内部Kibana仪表盘服务故障，认识到主动应对的重要性。他们通过一种富有创意和“恶作剧”精神的练习，解决了问题根源，激励了团队成员，并为枯燥的系统维护工作带来了兴奋和乐趣。\n\n## 一次Kibana事故\n\n2024年1月29日，Slack工程师使用的Kibana集群（用于保存自定义仪表盘和应用性能数据可视化）因磁盘空间不足而开始出现故障。调查发现，这是早期架构决策的下游影响：Kibana集群被配置为使用与Kibana应用在同一主机上的Elasticsearch实例，导致存储和应用紧密耦合在同一节点上，这些节点最终崩溃。工程师无法加载所需数据来确保应用健康。集群最终陷入无法挽回的糟糕状态，不得不从头重建。\n\n团队原以为可以通过更换新主机并从备份中恢复Kibana对象来重建集群。然而，他们震惊地发现最近的备份已是近两年前的。备份和恢复方法在首次配置后并未得到充分关注，也没有配置告警来通知其运行异常。此外，运行手册也已过时，旧备份在尝试恢复时也失败了。这导致内部员工的链接和可视化数据丢失，团队不得不手动重建索引和索引模式。向同事解释恢复程序失败和数据丢失的过程令人沮丧。\n\n这次事故的教训是：除非主动演练流程、程序和运行手册，否则它们会过时并在最需要时失效。事故响应旨在尽快恢复服务，但事故平息后的行动决定了它们最终是收益还是负担。\n\n## “破坏东西”的乐趣与价值\n\n团队决心将这次事故转化为实际收益。事故后的任务包括：\n\n*   确保所有环境中的Elasticsearch集群都通过计划备份脚本进行备份。\n*   根据经验修复运行手册。\n*   检查Amazon S3的保留策略是否设置正确。\n\n为了验证这些改进措施的有效性，团队提出了一个非传统但令人兴奋的想法：故意破坏一个开发环境的Kibana集群，并尝试新的备份和恢复流程。开发集群的配置与生产集群类似，能提供真实的测试环境。为了确保成功，他们仔细规划了要破坏哪个集群、如何破坏以及如何恢复服务。\n\n## 演练过程与成果\n\n团队在一个安静的周四上午安排了这次测试活动，并邀请了所有团队成员。大家充满活力地参与了这次“故意在工作中破坏东西”的机会。他们通过填满Kibana节点的磁盘，实时观察其故障，并成功触发了告警。团队按照新的运行手册步骤操作，将整个集群循环重建。系统成功地从这次模拟事故中恢复。\n\n尽管恢复成功，但他们未能达到在一小时内恢复的目标。运行手册中的许多命令难以理解，在压力下难以掌握。甚至从运行手册中复制粘贴也因格式问题而充满挑战。尽管存在这些粗糙之处，备份最终还是完全恢复了集群状态。此外，他们还意外发现了一些需要添加到基础设施即代码中的防火墙规则，修复这些问题避免了未来的麻烦。\n\n在对新恢复流程的最终测试中，团队将通用的开发Kibana实例和Elasticsearch集群迁移到Kubernetes。这是一个绝佳的机会，可以在高使用率的Kibana集群上测试改进后的备份脚本。由于对流程的理解加深和更新的配置脚本，他们成功完成了迁移，停机时间约为30分钟。\n\n在两次演练中，团队都遇到了新运行手册和恢复过程中的小问题。他们花时间找出运行手册的不足之处并加以改进。受演练启发，他们主动将计划备份脚本工具升级为一个功能齐全的CLI备份和恢复程序。现在，他们能够通过一个命令从云存储中完全恢复Kibana备份。\n\n“破坏东西”不仅有趣，更是对时间的一项极其宝贵的投资，它将使团队免于未来的压力。\n\n## 混沌无处不在——善加利用\n\n文章再次引用John Gall的观点：“复杂系统通常在故障模式下运行。”每个生产系统都以一种尚未被发现的方式存在问题。因此，在问题变得关键之前，投入时间和精力去发现这些问题并规划如何从中恢复至关重要。建议包括：\n\n*   在客户使用前生成大量流量并进行负载测试。\n*   关闭服务以模拟意外中断。\n*   经常升级依赖项。\n\n软件中的日常维护常常被忽视，因为它可能枯燥乏味，但当事故不可避免地发生时，我们就会为此付出代价。Slack团队发现，通过“战略性混沌”（有计划的破坏），他们可以使系统测试和维护变得令人兴奋和新鲜。这不仅打破了日常修复工作的常规，还让他们置身于独特而真实的境地，这是传统维护方式无法发现的。文章鼓励其他团队也花时间“破坏”自己的系统，然后恢复它们，并反复进行。每次迭代都会改进流程和工具，以应对未来不可避免的压力情况。最后，文章提醒大家每年3月31日庆祝世界备份日。\n\n## 致谢\n\n文章感谢了Kyle Sammons、Mark Carey、Renning Bruns、Emma Montross、Shelly Wu、Bryan Burkholder、George Luong和Ryan Katkov等多位团队成员在恢复演练的规划、执行、工具功能实现、自动化、事故响应和支持以及提供自主权方面的贡献。",
-      "shortSummary": "Slack工程团队通过一次Kibana事故认识到主动测试系统恢复流程的重要性。他们创新性地开展“故意破坏”演练，在开发环境中模拟故障，测试并完善了备份、恢复流程和运行手册。通过这种“战略性混沌”，团队不仅将事故转化为宝贵经验，还自动化了恢复过程，显著提升了系统韧性。文章强调，主动发现并解决潜在问题，比被动应对事故更有效，并鼓励其他团队也进行类似的破坏性测试。",
-      "translated_title": "故意破坏",
-      "images": [],
-      "contentSource": "RSS",
-      "content": " “A complex system can fail in an infinite number of ways.” -“Systemantics” by John Gall &#160; Incidents are stressful but inevitable. Even services designed for availability will eventually encounter a failure. Engineers naturally find it daunting to defend their systems against the “infinite number of ways” things can go wrong.  Our team found ourselves in&#8230;"
     }
   ],
-  "lastUpdated": "2026-01-09T04:49:17.114Z"
+  "lastUpdated": "2026-01-11T04:53:54.586Z"
 }
