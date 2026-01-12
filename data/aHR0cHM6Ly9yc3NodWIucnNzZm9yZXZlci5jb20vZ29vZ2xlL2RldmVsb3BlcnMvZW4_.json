@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Under the Hood: Universal Commerce Protocol (UCP)",
+      "link": "https://developers.googleblog.com/en/under-the-hood-universal-commerce-protocol-ucp/",
+      "pubDate": "Sat, 10 Jan 2026 16:00:00 GMT",
+      "isoDate": "2026-01-10T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Under the Hood: Universal Commerce Protocol (UCP)",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/UCP_Diagram_Detailed_1.original.png",
+          "alt": "UCP Diagram (Detailed) (1)",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/triptych-alt.original.jpg",
+          "alt": "triptych-alt",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "The Universal Commerce Protocol (UCP) is a new, open-source standard for agentic commerce, co-developed by Google and industry leaders. It establishes a common, secure language to connect consumer surfaces (like Gemini and AI Mode in Search) with business backends, enabling seamless shopping from product discovery to purchase. UCP simplifies integration for businesses, supports various payment providers, and is designed to power the next generation of conversational commerce experiences."
+    },
+    {
       "title": "A Developer's Guide to Debugging JAX on Cloud TPUs: Essential Tools and Techniques",
       "link": "https://developers.googleblog.com/en/a-developers-guide-to-debugging-jax-on-cloud-tpus-essential-tools-and-techniques/",
       "pubDate": "Sun, 04 Jan 2026 16:00:00 GMT",
@@ -308,27 +334,7 @@
       ],
       "contentSource": "RSS",
       "content": "Gemini CLI's new automatic **Session Management** (v0.20.0+) saves your conversation history, tool outputs, and reasoning, providing project-specific context. Resume easily using the **Interactive Session Browser** (`/resume`) or command-line flags (`--resume`). This feature ensures you never lose your work state, capturing prompts, tool execution details, and usage stats. Customize history with cleanup policies in `settings.json`."
-    },
-    {
-      "title": "Don't Trust, Verify: Building End-to-End Confidential Applications on Google Cloud",
-      "link": "https://developers.googleblog.com/en/dont-trust-verify-building-end-to-end-confidential-applications-on-google-cloud/",
-      "pubDate": "Mon, 08 Dec 2025 16:00:00 GMT",
-      "isoDate": "2025-12-08T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Don't Trust, Verify: Building End-to-End Confidential Applications on Google Cloud",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/oak_session_diagram.original.jpg",
-          "alt": "oak session diagram",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Google Cloud enables end-to-end confidential applications, protecting sensitive data 'in-use' with hardware isolation. The solution combines Confidential Space (TEE/attestation), Oak Functions (private sandbox), and Oak Session (attested end-to-end encryption for scale). This framework anchors user trust in open-source components, proving confidentiality for sensitive workloads like proprietary GenAI models, even when running behind untrusted load balancers."
     }
   ],
-  "lastUpdated": "2026-01-11T10:31:32.470Z"
+  "lastUpdated": "2026-01-12T10:36:50.596Z"
 }
