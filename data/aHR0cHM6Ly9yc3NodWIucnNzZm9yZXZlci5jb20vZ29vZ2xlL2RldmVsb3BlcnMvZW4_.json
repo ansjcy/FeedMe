@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "A Guide to Fine-Tuning FunctionGemma",
+      "link": "https://developers.googleblog.com/en/a-guide-to-fine-tuning-functiongemma/",
+      "pubDate": "Thu, 15 Jan 2026 16:00:00 GMT",
+      "isoDate": "2026-01-15T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "A Guide to Fine-Tuning FunctionGemma",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/train.original.png",
+          "alt": "train",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/screenshot.original.png",
+          "alt": "screenshot",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "FunctionGemma is a specialized AI model for function calling. This post explains why fine-tuning is key to resolving tool selection ambiguity (e.g., internal vs. Google search) and achieving ultra-specialization, transforming it into a strict, enterprise-compliant agent. A case study demonstrates the improved logic. It also introduces the \"FunctionGemma Tuning Lab,\" a no-code demo on Hugging Face Spaces, which streamlines the entire fine-tuning process for developers."
+    },
+    {
       "title": "Under the Hood: Universal Commerce Protocol (UCP)",
       "link": "https://developers.googleblog.com/en/under-the-hood-universal-commerce-protocol-ucp/",
       "pubDate": "Sat, 10 Jan 2026 16:00:00 GMT",
@@ -314,27 +340,7 @@
       ],
       "contentSource": "RSS",
       "content": "The new Gemini Interactions API enables stateful, multi-turn AI agent workflows, providing a single interface for raw models and the Gemini Deep Research Agent. It can be integrated with existing ADK systems as a superior inference engine with simplified state management, or used as a transparent remote A2A agent via InteractionsApiTransport, allowing seamless expansion of multi-agent systems with minimal refactoring."
-    },
-    {
-      "title": "Pick up exactly where you left off with Session Management in Gemini CLI",
-      "link": "https://developers.googleblog.com/en/pick-up-exactly-where-you-left-off-with-session-management-in-gemini-cli/",
-      "pubDate": "Tue, 09 Dec 2025 16:00:00 GMT",
-      "isoDate": "2025-12-09T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Pick up exactly where you left off with Session Management in Gemini CLI",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_CLI_-_Session_Browser.original.png",
-          "alt": "Gemini CLI - Session Browser",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Gemini CLI's new automatic **Session Management** (v0.20.0+) saves your conversation history, tool outputs, and reasoning, providing project-specific context. Resume easily using the **Interactive Session Browser** (`/resume`) or command-line flags (`--resume`). This feature ensures you never lose your work state, capturing prompts, tool execution details, and usage stats. Customize history with cleanup policies in `settings.json`."
     }
   ],
-  "lastUpdated": "2026-01-16T10:35:40.466Z"
+  "lastUpdated": "2026-01-17T10:30:48.158Z"
 }
