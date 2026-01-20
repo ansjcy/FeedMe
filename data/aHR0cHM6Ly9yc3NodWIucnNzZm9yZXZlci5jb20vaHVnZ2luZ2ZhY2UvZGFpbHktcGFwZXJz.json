@@ -70,6 +70,19 @@
       "content": "Output diversity is crucial for Large Language Models as it underpins pluralism and creativity. In this work, we reveal that controlling the language used during model thinking-the language of thought-provides a novel and structural source of output diversity. Our preliminary study shows that different thinking languages occupy distinct regions in a model's thinking space. Based on this observation, we study two repeated sampling strategies under multilingual thinking-Single-Language Sampling and Mixed-Language Sampling-and conduct diversity evaluation on outputs that are controlled to be in English, regardless of the thinking language used. Across extensive experiments, we demonstrate that switching the thinking language from English to non-English languages consistently increases output diversity, with a clear and consistent positive correlation such that languages farther from English in the thinking space yield larger gains. We further show that aggregating samples across multiple thinking languages yields additional improvements through compositional effects, and that scaling sampling with linguistic heterogeneity expands the model's diversity ceiling. Finally, we show that these findings translate into practical benefits in pluralistic alignment scenarios, leading to broader coverage of cultural knowledge and value orientations in LLM outputs. Our code is publicly available at https://github.com/iNLP-Lab/Multilingual-LoT-Diversity."
     },
     {
+      "title": "CoDance: An Unbind-Rebind Paradigm for Robust Multi-Subject Animation",
+      "link": "https://arxiv.org/abs/2601.11096",
+      "pubDate": "Fri, 16 Jan 2026 03:53:09 GMT",
+      "isoDate": "2026-01-16T03:53:09.000Z",
+      "creator": "Shuai Tan, Biao Gong, Ke Ma, Yutong Feng, Qiyuan Zhang, Yan Wang, Yujun Shen, Hengshuang Zhao",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "CoDance: An Unbind-Rebind Paradigm for Robust Multi-Subject Animation",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Character image animation is gaining significant importance across various domains, driven by the demand for robust and flexible multi-subject rendering. While existing methods excel in single-person animation, they struggle to handle arbitrary subject counts, diverse character types, and spatial misalignment between the reference image and the driving poses. We attribute these limitations to an overly rigid spatial binding that forces strict pixel-wise alignment between the pose and reference, and an inability to consistently rebind motion to intended subjects. To address these challenges, we propose CoDance, a novel Unbind-Rebind framework that enables the animation of arbitrary subject counts, types, and spatial configurations conditioned on a single, potentially misaligned pose sequence. Specifically, the Unbind module employs a novel pose shift encoder to break the rigid spatial binding between the pose and the reference by introducing stochastic perturbations to both poses and their latent features, thereby compelling the model to learn a location-agnostic motion representation. To ensure precise control and subject association, we then devise a Rebind module, leveraging semantic guidance from text prompts and spatial guidance from subject masks to direct the learned motion to intended characters. Furthermore, to facilitate comprehensive evaluation, we introduce a new multi-subject CoDanceBench. Extensive experiments on CoDanceBench and existing datasets show that CoDance achieves SOTA performance, exhibiting remarkable generalization across diverse subjects and spatial layouts. The code and weights will be open-sourced."
+    },
+    {
       "title": "PhysRVG: Physics-Aware Unified Reinforcement Learning for Video Generative Models",
       "link": "https://arxiv.org/abs/2601.11087",
       "pubDate": "Fri, 16 Jan 2026 03:40:10 GMT",
@@ -81,6 +94,32 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Physical principles are fundamental to realistic visual simulation, but remain a significant oversight in transformer-based video generation. This gap highlights a critical limitation in rendering rigid body motion, a core tenet of classical mechanics. While computer graphics and physics-based simulators can easily model such collisions using Newton formulas, modern pretrain-finetune paradigms discard the concept of object rigidity during pixel-level global denoising. Even perfectly correct mathematical constraints are treated as suboptimal solutions (i.e., conditions) during model optimization in post-training, fundamentally limiting the physical realism of generated videos. Motivated by these considerations, we introduce, for the first time, a physics-aware reinforcement learning paradigm for video generation models that enforces physical collision rules directly in high-dimensional spaces, ensuring the physics knowledge is strictly applied rather than treated as conditions. Subsequently, we extend this paradigm to a unified framework, termed Mimicry-Discovery Cycle (MDcycle), which allows substantial fine-tuning while fully preserving the model's ability to leverage physics-grounded feedback. To validate our approach, we construct new benchmark PhysRVGBench and perform extensive qualitative and quantitative experiments to thoroughly assess its effectiveness."
+    },
+    {
+      "title": "ABC-Bench: Benchmarking Agentic Backend Coding in Real-World Development",
+      "link": "https://arxiv.org/abs/2601.11077",
+      "pubDate": "Fri, 16 Jan 2026 03:23:52 GMT",
+      "isoDate": "2026-01-16T03:23:52.000Z",
+      "creator": "Jie Yang, Honglin Guo, Li Ji, Jiazheng Zhou, Rui Zheng, Zhikai Lei, Shuo Zhang, Zhiheng Xi, Shichun Liu, Yuxin Wang, Bo Wang, Yining Zheng, Tao Gui, Xipeng Qiu",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "ABC-Bench: Benchmarking Agentic Backend Coding in Real-World Development",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "The evolution of Large Language Models (LLMs) into autonomous agents has expanded the scope of AI coding from localized code generation to complex, repository-level, and execution-driven problem solving. However, current benchmarks predominantly evaluate code logic in static contexts, neglecting the dynamic, full-process requirements of real-world engineering, particularly in backend development which demands rigorous environment configuration and service deployment. To address this gap, we introduce ABC-Bench, a benchmark explicitly designed to evaluate agentic backend coding within a realistic, executable workflow. Using a scalable automated pipeline, we curated 224 practical tasks spanning 8 languages and 19 frameworks from open-source repositories. Distinct from previous evaluations, ABC-Bench require the agents to manage the entire development lifecycle from repository exploration to instantiating containerized services and pass the external end-to-end API tests. Our extensive evaluation reveals that even state-of-the-art models struggle to deliver reliable performance on these holistic tasks, highlighting a substantial disparity between current model capabilities and the demands of practical backend engineering. Our code is available at https://github.com/OpenMOSS/ABC-Bench."
+    },
+    {
+      "title": "Spurious Rewards Paradox: Mechanistically Understanding How RLVR Activates Memorization Shortcuts in LLMs",
+      "link": "https://arxiv.org/abs/2601.11061",
+      "pubDate": "Fri, 16 Jan 2026 02:55:38 GMT",
+      "isoDate": "2026-01-16T02:55:38.000Z",
+      "creator": "Lecheng Yan, Ruizhe Li, Guanhua Chen, Qing Li, Jiahui Geng, Wenxi Li, Vincent Wang, Chris Lee",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Spurious Rewards Paradox: Mechanistically Understanding How RLVR Activates Memorization Shortcuts in LLMs",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Reinforcement Learning with Verifiable Rewards (RLVR) is highly effective for enhancing LLM reasoning, yet recent evidence shows models like Qwen 2.5 achieve significant gains even with spurious or incorrect rewards. We investigate this phenomenon and identify a \"Perplexity Paradox\": spurious RLVR triggers a divergence where answer-token perplexity drops while prompt-side coherence degrades, suggesting the model is bypassing reasoning in favor of memorization. Using Path Patching, Logit Lens, JSD analysis, and Neural Differential Equations, we uncover a hidden Anchor-Adapter circuit that facilitates this shortcut. We localize a Functional Anchor in the middle layers (L18-20) that triggers the retrieval of memorized solutions, followed by Structural Adapters in later layers (L21+) that transform representations to accommodate the shortcut signal. Finally, we demonstrate that scaling specific MLP keys within this circuit allows for bidirectional causal steering-artificially amplifying or suppressing contamination-driven performance. Our results provide a mechanistic roadmap for identifying and mitigating data contamination in RLVR-tuned models. Code is available at https://github.com/idwts/How-RLVR-Activates-Memorization-Shortcuts."
     },
     {
       "title": "BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search",
@@ -224,46 +263,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "State-of-the-art video generative models produce promising visual content yet often violate basic physics principles, limiting their utility. While some attribute this deficiency to insufficient physics understanding from pre-training, we find that the shortfall in physics plausibility also stems from suboptimal inference strategies. We therefore introduce WMReward and treat improving physics plausibility of video generation as an inference-time alignment problem. In particular, we leverage the strong physics prior of a latent world model (here, VJEPA-2) as a reward to search and steer multiple candidate denoising trajectories, enabling scaling test-time compute for better generation performance. Empirically, our approach substantially improves physics plausibility across image-conditioned, multiframe-conditioned, and text-conditioned generation settings, with validation from human preference study. Notably, in the ICCV 2025 Perception Test PhysicsIQ Challenge, we achieve a final score of 62.64%, winning first place and outperforming the previous state of the art by 7.42%. Our work demonstrates the viability of using latent world models to improve physics plausibility of video generation, beyond this specific instantiation or parameterization."
-    },
-    {
-      "title": "HeartMuLa: A Family of Open Sourced Music Foundation Models",
-      "link": "https://arxiv.org/abs/2601.10547",
-      "pubDate": "Thu, 15 Jan 2026 11:14:25 GMT",
-      "isoDate": "2026-01-15T11:14:25.000Z",
-      "creator": "Dongchao Yang, Yuxin Xie, Yuguo Yin, Zheyu Wang, Xiaoyu Yi, Gongxi Zhu, Xiaolong Weng, Zihan Xiong, Yingzhe Ma, Dading Cong, Jingliang Liu, Zihang Huang, Jinghan Ru, Rongjie Huang, Haoran Wan, Peixu Wang, Kuoxi Yu, Helin Wang, Liming Liang, Xianwei Zhuang, Yuanyuan Wang, Haohan Guo, Junjie Cao, Zeqian Ju, Songxiang Liu, Yuewen Cao, Heming Weng, Yuexian Zou",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "HeartMuLa: A Family of Open Sourced Music Foundation Models",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "We present a family of open-source Music Foundation Models designed to advance large-scale music understanding and generation across diverse tasks and modalities. Our framework consists of four major components: (1) HeartCLAP, an audio-text alignment model; (2) HeartTranscriptor, a robust lyric recognition model optimized for real-world music scenarios; and (3) HeartCodec, a low-frame-rate (12.5 Hz) yet high-fidelity music codec tokenizer that captures long-range musical structure while preserving fine-grained acoustic details and enabling efficient autoregressive modeling; (4) HeartMuLa, an LLM-based song generation model capable of synthesizing high-fidelity music under rich, user-controllable conditions (e.g., textual style descriptions, lyrics, and reference audio). In addition, it provides two specialized modes: (i) fine-grained musical attribute control, which allows users to specify the style of different song sections (e.g., intro, verse, chorus) using natural language prompts; and (ii) short, engaging music generation, which is suitable as background music for short videos. Lastly, HeartMuLa improves significantly when scaled to 7B parameters. For the first time, we show that a Suno-level, commercial-grade system can be reproduced using academic-scale data and GPU resources. We expect these foundation models to serve as strong baselines for future research and to facilitate practical applications in multimodal content production."
-    },
-    {
-      "title": "A Safety Report on GPT-5.2, Gemini 3 Pro, Qwen3-VL, Doubao 1.8, Grok 4.1 Fast, Nano Banana Pro, and Seedream 4.5",
-      "link": "https://arxiv.org/abs/2601.10527",
-      "pubDate": "Thu, 15 Jan 2026 10:52:52 GMT",
-      "isoDate": "2026-01-15T10:52:52.000Z",
-      "creator": "Xingjun Ma, Yixu Wang, Hengyuan Xu, Yutao Wu, Yifan Ding, Yunhan Zhao, Zilong Wang, Jiabin Hua, Ming Wen, Jianan Liu, Ranjie Duan, Yifeng Gao, Yingshui Tan, Yunhao Chen, Hui Xue, Xin Wang, Wei Cheng, Jingjing Chen, Zuxuan Wu, Bo Li, Yu-Gang Jiang",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "A Safety Report on GPT-5.2, Gemini 3 Pro, Qwen3-VL, Doubao 1.8, Grok 4.1 Fast, Nano Banana Pro, and Seedream 4.5",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "The rapid evolution of Large Language Models (LLMs) and Multimodal Large Language Models (MLLMs) has produced substantial gains in reasoning, perception, and generative capability across language and vision. However, whether these advances yield commensurate improvements in safety remains unclear, in part due to fragmented evaluation practices limited to single modalities or threat models. In this report, we present an integrated safety evaluation of 7 frontier models: GPT-5.2, Gemini 3 Pro, Qwen3-VL, Doubao 1.8, Grok 4.1 Fast, Nano Banana Pro, and Seedream 4.5. We evaluate each model across language, vision-language, and image generation settings using a unified protocol that integrates benchmark evaluation, adversarial evaluation, multilingual evaluation, and compliance evaluation. Aggregating our evaluations into safety leaderboards and model safety profiles across multiple evaluation modes reveals a sharply heterogeneous safety landscape. While GPT-5.2 demonstrates consistently strong and balanced safety performance across evaluations, other models exhibit pronounced trade-offs among benchmark safety, adversarial alignment, multilingual generalization, and regulatory compliance. Both language and vision-language modalities show significant vulnerability under adversarial evaluation, with all models degrading substantially despite strong results on standard benchmarks. Text-to-image models achieve relatively stronger alignment in regulated visual risk categories, yet remain brittle under adversarial or semantically ambiguous prompts. Overall, these results show that safety in frontier models is inherently multidimensional--shaped by modality, language, and evaluation scheme, underscoring the need for standardized safety evaluations to accurately assess real-world risk and guide responsible model development and deployment."
-    },
-    {
-      "title": "Urban Socio-Semantic Segmentation with Vision-Language Reasoning",
-      "link": "https://arxiv.org/abs/2601.10477",
-      "pubDate": "Thu, 15 Jan 2026 10:00:36 GMT",
-      "isoDate": "2026-01-15T10:00:36.000Z",
-      "creator": "Yu Wang, Yi Wang, Rui Dai, Yujie Wang, Kaikui Liu, Xiangxiang Chu, Yansheng Li",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Urban Socio-Semantic Segmentation with Vision-Language Reasoning",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "As hubs of human activity, urban surfaces consist of a wealth of semantic entities. Segmenting these various entities from satellite imagery is crucial for a range of downstream applications. Current advanced segmentation models can reliably segment entities defined by physical attributes (e.g., buildings, water bodies) but still struggle with socially defined categories (e.g., schools, parks). In this work, we achieve socio-semantic segmentation by vision-language model reasoning. To facilitate this, we introduce the Urban Socio-Semantic Segmentation dataset named SocioSeg, a new resource comprising satellite imagery, digital maps, and pixel-level labels of social semantic entities organized in a hierarchical structure. Additionally, we propose a novel vision-language reasoning framework called SocioReasoner that simulates the human process of identifying and annotating social semantic entities via cross-modal recognition and multi-stage reasoning. We employ reinforcement learning to optimize this non-differentiable process and elicit the reasoning capabilities of the vision-language model. Experiments demonstrate our approach's gains over state-of-the-art models and strong zero-shot generalization. Our dataset and code are available in https://github.com/AMAP-ML/SocioReasoner."
     }
   ],
-  "lastUpdated": "2026-01-19T09:45:52.427Z"
+  "lastUpdated": "2026-01-20T09:42:02.924Z"
 }
