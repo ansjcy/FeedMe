@@ -5,6 +5,81 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "AI-supported vulnerability triage with the GitHub Security Lab Taskflow Agent",
+      "link": "https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/",
+      "pubDate": "Tue, 20 Jan 2026 19:52:50 +0000",
+      "isoDate": "2026-01-20T19:52:50.000Z",
+      "creator": "Man Yue Mo",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "AI-supported vulnerability triage with the GitHub Security Lab Taskflow Agent",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Learn how we are using the newly released GitHub Security Lab Taskflow Agent to triage categories of vulnerabilities in GitHub Actions and JavaScript projects.</p>\n<p>The post <a href=\"https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/\">AI-supported vulnerability triage with the GitHub Security Lab Taskflow Agent</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Context windows, Plan agent, and TDD: What I learned building a countdown app with GitHub Copilot",
+      "link": "https://github.blog/developer-skills/application-development/context-windows-plan-agent-and-tdd-what-i-learned-building-a-countdown-app-with-github-copilot/",
+      "pubDate": "Tue, 20 Jan 2026 17:00:00 +0000",
+      "isoDate": "2026-01-20T17:00:00.000Z",
+      "creator": "Chris Reddington",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Context windows, Plan agent, and TDD: What I learned building a countdown app with GitHub Copilot",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/01/setup-info.png?resize=1024%2C314",
+          "alt": "Screenshot of a conversation with Copilot Chat in Visual Studio Code. Copilot has identified that the user wants to create a new workspace for a New Year countdown app using Vite, TypeScript and Tailwind CSS v4. It's going to to use the create_new_workspace tool to create the new workspace.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/01/timezone-selector.png?resize=1024%2C406",
+          "alt": "Screenshot of the input box for Copilot Chat in Visual Studio Code. The input box contains a prompt with some requirements that configure an interactive timezone selector either like a time machine dial, or a mini world map.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/01/vis-concept.png?resize=1024%2C455",
+          "alt": ": Screenshot of Copilot Chat in Visual Studio Code. The agent selector shows \"UI Performance Specialist\", with a prompt asking the agent to review the plan and to provide implementation details.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/01/write-tests.png?resize=1024%2C380",
+          "alt": "Screenshot of Copilot Chat in Visual Studio Code showing GitHub Copilot following a TDD cycle; failing tests first, then implementation.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/01/timezones-ts.png?resize=1024%2C398",
+          "alt": "Screenshot of Copilot Chat in Visual Studio Code showing GitHub Copilot making implementation changes, running tests and identifying a test failure. Copilot iterates based on the failure, and re-runs the tests to obtain a green set of tests.",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/01/world-map.png?resize=1024%2C719",
+          "alt": "Screenshot from the countdown app. It has several dots placed for locations across the world, but the world map has rendered as a series of abstract shapes to represent islands, instead of a true version of the world map.",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/01/toggle.png?resize=1024%2C381",
+          "alt": "Screenshot of Copilot Chat in Visual Studio Code showing an interaction where Copilot asks clarifying questions to confirm the requirements.",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/01/fireworks.png?resize=1024%2C640",
+          "alt": "Screenshot from the countdown app, showing the timer has reached 0 and fireworks are being shown on screen to celebrate.",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Learn how I managed context to keep Copilot focused, used the Plan agent to sharpen vague requirements, and required Test Driven Development practices to catch bugs before users.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/application-development/context-windows-plan-agent-and-tdd-what-i-learned-building-a-countdown-app-with-github-copilot/\">Context windows, Plan agent, and TDD: What I learned building a countdown app with GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Building an agentic memory system for GitHub Copilot",
       "link": "https://github.blog/ai-and-ml/github-copilot/building-an-agentic-memory-system-for-github-copilot/",
       "pubDate": "Thu, 15 Jan 2026 21:31:10 +0000",
@@ -403,64 +478,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>AI is settling the “typed vs. untyped” debate by turning type systems into the safety net for code you didn’t write yourself.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/\">Why AI is pushing developers toward typed languages</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Agentic AI, MCP, and spec-driven development: Top blog posts of 2025",
-      "link": "https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/",
-      "pubDate": "Tue, 30 Dec 2025 17:20:10 +0000",
-      "isoDate": "2025-12-30T17:20:10.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Agentic AI, MCP, and spec-driven development: Top blog posts of 2025",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/189763197?v=4&s=200",
-          "alt": "Natalie Guevara",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Explore the GitHub Blog’s top posts covering the biggest software development topics of the year.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/\">Agentic AI, MCP, and spec-driven development: Top blog posts of 2025</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Bugs that survive the heat of continuous fuzzing",
-      "link": "https://github.blog/security/vulnerability-research/bugs-that-survive-the-heat-of-continuous-fuzzing/",
-      "pubDate": "Mon, 29 Dec 2025 22:01:14 +0000",
-      "isoDate": "2025-12-29T22:01:14.000Z",
-      "creator": "Antonio Morales",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Bugs that survive the heat of continuous fuzzing",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Learn why some long-enrolled OSS-Fuzz projects still contain vulnerabilities and how you can find them.</p>\n<p>The post <a href=\"https://github.blog/security/vulnerability-research/bugs-that-survive-the-heat-of-continuous-fuzzing/\">Bugs that survive the heat of continuous fuzzing</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-01-19T04:58:43.482Z"
+  "lastUpdated": "2026-01-21T04:52:46.859Z"
 }
