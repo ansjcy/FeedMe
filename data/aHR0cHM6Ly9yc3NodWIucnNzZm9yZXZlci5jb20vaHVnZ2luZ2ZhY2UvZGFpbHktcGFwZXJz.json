@@ -70,6 +70,19 @@
       "content": "Recent video generation models demonstrate remarkable ability to capture complex physical interactions and scene evolution over time. To leverage their spatiotemporal priors, robotics works have adapted video models for policy learning but introduce complexity by requiring multiple stages of post-training and new architectural components for action generation. In this work, we introduce Cosmos Policy, a simple approach for adapting a large pretrained video model (Cosmos-Predict2) into an effective robot policy through a single stage of post-training on the robot demonstration data collected on the target platform, with no architectural modifications. Cosmos Policy learns to directly generate robot actions encoded as latent frames within the video model's latent diffusion process, harnessing the model's pretrained priors and core learning algorithm to capture complex action distributions. Additionally, Cosmos Policy generates future state images and values (expected cumulative rewards), which are similarly encoded as latent frames, enabling test-time planning of action trajectories with higher likelihood of success. In our evaluations, Cosmos Policy achieves state-of-the-art performance on the LIBERO and RoboCasa simulation benchmarks (98.5% and 67.1% average success rates, respectively) and the highest average score in challenging real-world bimanual manipulation tasks, outperforming strong diffusion policies trained from scratch, video model-based policies, and state-of-the-art vision-language-action models fine-tuned on the same robot demonstrations. Furthermore, given policy rollout data, Cosmos Policy can learn from experience to refine its world model and value function and leverage model-based planning to achieve even higher success rates in challenging tasks. We release code, models, and training data at https://research.nvidia.com/labs/dir/cosmos-policy/"
     },
     {
+      "title": "ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion",
+      "link": "https://arxiv.org/abs/2601.16148",
+      "pubDate": "Thu, 22 Jan 2026 12:41:13 GMT",
+      "isoDate": "2026-01-22T12:41:13.000Z",
+      "creator": "Remy Sabathier, David Novotny, Niloy J. Mitra, Tom Monnier",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Generating animated 3D objects is at the heart of many applications, yet most advanced works are typically difficult to apply in practice because of their limited setup, their long runtime, or their limited quality. We introduce ActionMesh, a generative model that predicts production-ready 3D meshes \"in action\" in a feed-forward manner. Drawing inspiration from early video models, our key insight is to modify existing 3D diffusion models to include a temporal axis, resulting in a framework we dubbed \"temporal 3D diffusion\". Specifically, we first adapt the 3D diffusion stage to generate a sequence of synchronized latents representing time-varying and independent 3D shapes. Second, we design a temporal 3D autoencoder that translates a sequence of independent shapes into the corresponding deformations of a pre-defined reference shape, allowing us to build an animation. Combining these two components, ActionMesh generates animated 3D meshes from different inputs like a monocular video, a text description, or even a 3D mesh with a text prompt describing its animation. Besides, compared to previous approaches, our method is fast and produces results that are rig-free and topology consistent, hence enabling rapid iteration and seamless applications like texturing and retargeting. We evaluate our model on standard video-to-4D benchmarks (Consistent4D, Objaverse) and report state-of-the-art performances on both geometric accuracy and temporal consistency, demonstrating that our model can deliver animated 3D meshes with unprecedented speed and quality."
+    },
+    {
       "title": "LLM Prompt Evaluation for Educational Applications",
       "link": "https://arxiv.org/abs/2601.16134",
       "pubDate": "Thu, 22 Jan 2026 12:31:25 GMT",
@@ -135,6 +148,32 @@
       "content": "Diffusion-based language models (DLLMs) offer non-sequential, block-wise generation and richer data reuse compared to autoregressive (AR) models, but existing code DLLMs still lag behind strong AR baselines under comparable budgets. We revisit this setting in a controlled study and introduce Stable-DiffCoder, a block diffusion code model that reuses the Seed-Coder architecture, data, and training pipeline. To enable efficient knowledge learning and stable training, we incorporate a block diffusion continual pretraining (CPT) stage enhanced by a tailored warmup and block-wise clipped noise schedule. Under the same data and architecture, Stable-DiffCoder overall outperforms its AR counterpart on a broad suite of code benchmarks. Moreover, relying only on the CPT and supervised fine-tuning stages, Stable-DiffCoder achieves stronger performance than a wide range of \\~8B ARs and DLLMs, demonstrating that diffusion-based training can improve code modeling quality beyond AR training alone. Moreover, diffusion-based any-order modeling improves structured code modeling for editing and reasoning, and through data augmentation, benefits low-resource coding languages."
     },
     {
+      "title": "EvoCUA: Evolving Computer Use Agents via Learning from Scalable Synthetic Experience",
+      "link": "https://arxiv.org/abs/2601.15876",
+      "pubDate": "Thu, 22 Jan 2026 06:36:43 GMT",
+      "isoDate": "2026-01-22T06:36:43.000Z",
+      "creator": "Taofeng Xue, Chong Peng, Mianqiu Huang, Linsen Guo, Tiancheng Han, Haozhe Wang, Jianing Wang, Xiaocheng Zhang, Xin Yang, Dengchang Zhao, Jinrui Ding, Xiandi Ma, Yuchen Xie, Peng Pei, Xunliang Cai, Xipeng Qiu",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "EvoCUA: Evolving Computer Use Agents via Learning from Scalable Synthetic Experience",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "The development of native computer-use agents (CUA) represents a significant leap in multimodal AI. However, their potential is currently bottlenecked by the constraints of static data scaling. Existing paradigms relying primarily on passive imitation of static datasets struggle to capture the intricate causal dynamics inherent in long-horizon computer tasks. In this work, we introduce EvoCUA, a native computer use agentic model. Unlike static imitation, EvoCUA integrates data generation and policy optimization into a self-sustaining evolutionary cycle. To mitigate data scarcity, we develop a verifiable synthesis engine that autonomously generates diverse tasks coupled with executable validators. To enable large-scale experience acquisition, we design a scalable infrastructure orchestrating tens of thousands of asynchronous sandbox rollouts. Building on these massive trajectories, we propose an iterative evolving learning strategy to efficiently internalize this experience. This mechanism dynamically regulates policy updates by identifying capability boundaries -- reinforcing successful routines while transforming failure trajectories into rich supervision through error analysis and self-correction. Empirical evaluations on the OSWorld benchmark demonstrate that EvoCUA achieves a success rate of 56.7%, establishing a new open-source state-of-the-art. Notably, EvoCUA significantly outperforms the previous best open-source model, OpenCUA-72B (45.0%), and surpasses leading closed-weights models such as UI-TARS-2 (53.1%). Crucially, our results underscore the generalizability of this approach: the evolving paradigm driven by learning from experience yields consistent performance gains across foundation models of varying scales, establishing a robust and scalable path for advancing native agent capabilities."
+    },
+    {
+      "title": "Agentic Confidence Calibration",
+      "link": "https://arxiv.org/abs/2601.15778",
+      "pubDate": "Thu, 22 Jan 2026 04:08:25 GMT",
+      "isoDate": "2026-01-22T04:08:25.000Z",
+      "creator": "Jiaxin Zhang, Caiming Xiong, Chien-Sheng Wu",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Agentic Confidence Calibration",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "AI agents are rapidly advancing from passive language models to autonomous systems executing complex, multi-step tasks. Yet their overconfidence in failure remains a fundamental barrier to deployment in high-stakes settings. Existing calibration methods, built for static single-turn outputs, cannot address the unique challenges of agentic systems, such as compounding errors along trajectories, uncertainty from external tools, and opaque failure modes. To address these challenges, we introduce, for the first time, the problem of Agentic Confidence Calibration and propose Holistic Trajectory Calibration (HTC), a novel diagnostic framework that extracts rich process-level features ranging from macro dynamics to micro stability across an agent's entire trajectory. Powered by a simple, interpretable model, HTC consistently surpasses strong baselines in both calibration and discrimination, across eight benchmarks, multiple LLMs, and diverse agent frameworks. Beyond performance, HTC delivers three essential advances: it provides interpretability by revealing the signals behind failure, enables transferability by applying across domains without retraining, and achieves generalization through a General Agent Calibrator (GAC) that achieves the best calibration (lowest ECE) on the out-of-domain GAIA benchmark. Together, these contributions establish a new process-centric paradigm for confidence calibration, providing a framework for diagnosing and enhancing the reliability of AI agents."
+    },
+    {
       "title": "Towards Automated Kernel Generation in the Era of LLMs",
       "link": "https://arxiv.org/abs/2601.15727",
       "pubDate": "Thu, 22 Jan 2026 02:53:52 GMT",
@@ -146,6 +185,32 @@
       "images": [],
       "contentSource": "RSS",
       "content": "The performance of modern AI systems is fundamentally constrained by the quality of their underlying kernels, which translate high-level algorithmic semantics into low-level hardware operations. Achieving near-optimal kernels requires expert-level understanding of hardware architectures and programming models, making kernel engineering a critical but notoriously time-consuming and non-scalable process. Recent advances in large language models (LLMs) and LLM-based agents have opened new possibilities for automating kernel generation and optimization. LLMs are well-suited to compress expert-level kernel knowledge that is difficult to formalize, while agentic systems further enable scalable optimization by casting kernel development as an iterative, feedback-driven loop. Rapid progress has been made in this area. However, the field remains fragmented, lacking a systematic perspective for LLM-driven kernel generation. This survey addresses this gap by providing a structured overview of existing approaches, spanning LLM-based approaches and agentic optimization workflows, and systematically compiling the datasets and benchmarks that underpin learning and evaluation in this domain. Moreover, key open challenges and future research directions are further outlined, aiming to establish a comprehensive reference for the next generation of automated kernel optimization. To keep track of this field, we maintain an open-source GitHub repository at https://github.com/flagos-ai/awesome-LLM-driven-kernel-generation."
+    },
+    {
+      "title": "Agentic Uncertainty Quantification",
+      "link": "https://arxiv.org/abs/2601.15703",
+      "pubDate": "Thu, 22 Jan 2026 02:16:26 GMT",
+      "isoDate": "2026-01-22T02:16:26.000Z",
+      "creator": "Jiaxin Zhang, Prafulla Kumar Choubey, Kung-Hsiang Huang, Caiming Xiong, Chien-Sheng Wu",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Agentic Uncertainty Quantification",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Although AI agents have demonstrated impressive capabilities in long-horizon reasoning, their reliability is severely hampered by the ``Spiral of Hallucination,'' where early epistemic errors propagate irreversibly. Existing methods face a dilemma: uncertainty quantification (UQ) methods typically act as passive sensors, only diagnosing risks without addressing them, while self-reflection mechanisms suffer from continuous or aimless corrections. To bridge this gap, we propose a unified Dual-Process Agentic UQ (AUQ) framework that transforms verbalized uncertainty into active, bi-directional control signals. Our architecture comprises two complementary mechanisms: System 1 (Uncertainty-Aware Memory, UAM), which implicitly propagates verbalized confidence and semantic explanations to prevent blind decision-making; and System 2 (Uncertainty-Aware Reflection, UAR), which utilizes these explanations as rational cues to trigger targeted inference-time resolution only when necessary. This enables the agent to balance efficient execution and deep deliberation dynamically. Extensive experiments on closed-loop benchmarks and open-ended deep research tasks demonstrate that our training-free approach achieves superior performance and trajectory-level calibration. We believe this principled framework AUQ represents a significant step towards reliable agents."
+    },
+    {
+      "title": "From Passive Metric to Active Signal: The Evolving Role of Uncertainty Quantification in Large Language Models",
+      "link": "https://arxiv.org/abs/2601.15690",
+      "pubDate": "Thu, 22 Jan 2026 01:21:31 GMT",
+      "isoDate": "2026-01-22T01:21:31.000Z",
+      "creator": "Jiaxin Zhang, Wendi Cui, Zhuohang Li, Lifu Huang, Bradley Malin, Caiming Xiong, Chien-Sheng Wu",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "From Passive Metric to Active Signal: The Evolving Role of Uncertainty Quantification in Large Language Models",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "While Large Language Models (LLMs) show remarkable capabilities, their unreliability remains a critical barrier to deployment in high-stakes domains. This survey charts a functional evolution in addressing this challenge: the evolution of uncertainty from a passive diagnostic metric to an active control signal guiding real-time model behavior. We demonstrate how uncertainty is leveraged as an active control signal across three frontiers: in advanced reasoning to optimize computation and trigger self-correction; in autonomous agents to govern metacognitive decisions about tool use and information seeking; and in reinforcement learning to mitigate reward hacking and enable self-improvement via intrinsic rewards. By grounding these advancements in emerging theoretical frameworks like Bayesian methods and Conformal Prediction, we provide a unified perspective on this transformative trend. This survey provides a comprehensive overview, critical analysis, and practical design patterns, arguing that mastering the new trend of uncertainty is essential for building the next generation of scalable, reliable, and trustworthy AI."
     },
     {
       "title": "Qwen3-TTS Technical Report",
@@ -198,72 +263,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Video generation models have significantly advanced embodied intelligence, unlocking new possibilities for generating diverse robot data that capture perception, reasoning, and action in the physical world. However, synthesizing high-quality videos that accurately reflect real-world robotic interactions remains challenging, and the lack of a standardized benchmark limits fair comparisons and progress. To address this gap, we introduce a comprehensive robotics benchmark, RBench, designed to evaluate robot-oriented video generation across five task domains and four distinct embodiments. It assesses both task-level correctness and visual fidelity through reproducible sub-metrics, including structural consistency, physical plausibility, and action completeness. Evaluation of 25 representative models highlights significant deficiencies in generating physically realistic robot behaviors. Furthermore, the benchmark achieves a Spearman correlation coefficient of 0.96 with human evaluations, validating its effectiveness. While RBench provides the necessary lens to identify these deficiencies, achieving physical realism requires moving beyond evaluation to address the critical shortage of high-quality training data. Driven by these insights, we introduce a refined four-stage data pipeline, resulting in RoVid-X, the largest open-source robotic dataset for video generation with 4 million annotated video clips, covering thousands of tasks and enriched with comprehensive physical property annotations. Collectively, this synergistic ecosystem of evaluation and data establishes a robust foundation for rigorous assessment and scalable training of video models, accelerating the evolution of embodied AI toward general intelligence."
-    },
-    {
-      "title": "OpenVision 3: A Family of Unified Visual Encoder for Both Understanding and Generation",
-      "link": "https://arxiv.org/abs/2601.15369",
-      "pubDate": "Wed, 21 Jan 2026 13:47:12 GMT",
-      "isoDate": "2026-01-21T13:47:12.000Z",
-      "creator": "Letian Zhang, Sucheng Ren, Yanqing Liu, Xianhang Li, Zeyu Wang, Yuyin Zhou, Huaxiu Yao, Zeyu Zheng, Weili Nie, Guilin Liu, Zhiding Yu, Cihang Xie",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "OpenVision 3: A Family of Unified Visual Encoder for Both Understanding and Generation",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "This paper presents a family of advanced vision encoder, named OpenVision 3, that learns a single, unified visual representation that can serve both image understanding and image generation. Our core architecture is simple: we feed VAE-compressed image latents to a ViT encoder and train its output to support two complementary roles. First, the encoder output is passed to the ViT-VAE decoder to reconstruct the original image, encouraging the representation to capture generative structure. Second, the same representation is optimized with contrastive learning and image-captioning objectives, strengthening semantic features. By jointly optimizing reconstruction- and semantics-driven signals in a shared latent space, the encoder learns representations that synergize and generalize well across both regimes. We validate this unified design through extensive downstream evaluations with the encoder frozen. For multimodal understanding, we plug the encoder into the LLaVA-1.5 framework: it performs comparably with a standard CLIP vision encoder (e.g., 62.4 vs 62.2 on SeedBench, and 83.7 vs 82.9 on POPE). For generation, we test it under the RAE framework: ours substantially surpasses the standard CLIP-based encoder (e.g., gFID: 1.89 vs 2.54 on ImageNet). We hope this work can spur future research on unified modeling."
-    },
-    {
-      "title": "BayesianVLA: Bayesian Decomposition of Vision Language Action Models via Latent Action Queries",
-      "link": "https://arxiv.org/abs/2601.15197",
-      "pubDate": "Wed, 21 Jan 2026 12:15:22 GMT",
-      "isoDate": "2026-01-21T12:15:22.000Z",
-      "creator": "Shijie Lian, Bin Yu, Xiaopeng Lin, Laurence T. Yang, Zhaolong Shen, Changti Wu, Yuzhuo Miao, Cong Huang, Kai Chen",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "BayesianVLA: Bayesian Decomposition of Vision Language Action Models via Latent Action Queries",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Vision-Language-Action (VLA) models have shown promise in robot manipulation but often struggle to generalize to new instructions or complex multi-task scenarios. We identify a critical pathology in current training paradigms where goal-driven data collection creates a dataset bias. In such datasets, language instructions are highly predictable from visual observations alone, causing the conditional mutual information between instructions and actions to vanish, a phenomenon we term Information Collapse. Consequently, models degenerate into vision-only policies that ignore language constraints and fail in out-of-distribution (OOD) settings. To address this, we propose BayesianVLA, a novel framework that enforces instruction following via Bayesian decomposition. By introducing learnable Latent Action Queries, we construct a dual-branch architecture to estimate both a vision-only prior p(a mid v) and a language-conditioned posterior π(a mid v, ell). We then optimize the policy to maximize the conditional Pointwise Mutual Information (PMI) between actions and instructions. This objective effectively penalizes the vision shortcut and rewards actions that explicitly explain the language command. Without requiring new data, BayesianVLA significantly improves generalization. Extensive experiments across on SimplerEnv and RoboCasa demonstrate substantial gains, including an 11.3% improvement on the challenging OOD SimplerEnv benchmark, validating the ability of our approach to robustly ground language in action."
-    },
-    {
-      "title": "The Flexibility Trap: Why Arbitrary Order Limits Reasoning Potential in Diffusion Language Models",
-      "link": "https://arxiv.org/abs/2601.15165",
-      "pubDate": "Wed, 21 Jan 2026 11:41:58 GMT",
-      "isoDate": "2026-01-21T11:41:58.000Z",
-      "creator": "Zanlin Ni, Shenzhi Wang, Yang Yue, Tianyu Yu, Weilin Zhao, Yeguo Hua, Tianyi Chen, Jun Song, Cheng Yu, Bo Zheng, Gao Huang",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "The Flexibility Trap: Why Arbitrary Order Limits Reasoning Potential in Diffusion Language Models",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Diffusion Large Language Models (dLLMs) break the rigid left-to-right constraint of traditional LLMs, enabling token generation in arbitrary orders. Intuitively, this flexibility implies a solution space that strictly supersets the fixed autoregressive trajectory, theoretically unlocking superior reasoning potential for general tasks like mathematics and coding. Consequently, numerous works have leveraged reinforcement learning (RL) to elicit the reasoning capability of dLLMs. In this paper, we reveal a counter-intuitive reality: arbitrary order generation, in its current form, narrows rather than expands the reasoning boundary of dLLMs. We find that dLLMs tend to exploit this order flexibility to bypass high-uncertainty tokens that are crucial for exploration, leading to a premature collapse of the solution space. This observation challenges the premise of existing RL approaches for dLLMs, where considerable complexities, such as handling combinatorial trajectories and intractable likelihoods, are often devoted to preserving this flexibility. We demonstrate that effective reasoning is better elicited by intentionally forgoing arbitrary order and applying standard Group Relative Policy Optimization (GRPO) instead. Our approach, JustGRPO, is minimalist yet surprisingly effective (e.g., 89.1% accuracy on GSM8K) while fully retaining the parallel decoding ability of dLLMs. Project page: https://nzl-thu.github.io/the-flexibility-trap"
-    },
-    {
-      "title": "Facilitating Proactive and Reactive Guidance for Decision Making on the Web: A Design Probe with WebSeek",
-      "link": "https://arxiv.org/abs/2601.15100",
-      "pubDate": "Wed, 21 Jan 2026 10:38:57 GMT",
-      "isoDate": "2026-01-21T10:38:57.000Z",
-      "creator": "Yanwei Huang, Arpit Narechania",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Facilitating Proactive and Reactive Guidance for Decision Making on the Web: A Design Probe with WebSeek",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Web AI agents such as ChatGPT Agent and GenSpark are increasingly used for routine web-based tasks, yet they still rely on text-based input prompts, lack proactive detection of user intent, and offer no support for interactive data analysis and decision making. We present WebSeek, a mixed-initiative browser extension that enables users to discover and extract information from webpages to then flexibly build, transform, and refine tangible data artifacts-such as tables, lists, and visualizations-all within an interactive canvas. Within this environment, users can perform analysis-including data transformations such as joining tables or creating visualizations-while an in-built AI both proactively offers context-aware guidance and automation, and reactively responds to explicit user requests. An exploratory user study (N=15) with WebSeek as a probe reveals participants' diverse analysis strategies, underscoring their desire for transparency and control during human-AI collaboration."
-    },
-    {
-      "title": "The Responsibility Vacuum: Organizational Failure in Scaled Agent Systems",
-      "link": "https://arxiv.org/abs/2601.15059",
-      "pubDate": "Wed, 21 Jan 2026 10:05:27 GMT",
-      "isoDate": "2026-01-21T10:05:27.000Z",
-      "creator": "Oleg Romanchuk, Roman Bondar",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "The Responsibility Vacuum: Organizational Failure in Scaled Agent Systems",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Modern CI/CD pipelines integrating agent-generated code exhibit a structural failure in responsibility attribution. Decisions are executed through formally correct approval processes, yet no entity possesses both the authority to approve those decisions and the epistemic capacity to meaningfully understand their basis.   We define this condition as responsibility vacuum: a state in which decisions occur, but responsibility cannot be attributed because authority and verification capacity do not coincide. We show that this is not a process deviation or technical defect, but a structural property of deployments where decision generation throughput exceeds bounded human verification capacity.   We identify a scaling limit under standard deployment assumptions, including parallel agent generation, CI-based validation, and individualized human approval gates. Beyond a throughput threshold, verification ceases to function as a decision criterion and is replaced by ritualized approval based on proxy signals. Personalized responsibility becomes structurally unattainable in this regime.   We further characterize a CI amplification dynamic, whereby increasing automated validation coverage raises proxy signal density without restoring human capacity. Under fixed time and attention constraints, this accelerates cognitive offloading in the broad sense and widens the gap between formal approval and epistemic understanding. Additional automation therefore amplifies, rather than mitigates, the responsibility vacuum.   We conclude that unless organizations explicitly redesign decision boundaries or reassign responsibility away from individual decisions toward batch- or system-level ownership, responsibility vacuum remains an invisible but persistent failure mode in scaled agent deployments."
     }
   ],
-  "lastUpdated": "2026-01-23T09:40:17.259Z"
+  "lastUpdated": "2026-01-24T09:30:44.660Z"
 }
