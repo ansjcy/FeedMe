@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "AI that talks to itself learns faster and smarter",
+      "link": "https://www.sciencedaily.com/releases/2026/01/260127112130.htm",
+      "pubDate": "Wed, 28 Jan 2026 03:47:06 EST",
+      "isoDate": "2026-01-28T08:47:06.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "AI that talks to itself learns faster and smarter",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "AI may learn better when it’s allowed to talk to itself. Researchers showed that internal “mumbling,” combined with short-term memory, helps AI adapt to new tasks, switch goals, and handle complex challenges more easily. This approach boosts learning efficiency while using far less training data. It could pave the way for more flexible, human-like AI systems."
+    },
+    {
       "title": "Researchers tested AI against 100,000 humans on creativity",
       "link": "https://www.sciencedaily.com/releases/2026/01/260125083356.htm",
       "pubDate": "Sun, 25 Jan 2026 09:50:27 EST",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Imagine supercomputers that think with light instead of electricity. That s the breakthrough two European research teams have made, demonstrating how intense laser pulses through ultra-thin glass fibers can perform AI-like computations thousands of times faster than traditional electronics. Their system doesn t just break speed records it achieves near state-of-the-art results in tasks like image recognition, all in under a trillionth of a second."
-    },
-    {
-      "title": "秒速生成气候友好型水泥配方的AI (原标题: The AI that writes climate-friendly cement recipes in seconds)",
-      "link": "https://www.sciencedaily.com/releases/2025/06/250619035502.htm",
-      "pubDate": "Thu, 19 Jun 2025 03:55:02 EDT",
-      "isoDate": "2025-06-19T07:55:02.000Z",
-      "creator": "",
-      "summary": "## PSI开发AI模型加速气候友好型水泥配方发现\n\n### 挑战与机遇\n\n*   **水泥行业的高排放问题**：水泥生产约占全球二氧化碳排放量的8%，超过全球航空业的总和。这主要源于两个方面：\n    *   **高温燃烧**：水泥厂的旋转窑需要加热到1400摄氏度，将石灰石烧制成熟料。这需要大量的能源密集型燃烧过程，产生大量二氧化碳。\n    *   **原材料分解**：更重要的是，熟料和水泥生产所需原材料（石灰石）中化学结合的二氧化碳，在高温窑中转化时会被释放出来，这部分排放量远超燃烧过程。\n*   **减排策略**：一种有前景的减排策略是修改水泥配方，用替代性胶凝材料部分取代熟料。\n\n### PSI的创新方法：AI模型\n\n*   **研究目标**：瑞士保罗谢勒研究所（PSI）的跨学科团队开发了一种基于机器学习的建模方法，旨在加速发现新的水泥配方，以在保持相同材料质量的同时，显著降低碳足迹。\n*   **“数字食谱”**：该模型能够模拟和优化水泥配方，使其在保持高机械性能的同时，排放更少的二氧化碳。研究人员形容其为“气候友好型水泥的数字食谱”，能够在几秒钟内生成实用的配方建议，避免了实验室中数千次耗时实验。\n*   **研究团队与成果**：\n    *   主要作者：数学家Romana Boiger。\n    *   项目发起人及合著者：PSI运输机制研究组负责人Nikolaos Prasianakis。\n    *   合著者：PSI水泥系统研究组负责人John Provis。\n    *   研究成果已发表在《材料与结构》（Materials and Structures）期刊上。\n\n### AI作为计算加速器\n\n*   **现有替代品与挑战**：目前，钢铁生产的炉渣和燃煤电厂的粉煤灰等工业副产品已被用于部分替代熟料以减少排放。然而，全球对水泥的巨大需求意味着这些材料不足以满足需求。寻找大量可用且能生产高质量、可靠水泥的材料组合极具挑战性，因为水泥的物理过程极其复杂，传统计算机建模计算量大且昂贵。\n*   **AI原理**：研究团队利用人工神经网络。这些计算机模型通过现有数据进行训练，以加速复杂的计算。通过调整内部连接的相对强度（“权重”），网络能够快速可靠地预测相似关系，作为传统物理建模的“捷径”。\n*   **数据生成与速度提升**：\n    *   PSI研究人员利用其开发的开源热力学建模软件GEMS，计算了各种水泥配方在硬化过程中形成的矿物质和发生的地球化学过程。\n    *   将GEMS结果与实验数据和机械模型结合，推导出了机械性能和二氧化碳排放的可靠指标。\n    *   经过训练的神经网络现在可以在毫秒内计算任意水泥配方的机械性能，比传统建模快约一千倍。\n\n### 逆向优化：从目标到配方\n\n*   **优化任务**：为了找到最佳水泥配方（最低二氧化碳排放和最高材料质量），研究人员将问题表述为数学优化任务：寻找一种能同时最大化机械性能和最小化二氧化碳排放的组合。\n*   **遗传算法的应用**：团队在工作流程中整合了另一种AI技术——遗传算法（受自然选择启发的计算机辅助方法），以选择性地识别能够理想结合这两个目标变量的配方。\n*   **“逆向方法”的优势**：这种方法不再需要盲目测试无数配方并评估其结果属性，而是可以直接搜索满足特定期望标准（如最大机械性能和最小二氧化碳排放）的配方。\n\n### 未来展望与潜力\n\n*   **有前景的配方**：研究人员已经识别出一些有前景的水泥配方，它们在二氧化碳减排、质量和实际生产可行性方面都具有潜力。\n*   **概念验证与后续测试**：这项研究主要作为“概念验证”，即证明有前景的配方可以通过纯粹的数学计算识别出来。这些配方仍需在实验室进行测试。\n*   **模型扩展性**：该AI建模工具可以根据需要进行扩展，整合更多方面，如原材料的生产或可用性，以及建筑材料的使用环境（例如，在海洋或沙漠环境中）。\n*   **跨学科合作的重要性**：该项目的成功离不开水泥化学家、热力学专家和AI专家等不同学科背景研究人员的紧密合作，以及与EMPA等其他研究机构在SCENE项目框架内的交流。\n*   **SCENE项目**：该研究是SCENE（瑞士净零排放卓越中心）项目的一部分，该项目旨在为大幅减少工业和能源供应中的温室气体排放提供科学解决方案。AI带来的巨大时间节省使其成为各种材料和系统设计的非常有前景的方法。",
-      "shortSummary": "瑞士保罗谢勒研究所（PSI）的科学家开发了一种AI模型，能在几秒内生成气候友好型水泥配方。该模型通过机器学习和神经网络，将水泥配方优化过程加速千倍，同时确保材料质量并显著减少二氧化碳排放。它能根据所需性能和碳足迹，逆向推导出最佳配方。这项创新为加速可持续水泥的开发提供了巨大潜力，有助于大幅降低水泥行业的碳排放。",
-      "translated_title": "秒速生成气候友好型水泥配方的AI",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "AI researchers in Switzerland have found a way to dramatically cut cement s carbon footprint by redesigning its recipe. Their system simulates thousands of ingredient combinations, pinpointing those that keep cement strong while emitting far less CO2 all in seconds."
     }
   ],
-  "lastUpdated": "2026-01-28T09:42:51.897Z"
+  "lastUpdated": "2026-01-29T09:54:23.131Z"
 }
