@@ -5,10 +5,48 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Beyond the Chatbot: A Blueprint for Trustable AI",
+      "link": "https://developers.googleblog.com/en/beyond-the-chatbot-a-blueprint-for-trustable-ai/",
+      "pubDate": "Wed, 28 Jan 2026 16:00:00 GMT",
+      "isoDate": "2026-01-28T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Beyond the Chatbot: A Blueprint for Trustable AI",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/IMG_4023.original.jpg",
+          "alt": "IMG_4023",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image_1.original.png",
+          "alt": "image",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/IMG_4066.original.jpg",
+          "alt": "IMG_4066",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GGBM5366_cDl3fp1.original.jpg",
+          "alt": "GGBM5366",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "At Thunderhill Raceway Park, a team of Google Developer Experts (GDEs) put a new \"Trustable AI Framework\" to the test. Here is how they used GCP, Gemini and Antigravity to turn high-velocity racing into a masterclass for agentic architecture."
+    },
+    {
       "title": "Tailor Gemini CLI to your workflow with hooks",
       "link": "https://developers.googleblog.com/en/tailor-gemini-cli-to-your-workflow-with-hooks/",
-      "pubDate": "Mon, 26 Jan 2026 16:00:00 GMT",
-      "isoDate": "2026-01-26T16:00:00.000Z",
+      "pubDate": "Tue, 27 Jan 2026 16:00:00 GMT",
+      "isoDate": "2026-01-27T16:00:00.000Z",
       "creator": "Google",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
@@ -23,6 +61,50 @@
       ],
       "contentSource": "RSS",
       "content": "New Gemini CLI hooks (v0.26.0+) let you tailor the agentic loop. Add context, enforce policies, and block secrets with custom scripts that run at predefined points in your workflow."
+    },
+    {
+      "title": "LiteRT: The Universal Framework for On-Device AI",
+      "link": "https://developers.googleblog.com/en/litert-the-universal-framework-for-on-device-ai/",
+      "pubDate": "Tue, 27 Jan 2026 16:00:00 GMT",
+      "isoDate": "2026-01-27T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "LiteRT: The Universal Framework for On-Device AI",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GPU_platform.original.png",
+          "alt": "GPU_platform",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/LLM_CUJ.original.png",
+          "alt": "LLM_CUJ",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemma3_perf.original.png",
+          "alt": "Gemma3_perf",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ML_framework.original.png",
+          "alt": "ML_framework",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Reliability.original.png",
+          "alt": "Reliability",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "LiteRT, the evolution of TFLite, is now the universal framework for on-device AI. It delivers up to 1.4x faster GPU, new NPU support, and streamlined GenAI deployment for models like Gemma."
     },
     {
       "title": "A Guide to Fine-Tuning FunctionGemma",
@@ -240,107 +322,7 @@
       ],
       "contentSource": "RSS",
       "content": "Conductor is a new Gemini CLI extension that promotes context-driven development. It shifts project context from chat logs to persistent Markdown files for formal specs and plans, ensuring AI agents adhere to project goals, style, and tech stack. This structured workflow is great for \"brownfield\" projects and teams, allowing for safe iteration and consistent code contributions while keeping the human developer in control."
-    },
-    {
-      "title": "Developer’s guide to multi-agent patterns in ADK",
-      "link": "https://developers.googleblog.com/en/developers-guide-to-multi-agent-patterns-in-adk/",
-      "pubDate": "Mon, 15 Dec 2025 16:00:00 GMT",
-      "isoDate": "2025-12-15T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Developer’s guide to multi-agent patterns in ADK",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/seqential_pattern.original.png",
-          "alt": "seqential pattern",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/coordinator_dispatcher_agent_pattern.original.png",
-          "alt": "coordinator dispatcher agent pattern",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/parallel_fan-out.original.png",
-          "alt": "parallel fan-out",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/hierarchical_task_decomposition_agent.original.png",
-          "alt": "hierarchical task decomposition agent",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/generator_critic_agent_pattern.original.png",
-          "alt": "generator critic agent pattern",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/iterative_refinement_agent_pattern_1.original.png",
-          "alt": "iterative refinement agent pattern (1)",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/human-in-the-loop_pattern.original.png",
-          "alt": "human-in-the-loop pattern",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/composite_agent_pattern.original.png",
-          "alt": "composite agent pattern",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Learn how to build modular and reliable agentic applications using 8 effective multi-agent design patterns with the Agent Development Kit (ADK)."
-    },
-    {
-      "title": "Introducing A2UI: An open project for agent-driven interfaces",
-      "link": "https://developers.googleblog.com/en/introducing-a2ui-an-open-project-for-agent-driven-interfaces/",
-      "pubDate": "Sun, 14 Dec 2025 16:00:00 GMT",
-      "isoDate": "2025-12-14T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Introducing A2UI: An open project for agent-driven interfaces",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/a2ui-blog-1-component-gallery_2.original.png",
-          "alt": "a2ui-blog-1-component-gallery (2)",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/a2ui-blog-2-reserve-table.original.png",
-          "alt": "a2ui-blog-2-reserve-table",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/a2ui-blog-3-end-to-end-data-flow.original.png",
-          "alt": "a2ui-blog-3-end-to-end-data-flow",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/a2ui-blog-4-checklist.original.png",
-          "alt": "a2ui-blog-4-checklist",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "A2UI is an open-source project for agent-driven, cross-platform, and generative UI. It provides a secure, declarative data format for agents to compose bespoke interfaces from a trusted component catalog, allowing for native styling and incremental updates. Designed for the multi-agent mesh (A2A), it offers a framework-agnostic solution to safely render remote agent UIs, with integrations in AG UI, Flutter's GenUI SDK, Opal, and Gemini Enterprise."
     }
   ],
-  "lastUpdated": "2026-01-28T10:40:33.424Z"
+  "lastUpdated": "2026-01-29T10:50:45.309Z"
 }
