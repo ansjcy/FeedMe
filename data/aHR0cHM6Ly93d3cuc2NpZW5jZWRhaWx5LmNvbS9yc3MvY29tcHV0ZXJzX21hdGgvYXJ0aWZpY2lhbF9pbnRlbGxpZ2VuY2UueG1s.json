@@ -31,6 +31,19 @@
       "content": "Scientists warn that rapid advances in AI and neurotechnology are outpacing our understanding of consciousness, creating serious ethical risks. New research argues that developing scientific tests for awareness could transform medicine, animal welfare, law, and AI development. But identifying consciousness in machines, brain organoids, or patients could also force society to rethink responsibility, rights, and moral boundaries. The question of what it means to be conscious has never been more urgent—or more unsettling."
     },
     {
+      "title": "NASA’s Perseverance rover completes the first AI-planned drive on Mars",
+      "link": "https://www.sciencedaily.com/releases/2026/01/260131084555.htm",
+      "pubDate": "Sat, 31 Jan 2026 08:45:55 EST",
+      "isoDate": "2026-01-31T13:45:55.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "NASA’s Perseverance rover completes the first AI-planned drive on Mars",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "NASA’s Perseverance rover has just made history by driving across Mars using routes planned by artificial intelligence instead of human operators. A vision-capable AI analyzed the same images and terrain data normally used by rover planners, identified hazards like rocks and sand ripples, and charted a safe path across the Martian surface. After extensive testing in a virtual replica of the rover, Perseverance successfully followed the AI-generated routes, traveling hundreds of feet autonomously."
+    },
+    {
       "title": "Scientists found a way to cool quantum computers using noise",
       "link": "https://www.sciencedaily.com/releases/2026/01/260129080418.htm",
       "pubDate": "Thu, 29 Jan 2026 08:42:30 EST",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Quantum computing just got a significant boost thanks to researchers at the University of Osaka, who developed a much more efficient way to create \"magic states\" a key component for fault-tolerant quantum computers. By pioneering a low-level, or \"level-zero,\" distillation method, they dramatically reduced the number of qubits and computational resources needed, overcoming one of the biggest obstacles: quantum noise. This innovation could accelerate the arrival of powerful quantum machines capable of revolutionizing industries from finance to biotech."
-    },
-    {
-      "title": "量子计算机刚刚获得升级——效率提升了10倍 (原标题: Quantum computers just got an upgrade – and it’s 10× more efficient)",
-      "link": "https://www.sciencedaily.com/releases/2025/06/250625011632.htm",
-      "pubDate": "Wed, 25 Jun 2025 01:58:18 EDT",
-      "isoDate": "2025-06-25T05:58:18.000Z",
-      "creator": "",
-      "summary": "# 新型高效量子计算机放大器\n\n量子计算机在解决极其复杂的问题方面具有巨大潜力，有望在药物开发、加密、人工智能和物流等领域开辟新可能。瑞典查尔姆斯理工大学的研究人员最近取得了一项重大突破，开发出一种高效放大器，该放大器仅在读取量子比特信息时才被激活，其功耗仅为目前最佳放大器的十分之一。这项创新显著减少了量子比特的退相干，为构建拥有更多量子比特和更高性能的强大量子计算机奠定了基础。\n\n## 量子计算基础与挑战\n\n*   **量子比特（Qubits）的独特之处：**\n    *   与传统计算机的比特（只能是0或1）不同，量子比特可以同时处于0和1的状态，以及两者之间的所有中间状态（叠加态）。\n    *   这种叠加现象是量子计算机能够解决传统超级计算机无法处理的复杂问题的关键原因之一。例如，一个20量子比特的量子计算机可以同时表示超过一百万种不同的状态。\n*   **放大器在量子信息读取中的作用：**\n    *   为了利用量子计算机的计算能力，必须测量量子比特并将其转换为可解释的信息。\n    *   这一过程需要极其敏感的微波放大器，以确保准确检测和读取微弱的信号。\n*   **退相干问题：**\n    *   读取量子信息是一个极其精细的过程，即使是微小的温度波动、噪声或电磁干扰都可能导致量子比特失去其完整性（量子态），从而使信息无法使用。\n    *   由于放大器会以热量的形式产生输出，它们也会导致量子比特的退相干。因此，研究人员一直在寻求更高效的量子比特放大器。\n\n## 查尔姆斯大学的创新突破\n\n查尔姆斯大学的研究人员在高效放大器领域迈出了重要一步：\n\n*   **突破性效率：**\n    *   他们开发出目前可使用晶体管构建的最敏感放大器。\n    *   该放大器的功耗已成功降低至现有最佳放大器所需功耗的十分之一，且性能未受影响。\n    *   研究人员Yin Zeng表示，这一突破有望在未来实现更准确的量子比特读取。\n*   **脉冲操作模式：**\n    *   与传统低噪声放大器不同，查尔姆斯研究人员开发的新型放大器采用脉冲操作，即仅在需要进行量子比特放大时才被激活，而非持续开启。\n    *   这是首次在脉冲操作模式下展示用于量子读取的低噪声半导体放大器，它在不影响性能的情况下大幅降低了功耗。\n*   **快速响应与智能控制：**\n    *   由于量子信息以脉冲形式传输，一个关键挑战是确保放大器能够足够快地激活以跟上量子比特的读取速度。\n    *   研究团队通过设计一个使用算法改进放大器操作的智能放大器来解决这一问题。\n    *   他们利用遗传编程实现了放大器的智能控制，使其能够以35纳秒的速度对传入的量子比特脉冲做出响应。\n    *   为了验证他们的方法，研究人员还开发了一种测量脉冲操作低噪声微波放大器噪声和放大性能的新技术。\n\n## 对量子计算机扩展的重要意义\n\n这项进展对于将量子计算机扩展到容纳比目前更多的量子比特具有重要意义：\n\n*   **解决热量限制：** 随着量子比特数量的增加，计算机的计算能力和处理复杂计算的能力也随之增强。然而，更大的量子系统也需要更多的放大器，导致整体功耗增加，这可能导致量子比特的退相干。这项研究为未来量子计算机的扩展提供了解决方案，其中量子比特放大器产生的热量是一个主要的限制因素。\n*   **推动量子计算机发展：** 这一突破为构建拥有显著更多量子比特和增强性能的量子计算机奠定了基础。\n\n## 研究团队与支持\n\n*   这项研究由查尔姆斯大学太赫兹和毫米波技术实验室的博士生Yin Zeng和微波电子学教授Jan Grahn共同完成，并发表在《IEEE Transactions on Microwave Theory and Techniques》期刊上。\n*   研究团队还包括Low Noise Factory AB的Jörgen Stenarson和Peter Sobis。\n*   放大器在查尔姆斯理工大学的Kollberg实验室和哥德堡的Low Noise Factory AB开发。\n*   该研究项目获得了查尔姆斯无线基础设施技术中心（WiTECH）和Vinnova“更智能电子系统”项目的资助。",
-      "shortSummary": "瑞典查尔姆斯理工大学开发出一种新型高效量子计算机放大器，其功耗仅为现有最佳放大器的十分之一。该放大器采用脉冲操作，仅在需要时激活，并能以35纳秒的极快速度响应。这项突破性进展显著减少了量子比特的退相干，解决了量子计算机扩展中的热量限制问题，为构建拥有更多量子比特、性能更强大的未来量子计算机铺平了道路。",
-      "translated_title": "量子计算机刚刚获得升级——效率提升了10倍",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Chalmers engineers built a pulse-driven qubit amplifier that’s ten times more efficient, stays cool, and safeguards quantum states—key for bigger, better quantum machines."
     }
   ],
-  "lastUpdated": "2026-02-02T10:01:12.259Z"
+  "lastUpdated": "2026-02-03T09:54:28.418Z"
 }
