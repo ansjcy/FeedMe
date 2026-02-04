@@ -5,6 +5,38 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Easy FunctionGemma finetuning with Tunix on Google TPUs",
+      "link": "https://developers.googleblog.com/en/easy-functiongemma-finetuning-with-tunix-on-google-tpus/",
+      "pubDate": "Mon, 02 Feb 2026 16:00:00 GMT",
+      "isoDate": "2026-02-02T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Easy FunctionGemma finetuning with Tunix on Google TPUs",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Google_stack.original.png",
+          "alt": "Google stack",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/TPU-util.original.png",
+          "alt": "TPU-util",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Accuracy_before_finetuning_vs._after_finetuning.original.png",
+          "alt": "Accuracy before finetuning vs. after finetuning",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Finetuning the FunctionGemma model is made fast and easy using the lightweight JAX-based Tunix library on Google TPUs, a process demonstrated here using LoRA for supervised finetuning. This approach delivers significant accuracy improvements with high TPU efficiency, culminating in a model ready for deployment."
+    },
+    {
       "title": "Beyond the Chatbot: A Blueprint for Trustable AI",
       "link": "https://developers.googleblog.com/en/beyond-the-chatbot-a-blueprint-for-trustable-ai/",
       "pubDate": "Wed, 28 Jan 2026 16:00:00 GMT",
@@ -296,33 +328,7 @@
       ],
       "contentSource": "RSS",
       "content": "Gemini 3 Flash is now available in Gemini CLI. It delivers Pro-grade coding performance with low latency and a lower cost, matching Gemini 3 Pro's SWE-bench Verified score of 76%. It significantly outperforms 2.5 Pro, improving auto-routing and agentic coding. It's ideal for high-frequency development tasks, handling complex code generation, large context windows (like processing 1,000 comment pull requests), and generating load-testing scripts quickly and reliably."
-    },
-    {
-      "title": "Conductor: Introducing context-driven development for Gemini CLI",
-      "link": "https://developers.googleblog.com/en/conductor-introducing-context-driven-development-for-gemini-cli/",
-      "pubDate": "Tue, 16 Dec 2025 16:00:00 GMT",
-      "isoDate": "2025-12-16T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Conductor: Introducing context-driven development for Gemini CLI",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ConductorScreenshot.original.png",
-          "alt": "ConductorScreenshot",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ConductorScreenshot2.original.png",
-          "alt": "ConductorScreenshot2",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Conductor is a new Gemini CLI extension that promotes context-driven development. It shifts project context from chat logs to persistent Markdown files for formal specs and plans, ensuring AI agents adhere to project goals, style, and tech stack. This structured workflow is great for \"brownfield\" projects and teams, allowing for safe iteration and consistent code contributions while keeping the human developer in control."
     }
   ],
-  "lastUpdated": "2026-02-02T10:56:31.217Z"
+  "lastUpdated": "2026-02-04T10:53:37.305Z"
 }
