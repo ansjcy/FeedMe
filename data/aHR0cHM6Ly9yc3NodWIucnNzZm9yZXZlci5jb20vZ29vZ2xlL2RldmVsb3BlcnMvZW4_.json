@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Introducing the Developer Knowledge API and MCP Server",
+      "link": "https://developers.googleblog.com/en/introducing-the-developer-knowledge-api-and-mcp-server/",
+      "pubDate": "Tue, 03 Feb 2026 16:00:00 GMT",
+      "isoDate": "2026-02-03T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Introducing the Developer Knowledge API and MCP Server",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Google is launching the Developer Knowledge API and MCP Server in public preview. This new toolset provides a canonical, machine-readable way for AI assistants and agentic platforms to search and retrieve up-to-date documentation across Firebase, Google Cloud, Android, and more. By using the official MCP server, developers can connect tools directly to Google’s documentation corpus, ensuring that AI-generated code and guidance are based on authoritative, real-time context."
+    },
+    {
       "title": "Easy FunctionGemma finetuning with Tunix on Google TPUs",
       "link": "https://developers.googleblog.com/en/easy-functiongemma-finetuning-with-tunix-on-google-tpus/",
       "pubDate": "Mon, 02 Feb 2026 16:00:00 GMT",
@@ -308,27 +321,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Introducing the Agent Development Kit (ADK) for TypeScript, an open-source framework for building complex, multi-agent AI systems with a code-first approach. Developers can define agent logic in TypeScript, applying traditional software development best practices (version control, testing). ADK offers end-to-end type safety, modularity, and deployment-agnostic functionality, leveraging the familiar TypeScript/JavaScript ecosystem."
-    },
-    {
-      "title": "Gemini 3 Flash is now available in Gemini CLI",
-      "link": "https://developers.googleblog.com/en/gemini-3-flash-is-now-available-in-gemini-cli/",
-      "pubDate": "Tue, 16 Dec 2025 16:00:00 GMT",
-      "isoDate": "2025-12-16T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Gemini 3 Flash is now available in Gemini CLI",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GeminiCLI_model_selector.original.png",
-          "alt": "GeminiCLI_model_selector",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Gemini 3 Flash is now available in Gemini CLI. It delivers Pro-grade coding performance with low latency and a lower cost, matching Gemini 3 Pro's SWE-bench Verified score of 76%. It significantly outperforms 2.5 Pro, improving auto-routing and agentic coding. It's ideal for high-frequency development tasks, handling complex code generation, large context windows (like processing 1,000 comment pull requests), and generating load-testing scripts quickly and reliably."
     }
   ],
-  "lastUpdated": "2026-02-04T10:53:37.305Z"
+  "lastUpdated": "2026-02-05T10:54:28.140Z"
 }
