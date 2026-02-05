@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "No Display? No Problem: Cross-Device Passkey Authentication for XR Devices",
+      "link": "https://engineering.fb.com/2026/02/04/security/cross-device-passkey-authentication-for-xr-devices-meta-quest/",
+      "pubDate": "Wed, 04 Feb 2026 22:00:07 +0000",
+      "isoDate": "2026-02-04T22:00:07.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "No Display? No Problem: Cross-Device Passkey Authentication for XR Devices",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>We’re sharing a novel approach to enabling cross-device passkey authentication for devices with inaccessible displays (like XR devices). Our approach bypasses the use of QR codes and enables cross-device authentication without the need for an on-device display, while still complying with all trust and proximity requirements. This approach builds on work done by the FIDO [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/02/04/security/cross-device-passkey-authentication-for-xr-devices-meta-quest/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/02/04/security/cross-device-passkey-authentication-for-xr-devices-meta-quest/\">No Display? No Problem: Cross-Device Passkey Authentication for XR Devices</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "Rust at Scale: An Added Layer of Security for WhatsApp",
       "link": "https://engineering.fb.com/2026/01/27/security/rust-at-scale-security-whatsapp/",
       "pubDate": "Tue, 27 Jan 2026 15:00:09 +0000",
@@ -120,69 +133,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>We&#8217;re excited to share another advancement in the security of your conversations on Messenger: the launch of key transparency verification for end-to-end encrypted chats.  This new feature enables an additional level of assurance that only you — and the people you&#8217;re communicating with — can see or listen to what is sent, and that no [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/11/20/security/key-transparency-comes-to-messenger/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/11/20/security/key-transparency-comes-to-messenger/\">Key Transparency Comes to Messenger</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "Efficient Optimization With Ax, an Open Platform for Adaptive Experimentation",
-      "link": "https://engineering.fb.com/2025/11/18/open-source/efficient-optimization-ax-open-platform-adaptive-experimentation/",
-      "pubDate": "Tue, 18 Nov 2025 17:00:24 +0000",
-      "isoDate": "2025-11-18T17:00:24.000Z",
-      "creator": "",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Efficient Optimization With Ax, an Open Platform for Adaptive Experimentation",
-      "images": [
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/11/Meta-Adaptive-Experimentation-Ax-image1.png",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/11/Meta-Adaptive-Experimentation-Ax-image-2.png",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/11/Meta-Adaptive-Experimentation-Ax-image-3.png",
-          "alt": "",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/11/Meta-Adaptive-Experimentation-Ax-image-4.png",
-          "alt": "",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/11/Meta-Adaptive-Experimentation-Ax-image-5.png",
-          "alt": "",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://s0.wp.com/latex.php?latex=argmax_%7Bx+%5Cin+X%7D+f%28x%29&bg=ffffff&fg=000&s=0&c=20201002",
-          "alt": "argmax_{x \\in X} f(x)",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://s0.wp.com/latex.php?latex=x+%5C+in+X&bg=ffffff&fg=000&s=0&c=20201002",
-          "alt": "x \\ in X",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2025/11/Meta-Adaptive-Experimentation-Ax-image-6.gif?w=916",
-          "alt": "",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>We’ve released Ax 1.0, an open-source platform that uses machine learning to automatically guide complex, resource-intensive experimentation. Ax is used at scale across Meta to improve AI models, tune production infrastructure, and accelerate advances in ML and even hardware design. Our accompanying paper, &#8220;Ax: A Platform for Adaptive Experimentation&#8221; explains Ax’s architecture, methodology, and how it [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/11/18/open-source/efficient-optimization-ax-open-platform-adaptive-experimentation/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/11/18/open-source/efficient-optimization-ax-open-platform-adaptive-experimentation/\">Efficient Optimization With Ax, an Open Platform for Adaptive Experimentation</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-02-03T05:56:56.965Z"
+  "lastUpdated": "2026-02-05T06:02:05.398Z"
 }
