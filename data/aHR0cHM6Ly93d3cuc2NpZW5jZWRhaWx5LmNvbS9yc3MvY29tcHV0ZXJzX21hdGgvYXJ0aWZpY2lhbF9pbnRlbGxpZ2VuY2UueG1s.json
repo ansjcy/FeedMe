@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "AI reads brain MRIs in seconds and flags emergencies",
+      "link": "https://www.sciencedaily.com/releases/2026/02/260210005419.htm",
+      "pubDate": "Tue, 10 Feb 2026 01:04:12 EST",
+      "isoDate": "2026-02-10T06:04:12.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "AI reads brain MRIs in seconds and flags emergencies",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Researchers at the University of Michigan have created an AI system that can interpret brain MRI scans in just seconds, accurately identifying a wide range of neurological conditions and determining which cases need urgent care. Trained on hundreds of thousands of real-world scans along with patient histories, the model achieved accuracy as high as 97.5% and outperformed other advanced AI tools."
+    },
+    {
       "title": "Scientists create smart synthetic skin that can hide images and change shape",
       "link": "https://www.sciencedaily.com/releases/2026/02/260206034836.htm",
       "pubDate": "Fri, 06 Feb 2026 11:09:31 EST",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "A multinational team has cracked a long-standing barrier to reliable quantum computing by inventing an algorithm that lets ordinary computers faithfully mimic a fault-tolerant quantum circuit built on the notoriously tricky GKP bosonic code, promising a crucial test-bed for future quantum hardware."
-    },
-    {
-      "title": "量子计算机刚刚击败了经典计算机——呈指数级且无条件地 (原标题: Quantum computers just beat classical ones — Exponentially and unconditionally)",
-      "link": "https://www.sciencedaily.com/releases/2025/06/250629033459.htm",
-      "pubDate": "Mon, 30 Jun 2025 02:30:44 EDT",
-      "isoDate": "2025-06-30T06:30:44.000Z",
-      "creator": "",
-      "summary": "# 量子计算机实现指数级无条件加速\n\n## 引言\n量子计算机在加速计算、药物设计、密码破解和新材料发现方面具有巨大潜力，但其功能性常受噪音和计算错误影响。近期，南加州大学维特比工程学院的Daniel Lidar教授及其团队，在量子纠错方面取得突破，首次展示了量子计算机相对于经典计算机的指数级无条件缩放加速优势。\n\n## 研究背景与成果\n*   **研究团队：** 由南加州大学维特比工程学院的Daniel Lidar教授领导，与南加州大学和约翰霍普金斯大学的合作者共同完成。\n*   **硬件平台：** 使用了两台基于127量子比特IBM Quantum Eagle处理器的量子计算机。\n*   **论文发表：** 研究成果“Demonstration of Algorithmic Quantum Speedup for an Abelian Hidden Subgroup Problem”发表在美国物理学会旗舰期刊《物理评论X》（Physical Review X）上。\n*   **加速类型：** 过去曾有温和的多项式加速演示，但指数级加速是量子计算机最显著的性能提升。\n\n## “缩放加速”与“无条件”的定义\n*   **缩放加速：** 并非指固定倍数的加速（如快100倍），而是指随着问题规模（变量数量）的增加，量子与经典计算机之间的性能差距持续扩大。\n*   **指数级加速：** 意味着每增加一个变量，性能差距大约翻倍。\n*   **无条件加速：** Lidar教授解释，这意味着加速不依赖任何未经证实的假设。此前的加速声明通常需要假设没有更好的经典算法可作为基准。\n\n## 解决“西蒙问题”的变体\n*   研究团队修改了算法，使其适用于量子计算机，并用其解决“西蒙问题”（Simon's problem）的一个变体。\n*   **西蒙问题：** 是一种寻找数学函数中隐藏重复模式的问题，被认为是Shor因数分解算法的先驱，后者可用于破解密码并催生了整个量子计算领域。\n*   **游戏类比：** 西蒙问题类似于一个猜谜游戏，量子玩家能比经典玩家指数级更快地赢得游戏。\n\n## 实现指数级加速的关键技术\n第一作者、南加州大学博士研究员Phattharaporn Singkanipa指出，关键在于最大限度地发挥硬件性能：更短的电路、更智能的脉冲序列和统计误差缓解。具体方法包括：\n1.  **限制数据输入：** 通过限制允许的秘密数字数量（技术上是限制秘密数字二进制表示中“1”的数量），减少所需的量子逻辑操作，从而降低误差累积的机会。\n2.  **压缩操作：** 使用“转译”（transpilation）方法，尽可能压缩所需的量子逻辑操作数量。\n3.  **动态解耦（最关键）：** 应用一系列精心设计的脉冲序列，使量子计算机内部量子比特的行为脱离嘈杂环境，保持量子处理的正常进行。这对实现量子加速影响最大。\n4.  **测量误差缓解：** 纠正动态解耦后因测量量子比特状态不完善而残留的某些误差。\n\n## 研究意义与未来展望\n*   **里程碑：** Lidar教授表示，量子计算界正在展示量子处理器如何在特定任务上开始超越经典对应物，并进入经典计算无法企及的领域。这项成果表明，当今的量子计算机已明确具备缩放量子优势。\n*   **不可逆转的性能分离：** Lidar补充说，由于此次展示的指数级加速是首次实现“无条件”的，因此这种性能分离是不可逆转的，量子性能优势变得越来越难以反驳。\n*   **局限与下一步：** Lidar提醒，当前结果除了赢得猜谜游戏外，尚无实际应用。在量子计算机解决实际世界问题之前，仍有大量工作要做。这包括展示不依赖“预言机”（预先知道答案）的加速，以及在更大规模量子计算机中进一步降低噪音和退相干的方法。\n*   **潜力证实：** 尽管如此，量子计算机此前“纸上谈兵”的指数级加速承诺现已得到确凿证实。\n\n## 披露\n南加州大学是IBM量子创新中心。Quantum Elements, Inc.是IBM量子网络中的一家初创公司。",
-      "shortSummary": "量子计算机首次实现了对经典计算机的指数级无条件加速。南加州大学团队利用IBM量子处理器，通过解决“西蒙问题”的变体，展示了这种优势。关键技术包括限制数据输入、压缩操作、动态解耦和测量误差缓解，有效降低了噪音影响。这项成果证实了量子计算机在特定任务上超越经典计算机的潜力，尽管目前尚无实际应用，但它为量子计算的未来发展奠定了坚实基础，证明了其“纸上谈兵”的指数级加速承诺已成为现实。",
-      "translated_title": "量子计算机刚刚击败了经典计算机——呈指数级且无条件地",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "A research team has achieved the holy grail of quantum computing: an exponential speedup that’s unconditional. By using clever error correction and IBM’s powerful 127-qubit processors, they tackled a variation of Simon’s problem, showing quantum machines are now breaking free from classical limitations, for real."
     }
   ],
-  "lastUpdated": "2026-02-09T10:10:16.607Z"
+  "lastUpdated": "2026-02-10T10:05:53.946Z"
 }
