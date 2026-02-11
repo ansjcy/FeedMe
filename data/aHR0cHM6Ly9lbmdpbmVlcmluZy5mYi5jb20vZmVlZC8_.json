@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "Building Prometheus: How Backend Aggregation Enables Gigawatt-Scale AI Clusters",
+      "link": "https://engineering.fb.com/2026/02/09/data-center-engineering/building-prometheus-how-backend-aggregation-enables-gigawatt-scale-ai-clusters/",
+      "pubDate": "Mon, 09 Feb 2026 17:00:33 +0000",
+      "isoDate": "2026-02-09T17:00:33.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Building Prometheus: How Backend Aggregation Enables Gigawatt-Scale AI Clusters",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>We’re sharing details of the role backend aggregation (BAG) plays in building Meta’s gigawatt-scale AI clusters like Prometheus. BAG allows us to seamlessly connect thousands of GPUs across multiple data centers and regions. Our BAG implementation is connecting two different network fabrics – Disaggregated Schedule Fabric (DSF) and Non-Scheduled Fabric (NSF). Once it’s complete our AI [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/02/09/data-center-engineering/building-prometheus-how-backend-aggregation-enables-gigawatt-scale-ai-clusters/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/02/09/data-center-engineering/building-prometheus-how-backend-aggregation-enables-gigawatt-scale-ai-clusters/\">Building Prometheus: How Backend Aggregation Enables Gigawatt-Scale AI Clusters</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "No Display? No Problem: Cross-Device Passkey Authentication for XR Devices",
       "link": "https://engineering.fb.com/2026/02/04/security/cross-device-passkey-authentication-for-xr-devices-meta-quest/",
       "pubDate": "Wed, 04 Feb 2026 22:00:07 +0000",
@@ -120,20 +133,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>We’re introducing Zoomer, Meta’s comprehensive, automated debugging and optimization platform for AI.  Zoomer works across all of our training and inference workloads at Meta and provides deep performance insights that enable energy savings, workflow acceleration, and efficiency gains in our AI infrastructure.  Zoomer has delivered training time reductions, and significant QPS improvements, making it the [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/11/21/data-infrastructure/zoomer-powering-ai-performance-meta-intelligent-debugging-optimization/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/11/21/data-infrastructure/zoomer-powering-ai-performance-meta-intelligent-debugging-optimization/\">Zoomer: Powering AI Performance at Meta&#8217;s Scale Through Intelligent Debugging and Optimization</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "Key Transparency Comes to Messenger",
-      "link": "https://engineering.fb.com/2025/11/20/security/key-transparency-comes-to-messenger/",
-      "pubDate": "Thu, 20 Nov 2025 17:00:21 +0000",
-      "isoDate": "2025-11-20T17:00:21.000Z",
-      "creator": "",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Key Transparency Comes to Messenger",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>We&#8217;re excited to share another advancement in the security of your conversations on Messenger: the launch of key transparency verification for end-to-end encrypted chats.  This new feature enables an additional level of assurance that only you — and the people you&#8217;re communicating with — can see or listen to what is sent, and that no [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2025/11/20/security/key-transparency-comes-to-messenger/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2025/11/20/security/key-transparency-comes-to-messenger/\">Key Transparency Comes to Messenger</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-02-09T06:10:01.880Z"
+  "lastUpdated": "2026-02-11T06:11:16.082Z"
 }
