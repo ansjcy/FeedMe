@@ -5,6 +5,26 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Conductor Update: Introducing Automated Reviews",
+      "link": "https://developers.googleblog.com/en/conductor-update-introducing-automated-reviews/",
+      "pubDate": "Wed, 11 Feb 2026 16:00:00 GMT",
+      "isoDate": "2026-02-11T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Conductor Update: Introducing Automated Reviews",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/AutomatedReviews.original.png",
+          "alt": "AutomatedReviews",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Conductor for the Gemini CLI has introduced a new Automated Review feature designed to verify the quality and accuracy of AI-generated code. This update addresses the challenge of validating agentic development by automatically checking implementations against original plans, enforcing style guides, and identifying security risks or bugs. by incorporating test-suite validation and providing actionable reports, Conductor helps developers ensure that their AI agents deliver safe, predictable, and architecturally sound code before it is finalized."
+    },
+    {
       "title": "Making Gemini CLI extensions easier to use",
       "link": "https://developers.googleblog.com/en/making-gemini-cli-extensions-easier-to-use/",
       "pubDate": "Tue, 10 Feb 2026 16:00:00 GMT",
@@ -228,51 +248,7 @@
       ],
       "contentSource": "RSS",
       "content": "The Universal Commerce Protocol (UCP) is a new, open-source standard for agentic commerce, co-developed by Google and industry leaders. It establishes a common, secure language to connect consumer surfaces (like Gemini and AI Mode in Search) with business backends, enabling seamless shopping from product discovery to purchase. UCP simplifies integration for businesses, supports various payment providers, and is designed to power the next generation of conversational commerce experiences."
-    },
-    {
-      "title": "A Developer's Guide to Debugging JAX on Cloud TPUs: Essential Tools and Techniques",
-      "link": "https://developers.googleblog.com/en/a-developers-guide-to-debugging-jax-on-cloud-tpus-essential-tools-and-techniques/",
-      "pubDate": "Sun, 04 Jan 2026 16:00:00 GMT",
-      "isoDate": "2026-01-04T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "A Developer's Guide to Debugging JAX on Cloud TPUs: Essential Tools and Techniques",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/relationship_diagram.original.png",
-          "alt": "relationship_diagram",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/tool_table_updated.original.png",
-          "alt": "tool_table_updated",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/log_updated.original.png",
-          "alt": "log_updated",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/libtpu1.original.png",
-          "alt": "libtpu1",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/libtpu2_updated_1.original.png",
-          "alt": "libtpu2_updated (1)",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "A practical guide to debugging and profiling JAX on Cloud TPUs. It outlines core components (libtpu, JAX/jaxlib) and essential techniques. Tools covered include: Verbose Logging (via libtpu env vars), TPU Monitoring Library for performance metrics, tpu-info for real-time utilization, XLA HLO Dumps for compiler debugging, and the XProf suite for in-depth performance analysis."
     }
   ],
-  "lastUpdated": "2026-02-12T10:58:10.419Z"
+  "lastUpdated": "2026-02-13T10:53:53.242Z"
 }
