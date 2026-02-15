@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "Brain inspired machines are better at math than expected",
+      "link": "https://www.sciencedaily.com/releases/2026/02/260213223923.htm",
+      "pubDate": "Sat, 14 Feb 2026 10:19:40 EST",
+      "isoDate": "2026-02-14T15:19:40.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Brain inspired machines are better at math than expected",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Neuromorphic computers modeled after the human brain can now solve the complex equations behind physics simulations — something once thought possible only with energy-hungry supercomputers. The breakthrough could lead to powerful, low-energy supercomputers while revealing new secrets about how our brains process information."
+    },
+    {
       "title": "AI reads brain MRIs in seconds and flags emergencies",
       "link": "https://www.sciencedaily.com/releases/2026/02/260210005419.htm",
       "pubDate": "Tue, 10 Feb 2026 01:04:12 EST",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Neural networks first treat sentences like puzzles solved by word order, but once they read enough, a tipping point sends them diving into word meaning instead—an abrupt “phase transition” reminiscent of water flashing into steam. By revealing this hidden switch, researchers open a window into how transformer models such as ChatGPT grow smarter and hint at new ways to make them leaner, safer, and more predictable."
-    },
-    {
-      "title": "科学家们刚刚模拟了“不可能”——容错量子代码终被破解 (原标题: Scientists just simulated the “impossible” — fault-tolerant quantum code cracked at last)",
-      "link": "https://www.sciencedaily.com/releases/2025/07/250702214157.htm",
-      "pubDate": "Wed, 02 Jul 2025 21:41:57 EDT",
-      "isoDate": "2025-07-03T01:41:57.000Z",
-      "creator": "",
-      "summary": "## 容错量子计算模拟取得突破\n\n量子计算机在走向实际应用的过程中面临一个主要障碍：其有限的计算错误纠正能力。为了开发真正可靠的量子计算机，研究人员必须能够使用传统计算机模拟量子计算以验证其正确性，这是一项至关重要但极其困难的任务。\n\n### 关键挑战：量子误差\n\n*   **高敏感性**：量子计算机的基本组成部分——量子比特（qubits）——虽然具有巨大的计算潜力，但对环境干扰（如振动、电磁辐射或温度变化）极其敏感。\n*   **相干性丧失**：最轻微的噪声都可能导致量子比特计算错误或失去其量子态（相干性），从而丧失继续计算的能力。\n*   **错误检测与纠正困难**：与传统计算机不同，量子计算机更容易出错，且错误更难检测和纠正，导致其目前尚不具备容错能力。\n\n### 突破性进展\n\n瑞典查尔姆斯理工大学、米兰大学、格拉纳达大学和东京大学的研究人员首次公布了一种模拟特定类型纠错量子计算的方法，这是在寻求稳健量子技术方面迈出的重要一步。\n\n*   **模拟对象**：该方法能够模拟使用一种名为Gottesman-Kitaev-Preskill (GKP) 代码的玻色子代码的量子计算。GKP代码因其存储量子信息的方式便于量子计算机纠错，从而降低了对噪声和干扰的敏感性，因此在领先的量子计算机实现中被广泛使用。\n*   **核心创新**：研究人员通过创建一种新的数学工具，成功地在其算法中使用了GKP代码。此前，由于GKP代码深层的量子力学性质，使用传统计算机模拟它们极其困难。\n*   **主要作者**：该研究由查尔姆斯应用量子物理博士Cameron Calcluth担任第一作者，Giulia Ferrini副教授为共同作者。\n\n### 意义与影响\n\n这项突破解决了量子研究领域长期存在的挑战，具有深远意义：\n\n*   **验证能力**：研究人员现在可以更可靠地测试和验证量子计算机的计算结果。\n*   **未来发展**：这为模拟以前无法测试但对构建稳定和可扩展量子计算机至关重要的量子计算开辟了全新的途径。\n*   **容错性**：能够模拟用于容错的纠错代码，对于未来构建更好、更强大的量子计算机至关重要。\n\n### 研究详情\n\n相关文章“Classical simulation of circuits with realistic odd-dimensional Gottesman-Kitaev-Preskill states”已发表在《物理评论快报》（Physical Review Letters）上。作者包括Cameron Calcluth、Giulia Ferrini、Oliver Hahn、Juani Bermejo-Vega和Alessandro Ferraro。",
-      "shortSummary": "科学家们首次成功模拟了容错量子计算，解决了量子计算机误差校正的重大难题。瑞典查尔姆斯理工大学等机构的研究人员开发了一种新算法，能模拟使用Gottesman-Kitaev-Preskill (GKP) 玻色子代码的量子计算。这一突破性进展对于未来构建更稳定、更可靠的量子计算机至关重要，因为它允许对之前难以测试的量子计算进行验证，是量子技术迈向实用化的关键一步。",
-      "translated_title": "科学家们刚刚模拟了“不可能”——容错量子代码终被破解",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "A multinational team has cracked a long-standing barrier to reliable quantum computing by inventing an algorithm that lets ordinary computers faithfully mimic a fault-tolerant quantum circuit built on the notoriously tricky GKP bosonic code, promising a crucial test-bed for future quantum hardware."
     }
   ],
-  "lastUpdated": "2026-02-14T09:40:13.403Z"
+  "lastUpdated": "2026-02-15T09:41:02.958Z"
 }
