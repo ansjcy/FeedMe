@@ -5,6 +5,32 @@
   "link": "https://blogs.microsoft.com/",
   "items": [
     {
+      "title": "A milestone achievement in our journey to carbon negative",
+      "link": "https://blogs.microsoft.com/blog/2026/02/18/a-milestone-achievement-in-our-journey-to-carbon-negative/",
+      "pubDate": "Wed, 18 Feb 2026 16:20:32 +0000",
+      "isoDate": "2026-02-18T16:20:32.000Z",
+      "creator": "Melanie Nakagawa, Chief Sustainability Officer and Noelle Walsh, President, Cloud Operations + Innovation",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "A milestone achievement in our journey to carbon negative",
+      "images": [
+        {
+          "url": "https://blogs.microsoft.com/wp-content/uploads/2026/02/renewable-energy-map-miller-light-1024x751.png",
+          "alt": "This map illustrates Microsoft’s global renewable energy procurement footprint. Contracted  and active volumes of renewable energy as of December 31, 2025. The base image is a world map, with markers placed across North America, South America, Europe, Asia‑Pacific, and other regions where Microsoft has contracted for  renewable energy. The map is intended to show the global reach and regional diversity of Microsoft’s renewable energy procurement efforts.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://blogs.microsoft.com/wp-content/uploads/2026/02/formula.jpg",
+          "alt": "Formula for methodology on renewable energy metric.",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>In 2020, Microsoft announced a moonshot commitment to become carbon negative by 2030 — accelerating work across our company to advance the partnerships and technologies needed to advance sustainability for our businesses, our customers and the world. A key milestone on this journey was our aim to match 100% of our annual global electricity consumption...</p>\n<p>The post <a href=\"https://blogs.microsoft.com/blog/2026/02/18/a-milestone-achievement-in-our-journey-to-carbon-negative/\">A milestone achievement in our journey to carbon negative</a> appeared first on <a href=\"https://blogs.microsoft.com\">The Official Microsoft Blog</a>.</p>\n"
+    },
+    {
       "title": "Updates in two of our core priorities",
       "link": "https://blogs.microsoft.com/blog/2026/02/04/updates-in-two-of-our-core-priorities/",
       "pubDate": "Wed, 04 Feb 2026 17:00:32 +0000",
@@ -145,20 +171,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Across every industry, leaders are asking: How can AI be used to fundamentally transform our business? At the forefront are Frontier Firms — empowering human ambition and finding AI-first differentiation in everything to maximize their potential and impact on society. These firms are redefining what’s possible and setting the pace for the future. To better...</p>\n<p>The post <a href=\"https://blogs.microsoft.com/blog/2025/11/11/bridging-the-ai-divide-how-frontier-firms-are-transforming-business/\">Bridging the AI divide: How Frontier Firms are transforming business</a> appeared first on <a href=\"https://blogs.microsoft.com\">The Official Microsoft Blog</a>.</p>\n"
-    },
-    {
-      "title": "警惕双面特工：AI 如何强化 — 或破坏 — 您的网络安全 (原标题: Beware of double agents: How AI can fortify — or fracture — your cybersecurity)",
-      "link": "https://blogs.microsoft.com/blog/2025/11/05/beware-of-double-agents-how-ai-can-fortify-or-fracture-your-cybersecurity/",
-      "pubDate": "Wed, 05 Nov 2025 14:00:01 +0000",
-      "isoDate": "2025-11-05T14:00:01.000Z",
-      "creator": "Charlie Bell",
-      "summary": "## 警惕双面特工：AI 如何强化 — 或破坏 — 您的网络安全\n\n人工智能（AI）正迅速成为我们世界的支柱，带来前所未有的生产力和创新。然而，随着组织部署AI代理以抓住新机遇并推动增长，它们也面临着新型的网络安全威胁。文章借鉴了《星际迷航》中安卓机器人Data及其邪恶双胞胎Lore的二元性，指出今天的AI代理如果管理得当，可以强化网络安全防御；如果管理不善，则可能破坏它们。IDC研究预测，到2028年将有13亿个AI代理投入使用。\n\n为应对AI代理带来的挑战，领导者应考虑并根据组织需求调整以下三个原则：\n\n### 1. 识别新的攻击格局\n\n网络安全不再仅仅是IT问题，而是董事会层面的优先事项。与传统软件不同，AI代理更加动态、适应性强且可能自主运行，这带来了独特的风险。我们必须接受AI可能被滥用的方式超出了传统软件的经验。\n\n*   **“困惑的代理人”问题（Confused Deputy）**：善意的AI代理，如果拥有广泛的权限，可能被恶意行为者操纵，滥用其访问权限，例如通过自动化操作泄露敏感数据。\n*   **自然语言的复杂性**：AI代理依赖的生成模型动态分析人类（甚至非人类）语言，使得区分已知的安全操作和通过恶意操纵引入的新指令变得困难。\n*   **影子代理的风险**：未经批准或被遗弃的“影子代理”会放大盲点并增加风险，就像“自带设备”（BYOD）浪潮中出现的问题一样。\n\n### 2. 实践代理零信任（Agentic Zero Trust）\n\n尽管AI代理是新的生产力驱动因素，但仍可使用既定的安全原则进行有效管理。微软高管Mustafa Suleyman在其著作《The Coming Wave》中提出了“遏制”（Containment）和“对齐”（Alignment）的概念：\n\n*   **遏制（Containment）**：意味着我们不盲目信任AI代理，并严格限制其活动的各个方面。例如，代理的访问权限不能超过其角色和目的，这与对员工账户、软件和设备采取的“最小权限”安全方法相同。此外，必须监控代理的一切行为和通信，如果无法监控，则不允许其在环境中运行。\n*   **对齐（Alignment）**：旨在通过提示和模型，将AI代理的预期目的注入其中。我们必须只使用经过训练能抵抗腐败的AI代理，并在模型本身和用于调用模型的提示中内置标准和任务特定的安全保护。AI代理必须抵制偏离其批准用途的企图，并在“遏制”环境中执行，密切关注其是否偏离预期目的。\n\n所有这些都需要强大的AI代理身份和组织内部明确的问责制。每个代理都必须有身份，并且必须知道组织中谁对其行为负责。这些原则与零信任（Zero Trust）的基本原则（如“假设泄露”、明确验证、最小权限）相符。\n\n### 3. 培养安全创新文化\n\n仅凭技术无法解决AI安全问题。文化是管理网络风险的真正超能力，领导者有独特的能力来塑造它。\n\n*   **开放对话**：将AI风险和负责任的使用纳入日常对话。\n*   **跨职能参与**：法律、合规、人力资源等部门都应参与讨论。\n*   **持续教育**：对团队进行AI安全基础知识培训，并明确政策。\n*   **安全实验**：提供经批准的空间，让人们在不制造风险的情况下学习和创新。\n\n### 前进之路：每家公司都应做些什么\n\nAI是一个改变一切的“情节转折”，机遇巨大，风险也同样巨大。AI的崛起需要“环境安全”（ambient security），即高管将网络安全作为日常优先事项。这意味着将强大的技术措施与持续教育和明确的领导力相结合，使安全意识影响每一个决策。\n\n组织应采取以下措施来维护环境安全：\n\n*   将AI安全作为战略优先事项。\n*   坚持对每个代理进行“遏制”和“对齐”。\n*   强制执行身份、所有权和数据治理。\n*   建立倡导安全创新的文化。\n\n**具体实践步骤包括：**\n\n*   为每个AI代理分配ID和所有者，就像员工需要徽章一样，确保可追溯性和控制。\n*   记录每个代理的意图和范围。\n*   监控代理的操作、输入和输出。\n*   尽早绘制数据流图，以设定合规基准。\n*   将代理保持在安全、受批准的环境中，杜绝“流氓代理工厂”。\n\n呼吁所有企业立即审查其AI治理框架，要求清晰、问责和持续改进。网络安全的未来是人与机器的结合——以目标为导向，让AI成为最强大的盟友。\n\n### 微软的角色\n\n微软致力于赋能客户应对这一新时代：\n\n*   推出了Microsoft Entra Agent ID，帮助客户从在Microsoft Copilot Studio和Azure AI Foundry中创建代理的那一刻起，就为其分配唯一的身份。\n*   在Defender和Security Copilot中利用AI，结合收集到的海量安全信号，揭露并击败网络犯罪分子可能用于入侵AI代理的网络钓鱼活动和其他攻击。\n*   致力于AI代理的平台方法，帮助客户安全地使用微软和第三方代理，避免因管理过多仪表板和控制台而带来的复杂性和风险。\n\n微软将在本月晚些时候的Microsoft Ignite大会上分享更多创新成果。理解核心机遇和风险，有助于为人与代理协同工作的世界创造一个更安全的环境。",
-      "shortSummary": "AI代理带来前所未有的生产力，但也构成新的网络安全威胁。文章强调AI的“双面特工”性质，并提出三大原则：识别新的攻击格局（如“困惑的代理人”问题和影子代理），实践“代理零信任”（通过“遏制”和“对齐”原则），以及培养安全创新文化。企业需将AI安全作为战略优先，为每个代理分配身份和所有者，并进行严格监控。微软正通过Entra Agent ID等工具帮助客户安全管理AI代理。领导者必须积极应对，使AI成为网络安全的盟友。",
-      "translated_title": "警惕双面特工：AI 如何强化 — 或破坏 — 您的网络安全",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>AI is rapidly becoming the backbone of our world, promising unprecedented productivity and innovation. But as organizations deploy AI agents to unlock new opportunities and drive growth, they also face a new breed of cybersecurity threats. There are a lot of Star Trek fans here at Microsoft, including me. One of our engineering leaders gifted...</p>\n<p>The post <a href=\"https://blogs.microsoft.com/blog/2025/11/05/beware-of-double-agents-how-ai-can-fortify-or-fracture-your-cybersecurity/\">Beware of double agents: How AI can fortify — or fracture — your cybersecurity</a> appeared first on <a href=\"https://blogs.microsoft.com\">The Official Microsoft Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-02-17T05:35:04.828Z"
+  "lastUpdated": "2026-02-19T05:35:28.781Z"
 }
