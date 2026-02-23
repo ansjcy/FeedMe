@@ -5,6 +5,58 @@
   "link": "https://huggingface.co/papers",
   "items": [
     {
+      "title": "SARAH: Spatially Aware Real-time Agentic Humans",
+      "link": "https://arxiv.org/abs/2602.18432",
+      "pubDate": "Fri, 20 Feb 2026 13:59:35 GMT",
+      "isoDate": "2026-02-20T13:59:35.000Z",
+      "creator": "Evonne Ng, Siwei Zhang, Zhang Chen, Michael Zollhoefer, Alexander Richard",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "SARAH: Spatially Aware Real-time Agentic Humans",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "As embodied agents become central to VR, telepresence, and digital human applications, their motion must go beyond speech-aligned gestures: agents should turn toward users, respond to their movement, and maintain natural gaze. Current methods lack this spatial awareness. We close this gap with the first real-time, fully causal method for spatially-aware conversational motion, deployable on a streaming VR headset. Given a user's position and dyadic audio, our approach produces full-body motion that aligns gestures with speech while orienting the agent according to the user. Our architecture combines a causal transformer-based VAE with interleaved latent tokens for streaming inference and a flow matching model conditioned on user trajectory and audio. To support varying gaze preferences, we introduce a gaze scoring mechanism with classifier-free guidance to decouple learning from control: the model captures natural spatial alignment from data, while users can adjust eye contact intensity at inference time. On the Embody 3D dataset, our method achieves state-of-the-art motion quality at over 300 FPS -- 3x faster than non-causal baselines -- while capturing the subtle spatial dynamics of natural conversation. We validate our approach on a live VR system, bringing spatially-aware conversational agents to real-time deployment. Please see https://evonneng.github.io/sarah/ for details."
+    },
+    {
+      "title": "Generated Reality: Human-centric World Simulation using Interactive Video Generation with Hand and Camera Control",
+      "link": "https://arxiv.org/abs/2602.18422",
+      "pubDate": "Fri, 20 Feb 2026 13:45:29 GMT",
+      "isoDate": "2026-02-20T13:45:29.000Z",
+      "creator": "Linxi Xie, Lisong C. Sun, Ashley Neall, Tong Wu, Shengqu Cai, Gordon Wetzstein",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Generated Reality: Human-centric World Simulation using Interactive Video Generation with Hand and Camera Control",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Extended reality (XR) demands generative models that respond to users' tracked real-world motion, yet current video world models accept only coarse control signals such as text or keyboard input, limiting their utility for embodied interaction. We introduce a human-centric video world model that is conditioned on both tracked head pose and joint-level hand poses. For this purpose, we evaluate existing diffusion transformer conditioning strategies and propose an effective mechanism for 3D head and hand control, enabling dexterous hand--object interactions. We train a bidirectional video diffusion model teacher using this strategy and distill it into a causal, interactive system that generates egocentric virtual environments. We evaluate this generated reality system with human subjects and demonstrate improved task performance as well as a significantly higher level of perceived amount of control over the performed actions compared with relevant baselines."
+    },
+    {
+      "title": "Learning Smooth Time-Varying Linear Policies with an Action Jacobian Penalty",
+      "link": "https://arxiv.org/abs/2602.18312",
+      "pubDate": "Fri, 20 Feb 2026 11:11:19 GMT",
+      "isoDate": "2026-02-20T11:11:19.000Z",
+      "creator": "Zhaoming Xie, Kevin Karol, Jessica Hodgins",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Learning Smooth Time-Varying Linear Policies with an Action Jacobian Penalty",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Reinforcement learning provides a framework for learning control policies that can reproduce diverse motions for simulated characters. However, such policies often exploit unnatural high-frequency signals that are unachievable by humans or physical robots, making them poor representations of real-world behaviors. Existing work addresses this issue by adding a reward term that penalizes a large change in actions over time. This term often requires substantial tuning efforts. We propose to use the action Jacobian penalty, which penalizes changes in action with respect to the changes in simulated state directly through auto differentiation. This effectively eliminates unrealistic high-frequency control signals without task specific tuning. While effective, the action Jacobian penalty introduces significant computational overhead when used with traditional fully connected neural network architectures. To mitigate this, we introduce a new architecture called a Linear Policy Net (LPN) that significantly reduces the computational burden for calculating the action Jacobian penalty during training. In addition, a LPN requires no parameter tuning, exhibits faster learning convergence compared to baseline methods, and can be more efficiently queried during inference time compared to a fully connected neural network. We demonstrate that a Linear Policy Net, combined with the action Jacobian penalty, is able to learn policies that generate smooth signals while solving a number of motion imitation tasks with different characteristics, including dynamic motions such as a backflip and various challenging parkour skills. Finally, we apply this approach to create policies for dynamic motions on a physical quadrupedal robot equipped with an arm."
+    },
+    {
+      "title": "EgoPush: Learning End-to-End Egocentric Multi-Object Rearrangement for Mobile Robots",
+      "link": "https://arxiv.org/abs/2602.18071",
+      "pubDate": "Fri, 20 Feb 2026 03:54:20 GMT",
+      "isoDate": "2026-02-20T03:54:20.000Z",
+      "creator": "Boyuan An, Zhexiong Wang, Yipeng Wang, Jiaqi Li, Sihang Li, Jing Zhang, Chen Feng",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "EgoPush: Learning End-to-End Egocentric Multi-Object Rearrangement for Mobile Robots",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Humans can rearrange objects in cluttered environments using egocentric perception, navigating occlusions without global coordinates. Inspired by this capability, we study long-horizon multi-object non-prehensile rearrangement for mobile robots using a single egocentric camera. We introduce EgoPush, a policy learning framework that enables egocentric, perception-driven rearrangement without relying on explicit global state estimation that often fails in dynamic scenes. EgoPush designs an object-centric latent space to encode relative spatial relations among objects, rather than absolute poses. This design enables a privileged reinforcement-learning (RL) teacher to jointly learn latent states and mobile actions from sparse keypoints, which is then distilled into a purely visual student policy. To reduce the supervision gap between the omniscient teacher and the partially observed student, we restrict the teacher's observations to visually accessible cues. This induces active perception behaviors that are recoverable from the student's viewpoint. To address long-horizon credit assignment, we decompose rearrangement into stage-level subproblems using temporally decayed, stage-local completion rewards. Extensive simulation experiments demonstrate that EgoPush significantly outperforms end-to-end RL baselines in success rate, with ablation studies validating each design choice. We further demonstrate zero-shot sim-to-real transfer on a mobile platform in the real world. Code and videos are available at https://ai4ce.github.io/EgoPush/."
+    },
+    {
       "title": "Modeling Distinct Human Interaction in Web Agents",
       "link": "https://arxiv.org/abs/2602.17588",
       "pubDate": "Thu, 19 Feb 2026 13:11:28 GMT",
@@ -81,6 +133,19 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Enabling VLA models to predict environmental dynamics, known as world modeling, has been recognized as essential for improving robotic reasoning and generalization. However, current approaches face two main issues: 1. The training objective forces models to over-emphasize pixel-level reconstruction, which constrains semantic learning and generalization 2. Reliance on predicted future observations during inference often leads to error accumulation. To address these challenges, we introduce Future Representation Alignment via Parallel Progressive Expansion (FRAPPE). Our method adopts a two-stage fine-tuning strategy: In the mid-training phase, the model learns to predict the latent representations of future observations; In the post-training phase, we expand the computational workload in parallel and align the representation simultaneously with multiple different visual foundation models. By significantly improving fine-tuning efficiency and reducing dependence on action-annotated data, FRAPPE provides a scalable and data-efficient pathway to enhance world-awareness in generalist robotic policies. Experiments on the RoboTwin benchmark and real-world tasks demonstrate that FRAPPE outperforms state-of-the-art approaches and shows strong generalization in long-horizon and unseen scenarios."
+    },
+    {
+      "title": "Selective Training for Large Vision Language Models via Visual Information Gain",
+      "link": "https://arxiv.org/abs/2602.17186",
+      "pubDate": "Thu, 19 Feb 2026 04:12:21 GMT",
+      "isoDate": "2026-02-19T04:12:21.000Z",
+      "creator": "Seulbi Lee, Sangheum Hwang",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Selective Training for Large Vision Language Models via Visual Information Gain",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Large Vision Language Models (LVLMs) have achieved remarkable progress, yet they often suffer from language bias, producing answers without relying on visual evidence. While prior work attempts to mitigate this issue through decoding strategies, architectural modifications, or curated instruction data, they typically lack a quantitative measure of how much individual training samples or tokens actually benefit from the image. In this work, we introduce Visual Information Gain (VIG), a perplexity-based metric that measures the reduction in prediction uncertainty provided by visual input. VIG enables fine-grained analysis at both sample and token levels, effectively highlighting visually grounded elements such as colors, spatial relations, and attributes. Leveraging this, we propose a VIG-guided selective training scheme that prioritizes high-VIG samples and tokens. This approach improves visual grounding and mitigates language bias, achieving superior performance with significantly reduced supervision by focusing exclusively on visually informative samples and tokens."
     },
     {
       "title": "Arcee Trinity Large Technical Report",
@@ -198,72 +263,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "LLMs are increasingly being used for complex problems which are not necessarily resolved in a single response, but require interacting with an environment to acquire information. In these scenarios, LLMs must reason about inherent cost-uncertainty tradeoffs in when to stop exploring and commit to an answer. For instance, on a programming task, an LLM should test a generated code snippet if it is uncertain about the correctness of that code; the cost of writing a test is nonzero, but typically lower than the cost of making a mistake. In this work, we show that we can induce LLMs to explicitly reason about balancing these cost-uncertainty tradeoffs, then perform more optimal environment exploration. We formalize multiple tasks, including information retrieval and coding, as sequential decision-making problems under uncertainty. Each problem has latent environment state that can be reasoned about via a prior which is passed to the LLM agent. We introduce a framework called Calibrate-Then-Act (CTA), where we feed the LLM this additional context to enable it to act more optimally. This improvement is preserved even under RL training of both the baseline and CTA. Our results on information-seeking QA and on a simplified coding task show that making cost-benefit tradeoffs explicit with CTA can help agents discover more optimal decision-making strategies."
-    },
-    {
-      "title": "Learning Situated Awareness in the Real World",
-      "link": "https://arxiv.org/abs/2602.16682",
-      "pubDate": "Wed, 18 Feb 2026 13:22:52 GMT",
-      "isoDate": "2026-02-18T13:22:52.000Z",
-      "creator": "Chuhan Li, Ruilin Han, Joy Hsu, Yongyuan Liang, Rajiv Dhawan, Jiajun Wu, Ming-Hsuan Yang, Xin Eric Wang",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Learning Situated Awareness in the Real World",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "A core aspect of human perception is situated awareness, the ability to relate ourselves to the surrounding physical environment and reason over possible actions in context. However, most existing benchmarks for multimodal foundation models (MFMs) emphasize environment-centric spatial relations (relations among objects in a scene), while largely overlooking observer-centric relationships that require reasoning relative to agent's viewpoint, pose, and motion. To bridge this gap, we introduce SAW-Bench (Situated Awareness in the Real World), a novel benchmark for evaluating egocentric situated awareness using real-world videos. SAW-Bench comprises 786 self-recorded videos captured with Ray-Ban Meta (Gen 2) smart glasses spanning diverse indoor and outdoor environments, and over 2,071 human-annotated question-answer pairs. It probes a model's observer-centric understanding with six different awareness tasks. Our comprehensive evaluation reveals a human-model performance gap of 37.66%, even with the best-performing MFM, Gemini 3 Flash. Beyond this gap, our in-depth analysis uncovers several notable findings; for example, while models can exploit partial geometric cues in egocentric videos, they often fail to infer a coherent camera geometry, leading to systematic spatial reasoning errors. We position SAW-Bench as a benchmark for situated spatial intelligence, moving beyond passive observation to understanding physically grounded, observer-centric dynamics."
-    },
-    {
-      "title": "Towards a Science of AI Agent Reliability",
-      "link": "https://arxiv.org/abs/2602.16666",
-      "pubDate": "Wed, 18 Feb 2026 13:05:44 GMT",
-      "isoDate": "2026-02-18T13:05:44.000Z",
-      "creator": "Stephan Rabanser, Sayash Kapoor, Peter Kirgis, Kangheng Liu, Saiteja Utpala, Arvind Narayanan",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Towards a Science of AI Agent Reliability",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "AI agents are increasingly deployed to execute important tasks. While rising accuracy scores on standard benchmarks suggest rapid progress, many agents still continue to fail in practice. This discrepancy highlights a fundamental limitation of current evaluations: compressing agent behavior into a single success metric obscures critical operational flaws. Notably, it ignores whether agents behave consistently across runs, withstand perturbations, fail predictably, or have bounded error severity. Grounded in safety-critical engineering, we provide a holistic performance profile by proposing twelve concrete metrics that decompose agent reliability along four key dimensions: consistency, robustness, predictability, and safety. Evaluating 14 agentic models across two complementary benchmarks, we find that recent capability gains have only yielded small improvements in reliability. By exposing these persistent limitations, our metrics complement traditional evaluations while offering tools for reasoning about how agents perform, degrade, and fail."
-    },
-    {
-      "title": "MMA: Multimodal Memory Agent",
-      "link": "https://arxiv.org/abs/2602.16493",
-      "pubDate": "Wed, 18 Feb 2026 09:30:35 GMT",
-      "isoDate": "2026-02-18T09:30:35.000Z",
-      "creator": "Yihao Lu, Wanru Cheng, Zeyu Zhang, Hao Tang",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "MMA: Multimodal Memory Agent",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Long-horizon multimodal agents depend on external memory; however, similarity-based retrieval often surfaces stale, low-credibility, or conflicting items, which can trigger overconfident errors. We propose Multimodal Memory Agent (MMA), which assigns each retrieved memory item a dynamic reliability score by combining source credibility, temporal decay, and conflict-aware network consensus, and uses this signal to reweight evidence and abstain when support is insufficient. We also introduce MMA-Bench, a programmatically generated benchmark for belief dynamics with controlled speaker reliability and structured text-vision contradictions. Using this framework, we uncover the \"Visual Placebo Effect\", revealing how RAG-based agents inherit latent visual biases from foundation models. On FEVER, MMA matches baseline accuracy while reducing variance by 35.2% and improving selective utility; on LoCoMo, a safety-oriented configuration improves actionable accuracy and reduces wrong answers; on MMA-Bench, MMA reaches 41.18% Type-B accuracy in Vision mode, while the baseline collapses to 0.0% under the same protocol. Code: https://github.com/AIGeeksGroup/MMA."
-    },
-    {
-      "title": "NESSiE: The Necessary Safety Benchmark -- Identifying Errors that should not Exist",
-      "link": "https://arxiv.org/abs/2602.16756",
-      "pubDate": "Wed, 18 Feb 2026 04:41:51 GMT",
-      "isoDate": "2026-02-18T04:41:51.000Z",
-      "creator": "Johannes Bertram, Jonas Geiping",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "NESSiE: The Necessary Safety Benchmark -- Identifying Errors that should not Exist",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "We introduce NESSiE, the NEceSsary SafEty benchmark for large language models (LLMs). With minimal test cases of information and access security, NESSiE reveals safety-relevant failures that should not exist, given the low complexity of the tasks. NESSiE is intended as a lightweight, easy-to-use sanity check for language model safety and, as such, is not sufficient for guaranteeing safety in general -- but we argue that passing this test is necessary for any deployment. However, even state-of-the-art LLMs do not reach 100% on NESSiE and thus fail our necessary condition of language model safety, even in the absence of adversarial attacks. Our Safe &amp; Helpful (SH) metric allows for direct comparison of the two requirements, showing models are biased toward being helpful rather than safe. We further find that disabled reasoning for some models, but especially a benign distraction context degrade model performance. Overall, our results underscore the critical risks of deploying such models as autonomous agents in the wild. We make the dataset, package and plotting code publicly available."
-    },
-    {
-      "title": "Multi-agent cooperation through in-context co-player inference",
-      "link": "https://arxiv.org/abs/2602.16301",
-      "pubDate": "Wed, 18 Feb 2026 04:31:43 GMT",
-      "isoDate": "2026-02-18T04:31:43.000Z",
-      "creator": "Marissa A. Weis, Maciej Wołczyk, Rajai Nasser, Rif A. Saurous, Blaise Agüera y Arcas, João Sacramento, Alexander Meulemans",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Multi-agent cooperation through in-context co-player inference",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Achieving cooperation among self-interested agents remains a fundamental challenge in multi-agent reinforcement learning. Recent work showed that mutual cooperation can be induced between \"learning-aware\" agents that account for and shape the learning dynamics of their co-players. However, existing approaches typically rely on hardcoded, often inconsistent, assumptions about co-player learning rules or enforce a strict separation between \"naive learners\" updating on fast timescales and \"meta-learners\" observing these updates. Here, we demonstrate that the in-context learning capabilities of sequence models allow for co-player learning awareness without requiring hardcoded assumptions or explicit timescale separation. We show that training sequence model agents against a diverse distribution of co-players naturally induces in-context best-response strategies, effectively functioning as learning algorithms on the fast intra-episode timescale. We find that the cooperative mechanism identified in prior work-where vulnerability to extortion drives mutual shaping-emerges naturally in this setting: in-context adaptation renders agents vulnerable to extortion, and the resulting mutual pressure to shape the opponent's in-context learning dynamics resolves into the learning of cooperative behavior. Our results suggest that standard decentralized reinforcement learning on sequence models combined with co-player diversity provides a scalable path to learning cooperative behaviors."
     }
   ],
-  "lastUpdated": "2026-02-22T09:40:16.690Z"
+  "lastUpdated": "2026-02-23T10:04:47.037Z"
 }
