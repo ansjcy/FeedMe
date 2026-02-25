@@ -5,6 +5,19 @@
   "link": "https://blogs.microsoft.com/",
   "items": [
     {
+      "title": "Microsoft Sovereign Cloud adds governance, productivity and support for large AI models securely running even when completely disconnected ",
+      "link": "https://blogs.microsoft.com/blog/2026/02/24/microsoft-sovereign-cloud-adds-governance-productivity-and-support-for-large-ai-models-securely-running-even-when-completely-disconnected/",
+      "pubDate": "Tue, 24 Feb 2026 10:20:08 +0000",
+      "isoDate": "2026-02-24T10:20:08.000Z",
+      "creator": "Douglas Phillips - President and Chief Technology Officer, Microsoft Specialized Clouds",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Microsoft Sovereign Cloud adds governance, productivity and support for large AI models securely running even when completely disconnected ",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>As digital sovereignty becomes a strategic requirement, organizations are rethinking how they deploy critical infrastructure and AI capabilities under tighter regulatory expectations and higher risk conditions. Microsoft’s approach to sovereignty is grounded in enabling enterprises, public sectors and regulated industries to participate in the digital economy securely, independently and on their own terms. The Microsoft Sovereign Cloud brings together productivity, security and cloud workloads to span both...</p>\n<p>The post <a href=\"https://blogs.microsoft.com/blog/2026/02/24/microsoft-sovereign-cloud-adds-governance-productivity-and-support-for-large-ai-models-securely-running-even-when-completely-disconnected/\">Microsoft Sovereign Cloud adds governance, productivity and support for large AI models securely running even when completely disconnected </a> appeared first on <a href=\"https://blogs.microsoft.com\">The Official Microsoft Blog</a>.</p>\n"
+    },
+    {
       "title": "Asha Sharma named EVP and CEO, Microsoft Gaming",
       "link": "https://blogs.microsoft.com/blog/2026/02/20/asha-sharma-named-evp-and-ceo-microsoft-gaming/",
       "pubDate": "Fri, 20 Feb 2026 20:44:35 +0000",
@@ -158,20 +171,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Anthropic to scale Claude on Azure Anthropic to adopt NVIDIA architecture NVIDIA and Microsoft to invest in Anthropic Today Microsoft, NVIDIA and Anthropic announced new strategic partnerships. Anthropic is scaling its rapidly-growing Claude AI model on Microsoft Azure, powered by NVIDIA, which will broaden access to Claude and provide Azure enterprise customers with expanded model choice and new capabilities. Anthropic...</p>\n<p>The post <a href=\"https://blogs.microsoft.com/blog/2025/11/18/microsoft-nvidia-and-anthropic-announce-strategic-partnerships/\">Microsoft, NVIDIA and Anthropic announce strategic partnerships</a> appeared first on <a href=\"https://blogs.microsoft.com\">The Official Microsoft Blog</a>.</p>\n"
-    },
-    {
-      "title": "无限规模：Azure AI 超级工厂背后的架构 (原标题: Infinite scale: The architecture behind the Azure AI superfactory)",
-      "link": "https://blogs.microsoft.com/blog/2025/11/12/infinite-scale-the-architecture-behind-the-azure-ai-superfactory/",
-      "pubDate": "Wed, 12 Nov 2025 17:00:05 +0000",
-      "isoDate": "2025-11-12T17:00:05.000Z",
-      "creator": "Scott Guthrie",
-      "summary": "# 无限规模：Azure AI 超级工厂背后的架构\n\n微软宣布在佐治亚州亚特兰大推出新的 Fairwater Azure AI 数据中心，该中心与威斯康星州的首个 Fairwater 站点以及之前的 AI 超级计算机和更广泛的 Azure 全球数据中心网络相连，共同构建了全球首个行星级 AI 超级工厂。\n\n## Fairwater 数据中心的核心目标与设计理念\n\n*   **满足空前需求**：每个 Fairwater 站点旨在高效满足前所未有的 AI 计算需求，推动模型智能前沿。\n*   **革新设计**：Fairwater 突破了传统云数据中心模式，采用单一扁平网络，可将数十万个最新的 NVIDIA GB200 和 GB300 GPU 集成到一个大规模超级计算机中。\n*   **多功能性**：设计考虑了多功能性，支持预训练、微调、强化学习和合成数据生成等多种 AI 工作负载。\n*   **弹性系统**：微软部署了专用的 AI 广域网 (WAN) 骨干网，将每个 Fairwater 站点集成到一个更广泛的弹性系统中，实现 AI 工作负载的动态分配，并最大限度地提高组合系统的 GPU 利用率。\n\n## Fairwater 的关键技术创新\n\n### 1. 最大化的计算密度\n\n现代 AI 基础设施日益受到物理定律的限制，光速成为关键瓶颈。Fairwater 旨在最大化计算密度，以最小化机架内部和机架之间的延迟，并最大化系统性能。\n\n*   **先进冷却系统**：\n    *   采用设施级的闭环液冷系统，设计寿命长，初始注水后可连续重复使用，无蒸发。\n    *   初始注水量相当于 20 个家庭一年的用水量，仅在水化学指标需要时才更换（设计使用寿命超过 6 年），极具效率和可持续性。\n    *   液冷提供更高的热传递效率，使每个机架和每行能够实现更高的功率密度（每个机架约 140kW，每行 1,360 kW），从而最大限度地密集封装计算能力。\n    *   热量通过 GPU 阵列的冷板路径系统循环后，由全球最大的冷却机组之一进行散热。\n*   **两层数据中心建筑设计**：\n    *   许多 AI 工作负载对延迟高度敏感，电缆长度会显著影响集群性能。\n    *   Fairwater 的两层设计允许在三维空间中放置机架，以最小化电缆长度，从而改善延迟、带宽、可靠性和成本。\n\n### 2. 高可用性、低成本电源\n\n微软致力于以经济高效、可靠的方式为计算提供电力。\n\n*   **弹性电网**：亚特兰大站点在选择时考虑了弹性公用电网，能够以 3x9 的成本实现 4x9 的可用性。\n*   **成本节约**：通过确保高可用电网电力，可以放弃 GPU 阵列的传统弹性方法（如现场发电、UPS 系统和双路配电），从而为客户节省成本并加快上市时间。\n*   **电源管理解决方案**：与行业伙伴共同开发了电源管理解决方案，以缓解大规模作业产生的功率振荡。这包括：\n    *   软件驱动方案：在活动减少期间引入补充工作负载。\n    *   硬件驱动方案：GPU 自行强制执行功率阈值。\n    *   现场储能方案：进一步掩盖功率波动，而无需消耗额外电力。\n\n### 3. 尖端加速器和网络系统\n\nFairwater 的世界级数据中心设计由专用服务器、尖端 AI 加速器和新型网络系统提供支持。\n\n*   **NVIDIA Blackwell GPU 集群**：每个 Fairwater 数据中心运行一个由互连的 NVIDIA Blackwell GPU 组成的单一、连贯集群。\n*   **高级网络架构**：\n    *   能够通过当前一代交换机可靠地扩展，超越传统 Clos 网络的限制（在单一扁平网络上连接数十万个 GPU）。\n    *   **向上扩展网络 (Scale-up networking)**：每个 AI 加速器机架容纳多达 72 个 NVIDIA Blackwell GPU，通过 NVLink 连接，实现机架内超低延迟通信。Blackwell 加速器提供最高的计算密度，支持 FP4 等低精度数字格式，以提高总 FLOPS 并实现高效内存使用。每个机架提供 1.8 TB 的 GPU 到 GPU 带宽，每个 GPU 可用超过 14 TB 的池化内存。\n    *   **向外扩展网络 (Scale-out networking)**：这些机架使用向外扩展网络创建 Pod 和集群，使所有 GPU 能够作为单个超级计算机运行，并具有最小的跳数。通过两层、基于以太网的后端网络实现，支持大规模集群，提供 800 Gbps 的 GPU 到 GPU 连接。\n    *   **开放性与成本管理**：依赖广泛的以太网生态系统和 SONiC（云中开放网络软件，微软自己的网络交换机操作系统），有助于避免供应商锁定并管理成本，因为可以使用商用硬件而非专有解决方案。\n    *   **优化 AI 网络**：通过数据包修剪、数据包喷射和高频遥测等方面的改进，实现先进的拥塞控制、快速检测和重传以及敏捷的负载均衡，确保现代 AI 工作负载的超可靠、低延迟性能。\n\n### 4. 行星级规模 (AI WAN)\n\n即使有这些创新，大规模训练作业（现在以万亿参数衡量）的计算需求也迅速超越了单个设施的功率和空间限制。\n\n*   **专用 AI WAN 光网络**：微软构建了专用的 AI WAN 光网络，以扩展 Fairwater 的向上和向外扩展网络。\n*   **全国范围扩展**：去年在美国各地铺设了超过 120,000 英里的新光纤，扩大了 AI 网络的覆盖范围和可靠性。\n*   **地理分散的 AI 超级工厂**：通过这个高性能、高弹性的骨干网，可以将不同代的超级计算机直接连接到一个 AI 超级工厂中，其能力超越了单个站点的地理限制。\n*   **灵活流量管理**：AI 开发者可以利用更广泛的 Azure AI 数据中心网络，根据需求在站点内的向上和向外扩展网络之间以及通过跨大陆的 AI WAN 在站点之间分段流量。这与过去所有流量都必须通过向外扩展网络的方式有了显著不同，提供了更细粒度的专用网络，并提高了基础设施的灵活性和利用率。\n\n## 总结\n\n亚特兰大的新 Fairwater 站点代表了 Azure AI 基础设施的又一次飞跃，体现了微软运行全球最大 AI 训练作业的经验。它结合了计算密度、可持续性和网络系统方面的突破性创新，以高效满足当前巨大的计算能力需求。它还与其他的 AI 数据中心和更广泛的 Azure 平台深度集成，形成了全球首个 AI 超级工厂。这些创新共同提供了一个灵活、专用基础设施，能够服务于现代 AI 工作负载的全部范围，并赋能地球上的每个人和每个组织取得更多成就。",
-      "shortSummary": "微软在亚特兰大推出 Fairwater Azure AI 数据中心，与威斯康星州站点共同构建全球首个行星级 AI 超级工厂。该架构通过前所未有的计算密度、先进液冷、两层设计及单一扁平网络，集成数十万个 NVIDIA Blackwell GPU。它利用专用 AI WAN 实现行星级连接和动态工作负载分配，确保高可用性、低成本和可持续性。此超级工厂旨在满足海量 AI 计算需求，为客户提供灵活强大的 AI 解决方案。",
-      "translated_title": "无限规模：Azure AI 超级工厂背后的架构",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Today, we are unveiling the next Fairwater site of Azure AI datacenters in Atlanta, Georgia. This purpose-built datacenter is connected to our first Fairwater site in Wisconsin, prior generations of AI supercomputers and the broader Azure global datacenter footprint to create the world’s first planet-scale AI superfactory. By packing computing power more densely than ever...</p>\n<p>The post <a href=\"https://blogs.microsoft.com/blog/2025/11/12/infinite-scale-the-architecture-behind-the-azure-ai-superfactory/\">Infinite scale: The architecture behind the Azure AI superfactory</a> appeared first on <a href=\"https://blogs.microsoft.com\">The Official Microsoft Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-02-23T05:40:28.668Z"
+  "lastUpdated": "2026-02-25T05:36:19.463Z"
 }
