@@ -5,6 +5,39 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Supercharge your AI agents: The New ADK Integrations Ecosystem",
+      "link": "https://developers.googleblog.com/en/supercharge-your-ai-agents-adk-integrations-ecosystem/",
+      "pubDate": "Thu, 26 Feb 2026 16:00:00 GMT",
+      "isoDate": "2026-02-26T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Supercharge your AI agents: The New ADK Integrations Ecosystem",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Agent Development Kit (ADK) now supports a robust ecosystem of third-party tools and integrations. Connect your agents to GitHub, Notion, Hugging Face, and more to build capable, real-world applications."
+    },
+    {
+      "title": "On-Device Function Calling in Google AI Edge Gallery",
+      "link": "https://developers.googleblog.com/en/on-device-function-calling-in-google-ai-edge-gallery/",
+      "pubDate": "Wed, 25 Feb 2026 16:00:00 GMT",
+      "isoDate": "2026-02-25T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "On-Device Function Calling in Google AI Edge Gallery",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/benchmark_wide2.original.png",
+          "alt": "benchmark_wide2",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Google has introduced FunctionGemma, a specialized 270M parameter model designed to bring efficient, action-oriented AI experiences directly to mobile devices through on-device function calling. By leveraging Google AI Edge and LiteRT-LM, the model enables complex tasks—such as managing calendars, controlling device hardware, or executing specific game logic in the \"Tiny Garden\" demo—to be performed entirely offline with high speed and low latency. Available for testing in the Google AI Edge Gallery app on both Android and iOS, FunctionGemma allows developers to move beyond simple text generation toward building responsive, \"agentic\" applications that interact seamlessly with the physical and digital world without relying on cloud processing."
+    },
+    {
       "title": "Turn creative prompts into interactive XR experiences with Gemini",
       "link": "https://developers.googleblog.com/en/turn-creative-prompts-into-interactive-xr-experiences-with-gemini/",
       "pubDate": "Wed, 18 Feb 2026 16:00:00 GMT",
@@ -158,71 +191,7 @@
       ],
       "contentSource": "RSS",
       "content": "At Thunderhill Raceway Park, a team of Google Developer Experts (GDEs) put a new \"Trustable AI Framework\" to the test. Here is how they used GCP, Gemini and Antigravity to turn high-velocity racing into a masterclass for agentic architecture."
-    },
-    {
-      "title": "Tailor Gemini CLI to your workflow with hooks",
-      "link": "https://developers.googleblog.com/en/tailor-gemini-cli-to-your-workflow-with-hooks/",
-      "pubDate": "Tue, 27 Jan 2026 16:00:00 GMT",
-      "isoDate": "2026-01-27T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Tailor Gemini CLI to your workflow with hooks",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_CLI_Hooks_panel.original.png",
-          "alt": "Gemini CLI Hooks panel",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "New Gemini CLI hooks (v0.26.0+) let you tailor the agentic loop. Add context, enforce policies, and block secrets with custom scripts that run at predefined points in your workflow."
-    },
-    {
-      "title": "LiteRT: The Universal Framework for On-Device AI",
-      "link": "https://developers.googleblog.com/en/litert-the-universal-framework-for-on-device-ai/",
-      "pubDate": "Tue, 27 Jan 2026 16:00:00 GMT",
-      "isoDate": "2026-01-27T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "LiteRT: The Universal Framework for On-Device AI",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GPU_platform.original.png",
-          "alt": "GPU_platform",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/LLM_CUJ.original.png",
-          "alt": "LLM_CUJ",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemma3_perf.original.png",
-          "alt": "Gemma3_perf",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ML_framework.original.png",
-          "alt": "ML_framework",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Reliability.original.png",
-          "alt": "Reliability",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "LiteRT, the evolution of TFLite, is now the universal framework for on-device AI. It delivers up to 1.4x faster GPU, new NPU support, and streamlined GenAI deployment for models like Gemma."
     }
   ],
-  "lastUpdated": "2026-02-26T10:57:19.579Z"
+  "lastUpdated": "2026-03-01T10:36:04.267Z"
 }
