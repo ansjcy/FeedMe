@@ -5,6 +5,112 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "How we rebuilt the search architecture for high availability in GitHub Enterprise Server",
+      "link": "https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/",
+      "pubDate": "Tue, 03 Mar 2026 18:45:09 +0000",
+      "isoDate": "2026-03-03T18:45:09.000Z",
+      "creator": "David Tippett",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How we rebuilt the search architecture for high availability in GitHub Enterprise Server",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/CCR.png?resize=1280%2C720",
+          "alt": "Diagram labeled 'HA Architecture' with two boxes: 'Primary Node' and 'Replica Node.' Across both of them there exists an 'Elasticsearch Cluster' with a nested box on each node labeled 'ES Instance.' A pink arrow points from the Primary Node’s ES Instance to the Replica Node’s ES Instance, indicating replication or failover in a high-availability setup.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/CCR-1.png?resize=1280%2C720",
+          "alt": "Diagram showing 'Primary Node' and 'Replica Node' as part of an 'Elasticsearch Cluster.' The Primary Node contains 'Primary Shard 1,' and the Replica Node contains 'Primary Shard 2.' A pink arrow points from an empty shard slot on the 'Primary Node' to Shard 2, representing the unwanted move of a primary shard to the 'Replica Node.'",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/CCR-2.png?resize=1280%2C720",
+          "alt": "Diagram showing two boxes labeled 'Primary Node' and 'Replica Node.' Each box contains a dashed rectangle labeled 'Elasticsearch Instance / Cluster.' A double-headed pink arrow labeled 'Replicate Index Data (CCR)' connects the two boxes, illustrating bidirectional data replication between the primary and replica Elasticsearch clusters.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/17506770?v=4&s=200",
+          "alt": "David Tippett",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Here's how we the search experience better, faster, and more resilient for GHES customers.</p>\n<p>The post <a href=\"https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/\">How we rebuilt the search architecture for high availability in GitHub Enterprise Server</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Join or host a GitHub Copilot Dev Days event near you",
+      "link": "https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/",
+      "pubDate": "Tue, 03 Mar 2026 16:55:00 +0000",
+      "isoDate": "2026-03-03T16:55:00.000Z",
+      "creator": "Kathleen Ann Savage",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Join or host a GitHub Copilot Dev Days event near you",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/20649242?v=4&s=200",
+          "alt": "Kathleen Ann Savage",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>GitHub Copilot Dev Days is a global series of hands-on, in-person, community-led events designed to help developers explore real-world, AI-assisted coding.  </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/\">Join or host a GitHub Copilot Dev Days event near you</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub for Beginners: Getting started with GitHub Issues and Projects",
       "link": "https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-issues-and-projects/",
       "pubDate": "Mon, 02 Mar 2026 17:00:00 +0000",
@@ -323,95 +429,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>Discover GitHub Agentic Workflows, now in technical preview. Build automations using coding agents in GitHub Actions to handle triage, documentation, code quality, and more.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/automate-repository-tasks-with-github-agentic-workflows/\">Automate repository tasks with GitHub Agentic Workflows  </a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Welcome to the Eternal September of open source. Here’s what we plan to do for maintainers.",
-      "link": "https://github.blog/open-source/maintainers/welcome-to-the-eternal-september-of-open-source-heres-what-we-plan-to-do-for-maintainers/",
-      "pubDate": "Thu, 12 Feb 2026 20:14:11 +0000",
-      "isoDate": "2026-02-12T20:14:11.000Z",
-      "creator": "Ashley Wolf",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Welcome to the Eternal September of open source. Here’s what we plan to do for maintainers.",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/10735907?v=4&s=200",
-          "alt": "Ashley Wolf",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Open source is hitting an “Eternal September.” As contribution friction drops, maintainers are adapting with new trust signals, triage approaches, and community-led solutions.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/welcome-to-the-eternal-september-of-open-source-heres-what-we-plan-to-do-for-maintainers/\">Welcome to the Eternal September of open source. Here&#8217;s what we plan to do for maintainers.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub availability report: January 2026",
-      "link": "https://github.blog/news-insights/company-news/github-availability-report-january-2026/",
-      "pubDate": "Wed, 11 Feb 2026 23:12:34 +0000",
-      "isoDate": "2026-02-11T23:12:34.000Z",
-      "creator": "Jakub Oleksy",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "GitHub availability report: January 2026",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/6147691?v=4&s=200",
-          "alt": "Jakub Oleksy",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>In January, we experienced two incidents that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-january-2026/\">GitHub availability report: January 2026</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-03-03T05:17:26.446Z"
+  "lastUpdated": "2026-03-05T05:15:52.336Z"
 }
