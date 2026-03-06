@@ -5,6 +5,26 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas",
+      "link": "https://developers.googleblog.com/en/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/",
+      "pubDate": "Wed, 04 Mar 2026 16:00:00 GMT",
+      "isoDate": "2026-03-04T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/PXL_20250411_163631916.original.jpg",
+          "alt": "PXL_20250411_163631916",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "While keynotes are available online, Google Cloud Next '26 in Las Vegas offers an irreplaceable in-person experience centered on networking, hands-on problem solving, and the transition to agentic AI. The event features specialized technical tracks covering everything from Gemini multimodal breakthroughs to zero-trust security on Cloud Run, providing developers with the tools to balance individual speed with organizational stability. Beyond formal sessions, the \"in-person advantage\" lies in over 20 developer meetups and collaborative whiteboard sessions designed to foster serendipitous breakthroughs. Ultimately, the conference serves as a high-energy hub for engineers to move beyond the hype and master the modern building blocks of software architecture together."
+    },
+    {
       "title": "How we built the Google I/O 2026 Save the Date experience",
       "link": "https://developers.googleblog.com/en/how-we-built-the-google-io-2026-save-the-date-experience/",
       "pubDate": "Mon, 02 Mar 2026 16:00:00 GMT",
@@ -141,39 +161,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Google is launching the Developer Knowledge API and MCP Server in public preview. This new toolset provides a canonical, machine-readable way for AI assistants and agentic platforms to search and retrieve up-to-date documentation across Firebase, Google Cloud, Android, and more. By using the official MCP server, developers can connect tools directly to Google’s documentation corpus, ensuring that AI-generated code and guidance are based on authoritative, real-time context."
-    },
-    {
-      "title": "Easy FunctionGemma finetuning with Tunix on Google TPUs",
-      "link": "https://developers.googleblog.com/en/easy-functiongemma-finetuning-with-tunix-on-google-tpus/",
-      "pubDate": "Mon, 02 Feb 2026 16:00:00 GMT",
-      "isoDate": "2026-02-02T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Easy FunctionGemma finetuning with Tunix on Google TPUs",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Google_stack.original.png",
-          "alt": "Google stack",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/TPU-util.original.png",
-          "alt": "TPU-util",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Accuracy_before_finetuning_vs._after_finetuning.original.png",
-          "alt": "Accuracy before finetuning vs. after finetuning",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Finetuning the FunctionGemma model is made fast and easy using the lightweight JAX-based Tunix library on Google TPUs, a process demonstrated here using LoRA for supervised finetuning. This approach delivers significant accuracy improvements with high TPU efficiency, culminating in a model ready for deployment."
     }
   ],
-  "lastUpdated": "2026-03-04T10:50:41.269Z"
+  "lastUpdated": "2026-03-06T10:49:32.372Z"
 }
