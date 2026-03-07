@@ -5,6 +5,26 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "What's new in TensorFlow 2.21",
+      "link": "https://developers.googleblog.com/en/whats-new-in-tensorflow-221/",
+      "pubDate": "Thu, 05 Mar 2026 16:00:00 GMT",
+      "isoDate": "2026-03-05T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "What's new in TensorFlow 2.21",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_6T271IJ.original.jpg",
+          "alt": "image3",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Google has officially launched LiteRT, the successor to TFLite, which offers significantly faster GPU and NPU acceleration alongside seamless support for PyTorch and JAX. The update also introduces lower-precision data type support for increased efficiency and a commitment to more frequent security and dependency updates across the TensorFlow ecosystem. This transition solidifies LiteRT as Google's primary high-performance framework for deploying GenAI and advanced on-device inference."
+    },
+    {
       "title": "You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas",
       "link": "https://developers.googleblog.com/en/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/",
       "pubDate": "Wed, 04 Mar 2026 16:00:00 GMT",
@@ -148,20 +168,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Data Commons has launched a free, hosted Model Context Protocol (MCP) service on Google Cloud Platform, eliminating the need for users to manage complex local server installations. This update simplifies connecting AI agents and the Gemini CLI to Data Commons, allowing Google to handle security, updates, and resource management while users query data natively."
-    },
-    {
-      "title": "Introducing the Developer Knowledge API and MCP Server",
-      "link": "https://developers.googleblog.com/en/introducing-the-developer-knowledge-api-and-mcp-server/",
-      "pubDate": "Tue, 03 Feb 2026 16:00:00 GMT",
-      "isoDate": "2026-02-03T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Introducing the Developer Knowledge API and MCP Server",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Google is launching the Developer Knowledge API and MCP Server in public preview. This new toolset provides a canonical, machine-readable way for AI assistants and agentic platforms to search and retrieve up-to-date documentation across Firebase, Google Cloud, Android, and more. By using the official MCP server, developers can connect tools directly to Google’s documentation corpus, ensuring that AI-generated code and guidance are based on authoritative, real-time context."
     }
   ],
-  "lastUpdated": "2026-03-06T10:49:32.372Z"
+  "lastUpdated": "2026-03-07T10:34:45.489Z"
 }
