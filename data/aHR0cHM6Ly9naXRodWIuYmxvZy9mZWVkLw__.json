@@ -5,6 +5,112 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "The era of “AI as text” is over. Execution is the new interface.",
+      "link": "https://github.blog/ai-and-ml/github-copilot/the-era-of-ai-as-text-is-over-execution-is-the-new-interface/",
+      "pubDate": "Tue, 10 Mar 2026 20:16:01 +0000",
+      "isoDate": "2026-03-10T20:16:01.000Z",
+      "creator": "Gwen Davis",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "The era of “AI as text” is over. Execution is the new interface.",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/94031472?v=4&s=200",
+          "alt": "Gwen Davis",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>AI is shifting from prompt-response interactions to programmable execution. See how the GitHub Copilot SDK enables agentic workflows directly inside your applications.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/the-era-of-ai-as-text-is-over-execution-is-the-new-interface/\">The era of “AI as text” is over. Execution is the new interface.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Under the hood: Security architecture of GitHub Agentic Workflows",
+      "link": "https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/",
+      "pubDate": "Mon, 09 Mar 2026 16:00:00 +0000",
+      "isoDate": "2026-03-09T16:00:00.000Z",
+      "creator": "Landon Cox",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Under the hood: Security architecture of GitHub Agentic Workflows",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/image1.jpg?resize=1024%2C949",
+          "alt": "Diagram of a three-layer system architecture with labeled sections Planning layer, Configuration layer, and Substrate layer. Each layer contains three blue tiles:\n\nPlanning: Safe Outputs MCP (GitHub write operations), Call filtering (call availability, volume), Output sanitization (secret removal, moderation).\nConfiguration: Compiler (GH AW extension), Firewall policies (allowlist), MCP config (Docker image, auth token).\nSubstrate: Action runner VM (OS, hypervisor), Docker containers (Docker daemon, network), Trusted containers (firewall, MCP gateway, API proxy).",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/image2.jpg?resize=1024%2C596",
+          "alt": "Architecture diagram showing several connected Docker containers. A Codex token connects to an api-proxy container, which connects to an OpenAI service icon. A separate flow shows an agent container (linked to chroot/host) communicating over http to a gh-aw-firewall container, then over http to a gh-aw-mcpg container (linked to Host Docker Socket), then over stdio to a GitHub MCP container (linked to a GitHub PAT). A GitHub icon appears above the GitHub MCP container.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/image3.jpg?resize=1024%2C688",
+          "alt": "Diagram showing a GitHub-centric workflow with green arrows and two rows of components. At the top, a GitHub icon points down into three boxes: Agent (Untrusted), GitHub MCP (Read-only), and MCP config (Write-buffered). Below are three processing steps labeled Filter operations, Moderate content, and Remove secrets, each marked 'Deterministic analysis.' Green arrows indicate data flow from GitHub into the system, down through configuration to 'Remove secrets,' then left through 'Moderate content' and 'Filter operations,' looping back toward the agent.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/15877973?v=4&s=200",
+          "alt": "Landon Cox",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/5447827?v=4&s=200",
+          "alt": "Jiaxiao Zhou",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>GitHub Agentic Workflows are built with isolation, constrained outputs, and comprehensive logging. Learn how our threat model and security architecture help teams run agents safely in GitHub Actions. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/\">Under the hood: Security architecture of GitHub Agentic Workflows</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "How to scan for vulnerabilities with GitHub Security Lab’s open source AI-powered framework",
       "link": "https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/",
       "pubDate": "Fri, 06 Mar 2026 21:09:04 +0000",
@@ -159,7 +265,7 @@
       "link": "https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/",
       "pubDate": "Tue, 03 Mar 2026 16:55:00 +0000",
       "isoDate": "2026-03-03T16:55:00.000Z",
-      "creator": "Kathleen Ann Savage",
+      "creator": "Katie Savage",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
       "translated_title": "Join or host a GitHub Copilot Dev Days event near you",
@@ -298,76 +404,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>GitHub Copilot coding agent now includes a model picker, self-review, built-in security scanning, custom agents, and CLI handoff. Here's what's new and how to use it. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/whats-new-with-github-copilot-coding-agent/\">What&#8217;s new with GitHub Copilot coding agent</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Multi-agent workflows often fail. Here’s how to engineer ones that don’t.",
-      "link": "https://github.blog/ai-and-ml/generative-ai/multi-agent-workflows-often-fail-heres-how-to-engineer-ones-that-dont/",
-      "pubDate": "Tue, 24 Feb 2026 16:00:00 +0000",
-      "isoDate": "2026-02-24T16:00:00.000Z",
-      "creator": "Gwen Davis",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Multi-agent workflows often fail. Here’s how to engineer ones that don’t.",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Most multi-agent workflow failures come down to missing structure, not model capability. Learn the three engineering patterns that make agent systems reliable.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/multi-agent-workflows-often-fail-heres-how-to-engineer-ones-that-dont/\">Multi-agent workflows often fail. Here’s how to engineer ones that don’t.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "How AI is reshaping developer choice (and Octoverse data proves it)",
-      "link": "https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/",
-      "pubDate": "Thu, 19 Feb 2026 17:00:00 +0000",
-      "isoDate": "2026-02-19T17:00:00.000Z",
-      "creator": "Andrea Griffiths",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "How AI is reshaping developer choice (and Octoverse data proves it)",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/octoverse-2025-top-programming-languages.png?resize=1024%2C576",
-          "alt": "A chart showing the top 10 programming languages on GitHub from 2023 to 2025. TypeScript rises to #1 in 2025, overtaking Python and JavaScript, which move to #2 and #3 respectively. Other top languages include Java, C#, PHP, Shell, C++, HCL, and Go. The chart tracks ranking changes over time on a dark background with colored lines representing each language.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/10/octoverse-2025-total-number-of-projects-using-genAI-model-SDKs.png?resize=1024%2C576",
-          "alt": "A line and area chart titled ‘Cumulative count of public projects using generative AI model SDKs,’ showing rapid growth from 2021 to 2025. The curve starts near zero and climbs steeply to over 1.1 million repositories by 2025, illustrating the widespread adoption of LLM and AI model SDKs. The chart features a purple-to-pink gradient fill on a dark background with geometric ribbons on the left.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/08/Andrea-Griffiths_avatar_1755783168-200x200.jpeg",
-          "alt": "Andrea Griffiths",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>AI is rewiring developer preferences through convenience loops. Octoverse 2025 reveals how AI compatibility is becoming the new standard for technology choice.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/\">How AI is reshaping developer choice (and Octoverse data proves it)</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-03-09T05:23:20.308Z"
+  "lastUpdated": "2026-03-11T05:15:29.327Z"
 }
