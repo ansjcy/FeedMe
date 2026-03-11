@@ -5,6 +5,45 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Unleash Your Development Superpowers: Refining the Core Coding Experience",
+      "link": "https://developers.googleblog.com/en/unleash-your-development-superpowers-refining-the-core-coding-experience/",
+      "pubDate": "Mon, 09 Mar 2026 16:00:00 GMT",
+      "isoDate": "2026-03-09T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Unleash Your Development Superpowers: Refining the Core Coding Experience",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "The Gemini Code Assist team has introduced a suite of updates focused on streamlining the core coding workflow through high-velocity tools like Agent Mode with Auto Approve and Inline Diff Views. These enhancements, along with new features for precise context management and custom commands, aim to transform the AI from a general assistant into a highly tailored, seamless collaborator that adapts to your specific development style."
+    },
+    {
+      "title": "Introducing Finish Changes and Outlines, now available in Gemini Code Assist extensions on IntelliJ and VS Code",
+      "link": "https://developers.googleblog.com/en/introducing-finish-changes-and-outlines-now-available-in-gemini-code-assist-extensions-on-intellij-and-vs-code/",
+      "pubDate": "Mon, 09 Mar 2026 16:00:00 GMT",
+      "isoDate": "2026-03-09T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Introducing Finish Changes and Outlines, now available in Gemini Code Assist extensions on IntelliJ and VS Code",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Google has introduced Finish Changes and Outlines for Gemini Code Assist in IntelliJ and VS Code to reduce developer friction and eliminate the need for long, manual prompting. Finish Changes acts as an AI pair programmer that completes code, implements pseudocode, and applies refactoring patterns by observing your current edits and context. Meanwhile, Outlines improves code comprehension by generating interactive, high-level English summaries interleaved directly within the source code to help engineers navigate and understand complex files."
+    },
+    {
+      "title": "Introducing Wednesday Build Hour",
+      "link": "https://developers.googleblog.com/en/introducing-wednesday-build-hour/",
+      "pubDate": "Sun, 08 Mar 2026 16:00:00 GMT",
+      "isoDate": "2026-03-08T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Introducing Wednesday Build Hour",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Wednesday Build Hour is a weekly, interactive \"technical gym session\" led by Google Cloud experts to help developers and architects sharpen their cloud skills. Moving beyond passive slide decks, the program focuses on hands-on building, covering advanced topics like AI agents, Vertex AI, and developer productivity tools. Each hour-long session is designed to provide tangible results that participants can immediately deploy into their own workflows. It serves as a consistent, dedicated space for builders to stay ahead of the curve and connect with a community of cloud engineers."
+    },
+    {
       "title": "What's new in TensorFlow 2.21",
       "link": "https://developers.googleblog.com/en/whats-new-in-tensorflow-221/",
       "pubDate": "Thu, 05 Mar 2026 16:00:00 GMT",
@@ -122,53 +161,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Google I/O returns May 19-20. Watch the livestreams for updates on Android, AI, Chrome, and Cloud. Registration is open on the Google I/O website."
-    },
-    {
-      "title": "Conductor Update: Introducing Automated Reviews",
-      "link": "https://developers.googleblog.com/en/conductor-update-introducing-automated-reviews/",
-      "pubDate": "Thu, 12 Feb 2026 16:00:00 GMT",
-      "isoDate": "2026-02-12T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Conductor Update: Introducing Automated Reviews",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/AutomatedReviews.original.png",
-          "alt": "AutomatedReviews",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Conductor for the Gemini CLI has introduced a new Automated Review feature designed to verify the quality and accuracy of AI-generated code. This update addresses the challenge of validating agentic development by automatically checking implementations against original plans, enforcing style guides, and identifying security risks or bugs. by incorporating test-suite validation and providing actionable reports, Conductor helps developers ensure that their AI agents deliver safe, predictable, and architecturally sound code before it is finalized."
-    },
-    {
-      "title": "Making Gemini CLI extensions easier to use",
-      "link": "https://developers.googleblog.com/en/making-gemini-cli-extensions-easier-to-use/",
-      "pubDate": "Tue, 10 Feb 2026 16:00:00 GMT",
-      "isoDate": "2026-02-10T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Making Gemini CLI extensions easier to use",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "To simplify the user experience and prevent startup failures, the Gemini CLI has introduced structured extension settings that eliminate the need for manual environment variable configuration. This update enables extensions to automatically prompt users for required details during installation and securely stores sensitive information, such as API keys, directly in the system keychain. Users can now easily manage and override these configurations globally or per project using the new Gemini extensions config command."
-    },
-    {
-      "title": "Access public data insights faster: Data Commons MCP is now hosted on Google Cloud",
-      "link": "https://developers.googleblog.com/en/access-public-data-insights-faster-data-commons-mcp-is-now-hosted-on-google-cloud/",
-      "pubDate": "Sun, 08 Feb 2026 16:00:00 GMT",
-      "isoDate": "2026-02-08T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Access public data insights faster: Data Commons MCP is now hosted on Google Cloud",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Data Commons has launched a free, hosted Model Context Protocol (MCP) service on Google Cloud Platform, eliminating the need for users to manage complex local server installations. This update simplifies connecting AI agents and the Gemini CLI to Data Commons, allowing Google to handle security, updates, and resource management while users query data natively."
     }
   ],
-  "lastUpdated": "2026-03-09T10:55:52.099Z"
+  "lastUpdated": "2026-03-11T10:54:30.614Z"
 }
