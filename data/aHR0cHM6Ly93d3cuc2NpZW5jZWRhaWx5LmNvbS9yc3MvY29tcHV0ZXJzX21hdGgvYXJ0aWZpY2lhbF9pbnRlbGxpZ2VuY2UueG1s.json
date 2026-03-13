@@ -5,6 +5,19 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "Scientists built the hardest AI test ever and the results are surprising",
+      "link": "https://www.sciencedaily.com/releases/2026/03/260313002650.htm",
+      "pubDate": "Fri, 13 Mar 2026 02:08:43 EDT",
+      "isoDate": "2026-03-13T06:08:43.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Scientists built the hardest AI test ever and the results are surprising",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "As AI systems began acing traditional tests, researchers realized those benchmarks were no longer tough enough. In response, nearly 1,000 experts created Humanity’s Last Exam, a massive 2,500-question challenge covering highly specialized topics across many fields. The exam was engineered so that any question solvable by current AI models was removed. Early results show even the most advanced systems still struggle — revealing a surprisingly large gap between AI performance and true expert-level knowledge."
+    },
+    {
       "title": "ChatGPT as a therapist? New study reveals serious ethical risks",
       "link": "https://www.sciencedaily.com/releases/2026/03/260302030642.htm",
       "pubDate": "Mon, 02 Mar 2026 10:04:35 EST",
@@ -640,20 +653,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Researchers at Harvard have created a groundbreaking metasurface that can replace bulky and complex optical components used in quantum computing with a single, ultra-thin, nanostructured layer. This innovation could make quantum networks far more scalable, stable, and compact. By harnessing the power of graph theory, the team simplified the design of these quantum metasurfaces, enabling them to generate entangled photons and perform sophisticated quantum operations — all on a chip thinner than a human hair. It's a radical leap forward for room-temperature quantum technology and photonics."
-    },
-    {
-      "title": "谷歌的深度伪造猎手能看到你所不能——即使在没有面部的视频中 (原标题: Google's deepfake hunter sees what you can’t—even in videos without faces)",
-      "link": "https://www.sciencedaily.com/releases/2025/07/250724232412.htm",
-      "pubDate": "Thu, 24 Jul 2025 23:24:12 EDT",
-      "isoDate": "2025-07-25T03:24:12.000Z",
-      "creator": "",
-      "summary": "## UNITE：谷歌与加州大学河滨分校合作开发的通用深度伪造检测系统\n\n### 引言：应对深度伪造视频带来的挑战\n\n在当前信息环境中，被篡改的视频（即深度伪造）已成为散布虚假信息、进行网络欺凌和煽动危害的强大工具。为了应对这一严峻挑战，加州大学河滨分校（UC Riverside）的研究人员与谷歌的科学家们携手合作，开发出一种功能强大的新型系统，旨在揭露这些伪造内容。\n\n### UNITE系统介绍\n\n*   **开发者：** 该系统由加州大学河滨分校马兰与罗斯玛丽·伯恩斯工程学院的电气与计算机工程教授阿米特·罗伊-乔杜里（Amit Roy-Chowdhury）和博士生罗希特·昆杜（Rohit Kundu），以及谷歌的科学家们共同开发。\n*   **系统名称：** 该系统被称为“识别篡改和合成视频的通用网络”（Universal Network for Identifying Tampered and synthEtic videos），简称 **UNITE**。\n*   **核心创新点：** UNITE的独特之处在于，它不仅检查视频中的面部，还会分析整个视频帧，包括背景和运动模式，从而检测伪造。这使其成为首批能够识别不依赖面部内容的合成或篡改视频的工具之一。\n\n### 深度伪造的演变与挑战\n\n*   **不再局限于换脸：** 昆杜指出，深度伪造技术已经发展，不再仅仅是简单的换脸。现在，人们可以使用强大的生成模型（如文本到视频、图像到视频生成平台）创建完全虚假的视频，包括面部和背景。\n*   **生成式AI工具的普及与风险：** 这些AI平台已广泛在线可用，几乎任何人都可以制作出极具说服力的虚假视频，对个人、机构乃至民主本身构成严重威胁。\n*   **现有检测器的局限性：** 昆杜解释说，早期的深度伪造检测器几乎完全依赖于面部线索。如果帧中没有面部，许多检测器就无法工作。然而，篡改场景背景同样可以扭曲事实，传播虚假信息。\n\n### UNITE的技术原理\n\n*   **模型类型：** UNITE采用基于Transformer的深度学习模型来分析视频片段。\n*   **检测方法：** 它能够检测出细微的空间和时间不一致性，这些线索常常被之前的系统所忽略。\n*   **核心框架：** 该模型借鉴了名为SigLIP的基础AI框架，该框架能够提取不限于特定人物或对象的特征。\n*   **训练方法：** 一种名为“注意力多样性损失”（attention-diversity loss）的新型训练方法，促使系统监控每个帧中的多个视觉区域，防止其仅仅关注面部。\n\n### 系统能力与通用性\n\n*   **检测范围：** UNITE是一个通用检测器，能够识别从简单的面部替换到复杂的、完全由AI生成且不含任何真实素材的合成视频等各种伪造类型。\n*   **“通用”的含义：** 昆杜表示，UNITE是一个模型，能够处理所有这些不同的场景，这正是其“通用”的体现。\n\n### 研究成果与合作\n\n*   **论文发表：** 研究人员在2025年计算机视觉与模式识别大会（CVPR）上展示了他们的研究成果。他们的论文题为“迈向通用合成视频检测器：从面部或背景操纵到完全AI生成内容”，由昆杜主导，详细阐述了UNITE的架构和训练方法。合著者包括谷歌研究员郝雄（Hao Xiong）、维沙尔·莫汉蒂（Vishal Mohanty）和阿图拉·巴拉钱德拉（Athula Balachandra）。\n*   **谷歌合作的重要性：** 昆杜在谷歌实习期间的合作，为模型训练提供了大量数据集和计算资源，使其能够处理各种合成内容，包括由文本或静止图像生成的视频——这些格式常常令现有检测器束手无策。\n\n### 未来展望与应用\n\n尽管UNITE仍处于开发阶段，但它有望在抵御视频虚假信息方面发挥至关重要的作用。潜在用户包括社交媒体平台、事实核查机构和新闻编辑室，它们可以利用UNITE来防止被篡改的视频病毒式传播。昆杜强调：“人们有权知道他们所看到的是否真实。随着AI在伪造现实方面变得越来越好，我们也必须在揭示真相方面做得更好。”",
-      "shortSummary": "加州大学河滨分校与谷歌合作开发了UNITE系统，这是一种新型AI模型，旨在检测深度伪造视频。与传统检测器不同，UNITE不仅分析面部，还能检查整个视频帧，包括背景和运动模式，从而识别出超越换脸的完全合成视频。该系统利用Transformer模型和“注意力多样性损失”训练方法，能检测细微的空间和时间不一致性。UNITE有望成为打击视频虚假信息的重要工具，帮助社交媒体和新闻机构辨别真伪。",
-      "translated_title": "谷歌的深度伪造猎手能看到你所不能——即使在没有面部的视频中",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "AI-generated videos are becoming dangerously convincing and UC Riverside researchers have teamed up with Google to fight back. Their new system, UNITE, can detect deepfakes even when faces aren't visible, going beyond traditional methods by scanning backgrounds, motion, and subtle cues. As fake content becomes easier to generate and harder to detect, this universal tool might become essential for newsrooms and social media platforms trying to safeguard the truth."
     }
   ],
-  "lastUpdated": "2026-03-12T09:54:46.341Z"
+  "lastUpdated": "2026-03-13T09:51:35.562Z"
 }
