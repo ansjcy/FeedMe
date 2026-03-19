@@ -5,6 +5,68 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Developer’s Guide to AI Agent Protocols",
+      "link": "https://developers.googleblog.com/en/developers-guide-to-ai-agent-protocols/",
+      "pubDate": "Tue, 17 Mar 2026 16:00:00 GMT",
+      "isoDate": "2026-03-17T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Developer’s Guide to AI Agent Protocols",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-1-mcp.original.png",
+          "alt": "diagram-1-mcp",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-2-a2a.original.png",
+          "alt": "diagram-2-a2a",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-3-ucp.original.png",
+          "alt": "diagram-3-ucp",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-4-ap2.original.png",
+          "alt": "diagram-4-ap2",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-5-a2ui.original.png",
+          "alt": "diagram-5-a2ui",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/widgets-a2ui.original.png",
+          "alt": "widgets-a2ui",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-6-ag-ui.original.png",
+          "alt": "diagram-6-ag-ui",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/kichen_manager_agent_overall.original.png",
+          "alt": "kichen manager agent_overall",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "This blog post introduces a suite of six protocols, such as MCP and A2A, designed to eliminate custom integration code by standardizing how AI agents access data and communicate. Using a \"kitchen manager\" agent as a practical example, it demonstrates how these tools handle complex tasks like real-time inventory checks, wholesale commerce via UCP, and secure payment authorization through AP2. By leveraging the Agent Development Kit (ADK), developers can also implement A2UI and AG-UI to deliver interactive dashboards and seamless streaming interfaces to users."
+    },
+    {
       "title": "Announcing the Colab MCP Server: Connect Any AI Agent to Google Colab",
       "link": "https://developers.googleblog.com/en/announcing-the-colab-mcp-server-connect-any-ai-agent-to-google-colab/",
       "pubDate": "Mon, 16 Mar 2026 16:00:00 GMT",
@@ -148,27 +210,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Agent Development Kit (ADK) now supports a robust ecosystem of third-party tools and integrations. Connect your agents to GitHub, Notion, Hugging Face, and more to build capable, real-world applications."
-    },
-    {
-      "title": "On-Device Function Calling in Google AI Edge Gallery",
-      "link": "https://developers.googleblog.com/en/on-device-function-calling-in-google-ai-edge-gallery/",
-      "pubDate": "Wed, 25 Feb 2026 16:00:00 GMT",
-      "isoDate": "2026-02-25T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "On-Device Function Calling in Google AI Edge Gallery",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/benchmark_wide2.original.png",
-          "alt": "benchmark_wide2",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Google has introduced FunctionGemma, a specialized 270M parameter model designed to bring efficient, action-oriented AI experiences directly to mobile devices through on-device function calling. By leveraging Google AI Edge and LiteRT-LM, the model enables complex tasks—such as managing calendars, controlling device hardware, or executing specific game logic in the \"Tiny Garden\" demo—to be performed entirely offline with high speed and low latency. Available for testing in the Google AI Edge Gallery app on both Android and iOS, FunctionGemma allows developers to move beyond simple text generation toward building responsive, \"agentic\" applications that interact seamlessly with the physical and digital world without relying on cloud processing."
     }
   ],
-  "lastUpdated": "2026-03-18T11:01:26.145Z"
+  "lastUpdated": "2026-03-19T10:55:04.526Z"
 }
