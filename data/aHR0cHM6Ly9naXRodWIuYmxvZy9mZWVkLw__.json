@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": " Investing in the people shaping open source and securing the future together",
+      "link": "https://github.blog/security/supply-chain-security/investing-in-the-people-shaping-open-source-and-securing-the-future-together/",
+      "pubDate": "Tue, 17 Mar 2026 16:00:00 +0000",
+      "isoDate": "2026-03-17T16:00:00.000Z",
+      "creator": "Kevin Crosby",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": " Investing in the people shaping open source and securing the future together",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/6313838?v=4&s=200",
+          "alt": "Kevin Crosby",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>See how GitHub is investing in open source security funding maintainers, partnering with Alpha-Omega, and expanding access to help reduce burden and strengthen software supply chains.</p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/investing-in-the-people-shaping-open-source-and-securing-the-future-together/\"> Investing in the people shaping open source and securing the future together</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub for Beginners: Getting started with GitHub Actions",
       "link": "https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-actions/",
       "pubDate": "Mon, 16 Mar 2026 16:00:00 +0000",
@@ -391,69 +435,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Developers connected to Andela share how they’re learning AI tools inside real production workflows.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/career-growth/scaling-ai-opportunity-across-the-globe-learnings-from-github-and-andela/\">Scaling AI opportunity across the globe: Learnings from GitHub and Andela</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "How we rebuilt the search architecture for high availability in GitHub Enterprise Server",
-      "link": "https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/",
-      "pubDate": "Tue, 03 Mar 2026 18:45:09 +0000",
-      "isoDate": "2026-03-03T18:45:09.000Z",
-      "creator": "David Tippett",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "How we rebuilt the search architecture for high availability in GitHub Enterprise Server",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/CCR.png?resize=1280%2C720",
-          "alt": "Diagram labeled 'HA Architecture' with two boxes: 'Primary Node' and 'Replica Node.' Across both of them there exists an 'Elasticsearch Cluster' with a nested box on each node labeled 'ES Instance.' A pink arrow points from the Primary Node’s ES Instance to the Replica Node’s ES Instance, indicating replication or failover in a high-availability setup.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/CCR-1.png?resize=1280%2C720",
-          "alt": "Diagram showing 'Primary Node' and 'Replica Node' as part of an 'Elasticsearch Cluster.' The Primary Node contains 'Primary Shard 1,' and the Replica Node contains 'Primary Shard 2.' A pink arrow points from an empty shard slot on the 'Primary Node' to Shard 2, representing the unwanted move of a primary shard to the 'Replica Node.'",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/CCR-2.png?resize=1280%2C720",
-          "alt": "Diagram showing two boxes labeled 'Primary Node' and 'Replica Node.' Each box contains a dashed rectangle labeled 'Elasticsearch Instance / Cluster.' A double-headed pink arrow labeled 'Replicate Index Data (CCR)' connects the two boxes, illustrating bidirectional data replication between the primary and replica Elasticsearch clusters.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/17506770?v=4&s=200",
-          "alt": "David Tippett",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Here's how we made the search experience better, faster, and more resilient for GHES customers.</p>\n<p>The post <a href=\"https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/\">How we rebuilt the search architecture for high availability in GitHub Enterprise Server</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-03-17T05:35:13.739Z"
+  "lastUpdated": "2026-03-19T05:35:57.238Z"
 }
