@@ -5,6 +5,32 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "Friend Bubbles: Enhancing Social Discovery on Facebook Reels",
+      "link": "https://engineering.fb.com/2026/03/18/ml-applications/friend-bubbles-enhancing-social-discovery-on-facebook-reels/",
+      "pubDate": "Wed, 18 Mar 2026 18:19:33 +0000",
+      "isoDate": "2026-03-18T18:19:33.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Friend Bubbles: Enhancing Social Discovery on Facebook Reels",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Friend bubbles in Facebook Reels highlight Reels your friends have liked or reacted to, helping you discover new content and making it easier to connect over shared interests. This article explains the technical architecture behind friend bubbles, including how machine learning estimates relationship strength and ranks content your friends have interacted with to create more [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/03/18/ml-applications/friend-bubbles-enhancing-social-discovery-on-facebook-reels/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/03/18/ml-applications/friend-bubbles-enhancing-social-discovery-on-facebook-reels/\">Friend Bubbles: Enhancing Social Discovery on Facebook Reels</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
+      "title": "Ranking Engineer Agent (REA): The Autonomous AI Agent Accelerating Meta’s Ads Ranking Innovation",
+      "link": "https://engineering.fb.com/2026/03/17/developer-tools/ranking-engineer-agent-rea-autonomous-ai-system-accelerating-meta-ads-ranking-innovation/",
+      "pubDate": "Tue, 17 Mar 2026 20:07:52 +0000",
+      "isoDate": "2026-03-17T20:07:52.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Ranking Engineer Agent (REA): The Autonomous AI Agent Accelerating Meta’s Ads Ranking Innovation",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Meta’s Ranking Engineer Agent (REA) autonomously executes key steps across the end-to-end machine learning (ML) lifecycle for ads ranking models. This post covers REA’s ML experimentation capabilities: autonomously generating hypotheses, launching training jobs, debugging failures, and iterating on results. Future posts will cover additional REA capabilities. REA reduces the need for manual intervention. It manages [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/03/17/developer-tools/ranking-engineer-agent-rea-autonomous-ai-system-accelerating-meta-ads-ranking-innovation/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/03/17/developer-tools/ranking-engineer-agent-rea-autonomous-ai-system-accelerating-meta-ads-ranking-innovation/\">Ranking Engineer Agent (REA): The Autonomous AI Agent Accelerating Meta’s Ads Ranking Innovation</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "Patch Me If You Can: AI Codemods for Secure-by-Default Android Apps",
       "link": "https://engineering.fb.com/2026/03/13/android/ai-codemods-secure-by-default-android-apps-meta-tech-podcast/",
       "pubDate": "Fri, 13 Mar 2026 16:00:26 +0000",
@@ -156,33 +182,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>We’re sharing a novel approach to enabling cross-device passkey authentication for devices with inaccessible displays (like XR devices). Our approach bypasses the use of QR codes and enables cross-device authentication without the need for an on-device display, while still complying with all trust and proximity requirements. This approach builds on work done by the FIDO [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/02/04/security/cross-device-passkey-authentication-for-xr-devices-meta-quest/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/02/04/security/cross-device-passkey-authentication-for-xr-devices-meta-quest/\">No Display? No Problem: Cross-Device Passkey Authentication for XR Devices</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "Rust at Scale: An Added Layer of Security for WhatsApp",
-      "link": "https://engineering.fb.com/2026/01/27/security/rust-at-scale-security-whatsapp/",
-      "pubDate": "Tue, 27 Jan 2026 15:00:09 +0000",
-      "isoDate": "2026-01-27T15:00:09.000Z",
-      "creator": "",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Rust at Scale: An Added Layer of Security for WhatsApp",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>WhatsApp has adopted and rolled out a new layer of security for users – built with Rust – as part of its effort to harden defenses against malware threats. WhatsApp’s experience creating and distributing our media consistency library in Rust to billions of devices and browsers proves Rust is production ready at a global scale. [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/01/27/security/rust-at-scale-security-whatsapp/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/01/27/security/rust-at-scale-security-whatsapp/\">Rust at Scale: An Added Layer of Security for WhatsApp</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "Adapting the Facebook Reels RecSys AI Model Based on User Feedback",
-      "link": "https://engineering.fb.com/2026/01/14/ml-applications/adapting-the-facebook-reels-recsys-ai-model-based-on-user-feedback/",
-      "pubDate": "Wed, 14 Jan 2026 20:51:33 +0000",
-      "isoDate": "2026-01-14T20:51:33.000Z",
-      "creator": "",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Adapting the Facebook Reels RecSys AI Model Based on User Feedback",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>We’ve improved personalized video recommendations on Facebook Reels by moving beyond metrics such as likes and watch time and directly leveraging user feedback.  Our new User True Interest Survey (UTIS) model, now helps surface more niche, high-quality content and boosts engagement, retention, and satisfaction. We’re doubling down on personalization, tackling challenges like sparse user data [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/01/14/ml-applications/adapting-the-facebook-reels-recsys-ai-model-based-on-user-feedback/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/01/14/ml-applications/adapting-the-facebook-reels-recsys-ai-model-based-on-user-feedback/\">Adapting the Facebook Reels RecSys AI Model Based on User Feedback</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-03-17T06:03:56.608Z"
+  "lastUpdated": "2026-03-19T06:02:28.553Z"
 }
