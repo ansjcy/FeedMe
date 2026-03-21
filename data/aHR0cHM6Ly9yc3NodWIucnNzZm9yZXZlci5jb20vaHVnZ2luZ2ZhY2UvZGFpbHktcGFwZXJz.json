@@ -135,6 +135,32 @@
       "content": "Recent advancements in omnimodal large language models (OmniLLMs) have significantly improved the comprehension of audio and video inputs. However, current evaluations primarily focus on short audio and video clips ranging from 10 seconds to 5 minutes, failing to reflect the demands of real-world applications, where videos typically run for tens of minutes. To address this critical gap, we introduce LVOmniBench, a new benchmark designed specifically for the cross-modal comprehension of long-form audio and video. This dataset comprises high-quality videos sourced from open platforms that feature rich audio-visual dynamics. Through rigorous manual selection and annotation, LVOmniBench comprises 275 videos, ranging in duration from 10 to 90 minutes, and 1,014 question-answer (QA) pairs. LVOmniBench aims to rigorously evaluate the capabilities of OmniLLMs across domains, including long-term memory, temporal localization, fine-grained understanding, and multimodal perception. Our extensive evaluation reveals that current OmniLLMs encounter significant challenges when processing extended audio-visual inputs. Open-source models generally achieve accuracies below 35%, whereas the Gemini 3 Pro reaches a peak accuracy of approximately 65%. We anticipate that this dataset, along with our empirical findings, will stimulate further research and the development of advanced models capable of resolving complex cross-modal understanding problems within long-form audio-visual contexts."
     },
     {
+      "title": "DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising",
+      "link": "https://arxiv.org/abs/2603.19216",
+      "pubDate": "Thu, 19 Mar 2026 13:58:11 GMT",
+      "isoDate": "2026-03-19T13:58:11.000Z",
+      "creator": "Tianjiao Yu, Xinzhuo Li, Muntasir Wahed, Jerry Xiong, Yifan Shen, Ying Shen, Ismini Lourentzou",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Understanding and generating 3D objects as compositions of meaningful parts is fundamental to human perception and reasoning. However, most text-to-3D methods overlook the semantic and functional structure of parts. While recent part-aware approaches introduce decomposition, they remain largely geometry-focused, lacking semantic grounding and failing to model how parts align with textual descriptions or their inter-part relations. We propose DreamPartGen, a framework for semantically grounded, part-aware text-to-3D generation. DreamPartGen introduces Duplex Part Latents (DPLs) that jointly model each part's geometry and appearance, and Relational Semantic Latents (RSLs) that capture inter-part dependencies derived from language. A synchronized co-denoising process enforces mutual geometric and semantic consistency, enabling coherent, interpretable, and text-aligned 3D synthesis. Across multiple benchmarks, DreamPartGen delivers state-of-the-art performance in geometric fidelity and text-shape alignment."
+    },
+    {
+      "title": "Tinted Frames: Question Framing Blinds Vision-Language Models",
+      "link": "https://arxiv.org/abs/2603.19203",
+      "pubDate": "Thu, 19 Mar 2026 13:53:09 GMT",
+      "isoDate": "2026-03-19T13:53:09.000Z",
+      "creator": "Wan-Cyuan Fan, Jiayun Luo, Declan Kutscher, Leonid Sigal, Ritwik Gupta",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Tinted Frames: Question Framing Blinds Vision-Language Models",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Vision-Language Models (VLMs) have been shown to be blind, often underutilizing their visual inputs even on tasks that require visual reasoning. In this work, we demonstrate that VLMs are selectively blind. They modulate the amount of attention applied to visual inputs based on linguistic framing even when alternative framings demand identical visual reasoning. Using visual attention as a probe, we quantify how framing alters both the amount and distribution of attention over the image. Constrained framings, such as multiple choice and yes/no, induce substantially lower attention to image context compared to open-ended, reduce focus on task-relevant regions, and shift attention towards uninformative tokens. We further demonstrate that this attention misallocation is the principal cause of degraded accuracy and cross-framing inconsistency. Building on this mechanistic insight, we introduce a lightweight prompt-tuning method using learnable tokens that encourages the robust, visually grounded attention patterns observed in open-ended settings, improving visual grounding and improving performance across framings."
+    },
+    {
       "title": "FASTER: Rethinking Real-Time Flow VLAs",
       "link": "https://arxiv.org/abs/2603.19199",
       "pubDate": "Thu, 19 Mar 2026 13:51:37 GMT",
@@ -146,6 +172,19 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Real-time execution is crucial for deploying Vision-Language-Action (VLA) models in the physical world. Existing asynchronous inference methods primarily optimize trajectory smoothness, but neglect the critical latency in reacting to environmental changes. By rethinking the notion of reaction in action chunking policies, this paper presents a systematic analysis of the factors governing reaction time. We show that reaction time follows a uniform distribution determined jointly by the Time to First Action (TTFA) and the execution horizon. Moreover, we reveal that the standard practice of applying a constant schedule in flow-based VLAs can be inefficient and forces the system to complete all sampling steps before any movement can start, forming the bottleneck in reaction latency. To overcome this issue, we propose Fast Action Sampling for ImmediaTE Reaction (FASTER). By introducing a Horizon-Aware Schedule, FASTER adaptively prioritizes near-term actions during flow sampling, compressing the denoising of the immediate reaction by tenfold (e.g., in π_{0.5} and X-VLA) into a single step, while preserving the quality of long-horizon trajectory. Coupled with a streaming client-server pipeline, FASTER substantially reduces the effective reaction latency on real robots, especially when deployed on consumer-grade GPUs. Real-world experiments, including a highly dynamic table tennis task, prove that FASTER unlocks unprecedented real-time responsiveness for generalist policies, enabling rapid generation of accurate and smooth trajectories."
+    },
+    {
+      "title": "What Really Controls Temporal Reasoning in Large Language Models: Tokenisation or Representation of Time?",
+      "link": "https://arxiv.org/abs/2603.19017",
+      "pubDate": "Thu, 19 Mar 2026 11:22:03 GMT",
+      "isoDate": "2026-03-19T11:22:03.000Z",
+      "creator": "Gagan Bhatia, Ahmad Muhammad Isa, Maxime Peyrard, Wei Zhao",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "What Really Controls Temporal Reasoning in Large Language Models: Tokenisation or Representation of Time?",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "We present MultiTempBench, a multilingual temporal reasoning benchmark spanning three tasks, date arithmetic, time zone conversion, and temporal relation extraction across five languages (English, German, Chinese, Arabic, and Hausa) and multiple calendar conventions (Gregorian, Hijri, and Chinese Lunar). MultiTempBench contains 15,000 examples built by translating 750 curated English questions and expanding each into controlled date-format variants. We evaluate 20 LLMs and introduce the multilingual Date Fragmentation Ratio (mDFR), calibrated with human severity ratings, together with geometric-probing analyses of internal temporal representations. We find tokenisation quality of temporal artefacts is a resource-dependent bottleneck: in low-resource languages and rarer calendar formats, fragmentation disrupts Year/Month/Day separation and accuracy collapses, while high-resource settings are often robust to digit-level splitting. Beyond tokenisation, crossed mixed-effects regression shows that temporal linearity is the strongest predictor of temporal reasoning in high-resource languages, whereas fragmentation is the stronger predictor in low-resource languages. Code is available at: https://github.com/gagan3012/mtb"
     },
     {
       "title": "Reasoning over mathematical objects: on-policy reward modeling and test time aggregation",
@@ -213,57 +252,18 @@
       "content": "While Multimodal Large Language Models (MLLMs) have achieved remarkable success in interpreting natural scenes, their ability to process discrete symbols -- the fundamental building blocks of human cognition -- remains a critical open question. Unlike continuous visual data, symbols such as mathematical formulas, chemical structures, and linguistic characters require precise, deeper interpretation. This paper introduces a comprehensive benchmark to evaluate how top-tier MLLMs navigate these \"discrete semantic spaces\" across five domains: language, culture, mathematics, physics, and chemistry. Our investigation uncovers a counterintuitive phenomenon: models often fail at basic symbol recognition yet succeed in complex reasoning tasks, suggesting they rely on linguistic probability rather than true visual perception. By exposing this \"cognitive mismatch\", we highlight a significant gap in current AI capabilities: the struggle to truly perceive and understand the symbolic languages that underpin scientific discovery and abstract thought. This work offers a roadmap for developing more rigorous, human-aligned intelligent systems."
     },
     {
-      "title": "Unified Spatio-Temporal Token Scoring for Efficient Video VLMs",
-      "link": "https://arxiv.org/abs/2603.18004",
-      "pubDate": "Wed, 18 Mar 2026 13:59:56 GMT",
-      "isoDate": "2026-03-18T13:59:56.000Z",
-      "creator": "Jianrui Zhang, Yue Yang, Rohun Tripathi, Winson Han, Ranjay Krishna, Christopher Clark, Yong Jae Lee, Sangho Lee",
+      "title": "AndroTMem: From Interaction Trajectories to Anchored Memory in Long-Horizon GUI Agents",
+      "link": "https://arxiv.org/abs/2603.18429",
+      "pubDate": "Wed, 18 Mar 2026 22:45:21 GMT",
+      "isoDate": "2026-03-18T22:45:21.000Z",
+      "creator": "Yibo Shi, Jungang Li, Linghao Zhang, Zihao Dongfang, Biao Wu, Sicheng Tao, Yibo Yan, Chenxi Qin, Weiting Liu, Zhixin Lin, Hanqian Li, Yu Huang, Song Dai, Yonghua Hei, Yue Ding, Xiang Li, Shikang Wang, Chengdong Xu, Jingqi Liu, Xueying Ma, Zhiwen Zheng, Xiaofei Zhang, Bincheng Wang, Nichen Yang, Jie Wu, Lihua Tian, Chen Li, Xuming Hu",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Unified Spatio-Temporal Token Scoring for Efficient Video VLMs",
+      "translated_title": "AndroTMem: From Interaction Trajectories to Anchored Memory in Long-Horizon GUI Agents",
       "images": [],
       "contentSource": "RSS",
-      "content": "Token pruning is essential for enhancing the computational efficiency of vision-language models (VLMs), particularly for video-based tasks where temporal redundancy is prevalent. Prior approaches typically prune tokens either (1) within the vision transformer (ViT) exclusively for unimodal perception tasks such as action recognition and object segmentation, without adapting to downstream vision-language tasks; or (2) only within the LLM while leaving the ViT output intact, often requiring complex text-conditioned token selection mechanisms. In this paper, we introduce Spatio-Temporal Token Scoring (STTS), a simple and lightweight module that prunes vision tokens across both the ViT and the LLM without text conditioning or token merging, and is fully compatible with end-to-end training. By learning how to score temporally via an auxiliary loss and spatially via LLM downstream gradients, aided by our efficient packing algorithm, STTS prunes 50% of vision tokens throughout the entire architecture, resulting in a 62% improvement in efficiency during both training and inference with only a 0.7% drop in average performance across 13 short and long video QA tasks. Efficiency gains increase with more sampled frames per video. Applying test-time scaling for long-video QA further yields performance gains of 0.5-1% compared to the baseline. Overall, STTS represents a novel, simple yet effective technique for unified, architecture-wide vision token pruning."
-    },
-    {
-      "title": "Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models",
-      "link": "https://arxiv.org/abs/2603.18002",
-      "pubDate": "Wed, 18 Mar 2026 13:59:10 GMT",
-      "isoDate": "2026-03-18T13:59:10.000Z",
-      "creator": "Kevin Qu, Haozhe Qi, Mihai Dusmanu, Mahdi Rad, Rui Wang, Marc Pollefeys",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still struggle with spatial understanding and viewpoint-aware reasoning. Recent efforts aim to augment the input representations with geometric cues rather than explicitly teaching models to reason in 3D space. We introduce Loc3R-VLM, a framework that equips 2D Vision-Language Models with advanced 3D understanding capabilities from monocular video input. Inspired by human spatial cognition, Loc3R-VLM relies on two joint objectives: global layout reconstruction to build a holistic representation of the scene structure, and explicit situation modeling to anchor egocentric perspective. These objectives provide direct spatial supervision that grounds both perception and language in a 3D context. To ensure geometric consistency and metric-scale alignment, we leverage lightweight camera pose priors extracted from a pre-trained 3D foundation model. Loc3R-VLM achieves state-of-the-art performance in language-based localization and outperforms existing 2D- and video-based approaches on situated and general 3D question-answering benchmarks, demonstrating that our spatial supervision framework enables strong 3D understanding. Project page: https://kevinqu7.github.io/loc3r-vlm"
-    },
-    {
-      "title": "LoST: Level of Semantics Tokenization for 3D Shapes",
-      "link": "https://arxiv.org/abs/2603.17995",
-      "pubDate": "Wed, 18 Mar 2026 13:56:06 GMT",
-      "isoDate": "2026-03-18T13:56:06.000Z",
-      "creator": "Niladri Shekhar Dutt, Zifan Shi, Paul Guerrero, Chun-Hao Paul Huang, Duygu Ceylan, Niloy J. Mitra, Xuelin Chen",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "LoST: Level of Semantics Tokenization for 3D Shapes",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Tokenization is a fundamental technique in the generative modeling of various modalities. In particular, it plays a critical role in autoregressive (AR) models, which have recently emerged as a compelling option for 3D generation. However, optimal tokenization of 3D shapes remains an open question. State-of-the-art (SOTA) methods primarily rely on geometric level-of-detail (LoD) hierarchies, originally designed for rendering and compression. These spatial hierarchies are often token-inefficient and lack semantic coherence for AR modeling. We propose Level-of-Semantics Tokenization (LoST), which orders tokens by semantic salience, such that early prefixes decode into complete, plausible shapes that possess principal semantics, while subsequent tokens refine instance-specific geometric and semantic details. To train LoST, we introduce Relational Inter-Distance Alignment (RIDA), a novel 3D semantic alignment loss that aligns the relational structure of the 3D shape latent space with that of the semantic DINO feature space. Experiments show that LoST achieves SOTA reconstruction, surpassing previous LoD-based 3D shape tokenizers by large margins on both geometric and semantic reconstruction metrics. Moreover, LoST achieves efficient, high-quality AR 3D generation and enables downstream tasks like semantic retrieval, while using only 0.1%-10% of the tokens needed by prior AR models."
-    },
-    {
-      "title": "LaDe: Unified Multi-Layered Graphic Media Generation and Decomposition",
-      "link": "https://arxiv.org/abs/2603.17965",
-      "pubDate": "Wed, 18 Mar 2026 13:34:07 GMT",
-      "isoDate": "2026-03-18T13:34:07.000Z",
-      "creator": "Vlad-Constantin Lungu-Stan, Ionut Mironica, Mariana-Iuliana Georgescu",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "LaDe: Unified Multi-Layered Graphic Media Generation and Decomposition",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Media design layer generation enables the creation of fully editable, layered design documents such as posters, flyers, and logos using only natural language prompts. Existing methods either restrict outputs to a fixed number of layers or require each layer to contain only spatially continuous regions, causing the layer count to scale linearly with design complexity. We propose LaDe (Layered Media Design), a latent diffusion framework that generates a flexible number of semantically meaningful layers. LaDe combines three components: an LLM-based prompt expander that transforms a short user intent into structured per-layer descriptions that guide the generation, a Latent Diffusion Transformer with a 4D RoPE positional encoding mechanism that jointly generates the full media design and its constituent RGBA layers, and an RGBA VAE that decodes each layer with full alpha-channel support. By conditioning on layer samples during training, our unified framework supports three tasks: text-to-image generation, text-to-layers media design generation, and media design decomposition. We compare LaDe to Qwen-Image-Layered on text-to-layers and image-to-layers tasks on the Crello test set. LaDe outperforms Qwen-Image-Layered in text-to-layers generation by improving text-to-layer alignment, as validated by two VLM-as-a-judge evaluators (GPT-4o mini and Qwen3-VL)."
+      "content": "Long-horizon GUI agents are a key step toward real-world deployment, yet effective interaction memory under prevailing paradigms remains under-explored. Replaying full interaction sequences is redundant and amplifies noise, while summaries often erase dependency-critical information and traceability. We present AndroTMem, a diagnostic framework for anchored memory in long-horizon Android GUI agents. Its core benchmark, AndroTMem-Bench, comprises 1,069 tasks with 34,473 interaction steps (avg. 32.1 per task, max. 65). We evaluate agents with TCR (Task Complete Rate), focusing on tasks whose completion requires carrying forward critical intermediate state; AndroTMem-Bench is designed to enforce strong step-to-step causal dependencies, making sparse yet essential intermediate states decisive for downstream actions and centering interaction memory in evaluation. Across open- and closed-source GUI agents, we observe a consistent pattern: as interaction sequences grow longer, performance drops are driven mainly by within-task memory failures, not isolated perception errors or local action mistakes. Guided by this diagnosis, we propose Anchored State Memory (ASM), which represents interaction sequences as a compact set of causally linked intermediate-state anchors to enable subgoal-targeted retrieval and attribution-aware decision making. Across multiple settings and 12 evaluated GUI agents, ASM consistently outperforms full-sequence replay and summary-based baselines, improving TCR by 5%-30.16% and AMS by 4.93%-24.66%, indicating that anchored, structured memory effectively mitigates the interaction-memory bottleneck in long-horizon GUI tasks. The code, benchmark, and related resources are publicly available at [https://github.com/CVC2233/AndroTMem](https://github.com/CVC2233/AndroTMem)."
     }
   ],
-  "lastUpdated": "2026-03-20T09:55:30.219Z"
+  "lastUpdated": "2026-03-21T09:41:18.298Z"
 }
