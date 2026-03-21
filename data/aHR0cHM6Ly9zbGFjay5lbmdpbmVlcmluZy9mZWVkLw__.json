@@ -5,6 +5,68 @@
   "link": "https://slack.engineering",
   "items": [
     {
+      "title": "How Slack Rebuilt Notifications 📣",
+      "link": "https://slack.engineering/how-slack-rebuilt-notifications/",
+      "pubDate": "Thu, 19 Mar 2026 19:00:54 +0000",
+      "isoDate": "2026-03-19T19:00:54.000Z",
+      "creator": "Frances Coronel",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How Slack Rebuilt Notifications 📣",
+      "images": [
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2026/03/Notifications-2.0-Project-Demo-2.png",
+          "alt": "Before: four paradigms. After: one unified model with three options.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2026/03/Notifications-2.0-Project-Demo-3.png",
+          "alt": "Mobile redesign: clearer settings and consistent cross-platform logic.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2026/03/Notifications-2.0-Project-Demo-8.png",
+          "alt": "Cleaner, more consistent modal with auto-save behavior.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2026/03/Notifications-2.0-Project-Demo-6.png",
+          "alt": "Still complex, but far more organized and readable.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2026/03/Notifications-2.0-Project-Demo-5.png",
+          "alt": "Mobile global preferences modernized to match desktop visually and structurally. ",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2026/03/Notifications-2.0-Project-Demo-7.png",
+          "alt": "This table showcases all the different user preferences we ended adding/updating on the backend ",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2026/03/Notifications-2.0-Project-Demo-1-1.png",
+          "alt": "A unified notifications model across desktop and mobile.",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2026/03/Notifications-2.0-Project-Demo-1.png?w=640",
+          "alt": "Notifications Team",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Introduction 🔔  At Slack, notifications are how teams stay in the loop, but they can also become overwhelming when not designed with intention. Our goal was to make staying informed feel effortless. We set out to rebuild one of Slack’s most complicated systems from the ground up by bringing calm, consistency, and clarity to the&#8230;"
+    },
+    {
       "title": "Streamlining Security Investigations with Agents",
       "link": "https://slack.engineering/streamlining-security-investigations-with-agents/",
       "pubDate": "Mon, 01 Dec 2025 16:00:42 +0000",
@@ -264,20 +326,7 @@
       ],
       "contentSource": "完整文章",
       "content": "At Slack, customer love is our first priority and accessibility is a core tenet of customer trust. We have our own Slack Accessibility Standards that product teams follow to guarantee their features are compliant with Web Content Accessibility Guidelines (WCAG). Our dedicated accessibility team supports developers in following these guidelines throughout the development process. We&#8230;"
-    },
-    {
-      "title": "迁移自动化：借助AI简化Jenkins到GHA的迁移 (原标题: Migration Automation: Easing the Jenkins → GHA shift with help from AI)",
-      "link": "https://slack.engineering/migration-automation-easing-the-jenkins-%e2%86%92-gha-shift-with-help-from-ai/",
-      "pubDate": "Mon, 16 Dec 2024 09:00:03 +0000",
-      "isoDate": "2024-12-16T09:00:03.000Z",
-      "creator": "Zhengyu Shen",
-      "summary": "Slack的CI基础设施近期经历了一次重大变革，从长期困扰开发人员的Jenkins迁移至GitHub Actions (GHA)。为了加速这一过程并减轻手动迁移的负担，Slack的一名实习生开发了一个自动化转换工具，旨在将Jenkins流水线自动迁移到GitHub Actions。该项目取得了成功，预计将迁移时间缩短一半，并节省超过1300小时的开发时间。\n\n### 项目概述与目标\n\n*   **背景**：Jenkins在安全性、停机时间和用户体验方面的问题促使Slack决定将大部分CI作业迁移到GitHub Actions。\n*   **核心目标**：创建一个能够自动迁移Jenkins流水线到GitHub Actions的转换工具。\n*   **成功标准**：\n    *   开发自动化工具以解决手动迁移的困难。\n    *   将工具应用于大量现有Jenkins作业。\n    *   创建关于转换过程的文档。\n*   **关键术语**：\n    *   **流水线 (Pipeline)**：Jenkins中用于组织作业的一组插件。项目开始时有242个Jenkins流水线待迁移。\n    *   **实例 (Instance)**：Jenkins流水线托管的Jenkins实例，需从3个实例迁移。\n    *   **工作流 (Workflow)**：GitHub Actions CI作业。\n    *   **GHA**：GitHub Actions的缩写。\n\n### 解决方案设计与实施\n\n项目分为三个主要部分：\n\n#### 第一部分：GitHub Actions Importer的使用\n\n*   **工具介绍**：GitHub Actions Importer是GitHub发布的一个工具，可以审计Jenkins实例并尝试将所有流水线转换为GitHub Actions工作流。\n*   **性能表现**：\n    *   约50%的流水线能够完全无误地从Jenkins迁移到GHA。\n    *   约5%的迁移完全失败。\n    *   其余的作业（约45%）是部分导入，即生成了工作流YAML文件但未能完全填充。\n*   **关键发现**：虽然有数百个流水线未能完全转换，但深入检查发现，90%以上的失败是由仅八个不受支持的Jenkins构建步骤和环境引起的。这使得后续的修正工作得以集中。\n\n#### 第二部分：研究与修正类型识别\n\n在了解了Importer的局限性后，项目团队识别出需要对生成的YAML文件进行四种主要类型的修正：\n\n1.  **替换限速操作为内部镜像 (RoI: 很高)**：\n    *   **问题**：默认情况下，GitHub Actions市场上的操作会受到github.com API的速率限制。\n    *   **解决方案**：替换为Slack内部GitHub Enterprise实例上的内部镜像操作，这些操作具有更高的速率限制。\n    *   **价值**：避免因速率限制导致作业失败，提升用户体验。\n2.  **替换操作为其他操作 (RoI: 高)**：\n    *   **问题**：Importer有时会选择某个操作，而Slack更倾向于使用内部或更合适的其他操作（例如，将`rtCamp/action-slack-notify`替换为Slack内部的消息发送操作）。\n    *   **解决方案**：利用大型语言模型（LLM）进行替换，因为不同操作的语法差异较大，难以通过简单的字符串方法转换。\n    *   **价值**：节省终端用户学习和适应不同操作的时间和精力。\n3.  **为终端用户添加有用注释 (RoI: 中等)**：\n    *   **问题**：某些工作流文件中的操作项（如访问秘密）无法自动化，因为秘密存储在GitHub外部，且迁移到GitHub不符合安全策略。\n    *   **解决方案**：在无法自动化的部分留下注释，指导用户如何手动修改以从正确位置读取秘密。\n    *   **价值**：为用户提供明确的修复方向，尽管仍需手动操作。\n4.  **删除不必要的注释 (RoI: 低-中等)**：\n    *   **问题**：Importer在遇到不支持的Jenkins项时会留下“X Jenkins项不受支持”的注释。但很多情况下，这些功能在GHA中已包含或不再需要。\n    *   **解决方案**：删除这些不重要的注释，以清理工作流文件。\n    *   **价值**：使工作流更简洁，虽然收益较小，但脚本实现简单。\n\n#### 第三部分：修正工具的开发\n\n*   **架构**：修正工具的输入是包含工作流YAML文件的目录路径。工具会遍历每个YAML文件，先进行所有非AI修正，再进行所有AI修正，并原地修改文件内容。\n*   **非AI修正实现**：主要使用Python的`String.replace()`方法来处理简单的字符串替换和注释添加。\n*   **AI修正实现**：\n    *   **提示工程 (Prompt Engineering)**：结合科学（结构化提示：上下文设置、具体步骤、输出指令）和艺术（实验与迭代）。\n    *   **示例提示**：详细指导LLM将`rtCamp/action-slack-notify`替换为`slack/message-action`，并指定如何处理参数映射，同时强调不要删除注释或修改其他操作。\n    *   **LLM表现**：对约24个LLM输出的检查显示，其在执行请求任务时达到了100%的准确率，这打消了对幻觉和其他意外副作用的担忧。LLM在处理Python字符串方法难以解决的复杂替换任务中发挥了关键作用。\n\n### 影响与用户反馈\n\n*   **效率提升**：该转换工具让终端用户完全跳过了手动编写GHA工作流的第一步，并极大地简化了第二步的调试工作，因为生成的GHA工作流文件准确性很高，几乎没有缺陷。\n*   **时间节省**：对于242个待迁移的流水线，根据开发人员经验的不同，手动转换每个流水线可能需要2到10小时。该工具的自动化能力显著减少了所需时间，实现了项目预期的总时间节省。\n*   **总结**：LLM在迁移过程中非常有用，尽管提示工程并非微不足道，但其投入时间不长，且LLM在“替换A为B”的任务上表现与人类一样出色，填补了Python字符串方法难以解决的复杂错误修正的空白。",
-      "shortSummary": "Slack通过一个AI辅助的自动化工具，成功将其CI作业从Jenkins迁移到GitHub Actions (GHA)。该工具由一名实习生开发，结合了GitHub Actions Importer、Python脚本和大型语言模型（LLM），能够自动修正和优化转换后的GHA工作流。LLM在复杂的操作替换任务中表现出100%的准确率。此举将迁移时间缩短了一半，预计为Slack节省超过1300小时的开发工作，显著提高了迁移效率和准确性。",
-      "translated_title": "迁移自动化：借助AI简化Jenkins到GHA的迁移",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Overview The past few months have been exciting times for Slack’s CI infrastructure. After years of developer frustration with Jenkins (everything from security issues to downtime to generally poor UX) internal pressure led us to move a majority of Slack’s CI jobs from Jenkins to GitHub Actions.  My intern project at Slack this summer involved&#8230;"
     }
   ],
-  "lastUpdated": "2026-03-19T05:35:54.359Z"
+  "lastUpdated": "2026-03-21T05:10:50.781Z"
 }
