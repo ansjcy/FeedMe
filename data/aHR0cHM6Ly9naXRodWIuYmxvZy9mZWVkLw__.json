@@ -5,6 +5,82 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "Building AI-powered GitHub issue triage with the Copilot SDK",
+      "link": "https://github.blog/ai-and-ml/github-copilot/building-ai-powered-github-issue-triage-with-the-copilot-sdk/",
+      "pubDate": "Tue, 24 Mar 2026 16:00:00 +0000",
+      "isoDate": "2026-03-24T16:00:00.000Z",
+      "creator": "Andrea Griffiths",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Building AI-powered GitHub issue triage with the Copilot SDK",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/Screenshot-2026-03-19-at-11.37.43-AM.png?resize=1305%2C835",
+          "alt": "Screenshot of a developer workspace showing a VS Code editor open to the IssueCrush project, with a package.json file visible and a terminal running a server that logs AI-generated issue summaries using the GitHub Copilot SDK. On the right, an iPhone simulator displays the IssueCrush mobile app, listing a GitHub issue with labels, a progress indicator, and a ‘Get AI Summary’ button, along with swipe-style approve and reject buttons at the bottom.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/Screenshot-2026-03-19-at-11.39.25-AM.png?resize=1318%2C921",
+          "alt": "Architecture diagram showing a React Native and web client communicating over HTTPS with a Node.js server. The server runs the GitHub Copilot SDK, which manages a local Copilot CLI process via JSON-RPC. The CLI connects to the GitHub Copilot service, while the client separately interacts with GitHub OAuth and the GitHub REST API for issue data.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/08/Andrea-Griffiths_avatar_1755783168-200x200.jpeg",
+          "alt": "Andrea Griffiths",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Learn how to integrate the Copilot SDK into a React Native app to generate AI-powered issue summaries, with production patterns for graceful degradation and caching.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/building-ai-powered-github-issue-triage-with-the-copilot-sdk/\">Building AI-powered GitHub issue triage with the Copilot SDK</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "GitHub expands application security coverage with AI‑powered detections",
+      "link": "https://github.blog/security/application-security/github-expands-application-security-coverage-with-ai-powered-detections/",
+      "pubDate": "Mon, 23 Mar 2026 16:00:00 +0000",
+      "isoDate": "2026-03-23T16:00:00.000Z",
+      "creator": "Marcelo Oliveira",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "GitHub expands application security coverage with AI‑powered detections",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/6937628?v=4&s=200",
+          "alt": "Marcelo Oliveira",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>CodeQL and AI‑powered detections work together in GitHub Code Security to identify vulnerabilities across more languages and frameworks.</p>\n<p>The post <a href=\"https://github.blog/security/application-security/github-expands-application-security-coverage-with-ai-powered-detections/\">GitHub expands application security coverage with AI‑powered detections</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Rethinking open source mentorship in the AI era",
       "link": "https://github.blog/open-source/maintainers/rethinking-open-source-mentorship-in-the-ai-era/",
       "pubDate": "Thu, 19 Mar 2026 18:00:00 +0000",
@@ -373,82 +449,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>AI is shifting from prompt-response interactions to programmable execution. See how the GitHub Copilot SDK enables agentic workflows directly inside your applications.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/the-era-of-ai-as-text-is-over-execution-is-the-new-interface/\">The era of “AI as text” is over. Execution is the new interface.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Under the hood: Security architecture of GitHub Agentic Workflows",
-      "link": "https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/",
-      "pubDate": "Mon, 09 Mar 2026 16:00:00 +0000",
-      "isoDate": "2026-03-09T16:00:00.000Z",
-      "creator": "Landon Cox",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Under the hood: Security architecture of GitHub Agentic Workflows",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/image1.jpg?resize=1024%2C949",
-          "alt": "Diagram of a three-layer system architecture with labeled sections Planning layer, Configuration layer, and Substrate layer. Each layer contains three blue tiles:\n\nPlanning: Safe Outputs MCP (GitHub write operations), Call filtering (call availability, volume), Output sanitization (secret removal, moderation).\nConfiguration: Compiler (GH AW extension), Firewall policies (allowlist), MCP config (Docker image, auth token).\nSubstrate: Action runner VM (OS, hypervisor), Docker containers (Docker daemon, network), Trusted containers (firewall, MCP gateway, API proxy).",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/image2.jpg?resize=1024%2C596",
-          "alt": "Architecture diagram showing several connected Docker containers. A Codex token connects to an api-proxy container, which connects to an OpenAI service icon. A separate flow shows an agent container (linked to chroot/host) communicating over http to a gh-aw-firewall container, then over http to a gh-aw-mcpg container (linked to Host Docker Socket), then over stdio to a GitHub MCP container (linked to a GitHub PAT). A GitHub icon appears above the GitHub MCP container.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/image3.jpg?resize=1024%2C688",
-          "alt": "Diagram showing a GitHub-centric workflow with green arrows and two rows of components. At the top, a GitHub icon points down into three boxes: Agent (Untrusted), GitHub MCP (Read-only), and MCP config (Write-buffered). Below are three processing steps labeled Filter operations, Moderate content, and Remove secrets, each marked 'Deterministic analysis.' Green arrows indicate data flow from GitHub into the system, down through configuration to 'Remove secrets,' then left through 'Moderate content' and 'Filter operations,' looping back toward the agent.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/15877973?v=4&s=200",
-          "alt": "Landon Cox",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/5447827?v=4&s=200",
-          "alt": "Jiaxiao Zhou",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>GitHub Agentic Workflows are built with isolation, constrained outputs, and comprehensive logging. Learn how our threat model and security architecture help teams run agents safely in GitHub Actions. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/\">Under the hood: Security architecture of GitHub Agentic Workflows</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "How to scan for vulnerabilities with GitHub Security Lab’s open source AI-powered framework",
-      "link": "https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/",
-      "pubDate": "Fri, 06 Mar 2026 21:09:04 +0000",
-      "isoDate": "2026-03-06T21:09:04.000Z",
-      "creator": "Man Yue Mo",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "How to scan for vulnerabilities with GitHub Security Lab’s open source AI-powered framework",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>GitHub Security Lab Taskflow Agent is very effective at finding Auth Bypasses, IDORs, Token Leaks, and other high-impact vulnerabilities.</p>\n<p>The post <a href=\"https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/\">How to scan for vulnerabilities with GitHub Security Lab’s open source AI-powered framework</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-03-23T05:44:39.970Z"
+  "lastUpdated": "2026-03-25T05:36:39.550Z"
 }
