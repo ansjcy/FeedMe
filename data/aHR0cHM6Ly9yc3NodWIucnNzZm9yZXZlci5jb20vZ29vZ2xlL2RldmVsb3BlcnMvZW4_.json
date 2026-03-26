@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Closing the knowledge gap with agent skills",
+      "link": "https://developers.googleblog.com/en/closing-the-knowledge-gap-with-agent-skills/",
+      "pubDate": "Tue, 24 Mar 2026 16:00:00 GMT",
+      "isoDate": "2026-03-24T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Closing the knowledge gap with agent skills",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_API_Skill_Benchmark_-_Model.original.png",
+          "alt": "Gemini API Skill Benchmark - Model",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_API_Skill_Benchmark_-_Domain.original.png",
+          "alt": "Gemini API Skill Benchmark - Domain",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "To bridge the gap between static model knowledge and rapidly evolving software practices, Google DeepMind developed a \"Gemini API developer skill\" that provides agents with live documentation and SDK guidance. Evaluation results show a massive performance boost, with the gemini-3.1-pro-preview model jumping from a 28.2% to a 96.6% success rate when equipped with the skill. This lightweight approach demonstrates how giving models strong reasoning capabilities and access to a \"source of truth\" can effectively eliminate outdated coding patterns."
+    },
+    {
       "title": "Jump to play: Building with Gemini & MediaPipe",
       "link": "https://developers.googleblog.com/en/jump-to-play-building-with-gemini-mediapipe/",
       "pubDate": "Mon, 23 Mar 2026 16:00:00 GMT",
@@ -196,27 +222,7 @@
       ],
       "contentSource": "RSS",
       "content": "Google has officially launched LiteRT, the successor to TFLite, which offers significantly faster GPU and NPU acceleration alongside seamless support for PyTorch and JAX. The update also introduces lower-precision data type support for increased efficiency and a commitment to more frequent security and dependency updates across the TensorFlow ecosystem. This transition solidifies LiteRT as Google's primary high-performance framework for deploying GenAI and advanced on-device inference."
-    },
-    {
-      "title": "You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas",
-      "link": "https://developers.googleblog.com/en/you-cant-stream-the-energy-a-developers-guide-to-google-cloud-next-26-in-vegas/",
-      "pubDate": "Wed, 04 Mar 2026 16:00:00 GMT",
-      "isoDate": "2026-03-04T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "You can't stream the energy: A developer's guide to Google Cloud Next '26 in Vegas",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/PXL_20250411_163631916.original.jpg",
-          "alt": "PXL_20250411_163631916",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "While keynotes are available online, Google Cloud Next '26 in Las Vegas offers an irreplaceable in-person experience centered on networking, hands-on problem solving, and the transition to agentic AI. The event features specialized technical tracks covering everything from Gemini multimodal breakthroughs to zero-trust security on Cloud Run, providing developers with the tools to balance individual speed with organizational stability. Beyond formal sessions, the \"in-person advantage\" lies in over 20 developer meetups and collaborative whiteboard sessions designed to foster serendipitous breakthroughs. Ultimately, the conference serves as a high-energy hub for engineers to move beyond the hype and master the modern building blocks of software architecture together."
     }
   ],
-  "lastUpdated": "2026-03-25T10:59:28.814Z"
+  "lastUpdated": "2026-03-26T11:05:43.395Z"
 }
