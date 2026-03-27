@@ -5,6 +5,144 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "What’s coming to our GitHub Actions 2026 security roadmap",
+      "link": "https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/",
+      "pubDate": "Thu, 26 Mar 2026 16:49:14 +0000",
+      "isoDate": "2026-03-26T16:49:14.000Z",
+      "creator": "Greg Ose",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "What’s coming to our GitHub Actions 2026 security roadmap",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/Screenshot-2026-03-26-at-12.34.47-PM.png?resize=1070%2C611",
+          "alt": "Example workflow YAML showing the dependencies section with cryptographic hashes commit SHAs for each action",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/427255?v=4&s=200",
+          "alt": "Greg Ose",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/84886334?v=4&s=200",
+          "alt": "Stephen Glass",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>A look at GitHub Actions’ 2026 roadmap, outlining how secure defaults, policy controls, and CI/CD observability harden the software supply chain end to end.</p>\n<p>The post <a href=\"https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/\">What&#8217;s coming to our GitHub Actions 2026 security roadmap</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "A year of open source vulnerability trends: CVEs, advisories, and malware",
+      "link": "https://github.blog/security/supply-chain-security/a-year-of-open-source-vulnerability-trends-cves-advisories-and-malware/",
+      "pubDate": "Thu, 26 Mar 2026 16:00:00 +0000",
+      "isoDate": "2026-03-26T16:00:00.000Z",
+      "creator": "Jonathan Evans",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "A year of open source vulnerability trends: CVEs, advisories, and malware",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/1-GHADB-Feeds-vs-Backfill.png?resize=4290%2C2640",
+          "alt": "Stacked bar graph showing the number of advisories published from GitHub's feeds and those published from the backfill campaigns.\n\nReviewed Year\tFrom Feeds\tFrom Backfill\n2020\t1145\t1539\n2021\t1419\t1412\n2022\t2731\t1848\n2023\t3065\t1792\n2024\t3142\t2093\n2025\t3734\t367",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/2-All-GHADB-Published.png?resize=1024%2C631",
+          "alt": "Stacked line graph showing the cumulative number of advisories of each type over the years.\n\nYear\tUnreviewed\tReviewed\tMalware\tWithdrawn\n2019\t0\t381\t0\t42\n2020\t0\t3,065\t0\t101\n2021\t1,978\t5,896\t0\t140\n2022\t177,369\t10,475\t7,433\t195\n2023\t202,583\t15,332\t9,136\t290\n2024\t238,642\t20,567\t13,404\t413\n2025\t283,447\t24,668\t20,649\t522",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/3-Ecosystem-Distribution-2025.png?resize=2236%2C2649",
+          "alt": "Circle graph showing the distributions of ecosystems of advisories reviewed in 2025.\n\nEcosystem\tProportion of 2025 Reviewed Advisories\nComposer\t19.40%\nErlang\t0.22%\nGitHub Actions\t0.41%\nGo\t17.33%\nMaven\t22.24%\nnpm\t14.92%\nNuget\t2.33%\nPip\t17.16%\nRubyGems\t1.47%\nRust\t4.31%\nSwift\t0.22%",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/4-Ecosystem-Distribution-All.png?resize=2236%2C2649",
+          "alt": "Circle graph showing the distributions of ecosystems of reviewed advisories across the entire GitHub Advisory Database.\n\nEcosystem\tProportion of All Reviewed Advisories\nComposer\t20.16%\nErlang\t0.16%\nGitHub Actions\t0.15%\nGo\t10.91%\nMaven\t24.33%\nnpm\t17.05%\nNuget\t2.98%\nPip\t16.33%\nPub\t0.04%\nRubyGems\t3.60%\nRust\t4.13%\nSwift\t0.17%",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/5-2025-Scoring-Systems.png?resize=1024%2C630",
+          "alt": "Priority\tCVSS\tEPSS\nCritical\t392\t11\nHigh\t1237\t96\nModerate\t1994\t221\nLow\t475\t1517\nVery Low\t\t1872",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/6-KEV-Scoring-Comparison.png?resize=1024%2C632",
+          "alt": "Priority\tCVSS\tEPSS\nCritical\t8\t4\nHigh\t8\t11\nModerate\t2\t3\nLow\t0\t0\nVery Low\t0\t0",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/7-Malware-Advisories.png?resize=1024%2C631",
+          "alt": "Bar graph showing the number of published malware advisories each year.\n\nPublication Year\tPublished Malware Advisories\n2022\t7433\n2023\t1703\n2024\t4268\n2025\t7197",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/03/8-2025-Published-CVEs.png?resize=1024%2C631",
+          "alt": "Bar graph showing the number of CVEs GitHub published year.\n\nPublished Year\tCVEs Published in 2025\n2020\t509\n2021\t1047\n2022\t1297\n2023\t1784\n2024\t2152\n2025\t2903",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Reviewed advisories hit a four-year low, malware advisories surged, and CNA publishing grew—here’s what changed and what it means for your triage and response. </p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/a-year-of-open-source-vulnerability-trends-cves-advisories-and-malware/\">A year of open source vulnerability trends: CVEs, advisories, and malware</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Updates to GitHub Copilot interaction data usage policy",
+      "link": "https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/",
+      "pubDate": "Wed, 25 Mar 2026 19:02:29 +0000",
+      "isoDate": "2026-03-25T19:02:29.000Z",
+      "creator": "Mario Rodriguez",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Updates to GitHub Copilot interaction data usage policy",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/884366?v=4&s=200",
+          "alt": "Mario Rodriguez",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>From April 24 onward, interaction data—specifically inputs, outputs, code snippets, and associated context—from Copilot Free, Pro, and Pro+ users will be used to train and improve our AI models unless they opt out.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/\">Updates to GitHub Copilot interaction data usage policy</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Building AI-powered GitHub issue triage with the Copilot SDK",
       "link": "https://github.blog/ai-and-ml/github-copilot/building-ai-powered-github-issue-triage-with-the-copilot-sdk/",
       "pubDate": "Tue, 24 Mar 2026 16:00:00 +0000",
@@ -169,7 +307,7 @@
       "content": "<p>An inside look at repository-native orchestration with GitHub Copilot and the design patterns behind multi-agent workflows that stay inspectable, predictable, and collaborative. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository/\">How Squad runs coordinated AI agents inside your repository</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     },
     {
-      "title": " Investing in the people shaping open source and securing the future together",
+      "title": " Investing in the people shaping open source and securing the future together (原标题: Investing in the people shaping open source and securing the future together)",
       "link": "https://github.blog/security/supply-chain-security/investing-in-the-people-shaping-open-source-and-securing-the-future-together/",
       "pubDate": "Tue, 17 Mar 2026 16:00:00 +0000",
       "isoDate": "2026-03-17T16:00:00.000Z",
@@ -210,7 +348,7 @@
         }
       ],
       "contentSource": "RSS",
-      "content": "<p>See how GitHub is investing in open source security funding maintainers, partnering with Alpha-Omega, and expanding access to help reduce burden and strengthen software supply chains.</p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/investing-in-the-people-shaping-open-source-and-securing-the-future-together/\"> Investing in the people shaping open source and securing the future together</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+      "content": "<p>See how GitHub is investing in open source security funding maintainers, partnering with Alpha-Omega, and expanding access to help reduce burden and strengthen software supply chains.</p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/investing-in-the-people-shaping-open-source-and-securing-the-future-together/\">Investing in the people shaping open source and securing the future together</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     },
     {
       "title": "GitHub for Beginners: Getting started with GitHub Actions",
@@ -317,139 +455,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>AI automates triage for accessibility feedback, allowing us to focus on fixing barriers—turning a chaotic backlog into continuous, rapid resolutions.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/\">Continuous AI for accessibility: How GitHub transforms feedback into inclusion</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub availability report: February 2026",
-      "link": "https://github.blog/news-insights/company-news/github-availability-report-february-2026/",
-      "pubDate": "Thu, 12 Mar 2026 03:23:54 +0000",
-      "isoDate": "2026-03-12T03:23:54.000Z",
-      "creator": "Jakub Oleksy",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "GitHub availability report: February 2026",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/6147691?v=4&s=200",
-          "alt": "Jakub Oleksy",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>In February, we experienced six incidents that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-february-2026/\">GitHub availability report: February 2026</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Addressing GitHub’s recent availability issues",
-      "link": "https://github.blog/news-insights/company-news/addressing-githubs-recent-availability-issues-2/",
-      "pubDate": "Wed, 11 Mar 2026 21:41:51 +0000",
-      "isoDate": "2026-03-11T21:41:51.000Z",
-      "creator": "Vlad Fedorov",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Addressing GitHub’s recent availability issues",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/84884694?v=4&s=200",
-          "alt": "Vlad Fedorov",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>GitHub recently experienced several availability incidents. We understand the impact these outages have on our customers and are sharing details on the stabilization work we’re prioritizing right now.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/addressing-githubs-recent-availability-issues-2/\">Addressing GitHub’s recent availability issues</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "The era of “AI as text” is over. Execution is the new interface.",
-      "link": "https://github.blog/ai-and-ml/github-copilot/the-era-of-ai-as-text-is-over-execution-is-the-new-interface/",
-      "pubDate": "Tue, 10 Mar 2026 20:16:01 +0000",
-      "isoDate": "2026-03-10T20:16:01.000Z",
-      "creator": "Gwen Davis",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "The era of “AI as text” is over. Execution is the new interface.",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/94031472?v=4&s=200",
-          "alt": "Gwen Davis",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_95220f.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>AI is shifting from prompt-response interactions to programmable execution. See how the GitHub Copilot SDK enables agentic workflows directly inside your applications.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/the-era-of-ai-as-text-is-over-execution-is-the-new-interface/\">The era of “AI as text” is over. Execution is the new interface.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-03-25T05:36:39.550Z"
+  "lastUpdated": "2026-03-27T05:47:31.022Z"
 }
