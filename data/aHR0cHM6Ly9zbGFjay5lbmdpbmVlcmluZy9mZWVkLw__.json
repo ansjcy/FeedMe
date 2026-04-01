@@ -5,6 +5,19 @@
   "link": "https://slack.engineering",
   "items": [
     {
+      "title": "From Custom to Open: Scalable Network Probing and HTTP/3 Readiness with Prometheus",
+      "link": "https://slack.engineering/from-custom-to-open-scalable-network-probing-and-http-3-readiness-with-prometheus/",
+      "pubDate": "Tue, 31 Mar 2026 17:00:39 +0000",
+      "isoDate": "2026-03-31T17:00:39.000Z",
+      "creator": "Carlo Preciado",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "From Custom to Open: Scalable Network Probing and HTTP/3 Readiness with Prometheus",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "The Problem: Legacy Tooling and Its Limitations Currently, Slack utilizes a hybrid approach to network measurement, incorporating both internal (such as traffic between AWS Availability Zones) and external (monitoring traffic from the public internet into Slack’s infrastructure) solutions. These tools comprise a combination of commercial SaaS offerings and custom-built network testing solutions developed by our&#8230;"
+    },
+    {
       "title": "How Slack Rebuilt Notifications 📣",
       "link": "https://slack.engineering/how-slack-rebuilt-notifications/",
       "pubDate": "Thu, 19 Mar 2026 19:00:54 +0000",
@@ -300,33 +313,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Many don’t know that “Slack” is in fact a backronym—it stands for “Searchable Log of all Communication and Knowledge”. And these days, it’s not just a searchable log: with Slack AI, Slack is now an intelligent log, leveraging the latest in generative AI to securely surface powerful, time-saving insights. We built Slack AI from the&#8230;"
-    },
-    {
-      "title": "Slack 的自动化无障碍测试 (原标题: Automated Accessibility Testing at Slack)",
-      "link": "https://slack.engineering/automated-accessibility-testing-at-slack/",
-      "pubDate": "Tue, 07 Jan 2025 20:46:20 +0000",
-      "isoDate": "2025-01-07T20:46:20.000Z",
-      "creator": "nstormann",
-      "summary": "在 Slack，客户满意度是首要任务，而无障碍性是客户信任的核心要素。为了确保产品功能符合 Web 内容无障碍指南 (WCAG)，Slack 制定了内部无障碍标准，并设有专门的无障碍团队支持开发人员。除了与外部手动测试人员合作外，Slack 在2022年开始引入桌面自动化无障碍测试，作为其整体测试策略的补充。这项策略还包括让残障人士早期参与设计过程、进行设计和原型评审，以及对所有支持的辅助技术进行手动测试。尽管自动化工具可能无法发现需要人工判断的细微无障碍问题（如屏幕阅读器可用性）或可能误报不符合产品特定设计考虑的问题，但 Slack 仍认为将其集成到现有测试框架中具有重要价值。\n\n### 探索与局限性\n\n**意外的复杂性：Axe、Jest 和 React Testing Library (RTL)**\n\nSlack 选择了流行的无障碍测试工具 Axe，因为它功能广泛、易于配置且与现有端到端 (E2E) 测试框架兼容。Axe 能够检查多种无障碍指南，并最大限度地减少误报。最初，团队尝试将 Axe 检查直接嵌入到 React Testing Library (RTL) 框架中，通过自定义 `render` 函数来简化开发流程。然而，由于 Slack 定制的 Jest 设置，这种方法遇到了问题。虽然通过单独的 Jest 配置运行检查可行，但这会要求开发人员专门为无障碍性编写测试，这与团队的初衷相悖。修改自定义 Jest 设置被认为过于复杂且不值得投入时间和资源，因此团队转向了 Playwright 框架。\n\n**Axe 检查的最佳解决方案：Playwright**\n\n在排除了 Jest 后，Slack 转向了其 E2E 测试框架 Playwright。Playwright 通过 `@axe-core/playwright` 包支持 Axe 无障碍测试。Axe Core 提供了过滤和自定义无障碍检查所需的大部分功能，包括排除特定规则和选择器，以及使用无障碍标签（如 'wcag2a'、'wcag2aa'）来指定分析类型。最初的目标是将无障碍检查“烘焙”到 Playwright 的交互方法中（如点击和导航），使其自动运行。然而，Playwright 的 `Locator` 对象带来了挑战。`Locator` 旨在简化与页面元素的交互，但它只确保单个元素的就绪性，而非整个页面的完全渲染。在错误时机运行检查可能导致遗漏问题。使用已弃用的方法（如 `waitForElement`）来控制检查触发时机也存在性能下降、错误重复和与 Playwright 抽象模型冲突的问题。因此，尽管将 Axe 检查嵌入到 Playwright 核心交互方法中看似理想，但 Playwright 内部机制的复杂性促使团队探索其他解决方案。\n\n### 定制与变通方案\n\n为了克服将无障碍检查嵌入框架的障碍，团队做出了一些让步，同时仍优先考虑简化的开发人员工作流程。他们继续专注于 Playwright，因为它在选择性地隐藏或应用无障碍检查方面提供了更大的灵活性，从而更容易管理检查的运行时间和地点。此外，Axe Core 也提供了出色的定制功能，例如过滤规则和使用特定的无障碍标签。\n\n使用 `@axe-core/playwright` 包，无障碍检查流程如下：\n\n1.  Playwright 测试加载页面/视图。\n2.  Axe 分析页面。\n3.  过滤掉预定义的排除项。\n4.  违规和工件被保存到文件中。\n\n团队设置了主函数 `runAxeAndSaveViolations`，并使用 AxeBuilder 类提供的功能自定义了范围，以检查 WCAG 2.1 A 级和 AA 级的合规性。他们还创建了一个选择器列表，用于从违规报告中排除已知问题和不适用的规则。为了避免重复并控制报告的严重性，团队创建了方法来检查每个违规的唯一性，并只报告被认为是“Critical”级别的违规。\n\n团队利用了 Playwright 的 fixture 模型，将无障碍辅助函数集成到现有的 `slack` fixture 中，从而使测试作者可以直接在测试规范中调用它，减少了开销。此外，他们还定制了 Playwright 的 `test.step`，添加了自定义标签“Running accessibility checks in runAxeAndSaveViolations”，以便更容易检测到无障碍违规发生的位置。\n\n![图片 1](https://slack.engineering/wp-content/uploads/sites/7/2024/12/joachim-schnurle-4j732BLw0BI-unsplash.jpg?w=640)\n\n### 无障碍检查在端到端测试中的放置\n\n为了启动项目，团队建立了一个与 Slack 关键功能测试套件镜像的测试套件，并将其重命名为无障碍测试套件，设置为非阻塞运行。这意味着开发人员将看到测试结果，但失败或违规不会阻止他们将代码合并到生产环境。这个初始套件总共包含 91 个测试。\n\n在策略上，团队考虑了在这些关键流程测试中放置无障碍检查的位置。通常，目标是在测试中覆盖的每个新视图、页面或流程之后添加一个无障碍检查。在大多数情况下，这意味着在按钮点击或导致导航的链接之后直接放置检查。在其他情况下，检查需要在第二个用户登录或重定向之后放置。重要的是要确保在一次测试中或在具有相同 UI 流程的多个测试中，同一视图不会被分析两次，以避免不必要的错误消息、保存工件和测试速度减慢。团队还小心地确保 Axe 调用只在页面或视图完全加载且所有内容渲染完成后才进行。这种方法要求团队深入了解应用程序和每个测试用例的上下文。\n\n![图片 2](https://slack.engineering/wp-content/uploads/sites/7/2024/12/krystian-tambur-k7rZ8wTfABA-unsplash.jpg?w=640)\n\n### 违规报告\n\n团队花费了一些时间迭代改进无障碍违规报告。最初，他们创建了一个简单的文本文件来保存本地运行的结果。根据开发人员的早期反馈，他们集成了 Playwright 的截图功能，并将截图与文本报告一起保存在同一个工件文件夹中。为了使报告更具连贯性和可读性，团队利用了 Playwright HTML Reporter。这个工具不仅聚合测试结果，还允许将截图和违规报告等工件附加到 HTML 输出中，从而在一个测试报告中显示所有无障碍工件。最后，为了使违规错误消息更有帮助且易于理解，团队编写了代码来提取违规的关键信息，并通过解析和精简错误消息来定制违规在报告和控制台中的显示方式。\n\n### 环境设置和运行测试\n\n一旦集成了 Axe 检查并设置了测试套件，团队就需要确定开发人员如何以及何时运行它们。为了简化开发人员的工作流程，他们引入了一个环境变量 `A11Y_ENABLE` 来控制框架中无障碍检查的激活，默认设置为 false 以防止不必要的运行。这种设置允许开发人员选择：\n\n*   **按需测试：** 开发人员可以在需要时手动启用该标志，在其分支上本地运行无障碍检查。\n*   **计划运行：** 开发人员可以配置在非高峰时段进行定期运行。Slack 在 Buildkite 中配置了每日回归运行，将无障碍测试运行结果每日发送到 Slack 警报通道。\n*   **CI 集成：** 可选地，可以在持续集成管道中启用该标志，以便在合并重大更改之前进行彻底测试。\n\n### 分类和所有权\n\n测试的所有权和维护是常见的问题。在将 Axe 调用添加到 Playwright E2E 测试的关键流程后，团队需要决定谁将负责分类通过自动化发现的无障碍问题，以及谁将负责现有测试的维护。在 Slack，开发人员负责其测试的创建和维护。为了支持开发人员更好地理解框架更改和新的无障碍自动化，团队创建了文档，并与内部 Slack 无障碍团队合作，制定了一个全面的分类流程，以适应他们现有的无障碍问题分类工作流程。Slack 的内部无障碍团队已经建立了分类和标记传入无障碍问题的流程，并以内部 Slack 无障碍标准为指导。为了增强流程，他们创建了一个新的“automated accessibility”标签来追踪通过自动化发现的问题。为了方便这些问题的编目，他们还在警报通道中设置了一个 Jira 工作流，可以自动创建带有预填充模板的 Jira 工单。该工单通过工作流创建，并自动标记为“automated accessibility”并放入 Jira Epic 中进行分类。\n\n### 执行审计\n\n团队定期对无障碍 Playwright 调用进行审计，以检查 Axe 调用的重复性，并确保无障碍覆盖的适当性。",
-      "shortSummary": "Slack 将无障碍性视为客户信任的核心，并于2022年引入桌面自动化无障碍测试，作为其全面测试策略的补充。团队选择 Axe 工具并将其集成到 Playwright E2E 测试框架中，克服了与 Jest 集成时的复杂性。通过定制化，实现了无障碍检查的自动化运行、优化了违规报告（包含截图），并建立了清晰的问题分类和所有权流程。自动化测试结果通过 Jira 工作流自动创建工单，并定期进行审计，旨在提高效率并及早发现无障碍问题。",
-      "translated_title": "Slack 的自动化无障碍测试",
-      "images": [
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/joachim-schnurle-4j732BLw0BI-unsplash.jpg?w=640",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2024/12/krystian-tambur-k7rZ8wTfABA-unsplash.jpg?w=640",
-          "alt": "",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "At Slack, customer love is our first priority and accessibility is a core tenet of customer trust. We have our own Slack Accessibility Standards that product teams follow to guarantee their features are compliant with Web Content Accessibility Guidelines (WCAG). Our dedicated accessibility team supports developers in following these guidelines throughout the development process. We&#8230;"
     }
   ],
-  "lastUpdated": "2026-03-31T05:50:30.647Z"
+  "lastUpdated": "2026-04-01T06:02:25.632Z"
 }
