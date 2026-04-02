@@ -5,6 +5,50 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Developer’s Guide to Building ADK Agents with Skills",
+      "link": "https://developers.googleblog.com/en/developers-guide-to-building-adk-agents-with-skills/",
+      "pubDate": "Tue, 31 Mar 2026 16:00:00 GMT",
+      "isoDate": "2026-03-31T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Developer’s Guide to Building ADK Agents with Skills",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/part1-progressive-disclosure_1.original.png",
+          "alt": "part1-progressive-disclosure (1)",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/part1-inline-skill-seo-review.original.png",
+          "alt": "part1-inline-skill-seo-review",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/part2-l3-resource-loading.original.png",
+          "alt": "part2-l3-resource-loading",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/part3-meta-skill-creator-output.original.png",
+          "alt": "part3-meta-skill-creator-output",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/part2-skilltoolset-flow.original.png",
+          "alt": "part2-skilltoolset-flow",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "The Agent Development Kit (ADK) SkillToolset introduces a \"progressive disclosure\" architecture that allows AI agents to load domain expertise on demand, reducing token usage by up to 90% compared to traditional monolithic prompts. Through four distinct patterns—ranging from simple inline checklists to \"skill factories\" where agents write their own code—the system enables agents to dynamically expand their capabilities at runtime using the universal agentskills.io specification. This modular approach ensures that complex instructions and external resources are only accessed when relevant, creating a scalable and self-extending framework for modern AI development."
+    },
+    {
       "title": "Boost Training Goodput: How Continuous Checkpointing Optimizes Reliability in Orbax and MaxText",
       "link": "https://developers.googleblog.com/en/boost-training-goodput-how-continuous-checkpointing-optimizes-reliability-in-orbax-and-maxtext/",
       "pubDate": "Mon, 30 Mar 2026 16:00:00 GMT",
@@ -240,20 +284,7 @@
       ],
       "contentSource": "RSS",
       "content": "Gemini CLI now features Plan Mode, a read-only environment that allows the AI to analyze complex codebases and map out architectural changes without the risk of accidental execution. By leveraging the new ask_user tool and expanded Model Context Protocol (MCP) support, developers can collaboratively refine strategies and pull in external data before committing to implementation."
-    },
-    {
-      "title": "Unleash Your Development Superpowers: Refining the Core Coding Experience",
-      "link": "https://developers.googleblog.com/en/unleash-your-development-superpowers-refining-the-core-coding-experience/",
-      "pubDate": "Mon, 09 Mar 2026 16:00:00 GMT",
-      "isoDate": "2026-03-09T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Unleash Your Development Superpowers: Refining the Core Coding Experience",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "The Gemini Code Assist team has introduced a suite of updates focused on streamlining the core coding workflow through high-velocity tools like Agent Mode with Auto Approve and Inline Diff Views. These enhancements, along with new features for precise context management and custom commands, aim to transform the AI from a general assistant into a highly tailored, seamless collaborator that adapts to your specific development style."
     }
   ],
-  "lastUpdated": "2026-04-01T11:08:57.374Z"
+  "lastUpdated": "2026-04-02T11:03:36.567Z"
 }
