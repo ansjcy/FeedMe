@@ -213,57 +213,57 @@
       "content": "The audio research community depends on open generative models as foundational tools for building novel approaches and establishing baselines. In this report, we present Woosh, Sony AI's publicly released sound effect foundation model, detailing its architecture, training process, and an evaluation against other popular open models. Being optimized for sound effects, we provide (1) a high-quality audio encoder/decoder model and (2) a text-audio alignment model for conditioning, together with (3) text-to-audio and (4) video-to-audio generative models. Distilled text-to-audio and video-to-audio models are also included in the release, allowing for low-resource operation and fast inference. Our evaluation on both public and private data shows competitive or better performance for each module when compared to existing open alternatives like StableAudio-Open and TangoFlux. Inference code and model weights are available at https://github.com/SonyResearch/Woosh. Demo samples can be found at https://sonyresearch.github.io/Woosh/."
     },
     {
-      "title": "AutoMIA: Improved Baselines for Membership Inference Attack via Agentic Self-Exploration",
-      "link": "https://arxiv.org/abs/2604.01014",
-      "pubDate": "Wed, 01 Apr 2026 11:17:45 GMT",
-      "isoDate": "2026-04-01T11:17:45.000Z",
-      "creator": "Ruhao Liu, Weiqi Huang, Qi Li, Xinchao Wang",
+      "title": "Steerable Visual Representations",
+      "link": "https://arxiv.org/abs/2604.02327",
+      "pubDate": "Wed, 01 Apr 2026 20:00:00 GMT",
+      "isoDate": "2026-04-01T20:00:00.000Z",
+      "creator": "Jona Ruthardt, Manu Gaur, Deva Ramanan, Makarand Tapaswi, Yuki M. Asano",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "AutoMIA: Improved Baselines for Membership Inference Attack via Agentic Self-Exploration",
+      "translated_title": "Steerable Visual Representations",
       "images": [],
       "contentSource": "RSS",
-      "content": "Membership Inference Attacks (MIAs) serve as a fundamental auditing tool for evaluating training data leakage in machine learning models. However, existing methodologies predominantly rely on static, handcrafted heuristics that lack adaptability, often leading to suboptimal performance when transferred across different large models. In this work, we propose AutoMIA, an agentic framework that reformulates membership inference as an automated process of self-exploration and strategy evolution. Given high-level scenario specifications, AutoMIA self-explores the attack space by generating executable logits-level strategies and progressively refining them through closed-loop evaluation feedback. By decoupling abstract strategy reasoning from low-level execution, our framework enables a systematic, model-agnostic traversal of the attack search space. Extensive experiments demonstrate that AutoMIA consistently matches or outperforms state-of-the-art baselines while eliminating the need for manual feature engineering."
+      "content": "Pretrained Vision Transformers (ViTs) such as DINOv2 and MAE provide generic image features that can be applied to a variety of downstream tasks such as retrieval, classification, and segmentation. However, such representations tend to focus on the most salient visual cues in the image, with no way to direct them toward less prominent concepts of interest. In contrast, Multimodal LLMs can be guided with textual prompts, but the resulting representations tend to be language-centric and lose their effectiveness for generic visual tasks. To address this, we introduce Steerable Visual Representations, a new class of visual representations, whose global and local features can be steered with natural language. While most vision-language models (e.g., CLIP) fuse text with visual features after encoding (late fusion), we inject text directly into the layers of the visual encoder (early fusion) via lightweight cross-attention. We introduce benchmarks for measuring representational steerability, and demonstrate that our steerable visual features can focus on any desired objects in an image while preserving the underlying representation quality. Our method also matches or outperforms dedicated approaches on anomaly detection and personalized object discrimination, exhibiting zero-shot generalization to out-of-distribution tasks."
     },
     {
-      "title": "EgoSim: Egocentric World Simulator for Embodied Interaction Generation",
-      "link": "https://arxiv.org/abs/2604.01001",
-      "pubDate": "Tue, 31 Mar 2026 20:00:00 GMT",
-      "isoDate": "2026-03-31T20:00:00.000Z",
-      "creator": "Jinkun Hao, Mingda Jia, Ruiyan Wang, Xihui Liu, Ran Yi, Lizhuang Ma, Jiangmiao Pang, Xudong Xu",
+      "title": "CORAL: Towards Autonomous Multi-Agent Evolution for Open-Ended Discovery",
+      "link": "https://arxiv.org/abs/2604.01658",
+      "pubDate": "Wed, 01 Apr 2026 20:00:00 GMT",
+      "isoDate": "2026-04-01T20:00:00.000Z",
+      "creator": "Ao Qu, Han Zheng, Zijian Zhou, Yihao Yan, Yihong Tang, Shao Yong Ong, Fenglu Hong, Kaichen Zhou, Chonghe Jiang, Minwei Kong, Jiacheng Zhu, Xuan Jiang, Sirui Li, Cathy Wu, Bryan Kian Hsiang Low, Jinhua Zhao, Paul Pu Liang",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "EgoSim: Egocentric World Simulator for Embodied Interaction Generation",
+      "translated_title": "CORAL: Towards Autonomous Multi-Agent Evolution for Open-Ended Discovery",
       "images": [],
       "contentSource": "RSS",
-      "content": "We introduce EgoSim, a closed-loop egocentric world simulator that generates spatially consistent interaction videos and persistently updates the underlying 3D scene state for continuous simulation. Existing egocentric simulators either lack explicit 3D grounding, causing structural drift under viewpoint changes, or treat the scene as static, failing to update world states across multi-stage interactions. EgoSim addresses both limitations by modeling 3D scenes as updatable world states. We generate embodiment interactions via a Geometry-action-aware Observation Simulation model, with spatial consistency from an Interaction-aware State Updating module. To overcome the critical data bottleneck posed by the difficulty in acquiring densely aligned scene-interaction training pairs, we design a scalable pipeline that extracts static point clouds, camera trajectories, and embodiment actions from in-the-wild large-scale monocular egocentric videos. We further introduce EgoCap, a capture system that enables low-cost real-world data collection with uncalibrated smartphones. Extensive experiments demonstrate that EgoSim significantly outperforms existing methods in terms of visual quality, spatial consistency, and generalization to complex scenes and in-the-wild dexterous interactions, while supporting cross-embodiment transfer to robotic manipulation. Codes and datasets will be open soon. The project page is at egosimulator.github.io."
+      "content": "Large language model (LLM)-based evolution is a promising approach for open-ended discovery, where progress requires sustained search and knowledge accumulation. Existing methods still rely heavily on fixed heuristics and hard-coded exploration rules, which limit the autonomy of LLM agents. We present CORAL, the first framework for autonomous multi-agent evolution on open-ended problems. CORAL replaces rigid control with long-running agents that explore, reflect, and collaborate through shared persistent memory, asynchronous multi-agent execution, and heartbeat-based interventions. It also provides practical safeguards, including isolated workspaces, evaluator separation, resource management, and agent session and health management. Evaluated on diverse mathematical, algorithmic, and systems optimization tasks, CORAL sets new state-of-the-art results on 10 tasks, achieving 3-10 times higher improvement rates with far fewer evaluations than fixed evolutionary search baselines across tasks. On Anthropic's kernel engineering task, four co-evolving agents improve the best known score from 1363 to 1103 cycles. Mechanistic analyses further show how these gains arise from knowledge reuse and multi-agent exploration and communication. Together, these results suggest that greater agent autonomy and multi-agent evolution can substantially improve open-ended discovery. Code is available at https://github.com/Human-Agent-Society/CORAL."
     },
     {
-      "title": "Investigating Autonomous Agent Contributions in the Wild: Activity Patterns and Code Change over Time",
-      "link": "https://arxiv.org/abs/2604.00917",
-      "pubDate": "Tue, 31 Mar 2026 20:00:00 GMT",
-      "isoDate": "2026-03-31T20:00:00.000Z",
-      "creator": "Razvan Mihai Popescu, David Gros, Andrei Botocan, Rahul Pandita, Prem Devanbu, Maliheh Izadi",
+      "title": "NearID: Identity Representation Learning via Near-identity Distractors",
+      "link": "https://arxiv.org/abs/2604.01973",
+      "pubDate": "Wed, 01 Apr 2026 20:00:00 GMT",
+      "isoDate": "2026-04-01T20:00:00.000Z",
+      "creator": "Aleksandar Cvejic, Rameen Abdal, Abdelrahman Eldesokey, Bernard Ghanem, Peter Wonka",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Investigating Autonomous Agent Contributions in the Wild: Activity Patterns and Code Change over Time",
+      "translated_title": "NearID: Identity Representation Learning via Near-identity Distractors",
       "images": [],
       "contentSource": "RSS",
-      "content": "The rise of large language models for code has reshaped software development. Autonomous coding agents, able to create branches, open pull requests, and perform code reviews, now actively contribute to real-world projects. Their growing role offers a unique and timely opportunity to investigate AI-driven contributions and their effects on code quality, team dynamics, and software maintainability. In this work, we construct a novel dataset of approximately 110,000 open-source pull requests, including associated commits, comments, reviews, issues, and file changes, collectively representing millions of lines of source code. We compare five popular coding agents, including OpenAI Codex, Claude Code, GitHub Copilot, Google Jules, and Devin, examining how their usage differs in various development aspects such as merge frequency, edited file types, and developer interaction signals, including comments and reviews. Furthermore, we emphasize that code authoring and review are only a small part of the larger software engineering process, as the resulting code must also be maintained and updated over time. Hence, we offer several longitudinal estimates of survival and churn rates for agent-generated versus human-authored code. Ultimately, our findings indicate an increasing agent activity in open-source projects, although their contributions are associated with more churn over time compared to human-authored code."
+      "content": "When evaluating identity-focused tasks such as personalized generation and image editing, existing vision encoders entangle object identity with background context, leading to unreliable representations and metrics. We introduce the first principled framework to address this vulnerability using Near-identity (NearID) distractors, where semantically similar but distinct instances are placed on the exact same background as a reference image, eliminating contextual shortcuts and isolating identity as the sole discriminative signal. Based on this principle, we present the NearID dataset (19K identities, 316K matched-context distractors) together with a strict margin-based evaluation protocol. Under this setting, pre-trained encoders perform poorly, achieving Sample Success Rates (SSR), a strict margin-based identity discrimination metric, as low as 30.7% and often ranking distractors above true cross-view matches. We address this by learning identity-aware representations on a frozen backbone using a two-tier contrastive objective enforcing the hierarchy: same identity &gt; NearID distractor &gt; random negative. This improves SSR to 99.2%, enhances part-level discrimination by 28.0%, and yields stronger alignment with human judgments on DreamBench++, a human-aligned benchmark for personalization. Project page: https://gorluxor.github.io/NearID/"
     },
     {
-      "title": "Executing as You Generate: Hiding Execution Latency in LLM Code Generation",
-      "link": "https://arxiv.org/abs/2604.00491",
-      "pubDate": "Tue, 31 Mar 2026 20:00:00 GMT",
-      "isoDate": "2026-03-31T20:00:00.000Z",
-      "creator": "Zhensu Sun, Zhihao Lin, Zhi Chen, Chengran Yang, Mingyi Zhou, Li Li, David Lo",
+      "title": "Therefore I am. I Think",
+      "link": "https://arxiv.org/abs/2604.01202",
+      "pubDate": "Wed, 01 Apr 2026 20:00:00 GMT",
+      "isoDate": "2026-04-01T20:00:00.000Z",
+      "creator": "Esakkivel Esakkiraja, Sai Rajeswar, Denis Akhiyarov, Rajagopal Venkatesaramani",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Executing as You Generate: Hiding Execution Latency in LLM Code Generation",
+      "translated_title": "Therefore I am. I Think",
       "images": [],
       "contentSource": "RSS",
-      "content": "Current LLM-based coding agents follow a serial execution paradigm: the model first generates the complete code, then invokes an interpreter to execute it. This sequential workflow leaves the executor idle during generation and the generator idle during execution, resulting in unnecessary end-to-end latency. We observe that, unlike human developers, LLMs produce code tokens sequentially without revision, making it possible to execute code as it is being generated. We formalize this parallel execution paradigm, modeling it as a three-stage pipeline of generation, detection, and execution, and derive closed-form latency bounds that characterize its speedup potential and operating regimes. We then present Eager, a concrete implementation featuring AST-based chunking, dynamic batching with gated execution, and early error interruption. We evaluate Eager across four benchmarks, seven LLMs, and three execution environments. Results show that Eager reduces the non-overlapped execution latency by up to 99.9% and the end-to-end latency by up to 55% across seven LLMs and four benchmarks."
+      "content": "We consider the question: when a large language reasoning model makes a choice, did it think first and then decide to, or decide first and then think? In this paper, we present evidence that detectable, early-encoded decisions shape chain-of-thought in reasoning models. Specifically, we show that a simple linear probe successfully decodes tool-calling decisions from pre-generation activations with very high confidence, and in some cases, even before a single reasoning token is produced. Activation steering supports this causally: perturbing the decision direction leads to inflated deliberation, and flips behavior in many examples (between 7 - 79% depending on model and benchmark). We also show through behavioral analysis that, when steering changes the decision, the chain-of-thought process often rationalizes the flip rather than resisting it. Together, these results suggest that reasoning models can encode action choices before they begin to deliberate in text."
     }
   ],
-  "lastUpdated": "2026-04-03T09:59:16.665Z"
+  "lastUpdated": "2026-04-04T09:50:31.512Z"
 }
