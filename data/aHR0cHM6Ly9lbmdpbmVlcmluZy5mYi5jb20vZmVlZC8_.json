@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "How Meta Used AI to Map Tribal Knowledge in Large-Scale Data Pipelines",
+      "link": "https://engineering.fb.com/2026/04/06/developer-tools/how-meta-used-ai-to-map-tribal-knowledge-in-large-scale-data-pipelines/",
+      "pubDate": "Mon, 06 Apr 2026 16:00:50 +0000",
+      "isoDate": "2026-04-06T16:00:50.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How Meta Used AI to Map Tribal Knowledge in Large-Scale Data Pipelines",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>AI coding assistants are powerful but only as good as their understanding of your codebase. When we pointed AI agents at one of Meta&#8217;s large-scale data processing pipelines – spanning four repositories, three languages, and over 4,100 files – we quickly found that they weren&#8217;t making useful edits quickly enough.  We fixed this by building [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/04/06/developer-tools/how-meta-used-ai-to-map-tribal-knowledge-in-large-scale-data-pipelines/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/04/06/developer-tools/how-meta-used-ai-to-map-tribal-knowledge-in-large-scale-data-pipelines/\">How Meta Used AI to Map Tribal Knowledge in Large-Scale Data Pipelines</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "KernelEvolve: How Meta’s Ranking Engineer Agent Optimizes AI Infrastructure",
       "link": "https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure/",
       "pubDate": "Thu, 02 Apr 2026 19:59:46 +0000",
@@ -120,69 +133,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>Meta recognizes the long-term benefits of jemalloc, a high-performance memory allocator, in its software infrastructure. We are renewing focus on jemalloc, aiming to reduce maintenance needs and modernize the codebase while continuing to evolve the allocator to adapt to the latest hardware and workloads. We are committed to continuing to develop jemalloc development with the [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/03/02/data-infrastructure/investing-in-infrastructure-metas-renewed-commitment-to-jemalloc/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/03/02/data-infrastructure/investing-in-infrastructure-metas-renewed-commitment-to-jemalloc/\">Investing in Infrastructure: Meta’s Renewed Commitment to jemalloc</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "RCCLX: Innovating GPU communications on AMD platforms (原标题: RCCLX: Innovating GPU Communications on AMD Platforms)",
-      "link": "https://engineering.fb.com/2026/02/24/data-center-engineering/rrcclx-innovating-gpu-communications-amd-platforms-meta/",
-      "pubDate": "Tue, 24 Feb 2026 21:30:54 +0000",
-      "isoDate": "2026-02-24T21:30:54.000Z",
-      "creator": "",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "RCCLX: Innovating GPU communications on AMD platforms",
-      "images": [
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2026/02/rrcclx-innovating-gpu-communications-amd-platforms-meta-image-1.png",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2026/02/rrcclx-innovating-gpu-communications-amd-platforms-meta-image-.png",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2026/02/rrcclx-innovating-gpu-communications-amd-platforms-meta-image-3.png",
-          "alt": "",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2026/02/rrcclx-innovating-gpu-communications-amd-platforms-meta-image-4.png",
-          "alt": "",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2026/02/rrcclx-innovating-gpu-communications-amd-platforms-meta-image-5.png",
-          "alt": "",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2026/02/rrcclx-innovating-gpu-communications-amd-platforms-meta-image-6.png",
-          "alt": "",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2026/02/rrcclx-innovating-gpu-communications-amd-platforms-meta-image-8.jpg",
-          "alt": "",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://engineering.fb.com/wp-content/uploads/2026/02/rrcclx-innovating-gpu-communications-amd-platforms-meta-image-7.jpg",
-          "alt": "",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>We are open-sourcing the initial version of RCCLX – an enhanced version of RCCL that we developed and tested on Meta’s internal workloads. RCCLX is fully integrated with Torchcomms and aims to empower researchers and developers to accelerate innovation, regardless of their chosen backend. Communication patterns for AI models are constantly evolving, as are hardware [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/02/24/data-center-engineering/rrcclx-innovating-gpu-communications-amd-platforms-meta/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/02/24/data-center-engineering/rrcclx-innovating-gpu-communications-amd-platforms-meta/\">RCCLX: Innovating GPU Communications on AMD Platforms</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-04-05T06:16:10.564Z"
+  "lastUpdated": "2026-04-07T06:21:43.938Z"
 }
