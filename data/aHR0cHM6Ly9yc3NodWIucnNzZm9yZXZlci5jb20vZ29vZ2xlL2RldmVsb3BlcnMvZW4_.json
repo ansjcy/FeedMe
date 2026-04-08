@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "TorchTPU: Running PyTorch Natively on TPUs at Google Scale",
+      "link": "https://developers.googleblog.com/en/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/",
+      "pubDate": "Mon, 06 Apr 2026 16:00:00 GMT",
+      "isoDate": "2026-04-06T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "TorchTPU: Running PyTorch Natively on TPUs at Google Scale",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "TorchTPU is a new engineering stack designed to provide a native, high-performance experience for running PyTorch workloads on Google’s TPU infrastructure with minimal code changes. It features an \"Eager First\" approach with multiple execution modes and utilizes the XLA compiler to optimize distributed training across massive clusters. Moving into 2026, the project aims to further reduce compilation overhead and expand support for dynamic shapes and custom kernels to ensure seamless scalability for the next generation of AI."
+    },
+    {
       "title": "Supporting Google Account username change in your app",
       "link": "https://developers.googleblog.com/en/supporting-google-account-username-change-in-your-app/",
       "pubDate": "Wed, 01 Apr 2026 16:00:00 GMT",
@@ -222,69 +235,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "This blog post introduces a workflow for extracting high-quality data from complex, unstructured documents by combining LlamaParse with Gemini 3.1 models. It demonstrates an event-driven architecture that uses Gemini 3.1 Pro for agentic parsing of dense financial tables and Gemini 3.1 Flash for cost-effective summarization. By following the provided tutorial, developers can build a personal finance assistant capable of transforming messy brokerage statements into structured, human-readable insights."
-    },
-    {
-      "title": "Developer’s Guide to AI Agent Protocols",
-      "link": "https://developers.googleblog.com/en/developers-guide-to-ai-agent-protocols/",
-      "pubDate": "Tue, 17 Mar 2026 16:00:00 GMT",
-      "isoDate": "2026-03-17T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Developer’s Guide to AI Agent Protocols",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-1-mcp.original.png",
-          "alt": "diagram-1-mcp",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-2-a2a.original.png",
-          "alt": "diagram-2-a2a",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-3-ucp.original.png",
-          "alt": "diagram-3-ucp",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-4-ap2.original.png",
-          "alt": "diagram-4-ap2",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-5-a2ui.original.png",
-          "alt": "diagram-5-a2ui",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/widgets-a2ui.original.png",
-          "alt": "widgets-a2ui",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-6-ag-ui.original.png",
-          "alt": "diagram-6-ag-ui",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/kichen_manager_agent_overall.original.png",
-          "alt": "kichen manager agent_overall",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "This blog post introduces a suite of six protocols, such as MCP and A2A, designed to eliminate custom integration code by standardizing how AI agents access data and communicate. Using a \"kitchen manager\" agent as a practical example, it demonstrates how these tools handle complex tasks like real-time inventory checks, wholesale commerce via UCP, and secure payment authorization through AP2. By leveraging the Agent Development Kit (ADK), developers can also implement A2UI and AG-UI to deliver interactive dashboards and seamless streaming interfaces to users."
     }
   ],
-  "lastUpdated": "2026-04-07T11:09:45.247Z"
+  "lastUpdated": "2026-04-08T11:10:37.068Z"
 }
