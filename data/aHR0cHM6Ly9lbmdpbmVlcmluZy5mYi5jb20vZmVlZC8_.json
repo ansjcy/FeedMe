@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "Escaping the Fork: How Meta Modernized WebRTC Across 50+ Use Cases",
+      "link": "https://engineering.fb.com/2026/04/09/developer-tools/escaping-the-fork-how-meta-modernized-webrtc-across-50-use-cases/",
+      "pubDate": "Thu, 09 Apr 2026 16:00:34 +0000",
+      "isoDate": "2026-04-09T16:00:34.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Escaping the Fork: How Meta Modernized WebRTC Across 50+ Use Cases",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>At Meta, WebRTC powers real-time audio and video across various platforms. But forking a large open-source project like WebRTC within our monorepo presents unique challenges – over time, an internal fork can drift behind upstream, cutting itself off from community upgrades. We&#8217;re sharing how we escaped this &#8220;forking trap&#8221; &#8211; from building a dual-stack architecture [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/04/09/developer-tools/escaping-the-fork-how-meta-modernized-webrtc-across-50-use-cases/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/04/09/developer-tools/escaping-the-fork-how-meta-modernized-webrtc-across-50-use-cases/\">Escaping the Fork: How Meta Modernized WebRTC Across 50+ Use Cases</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "Trust But Canary: Configuration Safety at Scale",
       "link": "https://engineering.fb.com/2026/04/08/security/trust-but-canary-configuration-safety-at-scale-meta-tech-podcast/",
       "pubDate": "Wed, 08 Apr 2026 18:25:26 +0000",
@@ -120,20 +133,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>We’re sharing the technical details behind how Advanced Browsing Protection (ABP) in Messenger protects the privacy of the links clicked on within chats while still warning people about malicious links. We hope that this post has helped to illuminate some of the engineering challenges and infrastructure components involved for providing this feature for our users. [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/03/09/security/how-advanced-browsing-protection-works-in-messenger/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/03/09/security/how-advanced-browsing-protection-works-in-messenger/\">How Advanced Browsing Protection Works in Messenger</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "FFmpeg at Meta: Media Processing at Scale",
-      "link": "https://engineering.fb.com/2026/03/02/video-engineering/ffmpeg-at-meta-media-processing-at-scale/",
-      "pubDate": "Mon, 02 Mar 2026 20:00:12 +0000",
-      "isoDate": "2026-03-02T20:00:12.000Z",
-      "creator": "",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "FFmpeg at Meta: Media Processing at Scale",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>FFmpeg is truly a multi-tool for media processing. As an industry-standard tool it supports a wide variety of audio and video codecs and container formats. It can also orchestrate complex chains of filters for media editing and manipulation. For the people who use our apps, FFmpeg plays an important role in enabling new video experiences [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/03/02/video-engineering/ffmpeg-at-meta-media-processing-at-scale/\">Read More...</a></p>\n<p>The post <a rel=\"nofollow\" href=\"https://engineering.fb.com/2026/03/02/video-engineering/ffmpeg-at-meta-media-processing-at-scale/\">FFmpeg at Meta: Media Processing at Scale</a> appeared first on <a rel=\"nofollow\" href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-04-09T06:24:25.861Z"
+  "lastUpdated": "2026-04-11T06:04:45.435Z"
 }
