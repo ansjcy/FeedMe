@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "GitHub Copilot CLI for Beginners: Getting started with GitHub Copilot CLI",
+      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-getting-started-with-github-copilot-cli/",
+      "pubDate": "Fri, 10 Apr 2026 16:00:00 +0000",
+      "isoDate": "2026-04-10T16:00:00.000Z",
+      "creator": "Christopher Harrison",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "GitHub Copilot CLI for Beginners: Getting started with GitHub Copilot CLI",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/6109729?v=4&s=200",
+          "alt": "Christopher Harrison",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>GitHub for Beginners: Getting started with the GitHub Copilot CLI, a step-by-step tutorial.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-getting-started-with-github-copilot-cli/\">GitHub Copilot CLI for Beginners: Getting started with GitHub Copilot CLI</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub availability report: March 2026",
       "link": "https://github.blog/news-insights/company-news/github-availability-report-march-2026/",
       "pubDate": "Thu, 09 Apr 2026 02:21:17 +0000",
@@ -375,69 +419,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>A look at GitHub Actions’ 2026 roadmap, outlining how secure defaults, policy controls, and CI/CD observability harden the software supply chain end to end.</p>\n<p>The post <a href=\"https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/\">What&#8217;s coming to our GitHub Actions 2026 security roadmap</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "A year of open source vulnerability trends: CVEs, advisories, and malware",
-      "link": "https://github.blog/security/supply-chain-security/a-year-of-open-source-vulnerability-trends-cves-advisories-and-malware/",
-      "pubDate": "Thu, 26 Mar 2026 16:00:00 +0000",
-      "isoDate": "2026-03-26T16:00:00.000Z",
-      "creator": "Jonathan Evans",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "A year of open source vulnerability trends: CVEs, advisories, and malware",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/1-GHADB-Feeds-vs-Backfill.png?resize=4290%2C2640",
-          "alt": "Stacked bar graph showing the number of advisories published from GitHub's feeds and those published from the backfill campaigns.\n\nReviewed Year\tFrom Feeds\tFrom Backfill\n2020\t1145\t1539\n2021\t1419\t1412\n2022\t2731\t1848\n2023\t3065\t1792\n2024\t3142\t2093\n2025\t3734\t367",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/2-All-GHADB-Published.png?resize=1024%2C631",
-          "alt": "Stacked line graph showing the cumulative number of advisories of each type over the years.\n\nYear\tUnreviewed\tReviewed\tMalware\tWithdrawn\n2019\t0\t381\t0\t42\n2020\t0\t3,065\t0\t101\n2021\t1,978\t5,896\t0\t140\n2022\t177,369\t10,475\t7,433\t195\n2023\t202,583\t15,332\t9,136\t290\n2024\t238,642\t20,567\t13,404\t413\n2025\t283,447\t24,668\t20,649\t522",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/3-Ecosystem-Distribution-2025.png?resize=2236%2C2649",
-          "alt": "Circle graph showing the distributions of ecosystems of advisories reviewed in 2025.\n\nEcosystem\tProportion of 2025 Reviewed Advisories\nComposer\t19.40%\nErlang\t0.22%\nGitHub Actions\t0.41%\nGo\t17.33%\nMaven\t22.24%\nnpm\t14.92%\nNuget\t2.33%\nPip\t17.16%\nRubyGems\t1.47%\nRust\t4.31%\nSwift\t0.22%",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/4-Ecosystem-Distribution-All.png?resize=2236%2C2649",
-          "alt": "Circle graph showing the distributions of ecosystems of reviewed advisories across the entire GitHub Advisory Database.\n\nEcosystem\tProportion of All Reviewed Advisories\nComposer\t20.16%\nErlang\t0.16%\nGitHub Actions\t0.15%\nGo\t10.91%\nMaven\t24.33%\nnpm\t17.05%\nNuget\t2.98%\nPip\t16.33%\nPub\t0.04%\nRubyGems\t3.60%\nRust\t4.13%\nSwift\t0.17%",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/5-2025-Scoring-Systems.png?resize=1024%2C630",
-          "alt": "Priority\tCVSS\tEPSS\nCritical\t392\t11\nHigh\t1237\t96\nModerate\t1994\t221\nLow\t475\t1517\nVery Low\t\t1872",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/6-KEV-Scoring-Comparison.png?resize=1024%2C632",
-          "alt": "Priority\tCVSS\tEPSS\nCritical\t8\t4\nHigh\t8\t11\nModerate\t2\t3\nLow\t0\t0\nVery Low\t0\t0",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/7-Malware-Advisories.png?resize=1024%2C631",
-          "alt": "Bar graph showing the number of published malware advisories each year.\n\nPublication Year\tPublished Malware Advisories\n2022\t7433\n2023\t1703\n2024\t4268\n2025\t7197",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/03/8-2025-Published-CVEs.png?resize=1024%2C631",
-          "alt": "Bar graph showing the number of CVEs GitHub published year.\n\nPublished Year\tCVEs Published in 2025\n2020\t509\n2021\t1047\n2022\t1297\n2023\t1784\n2024\t2152\n2025\t2903",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Reviewed advisories hit a four-year low, malware advisories surged, and CNA publishing grew—here’s what changed and what it means for your triage and response. </p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/a-year-of-open-source-vulnerability-trends-cves-advisories-and-malware/\">A year of open source vulnerability trends: CVEs, advisories, and malware</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-04-09T05:55:23.529Z"
+  "lastUpdated": "2026-04-11T05:37:38.926Z"
 }
