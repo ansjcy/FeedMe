@@ -5,6 +5,63 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Build Better AI Agents: 5 Developer Tips from the Agent Bake-Off",
+      "link": "https://developers.googleblog.com/en/build-better-ai-agents-5-developer-tips-from-the-agent-bake-off/",
+      "pubDate": "Mon, 13 Apr 2026 16:00:00 GMT",
+      "isoDate": "2026-04-13T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Build Better AI Agents: 5 Developer Tips from the Agent Bake-Off",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_1.original.jpg",
+          "alt": "Image 1",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_2.original.jpg",
+          "alt": "Image 2",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_3.original.jpg",
+          "alt": "Image 3",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_4.original.png",
+          "alt": "Image 4",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_5.original.jpg",
+          "alt": "Image 5",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "The Google Cloud AI Agent Bake-Off highlights a shift from simple prompt engineering to rigorous agentic engineering, emphasizing that production-ready AI requires a modular, multi-agent architecture. The post outlines five key developer tips, including decomposing complex tasks into specialized sub-agents and using deterministic code for execution to prevent probabilistic errors. Furthermore, it advises developers to prioritize multimodality and open-source protocols like MCP to ensure agents are scalable, integrated, and future-proof against rapidly evolving model capabilities."
+    },
+    {
+      "title": "Get ready for Google I/O: Livestream schedule revealed",
+      "link": "https://developers.googleblog.com/en/get-ready-for-google-io-livestream-schedule-revealed/",
+      "pubDate": "Mon, 13 Apr 2026 16:00:00 GMT",
+      "isoDate": "2026-04-13T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Get ready for Google I/O: Livestream schedule revealed",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Google I/O returns May 19–20 to showcase major updates in AI, Android, Chrome, and Cloud, beginning with a keynote on the \"agentic era\" of development. The event will focus on new tools designed to automate complex workflows and simplify the creation of high-quality, AI-ready applications. Attendees can register to access live sessions, technical demos, and professional development resources both live and on-demand."
+    },
+    {
       "title": "TorchTPU: Running PyTorch Natively on TPUs at Google Scale",
       "link": "https://developers.googleblog.com/en/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/",
       "pubDate": "Mon, 06 Apr 2026 16:00:00 GMT",
@@ -196,46 +253,7 @@
       ],
       "contentSource": "RSS",
       "content": "To bridge the gap between static model knowledge and rapidly evolving software practices, Google DeepMind developed a \"Gemini API developer skill\" that provides agents with live documentation and SDK guidance. Evaluation results show a massive performance boost, with the gemini-3.1-pro-preview model jumping from a 28.2% to a 96.6% success rate when equipped with the skill. This lightweight approach demonstrates how giving models strong reasoning capabilities and access to a \"source of truth\" can effectively eliminate outdated coding patterns."
-    },
-    {
-      "title": "Jump to play: Building with Gemini & MediaPipe",
-      "link": "https://developers.googleblog.com/en/jump-to-play-building-with-gemini-mediapipe/",
-      "pubDate": "Mon, 23 Mar 2026 16:00:00 GMT",
-      "isoDate": "2026-03-23T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Jump to play: Building with Gemini & MediaPipe",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/combined.original.png",
-          "alt": "combined",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_2.original.png",
-          "alt": "image1 (2)",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "The provided workflow streamlines motion-controlled game development by using Gemini Canvas to rapidly prototype mechanics like the MediaPipe Pose Landmarker through high-level prompting. Developers can refine these prototypes in Google AI Studio by optimizing for low-latency \"lite\" models and stable tracking points, such as shoulder landmarks, to ensure responsive gameplay. The process concludes by using Gemini Code Assist to refactor experimental code into a modular, production-ready application capable of supporting various multimodal inputs."
-    },
-    {
-      "title": "Build a smart financial assistant with LlamaParse and Gemini 3.1",
-      "link": "https://developers.googleblog.com/en/build-a-smart-financial-assistant-with-llamaparse-and-gemini-31/",
-      "pubDate": "Sun, 22 Mar 2026 16:00:00 GMT",
-      "isoDate": "2026-03-22T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Build a smart financial assistant with LlamaParse and Gemini 3.1",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "This blog post introduces a workflow for extracting high-quality data from complex, unstructured documents by combining LlamaParse with Gemini 3.1 models. It demonstrates an event-driven architecture that uses Gemini 3.1 Pro for agentic parsing of dense financial tables and Gemini 3.1 Flash for cost-effective summarization. By following the provided tutorial, developers can build a personal finance assistant capable of transforming messy brokerage statements into structured, human-readable insights."
     }
   ],
-  "lastUpdated": "2026-04-14T11:13:02.921Z"
+  "lastUpdated": "2026-04-15T11:11:04.134Z"
 }
