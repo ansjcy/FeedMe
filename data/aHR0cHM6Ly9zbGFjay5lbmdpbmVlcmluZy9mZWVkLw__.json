@@ -5,6 +5,19 @@
   "link": "https://slack.engineering",
   "items": [
     {
+      "title": "Managing context in long-run agentic applications",
+      "link": "https://slack.engineering/managing-context-in-long-run-agentic-applications/",
+      "pubDate": "Mon, 13 Apr 2026 17:17:16 +0000",
+      "isoDate": "2026-04-13T17:17:16.000Z",
+      "creator": "Dominic Marks",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Managing context in long-run agentic applications",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Excerpt In complex, long-running agentic systems, maintaining alignment and coherent reasoning between agents requires careful design. In this second article of our series, we explore these challenges and the mechanisms we built to keep teams of agents working productively over long time spans. We present a range of complementary techniques that balance the conflicting requirements&#8230;"
+    },
+    {
       "title": "From Custom to Open: Scalable Network Probing and HTTP/3 Readiness with Prometheus",
       "link": "https://slack.engineering/from-custom-to-open-scalable-network-probing-and-http-3-readiness-with-prometheus/",
       "pubDate": "Tue, 31 Mar 2026 17:00:39 +0000",
@@ -300,20 +313,7 @@
       ],
       "contentSource": "完整文章",
       "content": "In the world of DevOps and Developer Experience (DevXP), speed and efficiency can make a big difference on an engineer’s day-to-day tasks. Today, we’ll dive into how Slack’s DevXP team took some existing tools and used them to optimize an end-to-end (E2E) testing pipeline. This lowered build times and reduced redundant processes, saving both time&#8230;"
-    },
-    {
-      "title": "我们如何构建安全私密的智能企业搜索 (原标题: How we built enterprise search to be secure and private)",
-      "link": "https://slack.engineering/how-we-built-enterprise-search-to-be-secure-and-private/",
-      "pubDate": "Fri, 07 Mar 2025 01:14:37 +0000",
-      "isoDate": "2025-03-07T01:14:37.000Z",
-      "creator": "Ian Hoffman",
-      "summary": "### 引言：Slack的演进\n\n“Slack”实际上是一个逆向首字母缩略词，代表“Searchable Log of all Communication and Knowledge”（所有通信和知识的可搜索日志）。如今，借助Slack AI，Slack已不仅仅是一个可搜索的日志，它利用最新的生成式AI技术，安全地提供强大且省时的洞察，成为一个智能日志。\n\n### Slack AI的安全与隐私原则\n\nSlack AI从零开始构建，遵循与现有企业级合规标准相同的安全和隐私原则：\n\n*   **客户数据永不离开Slack：** 确保客户信息始终在Slack的信任边界内。\n*   **不使用客户数据训练大型语言模型（LLMs）：** 保护客户数据的隐私性，避免其被用于模型训练。\n*   **Slack AI仅处理用户可见的数据：** 确保AI的响应仅基于用户已有权限访问的信息。\n*   **与现有企业级合规标准无缝集成：** 兼容既有的安全和合规框架。\n\n### 企业搜索的扩展与功能\n\n现在，通过企业搜索，Slack不仅是其内部所有内容和知识的日志，还包括来自关键外部应用程序的知识。用户可以直接在Slack的搜索中找到最新、相关且有权限的内容。目前已支持Google Drive和GitHub，未来还将集成更多连接的应用。这些新应用的加入，使得Slack搜索和AI答案能够从关键工具中获取上下文，从而更强大地满足用户查询。\n\n### 企业搜索的安全与隐私原则\n\n企业搜索秉承与Slack AI相同的企业级安全和隐私标准：\n\n*   **从不存储外部数据：** 外部数据不会存储在Slack的数据库中。\n*   **外部数据和权限实时更新：** 确保从外部系统获取的数据和权限始终是最新的。\n*   **用户和管理员需明确授权：** 必须明确授予Slack访问外部源的权限，并可随时撤销。\n*   **遵循最小权限原则：** 仅请求满足搜索查询所需的授权。\n\n### Slack AI如何保障安全\n\n*   **托管LLMs在托管VPC中：** Slack使用AWS在托管VPC中托管闭源LLMs，确保模型提供商无法访问Slack客户数据，且客户数据永不离开Slack的信任边界。\n*   **采用检索增强生成（RAG）：** 不通过训练LLMs来处理数据，而是使用RAG，仅向LLM提供完成任务所需的、用户有权限访问的内容。这些内容只在运行时提供给LLM，LLM不会保留任何用户数据。\n*   **权限感知：** Slack利用请求用户的访问控制列表（ACL），确保LLM只接收用户在Slack中已有权限访问的数据。\n*   **重用现有合规基础设施：** 存储和处理LLM生成内容时，重用所有现有合规基础设施（如加密密钥管理和国际数据驻留）。搜索答案摘要不会被存储，仅显示给请求用户后立即丢弃。\n\n### 企业搜索如何保障安全\n\n企业搜索建立在Slack AI之上，并受益于其多项创新（例如使用相同的LLMs、RAG，且不存储搜索答案）。此外，企业搜索增加了从外部源提供有权限内容的能力：\n\n*   **不存储外部数据：** 采用联邦式实时方法，通过合作伙伴的公共搜索API返回最新、有权限的结果。Slack客户端可能会缓存数据以优化性能，但核心数据不存储。\n*   **数据和权限实时更新：** 实时从外部源获取数据，避免数据过时。通过OAuth协议，确保企业搜索只能执行用户授权的操作，且这些操作是用户自身可执行操作的子集。\n*   **用户明确授权：** Slack管理员必须选择启用每个外部源用于组织搜索，并可随时撤销。同样，Slack用户也需明确授权，并可随时撤销。这得益于基于OAuth的方法。\n*   **最小权限原则：** 连接外部系统时，仅请求满足搜索查询所需的OAuth读取权限。Slack会向管理员和最终用户展示计划请求的权限范围，确保透明度。\n\n### 结论\n\nSalesforce将信任视为首要价值。Slack自豪地构建了以安全和隐私为核心的企业搜索体验，它建立在Slack AI已有的强大安全原则之上。客户可以放心地使用这一强大新功能，因为他们的外部数据始终得到妥善保护。",
-      "shortSummary": "Slack推出了基于其AI技术的企业搜索功能，将搜索范围从内部扩展到Google Drive、GitHub等外部应用。该功能严格遵循安全和隐私原则：客户数据不离开Slack，不用于训练LLM，仅处理用户有权限访问的数据。企业搜索不存储外部数据，采用实时联邦查询，并通过OAuth确保用户明确授权和最小权限访问。其核心目标是提供安全、私密且高效的跨应用内容检索体验，将信任置于首位。",
-      "translated_title": "我们如何构建安全私密的智能企业搜索",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Many don’t know that “Slack” is in fact a backronym—it stands for “Searchable Log of all Communication and Knowledge”. And these days, it’s not just a searchable log: with Slack AI, Slack is now an intelligent log, leveraging the latest in generative AI to securely surface powerful, time-saving insights. We built Slack AI from the&#8230;"
     }
   ],
-  "lastUpdated": "2026-04-13T06:24:41.382Z"
+  "lastUpdated": "2026-04-15T06:07:01.035Z"
 }
