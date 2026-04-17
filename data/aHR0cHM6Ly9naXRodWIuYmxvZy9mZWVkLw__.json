@@ -5,6 +5,162 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "How GitHub uses eBPF to improve deployment safety",
+      "link": "https://github.blog/engineering/infrastructure/how-github-uses-ebpf-to-improve-deployment-safety/",
+      "pubDate": "Thu, 16 Apr 2026 16:00:00 +0000",
+      "isoDate": "2026-04-16T16:00:00.000Z",
+      "creator": "Lawrence Gripper",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How GitHub uses eBPF to improve deployment safety",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/04/Screenshot-2026-04-06-at-6.36.24-PM.png?resize=1433%2C194",
+          "alt": "Diagram showing a MySQL deploy script fails after attempting to pull the latest release of an open source tool from GitHub.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/04/Screenshot-2026-04-06-at-6.36.34-PM.png?resize=1439%2C363",
+          "alt": "Diagram showing a script failing after being unable to contact GitHub (due to the outage).",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/04/Screenshot-2026-04-06-at-6.36.41-PM.png?resize=1450%2C202",
+          "alt": "Diagram showing a MySQL deploy script calling, via an API, another internal service, which in turn attempts to fetch the latest release of an open source tool from GitHub to use the new binary. The failure propagates back to the deploy script.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/1939288?v=4&s=200",
+          "alt": "Lawrence Gripper",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/6463364?v=4&s=200",
+          "alt": "Aleksey Levenstein",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Learn how Github uses eBPF to detect and prevent circular dependencies in its deployment tooling. </p>\n<p>The post <a href=\"https://github.blog/engineering/infrastructure/how-github-uses-ebpf-to-improve-deployment-safety/\">How GitHub uses eBPF to improve deployment safety</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Build a personal organization command center with GitHub Copilot CLI",
+      "link": "https://github.blog/ai-and-ml/github-copilot/build-a-personal-organization-command-center-with-github-copilot-cli/",
+      "pubDate": "Wed, 15 Apr 2026 17:00:00 +0000",
+      "isoDate": "2026-04-15T17:00:00.000Z",
+      "creator": "Cassidy Williams",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Build a personal organization command center with GitHub Copilot CLI",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/1454517?v=4&s=200",
+          "alt": "Cassidy Williams",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/13090072?v=4&s=200",
+          "alt": "Jacklyn Carroll",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Learn about the productivity tool one GitHub engineer built, and how AI supported the development process.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/build-a-personal-organization-command-center-with-github-copilot-cli/\">Build a personal organization command center with GitHub Copilot CLI</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Developer policy update: Intermediary liability, copyright, and transparency",
+      "link": "https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-intermediary-liability-copyright-and-transparency/",
+      "pubDate": "Wed, 15 Apr 2026 15:00:00 +0000",
+      "isoDate": "2026-04-15T15:00:00.000Z",
+      "creator": "Margaret Tucker",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Developer policy update: Intermediary liability, copyright, and transparency",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/92055439?v=4&s=200",
+          "alt": "Margaret Tucker",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>We’re sharing recent policy updates that developers should know about, updating our Transparency Center with the full year of 2025 data, and looking to what’s ahead.</p>\n<p>The post <a href=\"https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-intermediary-liability-copyright-and-transparency/\">Developer policy update: Intermediary liability, copyright, and transparency</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Hack the AI agent: Build agentic AI security skills with the GitHub Secure Code Game",
       "link": "https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/",
       "pubDate": "Tue, 14 Apr 2026 18:17:59 +0000",
@@ -335,133 +491,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>Discover how Rubber Duck provides a different perspective to GitHub Copilot CLI. </p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/\">GitHub Copilot CLI combines model families for a second opinion</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "The uphill climb of making diff lines performant",
-      "link": "https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/",
-      "pubDate": "Fri, 03 Apr 2026 16:00:00 +0000",
-      "isoDate": "2026-04-03T16:00:00.000Z",
-      "creator": "Luke Ghenco",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "The uphill climb of making diff lines performant",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/04/3.png?resize=960%2C1340",
-          "alt": "V1 Diff Components and HTML. We had 8 react components for a single diff line. \n",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/15013243?v=4&s=200",
-          "alt": "Luke Ghenco",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/247706?v=4&s=200",
-          "alt": "Adam Shwert",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>The path to better performance is often found in simplicity.</p>\n<p>The post <a href=\"https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/\">The uphill climb of making diff lines performant</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Securing the open source supply chain across GitHub",
-      "link": "https://github.blog/security/supply-chain-security/securing-the-open-source-supply-chain-across-github/",
-      "pubDate": "Wed, 01 Apr 2026 19:20:12 +0000",
-      "isoDate": "2026-04-01T19:20:12.000Z",
-      "creator": "Zachary Steindler",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Securing the open source supply chain across GitHub",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/167759?v=4&s=200",
-          "alt": "Zachary Steindler",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Recent attacks on open source focus on exfiltrating secrets; here are the prevention steps you can take today, plus a look at the security capabilities GitHub is working on.</p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/securing-the-open-source-supply-chain-across-github/\">Securing the open source supply chain across GitHub</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Run multiple agents at once with /fleet in Copilot CLI",
-      "link": "https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/",
-      "pubDate": "Wed, 01 Apr 2026 15:00:00 +0000",
-      "isoDate": "2026-04-01T15:00:00.000Z",
-      "creator": "Matt Nigh",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Run multiple agents at once with /fleet in Copilot CLI",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/5862416?v=4&s=200",
-          "alt": "Matt Nigh",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/18745491?v=4&s=200",
-          "alt": "Brian LaFlamme",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>/fleet lets Copilot CLI dispatch multiple agents in parallel. Learn how to write prompts that split work across files, declare dependencies, and avoid common pitfalls.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/\">Run multiple agents at once with /fleet in Copilot CLI</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-04-15T06:07:08.877Z"
+  "lastUpdated": "2026-04-17T06:10:57.589Z"
 }
