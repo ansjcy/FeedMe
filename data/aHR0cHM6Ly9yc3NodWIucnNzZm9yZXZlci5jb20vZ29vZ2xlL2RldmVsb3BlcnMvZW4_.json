@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "A2UI v0.9: The New Standard for Portable, Framework-Agnostic Generative UI",
+      "link": "https://developers.googleblog.com/en/a2ui-v0-9-generative-ui/",
+      "pubDate": "Thu, 16 Apr 2026 16:00:00 GMT",
+      "isoDate": "2026-04-16T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "A2UI v0.9: The New Standard for Portable, Framework-Agnostic Generative UI",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "A2UI v0.9 introduces a framework-agnostic standard designed to help AI agents generate real-time, tailored UI widgets using a company’s existing design system. This update simplifies the developer experience with a new Agent SDK for Python, a shared web-core library, and official support for renderers like React, Flutter, and Angular. By decoupling UI intent from specific platforms, the release enables seamless, low-latency streaming of generative interfaces across web and mobile applications. Integrating with broader ecosystems like AG2 and Vercel, A2UI v0.9 aims to move generative UI from experimental demos to production-ready digital products."
+    },
+    {
       "title": "MaxText Expands Post-Training Capabilities: Introducing SFT and RL on Single-Host TPUs",
       "link": "https://developers.googleblog.com/en/maxtext-expands-post-training-capabilities-introducing-sft-and-rl-on-single-host-tpus/",
       "pubDate": "Wed, 15 Apr 2026 16:00:00 GMT",
@@ -202,39 +215,7 @@
       ],
       "contentSource": "RSS",
       "content": "The Agent Development Kit (ADK) SkillToolset introduces a \"progressive disclosure\" architecture that allows AI agents to load domain expertise on demand, reducing token usage by up to 90% compared to traditional monolithic prompts. Through four distinct patterns—ranging from simple inline checklists to \"skill factories\" where agents write their own code—the system enables agents to dynamically expand their capabilities at runtime using the universal agentskills.io specification. This modular approach ensures that complex instructions and external resources are only accessed when relevant, creating a scalable and self-extending framework for modern AI development."
-    },
-    {
-      "title": "Boost Training Goodput: How Continuous Checkpointing Optimizes Reliability in Orbax and MaxText",
-      "link": "https://developers.googleblog.com/en/boost-training-goodput-how-continuous-checkpointing-optimizes-reliability-in-orbax-and-maxtext/",
-      "pubDate": "Mon, 30 Mar 2026 16:00:00 GMT",
-      "isoDate": "2026-03-30T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Boost Training Goodput: How Continuous Checkpointing Optimizes Reliability in Orbax and MaxText",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GfD_blog_sketch.original.png",
-          "alt": "GfD blog sketch",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GfD_Blog_-_Continuous_Checkpointing_2.original.png",
-          "alt": "GfD Blog - Continuous Checkpointing (2)",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/GfD_Blog_-_Continuous_Checkpointing_1.original.png",
-          "alt": "GfD Blog - Continuous Checkpointing (1)",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "The newly introduced continuous checkpointing feature in Orbax and MaxText is designed to optimize the balance between reliability and performance during model training, addressing issues with conventional fixed-frequency checkpointing. Unlike fixed intervals—which can either compromise reliability or bottleneck performance—continuous checkpointing maximizes I/O bandwidth and minimizes failure risk by asynchronously initiating a new save operation only after the previous one successfully completes. Benchmarks demonstrate that this approach significantly reduces checkpoint intervals and results in substantial resource conservation, especially in large-scale training jobs where mean-time-between-failure (MTBF) is short."
     }
   ],
-  "lastUpdated": "2026-04-17T11:06:59.454Z"
+  "lastUpdated": "2026-04-18T10:53:12.507Z"
 }
