@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Production-Ready AI Agents: 5 Lessons from Refactoring a Monolith",
+      "link": "https://developers.googleblog.com/en/production-ready-ai-agents-5-lessons-from-refactoring-a-monolith/",
+      "pubDate": "Mon, 20 Apr 2026 16:00:00 GMT",
+      "isoDate": "2026-04-20T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Production-Ready AI Agents: 5 Lessons from Refactoring a Monolith",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Agent_Clinic_blog_image_1_updated.original.jpg",
+          "alt": "Agent Clinic blog image 1 updated",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Agent_Clinic_blog_image_2_updated.original.jpg",
+          "alt": "Agent Clinic blog image 2 updated",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "The blog post outlines the transition of a brittle sales research prototype into a robust production agent using Google’s Agent Development Kit (ADK). By replacing monolithic scripts with orchestrated sub-agents and structured Pydantic outputs, the developers eliminated silent failures and fragile parsing. Additionally, the post highlights the necessity of dynamic RAG pipelines and OpenTelemetry observability to ensure AI agents are scalable, cost-effective, and transparent in real-world applications."
+    },
+    {
       "title": "A2UI v0.9: The New Standard for Portable, Framework-Agnostic Generative UI",
       "link": "https://developers.googleblog.com/en/a2ui-v0-9-generative-ui/",
       "pubDate": "Thu, 16 Apr 2026 16:00:00 GMT",
@@ -171,51 +197,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Google DeepMind has launched Gemma 4, a family of state-of-the-art open models designed to enable multi-step planning and autonomous agentic workflows directly on-device. The release includes the Google AI Edge Gallery for experimenting with \"Agent Skills\" and the LiteRT-LM library, which offers a significant speed boost and structured output for developers. Available under an Apache 2.0 license, Gemma 4 supports over 140 languages and is compatible with a wide range of hardware, including mobile devices, desktops, and IoT platforms like Raspberry Pi."
-    },
-    {
-      "title": "Developer’s Guide to Building ADK Agents with Skills",
-      "link": "https://developers.googleblog.com/en/developers-guide-to-building-adk-agents-with-skills/",
-      "pubDate": "Tue, 31 Mar 2026 16:00:00 GMT",
-      "isoDate": "2026-03-31T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Developer’s Guide to Building ADK Agents with Skills",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/part1-progressive-disclosure_1.original.png",
-          "alt": "part1-progressive-disclosure (1)",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/part1-inline-skill-seo-review.original.png",
-          "alt": "part1-inline-skill-seo-review",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/part2-l3-resource-loading.original.png",
-          "alt": "part2-l3-resource-loading",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/part3-meta-skill-creator-output.original.png",
-          "alt": "part3-meta-skill-creator-output",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/part2-skilltoolset-flow.original.png",
-          "alt": "part2-skilltoolset-flow",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "The Agent Development Kit (ADK) SkillToolset introduces a \"progressive disclosure\" architecture that allows AI agents to load domain expertise on demand, reducing token usage by up to 90% compared to traditional monolithic prompts. Through four distinct patterns—ranging from simple inline checklists to \"skill factories\" where agents write their own code—the system enables agents to dynamically expand their capabilities at runtime using the universal agentskills.io specification. This modular approach ensures that complex instructions and external resources are only accessed when relevant, creating a scalable and self-extending framework for modern AI development."
     }
   ],
-  "lastUpdated": "2026-04-21T11:18:33.681Z"
+  "lastUpdated": "2026-04-22T11:16:43.034Z"
 }
