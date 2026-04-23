@@ -5,6 +5,38 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Agents CLI in Agent Platform: create to production in one CLI",
+      "link": "https://developers.googleblog.com/en/agents-cli-in-agent-platform-create-to-production-in-one-cli/",
+      "pubDate": "Tue, 21 Apr 2026 16:00:00 GMT",
+      "isoDate": "2026-04-21T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Agents CLI in Agent Platform: create to production in one CLI",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/fragmented_gcp_1.original.png",
+          "alt": "fragmented_gcp (1)",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/agents_cli_skills.original.png",
+          "alt": "agents_cli_skills",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/agents_cli_lifecycle.original.png",
+          "alt": "agents_cli_lifecycle",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Google Cloud has introduced the Agents CLI, a specialized tool designed to bridge the gap between local development and production-grade AI agent deployment. The CLI provides coding assistants with machine-readable access to the full Google Cloud stack, reducing context overload and token waste during the scaffolding process. By streamlining evaluation, infrastructure provisioning, and deployment into a single programmatic backbone, the tool enables developers to move from initial concept to a live service in hours rather than weeks."
+    },
+    {
       "title": "Production-Ready AI Agents: 5 Lessons from Refactoring a Monolith",
       "link": "https://developers.googleblog.com/en/production-ready-ai-agents-5-lessons-from-refactoring-a-monolith/",
       "pubDate": "Mon, 20 Apr 2026 16:00:00 GMT",
@@ -184,20 +216,7 @@
       ],
       "contentSource": "RSS",
       "content": "Google has updated its account settings to allow U.S. users to change their @gmail.com usernames while keeping all existing account data and inboxes intact. For developers, this means that while old email addresses will remain active as aliases, apps that rely solely on email addresses for identification may face issues with account duplication or lost access. To ensure a seamless user experience, Google recommends migrating to the \"subject ID\" as the primary user identifier and allowing users to manually update their contact information within app settings."
-    },
-    {
-      "title": "Bring state-of-the-art agentic skills to the edge with Gemma 4",
-      "link": "https://developers.googleblog.com/en/bring-state-of-the-art-agentic-skills-to-the-edge-with-gemma-4/",
-      "pubDate": "Wed, 01 Apr 2026 16:00:00 GMT",
-      "isoDate": "2026-04-01T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Bring state-of-the-art agentic skills to the edge with Gemma 4",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Google DeepMind has launched Gemma 4, a family of state-of-the-art open models designed to enable multi-step planning and autonomous agentic workflows directly on-device. The release includes the Google AI Edge Gallery for experimenting with \"Agent Skills\" and the LiteRT-LM library, which offers a significant speed boost and structured output for developers. Available under an Apache 2.0 license, Gemma 4 supports over 140 languages and is compatible with a wide range of hardware, including mobile devices, desktops, and IoT platforms like Raspberry Pi."
     }
   ],
-  "lastUpdated": "2026-04-22T11:16:43.034Z"
+  "lastUpdated": "2026-04-23T11:17:50.318Z"
 }
