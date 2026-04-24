@@ -5,6 +5,26 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Building real-world on-device AI with LiteRT and NPU",
+      "link": "https://developers.googleblog.com/en/building-real-world-on-device-ai-with-litert-and-npu/",
+      "pubDate": "Wed, 22 Apr 2026 16:00:00 GMT",
+      "isoDate": "2026-04-22T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Building real-world on-device AI with LiteRT and NPU",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Untitled.original.jpg",
+          "alt": "Untitled",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "LiteRT is a production-ready framework designed to help mobile developers unlock the power of Neural Processing Units (NPUs), overcoming the performance and battery limitations of traditional CPU or GPU processing. By providing a unified API that abstracts away hardware complexities, it allows industry leaders like Google Meet and Epic Games to deploy sophisticated AI models for real-time video, animation, and speech recognition with significantly higher efficiency. The platform further supports developers through benchmarking tools and cross-platform compatibility, enabling seamless AI deployment across mobile devices, AI PCs, and industrial IoT hardware."
+    },
+    {
       "title": "Agents CLI in Agent Platform: create to production in one CLI",
       "link": "https://developers.googleblog.com/en/agents-cli-in-agent-platform-create-to-production-in-one-cli/",
       "pubDate": "Tue, 21 Apr 2026 16:00:00 GMT",
@@ -196,27 +216,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "TorchTPU is a new engineering stack designed to provide a native, high-performance experience for running PyTorch workloads on Google’s TPU infrastructure with minimal code changes. It features an \"Eager First\" approach with multiple execution modes and utilizes the XLA compiler to optimize distributed training across massive clusters. Moving into 2026, the project aims to further reduce compilation overhead and expand support for dynamic shapes and custom kernels to ensure seamless scalability for the next generation of AI."
-    },
-    {
-      "title": "Supporting Google Account username change in your app",
-      "link": "https://developers.googleblog.com/en/supporting-google-account-username-change-in-your-app/",
-      "pubDate": "Wed, 01 Apr 2026 16:00:00 GMT",
-      "isoDate": "2026-04-01T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Supporting Google Account username change in your app",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Username_Change_UI.original.png",
-          "alt": "Username Change_UI",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Google has updated its account settings to allow U.S. users to change their @gmail.com usernames while keeping all existing account data and inboxes intact. For developers, this means that while old email addresses will remain active as aliases, apps that rely solely on email addresses for identification may face issues with account duplication or lost access. To ensure a seamless user experience, Google recommends migrating to the \"subject ID\" as the primary user identifier and allowing users to manually update their contact information within app settings."
     }
   ],
-  "lastUpdated": "2026-04-23T11:17:50.318Z"
+  "lastUpdated": "2026-04-24T11:16:29.371Z"
 }
