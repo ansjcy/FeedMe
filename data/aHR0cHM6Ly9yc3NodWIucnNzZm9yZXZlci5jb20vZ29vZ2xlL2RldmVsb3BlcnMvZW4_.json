@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Speeding Up AI: Bringing Google Colossus to PyTorch via GCSFS and Rapid Bucket",
+      "link": "https://developers.googleblog.com/en/speeding-up-ai-bringing-google-colossus-to-pytorch-via-gcsfs-and-rapid-bucket/",
+      "pubDate": "Tue, 28 Apr 2026 16:00:00 GMT",
+      "isoDate": "2026-04-28T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Speeding Up AI: Bringing Google Colossus to PyTorch via GCSFS and Rapid Bucket",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/adk-java-1-0-release-1600x476_oH5cwtR.original.jpg",
+          "alt": "adk-java-1-0-release-1600x476",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/adk-java-1-0-release-1600x476_VmEOghU.original.jpg",
+          "alt": "adk-java-1-0-release-1600x476",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Google Cloud has introduced a high-performance integration that connects Rapid Storage directly to PyTorch via the fsspec interface to eliminate AI training bottlenecks. By utilizing Google’s Colossus architecture and bidirectional gRPC streaming, the solution offers up to 15 TiB/s aggregate throughput and significant reductions in latency. These improvements allow developers to speed up total training time by 23% with zero code changes required beyond updating the storage bucket type."
+    },
+    {
       "title": "Building real-world on-device AI with LiteRT and NPU",
       "link": "https://developers.googleblog.com/en/building-real-world-on-device-ai-with-litert-and-npu/",
       "pubDate": "Wed, 22 Apr 2026 16:00:00 GMT",
@@ -203,20 +229,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Google I/O returns May 19–20 to showcase major updates in AI, Android, Chrome, and Cloud, beginning with a keynote on the \"agentic era\" of development. The event will focus on new tools designed to automate complex workflows and simplify the creation of high-quality, AI-ready applications. Attendees can register to access live sessions, technical demos, and professional development resources both live and on-demand."
-    },
-    {
-      "title": "TorchTPU: Running PyTorch Natively on TPUs at Google Scale",
-      "link": "https://developers.googleblog.com/en/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/",
-      "pubDate": "Mon, 06 Apr 2026 16:00:00 GMT",
-      "isoDate": "2026-04-06T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "TorchTPU: Running PyTorch Natively on TPUs at Google Scale",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "TorchTPU is a new engineering stack designed to provide a native, high-performance experience for running PyTorch workloads on Google’s TPU infrastructure with minimal code changes. It features an \"Eager First\" approach with multiple execution modes and utilizes the XLA compiler to optimize distributed training across massive clusters. Moving into 2026, the project aims to further reduce compilation overhead and expand support for dynamic shapes and custom kernels to ensure seamless scalability for the next generation of AI."
     }
   ],
-  "lastUpdated": "2026-04-29T11:47:46.638Z"
+  "lastUpdated": "2026-04-30T11:47:13.952Z"
 }
