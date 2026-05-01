@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Building with Gemini Embedding 2: Agentic multimodal RAG and beyond",
+      "link": "https://developers.googleblog.com/en/building-with-gemini-embedding-2/",
+      "pubDate": "Wed, 29 Apr 2026 16:00:00 GMT",
+      "isoDate": "2026-04-29T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Building with Gemini Embedding 2: Agentic multimodal RAG and beyond",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Google has announced the general availability of Gemini Embedding 2, a unified model that maps text, images, video, audio, and documents into a single semantic space. This model allows developers to process interleaved multimodal inputs in a single request, significantly improving performance for tasks like agentic RAG, visual search, and content moderation. By supporting over 100 languages and offering features like task-specific prefixes and Matryoshka dimensionality reduction, the model provides a highly efficient and accurate foundation for building complex AI agents."
+    },
+    {
       "title": "Speeding Up AI: Bringing Google Colossus to PyTorch via GCSFS and Rapid Bucket",
       "link": "https://developers.googleblog.com/en/speeding-up-ai-bringing-google-colossus-to-pytorch-via-gcsfs-and-rapid-bucket/",
       "pubDate": "Tue, 28 Apr 2026 16:00:00 GMT",
@@ -216,20 +229,7 @@
       ],
       "contentSource": "RSS",
       "content": "The Google Cloud AI Agent Bake-Off highlights a shift from simple prompt engineering to rigorous agentic engineering, emphasizing that production-ready AI requires a modular, multi-agent architecture. The post outlines five key developer tips, including decomposing complex tasks into specialized sub-agents and using deterministic code for execution to prevent probabilistic errors. Furthermore, it advises developers to prioritize multimodality and open-source protocols like MCP to ensure agents are scalable, integrated, and future-proof against rapidly evolving model capabilities."
-    },
-    {
-      "title": "Get ready for Google I/O: Livestream schedule revealed",
-      "link": "https://developers.googleblog.com/en/get-ready-for-google-io-livestream-schedule-revealed/",
-      "pubDate": "Mon, 13 Apr 2026 16:00:00 GMT",
-      "isoDate": "2026-04-13T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Get ready for Google I/O: Livestream schedule revealed",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Google I/O returns May 19–20 to showcase major updates in AI, Android, Chrome, and Cloud, beginning with a keynote on the \"agentic era\" of development. The event will focus on new tools designed to automate complex workflows and simplify the creation of high-quality, AI-ready applications. Attendees can register to access live sessions, technical demos, and professional development resources both live and on-demand."
     }
   ],
-  "lastUpdated": "2026-04-30T11:47:13.952Z"
+  "lastUpdated": "2026-05-01T11:16:37.471Z"
 }
