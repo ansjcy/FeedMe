@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Supercharging LLM inference on Google TPUs: Achieving 3X speedups with diffusion-style speculative decoding",
+      "link": "https://developers.googleblog.com/en/supercharging-llm-inference-on-google-tpus-achieving-3x-speedups-with-diffusion-style-speculative-decoding/",
+      "pubDate": "Sun, 03 May 2026 16:00:00 GMT",
+      "isoDate": "2026-05-03T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Supercharging LLM inference on Google TPUs: Achieving 3X speedups with diffusion-style speculative decoding",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/table1.original.png",
+          "alt": "table1",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/table2.original.png",
+          "alt": "table2",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Researchers at UCSD have successfully implemented DFlash, a block-diffusion speculative decoding method, on Google TPUs to bypass the sequential bottlenecks of traditional autoregressive drafting. By \"painting\" entire blocks of candidate tokens in a single forward pass rather than predicting them one-by-one, the system achieved average speedups of 3.13x, with peak performance nearly doubling that of existing methods like EAGLE-3. This open-source integration into the vLLM ecosystem optimizes TPU hardware by leveraging \"free\" parallel verification and high-quality draft predictions for complex reasoning tasks."
+    },
+    {
       "title": "Building with Gemini Embedding 2: Agentic multimodal RAG and beyond",
       "link": "https://developers.googleblog.com/en/building-with-gemini-embedding-2/",
       "pubDate": "Wed, 29 Apr 2026 16:00:00 GMT",
@@ -185,51 +211,7 @@
       ],
       "contentSource": "RSS",
       "content": "Gemini CLI has introduced subagents, specialized expert agents that handle complex or high-volume tasks in isolated context windows to keep the primary session fast and focused. These agents can be customized via Markdown files, run in parallel to boost productivity, and are easily invoked using the @agent syntax for targeted delegation. This architecture prevents \"context rot\" by consolidating intricate multi-step executions into concise summaries for the main orchestrator."
-    },
-    {
-      "title": "Build Better AI Agents: 5 Developer Tips from the Agent Bake-Off",
-      "link": "https://developers.googleblog.com/en/build-better-ai-agents-5-developer-tips-from-the-agent-bake-off/",
-      "pubDate": "Mon, 13 Apr 2026 16:00:00 GMT",
-      "isoDate": "2026-04-13T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Build Better AI Agents: 5 Developer Tips from the Agent Bake-Off",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_1.original.jpg",
-          "alt": "Image 1",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_2.original.jpg",
-          "alt": "Image 2",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_3.original.jpg",
-          "alt": "Image 3",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_4.original.png",
-          "alt": "Image 4",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_5.original.jpg",
-          "alt": "Image 5",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "The Google Cloud AI Agent Bake-Off highlights a shift from simple prompt engineering to rigorous agentic engineering, emphasizing that production-ready AI requires a modular, multi-agent architecture. The post outlines five key developer tips, including decomposing complex tasks into specialized sub-agents and using deterministic code for execution to prevent probabilistic errors. Furthermore, it advises developers to prioritize multimodality and open-source protocols like MCP to ensure agents are scalable, integrated, and future-proof against rapidly evolving model capabilities."
     }
   ],
-  "lastUpdated": "2026-05-04T11:59:50.473Z"
+  "lastUpdated": "2026-05-05T11:23:15.979Z"
 }
