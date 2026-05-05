@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "Register now for OpenClaw: After Hours @ GitHub",
+      "link": "https://github.blog/open-source/register-now-for-openclaw-after-hours-github/",
+      "pubDate": "Mon, 04 May 2026 15:00:00 +0000",
+      "isoDate": "2026-05-04T15:00:00.000Z",
+      "creator": "Lee Reilly",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Register now for OpenClaw: After Hours @ GitHub",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/121322?v=4&s=200",
+          "alt": "Lee Reilly",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>OpenClaw builders will gather at GitHub HQ during Microsoft Build 2026 for demos and conversations. Join in person, or watch the livestream on Twitch.</p>\n<p>The post <a href=\"https://github.blog/open-source/register-now-for-openclaw-after-hours-github/\">Register now for OpenClaw: After Hours @ GitHub</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub Copilot CLI for Beginners: Interactive v. non-interactive mode",
       "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-interactive-v-non-interactive-mode/",
       "pubDate": "Thu, 30 Apr 2026 16:09:02 +0000",
@@ -405,69 +449,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>Changes to the status page will provide more specific data, so you'll have better insight into the overall health of the platform.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/bringing-more-transparency-to-githubs-status-page/\">Bringing more transparency to GitHub’s status page</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "How GitHub uses eBPF to improve deployment safety",
-      "link": "https://github.blog/engineering/infrastructure/how-github-uses-ebpf-to-improve-deployment-safety/",
-      "pubDate": "Thu, 16 Apr 2026 16:00:00 +0000",
-      "isoDate": "2026-04-16T16:00:00.000Z",
-      "creator": "Lawrence Gripper",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "How GitHub uses eBPF to improve deployment safety",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/04/Screenshot-2026-04-06-at-6.36.24-PM.png?resize=1433%2C194",
-          "alt": "Diagram showing a MySQL deploy script fails after attempting to pull the latest release of an open source tool from GitHub.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/04/Screenshot-2026-04-06-at-6.36.34-PM.png?resize=1439%2C363",
-          "alt": "Diagram showing a script failing after being unable to contact GitHub (due to the outage).",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/04/Screenshot-2026-04-06-at-6.36.41-PM.png?resize=1450%2C202",
-          "alt": "Diagram showing a MySQL deploy script calling, via an API, another internal service, which in turn attempts to fetch the latest release of an open source tool from GitHub to use the new binary. The failure propagates back to the deploy script.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/1939288?v=4&s=200",
-          "alt": "Lawrence Gripper",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/6463364?v=4&s=200",
-          "alt": "Aleksey Levenstein",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Learn how Github uses eBPF to detect and prevent circular dependencies in its deployment tooling. </p>\n<p>The post <a href=\"https://github.blog/engineering/infrastructure/how-github-uses-ebpf-to-improve-deployment-safety/\">How GitHub uses eBPF to improve deployment safety</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-05-03T06:34:55.160Z"
+  "lastUpdated": "2026-05-05T06:26:30.719Z"
 }
