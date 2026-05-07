@@ -5,6 +5,63 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "Validating agentic behavior when “correct” isn’t deterministic",
+      "link": "https://github.blog/ai-and-ml/generative-ai/validating-agentic-behavior-when-correct-isnt-deterministic/",
+      "pubDate": "Wed, 06 May 2026 21:16:31 +0000",
+      "isoDate": "2026-05-06T21:16:31.000Z",
+      "creator": "Gaurav Mittal",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Validating agentic behavior when “correct” isn’t deterministic",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>How to build the “Trust Layer” for Github Copilot Coding Agents without brittle scripts or black-box judgements by using dominatory analysis.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/validating-agentic-behavior-when-correct-isnt-deterministic/\">Validating agentic behavior when “correct” isn’t deterministic</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Welcome to Maintainer Month: Celebrating the people behind the code",
+      "link": "https://github.blog/open-source/maintainers/welcome-to-maintainer-month-celebrating-the-people-behind-the-code/",
+      "pubDate": "Tue, 05 May 2026 14:30:00 +0000",
+      "isoDate": "2026-05-05T14:30:00.000Z",
+      "creator": "Abigail Cabunoc Mayes",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Welcome to Maintainer Month: Celebrating the people behind the code",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/617994?v=4&s=200",
+          "alt": "Abigail Cabunoc Mayes",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>What maintainers are telling us, what we've shipped, and how to celebrate the people behind open source.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/welcome-to-maintainer-month-celebrating-the-people-behind-the-code/\">Welcome to Maintainer Month: Celebrating the people behind the code</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Register now for OpenClaw: After Hours @ GitHub",
       "link": "https://github.blog/open-source/register-now-for-openclaw-after-hours-github/",
       "pubDate": "Mon, 04 May 2026 15:00:00 +0000",
@@ -349,107 +406,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>The open source Git project just released Git 2.54. Here is GitHub’s look at some of the most interesting features and changes introduced since last time.</p>\n<p>The post <a href=\"https://github.blog/open-source/git/highlights-from-git-2-54/\">Highlights from Git 2.54</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Building an emoji list generator with the GitHub Copilot CLI",
-      "link": "https://github.blog/ai-and-ml/github-copilot/building-an-emoji-list-generator-with-the-github-copilot-cli/",
-      "pubDate": "Fri, 17 Apr 2026 18:00:00 +0000",
-      "isoDate": "2026-04-17T18:00:00.000Z",
-      "creator": "Cassidy Williams",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Building an emoji list generator with the GitHub Copilot CLI",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/04/list.png?resize=1869%2C1944",
-          "alt": "Screenshot of the 'Emoji List Generator.' Paste or type your bullet points below. Press CTRL + S to generate, CTRL + C to quit.\n\nYour bullet points\n- Is there a ghost here?\n- Ducks quack a lot\n- I would like to have a word with the moon\n- Mechanical keyboards are cool\n- We just launched a sick new feature\n- I'd like to squish some slime\n\nFollowed by the same list, with appropriate emojis.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/1454517?v=4&s=200",
-          "alt": "Cassidy Williams",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>See how we created an emoji list generator during the Rubber Duck Thursday stream.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/building-an-emoji-list-generator-with-the-github-copilot-cli/\">Building an emoji list generator with the GitHub Copilot CLI</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Bringing more transparency to GitHub’s status page",
-      "link": "https://github.blog/news-insights/company-news/bringing-more-transparency-to-githubs-status-page/",
-      "pubDate": "Fri, 17 Apr 2026 16:00:00 +0000",
-      "isoDate": "2026-04-17T16:00:00.000Z",
-      "creator": "Jakub Oleksy",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Bringing more transparency to GitHub’s status page",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/04/image-6.png?resize=2084%2C1756",
-          "alt": "Image of the updated GitHub status page.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/6147691?v=4&s=200",
-          "alt": "Jakub Oleksy",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Changes to the status page will provide more specific data, so you'll have better insight into the overall health of the platform.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/bringing-more-transparency-to-githubs-status-page/\">Bringing more transparency to GitHub’s status page</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-05-05T06:26:30.719Z"
+  "lastUpdated": "2026-05-07T06:48:09.439Z"
 }
