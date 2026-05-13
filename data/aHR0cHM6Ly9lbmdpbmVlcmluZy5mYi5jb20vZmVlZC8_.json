@@ -5,6 +5,32 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "Migrating Data Ingestion Systems at Meta Scale",
+      "link": "https://engineering.fb.com/2026/05/12/data-infrastructure/migrating-data-ingestion-systems-at-meta-scale/",
+      "pubDate": "Tue, 12 May 2026 16:00:57 +0000",
+      "isoDate": "2026-05-12T16:00:57.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Migrating Data Ingestion Systems at Meta Scale",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Meta’s data ingestion system, which our engineering teams leverage for up-to-date snapshots of the social graph, has recently undergone a significant revamp to enhance its reliability at scale.  Moving from our legacy system to our new architecture required a large-scale migration of our entire data ingestion system.  We’re sharing the solutions and strategies that enabled [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/05/12/data-infrastructure/migrating-data-ingestion-systems-at-meta-scale/\">Read More...</a></p>\n<p>The post <a href=\"https://engineering.fb.com/2026/05/12/data-infrastructure/migrating-data-ingestion-systems-at-meta-scale/\">Migrating Data Ingestion Systems at Meta Scale</a> appeared first on <a href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
+      "title": "Labyrinth 1.1: Making End-to-End Encrypted Backups Even More Reliable ",
+      "link": "https://engineering.fb.com/2026/05/11/security/labyrinth-1-1-end-to-end-encrypted-e2ee-backups-more-reliable/",
+      "pubDate": "Mon, 11 May 2026 16:00:55 +0000",
+      "isoDate": "2026-05-11T16:00:55.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Labyrinth 1.1: Making End-to-End Encrypted Backups Even More Reliable ",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>We’re rolling out version 1.1 of Labyrinth, the encrypted storage system and protocol that secures messages and history on Messenger. Labyrinth 1.1 enhances the reliability of end-to-end encrypted backups with a new sub-protocol that helps messages survive the loss of a device, a switched device, and long gaps between sign-ins. Read our updated white paper, [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/05/11/security/labyrinth-1-1-end-to-end-encrypted-e2ee-backups-more-reliable/\">Read More...</a></p>\n<p>The post <a href=\"https://engineering.fb.com/2026/05/11/security/labyrinth-1-1-end-to-end-encrypted-e2ee-backups-more-reliable/\">Labyrinth 1.1: Making End-to-End Encrypted Backups Even More Reliable </a> appeared first on <a href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "How Meta Is Strengthening End-to-End Encrypted Backups",
       "link": "https://engineering.fb.com/2026/05/01/security/meta-strengthening-end-to-end-encrypted-backups/",
       "pubDate": "Fri, 01 May 2026 16:00:58 +0000",
@@ -107,33 +133,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>This is the second post in the Ranking Engineer Agent blog series exploring the autonomous AI capabilities accelerating Meta&#8217;s Ads Ranking innovation. The previous post introduced Ranking Engineer Agent&#8217;s ML exploration capability, which autonomously designs, executes, and analyzes ranking model experiments. This post covers how to optimize the low-level infrastructure that makes those models run [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure/\">Read More...</a></p>\n<p>The post <a href=\"https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure/\">KernelEvolve: How Meta’s Ranking Engineer Agent Optimizes AI Infrastructure</a> appeared first on <a href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "Meta Adaptive Ranking Model: Bending the Inference Scaling Curve to Serve LLM-Scale Models for Ads",
-      "link": "https://engineering.fb.com/2026/03/31/ml-applications/meta-adaptive-ranking-model-bending-the-inference-scaling-curve-to-serve-llm-scale-models-for-ads/",
-      "pubDate": "Tue, 31 Mar 2026 16:00:17 +0000",
-      "isoDate": "2026-03-31T16:00:17.000Z",
-      "creator": "",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Meta Adaptive Ranking Model: Bending the Inference Scaling Curve to Serve LLM-Scale Models for Ads",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Meta continues to lead the industry in utilizing groundbreaking AI Recommendation Systems (RecSys) to deliver better experiences for people, and better results for advertisers. To reach the next frontier of performance, we are scaling Meta’s Ads Recommender runtime models to LLM-scale &#38; complexity to further a deeper understanding of people’s interests and intent. This increase [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/03/31/ml-applications/meta-adaptive-ranking-model-bending-the-inference-scaling-curve-to-serve-llm-scale-models-for-ads/\">Read More...</a></p>\n<p>The post <a href=\"https://engineering.fb.com/2026/03/31/ml-applications/meta-adaptive-ranking-model-bending-the-inference-scaling-curve-to-serve-llm-scale-models-for-ads/\">Meta Adaptive Ranking Model: Bending the Inference Scaling Curve to Serve LLM-Scale Models for Ads</a> appeared first on <a href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "AI for American-Produced Cement and Concrete",
-      "link": "https://engineering.fb.com/2026/03/30/data-center-engineering/ai-for-american-produced-cement-and-concrete/",
-      "pubDate": "Mon, 30 Mar 2026 16:00:34 +0000",
-      "isoDate": "2026-03-30T16:00:34.000Z",
-      "creator": "",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "AI for American-Produced Cement and Concrete",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>Meta is continuing its long-term roadmap to help the construction industry leverage AI to produce high-quality and more sustainable concrete mixes, as well as those exclusively produced in the United States.  Concurrent with the 2026 American Concrete Institute (ACI) Spring Convention, Meta is releasing a new AI model for designing concrete mixes – Bayesian Optimization [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/03/30/data-center-engineering/ai-for-american-produced-cement-and-concrete/\">Read More...</a></p>\n<p>The post <a href=\"https://engineering.fb.com/2026/03/30/data-center-engineering/ai-for-american-produced-cement-and-concrete/\">AI for American-Produced Cement and Concrete</a> appeared first on <a href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-05-11T08:29:04.288Z"
+  "lastUpdated": "2026-05-13T07:55:26.195Z"
 }
