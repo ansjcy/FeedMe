@@ -5,6 +5,44 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Build Long-running AI agents that pause, resume, and never lose context with ADK",
+      "link": "https://developers.googleblog.com/en/build-long-running-ai-agents-that-pause-resume-and-never-lose-context-with-adk/",
+      "pubDate": "Mon, 11 May 2026 16:00:00 GMT",
+      "isoDate": "2026-05-11T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Build Long-running AI agents that pause, resume, and never lose context with ADK",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Diagram-1.original.png",
+          "alt": "Diagram-1",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/live-onboarding-overview.original.png",
+          "alt": "live-onboarding-overview",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Diagram-2.original.png",
+          "alt": "Diagram-2",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Diagram-3.original.png",
+          "alt": "Diagram-3",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "How to transition from stateless chatbots to production-grade agents capable of managing long-running enterprise workflows, such as HR onboarding, that span days or weeks. It introduces the Agent Development Kit (ADK) and its architectural shifts, specifically using durable state machines and persistent session storage to ensure an agent never loses context during \"idle time\" or server restarts. By leveraging event-driven webhooks and multi-agent delegation, the tutorial demonstrates how to build resilient systems that \"sleep\" during pauses and wake up to resume complex tasks with high reasoning accuracy."
+    },
+    {
       "title": "Supercharging LLM inference on Google TPUs: Achieving 3X speedups with diffusion-style speculative decoding",
       "link": "https://developers.googleblog.com/en/supercharging-llm-inference-on-google-tpus-achieving-3x-speedups-with-diffusion-style-speculative-decoding/",
       "pubDate": "Sun, 03 May 2026 16:00:00 GMT",
@@ -185,33 +223,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Google has introduced enhancements to the Google Pay API to provide developers with greater flexibility and control over merchant-initiated transactions (MIT). The update includes new objects within the PaymentDataRequest to specifically handle recurring subscriptions, deferred payments like hotel bookings, and automatic account reloads. By allowing merchants to clearly define future payment terms, these changes improve transparency for users and help reduce transaction declines through better token management. Developers can now implement these features to create more seamless and secure long-term payment experiences."
-    },
-    {
-      "title": "Subagents have arrived in Gemini CLI",
-      "link": "https://developers.googleblog.com/en/subagents-have-arrived-in-gemini-cli/",
-      "pubDate": "Tue, 14 Apr 2026 16:00:00 GMT",
-      "isoDate": "2026-04-14T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Subagents have arrived in Gemini CLI",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_CLI_-_Parallel_Subagents.original.png",
-          "alt": "Gemini CLI - Parallel Subagents",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_CLI__agents.original.png",
-          "alt": "Gemini CLI _agents",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Gemini CLI has introduced subagents, specialized expert agents that handle complex or high-volume tasks in isolated context windows to keep the primary session fast and focused. These agents can be customized via Markdown files, run in parallel to boost productivity, and are easily invoked using the @agent syntax for targeted delegation. This architecture prevents \"context rot\" by consolidating intricate multi-step executions into concise summaries for the main orchestrator."
     }
   ],
-  "lastUpdated": "2026-05-12T12:04:31.175Z"
+  "lastUpdated": "2026-05-13T12:11:56.427Z"
 }
