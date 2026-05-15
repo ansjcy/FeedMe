@@ -5,6 +5,57 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Accelerating on-device AI: A look at Arm and Google AI Edge optimization",
+      "link": "https://developers.googleblog.com/en/accelerating-on-device-ai-a-look-at-arm-and-google-ai-edge-optimization/",
+      "pubDate": "Wed, 13 May 2026 16:00:00 GMT",
+      "isoDate": "2026-05-13T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Accelerating on-device AI: A look at Arm and Google AI Edge optimization",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_b761hb761hb761hb.original.png",
+          "alt": "Gemini_Generated_Image_b761hb761hb761hb",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Model_Explorer.original.png",
+          "alt": "Model Explorer",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Model_Explorere.original.jpg",
+          "alt": "Model Explorere",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/LiteRT_ARM_SME2_Charts_3_2.original.png",
+          "alt": "LiteRT ARM SME2 Charts 3_2",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Integration of Arm Scalable Matrix Extension 2 (SME2) and the Google AI Edge software stack enables high-performance, on-device generative AI by turning the CPU into a powerful matrix-compute accelerator. Using Stability AI’s \"stable-audio-open-small\" model as a case study, it outlines a streamlined \"Convert, Optimize, and Deploy\" pipeline that utilizes LiteRT, XNNPACK, and KleidiAI to automate hardware acceleration. The resulting implementation achieves over a 2x speedup in audio generation and a 4x reduction in memory usage while maintaining high audio quality on Arm-powered mobile devices and laptops."
+    },
+    {
+      "title": "Announcing Genkit Middleware: Intercept, extend, and harden your agentic apps",
+      "link": "https://developers.googleblog.com/en/announcing-genkit-middleware-intercept-extend-and-harden-your-agentic-apps/",
+      "pubDate": "Wed, 13 May 2026 16:00:00 GMT",
+      "isoDate": "2026-05-13T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Announcing Genkit Middleware: Intercept, extend, and harden your agentic apps",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Genkit is an open-source framework designed to help developers build production-ready, agentic AI applications using TypeScript, Go, Dart, and Python. The framework utilizes a powerful middleware system that intercepts generation calls to inject custom behaviors like retries, model fallbacks, and human-in-the-loop tool approvals. By attaching hooks at the generate, model, and tool layers, developers can ensure high reliability and deterministic control over model outputs. Furthermore, Genkit allows for the creation and stacking of custom middleware, all of which can be inspected and debugged through a dedicated Developer UI."
+    },
+    {
       "title": "Build Long-running AI agents that pause, resume, and never lose context with ADK",
       "link": "https://developers.googleblog.com/en/build-long-running-ai-agents-that-pause-resume-and-never-lose-context-with-adk/",
       "pubDate": "Mon, 11 May 2026 16:00:00 GMT",
@@ -197,33 +248,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "A2UI v0.9 introduces a framework-agnostic standard designed to help AI agents generate real-time, tailored UI widgets using a company’s existing design system. This update simplifies the developer experience with a new Agent SDK for Python, a shared web-core library, and official support for renderers like React, Flutter, and Angular. By decoupling UI intent from specific platforms, the release enables seamless, low-latency streaming of generative interfaces across web and mobile applications. Integrating with broader ecosystems like AG2 and Vercel, A2UI v0.9 aims to move generative UI from experimental demos to production-ready digital products."
-    },
-    {
-      "title": "MaxText Expands Post-Training Capabilities: Introducing SFT and RL on Single-Host TPUs",
-      "link": "https://developers.googleblog.com/en/maxtext-expands-post-training-capabilities-introducing-sft-and-rl-on-single-host-tpus/",
-      "pubDate": "Wed, 15 Apr 2026 16:00:00 GMT",
-      "isoDate": "2026-04-15T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "MaxText Expands Post-Training Capabilities: Introducing SFT and RL on Single-Host TPUs",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "MaxText has introduced new support for Supervised Fine-Tuning (SFT) and Reinforcement Learning (RL) on single-host TPU configurations, leveraging JAX and the Tunix library for high-performance model refinement. These features enable developers to easily adapt pre-trained models for specialized tasks and complex reasoning using efficient algorithms like GRPO and GSPO. This update streamlines the post-training workflow, offering a scalable path from single-host setups to larger multi-host configurations."
-    },
-    {
-      "title": "New enhancements for merchant initiated transactions with the Google Pay API",
-      "link": "https://developers.googleblog.com/en/new-enhancements-for-merchant-initiated-transactions-with-the-google-pay-api/",
-      "pubDate": "Tue, 14 Apr 2026 16:00:00 GMT",
-      "isoDate": "2026-04-14T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "New enhancements for merchant initiated transactions with the Google Pay API",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Google has introduced enhancements to the Google Pay API to provide developers with greater flexibility and control over merchant-initiated transactions (MIT). The update includes new objects within the PaymentDataRequest to specifically handle recurring subscriptions, deferred payments like hotel bookings, and automatic account reloads. By allowing merchants to clearly define future payment terms, these changes improve transparency for users and help reduce transaction declines through better token management. Developers can now implement these features to create more seamless and secure long-term payment experiences."
     }
   ],
-  "lastUpdated": "2026-05-14T12:00:01.235Z"
+  "lastUpdated": "2026-05-15T12:02:10.322Z"
 }
