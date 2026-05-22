@@ -5,6 +5,81 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Announcing ADK for Kotlin and ADK for Android 0.1.0: Building AI Agents on Android and Beyond",
+      "link": "https://developers.googleblog.com/en/adk-kotlin-android-building-ai-agents/",
+      "pubDate": "Wed, 20 May 2026 16:00:00 GMT",
+      "isoDate": "2026-05-20T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Announcing ADK for Kotlin and ADK for Android 0.1.0: Building AI Agents on Android and Beyond",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "ADK for Kotlin brings agentic workflows to your backend projects, while ADK for Android provides spe..."
+    },
+    {
+      "title": "Empowering Service Providers and Hardware Partners with Gemini for Home",
+      "link": "https://developers.googleblog.com/en/empowering-service-providers-and-hardware-partners-with-gemini-for-home/",
+      "pubDate": "Wed, 20 May 2026 16:00:00 GMT",
+      "isoDate": "2026-05-20T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Empowering Service Providers and Hardware Partners with Gemini for Home",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-02-intro-gemini-era4x.original.jpg",
+          "alt": "io26-blog-02-intro-gemini-era@4x",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-03-power-of-gemini.original.jpg",
+          "alt": "io26-blog-03-power-of-gemini",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-04-service-opps.original.jpg",
+          "alt": "io26-blog-04-service-opps",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-05-service-opps-att-security4x_1.original.jpg",
+          "alt": "io26-blog-05-service-opps-att-security@",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-06-hardware-prog4x.original.jpg",
+          "alt": "io26-blog-06-hardware-prog@4x",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-07-hardware-prog-partners4x.original.jpg",
+          "alt": "io26-blog-07-hardware-prog-partners@4x",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-08-hardware-prog-speakers-cameras4x.original.jpg",
+          "alt": "io26-blog-08-hardware-prog-speakers-cameras@4x",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-09-partner-qr-cta4x.original.png",
+          "alt": "io26-blog-09-partner-qr-cta@4x",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Google is expanding its smart home ecosystem by launching a full-stack Gemini AI offering that integrates advanced camera intelligence, natural language queries, and daily activity summaries. This initiative provides service providers and hardware manufacturers with turnkey reference designs and APIs to build proactive, branded services without extensive research and development. Ultimately, the program aims to move beyond basic device control toward an AI-native home that can understand context and care for users' needs in real time."
+    },
+    {
       "title": "Blazing fast on-device GenAI with LiteRT-LM",
       "link": "https://developers.googleblog.com/en/blazing-fast-on-device-genai-with-litert-lm/",
       "pubDate": "Mon, 18 May 2026 16:00:00 GMT",
@@ -170,71 +245,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Genkit is an open-source framework designed to help developers build production-ready, agentic AI applications using TypeScript, Go, Dart, and Python. The framework utilizes a powerful middleware system that intercepts generation calls to inject custom behaviors like retries, model fallbacks, and human-in-the-loop tool approvals. By attaching hooks at the generate, model, and tool layers, developers can ensure high reliability and deterministic control over model outputs. Furthermore, Genkit allows for the creation and stacking of custom middleware, all of which can be inspected and debugged through a dedicated Developer UI."
-    },
-    {
-      "title": "Build Long-running AI agents that pause, resume, and never lose context with ADK",
-      "link": "https://developers.googleblog.com/en/build-long-running-ai-agents-that-pause-resume-and-never-lose-context-with-adk/",
-      "pubDate": "Mon, 11 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-11T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Build Long-running AI agents that pause, resume, and never lose context with ADK",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Diagram-1.original.png",
-          "alt": "Diagram-1",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/live-onboarding-overview.original.png",
-          "alt": "live-onboarding-overview",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Diagram-2.original.png",
-          "alt": "Diagram-2",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Diagram-3.original.png",
-          "alt": "Diagram-3",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "How to transition from stateless chatbots to production-grade agents capable of managing long-running enterprise workflows, such as HR onboarding, that span days or weeks. It introduces the Agent Development Kit (ADK) and its architectural shifts, specifically using durable state machines and persistent session storage to ensure an agent never loses context during \"idle time\" or server restarts. By leveraging event-driven webhooks and multi-agent delegation, the tutorial demonstrates how to build resilient systems that \"sleep\" during pauses and wake up to resume complex tasks with high reasoning accuracy."
-    },
-    {
-      "title": "Supercharging LLM inference on Google TPUs: Achieving 3X speedups with diffusion-style speculative decoding",
-      "link": "https://developers.googleblog.com/en/supercharging-llm-inference-on-google-tpus-achieving-3x-speedups-with-diffusion-style-speculative-decoding/",
-      "pubDate": "Sun, 03 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-03T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Supercharging LLM inference on Google TPUs: Achieving 3X speedups with diffusion-style speculative decoding",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/table1.original.png",
-          "alt": "table1",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/table2.original.png",
-          "alt": "table2",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Researchers at UCSD have successfully implemented DFlash, a block-diffusion speculative decoding method, on Google TPUs to bypass the sequential bottlenecks of traditional autoregressive drafting. By \"painting\" entire blocks of candidate tokens in a single forward pass rather than predicting them one-by-one, the system achieved average speedups of 3.13x, with peak performance nearly doubling that of existing methods like EAGLE-3. This open-source integration into the vLLM ecosystem optimizes TPU hardware by leveraging \"free\" parallel verification and high-quality draft predictions for complex reasoning tasks."
     }
   ],
-  "lastUpdated": "2026-05-21T12:51:51.591Z"
+  "lastUpdated": "2026-05-22T12:29:59.687Z"
 }
