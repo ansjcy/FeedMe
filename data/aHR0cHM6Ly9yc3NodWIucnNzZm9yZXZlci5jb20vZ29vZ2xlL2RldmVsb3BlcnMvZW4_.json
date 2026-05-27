@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Enhancing Android Checkout with Dynamic Callbacks in Google Pay",
+      "link": "https://developers.googleblog.com/en/enhancing-android-checkout-with-dynamic-callbacks-in-google-pay/",
+      "pubDate": "Mon, 25 May 2026 16:00:00 GMT",
+      "isoDate": "2026-05-25T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Enhancing Android Checkout with Dynamic Callbacks in Google Pay",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "We are excited to bring Express checkout with Google Pay for Android native apps enabling developers..."
+    },
+    {
       "title": "Announcing ADK for Kotlin and ADK for Android 0.1.0: Building AI Agents on Android and Beyond",
       "link": "https://developers.googleblog.com/en/adk-kotlin-android-building-ai-agents/",
       "pubDate": "Wed, 20 May 2026 16:00:00 GMT",
@@ -232,20 +245,7 @@
       ],
       "contentSource": "RSS",
       "content": "Integration of Arm Scalable Matrix Extension 2 (SME2) and the Google AI Edge software stack enables high-performance, on-device generative AI by turning the CPU into a powerful matrix-compute accelerator. Using Stability AI’s \"stable-audio-open-small\" model as a case study, it outlines a streamlined \"Convert, Optimize, and Deploy\" pipeline that utilizes LiteRT, XNNPACK, and KleidiAI to automate hardware acceleration. The resulting implementation achieves over a 2x speedup in audio generation and a 4x reduction in memory usage while maintaining high audio quality on Arm-powered mobile devices and laptops."
-    },
-    {
-      "title": "Announcing Genkit Middleware: Intercept, extend, and harden your agentic apps",
-      "link": "https://developers.googleblog.com/en/announcing-genkit-middleware-intercept-extend-and-harden-your-agentic-apps/",
-      "pubDate": "Wed, 13 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-13T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Announcing Genkit Middleware: Intercept, extend, and harden your agentic apps",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Genkit is an open-source framework designed to help developers build production-ready, agentic AI applications using TypeScript, Go, Dart, and Python. The framework utilizes a powerful middleware system that intercepts generation calls to inject custom behaviors like retries, model fallbacks, and human-in-the-loop tool approvals. By attaching hooks at the generate, model, and tool layers, developers can ensure high reliability and deterministic control over model outputs. Furthermore, Genkit allows for the creation and stacking of custom middleware, all of which can be inspected and debugged through a dedicated Developer UI."
     }
   ],
-  "lastUpdated": "2026-05-25T13:36:54.040Z"
+  "lastUpdated": "2026-05-27T13:38:06.310Z"
 }
