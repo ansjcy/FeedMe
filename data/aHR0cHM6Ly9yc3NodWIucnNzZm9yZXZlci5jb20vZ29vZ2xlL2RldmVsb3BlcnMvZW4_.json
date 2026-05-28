@@ -5,6 +5,44 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "The latest updates to Google Pay",
+      "link": "https://developers.googleblog.com/en/the-latest-updates-to-google-pay/",
+      "pubDate": "Tue, 26 May 2026 16:00:00 GMT",
+      "isoDate": "2026-05-26T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "The latest updates to Google Pay",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/mcp-server-prompt_1_vswlBaz.original.png",
+          "alt": "mcp-server-prompt (1)",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/card-funding-source.original.png",
+          "alt": "card-funding-source",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/mit_1.original.png",
+          "alt": "mit (1)",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/x-device.original.jpg",
+          "alt": "x-device (1)",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Google Pay is evolving for \"agentic commerce\" by introducing the Universal Commerce Protocol and a new MCP server that allows AI agents to manage integrations and analyze trends. New Android updates introduce dynamic callbacks for seamless express checkouts and extend payment support into social media apps via WebViews. Additionally, the platform is launching cross-device biometric authentication and new transaction signals to help merchants reduce friction and optimize processing costs."
+    },
+    {
       "title": "Enhancing Android Checkout with Dynamic Callbacks in Google Pay",
       "link": "https://developers.googleblog.com/en/enhancing-android-checkout-with-dynamic-callbacks-in-google-pay/",
       "pubDate": "Mon, 25 May 2026 16:00:00 GMT",
@@ -207,45 +245,7 @@
       ],
       "contentSource": "RSS",
       "content": "The Google AI Edge Gallery app has expanded its on-device AI capabilities by introducing experimental support for the open-source Model Context Protocol (MCP) on Android, allowing Gemma 4 to coordinate complex tasks across external data sources like Google Workspace and Google Maps. To enable more proactive and persistent user interactions, the update adds a \"Schedule Notification\" skill for automating routines and a persistent chat history feature that restores long session contexts nearly instantly. Driven by an open-source toolkit, the platform encourages community developers to build and share custom utility-focused workflows, prompt configurations, and tool integrations via its GitHub repository."
-    },
-    {
-      "title": "Accelerating on-device AI: A look at Arm and Google AI Edge optimization",
-      "link": "https://developers.googleblog.com/en/accelerating-on-device-ai-a-look-at-arm-and-google-ai-edge-optimization/",
-      "pubDate": "Wed, 13 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-13T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Accelerating on-device AI: A look at Arm and Google AI Edge optimization",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_b761hb761hb761hb.original.png",
-          "alt": "Gemini_Generated_Image_b761hb761hb761hb",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Model_Explorer.original.png",
-          "alt": "Model Explorer",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Model_Explorere.original.jpg",
-          "alt": "Model Explorere",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/LiteRT_ARM_SME2_Charts_3_2.original.png",
-          "alt": "LiteRT ARM SME2 Charts 3_2",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Integration of Arm Scalable Matrix Extension 2 (SME2) and the Google AI Edge software stack enables high-performance, on-device generative AI by turning the CPU into a powerful matrix-compute accelerator. Using Stability AI’s \"stable-audio-open-small\" model as a case study, it outlines a streamlined \"Convert, Optimize, and Deploy\" pipeline that utilizes LiteRT, XNNPACK, and KleidiAI to automate hardware acceleration. The resulting implementation achieves over a 2x speedup in audio generation and a 4x reduction in memory usage while maintaining high audio quality on Arm-powered mobile devices and laptops."
     }
   ],
-  "lastUpdated": "2026-05-27T13:38:06.310Z"
+  "lastUpdated": "2026-05-28T14:00:24.101Z"
 }
