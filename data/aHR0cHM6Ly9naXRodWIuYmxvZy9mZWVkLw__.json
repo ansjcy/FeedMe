@@ -5,6 +5,68 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "Still a developer. Just outside. Our latest GitHub Shop collection is here.",
+      "link": "https://github.blog/news-insights/company-news/still-a-developer-just-outside-our-latest-github-shop-collection-is-here/",
+      "pubDate": "Thu, 28 May 2026 18:18:43 +0000",
+      "isoDate": "2026-05-28T18:18:43.000Z",
+      "creator": "Natalie Guevara",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Still a developer. Just outside. Our latest GitHub Shop collection is here.",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/05/Blog_Image_02.png?resize=1024%2C576",
+          "alt": "Woman wearing a blue <header> hat and a white t-shirt that says <body>. She's on a pink and blue background which has an image of a building created by white dots. ",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/05/Blog_Image_03.png?resize=1024%2C576",
+          "alt": "A man in a deck chair. He is wearing the cabana set - shirt and shorts with a tropical pattern and covered with Mona, Rubber Ducky and Copilot. He is wearing socks and slides on his feet. The slides say <footer>. He is holding a drink. He is on a pink background with blue dots creating the image of a park.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/05/Blog_Image_01.png?resize=1024%2C576",
+          "alt": "A hand is holding a can that is dressed in a tiny black GitHub hoodie coozie. There is a straw sticking out of the can. It is on a pink and blue background with a nature image made of white dots.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/05/Blog_Image_04.png?resize=1024%2C576",
+          "alt": "There is a drinks float in the shape of Mona the Octocat. Inside the float is a can with a straw in it. The background is pink with blue trees and buildings.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/54560767?v=4&s=200",
+          "alt": "Lavinia Sfetcu",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>The ESC collection lets you escape the confines of your desk and get out into the sun where good ideas are bound to happen.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/still-a-developer-just-outside-our-latest-github-shop-collection-is-here/\">Still a developer. Just outside. Our latest GitHub Shop collection is here.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub for Beginners: Getting started with Git and GitHub in VS Code",
       "link": "https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-git-and-github-in-vs-code/",
       "pubDate": "Mon, 25 May 2026 16:00:00 +0000",
@@ -416,69 +478,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>In April, we experienced 10 incidents that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-april-2026/\">GitHub availability report: April 2026</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "From latency to instant: Modernizing GitHub Issues navigation performance",
-      "link": "https://github.blog/engineering/architecture-optimization/from-latency-to-instant-modernizing-github-issues-navigation-performance/",
-      "pubDate": "Thu, 14 May 2026 16:00:00 +0000",
-      "isoDate": "2026-05-14T16:00:00.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "From latency to instant: Modernizing GitHub Issues navigation performance",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/trafficDistro.png?resize=1024%2C336",
-          "alt": "Graph showing navigation mix for issues show route (57.6% hard, 37.5% react).",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/trafficPerf.png?resize=1024%2C335",
-          "alt": "Graph showing HPC distribution by navigation type (2.05 hard, 1.76 turbo, 1.04 react).",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/softNavFlow.png?resize=1024%2C443",
-          "alt": "Architectural diagram showing the client cache layer.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/softNavIncrease.png?resize=1024%2C592",
-          "alt": "Graph showing HPC distribution after cache rollout.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/preheatFlow.png?resize=1024%2C237",
-          "alt": "Flow diagram showing preheating process. Steps are: Look at issues index, For each issue in the list trigger a preheat request, Is data in the cache present? if yes, add to IndexDB. If no, fetch data, then add to IndexDB.",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/hotcacheArch.png?resize=1024%2C389",
-          "alt": "Diagram showing the in-memory cache layer.",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/preheatResults.png?resize=1024%2C593",
-          "alt": "Graph showing HPC distribution after preheating rollout.",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/swFlow.png?resize=1024%2C189",
-          "alt": "Diagram showing service worker interception flow.",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>How the GitHub Issues team used client-side caching, smart prefetching, and service workers to make navigation feel instant.</p>\n<p>The post <a href=\"https://github.blog/engineering/architecture-optimization/from-latency-to-instant-modernizing-github-issues-navigation-performance/\">From latency to instant: Modernizing GitHub Issues navigation performance</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-05-27T08:10:22.547Z"
+  "lastUpdated": "2026-05-29T08:06:14.515Z"
 }
