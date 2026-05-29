@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Supercharge your integration workflow with the Google Pay & Wallet Developer MCP server",
+      "link": "https://developers.googleblog.com/en/supercharge-your-integration-workflow-with-the-google-pay-wallet-developer-mcp-server/",
+      "pubDate": "Wed, 27 May 2026 16:00:00 GMT",
+      "isoDate": "2026-05-27T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Supercharge your integration workflow with the Google Pay & Wallet Developer MCP server",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Google has announced the new Google Pay &amp; Wallet Developer MCP server, an open-standard tool designed to securely connect AI development assistants and IDEs with real-time API and account context. The server allows developers to remain within their development environment to search official documentation, validate Wallet pass definitions, check integration status, and manage merchant accounts. Ultimately, this integration aims to reduce friction and accelerate development workflows by minimizing context switching and providing up-to-date, grounded AI support."
+    },
+    {
+      "title": "How the community trained Gemma to \"Think\" with Tunix and TPUs",
+      "link": "https://developers.googleblog.com/en/how-the-community-trained-gemma-to-think-with-tunix-and-tpus/",
+      "pubDate": "Wed, 27 May 2026 16:00:00 GMT",
+      "isoDate": "2026-05-27T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How the community trained Gemma to \"Think\" with Tunix and TPUs",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "The Google Tunix Hackathon on Kaggle challenged developers to transform small, non-reasoning base models into general reasoning engines using Kaggle TPUs and a limited compute budget. The winning teams achieved this by implementing multi-stage post-training pipelines that combined Supervised Fine-Tuning (SFT) with advanced alignment techniques like GRPO and SimPO. Ultimately, the competition democratized AI development by proving that highly capable, structured reasoning models can be successfully trained by the community using accessible, open-source resources."
+    },
+    {
       "title": "The latest updates to Google Pay",
       "link": "https://developers.googleblog.com/en/the-latest-updates-to-google-pay/",
       "pubDate": "Tue, 26 May 2026 16:00:00 GMT",
@@ -212,40 +238,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "The Google Cloud and NVIDIA developer community is celebrating its first anniversary with 100,000 members and a renewed focus on providing builders with advanced AI infrastructure and resources. To accelerate development, the community offers curated learning pathways for mastering LLM optimization, GPU-accelerated data analytics, and monthly expert-led webinars. Moving into its second year, the initiative will expand to include hands-on labs, engineering events, and specialized content focused on the growth of agentic AI."
-    },
-    {
-      "title": "An important update: Transitioning Gemini CLI to Antigravity CLI",
-      "link": "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
-      "pubDate": "Mon, 18 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-18T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "An important update: Transitioning Gemini CLI to Antigravity CLI",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Google is unifying its AI terminal tools by transitioning the community-focused Gemini CLI into Antigravity CLI, a new agent-first platform built for complex, multi-agent workflows. This new Go-based tool offers faster execution, asynchronous processing, and a unified architecture that syncs with the Antigravity 2.0 desktop application. While enterprise customers will maintain existing access, individual and free users must transition to the new platform before Gemini CLI stops serving requests on June 18, 2026."
-    },
-    {
-      "title": "A Smarter Google AI Edge Gallery: MCP integration, notifications, and session continuity",
-      "link": "https://developers.googleblog.com/en/a-smarter-google-ai-edge-gallery-mcp-integration-notifications-and-session-continuity/",
-      "pubDate": "Mon, 18 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-18T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "A Smarter Google AI Edge Gallery: MCP integration, notifications, and session continuity",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/2_p8rLYgU.original.png",
-          "alt": "2",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "The Google AI Edge Gallery app has expanded its on-device AI capabilities by introducing experimental support for the open-source Model Context Protocol (MCP) on Android, allowing Gemma 4 to coordinate complex tasks across external data sources like Google Workspace and Google Maps. To enable more proactive and persistent user interactions, the update adds a \"Schedule Notification\" skill for automating routines and a persistent chat history feature that restores long session contexts nearly instantly. Driven by an open-source toolkit, the platform encourages community developers to build and share custom utility-focused workflows, prompt configurations, and tool integrations via its GitHub repository."
     }
   ],
-  "lastUpdated": "2026-05-28T14:00:24.101Z"
+  "lastUpdated": "2026-05-29T12:51:48.659Z"
 }
