@@ -5,6 +5,46 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Gemma 4 12B: The Developer Guide",
+      "link": "https://developers.googleblog.com/en/gemma-4-12b-the-developer-guide/",
+      "pubDate": "Tue, 02 Jun 2026 16:00:00 GMT",
+      "isoDate": "2026-06-02T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Gemma 4 12B: The Developer Guide",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/overview.original.png",
+          "alt": "overview",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "The newly released Gemma 4 12B is a dense, multimodal model designed for high-performance local AI execution on consumer devices. By introducing a novel, encoder-free architecture, it bypasses traditional visual and audio encoders to feed multimodal data directly into the LLM backbone."
+    },
+    {
+      "title": "Bringing Gemma 4 12B to your Laptop: Unlocking Local, Agentic Workflows with Google AI Edge",
+      "link": "https://developers.googleblog.com/en/bringing-gemma-4-12b-to-your-laptop-unlocking-local-agentic-workflows-with-google-ai-edge/",
+      "pubDate": "Tue, 02 Jun 2026 16:00:00 GMT",
+      "isoDate": "2026-06-02T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Bringing Gemma 4 12B to your Laptop: Unlocking Local, Agentic Workflows with Google AI Edge",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/rubber_duck_3d_plot.original.png",
+          "alt": "rubber_duck_3d_plot",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Google DeepMind’s Gemma 4 12B model brings agentic, multimodal AI capabilities to everyday laptops with 16GB of RAM, enabling local data processing and visual insight generation. Users can leverage this model on macOS through the Google AI Edge Gallery for dynamic Python code execution and visualization, as well as via Google AI Edge Eloquent for completely offline voice dictation and text editing. Additionally, developer workflows are enhanced by the LiteRT-LM CLI's new serve command, which creates an industry-compatible local endpoint to power fully-local AI tools and agents."
+    },
+    {
       "title": "Supercharge your integration workflow with the Google Pay & Wallet Developer MCP server",
       "link": "https://developers.googleblog.com/en/supercharge-your-integration-workflow-with-the-google-pay-wallet-developer-mcp-server/",
       "pubDate": "Wed, 27 May 2026 16:00:00 GMT",
@@ -212,33 +252,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Google announced the transition from assistive AI to independent agents, highlighting the launch of the Gemini 3.5 series and major updates to its Antigravity agent-first development platform. For mobile developers, the post introduces new Android CLI tools, the Android Bench evaluation leaderboard, and an automated Migration agent designed to rapidly convert various frameworks into native Kotlin code. Web development is also being transformed through Chrome DevTools for agents, the HTML-in-Canvas API, and the proposal of WebMCP, an open web standard that enables browser-based AI agents to execute complex tasks."
-    },
-    {
-      "title": "Google Tensor SDK Beta with LiteRT",
-      "link": "https://developers.googleblog.com/en/google-tensor-sdk-beta-with-litert/",
-      "pubDate": "Mon, 18 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-18T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Google Tensor SDK Beta with LiteRT",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "The Google Tensor ML SDK is graduating to its Beta phase, allowing developers to build and deploy high-performance machine learning models directly onto the TPU of Google Pixel 10 devices. By integrating with LiteRT, Google's edge deployment framework, the SDK provides a unified workflow for developers to convert, compile, and run PyTorch or TFLite models with robust fallback options. Additionally, a new model garden offers over 100 classic and generative AI models, including Gemma 3, enabling low-latency, private features like speech recognition, computer vision, and text generation."
-    },
-    {
-      "title": "One Year of Innovation: Celebrating 100k Members in the Google Cloud x NVIDIA Developer Community",
-      "link": "https://developers.googleblog.com/en/one-year-of-innovation-celebrating-100k-members-in-the-google-cloud-x-nvidia-developer-community/",
-      "pubDate": "Mon, 18 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-18T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "One Year of Innovation: Celebrating 100k Members in the Google Cloud x NVIDIA Developer Community",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "The Google Cloud and NVIDIA developer community is celebrating its first anniversary with 100,000 members and a renewed focus on providing builders with advanced AI infrastructure and resources. To accelerate development, the community offers curated learning pathways for mastering LLM optimization, GPU-accelerated data analytics, and monthly expert-led webinars. Moving into its second year, the initiative will expand to include hands-on labs, engineering events, and specialized content focused on the growth of agentic AI."
     }
   ],
-  "lastUpdated": "2026-06-03T14:52:07.619Z"
+  "lastUpdated": "2026-06-04T12:50:15.619Z"
 }
