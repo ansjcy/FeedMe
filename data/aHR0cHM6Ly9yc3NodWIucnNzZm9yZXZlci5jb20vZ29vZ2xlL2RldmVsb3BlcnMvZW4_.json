@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Introducing the Google Colab CLI",
+      "link": "https://developers.googleblog.com/en/introducing-the-google-colab-cli/",
+      "pubDate": "Thu, 04 Jun 2026 16:00:00 GMT",
+      "isoDate": "2026-06-04T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Introducing the Google Colab CLI",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Google has announced the Google Colab Command-Line Interface (CLI), a new tool that allows developers and AI agents to connect local terminals to remote Colab runtimes for frictionless execution. The lightweight CLI enables users to easily request high-powered GPUs, run local Python scripts remotely, and seamlessly retrieve artifact logs or models like fine-tuned Gemma 3 adapters. By integrating directly into standard terminal environments, the tool is highly programmable and ready to be used by AI agents such as Antigravity or Claude Code to manage complex machine learning pipelines."
+    },
+    {
       "title": "Gemma 4 12B: The Developer Guide",
       "link": "https://developers.googleblog.com/en/gemma-4-12b-the-developer-guide/",
       "pubDate": "Tue, 02 Jun 2026 16:00:00 GMT",
@@ -239,20 +252,7 @@
       ],
       "contentSource": "RSS",
       "content": "Google AI Edge’s LiteRT-LM provides a production-proven, highly optimized infrastructure for running Gemma 4 across cross-platform mobile and edge environments. It actively unlocks the model's native multimodal and agentic features on-device by utilizing memory-efficient dynamic loading, Multi-Token Prediction for up to a 2.2x speedup, and advanced orchestration tools like Thinking Mode and Constrained Decoding. Furthermore, the engine is rapidly expanding its integration surfaces beyond Android, introducing new native Swift APIs for Apple ecosystems and WebGPU-accelerated JavaScript APIs for high-performance, serverless browser inference."
-    },
-    {
-      "title": "All the news from the Google I/O 2026 Developer keynote",
-      "link": "https://developers.googleblog.com/en/all-the-news-from-the-google-io-2026-developer-keynote/",
-      "pubDate": "Mon, 18 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-18T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "All the news from the Google I/O 2026 Developer keynote",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Google announced the transition from assistive AI to independent agents, highlighting the launch of the Gemini 3.5 series and major updates to its Antigravity agent-first development platform. For mobile developers, the post introduces new Android CLI tools, the Android Bench evaluation leaderboard, and an automated Migration agent designed to rapidly convert various frameworks into native Kotlin code. Web development is also being transformed through Chrome DevTools for agents, the HTML-in-Canvas API, and the proposal of WebMCP, an open web standard that enables browser-based AI agents to execute complex tasks."
     }
   ],
-  "lastUpdated": "2026-06-05T12:44:52.631Z"
+  "lastUpdated": "2026-06-06T11:41:15.974Z"
 }
