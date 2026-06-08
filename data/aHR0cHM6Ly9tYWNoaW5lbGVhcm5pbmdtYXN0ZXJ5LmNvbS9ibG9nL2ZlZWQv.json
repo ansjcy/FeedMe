@@ -5,167 +5,241 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
-      "title": "Prompt Engineering for Agentic AI",
-      "link": "https://machinelearningmastery.com/prompt-engineering-for-agentic-ai/",
-      "pubDate": "Tue, 19 May 2026 12:00:06 +0000",
-      "isoDate": "2026-05-19T12:00:06.000Z",
+      "title": "Building Semantic Search with Transformers.js and Sentence Embeddings",
+      "link": "https://machinelearningmastery.com/building-semantic-search-with-transformers-js-and-sentence-embeddings/",
+      "pubDate": "Fri, 05 Jun 2026 12:00:01 +0000",
+      "isoDate": "2026-06-05T12:00:01.000Z",
       "creator": "Shittu Olumide",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Prompt Engineering for Agentic AI",
+      "translated_title": "Building Semantic Search with Transformers.js and Sentence Embeddings",
       "images": [
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/Anthropics-context-engineering.png",
-          "alt": "Anthropic's context engineering",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/mlm-building-semantic-search-with-transformers-js-and-sentence-embeddings-feat.png",
+          "alt": "Building Semantic Search with Transformers.js and Sentence Embeddings",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-A-3D-scatter-plot-diagram-illustrating-how-semantically-similar-sentences-cluster-together-in-vector-space.png",
+          "alt": "A 3D scatter plot diagram illustrating how semantically similar sentences cluster together in vector space",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "You've probably shipped this bug before, where a user types \" affordable laptop \" into your search bar and gets zero results."
+    },
+    {
+      "title": "Using Scikit-LLM with Open-Source LLMs",
+      "link": "https://machinelearningmastery.com/using-scikit-llm-with-open-source-llms/",
+      "pubDate": "Thu, 04 Jun 2026 12:55:34 +0000",
+      "isoDate": "2026-06-04T12:55:34.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Using Scikit-LLM with Open-Source LLMs",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/mlm-using-scikit-llm-with-open-source-llms.png",
+          "alt": "Using Scikit-LLM with Open-Source LLMs",
           "title": "",
           "position": 1
         }
       ],
       "contentSource": "RSS",
-      "content": "You have probably spent time learning how to prompt AI well."
+      "content": "This article will teach you how to perform a language task like text classification by integrating locally hosted large language models (LLMs) of manageable size, like Mistral, Gemma, and Llama 3: all for free thanks to Ollama &mdash; a free repository for local LLMs &mdash; and the Scikit-LLM Python library."
     },
     {
-      "title": "Building Vector Similarity Search in PostgreSQL with pgvector",
-      "link": "https://machinelearningmastery.com/building-vector-similarity-search-in-postgresql-with-pgvector/",
-      "pubDate": "Mon, 18 May 2026 13:45:55 +0000",
-      "isoDate": "2026-05-18T13:45:55.000Z",
-      "creator": "Bala Priya C",
+      "title": "Scikit-LLM vs. Traditional Text Classifiers: When Should You Use an LLM?",
+      "link": "https://machinelearningmastery.com/scikit-llm-vs-traditional-text-classifiers-when-should-you-use-an-llm/",
+      "pubDate": "Tue, 02 Jun 2026 12:00:18 +0000",
+      "isoDate": "2026-06-02T12:00:18.000Z",
+      "creator": "Iván Palomares Carrascosa",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Building Vector Similarity Search in PostgreSQL with pgvector",
+      "translated_title": "Scikit-LLM vs. Traditional Text Classifiers: When Should You Use an LLM?",
       "images": [
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/bala-mlm-pgvector.png",
-          "alt": "Building Vector Similarity Search in PostgreSQL with pgvector",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/mlm-scikit-llm-vs-traditional-text-classifiers-when-should-you-use-an-llm.png",
+          "alt": "Scikit-LLM vs. Traditional Text Classifiers: When Should You Use an LLM?",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "In recent years, generative AI models like LLMs (large language models) have gradually taken over classical machine learning ones for addressing certain tasks, for instance, text classification ."
+    },
+    {
+      "title": "The Roadmap for Mastering LLMOps in 2026",
+      "link": "https://machinelearningmastery.com/the-roadmap-for-mastering-llmops-in-2026/",
+      "pubDate": "Mon, 01 Jun 2026 12:00:18 +0000",
+      "isoDate": "2026-06-01T12:00:18.000Z",
+      "creator": "Shittu Olumide",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "The Roadmap for Mastering LLMOps in 2026",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/mlm-the-roadmap-for-mastering-llmops-in-2026.png",
+          "alt": "The Roadmap for Mastering LLMOps in 2026",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/mlm-embeddings-img.png",
-          "alt": "Generating Embeddings",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/A-clean-upward-learning-stack-diagram-with-four-labeled-layers-stacked-from-bottom-to-top.png",
+          "alt": "A clean upward learning stack diagram with four labeled layers stacked from bottom to top",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "The LLMOps market is projected to grow from <a href=\"https://www."
+    },
+    {
+      "title": "Serving Multiple Users at Once: How Continuous Batching Keeps LLM Inference Efficient",
+      "link": "https://machinelearningmastery.com/serving-multiple-users-at-once-how-continuous-batching-keeps-llm-inference-efficient/",
+      "pubDate": "Sat, 30 May 2026 02:54:17 +0000",
+      "isoDate": "2026-05-30T02:54:17.000Z",
+      "creator": "Yoyo Chan",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Serving Multiple Users at Once: How Continuous Batching Keeps LLM Inference Efficient",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/petra-reid-WYvxaZGBebg-unsplash-scaled.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "This article is divided into four parts; they are: • The Problem with Static Batching • Code Example of Static Batching • Continuous Batching: Dynamic Scheduling and Ragged Batching • Full Implementation The simplest way to serve multiple requests together is to use static batching, by grouping them into fixed-size batches and processing each batch together."
+    },
+    {
+      "title": "Building a Context Pruning Pipeline for Long-Running Agents",
+      "link": "https://machinelearningmastery.com/building-a-context-pruning-pipeline-for-long-running-agents/",
+      "pubDate": "Thu, 28 May 2026 12:00:39 +0000",
+      "isoDate": "2026-05-28T12:00:39.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Building a Context Pruning Pipeline for Long-Running Agents",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/04/mlm-building-a-context-pruning-pipeline-for-long-running-agents.png",
+          "alt": "Building a Context Pruning Pipeline for Long-Running Agents",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Modern AI agents built on top of large language models (LLMs) are designed to run continuously."
+    },
+    {
+      "title": "The Statistics of Token Selection: Logits, Temperature, and Top-P Walkthrough",
+      "link": "https://machinelearningmastery.com/the-statistics-of-token-selection-logits-temperature-and-top-p-walkthrough/",
+      "pubDate": "Wed, 27 May 2026 12:00:05 +0000",
+      "isoDate": "2026-05-27T12:00:05.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "The Statistics of Token Selection: Logits, Temperature, and Top-P Walkthrough",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/mlm-the-statistics-of-token-selection-logits-temperature-and-top-p-walkthrough.png",
+          "alt": "The Statistics of Token Selection: Logits, Temperature, and Top-P Walkthrough",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/04/llm_token_gen-scaled.png",
+          "alt": "Token selection process in LLMs",
           "title": "",
           "position": 2
         },
         {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/hnsw.png",
-          "alt": "How HNSW Works",
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/04/llm_output_walkthrough-scaled.png",
+          "alt": "Token selection walkthrough based on logits, temperature, and top-p",
           "title": "",
           "position": 3
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/bala-vector-db-ivf-scaled.png",
-          "alt": "How Inverted File Index Works",
-          "title": "",
-          "position": 4
         }
       ],
       "contentSource": "RSS",
-      "content": "Search works well when users know exactly what they are looking for, but it breaks down when intent is described in natural language."
+      "content": "When large language models, or LLMs for short, produce outputs, several criteria are at stake, including not only overall response relevance but also coherence and creativity."
     },
     {
-      "title": "Choosing the Right Agentic Design Pattern: A Decision-Tree Approach",
-      "link": "https://machinelearningmastery.com/choosing-the-right-agentic-design-pattern-a-decision-tree-approach/",
-      "pubDate": "Wed, 13 May 2026 12:00:45 +0000",
-      "isoDate": "2026-05-13T12:00:45.000Z",
-      "creator": "Bala Priya C",
+      "title": "Building a Multi-Tool Gemma 4 Agent with Error Recovery",
+      "link": "https://machinelearningmastery.com/building-a-multi-tool-gemma-4-agent-with-error-recovery/",
+      "pubDate": "Tue, 26 May 2026 12:00:51 +0000",
+      "isoDate": "2026-05-26T12:00:51.000Z",
+      "creator": "Matthew Mayo",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Choosing the Right Agentic Design Pattern: A Decision-Tree Approach",
-      "images": [],
+      "translated_title": "Building a Multi-Tool Gemma 4 Agent with Error Recovery",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/mlm-building-a-multi-tool-gemma-4-agent-with-error-recovery.png",
+          "alt": "Building a Multi-Tool Gemma 4 Agent with Error Recovery",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/mlm-building-a-multi-tool-gemma-4-agent-with-error-recovery-output-1c.png",
+          "alt": "Code output",
+          "title": "",
+          "position": 2
+        }
+      ],
       "contentSource": "RSS",
-      "content": "Most <a href=\"https://www."
+      "content": "In a <a href=\"https://machinelearningmastery."
     },
     {
-      "title": "LLM Observability Tools for Reliable AI Applications",
-      "link": "https://machinelearningmastery.com/llm-observability-tools-for-reliable-ai-applications/",
-      "pubDate": "Tue, 12 May 2026 12:00:07 +0000",
-      "isoDate": "2026-05-12T12:00:07.000Z",
-      "creator": "Bala Priya C",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "LLM Observability Tools for Reliable AI Applications",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Large language models (LLMs) now power everything from customer service bots to autonomous coding agents."
-    },
-    {
-      "title": "Implementing Prompt Compression to Reduce Agentic Loop Costs",
-      "link": "https://machinelearningmastery.com/implementing-prompt-compression-to-reduce-agentic-loop-costs/",
-      "pubDate": "Mon, 11 May 2026 12:00:43 +0000",
-      "isoDate": "2026-05-11T12:00:43.000Z",
+      "title": "Implementing Hybrid Semantic-Lexical Search in RAG",
+      "link": "https://machinelearningmastery.com/implementing-hybrid-semantic-lexical-search-in-rag/",
+      "pubDate": "Mon, 25 May 2026 12:00:35 +0000",
+      "isoDate": "2026-05-25T12:00:35.000Z",
       "creator": "Iván Palomares Carrascosa",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Implementing Prompt Compression to Reduce Agentic Loop Costs",
-      "images": [],
+      "translated_title": "Implementing Hybrid Semantic-Lexical Search in RAG",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/03/mlm-implementing-hybrid-semantic-lexical-search-in-rag.png",
+          "alt": "Implementing Hybrid Semantic-Lexical Search in RAG",
+          "title": "",
+          "position": 1
+        }
+      ],
       "contentSource": "RSS",
-      "content": "Agentic loops in production can be synonymous with high costs, especially when it comes to both LLM and external application usage via APIs, where billing is often closely related to token usage."
+      "content": "Implementing hybrid search strategies is a critical step in building modern RAG (Retrieval-Augmented Generation) systems , especially when shifting from prototype to production-ready solutions."
     },
     {
-      "title": "Implementing Permission-Gated Tool Calling in Python Agents",
-      "link": "https://machinelearningmastery.com/implementing-permission-gated-tool-calling-in-python-agents/",
-      "pubDate": "Fri, 08 May 2026 12:00:34 +0000",
-      "isoDate": "2026-05-08T12:00:34.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Implementing Permission-Gated Tool Calling in Python Agents",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "AI agents have evolved beyond passive chatbots."
-    },
-    {
-      "title": "The Roadmap to Mastering Tool Calling in AI Agents",
-      "link": "https://machinelearningmastery.com/the-roadmap-to-mastering-tool-calling-in-ai-agents/",
-      "pubDate": "Thu, 07 May 2026 12:00:13 +0000",
-      "isoDate": "2026-05-07T12:00:13.000Z",
+      "title": "Building Context-Aware Search in Python with LLM Embeddings + Metadata",
+      "link": "https://machinelearningmastery.com/building-context-aware-search-in-python-with-llm-embeddings-metadata/",
+      "pubDate": "Fri, 22 May 2026 12:00:56 +0000",
+      "isoDate": "2026-05-22T12:00:56.000Z",
       "creator": "Bala Priya C",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "The Roadmap to Mastering Tool Calling in AI Agents",
-      "images": [],
+      "translated_title": "Building Context-Aware Search in Python with LLM Embeddings + Metadata",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/mlm-context-aware-semantic-search.png",
+          "alt": "Building Context-Aware Search in Python with LLM Embeddings + Metadata",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/loading-embeddings.png",
+          "alt": "Sentence Embeddings for 20 Tickets",
+          "title": "",
+          "position": 2
+        }
+      ],
       "contentSource": "RSS",
-      "content": "Most <a href=\"https://www."
-    },
-    {
-      "title": "Implementing Statistical Guardrails for Non-Deterministic Agents",
-      "link": "https://machinelearningmastery.com/implementing-statistical-guardrails-for-non-deterministic-agents/",
-      "pubDate": "Tue, 05 May 2026 12:00:11 +0000",
-      "isoDate": "2026-05-05T12:00:11.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Implementing Statistical Guardrails for Non-Deterministic Agents",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Non-deterministic agents are those where the same input can lead to distinct outputs across multiple runs."
-    },
-    {
-      "title": "Agentic RAG Explained in 3 Levels of Difficulty",
-      "link": "https://machinelearningmastery.com/agentic-rag-explained-in-3-levels-of-difficulty/",
-      "pubDate": "Mon, 04 May 2026 12:00:34 +0000",
-      "isoDate": "2026-05-04T12:00:34.000Z",
-      "creator": "Bala Priya C",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Agentic RAG Explained in 3 Levels of Difficulty",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Traditional <a href=\"https://aws."
-    },
-    {
-      "title": "Effective KV Compression with TurboQuant",
-      "link": "https://machinelearningmastery.com/effective-kv-compression-with-turboquant/",
-      "pubDate": "Thu, 30 Apr 2026 12:00:11 +0000",
-      "isoDate": "2026-04-30T12:00:11.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Effective KV Compression with TurboQuant",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "TurboQuant has recently been launched by Google as a novel algorithmic suite and library for applying advanced quantization and compression to large language models (LLMs) and vector search engines &mdash; an indispensable element of RAG systems."
+      "content": "Keyword search breaks the moment a user types something a document doesn't literally say."
     }
   ],
-  "lastUpdated": "2026-06-07T11:13:16.514Z"
+  "lastUpdated": "2026-06-08T13:13:42.028Z"
 }
