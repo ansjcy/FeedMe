@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "GitHub for Beginners: Answers to some common questions",
+      "link": "https://github.blog/developer-skills/github/github-for-beginners-answers-to-some-common-questions/",
+      "pubDate": "Mon, 08 Jun 2026 16:00:00 +0000",
+      "isoDate": "2026-06-08T16:00:00.000Z",
+      "creator": "Natalie Guevara",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "GitHub for Beginners: Answers to some common questions",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/47188731?v=4&s=200",
+          "alt": "Kedasha Kerr",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Find the answers to some of the most common GitHub-related questions.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/github/github-for-beginners-answers-to-some-common-questions/\">GitHub for Beginners: Answers to some common questions</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub Universe is back: All together now, in the agentic era",
       "link": "https://github.blog/news-insights/company-news/github-universe-is-back-all-together-now-in-the-agentic-era/",
       "pubDate": "Thu, 04 Jun 2026 16:00:00 +0000",
@@ -435,69 +479,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>Kick off work in VS Code or the CLI, finish it from your phone. Remote control for GitHub Copilot sessions is now generally available on github.com and GitHub Mobile.  </p>\n<p>The post <a href=\"https://github.blog/news-insights/product-news/take-your-local-github-sessions-anywhere/\">Take your local GitHub sessions anywhere</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Building a general-purpose accessibility agent—and what we learned in the process",
-      "link": "https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/",
-      "pubDate": "Fri, 15 May 2026 16:00:00 +0000",
-      "isoDate": "2026-05-15T16:00:00.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Building a general-purpose accessibility agent—and what we learned in the process",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/image1.png?resize=1024%2C908",
-          "alt": "A GitHub Actions bot comment on a line of code in a Pull Request that suggests a fix to a content order accessibility issue. The comment reads, 'WCAG 1.3.2 Meaningful Sequence: The .header CSS class uses flex-direction: row-reverse, which causes the close button to appear first in the DOM (and screen reader reading order) but visually renders after the heading. This creates a mismatch between the programmatic reading sequence and the visual layout. A simpler approach is to swap the element order in the DOM and use regular flex-direction: row in the CSS, so the reading order matches what sighted users see:' Following that is a code suggestion that re-orderes the heading and side panel toolbar, with the option to commit the suggestion to code. After that is a final comment that reads, ''This also requires updating •header in agent-task-content.module.css to change flex-direction: row-reverse → flex-direction: row.\" Cropped screenshot.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/image2.png?resize=1024%2C731",
-          "alt": "A diagram demonstrating how the parent accessibility agent passes work sequentially from itself to a read-only reviewer sub-agent, then back to the parent agent, to a write and read-capable implementer sub-agent, then back again to the parent agent. The parent agent is contained in a column labeled, 'Tier 1 - Orchestration', and the two sub-agents are contained in a column labeled, 'Tier 2 - Specialists'. The first connecting line that shows the parent agent passing work off to the reviewer sub-agent is labeled, 'run sub-agent'. The second line that passes work back to the parent agent is labeled, 'structured findings'. The third line has the parent agent passing work to the implementer sub-agent, and is labeled 'Run sub-agent with structured findings'. The fourth and final line passes work from the implementer sub-agent back to the parent agent and is labeled, 'Changes or guidance generated'. The parent and sub-agents also have lists of responsibilities. The parent accessibility agent routes requests, locates code and skills, runs complexity scoring, validates outputs, manages escalation gates, manages re-audit loops, and answers research questions. The reviewer sub-agent  performs code audits, WCAG research, detects escalation triggers, and produces structured findings. The implementer sub-agent has two modes: a default code-change mode and a fallback guidance-only mode. The code-change mode fixes critical issues first, then addresses the rest. The guidance-only mode generates guidance docs. Both modes validates changes.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/image3.png?resize=1024%2C592",
-          "alt": "A diagram demonstrating how the research sub-agent uses ordered phases and ordered steps within each phase to produce structured output. The first phase is labeled, 'Phase 1 - Research', and contains 5 steps. The first step is labeled, 'WCAG SCs' and uses a skill called 'wcag-2.2-level-a-aa-success-criteria'. The second step is labeled, 'GitHub’s SC interpretation' and uses a skill called 'accessibility-check-wcag-sc-interpretation'. The third step is labeled, 'Assistive technology support' and uses a skill called 'accessibility-check-at-support'. The fourth step is labeled, 'Prior accessibility audits' and uses a skill called 'accessibility-search-prior-audits-general'. The fifth and final step for this phase is labeled, 'External W3C references' and is governed by a rule called 'Only if local searching is insufficient'. An arrow connects the first phase to the second phase, which is labeled, 'Phase 2 - Code audit'. The first step of phase 2 is labeled, 'Read source files on demand'. The second step is labeled, 'Incorporate user-provided URLs' and has a role called that compels it to always fetch. The third step is labeled, 'Investigate provided URLs’ links' and is governed by a rule called 'search 1 level deep'. The fourth step is labeled, 'Run validation skills' and uses a resource called 'decision table'. The fifth step is labeled, 'Cross-reference findings' and uses a skill called 'use phase 1 research'. The sixth and final step of this phase is labeled, 'Re-review all content interacted with'. An arrow connects the second phase to the third phase, which is labeled, 'Phase 3 - Structured output'. The third phase contains a single step labeled, 'Findings report, output-schema-reviewer'. It has three subsections, 'Summary', 'Finding severity scoring', and 'Each finding includes'. The summary subsection contains an ordered list that reads, '1. total findings', '2. prior audits', '3. escalation needed', '4. escalation scope', and '5. Escalated findings'. Finding and severity scoring has three levels, 'critical', 'warning', and 'info'. Each finding includes applicable WCAG SCs, applicable files and line numbers, current human-facing experience, expected human-facing experience, suggestion for remediation, and an escalation summary (if present).",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/image4.png?resize=729%2C807",
-          "alt": "A pie chart titled, 'WCAG A and AA Success Criterion'. The first of two slices is labeled, '36% require manual evaluation'. The second of two slices is labeled, '64% can be detected automatically'.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/634191?v=4&s=200",
-          "alt": "Eric Bailey",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Learn about the experimental general-purpose accessibility agent that GitHub is piloting.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/\">Building a general-purpose accessibility agent—and what we learned in the process</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-06-07T07:59:47.403Z"
+  "lastUpdated": "2026-06-09T07:58:30.161Z"
 }
