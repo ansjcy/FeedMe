@@ -5,6 +5,119 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "How we made GitHub Copilot CLI more selective about delegation",
+      "link": "https://github.blog/ai-and-ml/how-we-made-github-copilot-cli-more-selective-about-delegation/",
+      "pubDate": "Fri, 12 Jun 2026 22:26:23 +0000",
+      "isoDate": "2026-06-12T22:26:23.000Z",
+      "creator": "Dylan Birtolo",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How we made GitHub Copilot CLI more selective about delegation",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/fig1-tool-failures.gif?resize=768%2C432",
+          "alt": "Animated Copilot CLI session showing unnecessary subagent delegation. The main agent idles while multiple subagents repeat searches, use stale or ambiguous file paths, and accumulate tool failures, increasing from 0 to 5.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/fig2-slide-4-diagram.png?resize=1024%2C425",
+          "alt": "Flow diagram of the smarter subagent delegation improvement loop: analyze initial signals from telemetry, A/B experiments, human side-by-side reviews, and agent comparison evals; create offline evals; make a product change; validate offline and online; then release when results are good. Dashed arrows show feedback loops for bad changes and online disagreements.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://secure.gravatar.com/avatar/1bf3b7949efaab6ca1043f27ce4ef74410d5efa97ef1213017be37112b8eb45a?s=200&d=mm&r=g",
+          "alt": "Pingping Lin",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/32049232?v=4&s=200",
+          "alt": "Yu Hu",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Better orchestration, fewer handoffs, faster progress, without a single new knob.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/how-we-made-github-copilot-cli-more-selective-about-delegation/\">How we made GitHub Copilot CLI more selective about delegation</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "GitHub availability report: May 2026",
+      "link": "https://github.blog/news-insights/company-news/github-availability-report-may-2026/",
+      "pubDate": "Thu, 11 Jun 2026 21:30:15 +0000",
+      "isoDate": "2026-06-11T21:30:15.000Z",
+      "creator": "Natalie Guevara",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "GitHub availability report: May 2026",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>In May, we experienced nine incidents that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-may-2026/\">GitHub availability report: May 2026</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Making secret scanning more trustworthy: Reducing false positives at scale",
+      "link": "https://github.blog/security/making-secret-scanning-more-trustworthy-reducing-false-positives-at-scale/",
+      "pubDate": "Thu, 11 Jun 2026 16:00:00 +0000",
+      "isoDate": "2026-06-11T16:00:00.000Z",
+      "creator": "Natalie Guevara",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Making secret scanning more trustworthy: Reducing false positives at scale",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/blog-post-1.png?resize=1024%2C576",
+          "alt": "Flow chart showing GitHub's existing verification step is enhanced with context-aware reasoning to improve precision changing detection. The flow is AI based detection > Candidate Secrets > Verification LLM reasoning > High-confidence alerts.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/blog-post-2.png?resize=1024%2C576",
+          "alt": "A table showing 'More context' such as entire file/repository, high noise, is not preferred to 'Better context' of usage signals, execution paths. This provides a focused input.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/blog-post-3.png?resize=1024%2C576",
+          "alt": "False positive reduction based on 1,500 customer-confirmed false positive alerts reached 75.76%.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/3497137?v=4&s=200",
+          "alt": "Mariko Wakabayashi",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
+          "alt": "The GitHub Podcast",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Alerts are more trustworthy and actionable when noise is reduced. See how we improved the verification step with context-aware LLM reasoning.</p>\n<p>The post <a href=\"https://github.blog/security/making-secret-scanning-more-trustworthy-reducing-false-positives-at-scale/\">Making secret scanning more trustworthy: Reducing false positives at scale</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Give GitHub Copilot CLI real code intelligence with language servers",
       "link": "https://github.blog/ai-and-ml/github-copilot/give-github-copilot-cli-real-code-intelligence-with-language-servers/",
       "pubDate": "Wed, 10 Jun 2026 16:00:00 +0000",
@@ -286,163 +399,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>Discover how to use VS Code to interact with GitHub and maintain your projects.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-git-and-github-in-vs-code/\">GitHub for Beginners: Getting started with Git and GitHub in VS Code</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub recognized as a Leader in the Gartner® Magic Quadrant™ for Enterprise AI Coding Agents for the third year in a row",
-      "link": "https://github.blog/ai-and-ml/github-copilot/github-recognized-as-a-leader-in-the-gartner-magic-quadrant-for-enterprise-ai-coding-agents-for-the-third-year-in-a-row/",
-      "pubDate": "Fri, 22 May 2026 16:10:21 +0000",
-      "isoDate": "2026-05-22T16:10:21.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "GitHub recognized as a Leader in the Gartner® Magic Quadrant™ for Enterprise AI Coding Agents for the third year in a row",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/Figure1-2.png?resize=926%2C1024",
-          "alt": "The Gartner Magic Quadrant shows GitHub, Anthropic, Cursor, and OpenAI in the 'Leader' quadrant, with GitHub as the highest in 'Ability to execute.' Cognition, Amazon Web Services, Google, and Alibaba Cloud are in the 'Challengers' quadrant; Atlassian, BytePlus, and JetBrains are in the 'Niche players' quadrant; and 'Tabnine' is in the 'Visionaries' quadrant.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/884366?v=4&s=200",
-          "alt": "Mario Rodriguez",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>We are committed to empowering every developer by building an open, secure, and AI-powered platform that defines the future of software development.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/github-recognized-as-a-leader-in-the-gartner-magic-quadrant-for-enterprise-ai-coding-agents-for-the-third-year-in-a-row/\">GitHub recognized as a Leader in the Gartner® Magic Quadrant™ for Enterprise AI Coding Agents for the third year in a row</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Beyond the engine: 10 open source projects shaping how games actually get made",
-      "link": "https://github.blog/open-source/gaming/beyond-the-engine-10-open-source-projects-shaping-how-games-actually-get-made/",
-      "pubDate": "Thu, 21 May 2026 18:00:00 +0000",
-      "isoDate": "2026-05-21T18:00:00.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Beyond the engine: 10 open source projects shaping how games actually get made",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/blockbench.png",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/pencil2d.png",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/pixelorama.png",
-          "alt": "",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/materialmaker.png",
-          "alt": "",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/LD.png",
-          "alt": "",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/tiled.png",
-          "alt": "",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/audacity.png",
-          "alt": "",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/05/yarn-spinner.png",
-          "alt": "",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Check out these 10 open source tools that help game developers create art, animation, levels, audio, dialogue, debug UIs, and engine-ready assets.</p>\n<p>The post <a href=\"https://github.blog/open-source/gaming/beyond-the-engine-10-open-source-projects-shaping-how-games-actually-get-made/\">Beyond the engine: 10 open source projects shaping how games actually get made</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Building GitHub’s next chapter in accessibility",
-      "link": "https://github.blog/open-source/building-githubs-next-chapter-in-accessibility/",
-      "pubDate": "Thu, 21 May 2026 16:00:00 +0000",
-      "isoDate": "2026-05-21T16:00:00.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Building GitHub’s next chapter in accessibility",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/108237890?v=4&s=200",
-          "alt": "Ed Summers",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2023/02/galaxy23-icon.svg",
-          "alt": "The GitHub Podcast",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Explore our update on GitHub’s accessibility strategy, and learn how you can join us in building a culture of accessibility.</p>\n<p>The post <a href=\"https://github.blog/open-source/building-githubs-next-chapter-in-accessibility/\">Building GitHub&#8217;s next chapter in accessibility</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-06-11T08:52:42.406Z"
+  "lastUpdated": "2026-06-13T07:54:32.700Z"
 }
