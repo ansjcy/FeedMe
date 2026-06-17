@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Unlocking the Power of the TPU Stack: Introducing our new Developer Hub",
+      "link": "https://developers.googleblog.com/en/unlocking-the-power-of-the-tpu-stack-introducing-our-new-developer-hub/",
+      "pubDate": "Mon, 15 Jun 2026 16:00:00 GMT",
+      "isoDate": "2026-06-15T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Unlocking the Power of the TPU Stack: Introducing our new Developer Hub",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Google has officially launched the TPU Developer Hub, a centralized educational resource designed to help model builders and developers maximize the performance of Google Cloud TPUs. The hub offers code-first resources, open-source recipes, and deep-dive documentation covering hardware architecture, software optimization, debugging, parallelism, and networking. These materials are tailored for both human developers and AI-assisted tools to streamline everything from large-scale training to low-latency inference workloads."
+    },
+    {
+      "title": "Enhance Security and Trust: New Session Metadata in Sign in with Google",
+      "link": "https://developers.googleblog.com/en/enhance-security-and-trust-new-session-metadata-in-sign-in-with-google/",
+      "pubDate": "Mon, 15 Jun 2026 16:00:00 GMT",
+      "isoDate": "2026-06-15T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Enhance Security and Trust: New Session Metadata in Sign in with Google",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Google is enhancing Sign in with Google by introducing new OIDC standard claims—specifically auth_time and amr (Authentication Methods Reference) to provide developers with deeper session metadata. These updates allow verified apps to verify the \"freshness\" of a user's login and the specific authentication methods used (such as MFA or hardware keys), enabling more dynamic, risk-based access controls. By leveraging these federated identity signals, platforms can better prevent account takeover and fraud while implementing granular security policies like step-up authentication for sensitive actions."
+    },
+    {
       "title": "DiffusionGemma: The Developer Guide",
       "link": "https://developers.googleblog.com/en/diffusiongemma-the-developer-guide/",
       "pubDate": "Tue, 09 Jun 2026 16:00:00 GMT",
@@ -159,82 +185,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "We are excited to bring Express checkout with Google Pay for Android native apps enabling developers..."
-    },
-    {
-      "title": "Announcing ADK for Kotlin and ADK for Android 0.1.0: Building AI Agents on Android and Beyond",
-      "link": "https://developers.googleblog.com/en/adk-kotlin-android-building-ai-agents/",
-      "pubDate": "Wed, 20 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-20T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Announcing ADK for Kotlin and ADK for Android 0.1.0: Building AI Agents on Android and Beyond",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Google has announced the launch of version 0.1.0 of the Agent Development Kit (ADK) for Kotlin, alongside a specialized ADK library for Android. This open-source framework simplifies the creation of AI agents by managing complex orchestration, session sharing, and error handling across cloud and edge environments. The release supports hybrid orchestration, enabling developers to build multi-agent systems where a cloud-based model can seamlessly offload specific tasks to local, on-device models like Gemini Nano to enhance user privacy."
-    },
-    {
-      "title": "Empowering Service Providers and Hardware Partners with Gemini for Home",
-      "link": "https://developers.googleblog.com/en/empowering-service-providers-and-hardware-partners-with-gemini-for-home/",
-      "pubDate": "Wed, 20 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-20T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Empowering Service Providers and Hardware Partners with Gemini for Home",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-02-intro-gemini-era4x.original.jpg",
-          "alt": "io26-blog-02-intro-gemini-era@4x",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-03-power-of-gemini.original.jpg",
-          "alt": "io26-blog-03-power-of-gemini",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-04-service-opps.original.jpg",
-          "alt": "io26-blog-04-service-opps",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-05-service-opps-att-security4x_1.original.jpg",
-          "alt": "io26-blog-05-service-opps-att-security@",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-06-hardware-prog4x.original.jpg",
-          "alt": "io26-blog-06-hardware-prog@4x",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-07-hardware-prog-partners4x.original.jpg",
-          "alt": "io26-blog-07-hardware-prog-partners@4x",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-08-hardware-prog-speakers-cameras4x.original.jpg",
-          "alt": "io26-blog-08-hardware-prog-speakers-cameras@4x",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/io26-blog-09-partner-qr-cta4x.original.png",
-          "alt": "io26-blog-09-partner-qr-cta@4x",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Google is expanding its smart home ecosystem by launching a full-stack Gemini AI offering that integrates advanced camera intelligence, natural language queries, and daily activity summaries. This initiative provides service providers and hardware manufacturers with turnkey reference designs and APIs to build proactive, branded services without extensive research and development. Ultimately, the program aims to move beyond basic device control toward an AI-native home that can understand context and care for users' needs in real time."
     }
   ],
-  "lastUpdated": "2026-06-16T15:18:27.362Z"
+  "lastUpdated": "2026-06-17T13:51:15.364Z"
 }
