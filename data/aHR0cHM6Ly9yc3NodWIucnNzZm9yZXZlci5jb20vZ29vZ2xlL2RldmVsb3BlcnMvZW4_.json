@@ -5,6 +5,64 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Announcing the Agentic Resource Discovery specification",
+      "link": "https://developers.googleblog.com/en/announcing-the-agentic-resource-discovery-specification/",
+      "pubDate": "Tue, 16 Jun 2026 16:00:00 GMT",
+      "isoDate": "2026-06-16T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Announcing the Agentic Resource Discovery specification",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ARD_logo_wall.original.png",
+          "alt": "ARD logo wall",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ard-infographics.original.png",
+          "alt": "ard-infographics",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "An open specification for finding and verifying tools, skills, and agents across the web.Agents are ..."
+    },
+    {
+      "title": "A2UI + MCP Apps: Combining the best of declarative and custom agentic UIs",
+      "link": "https://developers.googleblog.com/en/a2ui-and-mcp-apps/",
+      "pubDate": "Tue, 16 Jun 2026 16:00:00 GMT",
+      "isoDate": "2026-06-16T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "A2UI + MCP Apps: Combining the best of declarative and custom agentic UIs",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/a2ui-over-mcp-flow.original.png",
+          "alt": "a2ui-over-mcp-flow",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/table.original.png",
+          "alt": "table",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/decision_tree_5.original.png",
+          "alt": "decision_tree_5",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "This post introduces three architectural patterns designed to integrate Model Context Protocol (MCP) Apps and Agent-to-User Interface (A2UI) to solve the tradeoff between highly custom iframe environments and native, declarative rendering. By combining these approaches, developers can serve native-feeling UIs directly over MCP servers, embed complex and stateful iframe apps securely inside declarative views, or inject generative UI components into legacy systems. Ultimately, these hybrid frameworks empower engineering teams to deliver secure, performant, and brand-consistent agentic user experiences tailored to their specific project constraints."
+    },
+    {
       "title": "Unlocking the Power of the TPU Stack: Introducing our new Developer Hub",
       "link": "https://developers.googleblog.com/en/unlocking-the-power-of-the-tpu-stack-introducing-our-new-developer-hub/",
       "pubDate": "Mon, 15 Jun 2026 16:00:00 GMT",
@@ -134,58 +192,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "The Google Tunix Hackathon on Kaggle challenged developers to transform small, non-reasoning base models into general reasoning engines using Kaggle TPUs and a limited compute budget. The winning teams achieved this by implementing multi-stage post-training pipelines that combined Supervised Fine-Tuning (SFT) with advanced alignment techniques like GRPO and SimPO. Ultimately, the competition democratized AI development by proving that highly capable, structured reasoning models can be successfully trained by the community using accessible, open-source resources."
-    },
-    {
-      "title": "The latest updates to Google Pay",
-      "link": "https://developers.googleblog.com/en/the-latest-updates-to-google-pay/",
-      "pubDate": "Tue, 26 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-26T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "The latest updates to Google Pay",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/mcp-server-prompt_1_vswlBaz.original.png",
-          "alt": "mcp-server-prompt (1)",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/card-funding-source.original.png",
-          "alt": "card-funding-source",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/mit_1.original.png",
-          "alt": "mit (1)",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/x-device.original.jpg",
-          "alt": "x-device (1)",
-          "title": "",
-          "position": 4
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Google Pay is evolving for \"agentic commerce\" by introducing the Universal Commerce Protocol and a new MCP server that allows AI agents to manage integrations and analyze trends. New Android updates introduce dynamic callbacks for seamless express checkouts and extend payment support into social media apps via WebViews. Additionally, the platform is launching cross-device biometric authentication and new transaction signals to help merchants reduce friction and optimize processing costs."
-    },
-    {
-      "title": "Enhancing Android Checkout with Dynamic Callbacks in Google Pay",
-      "link": "https://developers.googleblog.com/en/enhancing-android-checkout-with-dynamic-callbacks-in-google-pay/",
-      "pubDate": "Mon, 25 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-25T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Enhancing Android Checkout with Dynamic Callbacks in Google Pay",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "We are excited to bring Express checkout with Google Pay for Android native apps enabling developers..."
     }
   ],
-  "lastUpdated": "2026-06-17T13:51:15.364Z"
+  "lastUpdated": "2026-06-18T13:36:20.493Z"
 }
