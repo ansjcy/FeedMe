@@ -5,6 +5,26 @@
   "link": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
   "items": [
     {
+      "title": "SpaceX wants to build AI data centers in space. Will it work?",
+      "link": "https://www.sciencedaily.com/releases/2026/06/260618041501.htm",
+      "pubDate": "Thu, 18 Jun 2026 23:43:09 EDT",
+      "isoDate": "2026-06-19T03:43:09.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "SpaceX wants to build AI data centers in space. Will it work?",
+      "images": [
+        {
+          "url": "https://counter.theconversation.com/content/284053/count.gif?distributor=republish-lightbox-advanced",
+          "alt": "The Conversation",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "The race to build data centers in space is gaining momentum as AI drives unprecedented demand for computing power. Orbital facilities could tap into abundant solar energy and avoid many of the environmental challenges faced on Earth. Yet space remains a harsh and expensive place to operate, with major hurdles including cooling, maintenance, radiation exposure, and orbital debris."
+    },
+    {
       "title": "Brain-inspired chip runs near absolute zero and could transform quantum computing",
       "link": "https://www.sciencedaily.com/releases/2026/06/260612032024.htm",
       "pubDate": "Fri, 12 Jun 2026 06:38:54 EDT",
@@ -647,20 +667,7 @@
       "images": [],
       "contentSource": "完整文章",
       "content": "Electrons can freeze into strange geometric crystals and then melt back into liquid-like motion under the right quantum conditions. Researchers identified how to tune these transitions and even discovered a bizarre “pinball” state where some electrons stay locked in place while others dart around freely. Their simulations help explain how these phases form and how they might be harnessed for advanced quantum technologies."
-    },
-    {
-      "title": "一束光运行AI，具备超级计算机能力 (原标题: A single beam of light runs AI with supercomputer power)",
-      "link": "https://www.sciencedaily.com/releases/2025/11/251115095923.htm",
-      "pubDate": "Sun, 16 Nov 2025 02:00:12 EST",
-      "isoDate": "2025-11-16T07:00:12.000Z",
-      "creator": "",
-      "summary": "### 一束光运行AI，具备超级计算机能力：光学张量计算新突破\n\n**背景与挑战**\n张量运算是支持现代人工智能（AI）技术的先进数学形式，远超传统计算。随着数据量持续增长，传统数字硬件（如GPU）在处理AI所需的复杂张量运算时，面临速度、能耗和可扩展性方面的巨大压力。AI系统在图像处理、语言理解等领域对张量运算的需求日益增加。\n\n**创新方法：单次光学张量计算**\n为了应对这些挑战，由阿尔托大学电子与纳米工程系光子学小组的张宇峰博士领导的国际团队，开发了一种全新的方法。该方法允许复杂张量计算在光通过光学系统的一次运动中完成，被称为“单次张量计算”，其运行速度达到光速。\n\n*   **工作原理**：\n    *   该方法通过将数字信息编码到光波的振幅和相位中，将数值数据转换为光场中的物理变化。\n    *   当这些光波相互作用时，它们会自动执行深度学习基础的数学过程，如矩阵和张量乘法。\n    *   通过使用多个波长的光，研究人员扩展了这项技术，以支持更复杂、更高阶的张量运算。\n    *   张博士解释说，这种方法执行的操作与当前GPU处理的卷积和注意力层相同，但全部以光速完成，利用光的物理特性同时执行多项计算，而非依赖电子电路。\n\n**主要优势**\n1.  **被动光学处理**：计算过程中，所需的操作随光传播自动发生，系统无需主动控制或电子切换。\n2.  **广泛兼容性**：该方法几乎可以在任何光学平台上实现。阿尔托大学光子学小组负责人孙志培教授表示，未来计划将此计算框架直接集成到光子芯片上，使基于光的处理器能够以极低的功耗执行复杂的AI任务。\n3.  **高效率与可扩展性**：通过一次光通过，所有检查和排序都能瞬间并行完成，显著提升效率。\n\n**未来展望**\n张博士指出，最终目标是将这项技术应用于主要科技公司现有的硬件和平台。他估计，该方法可在3到5年内整合到此类系统中。这将催生新一代光学计算系统，极大地加速跨领域复杂的AI任务。\n\n**研究发表**\n这项研究于2025年11月14日发表在《自然·光子学》（Nature Photonics）杂志上。",
-      "shortSummary": "由阿尔托大学团队领导的研究人员开发了一种创新的光学计算方法，利用一束光以光速执行复杂的AI张量运算。该“单次张量计算”通过将信息编码到光波中，实现被动、并行处理，显著提升AI任务的速度和能效，超越传统GPU的限制。这项技术有望在3-5年内集成到现有硬件中，开创光基AI硬件的新时代。",
-      "translated_title": "一束光运行AI，具备超级计算机能力",
-      "images": [],
-      "contentSource": "完整文章",
-      "content": "Aalto University researchers have developed a method to execute AI tensor operations using just one pass of light. By encoding data directly into light waves, they enable calculations to occur naturally and simultaneously. The approach works passively, without electronics, and could soon be integrated into photonic chips. If adopted, it promises dramatically faster and more energy-efficient AI systems."
     }
   ],
-  "lastUpdated": "2026-06-18T12:29:59.143Z"
+  "lastUpdated": "2026-06-19T12:51:59.035Z"
 }
