@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "How A2A is Building a World of Collaborative Agents",
+      "link": "https://developers.googleblog.com/en/how-a2a-is-building-a-world-of-collaborative-agents/",
+      "pubDate": "Wed, 17 Jun 2026 16:00:00 GMT",
+      "isoDate": "2026-06-17T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How A2A is Building a World of Collaborative Agents",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Agent_Collaboration_Architecuture_image.original.png",
+          "alt": "Agent Collaboration Architecuture image",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Foldrun_architecture.original.png",
+          "alt": "Foldrun architecture",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Celebrating the first anniversary of the Agent-to-Agent (A2A) protocol, this blog post highlights how the framework enables autonomous AI agents to securely collaborate and hand off tasks without the rigidity of traditional APIs. By delegating complex workflows to specialized peer agents, A2A prevents context pollution, ensures data privacy, and simplifies application design through modularity. To demonstrate this ecosystem in action, the post spotlights FoldRun—an agentic interface for life sciences that orchestrates complex protein structure predictions—alongside diverse A2A use cases spanning commerce, data streaming, DevOps, and telecommunications."
+    },
+    {
       "title": "Announcing the Agentic Resource Discovery specification",
       "link": "https://developers.googleblog.com/en/announcing-the-agentic-resource-discovery-specification/",
       "pubDate": "Tue, 16 Jun 2026 16:00:00 GMT",
@@ -179,20 +205,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Google has announced the new Google Pay &amp; Wallet Developer MCP server, an open-standard tool designed to securely connect AI development assistants and IDEs with real-time API and account context. The server allows developers to remain within their development environment to search official documentation, validate Wallet pass definitions, check integration status, and manage merchant accounts. Ultimately, this integration aims to reduce friction and accelerate development workflows by minimizing context switching and providing up-to-date, grounded AI support."
-    },
-    {
-      "title": "How the community trained Gemma to \"Think\" with Tunix and TPUs",
-      "link": "https://developers.googleblog.com/en/how-the-community-trained-gemma-to-think-with-tunix-and-tpus/",
-      "pubDate": "Wed, 27 May 2026 16:00:00 GMT",
-      "isoDate": "2026-05-27T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "How the community trained Gemma to \"Think\" with Tunix and TPUs",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "The Google Tunix Hackathon on Kaggle challenged developers to transform small, non-reasoning base models into general reasoning engines using Kaggle TPUs and a limited compute budget. The winning teams achieved this by implementing multi-stage post-training pipelines that combined Supervised Fine-Tuning (SFT) with advanced alignment techniques like GRPO and SimPO. Ultimately, the competition democratized AI development by proving that highly capable, structured reasoning models can be successfully trained by the community using accessible, open-source resources."
     }
   ],
-  "lastUpdated": "2026-06-18T13:36:20.493Z"
+  "lastUpdated": "2026-06-19T13:41:44.524Z"
 }
