@@ -5,6 +5,122 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "The Roadmap to Mastering AI Agent Evaluation",
+      "link": "https://machinelearningmastery.com/the-roadmap-to-mastering-ai-agent-evaluation/",
+      "pubDate": "Thu, 18 Jun 2026 12:00:32 +0000",
+      "isoDate": "2026-06-18T12:00:32.000Z",
+      "creator": "Bala Priya C",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "The Roadmap to Mastering AI Agent Evaluation",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/mlm-the-roadmap-to-mastering-ai-agent-evaluation.png",
+          "alt": "The Roadmap to Mastering AI Agent Evaluation",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/reasoning-vs-action-layer.png",
+          "alt": "Reasoning vs Action Layer",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/ai-agent-evals.png",
+          "alt": "Matching Agent Evaluation Strategy to Agent Type",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/pass-k-comparison.png",
+          "alt": "pass@k and pass^k",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Let's not waste any more time."
+    },
+    {
+      "title": "Building an End-to-End Sentiment Analysis Pipeline with Scikit-LLM",
+      "link": "https://machinelearningmastery.com/building-an-end-to-end-sentiment-analysis-pipeline-with-scikit-llm/",
+      "pubDate": "Tue, 16 Jun 2026 12:00:48 +0000",
+      "isoDate": "2026-06-16T12:00:48.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Building an End-to-End Sentiment Analysis Pipeline with Scikit-LLM",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/mlm-building-an-end-to-end-sentiment-analysis-pipeline-with-scikit-llm.png",
+          "alt": "Building an End-to-End Sentiment Analysis Pipeline with Scikit-LLM",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Traditional machine learning pipelines for predictive tasks like text classification usually rely on extracting structured, numerical features from raw text &mdash; for instance, TF-IDF frequencies or token embeddings &mdash; to feed into classical models such as logistic regression, ensembles, or support vector machines."
+    },
+    {
+      "title": "AI Agent Tool Design: What Works and What Doesn’t",
+      "link": "https://machinelearningmastery.com/ai-agent-tool-design-what-works-and-what-doesnt/",
+      "pubDate": "Mon, 15 Jun 2026 12:00:36 +0000",
+      "isoDate": "2026-06-15T12:00:36.000Z",
+      "creator": "Bala Priya C",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "AI Agent Tool Design: What Works and What Doesn’t",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/mlm-agent-tool-design.png",
+          "alt": "AI Agent Tool Design: What Works and What Doesn't",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/srp-tool-design.png",
+          "alt": "One Tool, One Responsibility",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/dynamic-tool-loading.png",
+          "alt": "Dynamic Tool Loading",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/no-single-step-destruction.png",
+          "alt": "Destructive Actions Without a Confirmation Gate",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Most <a href=\"https://www."
+    },
+    {
+      "title": "Python Concepts Every AI Engineer Must Master",
+      "link": "https://machinelearningmastery.com/python-concepts-every-ai-engineer-must-master/",
+      "pubDate": "Fri, 12 Jun 2026 12:00:39 +0000",
+      "isoDate": "2026-06-12T12:00:39.000Z",
+      "creator": "Matthew Mayo",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Python Concepts Every AI Engineer Must Master",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/mlm-python-concepts-every-ai-engineer-must-master.png",
+          "alt": "Python Concepts Every AI Engineer Must Master",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Transitioning from writing local experimental scripts to building scalable, production-grade AI systems requires a shift in how we write Python."
+    },
+    {
       "title": "Multi-Label Text Classification with Scikit-LLM",
       "link": "https://machinelearningmastery.com/multi-label-text-classification-with-scikit-llm/",
       "pubDate": "Thu, 11 Jun 2026 12:00:17 +0000",
@@ -129,105 +245,7 @@
       ],
       "contentSource": "RSS",
       "content": "In recent years, generative AI models like LLMs (large language models) have gradually taken over classical machine learning ones for addressing certain tasks, for instance, text classification ."
-    },
-    {
-      "title": "The Roadmap for Mastering LLMOps in 2026",
-      "link": "https://machinelearningmastery.com/the-roadmap-for-mastering-llmops-in-2026/",
-      "pubDate": "Mon, 01 Jun 2026 12:00:18 +0000",
-      "isoDate": "2026-06-01T12:00:18.000Z",
-      "creator": "Shittu Olumide",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "The Roadmap for Mastering LLMOps in 2026",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/mlm-the-roadmap-for-mastering-llmops-in-2026.png",
-          "alt": "The Roadmap for Mastering LLMOps in 2026",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/A-clean-upward-learning-stack-diagram-with-four-labeled-layers-stacked-from-bottom-to-top.png",
-          "alt": "A clean upward learning stack diagram with four labeled layers stacked from bottom to top",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "The LLMOps market is projected to grow from <a href=\"https://www."
-    },
-    {
-      "title": "Serving Multiple Users at Once: How Continuous Batching Keeps LLM Inference Efficient",
-      "link": "https://machinelearningmastery.com/serving-multiple-users-at-once-how-continuous-batching-keeps-llm-inference-efficient/",
-      "pubDate": "Sat, 30 May 2026 02:54:17 +0000",
-      "isoDate": "2026-05-30T02:54:17.000Z",
-      "creator": "Yoyo Chan",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Serving Multiple Users at Once: How Continuous Batching Keeps LLM Inference Efficient",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/petra-reid-WYvxaZGBebg-unsplash-scaled.jpg",
-          "alt": "",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "This article is divided into four parts; they are: • The Problem with Static Batching • Code Example of Static Batching • Continuous Batching: Dynamic Scheduling and Ragged Batching • Full Implementation The simplest way to serve multiple requests together is to use static batching, by grouping them into fixed-size batches and processing each batch together."
-    },
-    {
-      "title": "Building a Context Pruning Pipeline for Long-Running Agents",
-      "link": "https://machinelearningmastery.com/building-a-context-pruning-pipeline-for-long-running-agents/",
-      "pubDate": "Thu, 28 May 2026 12:00:39 +0000",
-      "isoDate": "2026-05-28T12:00:39.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Building a Context Pruning Pipeline for Long-Running Agents",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/04/mlm-building-a-context-pruning-pipeline-for-long-running-agents.png",
-          "alt": "Building a Context Pruning Pipeline for Long-Running Agents",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Modern AI agents built on top of large language models (LLMs) are designed to run continuously."
-    },
-    {
-      "title": "The Statistics of Token Selection: Logits, Temperature, and Top-P Walkthrough",
-      "link": "https://machinelearningmastery.com/the-statistics-of-token-selection-logits-temperature-and-top-p-walkthrough/",
-      "pubDate": "Wed, 27 May 2026 12:00:05 +0000",
-      "isoDate": "2026-05-27T12:00:05.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "The Statistics of Token Selection: Logits, Temperature, and Top-P Walkthrough",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/mlm-the-statistics-of-token-selection-logits-temperature-and-top-p-walkthrough.png",
-          "alt": "The Statistics of Token Selection: Logits, Temperature, and Top-P Walkthrough",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/04/llm_token_gen-scaled.png",
-          "alt": "Token selection process in LLMs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/04/llm_output_walkthrough-scaled.png",
-          "alt": "Token selection walkthrough based on logits, temperature, and top-p",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "When large language models, or LLMs for short, produce outputs, several criteria are at stake, including not only overall response relevance but also coherence and creativity."
     }
   ],
-  "lastUpdated": "2026-06-19T12:51:56.165Z"
+  "lastUpdated": "2026-06-20T11:24:02.335Z"
 }
