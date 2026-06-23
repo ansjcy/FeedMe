@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "Adopting AV1 for Real-Time Communication (RTC) at Scale",
+      "link": "https://engineering.fb.com/2026/06/22/video-engineering/adopting-av1-for-real-time-communication-rtc-meta/",
+      "pubDate": "Mon, 22 Jun 2026 16:00:08 +0000",
+      "isoDate": "2026-06-22T16:00:08.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Adopting AV1 for Real-Time Communication (RTC) at Scale",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Adopting AV1 for real-time communication at Meta has been a multi-year effort spanning codec selection, device eligibility, rate control, and error resilience. We’re sharing the technical and operational challenges while deploying AV1 and expanding coverage, and how we addressed them for real-time communication. We’re presenting several technologies for improving AV1 call quality, including rate control [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/06/22/video-engineering/adopting-av1-for-real-time-communication-rtc-meta/\">Read More...</a></p>\n<p>The post <a href=\"https://engineering.fb.com/2026/06/22/video-engineering/adopting-av1-for-real-time-communication-rtc-meta/\">Adopting AV1 for Real-Time Communication (RTC) at Scale</a> appeared first on <a href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "Lights Out, Systems On: Validating Instant Power Loss Readiness",
       "link": "https://engineering.fb.com/2026/06/03/data-center-engineering/lights-out-systems-on-validating-instant-power-loss-readiness/",
       "pubDate": "Wed, 03 Jun 2026 17:00:44 +0000",
@@ -120,20 +133,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>We’re sharing lessons learned from Meta’s post-quantum cryptography (PQC) migration to help other organizations strengthen their resilience as industry transitions to post-quantum cryptography standards. We’re proposing the idea of PQC Migration Levels to help teams within organizations manage the complexity of PQC migration for their various use cases. By outlining Meta’s approach to this work [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/04/16/security/post-quantum-cryptography-migration-at-meta-framework-lessons-and-takeaways/\">Read More...</a></p>\n<p>The post <a href=\"https://engineering.fb.com/2026/04/16/security/post-quantum-cryptography-migration-at-meta-framework-lessons-and-takeaways/\">Post-Quantum Cryptography Migration at Meta: Framework, Lessons, and Takeaways</a> appeared first on <a href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "Escaping the Fork: How Meta Modernized WebRTC Across 50+ Use Cases",
-      "link": "https://engineering.fb.com/2026/04/09/developer-tools/escaping-the-fork-how-meta-modernized-webrtc-across-50-use-cases/",
-      "pubDate": "Thu, 09 Apr 2026 16:00:34 +0000",
-      "isoDate": "2026-04-09T16:00:34.000Z",
-      "creator": "",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Escaping the Fork: How Meta Modernized WebRTC Across 50+ Use Cases",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>At Meta, WebRTC powers real-time audio and video across various platforms. But forking a large open-source project like WebRTC within our monorepo presents unique challenges – over time, an internal fork can drift behind upstream, cutting itself off from community upgrades. We&#8217;re sharing how we escaped this &#8220;forking trap&#8221; &#8211; from building a dual-stack architecture [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/04/09/developer-tools/escaping-the-fork-how-meta-modernized-webrtc-across-50-use-cases/\">Read More...</a></p>\n<p>The post <a href=\"https://engineering.fb.com/2026/04/09/developer-tools/escaping-the-fork-how-meta-modernized-webrtc-across-50-use-cases/\">Escaping the Fork: How Meta Modernized WebRTC Across 50+ Use Cases</a> appeared first on <a href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-06-21T08:59:42.810Z"
+  "lastUpdated": "2026-06-23T08:33:00.871Z"
 }
