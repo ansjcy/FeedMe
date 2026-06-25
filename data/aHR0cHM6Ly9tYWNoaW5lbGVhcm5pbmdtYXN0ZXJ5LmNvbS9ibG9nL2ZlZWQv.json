@@ -5,6 +5,78 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "Context Windows Are Not Memory: What AI Agent Developers Need to Understand",
+      "link": "https://machinelearningmastery.com/context-windows-are-not-memory-what-ai-agent-developers-need-to-understand/",
+      "pubDate": "Wed, 24 Jun 2026 12:00:18 +0000",
+      "isoDate": "2026-06-24T12:00:18.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Context Windows Are Not Memory: What AI Agent Developers Need to Understand",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/mlm-context-windows-are-not-memory-what-ai-agent-developers-need-to-understand.png",
+          "alt": "Context Windows Are Not Memory: What AI Agent Developers Need to Understand",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "In this article, you will learn why a large context window is not the same thing as agent memory, and how techniques like retrieval, compression,..."
+    },
+    {
+      "title": "Clustering Unstructured Text with LLM Embeddings and HDBSCAN",
+      "link": "https://machinelearningmastery.com/clustering-unstructured-text-with-llm-embeddings-and-hdbscan/",
+      "pubDate": "Tue, 23 Jun 2026 12:00:57 +0000",
+      "isoDate": "2026-06-23T12:00:57.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Clustering Unstructured Text with LLM Embeddings and HDBSCAN",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/mlm-clustering-unstructured-text-with-llm-embeddings-and-hdbscan-feature.png",
+          "alt": "Clustering Unstructured Text with LLM Embeddings and HDBSCAN",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/hdbscan_embeddings.png",
+          "alt": "Clustering visualizations",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "The current era of Generative AI seems to primarily focus on chat interfaces and prompts, but the range of applications of large language models , or LLMs for short, is not limited to just that."
+    },
+    {
+      "title": "Building Browser-Using AI Agents in Python",
+      "link": "https://machinelearningmastery.com/building-browser-using-ai-agents-in-python/",
+      "pubDate": "Mon, 22 Jun 2026 12:00:28 +0000",
+      "isoDate": "2026-06-22T12:00:28.000Z",
+      "creator": "Shittu Olumide",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Building Browser-Using AI Agents in Python",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-Building-Browser-Using-AI-Agents-in-Python.png",
+          "alt": "Building Browser-Using AI Agents in Python",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-A-vertical-flow-diagram-showing-how-a-task-request-flows-through-the-agent.png",
+          "alt": "A vertical flow diagram showing how a task request flows through the agent",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Most AI agent tutorials start with an API."
+    },
+    {
       "title": "The Roadmap to Mastering AI Agent Evaluation",
       "link": "https://machinelearningmastery.com/the-roadmap-to-mastering-ai-agent-evaluation/",
       "pubDate": "Thu, 18 Jun 2026 12:00:32 +0000",
@@ -179,73 +251,7 @@
       ],
       "contentSource": "RSS",
       "content": "According to Futurum Research's 2025 market overview of agentic AI platforms, <a href=\"https://zbrain."
-    },
-    {
-      "title": "Building Semantic Search with Transformers.js and Sentence Embeddings",
-      "link": "https://machinelearningmastery.com/building-semantic-search-with-transformers-js-and-sentence-embeddings/",
-      "pubDate": "Fri, 05 Jun 2026 12:00:01 +0000",
-      "isoDate": "2026-06-05T12:00:01.000Z",
-      "creator": "Shittu Olumide",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Building Semantic Search with Transformers.js and Sentence Embeddings",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/mlm-building-semantic-search-with-transformers-js-and-sentence-embeddings-feat.png",
-          "alt": "Building Semantic Search with Transformers.js and Sentence Embeddings",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-A-3D-scatter-plot-diagram-illustrating-how-semantically-similar-sentences-cluster-together-in-vector-space.png",
-          "alt": "A 3D scatter plot diagram illustrating how semantically similar sentences cluster together in vector space",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "You've probably shipped this bug before, where a user types \" affordable laptop \" into your search bar and gets zero results."
-    },
-    {
-      "title": "Using Scikit-LLM with Open-Source LLMs",
-      "link": "https://machinelearningmastery.com/using-scikit-llm-with-open-source-llms/",
-      "pubDate": "Thu, 04 Jun 2026 12:55:34 +0000",
-      "isoDate": "2026-06-04T12:55:34.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Using Scikit-LLM with Open-Source LLMs",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/mlm-using-scikit-llm-with-open-source-llms.png",
-          "alt": "Using Scikit-LLM with Open-Source LLMs",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "This article will teach you how to perform a language task like text classification by integrating locally hosted large language models (LLMs) of manageable size, like Mistral, Gemma, and Llama 3: all for free thanks to Ollama &mdash; a free repository for local LLMs &mdash; and the Scikit-LLM Python library."
-    },
-    {
-      "title": "Scikit-LLM vs. Traditional Text Classifiers: When Should You Use an LLM?",
-      "link": "https://machinelearningmastery.com/scikit-llm-vs-traditional-text-classifiers-when-should-you-use-an-llm/",
-      "pubDate": "Tue, 02 Jun 2026 12:00:18 +0000",
-      "isoDate": "2026-06-02T12:00:18.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Scikit-LLM vs. Traditional Text Classifiers: When Should You Use an LLM?",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/05/mlm-scikit-llm-vs-traditional-text-classifiers-when-should-you-use-an-llm.png",
-          "alt": "Scikit-LLM vs. Traditional Text Classifiers: When Should You Use an LLM?",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "In recent years, generative AI models like LLMs (large language models) have gradually taken over classical machine learning ones for addressing certain tasks, for instance, text classification ."
     }
   ],
-  "lastUpdated": "2026-06-24T11:51:31.597Z"
+  "lastUpdated": "2026-06-25T11:46:31.761Z"
 }
