@@ -148,6 +148,45 @@
       "content": "Modern generative world models render increasingly realistic action-controllable futures, yet they frequently hallucinate: rollouts remain visually fluent while drifting from the ground-truth dynamics. We hypothesize that hallucination concentrates in low-coverage regions of the state-action space, where lightweight data-centric signals can both detect it and guide mitigation. To test this, we introduce MMBench2, a 427-hour, 210-task dataset for visual world modeling with ground-truth actions, rewards, and live simulators, and train a 350M-parameter world model on it. We identify three distinct hallucination modes: perceptual, action-marginalized, and scene-diverging -- each anchored to a different stage of the pipeline, and develop three signals that accurately predict where the model will fail. To close coverage gaps at training time, we develop a coverage-aware sampling technique; to close them online, our hallucination predictors serve as curiosity rewards for targeted data collection, yielding a data-efficient finetuning recipe that adapts the pretrained world model to entirely unseen environments with as few as 50 real environment trajectories. Overall, our findings reveal that hallucination in world models is inherently a data coverage issue, and that the same signals used to detect it can also be used for mitigation.   An interactive web version of our paper is available at https://www.nicklashansen.com/mmbench2"
     },
     {
+      "title": "LISA: Likelihood Score Alignment for Visual-condition Controllable Generation",
+      "link": "https://arxiv.org/abs/2606.27192",
+      "pubDate": "Wed, 24 Jun 2026 20:00:00 GMT",
+      "isoDate": "2026-06-24T20:00:00.000Z",
+      "creator": "Yanghao Wang, Hongxu Chen, Jiazhen Liu, Zhenqi He, Rui Liu, Zhen Wang, Long Chen",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "LISA: Likelihood Score Alignment for Visual-condition Controllable Generation",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "The prevalent dual-branch paradigm, i.e., training a side network to encode visual conditions and fusing its intermediate-layer features to a frozen pretrained main network, has shown remarkable success in visual-condition controllable generation. Despite its widespread adoption, the role of the side branch and its training efficiency remain underexplored. In this paper, we first revisit this mainstream paradigm through the lens of score-based generative modeling: 1) The main network preserves visual perceptual quality by providing a prior unconditional score. 2) The side network steers conditional control by implicitly contributing a likelihood score. Guided by this perspective, we propose LIkelihood Score Alignment (LISA), an effective regularization method that explicitly aligns the intermediate feature of the side network with an approximated likelihood score. Specifically, we first hook features from a designated layer of the side network and project them into the score latent space by a lightweight decoder. Then, we construct an approximated likelihood score target and calculate the distance between the decoder's output and this target as an additional regularization loss. Finally, we jointly optimize the side network and decoder with both standard diffusion loss and our regularization loss. Experiments across various image/video tasks, architectures, and diffusion/flow models demonstrated that LISA can not only consistently accelerate the training convergence and improve final synthetic results, but also encourage the side network's features to be more disentangled for conditional modeling with negligible additional training cost and zero extra inference cost."
+    },
+    {
+      "title": "Information-Aware KV Cache Compression for Long Reasoning",
+      "link": "https://arxiv.org/abs/2606.26875",
+      "pubDate": "Wed, 24 Jun 2026 20:00:00 GMT",
+      "isoDate": "2026-06-24T20:00:00.000Z",
+      "creator": "Jushi Kai, Zhuiri Xiao, Alexandra Birch, Zhouhan Lin",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Information-Aware KV Cache Compression for Long Reasoning",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Reasoning capability has advanced rapidly in large language models (LLMs), leading to an increasing size of key-value (KV) cache in both prefilling and decoding stages. Existing KV cache compression methods mainly rely on attention weights to estimate token importance. While attention effectively captures contextual relevance, it overlooks complementary information-theoretic signals related to predictive uncertainty and token informativeness. In this paper, we revisit token importance from a forward-looking perspective and introduce Forward Influence, a metric that measures how compressed tokens affect future contexts. Our analysis reveals that tokens selected by attention scores mainly influence nearby contexts, whereas tokens associated with high predictive uncertainty exhibit substantially stronger influence on distant future contexts. Based on the observation, we propose InfoKV, an entropy-aware KV cache compression framework that incorporates information-theoretic signals. It combines token-level predictive uncertainty with layer-wise representation evolution and integrates the resulting entropy scores with attention scores during reasoning. Experiments on long-context reasoning benchmarks with Llama-3.1, Llama-3.2, and DeepSeek-R1 demonstrate that InfoKV consistently outperforms existing attention-based KV compression methods in both long prefilling and decoding scenarios."
+    },
+    {
+      "title": "EO-WM: A Physically Informed World Model for Probabilistic Earth Observation Forecasting",
+      "link": "https://arxiv.org/abs/2606.27277",
+      "pubDate": "Wed, 24 Jun 2026 20:00:00 GMT",
+      "isoDate": "2026-06-24T20:00:00.000Z",
+      "creator": "Junwei Luo, Shuai Yuan, Zhenya Yang, Yansheng Li, Zhe Liu, Hengshuang Zhao",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "EO-WM: A Physically Informed World Model for Probabilistic Earth Observation Forecasting",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Earth Observation (EO) forecasting aims to predict future Earth surface dynamics from satellite observations under changing meteorological conditions. In this paper, we view this task as a partially observed, weather-driven world modeling problem, in which weather acts as a conditioning signal, while forecasting remains uncertain due to sparse observations and unobserved land-surface states. However, existing methods do not fully capture this setting: deterministic models collapse uncertainty into a single future prediction, while diffusion-based methods typically treat weather variables as undifferentiated conditioning signals, and existing benchmarks focus mainly on reconstruction accuracy rather than whether forecasts respond correctly to changed weather forcing.We introduce EO-WM, a video diffusion transformer for multispectral EO forecasting. EO-WM incorporates a physically informed conditioning framework that represents meteorological forcing through a climatological baseline, weather anomalies, and cumulative physical stress signals. Specifically, it separates baseline and anomaly through distinct conditioning pathways, and accumulates anomalous forcing over time to capture sustained heat and drought stress. To evaluate weather-response behavior beyond standard metrics, we introduce two diagnostic benchmarks: an Extreme Summer Benchmark for severity-aware prediction of vegetation degradation under extreme weather, and a Seasonal Matched-Pair Benchmark for testing response fidelity under changed weather forcing. Experiments show that EO-WM reduces the error in predicted Normalized Difference Vegetation Index (NDVI) decline amplitude by a relative 5.63% and improves directional hit rate by a relative 7.80%, while remaining competitive on standard pixel-level metrics. The benchmarks and model will be made open-source at https://github.com/Luo-Z13/EO-WM."
+    },
+    {
       "title": "DomainShuttle: Freeform Open Domain Subject-driven Text-to-video Generation",
       "link": "https://arxiv.org/abs/2606.26058",
       "pubDate": "Tue, 23 Jun 2026 20:00:00 GMT",
@@ -224,46 +263,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Autoregressive video diffusion with causal diffusion transformers has emerged as a major paradigm for real-time streaming video generation and action-conditioned interactive world models. In this work, we extend rCM, an advanced diffusion distillation framework, to autoregressive video diffusion. The core philosophy of rCM lies in the complementarity between forward and reverse divergences, represented by consistency models (CMs) and distribution matching distillation (DMD), respectively, in diffusion distillation. This philosophy naturally carries over to the autoregressive setting, where teacher-forcing (TF) provides an offline, forward-divergence causal training paradigm, while self-forcing (SF) corresponds to an on-policy, reverse-divergence refinement.   Our contributions are: (1) through extensive experiments, we show that teacher-forcing CM is currently the best complement to self-forcing DMD as an initialization strategy (2) we present the first implementation of teacher-forcing-based continuous-time CMs (e.g., sCM/MeanFlow) for autoregressive video diffusion, enabled by our custom-mask FlashAttention-2 JVP kernel, achieving 10times faster convergence compared to discrete-time CMs (dCMs) (3) we introduce Causal-rCM, a leading, unified, and scalable algorithm-infrastructure open recipe for diffusion distillation and causal training (4) we achieve state-of-the-art streaming video generation performance in both frame-wise and chunk-wise settings, using only synthetic data for training.   Notably, our distilled 2-step causal Wan2.1-1.3B model achieves a VBench-T2V score of 84.63 with only 1 or 2 sampling steps. We further apply Causal-rCM to Cosmos 3, an advanced omnimodal world foundation model for physical AI with action-conditioned generation capability, enabling an interactive world model."
-    },
-    {
-      "title": "TryOnCrafter: Unleashing Camera Trajectories for Realistic Video Virtual Try-on via a Renderable 4D Try-on Proxy",
-      "link": "https://arxiv.org/abs/2606.26092",
-      "pubDate": "Tue, 23 Jun 2026 20:00:00 GMT",
-      "isoDate": "2026-06-23T20:00:00.000Z",
-      "creator": "Hao Sun, Hao Yan, Mengting Chen, Quanjian Song, Yu Li, Juan Cao, Jinsong Lan, Xiaoyong Zhu, Bo Zheng, Sheng Tang",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "TryOnCrafter: Unleashing Camera Trajectories for Realistic Video Virtual Try-on via a Renderable 4D Try-on Proxy",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "While Video Virtual Try-on (VVT) has achieved remarkable progress in synthesizing realistic garment overlays on dynamic subjects, existing paradigms remains fundamentally constrained by a passive dependency on source camera trajectories, failing to accommodate the requisite interactive freedom for omnidirectional viewpoint exploration. To address this limitation, we define a pioneering research frontier: Camera-controllable Video Virtual Try-on (CaM-VVT). Unlike conventional VVT, CaM-VVT not only necessitates viewpoint-agnostic texture hallucination but also strict structural synchronization between non-rigid human dynamics and background contexts under arbitrary, unconstrained camera movements. To tackle these challenges, we present TryOnCrafter, the first unified DiT-based framework specifically architected for the CaM-VVT task. Departing from implicit pixel-space manipulation, we introduce a Renderable 4D Try-on Proxy that explicitly decouples the human subject from the environment. This is achieved by distilling high-fidelity 2D try-on priors into a clothed 3DGS-based avatar, which is subsequently animated via SMPL-X sequences and metric-aligned into a reconstructed background point cloud. This proxy establishes a robust structural foundation with superior texture density and motion integrity. Our Proxy-Anchored Video DiT leverages this robust structural foundation as a primary geometric anchor, ensuring that the synthesized photorealistic videos are strictly constrained by prescribed trajectories and physically plausible deformations. Benefiting from the inherent editability of the 4D proxy, TryOnCrafter facilitates diverse downstream applications, including human relocalization, ``bullet time'' effects, and 360-degree orbital viewing."
-    },
-    {
-      "title": "Autodata: An agentic data scientist to create high quality synthetic data",
-      "link": "https://arxiv.org/abs/2606.25996",
-      "pubDate": "Tue, 23 Jun 2026 20:00:00 GMT",
-      "isoDate": "2026-06-23T20:00:00.000Z",
-      "creator": "Ilia Kulikov, Chenxi Whitehouse, Tianhao Wu, Yixin Nie, Swarnadeep Saha, Eryk Helenowski, Weizhe Yuan, Olga Golovneva, Jack Lanchantin, Yoram Bachrach, Jakob Foerster, Xian Li, Han Fang, Sainbayar Sukhbaatar, Jason Weston",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Autodata: An agentic data scientist to create high quality synthetic data",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "We introduce Autodata, a general method that enables AI agents to act as data scientists who build high quality training and evaluation data. We show how to train (meta-optimize) such a data scientist agent, so that it learns to create even stronger data. We describe the overall formulation, and a specific practical implementation, Agentic Self-Instruct. We conduct experiments on computer science research tasks, legal reasoning tasks and reasoning with mathematical objects, where we obtain improved results compared to classical synthetic dataset creation methods. Further, meta-optimizing the data scientist agent itself delivers an even larger performance uplift. Agentic data creation provides a way to convert increased inference compute into higher quality model training. Overall, we believe this direction has the potential to change the way we build AI data."
-    },
-    {
-      "title": "Constraint Tax in Open-Weight LLMs: An Empirical Study of Tool Calling Suppression Under Structured Output Constraints",
-      "link": "https://arxiv.org/abs/2606.25605",
-      "pubDate": "Tue, 23 Jun 2026 20:00:00 GMT",
-      "isoDate": "2026-06-23T20:00:00.000Z",
-      "creator": "Fangzheng Li, Aimin Zhang, Chen Lv",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Constraint Tax in Open-Weight LLMs: An Empirical Study of Tool Calling Suppression Under Structured Output Constraints",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Tool Calling and Structured Output are two core capabilities of modern Agent systems, yet their interaction under joint deployment conditions remains insufficiently understood. This paper reports a reproducible phenomenon observed in a production Agent system: when Tool Calling and JSON Schema constraints are simultaneously enabled, multiple open-weight models cease invoking tools despite maintaining high schema compliance. We refer to this behavior as Tool Suppression. Through controlled experiments across multiple model families and deployment settings, we consistently reproduce Tool Suppression under joint constraints, while tool execution and schema compliance remain functional when evaluated independently. Further analysis reveals that JSON Schema constraints are compiled into grammar-based token masks, causing tool-call tokens to become unreachable during decoding. This provides an implementation-level explanation for the observed behavior. To interpret the phenomenon, we formulate the Constraint Priority Inversion (CPI) hypothesis, which suggests that schema satisfaction may dominate action-selection behavior under multiple simultaneous constraints. We present CPI as a behavioral hypothesis consistent with the observed evidence rather than a verified internal mechanism. To mitigate the problem, we propose Transparent Two-Pass Execution, an inference-time strategy that decouples tool execution from schema-constrained response generation. Experimental results show that this approach restores tool invocation while preserving structured output guarantees without requiring model retraining. These findings suggest that evaluating tool use and structured output separately may overlook important reliability issues in production Agent systems. Code, data, and docs will be released at https://github.com/Fzsama/Constrain-Tax-26-06.git."
     }
   ],
-  "lastUpdated": "2026-06-26T11:49:27.932Z"
+  "lastUpdated": "2026-06-27T11:02:01.434Z"
 }
