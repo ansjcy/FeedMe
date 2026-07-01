@@ -5,6 +5,150 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "How GitHub maintains compliance for open source dependencies",
+      "link": "https://github.blog/enterprise-software/governance-and-compliance/how-github-maintains-compliance-for-open-source-dependencies/",
+      "pubDate": "Tue, 30 Jun 2026 17:28:16 +0000",
+      "isoDate": "2026-06-30T17:28:16.000Z",
+      "creator": "Natalie Guevara",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How GitHub maintains compliance for open source dependencies",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/613757407-388b97bc-ca84-416a-aac5-72e4924e5dc8.png?resize=936%2C504",
+          "alt": "The enterprise license policy screen has a paginated list of SPDX licenses, with the ability to add more via manual input or a selection dialog.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/613757492-a055f40b-3546-4726-8ff8-fa28f2729d44.png?resize=936%2C598",
+          "alt": "A license alert page, with the name of the package and the noncompliant license identifier and a timeline showing communications between the developer and approver. ",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/613757588-b5723bcc-5867-419b-983b-6c997ee8a31e.png?resize=936%2C1024",
+          "alt": "An email notification sent to the license reviewer team, with the name of the user who raised the alert, the repository where the alert was generated, and a comment from the developer requesting the package be permitted because it is a private, internal package.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/160953253?v=4&s=200",
+          "alt": "Jeff Luszcz",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/56753?v=4&s=200",
+          "alt": "Eric Sorenson",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Explore how the Open Source Program Office uses GitHub’s new license compliance product to manage open source dependencies at scale.</p>\n<p>The post <a href=\"https://github.blog/enterprise-software/governance-and-compliance/how-github-maintains-compliance-for-open-source-dependencies/\">How GitHub maintains compliance for open source dependencies</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Highlights from Git 2.55",
+      "link": "https://github.blog/open-source/git/highlights-from-git-2-55/",
+      "pubDate": "Mon, 29 Jun 2026 17:25:25 +0000",
+      "isoDate": "2026-06-29T17:25:25.000Z",
+      "creator": "Natalie Guevara",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Highlights from Git 2.55",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/Screenshot-2026-06-25-at-6.36.16-PM.png?resize=1024%2C256",
+          "alt": "Diagram showing a chain of MIDX layers with newly written packs.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/Screenshot-2026-06-25-at-6.39.09-PM.png?resize=1024%2C392",
+          "alt": "Diagram indicating the first geometric split is too small.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/Screenshot-2026-06-25-at-6.37.10-PM.png?resize=1024%2C343",
+          "alt": "Diagram showing how moving the split left finds a geometric roll-up.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/Screenshot-2026-06-25-at-6.37.46-PM.png?resize=1024%2C420",
+          "alt": "Diagram showing the new tip layer cannot compact with its neighbor.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/Screenshot-2026-06-25-at-6.38.26-PM.png?resize=1024%2C476",
+          "alt": "Diagram showing compaction stops before rewriting the deeper layer.",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/history-fixup-demo_bf66f4.gif?resize=1024%2C369",
+          "alt": "An animated gif showing Here is a small example. The first commit introduced a pancake recipe, followed by a few more commits on top. Later, we realize that the recipe was missing maple syrup. After staging that one-line change, git history fixup <commit> folds it into the original recipe commit and replays the descendant commits on top.",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/443245?v=4&s=200",
+          "alt": "Taylor Blau",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>The open source Git project just released Git 2.55. Here is GitHub’s look at some of the most interesting features and changes introduced since last time.</p>\n<p>The post <a href=\"https://github.blog/open-source/git/highlights-from-git-2-55/\">Highlights from Git 2.55</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Inside the Advisory Database and what happens when vulnerability volume breaks records",
+      "link": "https://github.blog/security/supply-chain-security/inside-the-advisory-database-and-what-happens-when-vulnerability-volume-breaks-records/",
+      "pubDate": "Mon, 29 Jun 2026 16:10:20 +0000",
+      "isoDate": "2026-06-29T16:10:20.000Z",
+      "creator": "Natalie Guevara",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Inside the Advisory Database and what happens when vulnerability volume breaks records",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/06/613839791-af0d8e48-215f-48c7-8f0c-16ef531592f7.png?resize=1024%2C640",
+          "alt": "Line graph showing a sharp increase in PVR submissions, CNA requests, and Repo GHSAs published, starting around January 2026. The lines go back to May 2025 and is relatively flat with a slight increase until January 2026.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/63199643?v=4&s=200",
+          "alt": "Madison Ficorilli",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>The GitHub Advisory Database is processing more vulnerability reports than ever before. Here's what's driving the surge, how we're responding, and how the community can help.</p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/inside-the-advisory-database-and-what-happens-when-vulnerability-volume-breaks-records/\">Inside the Advisory Database and what happens when vulnerability volume breaks records</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "GitHub and UNDP team up to advance development priorities in Ghana with open source",
       "link": "https://github.blog/open-source/social-impact/github-and-undp-team-up-to-advance-development-priorities-in-ghana-with-open-source/",
       "pubDate": "Fri, 26 Jun 2026 16:53:57 +0000",
@@ -304,181 +448,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>Qubot, our internal Copilot-powered analytics agent, allows any GitHub employee to ask questions about our data in plain language. Here's what we learned as we built it.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-we-built-an-internal-data-analytics-agent/\">How we built an internal data analytics agent</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "How pull request limits are cutting down the noise",
-      "link": "https://github.blog/open-source/maintainers/how-pull-request-limits-are-cutting-down-the-noise/",
-      "pubDate": "Thu, 18 Jun 2026 16:00:00 +0000",
-      "isoDate": "2026-06-18T16:00:00.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "How pull request limits are cutting down the noise",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/608690507-ead99df1-2879-43d6-8f5b-f04431eeefcf.jpg?resize=1024%2C566",
-          "alt": "A screenshot of the 'Moderation options menu' open to the 'Interaction limits' submenu, with 'Pull request limits' at the top. The checkbox 'Limit open pull requests from users without write access' is selected.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/21322192?v=4&s=200",
-          "alt": "Camilla Moraes",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/10735907?v=4&s=200",
-          "alt": "Ashley Wolf",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/Universe26-Icon.svg",
-          "alt": "GitHub Universe 2026",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Learn how pull request limits can help manage contribution volume in your repositories, and see what’s next on the roadmap.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/how-pull-request-limits-are-cutting-down-the-noise/\">How pull request limits are cutting down the noise</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Getting more from each token: How Copilot improves context handling and model routing",
-      "link": "https://github.blog/ai-and-ml/github-copilot/getting-more-from-each-token-how-copilot-improves-context-handling-and-model-routing/",
-      "pubDate": "Wed, 17 Jun 2026 19:41:46 +0000",
-      "isoDate": "2026-06-17T19:41:46.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Getting more from each token: How Copilot improves context handling and model routing",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/608776889-fa214f25-8231-4b9f-a0cc-9eff3cbb1be8.png?resize=1024%2C576",
-          "alt": "Chart shows HyDRA quality vs cost savings across a 5 model production pool. Three HyDRA operating points illustrate tunability: (peak) exceeds Sonnet at 12.9% savings; (agg.) balances quality for 72.5% savings.  ",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/608777067-4addfe82-4e15-4bca-ab71-907abbe0579e.png?resize=1024%2C576",
-          "alt": "Chart showing quality and cost tradeoffs of HyDRA and other published research and commercial routers using SWEBench benchmarks. HyDRA (Cons.) ties OpenRouter Auto on resolution rate (70.8%) at 3.3x the savings. HyDRA (Aggr.) outperforms both Azure Foundry operating modes. ",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/605338236-0e8f7a05-ba70-4471-806c-65aba753c914.png?resize=1024%2C576",
-          "alt": "Chart showing the efficacy of high reasoning, low reasoning, and Auto across English, European, CJK, and other script families. Evaluation is based on an evaluation set sampled from production VS Code chat telemetry across 19 languages.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/8644266?v=4&s=200",
-          "alt": "Joe Binder",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/Universe26-Icon.svg",
-          "alt": "GitHub Universe 2026",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>How GitHub Copilot is making more of each session go toward useful work, so your credits go further.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/getting-more-from-each-token-how-copilot-improves-context-handling-and-model-routing/\">Getting more from each token: How Copilot improves context handling and model routing</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "What are git worktrees, and why should I use them?",
-      "link": "https://github.blog/ai-and-ml/github-copilot/what-are-git-worktrees-and-why-should-i-use-them/",
-      "pubDate": "Tue, 16 Jun 2026 20:58:54 +0000",
-      "isoDate": "2026-06-16T20:58:54.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "What are git worktrees, and why should I use them?",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/Screenshot-2026-06-16-at-1.35.20-PM.png?resize=924%2C819",
-          "alt": "Screenshot of the 'New worktree' dropdown in the GitHub Copilot app. Options are 'New worktree', 'Local repository', or 'Cloud.'",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/Screenshot-2026-06-16-at-1.36.45-PM.png?resize=877%2C331",
-          "alt": "Screenshot of the worktree generated in the previous step.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/1454517?v=4&s=200",
-          "alt": "Cassidy Williams",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/Universe26-Icon.svg",
-          "alt": "GitHub Universe 2026",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Git worktrees have been around since 2015, but it wasn't until recently they became popular. Learn what they are, how to use them, and why you might.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/what-are-git-worktrees-and-why-should-i-use-them/\">What are git worktrees, and why should I use them?</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-06-29T09:04:45.634Z"
+  "lastUpdated": "2026-07-01T08:19:39.407Z"
 }
