@@ -5,6 +5,58 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Why we built ADK 2.0",
+      "link": "https://developers.googleblog.com/en/why-we-built-adk-20/",
+      "pubDate": "Tue, 30 Jun 2026 16:00:00 GMT",
+      "isoDate": "2026-06-30T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Why we built ADK 2.0",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/workflow-diagram.original.png",
+          "alt": "workflow-diagram",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/workflow_comparison.original.png",
+          "alt": "workflow_comparison",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Answering the questions of \"why we built ADK 2.0\".  This explains the rationale, some of the features, and why a developer should consider upgrading.  This will be published the day after ADK go 2.0 launches."
+    },
+    {
+      "title": "ML Development in VS Code with Google Cloud Power: Workbench Extension Now Available",
+      "link": "https://developers.googleblog.com/en/ml-development-in-vs-code-with-google-cloud-power-workbench-extension-now-available/",
+      "pubDate": "Tue, 30 Jun 2026 16:00:00 GMT",
+      "isoDate": "2026-06-30T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "ML Development in VS Code with Google Cloud Power: Workbench Extension Now Available",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "The Google Cloud Workbench Notebooks extension for VS Code has officially launched, allowing developers to connect their local IDE to scalable, cloud-based Jupyter environments. This integration streamlines the machine learning lifecycle by eliminating context switching and providing direct access to high-performance Google Cloud infrastructure. To support transparency and community-driven innovation, the newly released extension is fully open-sourced and available on GitHub and the VS Code Marketplace."
+    },
+    {
+      "title": "Build agentic full-stack apps with Genkit",
+      "link": "https://developers.googleblog.com/en/build-agentic-full-stack-apps-with-genkit/",
+      "pubDate": "Tue, 30 Jun 2026 16:00:00 GMT",
+      "isoDate": "2026-06-30T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Build agentic full-stack apps with Genkit",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "The open-source Genkit framework has introduced the Agents API, a full-stack tool designed to simplify the complex plumbing of conversational AI by packaging message history, tool loops, and streaming into a single interface. The API supports flexible, server- or client-managed state persistence—allowing for advanced workflows like history branching, long-running detached tasks, and multi-agent coordination—while seamlessly connecting backends to frontends via a unified wire protocol. Currently available in preview for TypeScript and Go, it also integrates with the Genkit Developer UI to allow developers to easily test, debug, and inspect agent snapshots without writing client code."
+    },
+    {
       "title": "Driving the Agent Quality Flywheel from Your Coding Agent",
       "link": "https://developers.googleblog.com/en/driving-the-agent-quality-flywheel-from-your-coding-agent/",
       "pubDate": "Mon, 29 Jun 2026 16:00:00 GMT",
@@ -197,59 +249,7 @@
       ],
       "contentSource": "RSS",
       "content": "This post introduces three architectural patterns designed to integrate Model Context Protocol (MCP) Apps and Agent-to-User Interface (A2UI) to solve the tradeoff between highly custom iframe environments and native, declarative rendering. By combining these approaches, developers can serve native-feeling UIs directly over MCP servers, embed complex and stateful iframe apps securely inside declarative views, or inject generative UI components into legacy systems. Ultimately, these hybrid frameworks empower engineering teams to deliver secure, performant, and brand-consistent agentic user experiences tailored to their specific project constraints."
-    },
-    {
-      "title": "Unlocking the Power of the TPU Stack: Introducing our new Developer Hub",
-      "link": "https://developers.googleblog.com/en/unlocking-the-power-of-the-tpu-stack-introducing-our-new-developer-hub/",
-      "pubDate": "Mon, 15 Jun 2026 16:00:00 GMT",
-      "isoDate": "2026-06-15T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Unlocking the Power of the TPU Stack: Introducing our new Developer Hub",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Google has officially launched the TPU Developer Hub, a centralized educational resource designed to help model builders and developers maximize the performance of Google Cloud TPUs. The hub offers code-first resources, open-source recipes, and deep-dive documentation covering hardware architecture, software optimization, debugging, parallelism, and networking. These materials are tailored for both human developers and AI-assisted tools to streamline everything from large-scale training to low-latency inference workloads."
-    },
-    {
-      "title": "Enhance Security and Trust: New Session Metadata in Sign in with Google",
-      "link": "https://developers.googleblog.com/en/enhance-security-and-trust-new-session-metadata-in-sign-in-with-google/",
-      "pubDate": "Mon, 15 Jun 2026 16:00:00 GMT",
-      "isoDate": "2026-06-15T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Enhance Security and Trust: New Session Metadata in Sign in with Google",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Google is enhancing Sign in with Google by introducing new OIDC standard claims—specifically auth_time and amr (Authentication Methods Reference) to provide developers with deeper session metadata. These updates allow verified apps to verify the \"freshness\" of a user's login and the specific authentication methods used (such as MFA or hardware keys), enabling more dynamic, risk-based access controls. By leveraging these federated identity signals, platforms can better prevent account takeover and fraud while implementing granular security policies like step-up authentication for sensitive actions."
-    },
-    {
-      "title": "DiffusionGemma: The Developer Guide",
-      "link": "https://developers.googleblog.com/en/diffusiongemma-the-developer-guide/",
-      "pubDate": "Tue, 09 Jun 2026 16:00:00 GMT",
-      "isoDate": "2026-06-09T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "DiffusionGemma: The Developer Guide",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/DiffusionGemma-Sudoku-Comparison.original.png",
-          "alt": "DiffusionGemma-Sudoku-Comparison",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diffusion_architecture.original.png",
-          "alt": "diffusion_architecture",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "DiffusionGemma is an experimental text-generation model built on the Gemma 4 architecture that uses diffusion-based parallel generation instead of token-by-token autoregression, enabling much faster inference, bidirectional context awareness, and real-time self-correction while remaining deployable on consumer GPUs. Its architecture generates and refines 256-token blocks in parallel through iterative denoising, allowing it to handle complex constraint-based tasks such as Sudoku more effectively than traditional language models and demonstrating strong gains from fine-tuning. The model integrates with vLLM and other popular inference frameworks, giving developers access to a new non-autoregressive approach that combines high performance, efficient long-context scaling, and straightforward customization and deployment."
     }
   ],
-  "lastUpdated": "2026-07-01T12:41:00.482Z"
+  "lastUpdated": "2026-07-02T12:16:58.720Z"
 }
