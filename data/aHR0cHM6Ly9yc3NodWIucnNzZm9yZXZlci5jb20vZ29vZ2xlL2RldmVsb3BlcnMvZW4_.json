@@ -5,6 +5,62 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "We terminated a TPU mid-training and it recovered in seconds: Introduction to elastic training with MaxText",
+      "link": "https://developers.googleblog.com/en/we-terminated-a-tpu-mid-training-and-it-recovered-in-seconds-introduction-to-elastic-training-with-maxtext/",
+      "pubDate": "Sun, 05 Jul 2026 16:00:00 GMT",
+      "isoDate": "2026-07-05T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "We terminated a TPU mid-training and it recovered in seconds: Introduction to elastic training with MaxText",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/fig1.original.png",
+          "alt": "fig1",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/fig2_1.original.png",
+          "alt": "fig2 (1)",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/fig3_2.original.png",
+          "alt": "fig3 (2)",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/fig4_1.original.png",
+          "alt": "fig4 (1)",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/fig5_1.original.png",
+          "alt": "fig5 (1)",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/tab1.original.png",
+          "alt": "tab1",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/fig6_2.original.png",
+          "alt": "fig6 (2)",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Distributed AI training is notoriously fragile because losing a single machine typically crashes the entire multi-node job, forcing a time-consuming, full-workload infrastructure restart. To address this, Google’s JAX ecosystem utilizes elastic training via Pathways, which converts a hardware failure into a catchable Python exception so the running process can survive. When an unplanned failure occurs, the system automatically replaces only the broken worker, restores the last viable checkpoint from Cloud Storage, and resumes training in place—minimizing total downtime to under two minutes without ever restarting the main controller process."
+    },
+    {
       "title": "Why we built ADK 2.0",
       "link": "https://developers.googleblog.com/en/why-we-built-adk-20/",
       "pubDate": "Tue, 30 Jun 2026 16:00:00 GMT",
@@ -217,39 +273,7 @@
       ],
       "contentSource": "RSS",
       "content": "An open specification for finding and verifying tools, skills, and agents across the web.Agents are ..."
-    },
-    {
-      "title": "A2UI + MCP Apps: Combining the best of declarative and custom agentic UIs",
-      "link": "https://developers.googleblog.com/en/a2ui-and-mcp-apps/",
-      "pubDate": "Tue, 16 Jun 2026 16:00:00 GMT",
-      "isoDate": "2026-06-16T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "A2UI + MCP Apps: Combining the best of declarative and custom agentic UIs",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/a2ui-over-mcp-flow.original.png",
-          "alt": "a2ui-over-mcp-flow",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/table.original.png",
-          "alt": "table",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/decision_tree_5.original.png",
-          "alt": "decision_tree_5",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "This post introduces three architectural patterns designed to integrate Model Context Protocol (MCP) Apps and Agent-to-User Interface (A2UI) to solve the tradeoff between highly custom iframe environments and native, declarative rendering. By combining these approaches, developers can serve native-feeling UIs directly over MCP servers, embed complex and stateful iframe apps securely inside declarative views, or inject generative UI components into legacy systems. Ultimately, these hybrid frameworks empower engineering teams to deliver secure, performant, and brand-consistent agentic user experiences tailored to their specific project constraints."
     }
   ],
-  "lastUpdated": "2026-07-06T13:56:20.548Z"
+  "lastUpdated": "2026-07-07T12:33:55.155Z"
 }
