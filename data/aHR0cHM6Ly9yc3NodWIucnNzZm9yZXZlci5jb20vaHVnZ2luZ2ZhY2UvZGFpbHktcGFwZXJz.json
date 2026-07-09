@@ -5,6 +5,71 @@
   "link": "https://huggingface.co/papers",
   "items": [
     {
+      "title": "Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning",
+      "link": "https://arxiv.org/abs/2607.07708",
+      "pubDate": "Tue, 07 Jul 2026 20:00:00 GMT",
+      "isoDate": "2026-07-07T20:00:00.000Z",
+      "creator": "Chen Tang, Yizhou Wang, Jianyu Wu, Lintao Wang, Shixiang Tang, Pengze Li, Encheng Su, Jun Yao, Jiabei Xiao, Yuqi Shi, Jielan Li, Hongxia Hao, Zhangyang Gao, Fang Wu, Ben Fei, Xiangyu Yue, Pan Tan, Bozitao Zhong, Jinouwen Zhang, Aoran Wang, Yan Lu, Jiaheng Liu, Xinzhu Ma, Liang Hong, Mingyue Zheng, Phil Torr, Bowen Zhou, Wanli Ouyang, Lei Bai",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Structure-property relationships are foundational to biology, chemistry and materials science, where function, reactivity and physical response emerge from spatial, chemical and periodic organization. Mechanistically explaining these relationships requires interpreting structural evidence through scientific principles and physical constraints, from stereochemistry and bonding to symmetry, energetics and periodic order. However, applying artificial intelligence to this process presents a joint challenge of representation and reasoning: models must preserve domain-native structural information while showing how specific evidence supports predictions under these constraints. Here we introduce SciReasoner, a multimodal scientific foundation model for native structural reasoning across proteins, small molecules and inorganic crystals. SciReasoner discretizes coordinates, topologies and periodic connectivities into a unified structure-aware vocabulary, treating structural tokens as addressable evidence units during reasoning. In homology-controlled Gene Ontology prediction, SciReasoner improves Cellular Component annotation for low-homology and orphan-like proteins, increasing F_{max} from 0.42 to 0.55. In chemistry, it raises single-step retrosynthesis accuracy from 0.63 to 0.72 while generating fragment-level disconnection and precursor-verification traces. In materials science, its representations separate elemental and compound phases and resolve high- and low-band-gap regimes. Across 86 benchmarks, SciReasoner achieves state-of-the-art performance on 67 tasks. Double-blind expert evaluation rates its reasoning traces as preferred or at least comparable to those of a frontier large language model in 98% of cases. By making structure an inspectable substrate for reasoning under scientific constraints, SciReasoner connects accurate prediction with interpretable scientific inference."
+    },
+    {
+      "title": "Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation",
+      "link": "https://arxiv.org/abs/2607.07608",
+      "pubDate": "Tue, 07 Jul 2026 20:00:00 GMT",
+      "isoDate": "2026-07-07T20:00:00.000Z",
+      "creator": "Hongyu Qu, Jianzhe Gao, Xiaobin Hu, Shaohuan Yang, Xinlei Yu, Rui Yan, Wenguan Wang, Xiangbo Shu, Shuicheng Yan",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Mainstream Vision-Language-Action (VLA) models predict actions primarily from the current observation under a Markovian assumption, thus struggling with long-horizon, temporally dependent tasks. Existing memory-augmented VLAs either expand the observation window or retrieve history from the memory bank as auxiliary policy-side context. However, they leave memory outside the native latent embedding space of VLA reasoning, preventing historical experience from being fluidly interleaved with multimodal reasoning and action formation. To this end, we introduce LaMem-VLA, a latent-memory-native framework that reconstructs historical experience into latent memory tokens and directly interweaves them with VLA reasoning. At its core, LaMem-VLA introduces four coordinated components: (i) a curator that organizes historical experience into two complementary short-term and long-term memory vaults; (ii) a seeker that queries both vaults using the multimodal cognition to retrieve context-relevant evidence; (iii) a condenser that reconstructs the retrieved evidence into compact short-term and long-term latent memory tokens; and (iv) a weaver that injects these memory tokens with the current observation and instruction into one continuous embedding sequence. By representing, retrieving, and consuming historical experience entirely in the same continuous latent space, LaMem-VLA enables memory to directly participate in VLA reasoning and guide action generation under a bounded context. Extensive experiments on SimplerEnv and LIBERO demonstrate the superiority of our LaMem-VLA."
+    },
+    {
+      "title": "Scaling Mixture-of-Experts Video Pretraining for Embodied Intelligence",
+      "link": "https://arxiv.org/abs/2607.07675",
+      "pubDate": "Tue, 07 Jul 2026 20:00:00 GMT",
+      "isoDate": "2026-07-07T20:00:00.000Z",
+      "creator": "Shuailei Ma, Jiaqi Liao, Xinyang Wang, Jingjing Wang, Chaoran Feng, Zijing Hu, Chong Bao, Zichen Xi, Yuqi Gan, Weisen Wang, Yanhong Zeng, Qin Zhao, Zifan Shi, Wei Wu, Hao Ouyang, Qiuyu Wang, Shangzhan Zhang, Jiahao Shao, Yipengjing Sun, Liangxiao Hu, Lunke Pan, Nan Xue, Kecheng Zheng, Yinghao Xu, Xing Zhu, Yujun Shen, Ka Leong Cheng",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Scaling Mixture-of-Experts Video Pretraining for Embodied Intelligence",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Despite the recent promise in robot control, video generative models suffer from a domain mismatch due to their primary focus on content creation. For example, their design inherently prioritizes visual fidelity and creativity over computational efficiency and physical realism. In this work, we present LingBot-Video, a DiT-based video pretraining paradigm specifically tailored for embodied intelligence. From the architecture perspective, we adopt the Mixture-of-Experts (MoE), instead of dense, framework to achieve a better trade-off between modeling capacity and inference efficiency, and manage to scale it up from scratch. From the data perspective, we construct a data profiling engine that augments standard internet videos with extensive robot-oriented footage, encompassing manipulation, navigation, and egocentric perspectives, to equip the base model with an intrinsic understanding of actions and world dynamics. From the training perspective, we develop a multi-dimensional reward system to enforce the alignment regarding physical rationality and task completion, going beyond standard criteria such as aesthetics, prompt-following, and motion consistency. Comprehensive evaluations validate its performance and efficiency as a video foundation model. We contribute LingBot-Video as the inaugural large-scale, open-source MoE video foundation model to the community, in a pioneering effort to bridge digital creativity and physical actuation."
+    },
+    {
+      "title": "Infinite Worlds with Versatile Interactions",
+      "link": "https://arxiv.org/abs/2607.07534",
+      "pubDate": "Tue, 07 Jul 2026 20:00:00 GMT",
+      "isoDate": "2026-07-07T20:00:00.000Z",
+      "creator": "Zelin Gao, Qiuyu Wang, Jiapeng Zhu, Jingye Chen, Zichen Liu, Qingyan Bai, Jiahao Wang, Yufeng Yuan, Hanlin Wang, Yichong Lu, Ka Leong Cheng, Haojie Zhang, Jian Gao, Tianrui Feng, Yuzheng Liu, Yao Yao, Yinghao Xu, Xing Zhu, Yujun Shen, Hao Ouyang",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Infinite Worlds with Versatile Interactions",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "We present LingBot-World 2.0 (also known as LingBot-World-Infinity), an advanced iteration of LingBot-World featuring four distinct upgrades. (1) Our model achieves an unbounded interaction horizon while maintaining consistent output quality, benefiting from a carefully crafted causal pretraining paradigm. (2) Through distilling a real-time variant from the base model, our system guarantees rapid response time, sufficient to drive 720p video streams at 60 fps. (3) Compared to the previous version, this update introduces highly diverse interactive elements, comprising a broader spectrum of actions (e.g., attacking, archery, spell-casting, and shooting) alongside a richer variety of text-driven events. (4) We pioneer the integration of an agentic harness within the domain of world modeling, wherein a pilot agent is tasked with planning and executing character behaviors, while a director agent is responsible for synthesizing novel environmental elements as the scene progresses. Additionally, to facilitate a shared experience, we develop an interface that permits multiple players to simultaneously immerse themselves in this vivid world simulator. We pair our primary 14B model with a lightweight 1.3B counterpart, which supports effortless deployment on a single GPU."
+    },
+    {
+      "title": "Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity",
+      "link": "https://arxiv.org/abs/2607.07386",
+      "pubDate": "Tue, 07 Jul 2026 20:00:00 GMT",
+      "isoDate": "2026-07-07T20:00:00.000Z",
+      "creator": "Loïc Cabannes, Pierre-Emmanuel Mazaré, Gergely Szilvasy, Matthijs Douze, Maria Lomeli, Ilze Amanda Auzina, Justin Carpentier, Gabriel Synnaeve, Hervé Jégou",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Linear attention models allow a fixed state size and a fixed amount of compute per token. However, due to their limited state size, linear attention models fall behind in long-context recall compared to softmax-attention-based transformer architectures. Increasing the state size of linear attention improves recall performance but at the cost of higher FLOPs. In this work, we introduce Sparse Delta Memory (SDM), an architecture that scales the hidden state of gated linear RNNs to orders of magnitude higher capacity using a sparse addressing scheme. SDM extends the Gated DeltaNet architecture by replacing the dense key-value outer product with sparse reads and writes to a large explicit memory. We show that, under an isoFLOP constraint and with an identical number of parameters, a higher state memory capacity significantly improves performance on in-context learning and long-context retrieval tasks. Moreover, by learning the initial state of the SDM memory and therefore using it as a parametric memory, we show that the model further improves on a wide range of common-knowledge and reasoning tasks."
+    },
+    {
       "title": "AlayaWorld: Long-Horizon and Playable Video World Generation",
       "link": "https://arxiv.org/abs/2607.06291",
       "pubDate": "Mon, 06 Jul 2026 20:00:00 GMT",
@@ -148,6 +213,45 @@
       "content": "Embodied navigation aims to build agents that interpret multimodal goals, reason in 3D space, and reach target destinations reliably in the real world. However, progress remains constrained by the lack of scalable, high-fidelity, and physically grounded interactive environments. Although real-world scanned datasets offer visual realism, they are limited by scale. In contrast, synthetic simulators scale more easily but often exhibit large sim-to-real gaps. We introduce Image2Sim, a real-time neural simulation framework that constructs high-quality interactive environments from posed RGB-D image sequences. The central idea is to decouple 3D spatial anchoring from photorealistic observation synthesis. For scene construction, Image2Sim uses a feed-forward feature Gaussian model that lifts posed RGB-D observations into a 3D feature-Gaussian representation in a single pass. For rendering, we propose a Geometry-Aware One-Step Pixel Flow model that transforms sparse and noisy Gaussian projections into high-quality panoramic RGB-D observations. Image2Sim also serves as a fully automated embodied data engine that generates high-fidelity observations, executable actions, and diverse navigation instructions at scale. It converts large collections of videos and images into nearly 20K interactive scenes and synthesizes more than 10 million navigation training samples. Navigation models trained entirely in these neural environments achieve strong improvements on major benchmarks and transfer effectively to real-world zero-shot settings. These results suggest that scalable neural simulation can serve as a practical training substrate for embodied navigation at scale."
     },
     {
+      "title": "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies",
+      "link": "https://arxiv.org/abs/2607.04434",
+      "pubDate": "Mon, 06 Jul 2026 20:00:00 GMT",
+      "isoDate": "2026-07-06T20:00:00.000Z",
+      "creator": "Tianxing Chen, Yue Chen, Zixuan Li, Junyuan Tang, Kailun Su, Haoran Lu, Weijie Wan, Baijun Chen, Songling Liu, Haowen Yan, Honghao Su, Zhiyang Dou, Kaixuan Wang, Dandan Zhang, Yunze Liu, Yan Qin, Qiwei Liang, Qiwei Wu, Zijian Lin, Wenwei Lin, Yuran Wang, Minghua He, Tianshu Wu, Ruihai Wu, Jingquan Zhou, Kai-Chong Lei, Haibao Yu, Yuanfeng Ji, Weiyang Jin, Guanyu Lin, Xiaofan Li, Qi Xiong, Renjing Xu, Zhongyu Li, Wenhao Chai, Enze Xie, Ziwei Wang, Yao Mu, Hao Dong, Wojciech Matusik, Mingyu Ding, Wenbo Ding, Ping Luo, Masayoshi Tomizuka",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Generalist robot manipulation policies have advanced rapidly, yet existing benchmarks remain limited in systematically evaluating their capabilities. Many rely on simple, short-horizon, or skill-narrow tasks with limited capability coverage, and are often conducted only in simulation or only in the real world. Simulation enables scalable feedback but misses physical deployment challenges, while real-world evaluation is costly, time-consuming, and difficult to reproduce. We introduce RoboDojo, a unified sim-and-real benchmark for comprehensive evaluation of generalist robot manipulation policies. RoboDojo includes 42 simulation tasks and 18 real-world tasks covering diverse and complementary manipulation capabilities. The simulation benchmark evaluates five dimensions: generalization, memory, precision, long-horizon execution, and open-vocabulary instruction following, while the real-world benchmark exposes policies to challenging physical-world deployment conditions. RoboDojo supports scalable evaluation through heterogeneous parallel simulation in Isaac Sim and provides RoboDojo-RealEval, a reproducible real-world evaluation system with remote cloud access, standardized hardware, scene reset, evaluation protocol, and deployment interface. Together with XPolicyLab, policies can be integrated once and evaluated across simulation and real-world settings with minimal adaptation. We integrate 30 policies into XPolicyLab and evaluate them on RoboDojo, establishing a public leaderboard and systematic analysis of current policy performance. The website is available at http://robodojo-benchmark.com/."
+    },
+    {
+      "title": "WildCity: A Real-World City-Scale Testbed for Rendering, Simulation, and Spatial Intelligence",
+      "link": "https://arxiv.org/abs/2607.06838",
+      "pubDate": "Mon, 06 Jul 2026 20:00:00 GMT",
+      "isoDate": "2026-07-06T20:00:00.000Z",
+      "creator": "Xiangyu Han, Mengyu Yang, Jiaqi Li, Bowen Chang, Ziyu Chen, Hexu Zhao, Rahul Kumar Agrawal, Anthony Rodriguez, Fiona Hua, Marco Pavone, Chen Feng, Yiming Li",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "WildCity: A Real-World City-Scale Testbed for Rendering, Simulation, and Spatial Intelligence",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Humans can navigate an unfamiliar city and gradually form a coherent spatial mental map spanning tens of square kilometers. Can AI build spatial representations at a comparable scale? Although recent foundation models have advanced scene reconstruction and embodied intelligence, scaling to entire cities remains an open challenge, primarily due to the lack of city-scale data. To bridge the gap, we introduce WildCity, a real-world multimodal dataset collected by autonomous fleets traversing complex urban environments. Our dataset includes 18 trajectories, each averaging 83.7 kilometers in length, and preserves the core challenges of in-the-wild perception, e.g., dynamic objects, lighting variations, and imperfect camera poses. We further establish an urban-tailored reconstruction baseline and convert the reconstructed environments into a closed-loop simulator. Beyond the dataset and baseline, we systematically analyze the key challenges on the path to simulation-ready urban digital twins: scalability, extrapolation, and uncertainty. Ultimately, WildCity aims to catalyze progress not only in city-scale rendering, but more broadly in the pursuit of AI that can perceive, remember, and reason across space at a scale comparable to human cognition. Project page: https://han-xiangyu.github.io/Wild-City/"
+    },
+    {
+      "title": "Imagined Rollouts are Kinematic, Not Dynamic: A Diagnosis of Long-Horizon World-Model Failure",
+      "link": "https://arxiv.org/abs/2607.05966",
+      "pubDate": "Mon, 06 Jul 2026 20:00:00 GMT",
+      "isoDate": "2026-07-06T20:00:00.000Z",
+      "creator": "Finn Rasmus Schäfer, Korbinian Moller, Yuan Gao, Christian Oefinger, Sebastian Schmidt, Johannes Betz",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Imagined Rollouts are Kinematic, Not Dynamic: A Diagnosis of Long-Horizon World-Model Failure",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Long-horizon failure in world models is conventionally attributed to compounding error, a generic framing that does not distinguish what kind of error compounds. We propose a kinematic-vs-dynamic reframing: world models tend to imagine kinematically rather than dynamically. We operationalize this as the imagined Kinematic-Consistency Error, a per-step diagnostic that measures how far a rollout departs from a closed-form kinematic null, paired with a perturbation protocol that tests whether iKCE responds when physical conditions cross a regime boundary. We instantiate the diagnostic on a released DreamerV3 checkpoint trained on DMC walker-walk, where imagined iKCE runs roughly two orders of magnitude above that of matched real-physics rollouts. Across a friction sweep that crosses the gait-collapse boundary, the model's iKCE stays statistically flat even as the trained policy's reward collapses through the same range, providing the kinematic-not-dynamic signature. The diagnostic distinguishes kinematic from dynamic imagination at horizons longer than the embodiment's gait period."
+    },
+    {
       "title": "PixWorld: Unifying 3D Scene Generation and Reconstruction in Pixel Space",
       "link": "https://arxiv.org/abs/2607.05373",
       "pubDate": "Sun, 05 Jul 2026 20:00:00 GMT",
@@ -159,124 +263,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "3D reconstruction and generation are commonly tackled by separate paradigms: pixel-based regression for reconstruction, and latent diffusion for generation. Recent works attempt to unify them in latent space, but with notable drawbacks: the diffusion objective is defined on latent features rather than the underlying 3D representation, and both branches suffer from information loss introduced by latent encoding, while requiring a pretrained Variational Autoencoder (VAE) or Representation Autoencoder (RAE). In this paper, we reformulate these two tasks under a unified pixel-space diffusion paradigm and introduce PixWorld, a single model that jointly addresses 3D reconstruction and generation. By supervising diffusion directly on rendered images, PixWorld removes the above limitations and aligns optimization with 3D scene fidelity. Beyond photometric and perceptual supervision that operates at the 2D image level and lacks 3D geometric awareness, we further introduce a geometry perception loss that aligns rendered views with their ground truth in the geometry-aware feature space of a pretrained 3D foundation model, providing 3D structural supervision. PixWorld consistently outperforms prior latent-space generation methods and matches state-of-the-art reconstruction methods, demonstrating the superiority of a unified pixel-space approach."
-    },
-    {
-      "title": "Vision Pretraining for Dense Spatial Perception",
-      "link": "https://arxiv.org/abs/2607.05247",
-      "pubDate": "Sun, 05 Jul 2026 20:00:00 GMT",
-      "isoDate": "2026-07-05T20:00:00.000Z",
-      "creator": "Zelin Fu, Bin Tan, Changjiang Sun, Shaohui Liu, Kecheng Zheng, Yinghao Xu, Xing Zhu, Yujun Shen, Nan Xue",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Vision Pretraining for Dense Spatial Perception",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Dense spatial perception is essential for physical intelligence, where visual systems are expected to recover structured, metric, and actionable representations from pixel observations. Modern visual foundation models tend to prioritize semantic invariance, often at the expense of detailed spatial understanding. In this work, we study vision pretraining through a boundary-centric lens, motivated by the premise that boundaries and shape discontinuities offer essential cues for perceiving geometric properties. Concretely, we propose masked boundary modeling, a self-supervised paradigm that dynamically learns sub-pixel boundary representations and subsequently leverages the discovered boundary-bearing tokens as masked targets to facilitate dense visual token learning. By scaling this framework, we develop LingBot-Vision and demonstrate its efficacy across a diverse set of downstream vision tasks with DINOv3 as a strong baseline. Remarkably, LingBot-Vision drives the progression from LingBot-Depth 1.0 to LingBot-Depth 2.0 for depth completion, and thereby yields enhanced depth estimation, a key pillar for embodied artificial intelligence. Our findings reveal that boundary modeling goes beyond simple line segments and instead serves as a scalable pretraining principle for learning spatially structured visual representations."
-    },
-    {
-      "title": "InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization",
-      "link": "https://arxiv.org/abs/2607.04988",
-      "pubDate": "Sun, 05 Jul 2026 20:00:00 GMT",
-      "isoDate": "2026-07-05T20:00:00.000Z",
-      "creator": "Haoxiang Ma, Junhao Cai, Xiaoxu Xu, Hao Li, Yuyin Yang, Yang Tian, Jiafei Cao, Hongrui Zhu, Zherui Qiu, Zhaxizhuoma, Yuqiang Yang, Jiaqi Peng, Xueyuan Wei, Yangkun Zhu, Jiahao Jiang, Xing Gao, Hanqing Wang, Feng Yuan, Kailin Li, Xueyue Zhu, Tai Wang, Yan Ding, Jiangmiao Pang, Jia Zeng, Jingjing Zhang, Bowen Zhou, Yao Mu, Chunhua Shen, Weinan Zhang",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Unified models for robot manipulation aim to equip one policy with both the semantic priors of pretrained VLMs and the physical dynamics learned through future prediction. In practice, existing designs tend to erode the semantics of the pretrained backbone, suffer interference among heterogeneous objectives, and learn future prediction from scratch in pixel space, leaving the dynamics priors of pretrained video generators unexploited. We present InternVLA-A1.5, which builds the policy on a native VLM backbone that keeps training on VQA and subtask prediction, and attaches a lightweight unified expert for continuous action generation. Future prediction is recast as a latent-querying problem, where a small set of learnable foresight tokens condenses the task-relevant future into a compact latent code under the supervision of a frozen pretrained video generation model, so the policy inherits world-model dynamics priors without ever learning pixel-level generation. The video branch is discarded at inference, keeping real-time control. Pretrained on 1.2M robot episodes and 3M multimodal samples, InternVLA-A1.5 achieves the best overall results on all six simulation benchmarks. In the real world, the preserved semantics deliver the strongest compositional generalization on held-out instruction bindings, and the two designs together sustain long-horizon execution."
-    },
-    {
-      "title": "KVpop -- Key-Value Cache Compression with Predictive Online Pruning",
-      "link": "https://arxiv.org/abs/2607.05061",
-      "pubDate": "Sun, 05 Jul 2026 20:00:00 GMT",
-      "isoDate": "2026-07-05T20:00:00.000Z",
-      "creator": "Lukas Hauzenberger, Niklas Schmidinger, Anamaria-Roberta Hartl, David Stap, Thomas Schmied, Sebastian Böck, Günter Klambauer, Sepp Hochreiter",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "KVpop -- Key-Value Cache Compression with Predictive Online Pruning",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Key-value (KV) cache growth is a major bottleneck in autoregressive decoding, as memory and bandwidth scale linearly with context length. Existing KV eviction methods often rely on static heuristics or proxy scores, which poorly track future token utility and cause brittle eviction as relevance shifts. To address this, we introduce KVpop, which learns a fixed-budget KV eviction policy by directly supervising the keep-or-drop decision. The scorer is trained against a novel future-attention target, computed efficiently without materializing dense attention maps. We further introduce a delayed memory-based scorer that, uniquely among learned eviction methods, defers scoring for a fixed number of steps to exploit near-future context. On AIME and HMMT mathematical reasoning, KVpop retains 98% of full-attention performance on Qwen3-4B at 75% KV cache compression and 97% at 88% compression, consistently outperforming established eviction baselines. Qwen3-8B shows even stronger results, reaching near-full teacher performance. These results show that supervising eviction with future-attention signals cuts memory costs while maintaining quality."
-    },
-    {
-      "title": "Do All Visual Tokens Matter Equally? Object-Evidence Preserving Token Merging for Vision-Language Retrieval",
-      "link": "https://arxiv.org/abs/2607.04605",
-      "pubDate": "Sun, 05 Jul 2026 20:00:00 GMT",
-      "isoDate": "2026-07-05T20:00:00.000Z",
-      "creator": "Suhyeong Park, Junha Jung, Jungwoo Park, Jaewoo Kang",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Do All Visual Tokens Matter Equally? Object-Evidence Preserving Token Merging for Vision-Language Retrieval",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Multi-vector vision-language retrieval preserves fine-grained visual evidence through maximum-similarity late interaction, but dense image-side tokens make storage and scoring expensive. Existing token compression methods reduce this cost, yet they can remove or collapse object- and region-level evidence that future query tokens may need to select. We propose SaMer, an object-aware token merging framework that compresses image-side post-projector tokens into K representative centroids while preserving the original late-interaction interface. SaMer uses object annotations only during training as a merge prior to discourage cross-instance mixing, requires no ground-truth bounding boxes or detectors at inference time, and adapts only the shared projection layer with frozen vision and language backbones. With K=64, SaMer removes more than 93% of image-side tokens and reduces ColPali storage by 16.09times, while improving R@1 on Flickr30K and MSCOCO. These gains arise because object-aware merging preserves query-selectable object evidence that pruning or feature-only pooling can remove or collapse. SaMer also outperforms compression baselines and shows stronger phrase-level grounding, suggesting that efficient multi-vector retrieval depends not only on reducing token count, but on preserving the evidence future query tokens need to select."
-    },
-    {
-      "title": "EdgeBench: Unveiling Scaling Laws of Learning from Real-World Environments",
-      "link": "https://arxiv.org/abs/2607.05155",
-      "pubDate": "Sun, 05 Jul 2026 20:00:00 GMT",
-      "isoDate": "2026-07-05T20:00:00.000Z",
-      "creator": "Deyao Zhu, Xin Zhou, Shengling Qin, Xuekai Zhu, Hangliang Ding, Shu Zhong, Zixin Wen, Zhonglin Xie, Chenhui Gou, Linxuan Ren, Yueyang Wang, Junfeng Zhong, Rui Liu, Tian Gao, Yangguang Lin, Jingyuan Zhang, Maojia Song, Xuan Qi, Jinhong Wu, Chenyang Zhang, Yinzhu Piao, Ziru Niu, Hongbin Lin, Lingxiang Meng, Peng Tang, Chengyao Tang, Shanyu Wu, Huanyu Zheng, Yu Liu, Liya Zhu, He Wang, Ming Ding, Ziyu Wan, Hao Liu, Sibo Wang, Haotian Zhu, Xintian Zhang, Nan Chai, Yipeng Liu, Panhao Lai, Sihang Yuan, Zixin Su, Ge Zhang, Wangchunshu Zhou, Yantao Du, Wenhao Huang, Guang Shi",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "EdgeBench: Unveiling Scaling Laws of Learning from Real-World Environments",
-      "images": [
-        {
-          "url": "https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png",
-          "alt": "BibSonomy",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png",
-          "alt": "Reddit",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Pretraining scaling laws reveal that model capability improves predictably with data and compute. But learning from real world environments after deployment remains far less understood. Analyzing roughly 38,000 hours of agent interaction with the environment across 134 real world tasks, we find, to the best of our knowledge, the first evidence that overall performance during environment learning follows a log-sigmoid scaling law with remarkably high precision, reaching R^2 = 0.998. Across model generations, we also find that agent learning speed roughly doubles every three months. This discovery stems from EdgeBench, a suite of 134 real world tasks with ultra-long horizons, spanning scientific discovery, software engineering, combinatorial optimization, professional knowledge work, formal mathematics, and interactive games. Each task sustains at least 12 hours of continuous agent operation under rich, multilevel feedback, and is built through substantial expert effort. We publicly release 51 tasks and our full evaluation framework to accelerate the study of how agents learn from real world experience."
-    },
-    {
-      "title": "LLM-as-a-Verifier: A General-Purpose Verification Framework",
-      "link": "https://arxiv.org/abs/2607.05391",
-      "pubDate": "Sun, 05 Jul 2026 20:00:00 GMT",
-      "isoDate": "2026-07-05T20:00:00.000Z",
-      "creator": "Jacky Kwok, Shulu Li, Pranav Atreya, Yuejiang Liu, Yixing Jiang, Chelsea Finn, Marco Pavone, Ion Stoica, Azalia Mirhoseini",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "LLM-as-a-Verifier: A General-Purpose Verification Framework",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Scaling pre-training, post-training, and test-time compute have become the central paradigms for improving the capabilities of LLMs. In this work, we identify verification, the ability to determine the correctness of a solution, as a new scaling axis. To unlock this and demonstrate its effectiveness, we introduce LLM-as-a-Verifier, a general-purpose verification framework that provides fine-grained feedback for agentic tasks without requiring additional training. Unlike standard LM judges that prompt LLMs to produce discrete scores for candidate solutions, LLM-as-a-Verifier computes the expectation over the distribution of scoring token logits to generate continuous scores. This probabilistic formulation enables verification to scale along multiple dimensions: (1) score granularity, (2) repeated evaluation, and (3) criteria decomposition. In particular, we show that scaling the scoring granularity leads to better separation between positive and negative solutions, resulting in more calibrated comparisons. Moreover, scaling repeated evaluation and criteria decomposition consistently lead to additional gains in verification accuracy through variance and complexity reduction. We further introduce a cost-efficient ranking algorithm for selecting the best solution among candidates using the verifier's continuous scores. LLM-as-a-Verifier achieves state-of-the-art performance on Terminal-Bench V2 (86.5%), SWE-Bench Verified (78.2%), RoboRewardBench (87.4%), and MedAgentBench (73.3%). Beyond verification, the fine-grained signals from LLM-as-a-Verifier can also serve as a proxy for estimating task progress. We build an extension for Claude Code, enabling developers to monitor and improve their own agentic systems. Finally, we show that LLM-as-a-Verifier can provide dense feedback for RL, improving the sample efficiency of SAC and GRPO on robotics and mathematical reasoning benchmarks."
-    },
-    {
-      "title": "Multiplayer Interactive World Models with Representation Autoencoders",
-      "link": "https://arxiv.org/abs/2607.05352",
-      "pubDate": "Sun, 05 Jul 2026 20:00:00 GMT",
-      "isoDate": "2026-07-05T20:00:00.000Z",
-      "creator": "Anthony Hu, Václav Volhejn, Adrien Ramanana Rahary, Chris Mulder, Aditya Makkar, Amélie Royer, Manu Orsini, Alyx Liao, Adam Jelley, Eloi Alonso, Florian Laurent, Fredrik Norén, James Swingos, Jan Hünermann, Kent Rollins, Lucas Hosseini, Matthieu Le Cauchois, Maxim Peter, Pim de Witte, Tim Brown, Vincent Micheli, Moritz Böhle, Gabriel de Marmiesse, Viktoriia Sharmanska, Lucia Specia, Michael Black, Patrick Pérez",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Multiplayer Interactive World Models with Representation Autoencoders",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "We introduce the first multiplayer world model for highly dynamic environments governed by complex physical interactions. Whereas single-player world models treat the other agents as part of the environment, ours conditions on the action streams of multiple agents, learning to attribute changes in the scene to the correct player and to stay coherent under arbitrary combinations of their actions. We study this problem in the game of Rocket League, where players compete and cooperate under fast, tightly coupled dynamics. Trained on 10,000 hours of gameplay collected with publicly available bots, our 5-billion-parameter latent diffusion model generates four-player matches in real time, producing 20 frames per second on a single Nvidia B200 GPU. Although trained only on short clips, its rollouts stay stable far beyond the training horizon: distributional quality holds steady out to five minutes, the longest horizon we measure, and in practice we observe rollouts continuing for hours with no sign of collapse. We systematically investigate the central design choices: the video codec, the generative objective, and the multiplayer conditioning scheme. In addition, we characterize how behavior changes with model and data scale, including the capabilities that emerge and the failure modes that persist. We further develop targeted evaluations that probe the model's physical understanding rather than visual appearance alone. To support continued research on multiplayer world models, we release our dataset, our full training and inference codebase, and a live demo."
-    },
-    {
-      "title": "MV-Forcing: Long Multi-View Video Generation via 4D-Grounded Spatio-Temporal Self-Forcing",
-      "link": "https://arxiv.org/abs/2607.05376",
-      "pubDate": "Sun, 05 Jul 2026 20:00:00 GMT",
-      "isoDate": "2026-07-05T20:00:00.000Z",
-      "creator": "Gal Fiebelman, Hadar Averbuch-Elor, Sagie Benaim",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "MV-Forcing: Long Multi-View Video Generation via 4D-Grounded Spatio-Temporal Self-Forcing",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Recent advances in video diffusion models have enabled either long single-view generation through temporal autoregression, or short multi-view synthesis through bidirectional attention. However, generating long, multi-view consistent videos of dynamic scenes remains unsolved. In this work, we present MV-Forcing, a framework that composes temporal and view-wise autoregression within a single diffusion model by introducing a 4D geometric bridge between sequentially generated views. Our key insight is that an autoregressive 3D reconstruction model naturally interfaces between autoregressively generated views. Given a completed source view, we reconstruct its 3D structure and render a geometric prior of the next target viewpoint, which the diffusion model refines into a high-quality video. To extend generation beyond the teacher's fixed temporal window, we introduce a joint denoising regime where both view slots are initialized from noise during training, enabling temporally unbounded generation. We distill the model via Distribution Matching Distillation with Spatio-Temporal Self-Forcing, closing the train-inference exposure bias gap for both temporal and view-sequential autoregression. Extensive experiments on both synthetic and real-world data demonstrate that MV-Forcing produces geometrically consistent multi-view videos of dynamic scenes at arbitrary lengths and viewpoint counts using a single few-step student model."
     }
   ],
-  "lastUpdated": "2026-07-08T11:11:24.233Z"
+  "lastUpdated": "2026-07-09T12:12:59.734Z"
 }
