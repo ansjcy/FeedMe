@@ -5,6 +5,199 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "Automating cross-repo documentation with GitHub Agentic Workflows",
+      "link": "https://github.blog/ai-and-ml/github-copilot/automating-cross-repo-documentation-with-github-agentic-workflows/",
+      "pubDate": "Wed, 08 Jul 2026 21:11:56 +0000",
+      "isoDate": "2026-07-08T21:11:56.000Z",
+      "creator": "David Pine",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Automating cross-repo documentation with GitHub Agentic Workflows",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/diagram.png?resize=1024%2C355",
+          "alt": "Sequence diagram showing an automated docs workflow: merging a feature pull request in microsoft/aspire triggers a GitHub Actions check that has an agent draft the documentation, open a draft pull request in microsoft/aspire.dev, and request SME review—so docs ship with the feature.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/7679720?v=4&s=200",
+          "alt": "David Pine",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/4175913?v=4&s=200",
+          "alt": "Peli de Halleux",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/Universe26-Icon.svg",
+          "alt": "GitHub Universe 2026",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Explore how the Aspire team turns merged product changes into SME-reviewed docs pull requests, closing the gap between release and documentation.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/automating-cross-repo-documentation-with-github-agentic-workflows/\">Automating cross-repo documentation with GitHub Agentic Workflows</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "GitHub availability report: June 2026",
+      "link": "https://github.blog/news-insights/company-news/github-availability-report-june-2026/",
+      "pubDate": "Wed, 08 Jul 2026 19:35:51 +0000",
+      "isoDate": "2026-07-08T19:35:51.000Z",
+      "creator": "Jakub Oleksy",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "GitHub availability report: June 2026",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>In June, we experienced six incidents that resulted in degraded performance across GitHub services.</p>\n<p>The post <a href=\"https://github.blog/news-insights/company-news/github-availability-report-june-2026/\">GitHub availability report: June 2026</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "How GitHub Copilot enables zero DNS configuration for GitHub Pages",
+      "link": "https://github.blog/ai-and-ml/github-copilot/how-github-copilot-enables-zero-dns-configuration-for-github-pages/",
+      "pubDate": "Wed, 08 Jul 2026 16:00:00 +0000",
+      "isoDate": "2026-07-08T16:00:00.000Z",
+      "creator": "Bruno Borges",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How GitHub Copilot enables zero DNS configuration for GitHub Pages",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/Screenshot-2026-07-07-at-3.42.14-PM.png?resize=721%2C266",
+          "alt": "Screenshot of Copilot CLI screen that says 'create a public repository for this folder with the same name'",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/Screenshot-2026-07-07-at-3.42.20-PM.png?resize=935%2C68",
+          "alt": "Screenshot showing the public repository has been created.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/Screenshot-2026-07-07-at-3.42.33-PM.png?resize=932%2C563",
+          "alt": "Screenshot showing a prompt to enable GitHub Pages for this repo and create a website landing page about 'GitHub Pages and Custom Domains.'",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/Screenshot-2026-07-07-at-3.43.09-PM.png?resize=899%2C277",
+          "alt": "Screenshot showing Profile > Tools highlighted.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/Screenshot-2026-07-07-at-3.43.35-PM.png?resize=928%2C519",
+          "alt": "Screenshot showing Copilot CLI prompt 'list my namecheap domains.'",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/Screenshot-2026-07-07-at-3.43.46-PM.png?resize=934%2C194",
+          "alt": "Screenshot of Copilot asking the user 'What is your namecheap API key? It will be saved locally...'",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/Screenshot-2026-07-07-at-3.43.52-PM.png?resize=506%2C210",
+          "alt": "Screenshot of domains: brunoborges.io and toml-schema.org.",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/Screenshot-2026-07-07-at-3.44.01-PM.png?resize=934%2C98",
+          "alt": "Screenshot of a prompt asking Copilot to 'Enable this GitHub Pages site with the custom domain ghpagesblog.click registered with namecheap.'",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Go from an empty repository to a live custom domain with HTTPS in about 14 minutes, without manually editing a single DNS record.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/how-github-copilot-enables-zero-dns-configuration-for-github-pages/\">How GitHub Copilot enables zero DNS configuration for GitHub Pages</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Q1 2026 Innovation Graph update: Open source collaboration is accelerating worldwide",
+      "link": "https://github.blog/news-insights/policy-news-and-insights/q1-2026-innovation-graph-update-open-source-collaboration-is-accelerating-worldwide/",
+      "pubDate": "Tue, 07 Jul 2026 16:00:00 +0000",
+      "isoDate": "2026-07-07T16:00:00.000Z",
+      "creator": "Natalie Guevara",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Q1 2026 Innovation Graph update: Open source collaboration is accelerating worldwide",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/outbound_collaboration_innovation_graph.png?resize=1024%2C500",
+          "alt": "Stacked area chart of quarterly outbound collaboration among the top 30 economies, showing a steady increase from Q1 2020 to Q1 2026.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/outbound_collaboration_flow_q1_2026_light_mode.png?resize=1024%2C780",
+          "alt": "A grid of line charts showing the top 30 economies by quarterly outbound collaboration from 2020-2026. Most of the charts show increasing collaboration volume, with the European Union ranked first. ",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/git_pushes_flow_q1_2026_light_mode.png?resize=1024%2C740",
+          "alt": "A grid of line charts showing the top 30 economies by quarterly git pushes from 2020-2026. Most of the charts show increasing counts of git pushes, with the European Union ranked first. ",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/repositories_flow_q1_2026_light_mode.png?resize=1024%2C746",
+          "alt": "A grid of line charts showing the top 30 economies by quarter-over-quarter change in repository count from 2020-2026. Most of the charts show increasing quarter-over-quarter growth of repositories, with India ranked first.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/syria_sparklines_q1_2026_light_mode.png?resize=688%2C1024",
+          "alt": "Line charts of git pushes, developers, organizations, repositories, and outbound collaboration for Syria for Q1 2020 through Q1 2026. Most charts show increasing activity, with particularly pronounced recent growth in the number of developers in Syria. ",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/4744405?v=4&s=200",
+          "alt": "Kevin Xu",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>New Innovation Graph data shows global developer communities growing faster than ever, with collaboration reaching new highs across many economies.</p>\n<p>The post <a href=\"https://github.blog/news-insights/policy-news-and-insights/q1-2026-innovation-graph-update-open-source-collaboration-is-accelerating-worldwide/\">Q1 2026 Innovation Graph update: Open source collaboration is accelerating worldwide</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "How GitHub used secret scanning to reach inbox zero",
       "link": "https://github.blog/security/application-security/how-github-used-secret-scanning-to-reach-inbox-zero/",
       "pubDate": "Thu, 02 Jul 2026 16:00:00 +0000",
@@ -285,183 +478,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>GitHub joined the United Nations Development Programme in Ghana to explore how open source governance can support one of West Africa's most ambitious digital reform efforts. </p>\n<p>The post <a href=\"https://github.blog/open-source/social-impact/github-and-undp-team-up-to-advance-development-priorities-in-ghana-with-open-source/\">GitHub and UNDP team up to advance development priorities in Ghana with open source</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Transitioning as a Hubber",
-      "link": "https://github.blog/developer-skills/career-growth/transitioning-as-a-hubber/",
-      "pubDate": "Fri, 26 Jun 2026 12:00:00 +0000",
-      "isoDate": "2026-06-26T12:00:00.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Transitioning as a Hubber",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/38347168?v=4&s=200",
-          "alt": "Arthur Searle",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/Universe26-Icon.svg",
-          "alt": "GitHub Universe 2026",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>How GitHub's culture and benefits helped me be the best version of myself.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/career-growth/transitioning-as-a-hubber/\">Transitioning as a Hubber</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Evaluating performance and efficiency of the GitHub Copilot agentic harness across models and tasks",
-      "link": "https://github.blog/ai-and-ml/github-copilot/evaluating-performance-and-efficiency-of-the-github-copilot-agentic-harness-across-models-and-tasks/",
-      "pubDate": "Thu, 25 Jun 2026 22:59:45 +0000",
-      "isoDate": "2026-06-25T22:59:45.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Evaluating performance and efficiency of the GitHub Copilot agentic harness across models and tasks",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/architecture-harness-surfaces.png?resize=1024%2C592",
-          "alt": "Diagram showing the agentic harness powers the GitHub Copilot CLI, the GitHub Copilot app, other IDEs like VS Code and Xcode, and others built with the SDK.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/token-efficiency.png?resize=1024%2C683",
-          "alt": "Chart showing Copilot CLI versus model-vendor harnesses using SWE-bench Verified, SWE-bench Pro, SkillsBench, Win-Hill, and TerminalBench2 tests. For Sonnet 4.6 and Opus 4.7, Copilot CLI performed better in all cases, using fewer tokens. For GPT 5.4 and GPT 5.5, CLI performed better in all cases except SWE-bench Verified, where it did 7% and 4% worse, respectively.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/task-resolution.png?resize=1024%2C786",
-          "alt": "Task resolution benchmarking test results for Copilot CLI versus model-vendor harnesses. For SWE-bench Verified tests, Copilot CLI performed better with Sonnet 4.6 and Opus 4.7, but worse with GPT 5.4 and GPT 5.5. For SWE-bench Pro, Copilot CLI only performed slightly worse with Sonnet 4.6, and performed better for other models. For SkillsBench, Copilot CLI performed worse for Sonnet 4.6 and Opus 4.7, but better for GPT models. For Win-Hill, Copilot CLI performed equal or better for all models. For TerminalBench 2, Copilot CLI performed better for Sonnet 4.6 and Opus 4.7, equal for GPT 5.5, and worse for GPT 5.4.",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/resolution-rate-vs-cost-variance-noarrow.png?resize=1024%2C676",
-          "alt": "A diagram showing mean cost per task compared to the resolution rate. Copilot CLI performs equal to or better than model-vendor harnesses.",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/26466942?v=4&s=200",
-          "alt": "Shibani Basava",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/21318528?v=4&s=200",
-          "alt": "Carlos Castro",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Explore how the GitHub Copilot agentic harness delivers strong results across multiple benchmarks and leading token efficiency, while maintaining flexibility to choose among more than 20 models.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/evaluating-performance-and-efficiency-of-the-github-copilot-agentic-harness-across-models-and-tasks/\">Evaluating performance and efficiency of the GitHub Copilot agentic harness across models and tasks</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "I automated my job (and it made me a better leader)",
-      "link": "https://github.blog/developer-skills/github/i-automated-my-job-and-it-made-me-a-better-leader/",
-      "pubDate": "Tue, 23 Jun 2026 16:00:00 +0000",
-      "isoDate": "2026-06-23T16:00:00.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "I automated my job (and it made me a better leader)",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/3139143?v=4&s=200",
-          "alt": "Ashley Willis",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>Explore how my day as a senior leader looks now that I use 40 automations to help, and learn more about some of my favorites.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/github/i-automated-my-job-and-it-made-me-a-better-leader/\">I automated my job (and it made me a better leader)</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub joins coalition advocating for fixes to California AI Transparency Act to protect open source",
-      "link": "https://github.blog/news-insights/policy-news-and-insights/github-joins-coalition-advocating-for-fixes-to-california-ai-transparency-act-to-protect-open-source/",
-      "pubDate": "Tue, 23 Jun 2026 15:48:00 +0000",
-      "isoDate": "2026-06-23T15:48:00.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "GitHub joins coalition advocating for fixes to California AI Transparency Act to protect open source",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/Screenshot-2026-06-23-at-10.41.24-AM.png?resize=906%2C974",
-          "alt": "PDF of the letter sent to Senator Becker.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/92055439?v=4&s=200",
-          "alt": "Margaret Tucker",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/Universe26-Icon.svg",
-          "alt": "GitHub Universe 2026",
-          "title": "",
-          "position": 6
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>We’re calling for targeted amendments to resolve conflicts with open source licensing and align with international transparency frameworks while preserving regulatory intent.</p>\n<p>The post <a href=\"https://github.blog/news-insights/policy-news-and-insights/github-joins-coalition-advocating-for-fixes-to-california-ai-transparency-act-to-protect-open-source/\">GitHub joins coalition advocating for fixes to California AI Transparency Act to protect open source</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-07-07T07:50:00.512Z"
+  "lastUpdated": "2026-07-09T07:49:31.343Z"
 }
