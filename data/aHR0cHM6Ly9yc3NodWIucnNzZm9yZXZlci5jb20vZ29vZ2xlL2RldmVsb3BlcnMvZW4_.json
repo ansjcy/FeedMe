@@ -5,6 +5,82 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "LiteRT.js, Google's high performance Web AI Inference",
+      "link": "https://developers.googleblog.com/en/litertjs-googles-high-performance-web-ai-inference/",
+      "pubDate": "Wed, 08 Jul 2026 16:00:00 GMT",
+      "isoDate": "2026-07-08T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "LiteRT.js, Google's high performance Web AI Inference",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram1_uua0KLc.original.png",
+          "alt": "diagram1",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Benchmarking_w__yolo26n_1600x900.original.jpg",
+          "alt": "Benchmarking w_ yolo26n 1600x900",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Classical_model_perf_1.original.png",
+          "alt": "Classical model perf (1)",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "We're excited to introduce LiteRT.js, the newest member of the LiteRT family! LiteRT.js is our powerful solution for running machine learning models directly in the browser, extending Google's cross-platform edge AI runtime to the web. Built for JavaScript developers, LiteRT.js delivers state-of-the-art ML model inference performance on WebGPU and upcoming WebNN, with a fallback to WebAssembly for CPU. This post provides a quick tour of LiteRT.js and gives web developers everything they need to get started."
+    },
+    {
+      "title": "Bridging the Domain Gap: AI Race Coach built with Antigravity and Gemini",
+      "link": "https://developers.googleblog.com/en/bridging-the-domain-gap-ai-race-coach-built-with-antigravity-and-gemini/",
+      "pubDate": "Tue, 07 Jul 2026 16:00:00 GMT",
+      "isoDate": "2026-07-07T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Bridging the Domain Gap: AI Race Coach built with Antigravity and Gemini",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_8nq8lw8nq8lw8nq8.original.jpg",
+          "alt": "Gemini_Generated_Image_8nq8lw8nq8lw8nq8",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/105011094-GBMG2991_1.original.jpg",
+          "alt": "105011094-GBMG2991 (1)",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_nk5kb8nk5kb8nk5k.original.jpg",
+          "alt": "Gemini_Generated_Image_nk5kb8nk5kb8nk5k",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_cbbrhccbbrhccbbr.original.jpg",
+          "alt": "Gemini_Generated_Image_cbbrhccbbrhccbbr",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/IMG_20260528_113543_5.original.jpg",
+          "alt": "IMG_20260528_113543 (5)",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "On May 23, 2026, fresh off the stage at Google I/O, our Google Developer Experts (GDEs) converged on..."
+    },
+    {
       "title": "We terminated a TPU mid-training and it recovered in seconds: Introduction to elastic training with MaxText",
       "link": "https://developers.googleblog.com/en/we-terminated-a-tpu-mid-training-and-it-recovered-in-seconds-introduction-to-elastic-training-with-maxtext/",
       "pubDate": "Sun, 05 Jul 2026 16:00:00 GMT",
@@ -221,59 +297,7 @@
       ],
       "contentSource": "RSS",
       "content": "AI coding agents are rapidly shifting from reactive assistants that complete tasks when prompted to ..."
-    },
-    {
-      "title": "How A2A is Building a World of Collaborative Agents",
-      "link": "https://developers.googleblog.com/en/how-a2a-is-building-a-world-of-collaborative-agents/",
-      "pubDate": "Wed, 17 Jun 2026 16:00:00 GMT",
-      "isoDate": "2026-06-17T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "How A2A is Building a World of Collaborative Agents",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Agent_Collaboration_Architecuture_image.original.png",
-          "alt": "Agent Collaboration Architecuture image",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Foldrun_architecture.original.png",
-          "alt": "Foldrun architecture",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Celebrating the first anniversary of the Agent-to-Agent (A2A) protocol, this blog post highlights how the framework enables autonomous AI agents to securely collaborate and hand off tasks without the rigidity of traditional APIs. By delegating complex workflows to specialized peer agents, A2A prevents context pollution, ensures data privacy, and simplifies application design through modularity. To demonstrate this ecosystem in action, the post spotlights FoldRun—an agentic interface for life sciences that orchestrates complex protein structure predictions—alongside diverse A2A use cases spanning commerce, data streaming, DevOps, and telecommunications."
-    },
-    {
-      "title": "Announcing the Agentic Resource Discovery specification",
-      "link": "https://developers.googleblog.com/en/announcing-the-agentic-resource-discovery-specification/",
-      "pubDate": "Tue, 16 Jun 2026 16:00:00 GMT",
-      "isoDate": "2026-06-16T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Announcing the Agentic Resource Discovery specification",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ARD_logo_wall.original.png",
-          "alt": "ARD logo wall",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ard-infographics.original.png",
-          "alt": "ard-infographics",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "An open specification for finding and verifying tools, skills, and agents across the web.Agents are ..."
     }
   ],
-  "lastUpdated": "2026-07-08T11:52:40.710Z"
+  "lastUpdated": "2026-07-10T12:32:01.880Z"
 }
