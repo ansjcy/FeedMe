@@ -5,6 +5,70 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "Better tools made Copilot code review worse. Here’s how we actually improved it.",
+      "link": "https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/",
+      "pubDate": "Fri, 10 Jul 2026 15:57:47 +0000",
+      "isoDate": "2026-07-10T15:57:47.000Z",
+      "creator": "Napalys Klicius",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Better tools made Copilot code review worse. Here’s how we actually improved it.",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/1.png?resize=1024%2C478",
+          "alt": "Diagram showing the flow before — a simplified illustration of the general-purpose behavior we observed: widening the search, guessing paths, and accumulating context.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/2.png?resize=1024%2C589",
+          "alt": "Diagram showing the flow after: a simplified illustration of the review-shaped behavior the prompt guided toward: stay anchored to the diff, narrow with grep and glob, then read focused ranges with view.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/11835209?v=4&s=200",
+          "alt": "Napalys Klicius",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>How migrating Copilot code review to shared Unix-style code exploration tools reduced review cost by reshaping agent workflows around pull request evidence.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/\">Better tools made Copilot code review worse. Here&#8217;s how we actually improved it.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "How GitHub gave every repository a durable owner",
+      "link": "https://github.blog/security/application-security/how-github-gave-every-repository-a-durable-owner/",
+      "pubDate": "Thu, 09 Jul 2026 16:29:37 +0000",
+      "isoDate": "2026-07-09T16:29:37.000Z",
+      "creator": "Michael Recachinas",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How GitHub gave every repository a durable owner",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/CleanShot-2026-07-09-at-12.21.43@2x.png?resize=683%2C1024",
+          "alt": "Flowchart of repository ownership enforcement: repositories are scanned for ownership, missing ownership opens a 30-day archive warning issue, unresolved issues lead to archiving, and resolved issues are closed automatically. ",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/Screenshot-2026-07-09-at-9.03.06-AM.png?resize=962%2C853",
+          "alt": "GitHub repository creation page showing required ownership custom property fields.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/924243?v=4&s=200",
+          "alt": "Michael Recachinas",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>GitHub had over 14,000 repositories. Fewer than half had clear ownership. Here's how we gave every active repository a validated owner in under 45 days, archived the rest, and made ownership the foundation for everything that followed.</p>\n<p>The post <a href=\"https://github.blog/security/application-security/how-github-gave-every-repository-a-durable-owner/\">How GitHub gave every repository a durable owner</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Automating cross-repo documentation with GitHub Agentic Workflows",
       "link": "https://github.blog/ai-and-ml/github-copilot/automating-cross-repo-documentation-with-github-agentic-workflows/",
       "pubDate": "Wed, 08 Jul 2026 21:11:56 +0000",
@@ -202,7 +266,7 @@
       "link": "https://github.blog/security/application-security/how-github-used-secret-scanning-to-reach-inbox-zero/",
       "pubDate": "Thu, 02 Jul 2026 16:00:00 +0000",
       "isoDate": "2026-07-02T16:00:00.000Z",
-      "creator": "Natalie Guevara",
+      "creator": "Michael Recachinas",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
       "translated_title": "How GitHub used secret scanning to reach inbox zero",
@@ -396,89 +460,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>The open source Git project just released Git 2.55. Here is GitHub’s look at some of the most interesting features and changes introduced since last time.</p>\n<p>The post <a href=\"https://github.blog/open-source/git/highlights-from-git-2-55/\">Highlights from Git 2.55</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "Inside the Advisory Database and what happens when vulnerability volume breaks records",
-      "link": "https://github.blog/security/supply-chain-security/inside-the-advisory-database-and-what-happens-when-vulnerability-volume-breaks-records/",
-      "pubDate": "Mon, 29 Jun 2026 16:10:20 +0000",
-      "isoDate": "2026-06-29T16:10:20.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Inside the Advisory Database and what happens when vulnerability volume breaks records",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/613839791-af0d8e48-215f-48c7-8f0c-16ef531592f7.png?resize=1024%2C640",
-          "alt": "Line graph showing a sharp increase in PVR submissions, CNA requests, and Repo GHSAs published, starting around January 2026. The lines go back to May 2025 and is relatively flat with a slight increase until January 2026.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/63199643?v=4&s=200",
-          "alt": "Madison Ficorilli",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>The GitHub Advisory Database is processing more vulnerability reports than ever before. Here's what's driving the surge, how we're responding, and how the community can help.</p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/inside-the-advisory-database-and-what-happens-when-vulnerability-volume-breaks-records/\">Inside the Advisory Database and what happens when vulnerability volume breaks records</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub and UNDP team up to advance development priorities in Ghana with open source",
-      "link": "https://github.blog/open-source/social-impact/github-and-undp-team-up-to-advance-development-priorities-in-ghana-with-open-source/",
-      "pubDate": "Fri, 26 Jun 2026 16:53:57 +0000",
-      "isoDate": "2026-06-26T16:53:57.000Z",
-      "creator": "Natalie Guevara",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "GitHub and UNDP team up to advance development priorities in Ghana with open source",
-      "images": [
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/image006.jpg?resize=800%2C533",
-          "alt": "A speaker walks among the audience at the workshop.",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2026/06/image007.jpg?resize=800%2C533",
-          "alt": "A speaker walks among the audience at the workshop.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://avatars.githubusercontent.com/u/3246297?v=4&s=200",
-          "alt": "Mathias Schindler",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/Universe26-Icon.svg",
-          "alt": "GitHub Universe 2026",
-          "title": "",
-          "position": 7
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>GitHub joined the United Nations Development Programme in Ghana to explore how open source governance can support one of West Africa's most ambitious digital reform efforts. </p>\n<p>The post <a href=\"https://github.blog/open-source/social-impact/github-and-undp-team-up-to-advance-development-priorities-in-ghana-with-open-source/\">GitHub and UNDP team up to advance development priorities in Ghana with open source</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-07-09T07:49:31.343Z"
+  "lastUpdated": "2026-07-11T06:23:26.858Z"
 }
