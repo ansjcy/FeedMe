@@ -5,6 +5,44 @@
   "link": "https://slack.engineering",
   "items": [
     {
+      "title": "Shipyard: How We Built Slack’s Next-Generation EC2 Platform",
+      "link": "https://slack.engineering/shipyard-how-we-built-slacks-next-generation-ec2-platform/",
+      "pubDate": "Tue, 14 Jul 2026 16:10:08 +0000",
+      "isoDate": "2026-07-14T16:10:08.000Z",
+      "creator": "Archie Gunasekara",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Shipyard: How We Built Slack’s Next-Generation EC2 Platform",
+      "images": [
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2026/05/1.png?w=640",
+          "alt": "Diagram showing the Shipyard AMI workflow: images are baked for each OS and architecture, go through automated testing, and are then distributed to the appropriate environments. Arrows indicate the flow from image creation to deployment, highlighting the end-to-end process without detailing each step.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2026/05/3.png?w=257",
+          "alt": "Diagram of a simple Gondola pipeline showing sequential stages: code build, test, and deployment. While this example is small, real pipelines can include hundreds of stages and multiple branching paths ",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2026/05/2.png?w=640",
+          "alt": "Flow diagram showing the division of responsibilities between global service teams and service owners. The diagram highlights which tasks and processes each group owns, clarifying the points where responsibilities are separate and where collaboration is required.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://slack.engineering/wp-content/uploads/sites/7/2026/05/5.png?w=640",
+          "alt": "Diagram of the Shipyard Longshorem instance test workflow. It shows the Shipyard API triggering test instances, messages flowing through SQS queues, and Auto Scaling Groups managing the test instances, illustrating how these components coordinate to run and validate tests.",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Over the past few years, we’ve been on a journey to modernise how we run Amazon Elastic Compute Cloud (EC2) instances at Slack. In our first post, Advancing Our Chef Infrastructure, we shared how we moved from a single Chef stack to a resilient, multi-stack setup with versioned cookbook deployments and safer promotion workflows. This&#8230;"
+    },
+    {
       "title": "Agentic Testing: Where Agents Fit in the E2E Testing Stack",
       "link": "https://slack.engineering/agentic-testing-where-agents-fit-in-the-e2e-testing-stack/",
       "pubDate": "Thu, 11 Jun 2026 14:15:28 +0000",
@@ -243,39 +281,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "We manage the build pipeline that delivers Quip and Slack Canvas’s backend. A year ago, we were chasing exciting ideas to help engineers ship better code, faster. But we had one huge problem: builds took 60 minutes. With a build that slow, the whole pipeline gets less agile, and feedback doesn’t come to engineers until&#8230;"
-    },
-    {
-      "title": "改进我们的Chef基础设施：安全而不中断 (原标题: Advancing Our Chef Infrastructure: Safety Without Disruption)",
-      "link": "https://slack.engineering/advancing-our-chef-infrastructure-safety-without-disruption/",
-      "pubDate": "Thu, 23 Oct 2025 18:17:56 +0000",
-      "isoDate": "2025-10-23T18:17:56.000Z",
-      "creator": "Archie Gunasekara",
-      "summary": "## 改进Chef基础设施：安全而不中断\n\n这篇文章是Slack关于其Chef基础设施演进的续篇，重点介绍了如何在不中断现有食谱或角色（cookbooks or roles）的情况下，提升Chef部署的安全性和可靠性。面对将Chef Policyfiles引入可能带来的短期风险，Slack选择了一条改进现有EC2框架的路径。\n\n### 挑战：单一生产环境的风险\n\n此前，每个实例都通过定时任务（cron job）定期触发Chef运行，主要用于合规性，确保配置一致。虽然这些任务在可用区（Availability Zones）之间错开，以避免同时影响所有节点，但单一共享的生产环境存在一个关键限制：新配置的节点会立即获取最新的（可能存在问题的）变更。在大规模扩容事件中，这可能导致数十或数百个节点以损坏的配置启动，构成严重的可靠性风险。\n\n### 解决方案一：拆分Chef环境\n\n为了解决上述问题，Slack将单一的生产Chef环境拆分为多个独立的桶，例如 `prod-1` 到 `prod-6`。服务团队仍然将实例启动为“prod”，但系统会在后台根据实例的可用区ID将其映射到这些更具体的环境中。\n\n*   **实现方式**：\n    *   Slack的基础AMI（Amazon Machine Image）中包含一个名为 **Poptart Bootstrap** 的工具。该工具在实例启动时通过 `cloud-init` 运行。\n    *   Poptart Bootstrap 被扩展，以检查节点的可用区ID，并将其分配到相应的编号生产Chef环境（`prod-1` 到 `prod-6`）。\n*   **优势**：\n    *   新节点不再从一个全局的真理源拉取配置，而是均匀分布在隔离的环境中，增加了额外的安全性和弹性。\n    *   对单个环境的变更现在只影响特定可用区中的节点，显著降低了部署期间的风险和影响范围。\n\n![环境流程图](https://slack.engineering/wp-content/uploads/sites/7/2025/10/env_flow.png?w=438)\n\n### 发布列车模型\n\n为了管理跨多个Chef环境的变更推广，Slack采用了发布列车模型：\n\n*   **推广流程**：最新的食谱变更会在整点推广到沙盒（sandbox）环境，然后是开发（dev）环境，最后从半点开始推广到生产环境。\n*   **金丝雀环境（Canary Environment）**：`prod-1` 被视为金丝雀生产环境，每小时接收更新（假设有新的食谱变更合并），以确保变更在真实的生产环境中得到定期验证，从而在早期以更小、更安全的方式捕获生产影响问题。\n*   **分阶段发布（Staggered Rollout）**：对于 `prod-2` 到 `prod-6`，采用分阶段发布模型。在将新版本部署到 `prod-2` 之前，系统会确保前一个版本已成功推广到所有生产环境，直至 `prod-6`。这种错开的发布方式最大限度地减少了影响范围，并提供了在发布列车早期捕获回归的机会。\n*   **示例**：文章详细展示了不同版本（A、B、C、D、E、F）如何在沙盒、开发和生产环境（prod-1到prod-6）中逐步推广，说明了变更需要更长时间才能完全部署到所有生产节点，但这种延迟为跨不同可用区部署之间提供了宝贵的时间，以便在问题变更完全传播之前捕获并解决任何问题。\n\n### 解决方案二：基于信号的Chef触发机制\n\n由于现在多个生产Chef环境在不同时间接收更新，固定计划的定时任务不再实用。因此，Slack从计划运行转向构建了一个新的服务，根据信号触发节点上的Chef运行。\n\n*   **Chef Librarian增强**：\n    *   Chef Librarian 服务负责监控新的Chef食谱制品并将其上传到所有Chef堆栈。\n    *   它现在被增强，每当将某个版本的制品推广到特定环境时，就会向一个S3桶发送消息。\n*   **S3结构**：S3桶中的 `chef-run-triggers` 键下维护一个嵌套结构，其中每个键代表一个Chef堆栈，再往下是每个环境名称的键。每个环境键都包含一个JSON对象，其中包含清单（manifest）详细信息，如版本、时间戳、食谱版本等。\n*   **Chef Summoner 服务**：\n    *   这是一个运行在Slack每个节点上的服务。\n    *   它负责检查与节点Chef堆栈和环境对应的S3键。\n    *   如果Chef Librarian发出的信号中存在新版本，Summoner会读取配置的 `Splay` 值并相应地安排Chef运行。\n    *   **Splay**：用于错开Chef运行，避免给定环境和堆栈中的所有节点同时尝试运行Chef，从而避免负载峰值和资源争用。\n    *   **合规性回退**：即使没有新的信号，Chef Summoner 也会确保Chef至少每12小时运行一次，以保持合规性并确保节点保持其预期的配置状态。\n\n![Summoner Logo](https://slack.engineering/wp-content/uploads/sites/7/2025/10/summoner_logo.png?w=640)\n\n### 结论\n\n通过引入拆分的生产环境和基于信号的Chef触发机制，Slack成功避免了新节点立即拉取错误配置的问题。现在，每个节点都与其可用区环境绑定，变更逐步推出。这种设置大大增强了弹性，消除了单点故障，并构建了保障措施，使整个系统更安全、更可预测。",
-      "shortSummary": "Slack改进了其Chef基础设施，旨在实现更安全、更可靠的部署，同时避免中断。核心改进包括：将单一生产环境拆分为多个基于可用区的独立环境（如prod-1到prod-6），通过金丝雀发布和发布列车模型逐步推广变更，从而显著缩小了风险范围。同时，将Chef运行触发机制从固定计划改为基于信号的“Chef Summoner”服务，该服务根据Chef Librarian在S3中发出的更新信号来调度Chef运行，并包含12小时的合规性回退机制。这些措施共同提升了系统的弹性和可预测性。",
-      "translated_title": "改进我们的Chef基础设施：安全而不中断",
-      "images": [
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/10/env_flow.png?w=438",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/10/summoner_logo.png?w=640",
-          "alt": "",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://slack.engineering/wp-content/uploads/sites/7/2025/10/summoner_flow.png?w=630",
-          "alt": "",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "完整文章",
-      "content": "Last year, I wrote a blog post titled Advancing Our Chef Infrastructure, where we explored the evolution of our Chef infrastructure over the years. We talked about the shift from a single Chef stack to a multi-stack model, and the challenges that came with it &#8211; from updating how we handle cookbook uploads to navigating&#8230;"
     }
   ],
-  "lastUpdated": "2026-07-13T07:32:22.097Z"
+  "lastUpdated": "2026-07-15T06:24:54.301Z"
 }
