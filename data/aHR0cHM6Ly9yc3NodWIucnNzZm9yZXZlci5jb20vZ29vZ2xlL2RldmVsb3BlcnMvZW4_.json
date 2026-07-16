@@ -5,6 +5,19 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Expanding Choice in Gemini Enterprise Agent Platform: Introducing Grounding with Parallel Web Search",
+      "link": "https://developers.googleblog.com/en/expanding-choice-in-gemini-enterprise-agent-platform-introducing-grounding-with-parallel-web-search/",
+      "pubDate": "Wed, 15 Jul 2026 16:00:00 GMT",
+      "isoDate": "2026-07-15T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Expanding Choice in Gemini Enterprise Agent Platform: Introducing Grounding with Parallel Web Search",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Google Cloud has partnered with Parallel Web Systems to natively integrate Parallel's search infrastructure as a web grounding provider on the Gemini Enterprise Agent Platform. This integration enables developers to anchor their AI agents in verifiable, real-time web results, significantly improving factual accuracy for complex enterprise workflows. Additionally, the partnership offers expanded architectural flexibility, allowing users to programmatically extract, permanently cache, and process web data alongside other large language models."
+    },
+    {
       "title": "Systems Engineering Playbook: Optimizing Qwen 3.5-397B MoE on Ironwood (TPU7x)",
       "link": "https://developers.googleblog.com/en/systems-engineering-playbook-optimizing-qwen-35-397b-moe-on-ironwood-tpu7x/",
       "pubDate": "Mon, 13 Jul 2026 16:00:00 GMT",
@@ -294,27 +307,7 @@
       ],
       "contentSource": "RSS",
       "content": "Building AI agents often leaves developers uncertain if prompt tweaks to fix single errors will accidentally cause widespread regressions in production. To bridge this gap, Google has introduced a new developer skill for coding agents that automates a five-stage evaluation flywheel: preparing data, running inference, grading with adaptive AutoRaters, analyzing failure clusters, and executing targeted optimizations. Running continuously against production traffic or on-demand via synthetic scenarios, this tool allows developers to describe testing goals in plain language while an independent evaluation service safely validates and counts actual performance improvements."
-    },
-    {
-      "title": "Build reliable multi-agent applications with ADK Go 2.0. Discover our new graph-based workflow engine, built-in human-in-the-loop, and dynamic orchest...",
-      "link": "https://developers.googleblog.com/en/announcing-adk-go-20/",
-      "pubDate": "Mon, 29 Jun 2026 16:00:00 GMT",
-      "isoDate": "2026-06-29T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Build reliable multi-agent applications with ADK Go 2.0. Discover our new graph-based workflow engine, built-in human-in-the-loop, and dynamic orchest...",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/workflow_graph.original.png",
-          "alt": "workflow_graph",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "The Agent Development Kit (ADK) for Go 2.0 has been released, introducing a first-class, graph-based workflow engine to help developers compose complex, multi-agent applications. This update adds built-in primitives for human-in-the-loop (HITL) orchestration, dynamic execution using plain Go code, and automated resilience features like exponential backoff retries. By unifying the execution model, both single-agent applications and intricate graphs now run on the same runtime, simplifying telemetry and state persistence."
     }
   ],
-  "lastUpdated": "2026-07-15T11:42:46.410Z"
+  "lastUpdated": "2026-07-16T11:48:02.687Z"
 }
