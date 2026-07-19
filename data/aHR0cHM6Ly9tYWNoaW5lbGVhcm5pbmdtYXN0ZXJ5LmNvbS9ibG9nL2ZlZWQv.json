@@ -5,6 +5,154 @@
   "link": "https://machinelearningmastery.com/blog/",
   "items": [
     {
+      "title": "Scikit-Ollama for Scikit-LLM/Ollama Integration",
+      "link": "https://machinelearningmastery.com/scikit-ollama-for-scikit-llm-ollama-integration/",
+      "pubDate": "Wed, 15 Jul 2026 12:00:34 +0000",
+      "isoDate": "2026-07-15T12:00:34.000Z",
+      "creator": "Iván Palomares Carrascosa",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Scikit-Ollama for Scikit-LLM/Ollama Integration",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/07/mlm-scikit-ollama-for-scikit-llm-ollama-integration-feature.png",
+          "alt": "Scikit-Ollama for Scikit-LLM/Ollama Integration",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "In this article, you will learn how scikit-ollama bridges the scikit-learn interface with locally running Ollama models to perform zero-shot text classification; no cloud API..."
+    },
+    {
+      "title": "LLM Evaluation Frameworks Compared: How to Actually Measure What Your Model Does",
+      "link": "https://machinelearningmastery.com/llm-evaluation-frameworks-compared-how-to-actually-measure-what-your-model-does/",
+      "pubDate": "Tue, 14 Jul 2026 12:00:29 +0000",
+      "isoDate": "2026-07-14T12:00:29.000Z",
+      "creator": "Shittu Olumide",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "LLM Evaluation Frameworks Compared: How to Actually Measure What Your Model Does",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-LLM-Evaluation-Frameworks-Compared.png",
+          "alt": "LLM Evaluation Frameworks Compared: How to Actually Measure What Your Model Does",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "In this article, you will learn how to evaluate LLM applications using the three dominant open-source frameworks &mdash; RAGAS, DeepEval, and Promptfoo &mdash; and why..."
+    },
+    {
+      "title": "Building AI Agents? Here Are Some Anti-Patterns to Avoid.",
+      "link": "https://machinelearningmastery.com/building-ai-agents-here-are-some-anti-patterns-to-avoid/",
+      "pubDate": "Mon, 13 Jul 2026 12:00:58 +0000",
+      "isoDate": "2026-07-13T12:00:58.000Z",
+      "creator": "Bala Priya C",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Building AI Agents? Here Are Some Anti-Patterns to Avoid.",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/07/mlm-ai-agent-anti-patterns-cover.png",
+          "alt": "Building AI Agents? Here Are Some Anti-Patterns to Avoid.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/07/mlm-ai-agent-architecture-anti-patterns.png",
+          "alt": "ai-agent-architecture-anti-patterns",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/07/mlm-ai-agent-production-design.png",
+          "alt": "ai-agent-production-design",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/07/mlm-ai-agent-context-drift-evaluation.png",
+          "alt": "ai-agent-context-drift-evaluation",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Agent systems change constantly in production."
+    },
+    {
+      "title": "Choosing the Right AI Agent Memory Strategy: A Decision-Tree Approach",
+      "link": "https://machinelearningmastery.com/choosing-the-right-ai-agent-memory-strategy-a-decision-tree-approach/",
+      "pubDate": "Fri, 10 Jul 2026 20:26:21 +0000",
+      "isoDate": "2026-07-10T20:26:21.000Z",
+      "creator": "Bala Priya C",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Choosing the Right AI Agent Memory Strategy: A Decision-Tree Approach",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/07/mlm-memory-strategy-decision-tree-cover.png",
+          "alt": "Choosing the Right AI Agent Memory Strategy: A Decision-Tree Approach",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/07/mlm-agent-memory-types.png",
+          "alt": "four types of agent memory",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/07/mlm-q3-semantic-vs-episodic-memory.png",
+          "alt": "semantic-vs-episodic-memory",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/07/mlm-agent-memory-strategy-decision-tree.png",
+          "alt": "Agent memory strategy decision tree",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/07/mlm-multiple-memory-layers.png",
+          "alt": "Combining agent memory types",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "In this article, you will learn how to choose the right memory strategy for an AI agent by working through a simple decision tree, one..."
+    },
+    {
+      "title": "LLM Orchestration Frameworks Compared: LangChain vs. LlamaIndex vs. Raw API Calls",
+      "link": "https://machinelearningmastery.com/llm-orchestration-frameworks-compared-langchain-vs-llamaindex-vs-raw-api-calls/",
+      "pubDate": "Thu, 09 Jul 2026 15:38:56 +0000",
+      "isoDate": "2026-07-09T15:38:56.000Z",
+      "creator": "Shittu Olumide",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "LLM Orchestration Frameworks Compared: LangChain vs. LlamaIndex vs. Raw API Calls",
+      "images": [
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-LLM-Orchestration-Frameworks-Compared.png",
+          "alt": "LLM Orchestration Frameworks Compared: LangChain vs. LlamaIndex vs. Raw API Calls",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-A-two-column-architecture-diagram-comparing-LlamaIndex-and-LangChain-RAG-pipelines-side-by-side.png",
+          "alt": "A two-column architecture diagram comparing LlamaIndex and LangChain RAG pipelines side by side",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "The default assumption in most LLM developer communities is that you start with raw API calls and graduate to a framework as your project grows."
+    },
+    {
       "title": "Tools vs. Subagents: Building Effective AI Agents Without Over-Engineering",
       "link": "https://machinelearningmastery.com/tools-vs-subagents-building-effective-ai-agents-without-over-engineering/",
       "pubDate": "Tue, 07 Jul 2026 17:04:55 +0000",
@@ -144,131 +292,7 @@
       ],
       "contentSource": "RSS",
       "content": "MCP provides a standard way for AI applications and external systems to communicate."
-    },
-    {
-      "title": "The AI Agent Tech Stack Explained",
-      "link": "https://machinelearningmastery.com/the-ai-agent-tech-stack-explained/",
-      "pubDate": "Fri, 26 Jun 2026 14:01:03 +0000",
-      "isoDate": "2026-06-26T14:01:03.000Z",
-      "creator": "Shittu Olumide",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "The AI Agent Tech Stack Explained",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-The-AI-Agent-Tech-Stack-scaled.png",
-          "alt": "The AI Agent Tech Stack Explained",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-A-horizontal-three-step-flow-diagram-showing-the-RAG-pipeline-1-scaled.png",
-          "alt": "A horizontal three-step flow diagram showing the RAG pipeline: Documents → Embeddings Model → Vector Database.",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-A-vertical-stack-diagram-showing-all-7-layers-labeled-top-to-bottom.png",
-          "alt": "A vertical stack diagram showing all 7 layers labeled top to bottom: Foundation Model, Orchestration Framework, Memory Systems, Vector Database and RAG, Tools and Integrations, Observability and Evaluation, Deployment Infrastructure",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "• <a href=\"https://www."
-    },
-    {
-      "title": "Agentic Workflow vs. Autonomous Agent: What’s the Difference?",
-      "link": "https://machinelearningmastery.com/agentic-workflow-vs-autonomous-agent-whats-the-difference/",
-      "pubDate": "Thu, 25 Jun 2026 12:00:29 +0000",
-      "isoDate": "2026-06-25T12:00:29.000Z",
-      "creator": "Shittu Olumide",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Agentic Workflow vs. Autonomous Agent: What’s the Difference?",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-Agentic-Workflow-vs.-Autonomous-Agent-scaled.png",
-          "alt": "Agentic Workflow vs. Autonomous Agent: What’s the Difference?",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "In this article, you will learn how to distinguish agentic workflows from autonomous agents by focusing on who owns control flow &mdash; a human writing..."
-    },
-    {
-      "title": "Context Windows Are Not Memory: What AI Agent Developers Need to Understand",
-      "link": "https://machinelearningmastery.com/context-windows-are-not-memory-what-ai-agent-developers-need-to-understand/",
-      "pubDate": "Wed, 24 Jun 2026 12:00:18 +0000",
-      "isoDate": "2026-06-24T12:00:18.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Context Windows Are Not Memory: What AI Agent Developers Need to Understand",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/mlm-context-windows-are-not-memory-what-ai-agent-developers-need-to-understand.png",
-          "alt": "Context Windows Are Not Memory: What AI Agent Developers Need to Understand",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "In this article, you will learn why a large context window is not the same thing as agent memory, and how techniques like retrieval, compression,..."
-    },
-    {
-      "title": "Clustering Unstructured Text with LLM Embeddings and HDBSCAN",
-      "link": "https://machinelearningmastery.com/clustering-unstructured-text-with-llm-embeddings-and-hdbscan/",
-      "pubDate": "Tue, 23 Jun 2026 12:00:57 +0000",
-      "isoDate": "2026-06-23T12:00:57.000Z",
-      "creator": "Iván Palomares Carrascosa",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Clustering Unstructured Text with LLM Embeddings and HDBSCAN",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/mlm-clustering-unstructured-text-with-llm-embeddings-and-hdbscan-feature.png",
-          "alt": "Clustering Unstructured Text with LLM Embeddings and HDBSCAN",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/hdbscan_embeddings.png",
-          "alt": "Clustering visualizations",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "The current era of Generative AI seems to primarily focus on chat interfaces and prompts, but the range of applications of large language models , or LLMs for short, is not limited to just that."
-    },
-    {
-      "title": "Building Browser-Using AI Agents in Python",
-      "link": "https://machinelearningmastery.com/building-browser-using-ai-agents-in-python/",
-      "pubDate": "Mon, 22 Jun 2026 12:00:28 +0000",
-      "isoDate": "2026-06-22T12:00:28.000Z",
-      "creator": "Shittu Olumide",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Building Browser-Using AI Agents in Python",
-      "images": [
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-Building-Browser-Using-AI-Agents-in-Python.png",
-          "alt": "Building Browser-Using AI Agents in Python",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://machinelearningmastery.com/wp-content/uploads/2026/06/MLM-Shittu-A-vertical-flow-diagram-showing-how-a-task-request-flows-through-the-agent.png",
-          "alt": "A vertical flow diagram showing how a task request flows through the agent",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Most AI agent tutorials start with an API."
     }
   ],
-  "lastUpdated": "2026-07-18T10:25:18.693Z"
+  "lastUpdated": "2026-07-19T10:39:58.085Z"
 }
