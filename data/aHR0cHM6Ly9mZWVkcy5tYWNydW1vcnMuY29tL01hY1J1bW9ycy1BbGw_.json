@@ -5,197 +5,155 @@
   "link": "https://www.macrumors.com",
   "items": [
     {
-      "title": "Apple Raises iPhone Prices in Japan",
-      "link": "https://www.macrumors.com/2026/07/17/apple-raises-iphone-prices-in-japan/",
-      "pubDate": "Sun, 19 Jul 2026 00:39:44 PDT",
-      "isoDate": "2026-07-19T07:39:44.000Z",
+      "title": "Apple's Secret Siri Interface Buried in macOS 27 Beta: How to Enable",
+      "link": "https://www.macrumors.com/2026/07/20/secret-siri-interface-macos-27-beta-enable/",
+      "pubDate": "Mon, 20 Jul 2026 04:09:36 PDT",
+      "isoDate": "2026-07-20T11:09:36.000Z",
+      "creator": "Tim Hardwick",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Apple's Secret Siri Interface Buried in macOS 27 Beta: How to Enable",
+      "images": [
+        {
+          "url": "https://images.macrumors.com/t/ANMdLhB89xmCCSn8IA1u8uFjEjI=/400x0/article-new/2026/07/siri-popover-macos-27%402x-scaled.jpg?lossy",
+          "alt": "siri popover macos 27%402x scaled",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://images.macrumors.com/article-new/2026/07/siri-popover-macos-27@2x-scaled.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Apple appears to be testing a hidden popover interface for Siri AI in the macOS 27 Golden Gate beta that surfaces Writing Tools and contextual actions whenever the user selects some text.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/siri-popover-macos-27@2x-scaled.jpg\" alt=\"\" width=\"2560\" height=\"1440\" class=\"aligncenter size-full wp-image-1056743\" />\r<br/>\nSpotted by a <a href=\"https://www.reddit.com/r/MacOSBeta/comments/1v0hvjd/macos_27_has_a_hidden_lightweight_ui_for_siri_ai/\">member of Reddit's r/MacOSBeta community</a>, the floating icon appears at the top-left of the selected text, expanding when the pointer hovers over it to a compact popover of Writing Tools and contextual actions.\r<br/>\n\r<br/>\nCurrently, the popover offers the tools Rewrite, Proofread, \"How does this sound?\" and \"Edit with Siri,\" plus options for creating key points and summarizing text. The contextual actions are based on the content selected, including things like adding contact details, composing a message or email, creating a calendar event, showing a location in Maps, and tracking flights or packages.\r<br/>\n\r<br/>\nThe Siri popover is disabled by default in macOS 27 developer beta 3 and public beta 1. Beta testers found it can be switched on through a private feature flag, but the feature is clearly unfinished. Some of the actions don't respond, suggesting Apple is still building out the underlying functionality.\r<br/>\n\r<br/>\nAdventurous beta users can try it with the following Terminal command, followed by a restart:\r<br/>\n<strong>sudo mkdir -p /Library/Preferences/FeatureFlags/Domain && sudo defaults write /Library/Preferences/FeatureFlags/Domain/WritingTools LightweightUI_macOS -dict Enabled -bool true</strong>\r<br/>\n\r<br/>\nAnd to disable the interface, use this command followed by a restart:\r<br/>\n<strong>sudo defaults write /Library/Preferences/FeatureFlags/Domain/WritingTools LightweightUI_macOS -dict Enabled -bool false</strong>\r<br/>\n\r<br/>\nNote that the UI's behavior is inconsistent, and there's no guarantee the interface will make it to the final release of macOS 27 Golden Gate this fall.<div class=\"linkback\">Tag: <a href=\"https://www.macrumors.com/guide/siri/\">Siri</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/20/secret-siri-interface-macos-27-beta-enable/\">Apple&#039;s Secret Siri Interface Buried in macOS 27 Beta: How to Enable</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apples-secret-siri-interface-buried-in-macos-27-beta-how-to-enable.2485644/\">Discuss this article</a> in our forums<br/><br/>"
+    },
+    {
+      "title": "Apple Testing New 'Live Notes' Feature at Genius Bar",
+      "link": "https://www.macrumors.com/2026/07/19/apple-testing-live-notes-feature-at-genius-bar/",
+      "pubDate": "Sun, 19 Jul 2026 18:59:22 PDT",
+      "isoDate": "2026-07-20T01:59:22.000Z",
       "creator": "Joe Rossignol",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Apple Raises iPhone Prices in Japan",
+      "translated_title": "Apple Testing New 'Live Notes' Feature at Genius Bar",
       "images": [
         {
-          "url": "https://images.macrumors.com/t/9a2jI2yDe2Op-Mbz4io8fkwnQbY=/400x0/article-new/2026/07/iPhone-17-17-Pro-and-Air-Feature.jpg?lossy",
-          "alt": "iPhone 17 17 Pro and Air Feature",
+          "url": "https://images.macrumors.com/t/DL70fSqSVN70yQT7y0qLMlOVjns=/400x0/article-new/2026/07/Apple-Genius-Bar.jpg?lossy",
+          "alt": "Apple Genius Bar",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://images.macrumors.com/article-new/2026/07/iPhone-17-17-Pro-and-Air-Feature.jpg",
+          "url": "https://images.macrumors.com/article-new/2026/07/Apple-Genius-Bar.jpg",
           "alt": "",
           "title": "",
           "position": 1
         }
       ],
       "contentSource": "RSS",
-      "content": "After <a href=\"https://www.macrumors.com/2026/06/25/apple-explains-why-it-raised-prices/\">raising prices on all Macs and iPads</a> worldwide last month, Apple has now increased the price of iPhone models in Japan.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/iPhone-17-17-Pro-and-Air-Feature.jpg\" alt=\"\" width=\"2500\" height=\"1406\" class=\"aligncenter size-full wp-image-1056654\" />\r<br/>\nAs spotted <a href=\"https://iphoneros.com/104946/subida-precios-iphone-japon\">by the Spanish blog <em>iPhoneros</em></a>, the iPhone 16, iPhone 17e, iPhone 17, iPhone Air, iPhone 17 Pro, and iPhone 17 Pro Max all received price increases on Apple's online store in Japan today. Prices increased by up to 11%.\r<br/>\n\r<br/>\n<table class=\"comparison\" style=\"text-align: center;\">\r<br/>\n    <tr>\r<br/>\n      <th>Model</th>\r<br/>\n      <th>Previous Price</th>\r<br/>\n      <th>New Price</th>\r<br/>\n      <th>Increase</th>\r<br/>\n    </tr>\r<br/>\n    <tr>\r<br/>\n      <td><strong>iPhone 17 Pro Max</strong></td>\r<br/>\n      <td>¥194,800</td>\r<br/>\n      <td>¥214,800</td>\r<br/>\n      <td>10.3%</td>\r<br/>\n    </tr>\r<br/>\n    <tr>\r<br/>\n      <td><strong>iPhone 17 Pro</strong></td>\r<br/>\n      <td>¥179,800</td>\r<br/>\n      <td>¥194,800</td>\r<br/>\n      <td>8.3%</td>\r<br/>\n    </tr>\r<br/>\n    <tr>\r<br/>\n      <td><strong>iPhone Air</strong></td>\r<br/>\n      <td>¥159,800</td>\r<br/>\n      <td>¥177,800</td>\r<br/>\n      <td>11.3%</td>\r<br/>\n    </tr>\r<br/>\n    <tr>\r<br/>\n      <td><strong>iPhone 17</strong></td>\r<br/>\n      <td>¥129,800</td>\r<br/>\n      <td>¥142,800</td>\r<br/>\n      <td>10%</td>\r<br/>\n    </tr>\r<br/>\n    <tr>\r<br/>\n      <td><strong>iPhone 17e</strong></td>\r<br/>\n      <td>¥99,800</td>\r<br/>\n      <td>¥107,800</td>\r<br/>\n      <td>8%</td>\r<br/>\n    </tr>\r<br/>\n    <tr>\r<br/>\n      <td><strong>iPhone 16</strong></td>\r<br/>\n      <td>¥114,800</td>\r<br/>\n      <td>¥124,800</td>\r<br/>\n      <td>8.7%</td>\r<br/>\n    </tr>\r<br/>\n</table>\r<br/>\n<div class=\"clear\"></div>\r<br/>\nApple attributed the Mac and iPad price increases last month to the ongoing memory chip shortage, which has driven up chip prices. In this case, however, the increases are likely due to the Japanese yen's depreciation against the U.S. dollar over the past year.\r<br/>\n\r<br/>\nApple did not raise iPhone prices today in the U.S. or any other countries that we checked.\r<br/>\n\r<br/>\nApple also <a href=\"https://www.macrumors.com/2026/07/17/apple-icloud-plus-price-increase/\">raised the prices of iCloud+</a> <a href=\"https://www.macrumors.com/2026/07/17/apple-music-price-increase/\">and Apple Music plans</a> in many countries today, including Japan, so price increases are a theme this Friday.<div class=\"linkback\">Related Roundups: <a href=\"https://www.macrumors.com/roundup/iphone-17/\">iPhone 17</a>, <a href=\"https://www.macrumors.com/roundup/iphone-17-pro/\">iPhone 17 Pro</a>, <a href=\"https://www.macrumors.com/roundup/iphone-17e/\">iPhone 17e</a>, <a href=\"https://www.macrumors.com/roundup/iphone-air/\">iPhone Air</a></div><div class=\"linkback\">Tag: <a href=\"https://www.macrumors.com/guide/japan/\">Japan</a></div><div class=\"linkback\">Buyer's Guide: <a href=\"https://buyersguide.macrumors.com/#iPhone-17\">iPhone 17 (Neutral)</a>, <a href=\"https://buyersguide.macrumors.com/#iPhone-17-Pro\">iPhone 17 Pro (Caution)</a>, <a href=\"https://buyersguide.macrumors.com/#iPhone-17e\">iPhone 17e (Neutral)</a>, <a href=\"https://buyersguide.macrumors.com/#iPhone-Air\">iPhone Air (Neutral)</a></div><div class=\"linkback\">Related Forum: <a href=\"https://forums.macrumors.com/forums/iphone.99\">iPhone</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/17/apple-raises-iphone-prices-in-japan/\">Apple Raises iPhone Prices in Japan</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-raises-iphone-prices-in-japan.2485560/\">Discuss this article</a> in our forums<br/><br/>"
+      "content": "<img src=\"https://images.macrumors.com/article-new/2026/07/Apple-Genius-Bar.jpg\" alt=\"\" width=\"160\" height=\"90\" class=\"alignleft size-full wp-image-1056730\" />Apple is testing a new AI-powered \"Live Notes\" feature that can transcribe conversations between Genius Bar employees and customers at some of its stores, <a href=\"https://www.bloomberg.com/news/newsletters/2026-07-19/why-apple-s-openai-lawsuit-doesn-t-mention-jony-ive-ai-recording-at-genius-bar-mrrv4mix\">according to <em>Bloomberg</em>'s Mark Gurman</a>. The system is currently opt-in, meaning it is only active if both the employee and customer agree to use it.\r<br/>\n\r<br/>\n\"The transcript is then added to the employee's iPad as part of the record of the repair session,\" he said. \"The goal is to save workers time and let them focus more on the customer, rather than taking notes throughout the appointment.\"<br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/19/apple-testing-live-notes-feature-at-genius-bar/\">Apple Testing New &#039;Live Notes&#039; Feature at Genius Bar</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-testing-new-live-notes-feature-at-genius-bar.2485632/\">Discuss this article</a> in our forums<br/><br/>"
     },
     {
-      "title": "Apple Passed Nvidia to Become World's Most Valuable Company Again",
-      "link": "https://www.macrumors.com/2026/07/17/apple-passed-nvidia-most-valuable-company/",
-      "pubDate": "Sun, 19 Jul 2026 00:39:44 PDT",
-      "isoDate": "2026-07-19T07:39:44.000Z",
+      "title": "Apple Reportedly Worked on Two 'Extreme' Chips",
+      "link": "https://www.macrumors.com/2026/07/19/apple-worked-on-two-extreme-chips/",
+      "pubDate": "Sun, 19 Jul 2026 08:51:57 PDT",
+      "isoDate": "2026-07-19T15:51:57.000Z",
       "creator": "Joe Rossignol",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Apple Passed Nvidia to Become World's Most Valuable Company Again",
+      "translated_title": "Apple Reportedly Worked on Two 'Extreme' Chips",
       "images": [
         {
-          "url": "https://images.macrumors.com/t/uUvSyFPbPiEXGWgZVGtwVKfIYk4=/400x0/article-new/2025/04/Stocks-App-Icon-and-Apple-Logo-Feature.jpg?lossy",
-          "alt": "Stocks App Icon and Apple Logo Feature",
+          "url": "https://images.macrumors.com/t/8F7V9JdoQOx67VYOvu6_wjwmxXA=/400x0/article-new/2022/12/mac-pro-m2-extreme-canceled.jpg?lossy",
+          "alt": "mac pro m2 extreme canceled",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://images.macrumors.com/article-new/2025/04/Stocks-App-Icon-and-Apple-Logo-Feature.jpg",
+          "url": "https://images.macrumors.com/article-new/2022/12/mac-pro-m2-extreme-canceled.jpg",
           "alt": "",
           "title": "",
           "position": 1
         }
       ],
       "contentSource": "RSS",
-      "content": "<img src=\"https://images.macrumors.com/article-new/2025/04/Stocks-App-Icon-and-Apple-Logo-Feature.jpg\" alt=\"\" width=\"160\" height=\"90\" class=\"alignleft size-full wp-image-997823\" />Apple momentarily became the world's most valuable publicly traded company again today after its market valuation surpassed that of Nvidia, <a href=\"https://www.cnbc.com/2026/07/17/apple-nvidia-aapl-nvda-market-cap.html\">according to <em>CNBC</em></a>. However, the two companies have since traded places during today's session.\r<br/>\n\r<br/>\nApple's stock has increased by around 20% since it closed at &#36;275.15 on June 25, pushing the company's valuation to nearly &#36;5 trillion.<div class=\"linkback\">Tag: <a href=\"https://www.macrumors.com/guide/aapl/\">AAPL</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/17/apple-passed-nvidia-most-valuable-company/\">Apple Passed Nvidia to Become World&#039;s Most Valuable Company Again</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-passed-nvidia-to-become-worlds-most-valuable-company-again.2485559/\">Discuss this article</a> in our forums<br/><br/>"
+      "content": "Apple once developed \"M2 Extreme\" and \"M3 Extreme\" chips for the Mac Pro, but it decided not to release them, <a href=\"https://www.bloomberg.com/news/newsletters/2026-07-19/why-apple-s-openai-lawsuit-doesn-t-mention-jony-ive-ai-recording-at-genius-bar-mrrv4mix\">according to <em>Bloomberg</em>'s Mark Gurman</a>. He first reported on this topic <a href=\"https://www.macrumors.com/2022/12/18/mac-pro-m2-extreme-chip-likely-scrapped/\">in 2022</a>, and he touched on it again in his <em>Power On</em> newsletter today.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2022/12/mac-pro-m2-extreme-canceled.jpg\" alt=\"\" width=\"1600\" height=\"900\" class=\"aligncenter size-full wp-image-878445\" />\r<br/>\n\"Extreme\" chips would have had twice as many CPU and GPU cores as Apple's \"Ultra\" chips.\r<br/>\n\r<br/>\n\"The idea was to offer twice as many graphics and main processing cores as that chip,\" he said. \"In the past, I've called this proposed processor the 'Extreme' chip, which to me is the most sensible Apple marketing name for something above Ultra.\"\r<br/>\n\r<br/>\nApple decided not to release the chips due to concerns over higher production costs and limited demand for the Mac Pro, according to Gurman.\r<br/>\n\r<br/>\nNot only did Apple ultimately scrap the \"Extreme\" chips, but it <a href=\"https://www.macrumors.com/2026/03/26/apple-discontinues-mac-pro/\">discontinued the Mac Pro</a> entirely this year <a href=\"https://www.macrumors.com/2026/03/27/reflecting-on-20-years-of-mac-pro/\">following a 20-year run</a>.<div class=\"linkback\">Tag: <a href=\"https://www.macrumors.com/guide/mark-gurman/\">Mark Gurman</a></div><div class=\"linkback\">Buyer's Guide: <a href=\"https://buyersguide.macrumors.com/#Mac_Pro\">Mac Pro (Don't Buy)</a></div><div class=\"linkback\">Related Forum: <a href=\"https://forums.macrumors.com/forums/mac-pro.1\">Mac Pro</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/19/apple-worked-on-two-extreme-chips/\">Apple Reportedly Worked on Two &#039;Extreme&#039; Chips</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-reportedly-worked-on-two-extreme-chips.2485613/\">Discuss this article</a> in our forums<br/><br/>"
     },
     {
-      "title": "Apple Raises iCloud+ Prices in 8 Countries",
-      "link": "https://www.macrumors.com/2026/07/17/apple-icloud-plus-price-increase/",
-      "pubDate": "Sun, 19 Jul 2026 00:39:44 PDT",
-      "isoDate": "2026-07-19T07:39:44.000Z",
-      "creator": "Juli Clover",
+      "title": "Apple's Latest Price Increases Go Beyond Macs and iPads",
+      "link": "https://www.macrumors.com/2026/07/19/apple-just-raised-more-prices/",
+      "pubDate": "Sun, 19 Jul 2026 08:50:00 PDT",
+      "isoDate": "2026-07-19T15:50:00.000Z",
+      "creator": "Joe Rossignol",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Apple Raises iCloud+ Prices in 8 Countries",
+      "translated_title": "Apple's Latest Price Increases Go Beyond Macs and iPads",
       "images": [
         {
-          "url": "https://images.macrumors.com/t/yvRKVhbBboujT0YiztmQAQNSIh8=/400x0/article-new/2024/12/iCloud-General-Feature-Redux.jpg?lossy",
-          "alt": "iCloud General Feature Redux",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://images.macrumors.com/article-new/2024/12/iCloud-General-Feature-Redux.jpg",
+          "url": "https://images.macrumors.com/article-new/2026/06/Apple-Up-Arrow-Fearture.jpg",
           "alt": "",
           "title": "",
           "position": 1
         }
       ],
       "contentSource": "RSS",
-      "content": "Apple has increased the price of <a href=\"https://www.macrumors.com/guide/icloud/\">iCloud</a>+ in Nigeria, Türkiye, Vietnam, Japan, Egypt, New Zealand, the Philippines, and Indonesia, according to an updated version of its <a href=\"https://support.apple.com/en-us/108047\">iCloud support document</a>.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2024/12/iCloud-General-Feature-Redux.jpg\" alt=\"\" width=\"2500\" height=\"1406\" class=\"aligncenter size-full wp-image-982796\" />\r<br/>\nPrice increases range from 11 percent to 55 percent depending on the plan and the country. Nigeria saw the biggest hike, and a 50GB plan is now ₦1,300, up from ₦900. Türkiye saw the next largest increase, with a 50GB plan priced at 49.99 TL, up from 39.99 TL.\r<br/>\n\r<br/>\nApple has likely adjusted pricing due to currency fluctuations. The Japanese Yen has weakened over the past year, for example, and the dollar is up almost 10 percent against the yen. The Turkish Lira has also depreciated, increasing the value of the U.S. dollar.\r<br/>\n\r<br/>\nA full list of price changes can be <a href=\"https://support.apple.com/en-us/108047\">found on Apple's iCloud website</a>. U.S. pricing has not changed, nor has pricing in any other country not listed above.\r<br/>\n\r<br/>\nAll Apple Accounts receive 5GB of free &zwnj;iCloud&zwnj; storage. Apple's &zwnj;iCloud&zwnj;+ plans give users extra storage, as well as perks like Hide My Email, <a href=\"https://www.macrumors.com/guide/homekit-secure-video/\">HomeKit Secure Video</a>, and &zwnj;iCloud&zwnj; Private Relay.<div class=\"linkback\">Tag: <a href=\"https://www.macrumors.com/guide/icloud/\">iCloud</a></div><div class=\"linkback\">Related Forum: <a href=\"https://forums.macrumors.com/forums/apple-music-apple-pay-card-icloud-fitness.134\">Apple Music, Apple Pay/Card, iCloud, Fitness+</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/17/apple-icloud-plus-price-increase/\">Apple Raises iCloud+ Prices in 8 Countries</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-raises-icloud-prices-in-8-countries.2485555/\">Discuss this article</a> in our forums<br/><br/>"
+      "content": "After <a href=\"https://www.macrumors.com/2026/06/25/apple-explains-why-it-raised-prices/\">raising prices on all Macs and iPads</a> worldwide last month, Apple increased prices on more products and services on Friday.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/06/Apple-Up-Arrow-Fearture.jpg\" alt=\"\" width=\"2500\" height=\"1406\" class=\"aligncenter size-full wp-image-1054142\" />\r<br/>\nApple has raised prices on Apple Music and Apple One plans around the world, iCloud+ plans in eight countries, and on iPhone models in Japan.<ul><li><strong><a href=\"https://www.macrumors.com/2026/07/17/apple-music-price-increase/\">Apple Music Now Costs &#36;11.99 as Apple Increases Subscription Prices</a></strong></li>\r<br/>\n<li><strong><a href=\"https://www.macrumors.com/2026/07/17/apple-icloud-plus-price-increase/\">Apple Raises iCloud+ Prices in 8 Countries</a></strong></li>\r<br/>\n<li><strong><a href=\"https://www.macrumors.com/2026/07/17/apple-raises-iphone-prices-in-japan/\">Apple Raises iPhone Prices in Japan</a></strong></li></ul>In the U.S., only the prices of Apple Music and Apple One increased on Friday, with iCloud+ plans and iPhones not affected in that country for now.<br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/19/apple-just-raised-more-prices/\">Apple&#039;s Latest Price Increases Go Beyond Macs and iPads</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apples-latest-price-increases-go-beyond-macs-and-ipads.2485615/\">Discuss this article</a> in our forums<br/><br/>"
     },
     {
-      "title": "Apple Music Now Costs $11.99 as Apple Increases Subscription Prices",
-      "link": "https://www.macrumors.com/2026/07/17/apple-music-price-increase/",
-      "pubDate": "Sun, 19 Jul 2026 00:39:44 PDT",
-      "isoDate": "2026-07-19T07:39:44.000Z",
-      "creator": "Juli Clover",
+      "title": "New Apple Store in Michigan Opening Later This Month",
+      "link": "https://www.macrumors.com/2026/07/19/new-apple-store-opening-in-michigan/",
+      "pubDate": "Sun, 19 Jul 2026 08:45:00 PDT",
+      "isoDate": "2026-07-19T15:45:00.000Z",
+      "creator": "Joe Rossignol",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Apple Music Now Costs $11.99 as Apple Increases Subscription Prices",
+      "translated_title": "New Apple Store in Michigan Opening Later This Month",
       "images": [
         {
-          "url": "https://images.macrumors.com/t/jPqxfP3SYFgIgGrk4CnZ1nJ15M8=/400x0/article-new/2024/08/apple-music.jpg?lossy",
-          "alt": "apple music",
+          "url": "https://images.macrumors.com/t/Fli5UMUmSaTKFhaD1iptv8lQtKs=/400x0/article-new/2026/01/Apple-Store-App-Liquid-Glass-Feature.jpg?lossy",
+          "alt": "Apple Store App Liquid Glass Feature",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://images.macrumors.com/article-new/2024/08/apple-music.jpg",
+          "url": "https://images.macrumors.com/article-new/2026/01/Apple-Store-App-Liquid-Glass-Feature.jpg",
           "alt": "",
           "title": "",
           "position": 1
         }
       ],
       "contentSource": "RSS",
-      "content": "Apple today increased the price of <a href=\"https://www.macrumors.com/guide/apple-music/\">Apple Music</a> and some <a href=\"https://www.macrumors.com/guide/apple-one/\">Apple One</a> subscription bundles. An individual &zwnj;Apple Music&zwnj; subscription is now &#36;1 more expensive in the United States, going from &#36;10.99 to &#36;11.99 per month.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2024/08/apple-music.jpg\" alt=\"\" width=\"1920\" height=\"1080\" class=\"aligncenter size-full wp-image-962031\" />\r<br/>\nPricing on the &zwnj;Apple Music&zwnj; Family plan increased by &#36;3, increasing from &#36;16.99 to &#36;19.99. Student pricing is up &#36;1, with the plan now priced at &#36;6.99.\r<br/>\n\r<br/>\nThe price of the individual &zwnj;Apple One&zwnj; plan hasn't changed, but the Family and Premier plans have gone up &#36;2. The Family plan is now &#36;27.95 per month and the Premier plan is &#36;39.95 per month. Apple has also <a href=\"https://macmagazine.com.br/post/2026/07/17/apple-music-e-apple-one-ficam-mais-caros-no-brasil-e-nos-eua/\">raised prices in Brazil</a>. \r<br/>\n\r<br/>\nIn a statement to <a href=\"https://www.musicbusinessworldwide.com/apple-music-hikes-subscription-prices-as-a-result-of-rising-licensing-costs/\">Music Business Worldwide</a>, Apple said it was raising prices due to the \"result of rising licensing costs.\" &zwnj;Apple Music&zwnj; prices were last increased in October 2022.<div class=\"linkback\">Tag: <a href=\"https://www.macrumors.com/guide/apple-music/\">Apple Music</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/17/apple-music-price-increase/\">Apple Music Now Costs &#36;11.99 as Apple Increases Subscription Prices</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-music-now-costs-11-99-as-apple-increases-subscription-prices.2485554/\">Discuss this article</a> in our forums<br/><br/>"
+      "content": "<img src=\"https://images.macrumors.com/article-new/2026/01/Apple-Store-App-Liquid-Glass-Feature.jpg\" alt=\"\" width=\"160\" height=\"90\" class=\"alignleft size-full wp-image-1034137\" />Apple's retail store at the Briarwood Mall in Ann Arbor, Michigan will be relocating to a new space at the mall on Friday, July 31 at 10 a.m. local time, according to a notice on <a href=\"https://www.apple.com/retail/briarwood/\">the store's page</a>.\r<br/>\n\r<br/>\nThe entrance to the all-new, larger store will be in front of <a href=\"https://www.simon.com/mall/briarwood-mall/stores/the-lawn\">The Lawn</a>, a new outdoor space at the mall.<div class=\"linkback\">Tag: <a href=\"https://www.macrumors.com/guide/apple-store/\">Apple Store</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/19/new-apple-store-opening-in-michigan/\">New Apple Store in Michigan Opening Later This Month</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/new-apple-store-in-michigan-opening-later-this-month.2485614/\">Discuss this article</a> in our forums<br/><br/>"
     },
     {
-      "title": "Apple and DOJ Hold Early Settlement Talks in iPhone Antitrust Case",
-      "link": "https://www.macrumors.com/2026/07/17/apple-doj-antitrust-settlement/",
-      "pubDate": "Sun, 19 Jul 2026 00:39:44 PDT",
-      "isoDate": "2026-07-19T07:39:44.000Z",
-      "creator": "Juli Clover",
+      "title": "AirPods Weekend Deals Include AirPods Pro 3 for $199.99 and AirPods 4 for $99",
+      "link": "https://www.macrumors.com/2026/07/19/airpods-weekend-deals-5/",
+      "pubDate": "Sun, 19 Jul 2026 07:34:26 PDT",
+      "isoDate": "2026-07-19T14:34:26.000Z",
+      "creator": "Mitchel Broussard",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Apple and DOJ Hold Early Settlement Talks in iPhone Antitrust Case",
+      "translated_title": "AirPods Weekend Deals Include AirPods Pro 3 for $199.99 and AirPods 4 for $99",
       "images": [
         {
-          "url": "https://images.macrumors.com/t/i1FmCOhPzkCo4JDaLiuGtRWJt0Q=/400x0/article-new/2024/03/Apple-vs-DOJ-Feature.jpg?lossy",
-          "alt": "Apple vs DOJ Feature",
+          "url": "https://images.macrumors.com/t/s5MGFVBaI9MaVUebZrUYOJO6l_k=/400x0/article-new/2019/10/airpods-pro-3-design.jpg?lossy",
+          "alt": "airpods pro 3 design",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://images.macrumors.com/article-new/2024/03/Apple-vs-DOJ-Feature.jpg",
+          "url": "https://images.macrumors.com/article-new/2019/10/airpods-pro-3-design.jpg",
           "alt": "",
           "title": "",
           "position": 1
         }
       ],
       "contentSource": "RSS",
-      "content": "Apple is working to settle an antitrust lawsuit with the U.S. Department of Justice, reports <em><a href=\"https://www.bloomberg.com/news/articles/2026-07-17/apple-in-early-settlement-talks-with-doj-over-antitrust-case\">Bloomberg</a></em>. Apple has proposed several offers and is now in early settlement talks with the DOJ.\r<br/>\n\r<br/>\n<img class=\"aligncenter size-full wp-image-943221\" src=\"https://images.macrumors.com/article-new/2024/03/Apple-vs-DOJ-Feature.jpg\" alt=\"\" width=\"2500\" height=\"1406\" />\r<br/>\nThe DOJ <a href=\"https://www.macrumors.com/guide/apple-vs-doj/\">sued Apple for antitrust violations in 2024</a> as part of an expansive antitrust investigation into major tech companies. The government accused Apple of getting customers \"hooked\" on its platform through a long-running history of anti-competitive behavior.\r<br/>\n\r<br/>\nThe lawsuit accused Apple of restricting \"super apps\" with broad capabilities, limiting cloud gaming, preferencing its own Messages app over third-party apps, and limiting the function of third-party digital wallets and smartwatches.\r<br/>\n\r<br/>\nSince the lawsuit was filed in 2024, Apple policy changes have addressed many of the claims, weakening the DOJ's position.\r<br/>\n\r<br/>\nWhile the talks are ongoing, <em>Bloomberg</em> says there's no guarantee an agreement will be reached. Apple attempted to <a href=\"https://www.macrumors.com/2025/06/30/doj-apple-antitrust-case-dismissal-denied/\">have the lawsuit dismissed</a> last year, but was unsuccessful. So far, no trial has been scheduled.<div class=\"linkback\">Tags: <a href=\"https://www.macrumors.com/guide/antitrust/\">Apple Antitrust</a>, <a href=\"https://www.macrumors.com/guide/apple-vs-doj/\">Apple vs. DoJ</a>, <a href=\"https://www.macrumors.com/guide/doj/\">DOJ</a>, <a href=\"https://www.macrumors.com/guide/lawsuit/\">Apple Lawsuits</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/17/apple-doj-antitrust-settlement/\">Apple and DOJ Hold Early Settlement Talks in iPhone Antitrust Case</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-and-doj-hold-early-settlement-talks-in-iphone-antitrust-case.2485552/\">Discuss this article</a> in our forums<br/><br/>"
-    },
-    {
-      "title": "MacRumors Giveaway: Win a MacBook Neo Plus Color-Matched Satechi Accessories",
-      "link": "https://www.macrumors.com/2026/07/17/macrumors-giveaway-satechi-macbook-neo/",
-      "pubDate": "Sun, 19 Jul 2026 00:39:44 PDT",
-      "isoDate": "2026-07-19T07:39:44.000Z",
-      "creator": "Juli Clover",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "MacRumors Giveaway: Win a MacBook Neo Plus Color-Matched Satechi Accessories",
-      "images": [
-        {
-          "url": "https://images.macrumors.com/t/4xPLu51aRfkTNgqjz46RWRyyhEE=/400x0/article-new/2026/07/satechi_macbook_neo_collection_lifestyle_4_16x9.jpg?lossy",
-          "alt": "satechi macbook neo collection lifestyle 4 16x9",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://images.macrumors.com/t/qmZgIZ9ITeALR_7EvsDm-fbz-GM=/400x0/article-new/2026/07/satechi-multiport-adapter-1.jpg?lossy",
-          "alt": "satechi multiport adapter 1",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://images.macrumors.com/t/5Q3Ibes7UZd90QGuRZ8mrxnAbAs=/400x0/article-new/2026/07/satechi-multiport-adapter-2.jpg?lossy",
-          "alt": "satechi multiport adapter 2",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://images.macrumors.com/t/j0PGqlYLRBZ2IKmd8tTEH9nS770=/400x0/article-new/2026/07/satechi-snap-hub-1.jpg?lossy",
-          "alt": "satechi snap hub 1",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://images.macrumors.com/t/EYwR_4iw100Fmbj-oIoCyOJBW2w=/400x0/article-new/2026/07/satechi-snap-hub-2.jpg?lossy",
-          "alt": "satechi snap hub 2",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://images.macrumors.com/t/x2VC7pVCHWRDKwMaNX7W3R-kLl4=/400x0/article-new/2026/07/satechi-mouse-1.jpg?lossy",
-          "alt": "satechi mouse 1",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://images.macrumors.com/article-new/2026/07/satechi_macbook_neo_collection_lifestyle_4_16x9.jpg",
-          "alt": "",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://images.macrumors.com/article-new/2026/07/satechi-multiport-adapter-1.jpg",
-          "alt": "",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "For this week's giveaway, we've teamed up with <a href=\"https://satechi.com/\">Satechi</a> to offer <em>MacRumors</em> readers a chance to win a <a href=\"https://www.macrumors.com/roundup/macbook-neo/\">MacBook Neo</a> and a set of <a href=\"https://satechi.com/collections/macbook-neo-accessories\">color-matched MacBook Neo accessories</a> to go along with it. A second-place winner will also get a set of Satechi's new accessories.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/satechi_macbook_neo_collection_lifestyle_4_16x9.jpg\" alt=\"\" width=\"869\" height=\"489\" class=\"aligncenter size-full wp-image-1056604\" />\r<br/>\nThe <a href=\"https://satechi.com/collections/macbook-neo-accessories\">MacBook Neo collection</a> includes the <a href=\"https://satechi.com/products/onthego-5-in-1-multiport-adapter/\">&#36;45 OntheGo 5-in–1 Multiport Adapter</a>, the <a href=\"https://satechi.com/products/usb-c-snap-hub/\">&#36;45 USB-C Snap Hub</a>, and the <a href=\"https://satechi.com/products/slim-ex-wireless-mouse\">&#36;30 Slim EX Wireless Mouse</a>. All of the accessories come in Citrus, Blush, Indigo, and Silver to match the &zwnj;MacBook Neo&zwnj; color options.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/satechi-multiport-adapter-1.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1056594\" />\r<br/>\nSatechi's OntheGo 5-in–1 Multiport Adapter plugs into the USB-C port on the &zwnj;MacBook Neo&zwnj; and adds five additional ports. It has two USB-C ports, a 5Gb/s USB-A port, an HDMI port that supports up to a 4K 60Hz external display, and an SD card slot. One of the USB-C ports offers 60W passthrough charging and the other supports 5Gb/s data transfer speeds.\r<br/>\n\r<br/>\nAn included magnet lets it attach to a <a href=\"https://www.macrumors.com/guide/magsafe/\">MagSafe</a> iPhone or to the lid of the MacBook with a 3M adhesive magnet mount ring. The matching built-in USB-C cable is braided for durability, and it rolls up into the adapter, making it a compact travel option. It measures 2.57 inches in diameter and it's 0.87 inches thick.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/satechi-multiport-adapter-2.jpg\" alt=\"\" width=\"2000\" height=\"1124\" class=\"aligncenter size-full wp-image-1056595\" />\r<br/>\nSatechi's USB-C Snap Hub also adds ports, but it has a different design. It plugs into both of the &zwnj;MacBook Neo&zwnj; USB-C ports, expanding them into six connections. There are two USB-C ports, an HDMI port that supports a 4K 60Hz display, a 5Gb/s USB-A port, an SD card slot, and a microSD card slot. One USB-C port supports 45W passthrough charging, and the other offers 5Gb/s data transfer speeds.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/satechi-snap-hub-1.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1056596\" />\r<br/>\nThe hub fits flush to the side of the &zwnj;MacBook Neo&zwnj;, and it has a dual-material design. The top is an anodized aluminum that matches the &zwnj;MacBook Neo&zwnj;'s body, while the base is a soft-touch ABS plastic meant to match the keyboard finish.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/satechi-snap-hub-2.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1056597\" />\r<br/>\nSatechi's Slim EX Wireless Mouse completes the collection, and it's made from color-matched aluminum. The mouse supports two Bluetooth channels and a 2.4GHz wireless connection, and it is able to work across macOS, iPadOS, Windows, and Android. It features quiet click switches and a precision-machined scroll wheel, plus there is a USB-C rechargeable, user-replaceable battery for longevity.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/satechi-mouse-1.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1056598\" />\r<br/>\nWe have a &zwnj;MacBook Neo&zwnj; and a Satechi accessory set to go along with it for one lucky <em>MacRumors</em> reader, and a second winner will get the &zwnj;MacBook Neo&zwnj; accessory kit. To enter to win, use the widget below and enter an email address. Email addresses will be used solely for contact purposes to reach the winner(s) and send the prize(s). You can earn additional entries by subscribing to our <a href=\"https://my.leadpages.net/leadbox/145ef7173f72a2%3A104a9fa76b46dc/5754903989321728/\">weekly newsletter</a>, subscribing to our <a href=\"https://www.youtube.com/user/macrumors\">YouTube channel</a>, following us on <a href=\"https://twitter.com/macrumors\">Twitter</a>, following us on <a href=\"https://www.instagram.com/macrumors/\">Instagram</a>, following us on <a href=\"https://www.threads.net/@macrumors\">Threads</a>, or visiting the <em>MacRumors</em> <a href=\"https://www.facebook.com/MacRumors\">Facebook page</a>.\r<br/>\n\r<br/>\nDue to the complexities of international laws regarding giveaways, only <strong>U.S. residents who are 18 years or older, UK residents who are 18 years or older, and Canadian residents who have reached the age of majority in their province or territory are eligible to enter</strong>. All federal, state, provincial, and/or local taxes, fees, and surcharges are the sole responsibility of the prize winner. To offer feedback or get more information on the giveaway restrictions, please refer to <a href=\"http://forums.macrumors.com/threads/macrumors-giveaways-why-are-they-only-open-to-u-s-residents.1918337/\">our Site Feedback section</a>, as that is where discussion of the rules will be redirected.\r<br/>\n\r<br/>\n<div class=\"center-wrap\"><a class=\"e-widget no-button\" href=\"https://gleam.io/eiQVW/satechi-giveaway\" rel=\"nofollow\">\r<br/>\n  Satechi Giveaway\r<br/>\n</a><script type=\"text/javascript\" src=\"https://widget.gleamjs.io/e.js\" async=\"true\"></script></div>The contest will run from today (July 17) at 9:00 a.m. Pacific Time through 9:00 a.m. Pacific Time on July 24. The winner will be chosen randomly on or shortly after July 24 and will be contacted by email. The winner will have 48 hours to respond and provide a shipping address before a new winner is chosen.<div class=\"linkback\">Related Roundup: <a href=\"https://www.macrumors.com/roundup/macbook-neo/\">MacBook Neo</a></div><div class=\"linkback\">Tag: <a href=\"https://www.macrumors.com/guide/giveaway/\">Giveaway</a></div><div class=\"linkback\">Buyer's Guide: <a href=\"https://buyersguide.macrumors.com/#MacBookNeo\">MacBook Neo (Buy Now)</a></div><div class=\"linkback\">Related Forum: <a href=\"https://forums.macrumors.com/forums/macbook-neo.129\">MacBook Neo</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/17/macrumors-giveaway-satechi-macbook-neo/\">MacRumors Giveaway: Win a MacBook Neo Plus Color-Matched Satechi Accessories</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/macrumors-giveaway-win-a-macbook-neo-plus-color-matched-satechi-accessories.2485550/\">Discuss this article</a> in our forums<br/><br/>"
+      "content": "Amazon today has the AirPods Pro 3 available for <a href=\"https://buy.geni.us/Proxy.ashx?TSID=3088&GR_URL=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0FQFB8FMG%3Ftag%3Dmacrumors-20%26linkCode%3Dogi%26th%3D1%26psc%3D1\"><strong>&#36;199.99</strong></a>, down from &#36;249.00. This is the best price we've seen on the AirPods Pro 3 since Prime Day ended last month, coming in around &#36;20 higher when compared to that all-time low price, and it's accompanied by a solid deal on the AirPods 4.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2019/10/airpods-pro-3-design.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1021273\" /><em><small>Note: MacRumors is an affiliate partner with some of these vendors. When you click a link and make a purchase, we may receive a small payment, which helps us keep the site running.</small></em>\r<br/>\n\r<br/>\nThis model of the AirPods Pro launched in September 2025 and has 2x better Active Noise Cancellation than the previous generation, better audio quality, a revised fit that's meant to improve comfort and stability, Live Translation for in-person conversations, and heart rate sensing for workouts.\r<br/>\n\r<br/>\n<div class=\"center-wrap\"><a href=\"https://buy.geni.us/Proxy.ashx?TSID=3088&GR_URL=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0FQFB8FMG%3Ftag%3Dmacrumors-20%26linkCode%3Dogi%26th%3D1%26psc%3D1\"target=\"_blank\"><div class=\"fancybutton\"><div class=\"fancybadge\">&#36;49 OFF</div>AirPods Pro 3 for &#36;199.99</div></a></div>\r<br/>\n\r<br/>\nYou can also get the AirPods 4 for <a href=\"https://buy.geni.us/Proxy.ashx?TSID=3088&GR_URL=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0DGHMNQ5Z%3Ftag%3Dmacrumors-20%26linkCode%3Dogi%26th%3D1\"><strong>&#36;99.00</strong></a>, down from &#36;129.00. This is a second-best price on the AirPods 4, which is the base model without Active Noise Cancellation. Amazon provides a July 24 estimated delivery date for free shipping, with faster delivery options for Prime members.\r<br/>\n\r<br/>\n<div class=\"center-wrap\"><a href=\"https://buy.geni.us/Proxy.ashx?TSID=3088&GR_URL=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0DGHMNQ5Z%3Ftag%3Dmacrumors-20%26linkCode%3Dogi%26th%3D1\"target=\"_blank\"><div class=\"fancybutton\"><div class=\"fancybadge\">&#36;30 OFF</div>AirPods 4 for &#36;99.00</div></a></div>\r<br/>\n\r<br/>\nAdditionally, you can get the AirPods 4 with ANC on sale for <a href=\"https://buy.geni.us/Proxy.ashx?TSID=3088&GR_URL=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0DGJ7HYG1%3Flv%3Dshuf%26linkCode%3Dogi%26th%3D1%26tag%3Dmacrumors-20%26channelId%3D1%26plpRedirect%3DmhFallback\"><strong>&#36;144.99</strong></a> right now on Amazon, down from &#36;179.00. Similar to the base model, we haven't tracked a record low price on the AirPods 4 with ANC in months, making today's deal a solid second-best option for anyone shopping for AirPods this summer.\r<br/>\n\r<br/>\n<div class=\"center-wrap\"><a href=\"https://buy.geni.us/Proxy.ashx?TSID=3088&GR_URL=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0DGJ7HYG1%3Flv%3Dshuf%26linkCode%3Dogi%26th%3D1%26tag%3Dmacrumors-20%26channelId%3D1%26plpRedirect%3DmhFallback\"target=\"_blank\"><div class=\"fancybutton\"><div class=\"fancybadge\">&#36;34 OFF</div>AirPods 4 (ANC) for &#36;144.99</div></a></div>\r<br/>\n\r<br/>\n\r<br/>\nHead to our full <a href=\"https://www.macrumors.com/roundup/best-apple-deals/\">Deals Roundup</a> to get caught up with all of the latest deals and discounts that we've been tracking over the past week.\r<br/>\n\r<br/>\n<hr />\r<br/>\n<div class=\"no-raptive\">\r<br/>\n<h3>Deals Newsletter</h3>\r<br/>\nInterested in hearing more about the best deals you can find in 2026? <a href=\"http://eepurl.com/itTnTk\">Sign up</a> for our Deals Newsletter and we'll keep you updated so you don't miss the biggest deals of the season!\r<br/>\n\r<br/>\n<div style=\"text-align:center;margin-bottom:2em;\">\r<br/>\n\r<br/>\n<form action=\"http://macrumors.us5.list-manage.com/subscribe/post?u=7d0106b433773bd0aef5828e0&amp;id=eebad02bf4&amp;f_id=00fbede0f0\" method=\"post\" id=\"mc-embedded-subscribe-form\" name=\"mc-embedded-subscribe-form\" class=\"validate\" target=\"_blank\" novalidate><input type=\"email\" value=\"\" name=\"EMAIL\" size=\"30\" class=\"required email\" id=\"mce-EMAIL\"  placeholder=\"Enter Email Address\" title=\"Email Address\" /><div class=\"response\" id=\"mce-error-response\" style=\"display:none\"></div><div class=\"response\" id=\"mce-success-response\" style=\"display:none\"></div><div style=\"position: absolute; left: -5000px;\"><input type=\"text\" name=\"b_7d0106b433773bd0aef5828e0_eebad02bf4\" tabindex=\"-1\" value=\"\" title=\"form\" /></div><input type=\"submit\" value=\"Subscribe\" name=\"subscribe\" id=\"mc-embedded-subscribe\" class=\"button\"></div>\r<br/>\n</div><div class=\"linkback\">Related Roundup: <a href=\"https://www.macrumors.com/roundup/best-apple-deals/\">Apple Deals</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/19/airpods-weekend-deals-5/\">AirPods Weekend Deals Include AirPods Pro 3 for &#36;199.99 and AirPods 4 for &#36;99</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/airpods-weekend-deals-include-airpods-pro-3-for-199-99-and-airpods-4-for-99.2485610/\">Discuss this article</a> in our forums<br/><br/>"
     }
   ],
-  "lastUpdated": "2026-07-19T10:39:58.321Z"
+  "lastUpdated": "2026-07-20T11:53:10.010Z"
 }
