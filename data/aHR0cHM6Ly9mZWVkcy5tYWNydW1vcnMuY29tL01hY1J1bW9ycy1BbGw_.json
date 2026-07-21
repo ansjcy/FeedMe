@@ -5,155 +5,197 @@
   "link": "https://www.macrumors.com",
   "items": [
     {
-      "title": "Apple's Secret Siri Interface Buried in macOS 27 Beta: How to Enable",
-      "link": "https://www.macrumors.com/2026/07/20/secret-siri-interface-macos-27-beta-enable/",
-      "pubDate": "Mon, 20 Jul 2026 04:09:36 PDT",
-      "isoDate": "2026-07-20T11:09:36.000Z",
+      "title": "Apple Chipmaker TSMC Plans Price Hikes of Up to 10% in 2027",
+      "link": "https://www.macrumors.com/2026/07/21/apple-tsmc-price-hikes-2027/",
+      "pubDate": "Tue, 21 Jul 2026 04:01:56 PDT",
+      "isoDate": "2026-07-21T11:01:56.000Z",
       "creator": "Tim Hardwick",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Apple's Secret Siri Interface Buried in macOS 27 Beta: How to Enable",
+      "translated_title": "Apple Chipmaker TSMC Plans Price Hikes of Up to 10% in 2027",
       "images": [
         {
-          "url": "https://images.macrumors.com/t/ANMdLhB89xmCCSn8IA1u8uFjEjI=/400x0/article-new/2026/07/siri-popover-macos-27%402x-scaled.jpg?lossy",
-          "alt": "siri popover macos 27%402x scaled",
+          "url": "https://images.macrumors.com/t/LeL5wq-nFXT32t_xoagdp_BBv90=/400x0/article-new/2020/08/tsmc_semiconductor_chip_inspection_678x452.jpg?lossy",
+          "alt": "tsmc semiconductor chip inspection 678x452",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://images.macrumors.com/article-new/2026/07/siri-popover-macos-27@2x-scaled.jpg",
+          "url": "https://images.macrumors.com/article-new/2020/08/tsmc_semiconductor_chip_inspection_678x452.jpg",
           "alt": "",
           "title": "",
           "position": 1
         }
       ],
       "contentSource": "RSS",
-      "content": "Apple appears to be testing a hidden popover interface for Siri AI in the macOS 27 Golden Gate beta that surfaces Writing Tools and contextual actions whenever the user selects some text.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/siri-popover-macos-27@2x-scaled.jpg\" alt=\"\" width=\"2560\" height=\"1440\" class=\"aligncenter size-full wp-image-1056743\" />\r<br/>\nSpotted by a <a href=\"https://www.reddit.com/r/MacOSBeta/comments/1v0hvjd/macos_27_has_a_hidden_lightweight_ui_for_siri_ai/\">member of Reddit's r/MacOSBeta community</a>, the floating icon appears at the top-left of the selected text, expanding when the pointer hovers over it to a compact popover of Writing Tools and contextual actions.\r<br/>\n\r<br/>\nCurrently, the popover offers the tools Rewrite, Proofread, \"How does this sound?\" and \"Edit with Siri,\" plus options for creating key points and summarizing text. The contextual actions are based on the content selected, including things like adding contact details, composing a message or email, creating a calendar event, showing a location in Maps, and tracking flights or packages.\r<br/>\n\r<br/>\nThe Siri popover is disabled by default in macOS 27 developer beta 3 and public beta 1. Beta testers found it can be switched on through a private feature flag, but the feature is clearly unfinished. Some of the actions don't respond, suggesting Apple is still building out the underlying functionality.\r<br/>\n\r<br/>\nAdventurous beta users can try it with the following Terminal command, followed by a restart:\r<br/>\n<strong>sudo mkdir -p /Library/Preferences/FeatureFlags/Domain && sudo defaults write /Library/Preferences/FeatureFlags/Domain/WritingTools LightweightUI_macOS -dict Enabled -bool true</strong>\r<br/>\n\r<br/>\nAnd to disable the interface, use this command followed by a restart:\r<br/>\n<strong>sudo defaults write /Library/Preferences/FeatureFlags/Domain/WritingTools LightweightUI_macOS -dict Enabled -bool false</strong>\r<br/>\n\r<br/>\nNote that the UI's behavior is inconsistent, and there's no guarantee the interface will make it to the final release of macOS 27 Golden Gate this fall.<div class=\"linkback\">Tag: <a href=\"https://www.macrumors.com/guide/siri/\">Siri</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/20/secret-siri-interface-macos-27-beta-enable/\">Apple&#039;s Secret Siri Interface Buried in macOS 27 Beta: How to Enable</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apples-secret-siri-interface-buried-in-macos-27-beta-how-to-enable.2485644/\">Discuss this article</a> in our forums<br/><br/>"
+      "content": "Apple's principal chipmaker TSMC plans to raise prices by as much as 10 percent starting in 2027, according to a new report from <em><a href=\"https://asia.nikkei.com/business/technology/exclusive-tsmc-to-raise-chipmaking-prices-by-up-to-10-from-2027\">Nikkei Asia</a></em>.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2020/08/tsmc_semiconductor_chip_inspection_678x452.jpg\" alt=\"\" width=\"678\" height=\"449\" class=\"aligncenter size-full wp-image-756102\" />\r<br/>\nThe Taiwan-based foundry has reportedly held talks with clients about base price increases of 5 to 10 percent, covering both mature nodes and the more advanced processes at 7-nanometers and below that Apple relies on for its A-series and M-series chips. Negotiations began in June and were finalized this month, according to the publication's sources, with the new pricing set to take effect at the start of 2027.\r<br/>\n\r<br/>\nCustomers placing additional high-performance computing orders beyond their original forecasts will face a further 10 to 15 percent premium, which could lead to some advanced chip orders costing more than 10 percent extra overall.\r<br/>\n\r<br/>\nThe increased prices are said to reflect rising costs for materials, manufacturing equipment, and construction of new overseas chip plants. \r<br/>\n\r<br/>\nTSMC reportedly decided to delay the hikes until 2027 to give customers time to adjust after negotiations concluded. The company declined to comment on the reported prices, but told <em>Nikkei Asia</em> that its general market approach was \"strategic, not opportunistic.\"\r<br/>\n\r<br/>\nApple is TSMC's largest customer, and the timing means higher chip costs would come in the same year that Apple is rumored to launch its <a href=\"https://www.macrumors.com/guide/20th-anniversary-iphone/\">20th anniversary iPhone models</a>. Whether Apple absorbs the increases or passes it along to customers remains to be seen. Apple last month dramatically <a href=\"https://www.macrumors.com/2026/06/25/apple-just-increased-prices/\">increased device prices</a> across multiple product lines, which CEO Tim Cook called \"unavoidable,\" citing the soaring cost of memory and storage chips.<div class=\"linkback\">Tags: <a href=\"https://www.macrumors.com/guide/nikkei-com/\">Nikkei</a>, <a href=\"https://www.macrumors.com/guide/tsmc/\">TSMC</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/21/apple-tsmc-price-hikes-2027/\">Apple Chipmaker TSMC Plans Price Hikes of Up to 10% in 2027</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-chipmaker-tsmc-plans-price-hikes-of-up-to-10-in-2027.2485705/\">Discuss this article</a> in our forums<br/><br/>"
     },
     {
-      "title": "Apple Testing New 'Live Notes' Feature at Genius Bar",
-      "link": "https://www.macrumors.com/2026/07/19/apple-testing-live-notes-feature-at-genius-bar/",
-      "pubDate": "Sun, 19 Jul 2026 18:59:22 PDT",
-      "isoDate": "2026-07-20T01:59:22.000Z",
+      "title": "Apple Testing 7-Inch Display for Largest 20th Anniversary iPhone Model",
+      "link": "https://www.macrumors.com/2026/07/21/iphone-20-pro-max-7-inch-display/",
+      "pubDate": "Tue, 21 Jul 2026 02:08:23 PDT",
+      "isoDate": "2026-07-21T09:08:23.000Z",
+      "creator": "Tim Hardwick",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Apple Testing 7-Inch Display for Largest 20th Anniversary iPhone Model",
+      "images": [
+        {
+          "url": "https://images.macrumors.com/t/Z94WwKzX3fBz-VzV5nFzaTReoIY=/400x0/article-new/2026/01/Mostly-Screen-iPhone-Purple-Feature-2027.jpg?lossy",
+          "alt": "Mostly Screen iPhone Purple Feature 2027",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://images.macrumors.com/article-new/2026/01/Mostly-Screen-iPhone-Purple-Feature-2027.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Apple is reportedly prototyping a larger iPhone display measuring roughly 6.96 inches, which would likely be marketed as a 7-inch panel if it reaches production.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/01/Mostly-Screen-iPhone-Purple-Feature-2027.jpg\" alt=\"\" width=\"2500\" height=\"1406\" class=\"aligncenter size-full wp-image-1033225\" />\r<br/>\nAccording to Chinese leaker <a href=\"https://weibo.com/6048569942/R9G4trdtx\">Digital Chat Station</a>, Apple is testing the display internally in preparation for the 20th anniversary iPhone, which is expected to launch next year. The leaker said that the screen ratio is the same as the current iPhone 17 Pro Max, but whether the display is ultimately used in the iPhone 20 Pro Max remains unconfirmed at this stage. \r<br/>\n\r<br/>\nLast month, <em>Bloomberg</em> <a href=\"https://www.macrumors.com/2026/06/16/20th-anniversary-iphone-size-options/\">reported</a> that Apple had started ramping up work on two sizes of the 20th anniversary iPhone. Multiple rumors have suggested the device will have an edge-to-edge display with <a href=\"https://www.macrumors.com/2026/04/24/20th-anniversary-iphone-micro-curved-oled-panel/\">curved glass</a> at <a href=\"https://www.macrumors.com/2026/04/28/20th-anniversary-iphone-liquid-glass-display/\">all sides</a> for a <a href=\"https://www.macrumors.com/2025/08/25/what-20th-anniversary-iphone-may-look-like/\">nearly borderless</a> visual effect.\r<br/>\n\r<br/>\nThis year's upcoming iPhone 18 Pro‌ and ‌iPhone 18 Pro‌ Max models are expected to be the same dimensions as the current iPhone 17 Pro models, which are available in 6.3- and 6.9-inch sizes. \r<br/>\n\r<br/>\nApple last increased the size of its premium iPhone displays with the iPhone 16 Pro lineup in 2024. The iPhone 16 Pro grew from 6.1 to 6.3 inches, while the iPhone 16 Pro Max increased from 6.7 to 6.9 inches, thanks to slimmer bezels and slightly larger chassis dimensions. \r<br/>\n\r<br/>\nToday's rumor is the first time that we have heard of any plans to increase the display size for Apple's 2027 commemorative iPhone.<div class=\"linkback\">Tags: <a href=\"https://www.macrumors.com/guide/20th-anniversary-iphone/\">20th-Anniversary iPhone</a>, <a href=\"https://www.macrumors.com/guide/digital-chat-station/\">Digital Chat Station</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/21/iphone-20-pro-max-7-inch-display/\">Apple Testing 7-Inch Display for Largest 20th Anniversary iPhone Model</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-testing-7-inch-display-for-largest-20th-anniversary-iphone-model.2485701/\">Discuss this article</a> in our forums<br/><br/>"
+    },
+    {
+      "title": "Samsung Debuts Galaxy Card With 5% Cash Back to Take On Apple Card",
+      "link": "https://www.macrumors.com/2026/07/20/samsung-galaxy-card/",
+      "pubDate": "Mon, 20 Jul 2026 16:39:33 PDT",
+      "isoDate": "2026-07-20T23:39:33.000Z",
+      "creator": "Juli Clover",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Samsung Debuts Galaxy Card With 5% Cash Back to Take On Apple Card",
+      "images": [
+        {
+          "url": "https://images.macrumors.com/t/VCTBKUB5jCMifJv7byG4_q-jcq8=/400x0/article-new/2026/07/samsung-galaxy-card.jpg?lossy",
+          "alt": "samsung galaxy card",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://images.macrumors.com/article-new/2026/07/samsung-galaxy-card.jpg",
+          "alt": "",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Samsung <a href=\"https://www.prnewswire.com/news-releases/samsung-launches-its-first-credit-card-in-the-us--a-mobile-wallet-experience-that-turns-everyday-spending-into-cash-rewards-302829997.html\">today announced</a> the launch of its first credit card in the United States, debuting the Samsung Galaxy Card in partnership with Barclays.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/samsung-galaxy-card.jpg\" alt=\"\" width=\"1070\" height=\"602\" class=\"aligncenter size-full wp-image-1056902\" />\r<br/>\nThe Samsung Galaxy Card works as a standard Visa card and offers special financing options for Samsung Galaxy devices purchased through Samsung. <a href=\"https://www.macrumors.com/guide/apple-card/\">Apple Card</a> has a similar financing option for Apple devices.\r<br/>\n\r<br/>\nThere is no annual fee for the Samsung Galaxy Card, and cardmembers earn 5% cash rewards on in-store or online purchases made directly from Samsung in the U.S. There are 3% cash rewards on purchases made using Samsung Wallet, 2% cash rewards on streaming service purchases like Netflix, Disney+, and Spotify, and 1% on everything else.\r<br/>\n\r<br/>\nNew users can earn &#36;200 in cash rewards after spending &#36;2,000 on purchases in the first 90 days of opening an account, and get a 20% discount on the Samsung VIP Advantage membership when using a Galaxy Card. &zwnj;Apple Card&zwnj; has 3% cash back for Apple purchases and purchases from select merchants, 2% for <a href=\"https://www.macrumors.com/roundup/apple-pay/\">Apple Pay</a> purchases, and 1% for everything else, so Samsung is offering higher cash back amounts.\r<br/>\n\r<br/>\n&zwnj;Apple Card&zwnj; is built around Apple's Wallet app, and the same is true for the Galaxy Card. It is integrated into Samsung Wallet, and the app can be used for account management. Samsung Wallet also houses passes, IDs, and digital keys, much like the Apple Wallet app.\r<br/>\n\r<br/>\nBarclays says the Samsung Galaxy Card is its first digital wallet-native credit card, with no separate banking app. Apple worked with Goldman Sachs for the &zwnj;Apple Card&zwnj;, but Goldman Sachs is exiting the partnership and JPMorgan Chase is taking over as issuer in a transition that will run through 2027.\r<br/>\n\r<br/>\nAfter a user applies for the Samsung Galaxy Card and is approved, it is available for use immediately in Samsung Wallet. Samsung will ship out a physical version of the card, which is black metal, the inverse of the white titanium &zwnj;Apple Card&zwnj;.\r<br/>\n\r<br/>\nSamsung users can apply for the card online or in Samsung retail stores starting on July 22, which is the date of the Samsung Unpacked event. Samsung is expected to introduce its latest Galaxy foldables at the event.<div class=\"linkback\">Tags: <a href=\"https://www.macrumors.com/guide/apple-card/\">Apple Card</a>, <a href=\"https://www.macrumors.com/guide/samsung/\">Samsung</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/20/samsung-galaxy-card/\">Samsung Debuts Galaxy Card With 5% Cash Back to Take On Apple Card</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/samsung-debuts-galaxy-card-with-5-cash-back-to-take-on-apple-card.2485690/\">Discuss this article</a> in our forums<br/><br/>"
+    },
+    {
+      "title": "Everything New in iOS 27 Beta 4",
+      "link": "https://www.macrumors.com/2026/07/20/ios-27-beta-4-everything-new/",
+      "pubDate": "Mon, 20 Jul 2026 14:50:52 PDT",
+      "isoDate": "2026-07-20T21:50:52.000Z",
+      "creator": "Juli Clover",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Everything New in iOS 27 Beta 4",
+      "images": [
+        {
+          "url": "https://images.macrumors.com/t/P945K0bs-0fvhGcdJsAjre_5zCI=/400x0/article-new/2026/07/iOS-27-Feature-Warm-Dark.jpg?lossy",
+          "alt": "iOS 27 Feature Warm Dark",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://images.macrumors.com/t/0dEMXw9HDRFqiRffPSTKCRGbZWY=/400x0/article-new/2026/07/ios-27-tv-app-auto-download-b4.jpg?lossy",
+          "alt": "ios 27 tv app auto download b4",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://images.macrumors.com/t/rfD3s_4lm8wFJBXBL5C6yM7zj1s=/400x0/article-new/2026/07/ios-27-photos-zoom-to-fill.jpg?lossy",
+          "alt": "ios 27 photos zoom to fill",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://images.macrumors.com/t/BXlx4OpItRa7krUEYRDmipvGPgI=/400x0/article-new/2026/07/ios-27-siri-voice-b4.jpg?lossy",
+          "alt": "ios 27 siri voice b4",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://images.macrumors.com/t/bs3ADXy-HRnzkCl8mQ2PR3xwztE=/400x0/article-new/2026/07/ios-27-accessibility-siri-b4.jpg?lossy",
+          "alt": "ios 27 accessibility siri b4",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://images.macrumors.com/t/ng0PvcrCBhCbFutW2nq2zcPLrQE=/400x0/article-new/2026/07/ios-27-prores-video-b4.jpg?lossy",
+          "alt": "ios 27 prores video b4",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://images.macrumors.com/t/4anlCNxbumEg06xJGtxyyvHTgJo=/400x0/article-new/2026/07/ios-27-wi-fi-settings-b4.jpg?lossy",
+          "alt": "ios 27 wi fi settings b4",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://images.macrumors.com/t/-JJY_GeH3VZH8jy4V3Jstonxqqs=/400x0/article-new/2026/07/ios-27-airpods-settings-b4.jpg?lossy",
+          "alt": "ios 27 airpods settings b4",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Apple is continuing to tweak <a href=\"https://www.macrumors.com/roundup/ios-27/\">iOS 27</a> ahead of its September launch, and the fourth developer beta is available as of today. There are fewer changes than in prior betas, but Apple is still adding new features.\r<br/>\n\r<br/>\n<img class=\"aligncenter size-full wp-image-1056262\" src=\"https://images.macrumors.com/article-new/2026/07/iOS-27-Feature-Warm-Dark.jpg\" alt=\"\" width=\"2500\" height=\"1406\" />\r<br/>\n<h2>TV App</h2>\r<br/>\nIn the Settings section of the <a href=\"https://www.macrumors.com/roundup/apple-tv/\">Apple TV</a> app, there's a new Automatic Downloads toggle. Turning it on will automatically download the next two episodes of shows you start in Continue Watching. They'll be deleted when you finish the episodes.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/ios-27-tv-app-auto-download-b4.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1056891\" />\r<br/>\n<h2>Photos</h2>\r<br/>\nThere is a \"Zoom <a href=\"https://www.macrumors.com/guide/photos/\">Photos</a> to Fill\" toggle in the &zwnj;Photos&zwnj; section of the Settings app. It slightly zooms photos that nearly match the screen's aspect ratio, and it is turned on by default.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/ios-27-photos-zoom-to-fill.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1056890\" />\r<br/>\n<h2>Wallpaper</h2>\r<br/>\nApple has removed the wallpaper feature that it added in the Notification Center in beta 3. When swiping, you would see a cutout of the subject of your wallpaper on the <a href=\"https://www.macrumors.com/guide/home-screen/\">Home Screen</a>, but that's no longer available.\r<br/>\n\r<br/>\n<div class=\"center-wrap\"><blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">iOS 27 beta 3 adds a new wallpaper animation which is so smooth <a href=\"https://t.co/8LzBOx3HMD\">pic.twitter.com/8LzBOx3HMD</a></p>&mdash; Aaron (@aaronp613) <a href=\"https://x.com/aaronp613/status/2074243407233372612?ref_src=twsrc%5Etfw\">July 6, 2026</a></blockquote> <script async src=\"https://platform.x.com/widgets.js\" charset=\"utf-8\"></script></div>\r<br/>\n\r<br/>\n<h2>Siri Voices</h2>\r<br/>\nThe <a href=\"https://www.macrumors.com/guide/siri/\">Siri</a> Voice selection interface has changed. On devices without the option to set a customizable voice, it has the custom voice look with voices and accents to select. On devices with custom &zwnj;Siri&zwnj; selections, there are more voices options, which Apple says are coming soon.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/ios-27-siri-voice-b4.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1056893\" />\r<br/>\nThe customizable voice for &zwnj;Siri&zwnj; is limited to the <a href=\"https://www.macrumors.com/roundup/iphone-17-pro/\">iPhone 17 Pro</a>, &zwnj;iPhone 17 Pro&zwnj; Max, and <a href=\"https://www.macrumors.com/roundup/iphone-air/\">iPhone Air</a> right now.\r<br/>\n\r<br/>\n<h2>Siri Settings</h2>\r<br/>\nIn the &zwnj;Siri&zwnj; section of the Settings app, there's a new option to adjust the length of previews in the &zwnj;Siri&zwnj; app. You can choose up to five lines, or none.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/ios-27-accessibility-siri-b4.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1056889\" />\r<br/>\nIn Accessibility, there's a new \"Always Show Request\" toggle that shows a transcription of what you say to &zwnj;Siri&zwnj; on the screen.\r<br/>\n\r<br/>\n<h2>Siri Search or Ask</h2>\r<br/>\nWhen you swipe down to get to the &zwnj;Siri&zwnj; Search or Ask interface, there's now a splash screen that explains it.\r<br/>\n\r<br/>\n<h2>ProRes Log Format</h2>\r<br/>\nIn the Camera section of the Settings app, there's an option to choose a ProRes log format if you toggle Apple ProRes on. You can tap on ProRes Log Video Encoding and select Log or Log 2.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/ios-27-prores-video-b4.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1056886\" />\r<br/>\nLog 2 is the latest format and retains more information in the file for additional flexibility when editing color and making adjustments after the video is captured.\r<br/>\n\r<br/>\n<h2>Wi-Fi Assist</h2>\r<br/>\nThere's an option to enable or disable Connectivity Assist for each Wi-Fi network, regardless of whether the Connectivity Assist master toggle is on.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/ios-27-wi-fi-settings-b4.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1056888\" />\r<br/>\n<h2>AirPods</h2>\r<br/>\nApple changed the look of AirPods options in Control Center, including adding more options for Adaptive mode.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/07/ios-27-airpods-settings-b4.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1056887\" />\r<br/>\n\r<br/>\n<h2>Dual Battery iPhone References</h2>\r<br/>\nCode in the fourth beta of &zwnj;iOS 27&zwnj; references <a href=\"https://www.macrumors.com/2026/07/20/ios-27-dual-battery-iphone/\">an iPhone with two batteries</a>, with strings like \"The batteries in this iPhone are performing as expected.\"\r<br/>\n\r<br/>\n<img class=\"aligncenter size-full wp-image-995556\" src=\"https://images.macrumors.com/article-new/2025/03/Foldable-iPhone-2023-Feature-1.jpg\" alt=\"\" width=\"2250\" height=\"1266\" />\r<br/>\n\r<br/>\nIt may hint at the foldable <a href=\"https://www.macrumors.com/guide/iphone-ultra/\">iPhone Ultra</a>, which is expected to have a dual-battery design.\r<br/>\n<div class=\"linkback\">Related Roundups: <a href=\"https://www.macrumors.com/roundup/ios-27/\">iOS 27</a>, <a href=\"https://www.macrumors.com/roundup/ipados-27/\">iPadOS 27</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/20/ios-27-beta-4-everything-new/\">Everything New in iOS 27 Beta 4</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/everything-new-in-ios-27-beta-4.2485687/\">Discuss this article</a> in our forums<br/><br/>"
+    },
+    {
+      "title": "Apple Watch Series 12 Coming in September With These New Features",
+      "link": "https://www.macrumors.com/2026/07/20/apple-watch-series-12-rumored-features/",
+      "pubDate": "Mon, 20 Jul 2026 13:00:46 PDT",
+      "isoDate": "2026-07-20T20:00:46.000Z",
       "creator": "Joe Rossignol",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Apple Testing New 'Live Notes' Feature at Genius Bar",
+      "translated_title": "Apple Watch Series 12 Coming in September With These New Features",
       "images": [
         {
-          "url": "https://images.macrumors.com/t/DL70fSqSVN70yQT7y0qLMlOVjns=/400x0/article-new/2026/07/Apple-Genius-Bar.jpg?lossy",
-          "alt": "Apple Genius Bar",
+          "url": "https://images.macrumors.com/t/3YJtCzlnKFYmqUPTuz-fPrgqSng=/400x0/article-new/2025/08/Apple-Watch-Series-10-Jet-Black-Touch-ID.jpg?lossy",
+          "alt": "Apple Watch Series 10 Jet Black Touch ID",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://images.macrumors.com/article-new/2026/07/Apple-Genius-Bar.jpg",
+          "url": "https://images.macrumors.com/article-new/2025/08/Apple-Watch-Series-10-Jet-Black-Touch-ID.jpg",
           "alt": "",
           "title": "",
           "position": 1
         }
       ],
       "contentSource": "RSS",
-      "content": "<img src=\"https://images.macrumors.com/article-new/2026/07/Apple-Genius-Bar.jpg\" alt=\"\" width=\"160\" height=\"90\" class=\"alignleft size-full wp-image-1056730\" />Apple is testing a new AI-powered \"Live Notes\" feature that can transcribe conversations between Genius Bar employees and customers at some of its stores, <a href=\"https://www.bloomberg.com/news/newsletters/2026-07-19/why-apple-s-openai-lawsuit-doesn-t-mention-jony-ive-ai-recording-at-genius-bar-mrrv4mix\">according to <em>Bloomberg</em>'s Mark Gurman</a>. The system is currently opt-in, meaning it is only active if both the employee and customer agree to use it.\r<br/>\n\r<br/>\n\"The transcript is then added to the employee's iPad as part of the record of the repair session,\" he said. \"The goal is to save workers time and let them focus more on the customer, rather than taking notes throughout the appointment.\"<br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/19/apple-testing-live-notes-feature-at-genius-bar/\">Apple Testing New &#039;Live Notes&#039; Feature at Genius Bar</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-testing-new-live-notes-feature-at-genius-bar.2485632/\">Discuss this article</a> in our forums<br/><br/>"
+      "content": "With the Apple Watch Series 12 now just two months away, we have created a recap of rumored new features, with some more likely than others.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2025/08/Apple-Watch-Series-10-Jet-Black-Touch-ID.jpg\" alt=\"\" width=\"2500\" height=\"1406\" class=\"aligncenter size-full wp-image-1015193\" />\r<br/>\nBelow, we have outlined everything rumored so far for the Apple Watch Series 12.\r<br/>\n\r<br/>\n<h2>More Likely</h2>\r<br/>\n<h3>New Chip After One-Year Hiatus</h3>\r<br/>\nWhile the Apple Watch Series 11, Apple Watch Ultra 3, and Apple Watch SE 3 all contain the same S10 chip as the previous year's models, leaked Apple code showed the Apple Watch Series 12 <a href=\"https://www.macrumors.com/2025/08/19/new-apple-watch-with-touch-id-and-more-uncovered/\">will get a new chip</a>. It is unclear if the chip will have S11 or S12 branding, but performance improvements are expected either way after a one-year hiatus.\r<br/>\n\r<br/>\n<h3>Longer Battery Life</h3>\r<br/>\nWith the Apple Watch Series 12, Apple is <a href=\"https://www.macrumors.com/2026/05/11/apple-prioritizing-battery-life-apple-watch/\">focused on longer battery life</a>, according to a known leaker on the Chinese social media platform Weibo. Apple says the Series 11 lasts up to 24 hours on a single charge, or up to 38 hours in Low Power Mode.\r<br/>\n\r<br/>\n<h2>Less Likely</h2>\r<br/>\n<h3>Touch ID</h3>\r<br/>\nTouch ID may be <a href=\"https://www.macrumors.com/2025/08/19/new-apple-watch-with-touch-id-and-more-uncovered/\">coming to the Apple Watch Series 12</a>, according to leaked Apple code.\r<br/>\n\r<br/>\nTouch ID would likely be built into the Apple Watch's side button, enabling users to unlock the device with their fingerprint instead of a passcode.\r<br/>\n\r<br/>\nEven though new Touch ID references were discovered in the code, there is no guarantee that Apple will move forward with this plan. One leaker has <a href=\"https://www.macrumors.com/2026/05/11/apple-prioritizing-battery-life-apple-watch/\">denied the rumor</a>, and credible sources such as <em>Bloomberg</em>'s Mark Gurman and Apple supply chain analyst Ming-Chi Kuo have yet to mention Touch ID coming to the Apple Watch this year.\r<br/>\n\r<br/>\n<h3>Band Sensors</h3>\r<br/>\nAnother sketchy rumor from a leaker known as Kosutami claimed that the Apple Watch Series 12 will have <a href=\"https://www.macrumors.com/2026/07/03/apple-watch-series-12-sensor-in-band/\">a band with at least one health sensor in it</a>, which would be a first. Health sensors are built into the Apple Watch directly on all existing models.<div class=\"linkback\">Related Roundup: <a href=\"https://www.macrumors.com/roundup/apple-watch/\">Apple Watch 11</a></div><div class=\"linkback\">Buyer's Guide: <a href=\"https://buyersguide.macrumors.com/#Apple_Watch\">Apple Watch (Don't Buy)</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/20/apple-watch-series-12-rumored-features/\">Apple Watch Series 12 Coming in September With These New Features</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-watch-series-12-coming-in-september-with-these-new-features.2485683/\">Discuss this article</a> in our forums<br/><br/>"
     },
     {
-      "title": "Apple Reportedly Worked on Two 'Extreme' Chips",
-      "link": "https://www.macrumors.com/2026/07/19/apple-worked-on-two-extreme-chips/",
-      "pubDate": "Sun, 19 Jul 2026 08:51:57 PDT",
-      "isoDate": "2026-07-19T15:51:57.000Z",
-      "creator": "Joe Rossignol",
+      "title": "Apple Seeds Fourth visionOS 27 Beta to Developers",
+      "link": "https://www.macrumors.com/2026/07/20/apple-seeds-visionos-27-beta-4/",
+      "pubDate": "Mon, 20 Jul 2026 12:24:21 PDT",
+      "isoDate": "2026-07-20T19:24:21.000Z",
+      "creator": "Juli Clover",
       "summary": "无法生成摘要（API请求失败）。",
       "shortSummary": "",
-      "translated_title": "Apple Reportedly Worked on Two 'Extreme' Chips",
+      "translated_title": "Apple Seeds Fourth visionOS 27 Beta to Developers",
       "images": [
         {
-          "url": "https://images.macrumors.com/t/8F7V9JdoQOx67VYOvu6_wjwmxXA=/400x0/article-new/2022/12/mac-pro-m2-extreme-canceled.jpg?lossy",
-          "alt": "mac pro m2 extreme canceled",
+          "url": "https://images.macrumors.com/t/hrsToXAqCgbwo9twGXzdqE6-PEA=/400x0/article-new/2026/06/curved_windows_visionos-27.jpg?lossy",
+          "alt": "curved windows visionos 27",
           "title": "",
           "position": 1
         },
         {
-          "url": "https://images.macrumors.com/article-new/2022/12/mac-pro-m2-extreme-canceled.jpg",
+          "url": "https://images.macrumors.com/article-new/2026/06/curved_windows_visionos-27.jpg",
           "alt": "",
           "title": "",
           "position": 1
         }
       ],
       "contentSource": "RSS",
-      "content": "Apple once developed \"M2 Extreme\" and \"M3 Extreme\" chips for the Mac Pro, but it decided not to release them, <a href=\"https://www.bloomberg.com/news/newsletters/2026-07-19/why-apple-s-openai-lawsuit-doesn-t-mention-jony-ive-ai-recording-at-genius-bar-mrrv4mix\">according to <em>Bloomberg</em>'s Mark Gurman</a>. He first reported on this topic <a href=\"https://www.macrumors.com/2022/12/18/mac-pro-m2-extreme-chip-likely-scrapped/\">in 2022</a>, and he touched on it again in his <em>Power On</em> newsletter today.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2022/12/mac-pro-m2-extreme-canceled.jpg\" alt=\"\" width=\"1600\" height=\"900\" class=\"aligncenter size-full wp-image-878445\" />\r<br/>\n\"Extreme\" chips would have had twice as many CPU and GPU cores as Apple's \"Ultra\" chips.\r<br/>\n\r<br/>\n\"The idea was to offer twice as many graphics and main processing cores as that chip,\" he said. \"In the past, I've called this proposed processor the 'Extreme' chip, which to me is the most sensible Apple marketing name for something above Ultra.\"\r<br/>\n\r<br/>\nApple decided not to release the chips due to concerns over higher production costs and limited demand for the Mac Pro, according to Gurman.\r<br/>\n\r<br/>\nNot only did Apple ultimately scrap the \"Extreme\" chips, but it <a href=\"https://www.macrumors.com/2026/03/26/apple-discontinues-mac-pro/\">discontinued the Mac Pro</a> entirely this year <a href=\"https://www.macrumors.com/2026/03/27/reflecting-on-20-years-of-mac-pro/\">following a 20-year run</a>.<div class=\"linkback\">Tag: <a href=\"https://www.macrumors.com/guide/mark-gurman/\">Mark Gurman</a></div><div class=\"linkback\">Buyer's Guide: <a href=\"https://buyersguide.macrumors.com/#Mac_Pro\">Mac Pro (Don't Buy)</a></div><div class=\"linkback\">Related Forum: <a href=\"https://forums.macrumors.com/forums/mac-pro.1\">Mac Pro</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/19/apple-worked-on-two-extreme-chips/\">Apple Reportedly Worked on Two &#039;Extreme&#039; Chips</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-reportedly-worked-on-two-extreme-chips.2485613/\">Discuss this article</a> in our forums<br/><br/>"
-    },
-    {
-      "title": "Apple's Latest Price Increases Go Beyond Macs and iPads",
-      "link": "https://www.macrumors.com/2026/07/19/apple-just-raised-more-prices/",
-      "pubDate": "Sun, 19 Jul 2026 08:50:00 PDT",
-      "isoDate": "2026-07-19T15:50:00.000Z",
-      "creator": "Joe Rossignol",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Apple's Latest Price Increases Go Beyond Macs and iPads",
-      "images": [
-        {
-          "url": "https://images.macrumors.com/article-new/2026/06/Apple-Up-Arrow-Fearture.jpg",
-          "alt": "",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "After <a href=\"https://www.macrumors.com/2026/06/25/apple-explains-why-it-raised-prices/\">raising prices on all Macs and iPads</a> worldwide last month, Apple increased prices on more products and services on Friday.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2026/06/Apple-Up-Arrow-Fearture.jpg\" alt=\"\" width=\"2500\" height=\"1406\" class=\"aligncenter size-full wp-image-1054142\" />\r<br/>\nApple has raised prices on Apple Music and Apple One plans around the world, iCloud+ plans in eight countries, and on iPhone models in Japan.<ul><li><strong><a href=\"https://www.macrumors.com/2026/07/17/apple-music-price-increase/\">Apple Music Now Costs &#36;11.99 as Apple Increases Subscription Prices</a></strong></li>\r<br/>\n<li><strong><a href=\"https://www.macrumors.com/2026/07/17/apple-icloud-plus-price-increase/\">Apple Raises iCloud+ Prices in 8 Countries</a></strong></li>\r<br/>\n<li><strong><a href=\"https://www.macrumors.com/2026/07/17/apple-raises-iphone-prices-in-japan/\">Apple Raises iPhone Prices in Japan</a></strong></li></ul>In the U.S., only the prices of Apple Music and Apple One increased on Friday, with iCloud+ plans and iPhones not affected in that country for now.<br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/19/apple-just-raised-more-prices/\">Apple&#039;s Latest Price Increases Go Beyond Macs and iPads</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apples-latest-price-increases-go-beyond-macs-and-ipads.2485615/\">Discuss this article</a> in our forums<br/><br/>"
-    },
-    {
-      "title": "New Apple Store in Michigan Opening Later This Month",
-      "link": "https://www.macrumors.com/2026/07/19/new-apple-store-opening-in-michigan/",
-      "pubDate": "Sun, 19 Jul 2026 08:45:00 PDT",
-      "isoDate": "2026-07-19T15:45:00.000Z",
-      "creator": "Joe Rossignol",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "New Apple Store in Michigan Opening Later This Month",
-      "images": [
-        {
-          "url": "https://images.macrumors.com/t/Fli5UMUmSaTKFhaD1iptv8lQtKs=/400x0/article-new/2026/01/Apple-Store-App-Liquid-Glass-Feature.jpg?lossy",
-          "alt": "Apple Store App Liquid Glass Feature",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://images.macrumors.com/article-new/2026/01/Apple-Store-App-Liquid-Glass-Feature.jpg",
-          "alt": "",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<img src=\"https://images.macrumors.com/article-new/2026/01/Apple-Store-App-Liquid-Glass-Feature.jpg\" alt=\"\" width=\"160\" height=\"90\" class=\"alignleft size-full wp-image-1034137\" />Apple's retail store at the Briarwood Mall in Ann Arbor, Michigan will be relocating to a new space at the mall on Friday, July 31 at 10 a.m. local time, according to a notice on <a href=\"https://www.apple.com/retail/briarwood/\">the store's page</a>.\r<br/>\n\r<br/>\nThe entrance to the all-new, larger store will be in front of <a href=\"https://www.simon.com/mall/briarwood-mall/stores/the-lawn\">The Lawn</a>, a new outdoor space at the mall.<div class=\"linkback\">Tag: <a href=\"https://www.macrumors.com/guide/apple-store/\">Apple Store</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/19/new-apple-store-opening-in-michigan/\">New Apple Store in Michigan Opening Later This Month</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/new-apple-store-in-michigan-opening-later-this-month.2485614/\">Discuss this article</a> in our forums<br/><br/>"
-    },
-    {
-      "title": "AirPods Weekend Deals Include AirPods Pro 3 for $199.99 and AirPods 4 for $99",
-      "link": "https://www.macrumors.com/2026/07/19/airpods-weekend-deals-5/",
-      "pubDate": "Sun, 19 Jul 2026 07:34:26 PDT",
-      "isoDate": "2026-07-19T14:34:26.000Z",
-      "creator": "Mitchel Broussard",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "AirPods Weekend Deals Include AirPods Pro 3 for $199.99 and AirPods 4 for $99",
-      "images": [
-        {
-          "url": "https://images.macrumors.com/t/s5MGFVBaI9MaVUebZrUYOJO6l_k=/400x0/article-new/2019/10/airpods-pro-3-design.jpg?lossy",
-          "alt": "airpods pro 3 design",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://images.macrumors.com/article-new/2019/10/airpods-pro-3-design.jpg",
-          "alt": "",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Amazon today has the AirPods Pro 3 available for <a href=\"https://buy.geni.us/Proxy.ashx?TSID=3088&GR_URL=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0FQFB8FMG%3Ftag%3Dmacrumors-20%26linkCode%3Dogi%26th%3D1%26psc%3D1\"><strong>&#36;199.99</strong></a>, down from &#36;249.00. This is the best price we've seen on the AirPods Pro 3 since Prime Day ended last month, coming in around &#36;20 higher when compared to that all-time low price, and it's accompanied by a solid deal on the AirPods 4.\r<br/>\n\r<br/>\n<img src=\"https://images.macrumors.com/article-new/2019/10/airpods-pro-3-design.jpg\" alt=\"\" width=\"2000\" height=\"1125\" class=\"aligncenter size-full wp-image-1021273\" /><em><small>Note: MacRumors is an affiliate partner with some of these vendors. When you click a link and make a purchase, we may receive a small payment, which helps us keep the site running.</small></em>\r<br/>\n\r<br/>\nThis model of the AirPods Pro launched in September 2025 and has 2x better Active Noise Cancellation than the previous generation, better audio quality, a revised fit that's meant to improve comfort and stability, Live Translation for in-person conversations, and heart rate sensing for workouts.\r<br/>\n\r<br/>\n<div class=\"center-wrap\"><a href=\"https://buy.geni.us/Proxy.ashx?TSID=3088&GR_URL=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0FQFB8FMG%3Ftag%3Dmacrumors-20%26linkCode%3Dogi%26th%3D1%26psc%3D1\"target=\"_blank\"><div class=\"fancybutton\"><div class=\"fancybadge\">&#36;49 OFF</div>AirPods Pro 3 for &#36;199.99</div></a></div>\r<br/>\n\r<br/>\nYou can also get the AirPods 4 for <a href=\"https://buy.geni.us/Proxy.ashx?TSID=3088&GR_URL=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0DGHMNQ5Z%3Ftag%3Dmacrumors-20%26linkCode%3Dogi%26th%3D1\"><strong>&#36;99.00</strong></a>, down from &#36;129.00. This is a second-best price on the AirPods 4, which is the base model without Active Noise Cancellation. Amazon provides a July 24 estimated delivery date for free shipping, with faster delivery options for Prime members.\r<br/>\n\r<br/>\n<div class=\"center-wrap\"><a href=\"https://buy.geni.us/Proxy.ashx?TSID=3088&GR_URL=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0DGHMNQ5Z%3Ftag%3Dmacrumors-20%26linkCode%3Dogi%26th%3D1\"target=\"_blank\"><div class=\"fancybutton\"><div class=\"fancybadge\">&#36;30 OFF</div>AirPods 4 for &#36;99.00</div></a></div>\r<br/>\n\r<br/>\nAdditionally, you can get the AirPods 4 with ANC on sale for <a href=\"https://buy.geni.us/Proxy.ashx?TSID=3088&GR_URL=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0DGJ7HYG1%3Flv%3Dshuf%26linkCode%3Dogi%26th%3D1%26tag%3Dmacrumors-20%26channelId%3D1%26plpRedirect%3DmhFallback\"><strong>&#36;144.99</strong></a> right now on Amazon, down from &#36;179.00. Similar to the base model, we haven't tracked a record low price on the AirPods 4 with ANC in months, making today's deal a solid second-best option for anyone shopping for AirPods this summer.\r<br/>\n\r<br/>\n<div class=\"center-wrap\"><a href=\"https://buy.geni.us/Proxy.ashx?TSID=3088&GR_URL=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0DGJ7HYG1%3Flv%3Dshuf%26linkCode%3Dogi%26th%3D1%26tag%3Dmacrumors-20%26channelId%3D1%26plpRedirect%3DmhFallback\"target=\"_blank\"><div class=\"fancybutton\"><div class=\"fancybadge\">&#36;34 OFF</div>AirPods 4 (ANC) for &#36;144.99</div></a></div>\r<br/>\n\r<br/>\n\r<br/>\nHead to our full <a href=\"https://www.macrumors.com/roundup/best-apple-deals/\">Deals Roundup</a> to get caught up with all of the latest deals and discounts that we've been tracking over the past week.\r<br/>\n\r<br/>\n<hr />\r<br/>\n<div class=\"no-raptive\">\r<br/>\n<h3>Deals Newsletter</h3>\r<br/>\nInterested in hearing more about the best deals you can find in 2026? <a href=\"http://eepurl.com/itTnTk\">Sign up</a> for our Deals Newsletter and we'll keep you updated so you don't miss the biggest deals of the season!\r<br/>\n\r<br/>\n<div style=\"text-align:center;margin-bottom:2em;\">\r<br/>\n\r<br/>\n<form action=\"http://macrumors.us5.list-manage.com/subscribe/post?u=7d0106b433773bd0aef5828e0&amp;id=eebad02bf4&amp;f_id=00fbede0f0\" method=\"post\" id=\"mc-embedded-subscribe-form\" name=\"mc-embedded-subscribe-form\" class=\"validate\" target=\"_blank\" novalidate><input type=\"email\" value=\"\" name=\"EMAIL\" size=\"30\" class=\"required email\" id=\"mce-EMAIL\"  placeholder=\"Enter Email Address\" title=\"Email Address\" /><div class=\"response\" id=\"mce-error-response\" style=\"display:none\"></div><div class=\"response\" id=\"mce-success-response\" style=\"display:none\"></div><div style=\"position: absolute; left: -5000px;\"><input type=\"text\" name=\"b_7d0106b433773bd0aef5828e0_eebad02bf4\" tabindex=\"-1\" value=\"\" title=\"form\" /></div><input type=\"submit\" value=\"Subscribe\" name=\"subscribe\" id=\"mc-embedded-subscribe\" class=\"button\"></div>\r<br/>\n</div><div class=\"linkback\">Related Roundup: <a href=\"https://www.macrumors.com/roundup/best-apple-deals/\">Apple Deals</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/19/airpods-weekend-deals-5/\">AirPods Weekend Deals Include AirPods Pro 3 for &#36;199.99 and AirPods 4 for &#36;99</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/airpods-weekend-deals-include-airpods-pro-3-for-199-99-and-airpods-4-for-99.2485610/\">Discuss this article</a> in our forums<br/><br/>"
+      "content": "Apple today provided developers with the fourth beta of an upcoming visionOS 27 update for testing purposes, with the beta coming two weeks after Apple released the third beta.\r<br/>\n\r<br/>\n<img class=\"aligncenter size-full wp-image-1051544\" src=\"https://images.macrumors.com/article-new/2026/06/curved_windows_visionos-27.jpg\" alt=\"\" width=\"1392\" height=\"904\" />\r<br/>\nvisionOS 27 can be installed by opening the Settings app, going to Software Updates, and opting into Beta Updates.\r<br/>\n\r<br/>\nvisionOS 27 introduces <a href=\"https://www.macrumors.com/guide/siri/\">Siri</a> AI, the smarter and more capable version of &zwnj;Siri&zwnj; that's similar in capability to chatbots like ChatGPT and Claude. On the Vision Pro, &zwnj;Siri&zwnj; can answer questions about anything the wearer is looking at, and there's a new &zwnj;Siri&zwnj; orb that can be placed anywhere in wearer's virtual space.\r<br/>\n\r<br/>\nPanorama photos can be turned into spatial environments, and there's a new Icelandic Thórsmörk environment that features dramatic mountains, valleys, and glaciers, along with the northern lights. Web Environment support allows developers to create 360-degree environments in Safari for a more native Vision Pro browsing experience.\r<br/>\n\r<br/>\nApp windows are now curved to provide a more immersive workspace, and Control Center has been reorganized to make system controls easier to find. Apple added a smaller widget size, and notifications automatically expand when the wearer looks at them.\r<br/>\n\r<br/>\nMore on what's new in visionOS 27 is <a href=\"https://www.macrumors.com/roundup/apple-vision-pro/#visionos_27\">listed in our Vision Pro roundup</a>.<div class=\"linkback\">Related Roundup: <a href=\"https://www.macrumors.com/roundup/apple-vision-pro/\">Apple Vision Pro</a></div><div class=\"linkback\">Buyer's Guide: <a href=\"https://buyersguide.macrumors.com/#AppleVisionPro\">Vision Pro (Neutral)</a></div><div class=\"linkback\">Related Forum: <a href=\"https://forums.macrumors.com/forums/apple-vision-pro.209\">Apple Vision Pro</a></div><br/>This article, &quot;<a href=\"https://www.macrumors.com/2026/07/20/apple-seeds-visionos-27-beta-4/\">Apple Seeds Fourth visionOS 27 Beta to Developers</a>&quot; first appeared on <a href=\"https://www.macrumors.com\">MacRumors.com</a><br/><br/><a href=\"https://forums.macrumors.com/threads/apple-seeds-fourth-visionos-27-beta-to-developers.2485681/\">Discuss this article</a> in our forums<br/><br/>"
     }
   ],
-  "lastUpdated": "2026-07-20T11:53:10.010Z"
+  "lastUpdated": "2026-07-21T11:13:57.569Z"
 }
