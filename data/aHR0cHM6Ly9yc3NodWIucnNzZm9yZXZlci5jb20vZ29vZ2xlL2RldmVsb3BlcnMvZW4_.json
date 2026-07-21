@@ -5,6 +5,32 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Run Ray on TPU, Part 1: The foundations",
+      "link": "https://developers.googleblog.com/en/run-ray-on-tpu-part-1-the-foundations/",
+      "pubDate": "Sun, 19 Jul 2026 16:00:00 GMT",
+      "isoDate": "2026-07-19T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Run Ray on TPU, Part 1: The foundations",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/fig1_2.original.png",
+          "alt": "fig1 (2)",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/fig2_2.original.png",
+          "alt": "fig2 (2)",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Ray 2.55 introduces official, first-class support for Google Cloud TPUs, enabling developers to run distributed Python workloads on Google's accelerators using the familiar Ray task-and-actor APIs. To handle the strict networking requirement of keeping multi-host TPU \"slices\" together over their Inter-Chip Interconnect (ICI), the KubeRay Operator on GKE automatically provisions and labels the underlying hardware layout. Ray Core utilizes these labels via its slice_placement_group() primitive to atomically reserve complete slices, allowing developers to deploy jobs through KubeRay, Ray Train, or Ray Serve simply by declaring a hardware topology (like \"4x4\") without writing custom placement code."
+    },
+    {
       "title": "Expanding Choice in Gemini Enterprise Agent Platform: Introducing Grounding with Parallel Web Search",
       "link": "https://developers.googleblog.com/en/expanding-choice-in-gemini-enterprise-agent-platform-introducing-grounding-with-parallel-web-search/",
       "pubDate": "Wed, 15 Jul 2026 16:00:00 GMT",
@@ -306,20 +332,7 @@
       ],
       "contentSource": "RSS",
       "content": "Answering the questions of \"why we built ADK 2.0\".  This explains the rationale, some of the features, and why a developer should consider upgrading.  This will be published the day after ADK go 2.0 launches."
-    },
-    {
-      "title": "ML Development in VS Code with Google Cloud Power: Workbench Extension Now Available",
-      "link": "https://developers.googleblog.com/en/ml-development-in-vs-code-with-google-cloud-power-workbench-extension-now-available/",
-      "pubDate": "Tue, 30 Jun 2026 16:00:00 GMT",
-      "isoDate": "2026-06-30T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "ML Development in VS Code with Google Cloud Power: Workbench Extension Now Available",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "The Google Cloud Workbench Notebooks extension for VS Code has officially launched, allowing developers to connect their local IDE to scalable, cloud-based Jupyter environments. This integration streamlines the machine learning lifecycle by eliminating context switching and providing direct access to high-performance Google Cloud infrastructure. To support transparency and community-driven innovation, the newly released extension is fully open-sourced and available on GitHub and the VS Code Marketplace."
     }
   ],
-  "lastUpdated": "2026-07-20T12:23:20.449Z"
+  "lastUpdated": "2026-07-21T11:54:13.180Z"
 }
