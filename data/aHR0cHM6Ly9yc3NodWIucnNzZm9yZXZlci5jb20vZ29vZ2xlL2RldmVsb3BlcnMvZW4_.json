@@ -5,6 +5,38 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Scaling Agentic RL: High-Throughput Agentic Training with Tunix",
+      "link": "https://developers.googleblog.com/en/scaling-agentic-rl-high-throughput-agentic-training-with-tunix/",
+      "pubDate": "Mon, 20 Jul 2026 16:00:00 GMT",
+      "isoDate": "2026-07-20T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Scaling Agentic RL: High-Throughput Agentic Training with Tunix",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2026-07-13_at_10.15.53AM.original.png",
+          "alt": "Screenshot 2026-07-13 at 10.15.53 AM",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2026-07-13_at_10.16.08AM.original.png",
+          "alt": "Screenshot 2026-07-13 at 10.16.08 AM",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/blog-perfetto.original.png",
+          "alt": "blog-perfetto",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Tunix is Google’s new JAX-native post-training library designed to eliminate TPU idling bottlenecks when training multi-turn, tool-using LLM reasoning agents. It maximizes hardware throughput by combining highly concurrent, asynchronous rollouts with a decoupled producer-consumer pipeline, ensuring the trainer is constantly fed even while agents wait on network I/O or environment steps. Additionally, Tunix provides plug-and-play abstractions and continuous macro-level profiling, allowing developers to easily integrate custom open-source environments and optimize complex distributed workflows without massive code rewrites."
+    },
+    {
       "title": "Run Ray on TPU, Part 1: The foundations",
       "link": "https://developers.googleblog.com/en/run-ray-on-tpu-part-1-the-foundations/",
       "pubDate": "Sun, 19 Jul 2026 16:00:00 GMT",
@@ -306,33 +338,7 @@
       ],
       "contentSource": "RSS",
       "content": "Distributed AI training is notoriously fragile because losing a single machine typically crashes the entire multi-node job, forcing a time-consuming, full-workload infrastructure restart. To address this, Google’s JAX ecosystem utilizes elastic training via Pathways, which converts a hardware failure into a catchable Python exception so the running process can survive. When an unplanned failure occurs, the system automatically replaces only the broken worker, restores the last viable checkpoint from Cloud Storage, and resumes training in place—minimizing total downtime to under two minutes without ever restarting the main controller process."
-    },
-    {
-      "title": "Why we built ADK 2.0",
-      "link": "https://developers.googleblog.com/en/why-we-built-adk-20/",
-      "pubDate": "Tue, 30 Jun 2026 16:00:00 GMT",
-      "isoDate": "2026-06-30T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Why we built ADK 2.0",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/workflow-diagram.original.png",
-          "alt": "workflow-diagram",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/workflow_comparison.original.png",
-          "alt": "workflow_comparison",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Answering the questions of \"why we built ADK 2.0\".  This explains the rationale, some of the features, and why a developer should consider upgrading.  This will be published the day after ADK go 2.0 launches."
     }
   ],
-  "lastUpdated": "2026-07-21T11:54:13.180Z"
+  "lastUpdated": "2026-07-22T11:56:54.512Z"
 }
