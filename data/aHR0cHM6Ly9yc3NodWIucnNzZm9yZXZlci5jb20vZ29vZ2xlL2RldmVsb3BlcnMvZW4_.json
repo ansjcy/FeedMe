@@ -340,5 +340,5 @@
       "content": "Distributed AI training is notoriously fragile because losing a single machine typically crashes the entire multi-node job, forcing a time-consuming, full-workload infrastructure restart. To address this, Google’s JAX ecosystem utilizes elastic training via Pathways, which converts a hardware failure into a catchable Python exception so the running process can survive. When an unplanned failure occurs, the system automatically replaces only the broken worker, restores the last viable checkpoint from Cloud Storage, and resumes training in place—minimizing total downtime to under two minutes without ever restarting the main controller process."
     }
   ],
-  "lastUpdated": "2026-07-22T11:56:54.512Z"
+  "lastUpdated": "2026-07-23T11:57:10.874Z"
 }
