@@ -5,6 +5,26 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "How to use Google microbenchmarks for evaluating TPU performance",
+      "link": "https://developers.googleblog.com/en/how-to-use-google-microbenchmarks-for-evaluating-tpu-performance/",
+      "pubDate": "Wed, 29 Jul 2026 16:00:00 GMT",
+      "isoDate": "2026-07-29T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "How to use Google microbenchmarks for evaluating TPU performance",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/TPU_microbenchmark.original.png",
+          "alt": "TPU microbenchmark",
+          "title": "",
+          "position": 1
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Google's open-source TPU microbenchmark suite provides developers with granular performance metrics across Network, Compute, HBM, Host Transfer, and Attention components to validate real-world hardware capabilities. By leveraging these benchmarks to establish a Roofline model, engineers can accurately diagnose whether their machine learning workloads are compute-, memory-, or network-bound. This empirical baseline directly guides targeted software optimizations—such as kernel tuning, mesh sharding, and rematerialization—to maximize hardware utilization for large-scale model deployments."
+    },
+    {
       "title": "Run Ray on TPU, Part 2: Ray AI libraries",
       "link": "https://developers.googleblog.com/en/run-ray-on-tpu-part-2-ray-ai-libraries/",
       "pubDate": "Thu, 23 Jul 2026 16:00:00 GMT",
@@ -258,51 +278,7 @@
       ],
       "contentSource": "RSS",
       "content": "We're excited to introduce LiteRT.js, the newest member of the LiteRT family! LiteRT.js is our powerful solution for running machine learning models directly in the browser, extending Google's cross-platform edge AI runtime to the web. Built for JavaScript developers, LiteRT.js delivers state-of-the-art ML model inference performance on WebGPU and upcoming WebNN, with a fallback to WebAssembly for CPU. This post provides a quick tour of LiteRT.js and gives web developers everything they need to get started."
-    },
-    {
-      "title": "Bridging the Domain Gap: AI Race Coach built with Antigravity and Gemini",
-      "link": "https://developers.googleblog.com/en/bridging-the-domain-gap-ai-race-coach-built-with-antigravity-and-gemini/",
-      "pubDate": "Tue, 07 Jul 2026 16:00:00 GMT",
-      "isoDate": "2026-07-07T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Bridging the Domain Gap: AI Race Coach built with Antigravity and Gemini",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_8nq8lw8nq8lw8nq8.original.jpg",
-          "alt": "Gemini_Generated_Image_8nq8lw8nq8lw8nq8",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/105011094-GBMG2991_1.original.jpg",
-          "alt": "105011094-GBMG2991 (1)",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_nk5kb8nk5kb8nk5k.original.jpg",
-          "alt": "Gemini_Generated_Image_nk5kb8nk5kb8nk5k",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemini_Generated_Image_cbbrhccbbrhccbbr.original.jpg",
-          "alt": "Gemini_Generated_Image_cbbrhccbbrhccbbr",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/IMG_20260528_113543_5.original.jpg",
-          "alt": "IMG_20260528_113543 (5)",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "On May 23, 2026, fresh off the stage at Google I/O, our Google Developer Experts (GDEs) converged on..."
     }
   ],
-  "lastUpdated": "2026-07-29T12:09:49.777Z"
+  "lastUpdated": "2026-07-31T12:07:07.758Z"
 }
