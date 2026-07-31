@@ -5,6 +5,112 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "Stacked sessions and pull requests in the GitHub Copilot app",
+      "link": "https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app/",
+      "pubDate": "Thu, 30 Jul 2026 17:30:24 +0000",
+      "isoDate": "2026-07-30T17:30:24.000Z",
+      "creator": "Cassidy Williams",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Stacked sessions and pull requests in the GitHub Copilot app",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/608818417-096042e4-9ace-4575-877d-a18926371bc2.png?resize=488%2C297",
+          "alt": "Screenshot of stacked sessions. They start with a folder 'Cass-kit', with 'Frontend modernization' below, and 'modernize frontend styles', 'Style port onto dev', and 'Remove react-bootstrap' all below.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/608818295-33cd0929-c17e-4c38-b63a-24e091f45b2e.png?resize=1024%2C728",
+          "alt": "Screenshot of a conversation with Copilot. It starts with Copilot asking, 'Your decision when you're back (left to you — too consequential to guess): 1. Merge into main as-is, reconcile the master/dev fork separately; 2. re-apply just the styling + a11y improvements as a fresh branch off dev; 3. close this PR if dev's direction supersedes it. If you want option 2, I can start that port onto dev's Less + TypeScript structure.' Cassidy responds, 'Let's close this and start a new session as a fresh branch off of dev, yes.' Copilot responds, ' I'll close PR #573 and create a fresh session branched off dev to port the styling + a11y work.'",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/07/608818417-096042e4-9ace-4575-877d-a18926371bc2_e0e8ce.png?resize=488%2C297",
+          "alt": "Screenshot of stacked sessions. They start with a folder 'Cass-kit', with 'Frontend modernization' below, and 'modernize frontend styles', 'Style port onto dev', and 'Remove react-bootstrap' all below.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/1454517?v=4&s=200",
+          "alt": "Cassidy Williams",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 7
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/Universe26-Icon.svg",
+          "alt": "GitHub Universe 2026",
+          "title": "",
+          "position": 8
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Learn how I modernized an old codebase of mine using stacked sessions and pull requests in the GitHub Copilot app.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app/\">Stacked sessions and pull requests in the GitHub Copilot app</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
+      "title": "Tame Dependabot: Group your updates, slow the cadence, keep security fast",
+      "link": "https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/",
+      "pubDate": "Wed, 29 Jul 2026 16:00:00 +0000",
+      "isoDate": "2026-07-29T16:00:00.000Z",
+      "creator": "Bruno Borges",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Tame Dependabot: Group your updates, slow the cadence, keep security fast",
+      "images": [
+        {
+          "url": "https://avatars.githubusercontent.com/u/129743?v=4&s=200",
+          "alt": "Bruno Borges",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
+          "alt": "Docs",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
+          "alt": "GitHub",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
+          "alt": "Customer stories",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2025/06/Universe26-Icon.svg",
+          "alt": "GitHub Universe 2026",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Dependabot keeps your dependencies current, but its defaults can flood your repository with pull requests. Here's how grouping updates, slowing the cadence, and keeping security fixes fast cut the noise on a Microsoft open source project.</p>\n<p>The post <a href=\"https://github.blog/security/supply-chain-security/tame-dependabot-group-your-updates-slow-the-cadence-keep-security-fast/\">Tame Dependabot: Group your updates, slow the cadence, keep security fast</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "Disrupting supply chain attacks on npm and GitHub Actions",
       "link": "https://github.blog/security/supply-chain-security/disrupting-supply-chain-attacks-on-npm-and-github-actions/",
       "pubDate": "Tue, 28 Jul 2026 16:00:00 +0000",
@@ -348,64 +454,7 @@
       ],
       "contentSource": "RSS",
       "content": "<p>Celebrating $100 million contributed by the community to the people who build and sustain open source every day.</p>\n<p>The post <a href=\"https://github.blog/open-source/maintainers/100-million-for-open-source-a-milestone-built-by-the-community/\">$100 million for open source: A milestone built by the community</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "The cost of saying yes has changed",
-      "link": "https://github.blog/engineering/the-cost-of-saying-yes-has-changed/",
-      "pubDate": "Fri, 17 Jul 2026 16:46:47 +0000",
-      "isoDate": "2026-07-17T16:46:47.000Z",
-      "creator": "Dalia Abuadas",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "The cost of saying yes has changed",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/5923128?v=4&s=200",
-          "alt": "Dalia Abuadas",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/Universe26-Icon.svg",
-          "alt": "GitHub Universe 2026",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>The cost of writing code dropped; the cost of owning it didn't. A framework for deciding which changes are actually cheap in the AI era.</p>\n<p>The post <a href=\"https://github.blog/engineering/the-cost-of-saying-yes-has-changed/\">The cost of saying yes has changed</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub for Beginners: Your roadmap to mastering the GitHub essentials",
-      "link": "https://github.blog/developer-skills/github/github-for-beginners-your-roadmap-to-mastering-the-github-essentials/",
-      "pubDate": "Wed, 15 Jul 2026 17:29:31 +0000",
-      "isoDate": "2026-07-15T17:29:31.000Z",
-      "creator": "Polly Davidson",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "GitHub for Beginners: Your roadmap to mastering the GitHub essentials",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>New to GitHub? This beginner's guide explains version control, repositories, and pull requests—plus everything else you need to start working confidently on GitHub.</p>\n<p>The post <a href=\"https://github.blog/developer-skills/github/github-for-beginners-your-roadmap-to-mastering-the-github-essentials/\">GitHub for Beginners: Your roadmap to mastering the GitHub essentials</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-07-29T06:41:35.633Z"
+  "lastUpdated": "2026-07-31T06:52:07.128Z"
 }
