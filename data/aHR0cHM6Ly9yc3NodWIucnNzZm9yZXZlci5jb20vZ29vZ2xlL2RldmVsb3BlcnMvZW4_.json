@@ -5,6 +5,64 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Agent and Model Evaluations in Gemini Enterprise Agent Platform are now GA",
+      "link": "https://developers.googleblog.com/en/agent-and-model-evaluations-in-gemini-enterprise-agent-platform-are-now-ga/",
+      "pubDate": "Thu, 30 Jul 2026 16:00:00 GMT",
+      "isoDate": "2026-07-30T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Agent and Model Evaluations in Gemini Enterprise Agent Platform are now GA",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image1_3.original.png",
+          "alt": "image1 (3)",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/2._2.original.png",
+          "alt": "2. (2)",
+          "title": "",
+          "position": 2
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Agent Platform's evaluation service is now generally available, providing developers with a unified engine to measure agent quality consistently across local development experiments and live production traffic. You can evaluate agents using over 20 pre-built metrics, DeepMind-backed adaptive rubrics, or custom code-based and LLM-as-a-judge metrics stored in a centralized, versioned registry. The service integrates directly into existing workflows via the Agent Platform SDK, agents-cli, and ADK, offering built-in user and environment simulators to automate complex multi-turn testing and streamline CI pipelines."
+    },
+    {
+      "title": "Enable on-demand expertise with Agent Skills in Genkit Go",
+      "link": "https://developers.googleblog.com/en/enable-on-demand-expertise-with-agent-skills-in-genkit-go/",
+      "pubDate": "Thu, 30 Jul 2026 16:00:00 GMT",
+      "isoDate": "2026-07-30T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Enable on-demand expertise with Agent Skills in Genkit Go",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/progressive-disclosure.original.png",
+          "alt": "progressive-disclosure",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ecce_ecce.original.jpg",
+          "alt": "ecce ecce",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ecce.original.jpg",
+          "alt": "ecce",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "To prevent context window bloat and reduce token consumption, Genkit Go introduces Agent Skills based on a progressive disclosure architecture. Developers can package specialized instructions, scripts, and references into modular SKILL.md bundles where only the frontmatter metadata is initially exposed to the agent's system prompt. When a task matches the skill's description, Genkit's middleware dynamically loads the full instruction body and associated assets, ensuring the model accesses precise workflows exactly when needed."
+    },
+    {
       "title": "How to use Google microbenchmarks for evaluating TPU performance",
       "link": "https://developers.googleblog.com/en/how-to-use-google-microbenchmarks-for-evaluating-tpu-performance/",
       "pubDate": "Wed, 29 Jul 2026 16:00:00 GMT",
@@ -233,52 +291,7 @@
       ],
       "contentSource": "RSS",
       "content": "To serve the 397B-parameter Qwen 3.5 Mixture-of-Experts (MoE) model on Ironwood TPUs, engineers developed a modular JAX/Pallas optimization stack that achieved up to a 4.7x inference speedup for prefill-heavy workloads. The team bypassed severe hardware sharding constraints by deploying a hybrid Data Parallelism and Expert Parallelism (DP+EP) topology, paired with custom low-level communication fusions like a hierarchical reduce-scatter to optimize cross-device token routing. Finally, by executing hardware-aware custom kernels—such as Batched Ragged Page Attention and a fully-fused Gated DeltaNet (GDN) block—they successfully saturated HBM bandwidth and TensorCore MXUs to push system throughput near its theoretical roofline limits."
-    },
-    {
-      "title": "Unlocking the Next Era of On-Device AI with Google Tensor and Pixel",
-      "link": "https://developers.googleblog.com/en/unlocking-the-next-era-of-on-device-ai-with-google-tensor-and-pixel/",
-      "pubDate": "Sun, 12 Jul 2026 16:00:00 GMT",
-      "isoDate": "2026-07-12T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Unlocking the Next Era of On-Device AI with Google Tensor and Pixel",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "At Google I/O Connect India, Google showcased the future of 100% private, on-device AI powered by the custom Tensor SoC and TPU for the new Pixel 10 family. The event debuted the lightweight Gemma 4 E2B model, which runs natively on the device to enable completely offline multimodal features like AI chat, real-time image recognition, and personal agent tasks. Developers can start building these secure, edge-based applications today by accessing the newly announced Tensor SDK beta and its accompanying open-source resources."
-    },
-    {
-      "title": "LiteRT.js, Google's high performance Web AI Inference",
-      "link": "https://developers.googleblog.com/en/litertjs-googles-high-performance-web-ai-inference/",
-      "pubDate": "Wed, 08 Jul 2026 16:00:00 GMT",
-      "isoDate": "2026-07-08T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "LiteRT.js, Google's high performance Web AI Inference",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram1_uua0KLc.original.png",
-          "alt": "diagram1",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Benchmarking_w__yolo26n_1600x900.original.jpg",
-          "alt": "Benchmarking w_ yolo26n 1600x900",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Classical_model_perf_1.original.png",
-          "alt": "Classical model perf (1)",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "We're excited to introduce LiteRT.js, the newest member of the LiteRT family! LiteRT.js is our powerful solution for running machine learning models directly in the browser, extending Google's cross-platform edge AI runtime to the web. Built for JavaScript developers, LiteRT.js delivers state-of-the-art ML model inference performance on WebGPU and upcoming WebNN, with a fallback to WebAssembly for CPU. This post provides a quick tour of LiteRT.js and gives web developers everything they need to get started."
     }
   ],
-  "lastUpdated": "2026-07-31T12:07:07.758Z"
+  "lastUpdated": "2026-08-01T11:24:52.939Z"
 }
