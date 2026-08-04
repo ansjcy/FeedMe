@@ -5,6 +5,50 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Scaling real-time AI agents with session-aware load balancing",
+      "link": "https://developers.googleblog.com/en/scaling-real-time-ai-agents-with-session-aware-load-balancing/",
+      "pubDate": "Sun, 02 Aug 2026 16:00:00 GMT",
+      "isoDate": "2026-08-02T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Scaling real-time AI agents with session-aware load balancing",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_1.original.png",
+          "alt": "Image 1",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_2.original.png",
+          "alt": "Image 2",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_3.original.png",
+          "alt": "Image 3",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_4_1.original.png",
+          "alt": "Image 4 (1)",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Image_5.original.png",
+          "alt": "Image 5",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Real-time AI agents break traditional request-response load balancing paradigms because they rely on long-lived, stateful bidirectional streams that obscure true server capacity. To solve this, developers must implement application-level session tracking directly within the runtime to accurately measure the committed concurrent workload of active conversations. By feeding these precise session counts alongside standard CPU utilization metrics into a hybrid routing algorithm, infrastructure can effectively distribute stateful AI traffic and prevent individual backend bottlenecks."
+    },
+    {
       "title": "Agent and Model Evaluations in Gemini Enterprise Agent Platform are now GA",
       "link": "https://developers.googleblog.com/en/agent-and-model-evaluations-in-gemini-enterprise-agent-platform-are-now-ga/",
       "pubDate": "Thu, 30 Jul 2026 16:00:00 GMT",
@@ -229,69 +273,7 @@
       ],
       "contentSource": "RSS",
       "content": "To resolve the scaling bottlenecks and runtime errors caused by monolithic system prompts, engineering teams should treat prompts as build artifacts by modularizing instructions into reusable templates. By running these modular \"skill files\" through a transpiler, developers can enforce static validation, catch missing dependencies at build time, and integrate prompt generation directly into their CI/CD pipelines. This deterministic approach prevents code drift and ultimately establishes a safe framework where agents can propose updates to their own logic via standard pull requests."
-    },
-    {
-      "title": "Systems Engineering Playbook: Optimizing Qwen 3.5-397B MoE on Ironwood (TPU7x)",
-      "link": "https://developers.googleblog.com/en/systems-engineering-playbook-optimizing-qwen-35-397b-moe-on-ironwood-tpu7x/",
-      "pubDate": "Mon, 13 Jul 2026 16:00:00 GMT",
-      "isoDate": "2026-07-13T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Systems Engineering Playbook: Optimizing Qwen 3.5-397B MoE on Ironwood (TPU7x)",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Qwen_3.5_497B_Throughput_Chart.original.png",
-          "alt": "Qwen 3.5 497B Throughput Chart",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Repeating_Sequence_Formula.original.png",
-          "alt": "Repeating Sequence Formula",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image_7.original.png",
-          "alt": "image (7)",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/The_Delta_Rule_Formula.original.png",
-          "alt": "The Delta Rule Formula",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Representation_Layer_Forumla.original.png",
-          "alt": "Representation Layer Forumla",
-          "title": "",
-          "position": 5
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Attention_Layer.original.png",
-          "alt": "Attention Layer",
-          "title": "",
-          "position": 6
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Theoretical_Bounds.original.png",
-          "alt": "Theoretical Bounds",
-          "title": "",
-          "position": 7
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Theoretical_Decode_Throughput_Formula.original.png",
-          "alt": "Theoretical Decode Throughput Formula",
-          "title": "",
-          "position": 8
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "To serve the 397B-parameter Qwen 3.5 Mixture-of-Experts (MoE) model on Ironwood TPUs, engineers developed a modular JAX/Pallas optimization stack that achieved up to a 4.7x inference speedup for prefill-heavy workloads. The team bypassed severe hardware sharding constraints by deploying a hybrid Data Parallelism and Expert Parallelism (DP+EP) topology, paired with custom low-level communication fusions like a hierarchical reduce-scatter to optimize cross-device token routing. Finally, by executing hardware-aware custom kernels—such as Batched Ragged Page Attention and a fully-fused Gated DeltaNet (GDN) block—they successfully saturated HBM bandwidth and TensorCore MXUs to push system throughput near its theoretical roofline limits."
     }
   ],
-  "lastUpdated": "2026-08-03T13:15:26.771Z"
+  "lastUpdated": "2026-08-04T12:08:19.287Z"
 }
