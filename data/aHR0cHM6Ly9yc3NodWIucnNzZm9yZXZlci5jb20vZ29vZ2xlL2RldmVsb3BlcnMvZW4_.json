@@ -5,6 +5,56 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Scaling AI Agent Infrastructure with the MCP Stateless updates",
+      "link": "https://developers.googleblog.com/en/scaling-ai-agent-infrastructure-with-the-mcp-stateless-updates/",
+      "pubDate": "Tue, 04 Aug 2026 16:00:00 GMT",
+      "isoDate": "2026-08-04T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Scaling AI Agent Infrastructure with the MCP Stateless updates",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2026-08-03_at_11.42.20AM.original.png",
+          "alt": "Screenshot 2026-08-03 at 11.42.20 AM",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2026-08-03_at_11.51.27AM.original.png",
+          "alt": "Screenshot 2026-08-03 at 11.51.27 AM",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2026-08-03_at_11.44.18AM.original.png",
+          "alt": "Screenshot 2026-08-03 at 11.44.18 AM",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2026-08-03_at_11.43.29AM_1.original.png",
+          "alt": "Screenshot 2026-08-03 at 11.43.29 AM (1)",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2026-08-03_at_11.44.30AM.original.png",
+          "alt": "Screenshot 2026-08-03 at 11.44.30 AM",
+          "title": "",
+          "position": 6
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2026-08-03_at_11.45.16AM.original.png",
+          "alt": "Screenshot 2026-08-03 at 11.45.16 AM",
+          "title": "",
+          "position": 7
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "The 2026-07-28 Model Context Protocol (MCP) specification replaces legacy stateful constraints with a fully stateless core, enabling cloud-native horizontal scaling, serverless deployments, and standard round-robin load balancing. This architectural shift introduces standardized HTTP headers for efficient routing without deep packet inspection, caching controls, and Multi Round-Trip Requests (MRTR) to handle interactive and long-running tasks without blocking connections. Developers can immediately begin migrating their agentic applications to this highly scalable infrastructure using the newly available beta SDKs for Python, TypeScript, Go, and C#."
+    },
+    {
       "title": "A unified API for AI model routing",
       "link": "https://developers.googleblog.com/en/a-unified-api-for-ai-model-routing/",
       "pubDate": "Mon, 03 Aug 2026 16:00:00 GMT",
@@ -229,20 +279,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "Google Cloud has partnered with Parallel Web Systems to natively integrate Parallel's search infrastructure as a web grounding provider on the Gemini Enterprise Agent Platform. This integration enables developers to anchor their AI agents in verifiable, real-time web results, significantly improving factual accuracy for complex enterprise workflows. Additionally, the partnership offers expanded architectural flexibility, allowing users to programmatically extract, permanently cache, and process web data alongside other large language models."
-    },
-    {
-      "title": "Evolving Spec-Driven Development: Conductor Now Supports Antigravity",
-      "link": "https://developers.googleblog.com/en/evolving-spec-driven-development-conductor-now-supports-antigravity/",
-      "pubDate": "Wed, 15 Jul 2026 16:00:00 GMT",
-      "isoDate": "2026-07-15T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Evolving Spec-Driven Development: Conductor Now Supports Antigravity",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Conductor has evolved from a Gemini CLI extension into a portable plugin, bringing conversational Spec-Driven Development (SDD) to ecosystems like Antigravity CLI and Claude. Rather than relying on strict command sequences, developers can now chat naturally with their AI assistant while it dynamically manages persistent markdown artifacts (like spec.md and plan.md) in the background. This update eliminates workflow friction while ensuring your repository remains a version-controlled, single source of truth for your project's architecture and state across different AI tools."
     }
   ],
-  "lastUpdated": "2026-08-05T12:06:22.368Z"
+  "lastUpdated": "2026-08-06T12:09:03.865Z"
 }
