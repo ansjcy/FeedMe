@@ -5,6 +5,19 @@
   "link": "https://engineering.fb.com/",
   "items": [
     {
+      "title": "From User Sequences to Scaling Laws: A Multi-Stage Architecture for Meta’s Ads Ranking",
+      "link": "https://engineering.fb.com/2026/08/05/ml-applications/from-user-sequences-to-scaling-laws-a-multi-stage-architecture-for-metas-ads-ranking/",
+      "pubDate": "Wed, 05 Aug 2026 19:20:20 +0000",
+      "isoDate": "2026-08-05T19:20:20.000Z",
+      "creator": "",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "From User Sequences to Scaling Laws: A Multi-Stage Architecture for Meta’s Ads Ranking",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "<p>Every day, Meta’s recommendation platforms handle billions of user interactions, generating rich temporal signals that capture individual preferences and intent across products, ads, and content. In our 2024 post on sequence learning for ads recommendations, we showed how modeling the order and timing of user actions (rather than relying on static, manually engineered sparse features) [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/08/05/ml-applications/from-user-sequences-to-scaling-laws-a-multi-stage-architecture-for-metas-ads-ranking/\">Read More...</a></p>\n<p>The post <a href=\"https://engineering.fb.com/2026/08/05/ml-applications/from-user-sequences-to-scaling-laws-a-multi-stage-architecture-for-metas-ads-ranking/\">From User Sequences to Scaling Laws: A Multi-Stage Architecture for Meta’s Ads Ranking</a> appeared first on <a href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
+    },
+    {
       "title": "GEM Training: How Meta Doubled the Efficiency of Its LLM-Scale Ads Foundation Model",
       "link": "https://engineering.fb.com/2026/08/03/ml-applications/training-gem-at-llm-scale-meta-ads-recommendation-foundation-model/",
       "pubDate": "Mon, 03 Aug 2026 18:00:17 +0000",
@@ -120,20 +133,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>We’re introducing Instantaneous PowerLoss Storm, a new testing paradigm within Meta’s infrastructure for handling and mitigating instant or zero-notice power loss in our data centers.  We’re sharing: how we built readiness to tolerate instant failures into our existing systems with defense-in-depth strategies; tradeoffs made in implementing it, and how we validated our readiness. Disaster preparedness [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/06/03/data-center-engineering/lights-out-systems-on-validating-instant-power-loss-readiness/\">Read More...</a></p>\n<p>The post <a href=\"https://engineering.fb.com/2026/06/03/data-center-engineering/lights-out-systems-on-validating-instant-power-loss-readiness/\">Lights Out, Systems On: Validating Instant Power Loss Readiness</a> appeared first on <a href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
-    },
-    {
-      "title": "SilverTorch: Index as Model — A New Retrieval Paradigm for Recommendation Systems",
-      "link": "https://engineering.fb.com/2026/05/26/ml-applications/silvertorch-index-as-model-new-retrieval-paradigm-recommendation-systems/",
-      "pubDate": "Tue, 26 May 2026 16:00:01 +0000",
-      "isoDate": "2026-05-26T16:00:01.000Z",
-      "creator": "",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "SilverTorch: Index as Model — A New Retrieval Paradigm for Recommendation Systems",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "<p>We’re introducing SilverTorch, a reimagining of recommendation systems that unifies all retrieval components for user generated content under a unified architecture.  SilverTorch shows up to 23.7x higher throughput compared to the state-of-the-art approaches. It’s also showing 20.9x more compute cost efficiency compared to a CPU-based solution while also improving accuracy.  Our research paper, “SilverTorch: A [...]</p>\n<p><a class=\"btn btn-secondary understrap-read-more-link\" href=\"https://engineering.fb.com/2026/05/26/ml-applications/silvertorch-index-as-model-new-retrieval-paradigm-recommendation-systems/\">Read More...</a></p>\n<p>The post <a href=\"https://engineering.fb.com/2026/05/26/ml-applications/silvertorch-index-as-model-new-retrieval-paradigm-recommendation-systems/\">SilverTorch: Index as Model — A New Retrieval Paradigm for Recommendation Systems</a> appeared first on <a href=\"https://engineering.fb.com\">Engineering at Meta</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-08-05T07:44:48.800Z"
+  "lastUpdated": "2026-08-07T06:11:54.168Z"
 }
