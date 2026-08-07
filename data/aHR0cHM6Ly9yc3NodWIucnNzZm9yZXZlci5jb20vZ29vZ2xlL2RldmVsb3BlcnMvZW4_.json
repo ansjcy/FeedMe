@@ -5,6 +5,38 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Agent Plugins package your skills, tools, and more",
+      "link": "https://developers.googleblog.com/en/agent-plugins-package-your-skills-tools-and-more/",
+      "pubDate": "Wed, 05 Aug 2026 16:00:00 GMT",
+      "isoDate": "2026-08-05T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Agent Plugins package your skills, tools, and more",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/agent-plugins-figure-fork-and-drift.original.jpg",
+          "alt": "agent-plugins-figure-fork-and-drift",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/agent-plugins-figure-not-every-skill.original.jpg",
+          "alt": "agent-plugins-figure-not-every-skill",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/agent-plugins-figure-ecosystem-layers.original.jpg",
+          "alt": "agent-plugins-figure-ecosystem-layers",
+          "title": "",
+          "position": 3
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Agent Plugins 1.0.0 is a new, vendor-neutral directory specification—backed by Google, Amazon, Microsoft, and others—for packaging Agent Skills and MCP servers into a single portable unit. By standardizing the manifest (plugin.json) and utilizing a fixed directory layout, it eliminates the need for developers to maintain separate wrappers or configurations to support different AI coding agents and IDEs. Google has officially joined as a Core Maintainer and already rolled out support in the Agents CLI and Data Agent Kit, allowing developers to start building and distributing interoperable plugins today."
+    },
+    {
       "title": "Scaling AI Agent Infrastructure with the MCP Stateless updates",
       "link": "https://developers.googleblog.com/en/scaling-ai-agent-infrastructure-with-the-mcp-stateless-updates/",
       "pubDate": "Tue, 04 Aug 2026 16:00:00 GMT",
@@ -266,20 +298,7 @@
       ],
       "contentSource": "RSS",
       "content": "Ray 2.55 introduces official, first-class support for Google Cloud TPUs, enabling developers to run distributed Python workloads on Google's accelerators using the familiar Ray task-and-actor APIs. To handle the strict networking requirement of keeping multi-host TPU \"slices\" together over their Inter-Chip Interconnect (ICI), the KubeRay Operator on GKE automatically provisions and labels the underlying hardware layout. Ray Core utilizes these labels via its slice_placement_group() primitive to atomically reserve complete slices, allowing developers to deploy jobs through KubeRay, Ray Train, or Ray Serve simply by declaring a hardware topology (like \"4x4\") without writing custom placement code."
-    },
-    {
-      "title": "Expanding Choice in Gemini Enterprise Agent Platform: Introducing Grounding with Parallel Web Search",
-      "link": "https://developers.googleblog.com/en/expanding-choice-in-gemini-enterprise-agent-platform-introducing-grounding-with-parallel-web-search/",
-      "pubDate": "Wed, 15 Jul 2026 16:00:00 GMT",
-      "isoDate": "2026-07-15T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Expanding Choice in Gemini Enterprise Agent Platform: Introducing Grounding with Parallel Web Search",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Google Cloud has partnered with Parallel Web Systems to natively integrate Parallel's search infrastructure as a web grounding provider on the Gemini Enterprise Agent Platform. This integration enables developers to anchor their AI agents in verifiable, real-time web results, significantly improving factual accuracy for complex enterprise workflows. Additionally, the partnership offers expanded architectural flexibility, allowing users to programmatically extract, permanently cache, and process web data alongside other large language models."
     }
   ],
-  "lastUpdated": "2026-08-06T12:09:03.865Z"
+  "lastUpdated": "2026-08-07T11:01:27.618Z"
 }
