@@ -87,7 +87,7 @@
       "content": "The 2026-07-28 Model Context Protocol (MCP) specification replaces legacy stateful constraints with a fully stateless core, enabling cloud-native horizontal scaling, serverless deployments, and standard round-robin load balancing. This architectural shift introduces standardized HTTP headers for efficient routing without deep packet inspection, caching controls, and Multi Round-Trip Requests (MRTR) to handle interactive and long-running tasks without blocking connections. Developers can immediately begin migrating their agentic applications to this highly scalable infrastructure using the newly available beta SDKs for Python, TypeScript, Go, and C#."
     },
     {
-      "title": "A unified API for AI model routing",
+      "title": "A unified API for AI model routing (原标题: Model routing with Google Cloud API Gateway)",
       "link": "https://developers.googleblog.com/en/a-unified-api-for-ai-model-routing/",
       "pubDate": "Mon, 03 Aug 2026 16:00:00 GMT",
       "isoDate": "2026-08-03T16:00:00.000Z",
@@ -300,5 +300,5 @@
       "content": "Ray 2.55 introduces official, first-class support for Google Cloud TPUs, enabling developers to run distributed Python workloads on Google's accelerators using the familiar Ray task-and-actor APIs. To handle the strict networking requirement of keeping multi-host TPU \"slices\" together over their Inter-Chip Interconnect (ICI), the KubeRay Operator on GKE automatically provisions and labels the underlying hardware layout. Ray Core utilizes these labels via its slice_placement_group() primitive to atomically reserve complete slices, allowing developers to deploy jobs through KubeRay, Ray Train, or Ray Serve simply by declaring a hardware topology (like \"4x4\") without writing custom placement code."
     }
   ],
-  "lastUpdated": "2026-08-09T10:44:16.756Z"
+  "lastUpdated": "2026-08-10T11:15:50.721Z"
 }
