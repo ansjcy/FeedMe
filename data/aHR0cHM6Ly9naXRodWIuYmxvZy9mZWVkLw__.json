@@ -5,6 +5,50 @@
   "link": "https://github.blog/",
   "items": [
     {
+      "title": "Using the GitHub Copilot SDK for Java",
+      "link": "https://github.blog/engineering/using-the-github-copilot-sdk-for-java/",
+      "pubDate": "Mon, 10 Aug 2026 19:30:00 +0000",
+      "isoDate": "2026-08-10T19:30:00.000Z",
+      "creator": "Edward Burns",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Using the GitHub Copilot SDK for Java",
+      "images": [
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/08/figure-01-app-flow-diagram.png?resize=1024%2C173",
+          "alt": "Application flow diagram showing the pipeline stages: Customer Enquiry flows to QUEUED, then VALIDATING, which branches to either SEARCHING (if genuine) or REJECTED (if spam/off-topic). SEARCHING leads to WRITING_REPORT (if matches found) or NO MATCHES. WRITING_REPORT completes at DONE.",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/08/figure-02-app-architecture-diagram.png?resize=1024%2C628",
+          "alt": "Application architecture diagram showing Browser with Pipeline Dashboard connecting to Open Liberty server containing AppState, CopilotClient in EMPTY mode, virtual thread agents, and WebSocket push for real-time UI updates.",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/08/figure-03-sample-app-01.png?resize=1024%2C940",
+          "alt": "Screenshot of the sample application showing the pipeline dashboard with multiple enquiries being processed concurrently.",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://github.blog/wp-content/uploads/2026/08/figure-04-sample-app-02.png?resize=778%2C1024",
+          "alt": "Screenshot of the sample application showing detailed agent event log and property search results.",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://avatars.githubusercontent.com/u/75821?v=4&s=200",
+          "alt": "Edward Burns",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "<p>Enterprise Java developers have a new superpower—drive GitHub Copilot from idiomatic Java code with annotations, virtual threads, and more.</p>\n<p>The post <a href=\"https://github.blog/engineering/using-the-github-copilot-sdk-for-java/\">Using the GitHub Copilot SDK for Java</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
+    },
+    {
       "title": "A guide to slash commands in the GitHub Copilot app",
       "link": "https://github.blog/ai-and-ml/github-copilot/a-guide-to-slash-commands-in-the-github-copilot-app/",
       "pubDate": "Thu, 06 Aug 2026 19:49:34 +0000",
@@ -349,51 +393,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "<p>A practical GitHub Copilot workflow for prototyping, planning, implementing, and reviewing software without chasing every new AI tool.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/\">The harness is all you need (mostly)</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
-    },
-    {
-      "title": "GitHub Copilot app for Beginners: Getting started",
-      "link": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-getting-started/",
-      "pubDate": "Mon, 27 Jul 2026 16:00:00 +0000",
-      "isoDate": "2026-07-27T16:00:00.000Z",
-      "creator": "Christopher Harrison",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "GitHub Copilot app for Beginners: Getting started",
-      "images": [
-        {
-          "url": "https://avatars.githubusercontent.com/u/6109729?v=4&s=200",
-          "alt": "Christopher Harrison",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon-Circle.svg",
-          "alt": "Docs",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/recirculation-github-icon.svg",
-          "alt": "GitHub",
-          "title": "",
-          "position": 3
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2024/07/Icon_da43dc.svg",
-          "alt": "Customer stories",
-          "title": "",
-          "position": 4
-        },
-        {
-          "url": "https://github.blog/wp-content/uploads/2025/06/Universe26-Icon.svg",
-          "alt": "GitHub Universe 2026",
-          "title": "",
-          "position": 5
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "<p>New to the GitHub Copilot app? Learn how to start projects, work with AI agents, explore canvases, and streamline your development workflow.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-getting-started/\">GitHub Copilot app for Beginners: Getting started</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>\n"
     }
   ],
-  "lastUpdated": "2026-08-09T05:14:49.055Z"
+  "lastUpdated": "2026-08-11T05:18:16.428Z"
 }
