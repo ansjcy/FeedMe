@@ -5,6 +5,88 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Mastering Edge AI on Raspberry Pi with LiteRT and Gemma",
+      "link": "https://developers.googleblog.com/en/mastering-edge-ai-on-raspberry-pi-with-litert-and-gemma/",
+      "pubDate": "Mon, 10 Aug 2026 16:00:00 GMT",
+      "isoDate": "2026-08-10T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Mastering Edge AI on Raspberry Pi with LiteRT and Gemma",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Gemma4-perf.original.png",
+          "alt": "Gemma4-perf",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/classic_model_perf.original.png",
+          "alt": "classic model perf",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Reachy_pipeline.original.png",
+          "alt": "Reachy pipeline",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/LiteRT_CLI_vs_Ollama.original.png",
+          "alt": "LiteRT_CLI vs Ollama",
+          "title": "",
+          "position": 4
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Deploying secure, real-time Edge AI on Raspberry Pi is now simplified using LiteRT and lightweight Gemma open models. LiteRT optimizes CPU and GPU performance, delivering fast token speeds for models like Gemma4, enabling real-time local reasoning for robotics. Developers can quickly convert, quantize, and run these models using the lightweight LiteRT CLI tool. Support for Hailo AI accelerators is also coming very soon."
+    },
+    {
+      "title": "Why Go is an Ideal Language for AI-Assisted Software Engineering",
+      "link": "https://developers.googleblog.com/en/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
+      "pubDate": "Mon, 10 Aug 2026 16:00:00 GMT",
+      "isoDate": "2026-08-10T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Why Go is an Ideal Language for AI-Assisted Software Engineering",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Go_Logo_-_Blue.original.png",
+          "alt": "Go Logo - Blue",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Go_Platform.original.png",
+          "alt": "Go Platform",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Vuln_Management.original.png",
+          "alt": "Vuln Management",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Fuzzing.original.png",
+          "alt": "Fuzzing",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Modernizers.original.png",
+          "alt": "Modernizers",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "As AI coding assistants shift the developer's primary role from writing boilerplate to reviewing and maintaining systems, language choice becomes critical for long-term architectural integrity. Go directly addresses this new paradigm by utilizing its strict compiler, integrated toolchain, and uncompromising readability to provide deterministic guardrails that help AI models self-correct and generate highly standardized code. By enforcing ecosystem-wide consistency and strict backward compatibility, the Go platform empowers engineering teams to efficiently verify, optimize, and maintain high-velocity, AI-generated output in production environments."
+    },
+    {
       "title": "Agent Plugins package your skills, tools, and more",
       "link": "https://developers.googleblog.com/en/agent-plugins-package-your-skills-tools-and-more/",
       "pubDate": "Wed, 05 Aug 2026 16:00:00 GMT",
@@ -240,65 +322,7 @@
       ],
       "contentSource": "RSS",
       "content": "This second installment explores how Ray’s higher-level libraries—Serve, Data, and Train—abstract the complexities of running AI workloads on Google's TPU slices. Ray Serve uses a simple topology configuration to correctly gang-schedule large multi-host models, while Ray Data eliminates data-loading bottlenecks by feeding accelerators directly with native JAX batches. Finally, JaxTrainer streamlines distributed training across TPUs by automatically handling cross-slice coordination, checkpointing, and fault tolerance."
-    },
-    {
-      "title": "Scaling Agentic RL: High-Throughput Agentic Training with Tunix",
-      "link": "https://developers.googleblog.com/en/scaling-agentic-rl-high-throughput-agentic-training-with-tunix/",
-      "pubDate": "Mon, 20 Jul 2026 16:00:00 GMT",
-      "isoDate": "2026-07-20T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Scaling Agentic RL: High-Throughput Agentic Training with Tunix",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2026-07-13_at_10.15.53AM.original.png",
-          "alt": "Screenshot 2026-07-13 at 10.15.53 AM",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Screenshot_2026-07-13_at_10.16.08AM.original.png",
-          "alt": "Screenshot 2026-07-13 at 10.16.08 AM",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/blog-perfetto.original.png",
-          "alt": "blog-perfetto",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Tunix is Google’s new JAX-native post-training library designed to eliminate TPU idling bottlenecks when training multi-turn, tool-using LLM reasoning agents. It maximizes hardware throughput by combining highly concurrent, asynchronous rollouts with a decoupled producer-consumer pipeline, ensuring the trainer is constantly fed even while agents wait on network I/O or environment steps. Additionally, Tunix provides plug-and-play abstractions and continuous macro-level profiling, allowing developers to easily integrate custom open-source environments and optimize complex distributed workflows without massive code rewrites."
-    },
-    {
-      "title": "Run Ray on TPU, Part 1: The foundations",
-      "link": "https://developers.googleblog.com/en/run-ray-on-tpu-part-1-the-foundations/",
-      "pubDate": "Sun, 19 Jul 2026 16:00:00 GMT",
-      "isoDate": "2026-07-19T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Run Ray on TPU, Part 1: The foundations",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/fig1_2.original.png",
-          "alt": "fig1 (2)",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/fig2_2.original.png",
-          "alt": "fig2 (2)",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Ray 2.55 introduces official, first-class support for Google Cloud TPUs, enabling developers to run distributed Python workloads on Google's accelerators using the familiar Ray task-and-actor APIs. To handle the strict networking requirement of keeping multi-host TPU \"slices\" together over their Inter-Chip Interconnect (ICI), the KubeRay Operator on GKE automatically provisions and labels the underlying hardware layout. Ray Core utilizes these labels via its slice_placement_group() primitive to atomically reserve complete slices, allowing developers to deploy jobs through KubeRay, Ray Train, or Ray Serve simply by declaring a hardware topology (like \"4x4\") without writing custom placement code."
     }
   ],
-  "lastUpdated": "2026-08-11T10:59:18.273Z"
+  "lastUpdated": "2026-08-12T11:06:49.176Z"
 }
