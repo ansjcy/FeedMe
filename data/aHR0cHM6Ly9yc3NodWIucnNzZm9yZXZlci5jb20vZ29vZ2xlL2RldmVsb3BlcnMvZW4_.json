@@ -324,5 +324,5 @@
       "content": "This second installment explores how Ray’s higher-level libraries—Serve, Data, and Train—abstract the complexities of running AI workloads on Google's TPU slices. Ray Serve uses a simple topology configuration to correctly gang-schedule large multi-host models, while Ray Data eliminates data-loading bottlenecks by feeding accelerators directly with native JAX batches. Finally, JaxTrainer streamlines distributed training across TPUs by automatically handling cross-slice coordination, checkpointing, and fault tolerance."
     }
   ],
-  "lastUpdated": "2026-08-12T11:06:49.176Z"
+  "lastUpdated": "2026-08-13T11:06:24.438Z"
 }
