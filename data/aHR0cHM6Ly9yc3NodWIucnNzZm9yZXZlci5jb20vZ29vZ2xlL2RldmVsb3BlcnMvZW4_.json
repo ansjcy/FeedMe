@@ -5,6 +5,69 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "HeyGen x Google Cloud: Bringing Avatar IV to TPUs",
+      "link": "https://developers.googleblog.com/en/heygen-x-google-cloud-bringing-avatar-iv-to-tpus/",
+      "pubDate": "Wed, 12 Aug 2026 16:00:00 GMT",
+      "isoDate": "2026-08-12T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "HeyGen x Google Cloud: Bringing Avatar IV to TPUs",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image7_wcPVnqC.original.png",
+          "alt": "image7",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image2_1.original.png",
+          "alt": "image2 (1)",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image4_1.original.png",
+          "alt": "image4 (1)",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image8_rAzL9tF.original.png",
+          "alt": "image8",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image3_1pLIOyC.original.png",
+          "alt": "image3",
+          "title": "",
+          "position": 5
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/image6_y0zfteb.original.png",
+          "alt": "image6",
+          "title": "",
+          "position": 6
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "HeyGen ported their 18B+ parameter Avatar IV video generation model to Google Cloud's Trillium (v6e) TPUs via torchax and XLA, utilizing FSDP and Ulysses sequence parallelism across an eight-chip mesh. To achieve a 1.86x speedup for real-time streaming, the engineering team pipelined exposed all-to-all collectives, aligned sparse attention block sizes to eliminate mask padding, and bypassed softmax serial dependencies using a precomputed Cauchy-Schwarz upper bound. These custom Pallas kernel and compiler optimizations were deployed only after passing rigorous two-tier quality gates to guarantee byte-identical or mathematically equivalent pixel outputs."
+    },
+    {
+      "title": "Introducing Credentio: Open Source C++ Library for C2PA Content Credentials from Google",
+      "link": "https://developers.googleblog.com/en/introducing-credentio-open-source-c-library-for-c2pa-content-credentials-from-google/",
+      "pubDate": "Wed, 12 Aug 2026 16:00:00 GMT",
+      "isoDate": "2026-08-12T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Introducing Credentio: Open Source C++ Library for C2PA Content Credentials from Google",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Credentio is a newly released, open-source C++ library from Google that allows developers to integrate high-performance, local-first validation of C2PA Content Credentials into their client and server applications. By processing assets entirely locally with a highly optimized memory footprint, the library delivers instant validation verdicts for multi-gigabyte media files without incurring cloud latency, bandwidth costs, or data privacy risks. The library currently features deep manifest parsing alongside configurable trust list integration, and is available now on Google Source with future plans to support full credential generation and embedding."
+    },
+    {
       "title": "Mastering Edge AI on Raspberry Pi with LiteRT and Gemma",
       "link": "https://developers.googleblog.com/en/mastering-edge-ai-on-raspberry-pi-with-litert-and-gemma/",
       "pubDate": "Mon, 10 Aug 2026 16:00:00 GMT",
@@ -282,47 +345,7 @@
       ],
       "contentSource": "RSS",
       "content": "To prevent context window bloat and reduce token consumption, Genkit Go introduces Agent Skills based on a progressive disclosure architecture. Developers can package specialized instructions, scripts, and references into modular SKILL.md bundles where only the frontmatter metadata is initially exposed to the agent's system prompt. When a task matches the skill's description, Genkit's middleware dynamically loads the full instruction body and associated assets, ensuring the model accesses precise workflows exactly when needed."
-    },
-    {
-      "title": "How to use Google microbenchmarks for evaluating TPU performance",
-      "link": "https://developers.googleblog.com/en/how-to-use-google-microbenchmarks-for-evaluating-tpu-performance/",
-      "pubDate": "Wed, 29 Jul 2026 16:00:00 GMT",
-      "isoDate": "2026-07-29T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "How to use Google microbenchmarks for evaluating TPU performance",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/TPU_microbenchmark.original.png",
-          "alt": "TPU microbenchmark",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "Google's open-source TPU microbenchmark suite provides developers with granular performance metrics across Network, Compute, HBM, Host Transfer, and Attention components to validate real-world hardware capabilities. By leveraging these benchmarks to establish a Roofline model, engineers can accurately diagnose whether their machine learning workloads are compute-, memory-, or network-bound. This empirical baseline directly guides targeted software optimizations—such as kernel tuning, mesh sharding, and rematerialization—to maximize hardware utilization for large-scale model deployments."
-    },
-    {
-      "title": "Run Ray on TPU, Part 2: Ray AI libraries",
-      "link": "https://developers.googleblog.com/en/run-ray-on-tpu-part-2-ray-ai-libraries/",
-      "pubDate": "Thu, 23 Jul 2026 16:00:00 GMT",
-      "isoDate": "2026-07-23T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Run Ray on TPU, Part 2: Ray AI libraries",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/fig4alt.original.png",
-          "alt": "fig4alt",
-          "title": "",
-          "position": 1
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "This second installment explores how Ray’s higher-level libraries—Serve, Data, and Train—abstract the complexities of running AI workloads on Google's TPU slices. Ray Serve uses a simple topology configuration to correctly gang-schedule large multi-host models, while Ray Data eliminates data-loading bottlenecks by feeding accelerators directly with native JAX batches. Finally, JaxTrainer streamlines distributed training across TPUs by automatically handling cross-slice coordination, checkpointing, and fault tolerance."
     }
   ],
-  "lastUpdated": "2026-08-13T11:06:24.438Z"
+  "lastUpdated": "2026-08-14T11:04:27.185Z"
 }
