@@ -347,5 +347,5 @@
       "content": "To prevent context window bloat and reduce token consumption, Genkit Go introduces Agent Skills based on a progressive disclosure architecture. Developers can package specialized instructions, scripts, and references into modular SKILL.md bundles where only the frontmatter metadata is initially exposed to the agent's system prompt. When a task matches the skill's description, Genkit's middleware dynamically loads the full instruction body and associated assets, ensuring the model accesses precise workflows exactly when needed."
     }
   ],
-  "lastUpdated": "2026-08-14T11:04:27.185Z"
+  "lastUpdated": "2026-08-15T10:31:27.582Z"
 }
