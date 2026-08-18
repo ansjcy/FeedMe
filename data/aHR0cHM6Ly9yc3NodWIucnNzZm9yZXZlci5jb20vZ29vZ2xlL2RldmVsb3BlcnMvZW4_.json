@@ -5,6 +5,50 @@
   "link": "https://developers.googleblog.com",
   "items": [
     {
+      "title": "Build zero-trust AI agents with Google's Agent Development Kit",
+      "link": "https://developers.googleblog.com/en/build-zero-trust-ai-agents-with-googles-agent-development-kit/",
+      "pubDate": "Sun, 16 Aug 2026 16:00:00 GMT",
+      "isoDate": "2026-08-16T16:00:00.000Z",
+      "creator": "Google",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Build zero-trust AI agents with Google's Agent Development Kit",
+      "images": [
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/zero-trust-agents_app.original.png",
+          "alt": "zero-trust-agents_app",
+          "title": "",
+          "position": 1
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-1.original.png",
+          "alt": "diagram-1",
+          "title": "",
+          "position": 2
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-3.original.png",
+          "alt": "diagram-3",
+          "title": "",
+          "position": 3
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/diagram-2.original.jpg",
+          "alt": "diagram-2",
+          "title": "",
+          "position": 4
+        },
+        {
+          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/table_1.original.png",
+          "alt": "table (1)",
+          "title": "",
+          "position": 5
+        }
+      ],
+      "contentSource": "RSS",
+      "content": "Building autonomous AI agents that mutate production state requires moving beyond soft system prompts to a robust zero-trust architecture. To secure Google Agent Development Kit (ADK) workflows against prompt injections and malicious execution, developers must implement hardware-backed cryptographic signatures for database writes, kernel-level sandboxing with gVisor for dynamic code, and deterministic semantic gateways for I/O validation. By enforcing these hard security boundaries at the infrastructure level, you can safely deploy multi-tool AI agents without risking unauthorized data manipulation or server compromise."
+    },
+    {
       "title": "HeyGen x Google Cloud: Bringing Avatar IV to TPUs",
       "link": "https://developers.googleblog.com/en/heygen-x-google-cloud-bringing-avatar-iv-to-tpus/",
       "pubDate": "Wed, 12 Aug 2026 16:00:00 GMT",
@@ -313,39 +357,7 @@
       ],
       "contentSource": "RSS",
       "content": "Agent Platform's evaluation service is now generally available, providing developers with a unified engine to measure agent quality consistently across local development experiments and live production traffic. You can evaluate agents using over 20 pre-built metrics, DeepMind-backed adaptive rubrics, or custom code-based and LLM-as-a-judge metrics stored in a centralized, versioned registry. The service integrates directly into existing workflows via the Agent Platform SDK, agents-cli, and ADK, offering built-in user and environment simulators to automate complex multi-turn testing and streamline CI pipelines."
-    },
-    {
-      "title": "Enable on-demand expertise with Agent Skills in Genkit Go",
-      "link": "https://developers.googleblog.com/en/enable-on-demand-expertise-with-agent-skills-in-genkit-go/",
-      "pubDate": "Thu, 30 Jul 2026 16:00:00 GMT",
-      "isoDate": "2026-07-30T16:00:00.000Z",
-      "creator": "Google",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Enable on-demand expertise with Agent Skills in Genkit Go",
-      "images": [
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/progressive-disclosure.original.png",
-          "alt": "progressive-disclosure",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ecce_ecce.original.jpg",
-          "alt": "ecce ecce",
-          "title": "",
-          "position": 2
-        },
-        {
-          "url": "https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/ecce.original.jpg",
-          "alt": "ecce",
-          "title": "",
-          "position": 3
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "To prevent context window bloat and reduce token consumption, Genkit Go introduces Agent Skills based on a progressive disclosure architecture. Developers can package specialized instructions, scripts, and references into modular SKILL.md bundles where only the frontmatter metadata is initially exposed to the agent's system prompt. When a task matches the skill's description, Genkit's middleware dynamically loads the full instruction body and associated assets, ensuring the model accesses precise workflows exactly when needed."
     }
   ],
-  "lastUpdated": "2026-08-17T10:40:29.192Z"
+  "lastUpdated": "2026-08-18T10:38:18.209Z"
 }
