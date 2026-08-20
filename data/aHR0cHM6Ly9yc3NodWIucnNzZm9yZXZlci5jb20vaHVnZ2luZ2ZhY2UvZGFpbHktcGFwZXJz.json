@@ -5,6 +5,110 @@
   "link": "https://huggingface.co/papers",
   "items": [
     {
+      "title": "Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL",
+      "link": "https://arxiv.org/abs/2608.17253",
+      "pubDate": "Tue, 18 Aug 2026 20:00:00 GMT",
+      "isoDate": "2026-08-18T20:00:00.000Z",
+      "creator": "Yunhao Yang, Yuexin Bian, Yunjie Tian, Di Fu, Tianjin Huang, Yuanyuan Shi, Ziang Xiao, Nuno Vasconcelos, Yijiang Li",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Reinforcement learning (RL) has emerged as a powerful approach for improving reasoning in language and vision-language models, yet its strongest successes still depend heavily on ground-truth supervision (e.g., verifiable reward). Such annotations are costly to obtain and become increasingly scarce as reasoning capabilities advance beyond what humans can reliably evaluate. Self-rewarding RL reduces this dependence by enabling models to derive reward signals from their own completions. However, training solely on self-generated feedback can reinforce existing biases and suboptimal behaviors, reduce response diversity, and ultimately lead to homogenized responses and training collapse. In this work, we show that unsupervised reasoning can emerge through cooperative multi-agent training. We introduce Co-RL, a framework in which multiple decoupled models, sharing no parameters, are simultaneously optimized through RL using rewards derived from their peers. We further show that increasing cohort diversity, through heterogeneous model families, sizes, and rephrased training samples, reduces the correlated errors that drive self-reinforcing feedback loops. This diversity consistently improves reasoning performance, maintains behavioral diversity, and mitigates training collapse. Across text-only and multimodal domains, Co-RL consistently outperforms the base models and prior label-free approaches, while matching or surpassing supervised methods, without access to any ground-truth labels. Concretely, Co-RL yields average gains of 3.0-8.6% across seven text-only benchmarks for LLMs and 2.3-7.2% across four multimodal benchmarks for VLMs. Code is available at https://github.com/DrStranded/Co-RL."
+    },
+    {
+      "title": "SemaPLC: A Project-Grounded, Verification-Gated Agent Harness for PLC Code Generation",
+      "link": "https://arxiv.org/abs/2608.18565",
+      "pubDate": "Tue, 18 Aug 2026 20:00:00 GMT",
+      "isoDate": "2026-08-18T20:00:00.000Z",
+      "creator": "Yanlun Tu, Huacan Wang, Ziyue Zhou, Jie Zhou, Ningyan Zhu, Ge Chen, Wangyi Chen, Tengfei Zhou, Yifan Zhou, Dasheng Yang, Xiaofeng Mou, Hui Zhang, Yi Xu",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "SemaPLC: A Project-Grounded, Verification-Gated Agent Harness for PLC Code Generation",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Programmable logic controllers (PLCs) run industrial plants, and large language models can already generate independent program organization units (POUs) for them. Whether such logic integrates into an existing PLC project and then runs correctly has been checked only in limited tests. We present SemaPLC, a project-grounded and verification-gated agent harness assembled from conventional tools but governed by a strict completion rule. Rather than stopping when the model judges its own output adequate, SemaPLC declares a task complete only when logged external checks confirm it. Those checks cover the specification, the compilation, and the behavior on a live runtime. On 117 independent-POU tasks matching existing benchmarks, it attains the highest strict verified pass rate on all seven models (72.6\\% mean). On a project-context track of 65 tasks whose generated logic must compile and run inside a real project, it attains the highest mean on integrated compilation, static behavior, and dynamic behavior. Of the three layers, dynamic behavior is the most revealing. We measure it by deploying the generated and the reference logic to a live PLC runtime and comparing their executed traces. All methods fall within 10 static points of one another, whereas dynamic scores separate them sharply, from 22.4 to 31.4 for the baselines against 52.2 for SemaPLC. Overall, our verification-gated harness raises the mean at every layer and most sharply at runtime. Execution, not static scoring, is the faithful test of whether generated control logic actually works. SemaPLC is open-sourced at https://github.com/midea-ai/SemaPLC."
+    },
+    {
+      "title": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
+      "link": "https://arxiv.org/abs/2608.19197",
+      "pubDate": "Tue, 18 Aug 2026 20:00:00 GMT",
+      "isoDate": "2026-08-18T20:00:00.000Z",
+      "creator": "Bo Liu, Simon Yu, Yiding Jiang, Ao Qu, Andrew Zhao, Zichen Liu, Junsu Kim, Zijian Zhou, Seungone Kim, Tongzheng Ren, Mickel Liu, Hanfei Yu, Zhaorun Chen, Weiyan Shi, Paul Pu Liang, Luke Zettlemoyer, Yejin Choi, Natasha Jaques",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Continuous self-improvement requires an ever-expanding pool of self-generated, diverse, adaptive goals. For language agents, existing training environment pools (hand-curated, statically synthesized, or frozen-verifier) keep the goal distribution fixed as the learner scales. We introduce SPADE (Self-Play in Adaptive Synthetic Executable Environments), a self-play RL framework in which a single LLM plays two roles: an Environment Designer that writes complete, long-horizon training environments as executable code with an OpenAI Gym-style reset()/step() interface, and a Reasoning Agent that learns to act in them. Each is a stateful, multi-turn environment (state transitions, reward functions, and verification code), so one interface spans reasoning problems and multi-step agentic tool use. The Reasoning Agent's regret is estimated using the gap between its reward with and without privileged hints; in optimizing this regret signal the Environment Designer learns to target environments at the edge of the agent's capabilities while keeping them feasible. Through extensive experimentation, we find several components critical to success: grounding the Environment Designer on documents sampled from a large pretraining corpus, and giving it an accumulated environment memory. Scaling to 30B-parameter models, SPADE improves over the strongest fixed-environment baseline by +5.3 on average across eight held-out math, science, code, and reasoning benchmarks, and lifts the tool-use setting by +5.7 on BFCL-v4 multi-turn and +13.9 on ACEBench-Agent; on the games setting, the margin over the strongest baseline grows with model scale. By making environment design itself a learnable component, SPADE takes a concrete step toward open-ended self-improvement."
+    },
+    {
+      "title": "Training Chemical Plausibility-Aware Large Language Models for Single-Step Retrosynthesis",
+      "link": "https://arxiv.org/abs/2608.18940",
+      "pubDate": "Tue, 18 Aug 2026 20:00:00 GMT",
+      "isoDate": "2026-08-18T20:00:00.000Z",
+      "creator": "Bogdan Zagribelnyy, Ivan Ilin, Nikita Bondarev, Maksim Kuznetsov, Mathieu Reymond, Vladimir Aladinskiy, Alex Aliper, Alex Zhavoronkov",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Training Chemical Plausibility-Aware Large Language Models for Single-Step Retrosynthesis",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Single-step retrosynthesis is a central component of computer-aided synthesis planning, yet its intrinsically one-to-many nature is poorly captured by single-answer evaluation and benchmarking protocols. To address this, we introduce Top-K prompting as a robust training and inference paradigm to better capture diverse, plausible reaction predictions. We compile CREED-CCV-2+USPTO-XL, an ultra-large-scale dataset of ~45.6 million verified reactions to train the C3LM (Chemistry Constraint-Consistent Language Model). By integrating fine-tuning with ChemCensor-based and novelty-oriented rewards, our model achieves state-of-the-art performance on the OOD URSA-expert-2026 benchmark. Further analysis of reaction uniqueness shows that LLMs and conventional models explore complementary reaction spaces, motivating ensemble-based retrosynthesis systems. Overall, our results establish Top-K, plausibility-aware training as a practical new direction for robust future LLM-based synthesis planning."
+    },
+    {
+      "title": "Decision-Metric Alignment in Latent World Models: Diagnostics and Action-Conditioned Objectives for MPC Planning",
+      "link": "https://arxiv.org/abs/2608.18746",
+      "pubDate": "Tue, 18 Aug 2026 20:00:00 GMT",
+      "isoDate": "2026-08-18T20:00:00.000Z",
+      "creator": "Jiawei Wang, Ke Rui, Yushen Zuo, Yichun Feng, Minglei Li",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "Decision-Metric Alignment in Latent World Models: Diagnostics and Action-Conditioned Objectives for MPC Planning",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "JEPA-style latent world models can use Euclidean distance to a goal latent as the cost for model-predictive control (MPC). Strong decoding of task variables, however, does not guarantee that this particular cost ranks candidate action sequences by real task progress. We call the latter property decision-metric alignment. We introduce Plan-Real Spearman, which measures latent--real rank agreement on random plans, and CEM-stage Spearman, which measures the same agreement as cross-entropy-method (CEM) search concentrates its proposal. We analyze sufficient conditions under which latent distance preserves real-cost rankings, identifying encoder distortion, terminal rollout error, and candidate margins as the controlling quantities. Guided by the observed empirical alignment gap, DA-LeWM augments LeWM with inverse-dynamics and demonstration-conditioned goal-action heads. Across all our experiments, DA-LeWM accelerates convergence and achieves higher online success than LeWM, while probe scores remain similar. These results show that action-conditioned objectives improve the geometry used by Euclidean-cost, CEM-based latent MPC."
+    },
+    {
+      "title": "SoftVTBench: A Deformation-Aware Visuo-Tactile Dataset and Benchmark for Deformable-Object Manipulation",
+      "link": "https://arxiv.org/abs/2608.18701",
+      "pubDate": "Tue, 18 Aug 2026 20:00:00 GMT",
+      "isoDate": "2026-08-18T20:00:00.000Z",
+      "creator": "Bowen Jing, Mingxin Wang, Ruiyang Hao, Chenchen Ge, Hanwen Shen, Junjie He, Yang Cui, Yiming Hou, Weitao Zhou, Jiawei Wang, Minglei Li, Dandan Zhang, Ding Zhao, Houde Liu, Xiaofan Li, Si Liu, Ping Luo, Haibao Yu",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "SoftVTBench: A Deformation-Aware Visuo-Tactile Dataset and Benchmark for Deformable-Object Manipulation",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Physical interaction quality is central to deformable-object manipulation, yet most benchmarks evaluate task success alone. A policy may complete the task while allowing slip or causing excessive compression. A primary bottleneck is the absence of visuo-tactile datasets that pair policy-visible contact observations with independent physical ground truth over complete tasks. We introduce SoftVTBench, a visuo-tactile dataset for physical-interaction-aware deformable-object manipulation. It contains 4,000 expert demonstrations and more than 50 assets, including volumetric deformable objects and visually matched rigid twins. At 20 Hz, each episode synchronizes multi-view RGB, dual-finger tactile RGB and marker motion, proprioception, language, and binary and continuous gripper actions, alongside evaluator-only finite-element (FEM) states. Building upon this dataset, we establish a closed-loop benchmark that uses fixed object-specific calibration to define the Deformation-aware Success Rate (DSR), which counts a rollout as successful only when it completes the task and keeps peak normalized deformation within tolerance. Across Diffusion Policy, π_{0.5}, and FastWAM, all 12 in-distribution configurations contain successful rollouts that violate the deformation tolerance, accounting for 0.7--24% of each configuration's successes. Under distribution shift, visuo-tactile variants achieve higher task success in all six policy--suite comparisons and higher DSR in five, whereas their in-distribution benefits are mixed. These results show that making touch available does not by itself ensure effective multimodal fusion. SoftVTBench therefore provides a common visuo-tactile resource for studying not only whether a policy succeeds, but how it physically interacts with deformable objects and when touch improves that interaction."
+    },
+    {
+      "title": "FM-Bench: A Benchmark for Long-Horizon Management with Competing Agents",
+      "link": "https://arxiv.org/abs/2608.18423",
+      "pubDate": "Tue, 18 Aug 2026 20:00:00 GMT",
+      "isoDate": "2026-08-18T20:00:00.000Z",
+      "creator": "Tianyou Wang, Chongyang Gao, Kezhen Chen, Chen Dong, Yinghao He, Donghan Li, Wangcheng Xu, Hongjiu Zhang, Chi Li",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "FM-Bench: A Benchmark for Long-Horizon Management with Competing Agents",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Language model agents now execute bounded tasks reliably. Whether they can sustain effective decision-making over long horizons, where actions have cumulative consequences and the environment responds to their choices, remains largely unmeasured. FM-Bench (Football Management Benchmark) measures this. An LLM agent runs a football club for 20 in-game years through 26 tools and roughly 340 to 400 decision stops. It drafts a squad on the same budget as every rival, trades players, negotiates contracts, invests in facilities and youth, sets lineups, and answers to a board that can fire it, while a deterministic engine accumulates every year into one final score with no LLM judge or human rater. The solo track plays each of 15 frontier models against a frozen scripted world, and the Arena places the same models plus a scripted anchor in one shared 20-year world; to our knowledge, the first head-to-head evaluation at this scale. We measure six behavioral capabilities behind the score. Across three seeds, all 15 models complete every horizon while the blind scripted baselines die out in most of theirs, and claude-fable-5 tops the solo board on mean score and the Arena, where the title nonetheless rotates among ten models. Neither scale, price, nor vendor predicts the order; the order settles only late in the horizon, and the best first-play human lands only at the bottom of the model board. What separates the models is managerial behavior rather than computation. Higher-scoring models reduce slow-payoff investment near the end, keep cash invested rather than idle, and open renewals well before the deadline, while token spend predicts nothing. No model learns the market's hidden prices from hundreds of rejected bids, and self-managed memory fails in two opposite modes: an archive that only grows or a plan rewritten every season. Code is available at https://github.com/Analogy-AI/fm-bench."
+    },
+    {
+      "title": "SkillGate: Training In-Policy Skill Selection in Long-Horizon Agents",
+      "link": "https://arxiv.org/abs/2608.18852",
+      "pubDate": "Tue, 18 Aug 2026 20:00:00 GMT",
+      "isoDate": "2026-08-18T20:00:00.000Z",
+      "creator": "Qingyao Li, Wenxiang Jiao, Shuai Shao, Kangning Zhang, Yuan Lu, Yi Guo, Weiwen Liu, Weinan Zhang, Yong Yu",
+      "summary": "无法生成摘要（API请求失败）。",
+      "shortSummary": "",
+      "translated_title": "SkillGate: Training In-Policy Skill Selection in Long-Horizon Agents",
+      "images": [],
+      "contentSource": "RSS",
+      "content": "Agent frameworks increasingly package procedural knowledge as skills: instruction files an agent reads on demand, while public libraries now hold thousands of them. Which skill to read has thus become a decision the policy itself makes in the middle of an episode, yet no existing signal trains it. We show that the default remedy, outcome-rewarded RL over the candidate slate, cannot teach it, for a structural reason we identify and name selector credit starvation: under a broadcast, sequence-level advantage, the few tokens that name the chosen skill carry a vanishing share of the loss, and the credit they inherit is increasingly wrong-signed as trajectories lengthen. A correct choice is punished whenever the execution after it fails, even though the choice itself is among the most valuable decisions in the trajectory. Auditing a completed run's own training artifacts confirms all three properties, each worsening monotonically with horizon. SkillGate removes the failure by construction: it partitions the token support into two disjoint credit channels, outcome credit reaching only execution tokens, and a separate action-local advantage reaching exactly the skill-naming tokens, positive only when a trajectory's single read is the correct one. On five agentic benchmarks under a 16-candidate slate, SkillGate lifts a 9B policy from 40.8% to 53.2% trial success, well ahead of the identical budget spent on outcome reward alone, while cutting exposure to misleading candidates by two thirds and reading fewer skills."
+    },
+    {
       "title": "ASI-Bench: At the Dawn of Artificial Superintelligence",
       "link": "https://arxiv.org/abs/2608.17271",
       "pubDate": "Mon, 17 Aug 2026 20:00:00 GMT",
@@ -172,124 +276,7 @@
       "images": [],
       "contentSource": "RSS",
       "content": "We assess indirect prompt injection in DeepSeek Harness (DSH), using AI-Infra-Guard (A.I.G) to construct tests, deliver controlled taint, execute DSH, collect traces, and judge outcomes. The study covers 14,560 controlled executions over 16 indirect-content channels, text and file carrier modes, 35 payload objectives, one unmodified baseline, and 12 attack methods. The experiment preserves DSH's agent loop, tool registry, model adapter, and session-event path; source tools and sensitive sinks are local fixtures, so attempted actions are recorded without external side effects. We evaluate each trace with a deterministic rule-based judge,  (RuleJudge), and a semantic LLM-based judge,  (LLMJudge). The strongest observed attack success rates are 17.0% under  for fake-completion attack in text mode, 25.5% under  for hidden Unicode in file mode, and 16.0% under  for the skills channel in file mode.  also assigns partial compliance more often than  (7.3% versus 2.0%). We relate these results to DSH's treatment of tool results, additional contexts, and tool-call policy hooks, then identify controls that should sit between untrusted content and sensitive actions. Our code is available at https://github.com/Tencent/AI-Infra-Guard/tree/main/Research/deepseek-harness-security-assessment ."
-    },
-    {
-      "title": "aDSL: Agentic 3D Creation via Joint Agent-Program Design",
-      "link": "https://arxiv.org/abs/2608.17975",
-      "pubDate": "Mon, 17 Aug 2026 20:00:00 GMT",
-      "isoDate": "2026-08-17T20:00:00.000Z",
-      "creator": "Rui-Huan Wang, Si-Tong Wei, Jia-Qi He, Heng-Yi Wei, Baoquan Chen, Peng-Shuai Wang",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "aDSL: Agentic 3D Creation via Joint Agent-Program Design",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Programmatic representations provide a compelling paradigm for 3D content creation, enabling fine-grained edits, interpretability, and explicit structural control. Yet, agentic workflows that rely on large language models (LLMs) to author 3D programs remain brittle, often failing to translate high-level intent into consistent low-level geometry. We attribute this fragility to a mismatch between existing programmatic interfaces and the reasoning strengths of LLMs, which favor semantic structure and spatial relations over fragile numeric choices. In this paper, we jointly design an Agent-centric Domain-Specific Language (aDSL) and a role-specialized multi-agent system to close this gap. aDSL bridges semantic logic and geometric constraints by emphasizing composability and spatial reasoning; it enables agents to manipulate geometry through relational operators instead of brittle absolute coordinates. Building on aDSL, our training-free multi-agent system follows a Plan-Execute-Critic loop to decompose requests, synthesize code, and iteratively repair errors and constraint violations using execution feedback. Experiments show that this co-design improves robustness, controllability, and faithfulness to user intent. Our method outperforms prior LLM-based baselines on text-to-shape and image-to-shape tasks while preserving explicit structure, editability, and interpretability. It also enables downstream applications such as articulated object creation and structured scene composition. Our code is available at https://github.com/sig-pku/aDSL."
-    },
-    {
-      "title": "MoE-ViE: Mixture of Experts Vision Encoder for Efficient Image and Video Understanding",
-      "link": "https://arxiv.org/abs/2608.17402",
-      "pubDate": "Mon, 17 Aug 2026 20:00:00 GMT",
-      "isoDate": "2026-08-17T20:00:00.000Z",
-      "creator": "Bonan Zhang, Shiyu Dong, Quan Hung Tran, Katharina Gschwind, Shuqi Yang, Sijia Chen, Adel Ahmadyan, Seungwhan Moon, Lu Zhang, Ahmed Kirmani, Babak Damavandi, Anuj Kumar",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "MoE-ViE: Mixture of Experts Vision Encoder for Efficient Image and Video Understanding",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Vision encoders are a critical component of vision-language models, and scaling their capacity effectively improves performance. However, dense scaling increases compute cost and inference latency. Mixture-of-Experts (MoE) architectures offer a compelling alternative, having enabled efficient scaling in LLMs, yet the MoE design space for CLIP-style vision encoders remains underexplored at State-of-the-Art (SOTA) levels. In this work, we systematically study MoE designs for vision encoder scaling and find that fine-grained MoE topologies yield substantial gains over both dense and standard MoE counterparts. We further propose an auxiliary-loss-free balancing variant for better expert utilization, and design a specialized MoE kernel to mitigate inference latency overhead. To enhance video capabilities while preserving image knowledge, we introduce frame-level distillation paired with a novel freezing mechanism. We pretrain a series of Mixture-of-Experts Vision Encoders (MoE-ViE) across a range of sizes, all consistently outperforming their dense counterparts. Our largest model matches the zero-shot performance of a SOTA encoder 1.7x its size at 76% of its latency. When aligned with an LLM, MoE-ViE surpasses all compared encoders on image and video benchmarks, including those with up to 5x more activated parameters. Code is available at https://github.com/facebookresearch/moe_vie."
-    },
-    {
-      "title": "HarnessEval-W: Agentifying the Evaluation of Visual Worlds",
-      "link": "https://arxiv.org/abs/2608.16859",
-      "pubDate": "Sun, 16 Aug 2026 20:00:00 GMT",
-      "isoDate": "2026-08-16T20:00:00.000Z",
-      "creator": "Weiliang Chen, Haowen Sun, Jun Gao, Jiawei Chi, Hanyang Wang, Qiyu Dai, Yihao Li, Hao Li, Jingnan Gao, Yi-Hsin Hung, Xingzhuo Guo, Shangchen Miao, Zhiyuan Shi, Xiang Li, Fengrui Tian, Weihua Du, Ziqi Huang, Shenyuan Gao, Siqiao Huang, Mingyu Liu, Yifei Li, Shizun Wang, Xi Wang, Tianqi Zhang, Xue Luo, Xiyin Ren, Jinshan Ren, Xiaoyang Shen, Xiaobo Hu, Zhiyang Dou, Mingyu Ding, Yichao Yan, Xinchao Wang, Yizhou Wang, Shilong Liu, Wenzhao Zheng, Yueqi Duan, Yuan Gong, Ziwei Liu, Ming-Yu Liu, Jialong Wu, Jiangran Lyu, Fangfu Liu",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "HarnessEval-W: Agentifying the Evaluation of Visual Worlds",
-      "images": [
-        {
-          "url": "https://arxiv.org/static/browse/0.3.4/images/icons/social/bibsonomy.png",
-          "alt": "BibSonomy",
-          "title": "",
-          "position": 1
-        },
-        {
-          "url": "https://arxiv.org/static/browse/0.3.4/images/icons/social/reddit.png",
-          "alt": "Reddit",
-          "title": "",
-          "position": 2
-        }
-      ],
-      "contentSource": "RSS",
-      "content": "A benchmark should deliver more than a scalar score: what makes an evaluation trustworthy is the reasoning that justifies the score. This is especially critical for world models, where judging a rollout requires understanding whether physics, causality, and world state evolve correctly. Humans spot such violations naturally, yet no existing benchmark automates this capability: metrics are computed brute-force, leaving no reasoning chain that can be examined or verified. We introduce HarnessEval-W, an agentified evaluation pipeline that brings the harness paradigm from the LLM ecosystem to world model benchmarking. Rather than applying a fixed rubric, HarnessEval-W interprets the context of each evaluation case, decomposes the evaluation question into measurable subproblems, and spawns specialized sub-agents, each equipped with tailored context and diagnostic tools to reason over its own subproblem. The parent agent then validates the gathered evidence and summarizes it into the final verdict. This hierarchical workflow turns every evaluation into a transparent evidence tree whose complete reasoning chain justifies the result. We apply HarnessEval-W to 18 representative world models over 330 evaluation cases. Its judgments closely align with human preferences while providing verifiable, fine-grained diagnoses of every generated rollout. We open-source the full pipeline as a live benchmark and invite the broad community to contribute to grow new skills and evaluation cases as world models evolve."
-    },
-    {
-      "title": "ClawGym II: Exploring Black-Box RL on Agent Harness",
-      "link": "https://arxiv.org/abs/2608.16798",
-      "pubDate": "Sun, 16 Aug 2026 20:00:00 GMT",
-      "isoDate": "2026-08-16T20:00:00.000Z",
-      "creator": "Huatong Song, Fei Bai, Ming Yang, Renyuan Li, Jia Deng, Jujie He, Zhange Zhang, Daixuan Cheng, Yan Xing, Qi Yun, Xuxing Chen, Danyang Li, Feng Chang, Chuan Hao, Ran Tao, Jian Yang, Bryan Dai, Wayne Xin Zhao, Mingjie Tang, Ji-Rong Wen",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "ClawGym II: Exploring Black-Box RL on Agent Harness",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Agent harnesses have substantially improved performance on long-horizon tasks by coordinating agent interactions with the environment. However, reinforcement learning through complex harnesses remains largely unexplored, as scaling such training to long-horizon agent tasks introduces fundamental challenges. In this work, we present a unified black-box RL framework for stable and scalable optimization of general agents through complex harnesses. Concretely, we first build a sandbox-based execution infrastructure that isolates task environments and harnesses within temporary sandboxes for large-scale concurrent rollouts. We then decouple policy optimization from opaque harness execution and place a serving proxy at the model boundary to capture model calls. To reconstruct multi-turn trajectories and improve training efficiency, we organize the captured calls into prefix trees and further adapt both critic-based PPO and critic-free GRPO to optimize over the recovered tree structure. Meanwhile, we maintain training-inference consistency throughout the optimization process. Finally, we introduce mix-harness training, allowing a single model to be jointly optimized by heterogeneous harnesses. With Qwen3-30A3B, black-box RL improves Pass@1 on ClawGym-Bench by 9.98 and 14.81 points through OpenClaw and Claude Code, respectively, while remaining stable over 200-400 optimization steps. Moreover, the framework yields consistent gains on more challenging tasks such as JobBench and OfficeQA. Overall, our framework enables effective, stable, and scalable optimization of general agents through black-box harnesses, supporting unified training across heterogeneous execution systems."
-    },
-    {
-      "title": "An Empirical Study of Training Pixel-Space Text-to-Image Diffusion Models",
-      "link": "https://arxiv.org/abs/2608.16887",
-      "pubDate": "Sun, 16 Aug 2026 20:00:00 GMT",
-      "isoDate": "2026-08-16T20:00:00.000Z",
-      "creator": "Dengyang Jiang, Ruoyi Du, Zhennan Chen, Dongyang Liu, Zanyi Wang, Mingzhe Zheng, Xiangpeng Yang, Huanqia Cai, Aiming Hao, Yuming Jiang, Peng Gao, Harry Yang, Steven Hoi",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "An Empirical Study of Training Pixel-Space Text-to-Image Diffusion Models",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "This paper investigates an increasingly important topic in generative modeling: pixel-space diffusion models. Although numerous studies have explored this topic, most focus on small-scale or class-conditional settings. Consequently, a practical recipe for training pixel-space models that rival or exceed well-established latent-space counterparts remains elusive. Through a comprehensive empirical study, we first observe that direct large-scale pre-training in pixel space converges substantially more slowly than in latent space. This observation motivates a latent-to-pixel strategy that acquires generative priors efficiently in latent space and transitions to pixel space during post-training. We then systematically investigate the key design choices governing this transition, including weight initialization, data composition, prediction target, decoder architecture, and noise schedule, and identify a practical recipe that makes the resulting pixel-space models match or outperform their latent-space counterparts while delivering 3.18 to 4.75 times end-to-end inference speedups. We hope that our findings provide useful empirical insights and practical guidelines for future research on pixel-space generation."
-    },
-    {
-      "title": "Learn What's Left, Not What's Mastered: Saturation Aware Advantage Reweighting for Multi-Reward Policy Optimization",
-      "link": "https://arxiv.org/abs/2608.16072",
-      "pubDate": "Sun, 16 Aug 2026 20:00:00 GMT",
-      "isoDate": "2026-08-16T20:00:00.000Z",
-      "creator": "Yixuan Wang, Yifei Chen, Haichao Zhang, Haozheng Luo, Xander Wu, Jie Ni, Yun Fu, Nuno Vasconcelos, Yijiang Li",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Learn What's Left, Not What's Mastered: Saturation Aware Advantage Reweighting for Multi-Reward Policy Optimization",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "Reinforcement learning (RL) with group-relative advantages has become the de facto standard for post-training language model reasoners. However, when optimizing multiple reward objectives, existing methods typically scalarize the reward vector with a fixed weighted sum before group-wise standardization. We show that this design leads to two fundamental problems: rollouts with distinct reward profiles can receive identical advantages, and all objectives are optimized with fixed relative weights regardless of their current level of saturation. As a result, training continues to allocate gradient budget to already-solved objectives instead of focusing on those with greater remaining headroom. We introduce Saturation Aware Advantage Reweighting for Multi-Reward Policy Optimization (SA-MRPO), which standardizes each reward objective independently and adaptively discounts its contribution according to a batch-level estimate of objective saturation. This dynamically reallocates optimization effort toward under-optimized objectives while empirically maintaining performance on those that are already well satisfied. We further show that saturation-aware reweighting can reverse the sign of an update, rather than merely rescale its magnitude. Across mathematical reasoning with two- and three-objective reward combinations, SA-MRPO improves the harder correctness objective over GDPO in 12 of 15 benchmark comparisons, with gains of up to 5% on AIME24. On adaptive reasoning it improves accuracy on all five benchmarks, by 3.8% on average and up to 9.2 % on AMC23, and on coding benchmarks it improves pass rate by up to 2.3%, while in all settings maintaining the easier objectives near their already satisfied levels."
-    },
-    {
-      "title": "GenRouter: Unified Workflow Routing for Agentic Image Generation",
-      "link": "https://arxiv.org/abs/2608.16721",
-      "pubDate": "Sun, 16 Aug 2026 20:00:00 GMT",
-      "isoDate": "2026-08-16T20:00:00.000Z",
-      "creator": "Harold Haodong Chen, Zhiyu Hou, Wen-Jie Shu, Weilin Ruan, Yingjie Xu, Litao Guo, Ying-Cong Chen",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "GenRouter: Unified Workflow Routing for Agentic Image Generation",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "The rapid evolution of text-to-image (T2I) generation models has effectively solved the foundational challenge of raw pixel synthesis, shifting the community's focus toward fulfilling increasingly intricate user requests. While recent agentic image generation workflows enhance static inference with advanced capabilities like external knowledge retrieval and iterative reasoning, they mostly operate in isolated silos with fixed ``one-size-fits-all\" topologies. This inevitably leads to severe compute-mismatch, where simple queries are forced through computationally heavy pipelines. To bridge this gap, we present GenRouter, the first unified workflow routing framework for agentic image generation. We first formulate GenCanvas, standardizing diverse agentic pipelines into a universal set of foundational primitives and executable templates. Operating over this unified space, GenRouter adaptively routes heterogeneous prompts to their optimal workflows via (i) demand profiling, (ii) experience matching, and (iii) Pareto filtering. Extensive experiments across diverse benchmarks demonstrate that GenRouter achieves superior visual alignment while reducing execution costs by over 95% and latency by 65% compared to heavyweight static pipelines. Furthermore, the system continuously self-evolves via accumulated experience, enabling robust zero-shot generalization that boosts performance and halves computational overhead."
-    },
-    {
-      "title": "Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs",
-      "link": "https://arxiv.org/abs/2608.16391",
-      "pubDate": "Sun, 16 Aug 2026 20:00:00 GMT",
-      "isoDate": "2026-08-16T20:00:00.000Z",
-      "creator": "Xiangfan Wu, Zonghao Ying, Huiyu Wu, Xing Zheng, Huangsheng Cheng, Xiaorong Shi, Jing Guo",
-      "summary": "无法生成摘要（API请求失败）。",
-      "shortSummary": "",
-      "translated_title": "Ventor-QTest: Threat-Model-Driven Verification of Vendor-Hosted LLM APIs",
-      "images": [],
-      "contentSource": "RSS",
-      "content": "As large language models become increasingly widespread, third-party providers that deploy open-weight models have become an important part of the ecosystem. Auditing the quality of their inference APIs is therefore an open problem. We formalize hosted model routing as a stochastic process and propose \\textbf{Ventor-QTest}, a composite black-box audit that requires no probability information from the target API. Its repeated-request component sends each frozen constrained context to the target multiple times, reconstructs a categorical output distribution from the returned text counts, and reports average fidelity loss (AFL) as a null-bias-corrected, within-window mean coarsened-KL statistic. Its long-sequence component uses independent runs to report extreme fidelity loss (EFL) through the empirical upper tail of a run-level reference-centered-surprisal statistic. Across three logprob-capable route conditions, AFL shows strong linear descriptive agreement with a logprob-derived coarsened-KL comparator. Across seven route snapshots, 20-run sequence probes reveal route-specific EFL variation. AFL and EFL have little detectable route-level association with GPQA-Diamond accuracy. In contrast, pronounced EFL coincides with a decline in Terminal-Bench pass rate as task exposure increases. This pattern may arise because correctness in long-horizon tasks is more sensitive to extreme fidelity loss. These results motivate reporting AFL and EFL jointly, particularly when auditing long-horizon agentic tasks. The open-source implementation is available at https://github.com/Tencent/AI-Infra-Guard/tree/main/services/api_checker/ventor_qtest."
     }
   ],
-  "lastUpdated": "2026-08-19T09:42:12.508Z"
+  "lastUpdated": "2026-08-20T09:43:24.972Z"
 }
